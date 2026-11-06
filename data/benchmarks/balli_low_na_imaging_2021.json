@@ -1,0 +1,76 @@
+{
+  "id": "balli_low_na_imaging_2021",
+  "application": "显微镜物镜",
+  "application_id": "app_04",
+  "name": "Balli 2021：NA0.04可见至SWIR中继成像",
+  "evidence_type": "原始研究的文字条件已核；主文图像与SI示意图尚未视觉复核",
+  "source_ids": [
+    "balli_3d_2021",
+    "balli_3d_si_2021"
+  ],
+  "parameters": [
+    {
+      "name": "低NA成像样品",
+      "value": "EPD 200 μm、NA 0.04（作者标称）；不是20 μm、NA 0.27样品。",
+      "evidence": {
+        "source_id": "balli_3d_2021",
+        "location": "§3前两段及成像段"
+      },
+      "metric_id": "na"
+    },
+    {
+      "name": "成像照明",
+      "value": "卤钨灯；作者报告450–1700 nm与长通滤光1000–1700 nm成像；不能当均匀光谱权重。",
+      "evidence": {
+        "source_id": "balli_3d_si_2021",
+        "location": "pp.3–4 §3；主文§3/Fig.3图注"
+      }
+    },
+    {
+      "name": "成像物距",
+      "value": "物体到超透镜约30 mm；机械前端基准未细化。",
+      "evidence": {
+        "source_id": "balli_3d_si_2021",
+        "location": "p.3 Fig.2图注与§3"
+      },
+      "metric_id": "working_distance"
+    },
+    {
+      "name": "中继成像",
+      "value": "Newport M-10X，10×、NA0.25中继物镜；位置可变以改变系统放大率。不是裸超透镜直接在相机上成像。",
+      "evidence": {
+        "source_id": "balli_3d_si_2021",
+        "location": "pp.3–4 §3"
+      }
+    },
+    {
+      "name": "宽带相机与响应边界",
+      "value": "NINOX-VS-CL-640；作者称1000–1650 nm响应较平坦、向1700 nm快速下降。1700 nm是相机响应限制。",
+      "evidence": {
+        "source_id": "balli_3d_si_2021",
+        "location": "p.4 §3"
+      }
+    },
+    {
+      "name": "RGB图像通道",
+      "value": "Amscope MU1000彩色相机，属于可见光通道，不能作为SWIR真实彩色图像。",
+      "evidence": {
+        "source_id": "balli_3d_si_2021",
+        "location": "p.4 §3"
+      }
+    },
+    {
+      "name": "实际制备",
+      "value": "IP-Dip双光子光刻，熔石英基底；SI称有效打印直径约200 μm，更大尺寸与拼接影响效率及焦斑。模压量产未实证。",
+      "evidence": {
+        "source_id": "balli_3d_si_2021",
+        "location": "p.2 §2；主文§3"
+      }
+    }
+  ],
+  "conditions": "同一论文主文与SI，不计两项独立研究；本条聚焦200 μm成像系统。仅核出版方文本及图注，未独立判读图像可辨尺度、焦斑曲线或全场像质；不得移用另一20 μm样品的60%效率。",
+  "unreported_or_not_verified": "主文§3效率段写20/100 μm，成像/制造段写20/200 μm，42%归属有冲突，暂不收为200 μm样品效率。缺视觉核图、最终放大率、物方采样、全场MTF、独立重复/不确定度。SI的放大率公式与距离符号需看原页再解释，不用它反算物距或系统倍率；NA0.04不定义通用低NA阈值。",
+  "record_status": "checked_excerpt",
+  "checked_on": "2026-11-06",
+  "claim_type": "representative_result"
+}

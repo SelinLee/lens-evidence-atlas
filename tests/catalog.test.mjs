@@ -300,3 +300,37 @@ test('thermal evidence preserves all NETD table cells, temperature conditions an
  assert.ok(d.metrics.find(m=>m.id==='netd').definition.includes('分母不是N−1'));
  assert.ok(!d.bests.some(b=>b.application_id==='app_10'));
 });
+
+test('SWIR comparison keeps simulation and prototype separate and resolves Ny/2 to physical frequency',()=>{
+ const d=load(),r=d.benchmarks.find(b=>b.id==='dupre_swir_prototype_2023');
+ const mtf=r.parameters.find(p=>p.metric_id==='mtf');
+ assert.ok(mtf.name.includes('模拟'));assert.ok(mtf.value.includes('不是样机实测'));
+ const expected=[[2.5,200,100],[5,100,50]];
+ const converted=r.parameters.find(p=>p.metric_id==='detector_nyquist').value;
+ for(const [pitch,nyquist,half] of expected){
+  assert.equal(1/(2*pitch/1000),nyquist);assert.equal(nyquist/2,half);
+  assert.ok(converted.includes(`${pitch} μm→Ny=${nyquist}、Ny/2=${half} lp/mm`));
+ }
+ assert.ok(r.parameters.find(p=>p.name==='实际样机与成像').value.includes('未给实测MTF'));
+ assert.ok(r.parameters.find(p=>p.metric_id==='fov').value.includes('未标H/V/对角'));
+ assert.ok(r.conditions.includes('模拟绝对波长'));
+ const a=d.applications.find(a=>a.id==='app_09');assert.equal(a.priorities.length,0);
+ assert.equal(d.benchmarks.find(b=>b.id==='swir_camera').checked_on,'2026-10-25');
+ assert.ok(!d.bests.some(b=>b.application_id==='app_09'));
+ const ny=d.metrics.find(m=>m.id==='detector_nyquist');
+ assert.equal(ny.direction,'tradeoff');assert.ok(ny.definition.includes('不是50%的MTF值'));
+ // Equal normalized frequency is insufficient when the pixel pitch differs.
+ assert.equal(canCompare({pitch_um:2.5,relative_frequency:.25},{pitch_um:5,relative_frequency:.25},['pitch_um','relative_frequency']),false);
+});
+
+test('Balli low-NA imaging retains the relay, limited reading scope and disputed efficiency attribution',()=>{
+ const d=load(),r=d.benchmarks.find(b=>b.id==='balli_low_na_imaging_2021');
+ assert.equal(r.application_id,'app_04');
+ assert.equal(d.benchmarks.filter(b=>b.source_ids.includes('balli_3d_2021')).length,1);
+ assert.ok(r.parameters.find(p=>p.name==='中继成像').value.includes('M-10X'));
+ assert.ok(r.parameters.find(p=>p.name==='成像物距').value.includes('约30 mm'));
+ assert.ok(!r.parameters.some(p=>p.metric_id==='focus_efficiency'||p.metric_id==='resolution'));
+ assert.ok(r.unreported_or_not_verified.includes('42%归属有冲突'));
+ assert.ok(d.sources.find(s=>s.id==='balli_3d_2021').evidence_scope.includes('未取得可视觉查看'));
+ assert.ok(d.sources.find(s=>s.id==='balli_3d_si_2021').evidence_scope.includes('未声称实际查看PDF图像'));
+});

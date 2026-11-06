@@ -1,0 +1,19 @@
+{
+  "id": "detector_nyquist",
+  "name": "探测器奈奎斯特频率",
+  "english_name": "Detector Nyquist Spatial Frequency",
+  "definition": "均匀采样网格沿指定像素轴的频率边界为0.5 cycles/pixel。EMVA 1288 §8.6以v/N表示频率，并将v=N/2称为Nyquist。由此作单位换算：像元间距p以mm计时，νN=1/(2p) cycles/mm（lp/mm）；p以μm计则νN=500/p。Ny/2为0.25 cycles/pixel，不是50%的MTF值。固定像元间距不随光学放大率改变像方νN；物方换算另需放大率及共轭。本库解释：这是采样指标，不证明系统达到同值的光学分辨率，也不保证Nyquist边界处任意相位条纹均有可用对比度。",
+  "unit": "cycles/pixel；lp/mm",
+  "direction": "tradeoff",
+  "required_conditions": [
+    "像元中心间距与采样方向",
+    "像方/物方及共轭放大率",
+    "原始单通道/彩色子阵列、合并像元与重采样",
+    "预采样光学MTF、像素响应及处理"
+  ],
+  "definition_refs": [
+    "emva1288_nyquist_2021"
+  ],
+  "best_interpretation": "提高采样频率不会自动提高光学信息量；应在同一物/像方频率下比较MTF，不设跨行业合格线。",
+  "updated_on": "2026-11-06"
+}

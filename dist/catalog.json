@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.24",
+    "version": "0.1.25",
     "updated_on": "2026-11-06",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -319,7 +319,7 @@
       "ranking_status": "author_explicit",
       "ranking_gap": "仅取得Wang 2021针对近红外低效率缺口的两项相对优先关系；其余物镜任务、分辨率/视场/工作距离等未建立全套原文排名。",
       "metric_mapping_status": "editorial_candidate_set",
-      "metric_mapping_note": "本页低NA检索以文献实际样本NA0.1/0.106为入口，NA0.24扫描样本为邻近对照；不定义统一低NA阈值。可见标靶线宽、近红外激发/可见发射的扫描分辨率估计及单元聚焦效率分开。视场与完整成像共轭缺口保留，不能用图上标尺、收集物镜倍率替代。 Chu计算显微子任务另报告照明、4-f共轭、采样与FP重建；不将算法改善归为裸透镜分辨率。 Zheng 2013补充NA0.08物镜的独立FPM任务；137方向/HDR和2015半周期勘误分别记录，不与Chu系统直接排名。",
+      "metric_mapping_note": "本页低NA检索以文献实际样本NA0.1/0.106为入口，NA0.24扫描样本为邻近对照；不定义统一低NA阈值。可见标靶线宽、近红外激发/可见发射的扫描分辨率估计及单元聚焦效率分开。视场与完整成像共轭缺口保留，不能用图上标尺、收集物镜倍率替代。 Chu计算显微子任务另报告照明、4-f共轭、采样与FP重建；不将算法改善归为裸透镜分辨率。 Zheng 2013补充NA0.08物镜的独立FPM任务；137方向/HDR和2015半周期勘误分别记录，不与Chu系统直接排名。 Balli NA0.04条目补可见至SWIR中继成像文字条件，图像尚待视觉核验；不沿用其他样品效率或假定最终倍率。",
       "legacy_priority_proposal": "物方NA、介质、WD、平场、盖玻片、轴向/横向色差",
       "record_ids": [
         "micro2",
@@ -330,7 +330,8 @@
         "wang_visible_2018_imaging",
         "wang_upconversion_scan_2021",
         "chu_meta_fp_usaf",
-        "zheng_fpm_usaf_2013"
+        "zheng_fpm_usaf_2013",
+        "balli_low_na_imaging_2021"
       ],
       "updated_on": "2026-11-06"
     },
@@ -439,23 +440,30 @@
       "id": "app_09",
       "name": "短波红外检测",
       "category": "红外与光谱",
-      "summary": "本例25 mm、f/1.4–16、16 mm像圈，系列800–2000 nm",
+      "summary": "按接收波段、光学MTF与像元采样匹配评估；商业镜头与1550 nm硅样机/模拟方案分别记录。",
       "metric_ids": [
         "mtf",
         "fnumber",
         "transmission",
-        "working_distance"
+        "working_distance",
+        "fov",
+        "detector_nyquist"
       ],
       "priorities": [],
       "ranking_status": "not_established",
-      "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
+      "ranking_gap": "任务权衡：Dupre 2023按眼动/iTOF的像元与多tap需求设计，MTF需绑定绝对空间频率、视场和封装条件；Table1的55%/70%是不同Ny/2频率的模拟。Balli的宽带成像需中继及相机光谱响应（样本位于显微镜物镜页）。本库据此整理条件关系，原文未给通用指标名次或验收线。",
       "metric_mapping_status": "editorial_candidate_set",
       "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
       "legacy_priority_proposal": "InGaAs响应加权MTF与透过率、F数、工作距离",
       "record_ids": [
-        "swir_camera"
+        "swir_camera",
+        "dupre_swir_prototype_2023"
       ],
-      "updated_on": "2026-11-06"
+      "updated_on": "2026-11-06",
+      "ranking_gap_refs": [
+        "dupre_swir_2023",
+        "balli_3d_si_2021"
+      ]
     },
     {
       "id": "app_10",
@@ -1171,6 +1179,25 @@
       "updated_on": "2026-11-06"
     },
     {
+      "id": "detector_nyquist",
+      "name": "探测器奈奎斯特频率",
+      "english_name": "Detector Nyquist Spatial Frequency",
+      "definition": "均匀采样网格沿指定像素轴的频率边界为0.5 cycles/pixel。EMVA 1288 §8.6以v/N表示频率，并将v=N/2称为Nyquist。由此作单位换算：像元间距p以mm计时，νN=1/(2p) cycles/mm（lp/mm）；p以μm计则νN=500/p。Ny/2为0.25 cycles/pixel，不是50%的MTF值。固定像元间距不随光学放大率改变像方νN；物方换算另需放大率及共轭。本库解释：这是采样指标，不证明系统达到同值的光学分辨率，也不保证Nyquist边界处任意相位条纹均有可用对比度。",
+      "unit": "cycles/pixel；lp/mm",
+      "direction": "tradeoff",
+      "required_conditions": [
+        "像元中心间距与采样方向",
+        "像方/物方及共轭放大率",
+        "原始单通道/彩色子阵列、合并像元与重采样",
+        "预采样光学MTF、像素响应及处理"
+      ],
+      "definition_refs": [
+        "emva1288_nyquist_2021"
+      ],
+      "best_interpretation": "提高采样频率不会自动提高光学信息量；应在同一物/像方频率下比较MTF，不设跨行业合格线。",
+      "updated_on": "2026-11-06"
+    },
+    {
       "id": "dimensional_measurement_error",
       "name": "尺寸/位移测量误差",
       "english_name": "Dimensional / Displacement Measurement Error",
@@ -1767,6 +1794,29 @@
       "doi": null
     },
     {
+      "id": "balli_3d_2021",
+      "title": "Balli et al. 2021: An ultrabroadband 3D achromatic metalens",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1515/nanoph-2020-0550",
+      "source_year": 2021,
+      "location": "Nanophotonics 10(4):1259–1264；§§1–4，重点§3成像段及Fig.3图注",
+      "evidence_scope": "出版社HTML正文及图注已读；未取得可视觉查看的主文图像，PDF下载403、截图失败，本记录不估读曲线或自行判定标靶分辨率。只收录明确文字条件与作者报告的实验类型。效率段100 μm与制造/成像段200 μm有口径冲突，未自行改字。",
+      "kind": "peer_reviewed_paper",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt",
+      "doi": "10.1515/nanoph-2020-0550"
+    },
+    {
+      "id": "balli_3d_si_2021",
+      "title": "Balli et al. 2021 Supplementary Information: An Ultrabroadband 3D Achromatic Metalens",
+      "url": "https://www.degruyterbrill.com/document/doi/10.1515/nanoph-2020-0550/downloadAsset/suppl/j_nanoph-2020-0550_suppl.pdf",
+      "source_year": 2021,
+      "location": "SI pp.2–4 §§2–3及Fig.2图注",
+      "evidence_scope": "出版方PDF的可检索文本已读，重点制造限制、成像物距/中继和相机响应；直接下载为空文件、截图405，未声称实际查看PDF图像或核验公式排版。与主文同一研究；页首模板DOI/date未作为正式元数据。",
+      "kind": "supplementary_material",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
+    },
+    {
       "id": "battistella_airy_2022",
       "title": "Battistella et al. 2022: Light-sheet mesoscopy with the Mesolens provides fast sub-cellular resolution imaging throughout large tissue volumes",
       "url": "https://eprints.gla.ac.uk/275833/1/275833.pdf",
@@ -1825,6 +1875,29 @@
       "kind": "manufacturer",
       "verification": "inherited_v2",
       "doi": null
+    },
+    {
+      "id": "dupre_swir_2023",
+      "title": "Dupre et al. 2023: Silicon Metalenses towards a fully integrated SWIR sensing",
+      "url": "https://imagesensors.org/Past%20Workshops/2023%20Workshop/2023%20Papers/P23.pdf",
+      "source_year": 2023,
+      "location": "IISW 2023工作坊原始论文，pp.1–4；Fig.2、Table1、Fig.3",
+      "evidence_scope": "读4页正文并实际查看pp.3–4的光线/MTF图、KPI表和样机图。Qualcomm作者的设计及初步实验；模拟的两个完整堆叠方案与1550 nm单镜头样机分开。不是第三方量产验收。未核其引用的安全标准，也未验证眼安全或完整单片相机。",
+      "kind": "workshop_paper",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt",
+      "doi": "10.60928/0mhu-kr31"
+    },
+    {
+      "id": "emva1288_nyquist_2021",
+      "title": "EMVA 1288 Release 4.0 General (16 June 2021): §8.6 spatial-frequency convention",
+      "url": "https://www.emva.org/wp-content/uploads/EMVA1288General_4.0Release.pdf",
+      "source_year": 2021,
+      "location": "p.28 §8.6，Eqs.(61)–(62)后频率说明",
+      "evidence_scope": "取得EMVA官方44页PDF；本条只核封面版本与§8.6频率说明，实际查看p.28。该节用于空间非均匀性频谱，取其cycles/pixel定义，不扩为镜头MTF合格门槛、整项认证或现行最新版声明。",
+      "kind": "standard",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
     },
     {
       "id": "epson",
@@ -3100,6 +3173,82 @@
       "claim_type": "representative_result"
     },
     {
+      "id": "balli_low_na_imaging_2021",
+      "application": "显微镜物镜",
+      "application_id": "app_04",
+      "name": "Balli 2021：NA0.04可见至SWIR中继成像",
+      "evidence_type": "原始研究的文字条件已核；主文图像与SI示意图尚未视觉复核",
+      "source_ids": [
+        "balli_3d_2021",
+        "balli_3d_si_2021"
+      ],
+      "parameters": [
+        {
+          "name": "低NA成像样品",
+          "value": "EPD 200 μm、NA 0.04（作者标称）；不是20 μm、NA 0.27样品。",
+          "evidence": {
+            "source_id": "balli_3d_2021",
+            "location": "§3前两段及成像段"
+          },
+          "metric_id": "na"
+        },
+        {
+          "name": "成像照明",
+          "value": "卤钨灯；作者报告450–1700 nm与长通滤光1000–1700 nm成像；不能当均匀光谱权重。",
+          "evidence": {
+            "source_id": "balli_3d_si_2021",
+            "location": "pp.3–4 §3；主文§3/Fig.3图注"
+          }
+        },
+        {
+          "name": "成像物距",
+          "value": "物体到超透镜约30 mm；机械前端基准未细化。",
+          "evidence": {
+            "source_id": "balli_3d_si_2021",
+            "location": "p.3 Fig.2图注与§3"
+          },
+          "metric_id": "working_distance"
+        },
+        {
+          "name": "中继成像",
+          "value": "Newport M-10X，10×、NA0.25中继物镜；位置可变以改变系统放大率。不是裸超透镜直接在相机上成像。",
+          "evidence": {
+            "source_id": "balli_3d_si_2021",
+            "location": "pp.3–4 §3"
+          }
+        },
+        {
+          "name": "宽带相机与响应边界",
+          "value": "NINOX-VS-CL-640；作者称1000–1650 nm响应较平坦、向1700 nm快速下降。1700 nm是相机响应限制。",
+          "evidence": {
+            "source_id": "balli_3d_si_2021",
+            "location": "p.4 §3"
+          }
+        },
+        {
+          "name": "RGB图像通道",
+          "value": "Amscope MU1000彩色相机，属于可见光通道，不能作为SWIR真实彩色图像。",
+          "evidence": {
+            "source_id": "balli_3d_si_2021",
+            "location": "p.4 §3"
+          }
+        },
+        {
+          "name": "实际制备",
+          "value": "IP-Dip双光子光刻，熔石英基底；SI称有效打印直径约200 μm，更大尺寸与拼接影响效率及焦斑。模压量产未实证。",
+          "evidence": {
+            "source_id": "balli_3d_si_2021",
+            "location": "p.2 §2；主文§3"
+          }
+        }
+      ],
+      "conditions": "同一论文主文与SI，不计两项独立研究；本条聚焦200 μm成像系统。仅核出版方文本及图注，未独立判读图像可辨尺度、焦斑曲线或全场像质；不得移用另一20 μm样品的60%效率。",
+      "unreported_or_not_verified": "主文§3效率段写20/100 μm，成像/制造段写20/200 μm，42%归属有冲突，暂不收为200 μm样品效率。缺视觉核图、最终放大率、物方采样、全场MTF、独立重复/不确定度。SI的放大率公式与距离符号需看原页再解释，不用它反算物距或系统倍率；NA0.04不定义通用低NA阈值。",
+      "record_status": "checked_excerpt",
+      "checked_on": "2026-11-06",
+      "claim_type": "representative_result"
+    },
+    {
       "id": "battistella_airy_profile",
       "application": "光片照明与体积显微",
       "name": "Battistella 2022 静态Airy光片三位置实测",
@@ -3322,6 +3471,108 @@
       "application_id": "app_31",
       "checked_on": "2026-10-25",
       "record_status": "inherited_v2",
+      "claim_type": "representative_result"
+    },
+    {
+      "id": "dupre_swir_prototype_2023",
+      "application": "短波红外检测",
+      "application_id": "app_09",
+      "name": "Dupre 2023：1550 nm硅样机与两种模拟传感器方案",
+      "evidence_type": "工作坊原始研究；样机成像与Zemax模拟逐项区分",
+      "source_ids": [
+        "dupre_swir_2023",
+        "emva1288_nyquist_2021"
+      ],
+      "parameters": [
+        {
+          "name": "实际样机与成像",
+          "value": "1550 nm；3 mm直径硅超透镜配商用InGaAs传感器，作者展示USAF图像；未给实测MTF。",
+          "evidence": {
+            "source_id": "dupre_swir_2023",
+            "location": "p.2样机段；p.4 Fig.3"
+          }
+        },
+        {
+          "name": "样机结构",
+          "value": "500 μm硅晶圆；柱高1200 nm；六角晶格常数500 nm，柱径100–400 nm。",
+          "evidence": {
+            "source_id": "dupre_swir_2023",
+            "location": "p.2样机段"
+          }
+        },
+        {
+          "name": "制造成熟度",
+          "value": "样机为电子束光刻；UV光刻及完整单片堆叠相机是后续计划。",
+          "evidence": {
+            "source_id": "dupre_swir_2023",
+            "location": "p.2结论"
+          }
+        },
+        {
+          "name": "眼动方案传感器（模拟配置）",
+          "value": "400×400像元；间距2.5 μm。",
+          "evidence": {
+            "source_id": "dupre_swir_2023",
+            "location": "p.4 Table1"
+          }
+        },
+        {
+          "name": "iTOF方案传感器（模拟配置）",
+          "value": "1920×1080像元；间距5 μm。",
+          "evidence": {
+            "source_id": "dupre_swir_2023",
+            "location": "p.4 Table1"
+          }
+        },
+        {
+          "name": "模拟封装高度与焦距",
+          "value": "眼动：z height 2.9 mm、EFL 0.9 mm；iTOF：23 mm、7.65 mm。z height按作者表名，不擅自等同实测TTL。",
+          "evidence": {
+            "source_id": "dupre_swir_2023",
+            "location": "p.4 Table1"
+          }
+        },
+        {
+          "name": "模拟口径与F数",
+          "value": "眼动：0.35 mm、F/2.6；iTOF：3 mm、F/2.55。",
+          "evidence": {
+            "source_id": "dupre_swir_2023",
+            "location": "p.4 Table1"
+          },
+          "metric_id": "fnumber"
+        },
+        {
+          "name": "模拟视场",
+          "value": "两方案表列FOV 90°；图中场角0/10/20/30/40/45°，未标H/V/对角，不自行写DFOV。",
+          "evidence": {
+            "source_id": "dupre_swir_2023",
+            "location": "p.1模拟段；p.3 Fig.2；p.4 Table1"
+          },
+          "metric_id": "fov"
+        },
+        {
+          "name": "模拟MTF @ Ny/2",
+          "value": "Table1：眼动55%，iTOF70%；正文称iTOF超过70%，保留措辞差异。不是样机实测。",
+          "evidence": {
+            "source_id": "dupre_swir_2023",
+            "location": "p.1模拟段；p.3 Fig.2c,f；p.4 Table1"
+          },
+          "metric_id": "mtf"
+        },
+        {
+          "name": "像方采样频率（本库换算）",
+          "value": "规则网格假设：2.5 μm→Ny=200、Ny/2=100 lp/mm；5 μm→Ny=100、Ny/2=50 lp/mm。55%和70%对应不同绝对频率，不能直接排名。",
+          "evidence": {
+            "source_id": "dupre_swir_2023",
+            "location": "p.4 Table1像元间距；νN=500/p换算，定义见EMVA §8.6"
+          },
+          "metric_id": "detector_nyquist"
+        }
+      ],
+      "conditions": "一个研究：Fig.2和Table1为Zemax设计，Fig.3为初步样机；不能把设计90°、55%/70% MTF及传感器参数转移给实物。模拟绝对波长本批未从明确正文/图注确认，不能由1550 nm样机反推。",
+      "unreported_or_not_verified": "样机物距、相机型号/像元、曝光、可辨USAF组号、实测MTF/效率、独立重复与误差条未充分报告。设计MTF的场点汇总规则、光谱权重及公差仍需补齐。未验证量产良率、单片集成或眼安全；波长本身不是安全认证。",
+      "record_status": "checked_excerpt",
+      "checked_on": "2026-11-06",
       "claim_type": "representative_result"
     },
     {
