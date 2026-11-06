@@ -2,8 +2,8 @@
 const D=window.LENS_DATA,$=id=>document.getElementById(id),esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const sources=new Map(D.sources.map(x=>[x.id,x])),metrics=new Map(D.metrics.map(x=>[x.id,x])),records=new Map(D.benchmarks.map(x=>[x.id,x]));
 const directions={higher:'较高通常更有利',lower:'较低通常更有利',lower_abs:'绝对偏差越小越好',target:'需匹配目标值',tradeoff:'存在权衡，不单向排序'};
-const kinds={trial_protocol:'原始试验方案',paper:'原始研究论文',paper_review:'学术综述',scholarly_book:'学术书章',standard:'标准 / 公开预览',manufacturer:'厂商资料',manufacturer_technical:'原厂技术文档',software_documentation:'原厂软件文档'};
-const kindOrder={trial_protocol:3,paper:0,paper_review:1,scholarly_book:2,standard:3,manufacturer_technical:4,software_documentation:4,manufacturer:5};
+const kinds={trial_protocol:'原始试验方案',paper:'原始研究论文',peer_reviewed_paper:'同行评议研究论文',conference_paper:'会议论文',workshop_paper:'研讨会论文',supplementary_material:'论文补充材料（同一研究）',paper_review:'学术综述',scholarly_book:'学术书章',standard:'标准 / 公开预览',manufacturer:'厂商资料',manufacturer_technical:'原厂技术文档',software_documentation:'原厂软件文档'};
+const kindOrder={trial_protocol:3,paper:0,peer_reviewed_paper:0,conference_paper:0,workshop_paper:0,supplementary_material:0,paper_review:1,scholarly_book:2,standard:3,manufacturer_technical:4,software_documentation:4,manufacturer:5};
 let selected='app_25',tab='metrics';
 function current(){return D.applications.find(a=>a.id===selected)||D.applications[0]}
 function refs(ids){return '<div class="inline-refs">'+[...new Set(ids)].map(id=>{const s=sources.get(id);return s?`<button data-source="${esc(id)}">${esc(s.title)}</button>`:''}).join(' · ')+'</div>'}

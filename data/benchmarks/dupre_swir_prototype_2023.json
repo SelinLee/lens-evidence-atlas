@@ -1,0 +1,102 @@
+{
+  "id": "dupre_swir_prototype_2023",
+  "application": "短波红外检测",
+  "application_id": "app_09",
+  "name": "Dupre 2023：1550 nm硅样机与两种模拟传感器方案",
+  "evidence_type": "工作坊原始研究；样机成像与Zemax模拟逐项区分",
+  "source_ids": [
+    "dupre_swir_2023",
+    "emva1288_nyquist_2021"
+  ],
+  "parameters": [
+    {
+      "name": "实际样机与成像",
+      "value": "1550 nm；3 mm直径硅超透镜配商用InGaAs传感器，作者展示USAF图像；未给实测MTF。",
+      "evidence": {
+        "source_id": "dupre_swir_2023",
+        "location": "p.2样机段；p.4 Fig.3"
+      }
+    },
+    {
+      "name": "样机结构",
+      "value": "500 μm硅晶圆；柱高1200 nm；六角晶格常数500 nm，柱径100–400 nm。",
+      "evidence": {
+        "source_id": "dupre_swir_2023",
+        "location": "p.2样机段"
+      }
+    },
+    {
+      "name": "制造成熟度",
+      "value": "样机为电子束光刻；UV光刻及完整单片堆叠相机是后续计划。",
+      "evidence": {
+        "source_id": "dupre_swir_2023",
+        "location": "p.2结论"
+      }
+    },
+    {
+      "name": "眼动方案传感器（模拟配置）",
+      "value": "400×400像元；间距2.5 μm。",
+      "evidence": {
+        "source_id": "dupre_swir_2023",
+        "location": "p.4 Table1"
+      }
+    },
+    {
+      "name": "iTOF方案传感器（模拟配置）",
+      "value": "1920×1080像元；间距5 μm。",
+      "evidence": {
+        "source_id": "dupre_swir_2023",
+        "location": "p.4 Table1"
+      }
+    },
+    {
+      "name": "模拟封装高度与焦距",
+      "value": "眼动：z height 2.9 mm、EFL 0.9 mm；iTOF：23 mm、7.65 mm。z height按作者表名，不擅自等同实测TTL。",
+      "evidence": {
+        "source_id": "dupre_swir_2023",
+        "location": "p.4 Table1"
+      }
+    },
+    {
+      "name": "模拟口径与F数",
+      "value": "眼动：0.35 mm、F/2.6；iTOF：3 mm、F/2.55。",
+      "evidence": {
+        "source_id": "dupre_swir_2023",
+        "location": "p.4 Table1"
+      },
+      "metric_id": "fnumber"
+    },
+    {
+      "name": "模拟视场",
+      "value": "两方案表列FOV 90°；图中场角0/10/20/30/40/45°，未标H/V/对角，不自行写DFOV。",
+      "evidence": {
+        "source_id": "dupre_swir_2023",
+        "location": "p.1模拟段；p.3 Fig.2；p.4 Table1"
+      },
+      "metric_id": "fov"
+    },
+    {
+      "name": "模拟MTF @ Ny/2",
+      "value": "Table1：眼动55%，iTOF70%；正文称iTOF超过70%，保留措辞差异。不是样机实测。",
+      "evidence": {
+        "source_id": "dupre_swir_2023",
+        "location": "p.1模拟段；p.3 Fig.2c,f；p.4 Table1"
+      },
+      "metric_id": "mtf"
+    },
+    {
+      "name": "像方采样频率（本库换算）",
+      "value": "规则网格假设：2.5 μm→Ny=200、Ny/2=100 lp/mm；5 μm→Ny=100、Ny/2=50 lp/mm。55%和70%对应不同绝对频率，不能直接排名。",
+      "evidence": {
+        "source_id": "dupre_swir_2023",
+        "location": "p.4 Table1像元间距；νN=500/p换算，定义见EMVA §8.6"
+      },
+      "metric_id": "detector_nyquist"
+    }
+  ],
+  "conditions": "一个研究：Fig.2和Table1为Zemax设计，Fig.3为初步样机；不能把设计90°、55%/70% MTF及传感器参数转移给实物。模拟绝对波长本批未从明确正文/图注确认，不能由1550 nm样机反推。",
+  "unreported_or_not_verified": "样机物距、相机型号/像元、曝光、可辨USAF组号、实测MTF/效率、独立重复与误差条未充分报告。设计MTF的场点汇总规则、光谱权重及公差仍需补齐。未验证量产良率、单片集成或眼安全；波长本身不是安全认证。",
+  "record_status": "checked_excerpt",
+  "checked_on": "2026-11-06",
+  "claim_type": "representative_result"
+}

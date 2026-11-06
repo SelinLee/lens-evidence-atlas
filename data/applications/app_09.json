@@ -2,21 +2,28 @@
   "id": "app_09",
   "name": "短波红外检测",
   "category": "红外与光谱",
-  "summary": "本例25 mm、f/1.4–16、16 mm像圈，系列800–2000 nm",
+  "summary": "按接收波段、光学MTF与像元采样匹配评估；商业镜头与1550 nm硅样机/模拟方案分别记录。",
   "metric_ids": [
     "mtf",
     "fnumber",
     "transmission",
-    "working_distance"
+    "working_distance",
+    "fov",
+    "detector_nyquist"
   ],
   "priorities": [],
   "ranking_status": "not_established",
-  "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
+  "ranking_gap": "任务权衡：Dupre 2023按眼动/iTOF的像元与多tap需求设计，MTF需绑定绝对空间频率、视场和封装条件；Table1的55%/70%是不同Ny/2频率的模拟。Balli的宽带成像需中继及相机光谱响应（样本位于显微镜物镜页）。本库据此整理条件关系，原文未给通用指标名次或验收线。",
   "metric_mapping_status": "editorial_candidate_set",
   "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
   "legacy_priority_proposal": "InGaAs响应加权MTF与透过率、F数、工作距离",
   "record_ids": [
-    "swir_camera"
+    "swir_camera",
+    "dupre_swir_prototype_2023"
   ],
-  "updated_on": "2026-11-06"
+  "updated_on": "2026-11-06",
+  "ranking_gap_refs": [
+    "dupre_swir_2023",
+    "balli_3d_si_2021"
+  ]
 }

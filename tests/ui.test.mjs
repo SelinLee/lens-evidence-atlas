@@ -274,3 +274,17 @@ test('thermal query separates NETD, source-size effect and temperature accuracy 
  for(const q of ['König 2020','A700','thermal_unmatched_977','']){f.el('search').value=q;f.run('renderList()');assert.equal(f.el('resultCount').textContent,q==='thermal_unmatched_977'?'0 / 33 类应用':q?'1 / 33 类应用':'33 / 33 类应用');}
  f.el('rankedOnly').checked=true;f.run('renderList()');assert.ok(!f.el('appList').innerHTML.includes('data-app="app_10"'));
 });
+
+test('SWIR and low-NA records expose sampling, relay and evidence limits without unsupported ranking',()=>{
+ const f=fixture();f.location.hash='#app_09/metrics';f.run('route()');
+ f.run("openMetric('detector_nyquist')");
+ for(const s of ['νN=500/p','不是50%的MTF值','EMVA'])assert.ok(f.el('detailBody').innerHTML.includes(s));
+ f.location.hash='#app_09/priority';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('不同Ny/2频率的模拟'));
+ f.run("openDialog('test',recordCard(records.get('dupre_swir_prototype_2023'),true))");
+ for(const s of ['不是样机实测','Ny/2=100','Ny/2=50','UV光刻','未标H/V/对角'])assert.ok(f.el('detailBody').innerHTML.includes(s));
+ f.run("openDialog('test',recordCard(records.get('balli_low_na_imaging_2021'),true))");
+ for(const s of ['M-10X','约30 mm','42%归属有冲突','未独立判读'])assert.ok(f.el('detailBody').innerHTML.includes(s));
+ for(const [q,n] of [['Dupre 2023',1],['Balli 2021',1],['no_swir_match_013',0],['',33]]){
+  f.el('search').value=q;f.run('renderList()');assert.equal(f.el('resultCount').textContent,`${n} / 33 类应用`);
+ }
+});
