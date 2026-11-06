@@ -172,3 +172,6 @@ ef84c19`；源提交与发布一致，保持owner-only访问。EVD-004d子任务
 - 已将SelinLee/lens-evidence-atlas改公开，并成功启用workflow型Pages，API返回地址https://selinlee.github.io/lens-evidence-atlas/。尚需工作流部署与实际网页验收；启用本身不算上线。
 - 准备PR #16：自动测试/构建后只发布dist，维护说明与网页入口同步。未另建发布仓库、未购买套餐、未创建跨仓库凭据。Sites停止发布，旧版本6/7失败记录保留历史，不能继续重试。
 - 科学目录仍0.1.8、67记录/87来源。本轮光片研究已取得Luo PDF和Shi 2022主文/SI，因用户托管调整先完成迁移；科学增量未落库，不计已完成。
+
+- **迁移完成**：PR #16已合并，源b9e86424bd4158949d1ffc8c04532e3c616c9afd；GitHub Pages运行42197556450 build/deploy成功。实际网址https://selinlee.github.io/lens-evidence-atlas/返回v0.1.8、33应用/21指标/67记录/87来源。
+- **真实页面验收**：本机独立Chrome无头打开该HTTPS地址，搜索meta-FP/Chu→1/33、无结果0/33、清空33/33；九参数弹窗/关闭/滚动、来源页、Wang记录和作者限定比较保留，截图可读。源仓库API确认public/has_pages=true。EVD-001b/001c/010a/017a局部交付关闭，父任务不关闭。未使用用户既有浏览器会话；未删除旧Sites站，但停止更新和作为入口。
