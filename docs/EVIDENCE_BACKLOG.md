@@ -2,6 +2,8 @@
 
 入口：[Dot 维护任务说明](DOT_MAINTENANCE.md) · [研究日志与检查点](RESEARCH_LOG.md) · [证据规则](EVIDENCE_POLICY.md)
 
+2026-11-06用户已确认仓库与网页公开，后续发布使用[GitHub Pages](https://selinlee.github.io/lens-evidence-atlas/)；旧私有Sites记录仅为历史。
+
 本文件是任务状态的唯一维护入口；路线图描述方向，研究日志保留过程与交接。稳定任务 ID 用于关联数据、日志、Issue 和 PR。任务拆分时使用 `EVD-002a` 等子 ID，保留父任务和拆分原因，不删除已完成历史。
 
 ## 使用与完成规则
@@ -73,14 +75,14 @@
 
 | ID / 范围 | 队列 | 状态 | 负责人 | 日期 | 产物 |
 | --- | --- | --- | --- | --- | --- |
-| EVD-001c 可见标靶与扫描模式区分 | Q0 | review | 本机Codex | 2026-11-06 | codex/low-na-imaging-evidence；[核验笔记](LOW_NA_IMAGING_REVIEW_2026-11-06.md) |
-| EVD-010a 作者限定任务相对次序 | Q0 | review | 本机Codex | 2026-11-06 | 同上；非整个物镜任务排序 |
-| EVD-017a Wang主文/SI与模拟实测界限 | Q1 | review | 本机Codex | 2026-11-06 | 同上；88.5%/88.1%差异保留 |
+| EVD-001c 可见标靶与扫描模式区分 | Q0 | done | 本机Codex | 2026-11-06 | codex/low-na-imaging-evidence；[核验笔记](LOW_NA_IMAGING_REVIEW_2026-11-06.md) |
+| EVD-010a 作者限定任务相对次序 | Q0 | done | 本机Codex | 2026-11-06 | 同上；非整个物镜任务排序 |
+| EVD-017a Wang主文/SI与模拟实测界限 | Q1 | done | 本机Codex | 2026-11-06 | 同上；88.5%/88.1%差异保留 |
 
 - [x] 原文和相关图页核验，2条记录/3条来源入口落库；新增独立研究仅2018一项。
 - [x] 前端作者/编辑标签、原文定位与校验同步；29项测试、构建及Chrome无头定向验收通过。
-- [x] [PR #13](https://github.com/SelinLee/lens-evidence-atlas/pull/13)已合并，源c192a9d；三个子任务保持review等待发布验收。
-- [ ] v0.1.7已保存为Sites版本6，但两次部署返回no healthy upstream；尚未确认上线，记录见日志11。不得将保存版本当发布成功。
+- [x] [PR #13](https://github.com/SelinLee/lens-evidence-atlas/pull/13)已合并，源c192a9d；三个子任务已随GitHub Pages v0.1.8验收发布。
+- [x] 旧Sites版本6曾失败；后续用户改为GitHub公开托管，全部更新已包含于Pages v0.1.8成功发布（日志13）。
 - 并行Dot PR #12使用EVD-001b；本批采用001c避免复用ID，不包含其未验收数据。
 
 ## 云端组合失配增量任务
@@ -102,7 +104,7 @@
 
 | ID / 范围 | 队列 | 状态 | 负责人 | 日期 | 产物 |
 | --- | --- | --- | --- | --- | --- |
-| EVD-001b 低NA计算显微任务与原图/重建边界 | Q0 | review | dot / 本机Codex验收 | 2026-11-06 | [PR #12](https://github.com/SelinLee/lens-evidence-atlas/pull/12)；[核验笔记](CHU_META_FP_REVIEW_2026-11-06.md) |
+| EVD-001b 低NA计算显微任务与原图/重建边界 | Q0 | done | dot / 本机Codex验收 | 2026-11-06 | [PR #12](https://github.com/SelinLee/lens-evidence-atlas/pull/12)；[核验笔记](CHU_META_FP_REVIEW_2026-11-06.md) |
 
 承接EVD-001的系统级成像缺口，使用既有app_04入口，不新建应用或规定统一低NA阈值。Chu等论文作者称原系统低NA；本轮不将几何估算当实测NA。
 - [x] 来源、7项参数、原文定位与处理边界落库；只计一个系统实验，未将原图/重建计作两个独立来源。
@@ -112,7 +114,7 @@
 - [x] 本机补原文HTML核验和采集/迭代时间、对比度条件；整合main已有成像资料，目录0.1.8共67记录/87来源；32项测试、构建通过。
 - [x] 本机独立Chrome无头验收真实搜索、九参数弹窗/关闭、来源页和已有作者比较保留，截图可读。
 - [x] PR #12最新头98d2074通过CI并合并，源f5bf0db；本机验收完成。
-- [ ] 私有发布：v0.1.8保存版本7成功，部署仍返回no healthy upstream，保持review等待上线。历史云端验收边界保留，未更改访问策略。
+- [x] 旧Sites版本7曾失败；用户授权公开GitHub托管后，Pages v0.1.8成功部署并完成实际网页验收（日志13）。
 父任务EVD-001仍未满足多个同条件独立系统样本和完整任务范围验收，不关闭。
 
 ## 本机阵列增量任务
