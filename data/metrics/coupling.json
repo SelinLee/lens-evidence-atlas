@@ -2,17 +2,20 @@
   "id": "coupling",
   "name": "单模耦合效率",
   "english_name": "Single-mode Coupling Efficiency",
-  "definition": "归一化复振幅重叠给出模式接收效率；总耦合还需乘系统透射效率。",
+  "definition": "在同一横截面、同一偏振的标量场模型中，接收模式效率 η = |∫ E₁* E₂ dA|² / [(∫ |E₁|² dA)(∫ |E₂|² dA)]；E₁、E₂为复振幅，*表示复共轭。η无量纲，乘100后以%表示。按Ansys的功率参考定义，总耦合效率为系统传输效率乘接收模式效率，须分别说明分母。",
   "unit": "%",
   "direction": "higher",
   "required_conditions": [
     "复振幅和相位",
     "模式、偏振、波长",
-    "接收效率还是总效率"
+    "接收效率还是总效率",
+    "积分横截面与功率参考面",
+    "瞳形、振幅整形及波前"
   ],
   "definition_refs": [
+    "jovanovic_smf_2017",
     "fiber_definition"
   ],
-  "best_interpretation": "模式完全匹配的接收效率理想上限为100%；不含实际反射、吸收等损耗。",
+  "best_interpretation": "100%只是在归一化模式完全匹配时的理论接收上限；由重叠公式可得，两个非零场相差整体复常数仍为完全匹配。有限瞳形、像差和实际损耗会限制可达到的结果，不能据此认定普通透镜或整套光路应达到100%。",
   "updated_on": "2026-11-06"
 }
