@@ -392,3 +392,31 @@ test('MLA scanning, simulation and statistical sample domains remain distinct',(
  const f=d.metrics.find(m=>m.id==='fov');assert.ok(f.definition.includes('单次曝光的稀疏覆盖'));assert.ok(f.required_conditions.includes('瞬时稀疏覆盖或扫描拼接、帧数与采集时间'));
  const s=d.sources.find(s=>s.id==='katopodis_dual_mode_2025');for(const word of ['MathML','没有取得出版PDF','Figs.2/4/6/7/8','不是补充实验'])assert.ok(s.evidence_scope.includes(word));
 });
+
+test('lenslet focal statistics preserve all published cells and remain separate from uncertainty',()=>{
+ const d=load(),r=d.benchmarks.find(b=>b.id==='zhu_mla_focal_2013');
+ const p=name=>r.parameters.find(p=>p.name===name);
+ const v=p('20个单元报告焦距（mm）').value.split(',').map(Number);
+ assert.equal(v.length,20);assert.equal(Math.min(...v),8.26);assert.equal(Math.max(...v),8.48);
+ const stats=x=>{const mean=x.reduce((a,b)=>a+b,0)/x.length;const sd=Math.sqrt(x.reduce((a,b)=>a+(b-mean)**2,0)/(x.length-1));return {mean,sd,cv:100*sd/mean};};
+ const s=stats(v);assert.ok(Math.abs(s.mean-8.43)<1e-12);assert.ok(Math.abs(s.sd-.04801315609179155)<1e-12);
+ assert.ok(p('焦距CV（本库复算）').value.includes(s.cv.toFixed(4)+'%'));
+ assert.ok(Math.abs(stats(v.map(x=>x*1000)).cv-s.cv)<1e-12);
+ assert.equal(p('焦距CV（本库复算）').metric_id,'array_focal_length_cv');
+ assert.equal(p('作者标准与扩展不确定度').metric_id,'measurement_uncertainty');
+ assert.ok(!d.bests.some(b=>b.cohort_record_ids?.includes(r.id)));
+});
+
+test('focal uncertainty conflict and printed geometry are independently reproducible',()=>{
+ const d=load(),r=d.benchmarks.find(b=>b.id==='zhu_mla_focal_2013');
+ const dmm=.08737,smm=.03034,L=18.04,h=1e-7;
+ const f=(d,s,l)=>l*s/(d-s);
+ const deriv=[(f(dmm+h,smm,L)-f(dmm-h,smm,L))/(2*h),(f(dmm,smm+h,L)-f(dmm,smm-h,L))/(2*h),(f(dmm,smm,L+h)-f(dmm,smm,L-h))/(2*h)];
+ for(const [i,expected] of [-168.28,484.61,.532].entries())assert.ok(Math.abs(deriv[i]-expected)<.0051);
+ const budget=us=>Math.hypot(168.28*.2,484.61*us,.532*100);
+ assert.equal(budget(.2).toFixed(1),'115.6');assert.equal(budget(2).toFixed(1),'971.3');assert.equal((2*budget(2)).toFixed(1),'1942.5');
+ assert.ok(f(dmm,smm,L)>8.48);assert.equal(f(dmm,smm,L).toFixed(3),'9.597');
+ const conflict=r.parameters.find(p=>p.name==='横向预算原文冲突').value;
+ assert.ok(conflict.includes('U_s=2 μm'));assert.ok(conflict.includes('U_s=0.2 μm'));
+ assert.ok(r.unreported_or_not_verified.includes('未解决'));
+});

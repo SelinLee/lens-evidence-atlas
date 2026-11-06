@@ -1,0 +1,20 @@
+{
+  "id": "measurement_uncertainty",
+  "name": "测量不确定度",
+  "english_name": "Measurement Uncertainty (Standard / Expanded)",
+  "definition": "以标准差形式表达的标准不确定度u，与扩展不确定度U=k·u_c不同。GUM一阶传播在输入不相关时为u_c²=Σc_i²u_i²，c_i为灵敏系数；存在相关性时还须计入协方差项。必须注明被测量、模型、单位、标准/扩展口径、覆盖因子与依据。k=2并不无条件保证95%覆盖。它不等于已知误差、制造公差或不同器件的样本标准差；相对值还须说明分母，不能把未知项当零。",
+  "unit": "与被测量同单位；相对值须说明分母",
+  "direction": "lower",
+  "required_conditions": [
+    "被测量、参考面、模型与适用近似",
+    "各分量来源、标准不确定度及单位",
+    "灵敏系数、相关性和修正项",
+    "标准/扩展口径、k及覆盖概率依据",
+    "重复次数、自由度、校准与溯源"
+  ],
+  "definition_refs": [
+    "jcgm100_2008"
+  ],
+  "best_interpretation": "只在同被测量和同覆盖口径下比较；数值小不自动证明预算完整、校准正确或产品合格。",
+  "updated_on": "2026-11-07"
+}

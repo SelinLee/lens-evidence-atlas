@@ -329,3 +329,17 @@ test('computational MLA query connects new metrics, versioned manuscript and ret
  f.location.hash='#app_14/best';f.run('route()');
  for(const id of ['yang_svfourier_imaging_2024','katopodis_mla_crosstalk_2025','richards_main'])assert.ok(f.el('panel').innerHTML.includes(`data-record="${id}"`));
 });
+
+test('lenslet metrology query exposes definitions, statistical references and unresolved conflicts',()=>{
+ const f=fixture();f.location.hash='#app_14/metrics';f.run('route()');
+ for(const [id,url] of [['array_focal_length','10.3788/OPE.20132105.1122'],['array_focal_length_cv','coefvari.htm'],['measurement_uncertainty','jcgm100-2008e']]){
+  assert.ok(f.el('panel').innerHTML.includes(`data-metric="${id}"`));f.run(`openMetric('${id}')`);
+  assert.ok(f.el('detailBody').innerHTML.includes(url));
+ }
+ f.run("openSource('nist_cv_2017')");assert.ok(f.el('detailBody').innerHTML.includes('计量与统计参考'));
+ f.run("openDialog('test',recordCard(records.get('zhu_mla_focal_2013'),true))");
+ for(const s of ['0.5696%','U_s=2 μm','U_s=0.2 μm','971.3 μm','9.597 mm','不是±3%制造公差'])assert.ok(f.el('detailBody').innerHTML.includes(s),s);
+ f.location.hash='#app_14/priority';f.run('route()');
+ assert.ok(f.el('panel').innerHTML.includes('data-source="zhu_mla_focal_2013"'));assert.ok(!f.el('panel').innerHTML.includes('class="tier"'));
+ for(const [q,n] of [['朱等2013',1],['no_lenslet_match',0],['',33]]){f.el('search').value=q;f.run('renderList()');assert.equal(f.el('resultCount').textContent,`${n} / 33 类应用`);}
+});
