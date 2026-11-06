@@ -14,7 +14,7 @@
 
 ## 优先级
 
-P1/P2 是顺序层次，同层并列，没有虚构百分比权重。当前有层次的7类应用均为 `editorial_synthesis`，原文支持理由但未给出这些名次。没有直接依据的应用使用 `not_established`，不按照规格表出现顺序推断重要性。
+P1/P2 是顺序层次，同层并列，没有虚构百分比权重。当前6类应用为 `editorial_synthesis`，原文支持理由但未给出这些名次；app_04含1组 `author_explicit` 的限定研发任务两项比较，必须展示 `explicit_rank_location` 和适用范围，不扩成通用物镜排名。应用 `ranking_status` 须与各条 `basis` 一致，已建立状态须有条目。没有直接依据的应用使用 `not_established`，不按照规格表出现顺序推断重要性。
 
 ## 最佳声明
 

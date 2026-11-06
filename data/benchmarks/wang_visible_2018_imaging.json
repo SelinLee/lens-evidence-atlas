@@ -1,0 +1,52 @@
+{
+  "application": "显微镜物镜",
+  "application_id": "app_04",
+  "checked_on": "2026-11-06",
+  "record_status": "checked_excerpt",
+  "claim_type": "representative_result",
+  "id": "wang_visible_2018_imaging",
+  "name": "Shuming Wang 2018 NA0.106 可见光透射标靶成像",
+  "evidence_type": "科研成像实验（标靶可辨线宽）",
+  "source_ids": [
+    "wang_visible_2018",
+    "wang_visible_2018_si"
+  ],
+  "parameters": [
+    {
+      "name": "超透镜NA",
+      "value": "0.106",
+      "evidence": {
+        "source_id": "wang_visible_2018",
+        "location": "主文Fig.4标题；SI Fig.8"
+      },
+      "metric_id": "na"
+    },
+    {
+      "name": "作者报告最小可辨线宽",
+      "value": "约2.19 μm（USAF标靶，不是线对周期或MTF50）",
+      "evidence": {
+        "source_id": "wang_visible_2018",
+        "location": "主文印刷p.231首段；Fig.4c"
+      },
+      "metric_id": "resolution"
+    },
+    {
+      "name": "元件消色差表征范围",
+      "value": "400–660 nm；成像使用卤素宽带光源",
+      "evidence": {
+        "source_id": "wang_visible_2018",
+        "location": "主文印刷p.229聚焦表征、p.230 Imaging段；不等于逐色都测得2.19 μm"
+      }
+    },
+    {
+      "name": "收集/放大物镜",
+      "value": "50× / NA0.42（不能当整机倍率或超透镜NA）",
+      "evidence": {
+        "source_id": "wang_visible_2018_si",
+        "location": "Supplementary Fig.8图注，PDF第8页"
+      }
+    }
+  ],
+  "conditions": "GaN超透镜透射成像；卤素光源经偏振器件产生圆偏振，标靶后由NA0.106超透镜收集，再由50×/NA0.42物镜与CCD读出；不是单片直接贴传感器的成像配置。2.19 μm为作者对USAF线条可辨宽度的报告，没有给出MTF50阈值。彩色图Fig.4d–f为校色前、g–i为颜色强度补偿后，不能把后处理图当原始色彩保真结果。",
+  "unreported_or_not_verified": "标靶与超透镜的精确共轭距离、系统总倍率、物方有效NA、定量视场/场边像质、曝光和可辨对比度阈值未由所读段落完整确定；未把4 μm标尺当视场。400–660 nm是元件表征范围，宽带2.19 μm结果不保证整个光谱/视场均达同值。未给出本批可比较的不确定度，不能与扫描荧光的分辨率估计直接排序。"
+}

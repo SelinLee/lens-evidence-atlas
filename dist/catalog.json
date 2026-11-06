@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "updated_on": "2026-11-06",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -290,55 +290,57 @@
       "id": "app_04",
       "name": "显微镜物镜",
       "category": "医疗与显微",
-      "summary": "物镜NA0.10–1.42按倍率/介质区分；新增NA0.1超透镜候选，元件效率不等于系统成像质量。",
+      "summary": "按任务区分NA0.1聚焦元件、NA0.106可见光标靶成像与NA0.24上转换扫描对照；低NA是本批检索导航，不是行业合格界线。",
       "metric_ids": [
         "na",
         "resolution",
         "mtf",
         "chromatic_shift",
         "working_distance",
-        "focus_efficiency"
+        "focus_efficiency",
+        "fov"
       ],
       "priorities": [
         {
           "tier": 1,
           "metric_ids": [
-            "resolution",
-            "mtf"
+            "focus_efficiency"
           ],
-          "rationale": "任务尺度和对比度直接决定可观察细节。",
+          "rationale": "原文明确相对achromatism而言，聚焦效率对填补该近红外低效率缺口更关键。此处只呈现这组相对关系。",
           "evidence_refs": [
-            "mtf_definition"
+            "wang_low_na_2021"
           ],
-          "basis": "editorial_synthesis",
-          "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
+          "basis": "author_explicit",
+          "scope": "仅限Wang 2021为650–1000 nm近红外窗口填补低效率缺口的消色差元件研发；文中此前已展示消色差。不是所有显微物镜或成像系统的通用顺序；P1/P2为本库编码，作者未给数值权重。",
+          "explicit_rank_location": "主文p.5左栏：Compared with the achromatism开头的句子，接Fig.3成像验证后"
         },
         {
           "tier": 2,
           "metric_ids": [
-            "na",
             "chromatic_shift"
           ],
-          "rationale": "通过NA与像差控制实现像质；此顺序是编辑性设计流程。",
+          "rationale": "原文比较对象为achromatism（消色差）；本库以轴向色差指标提供相关证据入口，原文没有给焦移数值权重，也没有把消色差判为可以忽略。",
           "evidence_refs": [
-            "na_definition",
-            "nikon_band"
+            "wang_low_na_2021"
           ],
-          "basis": "editorial_synthesis",
-          "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
+          "basis": "author_explicit",
+          "scope": "仅限Wang 2021为650–1000 nm近红外窗口填补低效率缺口的消色差元件研发；文中此前已展示消色差。不是所有显微物镜或成像系统的通用顺序；P1/P2为本库编码，作者未给数值权重。",
+          "explicit_rank_location": "同主文p.5左栏相对重要性句；仅两项相对关系，不是完整指标排名"
         }
       ],
-      "ranking_status": "editorial_synthesis",
-      "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
+      "ranking_status": "author_explicit",
+      "ranking_gap": "仅取得Wang 2021针对近红外低效率缺口的两项相对优先关系；其余物镜任务、分辨率/视场/工作距离等未建立全套原文排名。",
       "metric_mapping_status": "editorial_candidate_set",
-      "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。 低NA候选元件的聚焦效率不能替代完整显微系统的分辨率、视场和工作距离。",
+      "metric_mapping_note": "本页低NA检索以文献实际样本NA0.1/0.106为入口，NA0.24扫描样本为邻近对照；不定义统一低NA阈值。可见标靶线宽、近红外激发/可见发射的扫描分辨率估计及单元聚焦效率分开。视场与完整成像共轭缺口保留，不能用图上标尺、收集物镜倍率替代。",
       "legacy_priority_proposal": "物方NA、介质、WD、平场、盖玻片、轴向/横向色差",
       "record_ids": [
         "micro2",
         "micro10",
         "micro20",
         "micro60",
-        "wang_low_na_achromat"
+        "wang_low_na_achromat",
+        "wang_visible_2018_imaging",
+        "wang_upconversion_scan_2021"
       ],
       "updated_on": "2026-11-06"
     },
@@ -1376,17 +1378,21 @@
       "id": "resolution",
       "name": "空间分辨率",
       "english_name": "Spatial Resolution",
-      "definition": "系统区分相邻结构的尺度；Rayleigh、Abbe和PSF FWHM等判据必须分别报告。",
+      "definition": "系统区分相邻结构的尺度；Rayleigh、Abbe和PSF FWHM等判据必须分别报告。 标靶可辨线宽、点扩散宽度和模型估计不等价；系统指标还取决于照明/发射谱、探测孔径及重建处理。",
       "unit": "μm",
       "direction": "lower",
       "required_conditions": [
         "判据",
         "波长与NA",
-        "物/像方及处理方式"
+        "物/像方及处理方式",
+        "照明/激发/发射光谱",
+        "探测孔径、扫描与重建处理"
       ],
       "definition_refs": [
         "mtf_definition",
-        "oct_definition"
+        "oct_definition",
+        "wang_visible_2018",
+        "wang_low_na_2021_si"
       ],
       "best_interpretation": "没有跨应用统一最优值",
       "updated_on": "2026-11-06"
@@ -2460,8 +2466,44 @@
       "doi": "10.1038/s41467-021-25797-9",
       "kind": "paper",
       "source_year": 2021,
-      "location": "Experiments；Fig.4a正文与图注；Methods聚焦效率定义",
-      "evidence_scope": "出版社HTML主文相关段落与图注；未读取PDF及补充材料，未对Fig.4做独立曲线估读。元件级指标，不外推完整生物显微系统。",
+      "location": "主文Experiments pp.3–5、Figs.3–5；p.5左栏效率相对重要性句；p.6 Methods效率定义",
+      "evidence_scope": "先前读取出版社HTML元件段；本轮增读正式PDF主文相关段落，视觉核对p.3 Fig.2数值模拟标签、p.5 Fig.4/正文及p.6 Fig.5/Methods。分别处理NA0.1聚焦元件和NA0.24扫描生物成像，不把后者移植为NA0.1性能。新增读取补充材料另列来源wang_low_na_2021_si。未进行图线数字化、全文复现或世界纪录核验。",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
+    },
+    {
+      "id": "wang_low_na_2021_si",
+      "title": "Yujie Wang 等（2021）近红外消色差超透镜补充材料",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-021-25797-9/MediaObjects/41467_2021_25797_MOESM1_ESM.docx",
+      "doi": "10.1038/s41467-021-25797-9",
+      "source_year": 2021,
+      "kind": "paper",
+      "location": "Supplementary Notes 1、3、5、7；Figs.7、9",
+      "evidence_scope": "读取出版社DOCX的相关XML正文及图注，提取并视觉核对Fig.7/9光路（白底显示透明原图）；未渲染完整DOCX版面、未复核所有补充图或原始数据。Note 1实测平均88.1%与主文Fig.4a的88.5%差异未澄清；Note 3约93%对应主文Fig.2d数值模拟，不能用作实测。与wang_low_na_2021同一研究。",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
+    },
+    {
+      "id": "wang_visible_2018",
+      "title": "Shuming Wang 等（2018）A broadband achromatic metalens in the visible",
+      "url": "https://www.nature.com/articles/s41565-017-0052-4",
+      "doi": "10.1038/s41565-017-0052-4",
+      "source_year": 2018,
+      "kind": "paper",
+      "location": "主文印刷pp.229–231；Fig.3/4；Imaging with visible achromatic metalenses",
+      "evidence_scope": "取得南京大学作者主页托管的正式6页PDF并读取相关正文；视觉核对印刷pp.230–231的Fig.3/4及成像段。作者Shuming Wang、Pin Chieh Wu等，南京大学/中研院/台湾大学等团队，与Yujie Wang 2021不同。未从曲线估读新的焦距或效率值。出版社HTML仅用于定位SI，SI另列来源。",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
+    },
+    {
+      "id": "wang_visible_2018_si",
+      "title": "Shuming Wang 等（2018）可见光消色差超透镜补充材料",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41565-017-0052-4/MediaObjects/41565_2017_52_MOESM1_ESM.pdf",
+      "doi": "10.1038/s41565-017-0052-4",
+      "source_year": 2018,
+      "kind": "paper",
+      "location": "Supplementary Section 2；Fig.8，PDF第8页",
+      "evidence_scope": "读取出版社8页补充PDF的实验部分文字/图注，视觉核对第8页Fig.8完整成像光路。仅对本条光路和偏振/收集物镜做核验，不将所有工艺表视为完整复现。同主文一项独立研究。",
       "checked_on": "2026-11-06",
       "verification": "checked_excerpt"
     },
@@ -4967,7 +5009,8 @@
       "name": "Wang 2021 低NA消色差超透镜（微成像候选元件）",
       "evidence_type": "科研实验示例（元件级）",
       "source_ids": [
-        "wang_low_na_2021"
+        "wang_low_na_2021",
+        "wang_low_na_2021_si"
       ],
       "parameters": [
         {
@@ -5004,10 +5047,130 @@
         }
       ],
       "conditions": "分子为半径3×FWHM焦圈功率，分母为同透镜孔径内入射功率（Methods）。只作低NA微成像候选光学元件；不等于完整显微系统、通用物镜指标或实物世界纪录。",
-      "unreported_or_not_verified": "逐波长是否重选焦面、样本量与误差条、补充材料、完整系统视场/物方分辨率未核验；平均的采样/加权细节不外推。与Richards空白基底参考分母不同，不直接排列效率高低。",
+      "unreported_or_not_verified": "逐波长是否重选焦面、样本量/误差条和平均采样权重仍未明确。已补读SI相关段落：Note 1写NA0.1实测平均88.1%，与主文Fig.4a的88.5%差异未澄清；Note 3约93%对应主文Fig.2d的数值模拟平均值，不是更高实测效率。本条保留主文实测88.5%，不混用模拟值。生物扫描成像NA0.24另列记录，不能作为此NA0.1元件的视场或分辨率。与Richards空白基底分母不同，不直接排效率。",
       "record_status": "checked_excerpt",
       "claim_type": "representative_result",
       "checked_on": "2026-11-06"
+    },
+    {
+      "application": "显微镜物镜",
+      "application_id": "app_04",
+      "checked_on": "2026-11-06",
+      "record_status": "checked_excerpt",
+      "claim_type": "representative_result",
+      "id": "wang_upconversion_scan_2021",
+      "name": "Yujie Wang 2021 NA0.24 上转换扫描成像（邻近NA对照）",
+      "evidence_type": "科研扫描成像实验＋作者分辨率估计",
+      "source_ids": [
+        "wang_low_na_2021",
+        "wang_low_na_2021_si"
+      ],
+      "parameters": [
+        {
+          "name": "超透镜NA",
+          "value": "0.24（不是NA0.1效率样品）",
+          "evidence": {
+            "source_id": "wang_low_na_2021",
+            "location": "主文Fig.5b图注，p.6"
+          },
+          "metric_id": "na"
+        },
+        {
+          "name": "激发波长",
+          "value": "980 nm连续波",
+          "evidence": {
+            "source_id": "wang_low_na_2021",
+            "location": "主文p.5右栏Fig.5对应实验段"
+          }
+        },
+        {
+          "name": "上转换发射",
+          "value": "中心655 nm，线宽20 nm（作者记法）",
+          "evidence": {
+            "source_id": "wang_low_na_2021",
+            "location": "主文p.5右栏Fig.5对应实验段"
+          }
+        },
+        {
+          "name": "作者分辨率估计",
+          "value": "约1.46 μm（依据PSF/发射波长衍射极限，非本库确认的直接标靶实测）",
+          "evidence": {
+            "source_id": "wang_low_na_2021",
+            "location": "主文p.5右栏；与Fig.3的USAF测试分开"
+          },
+          "metric_id": "resolution"
+        },
+        {
+          "name": "探测虚拟针孔",
+          "value": "1/3 Airy Unit；仅累计针孔内CCD计数",
+          "evidence": {
+            "source_id": "wang_low_na_2021_si",
+            "location": "Supplementary Note 7：CCD-1探测与virtual confocal pinhole"
+          }
+        },
+        {
+          "name": "扫描与成像共轭",
+          "value": "三维台逐点扫描；CCD-1与超透镜焦平面共轭",
+          "evidence": {
+            "source_id": "wang_low_na_2021_si",
+            "location": "Supplementary Note 7和Fig.9a；不是整幅一次曝光"
+          }
+        }
+      ],
+      "conditions": "NA0.24 TiO2超透镜激发并收集稀土纳米晶上转换信号；实验包括PS微球覆盖微片及含纳米晶HeLa细胞。50×中继物镜、250 mm双胶合透镜和100 mm透镜等组成探测链，翻转镜切换监视/共焦模块，像素计数经虚拟针孔筛选后扫描重建。作为NA0.1/0.106元件的邻近NA与成像模式对照，不据此定义全行业低NA范围。",
+      "unreported_or_not_verified": "完整扫描视场、步距、驻留/曝光、PSF拟合与误差、处理/背景扣除和检测校准未完整报告；1.46 μm的具体计算/实测分解未核实，不能当成MTF50或USAF线宽。655 nm线宽20 nm不自行改称FWHM。NA0.26商用对照仅是同文对照，非第二个独立团队。此扫描成像不代表纯近红外发射成像或单片相机系统。"
+    },
+    {
+      "application": "显微镜物镜",
+      "application_id": "app_04",
+      "checked_on": "2026-11-06",
+      "record_status": "checked_excerpt",
+      "claim_type": "representative_result",
+      "id": "wang_visible_2018_imaging",
+      "name": "Shuming Wang 2018 NA0.106 可见光透射标靶成像",
+      "evidence_type": "科研成像实验（标靶可辨线宽）",
+      "source_ids": [
+        "wang_visible_2018",
+        "wang_visible_2018_si"
+      ],
+      "parameters": [
+        {
+          "name": "超透镜NA",
+          "value": "0.106",
+          "evidence": {
+            "source_id": "wang_visible_2018",
+            "location": "主文Fig.4标题；SI Fig.8"
+          },
+          "metric_id": "na"
+        },
+        {
+          "name": "作者报告最小可辨线宽",
+          "value": "约2.19 μm（USAF标靶，不是线对周期或MTF50）",
+          "evidence": {
+            "source_id": "wang_visible_2018",
+            "location": "主文印刷p.231首段；Fig.4c"
+          },
+          "metric_id": "resolution"
+        },
+        {
+          "name": "元件消色差表征范围",
+          "value": "400–660 nm；成像使用卤素宽带光源",
+          "evidence": {
+            "source_id": "wang_visible_2018",
+            "location": "主文印刷p.229聚焦表征、p.230 Imaging段；不等于逐色都测得2.19 μm"
+          }
+        },
+        {
+          "name": "收集/放大物镜",
+          "value": "50× / NA0.42（不能当整机倍率或超透镜NA）",
+          "evidence": {
+            "source_id": "wang_visible_2018_si",
+            "location": "Supplementary Fig.8图注，PDF第8页"
+          }
+        }
+      ],
+      "conditions": "GaN超透镜透射成像；卤素光源经偏振器件产生圆偏振，标靶后由NA0.106超透镜收集，再由50×/NA0.42物镜与CCD读出；不是单片直接贴传感器的成像配置。2.19 μm为作者对USAF线条可辨宽度的报告，没有给出MTF50阈值。彩色图Fig.4d–f为校色前、g–i为颜色强度补偿后，不能把后处理图当原始色彩保真结果。",
+      "unreported_or_not_verified": "标靶与超透镜的精确共轭距离、系统总倍率、物方有效NA、定量视场/场边像质、曝光和可辨对比度阈值未由所读段落完整确定；未把4 μm标尺当视场。400–660 nm是元件表征范围，宽带2.19 μm结果不保证整个光谱/视场均达同值。未给出本批可比较的不确定度，不能与扫描荧光的分辨率估计直接排序。"
     },
     {
       "id": "zhang_hex_mla",

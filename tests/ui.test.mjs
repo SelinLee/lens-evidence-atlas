@@ -48,3 +48,13 @@ test('TECF search can be repeated and cleared without hiding unrelated applicati
   assert.equal(f.el('resultCount').textContent,query==='unmatched_alignment_987'?'0 / 33 类应用':query?'1 / 33 类应用':'33 / 33 类应用');
  }
 });
+
+
+test('author relative priority and editorial interpretation have distinct labels',()=>{
+ const f=fixture();f.location.hash='#app_04/priority';f.run('route()');
+ for(const text of ['作者原文明示的限定任务相对次序','相对次序原文位置','650–1000 nm','不是通用指标总榜'])assert.ok(f.el('panel').innerHTML.includes(text));
+ assert.ok(!f.el('coverage').innerHTML.includes('编辑解读'));
+ f.location.hash='#app_14/priority';f.run('route()');
+ assert.ok(f.el('panel').innerHTML.includes('有出处的编辑性优先级'));assert.ok(!f.el('panel').innerHTML.includes('作者原文明示的限定任务相对次序'));
+ f.run('method()');assert.ok(f.el('detailBody').innerHTML.includes('6 类应用有带出处'));assert.ok(f.el('detailBody').innerHTML.includes('1 类应用包含作者'));
+});
