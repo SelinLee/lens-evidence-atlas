@@ -73,14 +73,15 @@
 
 | ID / 范围 | 队列 | 状态 | 负责人 | 日期 | 产物 |
 | --- | --- | --- | --- | --- | --- |
-| EVD-004d 扩芯双耦合器组合失配 | Q0 | review | dot | 2026-11-06 | 分支 `evidence/2026-11-06-smf-alignment`；本批日志07 |
+| EVD-004d 扩芯双耦合器组合失配 | Q0 | review | dot | 2026-11-06 | [草稿PR #8](https://github.com/SelinLee/lens-evidence-atlas/pull/8)；本批日志07 |
 
 来源 `he_tecf_2022`、记录 `he_tecf_combined_misalignment`。承接EVD-004/016实际装调证据缺口，不重复LBT模型。基线main ed5be7f/catalog0.1.4；本批仅一个独立论文实验点，父任务不关闭。
 
 - [x] 直接读取原始论文HTML，组合条件逐项定位，不拼接不同MFD样品或仿真。
 - [x] 光谱、分母校准与不确定性未知保留，不把设计参数变成实测；未增最佳声明。
 - [x] 27/27测试、构建、逐文件重复构建哈希与查询DOM回归通过；不替代浏览器视觉验收。
-- [ ] 提交草稿PR、核验CI并完成审核；真实浏览器验收待补。
+- [x] 已提交[草稿PR #8](https://github.com/SelinLee/lens-evidence-atlas/pull/8)，科学提交0c182cd；CI结果以PR当前HEAD检查为准。
+- [ ] 完成科学审核和真实浏览器验收；云预览限制仍保留，PR保持草稿。
 - [ ] 合并与私有发布，本批没有执行。
 
 ## 本机LBT增量任务
