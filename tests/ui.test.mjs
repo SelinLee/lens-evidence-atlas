@@ -9,7 +9,7 @@ import {load} from '../scripts/catalog.mjs';
 function fixture(){
  const elements=new Map();
  const el=id=>{if(!elements.has(id))elements.set(id,{value:'',checked:false,textContent:'',innerHTML:'',open:false,dataset:{},setAttribute(){},addEventListener(){},insertAdjacentHTML(_,html){this.innerHTML+=html},showModal(){this.open=true},close(){this.open=false},focus(){}});return elements.get(id)};
- const tabs=['metrics','priority','best','sources'].map(name=>Object.assign(el('tab-'+name),{dataset:{tab:name},textContent:name}));
+ const tabs=['metrics','priority','best','compare','sources'].map(name=>Object.assign(el('tab-'+name),{dataset:{tab:name},textContent:name}));
  const document={getElementById:el,querySelectorAll:()=>tabs,querySelector:s=>s==='.tabs'?el('tabs'):tabs.find(t=>s.includes('"'+t.dataset.tab+'"')),addEventListener(){}};
  const location={hash:'#app_14/metrics'},window={LENS_DATA:load(),addEventListener(){}};
  const context=vm.createContext({document,location,window});
@@ -382,4 +382,24 @@ test('MLA centroid queries expose versioned primary source and distinct model/be
   assert.ok(f.el('panel').innerHTML.includes(`data-record="${id}"`));f.run(`openDialog('record',recordCard(records.get('${id}'),true))`);assert.ok(f.el('detailBody').innerHTML.includes(word));
  }
  f.run("openSource('rouquette_mla_wfs_v1_2026')");assert.ok(f.el('detailBody').innerHTML.includes('作者稿'));assert.ok(f.el('detailBody').innerHTML.includes('未核同行评议'));
+});
+
+test('comparison renders referenced values and source locators without duplicating or trusting markup',()=>{
+ const f=fixture();f.location.hash='#app_04/compare/chu_meta_fp_usaf/zheng_fpm_usaf_2013';f.run('route()');
+ for(const text of ['60 s','4 s','0.78 μm','0.5','0.08','未建立可比较参数','同协议数值排名','data-source="chu_meta_fp_si_2025"'])assert.ok(f.el('panel').innerHTML.includes(text),text);
+ // Changing the original record changes the comparison; no stale copied display value.
+ f.run("records.get('chu_meta_fp_usaf').parameters[0].value='<script>fixture</script>';render()");
+ assert.ok(f.el('panel').innerHTML.includes('&lt;script&gt;fixture&lt;/script&gt;'));
+ assert.ok(!f.el('panel').innerHTML.includes('<script>fixture</script>'));
+});
+test('comparison routing handles unknown ids, identical choices and same-study samples',()=>{
+ const f=fixture();f.location.hash='#app_04/compare/wang_low_na_achromat/wang_upconversion_scan_2021';f.run('route()');
+ assert.ok(f.el('panel').innerHTML.includes('不能计作两个独立来源'));
+ assert.ok(f.el('panel').innerHTML.includes('88.5%'));
+ f.location.hash='#app_04/compare/unknown/unknown';f.run('route()');
+ assert.ok(f.el('panel').innerHTML.includes('Wang 2018'));
+ assert.ok(f.el('panel').innerHTML.includes('Balli 2021'));
+ assert.equal(f.run("comparisonPair(D.comparisons[0],'chu_meta_fp_usaf','chu_meta_fp_usaf')[0].record_id===comparisonPair(D.comparisons[0],'chu_meta_fp_usaf','chu_meta_fp_usaf')[1].record_id"),false);
+ f.location.hash='#app_14/compare';f.run('route()');assert.equal(f.run('tab'),'metrics');
+ assert.deepEqual(Array.from(f.run('tabNames()')),['metrics','priority','best','sources']);
 });

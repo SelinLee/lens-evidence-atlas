@@ -1,0 +1,381 @@
+[
+  {
+    "id": "low_na_imaging_conditions",
+    "application_id": "app_04",
+    "title": "低NA成像：条件与证据对照",
+    "scope": "六条既有记录来自五项研究；Wang 2021的元件与扫描实验属于同一研究。NA范围沿用样本，不设行业统一界线；以相同字段展示原记录，不生成性能评分或最优排名。",
+    "updated_on": "2026-11-07",
+    "fields": [
+      {
+        "id": "spectrum",
+        "label": "波长与照明",
+        "metric_ids": []
+      },
+      {
+        "id": "na",
+        "label": "物理NA / 合成NA",
+        "metric_ids": [
+          "na"
+        ]
+      },
+      {
+        "id": "geometry",
+        "label": "共轭、中继与采样",
+        "metric_ids": [
+          "working_distance"
+        ]
+      },
+      {
+        "id": "resolution",
+        "label": "分辨率与判据",
+        "metric_ids": [
+          "resolution",
+          "mtf"
+        ]
+      },
+      {
+        "id": "field",
+        "label": "视场与场点",
+        "metric_ids": [
+          "fov"
+        ]
+      },
+      {
+        "id": "efficiency",
+        "label": "效率与分母",
+        "metric_ids": [
+          "focus_efficiency"
+        ]
+      },
+      {
+        "id": "acquisition",
+        "label": "采集与计算",
+        "metric_ids": []
+      },
+      {
+        "id": "medium",
+        "label": "介质与偏振",
+        "metric_ids": []
+      }
+    ],
+    "entries": [
+      {
+        "record_id": "wang_visible_2018_imaging",
+        "study_id": "wang2018",
+        "label": "Wang 2018 · 可见标靶",
+        "task": "宽带透射标靶，经收集物镜读出",
+        "cells": {
+          "spectrum": {
+            "parameter_names": [
+              "元件消色差表征范围"
+            ],
+            "note": "元件消色差带宽和宽带成像照明分别解释。"
+          },
+          "na": {
+            "parameter_names": [
+              "超透镜NA",
+              "收集/放大物镜"
+            ],
+            "note": "收集物镜NA不替代超透镜或物方有效NA。"
+          },
+          "geometry": {
+            "parameter_names": [
+              "收集/放大物镜"
+            ],
+            "note": "精确物像距离、总倍率仍缺；不是裸镜直接贴传感器。"
+          },
+          "resolution": {
+            "parameter_names": [
+              "作者报告最小可辨线宽"
+            ],
+            "note": "作者USAF可辨线宽，非MTF50或点源间距。"
+          },
+          "field": {
+            "parameter_names": [],
+            "note": "定量视场及密集场位置验收未完整核定；标尺不能补作视场。"
+          },
+          "efficiency": {
+            "parameter_names": [],
+            "note": "本记录未收同一成像系统的效率；不能移用其他论文的聚焦效率。"
+          },
+          "acquisition": {
+            "parameter_names": [],
+            "note": "原图和颜色强度补偿图分开；曝光/处理耗时未完整确定。"
+          },
+          "medium": {
+            "parameter_names": [],
+            "note": "圆偏振见记录条件；标靶介质/有效物方NA仍需核实。"
+          }
+        }
+      },
+      {
+        "record_id": "balli_low_na_imaging_2021",
+        "study_id": "balli2021",
+        "label": "Balli 2021 · 可见至SWIR",
+        "task": "低NA宽带中继成像；目前文字条件已核",
+        "cells": {
+          "spectrum": {
+            "parameter_names": [
+              "成像照明",
+              "宽带相机与响应边界",
+              "RGB图像通道"
+            ],
+            "note": "可见RGB和宽带相机是不同通道，不能当SWIR真彩色。"
+          },
+          "na": {
+            "parameter_names": [
+              "低NA成像样品"
+            ],
+            "note": "作者标称的200 μm成像样品；不采用20 μm样品NA。"
+          },
+          "geometry": {
+            "parameter_names": [
+              "成像物距",
+              "中继成像"
+            ],
+            "note": "物距约30 mm；中继位置可变，最终倍率尚缺。"
+          },
+          "resolution": {
+            "parameter_names": [],
+            "note": "图像与SI示意图尚未视觉核，不从文字线索录最细可辨尺度。"
+          },
+          "field": {
+            "parameter_names": [],
+            "note": "全场MTF、实际可用视场及物方采样未核。"
+          },
+          "efficiency": {
+            "parameter_names": [],
+            "note": "主文100/200 μm归属冲突未解，不把42%或另一20 μm样品60%移用。"
+          },
+          "acquisition": {
+            "parameter_names": [
+              "宽带相机与响应边界",
+              "RGB图像通道"
+            ],
+            "note": "相机/通道有文字依据；曝光、帧率及总处理耗时未核。"
+          },
+          "medium": {
+            "parameter_names": [],
+            "note": "制备基底不能代替成像介质；实际偏振/介质未完整核定。"
+          }
+        }
+      },
+      {
+        "record_id": "chu_meta_fp_usaf",
+        "study_id": "chu2025",
+        "label": "Chu 2025 · 迭代FP",
+        "task": "81角度采集的双超透镜计算成像",
+        "cells": {
+          "spectrum": {
+            "parameter_names": [
+              "照明中心波长"
+            ],
+            "note": "照明中心532 nm；滤光带宽仍缺。"
+          },
+          "na": {
+            "parameter_names": [
+              "双超透镜4-f几何",
+              "SI缩小模型NA与尺寸"
+            ],
+            "note": "实测物方NA未核；SI的0.05及20 μm属于缩小模型，不自动映射双片系统。"
+          },
+          "geometry": {
+            "parameter_names": [
+              "双超透镜4-f几何",
+              "报告系统倍率",
+              "传感器像元"
+            ],
+            "note": "约4×是作者报告；像元为像方尺寸。"
+          },
+          "resolution": {
+            "parameter_names": [
+              "中央照明原图可辨细节",
+              "多角度FP重建可辨细节",
+              "FP后Michelson对比度"
+            ],
+            "note": "原图与迭代FP来自同一系统；靶元素对比度不自动成为统一分辨阈值。"
+          },
+          "field": {
+            "parameter_names": [],
+            "note": "实际视场、全场MTF与密集场点判读未核。"
+          },
+          "efficiency": {
+            "parameter_names": [
+              "SI缩小模型聚焦效率"
+            ],
+            "note": "约80%是FDTD模型文本，不是系统通光效率；分母/积分圈仍缺。"
+          },
+          "acquisition": {
+            "parameter_names": [
+              "迭代FP输入",
+              "采集与迭代重建时间",
+              "SI采集时间（与主文冲突）"
+            ],
+            "note": "主文约60 s与SI约4 s冲突未解；采集、迭代重建和RCNN单帧流程分开。"
+          },
+          "medium": {
+            "parameter_names": [],
+            "note": "本条USAF靶介质/偏振未核；不能套用论文细胞实验的介质。"
+          }
+        }
+      },
+      {
+        "record_id": "zheng_fpm_usaf_2013",
+        "study_id": "zheng2013",
+        "label": "Zheng 2013 · FPM与勘误",
+        "task": "低NA传统物镜、多角度HDR及迭代重建",
+        "cells": {
+          "spectrum": {
+            "parameter_names": [
+              "表征光谱"
+            ],
+            "note": "632 nm表征；与Chu 532 nm条件不同。"
+          },
+          "na": {
+            "parameter_names": [
+              "物镜倍率与物理NA",
+              "重建最大合成NA"
+            ],
+            "note": "物理NA0.08和合成NA0.5不同；合成值不替代物镜。"
+          },
+          "geometry": {
+            "parameter_names": [
+              "物镜倍率与物理NA",
+              "物方原图/重建强度图采样间隔",
+              "重建复场采样间隔"
+            ],
+            "note": "物方采样不等于靶标分辨率；复场/强度图采样分开。"
+          },
+          "resolution": {
+            "parameter_names": [
+              "勘误明确的靶标分辨率",
+              "离焦重建线剖面的作者报告对比差"
+            ],
+            "note": "采用2015勘误的半周期/整周期；离焦对比差不当MTF。"
+          },
+          "field": {
+            "parameter_names": [
+              "报告有效视场",
+              "视场检查的位置标签（直径）"
+            ],
+            "note": "核过选定场位置，不等于证明全场每点达到同一分辨率。"
+          },
+          "efficiency": {
+            "parameter_names": [],
+            "note": "本记录未给可比较的系统通光效率。"
+          },
+          "acquisition": {
+            "parameter_names": [
+              "照明角度与HDR采集",
+              "单色采集/全视场重建时间"
+            ],
+            "note": "137个方向不是137次曝光；采集与MATLAB重建耗时分开。"
+          },
+          "medium": {
+            "parameter_names": [],
+            "note": "薄样品非荧光任务；介质/偏振未核。"
+          }
+        }
+      },
+      {
+        "record_id": "wang_low_na_achromat",
+        "study_id": "wang2021",
+        "label": "Wang 2021 · NA0.1元件",
+        "task": "近红外消色差聚焦元件；不是完整显微系统",
+        "cells": {
+          "spectrum": {
+            "parameter_names": [
+              "评价波段"
+            ],
+            "note": "元件聚焦表征带宽，不是逐波长成像分辨率。"
+          },
+          "na": {
+            "parameter_names": [
+              "NA"
+            ],
+            "note": "NA0.1效率样品与同文NA0.24扫描样品分开。"
+          },
+          "geometry": {
+            "parameter_names": [],
+            "note": "本记录无完整成像共轭；不能用同文另一样品补齐。"
+          },
+          "resolution": {
+            "parameter_names": [],
+            "note": "本条聚焦效率样品没有已核定的成像分辨率。"
+          },
+          "field": {
+            "parameter_names": [],
+            "note": "本条没有可迁移的系统视场。"
+          },
+          "efficiency": {
+            "parameter_names": [
+              "实测平均聚焦效率",
+              "作者正文给出的谱点效率"
+            ],
+            "note": "半径3×FWHM焦圈/孔径内入射功率；主文88.5%与SI88.1%差异、93%为模拟须保留。"
+          },
+          "acquisition": {
+            "parameter_names": [],
+            "note": "本条未给成像采集或重建耗时；元件聚焦测试不能换算相机帧率。"
+          },
+          "medium": {
+            "parameter_names": [],
+            "note": "测量介质/偏振不能由材料名推断；查原文对应测试条件。"
+          }
+        }
+      },
+      {
+        "record_id": "wang_upconversion_scan_2021",
+        "study_id": "wang2021",
+        "label": "Wang 2021 · NA0.24扫描",
+        "task": "上转换逐点扫描；邻近NA对照，与NA0.1同一研究",
+        "cells": {
+          "spectrum": {
+            "parameter_names": [
+              "激发波长",
+              "上转换发射"
+            ],
+            "note": "980 nm激发与655 nm发射分开；20 nm线宽未改写为FWHM。"
+          },
+          "na": {
+            "parameter_names": [
+              "超透镜NA"
+            ],
+            "note": "NA0.24是邻近对照，不被重新定义为统一低NA范围。"
+          },
+          "geometry": {
+            "parameter_names": [
+              "探测虚拟针孔",
+              "扫描与成像共轭"
+            ],
+            "note": "CCD虚拟针孔、焦平面共轭和逐点扫描需同时考虑。"
+          },
+          "resolution": {
+            "parameter_names": [
+              "作者分辨率估计"
+            ],
+            "note": "作者PSF/衍射极限估计，不是本库核定的USAF线宽。"
+          },
+          "field": {
+            "parameter_names": [],
+            "note": "完整扫描视场、步距及场点统计未核。"
+          },
+          "efficiency": {
+            "parameter_names": [],
+            "note": "不能把同文NA0.1样品的88.5%赋给本扫描系统。"
+          },
+          "acquisition": {
+            "parameter_names": [
+              "扫描与成像共轭"
+            ],
+            "note": "逐点扫描，不是整幅一次曝光；驻留和总采集耗时仍缺。"
+          },
+          "medium": {
+            "parameter_names": [],
+            "note": "上转换信号与薄样品透射成像不同；完整介质/背景处理未核。"
+          }
+        }
+      }
+    ]
+  }
+]
