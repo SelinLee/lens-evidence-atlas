@@ -150,3 +150,24 @@ test('LEOF loss record preserves direction, sample hierarchy and reported uncert
  for(const word of ['−10 log10','百分数','Fresnel','几何平均','附加损失'])assert.ok(m.definition.includes(word));
  assert.ok(m.required_conditions.includes('样品数量、重复次数与平均域'));
 });
+
+test('FPM retains correction, sampling, exposure and physical-aperture boundaries',()=>{
+ const d=load(),b=d.benchmarks.find(b=>b.id==='zheng_fpm_usaf_2013'),m=d.metrics.find(m=>m.id==='resolution');
+ assert.equal(b.parameters.length,11);
+ assert.equal(b.parameters.find(p=>p.metric_id==='resolution').value,'半周期0.78 μm；整周期1.56 μm');
+ assert.equal(b.parameters.find(p=>p.metric_id==='resolution').evidence.source_id,'zheng_fpm_correction_2015');
+ assert.equal(b.parameters.find(p=>p.metric_id==='na').value,'2×；NA 0.08（Olympus Plan APO）');
+ assert.equal(b.parameters.filter(p=>p.metric_id==='na').length,1);
+ for(const word of ['137个LED','中央49个各3次','其余各2次','不能记成137次曝光'])assert.ok(b.parameters.find(p=>p.name==='照明角度与HDR采集').value.includes(word));
+ for(const word of ['不是两个独立样本','2015勘误','Rayleigh','不代表本轮证明全视场'])assert.ok(b.conditions.includes(word));
+ assert.ok(m.definition_refs.includes('zheng_fpm_correction_2015'));
+ assert.deepEqual(b.source_ids,['zheng_fpm_2013','zheng_fpm_correction_2015','zheng_fpm_si_2015']);
+ assert.equal(b.parameters.find(p=>p.metric_id==='fov').evidence.source_id,'zheng_fpm_si_2015');
+ for(const word of ['0.55 μm','0, 0.6, 1, 1.25 cm','约30%'])assert.ok(b.parameters.some(p=>p.value.includes(word)),word);
+ for(const word of ['0.632 μm','0.197 billion','0.23 billion','Michelson','密集全视场'])assert.ok(b.unreported_or_not_verified.includes(word),word);
+ assert.ok(b.conditions.includes('不是独立研究'));
+ assert.ok(d.sources.find(s=>s.id==='zheng_fpm_si_2015').location.includes('PDF p.1'));
+ const fov=d.metrics.find(m=>m.id==='fov');assert.ok(fov.unit.includes('mm²'));assert.ok(fov.definition_refs.includes('zheng_fpm_2013'));assert.ok(fov.required_conditions.includes('线性/角度/面积及区域形状'));
+ assert.ok(m.required_conditions.includes('周期靶半周期/整周期口径与重建采样'));
+ assert.ok(!d.bests.some(x=>x.cohort_record_ids?.includes(b.id)));
+});
