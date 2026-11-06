@@ -1,0 +1,102 @@
+{
+  "id": "rouquette_mla_bench_2026",
+  "application_id": "app_14",
+  "name": "Rouquette 2026 整阵列台架质心方差",
+  "claim_type": "representative_result",
+  "evidence_type": "作者稿；台架实测分子与高斯理论分母比较",
+  "parameters": [
+    {
+      "name": "阵列与光源",
+      "value": "68×68子孔径网格；400 μm芯径多模LED光纤源，等效天空1 arcsec；SLM作平镜",
+      "evidence": {
+        "source_id": "rouquette_mla_wfs_v1_2026",
+        "location": "§1 p.1；§4.1 p.11/Fig.13 p.12"
+      }
+    },
+    {
+      "name": "滤光片",
+      "value": "Fig.12装置标589±4 nm；不是已测光源谱形或滤光片实测FWHM",
+      "evidence": {
+        "source_id": "rouquette_mla_wfs_v1_2026",
+        "location": "Fig.12 p.11"
+      }
+    },
+    {
+      "name": "采样与统计",
+      "value": "500 Hz相机帧率；每子孔径高通量测FWHM，质心方差按1000帧计算",
+      "evidence": {
+        "source_id": "rouquette_mla_wfs_v1_2026",
+        "location": "§4.2 p.11"
+      },
+      "metric_id": "centroid_variance"
+    },
+    {
+      "name": "光子数校准",
+      "value": "Nph=G×ADU/QE；G=0.24 e⁻/ADU，QE=0.7 e⁻/ph；正文未给这些校准量的不确定度",
+      "evidence": {
+        "source_id": "rouquette_mla_wfs_v1_2026",
+        "location": "§4.2 p.11"
+      }
+    },
+    {
+      "name": "比较基准",
+      "value": "R=σ²_measured/σ²_Gauss；理论高斯光斑采用同实测光通量和FWHM，不是另一块实测理想阵列",
+      "evidence": {
+        "source_id": "rouquette_mla_wfs_v1_2026",
+        "location": "§4.2 p.11"
+      },
+      "metric_id": "centroid_variance_ratio"
+    },
+    {
+      "name": "阵列#1方差比中位数",
+      "value": "2.35；红色直方图",
+      "evidence": {
+        "source_id": "rouquette_mla_wfs_v1_2026",
+        "location": "Fig.16(b)及图注 p.13"
+      },
+      "metric_id": "centroid_variance_ratio"
+    },
+    {
+      "name": "阵列#2方差比中位数",
+      "value": "1.81；紫色直方图，为本次三组所报最低中位数，不是通用最佳",
+      "evidence": {
+        "source_id": "rouquette_mla_wfs_v1_2026",
+        "location": "§4.2 p.11；Fig.16(b)及图注 p.13"
+      },
+      "metric_id": "centroid_variance_ratio"
+    },
+    {
+      "name": "阵列#3方差比中位数",
+      "value": "1.9；绿色直方图",
+      "evidence": {
+        "source_id": "rouquette_mla_wfs_v1_2026",
+        "location": "Fig.16(b)及图注 p.13"
+      },
+      "metric_id": "centroid_variance_ratio"
+    },
+    {
+      "name": "阵列内方差比分布std",
+      "value": "图标#1=0.27、#2=0.16、#3=0.16；#2/#3在所示精度并列，不能据正文“小散布”声称#2唯一最低，也不是中位数标准误",
+      "evidence": {
+        "source_id": "rouquette_mla_wfs_v1_2026",
+        "location": "Fig.16(b) p.13"
+      },
+      "metric_id": "centroid_variance_ratio"
+    },
+    {
+      "name": "局部测量与模型核对",
+      "value": "Fig.14展示一个子孔径的均值光斑和方差–通量对照；Figs.15–16给瞳内分布，不能由单点一致证明所有单元同精度",
+      "evidence": {
+        "source_id": "rouquette_mla_wfs_v1_2026",
+        "location": "Figs.14–16，pp.12–13"
+      }
+    }
+  ],
+  "conditions": "LAM MORFEO/HARMONI原型台架，C-BLUE相机；R是有模型基准的超额方差指标。图16给三阵列统计，不是三个独立团队；68×68是网格大小，不等于4624个有效测量或100%制造良率。",
+  "unreported_or_not_verified": "未报告Fig.16统计所用精确通量/有效子孔径掩模、完整帧数据、校准不确定度和各噪声项独立分离。作者将超额方差归因面形，本库不据此排除漂移或校准影响。Fig.9单元模拟#3最好而台架#2中位数最低；对应关系不足以合并排名。图16的std是阵列内分布散布，非每个值置信区间；三原型不能推出通用公差。准直器f=45 mm、D=24 mm属于台架元件，不是微透镜单元。",
+  "source_ids": [
+    "rouquette_mla_wfs_v1_2026"
+  ],
+  "record_status": "checked_excerpt",
+  "checked_on": "2026-11-07"
+}

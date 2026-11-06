@@ -370,3 +370,16 @@ test('lenslet metrology query exposes definitions, statistical references and un
  assert.ok(f.el('panel').innerHTML.includes('data-source="zhu_mla_focal_2013"'));assert.ok(!f.el('panel').innerHTML.includes('class="tier"'));
  for(const [q,n] of [['朱等2013',1],['no_lenslet_match',0],['',33]]){f.el('search').value=q;f.run('renderList()');assert.equal(f.el('resultCount').textContent,`${n} / 33 类应用`);}
 });
+
+test('MLA centroid queries expose versioned primary source and distinct model/bench baselines',()=>{
+ const f=fixture();
+ for(const id of ['centroid_variance','centroid_variance_ratio']){
+  assert.ok(f.el('panel').innerHTML.includes(`data-metric="${id}"`));f.run(`openMetric('${id}')`);
+  assert.ok(f.el('detailBody').innerHTML.includes('https://arxiv.org/pdf/2607.26543v1'));
+ }
+ f.location.hash='#app_14/best';f.run('route()');
+ for(const [id,word] of [['rouquette_mla_model_2026','不是物理透射功率测量'],['rouquette_mla_bench_2026','不是另一块实测理想阵列']]){
+  assert.ok(f.el('panel').innerHTML.includes(`data-record="${id}"`));f.run(`openDialog('record',recordCard(records.get('${id}'),true))`);assert.ok(f.el('detailBody').innerHTML.includes(word));
+ }
+ f.run("openSource('rouquette_mla_wfs_v1_2026')");assert.ok(f.el('detailBody').innerHTML.includes('作者稿'));assert.ok(f.el('detailBody').innerHTML.includes('未核同行评议'));
+});

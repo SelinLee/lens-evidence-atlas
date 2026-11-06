@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.30",
+    "version": "0.1.31",
     "updated_on": "2026-11-07",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -576,7 +576,7 @@
       "id": "app_14",
       "name": "微透镜阵列与光场",
       "category": "激光与科研",
-      "summary": "按阵列制造、标定与成像任务查询；含ISO14880焦距/波前测试节选。区分仪器要求、单元性能、阵列离散、串扰和重建结果，保留原文冲突及预览边界。",
+      "summary": "按阵列制造、标定、成像与波前传感任务查询；含ISO14880测试节选、实测面形驱动模拟和整阵列台架证据。区分仪器要求、单元性能、阵列离散、串扰及模型基准，保留原文冲突。",
       "metric_ids": [
         "focus_efficiency",
         "chromatic_shift",
@@ -595,11 +595,13 @@
         "array_focal_length_cv",
         "measurement_uncertainty",
         "wavefront_rms",
-        "array_diffraction_aperture"
+        "array_diffraction_aperture",
+        "centroid_variance",
+        "centroid_variance_ratio"
       ],
       "priorities": [],
       "ranking_status": "not_established",
-      "ranking_gap": "任务一：Richards 2023印刷p.6“Individually tuning…”及p.7 Fig.5讨论该材料与打印工艺下的单个消色差微透镜。提高NA时，聚焦效率下降、焦长误差通常增大；增加衍射环带还受到细结构打印精度限制，折射面调节是作者讨论的设计手段。它支持联合考察NA、效率、色差与可制备性，不能推出效率/色差统一高于NA或Strehl的P1/P2。任务二：pp.6–7“Imaging with an achromatic microlens array”及p.8 Fig.6展示18单元阵列的白光USAF成像；作者提出更小直径、较低NA、更密排列可能获得更多光场数据，这是后续设计建议，未在该示例中给出对照实测排序。单透镜效率不能替代整阵列效率、焦距一致性或串扰；这些阵列任务指标的定量权衡仍待补证。 任务三：Katopodis 2025 §2.1–2.2、§5.1–5.2与§6的明场多通道成像，用微孔减少通道串扰，但引入盲区，需扫描拼接补全；快速稀疏采样与完整视场采集应分别评价。串扰、有效覆盖、分辨率、工作距离、采集时间和装配稳定性需联合报告；作者承认速度受机械扫描和微孔振动影响。Eq.(4)与正文CT倒数冲突公开保留，只能支持本研究的条件权衡，不能推出这些指标的通用先后顺序。 任务四：Yang 2024作者v2 §3.2–3.3、SI§4.C与§8.C采用无隔板阵列加算法解复用，需要联合评价重建分辨率、场点对比度、轴向可用范围和计算成本。更多网络通道可提高质量但增加时间/内存，作者选9通道折中；这不是物理通道数的普适最优。推理时间不等于采集帧率；单次曝光复用重建与物理隔板/扫描拼接的结果不能不加条件互排。 任务五：朱等2013 §1–4将焦距标定准确性和多单元检测效率作为测量目标；其20单元数据与预算提示必须分开焦距离散、测量不确定度和设计偏移。本库CV仅为表内描述，约3%为作者方法预算说明，不能转作制造一致性门槛。依据GUM需说明参考面、修正、相关性和覆盖因子，未建立三者的通用名次。 计量任务补充：ISO14880-2:2024 §6.1按所需不确定度、被测性质、灵活性、成本及单元抽测/整阵列测量选择方法；此列举不是重要性排名。Part3 §5–6.2提供检测NA、校准和判焦条件。两类标准支持测量可比性，不替具体应用规定制造容差或统一P1/P2。",
+      "ranking_gap": "任务一：Richards 2023印刷p.6“Individually tuning…”及p.7 Fig.5讨论该材料与打印工艺下的单个消色差微透镜。提高NA时，聚焦效率下降、焦长误差通常增大；增加衍射环带还受到细结构打印精度限制，折射面调节是作者讨论的设计手段。它支持联合考察NA、效率、色差与可制备性，不能推出效率/色差统一高于NA或Strehl的P1/P2。任务二：pp.6–7“Imaging with an achromatic microlens array”及p.8 Fig.6展示18单元阵列的白光USAF成像；作者提出更小直径、较低NA、更密排列可能获得更多光场数据，这是后续设计建议，未在该示例中给出对照实测排序。单透镜效率不能替代整阵列效率、焦距一致性或串扰；这些阵列任务指标的定量权衡仍待补证。 任务三：Katopodis 2025 §2.1–2.2、§5.1–5.2与§6的明场多通道成像，用微孔减少通道串扰，但引入盲区，需扫描拼接补全；快速稀疏采样与完整视场采集应分别评价。串扰、有效覆盖、分辨率、工作距离、采集时间和装配稳定性需联合报告；作者承认速度受机械扫描和微孔振动影响。Eq.(4)与正文CT倒数冲突公开保留，只能支持本研究的条件权衡，不能推出这些指标的通用先后顺序。 任务四：Yang 2024作者v2 §3.2–3.3、SI§4.C与§8.C采用无隔板阵列加算法解复用，需要联合评价重建分辨率、场点对比度、轴向可用范围和计算成本。更多网络通道可提高质量但增加时间/内存，作者选9通道折中；这不是物理通道数的普适最优。推理时间不等于采集帧率；单次曝光复用重建与物理隔板/扫描拼接的结果不能不加条件互排。 任务五：朱等2013 §1–4将焦距标定准确性和多单元检测效率作为测量目标；其20单元数据与预算提示必须分开焦距离散、测量不确定度和设计偏移。本库CV仅为表内描述，约3%为作者方法预算说明，不能转作制造一致性门槛。依据GUM需说明参考面、修正、相关性和覆盖因子，未建立三者的通用名次。 计量任务补充：ISO14880-2:2024 §6.1按所需不确定度、被测性质、灵活性、成本及单元抽测/整阵列测量选择方法；此列举不是重要性排名。Part3 §5–6.2提供检测NA、校准和判焦条件。两类标准支持测量可比性，不替具体应用规定制造容差或统一P1/P2。 任务六：Rouquette作者v1 §2 p.2明确以CoG方差作为低光通量LGS光斑检测的主要评价量，§2.3/§3/§4显示面形误差、光斑拉长、像素采样、噪声及重构算法共同影响结果。这一任务依据支持检查质心方差及参考模型，不构成所有阵列用途的统一排名。相对方差惩罚减小不代表绝对定位改善；单元模型与AO系统通量代价不同。台架分母为同通量/FWHM的高斯理论，不能替代面形计量；sag相关性不直接给出制造容差。",
       "metric_mapping_status": "editorial_candidate_set",
       "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
       "legacy_priority_proposal": "节距/填充率、焦距一致性、波前、串扰、色差、封装",
@@ -615,7 +617,9 @@
         "yang_svfourier_imaging_2024",
         "zhu_mla_focal_2013",
         "iso14880_wavefront_test_2024",
-        "iso14880_focal_test_2024"
+        "iso14880_focal_test_2024",
+        "rouquette_mla_model_2026",
+        "rouquette_mla_bench_2026"
       ],
       "updated_on": "2026-11-07",
       "ranking_gap_refs": [
@@ -625,7 +629,8 @@
         "zhu_mla_focal_2013",
         "jcgm100_2008",
         "iso14880_2_2024_excerpt",
-        "iso14880_3_2024_excerpt"
+        "iso14880_3_2024_excerpt",
+        "rouquette_mla_wfs_v1_2026"
       ]
     },
     {
@@ -1235,6 +1240,46 @@
       ],
       "best_interpretation": "仅在相同质心间距协议下比较空间一致性；低CV不自动证明高光效或低串扰。原文报告值与表内可复算数据不一致时并列保留，不能用于本库最优排名。",
       "updated_on": "2026-11-06"
+    },
+    {
+      "id": "centroid_variance",
+      "name": "光斑质心位置方差",
+      "english_name": "Centroid Position Variance",
+      "definition": "对固定光斑及指定质心估计器，重复采样所得位置C的方差Var(C)=E[(C−E[C])²]；分别报告x/y方向。Rouquette作者v1 §2.3 Eqs.2–8讨论加权重心WCoG的光子噪声与读出噪声，§4.2用1000帧估计。它不是光斑强度分布的二阶宽度、面形RMS或波前RMS。本库统计说明：方差只描述随机离散；相对真值的均方误差还含偏差平方，低方差不能单独证明绝对定位准确。",
+      "unit": "pixel² / arcsec² / μm²（说明位置坐标）",
+      "direction": "lower",
+      "required_conditions": [
+        "波长、源形状和x/y光斑宽度",
+        "每子孔径每帧光子数及读出噪声",
+        "像素尺度、窗口与截断",
+        "质心算法、权重宽度及响应校正",
+        "重复次数、有效样本与漂移/偏差处理"
+      ],
+      "definition_refs": [
+        "rouquette_mla_wfs_v1_2026"
+      ],
+      "best_interpretation": "相同光通量、采样、噪声和算法下比较。WCoG响应因子b是乘性校正，不能直接当位置偏差；光斑更宽与质心位置方差更大也不是同一指标。",
+      "updated_on": "2026-11-07"
+    },
+    {
+      "id": "centroid_variance_ratio",
+      "name": "质心方差比",
+      "english_name": "Centroid Variance Ratio",
+      "definition": "R=σ²_case/σ²_reference，为无量纲比。Rouquette作者v1的单元模拟用实测面形驱动模型/理想球面模型；§4.2台架用实测方差/同实测光通量及FWHM的高斯理论方差。这两种分母不同，不能合并排名。本库代数说明：标准差比是√R，不是R；只有指定光子噪声主导且方差∝1/N时，方差惩罚才可按等效光子通量因子解释，不能直接当透过率。",
+      "unit": "无量纲（必须标分子/分母）",
+      "direction": "lower",
+      "required_conditions": [
+        "分子与分母的实验/模型性质",
+        "参考模型、版本及方差坐标方向",
+        "光通量、FWHM、像素尺度和窗口",
+        "质心算法、权重及噪声区间",
+        "重复帧、有效子孔径集合和统计量"
+      ],
+      "definition_refs": [
+        "rouquette_mla_wfs_v1_2026"
+      ],
+      "best_interpretation": "在固定基准下R>1表示超过基准的方差；R=1是该模型基准而非通用合格线。阵列中位数、单元值和阵列间散布不能互换，图中std也不是中位数的测量不确定度。",
+      "updated_on": "2026-11-07"
     },
     {
       "id": "chromatic_shift",
@@ -2865,6 +2910,18 @@
       "kind": "paper",
       "verification": "checked_excerpt",
       "doi": "10.1038/s41467-023-38858-y"
+    },
+    {
+      "id": "rouquette_mla_wfs_v1_2026",
+      "title": "Rouquette et al. 2026 作者v1：微透镜面形对LGS波前传感的影响",
+      "url": "https://arxiv.org/pdf/2607.26543v1",
+      "location": "14页作者稿：§2/Eqs.1–8/Figs.1–9（pp.2–9）；§3/Table1/Figs.10–11（pp.9–10）；§4/Figs.12–16（pp.11–13）",
+      "kind": "author_manuscript",
+      "evidence_scope": "已读14页全文并视觉核全部图页；2026-07-29 arXiv v1，DOI为存档DOI，未核同行评议出版版。作者为Paul Rouquette、Benoit Neichel、Cédric Taïsir Héritier、Pierre Jouve、Anne Costille、Kjetil Dohlen、Thierry Fusco。分开实测面形驱动模拟、AO等效噪声模型与台架测量/理论基准。Fig.1相位轴度/图注弧度、RON单位、Fig.8方向差异及两类原型表现不一致均保留；未复现实验原始数据或整套仿真，参考文献4/6/7未另核。",
+      "source_year": 2026,
+      "checked_on": "2026-11-07",
+      "verification": "checked_excerpt",
+      "doi": "10.48550/arXiv.2607.26543"
     },
     {
       "id": "rudd_paraph_2016",
@@ -6897,6 +6954,198 @@
       "checked_on": "2026-11-06",
       "record_status": "checked_excerpt",
       "claim_type": "representative_result"
+    },
+    {
+      "id": "rouquette_mla_bench_2026",
+      "application_id": "app_14",
+      "name": "Rouquette 2026 整阵列台架质心方差",
+      "claim_type": "representative_result",
+      "evidence_type": "作者稿；台架实测分子与高斯理论分母比较",
+      "parameters": [
+        {
+          "name": "阵列与光源",
+          "value": "68×68子孔径网格；400 μm芯径多模LED光纤源，等效天空1 arcsec；SLM作平镜",
+          "evidence": {
+            "source_id": "rouquette_mla_wfs_v1_2026",
+            "location": "§1 p.1；§4.1 p.11/Fig.13 p.12"
+          }
+        },
+        {
+          "name": "滤光片",
+          "value": "Fig.12装置标589±4 nm；不是已测光源谱形或滤光片实测FWHM",
+          "evidence": {
+            "source_id": "rouquette_mla_wfs_v1_2026",
+            "location": "Fig.12 p.11"
+          }
+        },
+        {
+          "name": "采样与统计",
+          "value": "500 Hz相机帧率；每子孔径高通量测FWHM，质心方差按1000帧计算",
+          "evidence": {
+            "source_id": "rouquette_mla_wfs_v1_2026",
+            "location": "§4.2 p.11"
+          },
+          "metric_id": "centroid_variance"
+        },
+        {
+          "name": "光子数校准",
+          "value": "Nph=G×ADU/QE；G=0.24 e⁻/ADU，QE=0.7 e⁻/ph；正文未给这些校准量的不确定度",
+          "evidence": {
+            "source_id": "rouquette_mla_wfs_v1_2026",
+            "location": "§4.2 p.11"
+          }
+        },
+        {
+          "name": "比较基准",
+          "value": "R=σ²_measured/σ²_Gauss；理论高斯光斑采用同实测光通量和FWHM，不是另一块实测理想阵列",
+          "evidence": {
+            "source_id": "rouquette_mla_wfs_v1_2026",
+            "location": "§4.2 p.11"
+          },
+          "metric_id": "centroid_variance_ratio"
+        },
+        {
+          "name": "阵列#1方差比中位数",
+          "value": "2.35；红色直方图",
+          "evidence": {
+            "source_id": "rouquette_mla_wfs_v1_2026",
+            "location": "Fig.16(b)及图注 p.13"
+          },
+          "metric_id": "centroid_variance_ratio"
+        },
+        {
+          "name": "阵列#2方差比中位数",
+          "value": "1.81；紫色直方图，为本次三组所报最低中位数，不是通用最佳",
+          "evidence": {
+            "source_id": "rouquette_mla_wfs_v1_2026",
+            "location": "§4.2 p.11；Fig.16(b)及图注 p.13"
+          },
+          "metric_id": "centroid_variance_ratio"
+        },
+        {
+          "name": "阵列#3方差比中位数",
+          "value": "1.9；绿色直方图",
+          "evidence": {
+            "source_id": "rouquette_mla_wfs_v1_2026",
+            "location": "Fig.16(b)及图注 p.13"
+          },
+          "metric_id": "centroid_variance_ratio"
+        },
+        {
+          "name": "阵列内方差比分布std",
+          "value": "图标#1=0.27、#2=0.16、#3=0.16；#2/#3在所示精度并列，不能据正文“小散布”声称#2唯一最低，也不是中位数标准误",
+          "evidence": {
+            "source_id": "rouquette_mla_wfs_v1_2026",
+            "location": "Fig.16(b) p.13"
+          },
+          "metric_id": "centroid_variance_ratio"
+        },
+        {
+          "name": "局部测量与模型核对",
+          "value": "Fig.14展示一个子孔径的均值光斑和方差–通量对照；Figs.15–16给瞳内分布，不能由单点一致证明所有单元同精度",
+          "evidence": {
+            "source_id": "rouquette_mla_wfs_v1_2026",
+            "location": "Figs.14–16，pp.12–13"
+          }
+        }
+      ],
+      "conditions": "LAM MORFEO/HARMONI原型台架，C-BLUE相机；R是有模型基准的超额方差指标。图16给三阵列统计，不是三个独立团队；68×68是网格大小，不等于4624个有效测量或100%制造良率。",
+      "unreported_or_not_verified": "未报告Fig.16统计所用精确通量/有效子孔径掩模、完整帧数据、校准不确定度和各噪声项独立分离。作者将超额方差归因面形，本库不据此排除漂移或校准影响。Fig.9单元模拟#3最好而台架#2中位数最低；对应关系不足以合并排名。图16的std是阵列内分布散布，非每个值置信区间；三原型不能推出通用公差。准直器f=45 mm、D=24 mm属于台架元件，不是微透镜单元。",
+      "source_ids": [
+        "rouquette_mla_wfs_v1_2026"
+      ],
+      "record_status": "checked_excerpt",
+      "checked_on": "2026-11-07"
+    },
+    {
+      "id": "rouquette_mla_model_2026",
+      "application_id": "app_14",
+      "name": "Rouquette 2026 面形驱动质心及AO模拟",
+      "claim_type": "representative_result",
+      "evidence_type": "作者稿；实测面形输入的单元模型与系统数值模拟",
+      "parameters": [
+        {
+          "name": "面形到光学模型",
+          "value": "Wyko NT9100测面形，与拟合球面比较；Δ=(n−1)(z_real−z_ideal)后计算相位/PSF，不是直接测得PSF或全阵列波前RMS",
+          "evidence": {
+            "source_id": "rouquette_mla_wfs_v1_2026",
+            "location": "§2.1/Eq.1/Figs.1–2，pp.2–3"
+          }
+        },
+        {
+          "name": "单子孔径采样",
+          "value": "14×14像素，1.2 arcsec/pixel；10,000次Monte Carlo实现",
+          "evidence": {
+            "source_id": "rouquette_mla_wfs_v1_2026",
+            "location": "§2.2 p.3；§2.3.2 Effect of flux p.6"
+          }
+        },
+        {
+          "name": "非拉长光斑方差比",
+          "value": "1.8–2.4（作者正文范围）；分子为实测面形驱动模拟，分母为理想模型；Lx=Ly=1.5 arcsec",
+          "evidence": {
+            "source_id": "rouquette_mla_wfs_v1_2026",
+            "location": "§2.3.2 Effect of flux/Fig.6，pp.6–7"
+          },
+          "metric_id": "centroid_variance_ratio"
+        },
+        {
+          "name": "名义通量下等质心精度代价",
+          "value": "700–1000 photons/subaperture/frame附近，作者报告约需1.9×光子；不能把所有噪声区间的R直接当光子倍率",
+          "evidence": {
+            "source_id": "rouquette_mla_wfs_v1_2026",
+            "location": "§2.3.2 Effect of flux p.6"
+          }
+        },
+        {
+          "name": "拉长方向与相对惩罚",
+          "value": "N=1000 photons/frame，Ly=1.5 arcsec；正文称Lx>8 arcsec后约1.3–1.5，Fig.8(c)主要为x方向趋势，y方向仍约1.7（图估读）。绝对x方差随拉长增加",
+          "evidence": {
+            "source_id": "rouquette_mla_wfs_v1_2026",
+            "location": "§2.3.2 Effect of elongation/Figs.7–8，pp.7–8"
+          },
+          "metric_id": "centroid_variance_ratio"
+        },
+        {
+          "name": "三个面形原型",
+          "value": "sag分别5.71、6.53、7.02 μm；Fig.9中#3模拟方差惩罚较小。这是三原型关联，不是已验证制造容差或通用最优sag",
+          "evidence": {
+            "source_id": "rouquette_mla_wfs_v1_2026",
+            "location": "§2.3.3/Fig.9，pp.8–9"
+          }
+        },
+        {
+          "name": "AO系统条件",
+          "value": "39 m望远镜；6个589 nm LGS，半径34 arcsec；钠层90 km高、18 km厚；68×68子孔径、每孔14×14像素，1.15 arcsec/pixel；r0=13.85 cm@500 nm、L0=25 m、天顶角30°",
+          "evidence": {
+            "source_id": "rouquette_mla_wfs_v1_2026",
+            "location": "§3/Table1，pp.9–10"
+          }
+        },
+        {
+          "name": "AO等效通量因子",
+          "value": "以高通量光子噪声方差比的倒数设置等效throughput，未逐单元传播全部实测相位；不是物理透射功率测量",
+          "evidence": {
+            "source_id": "rouquette_mla_wfs_v1_2026",
+            "location": "§3 p.9"
+          }
+        },
+        {
+          "name": "同K-band Strehl的系统通量代价",
+          "value": "作者给#3约1.25×、#1约1.4×；Fig.11为横向光子倍率，不是Strehl值或透过率；对照子孔径预测约1.5×、2×",
+          "evidence": {
+            "source_id": "rouquette_mla_wfs_v1_2026",
+            "location": "§3 p.9/Fig.11 p.10"
+          }
+        }
+      ],
+      "conditions": "MORFEO/HARMONI LGS Shack–Hartmann任务；WCoG高斯权重、光子与读出噪声。单元1.2与AO 1.15 arcsec/pixel分别保留。AO采用MMSE与六LGS冗余的噪声等效近似；不能推广成微成像的性能门槛。",
+      "unreported_or_not_verified": "Fig.1相位轴标度(°)但图注写radians；p.6将σ²_RON写为2.5 e⁻/pixel，方差符号与单位不一致，未擅自改成标准差。未核折射率数值、原始面形数据、完整模型代码、K-band精确波长及实验制造公差。Fig.8文字概括不适用于两个轴；模拟#3与台架#2优势不同，跨流程样本对应和条件未充分说明。",
+      "source_ids": [
+        "rouquette_mla_wfs_v1_2026"
+      ],
+      "record_status": "checked_excerpt",
+      "checked_on": "2026-11-07"
     },
     {
       "id": "scan_ir",

@@ -1,0 +1,90 @@
+{
+  "id": "rouquette_mla_model_2026",
+  "application_id": "app_14",
+  "name": "Rouquette 2026 面形驱动质心及AO模拟",
+  "claim_type": "representative_result",
+  "evidence_type": "作者稿；实测面形输入的单元模型与系统数值模拟",
+  "parameters": [
+    {
+      "name": "面形到光学模型",
+      "value": "Wyko NT9100测面形，与拟合球面比较；Δ=(n−1)(z_real−z_ideal)后计算相位/PSF，不是直接测得PSF或全阵列波前RMS",
+      "evidence": {
+        "source_id": "rouquette_mla_wfs_v1_2026",
+        "location": "§2.1/Eq.1/Figs.1–2，pp.2–3"
+      }
+    },
+    {
+      "name": "单子孔径采样",
+      "value": "14×14像素，1.2 arcsec/pixel；10,000次Monte Carlo实现",
+      "evidence": {
+        "source_id": "rouquette_mla_wfs_v1_2026",
+        "location": "§2.2 p.3；§2.3.2 Effect of flux p.6"
+      }
+    },
+    {
+      "name": "非拉长光斑方差比",
+      "value": "1.8–2.4（作者正文范围）；分子为实测面形驱动模拟，分母为理想模型；Lx=Ly=1.5 arcsec",
+      "evidence": {
+        "source_id": "rouquette_mla_wfs_v1_2026",
+        "location": "§2.3.2 Effect of flux/Fig.6，pp.6–7"
+      },
+      "metric_id": "centroid_variance_ratio"
+    },
+    {
+      "name": "名义通量下等质心精度代价",
+      "value": "700–1000 photons/subaperture/frame附近，作者报告约需1.9×光子；不能把所有噪声区间的R直接当光子倍率",
+      "evidence": {
+        "source_id": "rouquette_mla_wfs_v1_2026",
+        "location": "§2.3.2 Effect of flux p.6"
+      }
+    },
+    {
+      "name": "拉长方向与相对惩罚",
+      "value": "N=1000 photons/frame，Ly=1.5 arcsec；正文称Lx>8 arcsec后约1.3–1.5，Fig.8(c)主要为x方向趋势，y方向仍约1.7（图估读）。绝对x方差随拉长增加",
+      "evidence": {
+        "source_id": "rouquette_mla_wfs_v1_2026",
+        "location": "§2.3.2 Effect of elongation/Figs.7–8，pp.7–8"
+      },
+      "metric_id": "centroid_variance_ratio"
+    },
+    {
+      "name": "三个面形原型",
+      "value": "sag分别5.71、6.53、7.02 μm；Fig.9中#3模拟方差惩罚较小。这是三原型关联，不是已验证制造容差或通用最优sag",
+      "evidence": {
+        "source_id": "rouquette_mla_wfs_v1_2026",
+        "location": "§2.3.3/Fig.9，pp.8–9"
+      }
+    },
+    {
+      "name": "AO系统条件",
+      "value": "39 m望远镜；6个589 nm LGS，半径34 arcsec；钠层90 km高、18 km厚；68×68子孔径、每孔14×14像素，1.15 arcsec/pixel；r0=13.85 cm@500 nm、L0=25 m、天顶角30°",
+      "evidence": {
+        "source_id": "rouquette_mla_wfs_v1_2026",
+        "location": "§3/Table1，pp.9–10"
+      }
+    },
+    {
+      "name": "AO等效通量因子",
+      "value": "以高通量光子噪声方差比的倒数设置等效throughput，未逐单元传播全部实测相位；不是物理透射功率测量",
+      "evidence": {
+        "source_id": "rouquette_mla_wfs_v1_2026",
+        "location": "§3 p.9"
+      }
+    },
+    {
+      "name": "同K-band Strehl的系统通量代价",
+      "value": "作者给#3约1.25×、#1约1.4×；Fig.11为横向光子倍率，不是Strehl值或透过率；对照子孔径预测约1.5×、2×",
+      "evidence": {
+        "source_id": "rouquette_mla_wfs_v1_2026",
+        "location": "§3 p.9/Fig.11 p.10"
+      }
+    }
+  ],
+  "conditions": "MORFEO/HARMONI LGS Shack–Hartmann任务；WCoG高斯权重、光子与读出噪声。单元1.2与AO 1.15 arcsec/pixel分别保留。AO采用MMSE与六LGS冗余的噪声等效近似；不能推广成微成像的性能门槛。",
+  "unreported_or_not_verified": "Fig.1相位轴标度(°)但图注写radians；p.6将σ²_RON写为2.5 e⁻/pixel，方差符号与单位不一致，未擅自改成标准差。未核折射率数值、原始面形数据、完整模型代码、K-band精确波长及实验制造公差。Fig.8文字概括不适用于两个轴；模拟#3与台架#2优势不同，跨流程样本对应和条件未充分说明。",
+  "source_ids": [
+    "rouquette_mla_wfs_v1_2026"
+  ],
+  "record_status": "checked_excerpt",
+  "checked_on": "2026-11-07"
+}
