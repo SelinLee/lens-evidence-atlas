@@ -6,6 +6,9 @@
 - [证据与比较规则](docs/EVIDENCE_POLICY.md)
 - [贡献与更新方法](CONTRIBUTING.md)
 - [维护路线图及缺口](docs/ROADMAP.md)
+- [Dot 维护任务说明（可复用 prompt）](docs/DOT_MAINTENANCE.md)
+- [证据补齐任务清单（状态与验收）](docs/EVIDENCE_BACKLOG.md)
+- [研究日志与续接检查点](docs/RESEARCH_LOG.md)
 
 ## 首版范围
 
@@ -44,7 +47,9 @@ dist/                 生成网页；随数据修改重建并提交
 
 ## 更新与发布
 
-通过 Issue → 数据修改 → 测试/构建 → PR 审核 → 私有部署维护。GitHub Actions 检查引用完整性、比较约束和生成文件是否过期，并保存私有构建制品。它**不启用公开 GitHub Pages**。
+通过任务清单/Issue → 数据修改 → 测试/构建 → PR 审核 → 私有部署维护。Dot 每批先认领稳定任务 ID，完成后更新清单状态及研究日志；详见 [维护任务说明](docs/DOT_MAINTENANCE.md)。文档与清单的保存不代表已启动后台研究。
+
+GitHub Actions 检查引用完整性、比较约束和生成文件是否过期，并保存私有构建制品。它**不启用公开 GitHub Pages**。
 
 GitHub 仓库私有并不自动让 Pages 私有。在线版本使用独立的 Sites 登录访问控制。更改仓库或站点访问范围必须由维护者明确决定。
 
