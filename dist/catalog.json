@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "updated_on": "2026-11-06",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -760,7 +760,7 @@
       "id": "app_22",
       "name": "单模光纤准直与通信耦合",
       "category": "激光与科研",
-      "summary": "商业准直镜、Subaru实验室与LBT在天注入分别记录；效率口径和装调模型不混合排名。",
+      "summary": "商业准直镜、Subaru实验室、LBT在天注入与扩芯双耦合器分别记录；实验组合失配和单误差模型不混合排名。",
       "metric_ids": [
         "coupling",
         "na",
@@ -805,7 +805,8 @@
         "fiber1550_compact",
         "scexao_smf_lab",
         "lbt_smf_180s",
-        "lbt_alignment_model"
+        "lbt_alignment_model",
+        "he_tecf_combined_misalignment"
       ],
       "updated_on": "2026-11-06"
     },
@@ -1674,6 +1675,19 @@
       "kind": "manufacturer",
       "verification": "inherited_v2",
       "doi": null
+    },
+    {
+      "id": "he_tecf_2022",
+      "title": "He 等 Optical Coupling Efficiency of a Coupler with Double-Combined Collimating Lenses and Thermally Expanded Core Fibers",
+      "authors": "Qi He; Zhengang Zhao; Xiaoda Ye; Chuan Luo; Dacheng Zhang; Sifei Wang; Xiaoping Xu",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8875270/",
+      "doi": "10.3390/mi13020324",
+      "source_year": 2022,
+      "kind": "paper",
+      "location": "Micromachines 13(2), 324；§2.3 Eq.(6)；§4.1 Fig.11–13正文；§4.2光源设置；§4.3 Fig.16图注及末两段",
+      "evidence_scope": "PMC所载正式论文HTML相关正文、公式和图注节选；本条落库复核限于上述位置。未读PDF/SI或取得原始数据；未从图线估读数值；设计/仿真焦距与NA不记作实测。",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
     },
     {
       "id": "holospec",
@@ -2801,6 +2815,72 @@
       "application_id": "app_07",
       "checked_on": "2026-10-25",
       "record_status": "inherited_v2",
+      "claim_type": "representative_result"
+    },
+    {
+      "id": "he_tecf_combined_misalignment",
+      "application": "单模光纤准直与通信耦合",
+      "application_id": "app_22",
+      "name": "He 2022 扩芯（TECF）单模光纤双耦合器：组合失配工作点",
+      "evidence_type": "科研实验段报告的组合失配结果",
+      "source_ids": [
+        "he_tecf_2022"
+      ],
+      "parameters": [
+        {
+          "name": "组合失配耦合效率（实验段报告）",
+          "value": "50.4%",
+          "evidence": {
+            "source_id": "he_tecf_2022",
+            "location": "§4.3末两段：选择20 μm TECF后连续给出工作距离、三种失配与50.4%"
+          },
+          "metric_id": "coupling"
+        },
+        {
+          "name": "热扩芯光纤模场直径",
+          "value": "20 μm",
+          "evidence": {
+            "source_id": "he_tecf_2022",
+            "location": "§4.3末两段：选择20 μm TECF后连续给出工作距离、三种失配与50.4%"
+          }
+        },
+        {
+          "name": "两耦合器工作距离",
+          "value": "10 mm",
+          "evidence": {
+            "source_id": "he_tecf_2022",
+            "location": "§4.3末两段：选择20 μm TECF后连续给出工作距离、三种失配与50.4%"
+          }
+        },
+        {
+          "name": "径向失配",
+          "value": "0.5 mm",
+          "evidence": {
+            "source_id": "he_tecf_2022",
+            "location": "§4.3末两段：选择20 μm TECF后连续给出工作距离、三种失配与50.4%"
+          }
+        },
+        {
+          "name": "角失配",
+          "value": "0.04°",
+          "evidence": {
+            "source_id": "he_tecf_2022",
+            "location": "§4.3末两段：选择20 μm TECF后连续给出工作距离、三种失配与50.4%"
+          }
+        },
+        {
+          "name": "轴向失配",
+          "value": "1 mm",
+          "evidence": {
+            "source_id": "he_tecf_2022",
+            "location": "§4.3末两段：选择20 μm TECF后连续给出工作距离、三种失配与50.4%"
+          }
+        }
+      ],
+      "conditions": "两只相同双组合准直透镜耦合器与两根相同TECF，FC/APC接口；§4.1/4.3先调至最大输出再引入失配。上述六项属于同一个组合工作点，不是独立单轴允许公差。§2.3 Eq.(6)定义输出/输入光功率比；实验功率参考面与损耗扣除仍待核。§4.1为1515–1595 nm ASE光源，§4.2写1550 nm、10 mW；§4.3未单独确认光谱，不能当作已核实的窄带1550 nm测量。",
+      "unreported_or_not_verified": "光纤型号、偏振、光功率校准面、连接器/透镜损耗是否扣除、组合点重复次数及误差条未核验。Table 2的焦距/NA属作者设计参数，非独立实测。§4.3另有0.3 μm径向表述疑点，本条不采用或擅改单位；未读取PDF/SI/原始数据。此点不代表旋转全周期性能或通用制造公差；与LBT单误差模型、SCExAO注入效率不可直接排名。",
+      "checked_on": "2026-11-06",
+      "record_status": "checked_excerpt",
       "claim_type": "representative_result"
     },
     {
