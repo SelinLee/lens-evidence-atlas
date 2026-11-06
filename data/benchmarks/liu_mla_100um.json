@@ -1,0 +1,66 @@
+{
+  "id": "liu_mla_100um",
+  "application": "微透镜阵列与光场",
+  "application_id": "app_14",
+  "name": "Liu 2023 100 μm微透镜阵列：焦点强度与色散",
+  "evidence_type": "科研实验（强度统计口径未完整公开）",
+  "source_ids": [
+    "liu_mla_2023"
+  ],
+  "parameters": [
+    {
+      "name": "单元口径",
+      "value": "100 μm",
+      "evidence": {
+        "source_id": "liu_mla_2023",
+        "location": "主文p.5 Fig.3图注及Optical characterization首段；p.7 Fig.5图注"
+      }
+    },
+    {
+      "name": "焦点强度统计",
+      "value": "约0.09（作者称quadratic variance；单位/归一化未明确）",
+      "evidence": {
+        "source_id": "liu_mla_2023",
+        "location": "主文p.5 Optical characterization首段、Fig.3e对应正文"
+      }
+    },
+    {
+      "name": "强度统计单元数",
+      "value": "10 × 10 = 100个；不是整片行列数",
+      "evidence": {
+        "source_id": "liu_mla_2023",
+        "location": "主文p.5 Optical characterization首段"
+      }
+    },
+    {
+      "name": "三波长焦距（作者记法）",
+      "value": "405 / 532 / 633 nm → 350 / 366 / 357 μm",
+      "evidence": {
+        "source_id": "liu_mla_2023",
+        "location": "主文p.7 Fig.5a–c及左右栏衔接正文"
+      }
+    },
+    {
+      "name": "三采样波长焦点最大差",
+      "value": "16 μm（本库由366−350计算，非连续光谱最大值）",
+      "evidence": {
+        "source_id": "liu_mla_2023",
+        "location": "主文p.7给出的三个焦距；本库算术派生"
+      },
+      "metric_id": "chromatic_shift"
+    },
+    {
+      "name": "各波长焦斑FWHM",
+      "value": "405 / 532 / 633 nm → 1.36 / 1.8 / 2.12 μm",
+      "evidence": {
+        "source_id": "liu_mla_2023",
+        "location": "主文p.7 Fig.5a–c对应正文；焦斑宽度，不等同USAF可分辨线宽"
+      }
+    }
+  ],
+  "conditions": "NOA-73选择性润湿/刮涂制备的100 μm口径阵列。Fig.3强度测试为532 nm连续波、线偏振、CCD记录焦平面；方差的强度归一化、峰值/积分定义与背景校正未交代。Fig.5为另一组405/532/633 nm连续波测试，分别报告焦距和FWHM；不假定与Fig.3是完全同一批单元，不据此建立共同面MTF或同条件排名。",
+  "unreported_or_not_verified": "完整阵列面积与行列数、逐单元焦距分布、重复样本量、误差条、定量串扰未给出可用结果。0.09不是9%不均匀度或91%均匀性。Fig.3a/b正文另报200 μm周期，Fig.3f峰间距看起来不同；不从图反算节距或填充率，保留样品对应缺口。1 mm系列NA≈0.26不是本条100 μm样本的NA。FWHM取自作者正文，测试面和拟合细节未完整交代；三波长非单调焦移，不能仅用端点差7 μm代表全波段。",
+  "checked_on": "2026-11-06",
+  "record_status": "checked_excerpt",
+  "claim_type": "representative_result"
+}
