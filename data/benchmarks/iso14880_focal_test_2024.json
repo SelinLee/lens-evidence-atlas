@@ -1,0 +1,76 @@
+{
+  "id": "iso14880_focal_test_2024",
+  "application_id": "app_14",
+  "name": "ISO14880-3:2024 显微镜焦距测试条件（节选）",
+  "claim_type": "standard_requirement",
+  "evidence_type": "正式测试标准节选；非焦距制造公差",
+  "parameters": [
+    {
+      "name": "测量量与参考位置",
+      "value": "由微透镜表面与焦点之间的轴向位移测有效前/后焦距",
+      "evidence": {
+        "source_id": "iso14880_3_2024_excerpt",
+        "location": "§5.1/p.1；§5.2.1/Fig.1/p.2；§6.2/p.4"
+      },
+      "metric_id": "array_focal_length"
+    },
+    {
+      "name": "检测物镜NA（要求）",
+      "value": "大于被测透镜焦点处NA",
+      "evidence": {
+        "source_id": "iso14880_3_2024_excerpt",
+        "location": "§5.2.2.2/p.3"
+      },
+      "metric_id": "na"
+    },
+    {
+      "name": "位移与校准器物",
+      "value": "校准位移传感器；指定波长已知焦距微透镜和已知台阶高度用于核验",
+      "evidence": {
+        "source_id": "iso14880_3_2024_excerpt",
+        "location": "§5.2.2.2、§5.2.2.6/p.3"
+      }
+    },
+    {
+      "name": "周期校准与不确定度",
+      "value": "定期校准并估计校准不确定度",
+      "evidence": {
+        "source_id": "iso14880_3_2024_excerpt",
+        "location": "§6.2/p.4"
+      },
+      "metric_id": "measurement_uncertainty"
+    },
+    {
+      "name": "焦点判据与取样",
+      "value": "可用图像峰值强度定位最佳焦点；分辨率须足够，注意探测器欠采样",
+      "evidence": {
+        "source_id": "iso14880_3_2024_excerpt",
+        "location": "§5.2.2.4/p.3；§6.2/p.4"
+      }
+    },
+    {
+      "name": "照明与探测器",
+      "value": "记录所用光谱；检测响应须保持线性",
+      "evidence": {
+        "source_id": "iso14880_3_2024_excerpt",
+        "location": "§5.2.2.3、§5.2.2.5/p.3"
+      }
+    },
+    {
+      "name": "温度与振动",
+      "value": "温控、无振动；20°C为优选温度，未给出本条温度允许偏差",
+      "evidence": {
+        "source_id": "iso14880_3_2024_excerpt",
+        "location": "§5.2.2.7/p.4"
+      }
+    }
+  ],
+  "conditions": "用于标准范围内微透镜的显微镜焦距测试；方法要求不等于产品性能门槛。20°C为优选值，不是已核验的±温差公差。标定、参考面和判焦规则须与实际实验匹配，不能据此宣称朱等2013或本项目已按2024版合规。",
+  "unreported_or_not_verified": "预览止于§6.3开头；§6.4焦点位置均匀性、§7结果/不确定度、§9完整报告及附录未取得。没有可据此填写的阵列焦距CV合格上限。§6.3不完整折射公式未用于替代一般系统光焦度公式。",
+  "source_ids": [
+    "iso14880_3_2024_excerpt",
+    "iso14880_3_2024"
+  ],
+  "record_status": "checked_excerpt",
+  "checked_on": "2026-11-07"
+}

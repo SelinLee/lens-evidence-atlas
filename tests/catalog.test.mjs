@@ -1,4 +1,21 @@
 import {test} from 'node:test';import assert from 'node:assert/strict';import {load,validate,canCompare} from '../scripts/catalog.mjs';
+test('MLA test standards preserve requirement objects, alternatives and evidence boundaries',()=>{
+ const d=load(),w=d.benchmarks.find(r=>r.id==='iso14880_wavefront_test_2024'),f=d.benchmarks.find(r=>r.id==='iso14880_focal_test_2024');
+ for(const r of [w,f]){
+  assert.equal(r.claim_type,'standard_requirement');
+  assert.equal(r.record_status,'checked_excerpt');
+  assert.ok(r.parameters.every(p=>p.evidence.location.includes('§')));
+  assert.ok(!d.bests.some(b=>b.cohort_record_ids?.includes(r.id)));
+ }
+ assert.equal(w.parameters[0].metric_id,'wavefront_rms');
+ assert.match(w.parameters[0].value,/RMS≤λ\/20/);
+ assert.match(w.parameters[1].value,/或RMS<λ\/20/);
+ assert.match(w.parameters[3].name,/建议/);
+ assert.match(w.conditions,/绝不是被测透镜统一验收线/);
+ assert.match(f.unreported_or_not_verified,/§6.4.*未取得/);
+ assert.match(f.parameters.at(-1).value,/优选温度/);
+ assert.equal(d.sources.find(s=>s.id==='werner').checked_on,'2026-10-25');
+});
 test('catalog resolves definitions, claims and evidence',()=>{const s=validate(load());assert.equal(s.applications,33);assert.ok(s.benchmarks>=55)});
 test('dangling references fail',()=>{const d=load();d.metrics[0].definition_refs=['missing'];assert.throws(()=>validate(d),/missing source/)});
 test('explicit priority cannot be fabricated from cited context',()=>{const d=load();const a=d.applications.find(a=>a.priorities.length);a.priorities[0].basis='author_explicit';delete a.priorities[0].explicit_rank_location;assert.throws(()=>validate(d),/explicit source rank locator/)});

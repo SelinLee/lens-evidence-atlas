@@ -1,0 +1,85 @@
+{
+  "id": "iso14880_wavefront_test_2024",
+  "application_id": "app_14",
+  "name": "ISO14880-2:2024 波前测试设备要求（节选）",
+  "claim_type": "standard_requirement",
+  "evidence_type": "正式测试标准节选；要求与建议分别标注",
+  "parameters": [
+    {
+      "name": "入射测试波前（要求）",
+      "value": "RMS≤λ/20；工作波长、对应被测单元有效口径区域",
+      "evidence": {
+        "source_id": "iso14880_2_2024_excerpt",
+        "location": "§4.1/p.2"
+      },
+      "metric_id": "wavefront_rms"
+    },
+    {
+      "name": "参考镜（两种允许条件）",
+      "value": "像差至少比被测镜小一个数量级，或RMS<λ/20",
+      "evidence": {
+        "source_id": "iso14880_2_2024_excerpt",
+        "location": "§4.2/p.2"
+      },
+      "metric_id": "wavefront_rms"
+    },
+    {
+      "name": "准直器NA（要求）",
+      "value": "大于被测样品最大NA，并足以避免衍射影响",
+      "evidence": {
+        "source_id": "iso14880_2_2024_excerpt",
+        "location": "§4.3/p.2"
+      },
+      "metric_id": "na"
+    },
+    {
+      "name": "准直器像差（建议）",
+      "value": "应低于约λ/14（0.07λ RMS）；进一步推荐低于λ/20",
+      "evidence": {
+        "source_id": "iso14880_2_2024_excerpt",
+        "location": "§4.3/p.2"
+      },
+      "metric_id": "wavefront_rms"
+    },
+    {
+      "name": "测量几何与通光次数",
+      "value": "∞/f共轭；单程应用要求单程测试，不能任意混合双程结果",
+      "evidence": {
+        "source_id": "iso14880_2_2024_excerpt",
+        "location": "§4.2/p.2；§5/p.3"
+      }
+    },
+    {
+      "name": "结果表达与异常点",
+      "value": "PV受伪点影响；§8建议改用RMS的若干倍（至少3倍），这不是PV=3×RMS恒等式",
+      "evidence": {
+        "source_id": "iso14880_2_2024_excerpt",
+        "location": "§8/p.4"
+      }
+    },
+    {
+      "name": "测试系统残差",
+      "value": "需考虑系统本身像差及其校正，不能把仪器残差直接归给样品",
+      "evidence": {
+        "source_id": "iso14880_2_2024_excerpt",
+        "location": "§9/p.4"
+      }
+    },
+    {
+      "name": "报告条件",
+      "value": "按适用项报告波长/谱宽、偏振、入射角、光斑、孔径、设备和环境；结果注明PV/RMS/多项式口径",
+      "evidence": {
+        "source_id": "iso14880_2_2024_excerpt",
+        "location": "§10/p.5"
+      }
+    }
+  ],
+  "conditions": "适用于该标准范围内的微透镜阵列波前测试。λ/20等约束对象为入射波前、参考镜或准直器，绝不是被测透镜统一验收线；两种参考镜条件为“或”。不是科研实测样本或完整合规清单。",
+  "unreported_or_not_verified": "仅核英文预览印刷pp.1–5；附录A–F及ISO14999引用条款未取得。未建立特定器件、制造批次的RMS容差；§8建议不提供任意波前的PV/RMS固定比例。",
+  "source_ids": [
+    "iso14880_2_2024_excerpt",
+    "std_7"
+  ],
+  "record_status": "checked_excerpt",
+  "checked_on": "2026-11-07"
+}
