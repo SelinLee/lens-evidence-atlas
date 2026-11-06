@@ -421,3 +421,6 @@ ef84c19`；源提交与发布一致，保持owner-only访问。EVD-004d子任务
 - **验收待续**：新增符号/功率反算、科研误差边界、网络/温度例外和查询展示回归；待测试、Chrome、PR/CI与实际Pages。004f只补定义/参考面及代表实验，父004仍开放。
 
 - **本地验收**：68项测试、构建及diff检查通过；独立Chrome无头桌面1440 px/390 px手机检查两类查询1/1/0/1/33、三定义、三出处弹窗、9/5参数两记录反复打开滚动关闭、排名过滤及已有重点记录保留。截图实际查看，页面及弹窗内部无横向溢出。数据SHA256=c8d3a303aeb375759f38cd4aa08ac1ea6692057ebd36ea1f2c5d27a191376a50，待合并和公开页面验证。
+
+- **实际发布验收**：PR [#43](https://github.com/SelinLee/lens-evidence-atlas/pull/43)最终头3a1f4bb642bf89980de3a50977cfd16da0f78025，CI42247316008通过；合并709225e6df1e4ab23a0603c9dad020410bb10052，主线CI42247400111通过。Pages[42247400387](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/42247400387)成功；实际HTTPS v0.1.26，SHA256=c8d3a303aeb375759f38cd4aa08ac1ea6692057ebd36ea1f2c5d27a191376a50。独立Chrome无头线上桌面/390 px查询1/1/0/1/33、三定义、三出处、9/5参数两记录滚动关闭、排名及旧重点样本保留通过；截图实际查看，页面与弹窗内部无横向溢出。仅关闭004f。
+- **下批取证**：认领003d；Katopodis/Papazoglou/Zergioti 2025双模多通道成像，DOI10.1117/1.JBO.30.12.126006。原始XML https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12698289/fullTextXML 已取得（临时/tmp/mla-dualmode.xml），初读串扰相关方法/验证/讨论，未完整精读和视觉核图。MathML确认Eq.(4)分子I_neigh、分母I_prim；正文强度对202/195及238/12却报CT1.035/19.83，需出版版核验。暂不落数值、不宣称零串扰或通用指标。Europe PMC的pdf=render入口403，两个旧OA元数据入口404；不重复无效入口，改找出版方合法PDF。
