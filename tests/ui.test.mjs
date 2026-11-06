@@ -78,3 +78,24 @@ test('meta-FP search repeats, clears, and preserves existing TECF and array reco
   f.location.hash='#'+app+'/best';f.run('route()');assert.ok(f.el('panel').innerHTML.includes(record));
  }
 });
+
+test('Airy profile renders all positions with width and length evidence boundaries',()=>{
+ const f=fixture();f.location.hash='#app_25/best';f.run('route()');
+ assert.ok(f.el('panel').innerHTML.includes('Battistella 2022'));
+ f.run("openDialog('test',recordCard(records.get('battistella_airy_profile'),true))");
+ for(const text of ['488 nm','7.8 ± 1.3 μm','10.1 ± 1.5 μm','11.1 ± 0.9 μm','y=0–3 mm','Fig.3C','第一主峰','不是荧光微球系统PSF','3306 μm','±的统计定义'])assert.ok(f.el('detailBody').innerHTML.includes(text),text);
+ f.run("openMetric('sheet_thickness')");assert.ok(f.el('detailBody').innerHTML.includes('首主峰FWHM不表示旁瓣总能量'));
+ f.run("openMetric('sheet_length')");assert.ok(f.el('detailBody').innerHTML.includes('不能不经判据直接当作实测有效长度'));
+ f.location.hash='#app_25/sources';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('10.1016/j.isci.2022.104797'));
+});
+test('Airy search repeats, clears, and preserves independent existing experiments',()=>{
+ const f=fixture();
+ for(const query of ['Battistella','Airy','unmatched_airy_987','Battistella','']){
+  f.el('search').value=query;f.run('renderList()');
+  assert.equal(f.el('resultCount').textContent,query==='unmatched_airy_987'?'0 / 33 类应用':query?'1 / 33 类应用':'33 / 33 类应用');
+ }
+ f.location.hash='#app_25/best';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('Luo 2025'));
+ for(const [app,record] of [['app_04','Chu 2025'],['app_22','He 2022'],['app_14','Liu']]){
+  f.location.hash='#'+app+'/best';f.run('route()');assert.ok(f.el('panel').innerHTML.includes(record));
+ }
+});

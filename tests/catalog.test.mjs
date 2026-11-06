@@ -68,3 +68,17 @@ test('low-NA computational microscopy separates raw imaging from FP reconstructi
  assert.ok(!d.bests.some(b=>b.cohort_record_ids?.includes(r.id)));
  assert.ok(d.metrics.find(m=>m.id==='resolution').definition_refs.includes('chu_meta_fp_2025'));
 });
+
+test('Airy illumination widths stay separate from model FOV and independent samples',()=>{
+ const d=load(),r=d.benchmarks.find(x=>x.id==='battistella_airy_profile');
+ assert.equal(r.parameters.length,5);
+ assert.deepEqual(r.parameters.filter(p=>p.metric_id==='sheet_thickness').map(p=>p.value),['7.8 ± 1.3 μm','10.1 ± 1.5 μm','11.1 ± 0.9 μm']);
+ assert.equal(r.parameters.filter(p=>p.metric_id==='sheet_length').length,0);
+ assert.ok(r.conditions.includes('三位置属于同一研究'));
+ assert.ok(r.conditions.includes('不是荧光微球系统PSF'));
+ assert.ok(r.unreported_or_not_verified.includes('3306 μm'));
+ assert.ok(r.unreported_or_not_verified.includes('±的统计定义'));
+ assert.ok(!d.bests.some(b=>b.application_id==='app_25'));
+ assert.equal(d.applications.find(a=>a.id==='app_25').ranking_status,'editorial_synthesis');
+ assert.ok(validate(d).benchmarks>=68);
+});
