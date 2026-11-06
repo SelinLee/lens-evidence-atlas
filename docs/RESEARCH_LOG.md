@@ -11,6 +11,17 @@
 3. 当前增量是EVD-014b/004b：模式接收公式与理论上限边界。测试、构建及本轮Chrome定向页面检查通过，PR合并和私有发布仍待完成。
 4. 在线部署仍未由本轮更新。下一步先完成增量的页面检查和两批合并/发布，再选择独立阵列实验或Luo定义消歧；无需重复已核过的同一段文献。
 
+## 2026-11-06-03 · 独立阵列几何样本（云端）
+
+- **任务/执行**：dot，EVD-003a；先通过environment_management确认并附加openai-managed云电脑，全程未使用Mac。复核唯一开放草稿PR #3，无新评论；沿用其分支，基线cc397dfa/catalog0.1.1，未重复前批的四篇读取范围。
+- **新增**：Zhang等2022，DOI10.1002/adom.202200677；数据 `zhang_hex_mla`、来源 `zhang_inkjet_mla_2022`、指标 `array_fill_factor`。关键数值与公式定位到出版社HTML §2.1/§2.3 Eq.4/Fig.3正文，读取范围见来源。catalog0.1.2：33应用/21指标/59基准/79来源。
+- **结论边界**：只收录玻璃六角阵列几何样本，填充因子是面积比而不是光学效率；不混入四种硅烷样品系列的焦距/NA。统计数量/误差类型、完整阵列尺寸、边缘口径、串扰和SI均留缺口。没有新增最优或世界纪录；原app_14编辑层次收窄到Richards单透镜子任务，阵列整体排序未建立。
+- **检索**：2026-11-06，检索“microlens array fill factor focal length uniformity crosstalk experimental open access 2024 2023”，随后定向读取Zhang出版社HTML。PMC10465169及PMC10544957正文被reCAPTCHA阻挡，未通过或绕过；没有以搜索摘要当正文证据。选取独立KIT/InnovationLab阵列实验，不声称系统检索完成。Luo分母未在本批消歧。
+- **校验**：可选参数metric_id必须存在并属于所在应用；新增反例与阵列科学边界回归。npm test全部通过，npm run build及重复构建一致，node --check web/app.js和git diff --check通过。查询DOM夹具检查新定义/DOI/原文定位、记录/缺口显示、搜索1/33、空结果0/33和清空33/33，以及收窄优先级文案。
+- **浏览器阻碍**：仓库本地服务已启动，但云Chrome的127.0.0.1:4178返回ERR_CONNECTION_REFUSED；file://被浏览器协议策略拒绝，已停止该路径。没有真实视觉或交互通过声明，没有切本机或扩大权限。此项仍须补验，草稿不能据此称ready。
+- **执行/发布**：Git CLI克隆因无凭据失败；通过现有GitHub连接器读取223文件并核对全部blob SHA，在获批云工作区运行测试，通过连接器提交和更新原工作分支，不创建凭据。最新提交见PR #3；未合并、未发布。Sites get_site/list_site_versions/get_deployment_status核验实际生产仍为v1/bcc3361、部署succeeded、owner-only且外部访客0。
+- **下一步**：先补本批真实浏览器验收，再复核原PR；继续第二个独立阵列样本或Luo定义差异，勿重做本次几何读取。父任务EVD-003/012/013不关闭。
+
 ## 2026-11-06-01 · 维护文档与基线建档
 
 - **类型/执行者**：仓库审计与任务初始化 / Codex。未启动 Dot 或定时后台任务。
@@ -37,10 +48,10 @@
 - **发布**：未发布本批。原私有Sites项目owner-only、外部访客0，实际线上仍v1/bcc3361；未更改权限、开Pages或邀请他人。
 - **下一步**：PR审核/CI后按既有规则合并与私有发布；科学上优先补Luo效率定义/差异或独立阵列实验，不先编制排行榜。所有尚未满足的父任务验收继续保留。
 
-## 2026-11-06-03 · 本机目标与模式接收界限
+## 2026-11-06-04 · 本机目标与模式接收界限
 
 - **执行者 / 任务**：本机Codex；EVD-014b、EVD-004b。建立实际持续目标，保持完整研究范围；使用独立工作目录保护Dot分支。
-- **基线 / 分支**：PR #3的cc397df、catalog0.1.1；增量分支`codex/local-evidence-goal`，[PR #4](https://github.com/SelinLee/lens-evidence-atlas/pull/4)，catalog0.1.2。父PR未合并，不能把基线58条记录算作本轮新增。
+- **基线 / 分支**：PR #3的cc397df、catalog0.1.1；增量分支`codex/local-evidence-goal`，[PR #4](https://github.com/SelinLee/lens-evidence-atlas/pull/4)，catalog0.1.3（协调版本号）。父PR未合并，不能把基线58条记录算作本轮新增。
 - **实际新增**：单模耦合词典补重叠公式、功率参考面及瞳形条件，理论界限补归一化与整体复常数说明。来源数/样本数不变。
 - **实际读取**：Ansys 2025 R1.01 Computing Fiber Coupling公开HTML定义/偏振/最大值/损耗段；Jovanovic 2017公开HTML §2.1–2.4、Eq.(1)、Table 1。只将本轮读取内容追加来源范围，不声称重验之前的PDF图页。
 - **方法与边界**：按四步法记录于[增量核验笔记](COUPLING_BOUND_REVIEW_2026-11-06.md)；Cauchy–Schwarz、量纲与完全匹配/正交极限是本轮数学复核，不是实测。未将论文引用的早期工作当已独立读取。

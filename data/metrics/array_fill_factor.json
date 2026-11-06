@@ -1,0 +1,19 @@
+{
+  "id": "array_fill_factor",
+  "name": "阵列几何填充因子",
+  "english_name": "Geometrical fill factor of a microlens array",
+  "definition": "微透镜覆盖面积与阵列总面积之比。圆形单元的理想六角排布可用 FF=2πr²/(√3P²) 计算，其中r为单元半径、P为相邻单元中心距；不是透过率或聚焦效率。",
+  "unit": "%",
+  "direction": "tradeoff",
+  "required_conditions": [
+    "面积分子与分母定义",
+    "单元轮廓与排布",
+    "节距及几何测量方法",
+    "评估区域与边缘处理"
+  ],
+  "definition_refs": [
+    "zhang_inkjet_mla_2022"
+  ],
+  "best_interpretation": "仅可比较同面积口径及评估区域的几何覆盖率；高填充率不自动证明低串扰、高效率或高良率。",
+  "updated_on": "2026-11-06"
+}

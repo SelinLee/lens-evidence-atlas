@@ -19,6 +19,7 @@ export function validate(d){
   expect(d.applications.find(a=>a.id===b.application_id)?.record_ids.includes(b.id),`${b.id}: record must be visible in its application`);
   for(const p of b.parameters||[]){
    expect(str(p.name)&&str(p.value),`${b.id}: parameter name/value required`);
+   if(p.metric_id!==undefined){expect(ids.metrics.has(p.metric_id),`${b.id}: parameter metric not found`);expect(d.applications.find(a=>a.id===b.application_id)?.metric_ids.includes(p.metric_id),`${b.id}: parameter metric outside application`);}
    if(b.record_status==='checked_excerpt'||p.evidence){
     expect(str(p.evidence?.location),`${b.id}: parameter source locator required`);
     expect(ids.sources.has(p.evidence?.source_id)&&b.source_ids.includes(p.evidence?.source_id),`${b.id}: parameter source must belong to record`);

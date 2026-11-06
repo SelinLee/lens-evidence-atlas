@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "updated_on": "2026-11-06",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -550,13 +550,14 @@
       "id": "app_14",
       "name": "微透镜阵列与光场",
       "category": "激光与科研",
-      "summary": "商业阵列节距300 μm/EFL8.7 mm；科研混合镜NA约0.3",
+      "summary": "新增喷墨六角阵列几何样本：填充因子88%为面积比；单透镜与阵列结果分开解释。",
       "metric_ids": [
         "focus_efficiency",
         "chromatic_shift",
         "na",
         "strehl",
-        "effective_abbe"
+        "effective_abbe",
+        "array_fill_factor"
       ],
       "priorities": [
         {
@@ -570,7 +571,7 @@
             "richards"
           ],
           "basis": "editorial_synthesis",
-          "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
+          "scope": "仅适用于Richards 2023单个消色差微透镜的设计取舍；不构成阵列节距、填充率、均匀性或串扰的重要性排序，不是作者名次或行业统一权重。"
         },
         {
           "tier": 2,
@@ -584,18 +585,19 @@
             "strehl"
           ],
           "basis": "editorial_synthesis",
-          "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
+          "scope": "仅适用于Richards 2023单个消色差微透镜的设计取舍；不构成阵列节距、填充率、均匀性或串扰的重要性排序，不是作者名次或行业统一权重。"
         }
       ],
       "ranking_status": "editorial_synthesis",
-      "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
+      "ranking_gap": "阵列整体的重要性顺序尚未建立；现有层次仅限Richards单透镜设计子任务，新填充因子定义和样本不产生排名。",
       "metric_mapping_status": "editorial_candidate_set",
       "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
       "legacy_priority_proposal": "节距/填充率、焦距一致性、波前、串扰、色差、封装",
       "record_ids": [
         "mla_product",
         "richards_main",
-        "richards_high"
+        "richards_high",
+        "zhang_hex_mla"
       ],
       "updated_on": "2026-11-06"
     },
@@ -1121,6 +1123,25 @@
     }
   ],
   "metrics": [
+    {
+      "id": "array_fill_factor",
+      "name": "阵列几何填充因子",
+      "english_name": "Geometrical fill factor of a microlens array",
+      "definition": "微透镜覆盖面积与阵列总面积之比。圆形单元的理想六角排布可用 FF=2πr²/(√3P²) 计算，其中r为单元半径、P为相邻单元中心距；不是透过率或聚焦效率。",
+      "unit": "%",
+      "direction": "tradeoff",
+      "required_conditions": [
+        "面积分子与分母定义",
+        "单元轮廓与排布",
+        "节距及几何测量方法",
+        "评估区域与边缘处理"
+      ],
+      "definition_refs": [
+        "zhang_inkjet_mla_2022"
+      ],
+      "best_interpretation": "仅可比较同面积口径及评估区域的几何覆盖率；高填充率不自动证明低串扰、高效率或高良率。",
+      "updated_on": "2026-11-06"
+    },
     {
       "id": "chromatic_shift",
       "name": "轴向色差",
@@ -2412,6 +2433,18 @@
       "kind": "paper",
       "verification": "inherited_v2",
       "doi": null
+    },
+    {
+      "id": "zhang_inkjet_mla_2022",
+      "title": "Zhang 等（2022）Fabrication of Microlens Arrays with High Quality and High Fill Factor by Inkjet Printing",
+      "url": "https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/adom.202200677",
+      "doi": "10.1002/adom.202200677",
+      "source_year": 2022,
+      "kind": "paper",
+      "location": "§2.1填充因子定义；§2.2形貌评估；§2.3 Eq.4、Fig.3及其正文；§2.4 Fig.4；§4 Characterization",
+      "evidence_scope": "出版社主文HTML上述章节、公式及图注。数据仅采用§2.3玻璃六角阵列的几何参数；未读PDF或补充材料，未视觉核验原图，也不从图估读数值。作者：Qiaoshuang Zhang等，KIT/InnovationLab研究团队。",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
     }
   ],
   "benchmarks": [
@@ -4641,6 +4674,56 @@
       "record_status": "checked_excerpt",
       "claim_type": "representative_result",
       "checked_on": "2026-11-06"
+    },
+    {
+      "id": "zhang_hex_mla",
+      "application": "微透镜阵列与光场",
+      "application_id": "app_14",
+      "name": "Zhang 2022 喷墨打印六角微透镜阵列",
+      "evidence_type": "科研实验的几何测量与计算",
+      "source_ids": [
+        "zhang_inkjet_mla_2022"
+      ],
+      "parameters": [
+        {
+          "name": "单元几何半径",
+          "value": "35.14 ± 0.55 μm",
+          "evidence": {
+            "source_id": "zhang_inkjet_mla_2022",
+            "location": "§2.3 Eq.4及Fig.3b对应正文（r、P、FF）；不是图中估读"
+          }
+        },
+        {
+          "name": "最小横向中心距",
+          "value": "71.35 μm",
+          "evidence": {
+            "source_id": "zhang_inkjet_mla_2022",
+            "location": "§2.3 Eq.4及Fig.3b对应正文（r、P、FF）；不是图中估读"
+          }
+        },
+        {
+          "name": "几何填充因子",
+          "value": "88%（由几何量计算）",
+          "metric_id": "array_fill_factor",
+          "evidence": {
+            "source_id": "zhang_inkjet_mla_2022",
+            "location": "§2.3 Eq.4及Fig.3b对应正文（r、P、FF）；不是图中估读"
+          }
+        },
+        {
+          "name": "阵列排布 / 基底",
+          "value": "六角排布 / 玻璃",
+          "evidence": {
+            "source_id": "zhang_inkjet_mla_2022",
+            "location": "§2.3 Eq.4及Fig.3b对应正文（r、P、FF）；不是图中估读"
+          }
+        }
+      ],
+      "conditions": "玻璃上固化的SU-8基喷墨阵列；半径为形貌量，非有效光学口径；88%为面积比，由半径和中心距按六角几何公式计算，不是直接实测的光学效率。",
+      "unreported_or_not_verified": "完整行列数、边缘统计口径、该样品独立焦距/NA与串扰未核验；不把四种硅烷样品系列的焦距范围或计算NA拼入本样品。±0.55 μm保留作者记法，未确认该六角样品的统计数量与误差类型。PDF、SI和原图未读。",
+      "checked_on": "2026-11-06",
+      "record_status": "checked_excerpt",
+      "claim_type": "representative_result"
     }
   ]
 }

@@ -1,0 +1,50 @@
+{
+  "id": "zhang_hex_mla",
+  "application": "微透镜阵列与光场",
+  "application_id": "app_14",
+  "name": "Zhang 2022 喷墨打印六角微透镜阵列",
+  "evidence_type": "科研实验的几何测量与计算",
+  "source_ids": [
+    "zhang_inkjet_mla_2022"
+  ],
+  "parameters": [
+    {
+      "name": "单元几何半径",
+      "value": "35.14 ± 0.55 μm",
+      "evidence": {
+        "source_id": "zhang_inkjet_mla_2022",
+        "location": "§2.3 Eq.4及Fig.3b对应正文（r、P、FF）；不是图中估读"
+      }
+    },
+    {
+      "name": "最小横向中心距",
+      "value": "71.35 μm",
+      "evidence": {
+        "source_id": "zhang_inkjet_mla_2022",
+        "location": "§2.3 Eq.4及Fig.3b对应正文（r、P、FF）；不是图中估读"
+      }
+    },
+    {
+      "name": "几何填充因子",
+      "value": "88%（由几何量计算）",
+      "metric_id": "array_fill_factor",
+      "evidence": {
+        "source_id": "zhang_inkjet_mla_2022",
+        "location": "§2.3 Eq.4及Fig.3b对应正文（r、P、FF）；不是图中估读"
+      }
+    },
+    {
+      "name": "阵列排布 / 基底",
+      "value": "六角排布 / 玻璃",
+      "evidence": {
+        "source_id": "zhang_inkjet_mla_2022",
+        "location": "§2.3 Eq.4及Fig.3b对应正文（r、P、FF）；不是图中估读"
+      }
+    }
+  ],
+  "conditions": "玻璃上固化的SU-8基喷墨阵列；半径为形貌量，非有效光学口径；88%为面积比，由半径和中心距按六角几何公式计算，不是直接实测的光学效率。",
+  "unreported_or_not_verified": "完整行列数、边缘统计口径、该样品独立焦距/NA与串扰未核验；不把四种硅烷样品系列的焦距范围或计算NA拼入本样品。±0.55 μm保留作者记法，未确认该六角样品的统计数量与误差类型。PDF、SI和原图未读。",
+  "checked_on": "2026-11-06",
+  "record_status": "checked_excerpt",
+  "claim_type": "representative_result"
+}
