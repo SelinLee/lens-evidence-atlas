@@ -1,0 +1,116 @@
+{
+  "id": "ma_gamma_defect_visibility",
+  "application": "工业与机器视觉",
+  "application_id": "app_02",
+  "name": "Ma 2026 高反射金属缺陷可见性：γ校正与区域统计",
+  "evidence_type": "科研图像实验：固定ROI统计对照，非最终检测算法验收",
+  "source_ids": [
+    "ma_defect_gamma_2026"
+  ],
+  "parameters": [
+    {
+      "name": "采集配置",
+      "value": "单台MV-CS016-10UM：1440×1080；DLP LightCrafter 4500：1140×912；外触发三步相移。249 fps是文中相机上限描述，不是缺陷检测吞吐率。",
+      "evidence": {
+        "source_id": "ma_defect_gamma_2026",
+        "location": "§4.1 pp.13–14"
+      }
+    },
+    {
+      "name": "γ比较与掩膜",
+      "value": "未校正标作γ=1.00；校正使用标定γ≈1.18，仅该标定值验证；固定缺陷/背景掩膜，在原始浮点图像上算指标。",
+      "evidence": {
+        "source_id": "ma_defect_gamma_2026",
+        "location": "§4.5 pp.21–26及Table 2注"
+      }
+    },
+    {
+      "name": "投影与曝光范围",
+      "value": "预实验曝光初设8000 μs；擦伤Fig.6标注D120（Fringenumber=120）；不是120 lp/mm，逐表曝光未单列。",
+      "evidence": {
+        "source_id": "ma_defect_gamma_2026",
+        "location": "§4.3 p.15；Fig.6 p.25"
+      }
+    },
+    {
+      "name": "划痕Im区域统计(Δμ, σB, σD)",
+      "value": "(6.860, 1.812, 6.718) → (6.435, 1.780, 6.179)（γ=1.00 → 1.18；原表强度尺度）",
+      "evidence": {
+        "source_id": "ma_defect_gamma_2026",
+        "location": "Table 1 p.23"
+      }
+    },
+    {
+      "name": "划痕Im Vsep",
+      "value": "0.986 → 1.001（无量纲；不是概率）",
+      "evidence": {
+        "source_id": "ma_defect_gamma_2026",
+        "location": "Table 1 p.23；定义Eq.(14) p.10"
+      },
+      "metric_id": "defect_separability"
+    },
+    {
+      "name": "划痕Im其他显著性指标",
+      "value": "Vc 0.461 → 0.410；Vsnr 3.786 → 3.615（均无量纲；非镜头MTF）",
+      "evidence": {
+        "source_id": "ma_defect_gamma_2026",
+        "location": "Table 1 p.23；定义Eqs.(11)/(13) pp.9–10"
+      }
+    },
+    {
+      "name": "擦伤Im区域统计(Δμ, σB, σD)",
+      "value": "(12.206, 3.839, 7.885) → (11.608, 3.925, 6.998)（γ=1.00 → 1.18；原表强度尺度）",
+      "evidence": {
+        "source_id": "ma_defect_gamma_2026",
+        "location": "Table 2 p.26"
+      }
+    },
+    {
+      "name": "擦伤Im Vsep",
+      "value": "1.392 → 1.447（无量纲；不是概率）",
+      "evidence": {
+        "source_id": "ma_defect_gamma_2026",
+        "location": "Table 2 p.26；定义Eq.(14) p.10"
+      },
+      "metric_id": "defect_separability"
+    },
+    {
+      "name": "擦伤Im其他显著性指标",
+      "value": "Vc 1.144 → 0.918；Vsnr 3.180 → 2.958（均无量纲；非镜头MTF）",
+      "evidence": {
+        "source_id": "ma_defect_gamma_2026",
+        "location": "Table 2 p.26；定义Eqs.(11)/(13) pp.9–10"
+      }
+    },
+    {
+      "name": "反射通道Ir区域统计(Δμ, σB, σD)",
+      "value": "(16.139, 4.201, 14.610) → (16.425, 4.402, 14.522)（γ=1.00 → 1.18；原表强度尺度）",
+      "evidence": {
+        "source_id": "ma_defect_gamma_2026",
+        "location": "Table 3 p.27"
+      }
+    },
+    {
+      "name": "反射通道Ir Vsep",
+      "value": "1.062 → 1.082（无量纲；不是概率）",
+      "evidence": {
+        "source_id": "ma_defect_gamma_2026",
+        "location": "Table 3 p.27；定义Eq.(14) p.10"
+      },
+      "metric_id": "defect_separability"
+    },
+    {
+      "name": "反射通道Ir其他显著性指标",
+      "value": "Vc 0.265 → 0.217；Vsnr 3.842 → 3.732（均无量纲；非镜头MTF）",
+      "evidence": {
+        "source_id": "ma_defect_gamma_2026",
+        "location": "Table 3 p.27；定义Eqs.(11)/(13) pp.9–10"
+      }
+    }
+  ],
+  "conditions": "一个独立研究；三表/两类缺陷/AC调制与DC反射通道不算三个独立系统。Im为三步相移解调的调制图，Ir为反射图；γ=1.00表示作者未校正基线，不表示硬件被调成理想线性。固定掩膜来自增强图的定位，数值在原始浮点图上算；CLAHE/百分位裁剪只用于显示或定位。§4.5明确原始调制图无硬裁剪，near-overexposure指原始强度帧的工作区间。MTF只作频率传递解释，未收录任何实测MTF或最佳投影密度。",
+  "unreported_or_not_verified": "镜头型号、倍率/NA、WD、物方FOV、工作波长/光谱、像元间距及逐表曝光未明确；缺ROI像素数、原始掩膜、ε数值、σ估计口径、重复样品与置信区间、缺陷物理宽深、漏检/误报率、ROC/AUC和端到端检测速度。正文std与表注variance对σ措辞不一；按Eq.(14)及表值平方代入复现Vsep至印出精度，不据此声称重建原始实验。§4.3写8-bit饱和阈值>255，与编码范围0–255不相容，未明确是否阈值用于扩展中间量，不采用其饱和比例。没有证明统计显著性，也不把作者强调的可分性提升扩为普适γ最优。原始数据仅称可向作者索取，本库未取得。",
+  "record_status": "checked_excerpt",
+  "checked_on": "2026-11-06",
+  "claim_type": "representative_result"
+}

@@ -189,3 +189,24 @@ test('telecentric validation separates reported aggregates, MAE, residuals and i
  assert.ok(!d.bests.some(b=>b.cohort_record_ids?.includes(r.id)));
  assert.ok(d.metrics.find(m=>m.id==='dimensional_measurement_error').definition.includes('标准测量不确定度'));
 });
+
+test('defect separability reproduces all table pairs without treating them as probabilities or independent studies',()=>{
+ const d=load(),r=d.benchmarks.find(r=>r.id==='ma_gamma_defect_visibility'),m=d.metrics.find(m=>m.id==='defect_separability');
+ assert.equal(r.source_ids.length,1);assert.equal(r.parameters.length,12);
+ for(const label of ['划痕Im','擦伤Im','反射通道Ir']){
+  const inputs=r.parameters.find(p=>p.name===label+'区域统计(Δμ, σB, σD)').value.split('（')[0].match(/\d+\.\d+/g).map(Number);
+  const outputs=r.parameters.find(p=>p.name===label+' Vsep').value.match(/\d+\.\d+/g).map(Number);
+  assert.equal(inputs.length,6);assert.equal(outputs.length,2);
+  for(let i=0;i<2;i++){
+   const [delta,bg,defect]=inputs.slice(3*i,3*i+3);
+   assert.ok(Math.abs(delta/Math.hypot(bg,defect)-outputs[i])<0.0005);
+  }
+  assert.ok(outputs[1]>outputs[0]);
+ }
+ assert.ok(m.definition.includes('ε在根号内'));assert.ok(m.definition.includes('可大于1'));
+ assert.ok(r.unreported_or_not_verified.includes('>255'));assert.ok(r.unreported_or_not_verified.includes('置信区间'));
+ assert.ok(r.conditions.includes('不表示硬件被调成理想线性'));
+ assert.ok(!d.bests.some(b=>b.cohort_record_ids?.includes(r.id)));
+ const a=d.applications.find(a=>a.id==='app_02');assert.equal(a.priorities.length,0);assert.equal(a.ranking_status,'not_established');
+ assert.ok(!r.parameters.some(p=>p.metric_id==='mtf'));
+});

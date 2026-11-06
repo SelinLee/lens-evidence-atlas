@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.19",
+    "version": "0.1.20",
     "updated_on": "2026-11-06",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -218,24 +218,31 @@
       "id": "app_02",
       "name": "工业与机器视觉",
       "category": "工业与感知",
-      "summary": "M12示例MTF20频率54–81 lp/mm；高性能HP像圈17.6 mm",
+      "summary": "商业MTF规格与高反射金属缺陷图像实验分开；查询曝光/γ校正、统计可分性与尺寸误差的不同评价口径，未建立统一合格阈值。",
       "metric_ids": [
         "mtf",
         "distortion",
         "working_distance",
-        "fov"
+        "fov",
+        "defect_separability",
+        "dimensional_measurement_error"
       ],
       "priorities": [],
       "ranking_status": "not_established",
-      "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
+      "ranking_gap": "缺陷可见性任务：Ma 2026 §4.5–4.6/Figs.5–6/Tables 1–3对高反射金属的固定区域比较γ校正前后图像。均值对比度与背景归一化响应可以下降，而Vsep略升；作者在该非线性图像分析任务中更倾向用包含两区域波动的Vsep。该证据支持同时核对区域均值、波动、掩膜和处理通道，不能直接推出漏检率改善或行业阈值。§3.6/§4.3讨论系统频率传递与投影密度/曝光的联系，未给实测镜头MTF曲线，也未求最佳投影频率。尺寸测量任务：Li 2015 §4分别比较重投影残差、已知长度/位移及拟合平面残差（样本见远心精密测量页），不能拿一种残差代替整机尺寸准确度。上述任务使用不同输出；MTF、畸变、WD与FOV的综合顺序仍需具体缺陷尺度、容差、照明及检测验证，不建立统一P1/P2。",
       "metric_mapping_status": "editorial_candidate_set",
       "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
       "legacy_priority_proposal": "指定物距/光圈/场点/像方频率的MTF、畸变、照明、稳定性",
       "record_ids": [
         "machine_hp",
-        "machine_m12"
+        "machine_m12",
+        "ma_gamma_defect_visibility"
       ],
-      "updated_on": "2026-11-06"
+      "updated_on": "2026-11-06",
+      "ranking_gap_refs": [
+        "ma_defect_gamma_2026",
+        "li_telecentric_2015"
+      ]
     },
     {
       "id": "app_03",
@@ -1127,6 +1134,27 @@
       "updated_on": "2026-11-06"
     },
     {
+      "id": "defect_separability",
+      "name": "缺陷—背景统计可分性",
+      "english_name": "Defect–Background Statistical Separability (Vsep)",
+      "definition": "这里专指Ma 2026 Eq.(14)：Vsep=|μD−μB|/√(σD²+σB²+ε)。D/B为固定缺陷/背景区域，μ为指定图像通道的均值，σ按标准差口径进入平方项；原文p.23称std但部分表注写variance，术语不一致须保留。ε在根号内，须记录取值及与强度平方一致的尺度。Vsep为无量纲区域统计指标，可大于1；不是检测概率、准确率、漏检率/误报率、AUC或镜头MTF。只在相同掩膜、通道、强度尺度与处理条件下解释大小；未给出普适合格阈值或跨缺陷类别排名。",
+      "unit": "1（无量纲）",
+      "direction": "higher",
+      "required_conditions": [
+        "缺陷与背景ROI/掩膜及像素数",
+        "图像通道、强度尺度与是否增强/裁剪",
+        "μ/σ估计方式、ε取值及尺度",
+        "照明/投影频率、曝光、γ处理",
+        "光谱、采样、倍率、光圈、工作距离与视场",
+        "重复样本数、统计不确定性及独立检测验证"
+      ],
+      "definition_refs": [
+        "ma_defect_gamma_2026"
+      ],
+      "best_interpretation": "区域统计可分性不等于分类性能；不能把单例提高或Vsep>1当作通用验收线。",
+      "updated_on": "2026-11-06"
+    },
+    {
       "id": "dimensional_measurement_error",
       "name": "尺寸/位移测量误差",
       "english_name": "Dimensional / Displacement Measurement Error",
@@ -1957,6 +1985,18 @@
       "kind": "manufacturer",
       "verification": "inherited_v2",
       "doi": null
+    },
+    {
+      "id": "ma_defect_gamma_2026",
+      "title": "Ma 等2026：Stabilizing Defect Visibility Under Overexposure in Fringe-Based Imaging via γ Nonlinearity Analysis",
+      "url": "https://mdpi-res.com/d_attachment/sensors/sensors-26-02032/article_deploy/sensors-26-02032.pdf",
+      "doi": "10.3390/s26072032",
+      "kind": "paper",
+      "source_year": 2026,
+      "location": "§3.3 pp.9–11 Eqs.(11)–(14)；§3.6 p.12；§4.1–4.3 pp.13–16；§4.5–4.6 pp.21–27，Figs.5/6及Tables 1–3；p.29 Data Availability",
+      "evidence_scope": "出版社33页PDF及独立Chrome无头读取PMC13075068正文；核读上述相关段与摘要/结论，实际渲染查看PDF pp.10、13、16、22、23、25–27，核公式、图像掩膜、表格与饱和阈值措辞。未重建Appendix A全部推导或取得按需提供的原始图像；只作表值代入的一致性检查，不声称复现实验、校正算法或全部因果机制。",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
     },
     {
       "id": "metalens_review_2026",
@@ -4228,6 +4268,122 @@
       "application_id": "app_10",
       "checked_on": "2026-10-25",
       "record_status": "inherited_v2",
+      "claim_type": "representative_result"
+    },
+    {
+      "id": "ma_gamma_defect_visibility",
+      "application": "工业与机器视觉",
+      "application_id": "app_02",
+      "name": "Ma 2026 高反射金属缺陷可见性：γ校正与区域统计",
+      "evidence_type": "科研图像实验：固定ROI统计对照，非最终检测算法验收",
+      "source_ids": [
+        "ma_defect_gamma_2026"
+      ],
+      "parameters": [
+        {
+          "name": "采集配置",
+          "value": "单台MV-CS016-10UM：1440×1080；DLP LightCrafter 4500：1140×912；外触发三步相移。249 fps是文中相机上限描述，不是缺陷检测吞吐率。",
+          "evidence": {
+            "source_id": "ma_defect_gamma_2026",
+            "location": "§4.1 pp.13–14"
+          }
+        },
+        {
+          "name": "γ比较与掩膜",
+          "value": "未校正标作γ=1.00；校正使用标定γ≈1.18，仅该标定值验证；固定缺陷/背景掩膜，在原始浮点图像上算指标。",
+          "evidence": {
+            "source_id": "ma_defect_gamma_2026",
+            "location": "§4.5 pp.21–26及Table 2注"
+          }
+        },
+        {
+          "name": "投影与曝光范围",
+          "value": "预实验曝光初设8000 μs；擦伤Fig.6标注D120（Fringenumber=120）；不是120 lp/mm，逐表曝光未单列。",
+          "evidence": {
+            "source_id": "ma_defect_gamma_2026",
+            "location": "§4.3 p.15；Fig.6 p.25"
+          }
+        },
+        {
+          "name": "划痕Im区域统计(Δμ, σB, σD)",
+          "value": "(6.860, 1.812, 6.718) → (6.435, 1.780, 6.179)（γ=1.00 → 1.18；原表强度尺度）",
+          "evidence": {
+            "source_id": "ma_defect_gamma_2026",
+            "location": "Table 1 p.23"
+          }
+        },
+        {
+          "name": "划痕Im Vsep",
+          "value": "0.986 → 1.001（无量纲；不是概率）",
+          "evidence": {
+            "source_id": "ma_defect_gamma_2026",
+            "location": "Table 1 p.23；定义Eq.(14) p.10"
+          },
+          "metric_id": "defect_separability"
+        },
+        {
+          "name": "划痕Im其他显著性指标",
+          "value": "Vc 0.461 → 0.410；Vsnr 3.786 → 3.615（均无量纲；非镜头MTF）",
+          "evidence": {
+            "source_id": "ma_defect_gamma_2026",
+            "location": "Table 1 p.23；定义Eqs.(11)/(13) pp.9–10"
+          }
+        },
+        {
+          "name": "擦伤Im区域统计(Δμ, σB, σD)",
+          "value": "(12.206, 3.839, 7.885) → (11.608, 3.925, 6.998)（γ=1.00 → 1.18；原表强度尺度）",
+          "evidence": {
+            "source_id": "ma_defect_gamma_2026",
+            "location": "Table 2 p.26"
+          }
+        },
+        {
+          "name": "擦伤Im Vsep",
+          "value": "1.392 → 1.447（无量纲；不是概率）",
+          "evidence": {
+            "source_id": "ma_defect_gamma_2026",
+            "location": "Table 2 p.26；定义Eq.(14) p.10"
+          },
+          "metric_id": "defect_separability"
+        },
+        {
+          "name": "擦伤Im其他显著性指标",
+          "value": "Vc 1.144 → 0.918；Vsnr 3.180 → 2.958（均无量纲；非镜头MTF）",
+          "evidence": {
+            "source_id": "ma_defect_gamma_2026",
+            "location": "Table 2 p.26；定义Eqs.(11)/(13) pp.9–10"
+          }
+        },
+        {
+          "name": "反射通道Ir区域统计(Δμ, σB, σD)",
+          "value": "(16.139, 4.201, 14.610) → (16.425, 4.402, 14.522)（γ=1.00 → 1.18；原表强度尺度）",
+          "evidence": {
+            "source_id": "ma_defect_gamma_2026",
+            "location": "Table 3 p.27"
+          }
+        },
+        {
+          "name": "反射通道Ir Vsep",
+          "value": "1.062 → 1.082（无量纲；不是概率）",
+          "evidence": {
+            "source_id": "ma_defect_gamma_2026",
+            "location": "Table 3 p.27；定义Eq.(14) p.10"
+          },
+          "metric_id": "defect_separability"
+        },
+        {
+          "name": "反射通道Ir其他显著性指标",
+          "value": "Vc 0.265 → 0.217；Vsnr 3.842 → 3.732（均无量纲；非镜头MTF）",
+          "evidence": {
+            "source_id": "ma_defect_gamma_2026",
+            "location": "Table 3 p.27；定义Eqs.(11)/(13) pp.9–10"
+          }
+        }
+      ],
+      "conditions": "一个独立研究；三表/两类缺陷/AC调制与DC反射通道不算三个独立系统。Im为三步相移解调的调制图，Ir为反射图；γ=1.00表示作者未校正基线，不表示硬件被调成理想线性。固定掩膜来自增强图的定位，数值在原始浮点图上算；CLAHE/百分位裁剪只用于显示或定位。§4.5明确原始调制图无硬裁剪，near-overexposure指原始强度帧的工作区间。MTF只作频率传递解释，未收录任何实测MTF或最佳投影密度。",
+      "unreported_or_not_verified": "镜头型号、倍率/NA、WD、物方FOV、工作波长/光谱、像元间距及逐表曝光未明确；缺ROI像素数、原始掩膜、ε数值、σ估计口径、重复样品与置信区间、缺陷物理宽深、漏检/误报率、ROC/AUC和端到端检测速度。正文std与表注variance对σ措辞不一；按Eq.(14)及表值平方代入复现Vsep至印出精度，不据此声称重建原始实验。§4.3写8-bit饱和阈值>255，与编码范围0–255不相容，未明确是否阈值用于扩展中间量，不采用其饱和比例。没有证明统计显著性，也不把作者强调的可分性提升扩为普适γ最优。原始数据仅称可向作者索取，本库未取得。",
+      "record_status": "checked_excerpt",
+      "checked_on": "2026-11-06",
       "claim_type": "representative_result"
     },
     {

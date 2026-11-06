@@ -1,0 +1,21 @@
+{
+  "id": "defect_separability",
+  "name": "缺陷—背景统计可分性",
+  "english_name": "Defect–Background Statistical Separability (Vsep)",
+  "definition": "这里专指Ma 2026 Eq.(14)：Vsep=|μD−μB|/√(σD²+σB²+ε)。D/B为固定缺陷/背景区域，μ为指定图像通道的均值，σ按标准差口径进入平方项；原文p.23称std但部分表注写variance，术语不一致须保留。ε在根号内，须记录取值及与强度平方一致的尺度。Vsep为无量纲区域统计指标，可大于1；不是检测概率、准确率、漏检率/误报率、AUC或镜头MTF。只在相同掩膜、通道、强度尺度与处理条件下解释大小；未给出普适合格阈值或跨缺陷类别排名。",
+  "unit": "1（无量纲）",
+  "direction": "higher",
+  "required_conditions": [
+    "缺陷与背景ROI/掩膜及像素数",
+    "图像通道、强度尺度与是否增强/裁剪",
+    "μ/σ估计方式、ε取值及尺度",
+    "照明/投影频率、曝光、γ处理",
+    "光谱、采样、倍率、光圈、工作距离与视场",
+    "重复样本数、统计不确定性及独立检测验证"
+  ],
+  "definition_refs": [
+    "ma_defect_gamma_2026"
+  ],
+  "best_interpretation": "区域统计可分性不等于分类性能；不能把单例提高或Vsep>1当作通用验收线。",
+  "updated_on": "2026-11-06"
+}
