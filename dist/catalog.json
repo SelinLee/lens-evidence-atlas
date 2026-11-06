@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "updated_on": "2026-11-06",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -45,15 +45,17 @@
       "claim_type": "theoretical_bound",
       "display_value": "100% 接收模式重叠效率（理想）",
       "evidence_refs": [
-        "fiber_definition"
+        "fiber_definition",
+        "jovanovic_smf_2017"
       ],
-      "location": "Maximum receiver efficiency段",
-      "scope": "幅度及相位处处匹配的理论接收效率，不含反射吸收等系统损耗",
+      "location": "Ansys：Maximum receiver efficiency及末段；Jovanovic §2.2 Eq.(1)、§2.4",
+      "scope": "归一化复振幅完全匹配的理论接收上限；整体复常数不改变重叠效率（由Eq.1推得）。不含系统损耗，不是任意瞳形或实际透镜都能达到的性能门槛。",
       "conditions": {
         "wavelength": "固定模式与波长",
         "normalization": "归一化复振幅重叠",
         "measurement": "理论界限",
-        "losses": "排除系统传输损耗"
+        "losses": "排除系统传输损耗",
+        "field_model": "同横截面、同偏振标量场；非零有限功率，归一化场形完全匹配"
       },
       "checked_on": "2026-11-06"
     }
@@ -1142,18 +1144,21 @@
       "id": "coupling",
       "name": "单模耦合效率",
       "english_name": "Single-mode Coupling Efficiency",
-      "definition": "归一化复振幅重叠给出模式接收效率；总耦合还需乘系统透射效率。",
+      "definition": "在同一横截面、同一偏振的标量场模型中，接收模式效率 η = |∫ E₁* E₂ dA|² / [(∫ |E₁|² dA)(∫ |E₂|² dA)]；E₁、E₂为复振幅，*表示复共轭。η无量纲，乘100后以%表示。按Ansys的功率参考定义，总耦合效率为系统传输效率乘接收模式效率，须分别说明分母。",
       "unit": "%",
       "direction": "higher",
       "required_conditions": [
         "复振幅和相位",
         "模式、偏振、波长",
-        "接收效率还是总效率"
+        "接收效率还是总效率",
+        "积分横截面与功率参考面",
+        "瞳形、振幅整形及波前"
       ],
       "definition_refs": [
+        "jovanovic_smf_2017",
         "fiber_definition"
       ],
-      "best_interpretation": "模式完全匹配的接收效率理想上限为100%；不含实际反射、吸收等损耗。",
+      "best_interpretation": "100%只是在归一化模式完全匹配时的理论接收上限；由重叠公式可得，两个非零场相差整体复常数仍为完全匹配。有限瞳形、像差和实际损耗会限制可达到的结果，不能据此认定普通透镜或整套光路应达到100%。",
       "updated_on": "2026-11-06"
     },
     {
@@ -1591,9 +1596,9 @@
       "id": "fiber_definition",
       "title": "Ansys OpticStudio: Computing Fiber Coupling",
       "url": "https://ansyshelp.ansys.com/public/Views/Secured/Zemax/v25101/en/OpticStudio_User_Guide/OpticStudio_Help/topics/Computing_Fiber_Coupling.html",
-      "location": "归一化复振幅重叠、最大接收效率及系统损耗段",
+      "location": "Computing Fiber Coupling：normalized overlap integral、偏振分量加权、Maximum receiver efficiency及末段total coupling efficiency",
       "kind": "software_documentation",
-      "evidence_scope": "2025 R1.01原厂公开文档正文核验",
+      "evidence_scope": "2025 R1.01原厂公开文档HTML相关正文于2026-11-06重新核读；本轮未视觉核验公式图片，公式另以Jovanovic 2017 §2.2 Eq.(1)的HTML数学表达交叉核对。",
       "checked_on": "2026-11-06",
       "verification": "checked_excerpt",
       "doi": null,
@@ -1678,8 +1683,8 @@
       "doi": "10.1051/0004-6361/201630351",
       "kind": "paper",
       "source_year": 2017,
-      "location": "作者稿§3.2 p.7；§3.3、§4.1及Fig.8 p.8；§8.4 pp.12–13及Fig.13",
-      "evidence_scope": "arXiv:1706.08821v2（26 Aug 2017）公开作者稿，15页；核读上述正文，实际渲染查看pp.8、12–13图页，未按图估读新数字；期刊A&A 604 A122（2017）。稿件自动排版页眉September 20, 2018不作发表年。",
+      "location": "作者稿§3.2 p.7；§3.3、§4.1及Fig.8 p.8；§8.4 pp.12–13及Fig.13；本轮补读HTML §2.1、§2.2 Eq.(1)、§2.3–2.4及Table 1",
+      "evidence_scope": "arXiv:1706.08821v2（26 Aug 2017）公开作者稿，15页；核读上述正文，实际渲染查看pp.8、12–13图页，未按图估读新数字；期刊A&A 604 A122（2017）。稿件自动排版页眉September 20, 2018不作发表年。 本轮增量：公开HTML https://arxiv.org/html/1706.08821v2 的§2.1–2.4正文、Eq.(1)与Table 1，核对重叠积分、瞳形和总效率边界；未重做原批PDF图页核验，也未独立读取该文引用的1982/1988原作。",
       "checked_on": "2026-11-06",
       "verification": "checked_excerpt"
     },

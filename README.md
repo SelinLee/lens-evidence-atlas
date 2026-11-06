@@ -9,6 +9,7 @@
 - [Dot 维护任务说明（可复用 prompt）](docs/DOT_MAINTENANCE.md)
 - [证据补齐任务清单（状态与验收）](docs/EVIDENCE_BACKLOG.md)
 - [研究日志与续接检查点](docs/RESEARCH_LOG.md)
+- [本机研究维护目标](docs/LOCAL_RESEARCH_GOAL.md)
 - [第一批审计与核验记录](docs/AUDIT_2026-11-06.md)
 
 ## 首版范围

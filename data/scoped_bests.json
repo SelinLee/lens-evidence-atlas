@@ -33,15 +33,17 @@
     "claim_type": "theoretical_bound",
     "display_value": "100% 接收模式重叠效率（理想）",
     "evidence_refs": [
-      "fiber_definition"
+      "fiber_definition",
+      "jovanovic_smf_2017"
     ],
-    "location": "Maximum receiver efficiency段",
-    "scope": "幅度及相位处处匹配的理论接收效率，不含反射吸收等系统损耗",
+    "location": "Ansys：Maximum receiver efficiency及末段；Jovanovic §2.2 Eq.(1)、§2.4",
+    "scope": "归一化复振幅完全匹配的理论接收上限；整体复常数不改变重叠效率（由Eq.1推得）。不含系统损耗，不是任意瞳形或实际透镜都能达到的性能门槛。",
     "conditions": {
       "wavelength": "固定模式与波长",
       "normalization": "归一化复振幅重叠",
       "measurement": "理论界限",
-      "losses": "排除系统传输损耗"
+      "losses": "排除系统传输损耗",
+      "field_model": "同横截面、同偏振标量场；非零有限功率，归一化场形完全匹配"
     },
     "checked_on": "2026-11-06"
   }
