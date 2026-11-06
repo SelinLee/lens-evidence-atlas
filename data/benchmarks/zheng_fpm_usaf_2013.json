@@ -6,7 +6,8 @@
   "evidence_type": "科研实验示例（多角度计算成像，作者报告）",
   "source_ids": [
     "zheng_fpm_2013",
-    "zheng_fpm_correction_2015"
+    "zheng_fpm_correction_2015",
+    "zheng_fpm_si_2015"
   ],
   "parameters": [
     {
@@ -44,7 +45,7 @@
       "metric_id": "resolution"
     },
     {
-      "name": "物方原图/重建采样间隔",
+      "name": "物方原图/重建强度图采样间隔",
       "value": "2.75 μm / 0.275 μm（不是分辨率）",
       "evidence": {
         "source_id": "zheng_fpm_2013",
@@ -61,10 +62,10 @@
     },
     {
       "name": "报告有效视场",
-      "value": "约120 mm²（主文转述SI Fig.S7，未独立复测）",
+      "value": "约120 mm²（作者报告；已核SI Fig.S7选定场位置图）",
       "evidence": {
-        "source_id": "zheng_fpm_2013",
-        "location": "p.742 Fig.2后Digital wavefront correction续段"
+        "source_id": "zheng_fpm_si_2015",
+        "location": "PDF p.11 / 印刷p.10 Fig.S7；PDF p.1更正通知把位置标签明确为视场直径"
       },
       "metric_id": "fov"
     },
@@ -75,10 +76,34 @@
         "source_id": "zheng_fpm_2013",
         "location": "p.744 Methods / Image acquisition and reconstruction第一、末段"
       }
+    },
+    {
+      "name": "重建复场采样间隔",
+      "value": "0.55 μm（复场）；0.275 μm为强度图",
+      "evidence": {
+        "source_id": "zheng_fpm_si_2015",
+        "location": "PDF p.3 / 印刷p.2 修订Note 3末段；不是分辨率或Nyquist极限"
+      }
+    },
+    {
+      "name": "视场检查的位置标签（直径）",
+      "value": "0, 0.6, 1, 1.25 cm（中心及相应直径视场边缘）",
+      "evidence": {
+        "source_id": "zheng_fpm_si_2015",
+        "location": "PDF p.1更正通知；PDF p.11 Fig.S7(b–e)；不是从中心量起的四个半径"
+      }
+    },
+    {
+      "name": "离焦重建线剖面的作者报告对比差",
+      "value": "约30%最小对比差（z = −150, 0, +150 μm）",
+      "evidence": {
+        "source_id": "zheng_fpm_si_2015",
+        "location": "PDF p.10 / 印刷p.9 Fig.S6(d)图注；定义未明确，不当MTF或通用阈值"
+      }
     }
   ],
-  "conditions": "低NA物镜的薄样品非荧光计算成像；632 nm表征。137个照明方向的强度图经LED强度归一化、平场/坏点处理与HDR合成，再分块迭代重建；约65%频谱重叠。半周期/整周期是同一靶标结果的两种口径，原图/重建不是两个独立样本。0.275 μm仅为重建采样，合成NA 0.5不取代物理NA 0.08。2015勘误优先澄清0.78 μm为半周期；正文仍有Rayleigh措辞，本库不据此等同点源间距、PSF FWHM或MTF。约120 mm²为含空间变化像差校正的系统报告，不代表本轮证明全视场均达该靶标分辨率。",
-  "unreported_or_not_verified": "未核验SI Fig.S2/S6/S7和修订Note 3、原始数据或代码；未确定统一对比度判读阈值、全视场MTF、统计重复/不确定性、样品介质与偏振。632 nm FPM与Chu 532 nm双超透镜系统的谱段、处理和瞳条件不同，不能直接互排。未收录无条件最佳、SBP纪录或荧光性能。",
+  "conditions": "低NA物镜的薄样品非荧光计算成像；632 nm表征。137个照明方向的强度图经LED强度归一化、平场/坏点处理与HDR合成，再分块迭代重建；约65%频谱重叠。半周期/整周期是同一靶标结果的两种口径，原图/重建不是两个独立样本。0.275 μm仅为强度图重建采样，SI Note 3另给复场采样0.55 μm，合成NA 0.5不取代物理NA 0.08。2015勘误优先澄清0.78 μm为半周期；正文仍有Rayleigh措辞，本库不据此等同点源间距、PSF FWHM或MTF。约120 mm²为含空间变化像差校正的系统报告；已核SI Fig.S7中心及三个选定离轴位置图，不代表本轮证明全视场均达该靶标分辨率。Fig.S6离焦线剖面与Fig.S7离轴场位置是不同检查，约30%不能移作全场统一对比度门槛。主文、勘误与修订SI是同一研究，四个位置和三种离焦不是独立研究。",
+  "unreported_or_not_verified": "已核验修订SI Fig.S2/S6/S7、Note 3和首页更正通知；原始数据或代码未复现。Fig.S6的contrast difference未明确分母/定义，不能假定为Michelson对比度或MTF；Fig.S7没有提供统一阈值下的密集全视场分辨率/MTF图、统计重复或不确定性，边缘截图不替代逐场定量验证。样品介质与偏振未核实。SI Note 3写λ/(2·NAsyn)=0.78 μm，但本库以632 nm和主文/图S2合成NA0.5代入得0.632 μm；120 mm²/(0.78 μm)²约0.197 billion，与作者0.23 billion也未直接复算一致，原因未消歧，未据此改写作者靶标结果。632 nm FPM与Chu 532 nm双超透镜系统条件不同，不能直接互排；未收录SBP纪录、无条件最佳或荧光性能。",
   "record_status": "checked_excerpt",
   "claim_type": "representative_result",
   "checked_on": "2026-11-06"

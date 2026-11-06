@@ -56,7 +56,7 @@ test('author relative priority and editorial interpretation have distinct labels
  assert.ok(!f.el('coverage').innerHTML.includes('编辑解读'));
  f.location.hash='#app_14/priority';f.run('route()');
  assert.ok(f.el('panel').innerHTML.includes('有出处的编辑性优先级'));assert.ok(!f.el('panel').innerHTML.includes('作者原文明示的限定任务相对次序'));
- f.run('method()');assert.ok(f.el('detailBody').innerHTML.includes('6 类应用有带出处'));assert.ok(f.el('detailBody').innerHTML.includes('1 类应用包含作者'));
+ f.run('method()');assert.ok(f.el('detailBody').innerHTML.includes('5 类应用有带出处'));assert.ok(f.el('detailBody').innerHTML.includes('1 类应用包含作者'));
 });
 
 test('meta-FP record renders raw and reconstructed details with source and gaps',()=>{
@@ -100,11 +100,90 @@ test('Airy search repeats, clears, and preserves independent existing experiment
  }
 });
 
+test('light-sheet task tradeoffs show a source without fabricating P1/P2',()=>{
+ const f=fixture();f.run("selected='app_25';tab='priority';render()");
+ const panel=f.el('panel').innerHTML;
+ assert.ok(panel.includes('任务权衡：没有统一重要性排序'));
+ assert.ok(panel.includes('data-source="shi_lattice_2022"'));
+ assert.equal(panel.includes('class="tier"'),false);
+ f.run("openSource('shi_lattice_2022')");assert.ok(f.el('detailBody').innerHTML.includes('p.9 Discussion'));
+ f.run("tab='sources';render()");assert.ok(f.el('panel').innerHTML.includes('10.1038/s41467-022-32341-w'));
+});
+test('sectioning definition and measured lattice record keep experimental boundaries visible',()=>{
+ const f=fixture();f.run("openMetric('optical_sectioning_width')");
+ for(const text of ['63%','半宽','积分范围','不是系统PSF FWHM','Table S2'])assert.ok(f.el('detailBody').innerHTML.includes(text),text);
+ f.run("openDialog('test',recordCard(records.get('shi_lattice_bead_psf'),true))");
+ for(const text of ['887 / 1075 nm','537 / 559 nm','16.8 μm','不是三个独立来源','0.45/0.35','560 nm/n=1.3属于模拟'])assert.ok(f.el('detailBody').innerHTML.includes(text),text);
+});
+
+test('sectioning definition shows its energy conflict, integration protocol and source',()=>{
+ const f=fixture();f.location.hash='#app_25/metrics';f.run('route()');
+ assert.ok(f.el('panel').innerHTML.includes('光学切片含能量宽度'));
+ f.run("openMetric('optical_sectioning_width')");
+ for(const text of ['63%','67%','全宽/半宽','实测或模型','10.1364/BOE.11.000008','§3.1.1','未读到PDF页面','不建立最佳声明'])assert.ok(f.el('detailBody').innerHTML.includes(text),text);
+ assert.equal(f.el('detail').open,true);f.el('detail').close();assert.equal(f.el('detail').open,false);
+ f.run("openMetric('optical_sectioning_width')");assert.equal(f.el('detail').open,true);
+ f.location.hash='#app_25/sources';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('Remacha'));
+ f.location.hash='#app_25/priority';f.run('route()');assert.ok(!f.el('panel').innerHTML.includes('光学切片含能量宽度'));
+});
+test('sectioning search repeats and clears without converting older measurements',()=>{
+ const f=fixture();for(const query of ['含能量','Remacha','no_sectioning_match_987','含能量','']){
+  f.el('search').value=query;f.run('renderList()');
+  assert.equal(f.el('resultCount').textContent,query==='no_sectioning_match_987'?'0 / 33 类应用':query?'1 / 33 类应用':'33 / 33 类应用');
+ }
+ f.location.hash='#app_25/best';f.run('route()');
+ for(const text of ['Luo 2025','Battistella 2022','7.8 ± 1.3 μm'])assert.ok(f.el('panel').innerHTML.includes(text));
+ assert.ok(!f.el('panel').innerHTML.includes('Remacha'));
+});
+
+test('MLAG spacing definition and dual reported/recomputed evidence render with caveats',()=>{
+ const f=fixture();f.run("openMetric('array_spacing_cv')");
+ for(const word of ['10.3390/s25154833','不是强度均匀性','样本数','标准差估计口径'])assert.ok(f.el('detailBody').innerHTML.includes(word),word);
+ f.location.hash='#app_14/best';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('Zhao 2025'));
+ for(let i=0;i<2;i++){
+  f.run("openDialog('test',recordCard(records.get('zhao_mlag_spacing'),true))");
+  for(const word of ['1.25%','1.11%','1.12965%','1.05222%','6组配对','蓝绿复合','638 nm','Table 1','所核验段落未明确交代CV是否使用更多未列出数据'])assert.ok(f.el('detailBody').innerHTML.includes(word),word);
+  assert.equal(f.el('detail').open,true);f.el('detail').close();assert.equal(f.el('detail').open,false);
+ }
+ f.location.hash='#app_14/sources';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('PMC12349526'));
+});
+test('MLAG query repeats, clears, and retains existing independent evidence',()=>{
+ const f=fixture();
+ for(const query of ['Zhao 2025','阵列光栅','unmatched_spacing_987','Zhao 2025','']){
+  f.el('search').value=query;f.run('renderList()');assert.equal(f.el('resultCount').textContent,query==='unmatched_spacing_987'?'0 / 33 类应用':query?'1 / 33 类应用':'33 / 33 类应用');
+ }
+ f.location.hash='#app_14/best';f.run('route()');for(const word of ['Liu','Zhang 2022','Richards'])assert.ok(f.el('panel').innerHTML.includes(word),word);
+ f.location.hash='#app_25/best';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('Battistella'));
+});
+
+test('LEOF loss and definition render all parameters, directions and evidence boundaries',()=>{
+ const f=fixture();f.location.hash='#app_22/best';f.run('route()');
+ assert.ok(f.el('panel').innerHTML.includes('Woźniak 2026'));
+ for(let i=0;i<2;i++){
+  f.run("openDialog('test',recordCard(records.get('wozniak_leof_repeatability'),true))");
+  for(const text of ['0.76 dB','0.39 dB','约0.67 dB','0.40 dB','19, 22, 23, 22, 22','28, 23, 26, 26, 30','100次','§4.2','1550 nm','Fig.8b/9b','功率校准面','不是允许偏移公差'])assert.ok(f.el('detailBody').innerHTML.includes(text),text);
+  f.run("$('detail').close()");assert.equal(f.el('detail').open,false);
+ }
+ f.run("openMetric('insertion_loss')");
+ for(const text of ['−10 log10','几何平均','10.3390/ma19051013','p.6'])assert.ok(f.el('detailBody').innerHTML.includes(text),text);
+ f.location.hash='#app_22/sources';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('10.3390/ma19051013'));
+});
+test('LEOF query repeats, clears, and preserves previous evidence',()=>{
+ const f=fixture();
+ for(const query of ['Woźniak','LEOF','unmatched_leof_987','Woźniak','']){
+  f.el('search').value=query;f.run('renderList()');
+  assert.equal(f.el('resultCount').textContent,query==='unmatched_leof_987'?'0 / 33 类应用':query?'1 / 33 类应用':'33 / 33 类应用');
+ }
+ for(const [app,record] of [['app_22','He 2022'],['app_25','Battistella 2022'],['app_04','Chu 2025'],['app_14','Liu']]){
+  f.location.hash='#'+app+'/best';f.run('route()');assert.ok(f.el('panel').innerHTML.includes(record));
+ }
+});
+
 test('FPM correction, all parameters and primary sources remain visible across dialogs',()=>{
  const f=fixture();f.location.hash='#app_04/best';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('Zheng 2013'));
  for(let i=0;i<2;i++){
   f.run("openDialog('test',recordCard(records.get('zheng_fpm_usaf_2013'),true))");
-  for(const text of ['632 nm','约20 nm','NA 0.08','0.5（合成','半周期0.78 μm','整周期1.56 μm','2.75 μm / 0.275 μm','137个LED','中央49个各3次','120 mm²','约3 min / 约10 min','PDF p.8','10.1038/nphoton.2015.148','SI Fig.S2/S6/S7'])assert.ok(f.el('detailBody').innerHTML.includes(text),text);
+  for(const text of ['632 nm','约20 nm','NA 0.08','0.5（合成','半周期0.78 μm','整周期1.56 μm','2.75 μm / 0.275 μm','137个LED','中央49个各3次','120 mm²','约3 min / 约10 min','PDF p.8','10.1038/nphoton.2015.148','SI Fig.S2/S6/S7','0.55 μm','0, 0.6, 1, 1.25 cm','约30%','0.632 μm','0.197 billion','Michelson'])assert.ok(f.el('detailBody').innerHTML.includes(text),text);
   assert.equal(f.el('detail').open,true);f.run("$('detail').close()");assert.equal(f.el('detail').open,false);
  }
  f.run("openMetric('resolution')");assert.ok(f.el('detailBody').innerHTML.includes('整周期（线对周期）'));
