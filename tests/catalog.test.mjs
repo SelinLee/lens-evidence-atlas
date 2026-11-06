@@ -49,3 +49,9 @@ test('TECF combined experiment does not become a single-axis tolerance or model'
  assert.ok(!b.parameters.some(p=>/NA|焦距/.test(p.name)));
  assert.ok(!d.bests.some(x=>x.cohort_record_ids?.includes(b.id)));
 });
+
+
+test('application ranking status cannot mislabel its evidence',()=>{
+ const d=load(),a=d.applications.find(a=>a.id==='app_04');a.ranking_status='editorial_synthesis';assert.throws(()=>validate(d),/ranking status must match/);
+ const e=load(),b=e.applications.find(a=>a.id==='app_04');b.priorities=[];assert.throws(()=>validate(e),/ranked application needs priorities/);
+});
