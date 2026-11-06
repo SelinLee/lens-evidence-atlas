@@ -2,7 +2,7 @@
   "id": "sheet_thickness",
   "name": "光片厚度",
   "english_name": "Light-sheet Thickness",
-  "definition": "照明横截面的强度宽度；FWHM与1/e²宽度分别定义。多峰光束须说明取首主峰还是整体轮廓，首主峰FWHM不表示旁瓣总能量。它与检测PSF共同影响系统轴向分辨，不能直接当作系统PSF。",
+  "definition": "照明横截面的强度宽度；FWHM、1/e与1/e²宽度分别定义。多峰光束须说明取首主峰还是整体轮廓，首主峰FWHM不表示旁瓣总能量。它与检测PSF共同影响系统轴向分辨，不能直接当作系统PSF。 Remacha §3.1.1的主峰口径为峰值1/e≈37%处宽度；含能量切片宽度另列，不能由多峰FWHM直接换算。",
   "unit": "μm",
   "direction": "lower",
   "required_conditions": [
@@ -13,7 +13,8 @@
   ],
   "definition_refs": [
     "ls_comparison",
-    "battistella_airy_2022"
+    "battistella_airy_2022",
+    "remacha_sectioning_2020"
   ],
   "best_interpretation": "没有跨应用统一最优值",
   "updated_on": "2026-11-06"
