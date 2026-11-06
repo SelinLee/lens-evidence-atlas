@@ -259,3 +259,18 @@ test('OCT query shows source conflicts and different measurement domains without
  f.location.hash='#app_23/best';f.run('route()');for(const id of ['oct36','spaide_oct_lateral_2022'])assert.ok(f.el('panel').innerHTML.includes('data-record="'+id+'"'));
  f.el('rankedOnly').checked=true;f.run('renderList()');assert.ok(!f.el('appList').innerHTML.includes('data-app="app_23"'));
 });
+
+test('thermal query separates NETD, source-size effect and temperature accuracy with traceable conditions',()=>{
+ const f=fixture();f.location.hash='#app_10/priority';f.run('route()');
+ assert.ok(f.el('panel').innerHTML.includes('定量辐射测温'));
+ for(const id of ['koenig_thermal_2020','flir_a700_science_24'])assert.ok(f.el('panel').innerHTML.includes('data-source="'+id+'"'));
+ assert.ok(!f.el('panel').innerHTML.includes('class="tier"'));
+ f.run("openMetric('netd')");for(const word of ['Eq.(2)','1/√2','不是N−1','正态分布'])assert.ok(f.el('detailBody').innerHTML.includes(word),word);
+ f.run("openMetric('size_of_source_effect')");assert.ok(f.el('detailBody').innerHTML.includes('不是负得越多越好'));
+ for(const [id,words] of [['koenig_thermal_netd_2020',['11.7 / 73.5 / 34.6','9.6 / 9.1 / 13.0','U(k=2)','目测估读']],['flir_a700_24_science',['&lt;25 mK','+30°C','1.04','环境15–35°C']]]){
+  f.run(`openDialog('test',recordCard(records.get('${id}'),true))`);for(const word of words)assert.ok(f.el('detailBody').innerHTML.includes(word),word);
+ }
+ f.location.hash='#app_10/best';f.run('route()');for(const id of ['lwir_requirements','lwir_product','koenig_thermal_netd_2020','flir_a700_24_science'])assert.ok(f.el('panel').innerHTML.includes('data-record="'+id+'"'));
+ for(const q of ['König 2020','A700','thermal_unmatched_977','']){f.el('search').value=q;f.run('renderList()');assert.equal(f.el('resultCount').textContent,q==='thermal_unmatched_977'?'0 / 33 类应用':q?'1 / 33 类应用':'33 / 33 类应用');}
+ f.el('rankedOnly').checked=true;f.run('renderList()');assert.ok(!f.el('appList').innerHTML.includes('data-app="app_10"'));
+});

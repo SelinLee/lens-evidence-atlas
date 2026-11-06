@@ -1,0 +1,100 @@
+{
+  "id": "flir_a700_24_science",
+  "application": "长波红外热成像",
+  "application_id": "app_10",
+  "name": "FLIR A700 24° Science Kit（85903-0102）",
+  "evidence_type": "原厂单配置规格声明；非独立实测",
+  "source_ids": [
+    "flir_a700_science_24"
+  ],
+  "parameters": [
+    {
+      "name": "NETD",
+      "value": "<25 mK，24°镜头，目标温度+30°C",
+      "evidence": {
+        "source_id": "flir_a700_science_24",
+        "location": "Imaging and optical data / Thermal sensitivity (NETD)"
+      },
+      "metric_id": "netd"
+    },
+    {
+      "name": "探测器与采样",
+      "value": "非制冷微测辐射热计，640×480，像元12 μm",
+      "evidence": {
+        "source_id": "flir_a700_science_24",
+        "location": "Imaging and optical data / Infrared resolution；Detector data"
+      }
+    },
+    {
+      "name": "光谱",
+      "value": "7.5–14 μm",
+      "evidence": {
+        "source_id": "flir_a700_science_24",
+        "location": "Detector data / Focal plane array/spectral range"
+      }
+    },
+    {
+      "name": "F数",
+      "value": "规格f-number行1.04；产品标题称f/1.0，两种原文表述分别保留",
+      "evidence": {
+        "source_id": "flir_a700_science_24",
+        "location": "标题；Imaging and optical data / f-number"
+      },
+      "metric_id": "fnumber"
+    },
+    {
+      "name": "视场",
+      "value": "24°×18°",
+      "evidence": {
+        "source_id": "flir_a700_science_24",
+        "location": "Imaging and optical data / Field of view"
+      },
+      "metric_id": "fov"
+    },
+    {
+      "name": "焦距",
+      "value": "18 mm",
+      "evidence": {
+        "source_id": "flir_a700_science_24",
+        "location": "Imaging and optical data / Focal length"
+      }
+    },
+    {
+      "name": "单像素角采样",
+      "value": "IFOV 0.65 mrad/pixel；不是实测PSF宽度或两点可分辨率",
+      "evidence": {
+        "source_id": "flir_a700_science_24",
+        "location": "Imaging and optical data / Spatial resolution (IFOV)"
+      }
+    },
+    {
+      "name": "最低调焦距离",
+      "value": "24°镜头0.3 m；启用MSX时0.5 m，不混为同一条件",
+      "evidence": {
+        "source_id": "flir_a700_science_24",
+        "location": "Imaging and optical data / Minimum focus distance及with MSX"
+      }
+    },
+    {
+      "name": "图像频率",
+      "value": "30 Hz；不等于已明确的噪声带宽或曝光时间",
+      "evidence": {
+        "source_id": "flir_a700_science_24",
+        "location": "Imaging and optical data / Image frequency"
+      }
+    },
+    {
+      "name": "测温accuracy的限定范围",
+      "value": "环境15–35°C，选择−20–120°C量程：目标−20–100°C时±2°C，100–120°C时±2%；不是NETD，也未给覆盖因子。",
+      "evidence": {
+        "source_id": "flir_a700_science_24",
+        "location": "Measurement / Object temperature range and accuracy"
+      }
+    }
+  ],
+  "conditions": "原厂P/N85903-0102、Rev.98866、2024-08-21版；仅本24° Science Kit配置。NETD声明固定+30°C，accuracy另有环境/量程条件。其他量程与可选镜头不得拼成一个最优配置；产品标题f/1.0和表内1.04不可无说明替换。",
+  "unreported_or_not_verified": "未独立测量；NETD的帧数、像素聚合、积分时间、时间滤波、噪声带宽和批次不确定度未完整给出；accuracy不是已知k=2扩展不确定度。未给此配置全场MTF、SSE曲线与独立校准预算。未核当前销售状态或页面标准列表的认证文件；相同30°C不足以与PTB相机排名，不能当行业合格门槛。",
+  "record_status": "checked_excerpt",
+  "checked_on": "2026-11-06",
+  "claim_type": "representative_result"
+}

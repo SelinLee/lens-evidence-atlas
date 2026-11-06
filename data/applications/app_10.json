@@ -2,22 +2,30 @@
   "id": "app_10",
   "name": "长波红外热成像",
   "category": "红外与光谱",
-  "summary": "工程例8–12 μm、f/1.3、T>90%、29.4 lp/mm中心MTF>0.45",
+  "summary": "区分温差灵敏度、光源尺寸效应与测温不确定度；提供PTB实验和原厂单配置参考",
   "metric_ids": [
     "mtf",
     "fnumber",
     "transmission",
-    "fov"
+    "fov",
+    "netd",
+    "size_of_source_effect"
   ],
   "priorities": [],
   "ranking_status": "not_established",
-  "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
+  "ranking_gap": "定量辐射测温：König 2020 §§4.1/5.2区分NETD时域噪声、空间非均匀性、SSE与总校准预算；低NETD不能替代小测温误差。源尺寸、ROI和校准几何须接近使用场景，高质量腔源条件下相机SSE贡献突出，但不推广为所有场景第一优先。FLIR原厂把NETD与accuracy分别列出且条件不同。镜头MTF/通光与整机噪声、校准共同评价；原文未给通用P1/P2或全行业mK门槛。",
   "metric_mapping_status": "editorial_candidate_set",
   "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
   "legacy_priority_proposal": "探测器匹配MTF、透过率、F数、无热化、系统NETD",
   "record_ids": [
     "lwir_requirements",
-    "lwir_product"
+    "lwir_product",
+    "koenig_thermal_netd_2020",
+    "flir_a700_24_science"
   ],
-  "updated_on": "2026-11-06"
+  "updated_on": "2026-11-06",
+  "ranking_gap_refs": [
+    "koenig_thermal_2020",
+    "flir_a700_science_24"
+  ]
 }

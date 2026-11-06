@@ -278,3 +278,25 @@ test('MGL supplement corrects calibration scope without turning calibration stat
  assert.ok(!d.bests.some(b=>b.cohort_record_ids?.includes(r.id)));
  assert.ok(d.applications.find(a=>a.id==='app_08').ranking_gap.includes('轴上校准近似设计全场'));
 });
+
+test('thermal evidence preserves all NETD table cells, temperature conditions and distinct uncertainty domains',()=>{
+ const d=load(),r=d.benchmarks.find(b=>b.id==='koenig_thermal_netd_2020');
+ const cells=[['30.0°C NETD方法A',[11.7,73.5,34.6]],['30.0°C NETD方法B',[11.8,68.9,32.5]],['100.0°C NETD方法A',[12.5,14,13.9]],['100.0°C NETD方法B',[9.6,9.1,13]]];
+ for(const [name,expected] of cells){
+  const p=r.parameters.find(p=>p.name===name);
+  assert.deepEqual(p.value.split('：')[1].match(/\d+(?:\.\d+)?/g).map(Number),expected);
+  assert.equal(p.metric_id,'netd');assert.ok(p.evidence.location.includes('Table5'));
+ }
+ for(const p of r.parameters.filter(p=>p.name.includes('扩展校准不确定度'))){assert.equal(p.metric_id,undefined);assert.ok(p.value.includes('U(k=2)'));}
+ assert.ok(r.parameters.find(p=>p.name==='SSE端点图中估读').value.includes('目测估读'));
+ assert.ok(r.conditions.includes('不是')||r.conditions.includes('不算三个独立研究'));
+ assert.ok(r.unreported_or_not_verified.includes('0.127 ms属于NU描述'));
+ const f=d.benchmarks.find(b=>b.id==='flir_a700_24_science');
+ assert.ok(f.parameters.find(p=>p.metric_id==='netd').value.includes('+30°C'));
+ assert.ok(f.parameters.find(p=>p.metric_id==='fnumber').value.includes('1.04'));
+ assert.ok(f.parameters.find(p=>p.name==='测温accuracy的限定范围').value.includes('环境15–35°C'));
+ for(const id of ['lwir_requirements','lwir_product'])assert.equal(d.benchmarks.find(b=>b.id===id).checked_on,'2026-10-25');
+ assert.equal(d.metrics.find(m=>m.id==='size_of_source_effect').direction,'lower_abs');
+ assert.ok(d.metrics.find(m=>m.id==='netd').definition.includes('分母不是N−1'));
+ assert.ok(!d.bests.some(b=>b.application_id==='app_10'));
+});

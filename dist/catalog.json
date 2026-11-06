@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.23",
+    "version": "0.1.24",
     "updated_on": "2026-11-06",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -461,24 +461,32 @@
       "id": "app_10",
       "name": "长波红外热成像",
       "category": "红外与光谱",
-      "summary": "工程例8–12 μm、f/1.3、T>90%、29.4 lp/mm中心MTF>0.45",
+      "summary": "区分温差灵敏度、光源尺寸效应与测温不确定度；提供PTB实验和原厂单配置参考",
       "metric_ids": [
         "mtf",
         "fnumber",
         "transmission",
-        "fov"
+        "fov",
+        "netd",
+        "size_of_source_effect"
       ],
       "priorities": [],
       "ranking_status": "not_established",
-      "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
+      "ranking_gap": "定量辐射测温：König 2020 §§4.1/5.2区分NETD时域噪声、空间非均匀性、SSE与总校准预算；低NETD不能替代小测温误差。源尺寸、ROI和校准几何须接近使用场景，高质量腔源条件下相机SSE贡献突出，但不推广为所有场景第一优先。FLIR原厂把NETD与accuracy分别列出且条件不同。镜头MTF/通光与整机噪声、校准共同评价；原文未给通用P1/P2或全行业mK门槛。",
       "metric_mapping_status": "editorial_candidate_set",
       "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
       "legacy_priority_proposal": "探测器匹配MTF、透过率、F数、无热化、系统NETD",
       "record_ids": [
         "lwir_requirements",
-        "lwir_product"
+        "lwir_product",
+        "koenig_thermal_netd_2020",
+        "flir_a700_24_science"
       ],
-      "updated_on": "2026-11-06"
+      "updated_on": "2026-11-06",
+      "ranking_gap_refs": [
+        "koenig_thermal_2020",
+        "flir_a700_science_24"
+      ]
     },
     {
       "id": "app_11",
@@ -1435,6 +1443,25 @@
       "updated_on": "2026-11-06"
     },
     {
+      "id": "netd",
+      "name": "噪声等效温差（NETD）",
+      "english_name": "Noise-Equivalent Temperature Difference",
+      "definition": "在规定辐射温度、光学配置、采集与处理条件下，高频时域噪声对应的等效温差，信号变化等于噪声（SNR=1）。König 2020 §4.1.3的方法A使用逐像素100连续帧；方法B的Eq.(2)为NETD=(1/√2)√[Σ(ΔTij−平均ΔT)²/N]，ΔTij为两连续帧对应像素的温度差，N=nh nv，按像素求和，分母不是N−1。1/√2的解释要求两帧等方差且噪声不相关（编辑推导）；帧间相关、漂移和滤波可改变估计。单个NETD不是温度读数偏差、总测量不确定度、空间分辨率或检测任务合格线。原文k=1对应68.3%的说法需正态分布前提；不能推广到任意噪声分布。",
+      "unit": "mK / K",
+      "direction": "lower",
+      "required_conditions": [
+        "参考辐射温度、光谱及光学配置（含F数）",
+        "实际积分时间、帧率、噪声带宽与滤波/平均",
+        "预热、NUC、环境及相机内部温度",
+        "时域/两帧方法、帧数、ROI、像素聚合及不确定度"
+      ],
+      "definition_refs": [
+        "koenig_thermal_2020"
+      ],
+      "best_interpretation": "同条件下较低表示时域温差灵敏度较好；不能单凭NETD排序镜头或推断测温准确度",
+      "updated_on": "2026-11-06"
+    },
+    {
       "id": "oct_axial",
       "name": "OCT轴向分辨率",
       "english_name": "OCT Axial Resolution",
@@ -1574,6 +1601,25 @@
         "remacha_sectioning_2020"
       ],
       "best_interpretation": "没有跨应用统一最优值",
+      "updated_on": "2026-11-06"
+    },
+    {
+      "id": "size_of_source_effect",
+      "name": "光源尺寸效应（SSE）",
+      "english_name": "Size-of-Source Effect",
+      "definition": "保持稳定参考辐射源温度，改变其可见辐射区域大小，观察中心测量点或固定小ROI的辐亮度/温度读数变化；镜头散射、反射等会使周边辐射影响中心读数。沿用König 2020 §4.1.4/Fig.8的温差曲线口径：ΔT(D)=T示值(D)−T示值(D参考)，随源口径D、距离及ROI报告；这是该文读数定义的编辑符号化。其他来源若用辐亮度比值，须另列归一化方式。此处关注偏移绝对值，不是负得越多越好。SSE不同于几何畸变、MTF、NETD或纯镜头透过率；是光学与测温系统共同表现。",
+      "unit": "K / °C温差",
+      "direction": "lower_abs",
+      "required_conditions": [
+        "源辐射温度、光谱、均匀性及周围辐射",
+        "源口径扫描范围、参考口径及测量距离",
+        "中心ROI大小、像素采样和受照区域",
+        "镜头、调焦、校准及温差/辐亮度归一化口径"
+      ],
+      "definition_refs": [
+        "koenig_thermal_2020"
+      ],
+      "best_interpretation": "固定条件下中心读数随源尺寸变化越小越好；没有跨系统统一口径或通用温差门槛",
       "updated_on": "2026-11-06"
     },
     {
@@ -1817,6 +1863,18 @@
       "source_year": null
     },
     {
+      "id": "flir_a700_science_24",
+      "title": "FLIR A700 24° f/1.0 Professional Science Kit：85903-0102，Rev.98866",
+      "url": "https://support.flir.com/dsdownload/assets/85903-0102-en-us.html",
+      "source_year": 2024,
+      "location": "原厂HTML：Rev.98866/Last modified2024-08-21；Imaging and optical data、Detector data、Measurement表",
+      "evidence_scope": "实际读取原厂HTML相关三表，并以独立Google Chrome无头加载复核DOM；仅收录该P/N及修订配置的厂商声明，未独立测量。标题f/1.0与f-number行1.04分别保留。未将表中环境/EMC标准列表当本批已核认证，未核当前销售/库存状态。",
+      "kind": "manufacturer",
+      "doi": null,
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
+    },
+    {
       "id": "fnumber_definition",
       "title": "System Throughput, f/#, and Numerical Aperture",
       "url": "https://www.edmundoptics.com/knowledge-center/application-notes/imaging/lens-iris-aperture-setting/",
@@ -1910,6 +1968,18 @@
       "source_year": 2017,
       "location": "作者稿§2.1–2.4、Eq.(1)，§2.3–2.4 pp.5–6及Table 1；§3.2 p.7；§3.3、§4.1及Fig.8 p.8；§8.4 pp.12–13及Fig.13",
       "evidence_scope": "arXiv:1706.08821v2（26 Aug 2017）公开作者稿，15页；此前核读相关正文和HTML §2.1–2.4/Eq.(1)/Table 1，实际渲染查看pp.8、12–13。本批另实际查看PDF pp.5–7，核对Table 1的无像差模拟/整形元件损耗预算和§3.2的焦比匹配假设；不将新PIAA预测当实测，不从图估读新数字。期刊A&A 604 A122（2017）；稿件自动排版页眉September 20, 2018不作发表年。未独立读取该文引用的1982/1988原作。",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
+    },
+    {
+      "id": "koenig_thermal_2020",
+      "title": "König et al. 2020: Metrological characterization and calibration of thermographic cameras for quantitative temperature measurement",
+      "url": "https://jsss.copernicus.org/articles/9/425/2020/jsss-9-425-2020.pdf",
+      "source_year": 2020,
+      "location": "JSSS 9:425–442；§§2–4.1.5/Eq.(2)/Tables2,5/Fig.8；§5.2/Table13；§6",
+      "evidence_scope": "出版社原始18页PDF；读摘要/Introduction、§§2–4.1.5相关段、§5.2不确定度说明及§6；实际查看PDF pp.4/7/8/16（印刷428/431/432/440）。未系统核全部DRM、§5.1校准表或复现实验。PTB同一团队测试三个匿名商业相机，不是三篇独立研究或已知三个厂商。没有读取VDI/VDE标准全文，不将论文中的历史标准说明当现行规范。",
+      "kind": "peer_reviewed_paper",
+      "doi": "10.5194/jsss-9-425-2020",
       "checked_on": "2026-11-06",
       "verification": "checked_excerpt"
     },
@@ -3333,6 +3403,106 @@
       "claim_type": "representative_result"
     },
     {
+      "id": "flir_a700_24_science",
+      "application": "长波红外热成像",
+      "application_id": "app_10",
+      "name": "FLIR A700 24° Science Kit（85903-0102）",
+      "evidence_type": "原厂单配置规格声明；非独立实测",
+      "source_ids": [
+        "flir_a700_science_24"
+      ],
+      "parameters": [
+        {
+          "name": "NETD",
+          "value": "<25 mK，24°镜头，目标温度+30°C",
+          "evidence": {
+            "source_id": "flir_a700_science_24",
+            "location": "Imaging and optical data / Thermal sensitivity (NETD)"
+          },
+          "metric_id": "netd"
+        },
+        {
+          "name": "探测器与采样",
+          "value": "非制冷微测辐射热计，640×480，像元12 μm",
+          "evidence": {
+            "source_id": "flir_a700_science_24",
+            "location": "Imaging and optical data / Infrared resolution；Detector data"
+          }
+        },
+        {
+          "name": "光谱",
+          "value": "7.5–14 μm",
+          "evidence": {
+            "source_id": "flir_a700_science_24",
+            "location": "Detector data / Focal plane array/spectral range"
+          }
+        },
+        {
+          "name": "F数",
+          "value": "规格f-number行1.04；产品标题称f/1.0，两种原文表述分别保留",
+          "evidence": {
+            "source_id": "flir_a700_science_24",
+            "location": "标题；Imaging and optical data / f-number"
+          },
+          "metric_id": "fnumber"
+        },
+        {
+          "name": "视场",
+          "value": "24°×18°",
+          "evidence": {
+            "source_id": "flir_a700_science_24",
+            "location": "Imaging and optical data / Field of view"
+          },
+          "metric_id": "fov"
+        },
+        {
+          "name": "焦距",
+          "value": "18 mm",
+          "evidence": {
+            "source_id": "flir_a700_science_24",
+            "location": "Imaging and optical data / Focal length"
+          }
+        },
+        {
+          "name": "单像素角采样",
+          "value": "IFOV 0.65 mrad/pixel；不是实测PSF宽度或两点可分辨率",
+          "evidence": {
+            "source_id": "flir_a700_science_24",
+            "location": "Imaging and optical data / Spatial resolution (IFOV)"
+          }
+        },
+        {
+          "name": "最低调焦距离",
+          "value": "24°镜头0.3 m；启用MSX时0.5 m，不混为同一条件",
+          "evidence": {
+            "source_id": "flir_a700_science_24",
+            "location": "Imaging and optical data / Minimum focus distance及with MSX"
+          }
+        },
+        {
+          "name": "图像频率",
+          "value": "30 Hz；不等于已明确的噪声带宽或曝光时间",
+          "evidence": {
+            "source_id": "flir_a700_science_24",
+            "location": "Imaging and optical data / Image frequency"
+          }
+        },
+        {
+          "name": "测温accuracy的限定范围",
+          "value": "环境15–35°C，选择−20–120°C量程：目标−20–100°C时±2°C，100–120°C时±2%；不是NETD，也未给覆盖因子。",
+          "evidence": {
+            "source_id": "flir_a700_science_24",
+            "location": "Measurement / Object temperature range and accuracy"
+          }
+        }
+      ],
+      "conditions": "原厂P/N85903-0102、Rev.98866、2024-08-21版；仅本24° Science Kit配置。NETD声明固定+30°C，accuracy另有环境/量程条件。其他量程与可选镜头不得拼成一个最优配置；产品标题f/1.0和表内1.04不可无说明替换。",
+      "unreported_or_not_verified": "未独立测量；NETD的帧数、像素聚合、积分时间、时间滤波、噪声带宽和批次不确定度未完整给出；accuracy不是已知k=2扩展不确定度。未给此配置全场MTF、SSE曲线与独立校准预算。未核当前销售状态或页面标准列表的认证文件；相同30°C不足以与PTB相机排名，不能当行业合格门槛。",
+      "record_status": "checked_excerpt",
+      "checked_on": "2026-11-06",
+      "claim_type": "representative_result"
+    },
+    {
       "id": "gastroscope",
       "application": "白光宏观内窥观察",
       "name": "Olympus GIF-XP190N",
@@ -3633,6 +3803,135 @@
       "checked_on": "2026-10-25",
       "record_status": "inherited_v2",
       "claim_type": "standard_requirement"
+    },
+    {
+      "id": "koenig_thermal_netd_2020",
+      "application": "长波红外热成像",
+      "application_id": "app_10",
+      "name": "König 2020 PTB：三匿名热像仪NETD与校准研究",
+      "evidence_type": "原始测量研究；厂商平台描述、实测NETD、图中估读和不确定度估计逐项区分",
+      "source_ids": [
+        "koenig_thermal_2020"
+      ],
+      "parameters": [
+        {
+          "name": "相机1（作者转述厂商）",
+          "value": "MCT制冷80 K；7.7–9.3 μm；25 mm，FOV22°×16°；320×256，50 Hz",
+          "evidence": {
+            "source_id": "koenig_thermal_2020",
+            "location": "p.428 Table2/§2.2"
+          }
+        },
+        {
+          "name": "相机2（作者转述厂商）",
+          "value": "非制冷微测辐射热计；8–14 μm；18 mm，FOV34°×26°；640×480，50 Hz",
+          "evidence": {
+            "source_id": "koenig_thermal_2020",
+            "location": "p.428 Table2/§2.2"
+          }
+        },
+        {
+          "name": "相机3（作者转述厂商）",
+          "value": "非制冷微测辐射热计；7.5–13 μm；10.5 mm，FOV60°×45°；640×480，32 Hz",
+          "evidence": {
+            "source_id": "koenig_thermal_2020",
+            "location": "p.428 Table2/§2.2"
+          }
+        },
+        {
+          "name": "厂商NETD对照（非本次实测）",
+          "value": "相机1/2/3：<25 mK@25°C / <80 mK@30°C / 75 mK（目标温度未列）；不能忽略与30°C实验的条件差异",
+          "evidence": {
+            "source_id": "koenig_thermal_2020",
+            "location": "p.428 Table2"
+          },
+          "metric_id": "netd"
+        },
+        {
+          "name": "30.0°C NETD方法A",
+          "value": "相机1/2/3：11.7 / 73.5 / 34.6 mK",
+          "evidence": {
+            "source_id": "koenig_thermal_2020",
+            "location": "p.432 Table5；§4.1.3"
+          },
+          "metric_id": "netd"
+        },
+        {
+          "name": "30.0°C NETD方法B",
+          "value": "相机1/2/3：11.8 / 68.9 / 32.5 mK",
+          "evidence": {
+            "source_id": "koenig_thermal_2020",
+            "location": "p.432 Table5；§4.1.3"
+          },
+          "metric_id": "netd"
+        },
+        {
+          "name": "100.0°C NETD方法A",
+          "value": "相机1/2/3：12.5 / 14.0 / 13.9 mK",
+          "evidence": {
+            "source_id": "koenig_thermal_2020",
+            "location": "p.432 Table5；§4.1.3"
+          },
+          "metric_id": "netd"
+        },
+        {
+          "name": "100.0°C NETD方法B",
+          "value": "相机1/2/3：9.6 / 9.1 / 13.0 mK",
+          "evidence": {
+            "source_id": "koenig_thermal_2020",
+            "location": "p.432 Table5；§4.1.3"
+          },
+          "metric_id": "netd"
+        },
+        {
+          "name": "NETD采集方法",
+          "value": "预热至稳定、测量前用厂家软件做NUC。A：100连续帧逐像素时域分析；B：两连续帧的去均值差图RMS/√2。不是单帧空间温度起伏。",
+          "evidence": {
+            "source_id": "koenig_thermal_2020",
+            "location": "pp.430–431 §4.1/§4.1.3/Eq.(2)"
+          },
+          "metric_id": "netd"
+        },
+        {
+          "name": "SSE测量几何",
+          "value": "板源100.0°C、口径60–300 mm；中心圆ROI直径60像素；相机1/2距离400 mm、相机3距离225 mm；以300 mm口径结果为参考。",
+          "evidence": {
+            "source_id": "koenig_thermal_2020",
+            "location": "p.432 §4.1.4/Fig.8"
+          },
+          "metric_id": "size_of_source_effect"
+        },
+        {
+          "name": "SSE端点图中估读",
+          "value": "60 mm相对300 mm口径：相机1/2/3约−0.4 / −2.1 / −2.0 K；图中目测估读、无误差条，不是表格精确值。",
+          "evidence": {
+            "source_id": "koenig_thermal_2020",
+            "location": "p.432 Fig.8"
+          },
+          "metric_id": "size_of_source_effect"
+        },
+        {
+          "name": "100.0°C板源扩展校准不确定度",
+          "value": "相机1/2/3：U(k=2)=1.22 / 1.70 / 1.57°C；预算估计，不是NETD或示值偏差。",
+          "evidence": {
+            "source_id": "koenig_thermal_2020",
+            "location": "p.440 §5.2/Table13"
+          }
+        },
+        {
+          "name": "100.0°C水热管腔源扩展校准不确定度",
+          "value": "相机1/2/3：U(k=2)=0.19 / 1.22 / 1.03°C；预算估计，不是NETD或示值偏差。",
+          "evidence": {
+            "source_id": "koenig_thermal_2020",
+            "location": "p.440 §5.2/Table13"
+          }
+        }
+      ],
+      "conditions": "一个PTB实验研究中的三个匿名商业相机；未知品牌，不算三个独立研究或已核三个厂家。Table2为厂家描述，Table5为本研究NETD，Fig.8数值为估读，Table13为不确定度预算估计。辐射测温范围；旧LWIR镜头需求与单镜片/镜组规格不能直接替代这些整机结果。NETD不同温度、不同方法以及三机不同波段/镜头条件不构成无条件优劣榜。",
+      "unreported_or_not_verified": "未给各机F数、MTF、逐温度NETD实际积分时间、噪声带宽/滤波、原始帧与重复实验不确定度；方法A到表内单值的像素聚合细节未充分明确。§4.1.1的0.127 ms属于NU描述，不能直接套到全部NETD测试。Table2厂家measurement uncertainty未给置信水平，不能当U(k=2)。预算未计不正确用户输入的额外误差。Table13的30°C行标Water-heat-pipe而Table1范围50–270°C，保留标签差异；本记录只取100°C预算。不因两法数值差异自行归因或声称显著性；未直接核VDI/VDE标准全文。",
+      "record_status": "checked_excerpt",
+      "checked_on": "2026-11-06",
+      "claim_type": "representative_result"
     },
     {
       "id": "laser_focus",
