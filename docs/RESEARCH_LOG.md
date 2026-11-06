@@ -394,3 +394,7 @@ ef84c19`；源提交与发布一致，保持owner-only访问。EVD-004d子任务
 - **待验收**：数据与定义已就位，测试、真实浏览器、PR/CI/Pages验证待完成；父011/012/015与009b未解决项继续保留。旧LightPath/Ophir记录日期和结论不刷新。
 - **前轮部署终态**：文档Pages42241007546已确认success，不再列为待等待。
 - **本地验证**：62项测试、构建及diff检查通过，回归核Table5十二个数字/温度/方法及NETD、accuracy、U(k=2)域区别。独立Chrome无头桌面/390 px查询1/0/1/33、三定义/双出处、13参数PTB与FLIR/旧需求弹窗、排名和既有重点记录检查通过。首轮截图发现长证据类型标签在弹窗中被nowrap截断，已改为换行并重建；复验同时检查弹窗内部scrollWidth而非仅页面宽度，截图确认完整，无横向溢出。科学数据SHA256为4d8cb44188e2b73aaf6363e19a3b8b766adff3dec6c3812a9367629a0d407d21。
+
+- **公开发布验收**：PR [#39](https://github.com/SelinLee/lens-evidence-atlas/pull/39)最终头340bef743a6dda3f0e383b7925b4b1687015cad8，CI42242258667成功；合并0adb74655b034d9845d8eaa641f5643848ac3c8d，主线CI42242388968成功。Pages[42242389147](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/42242389147)成功，实际HTTPS v0.1.24及数据SHA256与本地一致。独立Chrome无头线上桌面/390 px查询1/0/1/33、三定义、两出处、13参数记录、排名筛选和原重点样本保留通过；截图实际查看，弹窗内部无横向溢出。仅关闭011a。
+- **用户公开决定复核**：GitHub接口visibility=PUBLIC、Pages public=true；不带登录凭据访问仓库HTML为HTTP200，网页可公开查询。本轮匿名API请求403，未将其称为成功验证；已认证API与匿名HTML分别记录。维护目标文档的“已准备”更正为“已上线”；会话旧目标中的私有措辞继续由用户最新公开指令覆盖。
+- **下批可恢复入口（未落库）**：新增待办EVD-011b。Dupre 2023原始工作坊PDF https://imagesensors.org/Past%20Workshops/2023%20Workshop/2023%20Papers/P23.pdf 已取得4页，文本初读：模拟MTF与1550 nm样机须分开；关键图表尚待视觉核验，不收录数字。Balli 2021 DOI10.1515/nanoph-2020-0550目前仅摘要/元数据线索，机构主文与SI下载403；不能把NA/效率摘要值写成已核验。优先取得可核原文，再决定是否作为SWIR及低NA成像证据；不重复已有Xie SFE记录。
