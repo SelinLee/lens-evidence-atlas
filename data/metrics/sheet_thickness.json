@@ -2,17 +2,18 @@
   "id": "sheet_thickness",
   "name": "光片厚度",
   "english_name": "Light-sheet Thickness",
-  "definition": "照明横截面的宽度；FWHM与1/e²宽度分别定义。它与检测PSF共同决定系统轴向分辨。",
+  "definition": "照明横截面的强度宽度；FWHM与1/e²宽度分别定义。多峰光束须说明取首主峰还是整体轮廓，首主峰FWHM不表示旁瓣总能量。它与检测PSF共同影响系统轴向分辨，不能直接当作系统PSF。",
   "unit": "μm",
   "direction": "lower",
   "required_conditions": [
-    "宽度定义",
+    "宽度定义及主峰/整体轮廓",
     "传播位置",
     "激发波长、介质",
-    "检测NA"
+    "测量方法及检测NA"
   ],
   "definition_refs": [
-    "ls_comparison"
+    "ls_comparison",
+    "battistella_airy_2022"
   ],
   "best_interpretation": "没有跨应用统一最优值",
   "updated_on": "2026-11-06"

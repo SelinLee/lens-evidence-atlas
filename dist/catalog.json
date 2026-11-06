@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.8",
+    "version": "0.1.9",
     "updated_on": "2026-11-06",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -893,7 +893,7 @@
       "id": "app_25",
       "name": "光片照明与体积显微",
       "category": "医疗与显微",
-      "summary": "照明NA0.05超透镜：光片FWHM6.8 μm；系统横向PSF约1.7 μm，二者分别评价。",
+      "summary": "照明宽度、传播范围与检测PSF分别评价：Luo双侧超透镜及独立Battistella静态Airy光片样本，波长与宽度口径不同，不直接排名。",
       "metric_ids": [
         "sheet_thickness",
         "sheet_length",
@@ -939,7 +939,8 @@
         "ls_illum",
         "ls_detection",
         "ls_meta",
-        "ls_system_psf"
+        "ls_system_psf",
+        "battistella_airy_profile"
       ],
       "updated_on": "2026-11-06"
     },
@@ -1403,16 +1404,18 @@
       "id": "sheet_length",
       "name": "光片有效长度",
       "english_name": "Light-sheet Propagation Length",
-      "definition": "在指定厚度/均匀度容差内的传播范围；高斯近似常以两倍瑞利长度描述。",
+      "definition": "在指定厚度/均匀度容差内的传播范围；高斯近似常以两倍瑞利长度描述。实验取样跨度、相机视场及模型预测FOV须分别标注，不能不经判据直接当作实测有效长度。",
       "unit": "μm",
       "direction": "higher",
       "required_conditions": [
         "厚度允许变化",
         "光束模型",
-        "波长及介质"
+        "波长及介质",
+        "长度判据、实测/模型及取样范围"
       ],
       "definition_refs": [
-        "ls_comparison"
+        "ls_comparison",
+        "battistella_airy_2022"
       ],
       "best_interpretation": "需与厚度、旁瓣和背景联合评价。",
       "updated_on": "2026-11-06"
@@ -1421,17 +1424,18 @@
       "id": "sheet_thickness",
       "name": "光片厚度",
       "english_name": "Light-sheet Thickness",
-      "definition": "照明横截面的宽度；FWHM与1/e²宽度分别定义。它与检测PSF共同决定系统轴向分辨。",
+      "definition": "照明横截面的强度宽度；FWHM与1/e²宽度分别定义。多峰光束须说明取首主峰还是整体轮廓，首主峰FWHM不表示旁瓣总能量。它与检测PSF共同影响系统轴向分辨，不能直接当作系统PSF。",
       "unit": "μm",
       "direction": "lower",
       "required_conditions": [
-        "宽度定义",
+        "宽度定义及主峰/整体轮廓",
         "传播位置",
         "激发波长、介质",
-        "检测NA"
+        "测量方法及检测NA"
       ],
       "definition_refs": [
-        "ls_comparison"
+        "ls_comparison",
+        "battistella_airy_2022"
       ],
       "best_interpretation": "没有跨应用统一最优值",
       "updated_on": "2026-11-06"
@@ -1577,6 +1581,18 @@
       "kind": "paper",
       "verification": "inherited_v2",
       "doi": null
+    },
+    {
+      "id": "battistella_airy_2022",
+      "title": "Battistella et al. 2022: Light-sheet mesoscopy with the Mesolens provides fast sub-cellular resolution imaging throughout large tissue volumes",
+      "url": "https://eprints.gla.ac.uk/275833/1/275833.pdf",
+      "location": "印刷pp.3–5 Results: Measurement of light-sheet thickness及Fig.1/3；pp.14–15 STAR Methods: Airy light-sheet illuminator与Measurement of light-sheet thickness",
+      "kind": "paper",
+      "evidence_scope": "作者机构开放的出版社版PDF相关段落；视觉核对印刷p.4结果、p.5 Fig.3及p.15测量方法；PMC同文索引交叉检查μm单位。未读取原始图像数据、分析代码或补充视频，不声称全文精读。",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt",
+      "doi": "10.1016/j.isci.2022.104797",
+      "source_year": 2022
     },
     {
       "id": "bechter_lbt_2020",
@@ -2679,6 +2695,66 @@
       "application_id": "app_18",
       "checked_on": "2026-10-25",
       "record_status": "inherited_v2",
+      "claim_type": "representative_result"
+    },
+    {
+      "id": "battistella_airy_profile",
+      "application": "光片照明与体积显微",
+      "name": "Battistella 2022 静态Airy光片三位置实测",
+      "evidence_type": "科研实验示例",
+      "source_ids": [
+        "battistella_airy_2022"
+      ],
+      "parameters": [
+        {
+          "name": "测量照明波长",
+          "value": "488 nm",
+          "evidence": {
+            "source_id": "battistella_airy_2022",
+            "location": "印刷p.3 Fig.1图注；p.14 STAR Methods开头"
+          }
+        },
+        {
+          "name": "首主峰强度FWHM（y=0 mm）",
+          "value": "7.8 ± 1.3 μm",
+          "evidence": {
+            "source_id": "battistella_airy_2022",
+            "location": "印刷p.4 Results的Airy结果段（Secondly开头）；p.5 Fig.3A及图注"
+          },
+          "metric_id": "sheet_thickness"
+        },
+        {
+          "name": "首主峰强度FWHM（y=1.5 mm）",
+          "value": "10.1 ± 1.5 μm",
+          "evidence": {
+            "source_id": "battistella_airy_2022",
+            "location": "印刷p.4 Results的Airy结果段（Secondly开头）；p.5 Fig.3B及图注"
+          },
+          "metric_id": "sheet_thickness"
+        },
+        {
+          "name": "首主峰强度FWHM（y=3 mm）",
+          "value": "11.1 ± 0.9 μm",
+          "evidence": {
+            "source_id": "battistella_airy_2022",
+            "location": "印刷p.4 Results的Airy结果段（Secondly开头）；p.5 Fig.3C及图注"
+          },
+          "metric_id": "sheet_thickness"
+        },
+        {
+          "name": "表征取样范围（非瑞利长度）",
+          "value": "y=0–3 mm；三位置",
+          "evidence": {
+            "source_id": "battistella_airy_2022",
+            "location": "印刷p.4 Results对y的定义；p.5 Fig.3A–C；p.14 Method details的3 mm短边"
+          }
+        }
+      ],
+      "conditions": "488 nm静态Airy照明，偏置Powell透镜方案；y从光束进入测量视场的一侧起算。宽度只取第一主峰的强度FWHM，不包含旁瓣总能量。7 nm铝膜盖玻片相对检测物镜45°反射，在LDF浸油中经Mesolens直接成像；移除荧光发射滤光片并用最低激光功率。三位置属于同一研究，不是三个独立样本；不是荧光微球系统PSF。",
+      "unreported_or_not_verified": "±的统计定义、重复次数与完整误差预算未核验；未量化旁瓣能量、光学效率或统一厚度容差下的有效长度。3306 μm是作者由模型参数算出的FOV，不作为本记录实测长度。Fig.1最大功率10 mW与Methods的4 mW不一致，均不赋给最低功率的轮廓测量。Fig.3图注称横截面坐标x、实际图轴标z，本记录只沿用无歧义的传播位置y。与Luo 532 nm不同条件，不直接排名。",
+      "application_id": "app_25",
+      "checked_on": "2026-11-06",
+      "record_status": "checked_excerpt",
       "claim_type": "representative_result"
     },
     {
