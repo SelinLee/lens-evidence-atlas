@@ -2,12 +2,13 @@
   "id": "app_22",
   "name": "单模光纤准直与通信耦合",
   "category": "激光与科研",
-  "summary": "商业准直镜、Subaru实验室、LBT在天注入与扩芯双耦合器分别记录；实验组合失配和单误差模型不混合排名。",
+  "summary": "商业准直镜、Subaru/LBT注入、扩芯组合失配与LEOF单接口双向插损分别记录；功率参考、统计域与工作点不同，不混合排名。",
   "metric_ids": [
     "coupling",
     "na",
     "efl",
-    "transmission"
+    "transmission",
+    "insertion_loss"
   ],
   "priorities": [
     {
@@ -48,7 +49,8 @@
     "scexao_smf_lab",
     "lbt_smf_180s",
     "lbt_alignment_model",
-    "he_tecf_combined_misalignment"
+    "he_tecf_combined_misalignment",
+    "wozniak_leof_repeatability"
   ],
   "updated_on": "2026-11-06"
 }

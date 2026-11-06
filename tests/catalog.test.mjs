@@ -82,3 +82,20 @@ test('Airy illumination widths stay separate from model FOV and independent samp
  assert.equal(d.applications.find(a=>a.id==='app_25').ranking_status,'editorial_synthesis');
  assert.ok(validate(d).benchmarks>=68);
 });
+
+test('LEOF loss record preserves direction, sample hierarchy and reported uncertainties',()=>{
+ const d=load(),r=d.benchmarks.find(r=>r.id==='wozniak_leof_repeatability'),m=d.metrics.find(m=>m.id==='insertion_loss');
+ assert.equal(r.parameters.length,9);assert.deepEqual(r.source_ids,['wozniak_leof_2026']);
+ assert.deepEqual(r.parameters.slice(0,4).map(p=>p.value),['0.76 dB','0.39 dB（图文聚合未复现）','约0.67 dB','0.40 dB（图文聚合未复现）']);
+ assert.deepEqual(r.parameters[7].value.match(/\d+/g).map(Number),[19,22,23,22,22]);
+ assert.deepEqual(r.parameters[8].value.match(/\d+/g).map(Number),[28,23,26,26,30]);
+ assert.ok(r.parameters.every(p=>p.evidence.source_id===r.source_ids[0]));
+ assert.ok(r.parameters[4].evidence.location.includes('§4.2'));
+ for(const word of ['1550 nm','不是独立来源','不是允许偏移公差'])assert.ok(r.conditions.includes(word));
+ for(const word of ['Fig.8b/9b','功率校准面','置信区间','FIFO'])assert.ok(r.unreported_or_not_verified.includes(word));
+ assert.equal(r.parameters.filter(p=>p.metric_id==='coupling').length,0);
+ assert.ok(!d.bests.some(b=>b.cohort_record_ids?.includes(r.id)));
+ assert.equal(m.direction,'lower');assert.equal(m.unit,'dB');
+ for(const word of ['−10 log10','百分数','Fresnel','几何平均','附加损失'])assert.ok(m.definition.includes(word));
+ assert.ok(m.required_conditions.includes('样品数量、重复次数与平均域'));
+});

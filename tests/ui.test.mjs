@@ -99,3 +99,26 @@ test('Airy search repeats, clears, and preserves independent existing experiment
   f.location.hash='#'+app+'/best';f.run('route()');assert.ok(f.el('panel').innerHTML.includes(record));
  }
 });
+
+test('LEOF loss and definition render all parameters, directions and evidence boundaries',()=>{
+ const f=fixture();f.location.hash='#app_22/best';f.run('route()');
+ assert.ok(f.el('panel').innerHTML.includes('Woźniak 2026'));
+ for(let i=0;i<2;i++){
+  f.run("openDialog('test',recordCard(records.get('wozniak_leof_repeatability'),true))");
+  for(const text of ['0.76 dB','0.39 dB','约0.67 dB','0.40 dB','19, 22, 23, 22, 22','28, 23, 26, 26, 30','100次','§4.2','1550 nm','Fig.8b/9b','功率校准面','不是允许偏移公差'])assert.ok(f.el('detailBody').innerHTML.includes(text),text);
+  f.run("$('detail').close()");assert.equal(f.el('detail').open,false);
+ }
+ f.run("openMetric('insertion_loss')");
+ for(const text of ['−10 log10','几何平均','10.3390/ma19051013','p.6'])assert.ok(f.el('detailBody').innerHTML.includes(text),text);
+ f.location.hash='#app_22/sources';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('10.3390/ma19051013'));
+});
+test('LEOF query repeats, clears, and preserves previous evidence',()=>{
+ const f=fixture();
+ for(const query of ['Woźniak','LEOF','unmatched_leof_987','Woźniak','']){
+  f.el('search').value=query;f.run('renderList()');
+  assert.equal(f.el('resultCount').textContent,query==='unmatched_leof_987'?'0 / 33 类应用':query?'1 / 33 类应用':'33 / 33 类应用');
+ }
+ for(const [app,record] of [['app_22','He 2022'],['app_25','Battistella 2022'],['app_04','Chu 2025'],['app_14','Liu']]){
+  f.location.hash='#'+app+'/best';f.run('route()');assert.ok(f.el('panel').innerHTML.includes(record));
+ }
+});

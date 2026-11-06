@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.9",
+    "version": "0.1.12",
     "updated_on": "2026-11-06",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -765,12 +765,13 @@
       "id": "app_22",
       "name": "单模光纤准直与通信耦合",
       "category": "激光与科研",
-      "summary": "商业准直镜、Subaru实验室、LBT在天注入与扩芯双耦合器分别记录；实验组合失配和单误差模型不混合排名。",
+      "summary": "商业准直镜、Subaru/LBT注入、扩芯组合失配与LEOF单接口双向插损分别记录；功率参考、统计域与工作点不同，不混合排名。",
       "metric_ids": [
         "coupling",
         "na",
         "efl",
-        "transmission"
+        "transmission",
+        "insertion_loss"
       ],
       "priorities": [
         {
@@ -811,7 +812,8 @@
         "scexao_smf_lab",
         "lbt_smf_180s",
         "lbt_alignment_model",
-        "he_tecf_combined_misalignment"
+        "he_tecf_combined_misalignment",
+        "wozniak_leof_repeatability"
       ],
       "updated_on": "2026-11-06"
     },
@@ -1300,6 +1302,27 @@
         "fov_definition"
       ],
       "best_interpretation": "没有跨应用统一最优值",
+      "updated_on": "2026-11-06"
+    },
+    {
+      "id": "insertion_loss",
+      "name": "插入损耗",
+      "english_name": "Insertion Loss",
+      "definition": "对明确功率参考的无量纲效率η，IL[dB] = −10 log10(η)，η = 10^(−IL/10)；η若用百分数须先除100。Woźniak §3.2 Eq.(3–4)中的η为归一化模式重叠乘Fresnel透射因子，不是仅模式重叠。实验仍须注明参考面与已扣除损耗；相对峰值的附加损失ΔIL不能冒充绝对插损。dB样本的算术平均反变换得到线性效率的几何平均，不等于线性效率算术平均。",
+      "unit": "dB",
+      "direction": "lower",
+      "required_conditions": [
+        "波长与带宽",
+        "输入输出功率参考面与扣除损耗",
+        "光纤模式、偏振与传输方向",
+        "间距、横向/角向对准与透镜几何",
+        "绝对插损或相对峰值附加损失",
+        "样品数量、重复次数与平均域"
+      ],
+      "definition_refs": [
+        "wozniak_leof_2026"
+      ],
+      "best_interpretation": "只有参考面、损耗边界和实验条件一致才能比较；优化间距下的单接口插损不是多芯FIFO器件或完整链路插损。平均dB值不换算为平均耦合效率排名。",
       "updated_on": "2026-11-06"
     },
     {
@@ -2559,6 +2582,19 @@
       "kind": "paper",
       "verification": "inherited_v2",
       "doi": null
+    },
+    {
+      "id": "wozniak_leof_2026",
+      "title": "Woźniak 等 Lensed Chemically Etched Optical Fibers for Free-Space Coupling of Multicore Fibers",
+      "authors": "Arkadiusz Woźniak; Mateusz Łakomski; Przemysław Niedzielski",
+      "url": "https://www.mdpi.com/1996-1944/19/5/1013",
+      "doi": "10.3390/ma19051013",
+      "source_year": 2026,
+      "kind": "paper",
+      "location": "Materials 19(5), 1013；出版社19页PDF：§3.2 Eq.(3–4) p.6；§4.1/Fig.6 p.9；§4.2/Figs.8–9 pp.10–11；§4.3/Fig.10 pp.11–12",
+      "evidence_scope": "2026-11-06直接核读出版社HTML相关正文及19页PDF上述页；视觉核验Eq.(3–4)、Figs.6–10及Fig.8/9内嵌间距表。正文四个均值仅作作者报告；未数字化箱线图、未取得原始数据或复现聚合，图文均值一致性未解决。未将模型容差或多芯束实验纳入本记录；不上传全文。",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
     },
     {
       "id": "zhang_inkjet_mla_2022",
@@ -5352,6 +5388,99 @@
       ],
       "conditions": "GaN超透镜透射成像；卤素光源经偏振器件产生圆偏振，标靶后由NA0.106超透镜收集，再由50×/NA0.42物镜与CCD读出；不是单片直接贴传感器的成像配置。2.19 μm为作者对USAF线条可辨宽度的报告，没有给出MTF50阈值。彩色图Fig.4d–f为校色前、g–i为颜色强度补偿后，不能把后处理图当原始色彩保真结果。",
       "unreported_or_not_verified": "标靶与超透镜的精确共轭距离、系统总倍率、物方有效NA、定量视场/场边像质、曝光和可辨对比度阈值未由所读段落完整确定；未把4 μm标尺当视场。400–660 nm是元件表征范围，宽带2.19 μm结果不保证整个光谱/视场均达同值。未给出本批可比较的不确定度，不能与扫描荧光的分辨率估计直接排序。"
+    },
+    {
+      "id": "wozniak_leof_repeatability",
+      "application": "单模光纤准直与通信耦合",
+      "application_id": "app_22",
+      "name": "Woźniak 2026 LEOF单接口：五样品双向插损与工作间距",
+      "evidence_type": "科研实验；正文报告均值与图内标注间距，非原始数据复算",
+      "source_ids": [
+        "wozniak_leof_2026"
+      ],
+      "parameters": [
+        {
+          "name": "TX接触平均耦合损耗（正文报告）",
+          "value": "0.76 dB",
+          "evidence": {
+            "source_id": "wozniak_leof_2026",
+            "location": "§4.2 p.10：Fig.8a对应正文"
+          },
+          "metric_id": "insertion_loss"
+        },
+        {
+          "name": "TX优化间距平均耦合损耗（正文报告）",
+          "value": "0.39 dB（图文聚合未复现）",
+          "evidence": {
+            "source_id": "wozniak_leof_2026",
+            "location": "§4.2 p.10：Fig.8b对应正文；保留图文核验缺口"
+          },
+          "metric_id": "insertion_loss"
+        },
+        {
+          "name": "RX接触平均耦合损耗（正文报告）",
+          "value": "约0.67 dB",
+          "evidence": {
+            "source_id": "wozniak_leof_2026",
+            "location": "§4.2 p.10末段：Fig.9a对应正文"
+          },
+          "metric_id": "insertion_loss"
+        },
+        {
+          "name": "RX优化间距平均耦合损耗（正文报告）",
+          "value": "0.40 dB（图文聚合未复现）",
+          "evidence": {
+            "source_id": "wozniak_leof_2026",
+            "location": "§4.2 pp.10–11：Fig.9b对应正文；保留图文核验缺口"
+          },
+          "metric_id": "insertion_loss"
+        },
+        {
+          "name": "该系列透镜直径 / 曲率半径",
+          "value": "40 μm / 32.5 μm",
+          "evidence": {
+            "source_id": "wozniak_leof_2026",
+            "location": "§4.2 p.10首段；不是§3仿真或37 μm多芯束"
+          }
+        },
+        {
+          "name": "随机抽取物理样品数",
+          "value": "5个LEOF，同一熔接程序",
+          "evidence": {
+            "source_id": "wozniak_leof_2026",
+            "location": "§4.2 p.10首段；§4.3 p.11"
+          }
+        },
+        {
+          "name": "方法段每点重复测量",
+          "value": "100次（作者称独立测量）",
+          "evidence": {
+            "source_id": "wozniak_leof_2026",
+            "location": "§4.1 p.9末段：干涉波动处理"
+          }
+        },
+        {
+          "name": "TX逐样品优化间距（样品1–5）",
+          "value": "19, 22, 23, 22, 22 μm",
+          "evidence": {
+            "source_id": "wozniak_leof_2026",
+            "location": "Fig.8b p.10内嵌Lens no./Gap表；逐行视觉核验"
+          }
+        },
+        {
+          "name": "RX逐样品优化间距（样品1–5）",
+          "value": "28, 23, 26, 26, 30 μm",
+          "evidence": {
+            "source_id": "wozniak_leof_2026",
+            "location": "Fig.9b p.11内嵌Lens no./Gap表；逐行视觉核验"
+          }
+        }
+      ],
+      "conditions": "1550 nm；§4.3 p.11及Fig.10明确波长，§4.2是同种40 μm、曲率半径32.5 μm的五件LEOF系列，与切割SMF-28e+端面双向耦合。TX指LEOF→SMF，RX为SMF→LEOF；0 μm接触与各样品优化空气间距分开。§4.1以每点100次测量缓解短间距干涉，本文报告损耗域平均；五件样品、两个方向和重复测量均来自同一研究，不是独立来源。图内优化间距是各曲线工作点，不是允许偏移公差、统一焦距或实测NA。",
+      "unreported_or_not_verified": "未核实实验功率校准面、连接器/传播/Fresnel损耗扣除、光谱线宽、偏振、逐样品原始序列或总体均值聚合权重。正文TX/RX优化0.39/0.40 dB与Fig.8b/9b均值方块的视觉位置均存在一致性疑问，聚合均未复现；不估读图线生成替代均值，不擅改作者数。正文0.18–0.65等范围的统计对象不够清楚，未记作样品均值范围或置信区间。§3理论0.5/1 dB容差、§4.3 Table 1（邻近37 μm讨论、归属待核）的参数和§4.4多芯FIFO结果不并入该40 μm系列；没有完整实验容差或量产良率结论。",
+      "checked_on": "2026-11-06",
+      "record_status": "checked_excerpt",
+      "claim_type": "representative_result"
     },
     {
       "id": "zhang_hex_mla",
