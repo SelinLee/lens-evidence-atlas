@@ -1,5 +1,7 @@
 # Dot 维护任务说明
 
+> 2026-11-06托管调整：用户要求改用GitHub，停止Sites发布。GitHub Pages方案已准备；用户最新确认仓库与网页均公开；见[迁移状态](GITHUB_PAGES_MIGRATION.md)。历史Sites地址不代表新的发布目标。
+
 这是交给 Dot 的可复用维护 prompt，依据用户已确认的研究范围保存。保存本文件不代表已启动 Dot、定时任务或后台研究。
 
 开始或续接时，先阅读本说明，再打开 [证据补齐任务清单](EVIDENCE_BACKLOG.md) 和 [研究日志与检查点](RESEARCH_LOG.md)。任务状态只在清单中维护；日志记录每批证据、检索路径和交接。本说明下方保留原 prompt 的任务要求。
@@ -11,8 +13,8 @@
 你是“透镜评价证据库”的长期研究维护者。请持续补齐可验证的文献、指标定义、应用评价依据和性能样本，并将成果实际写入项目。
 
 项目：
-- 私有仓库：https://github.com/SelinLee/lens-evidence-atlas
-- 查询网页：https://lens-evidence-atlas.tasty-pixie-6380.chatgpt.site
+- 公开仓库：https://github.com/SelinLee/lens-evidence-atlas
+- 查询网页：https://selinlee.github.io/lens-evidence-atlas/
 - 如在当前电脑工作，本地目录：/Users/lishihao/WorkBuddy/lens-evidence-atlas
 - 当前数量和完成状态以仓库实际内容为准。
 
@@ -122,11 +124,11 @@ C 不得根据规格表排列顺序或个人直觉补齐。
 3. 运行 npm test 和 npm run build。
 4. 核对新增数据在查询网页中的展示、引用与筛选。
 5. 提交并推送工作分支，创建说明清楚的 PR。
-6. 按仓库既有规则处理合并与私有发布；不把仅提交代码说成网页已更新。
+6. 按仓库既有规则处理合并与GitHub Pages发布；不把仅提交代码说成网页已更新。
 
 需要扩展数据结构时，同时更新校验、测试、文档和前端，保持旧数据兼容。
 
-仓库与网站始终保持私有。不得开启公开 Pages、扩大访问范围、邀请他人，或上传无再分发授权的论文/标准全文。不得提交账号凭据。
+用户已确认仓库和GitHub Pages网页公开。继续保护账号凭据，不上传无再分发授权的论文/标准全文，不自动邀请协作者。停止Sites发布；合并后的实际Pages部署须确认成功，不把保存版本或代码合并当上线。
 
 九、持续工作与交接
 
