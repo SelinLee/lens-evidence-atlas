@@ -3,6 +3,11 @@ description: 提交指标定义、排序依据或可比性能记录
 title: "[证据] "
 body:
   - type: input
+    id: backlog_task
+    attributes:
+      label: 关联证据任务 ID
+      description: 填 EVD-…；新任务先在 docs/EVIDENCE_BACKLOG.md 登记，避免重复补证。
+  - type: input
     id: application
     attributes:
       label: 应用与指标 ID
