@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "updated_on": "2026-11-06",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -550,7 +550,7 @@
       "id": "app_14",
       "name": "微透镜阵列与光场",
       "category": "激光与科研",
-      "summary": "新增喷墨六角阵列几何样本：填充因子88%为面积比；单透镜与阵列结果分开解释。",
+      "summary": "收录独立喷墨与选择性润湿阵列实验，区分几何填充率、焦点强度统计、三波长焦移和制备尺寸偏差；均匀性公式与串扰仍待补证。",
       "metric_ids": [
         "focus_efficiency",
         "chromatic_shift",
@@ -597,7 +597,9 @@
         "mla_product",
         "richards_main",
         "richards_high",
-        "zhang_hex_mla"
+        "zhang_hex_mla",
+        "liu_mla_100um",
+        "liu_mla_process_radius"
       ],
       "updated_on": "2026-11-06"
     },
@@ -1680,12 +1682,12 @@
       "id": "he_tecf_2022",
       "title": "He 等 Optical Coupling Efficiency of a Coupler with Double-Combined Collimating Lenses and Thermally Expanded Core Fibers",
       "authors": "Qi He; Zhengang Zhao; Xiaoda Ye; Chuan Luo; Dacheng Zhang; Sifei Wang; Xiaoping Xu",
-      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8875270/",
+      "url": "https://mdpi-res.com/d_attachment/micromachines/micromachines-13-00324/article_deploy/micromachines-13-00324.pdf",
       "doi": "10.3390/mi13020324",
       "source_year": 2022,
       "kind": "paper",
-      "location": "Micromachines 13(2), 324；§2.3 Eq.(6)；§4.1 Fig.11–13正文；§4.2光源设置；§4.3 Fig.16图注及末两段",
-      "evidence_scope": "PMC所载正式论文HTML相关正文、公式和图注节选；本条落库复核限于上述位置。未读PDF/SI或取得原始数据；未从图线估读数值；设计/仿真焦距与NA不记作实测。",
+      "location": "Micromachines 13(2), 324；§2.3 Eq.(6) p.5；§4.1–4.2 pp.11–14；§4.3 Fig.16 pp.14–16，组合工作点p.16首段；§5结论",
+      "evidence_scope": "Dot读取PMC正式论文HTML相关正文、公式和图注；本机续核出版社18页PDF中§2.3、§3.1–3.3、§4和§5相关段落，视觉核对p.5 Eq.(4–6)、p.15 Fig.16及p.16组合点/结论。没有从图线提取新数值、未取得原始数据；设计/仿真焦距与NA不记作实测，50%是本文接收任务要求，不是行业门槛。",
       "checked_on": "2026-11-06",
       "verification": "checked_excerpt"
     },
@@ -1808,6 +1810,30 @@
       "kind": "paper",
       "verification": "checked_excerpt",
       "doi": "10.1002/smtd.202402149"
+    },
+    {
+      "id": "liu_mla_2023",
+      "title": "Liu 等（2023）Mold-free self-assembled scalable microlens arrays with ultrasmooth surface and record-high resolution",
+      "url": "https://www.nature.com/articles/s41377-023-01174-7",
+      "doi": "10.1038/s41377-023-01174-7",
+      "source_year": 2023,
+      "kind": "paper",
+      "location": "主文pp.2–8 Results、Optical characterization of MLAs、Materials and methods；重点Fig.3 p.5、Fig.5 p.7及对应正文",
+      "evidence_scope": "实际读取出版社HTML相关段落与9页PDF的相关章节，视觉核对PDF p.5 Fig.3和p.7 Fig.5。作者Zhihao Liu、Guangwei Hu、Huapeng Ye等；华南师范大学/南洋理工大学等团队。聚焦100 μm口径样本；1 mm液滴剂量系列的最大NA不并入。标题的record-high保留为文献题名，不认可为本库世界纪录。补充材料另列关联来源，同一研究不算第二个独立团队。",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
+    },
+    {
+      "id": "liu_mla_2023_si",
+      "title": "Liu 等（2023）微透镜阵列论文补充材料：制备尺寸与样品对应",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41377-023-01174-7/MediaObjects/41377_2023_1174_MOESM1_ESM.docx",
+      "doi": "10.1038/s41377-023-01174-7",
+      "source_year": 2023,
+      "kind": "paper",
+      "location": "Supplementary Information §4–5、Table S1、§7 Fig.S8及其图注/正文",
+      "evidence_scope": "下载出版社补充DOCX，读取XML正文与表格；从文档提取并视觉核验Fig.S8原图的三个半径标签与标尺。没有渲染完整DOCX页版；没有观看补充视频，也未视觉核验其余SI图。与主文liu_mla_2023同一研究。§5分辨率组号文字与Table S1/主文有差异，保留待核。",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
     },
     {
       "id": "ls_comparison",
@@ -2832,7 +2858,7 @@
           "value": "50.4%",
           "evidence": {
             "source_id": "he_tecf_2022",
-            "location": "§4.3末两段：选择20 μm TECF后连续给出工作距离、三种失配与50.4%"
+            "location": "§4.3末两段：选择20 μm TECF后连续给出工作距离、三种失配与50.4%；出版社PDF p.16首段复核"
           },
           "metric_id": "coupling"
         },
@@ -2841,7 +2867,7 @@
           "value": "20 μm",
           "evidence": {
             "source_id": "he_tecf_2022",
-            "location": "§4.3末两段：选择20 μm TECF后连续给出工作距离、三种失配与50.4%"
+            "location": "§4.3末两段：选择20 μm TECF后连续给出工作距离、三种失配与50.4%；出版社PDF p.16首段复核"
           }
         },
         {
@@ -2849,7 +2875,7 @@
           "value": "10 mm",
           "evidence": {
             "source_id": "he_tecf_2022",
-            "location": "§4.3末两段：选择20 μm TECF后连续给出工作距离、三种失配与50.4%"
+            "location": "§4.3末两段：选择20 μm TECF后连续给出工作距离、三种失配与50.4%；出版社PDF p.16首段复核"
           }
         },
         {
@@ -2857,7 +2883,7 @@
           "value": "0.5 mm",
           "evidence": {
             "source_id": "he_tecf_2022",
-            "location": "§4.3末两段：选择20 μm TECF后连续给出工作距离、三种失配与50.4%"
+            "location": "§4.3末两段：选择20 μm TECF后连续给出工作距离、三种失配与50.4%；出版社PDF p.16首段复核"
           }
         },
         {
@@ -2865,7 +2891,7 @@
           "value": "0.04°",
           "evidence": {
             "source_id": "he_tecf_2022",
-            "location": "§4.3末两段：选择20 μm TECF后连续给出工作距离、三种失配与50.4%"
+            "location": "§4.3末两段：选择20 μm TECF后连续给出工作距离、三种失配与50.4%；出版社PDF p.16首段复核"
           }
         },
         {
@@ -2873,12 +2899,12 @@
           "value": "1 mm",
           "evidence": {
             "source_id": "he_tecf_2022",
-            "location": "§4.3末两段：选择20 μm TECF后连续给出工作距离、三种失配与50.4%"
+            "location": "§4.3末两段：选择20 μm TECF后连续给出工作距离、三种失配与50.4%；出版社PDF p.16首段复核"
           }
         }
       ],
-      "conditions": "两只相同双组合准直透镜耦合器与两根相同TECF，FC/APC接口；§4.1/4.3先调至最大输出再引入失配。上述六项属于同一个组合工作点，不是独立单轴允许公差。§2.3 Eq.(6)定义输出/输入光功率比；实验功率参考面与损耗扣除仍待核。§4.1为1515–1595 nm ASE光源，§4.2写1550 nm、10 mW；§4.3未单独确认光谱，不能当作已核实的窄带1550 nm测量。",
-      "unreported_or_not_verified": "光纤型号、偏振、光功率校准面、连接器/透镜损耗是否扣除、组合点重复次数及误差条未核验。Table 2的焦距/NA属作者设计参数，非独立实测。§4.3另有0.3 μm径向表述疑点，本条不采用或擅改单位；未读取PDF/SI/原始数据。此点不代表旋转全周期性能或通用制造公差；与LBT单误差模型、SCExAO注入效率不可直接排名。",
+      "conditions": "两只相同双组合准直透镜耦合器与两根相同TECF，FC/APC接口；§4.1/4.3先调至最大输出再引入失配。上述六项属于同一个组合工作点，不是独立单轴允许公差。§2.3 Eq.(6)定义输出/输入光功率比；实验功率参考面与损耗扣除仍待核。§4.1为1515–1595 nm ASE光源，§4.2写1550 nm、10 mW；§4.3未单独确认光谱，不能当作已核实的窄带1550 nm测量。 PDF p.16以接收/解调设备能够收集信号（效率>50%）为本实验任务条件，不是行业标准或所有耦合应用的合格门槛。",
+      "unreported_or_not_verified": "光纤型号、偏振、光功率校准面、连接器/透镜损耗是否扣除、组合点重复次数及误差条未核验。Table 2的焦距/NA属作者设计参数，非独立实测。§4.3另有0.3 μm径向表述疑点，本条不采用或擅改单位；本机已补读PDF相关段落并核对Fig.16的径向轴标为mm，但不擅自将正文0.3 μm改为0.3 mm；未取得原始数据。此点不代表旋转全周期性能或通用制造公差；与LBT单误差模型、SCExAO注入效率不可直接排名。",
       "checked_on": "2026-11-06",
       "record_status": "checked_excerpt",
       "claim_type": "representative_result"
@@ -3314,6 +3340,121 @@
       "application_id": "app_21",
       "checked_on": "2026-10-25",
       "record_status": "inherited_v2",
+      "claim_type": "representative_result"
+    },
+    {
+      "id": "liu_mla_100um",
+      "application": "微透镜阵列与光场",
+      "application_id": "app_14",
+      "name": "Liu 2023 100 μm微透镜阵列：焦点强度与色散",
+      "evidence_type": "科研实验（强度统计口径未完整公开）",
+      "source_ids": [
+        "liu_mla_2023"
+      ],
+      "parameters": [
+        {
+          "name": "单元口径",
+          "value": "100 μm",
+          "evidence": {
+            "source_id": "liu_mla_2023",
+            "location": "主文p.5 Fig.3图注及Optical characterization首段；p.7 Fig.5图注"
+          }
+        },
+        {
+          "name": "焦点强度统计",
+          "value": "约0.09（作者称quadratic variance；单位/归一化未明确）",
+          "evidence": {
+            "source_id": "liu_mla_2023",
+            "location": "主文p.5 Optical characterization首段、Fig.3e对应正文"
+          }
+        },
+        {
+          "name": "强度统计单元数",
+          "value": "10 × 10 = 100个；不是整片行列数",
+          "evidence": {
+            "source_id": "liu_mla_2023",
+            "location": "主文p.5 Optical characterization首段"
+          }
+        },
+        {
+          "name": "三波长焦距（作者记法）",
+          "value": "405 / 532 / 633 nm → 350 / 366 / 357 μm",
+          "evidence": {
+            "source_id": "liu_mla_2023",
+            "location": "主文p.7 Fig.5a–c及左右栏衔接正文"
+          }
+        },
+        {
+          "name": "三采样波长焦点最大差",
+          "value": "16 μm（本库由366−350计算，非连续光谱最大值）",
+          "evidence": {
+            "source_id": "liu_mla_2023",
+            "location": "主文p.7给出的三个焦距；本库算术派生"
+          },
+          "metric_id": "chromatic_shift"
+        },
+        {
+          "name": "各波长焦斑FWHM",
+          "value": "405 / 532 / 633 nm → 1.36 / 1.8 / 2.12 μm",
+          "evidence": {
+            "source_id": "liu_mla_2023",
+            "location": "主文p.7 Fig.5a–c对应正文；焦斑宽度，不等同USAF可分辨线宽"
+          }
+        }
+      ],
+      "conditions": "NOA-73选择性润湿/刮涂制备的100 μm口径阵列。Fig.3强度测试为532 nm连续波、线偏振、CCD记录焦平面；方差的强度归一化、峰值/积分定义与背景校正未交代。Fig.5为另一组405/532/633 nm连续波测试，分别报告焦距和FWHM；不假定与Fig.3是完全同一批单元，不据此建立共同面MTF或同条件排名。",
+      "unreported_or_not_verified": "完整阵列面积与行列数、逐单元焦距分布、重复样本量、误差条、定量串扰未给出可用结果。0.09不是9%不均匀度或91%均匀性。Fig.3a/b正文另报200 μm周期，Fig.3f峰间距看起来不同；不从图反算节距或填充率，保留样品对应缺口。1 mm系列NA≈0.26不是本条100 μm样本的NA。FWHM取自作者正文，测试面和拟合细节未完整交代；三波长非单调焦移，不能仅用端点差7 μm代表全波段。",
+      "checked_on": "2026-11-06",
+      "record_status": "checked_excerpt",
+      "claim_type": "representative_result"
+    },
+    {
+      "id": "liu_mla_process_radius",
+      "application": "微透镜阵列与光场",
+      "application_id": "app_14",
+      "name": "Liu 2023 制备尺寸传递：图示区域半径",
+      "evidence_type": "科研实验的图像测量（非制造容差或良率）",
+      "source_ids": [
+        "liu_mla_2023_si"
+      ],
+      "parameters": [
+        {
+          "name": "模板曝光区域半径",
+          "value": "约50.25 μm",
+          "evidence": {
+            "source_id": "liu_mla_2023_si",
+            "location": "SI §7 Fig.S8a原图标签、图注及正文"
+          }
+        },
+        {
+          "name": "改性区域半径",
+          "value": "50.13 μm",
+          "evidence": {
+            "source_id": "liu_mla_2023_si",
+            "location": "SI §7 Fig.S8b原图标签、图注及正文"
+          }
+        },
+        {
+          "name": "固化微透镜半径",
+          "value": "51.33 μm",
+          "evidence": {
+            "source_id": "liu_mla_2023_si",
+            "location": "SI §7 Fig.S8c原图标签、图注及正文"
+          }
+        },
+        {
+          "name": "固化后相对改性区域的半径差",
+          "value": "约+1.2 μm（51.33−50.13）",
+          "evidence": {
+            "source_id": "liu_mla_2023_si",
+            "location": "SI §7末段；本库复核算术与符号"
+          }
+        }
+      ],
+      "conditions": "SI Fig.S8展示制备三个阶段的区域图像，通过MATLAB二值化并结合标尺估计半径。此条属于同一Liu论文的工艺测量，不增加独立团队数；不把这三个区域的半径拼为阵列统计分布或所有光学样本的实际口径。",
+      "unreported_or_not_verified": "未给出可用于统计容差的跨单元/跨批次分布、抽样数和置信区间；图像阈值、标定不确定性与半径拟合细节未完整报告。正文提及system error ±0.5但单位和统计含义未明确，本条不将其作为±0.5 μm容差。1.2 μm为半径偏差，非直径偏差、标准差或合格界限；不能从中给出良率。",
+      "checked_on": "2026-11-06",
+      "record_status": "checked_excerpt",
       "claim_type": "representative_result"
     },
     {

@@ -1,0 +1,49 @@
+{
+  "id": "liu_mla_process_radius",
+  "application": "微透镜阵列与光场",
+  "application_id": "app_14",
+  "name": "Liu 2023 制备尺寸传递：图示区域半径",
+  "evidence_type": "科研实验的图像测量（非制造容差或良率）",
+  "source_ids": [
+    "liu_mla_2023_si"
+  ],
+  "parameters": [
+    {
+      "name": "模板曝光区域半径",
+      "value": "约50.25 μm",
+      "evidence": {
+        "source_id": "liu_mla_2023_si",
+        "location": "SI §7 Fig.S8a原图标签、图注及正文"
+      }
+    },
+    {
+      "name": "改性区域半径",
+      "value": "50.13 μm",
+      "evidence": {
+        "source_id": "liu_mla_2023_si",
+        "location": "SI §7 Fig.S8b原图标签、图注及正文"
+      }
+    },
+    {
+      "name": "固化微透镜半径",
+      "value": "51.33 μm",
+      "evidence": {
+        "source_id": "liu_mla_2023_si",
+        "location": "SI §7 Fig.S8c原图标签、图注及正文"
+      }
+    },
+    {
+      "name": "固化后相对改性区域的半径差",
+      "value": "约+1.2 μm（51.33−50.13）",
+      "evidence": {
+        "source_id": "liu_mla_2023_si",
+        "location": "SI §7末段；本库复核算术与符号"
+      }
+    }
+  ],
+  "conditions": "SI Fig.S8展示制备三个阶段的区域图像，通过MATLAB二值化并结合标尺估计半径。此条属于同一Liu论文的工艺测量，不增加独立团队数；不把这三个区域的半径拼为阵列统计分布或所有光学样本的实际口径。",
+  "unreported_or_not_verified": "未给出可用于统计容差的跨单元/跨批次分布、抽样数和置信区间；图像阈值、标定不确定性与半径拟合细节未完整报告。正文提及system error ±0.5但单位和统计含义未明确，本条不将其作为±0.5 μm容差。1.2 μm为半径偏差，非直径偏差、标准差或合格界限；不能从中给出良率。",
+  "checked_on": "2026-11-06",
+  "record_status": "checked_excerpt",
+  "claim_type": "representative_result"
+}
