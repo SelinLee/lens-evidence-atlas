@@ -1,0 +1,93 @@
+{
+  "id": "wozniak_leof_repeatability",
+  "application": "单模光纤准直与通信耦合",
+  "application_id": "app_22",
+  "name": "Woźniak 2026 LEOF单接口：五样品双向插损与工作间距",
+  "evidence_type": "科研实验；正文报告均值与图内标注间距，非原始数据复算",
+  "source_ids": [
+    "wozniak_leof_2026"
+  ],
+  "parameters": [
+    {
+      "name": "TX接触平均耦合损耗（正文报告）",
+      "value": "0.76 dB",
+      "evidence": {
+        "source_id": "wozniak_leof_2026",
+        "location": "§4.2 p.10：Fig.8a对应正文"
+      },
+      "metric_id": "insertion_loss"
+    },
+    {
+      "name": "TX优化间距平均耦合损耗（正文报告）",
+      "value": "0.39 dB（图文聚合未复现）",
+      "evidence": {
+        "source_id": "wozniak_leof_2026",
+        "location": "§4.2 p.10：Fig.8b对应正文；保留图文核验缺口"
+      },
+      "metric_id": "insertion_loss"
+    },
+    {
+      "name": "RX接触平均耦合损耗（正文报告）",
+      "value": "约0.67 dB",
+      "evidence": {
+        "source_id": "wozniak_leof_2026",
+        "location": "§4.2 p.10末段：Fig.9a对应正文"
+      },
+      "metric_id": "insertion_loss"
+    },
+    {
+      "name": "RX优化间距平均耦合损耗（正文报告）",
+      "value": "0.40 dB（图文聚合未复现）",
+      "evidence": {
+        "source_id": "wozniak_leof_2026",
+        "location": "§4.2 pp.10–11：Fig.9b对应正文；保留图文核验缺口"
+      },
+      "metric_id": "insertion_loss"
+    },
+    {
+      "name": "该系列透镜直径 / 曲率半径",
+      "value": "40 μm / 32.5 μm",
+      "evidence": {
+        "source_id": "wozniak_leof_2026",
+        "location": "§4.2 p.10首段；不是§3仿真或37 μm多芯束"
+      }
+    },
+    {
+      "name": "随机抽取物理样品数",
+      "value": "5个LEOF，同一熔接程序",
+      "evidence": {
+        "source_id": "wozniak_leof_2026",
+        "location": "§4.2 p.10首段；§4.3 p.11"
+      }
+    },
+    {
+      "name": "方法段每点重复测量",
+      "value": "100次（作者称独立测量）",
+      "evidence": {
+        "source_id": "wozniak_leof_2026",
+        "location": "§4.1 p.9末段：干涉波动处理"
+      }
+    },
+    {
+      "name": "TX逐样品优化间距（样品1–5）",
+      "value": "19, 22, 23, 22, 22 μm",
+      "evidence": {
+        "source_id": "wozniak_leof_2026",
+        "location": "Fig.8b p.10内嵌Lens no./Gap表；逐行视觉核验"
+      }
+    },
+    {
+      "name": "RX逐样品优化间距（样品1–5）",
+      "value": "28, 23, 26, 26, 30 μm",
+      "evidence": {
+        "source_id": "wozniak_leof_2026",
+        "location": "Fig.9b p.11内嵌Lens no./Gap表；逐行视觉核验"
+      }
+    }
+  ],
+  "conditions": "1550 nm；§4.3 p.11及Fig.10明确波长，§4.2是同种40 μm、曲率半径32.5 μm的五件LEOF系列，与切割SMF-28e+端面双向耦合。TX指LEOF→SMF，RX为SMF→LEOF；0 μm接触与各样品优化空气间距分开。§4.1以每点100次测量缓解短间距干涉，本文报告损耗域平均；五件样品、两个方向和重复测量均来自同一研究，不是独立来源。图内优化间距是各曲线工作点，不是允许偏移公差、统一焦距或实测NA。 §4.1 p.9报告EXFO FLS-600光源、Thorlabs NTA007探测器和BNT001控制器；设备型号不能补足校准参考面。",
+  "unreported_or_not_verified": "未核实实验功率校准面、连接器/传播/Fresnel损耗扣除、光谱线宽、偏振、逐样品原始序列或总体均值聚合权重。正文TX/RX优化0.39/0.40 dB与Fig.8b/9b均值方块的视觉位置均存在一致性疑问，聚合均未复现；不估读图线生成替代均值，不擅改作者数。正文0.18–0.65等范围的统计对象不够清楚，未记作样品均值范围或置信区间。§3理论0.5/1 dB容差、§4.3 Table 1（邻近37 μm讨论、归属待核）的参数和§4.4多芯FIFO结果不并入该40 μm系列；没有完整实验容差或量产良率结论。 Fig.6示意标签SMF-28+与图注/结果的SMF-28e+记法不同，本文沿结果图注记录型号，不据示意图补模场直径。Data Availability Statement未提供逐点原始序列的公开下载入口。",
+  "checked_on": "2026-11-06",
+  "record_status": "checked_excerpt",
+  "claim_type": "representative_result"
+}
