@@ -1,0 +1,49 @@
+{
+  "id": "ls_system_psf",
+  "application": "光片照明与体积显微",
+  "application_id": "app_25",
+  "name": "Luo 2025 双侧光片系统PSF（非镜片自身分辨率）",
+  "evidence_type": "科研实验示例",
+  "source_ids": [
+    "lightsheet_meta"
+  ],
+  "parameters": [
+    {
+      "name": "横向PSF强度FWHM",
+      "value": "x、y方向约1.7 μm",
+      "evidence": {
+        "source_id": "lightsheet_meta",
+        "location": "§2.2 Fig.2c–d对应正文"
+      }
+    },
+    {
+      "name": "测试珠直径",
+      "value": "1.0 μm",
+      "evidence": {
+        "source_id": "lightsheet_meta",
+        "location": "§2.2 Fig.2c前后正文"
+      }
+    },
+    {
+      "name": "检测NA",
+      "value": "约0.3",
+      "evidence": {
+        "source_id": "lightsheet_meta",
+        "location": "§2.2 PSF测量段"
+      }
+    },
+    {
+      "name": "z扫描步长",
+      "value": "0.5 μm",
+      "evidence": {
+        "source_id": "lightsheet_meta",
+        "location": "§2.2 Fig.2d前正文"
+      }
+    }
+  ],
+  "conditions": "红色荧光珠置于水容器内琼脂中；照明元件与检测系统分开评价。此记录与ls_meta同属一篇论文，不是第二个独立来源。后续组织图像使用Richardson–Lucy去卷积，不能把处理后对比度当作裸镜片分辨率。",
+  "unreported_or_not_verified": "1 μm有限珠尺寸未去卷积到独立镜片PSF；§1的1.1 μm与§2.2及摘要的1.7 μm不同，未消歧；PSF专属发射谱、补充材料与原始图像未核验。",
+  "checked_on": "2026-11-06",
+  "record_status": "checked_excerpt",
+  "claim_type": "representative_result"
+}

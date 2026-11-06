@@ -9,33 +9,57 @@
   "parameters": [
     {
       "name": "直径",
-      "value": "约90 μm"
+      "value": "约90 μm",
+      "evidence": {
+        "source_id": "richards",
+        "location": "p.8 Microlens fabrication：最大直径90 μm；Fig.2图注"
+      }
     },
     {
       "name": "整体厚度",
-      "value": "约15 μm"
+      "value": "约15 μm",
+      "evidence": {
+        "source_id": "richards",
+        "location": "p.3：几何混合结构整体厚度14.7 μm"
+      }
     },
     {
       "name": "NA",
-      "value": "约0.3"
+      "value": "约0.3",
+      "evidence": {
+        "source_id": "richards",
+        "location": "p.7 Discussion及Fig.5a：主方案NA0.3"
+      }
     },
     {
       "name": "实测波长",
-      "value": "488/542/612/633 nm"
+      "value": "488/542/612/633 nm",
+      "evidence": {
+        "source_id": "richards",
+        "location": "p.3 Focal length and focusing efficiency"
+      }
     },
     {
       "name": "聚焦效率",
-      "value": "10个样品均值45–64%；各波长最佳51–70%"
+      "value": "10个样品均值45–64%；各波长最佳51–70%",
+      "evidence": {
+        "source_id": "richards",
+        "location": "pp.4–5 Fig.3b及相邻正文：几何混合10样品平均与最大值"
+      }
     },
     {
-      "name": "焦距误差",
-      "value": "<3%"
+      "name": "相对542 nm的焦长误差（作者报告）",
+      "value": "约4 μm，约2.8%",
+      "evidence": {
+        "source_id": "richards",
+        "location": "p.4 Focal length and focusing efficiency；Fig.3a；p.9 Focal length measurements"
+      }
     }
   ],
-  "conditions": "曲面折射+衍射方案；焦圈半径3×FWHM；分母为空白基底同孔径参考功率。",
-  "unreported_or_not_verified": "独立整镜绝对总透过率；连续谱逐点验收",
+  "conditions": "几何折射+衍射混合方案；4个离散测量波长。实验分子为半径3×FWHM针孔内焦斑功率，分母为邻近空白基底同物方孔径参考功率（p.8）。移台使收集物镜对准焦点，未证明四波长共用固定z平面。仿真以200×200 μm焦面屏幕总功率为分母（p.9），与实验不等价。",
+  "unreported_or_not_verified": "连续400–700 nm逐波长验收、共同固定焦面效率、独立总透过率、补充材料；正文约2.8%的聚合公式不清楚，不改写为峰峰值或最大绝对相对误差。",
   "application_id": "app_14",
-  "checked_on": "2026-10-25",
-  "record_status": "inherited_v2",
+  "checked_on": "2026-11-06",
+  "record_status": "checked_excerpt",
   "claim_type": "representative_result"
 }

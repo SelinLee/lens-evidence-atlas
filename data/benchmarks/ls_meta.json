@@ -9,33 +9,57 @@
   "parameters": [
     {
       "name": "波长",
-      "value": "532 nm"
+      "value": "532 nm",
+      "evidence": {
+        "source_id": "lightsheet_meta",
+        "location": "§2.1 Eq.1后参数段；光片厚度见Fig.1d对应正文"
+      }
     },
     {
       "name": "孔径尺度",
-      "value": "1 mm"
+      "value": "1 mm",
+      "evidence": {
+        "source_id": "lightsheet_meta",
+        "location": "§2.1 Eq.1后参数段；光片厚度见Fig.1d对应正文"
+      }
     },
     {
       "name": "焦距",
-      "value": "10 mm"
+      "value": "10 mm",
+      "evidence": {
+        "source_id": "lightsheet_meta",
+        "location": "§2.1 Eq.1后参数段；光片厚度见Fig.1d对应正文"
+      }
     },
     {
       "name": "照明NA",
-      "value": "0.05"
+      "value": "0.05",
+      "evidence": {
+        "source_id": "lightsheet_meta",
+        "location": "§2.1 Eq.1后参数段；光片厚度见Fig.1d对应正文"
+      }
     },
     {
       "name": "实测光片厚度",
-      "value": "FWHM6.8 μm"
+      "value": "FWHM6.8 μm",
+      "evidence": {
+        "source_id": "lightsheet_meta",
+        "location": "§2.1 Eq.1后参数段；光片厚度见Fig.1d对应正文"
+      }
     },
     {
-      "name": "检测物镜",
-      "value": "10×水浸，NA约0.3，WD3.5 mm"
+      "name": "透过效率（作者报告）",
+      "value": "44.3%",
+      "evidence": {
+        "source_id": "lightsheet_meta",
+        "location": "§1 Introduction，paired cylindrical metalenses结果概述"
+      }
     }
   ],
-  "conditions": "§2.1与实验段落；低NA超透镜负责照明，传统物镜负责检测。本文不同位置出现1.1/1.7 μm横向分辨和800/850 nm柱高，未在此表拼成单一已核验规格。",
-  "unreported_or_not_verified": "效率的完整测量分母、宽带共焦、未读补充材料与分辨率处理条件",
+  "conditions": "532 nm；照明NA 0.05。6.8 μm为光片焦面强度FWHM，不是系统横向分辨率。44.3%仅按作者名称记为透过效率，不能改称焦圈效率或与其他分母直接比较。",
+  "unreported_or_not_verified": "44.3%的完整功率分母和收集范围、补充材料、宽带共焦；正文850 nm柱高与Table 1的800 nm不一致，均不作为已消歧厚度；未复核原记录检测物镜WD。",
   "application_id": "app_25",
-  "checked_on": "2026-10-25",
-  "record_status": "inherited_v2",
+  "checked_on": "2026-11-06",
+  "record_status": "checked_excerpt",
   "claim_type": "representative_result"
 }

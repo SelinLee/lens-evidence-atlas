@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "updated_on": "2026-11-06",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -31,12 +31,12 @@
         ],
         "NA": "约0.3",
         "aperture": "约90 μm",
-        "denominator": "空白基底同孔径参考功率",
+        "denominator": "实验：附近空白基底同物方孔径参考功率；不同于仿真焦面总功率",
         "integration": "焦圈半径3×FWHM",
         "measurement": "实验",
-        "plane": "各测量波长条件按原文"
+        "plane": "方法移台至焦点；未证明跨波长共同固定z平面"
       },
-      "checked_on": "2026-10-25"
+      "checked_on": "2026-11-06"
     },
     {
       "id": "fiber_ideal_bound",
@@ -288,13 +288,14 @@
       "id": "app_04",
       "name": "显微镜物镜",
       "category": "医疗与显微",
-      "summary": "本组NA0.10/0.45/0.80/1.42，按倍率与介质分别配对",
+      "summary": "物镜NA0.10–1.42按倍率/介质区分；新增NA0.1超透镜候选，元件效率不等于系统成像质量。",
       "metric_ids": [
         "na",
         "resolution",
         "mtf",
         "chromatic_shift",
-        "working_distance"
+        "working_distance",
+        "focus_efficiency"
       ],
       "priorities": [
         {
@@ -328,13 +329,14 @@
       "ranking_status": "editorial_synthesis",
       "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
       "metric_mapping_status": "editorial_candidate_set",
-      "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
+      "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。 低NA候选元件的聚焦效率不能替代完整显微系统的分辨率、视场和工作距离。",
       "legacy_priority_proposal": "物方NA、介质、WD、平场、盖玻片、轴向/横向色差",
       "record_ids": [
         "micro2",
         "micro10",
         "micro20",
-        "micro60"
+        "micro60",
+        "wang_low_na_achromat"
       ],
       "updated_on": "2026-11-06"
     },
@@ -754,7 +756,7 @@
       "id": "app_22",
       "name": "单模光纤准直与通信耦合",
       "category": "激光与科研",
-      "summary": "1550 nm例NA0.15、EFL18.75 mm、3.6 mm束径",
+      "summary": "1550 nm准直镜规格与SCExAO约78%实验室注入分开收录；校准分母不同，不作统一排名。",
       "metric_ids": [
         "coupling",
         "na",
@@ -796,7 +798,8 @@
       "legacy_priority_proposal": "模场重叠、插损/回损、发散、准直波段、对准容差",
       "record_ids": [
         "fiber1550",
-        "fiber1550_compact"
+        "fiber1550_compact",
+        "scexao_smf_lab"
       ],
       "updated_on": "2026-11-06"
     },
@@ -878,13 +881,14 @@
       "id": "app_25",
       "name": "光片照明与体积显微",
       "category": "医疗与显微",
-      "summary": "商业照明NA0.1/0.2；科研柱面镜NA0.05、1 mm、f10 mm",
+      "summary": "照明NA0.05超透镜：光片FWHM6.8 μm；系统横向PSF约1.7 μm，二者分别评价。",
       "metric_ids": [
         "sheet_thickness",
         "sheet_length",
         "na",
         "resolution",
-        "focus_efficiency"
+        "focus_efficiency",
+        "transmission"
       ],
       "priorities": [
         {
@@ -922,7 +926,8 @@
       "record_ids": [
         "ls_illum",
         "ls_detection",
-        "ls_meta"
+        "ls_meta",
+        "ls_system_psf"
       ],
       "updated_on": "2026-11-06"
     },
@@ -1667,6 +1672,18 @@
       "doi": null
     },
     {
+      "id": "jovanovic_smf_2017",
+      "title": "Jovanovic 等：Efficient injection from large telescopes into single-mode fibres: Enabling the era of ultra-precision astronomy",
+      "url": "https://arxiv.org/pdf/1706.08821v2",
+      "doi": "10.1051/0004-6361/201630351",
+      "kind": "paper",
+      "source_year": 2017,
+      "location": "作者稿§3.2 p.7；§3.3、§4.1及Fig.8 p.8；§8.4 pp.12–13及Fig.13",
+      "evidence_scope": "arXiv:1706.08821v2（26 Aug 2017）公开作者稿，15页；核读上述正文，实际渲染查看pp.8、12–13图页，未按图估读新数字；期刊A&A 604 A122（2017）。稿件自动排版页眉September 20, 2018不作发表年。",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
+    },
+    {
       "id": "laser",
       "title": "Edmund 532 nm非球面镜 #33-015",
       "url": "https://www.edmundoptics.com/p/25mm-dia-050-na-532nm-v-coat-aspheric-lens/2780/",
@@ -1730,13 +1747,13 @@
       "id": "lightsheet_meta",
       "title": "Luo 等 Metalens-Based Dual Light-Sheet Fluorescence Microscopy",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12464795/",
-      "location": "§2.1、Fig.1、Experimental Setup；DOI 10.1002/smtd.202402149",
-      "evidence_scope": "原始论文正文检索节选；直接打开PMC受限，非全文精读；只用正文明确数值",
+      "location": "§1；§2.1 Eq.1、Fig.1c–d、Table 1；§2.2 Fig.2c–d；§2.2 Eq.2及Fig.4",
+      "evidence_scope": "PMC 主文 HTML 的上述正文、图注和表格节选；未读补充材料，未逐图视觉复核；不从图估读新数值。后续打开出现验证码，未绕过。",
       "source_year": 2025,
-      "checked_on": "2026-10-25",
+      "checked_on": "2026-11-06",
       "kind": "paper",
-      "verification": "inherited_v2",
-      "doi": null
+      "verification": "checked_excerpt",
+      "doi": "10.1002/smtd.202402149"
     },
     {
       "id": "ls_comparison",
@@ -2005,14 +2022,14 @@
     {
       "id": "richards",
       "title": "Richards 等 Hybrid achromatic microlenses",
-      "url": "https://www.nature.com/articles/s41467-023-38858-y",
-      "location": "Fig.1 / Fig.3 / Fig.5 / Discussion / Methods",
-      "evidence_scope": "本会话已读取原始全文；沿用结构和效率定义核验",
+      "url": "https://backend.orbit.dtu.dk/ws/files/325782423/s41467_023_38858_y.pdf",
+      "location": "出版社版本pp.4–5 Focal length and focusing efficiency / Fig.3；p.8 Focusing efficiency；p.9 Focal length measurements / Simulations",
+      "evidence_scope": "DTU机构库出版社版本；读取并实际渲染查看印刷pp.3–5、7–9（PDF页序+1），核对Fig.2/3/5/6及相关方法。未读补充材料，不从曲线估读新数值。",
       "source_year": 2023,
-      "checked_on": "2026-10-25",
+      "checked_on": "2026-11-06",
       "kind": "paper",
-      "verification": "inherited_v2",
-      "doi": null
+      "verification": "checked_excerpt",
+      "doi": "10.1038/s41467-023-38858-y"
     },
     {
       "id": "sfe",
@@ -2355,6 +2372,18 @@
       "kind": "manufacturer",
       "verification": "inherited_v2",
       "doi": null
+    },
+    {
+      "id": "wang_low_na_2021",
+      "title": "Wang 等：High-efficiency broadband achromatic metalens for near-IR biological imaging window",
+      "url": "https://www.nature.com/articles/s41467-021-25797-9",
+      "doi": "10.1038/s41467-021-25797-9",
+      "kind": "paper",
+      "source_year": 2021,
+      "location": "Experiments；Fig.4a正文与图注；Methods聚焦效率定义",
+      "evidence_scope": "出版社HTML主文相关段落与图注；未读取PDF及补充材料，未对Fig.4做独立曲线估读。元件级指标，不外推完整生物显微系统。",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
     },
     {
       "id": "wd_definition",
@@ -3117,34 +3146,107 @@
       "parameters": [
         {
           "name": "波长",
-          "value": "532 nm"
+          "value": "532 nm",
+          "evidence": {
+            "source_id": "lightsheet_meta",
+            "location": "§2.1 Eq.1后参数段；光片厚度见Fig.1d对应正文"
+          }
         },
         {
           "name": "孔径尺度",
-          "value": "1 mm"
+          "value": "1 mm",
+          "evidence": {
+            "source_id": "lightsheet_meta",
+            "location": "§2.1 Eq.1后参数段；光片厚度见Fig.1d对应正文"
+          }
         },
         {
           "name": "焦距",
-          "value": "10 mm"
+          "value": "10 mm",
+          "evidence": {
+            "source_id": "lightsheet_meta",
+            "location": "§2.1 Eq.1后参数段；光片厚度见Fig.1d对应正文"
+          }
         },
         {
           "name": "照明NA",
-          "value": "0.05"
+          "value": "0.05",
+          "evidence": {
+            "source_id": "lightsheet_meta",
+            "location": "§2.1 Eq.1后参数段；光片厚度见Fig.1d对应正文"
+          }
         },
         {
           "name": "实测光片厚度",
-          "value": "FWHM6.8 μm"
+          "value": "FWHM6.8 μm",
+          "evidence": {
+            "source_id": "lightsheet_meta",
+            "location": "§2.1 Eq.1后参数段；光片厚度见Fig.1d对应正文"
+          }
         },
         {
-          "name": "检测物镜",
-          "value": "10×水浸，NA约0.3，WD3.5 mm"
+          "name": "透过效率（作者报告）",
+          "value": "44.3%",
+          "evidence": {
+            "source_id": "lightsheet_meta",
+            "location": "§1 Introduction，paired cylindrical metalenses结果概述"
+          }
         }
       ],
-      "conditions": "§2.1与实验段落；低NA超透镜负责照明，传统物镜负责检测。本文不同位置出现1.1/1.7 μm横向分辨和800/850 nm柱高，未在此表拼成单一已核验规格。",
-      "unreported_or_not_verified": "效率的完整测量分母、宽带共焦、未读补充材料与分辨率处理条件",
+      "conditions": "532 nm；照明NA 0.05。6.8 μm为光片焦面强度FWHM，不是系统横向分辨率。44.3%仅按作者名称记为透过效率，不能改称焦圈效率或与其他分母直接比较。",
+      "unreported_or_not_verified": "44.3%的完整功率分母和收集范围、补充材料、宽带共焦；正文850 nm柱高与Table 1的800 nm不一致，均不作为已消歧厚度；未复核原记录检测物镜WD。",
       "application_id": "app_25",
-      "checked_on": "2026-10-25",
-      "record_status": "inherited_v2",
+      "checked_on": "2026-11-06",
+      "record_status": "checked_excerpt",
+      "claim_type": "representative_result"
+    },
+    {
+      "id": "ls_system_psf",
+      "application": "光片照明与体积显微",
+      "application_id": "app_25",
+      "name": "Luo 2025 双侧光片系统PSF（非镜片自身分辨率）",
+      "evidence_type": "科研实验示例",
+      "source_ids": [
+        "lightsheet_meta"
+      ],
+      "parameters": [
+        {
+          "name": "横向PSF强度FWHM",
+          "value": "x、y方向约1.7 μm",
+          "evidence": {
+            "source_id": "lightsheet_meta",
+            "location": "§2.2 Fig.2c–d对应正文"
+          }
+        },
+        {
+          "name": "测试珠直径",
+          "value": "1.0 μm",
+          "evidence": {
+            "source_id": "lightsheet_meta",
+            "location": "§2.2 Fig.2c前后正文"
+          }
+        },
+        {
+          "name": "检测NA",
+          "value": "约0.3",
+          "evidence": {
+            "source_id": "lightsheet_meta",
+            "location": "§2.2 PSF测量段"
+          }
+        },
+        {
+          "name": "z扫描步长",
+          "value": "0.5 μm",
+          "evidence": {
+            "source_id": "lightsheet_meta",
+            "location": "§2.2 Fig.2d前正文"
+          }
+        }
+      ],
+      "conditions": "红色荧光珠置于水容器内琼脂中；照明元件与检测系统分开评价。此记录与ls_meta同属一篇论文，不是第二个独立来源。后续组织图像使用Richardson–Lucy去卷积，不能把处理后对比度当作裸镜片分辨率。",
+      "unreported_or_not_verified": "1 μm有限珠尺寸未去卷积到独立镜片PSF；§1的1.1 μm与§2.2及摘要的1.7 μm不同，未消歧；PSF专属发射谱、补充材料与原始图像未核验。",
+      "checked_on": "2026-11-06",
+      "record_status": "checked_excerpt",
       "claim_type": "representative_result"
     },
     {
@@ -3976,34 +4078,58 @@
       "parameters": [
         {
           "name": "直径",
-          "value": "约90 μm"
+          "value": "约90 μm",
+          "evidence": {
+            "source_id": "richards",
+            "location": "p.8 Microlens fabrication：最大直径90 μm；Fig.2图注"
+          }
         },
         {
           "name": "整体厚度",
-          "value": "约15 μm"
+          "value": "约15 μm",
+          "evidence": {
+            "source_id": "richards",
+            "location": "p.3：几何混合结构整体厚度14.7 μm"
+          }
         },
         {
           "name": "NA",
-          "value": "约0.3"
+          "value": "约0.3",
+          "evidence": {
+            "source_id": "richards",
+            "location": "p.7 Discussion及Fig.5a：主方案NA0.3"
+          }
         },
         {
           "name": "实测波长",
-          "value": "488/542/612/633 nm"
+          "value": "488/542/612/633 nm",
+          "evidence": {
+            "source_id": "richards",
+            "location": "p.3 Focal length and focusing efficiency"
+          }
         },
         {
           "name": "聚焦效率",
-          "value": "10个样品均值45–64%；各波长最佳51–70%"
+          "value": "10个样品均值45–64%；各波长最佳51–70%",
+          "evidence": {
+            "source_id": "richards",
+            "location": "pp.4–5 Fig.3b及相邻正文：几何混合10样品平均与最大值"
+          }
         },
         {
-          "name": "焦距误差",
-          "value": "<3%"
+          "name": "相对542 nm的焦长误差（作者报告）",
+          "value": "约4 μm，约2.8%",
+          "evidence": {
+            "source_id": "richards",
+            "location": "p.4 Focal length and focusing efficiency；Fig.3a；p.9 Focal length measurements"
+          }
         }
       ],
-      "conditions": "曲面折射+衍射方案；焦圈半径3×FWHM；分母为空白基底同孔径参考功率。",
-      "unreported_or_not_verified": "独立整镜绝对总透过率；连续谱逐点验收",
+      "conditions": "几何折射+衍射混合方案；4个离散测量波长。实验分子为半径3×FWHM针孔内焦斑功率，分母为邻近空白基底同物方孔径参考功率（p.8）。移台使收集物镜对准焦点，未证明四波长共用固定z平面。仿真以200×200 μm焦面屏幕总功率为分母（p.9），与实验不等价。",
+      "unreported_or_not_verified": "连续400–700 nm逐波长验收、共同固定焦面效率、独立总透过率、补充材料；正文约2.8%的聚合公式不清楚，不改写为峰峰值或最大绝对相对误差。",
       "application_id": "app_14",
-      "checked_on": "2026-10-25",
-      "record_status": "inherited_v2",
+      "checked_on": "2026-11-06",
+      "record_status": "checked_excerpt",
       "claim_type": "representative_result"
     },
     {
@@ -4095,6 +4221,55 @@
       "checked_on": "2026-10-25",
       "record_status": "inherited_v2",
       "claim_type": "representative_result"
+    },
+    {
+      "id": "scexao_smf_lab",
+      "application_id": "app_22",
+      "application": "单模光纤准直与通信耦合",
+      "name": "Jovanovic 2017 SCExAO 实验室单模光纤注入",
+      "evidence_type": "科研实验示例",
+      "source_ids": [
+        "jovanovic_smf_2017"
+      ],
+      "parameters": [
+        {
+          "name": "最高测得耦合效率（本文实验室条件）",
+          "value": "约78% @1500/1550 nm",
+          "evidence": {
+            "source_id": "jovanovic_smf_2017",
+            "location": "§4.1 p.8 Fig.8及对应正文"
+          }
+        },
+        {
+          "name": "相对本文理论极限",
+          "value": "约86%（极限约91%）",
+          "evidence": {
+            "source_id": "jovanovic_smf_2017",
+            "location": "§4.1 pp.8–9；不是86%绝对耦合"
+          }
+        },
+        {
+          "name": "光纤及模场直径",
+          "value": "SMF-28-J9；1/e²模场直径10.4 μm @1550 nm",
+          "evidence": {
+            "source_id": "jovanovic_smf_2017",
+            "location": "§3.2 p.7"
+          }
+        },
+        {
+          "name": "参考光纤",
+          "value": "365 μm芯径多模光纤",
+          "evidence": {
+            "source_id": "jovanovic_smf_2017",
+            "location": "§3.2–3.3 pp.7–8；§8.4 pp.12–13"
+          }
+        }
+      ],
+      "conditions": "实验室、瞳面变迹和波前校正后的注入；以移动多模参考光纤测得通量归一化，Fig.8已去除光纤端面Fresnel反射损失。不是从望远镜入口到光纤输出的端到端透过率。约78%是该文配置和谱通道内结果，不是光纤或透镜的全球纪录。",
+      "unreported_or_not_verified": "f/5.3±0.1来自高斯近似模型，峰位对应f/5.3未直接验证，不转换为实测NA；参考光纤捕获全部通量是有近似的校准；缺同分母独立实验集合、统一孔径/偏振/像差条件，不与100%理想模式界限或厂商准直镜规格排名。",
+      "record_status": "checked_excerpt",
+      "claim_type": "representative_result",
+      "checked_on": "2026-11-06"
     },
     {
       "id": "sfe_rgb",
@@ -4412,6 +4587,55 @@
       "checked_on": "2026-10-25",
       "record_status": "inherited_v2",
       "claim_type": "representative_result"
+    },
+    {
+      "id": "wang_low_na_achromat",
+      "application_id": "app_04",
+      "application": "显微镜物镜",
+      "name": "Wang 2021 低NA消色差超透镜（微成像候选元件）",
+      "evidence_type": "科研实验示例（元件级）",
+      "source_ids": [
+        "wang_low_na_2021"
+      ],
+      "parameters": [
+        {
+          "name": "NA",
+          "value": "0.1",
+          "evidence": {
+            "source_id": "wang_low_na_2021",
+            "location": "Experiments与Fig.4a对应正文"
+          }
+        },
+        {
+          "name": "评价波段",
+          "value": "650–1000 nm",
+          "evidence": {
+            "source_id": "wang_low_na_2021",
+            "location": "Experiments聚焦效率段"
+          }
+        },
+        {
+          "name": "实测平均聚焦效率",
+          "value": "88.5%",
+          "evidence": {
+            "source_id": "wang_low_na_2021",
+            "location": "Experiments；Fig.4a对应正文"
+          }
+        },
+        {
+          "name": "作者正文给出的谱点效率",
+          "value": "650 nm：85%；700 nm：90.2%",
+          "evidence": {
+            "source_id": "wang_low_na_2021",
+            "location": "Experiments；Fig.4a对应正文"
+          }
+        }
+      ],
+      "conditions": "分子为半径3×FWHM焦圈功率，分母为同透镜孔径内入射功率（Methods）。只作低NA微成像候选光学元件；不等于完整显微系统、通用物镜指标或实物世界纪录。",
+      "unreported_or_not_verified": "逐波长是否重选焦面、样本量与误差条、补充材料、完整系统视场/物方分辨率未核验；平均的采样/加权细节不外推。与Richards空白基底参考分母不同，不直接排列效率高低。",
+      "record_status": "checked_excerpt",
+      "claim_type": "representative_result",
+      "checked_on": "2026-11-06"
     }
   ]
 }
