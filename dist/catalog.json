@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.9",
+    "version": "0.1.14",
     "updated_on": "2026-11-06",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -893,56 +893,34 @@
       "id": "app_25",
       "name": "光片照明与体积显微",
       "category": "医疗与显微",
-      "summary": "照明宽度、传播范围与检测PSF分别评价：Luo双侧超透镜及独立Battistella静态Airy光片样本，波长与宽度口径不同，不直接排名。",
+      "summary": "按任务权衡照明厚度、传播范围、旁瓣激发和系统分辨率。收录Luo超透镜、Battistella静态Airy和Shi高斯/晶格实验；不同测量口径不直接排名。 Remacha与Shi提供含能量宽度方法依据。",
       "metric_ids": [
         "sheet_thickness",
         "sheet_length",
+        "optical_sectioning_width",
         "na",
         "resolution",
         "focus_efficiency",
         "transmission"
       ],
-      "priorities": [
-        {
-          "tier": 1,
-          "metric_ids": [
-            "sheet_thickness",
-            "sheet_length"
-          ],
-          "rationale": "厚度和有效长度共同约束照明切片能力，不宜单独追求最薄光片。",
-          "evidence_refs": [
-            "ls_comparison"
-          ],
-          "basis": "editorial_synthesis",
-          "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
-        },
-        {
-          "tier": 2,
-          "metric_ids": [
-            "na",
-            "resolution"
-          ],
-          "rationale": "检测NA参与决定系统分辨率；本层顺序是面向照明设计的编辑性解读。",
-          "evidence_refs": [
-            "ls_comparison"
-          ],
-          "basis": "editorial_synthesis",
-          "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
-        }
-      ],
-      "ranking_status": "editorial_synthesis",
-      "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
+      "priorities": [],
+      "ranking_status": "not_established",
+      "ranking_gap": "任务权衡有原文依据，但没有统一指标次序。Shi 2022 Discussion（主文p.9）：在传播长度与峰值强度相同的比较中，若漂白比轴向分辨率/传播均匀性更受关注，高斯照明可降低总照明剂量；若更重视轴向分辨率和传播均匀性，MB-square或Hex晶格可提供更高分辨信息，但伴随更强离焦激发和背景，且漂白还依赖局部强度与样品微环境。需结合荧光密度、背景与信噪比选择；本页撤下此前笼统的P1/P2编辑顺序，不将这组条件建议编码成通用作者排名。",
       "metric_mapping_status": "editorial_candidate_set",
-      "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
+      "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。 含能量宽度为方法定义入口，不代表现有样本已报告此值。",
       "legacy_priority_proposal": "照明厚度/长度/均匀度与检测NA分别评价",
       "record_ids": [
         "ls_illum",
         "ls_detection",
         "ls_meta",
         "ls_system_psf",
-        "battistella_airy_profile"
+        "battistella_airy_profile",
+        "shi_lattice_bead_psf"
       ],
-      "updated_on": "2026-11-06"
+      "updated_on": "2026-11-06",
+      "ranking_gap_refs": [
+        "shi_lattice_2022"
+      ]
     },
     {
       "id": "app_26",
@@ -1377,10 +1355,35 @@
       "updated_on": "2026-11-06"
     },
     {
+      "id": "optical_sectioning_width",
+      "name": "光学切片含能量宽度",
+      "english_name": "Optical sectioning width (specified enclosed-energy fraction)",
+      "definition": "沿检测轴包含约定比例光片能量的区间宽度，用于描述主峰和旁瓣共同造成的激发范围。Remacha §3.1.1/Fig.2采用1−1/e≈63%，但§3.1.2写67%；本库保留冲突，不设通用阈值。它不是主峰强度FWHM或系统轴向PSF，也不是无条件的图像对比度。 Shi 2022另明确采用累计激发强度63%的半宽h63；它不是强度降至峰值63%处的主峰宽度，也不是系统PSF FWHM。对关于z=0对称的激发剖面，本库将其写为∫[-h63,h63] I_exc(z) dz / ∫ I_exc(z) dz = 0.63；这是定义的对称积分表述。须报告实际积分范围与归一化，且只有相同区间规则下全宽才等于2h63。",
+      "unit": "μm",
+      "direction": "lower",
+      "required_conditions": [
+        "包含能量比例及分母/积分范围",
+        "积分轴、区间选取及全宽/半宽",
+        "传播位置与光束形成方式",
+        "激发波长、介质及线性/多光子响应",
+        "检测收集、样品及后处理条件",
+        "实测或模型、采样与背景处理",
+        "累计剖面是激发强度还是总系统响应",
+        "中心/对称性约定及横向取样/平均方式"
+      ],
+      "definition_refs": [
+        "remacha_sectioning_2020",
+        "shi_lattice_2022",
+        "shi_lattice_2022_si"
+      ],
+      "best_interpretation": "仅比较相同含能量比例与积分协议；应同时报告主峰宽度、有效长度及剂量/背景。定义证据不代表现有Luo或Battistella记录已有该数值，也不建立最佳声明。 Shi的归一化λ数值换算前须明确真空/介质波长；不将不同宽度协议合并排名。",
+      "updated_on": "2026-11-06"
+    },
+    {
       "id": "resolution",
       "name": "空间分辨率",
       "english_name": "Spatial Resolution",
-      "definition": "系统区分相邻结构的尺度；Rayleigh、Abbe和PSF FWHM等判据必须分别报告。 标靶可辨线宽、点扩散宽度和模型估计不等价；系统指标还取决于照明/发射谱、探测孔径及重建处理。 USAF靶的可辨元素尺度与计算重建结果也须标明判读方法、采样及算法，不能替代裸光学系统PSF或MTF。",
+      "definition": "系统区分相邻结构的尺度；Rayleigh、Abbe和PSF FWHM等判据必须分别报告。 标靶可辨线宽、点扩散宽度和模型估计不等价；系统指标还取决于照明/发射谱、探测孔径及重建处理。 USAF靶的可辨元素尺度与计算重建结果也须标明判读方法、采样及算法，不能替代裸光学系统PSF或MTF。 光片荧光系统的总PSF由激发与检测响应共同决定；多峰响应须交代半高基线/峰突出度。去卷积比较须报告算法及收敛条件，固定相同迭代次数不保证等价。",
       "unit": "μm",
       "direction": "lower",
       "required_conditions": [
@@ -1388,14 +1391,16 @@
         "波长与NA",
         "物/像方及处理方式",
         "照明/激发/发射光谱",
-        "探测孔径、扫描与重建处理"
+        "探测孔径、扫描与重建处理",
+        "多峰阈值/基线及重建收敛条件（适用时）"
       ],
       "definition_refs": [
         "mtf_definition",
         "oct_definition",
         "wang_visible_2018",
         "wang_low_na_2021_si",
-        "chu_meta_fp_2025"
+        "chu_meta_fp_2025",
+        "shi_lattice_2022"
       ],
       "best_interpretation": "没有跨应用统一最优值",
       "updated_on": "2026-11-06"
@@ -1404,18 +1409,21 @@
       "id": "sheet_length",
       "name": "光片有效长度",
       "english_name": "Light-sheet Propagation Length",
-      "definition": "在指定厚度/均匀度容差内的传播范围；高斯近似常以两倍瑞利长度描述。实验取样跨度、相机视场及模型预测FOV须分别标注，不能不经判据直接当作实测有效长度。",
+      "definition": "光片传播范围必须绑定判据。Shi 2022采用沿传播轴y的强度剖面FWHM；另一类定义按厚度或光学切片半宽的允许增长范围取长度，二者不能默认相等。理想高斯束的2zR特指束宽增至束腰√2倍的两端间距，不能直接套给任意光束的传播强度FWHM。实验取样跨度、相机视场及模型预测FOV须分别标注，不能不经判据直接当作实测有效长度。 Remacha §3.1.2按含能量厚度增至两倍定义传播距离，需说明单侧/双侧长度，不与强度半高或宽度√2倍混用。",
       "unit": "μm",
       "direction": "higher",
       "required_conditions": [
-        "厚度允许变化",
-        "光束模型",
+        "长度判据（强度半高/宽度增长/光学切片阈值）",
+        "全长/半长、传播轴及中心定义",
+        "光束模型、瞳形与横向取样",
         "波长及介质",
-        "长度判据、实测/模型及取样范围"
+        "实测/模型、取样范围和拟合方法"
       ],
       "definition_refs": [
         "ls_comparison",
-        "battistella_airy_2022"
+        "battistella_airy_2022",
+        "shi_lattice_2022",
+        "remacha_sectioning_2020"
       ],
       "best_interpretation": "需与厚度、旁瓣和背景联合评价。",
       "updated_on": "2026-11-06"
@@ -1424,18 +1432,20 @@
       "id": "sheet_thickness",
       "name": "光片厚度",
       "english_name": "Light-sheet Thickness",
-      "definition": "照明横截面的强度宽度；FWHM与1/e²宽度分别定义。多峰光束须说明取首主峰还是整体轮廓，首主峰FWHM不表示旁瓣总能量。它与检测PSF共同影响系统轴向分辨，不能直接当作系统PSF。",
+      "definition": "照明横截面的强度宽度；FWHM与1/e²宽度分别定义。多峰光束须说明取首主峰还是整体轮廓，首主峰FWHM不表示旁瓣总能量。它与检测PSF共同影响系统轴向分辨，不能直接当作系统PSF。 半宽和全宽、峰值比例和peak prominence（峰突出度）阈值须区分；Shi的方法还使用峰值63%处的主瓣宽度，这与累计强度63%的光学切片半宽是两项不同量。 Remacha §3.1.1采用峰值1/e≈37%处主峰宽度；与Shi的63%峰值阈值须分列，不直接换算。",
       "unit": "μm",
       "direction": "lower",
       "required_conditions": [
-        "宽度定义及主峰/整体轮廓",
+        "强度宽度阈值、半宽/全宽、基线及主峰/整体轮廓",
         "传播位置",
         "激发波长、介质",
-        "测量方法及检测NA"
+        "测量方法及检测响应（推断系统分辨率时须报告检测NA）"
       ],
       "definition_refs": [
         "ls_comparison",
-        "battistella_airy_2022"
+        "battistella_airy_2022",
+        "shi_lattice_2022",
+        "remacha_sectioning_2020"
       ],
       "best_interpretation": "没有跨应用统一最优值",
       "updated_on": "2026-11-06"
@@ -1838,9 +1848,9 @@
     {
       "id": "lightsheet_meta",
       "title": "Luo 等 Metalens-Based Dual Light-Sheet Fluorescence Microscopy",
-      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12464795/",
-      "location": "§1；§2.1 Eq.1、Fig.1c–d、Table 1；§2.2 Fig.2c–d；§2.2 Eq.2及Fig.4",
-      "evidence_scope": "PMC 主文 HTML 的上述正文、图注和表格节选；未读补充材料，未逐图视觉复核；不从图估读新数值。后续打开出现验证码，未绕过。",
+      "url": "https://metamaterials.riken.jp/tanaka/AccomplishmentFiles/SmallMethods-25-e02149-YLuo-MetalensBasedDualLightSheetFluorescenceMicroscopy.pdf",
+      "location": "主文p.2 §2.1 Eq.1参数；p.3 Fig.1/对应正文；p.4 Table1和Fig.2c–d；p.6检测物镜与RL处理；p.7 Methods相关制造段",
+      "evidence_scope": "先前读取PMC主文相关HTML；本机进一步取得作者机构RIKEN托管的出版社正式PDF，阅读以上相关段落并视觉核对PDF pp.3/4/6。未读完整补充材料或原始图像，不从曲线估读新值。保留800/850 nm柱高与1.1/1.7 μm差异；Wiley补充材料访问失败，未绕过。",
       "source_year": 2025,
       "checked_on": "2026-11-06",
       "kind": "paper",
@@ -2136,6 +2146,18 @@
       "doi": null
     },
     {
+      "id": "remacha_sectioning_2020",
+      "title": "Remacha, Friedrich, Vermot & Fahrbach: How to define and optimize axial resolution in light-sheet microscopy: a simulation-based approach",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6968747/",
+      "doi": "10.1364/BOE.11.000008",
+      "source_year": 2020,
+      "kind": "paper",
+      "location": "§3.1.1及Fig.2–3图注；§3.1.2；§3.2首段；§4；Appendix B开头",
+      "evidence_scope": "PMC主文HTML相关正文及图注，非全文精读；PubMed元数据与Fig.2图注交叉核对。出版物为2020卷期，在线日期2019-12-02。仿真/方法证据，不计独立实测样本；未读到PDF页面、未视觉核验Fig.2图像、未复现作者代码。§3.1.1/Fig.2写63%，§3.1.2写67%，保留文本冲突，未判作已证实的勘误。",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
+    },
+    {
       "id": "richards",
       "title": "Richards 等 Hybrid achromatic microlenses",
       "url": "https://backend.orbit.dtu.dk/ws/files/325782423/s41467_023_38858_y.pdf",
@@ -2158,6 +2180,30 @@
       "kind": "paper",
       "verification": "inherited_v2",
       "doi": null
+    },
+    {
+      "kind": "paper",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt",
+      "doi": "10.1038/s41467-022-32341-w",
+      "source_year": 2022,
+      "id": "shi_lattice_2022",
+      "title": "Shi, Daugird & Legant 2022: A quantitative analysis of various patterns applied in lattice light sheet microscopy",
+      "url": "https://www.nature.com/articles/s41467-022-32341-w",
+      "location": "主文pp.1–3 Introduction/Results/Fig.1；p.9 Discussion；pp.9–11 Methods: PSF simulation与Experimental imaging system",
+      "evidence_scope": "出版社HTML及正式PDF上述相关段落；视觉核对PDF p.3 Fig.1、p.10方法。核验传播长度、累计强度半宽、总PSF和任务权衡；未逐图读完整主文、未复现原始数据。单珠实验参数见另列SI入口；同文主文/SI不是两项独立研究。"
+    },
+    {
+      "kind": "paper",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt",
+      "doi": "10.1038/s41467-022-32341-w",
+      "source_year": 2022,
+      "id": "shi_lattice_2022_si",
+      "title": "Shi et al. 2022 Supplementary Material: Table S2 and Fig. SI2",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-022-32341-w/MediaObjects/41467_2022_32341_MOESM1_ESM.pdf",
+      "location": "SI PDF p.3 Table S2(a)（模拟）；p.6 Fig. SI2(a–g)，尤其(g)实验数值表；Table S1与Fig. SI1图注",
+      "evidence_scope": "出版社补充PDF相关表格及图注，已视觉核对p.3和p.6；从(g)直接转录实验nm与μm数值，不估读曲线。Table S2为模拟，未混入实验。保留Hex NA标注及Gaussian归一化/纳米列差异；未读取所有24幅补充图或分析代码。"
     },
     {
       "id": "sill",
@@ -3789,7 +3835,7 @@
         }
       ],
       "conditions": "532 nm；照明NA 0.05。6.8 μm为光片焦面强度FWHM，不是系统横向分辨率。44.3%仅按作者名称记为透过效率，不能改称焦圈效率或与其他分母直接比较。",
-      "unreported_or_not_verified": "44.3%的完整功率分母和收集范围、补充材料、宽带共焦；正文850 nm柱高与Table 1的800 nm不一致，均不作为已消歧厚度；未复核原记录检测物镜WD。",
+      "unreported_or_not_verified": "44.3%的完整功率分母和收集范围、补充材料、宽带共焦；正文850 nm柱高与Table 1的800 nm不一致，均不作为已消歧厚度；主文p.3的152±1 μm为作者FOV，缺统一传播长度判据，不改称实测有效长度。",
       "application_id": "app_25",
       "checked_on": "2026-11-06",
       "record_status": "checked_excerpt",
@@ -3836,10 +3882,18 @@
             "source_id": "lightsheet_meta",
             "location": "§2.2 Fig.2d前正文"
           }
+        },
+        {
+          "name": "检测物镜工作距离（作者报告）",
+          "value": "3.5 mm；10× Olympus UMPLFLN水浸",
+          "evidence": {
+            "source_id": "lightsheet_meta",
+            "location": "主文PDF p.6左栏，检测臂分辨率与水浸物镜段"
+          }
         }
       ],
       "conditions": "红色荧光珠置于水容器内琼脂中；照明元件与检测系统分开评价。此记录与ls_meta同属一篇论文，不是第二个独立来源。后续组织图像使用Richardson–Lucy去卷积，不能把处理后对比度当作裸镜片分辨率。",
-      "unreported_or_not_verified": "1 μm有限珠尺寸未去卷积到独立镜片PSF；§1的1.1 μm与§2.2及摘要的1.7 μm不同，未消歧；PSF专属发射谱、补充材料与原始图像未核验。",
+      "unreported_or_not_verified": "1 μm有限珠尺寸未去卷积到独立镜片PSF；§1的1.1 μm与§2.2及摘要的1.7 μm不同，未消歧；PSF专属发射谱、补充材料与原始图像未核验。 15 μm演示珠的605 nm不能移用于此1 μm PSF珠；p.6用于理论估算的平均500 nm也不证明其实际发射谱。",
       "checked_on": "2026-11-06",
       "record_status": "checked_excerpt",
       "claim_type": "representative_result"
@@ -4905,6 +4959,87 @@
       "application_id": "app_07",
       "checked_on": "2026-10-25",
       "record_status": "inherited_v2",
+      "claim_type": "representative_result"
+    },
+    {
+      "id": "shi_lattice_bead_psf",
+      "application": "光片照明与体积显微",
+      "application_id": "app_25",
+      "name": "Shi 2022 高斯/晶格光片单珠系统PSF与传播长度",
+      "evidence_type": "科研实验示例",
+      "source_ids": [
+        "shi_lattice_2022",
+        "shi_lattice_2022_si"
+      ],
+      "parameters": [
+        {
+          "name": "Gaussian（表列NA 0.21/0）：系统轴向PSF FWHM（中心 / 传播半高位置）",
+          "value": "887 / 1075 nm",
+          "metric_id": "resolution",
+          "evidence": {
+            "source_id": "shi_lattice_2022_si",
+            "location": "SI PDF p.6 Fig. SI2(g)，Overall PSF axial FWHM的Center / FWHM两列（nm原值）"
+          }
+        },
+        {
+          "name": "Gaussian（表列NA 0.21/0）：传播强度FWHM长度",
+          "value": "16.8 μm",
+          "metric_id": "sheet_length",
+          "evidence": {
+            "source_id": "shi_lattice_2022_si",
+            "location": "SI PDF p.6 Fig. SI2(f–g)，Propagation Length列；定义见主文p.2 Results及Fig.1b–c"
+          }
+        },
+        {
+          "name": "MB-square（表列NA 0.35/0.25）：系统轴向PSF FWHM（中心 / 传播半高位置）",
+          "value": "728 / 738 nm",
+          "metric_id": "resolution",
+          "evidence": {
+            "source_id": "shi_lattice_2022_si",
+            "location": "SI PDF p.6 Fig. SI2(g)，Overall PSF axial FWHM的Center / FWHM两列（nm原值）"
+          }
+        },
+        {
+          "name": "MB-square（表列NA 0.35/0.25）：传播强度FWHM长度",
+          "value": "18.0 μm",
+          "metric_id": "sheet_length",
+          "evidence": {
+            "source_id": "shi_lattice_2022_si",
+            "location": "SI PDF p.6 Fig. SI2(f–g)，Propagation Length列；定义见主文p.2 Results及Fig.1b–c"
+          }
+        },
+        {
+          "name": "Hex（表列NA 0.46/0.36，图文有差异）：系统轴向PSF FWHM（中心 / 传播半高位置）",
+          "value": "537 / 559 nm",
+          "metric_id": "resolution",
+          "evidence": {
+            "source_id": "shi_lattice_2022_si",
+            "location": "SI PDF p.6 Fig. SI2(g)，Overall PSF axial FWHM的Center / FWHM两列（nm原值）"
+          }
+        },
+        {
+          "name": "Hex（表列NA 0.46/0.36，图文有差异）：传播强度FWHM长度",
+          "value": "20.0 μm",
+          "metric_id": "sheet_length",
+          "evidence": {
+            "source_id": "shi_lattice_2022_si",
+            "location": "SI PDF p.6 Fig. SI2(f–g)，Propagation Length列；定义见主文p.2 Results及Fig.1b–c"
+          }
+        },
+        {
+          "name": "照明 / 检测物镜NA（非光束瞳形参数）",
+          "value": "0.6 / 1.0",
+          "metric_id": "na",
+          "evidence": {
+            "source_id": "shi_lattice_2022",
+            "location": "主文p.10 Methods: Experimental imaging system，TL20X-MPL与Zeiss 20×/1.0"
+          }
+        }
+      ],
+      "conditions": "同一研究内三种照明配置，按SI Fig. SI2(g)直接记录；100 nm红色荧光珠、室温PBS，照明物镜NA 0.6、检测NA 1.0。系统轴向PSF宽度不是照明主峰厚度；中心/边位置分别为传播中心和沿传播强度降至半高的位置。长度为沿y的强度FWHM，不是统一厚度容差或2倍瑞利长度。论文定量分辨率比较使用未去卷积数据，默认匹配样品处峰值强度。三配置不是三个独立来源，实际长度16.8/18.0/20.0 μm并不严格相等。",
+      "unreported_or_not_verified": "实际仪器激发线、发射滤波带宽、实验介质折射率、Fig. SI2专属重复数/误差与采样未核验。Methods的580/605 nm是红珠标称激发/发射，不能当激光设置；Table S2的560 nm/n=1.3属于模拟。Hex在SI图(a/c)标NA 0.45/0.35，在表(g)标0.46/0.36，未消歧。Gaussian中心列1.95λ/887 nm与同表其他λ/nm对的比例不一致，保留作者nm原值，不反推或校正波长。Methods用peak prominence定义半高，Fig. SI2具体实现/基线未独立复现；未估读旁瓣能量、切片半宽、效率或统计制造容差，不宣称最佳。",
+      "checked_on": "2026-11-06",
+      "record_status": "checked_excerpt",
       "claim_type": "representative_result"
     },
     {

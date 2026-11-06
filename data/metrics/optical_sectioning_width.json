@@ -1,0 +1,25 @@
+{
+  "id": "optical_sectioning_width",
+  "name": "光学切片含能量宽度",
+  "english_name": "Optical sectioning width (specified enclosed-energy fraction)",
+  "definition": "沿检测轴包含约定比例光片能量的区间宽度，用于描述主峰和旁瓣共同造成的激发范围。Remacha §3.1.1/Fig.2采用1−1/e≈63%，但§3.1.2写67%；本库保留冲突，不设通用阈值。它不是主峰强度FWHM或系统轴向PSF，也不是无条件的图像对比度。 Shi 2022另明确采用累计激发强度63%的半宽h63；它不是强度降至峰值63%处的主峰宽度，也不是系统PSF FWHM。对关于z=0对称的激发剖面，本库将其写为∫[-h63,h63] I_exc(z) dz / ∫ I_exc(z) dz = 0.63；这是定义的对称积分表述。须报告实际积分范围与归一化，且只有相同区间规则下全宽才等于2h63。",
+  "unit": "μm",
+  "direction": "lower",
+  "required_conditions": [
+    "包含能量比例及分母/积分范围",
+    "积分轴、区间选取及全宽/半宽",
+    "传播位置与光束形成方式",
+    "激发波长、介质及线性/多光子响应",
+    "检测收集、样品及后处理条件",
+    "实测或模型、采样与背景处理",
+    "累计剖面是激发强度还是总系统响应",
+    "中心/对称性约定及横向取样/平均方式"
+  ],
+  "definition_refs": [
+    "remacha_sectioning_2020",
+    "shi_lattice_2022",
+    "shi_lattice_2022_si"
+  ],
+  "best_interpretation": "仅比较相同含能量比例与积分协议；应同时报告主峰宽度、有效长度及剂量/背景。定义证据不代表现有Luo或Battistella记录已有该数值，也不建立最佳声明。 Shi的归一化λ数值换算前须明确真空/介质波长；不将不同宽度协议合并排名。",
+  "updated_on": "2026-11-06"
+}
