@@ -1,0 +1,81 @@
+{
+  "id": "shi_lattice_bead_psf",
+  "application": "光片照明与体积显微",
+  "application_id": "app_25",
+  "name": "Shi 2022 高斯/晶格光片单珠系统PSF与传播长度",
+  "evidence_type": "科研实验示例",
+  "source_ids": [
+    "shi_lattice_2022",
+    "shi_lattice_2022_si"
+  ],
+  "parameters": [
+    {
+      "name": "Gaussian（表列NA 0.21/0）：系统轴向PSF FWHM（中心 / 传播半高位置）",
+      "value": "887 / 1075 nm",
+      "metric_id": "resolution",
+      "evidence": {
+        "source_id": "shi_lattice_2022_si",
+        "location": "SI PDF p.6 Fig. SI2(g)，Overall PSF axial FWHM的Center / FWHM两列（nm原值）"
+      }
+    },
+    {
+      "name": "Gaussian（表列NA 0.21/0）：传播强度FWHM长度",
+      "value": "16.8 μm",
+      "metric_id": "sheet_length",
+      "evidence": {
+        "source_id": "shi_lattice_2022_si",
+        "location": "SI PDF p.6 Fig. SI2(f–g)，Propagation Length列；定义见主文p.2 Results及Fig.1b–c"
+      }
+    },
+    {
+      "name": "MB-square（表列NA 0.35/0.25）：系统轴向PSF FWHM（中心 / 传播半高位置）",
+      "value": "728 / 738 nm",
+      "metric_id": "resolution",
+      "evidence": {
+        "source_id": "shi_lattice_2022_si",
+        "location": "SI PDF p.6 Fig. SI2(g)，Overall PSF axial FWHM的Center / FWHM两列（nm原值）"
+      }
+    },
+    {
+      "name": "MB-square（表列NA 0.35/0.25）：传播强度FWHM长度",
+      "value": "18.0 μm",
+      "metric_id": "sheet_length",
+      "evidence": {
+        "source_id": "shi_lattice_2022_si",
+        "location": "SI PDF p.6 Fig. SI2(f–g)，Propagation Length列；定义见主文p.2 Results及Fig.1b–c"
+      }
+    },
+    {
+      "name": "Hex（表列NA 0.46/0.36，图文有差异）：系统轴向PSF FWHM（中心 / 传播半高位置）",
+      "value": "537 / 559 nm",
+      "metric_id": "resolution",
+      "evidence": {
+        "source_id": "shi_lattice_2022_si",
+        "location": "SI PDF p.6 Fig. SI2(g)，Overall PSF axial FWHM的Center / FWHM两列（nm原值）"
+      }
+    },
+    {
+      "name": "Hex（表列NA 0.46/0.36，图文有差异）：传播强度FWHM长度",
+      "value": "20.0 μm",
+      "metric_id": "sheet_length",
+      "evidence": {
+        "source_id": "shi_lattice_2022_si",
+        "location": "SI PDF p.6 Fig. SI2(f–g)，Propagation Length列；定义见主文p.2 Results及Fig.1b–c"
+      }
+    },
+    {
+      "name": "照明 / 检测物镜NA（非光束瞳形参数）",
+      "value": "0.6 / 1.0",
+      "metric_id": "na",
+      "evidence": {
+        "source_id": "shi_lattice_2022",
+        "location": "主文p.10 Methods: Experimental imaging system，TL20X-MPL与Zeiss 20×/1.0"
+      }
+    }
+  ],
+  "conditions": "同一研究内三种照明配置，按SI Fig. SI2(g)直接记录；100 nm红色荧光珠、室温PBS，照明物镜NA 0.6、检测NA 1.0。系统轴向PSF宽度不是照明主峰厚度；中心/边位置分别为传播中心和沿传播强度降至半高的位置。长度为沿y的强度FWHM，不是统一厚度容差或2倍瑞利长度。论文定量分辨率比较使用未去卷积数据，默认匹配样品处峰值强度。三配置不是三个独立来源，实际长度16.8/18.0/20.0 μm并不严格相等。",
+  "unreported_or_not_verified": "实际仪器激发线、发射滤波带宽、实验介质折射率、Fig. SI2专属重复数/误差与采样未核验。Methods的580/605 nm是红珠标称激发/发射，不能当激光设置；Table S2的560 nm/n=1.3属于模拟。Hex在SI图(a/c)标NA 0.45/0.35，在表(g)标0.46/0.36，未消歧。Gaussian中心列1.95λ/887 nm与同表其他λ/nm对的比例不一致，保留作者nm原值，不反推或校正波长。Methods用peak prominence定义半高，Fig. SI2具体实现/基线未独立复现；未估读旁瓣能量、切片半宽、效率或统计制造容差，不宣称最佳。",
+  "checked_on": "2026-11-06",
+  "record_status": "checked_excerpt",
+  "claim_type": "representative_result"
+}
