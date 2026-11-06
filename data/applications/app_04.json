@@ -2,7 +2,7 @@
   "id": "app_04",
   "name": "显微镜物镜",
   "category": "医疗与显微",
-  "summary": "按任务区分NA0.1聚焦元件、NA0.106可见光标靶成像与NA0.24上转换扫描对照；低NA是本批检索导航，不是行业合格界线。",
+  "summary": "按任务区分聚焦元件、可见标靶、上转换扫描与双超透镜计算成像；原图和重建分别记录，低NA是本批检索导航而非行业界线。",
   "metric_ids": [
     "na",
     "resolution",
@@ -43,7 +43,7 @@
   "ranking_status": "author_explicit",
   "ranking_gap": "仅取得Wang 2021针对近红外低效率缺口的两项相对优先关系；其余物镜任务、分辨率/视场/工作距离等未建立全套原文排名。",
   "metric_mapping_status": "editorial_candidate_set",
-  "metric_mapping_note": "本页低NA检索以文献实际样本NA0.1/0.106为入口，NA0.24扫描样本为邻近对照；不定义统一低NA阈值。可见标靶线宽、近红外激发/可见发射的扫描分辨率估计及单元聚焦效率分开。视场与完整成像共轭缺口保留，不能用图上标尺、收集物镜倍率替代。",
+  "metric_mapping_note": "本页低NA检索以文献实际样本NA0.1/0.106为入口，NA0.24扫描样本为邻近对照；不定义统一低NA阈值。可见标靶线宽、近红外激发/可见发射的扫描分辨率估计及单元聚焦效率分开。视场与完整成像共轭缺口保留，不能用图上标尺、收集物镜倍率替代。 Chu计算显微子任务另报告照明、4-f共轭、采样与FP重建；不将算法改善归为裸透镜分辨率。",
   "legacy_priority_proposal": "物方NA、介质、WD、平场、盖玻片、轴向/横向色差",
   "record_ids": [
     "micro2",
@@ -52,7 +52,8 @@
     "micro60",
     "wang_low_na_achromat",
     "wang_visible_2018_imaging",
-    "wang_upconversion_scan_2021"
+    "wang_upconversion_scan_2021",
+    "chu_meta_fp_usaf"
   ],
   "updated_on": "2026-11-06"
 }

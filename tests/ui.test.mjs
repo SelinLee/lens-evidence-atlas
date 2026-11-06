@@ -58,3 +58,23 @@ test('author relative priority and editorial interpretation have distinct labels
  assert.ok(f.el('panel').innerHTML.includes('有出处的编辑性优先级'));assert.ok(!f.el('panel').innerHTML.includes('作者原文明示的限定任务相对次序'));
  f.run('method()');assert.ok(f.el('detailBody').innerHTML.includes('6 类应用有带出处'));assert.ok(f.el('detailBody').innerHTML.includes('1 类应用包含作者'));
 });
+
+test('meta-FP record renders raw and reconstructed details with source and gaps',()=>{
+ const f=fixture();f.location.hash='#app_04/best';f.run('route()');
+ assert.ok(f.el('panel').innerHTML.includes('Chu 2025'));
+ f.run("openDialog('test',recordCard(records.get('chu_meta_fp_usaf'),true))");
+ for(const text of ['60 s','20–41%','532 nm','13 mm','5.2 mm','约4×','1.75 × 1.75','81个','7.81 μm','3.91 μm','§2 Results','RCNN单帧预测不属于','实测NA','判读阈值'])assert.ok(f.el('detailBody').innerHTML.includes(text),text);
+ f.location.hash='#app_04/sources';f.run('route()');
+ assert.ok(f.el('panel').innerHTML.includes('10.1515/nanoph-2025-0416'));
+ f.run("openMetric('resolution')");assert.ok(f.el('detailBody').innerHTML.includes('不能替代裸光学系统PSF或MTF'));
+});
+test('meta-FP search repeats, clears, and preserves existing TECF and array records',()=>{
+ const f=fixture();
+ for(const query of ['meta-FP','Chu 2025','unmatched_low_na_987','meta-FP','']){
+  f.el('search').value=query;f.run('renderList()');
+  assert.equal(f.el('resultCount').textContent,query==='unmatched_low_na_987'?'0 / 33 类应用':query?'1 / 33 类应用':'33 / 33 类应用');
+ }
+ for(const [app,record] of [['app_22','He 2022'],['app_14','Liu']]){
+  f.location.hash='#'+app+'/best';f.run('route()');assert.ok(f.el('panel').innerHTML.includes(record));
+ }
+});
