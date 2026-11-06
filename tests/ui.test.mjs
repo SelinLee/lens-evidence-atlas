@@ -56,7 +56,7 @@ test('author relative priority and editorial interpretation have distinct labels
  assert.ok(!f.el('coverage').innerHTML.includes('编辑解读'));
  f.location.hash='#app_14/priority';f.run('route()');
  assert.ok(f.el('panel').innerHTML.includes('有出处的编辑性优先级'));assert.ok(!f.el('panel').innerHTML.includes('作者原文明示的限定任务相对次序'));
- f.run('method()');assert.ok(f.el('detailBody').innerHTML.includes('6 类应用有带出处'));assert.ok(f.el('detailBody').innerHTML.includes('1 类应用包含作者'));
+ f.run('method()');assert.ok(f.el('detailBody').innerHTML.includes('5 类应用有带出处'));assert.ok(f.el('detailBody').innerHTML.includes('1 类应用包含作者'));
 });
 
 test('meta-FP record renders raw and reconstructed details with source and gaps',()=>{
@@ -98,4 +98,20 @@ test('Airy search repeats, clears, and preserves independent existing experiment
  for(const [app,record] of [['app_04','Chu 2025'],['app_22','He 2022'],['app_14','Liu']]){
   f.location.hash='#'+app+'/best';f.run('route()');assert.ok(f.el('panel').innerHTML.includes(record));
  }
+});
+
+test('light-sheet task tradeoffs show a source without fabricating P1/P2',()=>{
+ const f=fixture();f.run("selected='app_25';tab='priority';render()");
+ const panel=f.el('panel').innerHTML;
+ assert.ok(panel.includes('任务权衡：没有统一重要性排序'));
+ assert.ok(panel.includes('data-source="shi_lattice_2022"'));
+ assert.equal(panel.includes('class="tier"'),false);
+ f.run("openSource('shi_lattice_2022')");assert.ok(f.el('detailBody').innerHTML.includes('p.9 Discussion'));
+ f.run("tab='sources';render()");assert.ok(f.el('panel').innerHTML.includes('10.1038/s41467-022-32341-w'));
+});
+test('sectioning definition and measured lattice record keep experimental boundaries visible',()=>{
+ const f=fixture();f.run("openMetric('optical_sectioning')");
+ for(const text of ['63%','半宽','积分范围','不是系统PSF FWHM','Table S2'])assert.ok(f.el('detailBody').innerHTML.includes(text),text);
+ f.run("openDialog('test',recordCard(records.get('shi_lattice_bead_psf'),true))");
+ for(const text of ['887 / 1075 nm','537 / 559 nm','16.8 μm','不是三个独立来源','0.45/0.35','560 nm/n=1.3属于模拟'])assert.ok(f.el('detailBody').innerHTML.includes(text),text);
 });

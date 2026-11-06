@@ -79,6 +79,22 @@ test('Airy illumination widths stay separate from model FOV and independent samp
  assert.ok(r.unreported_or_not_verified.includes('3306 μm'));
  assert.ok(r.unreported_or_not_verified.includes('±的统计定义'));
  assert.ok(!d.bests.some(b=>b.application_id==='app_25'));
- assert.equal(d.applications.find(a=>a.id==='app_25').ranking_status,'editorial_synthesis');
+ assert.notEqual(d.applications.find(a=>a.id==='app_25').ranking_status,'author_explicit');
  assert.ok(validate(d).benchmarks>=68);
+});
+
+test('cited task tradeoffs cannot silently lose their source or explanation',()=>{
+ const d=load(),a=d.applications.find(x=>x.id==='app_25');
+ assert.equal(a.ranking_status,'not_established');assert.equal(a.priorities.length,0);
+ assert.ok(validate(d));
+ a.ranking_gap_refs=['missing_tradeoff_source'];assert.throws(()=>validate(d),/ranking context: missing source/);
+ a.ranking_gap_refs=['shi_lattice_2022'];a.ranking_gap='';assert.throws(()=>validate(d),/cited ranking context needs explanation/);
+});
+test('lattice measured PSF and length do not import simulated widths or wavelength',()=>{
+ const d=load(),r=d.benchmarks.find(x=>x.id==='shi_lattice_bead_psf');
+ assert.deepEqual(r.parameters.filter(p=>p.metric_id==='resolution').map(p=>p.value),['887 / 1075 nm','728 / 738 nm','537 / 559 nm']);
+ assert.deepEqual(r.parameters.filter(p=>p.metric_id==='sheet_length').map(p=>p.value),['16.8 μm','18.0 μm','20.0 μm']);
+ assert.equal(r.parameters.some(p=>p.metric_id==='sheet_thickness'||p.metric_id==='optical_sectioning'),false);
+ assert.equal(r.parameters.some(p=>/560|580|605/.test(p.value)),false);
+ assert.equal(d.bests.some(b=>b.application_id==='app_25'),false);
 });

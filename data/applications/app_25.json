@@ -2,45 +2,19 @@
   "id": "app_25",
   "name": "光片照明与体积显微",
   "category": "医疗与显微",
-  "summary": "照明宽度、传播范围与检测PSF分别评价：Luo双侧超透镜及独立Battistella静态Airy光片样本，波长与宽度口径不同，不直接排名。",
+  "summary": "按任务权衡照明厚度、传播范围、旁瓣激发和系统分辨率。收录Luo超透镜、Battistella静态Airy和Shi高斯/晶格实验；不同测量口径不直接排名。",
   "metric_ids": [
     "sheet_thickness",
     "sheet_length",
+    "optical_sectioning",
     "na",
     "resolution",
     "focus_efficiency",
     "transmission"
   ],
-  "priorities": [
-    {
-      "tier": 1,
-      "metric_ids": [
-        "sheet_thickness",
-        "sheet_length"
-      ],
-      "rationale": "厚度和有效长度共同约束照明切片能力，不宜单独追求最薄光片。",
-      "evidence_refs": [
-        "ls_comparison"
-      ],
-      "basis": "editorial_synthesis",
-      "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
-    },
-    {
-      "tier": 2,
-      "metric_ids": [
-        "na",
-        "resolution"
-      ],
-      "rationale": "检测NA参与决定系统分辨率；本层顺序是面向照明设计的编辑性解读。",
-      "evidence_refs": [
-        "ls_comparison"
-      ],
-      "basis": "editorial_synthesis",
-      "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
-    }
-  ],
-  "ranking_status": "editorial_synthesis",
-  "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
+  "priorities": [],
+  "ranking_status": "not_established",
+  "ranking_gap": "任务权衡有原文依据，但没有统一指标次序。Shi 2022 Discussion（主文p.9）：在传播长度与峰值强度相同的比较中，若漂白比轴向分辨率/传播均匀性更受关注，高斯照明可降低总照明剂量；若更重视轴向分辨率和传播均匀性，MB-square或Hex晶格可提供更高分辨信息，但伴随更强离焦激发和背景，且漂白还依赖局部强度与样品微环境。需结合荧光密度、背景与信噪比选择；本页撤下此前笼统的P1/P2编辑顺序，不将这组条件建议编码成通用作者排名。",
   "metric_mapping_status": "editorial_candidate_set",
   "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
   "legacy_priority_proposal": "照明厚度/长度/均匀度与检测NA分别评价",
@@ -49,7 +23,11 @@
     "ls_detection",
     "ls_meta",
     "ls_system_psf",
-    "battistella_airy_profile"
+    "battistella_airy_profile",
+    "shi_lattice_bead_psf"
   ],
-  "updated_on": "2026-11-06"
+  "updated_on": "2026-11-06",
+  "ranking_gap_refs": [
+    "shi_lattice_2022"
+  ]
 }

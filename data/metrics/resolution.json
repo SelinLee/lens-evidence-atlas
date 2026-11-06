@@ -2,7 +2,7 @@
   "id": "resolution",
   "name": "空间分辨率",
   "english_name": "Spatial Resolution",
-  "definition": "系统区分相邻结构的尺度；Rayleigh、Abbe和PSF FWHM等判据必须分别报告。 标靶可辨线宽、点扩散宽度和模型估计不等价；系统指标还取决于照明/发射谱、探测孔径及重建处理。 USAF靶的可辨元素尺度与计算重建结果也须标明判读方法、采样及算法，不能替代裸光学系统PSF或MTF。",
+  "definition": "系统区分相邻结构的尺度；Rayleigh、Abbe和PSF FWHM等判据必须分别报告。 标靶可辨线宽、点扩散宽度和模型估计不等价；系统指标还取决于照明/发射谱、探测孔径及重建处理。 USAF靶的可辨元素尺度与计算重建结果也须标明判读方法、采样及算法，不能替代裸光学系统PSF或MTF。 光片荧光系统的总PSF由激发与检测响应共同决定；多峰响应须交代半高基线/峰突出度。去卷积比较须报告算法及收敛条件，固定相同迭代次数不保证等价。",
   "unit": "μm",
   "direction": "lower",
   "required_conditions": [
@@ -10,14 +10,16 @@
     "波长与NA",
     "物/像方及处理方式",
     "照明/激发/发射光谱",
-    "探测孔径、扫描与重建处理"
+    "探测孔径、扫描与重建处理",
+    "多峰阈值/基线及重建收敛条件（适用时）"
   ],
   "definition_refs": [
     "mtf_definition",
     "oct_definition",
     "wang_visible_2018",
     "wang_low_na_2021_si",
-    "chu_meta_fp_2025"
+    "chu_meta_fp_2025",
+    "shi_lattice_2022"
   ],
   "best_interpretation": "没有跨应用统一最优值",
   "updated_on": "2026-11-06"
