@@ -1,6 +1,6 @@
-# 热成像NETD与SSE：待落库核验笔记
+# 热成像NETD与SSE核验笔记
 
-状态：EVD-011a原文核验已推进，科学目录尚未修改。因新取得NIR附录揭示上一版校准范围错误，优先发布该更正，再接续本任务。不得把本笔记状态当作网页已有NETD指标。
+状态：EVD-011a已完成原文核验并写入v0.1.24候选目录，待测试、合并与实际网页验收。NIR附录校准范围更正已在v0.1.23发布。
 
 ## 定位与读取边界
 
@@ -35,11 +35,11 @@ Table5（p.432），单位mK，按Camera1/2/3顺序：
 
 Table13把30°C行也标为Water-heat-pipe cavity radiator，但Table1给其范围50–270°C；首批可只用100°C行并保留该标签差异，不自行把30°C水腔源改成氨腔源。
 
-## 下一步落库方向
+## 本批落库与后续
 
 补NETD与SSE两个指标、一个同研究三相机记录、一个原始来源；用厂商参数/NETD实验/SSE估读/不确定度估计分别标注。app10保留旧LightPath需求示例与Ophir产品，不刷新旧核验日期。给“辐射测温”任务的并列权衡，保持无统一名次与无全行业mK门槛。补实际光学通量、时间带宽和目标温度是后续可比性条件；不把本研究当世界最佳或多个独立团队。
 
-## 商业配置补充入口（本轮已读原厂HTML，尚未落库）
+## 商业配置（已核原厂HTML，纳入本批候选）
 
 [FLIR A700 24° f/1.0 Professional Science Kit](https://support.flir.com/dsdownload/assets/85903-0102-en-us.html)，P/N85903-0102，Rev.98866，页面Last modified2024-08-21。已读取原厂Imaging and optical data、Detector data、Measurement表。NETD<25 mK，24°、目标+30°C；640×480、30 Hz、7.5–14 μm非制冷微测辐射热计、12 μm像元；18 mm、24°×18°、IFOV0.65 mrad/pixel。标题称f/1.0但规格f-number行写1.04，应分别保留，不能悄悄改成完全一致。
 
