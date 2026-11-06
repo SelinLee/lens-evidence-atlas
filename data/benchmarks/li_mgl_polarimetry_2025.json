@@ -1,0 +1,110 @@
+{
+  "id": "li_mgl_polarimetry_2025",
+  "application": "近红外感知与生物识别",
+  "application_id": "app_08",
+  "name": "Li 2025 MGL 940 nm 全Stokes偏振相机",
+  "evidence_type": "科研器件实验、成像演示及同文光学模拟（逐项区分）",
+  "source_ids": [
+    "li_mgl_2025"
+  ],
+  "parameters": [
+    {
+      "name": "波长与滤光片",
+      "value": "940 nm；滤光片带宽30 nm",
+      "evidence": {
+        "source_id": "li_mgl_2025",
+        "location": "Results: Full-Stokes polarization imaging，Fig.3H前段"
+      }
+    },
+    {
+      "name": "孔径与几何",
+      "value": "光阑直径0.5 mm；光阑至超表面1.57 mm；EFL1.81 mm；超表面直径0.98 mm",
+      "evidence": {
+        "source_id": "li_mgl_2025",
+        "location": "Fig.3A图注；Methods: Sample fabrication"
+      }
+    },
+    {
+      "name": "设计视场",
+      "value": "约14°（Eq.(6)计算，θg=9.8°）；不是已核85°DFOV同口径对照",
+      "evidence": {
+        "source_id": "li_mgl_2025",
+        "location": "Results Eq.(6)/Fig.3"
+      },
+      "metric_id": "fov"
+    },
+    {
+      "name": "MTF与Strehl模型",
+      "value": "切向MTF为模拟；各角平均Strehl 0.71，不是实测MTF或全场衍射极限",
+      "evidence": {
+        "source_id": "li_mgl_2025",
+        "location": "Results Fig.3C及对应正文"
+      },
+      "metric_id": "mtf"
+    },
+    {
+      "name": "四通道聚焦效率",
+      "value": "实验报告总61.3%，零级2.3%；S9未读，分母/积分区域和偏振平均未完整核实，暂不标绝对效率",
+      "evidence": {
+        "source_id": "li_mgl_2025",
+        "location": "Results Fig.3H前段；Methods: Characterization of samples"
+      },
+      "metric_id": "focus_efficiency"
+    },
+    {
+      "name": "外形与采样",
+      "value": "外壳9.2 × 9.2 × 4.81 mm；像素3 × 3 μm；壳厚不等于TTL",
+      "evidence": {
+        "source_id": "li_mgl_2025",
+        "location": "Results Fig.3H前段"
+      }
+    },
+    {
+      "name": "重建与校准",
+      "value": "四通道配准，S=M⁻¹I；逐场校准矩阵；S0–S3用于DoP/DoLP/DoCP/AoP",
+      "evidence": {
+        "source_id": "li_mgl_2025",
+        "location": "Results Eq.(9)及Eqs.(10)–(13)"
+      },
+      "metric_id": "docp"
+    },
+    {
+      "name": "偏振实验误差声明",
+      "value": "x线偏振输入：全场平均AoP1.27°；多入射态平均偏振测量误差<1.32%（未核误差范数/聚合），不是所有角度最大误差",
+      "evidence": {
+        "source_id": "li_mgl_2025",
+        "location": "Results Fig.4A对应段"
+      },
+      "metric_id": "aolp"
+    },
+    {
+      "name": "处理与成像速度",
+      "value": "笔记本处理约10 ms，成像帧率可达23 fps；不能把10 ms倒数当端到端100 fps",
+      "evidence": {
+        "source_id": "li_mgl_2025",
+        "location": "Results Fig.4之后实时偏振成像段"
+      }
+    },
+    {
+      "name": "防伪示例条件",
+      "value": "940 nm部分椭圆偏振VCSEL照明，距离100 cm；一位作者真人与其打印照片",
+      "evidence": {
+        "source_id": "li_mgl_2025",
+        "location": "Results: Face antispoofing application；Fig.5"
+      }
+    },
+    {
+      "name": "示例图像距离",
+      "value": "融合RGB各10个直方图区间；按Eq.(14)χ²距离Σ(Hx−Hy)²/(Hx+Hy)，该对图像0.9199；不是91.99%识别准确率",
+      "evidence": {
+        "source_id": "li_mgl_2025",
+        "location": "Results Eq.(14)/Fig.5"
+      }
+    }
+  ],
+  "conditions": "单个MGL研究；S0–S3全Stokes与Metalenz三通道不同。四通道功率使用940 nm超连续光、偏振片及波片、4f系统和功率计测量；聚焦效率不能与缺少同分母条件的NILT94%互排。Fig.4为透明物偏振图，Fig.5为有限防伪演示。",
+  "unreported_or_not_verified": "主文可读、补充S9/S10/S11未读：缺完整效率分母、误差定义/状态采样数/不确定度、融合算法及测试数据集。传感器resolution原文写1280 μm by800 μm，单位有歧义，不擅改成像素数；设计段称BK7而制造段称BF33，保留不一致。没有独立防伪分类器验证、FAR/FRR/APCER/BPCER/ROC或置信区间；0.9199没有通用通过阈值。3D面具/动态攻击尚不能由此演示证明。含企业作者和相关专利申请；不把同文模拟当实验或多个独立样本。",
+  "record_status": "checked_excerpt",
+  "checked_on": "2026-11-06",
+  "claim_type": "representative_result"
+}

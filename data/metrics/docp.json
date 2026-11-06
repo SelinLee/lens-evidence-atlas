@@ -1,0 +1,19 @@
+{
+  "id": "docp",
+  "name": "圆偏振度（有符号DoCP）",
+  "english_name": "Signed Degree of Circular Polarization",
+  "definition": "此处沿用Li 2025 Eq.(12)：DoCP=S3/S0（S0>0），理想范围−1至1；符号依左右旋与观察方向约定。它不是总偏振度DoP；若其他来源用绝对值必须另标。S0/S1/S2三个通道不能独立给出DoCP；需要S3测量及校准。DoCP较大或绝对值较大不等于防伪正确率高，须在固定照明、对象及任务下评价。",
+  "unit": "1 / %",
+  "direction": "tradeoff",
+  "required_conditions": [
+    "光谱、偏振坐标轴及S3左右旋符号约定",
+    "Stokes重建/配准/仪器矩阵校准与场点",
+    "S0低信号阈值、噪声偏置及不确定度",
+    "入射照明偏振、被测对象与统计区域"
+  ],
+  "definition_refs": [
+    "li_mgl_2025"
+  ],
+  "best_interpretation": "描述偏振状态；性能评价应比较给定状态和条件下的测量误差及任务收益，没有通用最优状态值",
+  "updated_on": "2026-11-06"
+}

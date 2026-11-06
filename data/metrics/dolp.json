@@ -1,0 +1,20 @@
+{
+  "id": "dolp",
+  "name": "线偏振度（DoLP）",
+  "english_name": "Degree of Linear Polarization",
+  "definition": "DoLP=√(S1²+S2²)/S0（S0>0），描述光的线偏振成分，理想物理范围0–1。Li 2025 Eq.(11)；总偏振度DoP=√(S1²+S2²+S3²)/S0，只有已知S3=0时二者相同。测得S0/S1/S2即可求DoLP，不意味着已测完整Stokes。高DoLP不是高镜头质量或高防伪准确率；低S0、噪声和失配可导致无效/超界结果，不应仅裁剪后声称准确。Rudd Eq.(3)单轴有符号强度差不是一般DoLP。",
+  "unit": "1 / %",
+  "direction": "tradeoff",
+  "required_conditions": [
+    "光谱、偏振坐标轴及S3左右旋符号约定",
+    "Stokes重建/配准/仪器矩阵校准与场点",
+    "S0低信号阈值、噪声偏置及不确定度",
+    "入射照明偏振、被测对象与统计区域"
+  ],
+  "definition_refs": [
+    "li_mgl_2025",
+    "rudd_paraph_2016"
+  ],
+  "best_interpretation": "描述偏振状态；性能评价应比较给定状态和条件下的测量误差及任务收益，没有通用最优状态值",
+  "updated_on": "2026-11-06"
+}

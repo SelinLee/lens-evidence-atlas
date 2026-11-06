@@ -1,0 +1,59 @@
+{
+  "id": "latawiec_nir_polarimetry_2025",
+  "application": "近红外感知与生物识别",
+  "application_id": "app_08",
+  "name": "Latawiec 2025 传感器集成三Stokes偏振成像",
+  "evidence_type": "厂商作者的会议器件报告及定性图像",
+  "source_ids": [
+    "latawiec_nir_2025"
+  ],
+  "parameters": [
+    {
+      "name": "传感器与集成",
+      "value": "Samsung S5K931S全局快门；非晶硅矩形柱，低折射率介质；与传感器隔数微米spacer",
+      "evidence": {
+        "source_id": "latawiec_nir_2025",
+        "location": "p.790 §2 Results"
+      }
+    },
+    {
+      "name": "偏振测量通道",
+      "value": "0°/90°及45°/135°像素路由；重建S0、S1、S2，后两者有符号；未报告S3",
+      "evidence": {
+        "source_id": "latawiec_nir_2025",
+        "location": "p.790 §2 Results；p.791 Figs.1/4"
+      },
+      "metric_id": "dolp"
+    },
+    {
+      "name": "像素尺寸",
+      "value": "2.2 μm",
+      "evidence": {
+        "source_id": "latawiec_nir_2025",
+        "location": "p.791 §3 Impact"
+      }
+    },
+    {
+      "name": "处理帧率声明",
+      "value": "180 frames per second，端侧成像处理；未给对应分辨率/曝光/延迟统计",
+      "evidence": {
+        "source_id": "latawiec_nir_2025",
+        "location": "p.791 §3 Impact"
+      }
+    },
+    {
+      "name": "照明与样例",
+      "value": "快门同步漫射闪光；塑料盒和人像的强度/S1/S2/DoLP定性图",
+      "evidence": {
+        "source_id": "latawiec_nir_2025",
+        "location": "p.790 §2；p.791 Figs.2/4"
+      },
+      "metric_id": "dolp"
+    }
+  ],
+  "conditions": "近红外器件报告，没有明确中心波长；不能继承2024 Polar ID的940 nm。三线偏振Stokes分量支持DoLP但不支持一般椭圆态完整Stokes/DoCP；高透过是定性描述。",
+  "unreported_or_not_verified": "未报告定量透过率、FOV/MTF、偏振误差、帧率条件、独立识别验证或误接受/误拒绝统计。face-biometric compliant不等于已核标准认证；180 fps不能与另一系统23 fps在缺少分辨率和曝光条件时排名。",
+  "record_status": "checked_excerpt",
+  "checked_on": "2026-11-06",
+  "claim_type": "representative_result"
+}
