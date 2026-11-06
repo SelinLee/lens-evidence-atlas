@@ -2,13 +2,14 @@
   "id": "app_14",
   "name": "微透镜阵列与光场",
   "category": "激光与科研",
-  "summary": "商业阵列节距300 μm/EFL8.7 mm；科研混合镜NA约0.3",
+  "summary": "新增喷墨六角阵列几何样本：填充因子88%为面积比；单透镜与阵列结果分开解释。",
   "metric_ids": [
     "focus_efficiency",
     "chromatic_shift",
     "na",
     "strehl",
-    "effective_abbe"
+    "effective_abbe",
+    "array_fill_factor"
   ],
   "priorities": [
     {
@@ -22,7 +23,7 @@
         "richards"
       ],
       "basis": "editorial_synthesis",
-      "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
+      "scope": "仅适用于Richards 2023单个消色差微透镜的设计取舍；不构成阵列节距、填充率、均匀性或串扰的重要性排序，不是作者名次或行业统一权重。"
     },
     {
       "tier": 2,
@@ -36,18 +37,19 @@
         "strehl"
       ],
       "basis": "editorial_synthesis",
-      "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
+      "scope": "仅适用于Richards 2023单个消色差微透镜的设计取舍；不构成阵列节距、填充率、均匀性或串扰的重要性排序，不是作者名次或行业统一权重。"
     }
   ],
   "ranking_status": "editorial_synthesis",
-  "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
+  "ranking_gap": "阵列整体的重要性顺序尚未建立；现有层次仅限Richards单透镜设计子任务，新填充因子定义和样本不产生排名。",
   "metric_mapping_status": "editorial_candidate_set",
   "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
   "legacy_priority_proposal": "节距/填充率、焦距一致性、波前、串扰、色差、封装",
   "record_ids": [
     "mla_product",
     "richards_main",
-    "richards_high"
+    "richards_high",
+    "zhang_hex_mla"
   ],
   "updated_on": "2026-11-06"
 }

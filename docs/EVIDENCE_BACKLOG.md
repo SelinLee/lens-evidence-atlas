@@ -63,6 +63,7 @@
 | [EVD-004a Jovanovic 耦合实测](#evd-004a) | Q0 | review | dot | 2026-11-06 | EVD-004 / 013 / 017 的局部交付 | [PR #3](https://github.com/SelinLee/lens-evidence-atlas/pull/3) |
 | [EVD-013a 引用与比较防线](#evd-013a) | Q0 | review | dot | 2026-11-06 | 为 EVD-013 / 018 提供校验，非完成比较集合 | [PR #3](https://github.com/SelinLee/lens-evidence-atlas/pull/3) |
 | [EVD-014a Richards 论文内范围](#evd-014a) | Q0 | review | dot | 2026-11-06 | EVD-014；不替代 EVD-003 阵列任务 | [PR #3](https://github.com/SelinLee/lens-evidence-atlas/pull/3) |
+| [EVD-003a 喷墨阵列几何](#evd-003a) | Q0 | review | dot | 2026-11-06 | EVD-003 / 012 / 013 的局部交付 | [PR #3](https://github.com/SelinLee/lens-evidence-atlas/pull/3) |
 
 建议首批从 EVD-002 和 EVD-004 中选择尚未被认领的具体缺口，同时完成相应的 EVD-013 条件记录；先核对现有研究分支/PR，避免重复。跨领域大任务应先拆成可一次审核的小任务。
 
@@ -246,6 +247,17 @@
 - [x] 实际查看出版社PDF印刷pp.3–5、7–9；10样本均值/最佳范围、实验空白基底分母和3×FWHM焦圈定位。
 - [x] 仿真200×200 μm焦面功率分母另列；约2.8%为四离散谱点相对542 nm的报告，固定共同焦面未证明、SI未读。
 - [ ] PR审核并合并；EVD-014理论界限原文复核和EVD-003独立阵列、串扰/均匀性等任务仍待做。
+
+### EVD-003a
+
+**范围：一个独立团队的六角阵列几何样本，不代表EVD-003全部验收。** 来源 `zhang_inkjet_mla_2022`、记录 `zhang_hex_mla`、定义 `array_fill_factor`；沿用 `evidence/2026-11-06-priority-batch-1`。
+
+- [x] 原始出版社HTML定位半径、中心距与面积比，定义区分几何填充率与光学效率。
+- [x] 不拼接不同样品系列；保留完整阵列尺寸、统计边界、串扰和SI未核验。
+- [x] 收窄既有单透镜编辑层次，不扩成阵列整体排名。
+- [x] 测试/构建与查询逻辑单元回归通过；提交草稿审核。
+- [ ] 真实浏览器展示验收：云浏览器无法连接本地预览，file协议被策略拒绝；单元回归不代替视觉验收。父任务仍缺第二个明确阵列实验与一致性/串扰证据。
+- [ ] PR审核并合并，另行记录实际私有发布状态。
 
 ## 33 类应用覆盖快照
 

@@ -27,3 +27,14 @@ test('corpus keys must include the metric requirements',()=>{const d=corpusFixtu
 test('corpus claim requires a cutoff and traceable selected value',()=>{const d=corpusFixture();delete d.bests.at(-1).as_of;assert.throws(()=>validate(d),/cutoff/);const e=corpusFixture();e.bests.at(-1).display_value='99.99%';assert.throws(()=>validate(e),/display value must match/)});
 
 test('unknown source verification cannot be displayed as newly checked',()=>{const d=load();delete d.sources[0].verification;assert.throws(()=>validate(d),/valid source verification/)});
+
+// Optional parameter metric links must stay valid outside corpus_best claims too.
+test('parameter metric links resolve and belong to their application',()=>{
+ for(const metric of ['missing_metric','transmission']){const d=load();d.benchmarks.find(b=>b.id==='zhang_hex_mla').parameters[2].metric_id=metric;assert.throws(()=>validate(d),/parameter metric/)}
+});
+test('array geometry stays separate from optical efficiency and sample-series values',()=>{
+ const d=load(),b=d.benchmarks.find(b=>b.id==='zhang_hex_mla'),m=d.metrics.find(m=>m.id==='array_fill_factor');
+ assert.equal(b.parameters.find(p=>p.metric_id===m.id).value,'88%（由几何量计算）');
+ assert.ok(b.conditions.includes('不是直接实测的光学效率'));assert.ok(!b.parameters.some(p=>/焦距|NA/.test(p.name)));
+ assert.ok(m.required_conditions.includes('评估区域与边缘处理'));assert.ok(!d.bests.some(x=>x.cohort_record_ids?.includes(b.id)));
+});

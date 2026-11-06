@@ -6,10 +6,21 @@
 
 ## 当前续接入口
 
-1. 核对 [研究 PR #3](https://github.com/SelinLee/lens-evidence-atlas/pull/3) 是否已审核或合并。本批已经提交，不要重复 Wang/Jovanovic/Luo/Richards 的同一读取范围；最新进度以下方 2026-11-06-02 为准。
+1. 核对 [研究 PR #3](https://github.com/SelinLee/lens-evidence-atlas/pull/3) 是否已审核或合并。本批已经提交，不要重复 Wang/Jovanovic/Luo/Richards 的同一读取范围；科学续接含下方2026-11-06-03；该批有待补浏览器验收。
 2. 阅读 [工作队列](EVIDENCE_BACKLOG.md#工作队列) 的 EVD-001a、002a、004a、013a、014a 审核项。父任务的独立来源、SI、阵列测量及未读理论来源仍未完成。
 3. 本批未部署，生产仍是私有 v1/bcc3361。合并后按既有私有流程另行发布并核验，不把分支构建当线上更新。
-4. 下一研究批优先针对 Luo 的分母/文内差异或一个独立阵列实验选择 1–3 个问题，先检查其他分支及认领；不盲目重复受限访问。
+4. 先补03批真实浏览器验收。下一研究批优先针对 Luo 的分母/文内差异或一个独立阵列实验选择 1–3 个问题，先检查其他分支及认领；不盲目重复受限访问。
+
+## 2026-11-06-03 · 独立阵列几何样本（云端）
+
+- **任务/执行**：dot，EVD-003a；先通过environment_management确认并附加openai-managed云电脑，全程未使用Mac。复核唯一开放草稿PR #3，无新评论；沿用其分支，基线cc397dfa/catalog0.1.1，未重复前批的四篇读取范围。
+- **新增**：Zhang等2022，DOI10.1002/adom.202200677；数据 `zhang_hex_mla`、来源 `zhang_inkjet_mla_2022`、指标 `array_fill_factor`。关键数值与公式定位到出版社HTML §2.1/§2.3 Eq.4/Fig.3正文，读取范围见来源。catalog0.1.2：33应用/21指标/59基准/79来源。
+- **结论边界**：只收录玻璃六角阵列几何样本，填充因子是面积比而不是光学效率；不混入四种硅烷样品系列的焦距/NA。统计数量/误差类型、完整阵列尺寸、边缘口径、串扰和SI均留缺口。没有新增最优或世界纪录；原app_14编辑层次收窄到Richards单透镜子任务，阵列整体排序未建立。
+- **检索**：2026-11-06，检索“microlens array fill factor focal length uniformity crosstalk experimental open access 2024 2023”，随后定向读取Zhang出版社HTML。PMC10465169及PMC10544957正文被reCAPTCHA阻挡，未通过或绕过；没有以搜索摘要当正文证据。选取独立KIT/InnovationLab阵列实验，不声称系统检索完成。Luo分母未在本批消歧。
+- **校验**：可选参数metric_id必须存在并属于所在应用；新增反例与阵列科学边界回归。npm test全部通过，npm run build及重复构建一致，node --check web/app.js和git diff --check通过。查询DOM夹具检查新定义/DOI/原文定位、记录/缺口显示、搜索1/33、空结果0/33和清空33/33，以及收窄优先级文案。
+- **浏览器阻碍**：仓库本地服务已启动，但云Chrome的127.0.0.1:4178返回ERR_CONNECTION_REFUSED；file://被浏览器协议策略拒绝，已停止该路径。没有真实视觉或交互通过声明，没有切本机或扩大权限。此项仍须补验，草稿不能据此称ready。
+- **执行/发布**：Git CLI克隆因无凭据失败；通过现有GitHub连接器读取223文件并核对全部blob SHA，在获批云工作区运行测试，通过连接器提交和更新原工作分支，不创建凭据。最新提交见PR #3；未合并、未发布。Sites get_site/list_site_versions/get_deployment_status核验实际生产仍为v1/bcc3361、部署succeeded、owner-only且外部访客0。
+- **下一步**：先补本批真实浏览器验收，再复核原PR；继续第二个独立阵列样本或Luo定义差异，勿重做本次几何读取。父任务EVD-003/012/013不关闭。
 
 ## 2026-11-06-01 · 维护文档与基线建档
 
