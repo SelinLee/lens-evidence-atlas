@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.20",
+    "version": "0.1.21",
     "updated_on": "2026-11-06",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -763,52 +763,30 @@
       "id": "app_23",
       "name": "OCT与低相干断层成像",
       "category": "医疗与显微",
-      "summary": "商业扫描镜例800–1100 nm、EFL36 mm、WD25.1 mm",
+      "summary": "区分轴向相干门、横向系统PSF、焦深与扫描采样；保留商业扫描镜及Spaide 2022实验参考。",
       "metric_ids": [
         "oct_axial",
         "resolution",
         "na",
         "chromatic_shift",
-        "working_distance"
+        "working_distance",
+        "gaussian_depth_focus"
       ],
-      "priorities": [
-        {
-          "tier": 1,
-          "metric_ids": [
-            "oct_axial",
-            "resolution"
-          ],
-          "rationale": "轴向与横向分辨率由不同机制决定，应并列约束；不是原文给出的数字排序。",
-          "evidence_refs": [
-            "oct_definition"
-          ],
-          "basis": "editorial_synthesis",
-          "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
-        },
-        {
-          "tier": 2,
-          "metric_ids": [
-            "na",
-            "chromatic_shift"
-          ],
-          "rationale": "再根据焦深、带宽及色散匹配选择聚焦方案。",
-          "evidence_refs": [
-            "oct_definition",
-            "oct"
-          ],
-          "basis": "editorial_synthesis",
-          "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
-        }
-      ],
-      "ranking_status": "editorial_synthesis",
-      "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
+      "priorities": [],
+      "ranking_status": "not_established",
+      "ranking_gap": "视网膜结构成像任务：Aumann 2019 §3.2.4–3.2.5分别讨论谱宽/轴向响应、聚焦/焦深、采样、灵敏度与速度。Spaide 2022 Discussion指出评估横向像质应看系统PSF，单用照明光斑会误导采样设计；提高扫描密度还受扫描时间、眼运动和慢轴定位限制。两者支持任务权衡，没有给出轴向/横向分辨率先于NA/色散的通用P1/P2。须先定义待分辨结构、成像范围和时间预算，再选择测量口径；本页不建立统一顺序。",
       "metric_mapping_status": "editorial_candidate_set",
       "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
       "legacy_priority_proposal": "横向PSF、扫描场、轴向色移、群时延/色散匹配",
       "record_ids": [
-        "oct36"
+        "oct36",
+        "spaide_oct_lateral_2022"
       ],
-      "updated_on": "2026-11-06"
+      "updated_on": "2026-11-06",
+      "ranking_gap_refs": [
+        "oct_definition",
+        "spaide_oct_lateral_2022"
+      ]
     },
     {
       "id": "app_24",
@@ -1292,6 +1270,25 @@
       "updated_on": "2026-11-06"
     },
     {
+      "id": "gaussian_depth_focus",
+      "name": "高斯束焦深（共焦参数）",
+      "english_name": "Gaussian Beam Depth of Focus / Confocal Parameter",
+      "definition": "限定近轴理想高斯束、均匀介质、真空波长λ₀及强度1/e²束腰半径w₀：焦深b=2z_R=2π n w₀²/λ₀，覆盖w(z)≤√2 w₀的轴向区间。n为该波长的相折射率。该几何聚焦范围不同于OCT相干门轴向分辨率、可探测深度或像素间隔，也不是任意波前/非高斯光束的统一焦深。Aumann 2019 p.67 Eq.(3.8)左式支持此口径；同页Eq.(3.7)给w₀=λ₀/(π NA)，编辑代入得b=2nλ₀/(π NA²)，而原书右式为nλ₀/(2π NA²)，相差4倍。保留原文不一致，不把其NA右式用作计算或行业门槛。缩小束腰会缩短此焦深；任务需结合横向系统PSF与轴向覆盖评价。",
+      "unit": "μm / mm",
+      "direction": "tradeoff",
+      "required_conditions": [
+        "近轴高斯束与介质、真空波长及相折射率",
+        "强度1/e²束腰半径/直径约定",
+        "焦深阈值w≤√2 w₀与总长2z_R",
+        "实测/模拟/理想估算及NA定义"
+      ],
+      "definition_refs": [
+        "oct_definition"
+      ],
+      "best_interpretation": "大焦深与小横向光斑存在权衡；无跨系统统一最优值",
+      "updated_on": "2026-11-06"
+    },
+    {
       "id": "insertion_loss",
       "name": "插入损耗",
       "english_name": "Insertion Loss",
@@ -1372,13 +1369,16 @@
       "id": "oct_axial",
       "name": "OCT轴向分辨率",
       "english_name": "OCT Axial Resolution",
-      "definition": "由低相干光源谱形与带宽决定的轴向响应宽度；不能仅由镜头NA推出。",
+      "definition": "低相干干涉系统对轴向点反射体的响应宽度；必须说明测的是幅度包络、平方后的强度/功率，还是对数显示曲线。Aumann 2019 §3.2.4 Eq.(3.5)给空气中常用高斯谱近似 δz≈(2 ln2/π)λ₀²/Δλ_FWHM；这是系统谱宽与重建口径，不能仅由镜头NA推出。编辑推导：对高斯功率谱S(k)，以几何深度z的往返相位2kz作傅里叶变换，幅度包络FWHM对应系数0.4413；平方后的强度FWHM缩为1/√2。Δλ换算使用窄相对带宽近似，宽谱/非高斯谱须直接计算或测量PSF，不用公式替代实测。空气等效光学深度换为介质几何深度须报告群折射率及其谱域近似；光谱整形、色散失配/补偿、探测器与重建均可能改变实际宽度。轴向像素间隔、成像范围与该分辨率不同。原书Eq.(3.3)缺平方及Eq.(3.8)系数疑点不用于本定义的数值计算。",
       "unit": "μm",
       "direction": "lower",
       "required_conditions": [
-        "空气或组织折射率",
-        "谱形与带宽",
-        "色散补偿、重建"
+        "中心波长、功率谱形与FWHM带宽（k域或λ域）",
+        "幅度包络/强度/对数显示及半高口径",
+        "空气等效光学深度或介质几何深度、群折射率",
+        "光程差与单程几何深度的往返因子",
+        "实测PSF或谱宽估算、光谱整形/探测及重建",
+        "色散失配与补偿、参考反射体和测量深度"
       ],
       "definition_refs": [
         "oct_definition"
@@ -1436,7 +1436,7 @@
       "id": "resolution",
       "name": "空间分辨率",
       "english_name": "Spatial Resolution",
-      "definition": "系统区分相邻结构的尺度；Rayleigh、Abbe和PSF FWHM等判据必须分别报告。 标靶可辨线宽、点扩散宽度和模型估计不等价；系统指标还取决于照明/发射谱、探测孔径及重建处理。 USAF靶的可辨元素尺度与计算重建结果也须标明判读方法、采样及算法，不能替代裸光学系统PSF或MTF。 光片荧光系统的总PSF由激发与检测响应共同决定；多峰响应须交代半高基线/峰突出度。去卷积比较须报告算法及收敛条件，固定相同迭代次数不保证等价。 周期靶须区分半周期（线宽）与整周期（线对周期）；重建像元间隔不是可辨尺度，具体口径以原文及勘误为准。",
+      "definition": "系统区分相邻结构的尺度；Rayleigh、Abbe和PSF FWHM等判据必须分别报告。 标靶可辨线宽、点扩散宽度和模型估计不等价；系统指标还取决于照明/发射谱、探测孔径及重建处理。 USAF靶的可辨元素尺度与计算重建结果也须标明判读方法、采样及算法，不能替代裸光学系统PSF或MTF。 光片荧光系统的总PSF由激发与检测响应共同决定；多峰响应须交代半高基线/峰突出度。去卷积比较须报告算法及收敛条件，固定相同迭代次数不保证等价。 周期靶须区分半周期（线宽）与整周期（线对周期）；重建像元间隔不是可辨尺度，具体口径以原文及勘误为准。 单模光纤共焦OCT须区分照明光斑与照明/接收共同决定的系统PSF；Spaide 2022 Eqs.(3)–(7)的相同高斯照明/接收模型给强度FWHM由w₀√(2 ln2)变为w₀√ln2，不可直接推广到截断瞳、相干多散射体或像差眼。ATF反推的衍射极限也不等于患者实际分辨率。",
       "unit": "μm",
       "direction": "lower",
       "required_conditions": [
@@ -1446,7 +1446,8 @@
         "照明/激发/发射光谱",
         "探测孔径、扫描与重建处理",
         "多峰阈值/基线及重建收敛条件（适用时）",
-        "周期靶半周期/整周期口径与重建采样"
+        "周期靶半周期/整周期口径与重建采样",
+        "OCT照明/接收响应、幅度或强度域、眼模型缩放与扫描密度"
       ],
       "definition_refs": [
         "mtf_definition",
@@ -1455,7 +1456,8 @@
         "wang_low_na_2021_si",
         "chu_meta_fp_2025",
         "shi_lattice_2022",
-        "zheng_fpm_correction_2015"
+        "zheng_fpm_correction_2015",
+        "spaide_oct_lateral_2022"
       ],
       "best_interpretation": "没有跨应用统一最优值",
       "updated_on": "2026-11-06"
@@ -2144,15 +2146,15 @@
     },
     {
       "id": "oct_definition",
-      "title": "Optical Coherence Tomography: Principle and Technical Realization",
-      "url": "https://www.ncbi.nlm.nih.gov/books/NBK554044/",
-      "location": "§3.5 OCT轴向/横向分辨率和焦深说明",
+      "title": "Aumann et al. 2019: Optical Coherence Tomography (OCT): Principle and Technical Realization",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-030-16638-0_3",
+      "location": "§3.2.3–3.2.5 pp.64–68，Eqs.(3.3)–(3.8)，Fig.3.6；§3.3 p.70",
       "kind": "scholarly_book",
-      "evidence_scope": "原始书章索引节选；直接打开验证码，未全文核验",
+      "evidence_scope": "出版社开放27页PDF；本轮读取引言、§3.2.3–3.2.5及§3.3相关段，实际查看pp.65/67公式与Fig.3.6。原索引误标§3.5，改为§3.2.4。p.67 Eq.(3.8)两种表示与Eq.(3.7)联立相差4倍；Eq.(3.3)印出的指数无平方，与前句Gaussian不一致，均保留疑点，不照抄为计算器。作者均来自Heidelberg Engineering，不能当独立厂商测试；未精读全章临床/功能OCT。",
       "checked_on": "2026-11-06",
       "verification": "checked_excerpt",
-      "doi": null,
-      "source_year": null
+      "doi": "10.1007/978-3-030-16638-0_3",
+      "source_year": 2019
     },
     {
       "id": "olympus",
@@ -2309,6 +2311,18 @@
       "kind": "manufacturer",
       "verification": "inherited_v2",
       "doi": null
+    },
+    {
+      "id": "spaide_oct_lateral_2022",
+      "title": "Spaide et al. 2022: Lateral Resolution of a Commercial Optical Coherence Tomography Instrument",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8787587/",
+      "location": "Introduction Eqs.(3)–(7)；Methods各小节；Results/Figs.2–5/Table 1；Discussion及Disclosure",
+      "kind": "peer_reviewed_paper",
+      "evidence_scope": "PMC原始全文HTML，读取摘要、Introduction/Methods/Results/Discussion及Disclosure；实际查看原始Figs.2/3/5。PDF入口与本机Chrome原网址返回检查页；HTML通过公开网页工具和普通HTTPS取得，未宣称读过PDF。作者含Heidelberg员工及咨询关系，不是独立第三方商业验收。未取得原始复数图像或独立复现；Table 2其他机型仅作者汇总，未当现行原厂规格入库。",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt",
+      "doi": "10.1167/tvst.11.1.28",
+      "source_year": 2022
     },
     {
       "id": "specim",
@@ -5471,6 +5485,109 @@
       "application_id": "app_29",
       "checked_on": "2026-10-25",
       "record_status": "inherited_v2",
+      "claim_type": "representative_result"
+    },
+    {
+      "id": "spaide_oct_lateral_2022",
+      "application": "OCT与低相干断层成像",
+      "application_id": "app_23",
+      "name": "Spaide 2022 OCT横向PSF与扫描采样：Spectralis平台",
+      "evidence_type": "科研实验及同文模型对照；含厂商作者，非第三方产品认证",
+      "source_ids": [
+        "spaide_oct_lateral_2022"
+      ],
+      "parameters": [
+        {
+          "name": "研究平台与光谱",
+          "value": "高分辨Spectralis平台：中心853 nm、带宽137 nm；文中称组织中轴向3 μm，非本批独立轴向PSF实测。常规对照880 nm/40 nm，称轴向7 μm。",
+          "evidence": {
+            "source_id": "spaide_oct_lateral_2022",
+            "location": "Methods首段/Retinal Imaging；Figs.6–7"
+          },
+          "metric_id": "oct_axial"
+        },
+        {
+          "name": "扫描与采样",
+          "value": "平台A-scan rate 85 kHz、深度采样范围1.9 mm；研究重编程1536 A-scans/10°，快轴间隔1.9 μm，对照6 μm。不是所有已售设备的默认扫描模式。",
+          "evidence": {
+            "source_id": "spaide_oct_lateral_2022",
+            "location": "Methods首段；Discussion扫描密度段"
+          }
+        },
+        {
+          "name": "颗粒标定与处理",
+          "value": "附加40.18 mm透镜；0–1 μm金刚石/硅胶，FeO在Methods写<800 nm、摘要/图注写800 nm，聚氨酯基体；线性32-bit OCT信号，峰值0.5–0.99、13像素邻域、0.1子像素质心对齐、剔除宽度超3σ、归一化后平均。",
+          "evidence": {
+            "source_id": "spaide_oct_lateral_2022",
+            "location": "Methods: Diamond Powder and Calibrated FeO Particle Imaging"
+          }
+        },
+        {
+          "name": "金刚石颗粒横向FWHM",
+          "value": "5.11 ± 0.034 μm（作者眼内等效尺度；±统计含义未明确）；三B-scan计462/454/299，总1215个颗粒轮廓。",
+          "evidence": {
+            "source_id": "spaide_oct_lateral_2022",
+            "location": "Results: Diamond Powder and FeO Particles；Fig.3A"
+          },
+          "metric_id": "resolution"
+        },
+        {
+          "name": "FeO颗粒横向FWHM",
+          "value": "4.9 ± 0.033 μm（作者眼内等效尺度；±统计含义未明确）；三B-scan计196/249/287，总732个颗粒轮廓。",
+          "evidence": {
+            "source_id": "spaide_oct_lateral_2022",
+            "location": "Results: Diamond Powder and FeO Particles；Fig.3B"
+          },
+          "metric_id": "resolution"
+        },
+        {
+          "name": "入瞳束径实测",
+          "value": "强度1/e²直径1.71 ± 0.01 mm；红外相机、径向及重复平均；±统计含义未明确。不是眼瞳物理口径。",
+          "evidence": {
+            "source_id": "spaide_oct_lateral_2022",
+            "location": "Methods: Measurement of OCT Beam Characteristics；Results/Fig.4"
+          }
+        },
+        {
+          "name": "模型横向FWHM（非实测）",
+          "value": "理想高斯共焦计算4.42 μm；Navarro眼OpticStudio模型4.60 ± 0.02 μm。模型采用853 nm、眼等效焦距16.7 mm及束径1.71 mm。",
+          "evidence": {
+            "source_id": "spaide_oct_lateral_2022",
+            "location": "Results: OpticStudio Simulation；Eq.(7)/Fig.1"
+          },
+          "metric_id": "resolution"
+        },
+        {
+          "name": "ATF推算的衍射极限（非患者实际PSF）",
+          "value": "4.98 ± 0.06 μm强度FWHM；3名健康受试者图像，以复振幅校正轴向运动、强信号线估ATF、弱信号线估噪声，逆变换后取模平方；±统计含义未明确。",
+          "evidence": {
+            "source_id": "spaide_oct_lateral_2022",
+            "location": "Methods: Amplitude Transfer Function；Results/Fig.2"
+          },
+          "metric_id": "resolution"
+        },
+        {
+          "name": "USAF靶可辨尺度（非PSF）",
+          "value": "Group 6 Element 4：作者报告眼内等效4.6 μm；该元素对比度19%，相邻Element 2/3为42%/29%。快轴、逐次调焦；不是MTF19%或通用合格阈值。",
+          "evidence": {
+            "source_id": "spaide_oct_lateral_2022",
+            "location": "Methods: 1951 USAF Target；Results/Fig.5/Table 1脚注b；Discussion"
+          },
+          "metric_id": "resolution"
+        },
+        {
+          "name": "USAF尺度换算边界",
+          "value": "作者使用40.18 mm附加透镜并按16.7 mm眼焦距缩放。编辑核算：Group 6 Element 4的整周期1000/2^(6+3/6) μm乘16.7/40.18≈4.592 μm；半周期≈2.296 μm。因此4.6与整周期相符，不能直接标成线宽；作者未明确写半/整周期。",
+          "evidence": {
+            "source_id": "spaide_oct_lateral_2022",
+            "location": "Methods: 1951 USAF Target；Results/Fig.5；编辑单位复核"
+          }
+        }
+      ],
+      "conditions": "一个研究的颗粒实验、ATF推算、模型与标靶不算多个独立团队样本。颗粒结果由技术样品得到并标作眼内等效尺度，不是直接测得每位患者PSF。Methods只在USAF小节明确16.7/40.18缩放，颗粒缩放/基体折射率补偿未完整给出；保留作者尺度。Fig.3为线性归一化OCT曲线，不在对数显示图上量半高；Methods未另给线性导出量与复振幅/功率的显式转换式。Fig.2明确ATF结果平方为强度PSF；两类响应不擅自认作同一原始信号域。Table 1标题虽为Measured Performance，内含理论与模拟，已逐项拆开。",
+      "unreported_or_not_verified": "缺原始图像/逐颗粒宽度、剔除数量、±对应SD/SEM/置信区间、完整颗粒缩放和折射率处理、逐深度/全场PSF、轴向PSF扫描及色散补偿细节。本文的3/7 μm为平台描述，不据谱宽反推并声称实测。没有独立验证临床诊断收益；相干条纹/角度变化会影响USAF判读，19%不是标准MTF门槛。ATF仅估计衍射极限，作者明确患者像差影响实际分辨率。4.6 μm整周期解释是编辑计算一致性核查，不是原文新实验。含厂商雇员和咨询关系；不将其他厂家Table 2声称值或“所有设备可能欠采样”推广判断收作独立实测/最佳。 Discussion称金刚石较FeO宽4.7%，按印出5.11/4.9计算约4.29%，无原始数据无法解释，保留差异。",
+      "record_status": "checked_excerpt",
+      "checked_on": "2026-11-06",
       "claim_type": "representative_result"
     },
     {

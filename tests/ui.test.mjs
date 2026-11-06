@@ -54,9 +54,9 @@ test('author relative priority and editorial interpretation have distinct labels
  const f=fixture();f.location.hash='#app_04/priority';f.run('route()');
  for(const text of ['作者原文明示的限定任务相对次序','相对次序原文位置','650–1000 nm','不是通用指标总榜'])assert.ok(f.el('panel').innerHTML.includes(text));
  assert.ok(!f.el('coverage').innerHTML.includes('编辑解读'));
- f.location.hash='#app_23/priority';f.run('route()');
+ f.location.hash='#app_32/priority';f.run('route()');
  assert.ok(f.el('panel').innerHTML.includes('有出处的编辑性优先级'));assert.ok(!f.el('panel').innerHTML.includes('作者原文明示的限定任务相对次序'));
- f.run('method()');assert.ok(f.el('detailBody').innerHTML.includes('2 类应用有带出处'));assert.ok(f.el('detailBody').innerHTML.includes('1 类应用包含作者'));
+ f.run('method()');assert.ok(f.el('detailBody').innerHTML.includes('1 类应用有带出处'));assert.ok(f.el('detailBody').innerHTML.includes('1 类应用包含作者'));
 });
 
 test('meta-FP record renders raw and reconstructed details with source and gaps',()=>{
@@ -215,7 +215,7 @@ test('array and SMF tradeoffs remain cited and discoverable without ranked statu
   f.run(`openSource('${source}')`);assert.ok(f.el('detailBody').innerHTML.includes(source==='richards'?'pp.6–7':'pp.5–6'));
  }
  f.el('rankedOnly').checked=true;f.run('renderList()');
- assert.equal(f.el('resultCount').textContent,'3 / 33 类应用');
+ assert.equal(f.el('resultCount').textContent,'2 / 33 类应用');
  for(const app of ['app_14','app_22'])assert.ok(!f.el('appList').innerHTML.includes('data-app="'+app+'"'));
  f.el('rankedOnly').checked=false;f.run('renderList()');
  for(const app of ['app_14','app_22'])assert.ok(f.el('appList').innerHTML.includes('data-app="'+app+'"'));
@@ -243,4 +243,19 @@ test('machine vision separates defect visibility from dimensional measurement an
  for(const word of ['0.986 → 1.001','1.392 → 1.447','1.062 → 1.082','8000 μs','D120','249 fps','&gt;255','未校正基线','置信区间'])assert.ok(f.el('detailBody').innerHTML.includes(word),word);
  for(const q of ['Ma 2026','unmatched_gamma_987','Ma 2026','']){f.el('search').value=q;f.run('renderList()');assert.equal(f.el('resultCount').textContent,q==='unmatched_gamma_987'?'0 / 33 类应用':q?'1 / 33 类应用':'33 / 33 类应用');}
  f.location.hash='#app_02/best';f.run('route()');for(const id of ['machine_hp','machine_m12','ma_gamma_defect_visibility'])assert.ok(f.el('panel').innerHTML.includes('data-record="'+id+'"'));
+});
+
+test('OCT query shows source conflicts and different measurement domains without an invented ranking',()=>{
+ const f=fixture();f.location.hash='#app_23/priority';f.run('route()');
+ for(const word of ['系统PSF','扫描时间','data-source="oct_definition"','data-source="spaide_oct_lateral_2022"'])assert.ok(f.el('panel').innerHTML.includes(word),word);
+ assert.ok(!f.el('panel').innerHTML.includes('class="tier"'));
+ for(const [id,words] of [['oct_axial',['幅度包络','群折射率','1/√2']],['gaussian_depth_focus',['2z_R','相差4倍','相折射率']]]){
+  f.run(`openMetric('${id}')`);for(const word of words)assert.ok(f.el('detailBody').innerHTML.includes(word),word);
+ }
+ f.run("openSource('oct_definition')");assert.ok(f.el('detailBody').innerHTML.includes('§3.2.4'));
+ f.run("openDialog('test',recordCard(records.get('spaide_oct_lateral_2022'),true))");
+ for(const word of ['5.11 ± 0.034','4.9 ± 0.033','4.98 ± 0.06','19%','4.592','2.296','厂商','非实测','非患者实际PSF','色散补偿'])assert.ok(f.el('detailBody').innerHTML.includes(word),word);
+ for(const q of ['Spaide 2022','no_oct_match_987','Spaide 2022','']){f.el('search').value=q;f.run('renderList()');assert.equal(f.el('resultCount').textContent,q==='no_oct_match_987'?'0 / 33 类应用':q?'1 / 33 类应用':'33 / 33 类应用');}
+ f.location.hash='#app_23/best';f.run('route()');for(const id of ['oct36','spaide_oct_lateral_2022'])assert.ok(f.el('panel').innerHTML.includes('data-record="'+id+'"'));
+ f.el('rankedOnly').checked=true;f.run('renderList()');assert.ok(!f.el('appList').innerHTML.includes('data-app="app_23"'));
 });

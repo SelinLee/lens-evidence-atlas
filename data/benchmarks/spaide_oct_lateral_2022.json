@@ -1,0 +1,103 @@
+{
+  "id": "spaide_oct_lateral_2022",
+  "application": "OCT与低相干断层成像",
+  "application_id": "app_23",
+  "name": "Spaide 2022 OCT横向PSF与扫描采样：Spectralis平台",
+  "evidence_type": "科研实验及同文模型对照；含厂商作者，非第三方产品认证",
+  "source_ids": [
+    "spaide_oct_lateral_2022"
+  ],
+  "parameters": [
+    {
+      "name": "研究平台与光谱",
+      "value": "高分辨Spectralis平台：中心853 nm、带宽137 nm；文中称组织中轴向3 μm，非本批独立轴向PSF实测。常规对照880 nm/40 nm，称轴向7 μm。",
+      "evidence": {
+        "source_id": "spaide_oct_lateral_2022",
+        "location": "Methods首段/Retinal Imaging；Figs.6–7"
+      },
+      "metric_id": "oct_axial"
+    },
+    {
+      "name": "扫描与采样",
+      "value": "平台A-scan rate 85 kHz、深度采样范围1.9 mm；研究重编程1536 A-scans/10°，快轴间隔1.9 μm，对照6 μm。不是所有已售设备的默认扫描模式。",
+      "evidence": {
+        "source_id": "spaide_oct_lateral_2022",
+        "location": "Methods首段；Discussion扫描密度段"
+      }
+    },
+    {
+      "name": "颗粒标定与处理",
+      "value": "附加40.18 mm透镜；0–1 μm金刚石/硅胶，FeO在Methods写<800 nm、摘要/图注写800 nm，聚氨酯基体；线性32-bit OCT信号，峰值0.5–0.99、13像素邻域、0.1子像素质心对齐、剔除宽度超3σ、归一化后平均。",
+      "evidence": {
+        "source_id": "spaide_oct_lateral_2022",
+        "location": "Methods: Diamond Powder and Calibrated FeO Particle Imaging"
+      }
+    },
+    {
+      "name": "金刚石颗粒横向FWHM",
+      "value": "5.11 ± 0.034 μm（作者眼内等效尺度；±统计含义未明确）；三B-scan计462/454/299，总1215个颗粒轮廓。",
+      "evidence": {
+        "source_id": "spaide_oct_lateral_2022",
+        "location": "Results: Diamond Powder and FeO Particles；Fig.3A"
+      },
+      "metric_id": "resolution"
+    },
+    {
+      "name": "FeO颗粒横向FWHM",
+      "value": "4.9 ± 0.033 μm（作者眼内等效尺度；±统计含义未明确）；三B-scan计196/249/287，总732个颗粒轮廓。",
+      "evidence": {
+        "source_id": "spaide_oct_lateral_2022",
+        "location": "Results: Diamond Powder and FeO Particles；Fig.3B"
+      },
+      "metric_id": "resolution"
+    },
+    {
+      "name": "入瞳束径实测",
+      "value": "强度1/e²直径1.71 ± 0.01 mm；红外相机、径向及重复平均；±统计含义未明确。不是眼瞳物理口径。",
+      "evidence": {
+        "source_id": "spaide_oct_lateral_2022",
+        "location": "Methods: Measurement of OCT Beam Characteristics；Results/Fig.4"
+      }
+    },
+    {
+      "name": "模型横向FWHM（非实测）",
+      "value": "理想高斯共焦计算4.42 μm；Navarro眼OpticStudio模型4.60 ± 0.02 μm。模型采用853 nm、眼等效焦距16.7 mm及束径1.71 mm。",
+      "evidence": {
+        "source_id": "spaide_oct_lateral_2022",
+        "location": "Results: OpticStudio Simulation；Eq.(7)/Fig.1"
+      },
+      "metric_id": "resolution"
+    },
+    {
+      "name": "ATF推算的衍射极限（非患者实际PSF）",
+      "value": "4.98 ± 0.06 μm强度FWHM；3名健康受试者图像，以复振幅校正轴向运动、强信号线估ATF、弱信号线估噪声，逆变换后取模平方；±统计含义未明确。",
+      "evidence": {
+        "source_id": "spaide_oct_lateral_2022",
+        "location": "Methods: Amplitude Transfer Function；Results/Fig.2"
+      },
+      "metric_id": "resolution"
+    },
+    {
+      "name": "USAF靶可辨尺度（非PSF）",
+      "value": "Group 6 Element 4：作者报告眼内等效4.6 μm；该元素对比度19%，相邻Element 2/3为42%/29%。快轴、逐次调焦；不是MTF19%或通用合格阈值。",
+      "evidence": {
+        "source_id": "spaide_oct_lateral_2022",
+        "location": "Methods: 1951 USAF Target；Results/Fig.5/Table 1脚注b；Discussion"
+      },
+      "metric_id": "resolution"
+    },
+    {
+      "name": "USAF尺度换算边界",
+      "value": "作者使用40.18 mm附加透镜并按16.7 mm眼焦距缩放。编辑核算：Group 6 Element 4的整周期1000/2^(6+3/6) μm乘16.7/40.18≈4.592 μm；半周期≈2.296 μm。因此4.6与整周期相符，不能直接标成线宽；作者未明确写半/整周期。",
+      "evidence": {
+        "source_id": "spaide_oct_lateral_2022",
+        "location": "Methods: 1951 USAF Target；Results/Fig.5；编辑单位复核"
+      }
+    }
+  ],
+  "conditions": "一个研究的颗粒实验、ATF推算、模型与标靶不算多个独立团队样本。颗粒结果由技术样品得到并标作眼内等效尺度，不是直接测得每位患者PSF。Methods只在USAF小节明确16.7/40.18缩放，颗粒缩放/基体折射率补偿未完整给出；保留作者尺度。Fig.3为线性归一化OCT曲线，不在对数显示图上量半高；Methods未另给线性导出量与复振幅/功率的显式转换式。Fig.2明确ATF结果平方为强度PSF；两类响应不擅自认作同一原始信号域。Table 1标题虽为Measured Performance，内含理论与模拟，已逐项拆开。",
+  "unreported_or_not_verified": "缺原始图像/逐颗粒宽度、剔除数量、±对应SD/SEM/置信区间、完整颗粒缩放和折射率处理、逐深度/全场PSF、轴向PSF扫描及色散补偿细节。本文的3/7 μm为平台描述，不据谱宽反推并声称实测。没有独立验证临床诊断收益；相干条纹/角度变化会影响USAF判读，19%不是标准MTF门槛。ATF仅估计衍射极限，作者明确患者像差影响实际分辨率。4.6 μm整周期解释是编辑计算一致性核查，不是原文新实验。含厂商雇员和咨询关系；不将其他厂家Table 2声称值或“所有设备可能欠采样”推广判断收作独立实测/最佳。 Discussion称金刚石较FeO宽4.7%，按印出5.11/4.9计算约4.29%，无原始数据无法解释，保留差异。",
+  "record_status": "checked_excerpt",
+  "checked_on": "2026-11-06",
+  "claim_type": "representative_result"
+}

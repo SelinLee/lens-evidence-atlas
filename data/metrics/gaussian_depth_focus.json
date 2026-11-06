@@ -1,0 +1,19 @@
+{
+  "id": "gaussian_depth_focus",
+  "name": "高斯束焦深（共焦参数）",
+  "english_name": "Gaussian Beam Depth of Focus / Confocal Parameter",
+  "definition": "限定近轴理想高斯束、均匀介质、真空波长λ₀及强度1/e²束腰半径w₀：焦深b=2z_R=2π n w₀²/λ₀，覆盖w(z)≤√2 w₀的轴向区间。n为该波长的相折射率。该几何聚焦范围不同于OCT相干门轴向分辨率、可探测深度或像素间隔，也不是任意波前/非高斯光束的统一焦深。Aumann 2019 p.67 Eq.(3.8)左式支持此口径；同页Eq.(3.7)给w₀=λ₀/(π NA)，编辑代入得b=2nλ₀/(π NA²)，而原书右式为nλ₀/(2π NA²)，相差4倍。保留原文不一致，不把其NA右式用作计算或行业门槛。缩小束腰会缩短此焦深；任务需结合横向系统PSF与轴向覆盖评价。",
+  "unit": "μm / mm",
+  "direction": "tradeoff",
+  "required_conditions": [
+    "近轴高斯束与介质、真空波长及相折射率",
+    "强度1/e²束腰半径/直径约定",
+    "焦深阈值w≤√2 w₀与总长2z_R",
+    "实测/模拟/理想估算及NA定义"
+  ],
+  "definition_refs": [
+    "oct_definition"
+  ],
+  "best_interpretation": "大焦深与小横向光斑存在权衡；无跨系统统一最优值",
+  "updated_on": "2026-11-06"
+}
