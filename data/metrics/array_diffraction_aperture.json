@@ -1,0 +1,20 @@
+{
+  "id": "array_diffraction_aperture",
+  "name": "单元衍射受限光学口径",
+  "english_name": "Diffraction-Limited Optical Aperture of a Lenslet",
+  "definition": "ISO14880-1:2019 §3.3.6.4将A_d定义为波前峰谷值PV<λ/4的评价区域面积，λ为实际测试波长。这是面积口径及其术语判据，不是直径、几何填充率或RMS<λ/4。标准还区分由几何口径与由A_d所张半角定义的NA_g和NA_d；不能只凭几何外形断言整个口径衍射受限。",
+  "unit": "mm² / μm²",
+  "direction": "tradeoff",
+  "required_conditions": [
+    "测试波长、波前PV与参考波前",
+    "区域形状、面积及实际评价口径",
+    "几何口径/衍射受限口径区别",
+    "波前采样、异常点及处理规则",
+    "NA的介质、方向和口径约定"
+  ],
+  "definition_refs": [
+    "iso14880_1_2019_excerpt"
+  ],
+  "best_interpretation": "在同波长和评价规则下说明可用区域；λ/4属于此术语，不能当所有系统的统一合格线，也不能据此声称Strehl精确等于0.8。",
+  "updated_on": "2026-11-07"
+}

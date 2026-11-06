@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.29",
+    "version": "0.1.30",
     "updated_on": "2026-11-07",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -100,15 +100,22 @@
       "name": "ISO 14880-1:2019",
       "url": "https://www.iso.org/standard/72947.html",
       "purpose": "微透镜阵列术语",
-      "limits": "包含有效阿贝数的术语体系；2019版仍已发布，DIS修订草案不是现行正式版",
-      "evidence_scope": "官方范围与本会话先前核对的公开预览"
+      "limits": "2019版仍Published、待DIS修订；具体焦距、有效阿贝数、波前及衍射受限口径条款已核；不作统一产品合格线",
+      "evidence_scope": "2026-11-07官方状态及英文预览印刷pp.3–4；§3.4及应用附录未取得"
     },
     {
       "name": "ISO 14880-2:2024",
       "url": "https://www.iso.org/standard/83940.html",
       "purpose": "微透镜阵列波前像差测试",
-      "limits": "2024版取代2006版；用于阵列中微透镜，不是任意相机的统一质量限值",
-      "evidence_scope": "官方范围摘要"
+      "limits": "取代2006版；λ/20等约束须区分入射波前/参考镜/准直器，不当被测样品统一限值",
+      "evidence_scope": "2026-11-07官方状态及英文预览印刷pp.1–5/§1–10；附录未取得"
+    },
+    {
+      "name": "ISO 14880-3:2024",
+      "url": "https://www.iso.org/standard/83941.html",
+      "purpose": "微透镜阵列除波前外的光学性质测试",
+      "limits": "取代2006版；本次核焦距测试条件，未核§6.4均匀性与§7预算，不据目录填写公差",
+      "evidence_scope": "2026-11-07官方状态及英文预览印刷pp.1–4；采用§5–6.2，§6.3仅开头"
     },
     {
       "name": "ISO 21254-1:2025",
@@ -569,7 +576,7 @@
       "id": "app_14",
       "name": "微透镜阵列与光场",
       "category": "激光与科研",
-      "summary": "收录阵列制造、焦距标定、多通道与计算成像实验；区分焦距/间距离散、测量不确定度、串扰及重建性能。原文口径冲突与复算边界可查，尚不构成同条件排行榜。",
+      "summary": "按阵列制造、标定与成像任务查询；含ISO14880焦距/波前测试节选。区分仪器要求、单元性能、阵列离散、串扰和重建结果，保留原文冲突及预览边界。",
       "metric_ids": [
         "focus_efficiency",
         "chromatic_shift",
@@ -586,11 +593,13 @@
         "usable_depth_range",
         "array_focal_length",
         "array_focal_length_cv",
-        "measurement_uncertainty"
+        "measurement_uncertainty",
+        "wavefront_rms",
+        "array_diffraction_aperture"
       ],
       "priorities": [],
       "ranking_status": "not_established",
-      "ranking_gap": "任务一：Richards 2023印刷p.6“Individually tuning…”及p.7 Fig.5讨论该材料与打印工艺下的单个消色差微透镜。提高NA时，聚焦效率下降、焦长误差通常增大；增加衍射环带还受到细结构打印精度限制，折射面调节是作者讨论的设计手段。它支持联合考察NA、效率、色差与可制备性，不能推出效率/色差统一高于NA或Strehl的P1/P2。任务二：pp.6–7“Imaging with an achromatic microlens array”及p.8 Fig.6展示18单元阵列的白光USAF成像；作者提出更小直径、较低NA、更密排列可能获得更多光场数据，这是后续设计建议，未在该示例中给出对照实测排序。单透镜效率不能替代整阵列效率、焦距一致性或串扰；这些阵列任务指标的定量权衡仍待补证。 任务三：Katopodis 2025 §2.1–2.2、§5.1–5.2与§6的明场多通道成像，用微孔减少通道串扰，但引入盲区，需扫描拼接补全；快速稀疏采样与完整视场采集应分别评价。串扰、有效覆盖、分辨率、工作距离、采集时间和装配稳定性需联合报告；作者承认速度受机械扫描和微孔振动影响。Eq.(4)与正文CT倒数冲突公开保留，只能支持本研究的条件权衡，不能推出这些指标的通用先后顺序。 任务四：Yang 2024作者v2 §3.2–3.3、SI§4.C与§8.C采用无隔板阵列加算法解复用，需要联合评价重建分辨率、场点对比度、轴向可用范围和计算成本。更多网络通道可提高质量但增加时间/内存，作者选9通道折中；这不是物理通道数的普适最优。推理时间不等于采集帧率；单次曝光复用重建与物理隔板/扫描拼接的结果不能不加条件互排。 任务五：朱等2013 §1–4将焦距标定准确性和多单元检测效率作为测量目标；其20单元数据与预算提示必须分开焦距离散、测量不确定度和设计偏移。本库CV仅为表内描述，约3%为作者方法预算说明，不能转作制造一致性门槛。依据GUM需说明参考面、修正、相关性和覆盖因子，未建立三者的通用名次。",
+      "ranking_gap": "任务一：Richards 2023印刷p.6“Individually tuning…”及p.7 Fig.5讨论该材料与打印工艺下的单个消色差微透镜。提高NA时，聚焦效率下降、焦长误差通常增大；增加衍射环带还受到细结构打印精度限制，折射面调节是作者讨论的设计手段。它支持联合考察NA、效率、色差与可制备性，不能推出效率/色差统一高于NA或Strehl的P1/P2。任务二：pp.6–7“Imaging with an achromatic microlens array”及p.8 Fig.6展示18单元阵列的白光USAF成像；作者提出更小直径、较低NA、更密排列可能获得更多光场数据，这是后续设计建议，未在该示例中给出对照实测排序。单透镜效率不能替代整阵列效率、焦距一致性或串扰；这些阵列任务指标的定量权衡仍待补证。 任务三：Katopodis 2025 §2.1–2.2、§5.1–5.2与§6的明场多通道成像，用微孔减少通道串扰，但引入盲区，需扫描拼接补全；快速稀疏采样与完整视场采集应分别评价。串扰、有效覆盖、分辨率、工作距离、采集时间和装配稳定性需联合报告；作者承认速度受机械扫描和微孔振动影响。Eq.(4)与正文CT倒数冲突公开保留，只能支持本研究的条件权衡，不能推出这些指标的通用先后顺序。 任务四：Yang 2024作者v2 §3.2–3.3、SI§4.C与§8.C采用无隔板阵列加算法解复用，需要联合评价重建分辨率、场点对比度、轴向可用范围和计算成本。更多网络通道可提高质量但增加时间/内存，作者选9通道折中；这不是物理通道数的普适最优。推理时间不等于采集帧率；单次曝光复用重建与物理隔板/扫描拼接的结果不能不加条件互排。 任务五：朱等2013 §1–4将焦距标定准确性和多单元检测效率作为测量目标；其20单元数据与预算提示必须分开焦距离散、测量不确定度和设计偏移。本库CV仅为表内描述，约3%为作者方法预算说明，不能转作制造一致性门槛。依据GUM需说明参考面、修正、相关性和覆盖因子，未建立三者的通用名次。 计量任务补充：ISO14880-2:2024 §6.1按所需不确定度、被测性质、灵活性、成本及单元抽测/整阵列测量选择方法；此列举不是重要性排名。Part3 §5–6.2提供检测NA、校准和判焦条件。两类标准支持测量可比性，不替具体应用规定制造容差或统一P1/P2。",
       "metric_mapping_status": "editorial_candidate_set",
       "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
       "legacy_priority_proposal": "节距/填充率、焦距一致性、波前、串扰、色差、封装",
@@ -604,7 +613,9 @@
         "zhao_mlag_spacing",
         "katopodis_mla_crosstalk_2025",
         "yang_svfourier_imaging_2024",
-        "zhu_mla_focal_2013"
+        "zhu_mla_focal_2013",
+        "iso14880_wavefront_test_2024",
+        "iso14880_focal_test_2024"
       ],
       "updated_on": "2026-11-07",
       "ranking_gap_refs": [
@@ -612,7 +623,9 @@
         "katopodis_dual_mode_2025",
         "yang_svfourier_v2_2024",
         "zhu_mla_focal_2013",
-        "jcgm100_2008"
+        "jcgm100_2008",
+        "iso14880_2_2024_excerpt",
+        "iso14880_3_2024_excerpt"
       ]
     },
     {
@@ -1122,6 +1135,26 @@
       "updated_on": "2026-11-07"
     },
     {
+      "id": "array_diffraction_aperture",
+      "name": "单元衍射受限光学口径",
+      "english_name": "Diffraction-Limited Optical Aperture of a Lenslet",
+      "definition": "ISO14880-1:2019 §3.3.6.4将A_d定义为波前峰谷值PV<λ/4的评价区域面积，λ为实际测试波长。这是面积口径及其术语判据，不是直径、几何填充率或RMS<λ/4。标准还区分由几何口径与由A_d所张半角定义的NA_g和NA_d；不能只凭几何外形断言整个口径衍射受限。",
+      "unit": "mm² / μm²",
+      "direction": "tradeoff",
+      "required_conditions": [
+        "测试波长、波前PV与参考波前",
+        "区域形状、面积及实际评价口径",
+        "几何口径/衍射受限口径区别",
+        "波前采样、异常点及处理规则",
+        "NA的介质、方向和口径约定"
+      ],
+      "definition_refs": [
+        "iso14880_1_2019_excerpt"
+      ],
+      "best_interpretation": "在同波长和评价规则下说明可用区域；λ/4属于此术语，不能当所有系统的统一合格线，也不能据此声称Strehl精确等于0.8。",
+      "updated_on": "2026-11-07"
+    },
+    {
       "id": "array_fill_factor",
       "name": "阵列几何填充因子",
       "english_name": "Geometrical fill factor of a microlens array",
@@ -1144,7 +1177,7 @@
       "id": "array_focal_length",
       "name": "阵列单元焦距（按参考面）",
       "english_name": "Lenslet Focal Length with a Specified Reference Plane",
-      "definition": "对阵列中指定单元测量焦点位置，必须约定焦距起算面与入射波前。朱等2013 §2把平凸单元的f解释为顶点至焦点的轴向距离，按平面/球面波前的光斑位移求取并作离焦修正；本入口保留这一作者定义，不默认它等于从主平面起算的有效焦距EFL。Eq.(1)为f=z+Δf−Δh≈Ls/(d−s)+Δf，Δh为球面矢高，作者采用Δh≪z；不能将成像工作距离或单次球面照明的像距直接代入。该实验还存在印刷示例与结果表未消歧的问题，故公式展示不代表可直接复现全部数据。",
+      "definition": "ISO14880-1:2019区分基底背侧准直入射时的顶点参考前焦距，以及透镜侧准直入射时从基底背面（或双面单元顶点）起算的后焦距；均不可默认成主平面EFL。Part3:2024 §6.2用表面与焦点之间的显微镜轴向位移测量，先核参考面与焦点判据。 对阵列中指定单元测量焦点位置，必须约定焦距起算面与入射波前。朱等2013 §2把平凸单元的f解释为顶点至焦点的轴向距离，按平面/球面波前的光斑位移求取并作离焦修正；本入口保留这一作者定义，不默认它等于从主平面起算的有效焦距EFL。Eq.(1)为f=z+Δf−Δh≈Ls/(d−s)+Δf，Δh为球面矢高，作者采用Δh≪z；不能将成像工作距离或单次球面照明的像距直接代入。该实验还存在印刷示例与结果表未消歧的问题，故公式展示不代表可直接复现全部数据。",
       "unit": "mm / μm",
       "direction": "target",
       "required_conditions": [
@@ -1155,7 +1188,9 @@
         "采样范围、重复测量与不确定度"
       ],
       "definition_refs": [
-        "zhu_mla_focal_2013"
+        "zhu_mla_focal_2013",
+        "iso14880_1_2019_excerpt",
+        "iso14880_3_2024_excerpt"
       ],
       "best_interpretation": "按设计目标与测量口径比较；焦距更短或更长不自动更好。单元焦距值、单元间离散和测量不确定度分别报告。",
       "updated_on": "2026-11-07"
@@ -1364,20 +1399,22 @@
       "id": "effective_abbe",
       "name": "系统有效/等效阿贝数",
       "english_name": "Effective / Equivalent Abbe Number",
-      "definition": "以指定参考谱线的系统焦距或光焦度变化表征相对色散的无量纲量。比较时必须统一文献公式、谱线与符号；本库不把不同定义下的值直接合并。",
+      "definition": "指定三个波长的相对焦距色散量。ISO14880-1:2019 §3.3.5.1采用ν_eff=[1/f(λ2)]/[1/f(λ1)−1/f(λ3)]，λ1<λ2<λ3；可见光通常用486.1、587.56、656.3 nm，其他波段须另报谱线。本库代数展开为f1·f3/[f2·(f3−f1)]，不与f2/(f3−f1)无条件等同；后者仅在f1·f3≈f2²时近似一致。焦距须非零且口径一致；f1=f3时分母为零，不能报告有限阿贝数。其他文献定义按原式另报。",
       "unit": "1",
       "direction": "tradeoff",
       "required_conditions": [
-        "原文定义和符号",
-        "三条参考谱线",
-        "焦点定位及不确定度",
+        "原文公式、谱线顺序与符号",
+        "三条参考谱线与实际光谱宽度",
+        "各波长焦距参考面、介质与焦点判据",
+        "焦点定位不确定度及端点差是否可分辨",
         "消色差还是主动色散任务"
       ],
       "definition_refs": [
+        "iso14880_1_2019_excerpt",
         "werner"
       ],
-      "best_interpretation": "消色差任务与色散共焦任务目标相反；端点近乎共焦时大数值不等同全带高像质。",
-      "updated_on": "2026-11-06"
+      "best_interpretation": "消色差与主动色散任务目标不同。端点近乎共焦时数值可能很大且对测量误差敏感，仍需完整焦移曲线和像质；本公式不提供行业合格门槛。",
+      "updated_on": "2026-11-07"
     },
     {
       "id": "efl",
@@ -1894,6 +1931,27 @@
       "updated_on": "2026-11-07"
     },
     {
+      "id": "wavefront_rms",
+      "name": "波前像差 RMS",
+      "english_name": "Root-Mean-Square Wavefront Aberration",
+      "definition": "相对约定理想波前的残差均方根。ISO14880-1:2019 §3.3.4给出术语，Part2:2024 Table1允许以μm或测试波长倍数表示。本库提醒：RMS不等于峰谷值PV，也不是面形高度；去除活塞、倾斜或离焦后须重新说明参考波前。不同残差空间分布之间没有固定的PV/RMS换算系数。",
+      "unit": "μm / nm / waves（须注明λ）",
+      "direction": "lower",
+      "required_conditions": [
+        "测试波长及长度/waves换算",
+        "参考波前、去除项与评价面",
+        "实际/软件孔径、形状、采样与权重",
+        "单程/双程及系统像差校正",
+        "被测件或测试光源/参考镜的对象区分"
+      ],
+      "definition_refs": [
+        "iso14880_1_2019_excerpt",
+        "iso14880_2_2024_excerpt"
+      ],
+      "best_interpretation": "相同参考波前和评价孔径下比较。测试设备的λ/20要求不自动成为被测透镜的验收限；单个RMS值不能证明整个视场和波段合格。",
+      "updated_on": "2026-11-07"
+    },
+    {
       "id": "working_distance",
       "name": "工作距离",
       "english_name": "Working Distance",
@@ -2210,6 +2268,54 @@
       "checked_on": "2026-10-25",
       "kind": "standard",
       "verification": "inherited_v2",
+      "doi": null
+    },
+    {
+      "id": "iso14880_1_2019_excerpt",
+      "title": "ISO 14880-1:2019 英文公开预览：焦距、波前与口径",
+      "url": "https://cdn.standards.iteh.ai/samples/72947/5ca4761c5a5a40f28072909753e2e27b/ISO-14880-1-2019.pdf",
+      "location": "§3.3.1–3.3.2、§3.3.4、§3.3.5.1及§3.3.6.4–3.3.6.6；印刷pp.3–4（PDF pp.9–10）",
+      "kind": "standard",
+      "evidence_scope": "10页公开预览；关键两页公式与术语已视觉核验。不是完整20页正文；§3.4及应用附录未取得。与ISO官方目录属同一标准，不是新增实验。",
+      "source_year": 2019,
+      "checked_on": "2026-11-07",
+      "verification": "checked_excerpt",
+      "doi": null
+    },
+    {
+      "id": "iso14880_2_2024_excerpt",
+      "title": "ISO 14880-2:2024 英文公开预览：波前测试设备与报告",
+      "url": "https://cdn.standards.iteh.ai/samples/83940/fa544fbf2f034a56851446bde2ffc3a6/ISO-14880-2-2024.pdf",
+      "location": "§3.2/Table1、§4.1–4.3、§5–6、§8–10；印刷pp.1–5（PDF pp.7–11）",
+      "kind": "standard",
+      "evidence_scope": "11页正式版英文预览，已视觉核印刷pp.1–5及相关正文；不是FDIS稿。附录A–F未取得，不作整套方法或仪器合规认证。与ISO官方目录为同一标准。",
+      "source_year": 2024,
+      "checked_on": "2026-11-07",
+      "verification": "checked_excerpt",
+      "doi": null
+    },
+    {
+      "id": "iso14880_3_2024",
+      "title": "ISO 14880-3:2024 官方版本与范围",
+      "url": "https://www.iso.org/standard/83941.html",
+      "location": "官方Abstract / General information / Life cycle",
+      "kind": "standard",
+      "evidence_scope": "2026-11-07读取官方目录：第二版2024-11，Published，取代2006版。目录本身不能支撑数值条款；可读正文另见英文公开预览。",
+      "source_year": 2024,
+      "checked_on": "2026-11-07",
+      "verification": "checked_excerpt",
+      "doi": null
+    },
+    {
+      "id": "iso14880_3_2024_excerpt",
+      "title": "ISO 14880-3:2024 英文公开预览：显微镜焦距测试",
+      "url": "https://cdn.standards.iteh.ai/samples/83941/a79d506863d14e23879a4c8b28b8cd69/ISO-14880-3-2024.pdf",
+      "location": "§4、§5.1–5.2.2.7、§6.2/Fig.1；印刷pp.1–4（PDF pp.7–10）",
+      "kind": "standard",
+      "evidence_scope": "10页正式版英文预览；已视觉核印刷pp.1–4。§6.3仅开头，后续§6.4–9及附录未取得，不据目录填写焦点位置均匀性限值。与官方条目同属一份标准。",
+      "source_year": 2024,
+      "checked_on": "2026-11-07",
+      "verification": "checked_excerpt",
       "doi": null
     },
     {
@@ -3026,22 +3132,24 @@
       "id": "std_6",
       "title": "ISO 14880-1:2019",
       "url": "https://www.iso.org/standard/72947.html",
-      "location": "微透镜阵列术语",
+      "location": "官方Abstract / General information / Life cycle",
       "kind": "standard",
-      "evidence_scope": "官方范围与本会话先前核对的公开预览",
-      "checked_on": "2026-10-25",
-      "verification": "inherited_v2",
+      "evidence_scope": "官方目录仍列第三版2019-06为Published、90.92待修订；ISO/DIS后继项目尚非正式替代版。具体条款另见本库2019版英文公开预览。",
+      "source_year": 2019,
+      "checked_on": "2026-11-07",
+      "verification": "checked_excerpt",
       "doi": null
     },
     {
       "id": "std_7",
       "title": "ISO 14880-2:2024",
       "url": "https://www.iso.org/standard/83940.html",
-      "location": "微透镜阵列波前像差测试",
+      "location": "官方Abstract / General information / Life cycle",
       "kind": "standard",
-      "evidence_scope": "官方范围摘要",
-      "checked_on": "2026-10-25",
-      "verification": "inherited_v2",
+      "evidence_scope": "官方目录列第二版2024-11为Published，取代2006版。具体已读条款另见本库2024版英文公开预览；未取得附录。",
+      "source_year": 2024,
+      "checked_on": "2026-11-07",
+      "verification": "checked_excerpt",
       "doi": null
     },
     {
@@ -4418,6 +4526,167 @@
       "checked_on": "2026-10-25",
       "record_status": "inherited_v2",
       "claim_type": "standard_requirement"
+    },
+    {
+      "id": "iso14880_focal_test_2024",
+      "application_id": "app_14",
+      "name": "ISO14880-3:2024 显微镜焦距测试条件（节选）",
+      "claim_type": "standard_requirement",
+      "evidence_type": "正式测试标准节选；非焦距制造公差",
+      "parameters": [
+        {
+          "name": "测量量与参考位置",
+          "value": "由微透镜表面与焦点之间的轴向位移测有效前/后焦距",
+          "evidence": {
+            "source_id": "iso14880_3_2024_excerpt",
+            "location": "§5.1/p.1；§5.2.1/Fig.1/p.2；§6.2/p.4"
+          },
+          "metric_id": "array_focal_length"
+        },
+        {
+          "name": "检测物镜NA（要求）",
+          "value": "大于被测透镜焦点处NA",
+          "evidence": {
+            "source_id": "iso14880_3_2024_excerpt",
+            "location": "§5.2.2.2/p.3"
+          },
+          "metric_id": "na"
+        },
+        {
+          "name": "位移与校准器物",
+          "value": "校准位移传感器；指定波长已知焦距微透镜和已知台阶高度用于核验",
+          "evidence": {
+            "source_id": "iso14880_3_2024_excerpt",
+            "location": "§5.2.2.2、§5.2.2.6/p.3"
+          }
+        },
+        {
+          "name": "周期校准与不确定度",
+          "value": "定期校准并估计校准不确定度",
+          "evidence": {
+            "source_id": "iso14880_3_2024_excerpt",
+            "location": "§6.2/p.4"
+          },
+          "metric_id": "measurement_uncertainty"
+        },
+        {
+          "name": "焦点判据与取样",
+          "value": "可用图像峰值强度定位最佳焦点；分辨率须足够，注意探测器欠采样",
+          "evidence": {
+            "source_id": "iso14880_3_2024_excerpt",
+            "location": "§5.2.2.4/p.3；§6.2/p.4"
+          }
+        },
+        {
+          "name": "照明与探测器",
+          "value": "记录所用光谱；检测响应须保持线性",
+          "evidence": {
+            "source_id": "iso14880_3_2024_excerpt",
+            "location": "§5.2.2.3、§5.2.2.5/p.3"
+          }
+        },
+        {
+          "name": "温度与振动",
+          "value": "温控、无振动；20°C为优选温度，未给出本条温度允许偏差",
+          "evidence": {
+            "source_id": "iso14880_3_2024_excerpt",
+            "location": "§5.2.2.7/p.4"
+          }
+        }
+      ],
+      "conditions": "用于标准范围内微透镜的显微镜焦距测试；方法要求不等于产品性能门槛。20°C为优选值，不是已核验的±温差公差。标定、参考面和判焦规则须与实际实验匹配，不能据此宣称朱等2013或本项目已按2024版合规。",
+      "unreported_or_not_verified": "预览止于§6.3开头；§6.4焦点位置均匀性、§7结果/不确定度、§9完整报告及附录未取得。没有可据此填写的阵列焦距CV合格上限。§6.3不完整折射公式未用于替代一般系统光焦度公式。",
+      "source_ids": [
+        "iso14880_3_2024_excerpt",
+        "iso14880_3_2024"
+      ],
+      "record_status": "checked_excerpt",
+      "checked_on": "2026-11-07"
+    },
+    {
+      "id": "iso14880_wavefront_test_2024",
+      "application_id": "app_14",
+      "name": "ISO14880-2:2024 波前测试设备要求（节选）",
+      "claim_type": "standard_requirement",
+      "evidence_type": "正式测试标准节选；要求与建议分别标注",
+      "parameters": [
+        {
+          "name": "入射测试波前（要求）",
+          "value": "RMS≤λ/20；工作波长、对应被测单元有效口径区域",
+          "evidence": {
+            "source_id": "iso14880_2_2024_excerpt",
+            "location": "§4.1/p.2"
+          },
+          "metric_id": "wavefront_rms"
+        },
+        {
+          "name": "参考镜（两种允许条件）",
+          "value": "像差至少比被测镜小一个数量级，或RMS<λ/20",
+          "evidence": {
+            "source_id": "iso14880_2_2024_excerpt",
+            "location": "§4.2/p.2"
+          },
+          "metric_id": "wavefront_rms"
+        },
+        {
+          "name": "准直器NA（要求）",
+          "value": "大于被测样品最大NA，并足以避免衍射影响",
+          "evidence": {
+            "source_id": "iso14880_2_2024_excerpt",
+            "location": "§4.3/p.2"
+          },
+          "metric_id": "na"
+        },
+        {
+          "name": "准直器像差（建议）",
+          "value": "应低于约λ/14（0.07λ RMS）；进一步推荐低于λ/20",
+          "evidence": {
+            "source_id": "iso14880_2_2024_excerpt",
+            "location": "§4.3/p.2"
+          },
+          "metric_id": "wavefront_rms"
+        },
+        {
+          "name": "测量几何与通光次数",
+          "value": "∞/f共轭；单程应用要求单程测试，不能任意混合双程结果",
+          "evidence": {
+            "source_id": "iso14880_2_2024_excerpt",
+            "location": "§4.2/p.2；§5/p.3"
+          }
+        },
+        {
+          "name": "结果表达与异常点",
+          "value": "PV受伪点影响；§8建议改用RMS的若干倍（至少3倍），这不是PV=3×RMS恒等式",
+          "evidence": {
+            "source_id": "iso14880_2_2024_excerpt",
+            "location": "§8/p.4"
+          }
+        },
+        {
+          "name": "测试系统残差",
+          "value": "需考虑系统本身像差及其校正，不能把仪器残差直接归给样品",
+          "evidence": {
+            "source_id": "iso14880_2_2024_excerpt",
+            "location": "§9/p.4"
+          }
+        },
+        {
+          "name": "报告条件",
+          "value": "按适用项报告波长/谱宽、偏振、入射角、光斑、孔径、设备和环境；结果注明PV/RMS/多项式口径",
+          "evidence": {
+            "source_id": "iso14880_2_2024_excerpt",
+            "location": "§10/p.5"
+          }
+        }
+      ],
+      "conditions": "适用于该标准范围内的微透镜阵列波前测试。λ/20等约束对象为入射波前、参考镜或准直器，绝不是被测透镜统一验收线；两种参考镜条件为“或”。不是科研实测样本或完整合规清单。",
+      "unreported_or_not_verified": "仅核英文预览印刷pp.1–5；附录A–F及ISO14999引用条款未取得。未建立特定器件、制造批次的RMS容差；§8建议不提供任意波前的PV/RMS固定比例。",
+      "source_ids": [
+        "iso14880_2_2024_excerpt",
+        "std_7"
+      ],
+      "record_status": "checked_excerpt",
+      "checked_on": "2026-11-07"
     },
     {
       "id": "itu_g671_connector_2025",

@@ -1,0 +1,21 @@
+{
+  "id": "wavefront_rms",
+  "name": "波前像差 RMS",
+  "english_name": "Root-Mean-Square Wavefront Aberration",
+  "definition": "相对约定理想波前的残差均方根。ISO14880-1:2019 §3.3.4给出术语，Part2:2024 Table1允许以μm或测试波长倍数表示。本库提醒：RMS不等于峰谷值PV，也不是面形高度；去除活塞、倾斜或离焦后须重新说明参考波前。不同残差空间分布之间没有固定的PV/RMS换算系数。",
+  "unit": "μm / nm / waves（须注明λ）",
+  "direction": "lower",
+  "required_conditions": [
+    "测试波长及长度/waves换算",
+    "参考波前、去除项与评价面",
+    "实际/软件孔径、形状、采样与权重",
+    "单程/双程及系统像差校正",
+    "被测件或测试光源/参考镜的对象区分"
+  ],
+  "definition_refs": [
+    "iso14880_1_2019_excerpt",
+    "iso14880_2_2024_excerpt"
+  ],
+  "best_interpretation": "相同参考波前和评价孔径下比较。测试设备的λ/20要求不自动成为被测透镜的验收限；单个RMS值不能证明整个视场和波段合格。",
+  "updated_on": "2026-11-07"
+}

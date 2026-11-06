@@ -16,6 +16,33 @@ function fixture(){
  vm.runInContext(fs.readFileSync(new URL('../web/app.js',import.meta.url),'utf8'),context);
  return {el,location,run:s=>vm.runInContext(s,context)};
 }
+test('MLA standards expose definitions and equipment requirements without inventing specimen acceptance',()=>{
+ const f=fixture();
+ for(const id of ['wavefront_rms','array_diffraction_aperture','effective_abbe','array_focal_length']){
+  assert.ok(f.el('panel').innerHTML.includes(`data-metric="${id}"`));
+  f.run(`openMetric('${id}')`);
+  assert.ok(f.el('detailBody').innerHTML.includes('ISO-14880-1-2019.pdf'));
+  assert.ok(f.el('detailBody').innerHTML.includes('PDF pp.9–10'));
+ }
+ f.run("openMetric('array_diffraction_aperture')");
+ assert.ok(f.el('detailBody').innerHTML.includes('PV&lt;λ/4'));
+ assert.ok(f.el('detailBody').innerHTML.includes('不是直径、几何填充率或RMS&lt;λ/4'));
+ f.run("openMetric('effective_abbe')");
+ assert.ok(f.el('detailBody').innerHTML.includes('[1/f(λ2)]/[1/f(λ1)−1/f(λ3)]'));
+ f.location.hash='#app_14/best';f.run('route()');
+ for(const [id,word,pdf] of [
+  ['iso14880_wavefront_test_2024','RMS≤λ/20','ISO-14880-2-2024.pdf'],
+  ['iso14880_focal_test_2024','大于被测透镜焦点处NA','ISO-14880-3-2024.pdf']
+ ]){
+  assert.ok(f.el('panel').innerHTML.includes(`data-record="${id}"`));
+  f.run(`openDialog('standard',recordCard(records.get('${id}'),true))`);
+  const body=f.el('detailBody').innerHTML;
+  for(const expected of [word,pdf,'正式测试标准节选','未取得'])assert.ok(body.includes(expected),expected);
+ }
+ f.location.hash='#app_14/priority';f.run('route()');
+ assert.ok(!f.el('panel').innerHTML.includes('class="tier"'));
+ assert.ok(f.el('panel').innerHTML.includes('此列举不是重要性排名'));
+});
 test('array definition and source locator render in the query interface',()=>{
  const f=fixture();assert.ok(f.el('panel').innerHTML.includes('阵列几何填充因子'));
  f.run("openMetric('array_fill_factor')");const body=f.el('detailBody').innerHTML;
