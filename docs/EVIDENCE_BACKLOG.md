@@ -74,7 +74,7 @@
 
 | ID / 任务 | 队列 | 状态 | 负责人 | 更新日期 | 依赖 | 产物 |
 | --- | --- | --- | --- | --- | --- | --- |
-| EVD-014b 模式接收理论界限 | Q0 | review | 本机 Codex | 2026-11-06 | PR #3 中的论文来源 | [增量核验](COUPLING_BOUND_REVIEW_2026-11-06.md) |
+| EVD-014b 模式接收理论界限 | Q0 | review | 本机 Codex | 2026-11-06 | PR #3 中的论文来源 | [增量核验](COUPLING_BOUND_REVIEW_2026-11-06.md) / [PR #4](https://github.com/SelinLee/lens-evidence-atlas/pull/4) |
 | EVD-004b 耦合公式与功率参考面 | Q0 | review | 本机 Codex | 2026-11-06 | EVD-014b | 同上；不是独立实验样本 |
 
 - [x] 实际核读Ansys定义正文和Jovanovic §2.1–2.4、Eq.(1)、Table 1；原有图页读取记录与本轮HTML增量分开。

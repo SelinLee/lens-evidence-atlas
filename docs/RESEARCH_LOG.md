@@ -40,7 +40,7 @@
 ## 2026-11-06-03 · 本机目标与模式接收界限
 
 - **执行者 / 任务**：本机Codex；EVD-014b、EVD-004b。建立实际持续目标，保持完整研究范围；使用独立工作目录保护Dot分支。
-- **基线 / 分支**：PR #3的cc397df、catalog0.1.1；增量分支`codex/local-evidence-goal`，catalog0.1.2。父PR未合并，不能把基线58条记录算作本轮新增。
+- **基线 / 分支**：PR #3的cc397df、catalog0.1.1；增量分支`codex/local-evidence-goal`，[PR #4](https://github.com/SelinLee/lens-evidence-atlas/pull/4)，catalog0.1.2。父PR未合并，不能把基线58条记录算作本轮新增。
 - **实际新增**：单模耦合词典补重叠公式、功率参考面及瞳形条件，理论界限补归一化与整体复常数说明。来源数/样本数不变。
 - **实际读取**：Ansys 2025 R1.01 Computing Fiber Coupling公开HTML定义/偏振/最大值/损耗段；Jovanovic 2017公开HTML §2.1–2.4、Eq.(1)、Table 1。只将本轮读取内容追加来源范围，不声称重验之前的PDF图页。
 - **方法与边界**：按四步法记录于[增量核验笔记](COUPLING_BOUND_REVIEW_2026-11-06.md)；Cauchy–Schwarz、量纲与完全匹配/正交极限是本轮数学复核，不是实测。未将论文引用的早期工作当已独立读取。
