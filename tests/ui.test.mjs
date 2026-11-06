@@ -288,3 +288,15 @@ test('SWIR and low-NA records expose sampling, relay and evidence limits without
   f.el('search').value=q;f.run('renderList()');assert.equal(f.el('resultCount').textContent,`${n} / 33 类应用`);
  }
 });
+
+test('fiber return-loss query shows definitions, experimental limits and normative exceptions together',()=>{
+ const f=fixture();f.location.hash='#app_22/metrics';f.run('route()');f.run("openMetric('return_loss')");
+ for(const s of ['−30 dB反射对应+30 dB回损','不能互换','G.671','G.957','G.650.3'])assert.ok(f.el('detailBody').innerHTML.includes(s));
+ f.run("openDialog('test',recordCard(records.get('chanclou_gradissimo_return_2001'),true))");
+ for(const s of ['±2 dB','0.0955%','不是样品达到100 dB','不是所有散点','未给偏振'])assert.ok(f.el('detailBody').innerHTML.includes(s));
+ f.run("openDialog('test',recordCard(records.get('itu_g671_connector_2025'),true))");
+ for(const s of ['允许−27 dB','−40 dB为研究中','Notes7、8','不是所有透镜'])assert.ok(f.el('detailBody').innerHTML.includes(s));
+ for(const [q,n] of [['Chanclou 2001',1],['G.671 (2025)',1],['no_return_loss_qa',0],['',33]]){
+  f.el('search').value=q;f.run('renderList()');assert.equal(f.el('resultCount').textContent,`${n} / 33 类应用`);
+ }
+});
