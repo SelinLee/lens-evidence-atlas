@@ -2,18 +2,21 @@
   "id": "sheet_length",
   "name": "光片有效长度",
   "english_name": "Light-sheet Propagation Length",
-  "definition": "在指定厚度/均匀度容差内的传播范围；高斯近似常以两倍瑞利长度描述。实验取样跨度、相机视场及模型预测FOV须分别标注，不能不经判据直接当作实测有效长度。",
+  "definition": "光片传播范围必须绑定判据。Shi 2022采用沿传播轴y的强度剖面FWHM；另一类定义按厚度或光学切片半宽的允许增长范围取长度，二者不能默认相等。理想高斯束的2zR特指束宽增至束腰√2倍的两端间距，不能直接套给任意光束的传播强度FWHM。实验取样跨度、相机视场及模型预测FOV须分别标注，不能不经判据直接当作实测有效长度。 Remacha §3.1.2按含能量厚度增至两倍定义传播距离，需说明单侧/双侧长度，不与强度半高或宽度√2倍混用。",
   "unit": "μm",
   "direction": "higher",
   "required_conditions": [
-    "厚度允许变化",
-    "光束模型",
+    "长度判据（强度半高/宽度增长/光学切片阈值）",
+    "全长/半长、传播轴及中心定义",
+    "光束模型、瞳形与横向取样",
     "波长及介质",
-    "长度判据、实测/模型及取样范围"
+    "实测/模型、取样范围和拟合方法"
   ],
   "definition_refs": [
     "ls_comparison",
-    "battistella_airy_2022"
+    "battistella_airy_2022",
+    "shi_lattice_2022",
+    "remacha_sectioning_2020"
   ],
   "best_interpretation": "需与厚度、旁瓣和背景联合评价。",
   "updated_on": "2026-11-06"

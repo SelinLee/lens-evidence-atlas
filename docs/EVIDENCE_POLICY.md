@@ -14,7 +14,7 @@
 
 ## 优先级
 
-P1/P2 是顺序层次，同层并列，没有虚构百分比权重。当前6类应用为 `editorial_synthesis`，原文支持理由但未给出这些名次；app_04含1组 `author_explicit` 的限定研发任务两项比较，必须展示 `explicit_rank_location` 和适用范围，不扩成通用物镜排名。应用 `ranking_status` 须与各条 `basis` 一致，已建立状态须有条目。没有直接依据的应用使用 `not_established`，不按照规格表出现顺序推断重要性。
+P1/P2 是顺序层次，同层并列，没有虚构百分比权重。当前5类应用为 `editorial_synthesis`，原文支持理由但未给出这些名次；app_04含1组 `author_explicit` 的限定研发任务两项比较，必须展示 `explicit_rank_location` 和适用范围，不扩成通用物镜排名。应用 `ranking_status` 须与各条 `basis` 一致，已建立状态须有条目。没有直接依据的应用使用 `not_established`，不按照规格表出现顺序推断重要性。
 
 ## 最佳声明
 
@@ -30,3 +30,5 @@ P1/P2 是顺序层次，同层并列，没有虚构百分比权重。当前6类�
 `inherited_v2` 表示沿用2026-10-25核验资料，并非2026-11-06重新读取全部来源。`checked_excerpt` 表示本轮读取相关内容；具体是全文、节选还是索引在 `evidence_scope` 中说明。
 
 数据通过自动校验仅代表结构和证据引用完整，不代表独立同行评审。每次发布应人工复核有变化的结论及布局。
+
+对于来源只支持条件权衡的应用，可用 `ranking_gap_refs` 引用该解释，并在来源页展示；不因此填写 `priorities` 或升级为作者排序。光片页已据Shi 2022 Discussion撤下无任务限定的旧顺序。
