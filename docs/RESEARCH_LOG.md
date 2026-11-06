@@ -480,3 +480,8 @@ ef84c19`；源提交与发布一致，保持owner-only访问。EVD-004d子任务
 - **科学变更**：候选v0.1.30为33应用/43定义/88记录/123来源；补RMS与衍射受限面积口径、阿贝数精确分式与焦距参考面，增加两项测试标准节选。标准元数据/预览不是独立实验，要求与建议逐项标注，λ/20不移作所有被测透镜公差。
 - **复核边界**：Part2附录及Part3 §6.3后续、§6.4/§7和附录未取得；ISO14999引用条款未另读。Werner论文出版页本轮返回429，保留既有核验日期/读取范围，未宣称其与ISO公式同义。本库代数复算核49.995与近似50、单位缩放和反号；残差反例核同PV不同RMS，不当实验样本。
 - **本地验收**：77项测试、构建、diff检查通过。独立Chrome无头1440/390 px完成搜索1/0/1/33、四定义、两来源弹窗、两标准记录重复开关/滚动、排名筛选、三PDF链接与原重点样本保留；无页面错误或横向溢出。实际查看桌面阿贝数、手机波前记录/焦距记录末尾/口径定义截图。待合并与实际HTTPS发布，不把本地验证称为上线。
+
+- **下批原文入口（未落库）**：检索“microlens array focal length uniformity measurement wavefront RMS experimental manufacturer SUSS”找到Rouquette等[arXiv:2607.26543v1](https://arxiv.org/abs/2607.26543v1)，2026-07-29作者稿，研究微透镜面形对LGS波前传感的影响。已取得14页PDF（/tmp/rouquette-mla-wavefront-2026v1.pdf，1,828,180 bytes）及同名txt，仅核标题/作者/摘要，未读方法和图表，未采纳性能数字。PDF元数据标题是模板残留，实际首页文本与arXiv题名匹配；继续需视觉核原文，区分面形测量、相位模型、CoG噪声模拟、AO端到端模拟与台架实验，不把作者稿称已同行评议。
+- **商业线索（未核原文）**：同轮检索命中[Thorlabs阵列原厂页](https://www.thorlabs.us/NewGroupPage9_PF.cfm?ObjectGroup_ID=2861)，可能涉及独立阵列焦距与装入WFS后的优化距离差别；未读取页面正文，不把搜索片段里的填充率或传感器accuracy改写为阵列制造一致性。
+
+- **实际发布验收**：PR [#51](https://github.com/SelinLee/lens-evidence-atlas/pull/51)最终头8310d697b93a4ae534c66d525abe6c11a435e3c5，CI42262860655成功；合并d087e8878bc289bebd07d7fdcc87005381e95310，主线CI42263046316与Pages[42263046333](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/42263046333)成功。实际HTTPS v0.1.30，SHA256=7a8f5909c4024c073e6dd0ad17fbe78d2f35ec88fc95e04e3d89f5b7b2152797。独立Chrome无头线上1440/390 px查询1/0/1/33、四定义、两来源弹窗、两标准记录反复滚动开关、三PDF链接及原重点样本保留通过；桌面阿贝数与手机波前/焦距记录截图已查看，无横向溢出或页面错误。003g/015a限定范围验收完成，父任务开放；新增待办003h继续面形与实际任务影响。交接分支codex/mla-standards-publication-handoff仅文档，不刷新科学日期或版本。
