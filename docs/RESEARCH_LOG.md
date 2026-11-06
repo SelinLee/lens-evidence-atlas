@@ -451,3 +451,9 @@ ef84c19`；源提交与发布一致，保持owner-only访问。EVD-004d子任务
 - **边界**：7.8 μm是作者标靶重建报告，100 μm是轴向可用总范围，0.06 s是示例推理时间；保留Table S3的0.0668 s、边缘退化、计时条件未知与出版版未逐字核验。原始PDF不上传。待验证/发布。
 
 - **本地验收**：72项测试、构建及diff检查通过。新增UI回归覆盖新指标到带版本作者稿的实际链接、出处类型和原有光学证据保留；初版测试误设为弹窗内来源按钮，按实际直接链接修正后通过，未改变网站引用结构。独立Chrome无头桌面1440 px/手机390 px完成搜索1/0/1/33、三定义、两出处、15参数样本反复开关/滚动、排序筛选及旧重点样本检查；截图实际查看，无横向溢出。候选SHA256=8d497fbf5aef0febe9f815a5730aaa319d07facc93f5e5a4671c483e66709e65，待合并和实际HTTPS验收。
+
+- **下批入口预核（不计科学落库）**：等待Pages时检索“microlens array focal length uniformity measurement experimental coefficient variation wavefront focal length distribution”。ISO官方目录 https://www.iso.org/standard/83941.html 已读取：14880-3:2024为第二版、2024-11发布，替代2006版；ANSI公开预览 https://webstore.ansi.org/preview-pages/ISO/preview_ISO%2B14880-3-2024.pdf 仅5页前置材料，目录列§6.2焦距、§6.4焦斑位置一致性、§7不确定性和Annex D，但没有这些条款正文，不能据目录给公式或门槛。待下一批核正文/合法预览及实验来源。原始研究线索：Zhu等2014 DOI10.1364/AO.53.006663（PubMed25322367）、Glöckner/Göring1997 DOI10.1364/AO.36.004438（PubMed18259233）；目前只是检索摘要/元数据，未读取方法图表，不采纳数字。Hessler学位论文另有Neuchâtel机构库入口，未读；与1997论文不是同一作者，不能混归。
+
+- **后续全文取得**：朱咸昌等2013《基于Hartmann-Shack波前检测原理的微透镜阵列焦距测量》，DOI10.3788/OPE.20132105.1122，出版方摘要页 https://ope.lightpublishing.cn/en/article/doi/10.3788/OPE.20132105.1122/ 已读。其PDF链接网页工具超时，但本机直取HTTP200成功：/tmp/zhu-mla-2013.pdf，7页、1,578,809 bytes，已提文本到同名.txt。尚未阅读正文或查看图表，不将摘要所述精度数字落库；下一轮可直接从此全文推进焦距定义、子单元标定、不确定性与一致性区别。2013与2014 Zhu论文需核团队关联，不能自动当独立来源。
+
+- **实际发布验收**：PR [#47](https://github.com/SelinLee/lens-evidence-atlas/pull/47)最终头69a11dab8191bc772f5780cdfc1606eba55830eb，CI42253552445成功；合并19d54193fd8ee5962a15b649d32114192b15fa56，主线CI42253635535成功。Pages[42253635380](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/42253635380)同一运行跟踪至success（部署7605305426，约6分17秒）；未因等待而重启。HTTPS实际v0.1.28及SHA256=8d497fbf5aef0febe9f815a5730aaa319d07facc93f5e5a4671c483e66709e65与本地一致。独立Chrome无头线上1440/390 px搜索1/0/1/33、三定义、两来源、15参数样本反复开关/滚动、排序过滤及旧重点记录通过；截图已实际查看，无横向溢出。只关闭003e限定报告核验交付，父003继续开放。
