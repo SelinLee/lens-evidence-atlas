@@ -363,3 +363,32 @@ test('connector limits retain network, temperature and durability exceptions ins
  assert.ok(r.conditions.includes('不是所有透镜'));
  assert.equal(d.applications.find(a=>a.id==='app_22').priorities.length,0);
 });
+
+test('array crosstalk preserves the reported measurements and reciprocal conflict',()=>{
+ const d=load(),r=d.benchmarks.find(b=>b.id==='katopodis_mla_crosstalk_2025'),m=d.metrics.find(m=>m.id==='array_crosstalk');
+ const p=name=>r.parameters.find(p=>p.name===name);
+ const values=name=>[...p(name).value.matchAll(/I_(?:prim|neigh)=(\d+)/g)].map(m=>Number(m[1]));
+ const no=values('无微孔的报告灰度均值'),ap=values('有微孔的报告灰度均值');
+ assert.deepEqual(no,[202,195]);assert.deepEqual(ap,[238,12]);
+ const ratios=[no[1]/no[0],ap[1]/ap[0]];
+ assert.deepEqual(r.parameters.filter(p=>p.metric_id===m.id).map(p=>Number(p.value.match(/≈([\d.]+)/)[1])),ratios.map(v=>Number(v.toFixed(5))));
+ assert.equal(Number((ratios[0]/ratios[1]).toFixed(2)),19.15);
+ assert.equal(no[1]/ap[1],16.25);assert.notEqual(ratios[0]/ratios[1],no[1]/ap[1]);
+ const printed=p('作者报告CT（与公式方向冲突）');assert.equal(printed.metric_id,undefined);
+ for(const word of ['1.035','19.83','方向冲突'])assert.ok((printed.name+printed.value).includes(word));
+ assert.equal(m.direction,'lower');for(const word of ['I_neigh/I_prim','不强制小于1','I_prim>0','不是邻道/全部通道的功率占比','负值'])assert.ok(m.definition.includes(word));
+ assert.equal(r.source_ids.length,1);assert.ok(!d.bests.some(b=>b.cohort_record_ids?.includes(r.id)));
+});
+
+test('MLA scanning, simulation and statistical sample domains remain distinct',()=>{
+ const d=load(),r=d.benchmarks.find(b=>b.id==='katopodis_mla_crosstalk_2025'),a=d.applications.find(a=>a.id==='app_14');
+ assert.equal(r.parameters.length,14);
+ for(const word of ['25幅图','900','1分钟','14 mm','3.1 μm'])assert.ok(r.parameters.some(p=>p.value.includes(word)));
+ for(const word of ['两微孔模拟','16步','灰度均值','五位小数'])assert.ok(r.conditions.includes(word));
+ for(const word of ['n=7','不能移作针孔串扰','未取得出版PDF','原始图像','相机型号','振动敏感性'])assert.ok(r.unreported_or_not_verified.includes(word));
+ assert.ok(!r.parameters.some(p=>p.metric_id==='na'||p.metric_id==='mtf'));
+ assert.equal(a.ranking_status,'not_established');assert.deepEqual(a.priorities,[]);
+ assert.ok(a.ranking_gap_refs.includes('katopodis_dual_mode_2025'));
+ const f=d.metrics.find(m=>m.id==='fov');assert.ok(f.definition.includes('单次曝光的稀疏覆盖'));assert.ok(f.required_conditions.includes('瞬时稀疏覆盖或扫描拼接、帧数与采集时间'));
+ const s=d.sources.find(s=>s.id==='katopodis_dual_mode_2025');for(const word of ['MathML','没有取得出版PDF','Figs.2/4/6/7/8','不是补充实验'])assert.ok(s.evidence_scope.includes(word));
+});

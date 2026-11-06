@@ -424,3 +424,12 @@ ef84c19`；源提交与发布一致，保持owner-only访问。EVD-004d子任务
 
 - **实际发布验收**：PR [#43](https://github.com/SelinLee/lens-evidence-atlas/pull/43)最终头3a1f4bb642bf89980de3a50977cfd16da0f78025，CI42247316008通过；合并709225e6df1e4ab23a0603c9dad020410bb10052，主线CI42247400111通过。Pages[42247400387](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/42247400387)成功；实际HTTPS v0.1.26，SHA256=c8d3a303aeb375759f38cd4aa08ac1ea6692057ebd36ea1f2c5d27a191376a50。独立Chrome无头线上桌面/390 px查询1/1/0/1/33、三定义、三出处、9/5参数两记录滚动关闭、排名及旧重点样本保留通过；截图实际查看，页面与弹窗内部无横向溢出。仅关闭004f。
 - **下批取证**：认领003d；Katopodis/Papazoglou/Zergioti 2025双模多通道成像，DOI10.1117/1.JBO.30.12.126006。原始XML https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12698289/fullTextXML 已取得（临时/tmp/mla-dualmode.xml），初读串扰相关方法/验证/讨论，未完整精读和视觉核图。MathML确认Eq.(4)分子I_neigh、分母I_prim；正文强度对202/195及238/12却报CT1.035/19.83，需出版版核验。暂不落数值、不宣称零串扰或通用指标。Europe PMC的pdf=render入口403，两个旧OA元数据入口404；不重复无效入口，改找出版方合法PDF。
+
+## 32 — 2026-11-07 阵列串扰口径与扫描视场
+
+- **前轮/基线**：上一目标轮公开访问确认属于状态复核，未新增科学成果；本轮完成v0.1.26线上Chrome验收，提交交接PR #44，CI42248305778通过，合并e558c8d。独立分支codex/mla-crosstalk-evidence；用户公开授权继续生效。
+- **取证**：Europe PMC XML及约1.02 MB正文图件包可读，CRC通过并查看Figs.2/4/6/7/8。出版PDF与PMC浏览器入口未取得；明确MathML核验与PDF版面核验不同。
+- **发现/落库**：Katopodis Eq.(4)用邻/主，正文CT却对应主/邻；保留原值与算术复核，约19.15倍为归一化比值之比。新定义、一研究14参数、一个来源，以及FOV瞬时/拼接条件与任务说明；候选v0.1.27，33应用/36指标/84记录/115来源，无新排名。
+- **边界**：两微孔模拟不充当单微孔实验零串扰；25帧900ROI与约1分钟不能混作瞬时完整视场。未核PDF、原始图像数据、重复误差、曝光/ROI合并；父003继续开放。待测试、真实Chrome、PR与实际部署。
+
+- **本地验收**：71项测试、构建及diff检查通过；独立Chrome无头1440 px/390 px查询1/0/1/33、三定义、两来源弹窗、14参数样本反复开关/滚动、排序过滤及旧样本保留通过。初验发现来源说明中的纯文本长URL导致手机弹窗内部溢出，已给来源块增加自动断行并重建复验；截图实际查看。数据SHA256=88f33dc137141ebd8d45bedfce97ee2ce75e2fb6a833f7ac7cb048976e7c8b54。交接PR #44的CI42248400564和Pages42248400125已确认success。新版本仍待PR/实际发布。

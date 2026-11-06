@@ -300,3 +300,13 @@ test('fiber return-loss query shows definitions, experimental limits and normati
   f.el('search').value=q;f.run('renderList()');assert.equal(f.el('resultCount').textContent,`${n} / 33 类应用`);
  }
 });
+
+test('MLA crosstalk query exposes reciprocal disagreement and acquisition conditions',()=>{
+ const f=fixture();f.location.hash='#app_14/metrics';f.run('route()');f.run("openMetric('array_crosstalk')");
+ for(const word of ['I_neigh/I_prim','负值','无量纲','MathML'])assert.ok(f.el('detailBody').innerHTML.includes(word));
+ f.run("openDialog('test',recordCard(records.get('katopodis_mla_crosstalk_2025'),true))");
+ for(const word of ['0.96535','0.05042','19.15','16.25','1.035','19.83','倒数','n=7','未取得出版PDF'])assert.ok(f.el('detailBody').innerHTML.includes(word));
+ f.location.hash='#app_14/priority';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('data-source="katopodis_dual_mode_2025"'));assert.ok(!f.el('panel').innerHTML.includes('class="tier"'));
+ for(const [q,n] of [['Katopodis 2025',1],['no_mla_crosstalk_match_013',0],['',33]]){f.el('search').value=q;f.run('renderList()');assert.equal(f.el('resultCount').textContent,`${n} / 33 类应用`);}
+ f.location.hash='#app_14/best';f.run('route()');for(const id of ['zhao_mlag_spacing','zhang_hex_mla','liu_mla_100um','richards_main','katopodis_mla_crosstalk_2025'])assert.ok(f.el('panel').innerHTML.includes('data-record="'+id+'"'));
+});
