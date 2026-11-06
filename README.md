@@ -1,8 +1,10 @@
 # Lens Evidence Atlas · 透镜评价证据库
 
-按应用查询透镜指标的定义、重要性依据与性能参考。仓库与在线站点目前均按**私有**管理。
+> 2026-11-06托管调整：用户要求改用GitHub，停止Sites发布。GitHub Pages方案已准备；用户最新确认仓库与网页均公开；见[迁移状态](docs/GITHUB_PAGES_MIGRATION.md)。历史Sites地址不代表新的发布目标。
 
-- [私有查询网页](https://lens-evidence-atlas.tasty-pixie-6380.chatgpt.site)
+按应用查询透镜指标的定义、重要性依据与性能参考。仓库与查询网页均按用户确认**公开**。
+
+- [GitHub Pages 查询网页](https://selinlee.github.io/lens-evidence-atlas/)
 - [证据与比较规则](docs/EVIDENCE_POLICY.md)
 - [贡献与更新方法](CONTRIBUTING.md)
 - [维护路线图及缺口](docs/ROADMAP.md)
@@ -49,14 +51,12 @@ dist/                 生成网页；随数据修改重建并提交
 
 ## 更新与发布
 
-通过任务清单/Issue → 数据修改 → 测试/构建 → PR 审核 → 私有部署维护。Dot 每批先认领稳定任务 ID，完成后更新清单状态及研究日志；详见 [维护任务说明](docs/DOT_MAINTENANCE.md)。文档与清单的保存不代表已启动后台研究。
+通过任务清单/Issue → 数据修改 → 测试/构建 → PR 审核 → GitHub Pages 发布维护。Dot 每批先认领稳定任务 ID，完成后更新清单状态及研究日志；详见 [维护任务说明](docs/DOT_MAINTENANCE.md)。文档与清单的保存不代表已启动后台研究。
 
-GitHub Actions 检查引用完整性、比较约束和生成文件是否过期，并保存私有构建制品。它**不启用公开 GitHub Pages**。
+GitHub Actions检查引用完整性、比较约束和生成文件是否过期。主分支更新通过`.github/workflows/pages.yml`测试并构建后，将dist发布到GitHub Pages；工作流成功和网页实际可读均应核验。
 
-GitHub 仓库私有并不自动让 Pages 私有。在线版本使用独立的 Sites 登录访问控制。更改仓库或站点访问范围必须由维护者明确决定。
-
-Sites 部署使用 `.openai/hosting.json` 的已存在项目 ID。通过 Sites 的仓库凭据推送同一版本、打包并调用私有部署；不要创建重复站点，不要提交任何 Token。GitHub `origin` 是主维护仓库，Sites 可使用单独的 `sites` 远程或独立发布 checkout。
+用户已批准源码与网页公开，catalog.json等网页资料同样公开。维护记录不得包含凭据或无授权再分发的全文。旧Sites发布记录仅保留历史；停止创建或重试Sites部署，迁移说明见[GitHub托管](docs/GITHUB_PAGES_MIGRATION.md)。
 
 ## 来源与使用
 
-保留来源链接及简短的中文释义，不收录整篇论文 PDF 或付费标准全文。来源文件和产品名称的权利归原权利人。仓库目前不授予开源许可；未来公开前需另行决定代码与资料的许可范围。
+保留来源链接及简短的中文释义，不收录整篇论文PDF或付费标准全文。来源文件和产品名称的权利归原权利人。仓库公开可读，目前尚未另行授予代码或资料的开源许可。
