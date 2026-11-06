@@ -38,3 +38,14 @@ test('array geometry stays separate from optical efficiency and sample-series va
  assert.ok(b.conditions.includes('不是直接实测的光学效率'));assert.ok(!b.parameters.some(p=>/焦距|NA/.test(p.name)));
  assert.ok(m.required_conditions.includes('评估区域与边缘处理'));assert.ok(!d.bests.some(x=>x.cohort_record_ids?.includes(b.id)));
 });
+
+test('TECF combined experiment does not become a single-axis tolerance or model',()=>{
+ const d=load(),b=d.benchmarks.find(b=>b.id==='he_tecf_combined_misalignment');
+ assert.equal(b.parameters.find(p=>p.metric_id==='coupling').value,'50.4%');
+ assert.deepEqual(b.parameters.slice(1).map(p=>p.value),['20 μm','10 mm','0.5 mm','0.04°','1 mm']);
+ assert.ok(b.parameters.every(p=>p.evidence.location.includes('§4.3末两段')));
+ for(const word of ['组合工作点','不是独立单轴允许公差','1515–1595 nm','未单独确认光谱'])assert.ok(b.conditions.includes(word));
+ assert.ok(b.unreported_or_not_verified.includes('功率校准面'));
+ assert.ok(!b.parameters.some(p=>/NA|焦距/.test(p.name)));
+ assert.ok(!d.bests.some(x=>x.cohort_record_ids?.includes(b.id)));
+});

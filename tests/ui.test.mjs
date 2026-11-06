@@ -33,3 +33,18 @@ test('array record and narrowed priority scope render with evidence boundaries',
  const body=f.el('detailBody').innerHTML;for(const expected of ['35.14 ± 0.55','71.35','88%（由几何量计算）','不是直接实测的光学效率','完整行列数','Eq.4'])assert.ok(body.includes(expected));
  f.location.hash='#app_14/priority';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('不构成阵列'));
 });
+
+test('TECF record shows combined conditions, source locator and uncertainty',()=>{
+ const f=fixture();f.location.hash='#app_22/best';f.run('route()');
+ assert.ok(f.el('panel').innerHTML.includes('He 2022'));
+ f.run("openDialog('test',recordCard(records.get('he_tecf_combined_misalignment'),true))");
+ for(const word of ['50.4%','20 μm','0.5 mm','0.04°','§4.3末两段','未单独确认光谱','功率校准面'])assert.ok(f.el('detailBody').innerHTML.includes(word));
+ f.location.hash='#app_22/sources';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('10.3390/mi13020324'));
+});
+test('TECF search can be repeated and cleared without hiding unrelated applications',()=>{
+ const f=fixture();
+ for(const query of ['He 2022','TECF','unmatched_alignment_987','He 2022','']){
+  f.el('search').value=query;f.run('renderList()');
+  assert.equal(f.el('resultCount').textContent,query==='unmatched_alignment_987'?'0 / 33 类应用':query?'1 / 33 类应用':'33 / 33 类应用');
+ }
+});
