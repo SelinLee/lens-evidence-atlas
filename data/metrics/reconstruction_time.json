@@ -1,0 +1,20 @@
+{
+  "id": "reconstruction_time",
+  "name": "图像重建处理时间",
+  "english_name": "Image Reconstruction / Inference Time",
+  "definition": "从约定的输入数据进入指定重建流程，到该流程完成输出所需的处理时长。Yang 2024 Fig.6与SI Table S3分别报告示例重建的inference time和网络配置的Speed(s)；本库统一用时间而非倒数速度描述，秒数越小仅表示同条件处理更快。必须说明计时是否含裁剪/补零、CPU/GPU传输、推理、后处理、同步和文件输出，以及batch、预热与统计方式。它不是曝光时间、传感器帧周期、扫描采集时间或训练耗时。若单帧串行且没有其他开销，1/t才是理想处理率换算；不能直接当实测采集帧率，批处理吞吐率也不是单帧延迟。",
+  "unit": "s / image（须说明批量与计时边界）",
+  "direction": "lower",
+  "required_conditions": [
+    "硬件、软件/模型版本与数值精度",
+    "输入/输出尺寸、通道数及裁剪/补零",
+    "计时起止与传输/前后处理是否包含",
+    "batch、并行/串行、同步、预热和重复统计",
+    "重建质量、样本类型与比较算法设置"
+  ],
+  "definition_refs": [
+    "yang_svfourier_v2_2024"
+  ],
+  "best_interpretation": "仅在可比硬件、数据尺寸和重建质量下比较；低时延不证明高分辨率或稳定实时采集。原文未明确的计时条件保留未知，不建立通用合格阈值。",
+  "updated_on": "2026-11-07"
+}
