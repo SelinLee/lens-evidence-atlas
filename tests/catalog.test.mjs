@@ -210,3 +210,29 @@ test('defect separability reproduces all table pairs without treating them as pr
  const a=d.applications.find(a=>a.id==='app_02');assert.equal(a.priorities.length,0);assert.equal(a.ranking_status,'not_established');
  assert.ok(!r.parameters.some(p=>p.metric_id==='mtf'));
 });
+
+test('OCT separates measured particles, theoretical widths, target period and source formula conflict',()=>{
+ const d=load(),r=d.benchmarks.find(r=>r.id==='spaide_oct_lateral_2022');
+ const a=d.applications.find(a=>a.id==='app_23');
+ assert.equal(a.ranking_status,'not_established');assert.equal(a.priorities.length,0);
+ assert.deepEqual(a.ranking_gap_refs,['oct_definition','spaide_oct_lateral_2022']);
+ assert.equal(r.parameters.length,10);assert.equal(r.source_ids.length,1);
+ for(const [name,count] of [['金刚石颗粒横向FWHM',1215],['FeO颗粒横向FWHM',732]]){
+  const p=r.parameters.find(p=>p.name===name),counts=p.value.match(/计(\d+)\/(\d+)\/(\d+)/).slice(1).map(Number);
+  assert.equal(counts.reduce((a,b)=>a+b),count);assert.ok(p.value.includes('±统计含义未明确'));
+ }
+ const period=1000/2**6.5*16.7/40.18;
+ assert.ok(Math.abs(period-4.592)<0.0005);assert.ok(Math.abs(period/2-2.296)<0.0005);
+ assert.ok(r.parameters.find(p=>p.name==='USAF尺度换算边界').value.includes('半周期≈2.296'));
+ const theory=.853/(Math.PI*(1.71/(2*16.7)))*Math.sqrt(Math.log(2));assert.ok(Math.abs(theory-4.42)<.005);
+ assert.ok(r.parameters.find(p=>p.name==='模型横向FWHM（非实测）').value.includes('4.42'));
+ assert.ok(r.parameters.find(p=>p.name==='ATF推算的衍射极限（非患者实际PSF）'));
+ assert.ok(r.conditions.includes('完整给出'));assert.ok(r.unreported_or_not_verified.includes('4.29%'));
+ assert.ok(!d.bests.some(b=>b.cohort_record_ids?.includes(r.id)));
+ const axial=d.metrics.find(m=>m.id==='oct_axial'),depth=d.metrics.find(m=>m.id==='gaussian_depth_focus');
+ for(const s of ['幅度包络','1/√2','群折射率','往返'])assert.ok(axial.definition.includes(s));
+ assert.equal(depth.direction,'tradeoff');assert.ok(depth.definition.includes('相差4倍'));
+ // Independent substitution checks the source's two printed forms, not a new measured benchmark.
+ const n=1.336,lambda=.85,na=.05,w=lambda/(Math.PI*na);
+ assert.ok(Math.abs((2*Math.PI*n*w*w/lambda)/(n*lambda/(2*Math.PI*na*na))-4)<1e-12);
+});

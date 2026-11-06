@@ -2,50 +2,28 @@
   "id": "app_23",
   "name": "OCT与低相干断层成像",
   "category": "医疗与显微",
-  "summary": "商业扫描镜例800–1100 nm、EFL36 mm、WD25.1 mm",
+  "summary": "区分轴向相干门、横向系统PSF、焦深与扫描采样；保留商业扫描镜及Spaide 2022实验参考。",
   "metric_ids": [
     "oct_axial",
     "resolution",
     "na",
     "chromatic_shift",
-    "working_distance"
+    "working_distance",
+    "gaussian_depth_focus"
   ],
-  "priorities": [
-    {
-      "tier": 1,
-      "metric_ids": [
-        "oct_axial",
-        "resolution"
-      ],
-      "rationale": "轴向与横向分辨率由不同机制决定，应并列约束；不是原文给出的数字排序。",
-      "evidence_refs": [
-        "oct_definition"
-      ],
-      "basis": "editorial_synthesis",
-      "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
-    },
-    {
-      "tier": 2,
-      "metric_ids": [
-        "na",
-        "chromatic_shift"
-      ],
-      "rationale": "再根据焦深、带宽及色散匹配选择聚焦方案。",
-      "evidence_refs": [
-        "oct_definition",
-        "oct"
-      ],
-      "basis": "editorial_synthesis",
-      "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
-    }
-  ],
-  "ranking_status": "editorial_synthesis",
-  "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
+  "priorities": [],
+  "ranking_status": "not_established",
+  "ranking_gap": "视网膜结构成像任务：Aumann 2019 §3.2.4–3.2.5分别讨论谱宽/轴向响应、聚焦/焦深、采样、灵敏度与速度。Spaide 2022 Discussion指出评估横向像质应看系统PSF，单用照明光斑会误导采样设计；提高扫描密度还受扫描时间、眼运动和慢轴定位限制。两者支持任务权衡，没有给出轴向/横向分辨率先于NA/色散的通用P1/P2。须先定义待分辨结构、成像范围和时间预算，再选择测量口径；本页不建立统一顺序。",
   "metric_mapping_status": "editorial_candidate_set",
   "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
   "legacy_priority_proposal": "横向PSF、扫描场、轴向色移、群时延/色散匹配",
   "record_ids": [
-    "oct36"
+    "oct36",
+    "spaide_oct_lateral_2022"
   ],
-  "updated_on": "2026-11-06"
+  "updated_on": "2026-11-06",
+  "ranking_gap_refs": [
+    "oct_definition",
+    "spaide_oct_lateral_2022"
+  ]
 }
