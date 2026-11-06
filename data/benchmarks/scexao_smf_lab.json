@@ -1,0 +1,49 @@
+{
+  "id": "scexao_smf_lab",
+  "application_id": "app_22",
+  "application": "单模光纤准直与通信耦合",
+  "name": "Jovanovic 2017 SCExAO 实验室单模光纤注入",
+  "evidence_type": "科研实验示例",
+  "source_ids": [
+    "jovanovic_smf_2017"
+  ],
+  "parameters": [
+    {
+      "name": "最高测得耦合效率（本文实验室条件）",
+      "value": "约78% @1500/1550 nm",
+      "evidence": {
+        "source_id": "jovanovic_smf_2017",
+        "location": "§4.1 p.8 Fig.8及对应正文"
+      }
+    },
+    {
+      "name": "相对本文理论极限",
+      "value": "约86%（极限约91%）",
+      "evidence": {
+        "source_id": "jovanovic_smf_2017",
+        "location": "§4.1 pp.8–9；不是86%绝对耦合"
+      }
+    },
+    {
+      "name": "光纤及模场直径",
+      "value": "SMF-28-J9；1/e²模场直径10.4 μm @1550 nm",
+      "evidence": {
+        "source_id": "jovanovic_smf_2017",
+        "location": "§3.2 p.7"
+      }
+    },
+    {
+      "name": "参考光纤",
+      "value": "365 μm芯径多模光纤",
+      "evidence": {
+        "source_id": "jovanovic_smf_2017",
+        "location": "§3.2–3.3 pp.7–8；§8.4 pp.12–13"
+      }
+    }
+  ],
+  "conditions": "实验室、瞳面变迹和波前校正后的注入；以移动多模参考光纤测得通量归一化，Fig.8已去除光纤端面Fresnel反射损失。不是从望远镜入口到光纤输出的端到端透过率。约78%是该文配置和谱通道内结果，不是光纤或透镜的全球纪录。",
+  "unreported_or_not_verified": "f/5.3±0.1来自高斯近似模型，峰位对应f/5.3未直接验证，不转换为实测NA；参考光纤捕获全部通量是有近似的校准；缺同分母独立实验集合、统一孔径/偏振/像差条件，不与100%理想模式界限或厂商准直镜规格排名。",
+  "record_status": "checked_excerpt",
+  "claim_type": "representative_result",
+  "checked_on": "2026-11-06"
+}
