@@ -1,8 +1,8 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.26",
-    "updated_on": "2026-11-06",
+    "version": "0.1.27",
+    "updated_on": "2026-11-07",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
     "name": "透镜评价证据库",
@@ -569,7 +569,7 @@
       "id": "app_14",
       "name": "微透镜阵列与光场",
       "category": "激光与科研",
-      "summary": "收录独立喷墨、选择性润湿与阵列光栅实验，区分几何填充率、焦点强度统计、焦移和质心间距CV；作者CV与表格复算差异保留，定量串扰仍待补证。",
+      "summary": "收录阵列制造、间距统计和多通道成像实验；区分填充率、强度/间距一致性、串扰和扫描视场。原始论文中的CV与CT口径冲突可查，尚不构成同条件排行榜。",
       "metric_ids": [
         "focus_efficiency",
         "chromatic_shift",
@@ -577,11 +577,15 @@
         "strehl",
         "effective_abbe",
         "array_fill_factor",
-        "array_spacing_cv"
+        "array_spacing_cv",
+        "array_crosstalk",
+        "fov",
+        "working_distance",
+        "resolution"
       ],
       "priorities": [],
       "ranking_status": "not_established",
-      "ranking_gap": "任务一：Richards 2023印刷p.6“Individually tuning…”及p.7 Fig.5讨论该材料与打印工艺下的单个消色差微透镜。提高NA时，聚焦效率下降、焦长误差通常增大；增加衍射环带还受到细结构打印精度限制，折射面调节是作者讨论的设计手段。它支持联合考察NA、效率、色差与可制备性，不能推出效率/色差统一高于NA或Strehl的P1/P2。任务二：pp.6–7“Imaging with an achromatic microlens array”及p.8 Fig.6展示18单元阵列的白光USAF成像；作者提出更小直径、较低NA、更密排列可能获得更多光场数据，这是后续设计建议，未在该示例中给出对照实测排序。单透镜效率不能替代整阵列效率、焦距一致性或串扰；这些阵列任务指标的定量权衡仍待补证。",
+      "ranking_gap": "任务一：Richards 2023印刷p.6“Individually tuning…”及p.7 Fig.5讨论该材料与打印工艺下的单个消色差微透镜。提高NA时，聚焦效率下降、焦长误差通常增大；增加衍射环带还受到细结构打印精度限制，折射面调节是作者讨论的设计手段。它支持联合考察NA、效率、色差与可制备性，不能推出效率/色差统一高于NA或Strehl的P1/P2。任务二：pp.6–7“Imaging with an achromatic microlens array”及p.8 Fig.6展示18单元阵列的白光USAF成像；作者提出更小直径、较低NA、更密排列可能获得更多光场数据，这是后续设计建议，未在该示例中给出对照实测排序。单透镜效率不能替代整阵列效率、焦距一致性或串扰；这些阵列任务指标的定量权衡仍待补证。 任务三：Katopodis 2025 §2.1–2.2、§5.1–5.2与§6的明场多通道成像，用微孔减少通道串扰，但引入盲区，需扫描拼接补全；快速稀疏采样与完整视场采集应分别评价。串扰、有效覆盖、分辨率、工作距离、采集时间和装配稳定性需联合报告；作者承认速度受机械扫描和微孔振动影响。Eq.(4)与正文CT倒数冲突公开保留，只能支持本研究的条件权衡，不能推出这些指标的通用先后顺序。",
       "metric_mapping_status": "editorial_candidate_set",
       "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
       "legacy_priority_proposal": "节距/填充率、焦距一致性、波前、串扰、色差、封装",
@@ -592,11 +596,13 @@
         "zhang_hex_mla",
         "liu_mla_100um",
         "liu_mla_process_radius",
-        "zhao_mlag_spacing"
+        "zhao_mlag_spacing",
+        "katopodis_mla_crosstalk_2025"
       ],
-      "updated_on": "2026-11-06",
+      "updated_on": "2026-11-07",
       "ranking_gap_refs": [
-        "richards"
+        "richards",
+        "katopodis_dual_mode_2025"
       ]
     },
     {
@@ -1085,6 +1091,27 @@
       "updated_on": "2026-11-06"
     },
     {
+      "id": "array_crosstalk",
+      "name": "阵列邻道串扰比",
+      "english_name": "Inter-channel crosstalk ratio (mean-intensity convention)",
+      "definition": "以单个通道受照的针孔实验为例，令I_prim与I_neigh为主通道和邻通道ROI扣除暗背景后的平均像素灰度；Katopodis 2025 §5.1 Eq.(4)的原始MathML定义CT=I_neigh/I_prim。本库采用这一邻道/主通道约定，值越低表示同协议下相对邻道响应越小。它是无量纲灰度均值比，不是邻道/全部通道的功率占比；多邻道的合并规则必须另报，不能默认相加。原文随后报告的1.035与19.83却对应相反的主/邻倒数，本库保留冲突并标明复算，不据此混用“越大越好”。比值要求I_prim>0；I_neigh=0时CT=0仅为该测量下的零估计，不证明无泄漏；背景扣除后出现负值不能直接当更优串扰。灰度比并非概率，不强制小于1；正的共同线性增益可消去，未校正偏置、非线性、饱和及不同通道响应不能据此忽略。",
+      "unit": "无量纲比值（可×100%）",
+      "direction": "lower",
+      "required_conditions": [
+        "分子/分母方向、灰度均值或积分功率",
+        "照明波段、受照通道与针孔尺寸/位置",
+        "主/邻ROI面积、邻道数及合并规则",
+        "暗背景、响应线性、饱和、增益与曝光",
+        "微孔阵列配置、光学几何与采集/处理模式",
+        "重复次数、场点和误差/检出限"
+      ],
+      "definition_refs": [
+        "katopodis_dual_mode_2025"
+      ],
+      "best_interpretation": "仅在相同单通道激励、ROI及探测协议下比较；不能与填充率、间距CV、成像分辨率或总能量效率互换。当前原文CT方向冲突、完整原始数据及若干采集条件缺失，不设通用合格阈值或最佳排名。",
+      "updated_on": "2026-11-07"
+    },
+    {
       "id": "array_fill_factor",
       "name": "阵列几何填充因子",
       "english_name": "Geometrical fill factor of a microlens array",
@@ -1361,7 +1388,7 @@
       "id": "fov",
       "name": "视场",
       "english_name": "Field of View",
-      "definition": "可成像的物方范围，可能用线性尺寸或角度表述。 系统也可报告有效物方面积（mm²）；须注明区域形状、判据与像差校正，面积不能在未知形状时换算成宽度或角度。 离轴位置若以某直径视场的边缘标注，不能把该直径当作从光轴起的径向距离。",
+      "definition": "可成像的物方范围，可能用线性尺寸或角度表述。 系统也可报告有效物方面积（mm²）；须注明区域形状、判据与像差校正，面积不能在未知形状时换算成宽度或角度。 离轴位置若以某直径视场的边缘标注，不能把该直径当作从光轴起的径向距离。 阵列微扫描须区分单通道ROI、单次曝光的稀疏覆盖及多次扫描拼接的完整视场，并同时注明帧数/采集时间；覆盖范围大不等于单次连续覆盖。",
       "unit": "°、mm或mm²",
       "direction": "tradeoff",
       "required_conditions": [
@@ -1369,15 +1396,17 @@
         "全角/半角",
         "物距、传感器及像质门槛",
         "线性/角度/面积及区域形状",
-        "有效范围判据与像差/重建处理"
+        "有效范围判据与像差/重建处理",
+        "瞬时稀疏覆盖或扫描拼接、帧数与采集时间"
       ],
       "definition_refs": [
         "fov_definition",
         "zheng_fpm_2013",
-        "zheng_fpm_si_2015"
+        "zheng_fpm_si_2015",
+        "katopodis_dual_mode_2025"
       ],
       "best_interpretation": "没有跨应用统一最优值",
-      "updated_on": "2026-11-06"
+      "updated_on": "2026-11-07"
     },
     {
       "id": "gaussian_depth_focus",
@@ -2115,6 +2144,18 @@
       "location": "作者稿§2.1–2.4、Eq.(1)，§2.3–2.4 pp.5–6及Table 1；§3.2 p.7；§3.3、§4.1及Fig.8 p.8；§8.4 pp.12–13及Fig.13",
       "evidence_scope": "arXiv:1706.08821v2（26 Aug 2017）公开作者稿，15页；此前核读相关正文和HTML §2.1–2.4/Eq.(1)/Table 1，实际渲染查看pp.8、12–13。本批另实际查看PDF pp.5–7，核对Table 1的无像差模拟/整形元件损耗预算和§3.2的焦比匹配假设；不将新PIAA预测当实测，不从图估读新数字。期刊A&A 604 A122（2017）；稿件自动排版页眉September 20, 2018不作发表年。未独立读取该文引用的1982/1988原作。",
       "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
+    },
+    {
+      "id": "katopodis_dual_mode_2025",
+      "title": "Katopodis, Papazoglou & Zergioti (2025): Dual-mode multichannel imaging system for high-throughput live-cell monitoring across large fields of view",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12698289/",
+      "doi": "10.1117/1.JBO.30.12.126006",
+      "source_year": 2025,
+      "kind": "peer_reviewed_paper",
+      "location": "§2.1 Eqs.(1)–(2), §2.2; §3.1–3.2 Figs.2/4; §4; §5.1 Eq.(4)/Fig.6; §5.2 Figs.7/8; §6; Code and Data Availability",
+      "evidence_scope": "取得Europe PMC原始JATS XML（https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12698289/fullTextXML），读取摘要、§1–7及数据可用性段，重点核§2–5串扰、扫描和成像方法；直接检查Eq.(4)的MathML mfrac，分子I_neigh、分母I_prim。通过同一服务的supplementaryFiles取得CRC校验通过的原文图件包，实际查看Figs.2/4/6/7/8；该包仅含正文图件，不是补充实验或独立来源。没有取得出版PDF页面；PMC独立Chrome无头仍返回检查页，出版方PDF入口返回HTML，不能称已核PDF版面。公式与正文CT数字倒数冲突只按可读XML报告，不能断言作者意图或已经勘误；复算不是原始数据重分析。USAF数值取作者正文报告，图8(f)清晰度不足以独立确认元素。未取得完整原始图像/代码，未复现实验或核全文引用中的比较纪录。论文发表于2025-12-12；2024会议前作不计作独立团队。",
+      "checked_on": "2026-11-07",
       "verification": "checked_excerpt"
     },
     {
@@ -4278,6 +4319,141 @@
       "record_status": "checked_excerpt",
       "checked_on": "2026-11-06",
       "claim_type": "standard_requirement"
+    },
+    {
+      "id": "katopodis_mla_crosstalk_2025",
+      "application": "微透镜阵列与光场",
+      "application_id": "app_14",
+      "name": "Katopodis 2025：多通道成像串扰对照与倒数冲突",
+      "evidence_type": "科研实验报告；CT公式/数字冲突与本库算术复核分开",
+      "source_ids": [
+        "katopodis_dual_mode_2025"
+      ],
+      "parameters": [
+        {
+          "name": "样机通道与微孔配置",
+          "value": "两片THORLABS MLA1M1（各7×10 lenslets），选6×6=36通道；实验采用一片银膜玻璃激光加工微孔阵列。两微孔阵列属于§3.2模拟对照。",
+          "evidence": {
+            "source_id": "katopodis_dual_mode_2025",
+            "location": "§3.2/Fig.4；§4；§5.1/Fig.6"
+          }
+        },
+        {
+          "name": "照明",
+          "value": "绿色LED Thorlabs M530L4 + ACL2520U-DG6-A聚光镜；未从型号推定实测中心波长、带宽或辐照度。",
+          "evidence": {
+            "source_id": "katopodis_dual_mode_2025",
+            "location": "§4"
+          }
+        },
+        {
+          "name": "针孔与ROI方法",
+          "value": "针孔填充一个物方通道；主ROI及两个紧邻通道ROI，以暗ROI扣背景后取灰度均值。两个邻道如何合并未明确。",
+          "evidence": {
+            "source_id": "katopodis_dual_mode_2025",
+            "location": "§5.1 Eq.(4)前段、Fig.6(e)"
+          }
+        },
+        {
+          "name": "无微孔的报告灰度均值",
+          "value": "I_prim=202；I_neigh=195（背景扣除后，灰度单位）",
+          "evidence": {
+            "source_id": "katopodis_dual_mode_2025",
+            "location": "§5.1 Eq.(4)后第一句"
+          }
+        },
+        {
+          "name": "有微孔的报告灰度均值",
+          "value": "I_prim=238；I_neigh=12（背景扣除后，灰度单位）",
+          "evidence": {
+            "source_id": "katopodis_dual_mode_2025",
+            "location": "§5.1 Eq.(4)后第二句"
+          }
+        },
+        {
+          "name": "作者报告CT（与公式方向冲突）",
+          "value": "无微孔1.035；有微孔19.83。数值对应I_prim/I_neigh的倒数约定，而Eq.(4)为I_neigh/I_prim；不能当作本库串扰比。",
+          "evidence": {
+            "source_id": "katopodis_dual_mode_2025",
+            "location": "§5.1 Eq.(4)及后两句"
+          }
+        },
+        {
+          "name": "无微孔邻道/主通道比（本库复算）",
+          "value": "195/202≈0.96535（约96.5%；非新增实测）",
+          "evidence": {
+            "source_id": "katopodis_dual_mode_2025",
+            "location": "§5.1报告均值按Eq.(4)复算"
+          },
+          "metric_id": "array_crosstalk"
+        },
+        {
+          "name": "有微孔邻道/主通道比（本库复算）",
+          "value": "12/238≈0.05042（约5.04%；非新增实测）",
+          "evidence": {
+            "source_id": "katopodis_dual_mode_2025",
+            "location": "§5.1报告均值按Eq.(4)复算"
+          },
+          "metric_id": "array_crosstalk"
+        },
+        {
+          "name": "归一化串扰降低倍数（本库复算）",
+          "value": "(195/202)/(12/238)≈19.15倍；原文概述约19–20倍。与原始邻道灰度195/12=16.25倍不同；不能据此证明绝对泄漏功率降低同样倍数。",
+          "evidence": {
+            "source_id": "katopodis_dual_mode_2025",
+            "location": "§5.1 Eq.(4)后段；以各自主通道归一化的比值之比"
+          }
+        },
+        {
+          "name": "单通道物方视场",
+          "value": "280×200 μm²；快速采样模式为分离ROI，间有盲区。",
+          "evidence": {
+            "source_id": "katopodis_dual_mode_2025",
+            "location": "§5.1；§5.2/Fig.8(d,e)"
+          },
+          "metric_id": "fov"
+        },
+        {
+          "name": "完整拼接视场",
+          "value": "8.4×6 mm²（50.4 mm²为本库面积换算）；4×横向倍率。不是单次曝光连续覆盖整个区域。",
+          "evidence": {
+            "source_id": "katopodis_dual_mode_2025",
+            "location": "§2.2.2；§5.2；§6"
+          },
+          "metric_id": "fov"
+        },
+        {
+          "name": "扫描与采集",
+          "value": "25幅图，每幅36个ROI，共900个ROI拼接；完整视场采集约1分钟，不是瞬时帧率。",
+          "evidence": {
+            "source_id": "katopodis_dual_mode_2025",
+            "location": "§5.2/Fig.7流程图与Fig.8后段"
+          }
+        },
+        {
+          "name": "样机工作距离",
+          "value": "14 mm",
+          "evidence": {
+            "source_id": "katopodis_dual_mode_2025",
+            "location": "§5.2 Fig.8后段"
+          },
+          "metric_id": "working_distance"
+        },
+        {
+          "name": "作者USAF判读与尺度",
+          "value": "G7-3，作者报161 lines/mm、周期约6.2 μm、线宽约3.1 μm；仅按正文记录，未独立确认图8(f)元素。不是实测PSF FWHM或实测MTF20。",
+          "evidence": {
+            "source_id": "katopodis_dual_mode_2025",
+            "location": "§5.2 Fig.8(f)及前后段"
+          },
+          "metric_id": "resolution"
+        }
+      ],
+      "conditions": "单研究36通道明场样机；绿色LED、两片MLA与一片微孔阵列。针孔实验使用背景扣除后的ROI灰度均值，不是全部出射功率。原始XML Eq.(4)为邻/主，而正文报告CT为主/邻；本库同时保存原值和按公式的算术复核，五位小数仅为追溯，不表示测量精度。Fig.4是Zemax模拟，Fig.6为实验，不能把两微孔模拟的残影消失等同实验零串扰。Fig.7流程明确25图×36 ROI=900；Eq.(2)的Steps=M_T²只在Eq.(1)取满视场且采用理想无重叠铺排时成立，不能据4×倍率把实际扫描改为16步。完整视场与快速稀疏采样分开；USAF半周期线宽与整周期、模拟OTF阈值分开。",
+      "unreported_or_not_verified": "未报告所核串扰对照的相机型号/像素响应、曝光与增益匹配、线性/饱和校验、针孔物理尺寸、ROI像素数/两个邻道合并规则、重复次数及误差预算。没有取得原始图像/代码，也未取得出版PDF或作者勘误，不能判定倒数冲突成因。Code and Data Availability写可向通讯作者索取；本次未联系作者。n=7及Table1的SD属于细胞/背景SNR与CNR比较，不能移作针孔串扰重复统计。§3.1 NA≈0.05、20% OTF与6.5 μm来自设计分析，不当作样机NA/MTF实测。图8(f)不足以独立判读G7-3，未确认分辨率覆盖全场或其定量对比度；“完全隔离”不替代有限残留的测量。当前微孔装配有振动敏感性、全场速度受机械扫描限制（§6作者承认）。缺少同协议独立研究集合，不排名或给全行业阈值。",
+      "checked_on": "2026-11-07",
+      "record_status": "checked_excerpt",
+      "claim_type": "representative_result"
     },
     {
       "id": "koenig_thermal_netd_2020",

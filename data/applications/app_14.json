@@ -2,7 +2,7 @@
   "id": "app_14",
   "name": "微透镜阵列与光场",
   "category": "激光与科研",
-  "summary": "收录独立喷墨、选择性润湿与阵列光栅实验，区分几何填充率、焦点强度统计、焦移和质心间距CV；作者CV与表格复算差异保留，定量串扰仍待补证。",
+  "summary": "收录阵列制造、间距统计和多通道成像实验；区分填充率、强度/间距一致性、串扰和扫描视场。原始论文中的CV与CT口径冲突可查，尚不构成同条件排行榜。",
   "metric_ids": [
     "focus_efficiency",
     "chromatic_shift",
@@ -10,11 +10,15 @@
     "strehl",
     "effective_abbe",
     "array_fill_factor",
-    "array_spacing_cv"
+    "array_spacing_cv",
+    "array_crosstalk",
+    "fov",
+    "working_distance",
+    "resolution"
   ],
   "priorities": [],
   "ranking_status": "not_established",
-  "ranking_gap": "任务一：Richards 2023印刷p.6“Individually tuning…”及p.7 Fig.5讨论该材料与打印工艺下的单个消色差微透镜。提高NA时，聚焦效率下降、焦长误差通常增大；增加衍射环带还受到细结构打印精度限制，折射面调节是作者讨论的设计手段。它支持联合考察NA、效率、色差与可制备性，不能推出效率/色差统一高于NA或Strehl的P1/P2。任务二：pp.6–7“Imaging with an achromatic microlens array”及p.8 Fig.6展示18单元阵列的白光USAF成像；作者提出更小直径、较低NA、更密排列可能获得更多光场数据，这是后续设计建议，未在该示例中给出对照实测排序。单透镜效率不能替代整阵列效率、焦距一致性或串扰；这些阵列任务指标的定量权衡仍待补证。",
+  "ranking_gap": "任务一：Richards 2023印刷p.6“Individually tuning…”及p.7 Fig.5讨论该材料与打印工艺下的单个消色差微透镜。提高NA时，聚焦效率下降、焦长误差通常增大；增加衍射环带还受到细结构打印精度限制，折射面调节是作者讨论的设计手段。它支持联合考察NA、效率、色差与可制备性，不能推出效率/色差统一高于NA或Strehl的P1/P2。任务二：pp.6–7“Imaging with an achromatic microlens array”及p.8 Fig.6展示18单元阵列的白光USAF成像；作者提出更小直径、较低NA、更密排列可能获得更多光场数据，这是后续设计建议，未在该示例中给出对照实测排序。单透镜效率不能替代整阵列效率、焦距一致性或串扰；这些阵列任务指标的定量权衡仍待补证。 任务三：Katopodis 2025 §2.1–2.2、§5.1–5.2与§6的明场多通道成像，用微孔减少通道串扰，但引入盲区，需扫描拼接补全；快速稀疏采样与完整视场采集应分别评价。串扰、有效覆盖、分辨率、工作距离、采集时间和装配稳定性需联合报告；作者承认速度受机械扫描和微孔振动影响。Eq.(4)与正文CT倒数冲突公开保留，只能支持本研究的条件权衡，不能推出这些指标的通用先后顺序。",
   "metric_mapping_status": "editorial_candidate_set",
   "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
   "legacy_priority_proposal": "节距/填充率、焦距一致性、波前、串扰、色差、封装",
@@ -25,10 +29,12 @@
     "zhang_hex_mla",
     "liu_mla_100um",
     "liu_mla_process_radius",
-    "zhao_mlag_spacing"
+    "zhao_mlag_spacing",
+    "katopodis_mla_crosstalk_2025"
   ],
-  "updated_on": "2026-11-06",
+  "updated_on": "2026-11-07",
   "ranking_gap_refs": [
-    "richards"
+    "richards",
+    "katopodis_dual_mode_2025"
   ]
 }
