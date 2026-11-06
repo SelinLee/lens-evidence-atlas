@@ -1,0 +1,48 @@
+[
+  {
+    "id": "richards_author_best",
+    "application_id": "app_14",
+    "metric_id": "focus_efficiency",
+    "claim_type": "author_reported_best",
+    "display_value": "51–70%（各波长的最佳样品）",
+    "evidence_refs": [
+      "richards"
+    ],
+    "location": "Results / Fig.3；10个样品的均值与最佳样品区分",
+    "scope": "论文内10个样品、各测量波长的最佳值范围；不是全球最高效率",
+    "conditions": {
+      "wavelengths_nm": [
+        488,
+        542,
+        612,
+        633
+      ],
+      "NA": "约0.3",
+      "aperture": "约90 μm",
+      "denominator": "空白基底同孔径参考功率",
+      "integration": "焦圈半径3×FWHM",
+      "measurement": "实验",
+      "plane": "各测量波长条件按原文"
+    },
+    "checked_on": "2026-10-25"
+  },
+  {
+    "id": "fiber_ideal_bound",
+    "application_id": "app_22",
+    "metric_id": "coupling",
+    "claim_type": "theoretical_bound",
+    "display_value": "100% 接收模式重叠效率（理想）",
+    "evidence_refs": [
+      "fiber_definition"
+    ],
+    "location": "Maximum receiver efficiency段",
+    "scope": "幅度及相位处处匹配的理论接收效率，不含反射吸收等系统损耗",
+    "conditions": {
+      "wavelength": "固定模式与波长",
+      "normalization": "归一化复振幅重叠",
+      "measurement": "理论界限",
+      "losses": "排除系统传输损耗"
+    },
+    "checked_on": "2026-11-06"
+  }
+]

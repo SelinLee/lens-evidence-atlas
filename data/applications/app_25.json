@@ -1,0 +1,52 @@
+{
+  "id": "app_25",
+  "name": "光片照明与体积显微",
+  "category": "医疗与显微",
+  "summary": "商业照明NA0.1/0.2；科研柱面镜NA0.05、1 mm、f10 mm",
+  "metric_ids": [
+    "sheet_thickness",
+    "sheet_length",
+    "na",
+    "resolution",
+    "focus_efficiency"
+  ],
+  "priorities": [
+    {
+      "tier": 1,
+      "metric_ids": [
+        "sheet_thickness",
+        "sheet_length"
+      ],
+      "rationale": "厚度和有效长度共同约束照明切片能力，不宜单独追求最薄光片。",
+      "evidence_refs": [
+        "ls_comparison"
+      ],
+      "basis": "editorial_synthesis",
+      "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
+    },
+    {
+      "tier": 2,
+      "metric_ids": [
+        "na",
+        "resolution"
+      ],
+      "rationale": "检测NA参与决定系统分辨率；本层顺序是面向照明设计的编辑性解读。",
+      "evidence_refs": [
+        "ls_comparison"
+      ],
+      "basis": "editorial_synthesis",
+      "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
+    }
+  ],
+  "ranking_status": "editorial_synthesis",
+  "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
+  "metric_mapping_status": "editorial_candidate_set",
+  "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
+  "legacy_priority_proposal": "照明厚度/长度/均匀度与检测NA分别评价",
+  "record_ids": [
+    "ls_illum",
+    "ls_detection",
+    "ls_meta"
+  ],
+  "updated_on": "2026-11-06"
+}

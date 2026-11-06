@@ -1,0 +1,33 @@
+{
+  "id": "iol_mtf",
+  "application": "人工晶状体",
+  "name": "ISO 11979-2:2024 单焦IOL",
+  "evidence_type": "正式标准数值条款",
+  "source_ids": [
+    "iol_std"
+  ],
+  "parameters": [
+    {
+      "name": "MTF测试孔径",
+      "value": "3 mm"
+    },
+    {
+      "name": "空间频率",
+      "value": "100 mm⁻¹（100 lp/mm）"
+    },
+    {
+      "name": "MTF要求",
+      "value": "≥0.43；或≥标称设计理论MTF的70%，且≥0.28"
+    },
+    {
+      "name": "球镜度数公差例",
+      "value": "|S|≤15 D：±0.3 D；15<|S|≤25 D：±0.4 D"
+    }
+  ],
+  "conditions": "§4.1要求原位等效条件；MTF按Annex B模型眼执行。这是两条可选合格路径，不能只摘0.43，也不能套给多焦/EDF全部类型。",
+  "unreported_or_not_verified": "Annex B完整测试方法和测量不确定度；本条不代替整项器件注册或临床要求",
+  "application_id": "app_32",
+  "checked_on": "2026-10-25",
+  "record_status": "inherited_v2",
+  "claim_type": "standard_requirement"
+}

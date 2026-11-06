@@ -1,0 +1,30 @@
+name: 补充或纠正证据
+description: 提交指标定义、排序依据或可比性能记录
+title: "[证据] "
+body:
+  - type: input
+    id: application
+    attributes:
+      label: 应用与指标 ID
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: 要新增或修改的具体结论
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: DOI/URL、原文位置、所读范围
+      description: 优先原始论文；注明版本、章节/公式/图表，不只提供搜索链接。
+    validations:
+      required: true
+  - type: textarea
+    id: conditions
+    attributes:
+      label: 适用条件、比较范围与不确定性
+      description: 最佳值需给出候选集合和一致的测量口径；排序需区分原文名次和编辑解读。
+    validations:
+      required: true

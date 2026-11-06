@@ -1,0 +1,19 @@
+{
+  "id": "chromatic_shift",
+  "name": "轴向色差",
+  "english_name": "Chromatic Focal Shift",
+  "definition": "不同波长最佳焦点的轴向位置差；需同时给出共同面像质。",
+  "unit": "μm或相对焦距%",
+  "direction": "lower_abs",
+  "required_conditions": [
+    "波长集合",
+    "焦点定位算法",
+    "共同面/各色最佳面"
+  ],
+  "definition_refs": [
+    "richards",
+    "metalens_review_2026"
+  ],
+  "best_interpretation": "没有跨应用统一最优值",
+  "updated_on": "2026-11-06"
+}

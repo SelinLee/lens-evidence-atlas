@@ -1,0 +1,41 @@
+{
+  "id": "lidar_meta",
+  "application": "激光雷达与三维测距",
+  "name": "Majorel 2024 定向超透镜阵列LiDAR",
+  "evidence_type": "科研实验与模拟分列",
+  "source_ids": [
+    "lidar_meta"
+  ],
+  "parameters": [
+    {
+      "name": "波长",
+      "value": "633 nm"
+    },
+    {
+      "name": "单元焦距",
+      "value": "10 μm"
+    },
+    {
+      "name": "阵列目标视场",
+      "value": "120°×120°，空气侧"
+    },
+    {
+      "name": "探测积分半径",
+      "value": "2.5 μm"
+    },
+    {
+      "name": "匹配角下模拟焦圈效率",
+      "value": "约80%，以透射功率为分母"
+    },
+    {
+      "name": "实验深度分辨描述",
+      "value": "约10 cm"
+    }
+  ],
+  "conditions": "实验使用扫描发射光、非扫描接收、增强CCD重新成像；不是已封装SPAD产品。2 ns门、0.5 ns门位移；作者给约10 cm深度分辨，不能把0.5 ns采样步长独立当分辨率。",
+  "unreported_or_not_verified": "汽车量程与实时性；独立80%绝对效率；批量芯片直集成验证",
+  "application_id": "app_19",
+  "checked_on": "2026-10-25",
+  "record_status": "inherited_v2",
+  "claim_type": "representative_result"
+}

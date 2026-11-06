@@ -1,0 +1,51 @@
+{
+  "id": "app_23",
+  "name": "OCT与低相干断层成像",
+  "category": "医疗与显微",
+  "summary": "商业扫描镜例800–1100 nm、EFL36 mm、WD25.1 mm",
+  "metric_ids": [
+    "oct_axial",
+    "resolution",
+    "na",
+    "chromatic_shift",
+    "working_distance"
+  ],
+  "priorities": [
+    {
+      "tier": 1,
+      "metric_ids": [
+        "oct_axial",
+        "resolution"
+      ],
+      "rationale": "轴向与横向分辨率由不同机制决定，应并列约束；不是原文给出的数字排序。",
+      "evidence_refs": [
+        "oct_definition"
+      ],
+      "basis": "editorial_synthesis",
+      "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
+    },
+    {
+      "tier": 2,
+      "metric_ids": [
+        "na",
+        "chromatic_shift"
+      ],
+      "rationale": "再根据焦深、带宽及色散匹配选择聚焦方案。",
+      "evidence_refs": [
+        "oct_definition",
+        "oct"
+      ],
+      "basis": "editorial_synthesis",
+      "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
+    }
+  ],
+  "ranking_status": "editorial_synthesis",
+  "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
+  "metric_mapping_status": "editorial_candidate_set",
+  "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
+  "legacy_priority_proposal": "横向PSF、扫描场、轴向色移、群时延/色散匹配",
+  "record_ids": [
+    "oct36"
+  ],
+  "updated_on": "2026-11-06"
+}

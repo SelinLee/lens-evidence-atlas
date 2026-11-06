@@ -1,0 +1,50 @@
+{
+  "id": "app_22",
+  "name": "单模光纤准直与通信耦合",
+  "category": "激光与科研",
+  "summary": "1550 nm例NA0.15、EFL18.75 mm、3.6 mm束径",
+  "metric_ids": [
+    "coupling",
+    "na",
+    "efl",
+    "transmission"
+  ],
+  "priorities": [
+    {
+      "tier": 1,
+      "metric_ids": [
+        "coupling"
+      ],
+      "rationale": "总耦合是任务输出，复振幅匹配与系统损耗需共同计算。",
+      "evidence_refs": [
+        "fiber_definition"
+      ],
+      "basis": "editorial_synthesis",
+      "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
+    },
+    {
+      "tier": 2,
+      "metric_ids": [
+        "na",
+        "efl"
+      ],
+      "rationale": "NA与焦距是实现模场匹配的设计参数，不能替代耦合效率。",
+      "evidence_refs": [
+        "fiber_definition",
+        "fiber"
+      ],
+      "basis": "editorial_synthesis",
+      "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
+    }
+  ],
+  "ranking_status": "editorial_synthesis",
+  "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
+  "metric_mapping_status": "editorial_candidate_set",
+  "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
+  "legacy_priority_proposal": "模场重叠、插损/回损、发散、准直波段、对准容差",
+  "record_ids": [
+    "fiber1550",
+    "fiber1550_compact"
+  ],
+  "updated_on": "2026-11-06"
+}

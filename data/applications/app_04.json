@@ -1,0 +1,54 @@
+{
+  "id": "app_04",
+  "name": "显微镜物镜",
+  "category": "医疗与显微",
+  "summary": "本组NA0.10/0.45/0.80/1.42，按倍率与介质分别配对",
+  "metric_ids": [
+    "na",
+    "resolution",
+    "mtf",
+    "chromatic_shift",
+    "working_distance"
+  ],
+  "priorities": [
+    {
+      "tier": 1,
+      "metric_ids": [
+        "resolution",
+        "mtf"
+      ],
+      "rationale": "任务尺度和对比度直接决定可观察细节。",
+      "evidence_refs": [
+        "mtf_definition"
+      ],
+      "basis": "editorial_synthesis",
+      "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
+    },
+    {
+      "tier": 2,
+      "metric_ids": [
+        "na",
+        "chromatic_shift"
+      ],
+      "rationale": "通过NA与像差控制实现像质；此顺序是编辑性设计流程。",
+      "evidence_refs": [
+        "na_definition",
+        "nikon_band"
+      ],
+      "basis": "editorial_synthesis",
+      "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
+    }
+  ],
+  "ranking_status": "editorial_synthesis",
+  "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
+  "metric_mapping_status": "editorial_candidate_set",
+  "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
+  "legacy_priority_proposal": "物方NA、介质、WD、平场、盖玻片、轴向/横向色差",
+  "record_ids": [
+    "micro2",
+    "micro10",
+    "micro20",
+    "micro60"
+  ],
+  "updated_on": "2026-11-06"
+}

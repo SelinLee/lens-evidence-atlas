@@ -1,0 +1,49 @@
+{
+  "id": "app_03",
+  "name": "远心精密测量",
+  "category": "工业与感知",
+  "summary": "例：畸变<0.020%、远心度<0.020° @588 nm",
+  "metric_ids": [
+    "distortion",
+    "telecentricity",
+    "mtf",
+    "fov",
+    "working_distance"
+  ],
+  "priorities": [
+    {
+      "tier": 1,
+      "metric_ids": [
+        "distortion",
+        "telecentricity"
+      ],
+      "rationale": "几何失真与视差直接影响尺寸定位；原文强调两者及波长依赖。",
+      "evidence_refs": [
+        "tele_definition"
+      ],
+      "basis": "editorial_synthesis",
+      "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
+    },
+    {
+      "tier": 2,
+      "metric_ids": [
+        "mtf"
+      ],
+      "rationale": "在可测量几何成立后核验目标频率的对比度。此先后是编辑性任务拆分。",
+      "evidence_refs": [
+        "mtf_definition"
+      ],
+      "basis": "editorial_synthesis",
+      "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
+    }
+  ],
+  "ranking_status": "editorial_synthesis",
+  "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
+  "metric_mapping_status": "editorial_candidate_set",
+  "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
+  "legacy_priority_proposal": "放大率稳定、畸变、远心度、温漂、标定残差",
+  "record_ids": [
+    "telecentric"
+  ],
+  "updated_on": "2026-11-06"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "distortion",
+  "name": "几何畸变",
+  "english_name": "Distortion",
+  "definition": "实际像点位置相对指定理想映射的偏差；TV、几何及fθ定义不能混用。",
+  "unit": "%",
+  "direction": "lower_abs",
+  "required_conditions": [
+    "映射定义",
+    "场高、波长",
+    "校准前后"
+  ],
+  "definition_refs": [
+    "tele_definition"
+  ],
+  "best_interpretation": "没有跨应用统一最优值",
+  "updated_on": "2026-11-06"
+}

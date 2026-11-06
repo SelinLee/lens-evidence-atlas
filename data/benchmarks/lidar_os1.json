@@ -1,0 +1,41 @@
+{
+  "id": "lidar_os1",
+  "application": "激光雷达与三维测距",
+  "name": "Ouster OS1 REV7.0 / FW3.1.x",
+  "evidence_type": "商业系统规格",
+  "source_ids": [
+    "ouster"
+  ],
+  "parameters": [
+    {
+      "name": "波长",
+      "value": "865 nm"
+    },
+    {
+      "name": "水平×垂直FOV",
+      "value": "360°×(42.4°±1.0°)"
+    },
+    {
+      "name": "发散角",
+      "value": "0.18° FWHM"
+    },
+    {
+      "name": "传感器出口光束直径",
+      "value": "9.5 mm"
+    },
+    {
+      "name": "暗目标量程",
+      "value": "90 m"
+    },
+    {
+      "name": "明目标量程",
+      "value": "170 m"
+    }
+  ],
+  "conditions": "暗/明目标分别10%/80%朗伯反射；均为>90%检出率、100 klx日光、1024@10 Hz。整机规格，光束直径不是接收透镜入瞳；不能用其他Rev的45°替换。",
+  "unreported_or_not_verified": "接收镜头独立NA、焦距、MTF、光学效率与各距离误检统计",
+  "application_id": "app_19",
+  "checked_on": "2026-10-25",
+  "record_status": "inherited_v2",
+  "claim_type": "representative_result"
+}
