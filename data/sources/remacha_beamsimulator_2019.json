@@ -1,0 +1,11 @@
+{
+  "id": "remacha_beamsimulator_2019",
+  "title": "Remacha et al.: Beam Simulator — author implementation, commit e849f5b",
+  "url": "https://github.com/remachae/beamsimulator/tree/e849f5b1b56bfc6f5cac8d466d21e99ea15172fb",
+  "source_year": 2019,
+  "kind": "research_software",
+  "location": "GeneralFunctions/osWidth_gui.m、pWidth_gui.m、doubleOS.m、analysisbeam_gui.m、integrate_and_slice_gui.m、prepare_data_gui.m、derivePhysicalAndNumericalParameters.m、propVolInt.m；simulatebeam_gui.m；LightSheet_Simulator.mlapp内matlab/document.xml的SimulateButtonPushed / AnalyzeButtonPushed / ExcitationDropDownValueChanged",
+  "evidence_scope": "论文Appendix C / Ref.40直接链接的作者代码，固定2019-10-23提交e849f5b1b56bfc6f5cac8d466d21e99ea15172fb。静态读取上述调用链；另读propVol.m和z2OS.m作为未被该分析入口调用的文件，不混用其不同接口。MLAPP仅解包读取内嵌代码，未运行MATLAB GUI或复现论文曲线。osWidth以1−1/e为比例、sum(prof)为有限窗口分母，在峰值附近滑动区间；不是固定对称半宽或未经限制的全局最短区间。doubleOS取宽度最小处两侧达2倍阈值的离散端点全距，缺一侧返回NaN。所读GUI路径只见I=|E|²后沿第二维求和；Two photon选项在prepare_data_gui中改变采样，未见积分前I²响应变换，故此版本不足以验证论文双光子结果。代码不是正式勘误、独立研究或实验；63%/67%和Fig.2的L/L/2标注差异保留。",
+  "checked_on": "2026-11-07",
+  "verification": "checked_excerpt"
+}

@@ -147,7 +147,7 @@ test('sectioning definition shows its energy conflict, integration protocol and 
  const f=fixture();f.location.hash='#app_25/metrics';f.run('route()');
  assert.ok(f.el('panel').innerHTML.includes('光学切片含能量宽度'));
  f.run("openMetric('optical_sectioning_width')");
- for(const text of ['63%','67%','全宽/半宽','实测或模型','10.1364/BOE.11.000008','§3.1.1','未读到PDF页面','不建立最佳声明'])assert.ok(f.el('detailBody').innerHTML.includes(text),text);
+ for(const text of ['63%','67%','全宽/半宽','实测或模型','10.1364/BOE.11.000008','§3.1.1','未取得出版PDF','不建立最佳声明'])assert.ok(f.el('detailBody').innerHTML.includes(text),text);
  assert.equal(f.el('detail').open,true);f.el('detail').close();assert.equal(f.el('detail').open,false);
  f.run("openMetric('optical_sectioning_width')");assert.equal(f.el('detail').open,true);
  f.location.hash='#app_25/sources';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('Remacha'));
@@ -402,4 +402,23 @@ test('comparison routing handles unknown ids, identical choices and same-study s
  assert.equal(f.run("comparisonPair(D.comparisons[0],'chu_meta_fp_usaf','chu_meta_fp_usaf')[0].record_id===comparisonPair(D.comparisons[0],'chu_meta_fp_usaf','chu_meta_fp_usaf')[1].record_id"),false);
  f.location.hash='#app_14/compare';f.run('route()');assert.equal(f.run('tab'),'metrics');
  assert.deepEqual(Array.from(f.run('tabNames()')),['metrics','priority','best','sources']);
+});
+
+test('light-sheet definitions expose fixed software provenance and preserve unresolved protocols',()=>{
+ const f=fixture();f.location.hash='#app_25/metrics';f.run('route()');
+ for(const id of ['sheet_thickness','sheet_length','optical_sectioning_width']){
+  f.run(`openMetric('${id}')`);
+  const body=f.el('detailBody').innerHTML;
+  assert.ok(body.includes('e849f5b1b56bfc6f5cac8d466d21e99ea15172fb'));
+  assert.ok(body.includes('作者研究代码（固定版本）'));
+ }
+ f.run("openMetric('optical_sectioning_width')");
+ for(const word of ['63.212%','67%','sum(prof)','滑动','双光子']) {
+  assert.ok(f.el('detailBody').innerHTML.includes(word),word);
+ }
+ f.run("openMetric('sheet_length')");assert.ok(f.el('detailBody').innerHTML.includes('NaN'));assert.ok(f.el('detailBody').innerHTML.includes('2√3 zR'));
+ f.location.hash='#app_25/sources';f.run('route()');
+ assert.ok(f.el('panel').innerHTML.includes('未运行MATLAB GUI'));assert.ok(f.el('panel').innerHTML.includes('I(y=L/2)'));
+ f.location.hash='#app_25/priority';f.run('route()');
+ assert.ok(!f.el('panel').innerHTML.includes('class="tier"'));assert.ok(f.el('panel').innerHTML.includes('相同定义的传播长度'));
 });
