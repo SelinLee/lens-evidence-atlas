@@ -1,0 +1,50 @@
+{
+  "application": "单模光纤准直与通信耦合",
+  "application_id": "app_22",
+  "source_ids": [
+    "bechter_lbt_2020"
+  ],
+  "checked_on": "2026-11-06",
+  "record_status": "checked_excerpt",
+  "claim_type": "representative_result",
+  "id": "lbt_smf_180s",
+  "name": "Bechter LBT在天单模注入：HD 113496三分钟片段",
+  "evidence_type": "科研在天实验（2016年观测）",
+  "parameters": [
+    {
+      "name": "耦合测量波段",
+      "value": "970–1065 nm",
+      "evidence": {
+        "source_id": "bechter_lbt_2020",
+        "location": "§3 Observational Summary"
+      }
+    },
+    {
+      "name": "180秒平均耦合效率",
+      "value": "23%",
+      "evidence": {
+        "source_id": "bechter_lbt_2020",
+        "location": "§4 p.4；Fig.2 p.5，400模式、HD 113496"
+      },
+      "metric_id": "coupling"
+    },
+    {
+      "name": "片段起始峰值（作者报告）",
+      "value": "约25%",
+      "evidence": {
+        "source_id": "bechter_lbt_2020",
+        "location": "§4 p.4；非平均值或通用最佳"
+      }
+    },
+    {
+      "name": "AO校正与时间窗",
+      "value": "400模式；180 s",
+      "evidence": {
+        "source_id": "bechter_lbt_2020",
+        "location": "§4 p.4及Fig.2图注"
+      }
+    }
+  ],
+  "conditions": "同一观测片段；由一对校准光电二极管测得SMF输出功率与光纤端入射功率之比（§2），不是望远镜入口到光纤输出的端到端透过率。原型无主动光束稳定或连续大气色散校正；未按瞳形理论上限0.78再次归一化。",
+  "unreported_or_not_verified": "Table 1同目标列22±2%，本条限定正文明确的180秒片段23%，不拼为同一统计值；差异的具体窗口对应关系未核。偏振、光纤实际长度及端面损耗校正的完整明细未核，不与Subaru实验室的78%直接排名。"
+}
