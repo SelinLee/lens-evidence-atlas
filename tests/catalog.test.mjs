@@ -129,7 +129,7 @@ test('enclosed-energy sectioning stays distinct from peak width and measured rec
  assert.ok(!d.benchmarks.some(b=>b.parameters.some(p=>p.metric_id===m.id)));
  assert.equal(d.benchmarks.find(b=>b.id==='battistella_airy_profile').source_ids.length,1);
  const source=d.sources.find(s=>s.id==='remacha_sectioning_2020');assert.equal(source.source_year,2020);
- for(const text of ['未读到PDF页面','未复现作者代码','67%'])assert.ok(source.evidence_scope.includes(text));
+ for(const text of ['未取得出版PDF','未复现仿真','Fig.2–3原图','67%'])assert.ok(source.evidence_scope.includes(text));
 });
 
 test('MLAG spot-spacing CV preserves printed observations and reported disagreement',()=>{
@@ -472,4 +472,20 @@ test('low-NA comparison preserves study identity and new SI contradictions',()=>
  assert.match(r.parameters.find(p=>p.name==='SI缩小模型聚焦效率').value,/80%.*模拟.*不是.*实测/);
  assert.equal(d.sources.find(s=>s.id==='balli_3d_2021').checked_on,'2026-11-06');
  assert.equal(d.bests.length,2);
+});
+
+test('light-sheet comparisons require window, response order and length endpoint conditions',()=>{
+ const d=load(),w=d.metrics.find(m=>m.id==='optical_sectioning_width'),l=d.metrics.find(m=>m.id==='sheet_length');
+ for(const m of [w,l]){
+  const conditions=Object.fromEntries(m.required_conditions.map(k=>[k,'specified']));
+  assert.equal(canCompare(conditions,{...conditions},m.required_conditions),true);
+  const key=m.required_conditions.at(-1),missing={...conditions};delete missing[key];
+  assert.equal(canCompare(conditions,missing,m.required_conditions),false);
+  assert.equal(canCompare(conditions,{...conditions,[key]:'different protocol'},m.required_conditions),false);
+ }
+ assert.ok(w.required_conditions.some(x=>x.includes('非线性')));
+ assert.ok(w.required_conditions.some(x=>x.includes('有限窗口')));
+ assert.ok(l.required_conditions.some(x=>x.includes('缺失交点')));
+ assert.equal(d.applications.find(a=>a.id==='app_25').ranking_status,'not_established');
+ assert.equal(d.benchmarks.some(r=>r.source_ids.includes('remacha_beamsimulator_2019')),false);
 });

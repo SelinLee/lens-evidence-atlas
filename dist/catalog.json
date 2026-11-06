@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.32",
+    "version": "0.1.33",
     "updated_on": "2026-11-07",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -1275,9 +1275,9 @@
       ],
       "priorities": [],
       "ranking_status": "not_established",
-      "ranking_gap": "任务权衡有原文依据，但没有统一指标次序。Shi 2022 Discussion（主文p.9）：在传播长度与峰值强度相同的比较中，若漂白比轴向分辨率/传播均匀性更受关注，高斯照明可降低总照明剂量；若更重视轴向分辨率和传播均匀性，MB-square或Hex晶格可提供更高分辨信息，但伴随更强离焦激发和背景，且漂白还依赖局部强度与样品微环境。需结合荧光密度、背景与信噪比选择；本页撤下此前笼统的P1/P2编辑顺序，不将这组条件建议编码成通用作者排名。",
+      "ranking_gap": "任务权衡有原文依据，但没有统一指标次序。Shi 2022 Discussion（主文p.9）：在传播长度与峰值强度相同的比较中，若漂白比轴向分辨率/传播均匀性更受关注，高斯照明可降低总照明剂量；若更重视轴向分辨率和传播均匀性，MB-square或Hex晶格可提供更高分辨信息，但伴随更强离焦激发和背景，且漂白还依赖局部强度与样品微环境。需结合荧光密度、背景与信噪比选择；本页撤下此前笼统的P1/P2编辑顺序，不将这组条件建议编码成通用作者排名。 Remacha §3.2/§4要求按相同定义的传播长度比较主峰宽度和切片宽度；原始图像对比度与去卷积后的分辨任务需分开，旁瓣背景及额外光剂量限制可恢复信息。此条件建议不构成跨任务排序。",
       "metric_mapping_status": "editorial_candidate_set",
-      "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。 含能量宽度为方法定义入口，不代表现有样本已报告此值。",
+      "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。 含能量宽度为方法定义入口，不代表现有样本已报告此值。 作者代码补充了有限窗口、滑动区间与长度端点规则；两光子响应和原文标注差异仍有复现缺口。",
       "legacy_priority_proposal": "照明厚度/长度/均匀度与检测NA分别评价",
       "record_ids": [
         "ls_illum",
@@ -1287,9 +1287,10 @@
         "battistella_airy_profile",
         "shi_lattice_bead_psf"
       ],
-      "updated_on": "2026-11-06",
+      "updated_on": "2026-11-07",
       "ranking_gap_refs": [
-        "shi_lattice_2022"
+        "shi_lattice_2022",
+        "remacha_sectioning_2020"
       ]
     },
     {
@@ -2082,7 +2083,7 @@
       "id": "optical_sectioning_width",
       "name": "光学切片含能量宽度",
       "english_name": "Optical sectioning width (specified enclosed-energy fraction)",
-      "definition": "沿检测轴包含约定比例光片能量的区间宽度，用于描述主峰和旁瓣共同造成的激发范围。Remacha §3.1.1/Fig.2采用1−1/e≈63%，但§3.1.2写67%；本库保留冲突，不设通用阈值。它不是主峰强度FWHM或系统轴向PSF，也不是无条件的图像对比度。 Shi 2022另明确采用累计激发强度63%的半宽h63；它不是强度降至峰值63%处的主峰宽度，也不是系统PSF FWHM。对关于z=0对称的激发剖面，本库将其写为∫[-h63,h63] I_exc(z) dz / ∫ I_exc(z) dz = 0.63；这是定义的对称积分表述。须报告实际积分范围与归一化，且只有相同区间规则下全宽才等于2h63。",
+      "definition": "沿检测轴包含约定比例光片能量的区间宽度，用于描述主峰和旁瓣共同造成的激发范围。Remacha §3.1.1/Fig.2采用1−1/e≈63%，但§3.1.2写67%；本库保留冲突，不设通用阈值。它不是主峰强度FWHM或系统轴向PSF，也不是无条件的图像对比度。 Shi 2022另明确采用累计激发强度63%的半宽h63；它不是强度降至峰值63%处的主峰宽度，也不是系统PSF FWHM。对关于z=0对称的激发剖面，本库将其写为∫[-h63,h63] I_exc(z) dz / ∫ I_exc(z) dz = 0.63；这是定义的对称积分表述。须报告实际积分范围与归一化，且只有相同区间规则下全宽才等于2h63。 作者固定版osWidth_gui实际采用1−1/e≈63.212%，将所给有限剖面内sum(prof)作为分母，在峰值附近搜索可滑动的连续区间，输出端点距离的全宽；并非固定中心对称半宽，也不保证任意剖面的全局最短区间。主分析入口先对三维强度第二数组轴求和，图示对应沿扫描方向积分、保留检测z与传播y。",
       "unit": "μm",
       "direction": "lower",
       "required_conditions": [
@@ -2093,15 +2094,18 @@
         "检测收集、样品及后处理条件",
         "实测或模型、采样与背景处理",
         "累计剖面是激发强度还是总系统响应",
-        "中心/对称性约定及横向取样/平均方式"
+        "中心/对称性约定及横向取样/平均方式",
+        "扫描积分与非线性激发响应的先后顺序",
+        "有限窗口截断、离散步长与端点计数规则"
       ],
       "definition_refs": [
         "remacha_sectioning_2020",
         "shi_lattice_2022",
-        "shi_lattice_2022_si"
+        "shi_lattice_2022_si",
+        "remacha_beamsimulator_2019"
       ],
-      "best_interpretation": "仅比较相同含能量比例与积分协议；应同时报告主峰宽度、有效长度及剂量/背景。定义证据不代表现有Luo或Battistella记录已有该数值，也不建立最佳声明。 Shi的归一化λ数值换算前须明确真空/介质波长；不将不同宽度协议合并排名。",
-      "updated_on": "2026-11-06"
+      "best_interpretation": "仅比较相同含能量比例与积分协议；应同时报告主峰宽度、有效长度及剂量/背景。定义证据不代表现有Luo或Battistella记录已有该数值，也不建立最佳声明。 Shi的归一化λ数值换算前须明确真空/介质波长；不将不同宽度协议合并排名。 复算须检查窗口/步长收敛；代码从4个步长开始搜索，包含两个端点共5个采样值，不能把这类离散输出直接当连续极限。固定版未核实双光子I²响应链，不据GUI选项断言已复现论文双光子曲线。",
+      "updated_on": "2026-11-07"
     },
     {
       "id": "reconstruction_time",
@@ -2200,7 +2204,7 @@
       "id": "sheet_length",
       "name": "光片有效长度",
       "english_name": "Light-sheet Propagation Length",
-      "definition": "光片传播范围必须绑定判据。Shi 2022采用沿传播轴y的强度剖面FWHM；另一类定义按厚度或光学切片半宽的允许增长范围取长度，二者不能默认相等。理想高斯束的2zR特指束宽增至束腰√2倍的两端间距，不能直接套给任意光束的传播强度FWHM。实验取样跨度、相机视场及模型预测FOV须分别标注，不能不经判据直接当作实测有效长度。 Remacha §3.1.2按含能量厚度增至两倍定义传播距离，需说明单侧/双侧长度，不与强度半高或宽度√2倍混用。",
+      "definition": "光片传播范围必须绑定判据。Shi 2022采用沿传播轴y的强度剖面FWHM；另一类定义按厚度或光学切片半宽的允许增长范围取长度，二者不能默认相等。理想高斯束的2zR特指束宽增至束腰√2倍的两端间距，不能直接套给任意光束的传播强度FWHM。实验取样跨度、相机视场及模型预测FOV须分别标注，不能不经判据直接当作实测有效长度。 Remacha §3.1.2按含能量厚度增至两倍定义传播距离，需说明单侧/双侧长度，不与强度半高或宽度√2倍混用。 固定版doubleOS实现取最小含能量宽度两侧首次达到2倍阈值的离散端点间全距，不作插值；任一侧未越阈即返回NaN，不能解释为无限长。Fig.2的y=L与剖面I(y=L/2)标注存在差异；代码口径不替代出版物勘误。",
       "unit": "μm",
       "direction": "higher",
       "required_conditions": [
@@ -2208,38 +2212,42 @@
         "全长/半长、传播轴及中心定义",
         "光束模型、瞳形与横向取样",
         "波长及介质",
-        "实测/模型、取样范围和拟合方法"
+        "实测/模型、取样范围和拟合方法",
+        "阈值参考宽度、端点插值及缺失交点处理"
       ],
       "definition_refs": [
         "ls_comparison",
         "battistella_airy_2022",
         "shi_lattice_2022",
-        "remacha_sectioning_2020"
+        "remacha_sectioning_2020",
+        "remacha_beamsimulator_2019"
       ],
-      "best_interpretation": "需与厚度、旁瓣和背景联合评价。",
-      "updated_on": "2026-11-06"
+      "best_interpretation": "需与厚度、旁瓣和背景联合评价。 本库代数推导：理想自相似高斯宽度w(y)=w0√[1+(y/zR)²]，若定义两端宽度为2w0，则全长为2√3 zR；宽度√2倍时才为2zR。该推导不是文中实测值；应先固定同一长度判据再比较厚度。",
+      "updated_on": "2026-11-07"
     },
     {
       "id": "sheet_thickness",
       "name": "光片厚度",
       "english_name": "Light-sheet Thickness",
-      "definition": "照明横截面的强度宽度；FWHM与1/e²宽度分别定义。多峰光束须说明取首主峰还是整体轮廓，首主峰FWHM不表示旁瓣总能量。它与检测PSF共同影响系统轴向分辨，不能直接当作系统PSF。 半宽和全宽、峰值比例和peak prominence（峰突出度）阈值须区分；Shi的方法还使用峰值63%处的主瓣宽度，这与累计强度63%的光学切片半宽是两项不同量。 Remacha §3.1.1采用峰值1/e≈37%处主峰宽度；与Shi的63%峰值阈值须分列，不直接换算。",
+      "definition": "照明横截面的强度宽度；FWHM与1/e²宽度分别定义。多峰光束须说明取首主峰还是整体轮廓，首主峰FWHM不表示旁瓣总能量。它与检测PSF共同影响系统轴向分辨，不能直接当作系统PSF。 半宽和全宽、峰值比例和peak prominence（峰突出度）阈值须区分；Shi的方法还使用峰值63%处的主瓣宽度，这与累计强度63%的光学切片半宽是两项不同量。 Remacha §3.1.1采用峰值1/e≈37%处主峰宽度；与Shi的63%峰值阈值须分列，不直接换算。 固定版pWidth_gui按当前剖面峰值归一化，取两侧阈值外的最近离散点并按(right−left−1)×步长返回；不作连续阈值插值。analysisbeam_gui在中心传播线强度最大处报告主峰宽度与含能量宽度，而长度阈值参考各传播位置中的最小含能量宽度，两处不保证重合。",
       "unit": "μm",
       "direction": "lower",
       "required_conditions": [
         "强度宽度阈值、半宽/全宽、基线及主峰/整体轮廓",
         "传播位置",
         "激发波长、介质",
-        "测量方法及检测响应（推断系统分辨率时须报告检测NA）"
+        "测量方法及检测响应（推断系统分辨率时须报告检测NA）",
+        "局部/焦点峰值归一化、采样步长与阈值插值"
       ],
       "definition_refs": [
         "ls_comparison",
         "battistella_airy_2022",
         "shi_lattice_2022",
-        "remacha_sectioning_2020"
+        "remacha_sectioning_2020",
+        "remacha_beamsimulator_2019"
       ],
       "best_interpretation": "没有跨应用统一最优值",
-      "updated_on": "2026-11-06"
+      "updated_on": "2026-11-07"
     },
     {
       "id": "size_of_source_effect",
@@ -3293,15 +3301,26 @@
       "doi": null
     },
     {
+      "id": "remacha_beamsimulator_2019",
+      "title": "Remacha et al.: Beam Simulator — author implementation, commit e849f5b",
+      "url": "https://github.com/remachae/beamsimulator/tree/e849f5b1b56bfc6f5cac8d466d21e99ea15172fb",
+      "source_year": 2019,
+      "kind": "research_software",
+      "location": "GeneralFunctions/osWidth_gui.m、pWidth_gui.m、doubleOS.m、analysisbeam_gui.m、integrate_and_slice_gui.m、prepare_data_gui.m、derivePhysicalAndNumericalParameters.m、propVolInt.m；simulatebeam_gui.m；LightSheet_Simulator.mlapp内matlab/document.xml的SimulateButtonPushed / AnalyzeButtonPushed / ExcitationDropDownValueChanged",
+      "evidence_scope": "论文Appendix C / Ref.40直接链接的作者代码，固定2019-10-23提交e849f5b1b56bfc6f5cac8d466d21e99ea15172fb。静态读取上述调用链；另读propVol.m和z2OS.m作为未被该分析入口调用的文件，不混用其不同接口。MLAPP仅解包读取内嵌代码，未运行MATLAB GUI或复现论文曲线。osWidth以1−1/e为比例、sum(prof)为有限窗口分母，在峰值附近滑动区间；不是固定对称半宽或未经限制的全局最短区间。doubleOS取宽度最小处两侧达2倍阈值的离散端点全距，缺一侧返回NaN。所读GUI路径只见I=|E|²后沿第二维求和；Two photon选项在prepare_data_gui中改变采样，未见积分前I²响应变换，故此版本不足以验证论文双光子结果。代码不是正式勘误、独立研究或实验；63%/67%和Fig.2的L/L/2标注差异保留。",
+      "checked_on": "2026-11-07",
+      "verification": "checked_excerpt"
+    },
+    {
       "id": "remacha_sectioning_2020",
       "title": "Remacha, Friedrich, Vermot & Fahrbach: How to define and optimize axial resolution in light-sheet microscopy: a simulation-based approach",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6968747/",
       "doi": "10.1364/BOE.11.000008",
       "source_year": 2020,
       "kind": "paper",
-      "location": "§3.1.1及Fig.2–3图注；§3.1.2；§3.2首段；§4；Appendix B开头",
-      "evidence_scope": "PMC主文HTML相关正文及图注，非全文精读；PubMed元数据与Fig.2图注交叉核对。出版物为2020卷期，在线日期2019-12-02。仿真/方法证据，不计独立实测样本；未读到PDF页面、未视觉核验Fig.2图像、未复现作者代码。§3.1.1/Fig.2写63%，§3.1.2写67%，保留文本冲突，未判作已证实的勘误。",
-      "checked_on": "2026-11-06",
+      "location": "§3.1.1–3.1.2、Fig.2–3原图及图注；§3.2、§4相关正文；Appendix B方法段及Appendix C / Ref.40",
+      "evidence_scope": "PMC主文HTML相关正文和图注，本轮通过独立Chrome无头查看Fig.2–3原图；非全篇逐图精读，未取得出版PDF，未复现仿真。2020卷期，在线2019-12-02。Fig.2可见37%峰值线与63%含能量阴影，Fig.3为系统PSF与旁瓣激发的示意而非实测。§3.1.1/Fig.2写63%，§3.1.2写67%；Fig.2上方及图注写y=L，剖面纵轴标I(y=L/2)。作者固定版代码另列来源，只确认该版本具体实现，不将文本/图注差异判作已解决勘误。Appendix B给n=1.33及有限采样说明，未用这些方法证据增加独立实测样本。",
+      "checked_on": "2026-11-07",
       "verification": "checked_excerpt"
     },
     {
