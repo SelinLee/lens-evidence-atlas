@@ -1,0 +1,22 @@
+{
+  "id": "dimensional_measurement_error",
+  "name": "尺寸/位移测量误差",
+  "english_name": "Dimensional / Displacement Measurement Error",
+  "definition": "重建的长度或位移与指定参考值之差；必须说明带符号误差、绝对误差、平均绝对误差(MAE)、最大值或均方根(RMSE)，不能把这些统计量互换。Li 2015 §4分别比较标定板两条对角线的三维欧氏距离和已知台阶平移量；它们是包含光学、投影、标定与坐标提取的系统结果，不是镜头畸变百分比、光学分辨率或标准测量不确定度。Lenhardt §5.1.1用y=y′/β联系物体尺寸、像尺寸和倍率；其绝对值一阶误差幅度相加不等于独立随机项RSS。",
+  "unit": "μm、mm或相对误差%（注明参考长度）",
+  "direction": "lower_abs",
+  "required_conditions": [
+    "被测量与参考值/溯源不确定性",
+    "物体/像面坐标与单位",
+    "波长、照明、倍率、采样及工作距离",
+    "标定模型与处理算法",
+    "校准/验证数据是否独立",
+    "姿态/位置/深度范围、样本数及统计口径"
+  ],
+  "definition_refs": [
+    "li_telecentric_2015",
+    "lenhardt_telecentric_course"
+  ],
+  "best_interpretation": "仅在同一被测量、参考标准、范围和统计量下比较；标定板上的拟合验证不能代替独立工件验收。",
+  "updated_on": "2026-11-06"
+}

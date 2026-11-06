@@ -2,16 +2,18 @@
   "id": "telecentricity",
   "name": "远心度偏差",
   "english_name": "Telecentricity Error",
-  "definition": "主光线偏离理想远心方向的角度，通常以残余角度描述。",
+  "definition": "主光线偏离理想远心方向的角度，通常以残余角度描述。 理想物方远心的入瞳在无穷远；理想双侧远心的入瞳和出瞳均在无穷远（Lenhardt §5.2）。理想模型可消去部分物距/像距误差项，但不代表实际镜头在任意深度恒定倍率，也不消除边缘定位、标定与残余畸变误差。",
   "unit": "°",
   "direction": "lower_abs",
   "required_conditions": [
     "物方/像方",
     "场高",
-    "波长"
+    "波长",
+    "工作距离/深度范围与理想模型或实测性质"
   ],
   "definition_refs": [
-    "tele_definition"
+    "tele_definition",
+    "lenhardt_telecentric_course"
   ],
   "best_interpretation": "没有跨应用统一最优值",
   "updated_on": "2026-11-06"

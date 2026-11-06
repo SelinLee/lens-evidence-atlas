@@ -1,0 +1,21 @@
+{
+  "id": "reprojection_error",
+  "name": "标定重投影误差",
+  "english_name": "Calibration Reprojection Error",
+  "definition": "用标定模型将已知或估计的空间点投影到图像，与观测特征点位置比较的残差。Li 2015 §3 Eq.(9)最小化观测投影与模型投影的差，§4 Fig.4分别报告相机与投影仪的RMS；必须注明像素或物理坐标单位、二维向量/逐轴统计、点集及是否为拟合所用数据。不能从较小重投影残差直接推断物体尺寸误差、独立验证精度或镜头分辨率；µm与pixel之间的换算须有坐标面、像元尺寸和倍率依据。",
+  "unit": "pixel或μm（注明坐标面及换算）",
+  "direction": "lower",
+  "required_conditions": [
+    "相机/投影仪与成像模型",
+    "残差坐标面、单位及换算",
+    "二维/逐轴RMS或其他统计定义",
+    "特征提取与优化算法",
+    "点数、姿态和视场范围",
+    "标定/独立验证数据集"
+  ],
+  "definition_refs": [
+    "li_telecentric_2015"
+  ],
+  "best_interpretation": "重投影残差只评价指定点集和模型，不能直接作为整机尺寸精度排行。",
+  "updated_on": "2026-11-06"
+}
