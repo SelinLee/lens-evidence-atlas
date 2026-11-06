@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.14",
+    "version": "0.1.15",
     "updated_on": "2026-11-06",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -553,14 +553,15 @@
       "id": "app_14",
       "name": "微透镜阵列与光场",
       "category": "激光与科研",
-      "summary": "收录独立喷墨与选择性润湿阵列实验，区分几何填充率、焦点强度统计、三波长焦移和制备尺寸偏差；均匀性公式与串扰仍待补证。",
+      "summary": "收录独立喷墨、选择性润湿与阵列光栅实验，区分几何填充率、焦点强度统计、焦移和质心间距CV；作者CV与表格复算差异保留，定量串扰仍待补证。",
       "metric_ids": [
         "focus_efficiency",
         "chromatic_shift",
         "na",
         "strehl",
         "effective_abbe",
-        "array_fill_factor"
+        "array_fill_factor",
+        "array_spacing_cv"
       ],
       "priorities": [
         {
@@ -602,7 +603,8 @@
         "richards_high",
         "zhang_hex_mla",
         "liu_mla_100um",
-        "liu_mla_process_radius"
+        "liu_mla_process_radius",
+        "zhao_mlag_spacing"
       ],
       "updated_on": "2026-11-06"
     },
@@ -1127,6 +1129,26 @@
         "zhang_inkjet_mla_2022"
       ],
       "best_interpretation": "仅可比较同面积口径及评估区域的几何覆盖率；高填充率不自动证明低串扰、高效率或高良率。",
+      "updated_on": "2026-11-06"
+    },
+    {
+      "id": "array_spacing_cv",
+      "name": "阵列焦斑间距变异系数",
+      "english_name": "Coefficient of variation of array spot spacing",
+      "definition": "指定方向上相邻焦斑质心间距d的标准差与平均间距之比；以百分数表示时CV=100×SD(d)/mean(d)。Zhao 2025 §3.2采用这一比值描述空间间距一致性。须声明SD的总体/样本估计口径；若选择样本SD，则s=√[Σ(dᵢ−d̄)²/(n−1)]。本库复算明确采用该样本口径，不声称原文指定了n−1。不是强度均匀性、焦距一致性、几何填充率或串扰；零平均值时不定义。 样本SD要求n>1；对全部间距施加同一个正的比例系数，CV不变，但不同位置使用不同放大率或处理不能据此忽略。",
+      "unit": "%",
+      "direction": "lower",
+      "required_conditions": [
+        "间距测量对象、方向与衍射级次",
+        "样本数、位置选择和空间采样范围",
+        "标准差估计口径与平均值",
+        "照明波长、输入角度和成像几何",
+        "质心提取、背景与像素标定方法"
+      ],
+      "definition_refs": [
+        "zhao_mlag_2025"
+      ],
+      "best_interpretation": "仅在相同质心间距协议下比较空间一致性；低CV不自动证明高光效或低串扰。原文报告值与表内可复算数据不一致时并列保留，不能用于本库最优排名。",
       "updated_on": "2026-11-06"
     },
     {
@@ -2615,6 +2637,18 @@
       "kind": "paper",
       "location": "§2.1填充因子定义；§2.2形貌评估；§2.3 Eq.4、Fig.3及其正文；§2.4 Fig.4；§4 Characterization",
       "evidence_scope": "出版社主文HTML上述章节、公式及图注。数据仅采用§2.3玻璃六角阵列的几何参数；未读PDF或补充材料，未视觉核验原图，也不从图估读数值。作者：Qiaoshuang Zhang等，KIT/InnovationLab研究团队。",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
+    },
+    {
+      "id": "zhao_mlag_2025",
+      "title": "Zhao、Feng、Shan（2025）High-Density Arrayed Spectrometer with Microlens Array Grating for Multi-Channel Parallel Spectral Analysis",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12349526/",
+      "doi": "10.3390/s25154833",
+      "source_year": 2025,
+      "kind": "paper",
+      "location": "§3.2（sec3dot2-sensors-25-04833）、Table 1（sensors-25-04833-t001）、Fig.4（sensors-25-04833-f004）；摘要与§3.3.1仅用于辨别波长归属；Data Availability Statement",
+      "evidence_scope": "直接以云浏览器读取PMC所载正式论文的§3.2全文、Table 1六行数值和CV行、Fig.4图注及渲染图像，另查邻近§3.3.1–3.3.3和结论；不是全文精读或PDF版面核验。作者Fangyuan Zhao、Zhigang Feng、Shuonan Shan，清华大学深圳国际研究生院。仅收录阵列间距实验，不把理论2070通道容量记为全部并行实测。摘要将1.11%关联638 nm，而§3.2写蓝绿复合照明、没有数值波长，保留对应关系缺口。表内CV与六行数据复算不一致；本次未取得额外原始数据。出版社网页/PDF工具读取429、PMC文本工具返回浏览器检查，普通云浏览器直接读取成功，未绕过挑战或复制全文。 本机再次通过独立Chrome无头直接读取§3.2、Table 1，并视觉核对表格与Fig.4；另读Data Availability Statement，作者说明完整数据属于在研项目而未直接公开。未联系作者、未取得完整数据或PDF版面。",
       "checked_on": "2026-11-06",
       "verification": "checked_excerpt"
     }
@@ -5534,6 +5568,83 @@
       ],
       "conditions": "玻璃上固化的SU-8基喷墨阵列；半径为形貌量，非有效光学口径；88%为面积比，由半径和中心距按六角几何公式计算，不是直接实测的光学效率。",
       "unreported_or_not_verified": "完整行列数、边缘统计口径、该样品独立焦距/NA与串扰未核验；不把四种硅烷样品系列的焦距范围或计算NA拼入本样品。±0.55 μm保留作者记法，未确认该六角样品的统计数量与误差类型。PDF、SI和原图未读。",
+      "checked_on": "2026-11-06",
+      "record_status": "checked_excerpt",
+      "claim_type": "representative_result"
+    },
+    {
+      "id": "zhao_mlag_spacing",
+      "application": "微透镜阵列与光场",
+      "application_id": "app_14",
+      "name": "Zhao 2025 阵列光栅：焦斑间距一致性与复算差异",
+      "evidence_type": "科研实验（作者CV与公开表格复算不一致）",
+      "source_ids": [
+        "zhao_mlag_2025"
+      ],
+      "parameters": [
+        {
+          "name": "x向间距CV（作者报告）",
+          "value": "1.25%（与六行表值复算不一致）",
+          "evidence": {
+            "source_id": "zhao_mlag_2025",
+            "location": "§3.2、Table 1；零级焦点到右邻/下邻焦斑的质心间距"
+          },
+          "metric_id": "array_spacing_cv"
+        },
+        {
+          "name": "y向间距CV（作者报告）",
+          "value": "1.11%（与六行表值复算不一致）",
+          "evidence": {
+            "source_id": "zhao_mlag_2025",
+            "location": "§3.2、Table 1；零级焦点到右邻/下邻焦斑的质心间距"
+          },
+          "metric_id": "array_spacing_cv"
+        },
+        {
+          "name": "公开采样数",
+          "value": "6组配对间距；不是全部阵列单元数",
+          "evidence": {
+            "source_id": "zhao_mlag_2025",
+            "location": "§3.2、Table 1；零级焦点到右邻/下邻焦斑的质心间距"
+          }
+        },
+        {
+          "name": "x向公开间距",
+          "value": "564、577、573、576、584、575 pixel",
+          "evidence": {
+            "source_id": "zhao_mlag_2025",
+            "location": "§3.2、Table 1；零级焦点到右邻/下邻焦斑的质心间距"
+          }
+        },
+        {
+          "name": "y向公开间距",
+          "value": "563、574、576、568、580、573 pixel",
+          "evidence": {
+            "source_id": "zhao_mlag_2025",
+            "location": "§3.2、Table 1；零级焦点到右邻/下邻焦斑的质心间距"
+          }
+        },
+        {
+          "name": "x向样本CV（本库复算）",
+          "value": "1.12965%（样本SD，n−1；非新增实测）",
+          "evidence": {
+            "source_id": "zhao_mlag_2025",
+            "location": "Table 1六行x间距；本库按样本SD/均值×100计算"
+          },
+          "metric_id": "array_spacing_cv"
+        },
+        {
+          "name": "y向样本CV（本库复算）",
+          "value": "1.05222%（样本SD，n−1；非新增实测）",
+          "evidence": {
+            "source_id": "zhao_mlag_2025",
+            "location": "Table 1六行y间距；本库按样本SD/均值×100计算"
+          },
+          "metric_id": "array_spacing_cv"
+        }
+      ],
+      "conditions": "§3.2将单点输入经MLAG形成阵列光斑，计算质心位置，并平移器件进行空间取样；记录零级焦点到右邻(x)/下邻(y)光斑的像素间距。Fig.4采用蓝绿复合照明，§3.2未明数值波长。六组表值只属于同一研究的配对样本，不是六个独立来源。本库样本CV以n−1为方差分母，均值分别574.83333和572.33333 pixel；总体SD口径给出约1.03122%/0.96054%，也不复现作者1.25%/1.11%。这些是表内算术复核，不替换作者测量或证明其计算错误。",
+      "unreported_or_not_verified": "所核验段落未明确交代CV是否使用更多未列出数据、SD估计口径、置信区间、重复测量、质心算法/背景校正与像素标定不确定度，无法判定差异原因。摘要638 nm与§3.2蓝绿复合照明的对应未消歧；不把§3.3.1另一实验的660/520/450 nm套用到Table 1。图示无可见串扰不是定量串扰结果。理论2070通道不当作2070路逐一验收。不是强度/焦距均匀性，不与Liu的未明归一化方差0.09换算或排名；未建立同条件比较集合。 Data Availability Statement明确数据因在研项目而未直接公开，故表内六行不等于完整数据集；没有联系作者。复算的五位小数用于算术追溯，不表示测量精度。",
       "checked_on": "2026-11-06",
       "record_status": "checked_excerpt",
       "claim_type": "representative_result"

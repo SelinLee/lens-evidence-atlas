@@ -135,3 +135,23 @@ test('sectioning search repeats and clears without converting older measurements
  for(const text of ['Luo 2025','Battistella 2022','7.8 ± 1.3 μm'])assert.ok(f.el('panel').innerHTML.includes(text));
  assert.ok(!f.el('panel').innerHTML.includes('Remacha'));
 });
+
+test('MLAG spacing definition and dual reported/recomputed evidence render with caveats',()=>{
+ const f=fixture();f.run("openMetric('array_spacing_cv')");
+ for(const word of ['10.3390/s25154833','不是强度均匀性','样本数','标准差估计口径'])assert.ok(f.el('detailBody').innerHTML.includes(word),word);
+ f.location.hash='#app_14/best';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('Zhao 2025'));
+ for(let i=0;i<2;i++){
+  f.run("openDialog('test',recordCard(records.get('zhao_mlag_spacing'),true))");
+  for(const word of ['1.25%','1.11%','1.12965%','1.05222%','6组配对','蓝绿复合','638 nm','Table 1','所核验段落未明确交代CV是否使用更多未列出数据'])assert.ok(f.el('detailBody').innerHTML.includes(word),word);
+  assert.equal(f.el('detail').open,true);f.el('detail').close();assert.equal(f.el('detail').open,false);
+ }
+ f.location.hash='#app_14/sources';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('PMC12349526'));
+});
+test('MLAG query repeats, clears, and retains existing independent evidence',()=>{
+ const f=fixture();
+ for(const query of ['Zhao 2025','阵列光栅','unmatched_spacing_987','Zhao 2025','']){
+  f.el('search').value=query;f.run('renderList()');assert.equal(f.el('resultCount').textContent,query==='unmatched_spacing_987'?'0 / 33 类应用':query?'1 / 33 类应用':'33 / 33 类应用');
+ }
+ f.location.hash='#app_14/best';f.run('route()');for(const word of ['Liu','Zhang 2022','Richards'])assert.ok(f.el('panel').innerHTML.includes(word),word);
+ f.location.hash='#app_25/best';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('Battistella'));
+});
