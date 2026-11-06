@@ -73,7 +73,7 @@
 
 | ID / 范围 | 队列 | 状态 | 负责人 | 日期 | 产物 |
 | --- | --- | --- | --- | --- | --- |
-| EVD-004d 扩芯双耦合器组合失配 | Q0 | review | dot | 2026-11-06 | [草稿PR #8](https://github.com/SelinLee/lens-evidence-atlas/pull/8)；本批日志07 |
+| EVD-004d 扩芯双耦合器组合失配 | Q0 | done | dot / 本机Codex验收 | 2026-11-06 | [草稿PR #8](https://github.com/SelinLee/lens-evidence-atlas/pull/8)；本批日志07 |
 
 来源 `he_tecf_2022`、记录 `he_tecf_combined_misalignment`。承接EVD-004/016实际装调证据缺口，不重复LBT模型。基线main ed5be7f/catalog0.1.4；本批仅一个独立论文实验点，父任务不关闭。
 
@@ -82,7 +82,7 @@
 - [x] 27/27测试、构建、逐文件重复构建哈希与查询DOM回归通过；不替代浏览器视觉验收。
 - [x] 已提交[草稿PR #8](https://github.com/SelinLee/lens-evidence-atlas/pull/8)，科学提交0c182cd；CI结果以PR当前HEAD检查为准。
 - [x] 本机补PDF pp.5/15/16科学审核和Chrome实际搜索/弹窗/来源页验收；见[核验笔记](TECF_REVIEW_2026-11-06.md)。保留云端旧记录的真实边界，整合后为0.1.6。
-- [ ] 合并与私有发布，本批没有执行。
+- [x] PR #8验收合并；v0.1.6私有发布成功，源提交d5bdb8a。仅关闭该工作点的子任务，父任务剩余验收继续保留。
 
 ## 本机阵列增量任务
 
