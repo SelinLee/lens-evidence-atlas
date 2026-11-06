@@ -73,13 +73,13 @@
 
 | ID / 范围 | 队列 | 状态 | 负责人 | 日期 | 产物 |
 | --- | --- | --- | --- | --- | --- |
-| EVD-003b Liu独立阵列光学样本 | Q0 | review | 本机Codex | 2026-11-06 | codex/mla-uniformity-evidence；[核验笔记](MLA_LIU_REVIEW_2026-11-06.md) |
-| EVD-016b Liu图示制备尺寸传递 | Q1 | review | 本机Codex | 2026-11-06 | 同上；不代表统计容差验收 |
+| EVD-003b Liu独立阵列光学样本 | Q0 | done | 本机Codex | 2026-11-06 | codex/mla-uniformity-evidence；[核验笔记](MLA_LIU_REVIEW_2026-11-06.md) |
+| EVD-016b Liu图示制备尺寸传递 | Q1 | done | 本机Codex | 2026-11-06 | 同上；不代表统计容差验收 |
 
 - [x] 主文及SI相关正文/图页核验；独立性按研究团队计数。
 - [x] 两条记录实际落库，未明定义、样品对应与统计不确定性保留。
 - [x] 24项测试、构建、差异检查通过；独立Chrome无头核对app_14/best整页截图与DOM，两条记录可见。
-- [ ] PR验收合并与私有发布。
+- [x] [PR #9](https://github.com/SelinLee/lens-evidence-atlas/pull/9)已合并；v0.1.5私有发布成功，源提交d523409。两个子任务仅关闭其限定范围。
 - 父任务EVD-003/016仍未满足完整定义、串扰、跨批次统计和同条件比较的要求。
 
 ## 本机LBT增量任务
