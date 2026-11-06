@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.17",
+    "version": "0.1.18",
     "updated_on": "2026-11-06",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -564,37 +564,9 @@
         "array_fill_factor",
         "array_spacing_cv"
       ],
-      "priorities": [
-        {
-          "tier": 1,
-          "metric_ids": [
-            "focus_efficiency",
-            "chromatic_shift"
-          ],
-          "rationale": "消色差微透镜示例同时报告效率与焦移，不支持只优化单一数值。",
-          "evidence_refs": [
-            "richards"
-          ],
-          "basis": "editorial_synthesis",
-          "scope": "仅适用于Richards 2023单个消色差微透镜的设计取舍；不构成阵列节距、填充率、均匀性或串扰的重要性排序，不是作者名次或行业统一权重。"
-        },
-        {
-          "tier": 2,
-          "metric_ids": [
-            "na",
-            "strehl"
-          ],
-          "rationale": "联合考虑孔径和成像质量；本排序为面向该示例的编辑性解读。",
-          "evidence_refs": [
-            "richards",
-            "strehl"
-          ],
-          "basis": "editorial_synthesis",
-          "scope": "仅适用于Richards 2023单个消色差微透镜的设计取舍；不构成阵列节距、填充率、均匀性或串扰的重要性排序，不是作者名次或行业统一权重。"
-        }
-      ],
-      "ranking_status": "editorial_synthesis",
-      "ranking_gap": "阵列整体的重要性顺序尚未建立；现有层次仅限Richards单透镜设计子任务，新填充因子定义和样本不产生排名。",
+      "priorities": [],
+      "ranking_status": "not_established",
+      "ranking_gap": "任务一：Richards 2023印刷p.6“Individually tuning…”及p.7 Fig.5讨论该材料与打印工艺下的单个消色差微透镜。提高NA时，聚焦效率下降、焦长误差通常增大；增加衍射环带还受到细结构打印精度限制，折射面调节是作者讨论的设计手段。它支持联合考察NA、效率、色差与可制备性，不能推出效率/色差统一高于NA或Strehl的P1/P2。任务二：pp.6–7“Imaging with an achromatic microlens array”及p.8 Fig.6展示18单元阵列的白光USAF成像；作者提出更小直径、较低NA、更密排列可能获得更多光场数据，这是后续设计建议，未在该示例中给出对照实测排序。单透镜效率不能替代整阵列效率、焦距一致性或串扰；这些阵列任务指标的定量权衡仍待补证。",
       "metric_mapping_status": "editorial_candidate_set",
       "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
       "legacy_priority_proposal": "节距/填充率、焦距一致性、波前、串扰、色差、封装",
@@ -607,7 +579,10 @@
         "liu_mla_process_radius",
         "zhao_mlag_spacing"
       ],
-      "updated_on": "2026-11-06"
+      "updated_on": "2026-11-06",
+      "ranking_gap_refs": [
+        "richards"
+      ]
     },
     {
       "id": "app_15",
@@ -776,36 +751,9 @@
         "transmission",
         "insertion_loss"
       ],
-      "priorities": [
-        {
-          "tier": 1,
-          "metric_ids": [
-            "coupling"
-          ],
-          "rationale": "总耦合是任务输出，复振幅匹配与系统损耗需共同计算。",
-          "evidence_refs": [
-            "fiber_definition"
-          ],
-          "basis": "editorial_synthesis",
-          "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
-        },
-        {
-          "tier": 2,
-          "metric_ids": [
-            "na",
-            "efl"
-          ],
-          "rationale": "NA与焦距是实现模场匹配的设计参数，不能替代耦合效率。",
-          "evidence_refs": [
-            "fiber_definition",
-            "fiber"
-          ],
-          "basis": "editorial_synthesis",
-          "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
-        }
-      ],
-      "ranking_status": "editorial_synthesis",
-      "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
+      "priorities": [],
+      "ranking_status": "not_established",
+      "ranking_gap": "任务：Jovanovic 2017的Subaru望远镜瞳形整形与单模光纤注入。作者稿§2.3–2.4 pp.5–6及Table 1表明，模式重叠改善可能被整形光学元件与掩模的损耗抵消；应在同一功率参考下同时核对模式耦合与光路透过率。Table 1是无波前像差假设下的模拟及整形元件通量预算，排除了其余光路，新PIAA设计当时尚未制备；不能作为实测端到端效率。§3.2 p.7说明焦比按所用光纤和光束模型匹配，并采用多轴对准；这不支持NA越大越好，也不能给出NA、焦距与耦合效率的通用P1/P2。上述依据限于该天文注入任务，通信封装的回损、稳定性和对准容差需要各自的任务证据。",
       "metric_mapping_status": "editorial_candidate_set",
       "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
       "legacy_priority_proposal": "模场重叠、插损/回损、发散、准直波段、对准容差",
@@ -818,7 +766,10 @@
         "he_tecf_combined_misalignment",
         "wozniak_leof_repeatability"
       ],
-      "updated_on": "2026-11-06"
+      "updated_on": "2026-11-06",
+      "ranking_gap_refs": [
+        "jovanovic_smf_2017"
+      ]
     },
     {
       "id": "app_23",
@@ -1832,8 +1783,8 @@
       "doi": "10.1051/0004-6361/201630351",
       "kind": "paper",
       "source_year": 2017,
-      "location": "作者稿§3.2 p.7；§3.3、§4.1及Fig.8 p.8；§8.4 pp.12–13及Fig.13；本轮补读HTML §2.1、§2.2 Eq.(1)、§2.3–2.4及Table 1",
-      "evidence_scope": "arXiv:1706.08821v2（26 Aug 2017）公开作者稿，15页；核读上述正文，实际渲染查看pp.8、12–13图页，未按图估读新数字；期刊A&A 604 A122（2017）。稿件自动排版页眉September 20, 2018不作发表年。 本轮增量：公开HTML https://arxiv.org/html/1706.08821v2 的§2.1–2.4正文、Eq.(1)与Table 1，核对重叠积分、瞳形和总效率边界；未重做原批PDF图页核验，也未独立读取该文引用的1982/1988原作。",
+      "location": "作者稿§2.1–2.4、Eq.(1)，§2.3–2.4 pp.5–6及Table 1；§3.2 p.7；§3.3、§4.1及Fig.8 p.8；§8.4 pp.12–13及Fig.13",
+      "evidence_scope": "arXiv:1706.08821v2（26 Aug 2017）公开作者稿，15页；此前核读相关正文和HTML §2.1–2.4/Eq.(1)/Table 1，实际渲染查看pp.8、12–13。本批另实际查看PDF pp.5–7，核对Table 1的无像差模拟/整形元件损耗预算和§3.2的焦比匹配假设；不将新PIAA预测当实测，不从图估读新数字。期刊A&A 604 A122（2017）；稿件自动排版页眉September 20, 2018不作发表年。未独立读取该文引用的1982/1988原作。",
       "checked_on": "2026-11-06",
       "verification": "checked_excerpt"
     },
@@ -2213,8 +2164,8 @@
       "id": "richards",
       "title": "Richards 等 Hybrid achromatic microlenses",
       "url": "https://backend.orbit.dtu.dk/ws/files/325782423/s41467_023_38858_y.pdf",
-      "location": "出版社版本pp.4–5 Focal length and focusing efficiency / Fig.3；p.8 Focusing efficiency；p.9 Focal length measurements / Simulations",
-      "evidence_scope": "DTU机构库出版社版本；读取并实际渲染查看印刷pp.3–5、7–9（PDF页序+1），核对Fig.2/3/5/6及相关方法。未读补充材料，不从曲线估读新数值。",
+      "location": "出版社版本pp.4–5 Focal length and focusing efficiency / Fig.3；p.8 Focusing efficiency；p.9 Focal length measurements / Simulations；p.6 Individually tuning… / pp.6–7 Imaging with an achromatic microlens array，p.7 Fig.5、p.8 Fig.6",
+      "evidence_scope": "DTU机构库出版社版本；读取并实际渲染查看印刷pp.3–9（PDF页序+1）。本批补核pp.6–8的NA/效率/焦移与加工取舍、18单元阵列及作者未来设计建议；区分单透镜测量与阵列示例。未读补充材料，不从曲线估读新数值。",
       "source_year": 2023,
       "checked_on": "2026-11-06",
       "kind": "paper",

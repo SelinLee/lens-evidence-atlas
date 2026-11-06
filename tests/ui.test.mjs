@@ -31,7 +31,7 @@ test('array record and narrowed priority scope render with evidence boundaries',
  const f=fixture();f.location.hash='#app_14/best';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('Zhang 2022'));
  f.run("openDialog('test',recordCard(records.get('zhang_hex_mla'),true))");
  const body=f.el('detailBody').innerHTML;for(const expected of ['35.14 ± 0.55','71.35','88%（由几何量计算）','不是直接实测的光学效率','完整行列数','Eq.4'])assert.ok(body.includes(expected));
- f.location.hash='#app_14/priority';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('不构成阵列'));
+ f.location.hash='#app_14/priority';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('单透镜效率不能替代整阵列效率'));
 });
 
 test('TECF record shows combined conditions, source locator and uncertainty',()=>{
@@ -54,9 +54,9 @@ test('author relative priority and editorial interpretation have distinct labels
  const f=fixture();f.location.hash='#app_04/priority';f.run('route()');
  for(const text of ['作者原文明示的限定任务相对次序','相对次序原文位置','650–1000 nm','不是通用指标总榜'])assert.ok(f.el('panel').innerHTML.includes(text));
  assert.ok(!f.el('coverage').innerHTML.includes('编辑解读'));
- f.location.hash='#app_14/priority';f.run('route()');
+ f.location.hash='#app_03/priority';f.run('route()');
  assert.ok(f.el('panel').innerHTML.includes('有出处的编辑性优先级'));assert.ok(!f.el('panel').innerHTML.includes('作者原文明示的限定任务相对次序'));
- f.run('method()');assert.ok(f.el('detailBody').innerHTML.includes('5 类应用有带出处'));assert.ok(f.el('detailBody').innerHTML.includes('1 类应用包含作者'));
+ f.run('method()');assert.ok(f.el('detailBody').innerHTML.includes('3 类应用有带出处'));assert.ok(f.el('detailBody').innerHTML.includes('1 类应用包含作者'));
 });
 
 test('meta-FP record renders raw and reconstructed details with source and gaps',()=>{
@@ -199,4 +199,24 @@ test('FPM search repeats, returns empty and clears without altering prior experi
   f.location.hash='#'+app+'/best';f.run('route()');assert.ok(f.el('panel').innerHTML.includes(text));
  }
  f.location.hash='#app_04/priority';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('650–1000 nm'));
+});
+
+test('array and SMF tradeoffs remain cited and discoverable without ranked status',()=>{
+ const f=fixture();
+ for(const [app,source,phrases] of [
+  ['app_14','richards',['打印精度','18单元','后续设计建议','单透镜效率不能替代整阵列效率']],
+  ['app_22','jovanovic_smf_2017',['Table 1','无波前像差','尚未制备','天文注入任务']]
+ ]){
+  f.location.hash='#'+app+'/priority';f.run('route()');
+  const panel=f.el('panel').innerHTML;
+  assert.ok(panel.includes('任务权衡：没有统一重要性排序'));
+  assert.ok(panel.includes('data-source="'+source+'"'));assert.ok(!panel.includes('class="tier"'));
+  for(const phrase of phrases)assert.ok(panel.includes(phrase),phrase);
+  f.run(`openSource('${source}')`);assert.ok(f.el('detailBody').innerHTML.includes(source==='richards'?'pp.6–7':'pp.5–6'));
+ }
+ f.el('rankedOnly').checked=true;f.run('renderList()');
+ assert.equal(f.el('resultCount').textContent,'4 / 33 类应用');
+ for(const app of ['app_14','app_22'])assert.ok(!f.el('appList').innerHTML.includes('data-app="'+app+'"'));
+ f.el('rankedOnly').checked=false;f.run('renderList()');
+ for(const app of ['app_14','app_22'])assert.ok(f.el('appList').innerHTML.includes('data-app="'+app+'"'));
 });

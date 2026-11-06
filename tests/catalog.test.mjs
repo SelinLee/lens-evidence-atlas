@@ -131,7 +131,7 @@ test('MLAG spot-spacing CV preserves printed observations and reported disagreem
  for(const w of ['638 nm','660/520/450 nm','置信区间','方差0.09','理论2070'])assert.ok(r.unreported_or_not_verified.includes(w));
  assert.ok(m.definition.includes('不是强度均匀性'));assert.ok(m.definition.includes('不声称原文指定了n−1'));
  assert.ok(!d.bests.some(b=>b.cohort_record_ids?.includes(r.id)));
- assert.equal(d.applications.find(a=>a.id==='app_14').ranking_status,'editorial_synthesis');
+ assert.equal(d.applications.find(a=>a.id==='app_14').ranking_status,'not_established');
 });
 
 test('LEOF loss record preserves direction, sample hierarchy and reported uncertainties',()=>{
