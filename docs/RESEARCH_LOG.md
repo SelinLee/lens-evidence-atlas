@@ -372,3 +372,12 @@ ef84c19`；源提交与发布一致，保持owner-only访问。EVD-004d子任务
 - **实际发布**：PR #35最终头cba90d324f912144c55fa86fe312ab8cfad045dd的CI42237461915成功，合并ef523144a1dca6a3d8629bd0185887984cefc50f。主线CI42237563651与Pages42237563644成功；公开build.json实际v0.1.22，SHA256与本地53eb3e283faeea4b7ef85e700db78fcc31f0fb81fbfb7763d750ec7454abed87一致。独立Chrome无头重复线上桌面/390 px查询、三定义/三来源、两新记录与旧模块弹窗、排名及旧重点记录验收；截图已看，无横向溢出。关闭009a，父009继续。
 - **可恢复入口**：Europe PMC主文XML https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12551697/fullTextXML 已成功获取，列有sciadv.adx9886_sm.pdf，但本轮仍未取得SI内容。009b可从Europe PMC合法补充材料入口继续，不反复撞Science/PMC同一检查页。没有据XML文件名提升SI读取边界。
 - **下阶段线索（仅检索，未读）**：NETD候选原始文章[Metrological characterization and calibration of thermographic cameras for quantitative temperature measurement](https://jsss.copernicus.org/articles/9/425/2020/jsss-9-425-2020.html)；实验候选[Measurement and Analysis of the Parameters of Modern Long-Range Thermal Imaging Cameras](https://www.mdpi.com/1424-8220/21/17/5700)。后续读方法/公式/实验图再决定收录。标准目录搜索还命中IEC TS63144-1及ASTM E1543不同版次，现行状态和条款均未核，不写成标准要求。没有采用搜索结果中的消费评测“好/最好”mK档位。
+
+## 28 — 2026-11-06 NIR附录校准范围更正与热成像预核
+
+- **前轮进展**：已实际发布v0.1.22；文档PR #36合并58fb4be，主线CI42238112818成功，Pages42238113330本轮由进行中追踪至success，无重启。工作分支先名thermal-netd-evidence，取得NIR关键附录后改为codex/nir-supplement-calibration，以优先更正科学数据；没有覆盖共享主工作目录。
+- **取证突破**：Europe PMC补充包首次传输中止3.37 MB；续传HTTP2错误，HTTP1.1确认不支持Range。检查本地ZIP发现第一个补充PDF条目的deflate流已完整结束，大小/CRC与描述符一致，成功取出40页PDF；未声称视频或整个ZIP完整。读S9–S11并核pp.12/13/26/27/28，原文文件仅留临时目录，未上传全文。
+- **更正与新增**：S10实际轴上16态校准近似全场，撤回旧逐场校准表述；只测MPSM第一行，4×16输入的逆记号需要广义逆/拟合实现解释。S9装机前16态四焦点效率和S11的HSV融合明确；分母、误差范数、独立PAD仍缺。本批候选v0.1.23，33应用/31指标/77记录/104来源；附录不计独立研究。
+- **热成像已核但未落库**：取得König 2020 PTB原始PDF，NETD A/B方法、Table5温度依赖、Fig8 SSE与Table13扩展不确定度可用于下批；详见THERMAL_NETD_REVIEW_2026-11-06.md。没有把NETD等同测温误差，也没有用论文中的历史标准描述替代现行条款。
+- **验收待续**：009b继续进行，不因拿到附录便关闭效率/误差/PAD剩余要求。011a待下一批实际落库。本文科学更正仍待测试、浏览器、PR和Pages验收。
+- **本地验收**：60项测试、构建及diff检查通过；新增回归防止把轴上外推写回逐场、把16校准态当独立验证态或把附录算新研究。独立Chrome无头桌面/390 px查询、三定义/四出处、13参数样本与旧模块/三通道记录、排名筛选及原重点样本保留通过；截图实际查看。候选SHA256为4dc3eaaf8bc67a821c11eb491caff8d4a064c63bbf31eacae7f837bc9864403a，尚待合并发布。
