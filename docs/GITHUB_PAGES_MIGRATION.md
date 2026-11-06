@@ -2,16 +2,12 @@
 
 2026-11-06，用户要求网页部署在GitHub而非ChatGPT。自此停止Sites新增发布与失败重试；旧部署记录仅作为历史，不是继续发布指令。
 
-当前GitHub仓库SelinLee/lens-evidence-atlas为个人账号下的私有仓库。读取仓库API确认has_pages=false；Pages接口404，尚未启用。用户计划字段未返回，不能认定已经具备私有仓库发布Pages的套餐资格。
+用户先批准网页公开、源码私有；GitHub API随后返回HTTP422，当前套餐不支持私有仓库Pages。用户进一步明确“那就不用考虑私有代码库了，公开吧”，因此最终方案为公开主仓库并直接部署Pages，无需额外发布仓库、升级套餐或创建跨仓库凭据。
 
-## 已准备
+## 发布流程
 
-`.github/workflows/pages.yml`：main更新或手动触发，先运行测试/构建并检查dist一致性，仅上传dist为Pages产物，再部署。复用现有查询页，无外部运行时依赖，CSS/JS/JSON使用相对路径，适配项目子路径。尚未启用Pages或触发公开发布。
+`.github/workflows/pages.yml`在main更新或手动触发时运行：先执行测试/构建并检查dist一致性，仅上传dist为Pages产物，再部署到github-pages环境。查询页使用相对CSS/JS/JSON路径，适配项目子路径。代码、研究资料与网页均公开；完整论文PDF及临时下载不在仓库中。
 
-## 已确认的访问范围
+本批只改托管方式，科学目录保持0.1.8。实际网址、构建源提交和部署结果在研究日志登记，不能把启用Pages或合并工作流当成发布成功。
 
-用户先前要求项目私有；本次已明确批准“允许网页公开，代码仓库仍私有”。个人仓库的GitHub Pages网页默认可公开访问，源仓库私有并不使网页私有；网站还包含可下载的catalog.json，允许网页公开即包含已收录的研究数据。私有Pages访问控制要求GitHub Enterprise Cloud组织拥有私有/内部项目仓库。
-
-仅公开dist查询页面及其研究数据，源仓库保持私有。正在核实当前账号是否支持私有仓库Pages并启用Actions发布；不擅自公开仓库、迁移组织或升级付费套餐。实际URL和部署结果单独记录。
-
-依据：[GitHub Pages可用计划](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)、[私有站点访问控制](https://docs.github.com/en/enterprise-cloud%40latest/pages/getting-started-with-github-pages/changing-the-visibility-of-your-github-pages-site)、[自定义发布工作流](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。
+依据：[GitHub Pages可用计划](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)、[自定义发布工作流](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。

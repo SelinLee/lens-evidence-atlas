@@ -1,6 +1,6 @@
 # Dot 维护任务说明
 
-> 2026-11-06托管调整：用户要求改用GitHub，停止Sites发布。GitHub Pages方案已准备；用户已允许网页公开，代码仓库仍私有；见[迁移状态](GITHUB_PAGES_MIGRATION.md)。历史Sites地址不代表新的发布目标。
+> 2026-11-06托管调整：用户要求改用GitHub，停止Sites发布。GitHub Pages方案已准备；用户最新确认仓库与网页均公开；见[迁移状态](GITHUB_PAGES_MIGRATION.md)。历史Sites地址不代表新的发布目标。
 
 这是交给 Dot 的可复用维护 prompt，依据用户已确认的研究范围保存。保存本文件不代表已启动 Dot、定时任务或后台研究。
 
