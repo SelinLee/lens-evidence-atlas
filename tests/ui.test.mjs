@@ -310,3 +310,22 @@ test('MLA crosstalk query exposes reciprocal disagreement and acquisition condit
  for(const [q,n] of [['Katopodis 2025',1],['no_mla_crosstalk_match_013',0],['',33]]){f.el('search').value=q;f.run('renderList()');assert.equal(f.el('resultCount').textContent,`${n} / 33 类应用`);}
  f.location.hash='#app_14/best';f.run('route()');for(const id of ['zhao_mlag_spacing','zhang_hex_mla','liu_mla_100um','richards_main','katopodis_mla_crosstalk_2025'])assert.ok(f.el('panel').innerHTML.includes('data-record="'+id+'"'));
 });
+
+test('computational MLA query connects new metrics, versioned manuscript and retained optical evidence',()=>{
+ const f=fixture();f.location.hash='#app_14/metrics';f.run('route()');
+ for(const id of ['reconstruction_time','usable_depth_range']){
+  assert.ok(f.el('panel').innerHTML.includes(`data-metric="${id}"`));
+  f.run(`openMetric('${id}')`);
+  assert.ok(f.el('detailBody').innerHTML.includes('href="https://arxiv.org/abs/2403.06439v2"'));
+ }
+ f.run("openSource('yang_svfourier_v2_2024')");
+ for(const word of ['论文作者稿（版本见来源）','https://arxiv.org/abs/2403.06439v2','未逐字核对最终出版版'])assert.ok(f.el('detailBody').innerHTML.includes(word),word);
+ f.run("openDialog('test',recordCard(records.get('yang_svfourier_imaging_2024'),true))");
+ for(const word of ['Table S3','不是曝光/端到端实时帧率','不是轴向分辨率100 μm','没有运行作者代码'])assert.ok(f.el('detailBody').innerHTML.includes(word),word);
+ f.location.hash='#app_14/priority';f.run('route()');
+ assert.ok(f.el('panel').innerHTML.includes('data-source="yang_svfourier_v2_2024"'));
+ assert.ok(!f.el('panel').innerHTML.includes('class="tier"'));
+ for(const [q,n] of [['SV-FourierNet',1],['no_svfourier_match',0],['',33]]){f.el('search').value=q;f.run('renderList()');assert.equal(f.el('resultCount').textContent,`${n} / 33 类应用`);}
+ f.location.hash='#app_14/best';f.run('route()');
+ for(const id of ['yang_svfourier_imaging_2024','katopodis_mla_crosstalk_2025','richards_main'])assert.ok(f.el('panel').innerHTML.includes(`data-record="${id}"`));
+});

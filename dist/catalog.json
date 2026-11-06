@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.27",
+    "version": "0.1.28",
     "updated_on": "2026-11-07",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -569,7 +569,7 @@
       "id": "app_14",
       "name": "微透镜阵列与光场",
       "category": "激光与科研",
-      "summary": "收录阵列制造、间距统计和多通道成像实验；区分填充率、强度/间距一致性、串扰和扫描视场。原始论文中的CV与CT口径冲突可查，尚不构成同条件排行榜。",
+      "summary": "收录阵列制造、间距统计、多通道与计算成像实验；区分填充率、串扰、扫描视场、重建分辨率与处理时间。公开CV/CT口径冲突及算法限制，尚不构成同条件排行榜。",
       "metric_ids": [
         "focus_efficiency",
         "chromatic_shift",
@@ -581,11 +581,13 @@
         "array_crosstalk",
         "fov",
         "working_distance",
-        "resolution"
+        "resolution",
+        "reconstruction_time",
+        "usable_depth_range"
       ],
       "priorities": [],
       "ranking_status": "not_established",
-      "ranking_gap": "任务一：Richards 2023印刷p.6“Individually tuning…”及p.7 Fig.5讨论该材料与打印工艺下的单个消色差微透镜。提高NA时，聚焦效率下降、焦长误差通常增大；增加衍射环带还受到细结构打印精度限制，折射面调节是作者讨论的设计手段。它支持联合考察NA、效率、色差与可制备性，不能推出效率/色差统一高于NA或Strehl的P1/P2。任务二：pp.6–7“Imaging with an achromatic microlens array”及p.8 Fig.6展示18单元阵列的白光USAF成像；作者提出更小直径、较低NA、更密排列可能获得更多光场数据，这是后续设计建议，未在该示例中给出对照实测排序。单透镜效率不能替代整阵列效率、焦距一致性或串扰；这些阵列任务指标的定量权衡仍待补证。 任务三：Katopodis 2025 §2.1–2.2、§5.1–5.2与§6的明场多通道成像，用微孔减少通道串扰，但引入盲区，需扫描拼接补全；快速稀疏采样与完整视场采集应分别评价。串扰、有效覆盖、分辨率、工作距离、采集时间和装配稳定性需联合报告；作者承认速度受机械扫描和微孔振动影响。Eq.(4)与正文CT倒数冲突公开保留，只能支持本研究的条件权衡，不能推出这些指标的通用先后顺序。",
+      "ranking_gap": "任务一：Richards 2023印刷p.6“Individually tuning…”及p.7 Fig.5讨论该材料与打印工艺下的单个消色差微透镜。提高NA时，聚焦效率下降、焦长误差通常增大；增加衍射环带还受到细结构打印精度限制，折射面调节是作者讨论的设计手段。它支持联合考察NA、效率、色差与可制备性，不能推出效率/色差统一高于NA或Strehl的P1/P2。任务二：pp.6–7“Imaging with an achromatic microlens array”及p.8 Fig.6展示18单元阵列的白光USAF成像；作者提出更小直径、较低NA、更密排列可能获得更多光场数据，这是后续设计建议，未在该示例中给出对照实测排序。单透镜效率不能替代整阵列效率、焦距一致性或串扰；这些阵列任务指标的定量权衡仍待补证。 任务三：Katopodis 2025 §2.1–2.2、§5.1–5.2与§6的明场多通道成像，用微孔减少通道串扰，但引入盲区，需扫描拼接补全；快速稀疏采样与完整视场采集应分别评价。串扰、有效覆盖、分辨率、工作距离、采集时间和装配稳定性需联合报告；作者承认速度受机械扫描和微孔振动影响。Eq.(4)与正文CT倒数冲突公开保留，只能支持本研究的条件权衡，不能推出这些指标的通用先后顺序。 任务四：Yang 2024作者v2 §3.2–3.3、SI§4.C与§8.C采用无隔板阵列加算法解复用，需要联合评价重建分辨率、场点对比度、轴向可用范围和计算成本。更多网络通道可提高质量但增加时间/内存，作者选9通道折中；这不是物理通道数的普适最优。推理时间不等于采集帧率；单次曝光复用重建与物理隔板/扫描拼接的结果不能不加条件互排。",
       "metric_mapping_status": "editorial_candidate_set",
       "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
       "legacy_priority_proposal": "节距/填充率、焦距一致性、波前、串扰、色差、封装",
@@ -597,12 +599,14 @@
         "liu_mla_100um",
         "liu_mla_process_radius",
         "zhao_mlag_spacing",
-        "katopodis_mla_crosstalk_2025"
+        "katopodis_mla_crosstalk_2025",
+        "yang_svfourier_imaging_2024"
       ],
       "updated_on": "2026-11-07",
       "ranking_gap_refs": [
         "richards",
-        "katopodis_dual_mode_2025"
+        "katopodis_dual_mode_2025",
+        "yang_svfourier_v2_2024"
       ]
     },
     {
@@ -1570,6 +1574,26 @@
       "updated_on": "2026-11-06"
     },
     {
+      "id": "reconstruction_time",
+      "name": "图像重建处理时间",
+      "english_name": "Image Reconstruction / Inference Time",
+      "definition": "从约定的输入数据进入指定重建流程，到该流程完成输出所需的处理时长。Yang 2024 Fig.6与SI Table S3分别报告示例重建的inference time和网络配置的Speed(s)；本库统一用时间而非倒数速度描述，秒数越小仅表示同条件处理更快。必须说明计时是否含裁剪/补零、CPU/GPU传输、推理、后处理、同步和文件输出，以及batch、预热与统计方式。它不是曝光时间、传感器帧周期、扫描采集时间或训练耗时。若单帧串行且没有其他开销，1/t才是理想处理率换算；不能直接当实测采集帧率，批处理吞吐率也不是单帧延迟。",
+      "unit": "s / image（须说明批量与计时边界）",
+      "direction": "lower",
+      "required_conditions": [
+        "硬件、软件/模型版本与数值精度",
+        "输入/输出尺寸、通道数及裁剪/补零",
+        "计时起止与传输/前后处理是否包含",
+        "batch、并行/串行、同步、预热和重复统计",
+        "重建质量、样本类型与比较算法设置"
+      ],
+      "definition_refs": [
+        "yang_svfourier_v2_2024"
+      ],
+      "best_interpretation": "仅在可比硬件、数据尺寸和重建质量下比较；低时延不证明高分辨率或稳定实时采集。原文未明确的计时条件保留未知，不建立通用合格阈值。",
+      "updated_on": "2026-11-07"
+    },
+    {
       "id": "reprojection_error",
       "name": "标定重投影误差",
       "english_name": "Calibration Reprojection Error",
@@ -1781,6 +1805,26 @@
       ],
       "best_interpretation": "无源系统能量比的理想上限不代表实物纪录。",
       "updated_on": "2026-11-06"
+    },
+    {
+      "id": "usable_depth_range",
+      "name": "可用轴向范围（成像景深）",
+      "english_name": "Usable Axial Range / Depth of Field (DOF; extended range: EDOF)",
+      "definition": "固定光学配置、探测和处理方案，沿物方轴向改变样品位置，按明确的图像质量判据界定仍可用的轴向区间；本库以区间总宽L=z_max−z_min表示，同时保留零点和端点。Yang 2024 §3.2以荧光分辨率靶的重建表现与伪影评价EDOF：10 μm轴向步进，报告−50至+50 μm内保持约7.8 μm的标靶分辨表现。该文没有给统一的数值对比度门槛，因此此范围只是该标靶/算法的经验报告；离散位置检验不能证明区间每个连续位置。它不是轴向PSF分辨率、光学切片厚度、高斯束共焦参数或多层三维重建能力；算法延长可用范围也不等于裸光学景深扩大。",
+      "unit": "μm / mm（轴向区间及总宽）",
+      "direction": "tradeoff",
+      "required_conditions": [
+        "物方轴向坐标、零点、端点和总宽/单侧约定",
+        "光谱、NA、介质、共轭与场点",
+        "标靶/样品及分辨率/对比度/伪影判据",
+        "轴向采样步长、重复和误差",
+        "固定焦点/重新调焦、重建模型与处理设置"
+      ],
+      "definition_refs": [
+        "yang_svfourier_v2_2024"
+      ],
+      "best_interpretation": "只有质量判据、场点和处理一致时才比较可用范围；大范围可能牺牲分辨率/对比度，不能将100 μm EDOF称作100 μm轴向分辨率或普适深度指标。",
+      "updated_on": "2026-11-07"
     },
     {
       "id": "working_distance",
@@ -3098,6 +3142,18 @@
       "location": "Materials 19(5), 1013；出版社19页PDF：§3.2 Eq.(3–4) p.6；§4.1/Fig.6 p.9；§4.2/Figs.8–9 pp.10–11；§4.3/Fig.10 pp.11–12",
       "evidence_scope": "2026-11-06直接核读出版社HTML相关正文及19页PDF上述页；视觉核验Eq.(3–4)、Figs.6–10及Fig.8/9内嵌间距表。正文四个均值仅作作者报告；未数字化箱线图、未取得原始数据或复现聚合，图文均值一致性未解决。未将模型容差或多芯束实验纳入本记录；不上传全文。 本机独立复核：出版社正文被拒绝、PMC出现浏览器检查；从出版社资源域取得同篇19页PDF（https://mdpi-res.com/d_attachment/materials/materials-19-01013/article_deploy/materials-19-01013.pdf），实际渲染并检查p.6、pp.9–12。Data Availability Statement仅称贡献见本文、可向通讯作者进一步询问；未取得可复算的原始序列，未联系作者。",
       "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
+    },
+    {
+      "id": "yang_svfourier_v2_2024",
+      "title": "Yang et al. (2024): Wide-Field, High-Resolution Reconstruction in Computational Multi-Aperture Miniscope Using a Fourier Neural Network — 作者v2及合订补充材料",
+      "url": "https://arxiv.org/abs/2403.06439v2",
+      "doi": "10.1364/OPTICA.523636",
+      "source_year": 2024,
+      "kind": "author_manuscript",
+      "location": "arXiv:2403.06439v2，2024-05-30；主文§2.1–2.3/§3.2–3.5/Figs.5–8/§4；SI§4.A–C/Table S2–S3、§8/Figs.S24–S27、§9.A–B/Fig.S28",
+      "evidence_scope": "取得51页作者稿PDF（主文17页+SI34页），读取相关方法、结果与结论，以及SI§4、§8、§9的采样/重建/景深/实验条件；实际查看PDF pp.11/12/28/46/47/48/49，对应主文Figs.5–6、SI pp.11/29–32的Table S2/S3及Figs.S24–S28。不是51页全部公式/参考文献的完整审核。正式发表信息由PubMed核对为Optica11(6):860–871，2024；本次使用的是2024-05-30 arXiv v2，未逐字核对最终出版版及其独立SI版本，故明确显示作者稿。主文/SI/不同网络变体均属一个研究，不计独立团队。没有运行训练代码或重建原始数据；没有量化图像分辨率、PSD或计时误差的独立复测。",
+      "checked_on": "2026-11-07",
       "verification": "checked_excerpt"
     },
     {
@@ -7371,6 +7427,150 @@
       "conditions": "1550 nm；§4.3 p.11及Fig.10明确波长，§4.2是同种40 μm、曲率半径32.5 μm的五件LEOF系列，与切割SMF-28e+端面双向耦合。TX指LEOF→SMF，RX为SMF→LEOF；0 μm接触与各样品优化空气间距分开。§4.1以每点100次测量缓解短间距干涉，本文报告损耗域平均；五件样品、两个方向和重复测量均来自同一研究，不是独立来源。图内优化间距是各曲线工作点，不是允许偏移公差、统一焦距或实测NA。 §4.1 p.9报告EXFO FLS-600光源、Thorlabs NTA007探测器和BNT001控制器；设备型号不能补足校准参考面。",
       "unreported_or_not_verified": "未核实实验功率校准面、连接器/传播/Fresnel损耗扣除、光谱线宽、偏振、逐样品原始序列或总体均值聚合权重。正文TX/RX优化0.39/0.40 dB与Fig.8b/9b均值方块的视觉位置均存在一致性疑问，聚合均未复现；不估读图线生成替代均值，不擅改作者数。正文0.18–0.65等范围的统计对象不够清楚，未记作样品均值范围或置信区间。§3理论0.5/1 dB容差、§4.3 Table 1（邻近37 μm讨论、归属待核）的参数和§4.4多芯FIFO结果不并入该40 μm系列；没有完整实验容差或量产良率结论。 Fig.6示意标签SMF-28+与图注/结果的SMF-28e+记法不同，本文沿结果图注记录型号，不据示意图补模场直径。Data Availability Statement未提供逐点原始序列的公开下载入口。",
       "checked_on": "2026-11-06",
+      "record_status": "checked_excerpt",
+      "claim_type": "representative_result"
+    },
+    {
+      "id": "yang_svfourier_imaging_2024",
+      "application": "微透镜阵列与光场",
+      "application_id": "app_14",
+      "name": "Yang 2024：SV-FourierNet阵列成像与推理时间",
+      "evidence_type": "作者v2实验报告与算法重建；模拟/几何估计分开",
+      "source_ids": [
+        "yang_svfourier_v2_2024"
+      ],
+      "parameters": [
+        {
+          "name": "物理阵列",
+          "value": "3×3塑料MLA，节距1 mm，Fresnel Technologies no.630；无通道隔板，子图重叠后由SV-FourierNet解复用。",
+          "evidence": {
+            "source_id": "yang_svfourier_v2_2024",
+            "location": "主文§1/§2.1；SI§9.A"
+          }
+        },
+        {
+          "name": "单透镜有效NA（作者几何估计）",
+          "value": "约0.05；SI按工作距离与节距估计，不是独立实测NA。所称5.4 μm光学分辨率为该估计的设计说明，不当作标靶实测。",
+          "evidence": {
+            "source_id": "yang_svfourier_v2_2024",
+            "location": "SI§9.A/p.32（合订PDF p.49）"
+          },
+          "metric_id": "na"
+        },
+        {
+          "name": "物方工作距离",
+          "value": "约7.5 mm；MLA到传感器约4.5 mm",
+          "evidence": {
+            "source_id": "yang_svfourier_v2_2024",
+            "location": "主文§2.1；SI§9.A/p.32"
+          },
+          "metric_id": "working_distance"
+        },
+        {
+          "name": "探测与物方采样",
+          "value": "1200万像素BSI CMOS，物理像元1.85 μm；作者有效物方采样2.8 μm，对应2像素周期5.6 μm，不是实测分辨率。正文型号IM226、Fig.S28标IMX226，保留原文写法差异。",
+          "evidence": {
+            "source_id": "yang_svfourier_v2_2024",
+            "location": "主文§2.1；SI§9.A/p.32/Fig.S28"
+          }
+        },
+        {
+          "name": "绿色荧光配置",
+          "value": "四个45° LED单元，LXML-PB01-0040与no.470激发滤片；探测535/50干涉滤片加Wratten no.12吸收滤片。照明模块标称可达1 mW/mm²、覆盖8×8 mm²，不等于每次实验实际剂量或重建FOV。",
+          "evidence": {
+            "source_id": "yang_svfourier_v2_2024",
+            "location": "SI§9.A/p.32/Fig.S28"
+          }
+        },
+        {
+          "name": "单次曝光与重建视场",
+          "value": "原文报告6.5 mm视场；单幅复用观测经网络重建，不是原始像直接清晰成像，也不是拼接扫描。未由这一线性数值推算全区域分辨率面积。",
+          "evidence": {
+            "source_id": "yang_svfourier_v2_2024",
+            "location": "主文§1/§3.4–3.5/Figs.7–8；SI§1"
+          },
+          "metric_id": "fov"
+        },
+        {
+          "name": "PSF空间标定范围",
+          "value": "单颗荧光微球扫描7×7 mm²，横向步长250 μm；属于模型标定，不是7×7 mm²均匀高分辨率成像验收。",
+          "evidence": {
+            "source_id": "yang_svfourier_v2_2024",
+            "location": "主文§2.2"
+          }
+        },
+        {
+          "name": "荧光靶重建分辨率（作者报告）",
+          "value": "主文7.8 μm，SI Fig.S24/S25为7.81 μm；Fig.5明确中心与径向偏移2 mm处，并有SI五方位补充。不是裸MLA的PSF FWHM或MTF门槛；未独立标定线宽/周期。",
+          "evidence": {
+            "source_id": "yang_svfourier_v2_2024",
+            "location": "主文§3.2/Fig.5；SI§8.A–C/Figs.S24–S26"
+          },
+          "metric_id": "resolution"
+        },
+        {
+          "name": "轴向可用区间",
+          "value": "−50至+50 μm，总宽100 μm；10 μm轴向步进、固定单深度训练模型。±70 μm处示出分辨退化和背景伪影，不是轴向分辨率100 μm。",
+          "evidence": {
+            "source_id": "yang_svfourier_v2_2024",
+            "location": "主文§3.2/Fig.5(b)；SI§8.B/Fig.S25"
+          },
+          "metric_id": "usable_depth_range"
+        },
+        {
+          "name": "输入和输出尺寸",
+          "value": "3000×4000原始像先裁为2886×3500、再补零到4200×4200；输出2400×2400。1200万原始像素不等于1200万个独立可分辨点。",
+          "evidence": {
+            "source_id": "yang_svfourier_v2_2024",
+            "location": "SI§4.A–B/p.9及Table S2/p.11"
+          }
+        },
+        {
+          "name": "示例推理时间（作者报告）",
+          "value": "SV-FourierNet 0.06 s；同图CM²Net 1.35 s、MultiWienerNet 0.12 s、LSV ADMM 54 min。均为Fig.6特定标靶重建展示，不是曝光/端到端实时帧率。",
+          "evidence": {
+            "source_id": "yang_svfourier_v2_2024",
+            "location": "主文Fig.6(b)（合订PDF p.12）；SI Fig.S24"
+          },
+          "metric_id": "reconstruction_time"
+        },
+        {
+          "name": "网络通道消融的处理时间",
+          "value": "Table S3：1/5/9/15/30个网络通道对应0.0499/0.0578/0.0668/0.0813/0.1162 s；采用9通道是作者的质量/计算量折中，不是速度最小。与物理3×3透镜数量不是同一变量。",
+          "evidence": {
+            "source_id": "yang_svfourier_v2_2024",
+            "location": "SI§4.C/Table S3/p.11（合订PDF p.28）"
+          },
+          "metric_id": "reconstruction_time"
+        },
+        {
+          "name": "实现与训练范围",
+          "value": "PyTorch、Nvidia A40，约5000张模拟训练图，训练batch=4、约48 h；训练batch与48 h不能移作推理计时协议或单帧延迟。",
+          "evidence": {
+            "source_id": "yang_svfourier_v2_2024",
+            "location": "主文§2.2–2.3；SI§3.C"
+          }
+        },
+        {
+          "name": "实验对照对象",
+          "value": "自由运动C. elegans使用同步宽场参考；75 μm厚弱散射固定脑片与2×0.1NA、10×0.25NA宽场图像对照。参考物镜NA不是本阵列NA；不是所有组织/深度上的精度保证。",
+          "evidence": {
+            "source_id": "yang_svfourier_v2_2024",
+            "location": "主文§3.4–3.5/Figs.7–8；SI§9.B–E"
+          }
+        },
+        {
+          "name": "已报告的边缘限制",
+          "value": "SI§8.C指出边缘仍有轻微对比度下降，9网络通道不能完全补偿截断和空间变像差；增加通道需更多计算。PSD空间分箱分析含模拟数据，不能当作逐位置实测MTF。",
+          "evidence": {
+            "source_id": "yang_svfourier_v2_2024",
+            "location": "SI§8.C–D/pp.29–31/Figs.S26–S27"
+          }
+        }
+      ],
+      "conditions": "依据arXiv v2作者稿和合订SI，而非声称最终出版版已逐字核验。一个系统、一个团队；网络消融和主文/SI不算独立实验来源。作者通过空间扫描微球标定PSF，以物理模型生成训练数据；标靶、生物样本是实验观测的网络重建，模拟PSNR/SSIM不冒充标靶实测。Fig.5的离轴实例标径向偏移2 mm；SI五方位补充且承认边缘对比度退化，不能把“均匀分辨率”理解为全视场每像素完整验收。EDOF来自标靶轴向扫描的经验判读，并非高斯束焦深或三维切片分辨率。Fig.6的0.06 s与Table S3的0.0668 s是不同展示/统计入口，保留各自来源，不擅自平均。",
+      "unreported_or_not_verified": "没有运行作者代码/权重或独立复算重建质量。所核范围没有明确统一的USAF数值判据、线宽/周期口径、完整分辨率/EDOF重复与置信区间，也没有完整曝光/读出/传输/推理/显示的端到端时间预算或采集帧率。A40出现在实现/训练说明，未单独证明每个对照计时均用同一硬件；推理batch、GPU同步/预热、重复统计及是否包含前后处理未核。原始PSF、模型低秩近似与网络ERF不是同一个测量量。SI§8.D把模拟数据空间分箱与不同实验样本PSD分别讨论，PSD受物体频谱影响，约0.14 μm⁻¹的作者谱截止不能直接替代MTF或与标靶7.8 μm统一排名。无与Katopodis相同针孔/ROI的CT测量，不输出光学隔离串扰比；无同条件跨团队最优集合。",
+      "checked_on": "2026-11-07",
       "record_status": "checked_excerpt",
       "claim_type": "representative_result"
     },
