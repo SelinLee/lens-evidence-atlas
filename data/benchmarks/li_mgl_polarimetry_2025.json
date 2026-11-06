@@ -5,7 +5,8 @@
   "name": "Li 2025 MGL 940 nm 全Stokes偏振相机",
   "evidence_type": "科研器件实验、成像演示及同文光学模拟（逐项区分）",
   "source_ids": [
-    "li_mgl_2025"
+    "li_mgl_2025",
+    "li_mgl_si_2025"
   ],
   "parameters": [
     {
@@ -44,10 +45,10 @@
     },
     {
       "name": "四通道聚焦效率",
-      "value": "实验报告总61.3%，零级2.3%；S9未读，分母/积分区域和偏振平均未完整核实，暂不标绝对效率",
+      "value": "装机前实验：16种入射偏振态，四焦点功率所得平均聚焦效率61.3%，零级平均2.3%；S9未明确参考分母和积分孔径，暂不标绝对效率",
       "evidence": {
-        "source_id": "li_mgl_2025",
-        "location": "Results Fig.3H前段；Methods: Characterization of samples"
+        "source_id": "li_mgl_si_2025",
+        "location": "PDF pp.11–12 S9；p.26 Fig.S13"
       },
       "metric_id": "focus_efficiency"
     },
@@ -61,16 +62,16 @@
     },
     {
       "name": "重建与校准",
-      "value": "四通道配准，S=M⁻¹I；逐场校准矩阵；S0–S3用于DoP/DoLP/DoCP/AoP",
+      "value": "四通道配准并重建S0–S3。S10实际在θFOV=0°用16种入射偏振态校准M00/M01/M02/M03，假设角度依赖弱而代表设计全视场；不是逐场独立校准或完整16分量MPSM实测。",
       "evidence": {
-        "source_id": "li_mgl_2025",
-        "location": "Results Eq.(9)及Eqs.(10)–(13)"
+        "source_id": "li_mgl_si_2025",
+        "location": "PDF pp.12–13 S10/Eqs.(S22)–(S24)；pp.27–28 Figs.S14–S15"
       },
       "metric_id": "docp"
     },
     {
       "name": "偏振实验误差声明",
-      "value": "x线偏振输入：全场平均AoP1.27°；多入射态平均偏振测量误差<1.32%（未核误差范数/聚合），不是所有角度最大误差",
+      "value": "x线偏振输入：全场平均AoP1.27°；多入射态平均偏振测量误差<1.32%（未核误差范数/聚合），不是所有角度最大误差；S10的16态为校准输入数，不能认作独立误差验证样本数",
       "evidence": {
         "source_id": "li_mgl_2025",
         "location": "Results Fig.4A对应段"
@@ -100,10 +101,26 @@
         "source_id": "li_mgl_2025",
         "location": "Results Eq.(14)/Fig.5"
       }
+    },
+    {
+      "name": "效率光路与装配边界",
+      "value": "940 nm准直束，HWP/QWP调16态，功率计置MGL焦面测四焦点；光阑遮高阶测零级。S9为组装前器件测量，不能称含滤光片、传感器及处理的整机光电效率。",
+      "evidence": {
+        "source_id": "li_mgl_si_2025",
+        "location": "PDF pp.11–12 S9；p.26 Fig.S13"
+      }
+    },
+    {
+      "name": "防伪融合算法",
+      "value": "Eq.(S25)：从DoCP伪彩图取HSV的H/S，从灰度强度图取V，再转RGB供纹理直方图分析；不是直接拿物体真实RGB颜色判别。伪彩映射、归一化和分类阈值仍未完整给出。",
+      "evidence": {
+        "source_id": "li_mgl_si_2025",
+        "location": "PDF p.13 S11/Eq.(S25)"
+      }
     }
   ],
-  "conditions": "单个MGL研究；S0–S3全Stokes与Metalenz三通道不同。四通道功率使用940 nm超连续光、偏振片及波片、4f系统和功率计测量；聚焦效率不能与缺少同分母条件的NILT94%互排。Fig.4为透明物偏振图，Fig.5为有限防伪演示。",
-  "unreported_or_not_verified": "主文可读、补充S9/S10/S11未读：缺完整效率分母、误差定义/状态采样数/不确定度、融合算法及测试数据集。传感器resolution原文写1280 μm by800 μm，单位有歧义，不擅改成像素数；设计段称BK7而制造段称BF33，保留不一致。没有独立防伪分类器验证、FAR/FRR/APCER/BPCER/ROC或置信区间；0.9199没有通用通过阈值。3D面具/动态攻击尚不能由此演示证明。含企业作者和相关专利申请；不把同文模拟当实验或多个独立样本。",
+  "conditions": "单个MGL研究；主文和附录不是独立实验团队。S0–S3全Stokes与Metalenz三通道不同。补充S9说明61.3%为组装前器件、16入射态的四焦点功率测量；不能与缺少同分母条件的NILT94%互排。S10以轴上校准外推设计全场，撤下本库v0.1.22的逐场校准表述。Fig.4为透明物偏振图，Fig.5为有限防伪演示。",
+  "unreported_or_not_verified": "已核S9–S11，但效率参考功率/积分孔径、16态具体坐标及聚合权重、<1.32%误差范数/独立验证态数/不确定度仍未完整给出。S10 Eq.(S24)写Sinc⁻¹：按16个四分量输入，Sinc为4×16矩阵，不能作普通方阵求逆；需要广义逆/拟合等实现，原段未明确，不能宣称已复现校准。融合伪彩映射/归一化/阈值及测试数据集缺失。传感器resolution原文写1280 μm by800 μm，单位有歧义，不擅改成像素数；设计段称BK7而制造段称BF33，保留不一致。没有独立防伪分类器验证、FAR/FRR/APCER/BPCER/ROC或置信区间；0.9199没有通用通过阈值。3D面具/动态攻击尚不能由此演示证明。含企业作者和相关专利申请；不把同文模拟当实验或多个独立样本。",
   "record_status": "checked_excerpt",
   "checked_on": "2026-11-06",
   "claim_type": "representative_result"

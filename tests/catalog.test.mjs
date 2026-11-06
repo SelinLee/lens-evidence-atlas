@@ -253,7 +253,7 @@ test('NIR evidence keeps visible specifications, measured channels and antispoof
  assert.ok(full.parameters.find(p=>p.metric_id==='focus_efficiency').value.includes('暂不标绝对效率'));
  assert.ok(full.parameters.find(p=>p.name==='示例图像距离').value.includes('不是91.99%识别准确率'));
  assert.ok(full.unreported_or_not_verified.includes('没有独立防伪分类器验证'));
- assert.equal(a.ranking_status,'not_established');assert.equal(a.ranking_gap_refs.length,3);
+ assert.equal(a.ranking_status,'not_established');assert.equal(a.ranking_gap_refs.length,4);
  assert.ok(!d.bests.some(b=>b.application_id===a.id));
  for(const id of ['dolp','docp','aolp']){
   const m=d.metrics.find(m=>m.id===id);assert.equal(m.direction,'tradeoff');
@@ -261,4 +261,20 @@ test('NIR evidence keeps visible specifications, measured channels and antispoof
  }
  assert.ok(d.metrics.find(m=>m.id==='aolp').definition.includes('S1=S2=0时方位角未定义'));
  assert.ok(d.metrics.find(m=>m.id==='docp').definition.includes('−1至1'));
+});
+
+test('MGL supplement corrects calibration scope without turning calibration states into validation or independent studies',()=>{
+ const d=load(),r=d.benchmarks.find(x=>x.id==='li_mgl_polarimetry_2025'),s=d.sources.find(x=>x.id==='li_mgl_si_2025');
+ assert.equal(d.benchmarks.filter(x=>x.source_ids.includes(s.id)).length,1);
+ assert.equal(r.parameters.length,13);
+ const calibration=r.parameters.find(p=>p.name==='重建与校准');
+ assert.equal(calibration.evidence.source_id,s.id);
+ for(const phrase of ['θFOV=0°','16种','不是逐场独立校准'])assert.ok(calibration.value.includes(phrase));
+ assert.ok(r.parameters.find(p=>p.name==='偏振实验误差声明').value.includes('不能认作独立误差验证样本数'));
+ assert.ok(r.parameters.find(p=>p.name==='四通道聚焦效率').value.includes('装机前'));
+ assert.ok(r.parameters.find(p=>p.name==='防伪融合算法').value.includes('不是直接拿物体真实RGB颜色判别'));
+ assert.ok(r.unreported_or_not_verified.includes('4×16矩阵'));
+ assert.ok(r.unreported_or_not_verified.includes('没有独立防伪分类器验证'));
+ assert.ok(!d.bests.some(b=>b.cohort_record_ids?.includes(r.id)));
+ assert.ok(d.applications.find(a=>a.id==='app_08').ranking_gap.includes('轴上校准近似设计全场'));
 });
