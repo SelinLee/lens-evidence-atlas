@@ -5,14 +5,16 @@
   "name": "Chu 2025 低NA双超透镜显微系统（meta-FP，USAF靶）",
   "evidence_type": "科研实验示例（原图与迭代计算重建，系统级）",
   "source_ids": [
-    "chu_meta_fp_2025"
+    "chu_meta_fp_2025",
+    "chu_meta_fp_pmc_2025",
+    "chu_meta_fp_si_2025"
   ],
   "parameters": [
     {
       "name": "照明中心波长",
       "value": "532 nm",
       "evidence": {
-        "source_id": "chu_meta_fp_2025",
+        "source_id": "chu_meta_fp_pmc_2025",
         "location": "§2 Results，Fig.1前首段：LDLS滤光设置"
       }
     },
@@ -20,7 +22,7 @@
       "name": "双超透镜4-f几何",
       "value": "第一片：焦距13 mm、直径2.6 mm；第二片：焦距50 mm、直径5.2 mm",
       "evidence": {
-        "source_id": "chu_meta_fp_2025",
+        "source_id": "chu_meta_fp_pmc_2025",
         "location": "§2 Results，Fig.1后首段：4-f系统"
       }
     },
@@ -28,7 +30,7 @@
       "name": "报告系统倍率",
       "value": "约4×",
       "evidence": {
-        "source_id": "chu_meta_fp_2025",
+        "source_id": "chu_meta_fp_pmc_2025",
         "location": "§2 Results，Fig.1后首段：4-f系统"
       }
     },
@@ -36,7 +38,7 @@
       "name": "传感器像元",
       "value": "1.75 × 1.75 μm（像方）",
       "evidence": {
-        "source_id": "chu_meta_fp_2025",
+        "source_id": "chu_meta_fp_pmc_2025",
         "location": "§2 Results，Fig.1后第二段：CMOS传感器"
       }
     },
@@ -44,7 +46,7 @@
       "name": "迭代FP输入",
       "value": "9 × 9 = 81个照明角度",
       "evidence": {
-        "source_id": "chu_meta_fp_2025",
+        "source_id": "chu_meta_fp_pmc_2025",
         "location": "§2 Results，Fig.1前：TFT中心像素阵列"
       }
     },
@@ -53,7 +55,7 @@
       "value": "7.81 μm（USAF G6-1）",
       "metric_id": "resolution",
       "evidence": {
-        "source_id": "chu_meta_fp_2025",
+        "source_id": "chu_meta_fp_pmc_2025",
         "location": "§2 Results，Fig.2讨论末段：smallest resolvable features"
       }
     },
@@ -62,7 +64,7 @@
       "value": "3.91 μm（USAF G7-1）",
       "metric_id": "resolution",
       "evidence": {
-        "source_id": "chu_meta_fp_2025",
+        "source_id": "chu_meta_fp_pmc_2025",
         "location": "§2 Results，Fig.2讨论末段：smallest resolvable features"
       }
     },
@@ -70,7 +72,7 @@
       "name": "采集与迭代重建时间",
       "value": "单幅采集约0.75 s；81角度整组约60 s；迭代重建3 s内（作者报告）",
       "evidence": {
-        "source_id": "chu_meta_fp_2025",
+        "source_id": "chu_meta_fp_pmc_2025",
         "location": "§2 Results，Fig.1前dataset acquisition time段和Fig.2前重建完成时间段"
       }
     },
@@ -78,14 +80,38 @@
       "name": "FP后Michelson对比度",
       "value": "G6-6：29–39%；G7-1：20–41%；G7-2：6–18%",
       "evidence": {
-        "source_id": "chu_meta_fp_2025",
+        "source_id": "chu_meta_fp_pmc_2025",
         "location": "§2 Results，Fig.2(h–j)对应段；C=(Imax−Imin)/(Imax+Imin)"
+      }
+    },
+    {
+      "name": "SI采集时间（与主文冲突）",
+      "value": "81幅约4 s；主文同为81角度却报约60 s，未解释差别，不择快值作性能结论",
+      "evidence": {
+        "source_id": "chu_meta_fp_si_2025",
+        "location": "Section2流程段；本机渲染p.4"
+      }
+    },
+    {
+      "name": "SI缩小模型NA与尺寸",
+      "value": "直径20 μm、NA=0.05；作者称与实验设计同NA，但未明确双片中哪一片/系统参考侧，不当已测物方NA",
+      "evidence": {
+        "source_id": "chu_meta_fp_si_2025",
+        "location": "Section6；本机渲染p.10"
+      }
+    },
+    {
+      "name": "SI缩小模型聚焦效率",
+      "value": "532 nm约80%，FDTD模拟；不是2.6/5.2 mm双片实测透过率，积分圈和效率分母未明确",
+      "evidence": {
+        "source_id": "chu_meta_fp_si_2025",
+        "location": "Section6；本机渲染p.10"
       }
     }
   ],
-  "conditions": "532 nm滤光照明、双超透镜4-f成像。7.81 μm对应中央照明原图，3.91 μm对应81角度采集后的迭代FP重建；作者以USAF可辨元素表述，属于靶标细节尺度，不是PSF FWHM或统一MTF阈值。两结果是同一系统、同一论文的处理前后对照，不是两个独立样本。本文称原系统为低NA，本库不据此定义统一NA界线，也不把重建分辨率归因于单片裸透镜。RCNN单帧预测不属于本条结果。 采集与重建时间分别报告；约60 s的多角度采集不等于RCNN单帧推理时延。对比度范围是作者对不同靶元素的报告，未指定统一可辨阈值，不能视作误差区间或MTF曲线。",
-  "unreported_or_not_verified": "数值物方NA及瞳匹配后的有效孔径未直接核验，不由直径/焦距反算成实测NA；滤光带宽、实验偏振、靶标所在介质、实际视场、全视场MTF、统一分辨率判读阈值、重复次数和不确定性、重建时间所用硬件及统计、SI算法/聚焦表征与原始图像未核验。不能与Wang近红外元件聚焦效率或传统物镜NA直接排名。",
+  "conditions": "532 nm滤光照明、双超透镜4-f成像。7.81 μm对应中央照明原图，3.91 μm对应81角度采集后的迭代FP重建；作者以USAF可辨元素表述，属于靶标细节尺度，不是PSF FWHM或统一MTF阈值。两结果是同一系统、同一论文的处理前后对照，不是两个独立样本。本文称原系统为低NA，本库不据此定义统一NA界线，也不把重建分辨率归因于单片裸透镜。RCNN单帧预测不属于本条结果。 采集与重建时间分别报告；约60 s的多角度采集不等于RCNN单帧推理时延。对比度范围是作者对不同靶元素的报告，未指定统一可辨阈值，不能视作误差区间或MTF曲线。 2026-11-07补核PMC Fig.1/2原图及SI指定文字：Fig.2支持原图/迭代重建的区别，对比度三数为不同线条/剖面值，不是统计误差。SI的81图约4 s与主文约60 s并列保留；不得以较快值替换主文。",
+  "unreported_or_not_verified": "主文Figs.1/2已视觉核，但原始图像序列/代码及统一分辨率判读阈值、重复次数、不确定性未取得；数值物方NA及瞳匹配后的有效孔径未直接核验，不由直径/焦距反算成实测NA。SI §6的NA0.05是20 μm缩小模型的设计说明，不明对应哪片及参考侧；约80%是模拟效率且分母/积分域未明。SI §2报81图约4 s，与主文约60 s冲突未解；重建计时硬件未给。滤光带宽、USAF靶介质/偏振、实际视场与全场MTF仍缺。SI局部文字已核，Fig.S6的EMF图渲染空白，未核其曲线或完整SI。不得将RCNN/细胞介质或模拟效率移用本条强度靶实验。",
   "record_status": "checked_excerpt",
   "claim_type": "representative_result",
-  "checked_on": "2026-11-06"
+  "checked_on": "2026-11-07"
 }

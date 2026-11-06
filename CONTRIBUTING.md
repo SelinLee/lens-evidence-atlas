@@ -26,3 +26,11 @@ PR 写明任务 ID、已满足的验收项和剩余缺口；提交审核记为 `
 `npm run check:links` 是可选的只读网络检查；403、429、验证码与网络失败只说明暂时不可访问，不说明科学结论错误。检查不会修改内容或自动提升核验等级。
 
 本库最优的 `comparison_keys` 还必须包含指标的全部 `required_conditions`，填写 `as_of`、`checked_on`、`selected_record_id`、`comparison_parameter_name`。每个候选对应参数需有匹配 `metric_id` 与定位来源；展示值必须等于选中记录参数值。上述检查不自动证明候选数值的科学可比性或最大/最小关系。
+
+## 条件对照页
+
+`data/comparisons.json`为每个应用可选的一组维护视图，使用`application_id`、`fields`及`entries`。每条entry指向已有`record_id`，使用`study_id`标识同一研究，`task`说明元件/系统/处理流程。每个cell按字段保存`parameter_names`和`note`，只引用已有且有逐参数出处的参数名；数值由原记录实时读取，不复制到cell的`value`。改名必须同步引用。
+
+每条记录必须保留所有字段，未知项用空参数列表和明确的缺口说明，不能删除格子掩盖缺证。备注是对记录条件/缺口的编辑性概括；新事实先补入有定位原文的benchmark，再引用。`updated_on`是对照维护日期，不刷新原研究核验日期。对照本身不产生`corpus_best`或数值评分；新增样本仍须过来源、任务和独立研究检查。
+
+网页支持`#应用ID/compare/记录A/记录B`分享链接、两个选择器以及定义/出处/完整记录弹窗。测试需覆盖参数改名失效、跨应用引用、缺失字段、同文样本、切换/刷新和桌面/手机可读性。

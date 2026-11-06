@@ -5,7 +5,7 @@ import {fileURLToPath} from 'node:url';
 import {isDeepStrictEqual} from 'node:util';
 export const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=(p)=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
-export function load(){const d={meta:read('data/catalog.json'),bests:read('data/scoped_bests.json'),standards:read('data/standards.json')};for(const folder of ['applications','metrics','sources','benchmarks'])d[folder]=fs.readdirSync(path.join(root,'data',folder)).filter(f=>f.endsWith('.json')).sort().map(f=>read(`data/${folder}/${f}`));return d}
+export function load(){const d={meta:read('data/catalog.json'),bests:read('data/scoped_bests.json'),standards:read('data/standards.json'),comparisons:read('data/comparisons.json')};for(const folder of ['applications','metrics','sources','benchmarks'])d[folder]=fs.readdirSync(path.join(root,'data',folder)).filter(f=>f.endsWith('.json')).sort().map(f=>read(`data/${folder}/${f}`));return d}
 export function validate(d){
  const errors=[];const expect=(ok,msg)=>{if(!ok)errors.push(msg)};const ids={};
  for(const type of ['applications','metrics','sources','benchmarks']){ids[type]=new Set();for(const x of d[type]){expect(typeof x.id==='string'&&/^[a-z0-9_]+$/.test(x.id),`${type}: invalid id`);expect(!ids[type].has(x.id),`${type}: duplicate ${x.id}`);ids[type].add(x.id)}}
@@ -45,6 +45,29 @@ export function validate(d){
     expect(r.application_id===b.application_id,`${b.id}: cohort application mismatch`);expect(canCompare(b.conditions,r.comparison_conditions,keys),`${b.id}: incomplete or mismatched comparison conditions for ${id}`)}
   }
  }}
+ // Comparison views reference original parameters; they never supply a second numerical truth.
+ const comparisonIds=new Set(),comparisonApps=new Set();
+ for(const c of d.comparisons||[]){
+  expect(str(c.id)&&!comparisonIds.has(c.id),`${c.id}: comparison id must be unique`);comparisonIds.add(c.id);
+  expect(ids.applications.has(c.application_id)&&!comparisonApps.has(c.application_id),`${c.id}: one comparison per known application`);comparisonApps.add(c.application_id);
+  expect(str(c.title)&&str(c.scope)&&/^\d{4}-\d{2}-\d{2}$/.test(c.updated_on),`${c.id}: comparison scope/date required`);
+  const fields=c.fields||[],entries=c.entries||[],keys=fields.map(f=>f.id);
+  expect(fields.length>0&&new Set(keys).size===keys.length,`${c.id}: unique comparison fields required`);
+  for(const f of fields){expect(str(f.id)&&str(f.label),`${c.id}: comparison field labels required`);for(const mid of f.metric_ids||[])expect(d.applications.find(a=>a.id===c.application_id)?.metric_ids.includes(mid),`${c.id}: comparison metric outside application`)}
+  expect(entries.length>=2&&new Set(entries.map(e=>e.record_id)).size===entries.length,`${c.id}: comparison needs distinct records`);
+  for(const e of entries){
+   const r=d.benchmarks.find(r=>r.id===e.record_id);
+   expect(Boolean(r)&&r.application_id===c.application_id,`${c.id}: comparison record outside application`);
+   expect(str(e.study_id)&&str(e.label)&&str(e.task),`${c.id}: comparison study/task required`);
+   expect(Object.keys(e.cells||{}).length===keys.length&&keys.every(k=>Object.hasOwn(e.cells||{},k)),`${c.id}: comparison must retain all condition fields`);
+   for(const [key,cell] of Object.entries(e.cells||{})){
+    expect(str(cell.note)&&Array.isArray(cell.parameter_names),`${c.id}/${key}: comparison note and references required`);
+    expect(!Object.hasOwn(cell,'value'),`${c.id}/${key}: comparison values must come from record`);
+    expect(new Set(cell.parameter_names||[]).size===(cell.parameter_names||[]).length,`${c.id}/${key}: duplicate comparison parameter`);
+    for(const name of cell.parameter_names||[]){const matches=r?.parameters.filter(p=>p.name===name)||[];expect(matches.length===1&&str(matches[0].evidence?.location),`${c.id}/${key}: comparison parameter must resolve unambiguously with evidence`)}
+   }
+  }
+ }
  if(errors.length)throw new Error(errors.join('\n'));return {applications:d.applications.length,metrics:d.metrics.length,sources:d.sources.length,benchmarks:d.benchmarks.length,ranked_applications:d.applications.filter(a=>a.priorities.length).length,bests:d.bests.length};
 }
 // Missing comparison conditions are not wildcards; uncertainty must block automatic ordering.

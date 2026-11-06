@@ -75,10 +75,10 @@ test('application ranking status cannot mislabel its evidence',()=>{
 
 test('low-NA computational microscopy separates raw imaging from FP reconstruction',()=>{
  const d=load(),r=d.benchmarks.find(b=>b.id==='chu_meta_fp_usaf');
- assert.equal(r.source_ids.length,1);assert.equal(r.parameters.length,9);
+ assert.equal(r.source_ids.length,3);assert.equal(r.parameters.length,12);
  assert.deepEqual(r.parameters.filter(p=>p.metric_id==='resolution').map(p=>p.value),['7.81 μm（USAF G6-1）','3.91 μm（USAF G7-1）']);
  for(const word of ['0.75 s','60 s','3 s内','20–41%'])assert.ok(r.parameters.some(p=>p.value.includes(word)));
- assert.ok(r.parameters.every(p=>p.evidence.source_id==='chu_meta_fp_2025'&&p.evidence.location.startsWith('§2 Results')));
+ assert.ok(r.parameters.slice(0,9).every(p=>p.evidence.source_id==='chu_meta_fp_pmc_2025'&&p.evidence.location.startsWith('§2 Results')));
  for(const text of ['81角度','不是PSF FWHM','不是两个独立样本','RCNN单帧预测不属于'])assert.ok(r.conditions.includes(text));
  assert.ok(r.unreported_or_not_verified.includes('不由直径/焦距反算成实测NA'));
  assert.ok(!r.parameters.some(p=>p.metric_id==='na'));
@@ -452,4 +452,24 @@ test('MLA centroid evidence separates model and experimental references and reta
  const m=d.metrics.find(x=>x.id==='centroid_variance_ratio');
  assert.match(m.definition,/标准差比是√R/);assert.match(m.definition,/两种分母不同/);
  assert.equal(d.applications.find(x=>x.id==='app_14').ranking_status,'not_established');
+});
+
+test('comparison references reject stale parameters, cross-application rows and hidden fields',()=>{
+ for(const [mutate,pattern] of [
+  [d=>d.comparisons[0].entries[0].cells.na.parameter_names=['renamed NA'],/must resolve unambiguously/],
+  [d=>d.comparisons[0].entries[0].record_id='rouquette_mla_bench_2026',/record outside application/],
+  [d=>delete d.comparisons[0].entries[0].cells.efficiency,/retain all condition fields/],
+  [d=>d.comparisons[0].entries[0].cells.na.value='0.9',/values must come from record/],
+  [d=>d.comparisons[0].entries.push(d.comparisons[0].entries[0]),/distinct records/],
+  [d=>d.comparisons[0].entries[0].study_id='',/study\/task required/]
+ ]){const d=load();mutate(d);assert.throws(()=>validate(d),pattern)}
+});
+test('low-NA comparison preserves study identity and new SI contradictions',()=>{
+ const d=load(),c=d.comparisons[0],r=d.benchmarks.find(r=>r.id==='chu_meta_fp_usaf');
+ assert.equal(c.entries.length,6);assert.equal(new Set(c.entries.map(e=>e.study_id)).size,5);
+ assert.equal(c.entries.find(e=>e.record_id==='wang_low_na_achromat').study_id,c.entries.find(e=>e.record_id==='wang_upconversion_scan_2021').study_id);
+ assert.match(r.parameters.find(p=>p.name==='SI采集时间（与主文冲突）').value,/4 s.*60 s.*未解释/);
+ assert.match(r.parameters.find(p=>p.name==='SI缩小模型聚焦效率').value,/80%.*模拟.*不是.*实测/);
+ assert.equal(d.sources.find(s=>s.id==='balli_3d_2021').checked_on,'2026-11-06');
+ assert.equal(d.bests.length,2);
 });
