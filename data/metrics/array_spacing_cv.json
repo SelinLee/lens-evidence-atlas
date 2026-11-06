@@ -1,0 +1,20 @@
+{
+  "id": "array_spacing_cv",
+  "name": "阵列焦斑间距变异系数",
+  "english_name": "Coefficient of variation of array spot spacing",
+  "definition": "指定方向上相邻焦斑质心间距d的标准差与平均间距之比；以百分数表示时CV=100×SD(d)/mean(d)。Zhao 2025 §3.2采用这一比值描述空间间距一致性。须声明SD的总体/样本估计口径；若选择样本SD，则s=√[Σ(dᵢ−d̄)²/(n−1)]。本库复算明确采用该样本口径，不声称原文指定了n−1。不是强度均匀性、焦距一致性、几何填充率或串扰；零平均值时不定义。",
+  "unit": "%",
+  "direction": "lower",
+  "required_conditions": [
+    "间距测量对象、方向与衍射级次",
+    "样本数、位置选择和空间采样范围",
+    "标准差估计口径与平均值",
+    "照明波长、输入角度和成像几何",
+    "质心提取、背景与像素标定方法"
+  ],
+  "definition_refs": [
+    "zhao_mlag_2025"
+  ],
+  "best_interpretation": "仅在相同质心间距协议下比较空间一致性；低CV不自动证明高光效或低串扰。原文报告值与表内可复算数据不一致时并列保留，不能用于本库最优排名。",
+  "updated_on": "2026-11-06"
+}

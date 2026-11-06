@@ -82,3 +82,22 @@ test('Airy illumination widths stay separate from model FOV and independent samp
  assert.equal(d.applications.find(a=>a.id==='app_25').ranking_status,'editorial_synthesis');
  assert.ok(validate(d).benchmarks>=68);
 });
+
+test('MLAG spot-spacing CV preserves printed observations and reported disagreement',()=>{
+ const d=load(),r=d.benchmarks.find(r=>r.id==='zhao_mlag_spacing'),m=d.metrics.find(m=>m.id==='array_spacing_cv');
+ assert.equal(r.source_ids.length,1);assert.equal(r.parameters.length,7);
+ assert.deepEqual(r.parameters[3].value.match(/\d+/g).map(Number),[564,577,573,576,584,575]);
+ assert.deepEqual(r.parameters[4].value.match(/\d+/g).map(Number),[563,574,576,568,580,573]);
+ assert.equal(r.parameters[0].value,'1.25%（与六行表值复算不一致）');assert.equal(r.parameters[1].value,'1.11%（与六行表值复算不一致）');
+ const cv=a=>{const mean=a.reduce((s,v)=>s+v,0)/a.length;return 100*Math.sqrt(a.reduce((s,v)=>s+(v-mean)**2,0)/(a.length-1))/mean};
+ for(const [index,expected] of [[3,1.1296468390129404],[4,1.0522157055921924]]){
+  const a=r.parameters[index].value.match(/\d+/g).map(Number);assert.equal(a.length,6);assert.ok(Math.abs(cv(a)-expected)<1e-10);
+  assert.ok(r.parameters[index+2].value.startsWith(expected.toFixed(5)+'%'));
+ }
+ assert.equal(r.parameters.filter(p=>p.metric_id===m.id).length,4);
+ for(const w of ['蓝绿复合','未明数值波长','总体SD','不是六个独立来源'])assert.ok(r.conditions.includes(w));
+ for(const w of ['638 nm','660/520/450 nm','置信区间','方差0.09','理论2070'])assert.ok(r.unreported_or_not_verified.includes(w));
+ assert.ok(m.definition.includes('不是强度均匀性'));assert.ok(m.definition.includes('不声称原文指定了n−1'));
+ assert.ok(!d.bests.some(b=>b.cohort_record_ids?.includes(r.id)));
+ assert.equal(d.applications.find(a=>a.id==='app_14').ranking_status,'editorial_synthesis');
+});
