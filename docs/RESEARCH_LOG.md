@@ -368,3 +368,7 @@ ef84c19`；源提交与发布一致，保持owner-only访问。EVD-004d子任务
 - **重要限制**：状态量不等于质量分数；Li的效率分母、偏振误差范数待SI核验；0.9199是图像距离；防伪小样例不证明错误率或认证。模拟MTF、壳厚与TTL、处理时间与成像fps、三Stokes与S3均分开；同厂商不计独立团队。
 - **交付状态**：数据与笔记已准备，测试/页面及PR/Pages验收记录待追加。父EVD-009继续进行；下一步补照明及独立PAD协议，不能以本批关闭父任务。
 - **本地验收**：59项测试、构建及diff检查通过。独立Google Chrome无头在本地dist完成桌面1440 px/手机390 px查询1/0/1/33、三定义、三来源、11参数样本及旧模块/三通道记录弹窗、排名筛选和原重点样本保留检查；截图实际查看，无横向溢出。候选数据SHA256为53eb3e283faeea4b7ef85e700db78fcc31f0fb81fbfb7763d750ec7454abed87。仍待PR和实际公开页面验收。
+
+- **实际发布**：PR #35最终头cba90d324f912144c55fa86fe312ab8cfad045dd的CI42237461915成功，合并ef523144a1dca6a3d8629bd0185887984cefc50f。主线CI42237563651与Pages42237563644成功；公开build.json实际v0.1.22，SHA256与本地53eb3e283faeea4b7ef85e700db78fcc31f0fb81fbfb7763d750ec7454abed87一致。独立Chrome无头重复线上桌面/390 px查询、三定义/三来源、两新记录与旧模块弹窗、排名及旧重点记录验收；截图已看，无横向溢出。关闭009a，父009继续。
+- **可恢复入口**：Europe PMC主文XML https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12551697/fullTextXML 已成功获取，列有sciadv.adx9886_sm.pdf，但本轮仍未取得SI内容。009b可从Europe PMC合法补充材料入口继续，不反复撞Science/PMC同一检查页。没有据XML文件名提升SI读取边界。
+- **下阶段线索（仅检索，未读）**：NETD候选原始文章[Metrological characterization and calibration of thermographic cameras for quantitative temperature measurement](https://jsss.copernicus.org/articles/9/425/2020/jsss-9-425-2020.html)；实验候选[Measurement and Analysis of the Parameters of Modern Long-Range Thermal Imaging Cameras](https://www.mdpi.com/1424-8220/21/17/5700)。后续读方法/公式/实验图再决定收录。标准目录搜索还命中IEC TS63144-1及ASTM E1543不同版次，现行状态和条款均未核，不写成标准要求。没有采用搜索结果中的消费评测“好/最好”mK档位。
