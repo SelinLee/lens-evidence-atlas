@@ -38,3 +38,9 @@ Table13把30°C行也标为Water-heat-pipe cavity radiator，但Table1给其范�
 ## 下一步落库方向
 
 补NETD与SSE两个指标、一个同研究三相机记录、一个原始来源；用厂商参数/NETD实验/SSE估读/不确定度估计分别标注。app10保留旧LightPath需求示例与Ophir产品，不刷新旧核验日期。给“辐射测温”任务的并列权衡，保持无统一名次与无全行业mK门槛。补实际光学通量、时间带宽和目标温度是后续可比性条件；不把本研究当世界最佳或多个独立团队。
+
+## 商业配置补充入口（本轮已读原厂HTML，尚未落库）
+
+[FLIR A700 24° f/1.0 Professional Science Kit](https://support.flir.com/dsdownload/assets/85903-0102-en-us.html)，P/N85903-0102，Rev.98866，页面Last modified2024-08-21。已读取原厂Imaging and optical data、Detector data、Measurement表。NETD<25 mK，24°、目标+30°C；640×480、30 Hz、7.5–14 μm非制冷微测辐射热计、12 μm像元；18 mm、24°×18°、IFOV0.65 mrad/pixel。标题称f/1.0但规格f-number行写1.04，应分别保留，不能悄悄改成完全一致。
+
+最低调焦距离0.3 m（24° f/1.0镜头），MSX要求0.5 m；后者不能代替纯IR调焦距离。环境15–35°C，−20–120°C量程内−20–100°C准确度±2°C、100–120°C为±2%；其他量程另列，不拼成一条无条件精度。未给覆盖因子/置信区间，不能把accuracy当k=2扩展不确定度。NETD采样/处理带宽、积分时间、样本分布与实验误差仍未完整报告；只是该配置厂商声明，不是实测或行业门槛。仅同为30°C还不足以与PTB匿名相机排名（波段/镜头/带宽/方法均不齐）。
