@@ -305,3 +305,11 @@ ef84c19`；源提交与发布一致，保持owner-only访问。EVD-004d子任务
 - **落库**：app_14/app_22旧P1/P2撤下，改为具体任务、原文位置、适用条件及可点击来源；未增加最佳或样本。候选v0.1.18：33应用/24指标/72记录/96来源，3类编辑层次+1类作者限定比较，2项限定最佳解释。所有benchmark和scoped_bests文件与基线一致。
 - **验证**：52项测试、构建、diff检查通过；独立本机Google Chrome无头，本地dist桌面及390 px视口完成来源打开/关闭、搜索/空结果/清空、排名筛选及已有MLAG/LEOF记录检查。截图实际查看，无横向溢出。源码版本与本地候选一致；此处尚未宣称上线。
 - **交付/下一步**：推送本批PR，核对最终头CI并合并，确认Pages成功与实际HTTPS内容。EVD-010c完成后转EVD-005/006，建立缺陷检测与尺寸测量的子任务证据；第一批各父任务仍有明确缺口，保持开放。
+
+- **合并验收**：PR [#27](https://github.com/SelinLee/lens-evidence-atlas/pull/27)最终头9156b7d53e44557aedc580c0f620ca2ee9acf31f，CI运行42227191911成功；合并为a91a08db89d436f22c03714084af11393222d4b6，主线CI42227252547成功。Pages运行42227252561构建通过并继续部署，未重启。
+
+- **下批检索线索（未核全文，不入数据）**：检索telecentric calibration / measurement uncertainty与machine vision MTF defect detection，发现原始研究入口[Yao & Liu 2016](https://journals.sagepub.com/doi/10.5772/63825)、[2019 telecentricity error compensation](https://www.sciencedirect.com/science/article/pii/S0263224119306797)，以及原厂书章[Schneider optical measurement](https://schneiderkreuznach.com/application/files/9715/0781/8897/optical-measurement.pdf)。当前仅搜索结果，不能据其摘要给数值/排序；下批先取原文并复核图表。MTF检索混入非缺陷检测任务，尚未确定合格任务样本。
+
+- **远心下一批预读增量（不算本批科学落库）**：已从上列Schneider原厂URL取得61页PDF，署名Dr. Karl Lenhardt；PDF创建元数据2005/修改2013，尚不据此断言出版年。提取首章及§5.1.1–5.1.2，实际渲染查看PDF p.42：Eq.(1)为y=y′/β，Eq.(2)有绝对值竖线，表示一阶误差幅度相加，不能把漏竖线的文本提取误作带符号微分，也不能当独立随机误差的RSS合成标准不确定度。当前页面仍为有限投影中心的线性/暂不含畸变模型；后续须读§5.2远心分支及测量条件，再决定进入定义或任务依据。文件保留在本机/tmp/schneider-optical-measurement.pdf和同名.txt，截图/tmp/schneider-p42.png；未上传原文，不把这份原厂教材替代要求的独立研究样本。
+
+- **发布完成**：Pages运行[42227252561](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/42227252561)成功；实际HTTPS为v0.1.18，数据SHA256 `7ba9cea6ca5612d851404197ca08b5c682f64a2c915a497ea13a4bfc6469357d`与本地dist一致。独立Chrome无头在实际网站重复本批桌面/390 px查询、无结果、清空、引用弹窗、排名过滤及旧记录保留检查，全部通过，截图实际查看。EVD-010c记done，父任务未关闭。下批按EVD-005a/006a续接；原厂预读仅保留检查点，不把搜索线索当已入库证据。
