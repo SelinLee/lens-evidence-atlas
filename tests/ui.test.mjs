@@ -233,3 +233,14 @@ test('telecentric measurement task exposes source locations and non-interchangea
  f.el('rankedOnly').checked=true;f.run('renderList()');assert.ok(!f.el('appList').innerHTML.includes('data-app="app_03"'));
  f.el('rankedOnly').checked=false;f.el('search').value='Li 2015';f.run('renderList()');assert.equal(f.el('resultCount').textContent,'1 / 33 类应用');
 });
+
+test('machine vision separates defect visibility from dimensional measurement and preserves source boundaries',()=>{
+ const f=fixture();f.location.hash='#app_02/priority';f.run('route()');
+ for(const word of ['缺陷可见性任务','尺寸测量任务','漏检率','data-source="ma_defect_gamma_2026"','data-source="li_telecentric_2015"'])assert.ok(f.el('panel').innerHTML.includes(word),word);
+ assert.ok(!f.el('panel').innerHTML.includes('class="tier"'));
+ f.run("openMetric('defect_separability')");for(const word of ['Eq.(14)','ε在根号内','不是检测概率','10.3390/s26072032'])assert.ok(f.el('detailBody').innerHTML.includes(word),word);
+ f.run("openDialog('test',recordCard(records.get('ma_gamma_defect_visibility'),true))");
+ for(const word of ['0.986 → 1.001','1.392 → 1.447','1.062 → 1.082','8000 μs','D120','249 fps','&gt;255','未校正基线','置信区间'])assert.ok(f.el('detailBody').innerHTML.includes(word),word);
+ for(const q of ['Ma 2026','unmatched_gamma_987','Ma 2026','']){f.el('search').value=q;f.run('renderList()');assert.equal(f.el('resultCount').textContent,q==='unmatched_gamma_987'?'0 / 33 类应用':q?'1 / 33 类应用':'33 / 33 类应用');}
+ f.location.hash='#app_02/best';f.run('route()');for(const id of ['machine_hp','machine_m12','ma_gamma_defect_visibility'])assert.ok(f.el('panel').innerHTML.includes('data-record="'+id+'"'));
+});

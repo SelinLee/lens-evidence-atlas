@@ -2,22 +2,29 @@
   "id": "app_02",
   "name": "工业与机器视觉",
   "category": "工业与感知",
-  "summary": "M12示例MTF20频率54–81 lp/mm；高性能HP像圈17.6 mm",
+  "summary": "商业MTF规格与高反射金属缺陷图像实验分开；查询曝光/γ校正、统计可分性与尺寸误差的不同评价口径，未建立统一合格阈值。",
   "metric_ids": [
     "mtf",
     "distortion",
     "working_distance",
-    "fov"
+    "fov",
+    "defect_separability",
+    "dimensional_measurement_error"
   ],
   "priorities": [],
   "ranking_status": "not_established",
-  "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
+  "ranking_gap": "缺陷可见性任务：Ma 2026 §4.5–4.6/Figs.5–6/Tables 1–3对高反射金属的固定区域比较γ校正前后图像。均值对比度与背景归一化响应可以下降，而Vsep略升；作者在该非线性图像分析任务中更倾向用包含两区域波动的Vsep。该证据支持同时核对区域均值、波动、掩膜和处理通道，不能直接推出漏检率改善或行业阈值。§3.6/§4.3讨论系统频率传递与投影密度/曝光的联系，未给实测镜头MTF曲线，也未求最佳投影频率。尺寸测量任务：Li 2015 §4分别比较重投影残差、已知长度/位移及拟合平面残差（样本见远心精密测量页），不能拿一种残差代替整机尺寸准确度。上述任务使用不同输出；MTF、畸变、WD与FOV的综合顺序仍需具体缺陷尺度、容差、照明及检测验证，不建立统一P1/P2。",
   "metric_mapping_status": "editorial_candidate_set",
   "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
   "legacy_priority_proposal": "指定物距/光圈/场点/像方频率的MTF、畸变、照明、稳定性",
   "record_ids": [
     "machine_hp",
-    "machine_m12"
+    "machine_m12",
+    "ma_gamma_defect_visibility"
   ],
-  "updated_on": "2026-11-06"
+  "updated_on": "2026-11-06",
+  "ranking_gap_refs": [
+    "ma_defect_gamma_2026",
+    "li_telecentric_2015"
+  ]
 }
