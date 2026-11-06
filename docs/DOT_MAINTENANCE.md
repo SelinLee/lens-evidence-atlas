@@ -1,5 +1,7 @@
 # Dot 维护任务说明
 
+> 2026-11-06托管调整：用户要求改用GitHub，停止Sites发布。GitHub Pages方案已准备，网页可见性待确认；见[迁移状态](GITHUB_PAGES_MIGRATION.md)。历史Sites地址不代表新的发布目标。
+
 这是交给 Dot 的可复用维护 prompt，依据用户已确认的研究范围保存。保存本文件不代表已启动 Dot、定时任务或后台研究。
 
 开始或续接时，先阅读本说明，再打开 [证据补齐任务清单](EVIDENCE_BACKLOG.md) 和 [研究日志与检查点](RESEARCH_LOG.md)。任务状态只在清单中维护；日志记录每批证据、检索路径和交接。本说明下方保留原 prompt 的任务要求。

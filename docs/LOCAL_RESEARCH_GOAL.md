@@ -1,5 +1,7 @@
 # 本机研究维护目标
 
+> 2026-11-06托管调整：用户要求改用GitHub，停止Sites发布。GitHub Pages方案已准备，网页可见性待确认；见[迁移状态](GITHUB_PAGES_MIGRATION.md)。历史Sites地址不代表新的发布目标。
+
 建立日期：2026-11-06；执行者：本机 Codex。与 Dot 共用 [维护说明](DOT_MAINTENANCE.md)、[任务清单](EVIDENCE_BACKLOG.md) 和 [研究日志](RESEARCH_LOG.md)，不另建一套竞争的任务状态。
 
 ## 目标及范围

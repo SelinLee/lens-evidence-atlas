@@ -1,5 +1,7 @@
 # Lens Evidence Atlas · 透镜评价证据库
 
+> 2026-11-06托管调整：用户要求改用GitHub，停止Sites发布。GitHub Pages方案已准备，网页可见性待确认；见[迁移状态](docs/GITHUB_PAGES_MIGRATION.md)。历史Sites地址不代表新的发布目标。
+
 按应用查询透镜指标的定义、重要性依据与性能参考。仓库与在线站点目前均按**私有**管理。
 
 - [私有查询网页](https://lens-evidence-atlas.tasty-pixie-6380.chatgpt.site)
