@@ -1,0 +1,75 @@
+{
+  "id": "chu_meta_fp_usaf",
+  "application_id": "app_04",
+  "application": "显微镜物镜",
+  "name": "Chu 2025 低NA双超透镜显微系统（meta-FP，USAF靶）",
+  "evidence_type": "科研实验示例（原图与迭代计算重建，系统级）",
+  "source_ids": [
+    "chu_meta_fp_2025"
+  ],
+  "parameters": [
+    {
+      "name": "照明中心波长",
+      "value": "532 nm",
+      "evidence": {
+        "source_id": "chu_meta_fp_2025",
+        "location": "§2 Results，Fig.1前首段：LDLS滤光设置"
+      }
+    },
+    {
+      "name": "双超透镜4-f几何",
+      "value": "第一片：焦距13 mm、直径2.6 mm；第二片：焦距50 mm、直径5.2 mm",
+      "evidence": {
+        "source_id": "chu_meta_fp_2025",
+        "location": "§2 Results，Fig.1后首段：4-f系统"
+      }
+    },
+    {
+      "name": "报告系统倍率",
+      "value": "约4×",
+      "evidence": {
+        "source_id": "chu_meta_fp_2025",
+        "location": "§2 Results，Fig.1后首段：4-f系统"
+      }
+    },
+    {
+      "name": "传感器像元",
+      "value": "1.75 × 1.75 μm（像方）",
+      "evidence": {
+        "source_id": "chu_meta_fp_2025",
+        "location": "§2 Results，Fig.1后第二段：CMOS传感器"
+      }
+    },
+    {
+      "name": "迭代FP输入",
+      "value": "9 × 9 = 81个照明角度",
+      "evidence": {
+        "source_id": "chu_meta_fp_2025",
+        "location": "§2 Results，Fig.1前：TFT中心像素阵列"
+      }
+    },
+    {
+      "name": "中央照明原图可辨细节",
+      "value": "7.81 μm（USAF G6-1）",
+      "metric_id": "resolution",
+      "evidence": {
+        "source_id": "chu_meta_fp_2025",
+        "location": "§2 Results，Fig.2讨论末段：smallest resolvable features"
+      }
+    },
+    {
+      "name": "多角度FP重建可辨细节",
+      "value": "3.91 μm（USAF G7-1）",
+      "metric_id": "resolution",
+      "evidence": {
+        "source_id": "chu_meta_fp_2025",
+        "location": "§2 Results，Fig.2讨论末段：smallest resolvable features"
+      }
+    }
+  ],
+  "conditions": "532 nm滤光照明、双超透镜4-f成像。7.81 μm对应中央照明原图，3.91 μm对应81角度采集后的迭代FP重建；作者以USAF可辨元素表述，属于靶标细节尺度，不是PSF FWHM或统一MTF阈值。两结果是同一系统、同一论文的处理前后对照，不是两个独立样本。本文称原系统为低NA，本库不据此定义统一NA界线，也不把重建分辨率归因于单片裸透镜。RCNN单帧预测不属于本条结果。",
+  "unreported_or_not_verified": "数值物方NA及瞳匹配后的有效孔径未直接核验，不由直径/焦距反算成实测NA；滤光带宽、实验偏振、靶标所在介质、实际视场、全视场MTF、分辨率判读阈值、重复次数和不确定性、SI算法/聚焦表征与原始图像未核验。不能与Wang近红外元件聚焦效率或传统物镜NA直接排名。",
+  "record_status": "checked_excerpt",
+  "claim_type": "representative_result",
+  "checked_on": "2026-11-06"
+}

@@ -49,3 +49,15 @@ test('TECF combined experiment does not become a single-axis tolerance or model'
  assert.ok(!b.parameters.some(p=>/NA|焦距/.test(p.name)));
  assert.ok(!d.bests.some(x=>x.cohort_record_ids?.includes(b.id)));
 });
+
+test('low-NA computational microscopy separates raw imaging from FP reconstruction',()=>{
+ const d=load(),r=d.benchmarks.find(b=>b.id==='chu_meta_fp_usaf');
+ assert.equal(r.source_ids.length,1);assert.equal(r.parameters.length,7);
+ assert.deepEqual(r.parameters.filter(p=>p.metric_id==='resolution').map(p=>p.value),['7.81 μm（USAF G6-1）','3.91 μm（USAF G7-1）']);
+ assert.ok(r.parameters.every(p=>p.evidence.source_id==='chu_meta_fp_2025'&&p.evidence.location.startsWith('§2 Results')));
+ for(const text of ['81角度','不是PSF FWHM','不是两个独立样本','RCNN单帧预测不属于'])assert.ok(r.conditions.includes(text));
+ assert.ok(r.unreported_or_not_verified.includes('不由直径/焦距反算成实测NA'));
+ assert.ok(!r.parameters.some(p=>p.metric_id==='na'));
+ assert.ok(!d.bests.some(b=>b.cohort_record_ids?.includes(r.id)));
+ assert.ok(d.metrics.find(m=>m.id==='resolution').definition_refs.includes('chu_meta_fp_2025'));
+});
