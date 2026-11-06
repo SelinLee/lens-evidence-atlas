@@ -1,0 +1,21 @@
+{
+  "id": "array_focal_length_cv",
+  "name": "阵列焦距变异系数",
+  "english_name": "Coefficient of Variation of Lenslet Focal Length",
+  "definition": "对同一协议下、正均值的阵列单元焦距f_i，采用样本标准差s_f=√[Σ(f_i−f̄)²/(n−1)]时，CV=100s_f/f̄（%），n>1。NIST给出一般样本CV定义；将其用于朱等20个单元的表内测量值是本库编辑计算，原论文没有报告该CV。它描述已测数值的相对离散，不是单元测量不确定度、设计值偏差、质心间距CV或跨批次良率。均值为零不定义；接近零、不同符号或不同参考面的焦距不能混池比较。测量噪声、共同偏差和选择范围尚未厘清时，不据CV推断真实制造一致性。",
+  "unit": "%",
+  "direction": "lower",
+  "required_conditions": [
+    "正均值焦距、同一参考面/波长/介质",
+    "单元数、位置选择与全阵列/局部范围",
+    "样本或总体SD口径、异常值与舍入",
+    "重复测量噪声、相关性与校准偏差",
+    "同一制造批次及设计目标"
+  ],
+  "definition_refs": [
+    "nist_cv_2017",
+    "zhu_mla_focal_2013"
+  ],
+  "best_interpretation": "同条件下较低CV仅说明表内数值离散较小；不能用它证明所有单元达到设计焦距，也不能直接把观测方差减去未知噪声方差。",
+  "updated_on": "2026-11-07"
+}

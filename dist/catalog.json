@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.28",
+    "version": "0.1.29",
     "updated_on": "2026-11-07",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -569,7 +569,7 @@
       "id": "app_14",
       "name": "微透镜阵列与光场",
       "category": "激光与科研",
-      "summary": "收录阵列制造、间距统计、多通道与计算成像实验；区分填充率、串扰、扫描视场、重建分辨率与处理时间。公开CV/CT口径冲突及算法限制，尚不构成同条件排行榜。",
+      "summary": "收录阵列制造、焦距标定、多通道与计算成像实验；区分焦距/间距离散、测量不确定度、串扰及重建性能。原文口径冲突与复算边界可查，尚不构成同条件排行榜。",
       "metric_ids": [
         "focus_efficiency",
         "chromatic_shift",
@@ -583,11 +583,14 @@
         "working_distance",
         "resolution",
         "reconstruction_time",
-        "usable_depth_range"
+        "usable_depth_range",
+        "array_focal_length",
+        "array_focal_length_cv",
+        "measurement_uncertainty"
       ],
       "priorities": [],
       "ranking_status": "not_established",
-      "ranking_gap": "任务一：Richards 2023印刷p.6“Individually tuning…”及p.7 Fig.5讨论该材料与打印工艺下的单个消色差微透镜。提高NA时，聚焦效率下降、焦长误差通常增大；增加衍射环带还受到细结构打印精度限制，折射面调节是作者讨论的设计手段。它支持联合考察NA、效率、色差与可制备性，不能推出效率/色差统一高于NA或Strehl的P1/P2。任务二：pp.6–7“Imaging with an achromatic microlens array”及p.8 Fig.6展示18单元阵列的白光USAF成像；作者提出更小直径、较低NA、更密排列可能获得更多光场数据，这是后续设计建议，未在该示例中给出对照实测排序。单透镜效率不能替代整阵列效率、焦距一致性或串扰；这些阵列任务指标的定量权衡仍待补证。 任务三：Katopodis 2025 §2.1–2.2、§5.1–5.2与§6的明场多通道成像，用微孔减少通道串扰，但引入盲区，需扫描拼接补全；快速稀疏采样与完整视场采集应分别评价。串扰、有效覆盖、分辨率、工作距离、采集时间和装配稳定性需联合报告；作者承认速度受机械扫描和微孔振动影响。Eq.(4)与正文CT倒数冲突公开保留，只能支持本研究的条件权衡，不能推出这些指标的通用先后顺序。 任务四：Yang 2024作者v2 §3.2–3.3、SI§4.C与§8.C采用无隔板阵列加算法解复用，需要联合评价重建分辨率、场点对比度、轴向可用范围和计算成本。更多网络通道可提高质量但增加时间/内存，作者选9通道折中；这不是物理通道数的普适最优。推理时间不等于采集帧率；单次曝光复用重建与物理隔板/扫描拼接的结果不能不加条件互排。",
+      "ranking_gap": "任务一：Richards 2023印刷p.6“Individually tuning…”及p.7 Fig.5讨论该材料与打印工艺下的单个消色差微透镜。提高NA时，聚焦效率下降、焦长误差通常增大；增加衍射环带还受到细结构打印精度限制，折射面调节是作者讨论的设计手段。它支持联合考察NA、效率、色差与可制备性，不能推出效率/色差统一高于NA或Strehl的P1/P2。任务二：pp.6–7“Imaging with an achromatic microlens array”及p.8 Fig.6展示18单元阵列的白光USAF成像；作者提出更小直径、较低NA、更密排列可能获得更多光场数据，这是后续设计建议，未在该示例中给出对照实测排序。单透镜效率不能替代整阵列效率、焦距一致性或串扰；这些阵列任务指标的定量权衡仍待补证。 任务三：Katopodis 2025 §2.1–2.2、§5.1–5.2与§6的明场多通道成像，用微孔减少通道串扰，但引入盲区，需扫描拼接补全；快速稀疏采样与完整视场采集应分别评价。串扰、有效覆盖、分辨率、工作距离、采集时间和装配稳定性需联合报告；作者承认速度受机械扫描和微孔振动影响。Eq.(4)与正文CT倒数冲突公开保留，只能支持本研究的条件权衡，不能推出这些指标的通用先后顺序。 任务四：Yang 2024作者v2 §3.2–3.3、SI§4.C与§8.C采用无隔板阵列加算法解复用，需要联合评价重建分辨率、场点对比度、轴向可用范围和计算成本。更多网络通道可提高质量但增加时间/内存，作者选9通道折中；这不是物理通道数的普适最优。推理时间不等于采集帧率；单次曝光复用重建与物理隔板/扫描拼接的结果不能不加条件互排。 任务五：朱等2013 §1–4将焦距标定准确性和多单元检测效率作为测量目标；其20单元数据与预算提示必须分开焦距离散、测量不确定度和设计偏移。本库CV仅为表内描述，约3%为作者方法预算说明，不能转作制造一致性门槛。依据GUM需说明参考面、修正、相关性和覆盖因子，未建立三者的通用名次。",
       "metric_mapping_status": "editorial_candidate_set",
       "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
       "legacy_priority_proposal": "节距/填充率、焦距一致性、波前、串扰、色差、封装",
@@ -600,13 +603,16 @@
         "liu_mla_process_radius",
         "zhao_mlag_spacing",
         "katopodis_mla_crosstalk_2025",
-        "yang_svfourier_imaging_2024"
+        "yang_svfourier_imaging_2024",
+        "zhu_mla_focal_2013"
       ],
       "updated_on": "2026-11-07",
       "ranking_gap_refs": [
         "richards",
         "katopodis_dual_mode_2025",
-        "yang_svfourier_v2_2024"
+        "yang_svfourier_v2_2024",
+        "zhu_mla_focal_2013",
+        "jcgm100_2008"
       ]
     },
     {
@@ -1135,6 +1141,47 @@
       "updated_on": "2026-11-06"
     },
     {
+      "id": "array_focal_length",
+      "name": "阵列单元焦距（按参考面）",
+      "english_name": "Lenslet Focal Length with a Specified Reference Plane",
+      "definition": "对阵列中指定单元测量焦点位置，必须约定焦距起算面与入射波前。朱等2013 §2把平凸单元的f解释为顶点至焦点的轴向距离，按平面/球面波前的光斑位移求取并作离焦修正；本入口保留这一作者定义，不默认它等于从主平面起算的有效焦距EFL。Eq.(1)为f=z+Δf−Δh≈Ls/(d−s)+Δf，Δh为球面矢高，作者采用Δh≪z；不能将成像工作距离或单次球面照明的像距直接代入。该实验还存在印刷示例与结果表未消歧的问题，故公式展示不代表可直接复现全部数据。",
+      "unit": "mm / μm",
+      "direction": "target",
+      "required_conditions": [
+        "单元编号、参考面及焦距/后焦距约定",
+        "波长、介质与入射波前/共轭",
+        "单元孔径、节距、球面矢高与像差",
+        "焦点判据、离焦修正与标定几何",
+        "采样范围、重复测量与不确定度"
+      ],
+      "definition_refs": [
+        "zhu_mla_focal_2013"
+      ],
+      "best_interpretation": "按设计目标与测量口径比较；焦距更短或更长不自动更好。单元焦距值、单元间离散和测量不确定度分别报告。",
+      "updated_on": "2026-11-07"
+    },
+    {
+      "id": "array_focal_length_cv",
+      "name": "阵列焦距变异系数",
+      "english_name": "Coefficient of Variation of Lenslet Focal Length",
+      "definition": "对同一协议下、正均值的阵列单元焦距f_i，采用样本标准差s_f=√[Σ(f_i−f̄)²/(n−1)]时，CV=100s_f/f̄（%），n>1。NIST给出一般样本CV定义；将其用于朱等20个单元的表内测量值是本库编辑计算，原论文没有报告该CV。它描述已测数值的相对离散，不是单元测量不确定度、设计值偏差、质心间距CV或跨批次良率。均值为零不定义；接近零、不同符号或不同参考面的焦距不能混池比较。测量噪声、共同偏差和选择范围尚未厘清时，不据CV推断真实制造一致性。",
+      "unit": "%",
+      "direction": "lower",
+      "required_conditions": [
+        "正均值焦距、同一参考面/波长/介质",
+        "单元数、位置选择与全阵列/局部范围",
+        "样本或总体SD口径、异常值与舍入",
+        "重复测量噪声、相关性与校准偏差",
+        "同一制造批次及设计目标"
+      ],
+      "definition_refs": [
+        "nist_cv_2017",
+        "zhu_mla_focal_2013"
+      ],
+      "best_interpretation": "同条件下较低CV仅说明表内数值离散较小；不能用它证明所有单元达到设计焦距，也不能直接把观测方差减去未知噪声方差。",
+      "updated_on": "2026-11-07"
+    },
+    {
       "id": "array_spacing_cv",
       "name": "阵列焦斑间距变异系数",
       "english_name": "Coefficient of variation of array spot spacing",
@@ -1470,6 +1517,26 @@
       ],
       "best_interpretation": "没有跨应用统一最优值",
       "updated_on": "2026-11-06"
+    },
+    {
+      "id": "measurement_uncertainty",
+      "name": "测量不确定度",
+      "english_name": "Measurement Uncertainty (Standard / Expanded)",
+      "definition": "以标准差形式表达的标准不确定度u，与扩展不确定度U=k·u_c不同。GUM一阶传播在输入不相关时为u_c²=Σc_i²u_i²，c_i为灵敏系数；存在相关性时还须计入协方差项。必须注明被测量、模型、单位、标准/扩展口径、覆盖因子与依据。k=2并不无条件保证95%覆盖。它不等于已知误差、制造公差或不同器件的样本标准差；相对值还须说明分母，不能把未知项当零。",
+      "unit": "与被测量同单位；相对值须说明分母",
+      "direction": "lower",
+      "required_conditions": [
+        "被测量、参考面、模型与适用近似",
+        "各分量来源、标准不确定度及单位",
+        "灵敏系数、相关性和修正项",
+        "标准/扩展口径、k及覆盖概率依据",
+        "重复次数、自由度、校准与溯源"
+      ],
+      "definition_refs": [
+        "jcgm100_2008"
+      ],
+      "best_interpretation": "只在同被测量和同覆盖口径下比较；数值小不自动证明预算完整、校准正确或产品合格。",
+      "updated_on": "2026-11-07"
     },
     {
       "id": "mtf",
@@ -2179,6 +2246,18 @@
       "verification": "checked_excerpt"
     },
     {
+      "id": "jcgm100_2008",
+      "title": "JCGM 100:2008：测量不确定度表达指南（GUM，2010纠正版）",
+      "url": "https://www.bipm.org/en/doi/10.59161/jcgm100-2008e",
+      "source_year": 2008,
+      "kind": "standard",
+      "location": "§2.3.1–2.3.6、§5.1.2–5.1.3/Eq.(10)、§5.2.1–5.2.2/Eqs.(13)–(16)、§6.2–6.3/Eq.(18)",
+      "evidence_scope": "取得BIPM英文134页PDF（扉页标Corrected version 2010），读取上述定义及传播/覆盖部分，实际查看PDF pp.31/33/35/36（印刷pp.19/21/23/24）公式与假设。非全指南审核；这是表达和评估方法依据，不提供本应用的性能门槛或合规认证。",
+      "checked_on": "2026-11-07",
+      "verification": "checked_excerpt",
+      "doi": "10.59161/JCGM100-2008E"
+    },
+    {
       "id": "jovanovic_smf_2017",
       "title": "Jovanovic 等：Efficient injection from large telescopes into single-mode fibres: Enabling the era of ultra-precision astronomy",
       "url": "https://arxiv.org/pdf/1706.08821v2",
@@ -2537,6 +2616,17 @@
       "kind": "manufacturer",
       "verification": "inherited_v2",
       "doi": null
+    },
+    {
+      "id": "nist_cv_2017",
+      "title": "NIST Dataplot：Coefficient of Variation",
+      "url": "https://itl.nist.gov/div898/software/dataplot/refman2/auxillar/coefvari.htm",
+      "source_year": 2017,
+      "kind": "metrology_reference",
+      "location": "Description及Note；页面标注创建/更新2017-01-24",
+      "evidence_scope": "实际读取官方HTML的样本CV、比例尺度、近零均值限制及百分数RSD说明；用于统计定义，不是微透镜行业合格线，也不是新实验样本。未采用该页其他分布修正公式。",
+      "checked_on": "2026-11-07",
+      "verification": "checked_excerpt"
     },
     {
       "id": "oct",
@@ -3216,6 +3306,18 @@
       "evidence_scope": "本机独立Chrome无头从Nature原文页取得当前补充材料入口，直接读取并渲染核对上述页。首面更正通知明确2015-07-30更新Note 3与Fig.S7图注；0/0.6/1/1.25 cm表示视场直径标签。检查采样口径、137方向频谱图、离焦线剖面与四个场位置图；未复现原始图像、算法、整场MTF或置信区间。Note 3的0.78 μm采样限和0.23 billion SBP与所列参数直接代入结果未一致，保留未消歧；它与主文和勘误属于同一研究。",
       "checked_on": "2026-11-06",
       "verification": "checked_excerpt"
+    },
+    {
+      "id": "zhu_mla_focal_2013",
+      "title": "朱咸昌等（2013）：基于Hartmann-Shack波前检测原理的微透镜阵列焦距测量",
+      "url": "https://ope.lightpublishing.cn/en/article/doi/10.3788/OPE.20132105.1122/",
+      "source_year": 2013,
+      "kind": "paper",
+      "location": "光学精密工程21(5):1122–1128；§2–4/Eqs.(1)–(7)、Fig.1–3/5–6；p.1125焦距表与p.1127不确定度表均印作Table 1",
+      "evidence_scope": "取得出版方7页原始PDF，逐页查看pp.1122–1128并读取方法、实验及预算；文本字体编码损坏，数字依据渲染页人工核对。未复现原始图像/代码，未独立读取参考文献。p.1126正文U_s=2 μm与p.1127表中0.2 μm相差10倍；印刷示例参数代入焦距主项也不能直接对齐结果表，均保留而不擅自修正。两个Table 1以页码区分。2014同名作者论文未读，不计独立团队。",
+      "checked_on": "2026-11-07",
+      "verification": "checked_excerpt",
+      "doi": "10.3788/OPE.20132105.1122"
     }
   ],
   "benchmarks": [
@@ -7810,6 +7912,133 @@
       "record_status": "checked_excerpt",
       "claim_type": "representative_result",
       "checked_on": "2026-11-06"
+    },
+    {
+      "id": "zhu_mla_focal_2013",
+      "application": "微透镜阵列与光场",
+      "application_id": "app_14",
+      "name": "朱等2013：20单元焦距与测量预算",
+      "evidence_type": "原始实验报告；表内统计与冲突敏感性为本库复算",
+      "source_ids": [
+        "zhu_mla_focal_2013",
+        "nist_cv_2017",
+        "jcgm100_2008"
+      ],
+      "parameters": [
+        {
+          "name": "测量对象与设计值",
+          "value": "平凸微透镜阵列；设计焦距8.5 mm，标准双胶合透镜F=75 mm。一次视场为4行5列20个单元，不是20个独立器件或完整阵列验收。",
+          "evidence": {
+            "source_id": "zhu_mla_focal_2013",
+            "location": "§2–3/pp.1123–1125/Fig.1/3"
+          },
+          "metric_id": "array_focal_length"
+        },
+        {
+          "name": "光路与探测标定",
+          "value": "He-Ne光源、平行光管、标准双胶合透镜、4×显微物镜与CCD；标定尺度1 pixel=1.886 μm，不当作CCD物理像元。实验光源的数值波长未明确列出；§4.3.3的550 nm属于自准直目视调焦预算。",
+          "evidence": {
+            "source_id": "zhu_mla_focal_2013",
+            "location": "§3–4.3.3/pp.1124–1126"
+          }
+        },
+        {
+          "name": "焦点与位置估计",
+          "value": "图像梯度清晰度函数找峰、二次拟合；步进0.1 mm。平面/球面波前两组光斑配对，最小二乘定位标准透镜焦点后求各单元位移；多单元可同时分析，但完整流程包含轴向扫描及移入/移出标准透镜。",
+          "evidence": {
+            "source_id": "zhu_mla_focal_2013",
+            "location": "§3/Eqs.(3)–(5)/Fig.3；§4.3.1/Figs.5–6"
+          }
+        },
+        {
+          "name": "20个单元报告焦距（mm）",
+          "value": "8.40, 8.42, 8.26, 8.47, 8.45, 8.40, 8.38, 8.41, 8.43, 8.44, 8.43, 8.45, 8.48, 8.46, 8.44, 8.47, 8.44, 8.45, 8.47, 8.45",
+          "evidence": {
+            "source_id": "zhu_mla_focal_2013",
+            "location": "p.1125 Table 1，Number 1–20"
+          },
+          "metric_id": "array_focal_length"
+        },
+        {
+          "name": "表内均值与离散（本库复算）",
+          "value": "n=20；平均8.430 mm，样本SD=0.04801 mm，最小8.26、最大8.48 mm，极差0.22 mm。是按两位小数的发表值复算，不是作者原始高精度数据或测量不确定度。",
+          "evidence": {
+            "source_id": "zhu_mla_focal_2013",
+            "location": "p.1125 Table 1；本库按n−1样本口径复算"
+          }
+        },
+        {
+          "name": "焦距CV（本库复算）",
+          "value": "100×0.048013156/8.430≈0.5696%；仅描述这20个报告值，不能据此声称真实制造均匀性优于0.57%。",
+          "evidence": {
+            "source_id": "zhu_mla_focal_2013",
+            "location": "p.1125 Table 1；统计定义另见NIST CV Description"
+          },
+          "metric_id": "array_focal_length_cv"
+        },
+        {
+          "name": "相对设计值的平均偏移（本库复算）",
+          "value": "(8.430−8.5)/8.5×100≈−0.824%；设计值不是独立校准真值，故不能称测量偏差已验证为−0.824%。",
+          "evidence": {
+            "source_id": "zhu_mla_focal_2013",
+            "location": "§3设计焦距与p.1125 Table 1"
+          }
+        },
+        {
+          "name": "横向预算原文冲突",
+          "value": "§4.1给U_d=0.2 μm；§4.2正文给U_s=2 μm，但p.1127不确定度表使用U_s=0.2 μm，相差10倍。保留两处，不擅自判哪一处为笔误。",
+          "evidence": {
+            "source_id": "zhu_mla_focal_2013",
+            "location": "§4.1–4.2/pp.1125–1126及p.1127 Table 1"
+          }
+        },
+        {
+          "name": "轴向预算",
+          "value": "U_L1不超过0.1 mm步进，U_L2=3 μm，U_L3=1.45 μm；作者合成取U_L≈0.1 mm。步距/示值误差到标准不确定度的分布换算依据未充分给出。",
+          "evidence": {
+            "source_id": "zhu_mla_focal_2013",
+            "location": "§4.3.1–4.3.3/pp.1126–1127"
+          }
+        },
+        {
+          "name": "作者标准与扩展不确定度",
+          "value": "按表中0.2/0.2/100 μm输入，作者合成标准不确定度115.6 μm，k=2扩展为231.2 μm，并称测量精度约3%。231.2 μm相对设计8.5 mm约2.72%；不是焦距CV，也不是±3%制造公差。",
+          "evidence": {
+            "source_id": "zhu_mla_focal_2013",
+            "location": "p.1127不确定度Table 1、表后段及§5"
+          },
+          "metric_id": "measurement_uncertainty"
+        },
+        {
+          "name": "原文两种U_s的计算影响（本库复算）",
+          "value": "沿用Eq.(7)灵敏系数−168.28/484.61/0.532，U_s=0.2 μm时u_c≈115.6 μm；若仅将U_s换成正文2 μm，其余保持不变，则u_c≈971.3 μm、k=2时U≈1942.5 μm。后者只是冲突敏感性复算，非作者报告或新的实测。",
+          "evidence": {
+            "source_id": "zhu_mla_focal_2013",
+            "location": "Eq.(7)与p.1127 Table 1；§4.2冲突分支复算"
+          }
+        },
+        {
+          "name": "预算示例几何与焦距复现限制",
+          "value": "p.1127给d=87.37 μm、s=30.34 μm、L=18.04 mm。按印刷正数代入Eq.(1)主项Ls/(d−s)≈9.597 mm，已高于结果表8.26–8.48 mm；修正项符号/距离约定或样本对应尚未消歧，不擅自改表值。",
+          "evidence": {
+            "source_id": "zhu_mla_focal_2013",
+            "location": "§2/Eqs.(1)–(2)与§4.3.3/Eq.(7)"
+          }
+        },
+        {
+          "name": "相关性和覆盖解释",
+          "value": "论文RSS预算没有给d、s和L的协方差、有效自由度或覆盖概率验证。GUM规定显著相关项需纳入；因此本库不将k=2自动写成已验证95%区间，也不从预算直接扣除焦距表的离散。",
+          "evidence": {
+            "source_id": "jcgm100_2008",
+            "location": "JCGM100 §5.2/Eqs.(13)–(16)、§6.2–6.3"
+          }
+        }
+      ],
+      "conditions": "同一研究同一局部4×5视场。论文中的焦距参考面为平凸单元顶点，未默认转换为主平面EFL。焦距表与不确定度表都标Table 1，以印刷页1125和1127区分。标准/扩展不确定度、单元间SD/CV及设计值偏移各有不同分母与含义。CV保留8.26 mm这一原值，不擅自删异常点；原始图像、逐单元完整预算与误差相关性不可得，不作真实制造方差估计。",
+      "unreported_or_not_verified": "没有独立复现实验或原始图像处理；全阵列尺寸、单元口径/节距、材料、精确实验波长、温度、完整重复次数和逐单元协方差未知。正文U_s=2 μm与预算表0.2 μm冲突未解决；印刷几何例子也未复现结果表。Eq.(7)只展示主项灵敏度，离焦修正相关输入的完整传播未验证。Eq.(3)图像梯度离散表达与软件实现未核，不能宣称重现作者算法。Figs.5–6中的3组定焦展示不是20单元跨批次统计。没有制造公差/良率、同条件独立实验对照或通用合格线。",
+      "checked_on": "2026-11-07",
+      "record_status": "checked_excerpt",
+      "claim_type": "representative_result"
     }
   ]
 }
