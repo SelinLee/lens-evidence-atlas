@@ -110,8 +110,28 @@ test('light-sheet task tradeoffs show a source without fabricating P1/P2',()=>{
  f.run("tab='sources';render()");assert.ok(f.el('panel').innerHTML.includes('10.1038/s41467-022-32341-w'));
 });
 test('sectioning definition and measured lattice record keep experimental boundaries visible',()=>{
- const f=fixture();f.run("openMetric('optical_sectioning')");
+ const f=fixture();f.run("openMetric('optical_sectioning_width')");
  for(const text of ['63%','半宽','积分范围','不是系统PSF FWHM','Table S2'])assert.ok(f.el('detailBody').innerHTML.includes(text),text);
  f.run("openDialog('test',recordCard(records.get('shi_lattice_bead_psf'),true))");
  for(const text of ['887 / 1075 nm','537 / 559 nm','16.8 μm','不是三个独立来源','0.45/0.35','560 nm/n=1.3属于模拟'])assert.ok(f.el('detailBody').innerHTML.includes(text),text);
+});
+
+test('sectioning definition shows its energy conflict, integration protocol and source',()=>{
+ const f=fixture();f.location.hash='#app_25/metrics';f.run('route()');
+ assert.ok(f.el('panel').innerHTML.includes('光学切片含能量宽度'));
+ f.run("openMetric('optical_sectioning_width')");
+ for(const text of ['63%','67%','全宽/半宽','实测或模型','10.1364/BOE.11.000008','§3.1.1','未读到PDF页面','不建立最佳声明'])assert.ok(f.el('detailBody').innerHTML.includes(text),text);
+ assert.equal(f.el('detail').open,true);f.el('detail').close();assert.equal(f.el('detail').open,false);
+ f.run("openMetric('optical_sectioning_width')");assert.equal(f.el('detail').open,true);
+ f.location.hash='#app_25/sources';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('Remacha'));
+ f.location.hash='#app_25/priority';f.run('route()');assert.ok(!f.el('panel').innerHTML.includes('光学切片含能量宽度'));
+});
+test('sectioning search repeats and clears without converting older measurements',()=>{
+ const f=fixture();for(const query of ['含能量','Remacha','no_sectioning_match_987','含能量','']){
+  f.el('search').value=query;f.run('renderList()');
+  assert.equal(f.el('resultCount').textContent,query==='no_sectioning_match_987'?'0 / 33 类应用':query?'1 / 33 类应用':'33 / 33 类应用');
+ }
+ f.location.hash='#app_25/best';f.run('route()');
+ for(const text of ['Luo 2025','Battistella 2022','7.8 ± 1.3 μm'])assert.ok(f.el('panel').innerHTML.includes(text));
+ assert.ok(!f.el('panel').innerHTML.includes('Remacha'));
 });

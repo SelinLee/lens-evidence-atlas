@@ -94,7 +94,23 @@ test('lattice measured PSF and length do not import simulated widths or waveleng
  const d=load(),r=d.benchmarks.find(x=>x.id==='shi_lattice_bead_psf');
  assert.deepEqual(r.parameters.filter(p=>p.metric_id==='resolution').map(p=>p.value),['887 / 1075 nm','728 / 738 nm','537 / 559 nm']);
  assert.deepEqual(r.parameters.filter(p=>p.metric_id==='sheet_length').map(p=>p.value),['16.8 μm','18.0 μm','20.0 μm']);
- assert.equal(r.parameters.some(p=>p.metric_id==='sheet_thickness'||p.metric_id==='optical_sectioning'),false);
+ assert.equal(r.parameters.some(p=>p.metric_id==='sheet_thickness'||p.metric_id==='optical_sectioning_width'),false);
  assert.equal(r.parameters.some(p=>/560|580|605/.test(p.value)),false);
  assert.equal(d.bests.some(b=>b.application_id==='app_25'),false);
+});
+
+test('enclosed-energy sectioning stays distinct from peak width and measured records',()=>{
+ const d=load(),m=d.metrics.find(m=>m.id==='optical_sectioning_width'),a=d.applications.find(a=>a.id==='app_25');
+ assert.ok(a.metric_ids.includes(m.id));assert.equal(m.unit,'μm');assert.equal(m.direction,'lower');
+ assert.ok(m.definition_refs.includes('remacha_sectioning_2020'));assert.ok(m.definition_refs.includes('shi_lattice_2022'));
+ for(const text of ['63%','67%','不设通用阈值','不是主峰强度FWHM','系统轴向PSF'])assert.ok(m.definition.includes(text),text);
+ for(const text of ['包含能量比例及分母/积分范围','积分轴、区间选取及全宽/半宽','实测或模型、采样与背景处理'])assert.ok(m.required_conditions.includes(text));
+ assert.ok(d.metrics.find(m=>m.id==='sheet_thickness').definition.includes('1/e≈37%'));
+ const length=d.metrics.find(m=>m.id==='sheet_length');for(const text of ['两倍','√2','单侧/双侧'])assert.ok(length.definition.includes(text));
+ assert.equal(a.ranking_status,'not_established');assert.ok(!a.priorities.some(p=>p.metric_ids.includes(m.id)));
+ assert.ok(!d.bests.some(b=>b.application_id===a.id));
+ assert.ok(!d.benchmarks.some(b=>b.parameters.some(p=>p.metric_id===m.id)));
+ assert.equal(d.benchmarks.find(b=>b.id==='battistella_airy_profile').source_ids.length,1);
+ const source=d.sources.find(s=>s.id==='remacha_sectioning_2020');assert.equal(source.source_year,2020);
+ for(const text of ['未读到PDF页面','未复现作者代码','67%'])assert.ok(source.evidence_scope.includes(text));
 });
