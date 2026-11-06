@@ -50,10 +50,17 @@ test('TECF combined experiment does not become a single-axis tolerance or model'
  assert.ok(!d.bests.some(x=>x.cohort_record_ids?.includes(b.id)));
 });
 
+
+test('application ranking status cannot mislabel its evidence',()=>{
+ const d=load(),a=d.applications.find(a=>a.id==='app_04');a.ranking_status='editorial_synthesis';assert.throws(()=>validate(d),/ranking status must match/);
+ const e=load(),b=e.applications.find(a=>a.id==='app_04');b.priorities=[];assert.throws(()=>validate(e),/ranked application needs priorities/);
+});
+
 test('low-NA computational microscopy separates raw imaging from FP reconstruction',()=>{
  const d=load(),r=d.benchmarks.find(b=>b.id==='chu_meta_fp_usaf');
- assert.equal(r.source_ids.length,1);assert.equal(r.parameters.length,7);
+ assert.equal(r.source_ids.length,1);assert.equal(r.parameters.length,9);
  assert.deepEqual(r.parameters.filter(p=>p.metric_id==='resolution').map(p=>p.value),['7.81 μm（USAF G6-1）','3.91 μm（USAF G7-1）']);
+ for(const word of ['0.75 s','60 s','3 s内','20–41%'])assert.ok(r.parameters.some(p=>p.value.includes(word)));
  assert.ok(r.parameters.every(p=>p.evidence.source_id==='chu_meta_fp_2025'&&p.evidence.location.startsWith('§2 Results')));
  for(const text of ['81角度','不是PSF FWHM','不是两个独立样本','RCNN单帧预测不属于'])assert.ok(r.conditions.includes(text));
  assert.ok(r.unreported_or_not_verified.includes('不由直径/焦距反算成实测NA'));

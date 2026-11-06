@@ -1,0 +1,68 @@
+{
+  "application": "显微镜物镜",
+  "application_id": "app_04",
+  "checked_on": "2026-11-06",
+  "record_status": "checked_excerpt",
+  "claim_type": "representative_result",
+  "id": "wang_upconversion_scan_2021",
+  "name": "Yujie Wang 2021 NA0.24 上转换扫描成像（邻近NA对照）",
+  "evidence_type": "科研扫描成像实验＋作者分辨率估计",
+  "source_ids": [
+    "wang_low_na_2021",
+    "wang_low_na_2021_si"
+  ],
+  "parameters": [
+    {
+      "name": "超透镜NA",
+      "value": "0.24（不是NA0.1效率样品）",
+      "evidence": {
+        "source_id": "wang_low_na_2021",
+        "location": "主文Fig.5b图注，p.6"
+      },
+      "metric_id": "na"
+    },
+    {
+      "name": "激发波长",
+      "value": "980 nm连续波",
+      "evidence": {
+        "source_id": "wang_low_na_2021",
+        "location": "主文p.5右栏Fig.5对应实验段"
+      }
+    },
+    {
+      "name": "上转换发射",
+      "value": "中心655 nm，线宽20 nm（作者记法）",
+      "evidence": {
+        "source_id": "wang_low_na_2021",
+        "location": "主文p.5右栏Fig.5对应实验段"
+      }
+    },
+    {
+      "name": "作者分辨率估计",
+      "value": "约1.46 μm（依据PSF/发射波长衍射极限，非本库确认的直接标靶实测）",
+      "evidence": {
+        "source_id": "wang_low_na_2021",
+        "location": "主文p.5右栏；与Fig.3的USAF测试分开"
+      },
+      "metric_id": "resolution"
+    },
+    {
+      "name": "探测虚拟针孔",
+      "value": "1/3 Airy Unit；仅累计针孔内CCD计数",
+      "evidence": {
+        "source_id": "wang_low_na_2021_si",
+        "location": "Supplementary Note 7：CCD-1探测与virtual confocal pinhole"
+      }
+    },
+    {
+      "name": "扫描与成像共轭",
+      "value": "三维台逐点扫描；CCD-1与超透镜焦平面共轭",
+      "evidence": {
+        "source_id": "wang_low_na_2021_si",
+        "location": "Supplementary Note 7和Fig.9a；不是整幅一次曝光"
+      }
+    }
+  ],
+  "conditions": "NA0.24 TiO2超透镜激发并收集稀土纳米晶上转换信号；实验包括PS微球覆盖微片及含纳米晶HeLa细胞。50×中继物镜、250 mm双胶合透镜和100 mm透镜等组成探测链，翻转镜切换监视/共焦模块，像素计数经虚拟针孔筛选后扫描重建。作为NA0.1/0.106元件的邻近NA与成像模式对照，不据此定义全行业低NA范围。",
+  "unreported_or_not_verified": "完整扫描视场、步距、驻留/曝光、PSF拟合与误差、处理/背景扣除和检测校准未完整报告；1.46 μm的具体计算/实测分解未核实，不能当成MTF50或USAF线宽。655 nm线宽20 nm不自行改称FWHM。NA0.26商用对照仅是同文对照，非第二个独立团队。此扫描成像不代表纯近红外发射成像或单片相机系统。"
+}

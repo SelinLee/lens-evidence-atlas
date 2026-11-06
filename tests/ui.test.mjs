@@ -49,11 +49,21 @@ test('TECF search can be repeated and cleared without hiding unrelated applicati
  }
 });
 
+
+test('author relative priority and editorial interpretation have distinct labels',()=>{
+ const f=fixture();f.location.hash='#app_04/priority';f.run('route()');
+ for(const text of ['作者原文明示的限定任务相对次序','相对次序原文位置','650–1000 nm','不是通用指标总榜'])assert.ok(f.el('panel').innerHTML.includes(text));
+ assert.ok(!f.el('coverage').innerHTML.includes('编辑解读'));
+ f.location.hash='#app_14/priority';f.run('route()');
+ assert.ok(f.el('panel').innerHTML.includes('有出处的编辑性优先级'));assert.ok(!f.el('panel').innerHTML.includes('作者原文明示的限定任务相对次序'));
+ f.run('method()');assert.ok(f.el('detailBody').innerHTML.includes('6 类应用有带出处'));assert.ok(f.el('detailBody').innerHTML.includes('1 类应用包含作者'));
+});
+
 test('meta-FP record renders raw and reconstructed details with source and gaps',()=>{
  const f=fixture();f.location.hash='#app_04/best';f.run('route()');
  assert.ok(f.el('panel').innerHTML.includes('Chu 2025'));
  f.run("openDialog('test',recordCard(records.get('chu_meta_fp_usaf'),true))");
- for(const text of ['532 nm','13 mm','5.2 mm','约4×','1.75 × 1.75','81个','7.81 μm','3.91 μm','§2 Results','RCNN单帧预测不属于','实测NA','判读阈值'])assert.ok(f.el('detailBody').innerHTML.includes(text),text);
+ for(const text of ['60 s','20–41%','532 nm','13 mm','5.2 mm','约4×','1.75 × 1.75','81个','7.81 μm','3.91 μm','§2 Results','RCNN单帧预测不属于','实测NA','判读阈值'])assert.ok(f.el('detailBody').innerHTML.includes(text),text);
  f.location.hash='#app_04/sources';f.run('route()');
  assert.ok(f.el('panel').innerHTML.includes('10.1515/nanoph-2025-0416'));
  f.run("openMetric('resolution')");assert.ok(f.el('detailBody').innerHTML.includes('不能替代裸光学系统PSF或MTF'));
