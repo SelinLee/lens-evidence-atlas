@@ -12,37 +12,9 @@
     "array_fill_factor",
     "array_spacing_cv"
   ],
-  "priorities": [
-    {
-      "tier": 1,
-      "metric_ids": [
-        "focus_efficiency",
-        "chromatic_shift"
-      ],
-      "rationale": "消色差微透镜示例同时报告效率与焦移，不支持只优化单一数值。",
-      "evidence_refs": [
-        "richards"
-      ],
-      "basis": "editorial_synthesis",
-      "scope": "仅适用于Richards 2023单个消色差微透镜的设计取舍；不构成阵列节距、填充率、均匀性或串扰的重要性排序，不是作者名次或行业统一权重。"
-    },
-    {
-      "tier": 2,
-      "metric_ids": [
-        "na",
-        "strehl"
-      ],
-      "rationale": "联合考虑孔径和成像质量；本排序为面向该示例的编辑性解读。",
-      "evidence_refs": [
-        "richards",
-        "strehl"
-      ],
-      "basis": "editorial_synthesis",
-      "scope": "仅适用于Richards 2023单个消色差微透镜的设计取舍；不构成阵列节距、填充率、均匀性或串扰的重要性排序，不是作者名次或行业统一权重。"
-    }
-  ],
-  "ranking_status": "editorial_synthesis",
-  "ranking_gap": "阵列整体的重要性顺序尚未建立；现有层次仅限Richards单透镜设计子任务，新填充因子定义和样本不产生排名。",
+  "priorities": [],
+  "ranking_status": "not_established",
+  "ranking_gap": "任务一：Richards 2023印刷p.6“Individually tuning…”及p.7 Fig.5讨论该材料与打印工艺下的单个消色差微透镜。提高NA时，聚焦效率下降、焦长误差通常增大；增加衍射环带还受到细结构打印精度限制，折射面调节是作者讨论的设计手段。它支持联合考察NA、效率、色差与可制备性，不能推出效率/色差统一高于NA或Strehl的P1/P2。任务二：pp.6–7“Imaging with an achromatic microlens array”及p.8 Fig.6展示18单元阵列的白光USAF成像；作者提出更小直径、较低NA、更密排列可能获得更多光场数据，这是后续设计建议，未在该示例中给出对照实测排序。单透镜效率不能替代整阵列效率、焦距一致性或串扰；这些阵列任务指标的定量权衡仍待补证。",
   "metric_mapping_status": "editorial_candidate_set",
   "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
   "legacy_priority_proposal": "节距/填充率、焦距一致性、波前、串扰、色差、封装",
@@ -55,5 +27,8 @@
     "liu_mla_process_radius",
     "zhao_mlag_spacing"
   ],
-  "updated_on": "2026-11-06"
+  "updated_on": "2026-11-06",
+  "ranking_gap_refs": [
+    "richards"
+  ]
 }
