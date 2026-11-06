@@ -99,3 +99,25 @@ test('Airy search repeats, clears, and preserves independent existing experiment
   f.location.hash='#'+app+'/best';f.run('route()');assert.ok(f.el('panel').innerHTML.includes(record));
  }
 });
+
+test('FPM correction, all parameters and primary sources remain visible across dialogs',()=>{
+ const f=fixture();f.location.hash='#app_04/best';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('Zheng 2013'));
+ for(let i=0;i<2;i++){
+  f.run("openDialog('test',recordCard(records.get('zheng_fpm_usaf_2013'),true))");
+  for(const text of ['632 nm','约20 nm','NA 0.08','0.5（合成','半周期0.78 μm','整周期1.56 μm','2.75 μm / 0.275 μm','137个LED','中央49个各3次','120 mm²','约3 min / 约10 min','PDF p.8','10.1038/nphoton.2015.148','SI Fig.S2/S6/S7'])assert.ok(f.el('detailBody').innerHTML.includes(text),text);
+  assert.equal(f.el('detail').open,true);f.run("$('detail').close()");assert.equal(f.el('detail').open,false);
+ }
+ f.run("openMetric('resolution')");assert.ok(f.el('detailBody').innerHTML.includes('整周期（线对周期）'));
+ f.location.hash='#app_04/sources';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('10.1038/nphoton.2013.187'));
+});
+test('FPM search repeats, returns empty and clears without altering prior experiments',()=>{
+ const f=fixture();
+ for(const query of ['Zheng 2013','傅里叶叠层','unmatched_fpm_987','Zheng 2013','']){
+  f.el('search').value=query;f.run('renderList()');
+  assert.equal(f.el('resultCount').textContent,query==='unmatched_fpm_987'?'0 / 33 类应用':query?'1 / 33 类应用':'33 / 33 类应用');
+ }
+ for(const [app,text] of [['app_04','Chu 2025'],['app_25','Battistella 2022'],['app_22','He 2022'],['app_14','Liu']]){
+  f.location.hash='#'+app+'/best';f.run('route()');assert.ok(f.el('panel').innerHTML.includes(text));
+ }
+ f.location.hash='#app_04/priority';f.run('route()');assert.ok(f.el('panel').innerHTML.includes('650–1000 nm'));
+});

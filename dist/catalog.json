@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.9",
+    "version": "0.1.13",
     "updated_on": "2026-11-06",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -331,7 +331,7 @@
       "ranking_status": "author_explicit",
       "ranking_gap": "仅取得Wang 2021针对近红外低效率缺口的两项相对优先关系；其余物镜任务、分辨率/视场/工作距离等未建立全套原文排名。",
       "metric_mapping_status": "editorial_candidate_set",
-      "metric_mapping_note": "本页低NA检索以文献实际样本NA0.1/0.106为入口，NA0.24扫描样本为邻近对照；不定义统一低NA阈值。可见标靶线宽、近红外激发/可见发射的扫描分辨率估计及单元聚焦效率分开。视场与完整成像共轭缺口保留，不能用图上标尺、收集物镜倍率替代。 Chu计算显微子任务另报告照明、4-f共轭、采样与FP重建；不将算法改善归为裸透镜分辨率。",
+      "metric_mapping_note": "本页低NA检索以文献实际样本NA0.1/0.106为入口，NA0.24扫描样本为邻近对照；不定义统一低NA阈值。可见标靶线宽、近红外激发/可见发射的扫描分辨率估计及单元聚焦效率分开。视场与完整成像共轭缺口保留，不能用图上标尺、收集物镜倍率替代。 Chu计算显微子任务另报告照明、4-f共轭、采样与FP重建；不将算法改善归为裸透镜分辨率。 Zheng 2013补充NA0.08物镜的独立FPM任务；137方向/HDR和2015半周期勘误分别记录，不与Chu系统直接排名。",
       "legacy_priority_proposal": "物方NA、介质、WD、平场、盖玻片、轴向/横向色差",
       "record_ids": [
         "micro2",
@@ -341,7 +341,8 @@
         "wang_low_na_achromat",
         "wang_visible_2018_imaging",
         "wang_upconversion_scan_2021",
-        "chu_meta_fp_usaf"
+        "chu_meta_fp_usaf",
+        "zheng_fpm_usaf_2013"
       ],
       "updated_on": "2026-11-06"
     },
@@ -1288,16 +1289,19 @@
       "id": "fov",
       "name": "视场",
       "english_name": "Field of View",
-      "definition": "可成像的物方范围，可能用线性尺寸或角度表述。",
-      "unit": "°或mm",
+      "definition": "可成像的物方范围，可能用线性尺寸或角度表述。 系统也可报告有效物方面积（mm²）；须注明区域形状、判据与像差校正，面积不能在未知形状时换算成宽度或角度。",
+      "unit": "°、mm或mm²",
       "direction": "tradeoff",
       "required_conditions": [
         "水平/垂直/对角",
         "全角/半角",
-        "物距、传感器及像质门槛"
+        "物距、传感器及像质门槛",
+        "线性/角度/面积及区域形状",
+        "有效范围判据与像差/重建处理"
       ],
       "definition_refs": [
-        "fov_definition"
+        "fov_definition",
+        "zheng_fpm_2013"
       ],
       "best_interpretation": "没有跨应用统一最优值",
       "updated_on": "2026-11-06"
@@ -1380,7 +1384,7 @@
       "id": "resolution",
       "name": "空间分辨率",
       "english_name": "Spatial Resolution",
-      "definition": "系统区分相邻结构的尺度；Rayleigh、Abbe和PSF FWHM等判据必须分别报告。 标靶可辨线宽、点扩散宽度和模型估计不等价；系统指标还取决于照明/发射谱、探测孔径及重建处理。 USAF靶的可辨元素尺度与计算重建结果也须标明判读方法、采样及算法，不能替代裸光学系统PSF或MTF。",
+      "definition": "系统区分相邻结构的尺度；Rayleigh、Abbe和PSF FWHM等判据必须分别报告。 标靶可辨线宽、点扩散宽度和模型估计不等价；系统指标还取决于照明/发射谱、探测孔径及重建处理。 USAF靶的可辨元素尺度与计算重建结果也须标明判读方法、采样及算法，不能替代裸光学系统PSF或MTF。 周期靶须区分半周期（线宽）与整周期（线对周期）；重建像元间隔不是可辨尺度，具体口径以原文及勘误为准。",
       "unit": "μm",
       "direction": "lower",
       "required_conditions": [
@@ -1388,14 +1392,16 @@
         "波长与NA",
         "物/像方及处理方式",
         "照明/激发/发射光谱",
-        "探测孔径、扫描与重建处理"
+        "探测孔径、扫描与重建处理",
+        "周期靶半周期/整周期口径与重建采样"
       ],
       "definition_refs": [
         "mtf_definition",
         "oct_definition",
         "wang_visible_2018",
         "wang_low_na_2021_si",
-        "chu_meta_fp_2025"
+        "chu_meta_fp_2025",
+        "zheng_fpm_correction_2015"
       ],
       "best_interpretation": "没有跨应用统一最优值",
       "updated_on": "2026-11-06"
@@ -2569,6 +2575,30 @@
       "kind": "paper",
       "location": "§2.1填充因子定义；§2.2形貌评估；§2.3 Eq.4、Fig.3及其正文；§2.4 Fig.4；§4 Characterization",
       "evidence_scope": "出版社主文HTML上述章节、公式及图注。数据仅采用§2.3玻璃六角阵列的几何参数；未读PDF或补充材料，未视觉核验原图，也不从图估读数值。作者：Qiaoshuang Zhang等，KIT/InnovationLab研究团队。",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
+    },
+    {
+      "id": "zheng_fpm_2013",
+      "title": "Zheng、Horstmeyer、Yang 2013 Wide-field, high-resolution Fourier ptychographic microscopy（2015修订版）",
+      "url": "https://biophot.caltech.edu/documents/21043/63-GZ-NatPhot-September2013.pdf",
+      "doi": "10.1038/nphoton.2013.187",
+      "source_year": 2013,
+      "kind": "paper",
+      "location": "期刊p.741实验设置与USAF段；p.742 Fig.2及视场段；p.744 Discussion和Methods",
+      "evidence_scope": "直接读取Caltech作者实验室托管的出版社修订PDF；核读上述正文，视觉核对PDF pp.3/4/6（期刊pp.741/742/744）的单位、Fig.2及采集方法。PDF注明2015-07-30印后修订，末页附勘误；不是原始2013未修订版。SI、原始图像、算法和完整视场复现未核验。PMC正文请求出现验证码，未绕过；不以其搜索索引替代本PDF。",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
+    },
+    {
+      "id": "zheng_fpm_correction_2015",
+      "title": "Zheng、Horstmeyer、Yang 2015 FPM勘误：半周期与整周期分辨率",
+      "url": "https://biophot.caltech.edu/documents/21043/63-GZ-NatPhot-September2013.pdf#page=8",
+      "doi": "10.1038/nphoton.2015.148",
+      "source_year": 2015,
+      "kind": "paper",
+      "location": "同一作者托管PDF末页（PDF p.8）Corrigendum全文",
+      "evidence_scope": "直接读取并视觉核对附录勘误：0.78 μm是half-pitch、1.56 μm是full-pitch，SBP和SI Note 3随之修订。它是同一研究的纠错，不是第二个独立实验来源。Nature勘误入口本轮重定向失败；未独立获取修订SI。仅用勘误澄清本案例口径，不把作者对full-pitch的偏好变成所有任务通用规则。",
       "checked_on": "2026-11-06",
       "verification": "checked_excerpt"
     }
@@ -5402,6 +5432,91 @@
       "checked_on": "2026-11-06",
       "record_status": "checked_excerpt",
       "claim_type": "representative_result"
+    },
+    {
+      "id": "zheng_fpm_usaf_2013",
+      "application_id": "app_04",
+      "application": "显微镜物镜",
+      "name": "Zheng 2013 低NA傅里叶叠层显微FPM（USAF与2015勘误）",
+      "evidence_type": "科研实验示例（多角度计算成像，作者报告）",
+      "source_ids": [
+        "zheng_fpm_2013",
+        "zheng_fpm_correction_2015"
+      ],
+      "parameters": [
+        {
+          "name": "表征光谱",
+          "value": "632 nm；LED带宽约20 nm",
+          "evidence": {
+            "source_id": "zheng_fpm_2013",
+            "location": "p.741 Experimental set-up末句；p.744 Methods / Experimental set-up"
+          }
+        },
+        {
+          "name": "物镜倍率与物理NA",
+          "value": "2×；NA 0.08（Olympus Plan APO）",
+          "evidence": {
+            "source_id": "zheng_fpm_2013",
+            "location": "p.741 Experimental set-up首段"
+          },
+          "metric_id": "na"
+        },
+        {
+          "name": "重建最大合成NA",
+          "value": "0.5（合成频谱范围，不是物镜物理NA）",
+          "evidence": {
+            "source_id": "zheng_fpm_2013",
+            "location": "p.741实验段及p.742 Fig.2图注"
+          }
+        },
+        {
+          "name": "勘误明确的靶标分辨率",
+          "value": "半周期0.78 μm；整周期1.56 μm",
+          "evidence": {
+            "source_id": "zheng_fpm_correction_2015",
+            "location": "PDF p.8 Corrigendum（原文p.741将G9-3报告为0.78 μm线宽）"
+          },
+          "metric_id": "resolution"
+        },
+        {
+          "name": "物方原图/重建采样间隔",
+          "value": "2.75 μm / 0.275 μm（不是分辨率）",
+          "evidence": {
+            "source_id": "zheng_fpm_2013",
+            "location": "p.741实验段；p.742 Fig.2(c2,d)图注"
+          }
+        },
+        {
+          "name": "照明角度与HDR采集",
+          "value": "137个LED；中央49个各3次曝光，其余各2次；不能记成137次曝光",
+          "evidence": {
+            "source_id": "zheng_fpm_2013",
+            "location": "p.744 Methods / Image acquisition and reconstruction首段"
+          }
+        },
+        {
+          "name": "报告有效视场",
+          "value": "约120 mm²（主文转述SI Fig.S7，未独立复测）",
+          "evidence": {
+            "source_id": "zheng_fpm_2013",
+            "location": "p.742 Fig.2后Digital wavefront correction续段"
+          },
+          "metric_id": "fov"
+        },
+        {
+          "name": "单色采集/全视场重建时间",
+          "value": "约3 min / 约10 min（MATLAB、Intel i7、无GPU；RGB各自处理，时间乘3）",
+          "evidence": {
+            "source_id": "zheng_fpm_2013",
+            "location": "p.744 Methods / Image acquisition and reconstruction第一、末段"
+          }
+        }
+      ],
+      "conditions": "低NA物镜的薄样品非荧光计算成像；632 nm表征。137个照明方向的强度图经LED强度归一化、平场/坏点处理与HDR合成，再分块迭代重建；约65%频谱重叠。半周期/整周期是同一靶标结果的两种口径，原图/重建不是两个独立样本。0.275 μm仅为重建采样，合成NA 0.5不取代物理NA 0.08。2015勘误优先澄清0.78 μm为半周期；正文仍有Rayleigh措辞，本库不据此等同点源间距、PSF FWHM或MTF。约120 mm²为含空间变化像差校正的系统报告，不代表本轮证明全视场均达该靶标分辨率。",
+      "unreported_or_not_verified": "未核验SI Fig.S2/S6/S7和修订Note 3、原始数据或代码；未确定统一对比度判读阈值、全视场MTF、统计重复/不确定性、样品介质与偏振。632 nm FPM与Chu 532 nm双超透镜系统的谱段、处理和瞳条件不同，不能直接互排。未收录无条件最佳、SBP纪录或荧光性能。",
+      "record_status": "checked_excerpt",
+      "claim_type": "representative_result",
+      "checked_on": "2026-11-06"
     }
   ]
 }

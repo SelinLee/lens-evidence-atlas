@@ -1,0 +1,85 @@
+{
+  "id": "zheng_fpm_usaf_2013",
+  "application_id": "app_04",
+  "application": "显微镜物镜",
+  "name": "Zheng 2013 低NA傅里叶叠层显微FPM（USAF与2015勘误）",
+  "evidence_type": "科研实验示例（多角度计算成像，作者报告）",
+  "source_ids": [
+    "zheng_fpm_2013",
+    "zheng_fpm_correction_2015"
+  ],
+  "parameters": [
+    {
+      "name": "表征光谱",
+      "value": "632 nm；LED带宽约20 nm",
+      "evidence": {
+        "source_id": "zheng_fpm_2013",
+        "location": "p.741 Experimental set-up末句；p.744 Methods / Experimental set-up"
+      }
+    },
+    {
+      "name": "物镜倍率与物理NA",
+      "value": "2×；NA 0.08（Olympus Plan APO）",
+      "evidence": {
+        "source_id": "zheng_fpm_2013",
+        "location": "p.741 Experimental set-up首段"
+      },
+      "metric_id": "na"
+    },
+    {
+      "name": "重建最大合成NA",
+      "value": "0.5（合成频谱范围，不是物镜物理NA）",
+      "evidence": {
+        "source_id": "zheng_fpm_2013",
+        "location": "p.741实验段及p.742 Fig.2图注"
+      }
+    },
+    {
+      "name": "勘误明确的靶标分辨率",
+      "value": "半周期0.78 μm；整周期1.56 μm",
+      "evidence": {
+        "source_id": "zheng_fpm_correction_2015",
+        "location": "PDF p.8 Corrigendum（原文p.741将G9-3报告为0.78 μm线宽）"
+      },
+      "metric_id": "resolution"
+    },
+    {
+      "name": "物方原图/重建采样间隔",
+      "value": "2.75 μm / 0.275 μm（不是分辨率）",
+      "evidence": {
+        "source_id": "zheng_fpm_2013",
+        "location": "p.741实验段；p.742 Fig.2(c2,d)图注"
+      }
+    },
+    {
+      "name": "照明角度与HDR采集",
+      "value": "137个LED；中央49个各3次曝光，其余各2次；不能记成137次曝光",
+      "evidence": {
+        "source_id": "zheng_fpm_2013",
+        "location": "p.744 Methods / Image acquisition and reconstruction首段"
+      }
+    },
+    {
+      "name": "报告有效视场",
+      "value": "约120 mm²（主文转述SI Fig.S7，未独立复测）",
+      "evidence": {
+        "source_id": "zheng_fpm_2013",
+        "location": "p.742 Fig.2后Digital wavefront correction续段"
+      },
+      "metric_id": "fov"
+    },
+    {
+      "name": "单色采集/全视场重建时间",
+      "value": "约3 min / 约10 min（MATLAB、Intel i7、无GPU；RGB各自处理，时间乘3）",
+      "evidence": {
+        "source_id": "zheng_fpm_2013",
+        "location": "p.744 Methods / Image acquisition and reconstruction第一、末段"
+      }
+    }
+  ],
+  "conditions": "低NA物镜的薄样品非荧光计算成像；632 nm表征。137个照明方向的强度图经LED强度归一化、平场/坏点处理与HDR合成，再分块迭代重建；约65%频谱重叠。半周期/整周期是同一靶标结果的两种口径，原图/重建不是两个独立样本。0.275 μm仅为重建采样，合成NA 0.5不取代物理NA 0.08。2015勘误优先澄清0.78 μm为半周期；正文仍有Rayleigh措辞，本库不据此等同点源间距、PSF FWHM或MTF。约120 mm²为含空间变化像差校正的系统报告，不代表本轮证明全视场均达该靶标分辨率。",
+  "unreported_or_not_verified": "未核验SI Fig.S2/S6/S7和修订Note 3、原始数据或代码；未确定统一对比度判读阈值、全视场MTF、统计重复/不确定性、样品介质与偏振。632 nm FPM与Chu 532 nm双超透镜系统的谱段、处理和瞳条件不同，不能直接互排。未收录无条件最佳、SBP纪录或荧光性能。",
+  "record_status": "checked_excerpt",
+  "claim_type": "representative_result",
+  "checked_on": "2026-11-06"
+}

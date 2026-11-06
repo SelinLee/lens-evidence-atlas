@@ -82,3 +82,18 @@ test('Airy illumination widths stay separate from model FOV and independent samp
  assert.equal(d.applications.find(a=>a.id==='app_25').ranking_status,'editorial_synthesis');
  assert.ok(validate(d).benchmarks>=68);
 });
+
+test('FPM retains correction, sampling, exposure and physical-aperture boundaries',()=>{
+ const d=load(),b=d.benchmarks.find(b=>b.id==='zheng_fpm_usaf_2013'),m=d.metrics.find(m=>m.id==='resolution');
+ assert.equal(b.parameters.length,8);
+ assert.equal(b.parameters.find(p=>p.metric_id==='resolution').value,'半周期0.78 μm；整周期1.56 μm');
+ assert.equal(b.parameters.find(p=>p.metric_id==='resolution').evidence.source_id,'zheng_fpm_correction_2015');
+ assert.equal(b.parameters.find(p=>p.metric_id==='na').value,'2×；NA 0.08（Olympus Plan APO）');
+ assert.equal(b.parameters.filter(p=>p.metric_id==='na').length,1);
+ for(const word of ['137个LED','中央49个各3次','其余各2次','不能记成137次曝光'])assert.ok(b.parameters.find(p=>p.name==='照明角度与HDR采集').value.includes(word));
+ for(const word of ['不是两个独立样本','2015勘误','Rayleigh','不代表本轮证明全视场'])assert.ok(b.conditions.includes(word));
+ assert.ok(m.definition_refs.includes('zheng_fpm_correction_2015'));
+ const fov=d.metrics.find(m=>m.id==='fov');assert.ok(fov.unit.includes('mm²'));assert.ok(fov.definition_refs.includes('zheng_fpm_2013'));assert.ok(fov.required_conditions.includes('线性/角度/面积及区域形状'));
+ assert.ok(m.required_conditions.includes('周期靶半周期/整周期口径与重建采样'));
+ assert.ok(!d.bests.some(x=>x.cohort_record_ids?.includes(b.id)));
+});
