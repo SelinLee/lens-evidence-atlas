@@ -2,48 +2,29 @@
   "id": "app_03",
   "name": "远心精密测量",
   "category": "工业与感知",
-  "summary": "例：畸变<0.020%、远心度<0.020° @588 nm",
+  "summary": "区分商业镜头规格、二维尺寸误差预算与三维结构光标定实验；重投影残差、长度误差、拟合平面残差分开，平均值口径冲突可查。",
   "metric_ids": [
     "distortion",
     "telecentricity",
     "mtf",
     "fov",
-    "working_distance"
+    "working_distance",
+    "dimensional_measurement_error",
+    "reprojection_error"
   ],
-  "priorities": [
-    {
-      "tier": 1,
-      "metric_ids": [
-        "distortion",
-        "telecentricity"
-      ],
-      "rationale": "几何失真与视差直接影响尺寸定位；原文强调两者及波长依赖。",
-      "evidence_refs": [
-        "tele_definition"
-      ],
-      "basis": "editorial_synthesis",
-      "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
-    },
-    {
-      "tier": 2,
-      "metric_ids": [
-        "mtf"
-      ],
-      "rationale": "在可测量几何成立后核验目标频率的对比度。此先后是编辑性任务拆分。",
-      "evidence_refs": [
-        "mtf_definition"
-      ],
-      "basis": "editorial_synthesis",
-      "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
-    }
-  ],
-  "ranking_status": "editorial_synthesis",
-  "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
+  "priorities": [],
+  "ranking_status": "not_established",
+  "ranking_gap": "二维尺寸测量：Lenhardt原厂教程PDF p.42 Eq.(1)/(2)将物体尺寸误差联系到像面定位与倍率标定；pp.53–55 §5.2说明理想物方远心消去部分物距项，但仍保留其他误差，双侧远心示例预算中边缘检测和残余畸变成为主要项。这是特定模型与输入公差下的判断，不能推出畸变/远心度总是优先于MTF。三维结构光：Li 2015 §4 pp.25800–25802分别验证重投影、对角线长度、平移与平面拟合；作者将圆心提取、插值和投影仪到相机的标定误差传递列为可能误差来源。设计时应按任务分配几何、特征定位与标定误差预算，再用独立参考件验证；这是本库据上述证据整理的建议，没有统一P1/P2。该三维系统结果不能当作纯镜头或二维尺寸测量/缺陷检测任务的通用精度。",
   "metric_mapping_status": "editorial_candidate_set",
   "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
   "legacy_priority_proposal": "放大率稳定、畸变、远心度、温漂、标定残差",
   "record_ids": [
-    "telecentric"
+    "telecentric",
+    "li_telecentric_calibration_2015"
   ],
-  "updated_on": "2026-11-06"
+  "updated_on": "2026-11-06",
+  "ranking_gap_refs": [
+    "lenhardt_telecentric_course",
+    "li_telecentric_2015"
+  ]
 }

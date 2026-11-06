@@ -54,9 +54,9 @@ test('author relative priority and editorial interpretation have distinct labels
  const f=fixture();f.location.hash='#app_04/priority';f.run('route()');
  for(const text of ['作者原文明示的限定任务相对次序','相对次序原文位置','650–1000 nm','不是通用指标总榜'])assert.ok(f.el('panel').innerHTML.includes(text));
  assert.ok(!f.el('coverage').innerHTML.includes('编辑解读'));
- f.location.hash='#app_03/priority';f.run('route()');
+ f.location.hash='#app_23/priority';f.run('route()');
  assert.ok(f.el('panel').innerHTML.includes('有出处的编辑性优先级'));assert.ok(!f.el('panel').innerHTML.includes('作者原文明示的限定任务相对次序'));
- f.run('method()');assert.ok(f.el('detailBody').innerHTML.includes('3 类应用有带出处'));assert.ok(f.el('detailBody').innerHTML.includes('1 类应用包含作者'));
+ f.run('method()');assert.ok(f.el('detailBody').innerHTML.includes('2 类应用有带出处'));assert.ok(f.el('detailBody').innerHTML.includes('1 类应用包含作者'));
 });
 
 test('meta-FP record renders raw and reconstructed details with source and gaps',()=>{
@@ -215,8 +215,21 @@ test('array and SMF tradeoffs remain cited and discoverable without ranked statu
   f.run(`openSource('${source}')`);assert.ok(f.el('detailBody').innerHTML.includes(source==='richards'?'pp.6–7':'pp.5–6'));
  }
  f.el('rankedOnly').checked=true;f.run('renderList()');
- assert.equal(f.el('resultCount').textContent,'4 / 33 类应用');
+ assert.equal(f.el('resultCount').textContent,'3 / 33 类应用');
  for(const app of ['app_14','app_22'])assert.ok(!f.el('appList').innerHTML.includes('data-app="'+app+'"'));
  f.el('rankedOnly').checked=false;f.run('renderList()');
  for(const app of ['app_14','app_22'])assert.ok(f.el('appList').innerHTML.includes('data-app="'+app+'"'));
+});
+
+test('telecentric measurement task exposes source locations and non-interchangeable error metrics',()=>{
+ const f=fixture();f.location.hash='#app_03/priority';f.run('route()');
+ for(const word of ['二维尺寸测量','三维结构光','输入公差','data-source="li_telecentric_2015"'])assert.ok(f.el('panel').innerHTML.includes(word),word);
+ assert.ok(!f.el('panel').innerHTML.includes('class="tier"'));
+ f.run("openMetric('reprojection_error')");for(const word of ['Eq.(9)','坐标面','独立验证精度'])assert.ok(f.el('detailBody').innerHTML.includes(word),word);
+ f.run("openMetric('dimensional_measurement_error')");assert.ok(f.el('detailBody').innerHTML.includes('MAE'));
+ f.location.hash='#app_03/best';f.run('route()');for(const word of ['Li 2015','VariMagTL'])assert.ok(f.el('panel').innerHTML.includes(word),word);
+ f.run("openDialog('test',recordCard(records.get('li_telecentric_calibration_2015'),true))");
+ for(const word of ['9.4 μm','10.02 μm','16.5 μm','1.75 μm','4.5 μm','102.56 mm','验证集划分','Table 1','AD/BC'])assert.ok(f.el('detailBody').innerHTML.includes(word),word);
+ f.el('rankedOnly').checked=true;f.run('renderList()');assert.ok(!f.el('appList').innerHTML.includes('data-app="app_03"'));
+ f.el('rankedOnly').checked=false;f.el('search').value='Li 2015';f.run('renderList()');assert.equal(f.el('resultCount').textContent,'1 / 33 类应用');
 });

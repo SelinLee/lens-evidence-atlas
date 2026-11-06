@@ -1,7 +1,7 @@
 import {test} from 'node:test';import assert from 'node:assert/strict';import {load,validate,canCompare} from '../scripts/catalog.mjs';
 test('catalog resolves definitions, claims and evidence',()=>{const s=validate(load());assert.equal(s.applications,33);assert.ok(s.benchmarks>=55)});
 test('dangling references fail',()=>{const d=load();d.metrics[0].definition_refs=['missing'];assert.throws(()=>validate(d),/missing source/)});
-test('explicit priority cannot be fabricated from cited context',()=>{const d=load();const a=d.applications.find(a=>a.priorities.length);a.priorities[0].basis='author_explicit';assert.throws(()=>validate(d),/explicit source rank locator/)});
+test('explicit priority cannot be fabricated from cited context',()=>{const d=load();const a=d.applications.find(a=>a.priorities.length);a.priorities[0].basis='author_explicit';delete a.priorities[0].explicit_rank_location;assert.throws(()=>validate(d),/explicit source rank locator/)});
 test('global best without a scoped comparison is rejected',()=>{const d=load();d.bests[0].claim_type='world_record';assert.throws(()=>validate(d),/world record forbidden/)});
 test('missing and mismatched conditions block numeric comparisons',()=>{assert.equal(canCompare({nm:532},{nm:633},['nm']),false);assert.equal(canCompare({nm:532},{nm:532},['nm','denominator']),false);assert.equal(canCompare({nm:532,denominator:'incident'},{nm:532,denominator:'incident'},['nm','denominator']),true)});
 
@@ -170,4 +170,22 @@ test('FPM retains correction, sampling, exposure and physical-aperture boundarie
  const fov=d.metrics.find(m=>m.id==='fov');assert.ok(fov.unit.includes('mm²'));assert.ok(fov.definition_refs.includes('zheng_fpm_2013'));assert.ok(fov.required_conditions.includes('线性/角度/面积及区域形状'));
  assert.ok(m.required_conditions.includes('周期靶半周期/整周期口径与重建采样'));
  assert.ok(!d.bests.some(x=>x.cohort_record_ids?.includes(b.id)));
+});
+
+test('telecentric validation separates reported aggregates, MAE, residuals and independent accuracy',()=>{
+ const d=load(),r=d.benchmarks.find(r=>r.id==='li_telecentric_calibration_2015');
+ const a=d.applications.find(a=>a.id==='app_03');
+ assert.equal(a.ranking_status,'not_established');assert.equal(a.priorities.length,0);
+ assert.deepEqual(a.ranking_gap_refs,['lenhardt_telecentric_course','li_telecentric_2015']);
+ assert.equal(r.source_ids.length,1);assert.equal(r.parameters.length,12);
+ const columns=r.parameters.find(p=>p.name==='Table 1逐姿态绝对Error列').value.split('；');
+ const means=columns.map(s=>{const values=s.match(/\d+\.\d+/g).map(Number);assert.equal(values.length,10);return values.reduce((a,b)=>a+b)/values.length});
+ assert.ok(Math.abs(means[0]-10.02)<1e-10);assert.ok(Math.abs(means[1]-10.75)<1e-10);
+ assert.notEqual(means[0],9.4);
+ assert.ok(r.parameters.find(p=>p.name==='Table 1作者Average误差').value.includes('不能直接叫MAE'));
+ assert.equal(r.parameters.find(p=>p.name==='相机/投影仪重投影RMS').metric_id,'reprojection_error');
+ assert.equal(r.parameters.find(p=>p.name==='平面拟合残差RMS').metric_id,undefined);
+ assert.ok(r.unreported_or_not_verified.includes('独立验证集划分'));assert.ok(r.unreported_or_not_verified.includes('50 nm sensitivity不是位置准确度'));
+ assert.ok(!d.bests.some(b=>b.cohort_record_ids?.includes(r.id)));
+ assert.ok(d.metrics.find(m=>m.id==='dimensional_measurement_error').definition.includes('标准测量不确定度'));
 });

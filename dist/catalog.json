@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.18",
+    "version": "0.1.19",
     "updated_on": "2026-11-06",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -241,50 +241,31 @@
       "id": "app_03",
       "name": "远心精密测量",
       "category": "工业与感知",
-      "summary": "例：畸变<0.020%、远心度<0.020° @588 nm",
+      "summary": "区分商业镜头规格、二维尺寸误差预算与三维结构光标定实验；重投影残差、长度误差、拟合平面残差分开，平均值口径冲突可查。",
       "metric_ids": [
         "distortion",
         "telecentricity",
         "mtf",
         "fov",
-        "working_distance"
+        "working_distance",
+        "dimensional_measurement_error",
+        "reprojection_error"
       ],
-      "priorities": [
-        {
-          "tier": 1,
-          "metric_ids": [
-            "distortion",
-            "telecentricity"
-          ],
-          "rationale": "几何失真与视差直接影响尺寸定位；原文强调两者及波长依赖。",
-          "evidence_refs": [
-            "tele_definition"
-          ],
-          "basis": "editorial_synthesis",
-          "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
-        },
-        {
-          "tier": 2,
-          "metric_ids": [
-            "mtf"
-          ],
-          "rationale": "在可测量几何成立后核验目标频率的对比度。此先后是编辑性任务拆分。",
-          "evidence_refs": [
-            "mtf_definition"
-          ],
-          "basis": "editorial_synthesis",
-          "scope": "仅适用于本页任务设定；不是原文明确名次或行业统一权重"
-        }
-      ],
-      "ranking_status": "editorial_synthesis",
-      "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
+      "priorities": [],
+      "ranking_status": "not_established",
+      "ranking_gap": "二维尺寸测量：Lenhardt原厂教程PDF p.42 Eq.(1)/(2)将物体尺寸误差联系到像面定位与倍率标定；pp.53–55 §5.2说明理想物方远心消去部分物距项，但仍保留其他误差，双侧远心示例预算中边缘检测和残余畸变成为主要项。这是特定模型与输入公差下的判断，不能推出畸变/远心度总是优先于MTF。三维结构光：Li 2015 §4 pp.25800–25802分别验证重投影、对角线长度、平移与平面拟合；作者将圆心提取、插值和投影仪到相机的标定误差传递列为可能误差来源。设计时应按任务分配几何、特征定位与标定误差预算，再用独立参考件验证；这是本库据上述证据整理的建议，没有统一P1/P2。该三维系统结果不能当作纯镜头或二维尺寸测量/缺陷检测任务的通用精度。",
       "metric_mapping_status": "editorial_candidate_set",
       "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
       "legacy_priority_proposal": "放大率稳定、畸变、远心度、温漂、标定残差",
       "record_ids": [
-        "telecentric"
+        "telecentric",
+        "li_telecentric_calibration_2015"
       ],
-      "updated_on": "2026-11-06"
+      "updated_on": "2026-11-06",
+      "ranking_gap_refs": [
+        "lenhardt_telecentric_course",
+        "li_telecentric_2015"
+      ]
     },
     {
       "id": "app_04",
@@ -1146,6 +1127,28 @@
       "updated_on": "2026-11-06"
     },
     {
+      "id": "dimensional_measurement_error",
+      "name": "尺寸/位移测量误差",
+      "english_name": "Dimensional / Displacement Measurement Error",
+      "definition": "重建的长度或位移与指定参考值之差；必须说明带符号误差、绝对误差、平均绝对误差(MAE)、最大值或均方根(RMSE)，不能把这些统计量互换。Li 2015 §4分别比较标定板两条对角线的三维欧氏距离和已知台阶平移量；它们是包含光学、投影、标定与坐标提取的系统结果，不是镜头畸变百分比、光学分辨率或标准测量不确定度。Lenhardt §5.1.1用y=y′/β联系物体尺寸、像尺寸和倍率；其绝对值一阶误差幅度相加不等于独立随机项RSS。",
+      "unit": "μm、mm或相对误差%（注明参考长度）",
+      "direction": "lower_abs",
+      "required_conditions": [
+        "被测量与参考值/溯源不确定性",
+        "物体/像面坐标与单位",
+        "波长、照明、倍率、采样及工作距离",
+        "标定模型与处理算法",
+        "校准/验证数据是否独立",
+        "姿态/位置/深度范围、样本数及统计口径"
+      ],
+      "definition_refs": [
+        "li_telecentric_2015",
+        "lenhardt_telecentric_course"
+      ],
+      "best_interpretation": "仅在同一被测量、参考标准、范围和统计量下比较；标定板上的拟合验证不能代替独立工件验收。",
+      "updated_on": "2026-11-06"
+    },
+    {
       "id": "distortion",
       "name": "几何畸变",
       "english_name": "Distortion",
@@ -1381,6 +1384,27 @@
       "updated_on": "2026-11-06"
     },
     {
+      "id": "reprojection_error",
+      "name": "标定重投影误差",
+      "english_name": "Calibration Reprojection Error",
+      "definition": "用标定模型将已知或估计的空间点投影到图像，与观测特征点位置比较的残差。Li 2015 §3 Eq.(9)最小化观测投影与模型投影的差，§4 Fig.4分别报告相机与投影仪的RMS；必须注明像素或物理坐标单位、二维向量/逐轴统计、点集及是否为拟合所用数据。不能从较小重投影残差直接推断物体尺寸误差、独立验证精度或镜头分辨率；µm与pixel之间的换算须有坐标面、像元尺寸和倍率依据。",
+      "unit": "pixel或μm（注明坐标面及换算）",
+      "direction": "lower",
+      "required_conditions": [
+        "相机/投影仪与成像模型",
+        "残差坐标面、单位及换算",
+        "二维/逐轴RMS或其他统计定义",
+        "特征提取与优化算法",
+        "点数、姿态和视场范围",
+        "标定/独立验证数据集"
+      ],
+      "definition_refs": [
+        "li_telecentric_2015"
+      ],
+      "best_interpretation": "重投影残差只评价指定点集和模型，不能直接作为整机尺寸精度排行。",
+      "updated_on": "2026-11-06"
+    },
+    {
       "id": "resolution",
       "name": "空间分辨率",
       "english_name": "Spatial Resolution",
@@ -1494,16 +1518,18 @@
       "id": "telecentricity",
       "name": "远心度偏差",
       "english_name": "Telecentricity Error",
-      "definition": "主光线偏离理想远心方向的角度，通常以残余角度描述。",
+      "definition": "主光线偏离理想远心方向的角度，通常以残余角度描述。 理想物方远心的入瞳在无穷远；理想双侧远心的入瞳和出瞳均在无穷远（Lenhardt §5.2）。理想模型可消去部分物距/像距误差项，但不代表实际镜头在任意深度恒定倍率，也不消除边缘定位、标定与残余畸变误差。",
       "unit": "°",
       "direction": "lower_abs",
       "required_conditions": [
         "物方/像方",
         "场高",
-        "波长"
+        "波长",
+        "工作距离/深度范围与理想模型或实测性质"
       ],
       "definition_refs": [
-        "tele_definition"
+        "tele_definition",
+        "lenhardt_telecentric_course"
       ],
       "best_interpretation": "没有跨应用统一最优值",
       "updated_on": "2026-11-06"
@@ -1801,6 +1827,18 @@
       "doi": null
     },
     {
+      "id": "lenhardt_telecentric_course",
+      "title": "Karl Lenhardt：Optical measurement techniques with telecentric lenses（Schneider原厂教程）",
+      "url": "https://schneiderkreuznach.com/application/files/9715/0781/8897/optical-measurement.pdf",
+      "doi": null,
+      "kind": "manufacturer_technical",
+      "source_year": null,
+      "location": "PDF p.42 §5.1.1 Eq.(1)/(2)；pp.53–55 §5.2.1/5.2.2 Eqs.(14)/(15)及误差预算讨论",
+      "evidence_scope": "原厂托管61页教程；读取导言和上述段落，实际渲染查看PDF pp.42、53–55。未通读全书；未逐项重建§5.1.3输入公差，故不收录示例总误差为数值基准。PDF创建元数据2005、修改2013不直接当出版年。Eq.(2)视觉核实有绝对值竖线，属于一阶幅度预算，不作随机标准不确定度的RSS公式。",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
+    },
+    {
       "id": "li",
       "title": "Li 等 厘米级逆向设计RGB超透镜",
       "url": "https://www.nature.com/articles/s41467-022-29973-3",
@@ -1811,6 +1849,18 @@
       "kind": "paper",
       "verification": "inherited_v2",
       "doi": null
+    },
+    {
+      "id": "li_telecentric_2015",
+      "title": "Li & Zhang 2015：Flexible calibration method for microscopic structured light system using telecentric lens",
+      "url": "https://engineering.purdue.edu/ZhangLab/publications/papers/2015-oexp-telecentric.pdf",
+      "doi": "10.1364/OE.23.025795",
+      "kind": "paper",
+      "source_year": 2015,
+      "location": "§2 Eqs.(1)–(3) pp.25797–25798；§3 Eq.(9)、§4 pp.25800–25802，Fig.4/5与Tables 1/2；§5 p.25803",
+      "evidence_scope": "Purdue作者机构托管出版社PDF，9页；读摘要、引言及§2–5相关正文，实际渲染查看PDF pp.6–8（印刷25800–25802）的公式、图注和表格。本条只收录标定体积、设备条件及三类实验残差；未取得原始图像、标定数据或重复测量数据。Table 1列名/正文点名和平均误差口径差异保留，不把10个姿态当独立系统。",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
     },
     {
       "id": "lidar_meta",
@@ -3556,6 +3606,125 @@
       ],
       "conditions": "同一观测片段；由一对校准光电二极管测得SMF输出功率与光纤端入射功率之比（§2），不是望远镜入口到光纤输出的端到端透过率。原型无主动光束稳定或连续大气色散校正；未按瞳形理论上限0.78再次归一化。",
       "unreported_or_not_verified": "Table 1同目标列22±2%，本条限定正文明确的180秒片段23%，不拼为同一统计值；差异的具体窗口对应关系未核。偏振、光纤实际长度及端面损耗校正的完整明细未核，不与Subaru实验室的78%直接排名。"
+    },
+    {
+      "id": "li_telecentric_calibration_2015",
+      "application": "远心精密测量",
+      "application_id": "app_03",
+      "name": "Li 2015 远心相机结构光标定与长度/位移验证",
+      "evidence_type": "科研实验：相机/投影仪联合标定；设备规格与本库表值复算另标",
+      "source_ids": [
+        "li_telecentric_2015"
+      ],
+      "parameters": [
+        {
+          "name": "相机/投影仪采样与型号",
+          "value": "DMK 23U274：1600×1200；LightCrafter PRO4500：1140×912（按原文）",
+          "evidence": {
+            "source_id": "li_telecentric_2015",
+            "location": "§4 p.25800（PDF p.6）"
+          }
+        },
+        {
+          "name": "相机镜头与标称倍率",
+          "value": "Opto-engineering TC4MHR036-C；0.487×",
+          "evidence": {
+            "source_id": "li_telecentric_2015",
+            "location": "§4 p.25800（PDF p.6）"
+          }
+        },
+        {
+          "name": "相机镜头工作距离",
+          "value": "102.56 mm",
+          "evidence": {
+            "source_id": "li_telecentric_2015",
+            "location": "§4 p.25800（PDF p.6）"
+          },
+          "metric_id": "working_distance"
+        },
+        {
+          "name": "镜头景深描述",
+          "value": "5 mm（设备描述，未给清晰度判据；非全范围误差保证）",
+          "evidence": {
+            "source_id": "li_telecentric_2015",
+            "location": "§4 p.25800（PDF p.6）"
+          }
+        },
+        {
+          "name": "标定体积",
+          "value": "约10(H)×8(W)×5(D) mm³",
+          "evidence": {
+            "source_id": "li_telecentric_2015",
+            "location": "摘要p.25795、§5 p.25803"
+          }
+        },
+        {
+          "name": "相机/投影仪重投影RMS",
+          "value": "1.8 / 1.2 μm（两者分别报告；单位换算与逐轴/向量汇总未完整说明）",
+          "evidence": {
+            "source_id": "li_telecentric_2015",
+            "location": "§4 p.25800（PDF p.6）及Fig.4 p.25801"
+          },
+          "metric_id": "reprojection_error"
+        },
+        {
+          "name": "对角线参考与姿态",
+          "value": "11.3137 mm；10个姿态；圆心节距1.0000 ± 0.0010 mm（±统计含义未明）",
+          "evidence": {
+            "source_id": "li_telecentric_2015",
+            "location": "§4 p.25800（PDF p.6）、§4 p.25801 Table 1（PDF p.7）"
+          }
+        },
+        {
+          "name": "Table 1作者Average误差",
+          "value": "AD列9.4 μm；BC列10.8 μm（AD值不能直接叫MAE）",
+          "evidence": {
+            "source_id": "li_telecentric_2015",
+            "location": "§4 p.25801 Table 1（PDF p.7）"
+          },
+          "metric_id": "dimensional_measurement_error"
+        },
+        {
+          "name": "Table 1逐姿态绝对Error列",
+          "value": "AD：16.1, 8.8, 7.6, 10.7, 8.0, 16.5, 12.8, 8.8, 2.9, 8.0 μm；BC：15.6, 9.0, 10.4, 10.9, 6.9, 14.4, 15.1, 4.6, 13.2, 7.4 μm",
+          "evidence": {
+            "source_id": "li_telecentric_2015",
+            "location": "§4 p.25801 Table 1（PDF p.7）"
+          },
+          "metric_id": "dimensional_measurement_error"
+        },
+        {
+          "name": "本库按表列复算（非新增实测）",
+          "value": "AD列MAE 10.02 μm；BC列MAE 10.75 μm；20项最大绝对误差16.5 μm。AD作者Average与MAE口径不同，保留差异。",
+          "evidence": {
+            "source_id": "li_telecentric_2015",
+            "location": "§4 p.25801 Table 1（PDF p.7）；本库分别对十行Error算术平均及取最大"
+          },
+          "metric_id": "dimensional_measurement_error"
+        },
+        {
+          "name": "平移验证四个非零位置",
+          "value": "参考50/100/150/200 μm；重建47.3/99.7/147.0/199.0 μm；绝对误差2.7/0.3/3.0/1.0 μm；四项MAE复算1.75 μm，作者正文约1.7 μm",
+          "evidence": {
+            "source_id": "li_telecentric_2015",
+            "location": "§4 p.25802 Table 2（PDF p.8）；相关正文p.25801"
+          },
+          "metric_id": "dimensional_measurement_error"
+        },
+        {
+          "name": "平面拟合残差RMS",
+          "value": "4.5 μm（相对同批点最小二乘拟合平面；不是独立已知平面绝对准确度）",
+          "evidence": {
+            "source_id": "li_telecentric_2015",
+            "location": "§4 p.25802及Fig.5"
+          }
+        }
+      ],
+      "conditions": "三维结构光系统，一个独立研究；不是二维纯镜头精度。相机远心镜头与普通针孔投影仪联合标定，模型忽略两镜头畸变（作者设备描述均<0.1%，不是行业可忽略阈值）。标定板圆心经图像提取、三维重建及插值；10姿态的同一板和四个非零平移工作点不是多个独立系统。原文Fig.4用μm表示重投影残差，不自行换算像素或物方分辨率。Table 1正文称AC/BD、表头AD/BC，保留原表标签。",
+      "unreported_or_not_verified": "未见明确工作波长/光谱、相机像元间距、曝光与偏振、实验NA、具体远心方向和倍率随深度实测曲线；缺原始图像/标定点和独立验证集划分、完整误差预算/参考件溯源及重复统计。Table 1 AD第9行11.3166 mm超过11.3137 mm参考而Error列写绝对值0.0029 mm；作者Average 0.0094 mm接近参考减平均长度，并非十项绝对误差均值0.01002 mm。正文概述平均约9/最大16 μm与逐表复算不等价。Table 2作者约1.7 μm与印出四值复算1.75 μm并存；平移台50 nm sensitivity不是位置准确度。4.5 μm拟合平面RMS不是GUM标准不确定度。",
+      "checked_on": "2026-11-06",
+      "record_status": "checked_excerpt",
+      "claim_type": "representative_result"
     },
     {
       "id": "lidar_meta",
