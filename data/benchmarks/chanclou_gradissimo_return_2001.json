@@ -1,0 +1,92 @@
+{
+  "id": "chanclou_gradissimo_return_2001",
+  "application": "单模光纤准直与通信耦合",
+  "application_id": "app_22",
+  "name": "Chanclou 2001：GRADISSIMO纤端返回模式抑制",
+  "evidence_type": "原始实验；端面事件、仪器指标及本库符号换算分开",
+  "source_ids": [
+    "chanclou_return_loss_2001",
+    "itu_g671_reflectance_2025",
+    "itu_g957_orl_2006"
+  ],
+  "parameters": [
+    {
+      "name": "器件与返回模式",
+      "value": "SMF端接无芯硅纤段和GRIN段，外径125 μm、平端面；考察返回光与LP01模式重新耦合。",
+      "evidence": {
+        "source_id": "chanclou_return_loss_2001",
+        "location": "作者稿pp.1–2/Fig.1"
+      }
+    },
+    {
+      "name": "测量波长与方法",
+      "value": "1550 nm；WIN-R白光干涉反射仪，空间分辨率标称50 μm。",
+      "evidence": {
+        "source_id": "chanclou_return_loss_2001",
+        "location": "作者稿p.2测量段"
+      }
+    },
+    {
+      "name": "仪器范围与accuracy",
+      "value": "回损量程0–100 dB；作者报告accuracy ±2 dB，未给置信水平/覆盖因子。量程不是样品达到100 dB。",
+      "evidence": {
+        "source_id": "chanclou_return_loss_2001",
+        "location": "作者稿p.2测量段"
+      }
+    },
+    {
+      "name": "示例几何",
+      "value": "硅纤长度400 μm、GRIN长度248 μm。",
+      "evidence": {
+        "source_id": "chanclou_return_loss_2001",
+        "location": "作者稿p.2 Fig.2前段"
+      }
+    },
+    {
+      "name": "示例端面反射",
+      "value": "作者报告−30.2 dB；Fig.2纵轴虽写return-loss却使用负值，按反射水平记录。",
+      "evidence": {
+        "source_id": "chanclou_return_loss_2001",
+        "location": "作者稿p.2测量段、p.3 Fig.2"
+      }
+    },
+    {
+      "name": "示例回损（本库符号换算）",
+      "value": "RL=30.2 dB；按功率约定ρ=10^(−30.2/10)≈0.000955，即约0.0955%。不是前向损耗百分比。",
+      "evidence": {
+        "source_id": "chanclou_return_loss_2001",
+        "location": "作者稿p.2报告值；本库按G.671/G.957功率定义换算"
+      },
+      "metric_id": "return_loss"
+    },
+    {
+      "name": "两接续界面事件",
+      "value": "正文均写低于−80 dB；Fig.3分别标<−90 dB和<−80 dB。是事件上界，未报告为精确反射值。",
+      "evidence": {
+        "source_id": "chanclou_return_loss_2001",
+        "location": "作者稿p.2/Fig.3"
+      }
+    },
+    {
+      "name": "长度扫描与模型边界",
+      "value": "Fig.4包含Lsilica=0及400 μm；实线为模型、点为实验。作者称模型贴近反射上界；28 dB为摘要/讨论量级，不是所有散点或示例30.2 dB的最大值。",
+      "evidence": {
+        "source_id": "chanclou_return_loss_2001",
+        "location": "作者稿pp.3–4/Fig.4及结论"
+      }
+    },
+    {
+      "name": "制造与散布解释",
+      "value": "未进行端面抛光；作者将散布与端面缺陷和光斑尺寸联系。结合AR膜进一步改善属于展望。",
+      "evidence": {
+        "source_id": "chanclou_return_loss_2001",
+        "location": "作者稿pp.3–4讨论与结论"
+      }
+    }
+  ],
+  "conditions": "测量返回入射导模的端面事件，不能等同所有空间方向的Fresnel总反射或整链路ORL。原文负dB曲线统一按反射水平解释，正回损另列；理论与散点不混同。未将该2001微光学实验按2025连接器标准判为合格或不合格。",
+  "unreported_or_not_verified": "未给偏振、光源完整带宽、绝对功率校准/参考面扣除、样品总数、重复次数或统计置信区间；±2 dB是作者所报accuracy，不当标准不确定度。文中amplitude fraction措辞与后文reflected power并存，本库采用功率定义换算而不复原未公开仪器算法。没有同件前向插损、完整公差或量产良率数据；弱事件上界受检测与校准限制。",
+  "record_status": "checked_excerpt",
+  "checked_on": "2026-11-06",
+  "claim_type": "representative_result"
+}

@@ -2,17 +2,18 @@
   "id": "app_22",
   "name": "单模光纤准直与通信耦合",
   "category": "激光与科研",
-  "summary": "商业准直镜、Subaru/LBT注入、扩芯组合失配与LEOF单接口双向插损分别记录；功率参考、统计域与工作点不同，不混合排名。",
+  "summary": "按任务区分前向耦合、插损与返回模式；商业/科研样本和连接器条件化标准分别记录，不能混合排名。",
   "metric_ids": [
     "coupling",
     "na",
     "efl",
     "transmission",
-    "insertion_loss"
+    "insertion_loss",
+    "return_loss"
   ],
   "priorities": [],
   "ranking_status": "not_established",
-  "ranking_gap": "任务：Jovanovic 2017的Subaru望远镜瞳形整形与单模光纤注入。作者稿§2.3–2.4 pp.5–6及Table 1表明，模式重叠改善可能被整形光学元件与掩模的损耗抵消；应在同一功率参考下同时核对模式耦合与光路透过率。Table 1是无波前像差假设下的模拟及整形元件通量预算，排除了其余光路，新PIAA设计当时尚未制备；不能作为实测端到端效率。§3.2 p.7说明焦比按所用光纤和光束模型匹配，并采用多轴对准；这不支持NA越大越好，也不能给出NA、焦距与耦合效率的通用P1/P2。上述依据限于该天文注入任务，通信封装的回损、稳定性和对准容差需要各自的任务证据。",
+  "ranking_gap": "任务：Jovanovic 2017的Subaru望远镜瞳形整形与单模光纤注入。作者稿§2.3–2.4 pp.5–6及Table 1表明，模式重叠改善可能被整形光学元件与掩模的损耗抵消；应在同一功率参考下同时核对模式耦合与光路透过率。Table 1是无波前像差假设下的模拟及整形元件通量预算，排除了其余光路，新PIAA设计当时尚未制备；不能作为实测端到端效率。§3.2 p.7说明焦比按所用光纤和光束模型匹配，并采用多轴对准；这不支持NA越大越好，也不能给出NA、焦距与耦合效率的通用P1/P2。上述依据限于该天文注入任务，通信封装的回损、稳定性和对准容差需要各自的任务证据。 通信反馈抑制另据Chanclou实验和G.957 §6.3.3：返回光可扰动激光器或产生多次反射噪声；须独立核回损与前向效率。G.671连接器限值有网络和温度例外，不能迁移为通用透镜门槛，也不构成指标排名。",
   "metric_mapping_status": "editorial_candidate_set",
   "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
   "legacy_priority_proposal": "模场重叠、插损/回损、发散、准直波段、对准容差",
@@ -23,10 +24,15 @@
     "lbt_smf_180s",
     "lbt_alignment_model",
     "he_tecf_combined_misalignment",
-    "wozniak_leof_repeatability"
+    "wozniak_leof_repeatability",
+    "chanclou_gradissimo_return_2001",
+    "itu_g671_connector_2025"
   ],
   "updated_on": "2026-11-06",
   "ranking_gap_refs": [
-    "jovanovic_smf_2017"
+    "jovanovic_smf_2017",
+    "chanclou_return_loss_2001",
+    "itu_g957_orl_2006",
+    "itu_g671_reflectance_2025"
   ]
 }

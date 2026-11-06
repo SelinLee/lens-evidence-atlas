@@ -334,3 +334,32 @@ test('Balli low-NA imaging retains the relay, limited reading scope and disputed
  assert.ok(d.sources.find(s=>s.id==='balli_3d_2021').evidence_scope.includes('未取得可视觉查看'));
  assert.ok(d.sources.find(s=>s.id==='balli_3d_si_2021').evidence_scope.includes('未声称实际查看PDF图像'));
 });
+
+test('return loss reverses reflectance sign without becoming insertion loss or an instrument-range result',()=>{
+ const d=load(),m=d.metrics.find(m=>m.id==='return_loss'),r=d.benchmarks.find(b=>b.id==='chanclou_gradissimo_return_2001');
+ assert.equal(m.direction,'higher');assert.ok(m.definition.includes('−10 log10ρ=−R'));
+ const rho=10**(-30.2/10);assert.ok(Math.abs(rho-.000954992586)<1e-12);
+ assert.ok(Math.abs(-10*Math.log10(rho)-30.2)<1e-12);
+ // A 10-fold reduction of returned power improves RL by 10 dB, not -10 dB.
+ assert.ok(Math.abs((-10*Math.log10(rho/10))-(-10*Math.log10(rho))-10)<1e-12);
+ assert.ok(r.parameters.find(p=>p.metric_id==='return_loss').value.includes('0.0955%'));
+ assert.ok(!r.parameters.some(p=>p.metric_id==='insertion_loss'));
+ assert.ok(r.parameters.find(p=>p.name==='仪器范围与accuracy').value.includes('不是样品达到100 dB'));
+ assert.ok(r.unreported_or_not_verified.includes('不当标准不确定度'));
+ assert.equal(d.sources.find(s=>s.id==='chanclou_return_loss_2001').source_year,2001);
+ assert.ok(r.conditions.includes('不等于')||r.conditions.includes('不能等同'));
+ assert.ok(!d.bests.some(b=>b.cohort_record_ids?.includes(r.id)));
+});
+
+test('connector limits retain network, temperature and durability exceptions instead of a universal lens gate',()=>{
+ const d=load(),r=d.benchmarks.find(b=>b.id==='itu_g671_connector_2025');
+ assert.equal(r.claim_type,'standard_requirement');
+ const limit=r.parameters.find(p=>p.metric_id==='return_loss');
+ for(const s of ['R≤−35 dB','RL≥35 dB','Notes7、8'])assert.ok(limit.value.includes(s));
+ const exception=r.parameters.find(p=>p.name==='网络适用例外');
+ for(const s of ['G.982','允许−27 dB','−40 dB为研究中'])assert.ok(exception.value.includes(s));
+ assert.ok(r.parameters.find(p=>p.name==='温度与耐久条件').value.includes('插拔耐久'));
+ assert.ok(r.parameters.find(p=>p.metric_id==='insertion_loss').value.includes('不是任意准直透镜'));
+ assert.ok(r.conditions.includes('不是所有透镜'));
+ assert.equal(d.applications.find(a=>a.id==='app_22').priorities.length,0);
+});
