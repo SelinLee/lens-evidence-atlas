@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.21",
+    "version": "0.1.22",
     "updated_on": "2026-11-06",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -405,24 +405,34 @@
       "id": "app_08",
       "name": "近红外感知与生物识别",
       "category": "工业与感知",
-      "summary": "940 nm：模块85°DFOV；另一单色MOE轴上绝对聚焦94%",
+      "summary": "区分940 nm模块、三/全Stokes偏振测量与防伪演示；无统一识别合格阈值",
       "metric_ids": [
         "fov",
         "mtf",
         "transmission",
-        "focus_efficiency"
+        "focus_efficiency",
+        "dolp",
+        "docp",
+        "aolp"
       ],
       "priorities": [],
       "ranking_status": "not_established",
-      "ranking_gap": "尚未找到适用任务的原文明确名次或定量权重；不按产品规格表的顺序假造排序。",
+      "ranking_gap": "偏振接收任务：Li 2025用逐场校准的四通道重建并讨论视场、零级串扰和效率权衡；Latawiec 2025强调像素级路由、端侧处理与模块集成。生物识别任务还需照明/工作距离与独立防伪错误统计，状态可测或图像可分不能代替系统验证。Rudd 2016为可见光双通道先例，说明轴向选择、配准与暗信号影响，不能当近红外门槛。以上是有出处的任务权衡，文献未给通用P1/P2或权重。",
       "metric_mapping_status": "editorial_candidate_set",
       "metric_mapping_note": "指标列表为检索导航；不能据此认定所有指标对该用途均已验证重要。",
       "legacy_priority_proposal": "有效光子、全场像质、温漂、偏振/SNR、装调与一致性",
       "record_ids": [
         "nir_polar",
-        "nir_moe"
+        "nir_moe",
+        "latawiec_nir_polarimetry_2025",
+        "li_mgl_polarimetry_2025"
       ],
-      "updated_on": "2026-11-06"
+      "updated_on": "2026-11-06",
+      "ranking_gap_refs": [
+        "li_mgl_2025",
+        "latawiec_nir_2025",
+        "rudd_paraph_2016"
+      ]
     },
     {
       "id": "app_09",
@@ -1033,6 +1043,25 @@
   ],
   "metrics": [
     {
+      "id": "aolp",
+      "name": "线偏振方位角（AoLP/AoP）",
+      "english_name": "Angle of Linear Polarization",
+      "definition": "Li 2025 Eq.(13)写AoP=½ arctan(S2/S1)。为保留象限，编辑实现应使用½ atan2(S2,S1)，结果按180°等价；这是计算约定补充，不声称原式已写atan2。S1=S2=0时方位角未定义；低DoLP时角度不稳定。误差应按180°周期取最短角差，再明确平均/绝对/RMS/最大口径；平均角不等于RMS误差。方位角本身没有越大越好的方向。",
+      "unit": "° / rad",
+      "direction": "tradeoff",
+      "required_conditions": [
+        "光谱、偏振坐标轴及S3左右旋符号约定",
+        "Stokes重建/配准/仪器矩阵校准与场点",
+        "S0低信号阈值、噪声偏置及不确定度",
+        "入射照明偏振、被测对象与统计区域"
+      ],
+      "definition_refs": [
+        "li_mgl_2025"
+      ],
+      "best_interpretation": "描述偏振状态；性能评价应比较给定状态和条件下的测量误差及任务收益，没有通用最优状态值",
+      "updated_on": "2026-11-06"
+    },
+    {
       "id": "array_fill_factor",
       "name": "阵列几何填充因子",
       "english_name": "Geometrical fill factor of a microlens array",
@@ -1170,6 +1199,45 @@
         "tele_definition"
       ],
       "best_interpretation": "没有跨应用统一最优值",
+      "updated_on": "2026-11-06"
+    },
+    {
+      "id": "docp",
+      "name": "圆偏振度（有符号DoCP）",
+      "english_name": "Signed Degree of Circular Polarization",
+      "definition": "此处沿用Li 2025 Eq.(12)：DoCP=S3/S0（S0>0），理想范围−1至1；符号依左右旋与观察方向约定。它不是总偏振度DoP；若其他来源用绝对值必须另标。S0/S1/S2三个通道不能独立给出DoCP；需要S3测量及校准。DoCP较大或绝对值较大不等于防伪正确率高，须在固定照明、对象及任务下评价。",
+      "unit": "1 / %",
+      "direction": "tradeoff",
+      "required_conditions": [
+        "光谱、偏振坐标轴及S3左右旋符号约定",
+        "Stokes重建/配准/仪器矩阵校准与场点",
+        "S0低信号阈值、噪声偏置及不确定度",
+        "入射照明偏振、被测对象与统计区域"
+      ],
+      "definition_refs": [
+        "li_mgl_2025"
+      ],
+      "best_interpretation": "描述偏振状态；性能评价应比较给定状态和条件下的测量误差及任务收益，没有通用最优状态值",
+      "updated_on": "2026-11-06"
+    },
+    {
+      "id": "dolp",
+      "name": "线偏振度（DoLP）",
+      "english_name": "Degree of Linear Polarization",
+      "definition": "DoLP=√(S1²+S2²)/S0（S0>0），描述光的线偏振成分，理想物理范围0–1。Li 2025 Eq.(11)；总偏振度DoP=√(S1²+S2²+S3²)/S0，只有已知S3=0时二者相同。测得S0/S1/S2即可求DoLP，不意味着已测完整Stokes。高DoLP不是高镜头质量或高防伪准确率；低S0、噪声和失配可导致无效/超界结果，不应仅裁剪后声称准确。Rudd Eq.(3)单轴有符号强度差不是一般DoLP。",
+      "unit": "1 / %",
+      "direction": "tradeoff",
+      "required_conditions": [
+        "光谱、偏振坐标轴及S3左右旋符号约定",
+        "Stokes重建/配准/仪器矩阵校准与场点",
+        "S0低信号阈值、噪声偏置及不确定度",
+        "入射照明偏振、被测对象与统计区域"
+      ],
+      "definition_refs": [
+        "li_mgl_2025",
+        "rudd_paraph_2016"
+      ],
+      "best_interpretation": "描述偏振状态；性能评价应比较给定状态和条件下的测量误差及任务收益，没有通用最优状态值",
       "updated_on": "2026-11-06"
     },
     {
@@ -1857,6 +1925,18 @@
       "doi": null
     },
     {
+      "id": "latawiec_nir_2025",
+      "title": "Pawel Latawiec 2025: Metasurface-integrated Polarimetric Sensors in Foundry-Compatible Process",
+      "url": "https://sid.org/Portals/sid/Files/SID-Digest/docs/59-1.pdf",
+      "doi": "10.1002/sdtp.18286",
+      "source_year": 2025,
+      "location": "SID Digest 56(1):790–792；p.790 §2 Results；p.791 Figs.1–4及§3 Impact",
+      "evidence_scope": "读取SID原始三页PDF文字，实际查看p.791图页；Crossref核元数据。Metalenz作者的器件报告，与2024 Polar ID简报属同一厂商，不能计为独立团队。没有读取其引用的Android合规条款，不将face-biometric compliant措辞视为认证。",
+      "kind": "conference_paper",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
+    },
+    {
       "id": "lenhardt_telecentric_course",
       "title": "Karl Lenhardt：Optical measurement techniques with telecentric lenses（Schneider原厂教程）",
       "url": "https://schneiderkreuznach.com/application/files/9715/0781/8897/optical-measurement.pdf",
@@ -1879,6 +1959,18 @@
       "kind": "paper",
       "verification": "inherited_v2",
       "doi": null
+    },
+    {
+      "id": "li_mgl_2025",
+      "title": "Feng-Jun Li et al. 2025: Meta-grating-lens–based monolithic polarization camera",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12551697/",
+      "doi": "10.1126/sciadv.adx9886",
+      "source_year": 2025,
+      "location": "Science Advances 11(43):eadx9886；Results Figs.3–5/Eqs.(6),(9)–(14)；Methods及Competing interests",
+      "evidence_scope": "读取PMC原始HTML摘要、Introduction、Results、Discussion、Methods及声明；实际查看原始Figs.3/4/5，核公式(10)–(13)根号和符号。PDF入口为检查页，补充材料S1–S11未取得，不声称已核S9效率分母、S10误差或S11融合细节。团队含Jinan University与Shphotonics，作者披露三项相关专利申请；不是第三方产品认证。",
+      "kind": "peer_reviewed_paper",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
     },
     {
       "id": "li_telecentric_2015",
@@ -2017,11 +2109,11 @@
       "title": "Metalenz Polar ID 940 nm Camera Module",
       "url": "https://metalenz.com/wp-content/uploads/2024/02/Polar-ID-MWC_RackcardFinal-Bleed.pdf",
       "location": "PDF第2页 Specifications",
-      "evidence_scope": "2024厂商模块简报",
+      "evidence_scope": "取得2024原厂两页PDF并实际查看第2页可见规格表及尺寸图。文本层含TTL4.21 mm、全Stokes、帧率等不可见内容，与渲染页不一致；这些隐藏文本不作为已核可见规格。仅支持厂商声明，不代表独立实测。",
       "source_year": 2024,
-      "checked_on": "2026-10-25",
+      "checked_on": "2026-11-06",
       "kind": "manufacturer",
-      "verification": "inherited_v2",
+      "verification": "checked_excerpt",
       "doi": null
     },
     {
@@ -2263,6 +2355,18 @@
       "kind": "paper",
       "verification": "checked_excerpt",
       "doi": "10.1038/s41467-023-38858-y"
+    },
+    {
+      "id": "rudd_paraph_2016",
+      "title": "Rudd, Günther & Boult 2016: PARAPH: Presentation Attack Rejection by Analyzing Polarization Hypotheses",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2016_workshops/w4/papers/Rudd_PARAPH_Presentation_Attack_CVPR_2016_paper.pdf",
+      "doi": null,
+      "source_year": 2016,
+      "location": "CVPR Workshops原始PDF pp.1–8（印刷103–110）；§§2–6、Eq.(3)、Figs.3–4",
+      "evidence_scope": "读取摘要、方法和实验/限制相关段，实际查看PDF pp.4–5（印刷106–107）。研究为被动可见光双正交通道，作为任务边界依据；不是940 nm性能样本，不是全Stokes测量或大规模防伪认证。",
+      "kind": "conference_paper",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
     },
     {
       "id": "sfe",
@@ -3563,6 +3667,65 @@
       "claim_type": "representative_result"
     },
     {
+      "id": "latawiec_nir_polarimetry_2025",
+      "application": "近红外感知与生物识别",
+      "application_id": "app_08",
+      "name": "Latawiec 2025 传感器集成三Stokes偏振成像",
+      "evidence_type": "厂商作者的会议器件报告及定性图像",
+      "source_ids": [
+        "latawiec_nir_2025"
+      ],
+      "parameters": [
+        {
+          "name": "传感器与集成",
+          "value": "Samsung S5K931S全局快门；非晶硅矩形柱，低折射率介质；与传感器隔数微米spacer",
+          "evidence": {
+            "source_id": "latawiec_nir_2025",
+            "location": "p.790 §2 Results"
+          }
+        },
+        {
+          "name": "偏振测量通道",
+          "value": "0°/90°及45°/135°像素路由；重建S0、S1、S2，后两者有符号；未报告S3",
+          "evidence": {
+            "source_id": "latawiec_nir_2025",
+            "location": "p.790 §2 Results；p.791 Figs.1/4"
+          },
+          "metric_id": "dolp"
+        },
+        {
+          "name": "像素尺寸",
+          "value": "2.2 μm",
+          "evidence": {
+            "source_id": "latawiec_nir_2025",
+            "location": "p.791 §3 Impact"
+          }
+        },
+        {
+          "name": "处理帧率声明",
+          "value": "180 frames per second，端侧成像处理；未给对应分辨率/曝光/延迟统计",
+          "evidence": {
+            "source_id": "latawiec_nir_2025",
+            "location": "p.791 §3 Impact"
+          }
+        },
+        {
+          "name": "照明与样例",
+          "value": "快门同步漫射闪光；塑料盒和人像的强度/S1/S2/DoLP定性图",
+          "evidence": {
+            "source_id": "latawiec_nir_2025",
+            "location": "p.790 §2；p.791 Figs.2/4"
+          },
+          "metric_id": "dolp"
+        }
+      ],
+      "conditions": "近红外器件报告，没有明确中心波长；不能继承2024 Polar ID的940 nm。三线偏振Stokes分量支持DoLP但不支持一般椭圆态完整Stokes/DoCP；高透过是定性描述。",
+      "unreported_or_not_verified": "未报告定量透过率、FOV/MTF、偏振误差、帧率条件、独立识别验证或误接受/误拒绝统计。face-biometric compliant不等于已核标准认证；180 fps不能与另一系统23 fps在缺少分辨率和曝光条件时排名。",
+      "record_status": "checked_excerpt",
+      "checked_on": "2026-11-06",
+      "claim_type": "representative_result"
+    },
+    {
       "application": "单模光纤准直与通信耦合",
       "application_id": "app_22",
       "source_ids": [
@@ -3660,6 +3823,116 @@
       ],
       "conditions": "同一观测片段；由一对校准光电二极管测得SMF输出功率与光纤端入射功率之比（§2），不是望远镜入口到光纤输出的端到端透过率。原型无主动光束稳定或连续大气色散校正；未按瞳形理论上限0.78再次归一化。",
       "unreported_or_not_verified": "Table 1同目标列22±2%，本条限定正文明确的180秒片段23%，不拼为同一统计值；差异的具体窗口对应关系未核。偏振、光纤实际长度及端面损耗校正的完整明细未核，不与Subaru实验室的78%直接排名。"
+    },
+    {
+      "id": "li_mgl_polarimetry_2025",
+      "application": "近红外感知与生物识别",
+      "application_id": "app_08",
+      "name": "Li 2025 MGL 940 nm 全Stokes偏振相机",
+      "evidence_type": "科研器件实验、成像演示及同文光学模拟（逐项区分）",
+      "source_ids": [
+        "li_mgl_2025"
+      ],
+      "parameters": [
+        {
+          "name": "波长与滤光片",
+          "value": "940 nm；滤光片带宽30 nm",
+          "evidence": {
+            "source_id": "li_mgl_2025",
+            "location": "Results: Full-Stokes polarization imaging，Fig.3H前段"
+          }
+        },
+        {
+          "name": "孔径与几何",
+          "value": "光阑直径0.5 mm；光阑至超表面1.57 mm；EFL1.81 mm；超表面直径0.98 mm",
+          "evidence": {
+            "source_id": "li_mgl_2025",
+            "location": "Fig.3A图注；Methods: Sample fabrication"
+          }
+        },
+        {
+          "name": "设计视场",
+          "value": "约14°（Eq.(6)计算，θg=9.8°）；不是已核85°DFOV同口径对照",
+          "evidence": {
+            "source_id": "li_mgl_2025",
+            "location": "Results Eq.(6)/Fig.3"
+          },
+          "metric_id": "fov"
+        },
+        {
+          "name": "MTF与Strehl模型",
+          "value": "切向MTF为模拟；各角平均Strehl 0.71，不是实测MTF或全场衍射极限",
+          "evidence": {
+            "source_id": "li_mgl_2025",
+            "location": "Results Fig.3C及对应正文"
+          },
+          "metric_id": "mtf"
+        },
+        {
+          "name": "四通道聚焦效率",
+          "value": "实验报告总61.3%，零级2.3%；S9未读，分母/积分区域和偏振平均未完整核实，暂不标绝对效率",
+          "evidence": {
+            "source_id": "li_mgl_2025",
+            "location": "Results Fig.3H前段；Methods: Characterization of samples"
+          },
+          "metric_id": "focus_efficiency"
+        },
+        {
+          "name": "外形与采样",
+          "value": "外壳9.2 × 9.2 × 4.81 mm；像素3 × 3 μm；壳厚不等于TTL",
+          "evidence": {
+            "source_id": "li_mgl_2025",
+            "location": "Results Fig.3H前段"
+          }
+        },
+        {
+          "name": "重建与校准",
+          "value": "四通道配准，S=M⁻¹I；逐场校准矩阵；S0–S3用于DoP/DoLP/DoCP/AoP",
+          "evidence": {
+            "source_id": "li_mgl_2025",
+            "location": "Results Eq.(9)及Eqs.(10)–(13)"
+          },
+          "metric_id": "docp"
+        },
+        {
+          "name": "偏振实验误差声明",
+          "value": "x线偏振输入：全场平均AoP1.27°；多入射态平均偏振测量误差<1.32%（未核误差范数/聚合），不是所有角度最大误差",
+          "evidence": {
+            "source_id": "li_mgl_2025",
+            "location": "Results Fig.4A对应段"
+          },
+          "metric_id": "aolp"
+        },
+        {
+          "name": "处理与成像速度",
+          "value": "笔记本处理约10 ms，成像帧率可达23 fps；不能把10 ms倒数当端到端100 fps",
+          "evidence": {
+            "source_id": "li_mgl_2025",
+            "location": "Results Fig.4之后实时偏振成像段"
+          }
+        },
+        {
+          "name": "防伪示例条件",
+          "value": "940 nm部分椭圆偏振VCSEL照明，距离100 cm；一位作者真人与其打印照片",
+          "evidence": {
+            "source_id": "li_mgl_2025",
+            "location": "Results: Face antispoofing application；Fig.5"
+          }
+        },
+        {
+          "name": "示例图像距离",
+          "value": "融合RGB各10个直方图区间；按Eq.(14)χ²距离Σ(Hx−Hy)²/(Hx+Hy)，该对图像0.9199；不是91.99%识别准确率",
+          "evidence": {
+            "source_id": "li_mgl_2025",
+            "location": "Results Eq.(14)/Fig.5"
+          }
+        }
+      ],
+      "conditions": "单个MGL研究；S0–S3全Stokes与Metalenz三通道不同。四通道功率使用940 nm超连续光、偏振片及波片、4f系统和功率计测量；聚焦效率不能与缺少同分母条件的NILT94%互排。Fig.4为透明物偏振图，Fig.5为有限防伪演示。",
+      "unreported_or_not_verified": "主文可读、补充S9/S10/S11未读：缺完整效率分母、误差定义/状态采样数/不确定度、融合算法及测试数据集。传感器resolution原文写1280 μm by800 μm，单位有歧义，不擅改成像素数；设计段称BK7而制造段称BF33，保留不一致。没有独立防伪分类器验证、FAR/FRR/APCER/BPCER/ROC或置信区间；0.9199没有通用通过阈值。3D面具/动态攻击尚不能由此演示证明。含企业作者和相关专利申请；不把同文模拟当实验或多个独立样本。",
+      "record_status": "checked_excerpt",
+      "checked_on": "2026-11-06",
+      "claim_type": "representative_result"
     },
     {
       "id": "li_telecentric_calibration_2015",
@@ -4846,34 +5119,67 @@
     {
       "id": "nir_polar",
       "application": "近红外感知与生物识别",
+      "application_id": "app_08",
       "name": "Metalenz Polar ID 模块",
-      "evidence_type": "厂商模块简报",
+      "evidence_type": "2024原厂模块简报；非独立实测",
       "source_ids": [
         "metalenz"
       ],
       "parameters": [
         {
-          "name": "中心波长",
-          "value": "940 nm"
+          "name": "主动泛光照明波长",
+          "value": "940 nm（centroid；不是接收带宽）",
+          "evidence": {
+            "source_id": "metalenz",
+            "location": "PDF p.2 Active Illumination / Wavelength (centroid)"
+          }
         },
         {
-          "name": "DFOV",
-          "value": "85°"
+          "name": "视场",
+          "value": "85° DFOV；表内65° H×V",
+          "evidence": {
+            "source_id": "metalenz",
+            "location": "PDF p.2 Specifications / FOV"
+          },
+          "metric_id": "fov"
         },
         {
           "name": "工作范围",
-          "value": "15–70 cm"
+          "value": "15–70 cm",
+          "evidence": {
+            "source_id": "metalenz",
+            "location": "PDF p.2 Specifications / Range"
+          }
         },
         {
-          "name": "TTL",
-          "value": "4.21 mm"
+          "name": "环境光声明",
+          "value": "0–100K Lux；未附对应识别率",
+          "evidence": {
+            "source_id": "metalenz",
+            "location": "PDF p.2 Specifications / Ambient lighting conditions"
+          }
+        },
+        {
+          "name": "接收与快门",
+          "value": "CMOS IR，全局快门",
+          "evidence": {
+            "source_id": "metalenz",
+            "location": "PDF p.2 Specifications / Sensor及Shutter"
+          }
+        },
+        {
+          "name": "外形尺寸图",
+          "value": "图示8 mm × 4.7 mm，侧向高度3.8 mm；不是TTL",
+          "evidence": {
+            "source_id": "metalenz",
+            "location": "PDF p.2尺寸示意图"
+          }
         }
       ],
-      "conditions": "2024模块配置；TTL是整模块长度而非超表面厚度。",
-      "unreported_or_not_verified": "F数、MTF、效率、偏振重建精度与误识率阈值",
-      "application_id": "app_08",
-      "checked_on": "2026-10-25",
-      "record_status": "inherited_v2",
+      "conditions": "2024模块可见规格；接收、主动泛光及外形尺寸分开。与Latawiec 2025为同一厂商资料，不计两个独立研究团队。",
+      "unreported_or_not_verified": "撤下旧TTL4.21 mm：该数仅出现在PDF隐藏文本层，可见表无此行；图示3.8 mm不能替代TTL。未核F数、MTF、定量效率、S3能力、偏振重建误差、识别错误率及测试协议；高安全/尺寸成本比较未作为认证或独立性能结论。",
+      "record_status": "checked_excerpt",
+      "checked_on": "2026-11-06",
       "claim_type": "representative_result"
     },
     {

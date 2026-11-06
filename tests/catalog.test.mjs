@@ -236,3 +236,29 @@ test('OCT separates measured particles, theoretical widths, target period and so
  const n=1.336,lambda=.85,na=.05,w=lambda/(Math.PI*na);
  assert.ok(Math.abs((2*Math.PI*n*w*w/lambda)/(n*lambda/(2*Math.PI*na*na))-4)<1e-12);
 });
+
+test('NIR evidence keeps visible specifications, measured channels and antispoofing scope separate',()=>{
+ const d=load(),a=d.applications.find(x=>x.id==='app_08');
+ const polar=d.benchmarks.find(x=>x.id==='nir_polar');
+ const linear=d.benchmarks.find(x=>x.id==='latawiec_nir_polarimetry_2025');
+ const full=d.benchmarks.find(x=>x.id==='li_mgl_polarimetry_2025');
+ // Hidden PDF text must never return as an asserted specification.
+ assert.ok(!polar.parameters.some(p=>/TTL|4\.21/.test(p.name)||/4\.21/.test(p.value)));
+ assert.ok(polar.parameters.find(p=>p.name==='主动泛光照明波长').value.includes('不是接收带宽'));
+ assert.ok(polar.unreported_or_not_verified.includes('隐藏文本层'));
+ assert.ok(!linear.parameters.some(p=>p.metric_id==='docp'));
+ assert.ok(linear.conditions.includes('没有明确中心波长'));
+ assert.ok(linear.parameters.find(p=>p.name==='偏振测量通道').value.includes('未报告S3'));
+ assert.ok(full.parameters.find(p=>p.metric_id==='mtf').value.includes('模拟'));
+ assert.ok(full.parameters.find(p=>p.metric_id==='focus_efficiency').value.includes('暂不标绝对效率'));
+ assert.ok(full.parameters.find(p=>p.name==='示例图像距离').value.includes('不是91.99%识别准确率'));
+ assert.ok(full.unreported_or_not_verified.includes('没有独立防伪分类器验证'));
+ assert.equal(a.ranking_status,'not_established');assert.equal(a.ranking_gap_refs.length,3);
+ assert.ok(!d.bests.some(b=>b.application_id===a.id));
+ for(const id of ['dolp','docp','aolp']){
+  const m=d.metrics.find(m=>m.id===id);assert.equal(m.direction,'tradeoff');
+  assert.ok(m.definition_refs.includes('li_mgl_2025'));
+ }
+ assert.ok(d.metrics.find(m=>m.id==='aolp').definition.includes('S1=S2=0时方位角未定义'));
+ assert.ok(d.metrics.find(m=>m.id==='docp').definition.includes('−1至1'));
+});

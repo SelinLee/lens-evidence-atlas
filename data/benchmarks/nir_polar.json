@@ -1,33 +1,66 @@
 {
   "id": "nir_polar",
   "application": "近红外感知与生物识别",
+  "application_id": "app_08",
   "name": "Metalenz Polar ID 模块",
-  "evidence_type": "厂商模块简报",
+  "evidence_type": "2024原厂模块简报；非独立实测",
   "source_ids": [
     "metalenz"
   ],
   "parameters": [
     {
-      "name": "中心波长",
-      "value": "940 nm"
+      "name": "主动泛光照明波长",
+      "value": "940 nm（centroid；不是接收带宽）",
+      "evidence": {
+        "source_id": "metalenz",
+        "location": "PDF p.2 Active Illumination / Wavelength (centroid)"
+      }
     },
     {
-      "name": "DFOV",
-      "value": "85°"
+      "name": "视场",
+      "value": "85° DFOV；表内65° H×V",
+      "evidence": {
+        "source_id": "metalenz",
+        "location": "PDF p.2 Specifications / FOV"
+      },
+      "metric_id": "fov"
     },
     {
       "name": "工作范围",
-      "value": "15–70 cm"
+      "value": "15–70 cm",
+      "evidence": {
+        "source_id": "metalenz",
+        "location": "PDF p.2 Specifications / Range"
+      }
     },
     {
-      "name": "TTL",
-      "value": "4.21 mm"
+      "name": "环境光声明",
+      "value": "0–100K Lux；未附对应识别率",
+      "evidence": {
+        "source_id": "metalenz",
+        "location": "PDF p.2 Specifications / Ambient lighting conditions"
+      }
+    },
+    {
+      "name": "接收与快门",
+      "value": "CMOS IR，全局快门",
+      "evidence": {
+        "source_id": "metalenz",
+        "location": "PDF p.2 Specifications / Sensor及Shutter"
+      }
+    },
+    {
+      "name": "外形尺寸图",
+      "value": "图示8 mm × 4.7 mm，侧向高度3.8 mm；不是TTL",
+      "evidence": {
+        "source_id": "metalenz",
+        "location": "PDF p.2尺寸示意图"
+      }
     }
   ],
-  "conditions": "2024模块配置；TTL是整模块长度而非超表面厚度。",
-  "unreported_or_not_verified": "F数、MTF、效率、偏振重建精度与误识率阈值",
-  "application_id": "app_08",
-  "checked_on": "2026-10-25",
-  "record_status": "inherited_v2",
+  "conditions": "2024模块可见规格；接收、主动泛光及外形尺寸分开。与Latawiec 2025为同一厂商资料，不计两个独立研究团队。",
+  "unreported_or_not_verified": "撤下旧TTL4.21 mm：该数仅出现在PDF隐藏文本层，可见表无此行；图示3.8 mm不能替代TTL。未核F数、MTF、定量效率、S3能力、偏振重建误差、识别错误率及测试协议；高安全/尺寸成本比较未作为认证或独立性能结论。",
+  "record_status": "checked_excerpt",
+  "checked_on": "2026-11-06",
   "claim_type": "representative_result"
 }

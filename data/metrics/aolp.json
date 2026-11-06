@@ -1,0 +1,19 @@
+{
+  "id": "aolp",
+  "name": "线偏振方位角（AoLP/AoP）",
+  "english_name": "Angle of Linear Polarization",
+  "definition": "Li 2025 Eq.(13)写AoP=½ arctan(S2/S1)。为保留象限，编辑实现应使用½ atan2(S2,S1)，结果按180°等价；这是计算约定补充，不声称原式已写atan2。S1=S2=0时方位角未定义；低DoLP时角度不稳定。误差应按180°周期取最短角差，再明确平均/绝对/RMS/最大口径；平均角不等于RMS误差。方位角本身没有越大越好的方向。",
+  "unit": "° / rad",
+  "direction": "tradeoff",
+  "required_conditions": [
+    "光谱、偏振坐标轴及S3左右旋符号约定",
+    "Stokes重建/配准/仪器矩阵校准与场点",
+    "S0低信号阈值、噪声偏置及不确定度",
+    "入射照明偏振、被测对象与统计区域"
+  ],
+  "definition_refs": [
+    "li_mgl_2025"
+  ],
+  "best_interpretation": "描述偏振状态；性能评价应比较给定状态和条件下的测量误差及任务收益，没有通用最优状态值",
+  "updated_on": "2026-11-06"
+}

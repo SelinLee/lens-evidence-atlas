@@ -359,3 +359,12 @@ ef84c19`；源提交与发布一致，保持owner-only访问。EVD-004d子任务
 - **下批入口（仅线索）**：Latawiec PDF为https://sid.org/Portals/sid/Files/SID-Digest/docs/59-1.pdf（Crossref已核DOI 10.1002/sdtp.18286，Pawel Latawiec，SID Digest 56(1):790–792，2025-06；出版社DOI网页工具未能打开）；其引用PARAPH原始论文https://openaccess.thecvf.com/content_cvpr_2016_workshops/w4/papers/Rudd_PARAPH_Presentation_Attack_CVPR_2016_paper.pdf可继续核最终防伪任务，当前仅定位未读。Sony Polarsens官方页可补器件机制，但不作为论文实测替代。以上未写入科学目录、未提升来源核验等级。
 
 - **实际发布验收**：Pages42233914755成功（部署7602449285），公开build.json为v0.1.21，SHA256与本地24bce96856cc3fb125b5e3da8758a6227d635f9ee6f6630dba86a2428fc9339b一致。本机独立Chrome无头实际HTTPS桌面/390 px手机定向验收通过：搜索1/0/1/33、三指标定义、两引用、10参数样本反复打开滚动关闭、2类排序筛选及已有远心/首批四方向样本；截图查看无横向溢出。关闭EVD-008a，父任务继续进行；下一步EVD-009a优先纠正旧模块TTL依据。
+
+## 27 — 2026-11-06 近红外偏振测量与防伪边界（EVD-009a）
+
+- **基线与接续**：main ce46fe7，独立分支codex/nir-polarimetry-review。前轮确认公开仓库及文档Pages42235288738成功，属于验收状态证据；本轮推进待落库研究，不重复状态汇报。旧目标的私有描述已被用户最新公开决定覆盖。
+- **原文核验**：按四步法读取Metalenz/SID原始PDF、Li Science Advances主文HTML、PARAPH原始PDF相关段并核关键图表。详情见NIR_POLARIMETRY_REVIEW_2026-11-06.md。Li补充材料和NILT旧链接访问失败，未抬升这些部分的证据等级。
+- **变化**：撤下Polar ID隐藏文字TTL断言，改正940 nm的照明归属；新增三/全Stokes两研究记录、3个来源及DoLP/DoCP/AoLP定义，app08补有引用的任务权衡。v0.1.22候选共33应用/31指标/77记录/103来源；保留2类有依据层次、2项限定最佳，没有新排名。
+- **重要限制**：状态量不等于质量分数；Li的效率分母、偏振误差范数待SI核验；0.9199是图像距离；防伪小样例不证明错误率或认证。模拟MTF、壳厚与TTL、处理时间与成像fps、三Stokes与S3均分开；同厂商不计独立团队。
+- **交付状态**：数据与笔记已准备，测试/页面及PR/Pages验收记录待追加。父EVD-009继续进行；下一步补照明及独立PAD协议，不能以本批关闭父任务。
+- **本地验收**：59项测试、构建及diff检查通过。独立Google Chrome无头在本地dist完成桌面1440 px/手机390 px查询1/0/1/33、三定义、三来源、11参数样本及旧模块/三通道记录弹窗、排名筛选和原重点样本保留检查；截图实际查看，无横向溢出。候选数据SHA256为53eb3e283faeea4b7ef85e700db78fcc31f0fb81fbfb7763d750ec7454abed87。仍待PR和实际公开页面验收。
