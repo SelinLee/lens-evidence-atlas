@@ -60,12 +60,12 @@
 | [EVD-016 工艺、容差与不确定性](#evd-016) | Q1 | todo | — | 2026-11-06 | 先落到 EVD-001–004 | — |
 | [EVD-017 来源读取范围复核](#evd-017) | Q1 | todo | — | 2026-11-06 | 随来源复读逐条处理 | — |
 | [EVD-018 条件化比较集合](#evd-018) | Q2 | todo | — | 2026-11-06 | EVD-013、对应应用样本 | — |
-| [EVD-001a Wang 低 NA 元件](#evd-001a) | Q0 | review | dot | 2026-11-06 | EVD-001 / 017 的局部交付 | [PR #3](https://github.com/SelinLee/lens-evidence-atlas/pull/3) |
-| [EVD-002a Luo 照明/系统边界](#evd-002a) | Q0 | review | dot | 2026-11-06 | EVD-002 / 013 / 017 的局部交付 | [PR #3](https://github.com/SelinLee/lens-evidence-atlas/pull/3) |
-| [EVD-004a Jovanovic 耦合实测](#evd-004a) | Q0 | review | dot | 2026-11-06 | EVD-004 / 013 / 017 的局部交付 | [PR #3](https://github.com/SelinLee/lens-evidence-atlas/pull/3) |
-| [EVD-013a 引用与比较防线](#evd-013a) | Q0 | review | dot | 2026-11-06 | 为 EVD-013 / 018 提供校验，非完成比较集合 | [PR #3](https://github.com/SelinLee/lens-evidence-atlas/pull/3) |
-| [EVD-014a Richards 论文内范围](#evd-014a) | Q0 | review | dot | 2026-11-06 | EVD-014；不替代 EVD-003 阵列任务 | [PR #3](https://github.com/SelinLee/lens-evidence-atlas/pull/3) |
-| [EVD-003a 喷墨阵列几何](#evd-003a) | Q0 | review | dot | 2026-11-06 | EVD-003 / 012 / 013 的局部交付 | [PR #3](https://github.com/SelinLee/lens-evidence-atlas/pull/3) |
+| [EVD-001a Wang 低 NA 元件](#evd-001a) | Q0 | done | dot | 2026-11-06 | EVD-001 / 017 的局部交付 | [PR #3](https://github.com/SelinLee/lens-evidence-atlas/pull/3) |
+| [EVD-002a Luo 照明/系统边界](#evd-002a) | Q0 | done | dot | 2026-11-06 | EVD-002 / 013 / 017 的局部交付 | [PR #3](https://github.com/SelinLee/lens-evidence-atlas/pull/3) |
+| [EVD-004a Jovanovic 耦合实测](#evd-004a) | Q0 | done | dot | 2026-11-06 | EVD-004 / 013 / 017 的局部交付 | [PR #3](https://github.com/SelinLee/lens-evidence-atlas/pull/3) |
+| [EVD-013a 引用与比较防线](#evd-013a) | Q0 | done | dot | 2026-11-06 | 为 EVD-013 / 018 提供校验，非完成比较集合 | [PR #3](https://github.com/SelinLee/lens-evidence-atlas/pull/3) |
+| [EVD-014a Richards 论文内范围](#evd-014a) | Q0 | done | dot | 2026-11-06 | EVD-014；不替代 EVD-003 阵列任务 | [PR #3](https://github.com/SelinLee/lens-evidence-atlas/pull/3) |
+| [EVD-003a 喷墨阵列几何](#evd-003a) | Q0 | done | dot | 2026-11-06 | EVD-003 / 012 / 013 的局部交付 | [PR #3](https://github.com/SelinLee/lens-evidence-atlas/pull/3) |
 
 建议首批从 EVD-002 和 EVD-004 中选择尚未被认领的具体缺口，同时完成相应的 EVD-013 条件记录；先核对现有研究分支/PR，避免重复。跨领域大任务应先拆成可一次审核的小任务。
 
@@ -75,14 +75,14 @@
 
 | ID / 任务 | 队列 | 状态 | 负责人 | 更新日期 | 依赖 | 产物 |
 | --- | --- | --- | --- | --- | --- | --- |
-| EVD-014b 模式接收理论界限 | Q0 | review | 本机 Codex | 2026-11-06 | PR #3 中的论文来源 | [增量核验](COUPLING_BOUND_REVIEW_2026-11-06.md) / [PR #4](https://github.com/SelinLee/lens-evidence-atlas/pull/4) |
-| EVD-004b 耦合公式与功率参考面 | Q0 | review | 本机 Codex | 2026-11-06 | EVD-014b | 同上；不是独立实验样本 |
+| EVD-014b 模式接收理论界限 | Q0 | done | 本机 Codex | 2026-11-06 | PR #3 中的论文来源 | [增量核验](COUPLING_BOUND_REVIEW_2026-11-06.md) / [PR #4](https://github.com/SelinLee/lens-evidence-atlas/pull/4) |
+| EVD-004b 耦合公式与功率参考面 | Q0 | done | 本机 Codex | 2026-11-06 | EVD-014b | 同上；不是独立实验样本 |
 
 - [x] 实际核读Ansys定义正文和Jovanovic §2.1–2.4、Eq.(1)、Table 1；原有图页读取记录与本轮HTML增量分开。
 - [x] 将公式、量纲、归一化上限和损耗边界落入指标/界限数据；没有建立新纪录或计作新独立样本。
 - [x] 19项测试、构建及Chrome定向页面检查通过；未作全站/移动端交互验收。
-- [ ] PR验收合并。
-- [ ] 私有发布并记录部署版本。
+- [x] PR #4已验收合并（2026-11-06）；本次仅关闭子任务。
+- [x] v0.1.3已私有发布：Sites版本2，源提交eb368c5；详见研究日志05批。
 
 ### EVD-001
 
@@ -220,7 +220,7 @@
 
 ## 首批局部交付与审核条件
 
-共同分支：`evidence/2026-11-06-priority-batch-1`；科学数据提交 [`8665352`](https://github.com/SelinLee/lens-evidence-atlas/commit/86653527ef4b818501d54e3c6621fbea19bba7a1)，关联 [Issue #1](https://github.com/SelinLee/lens-evidence-atlas/issues/1) / [PR #3](https://github.com/SelinLee/lens-evidence-atlas/pull/3)。过程及读取范围见 [2026-11-06-02 日志](RESEARCH_LOG.md)。待审核子任务不是父任务完成；全部尚未合并或私有发布。
+共同分支：`evidence/2026-11-06-priority-batch-1`；科学数据提交 [`8665352`](https://github.com/SelinLee/lens-evidence-atlas/commit/86653527ef4b818501d54e3c6621fbea19bba7a1)，关联 [Issue #1](https://github.com/SelinLee/lens-evidence-atlas/issues/1) / [PR #3](https://github.com/SelinLee/lens-evidence-atlas/pull/3)。过程及读取范围见 [2026-11-06-02 日志](RESEARCH_LOG.md)。这些子任务已通过PR #3合并并随v0.1.3私有发布；父任务未满足的验收继续保留。
 
 ### EVD-001a
 
@@ -228,7 +228,7 @@
 
 - [x] NA0.1、650–1000 nm 平均88.5%及两个谱点值绑定主文 HTML 位置；同孔径入射分母、半径3×FWHM焦圈明确。
 - [x] 元件/完整成像系统分开，样本数和逐波长焦面未核验，PDF/SI未读；与Richards的分母不同，不排名。
-- [ ] PR审核并合并；父任务仍需第二独立来源与明确成像任务。
+- [x] PR #3已审核并合并；父任务仍需第二独立来源与明确成像任务。
 
 ### EVD-002a
 
@@ -236,7 +236,7 @@
 
 - [x] 532 nm照明FWHM6.8 μm与系统横向PSF约1.7 μm分开，记录照明NA0.05、检测NA0.3、1 μm珠和0.5 μm步长。
 - [x] 44.3%仅保留作者报告的透过效率名称；分母未核，文内1.1/1.7 μm、800/850 nm差异保留；SI/原图未读。
-- [ ] PR审核并合并；父任务仍需差异消歧、完整测量定义及独立可比来源。
+- [x] PR #3已审核并合并；父任务仍需差异消歧、完整测量定义及独立可比来源。
 
 ### EVD-004a
 
@@ -244,7 +244,7 @@
 
 - [x] 实际查看arXiv v2 pp.8、12–13图页；记录约78%@1500/1550 nm、纤型/MFD和365 μm MMF参考分母，排除端面Fresnel反射。
 - [x] 86%相对91%理论值不是绝对耦合率，f/5.3模型估计未直接验证，不记实测NA；未知偏振/对准与端到端边界保留。
-- [ ] PR审核并合并；父任务仍需独立同条件实验及实际失配容差。
+- [x] PR #3已审核并合并；父任务仍需独立同条件实验及实际失配容差。
 
 ### EVD-013a
 
@@ -253,7 +253,7 @@
 - [x] 新核验参数来源定位、核验状态枚举、应用/记录双向关联；未知及空条件不能比较。
 - [x] 本库最优候选存在/唯一性/应用、指标必需条件、截止日、选中参数及显示值检查；19项测试与构建通过。
 - [x] 本地四目标应用、出处与搜索筛选实测；无新增无范围最优，人工仍须判断科学可比性与数值优劣。
-- [ ] PR审核并合并；父任务的全库缺项表与EVD-018真实比较集合仍待做。
+- [x] PR #3已审核并合并；父任务的全库缺项表与EVD-018真实比较集合仍待做。
 
 ### EVD-014a
 
@@ -261,7 +261,7 @@
 
 - [x] 实际查看出版社PDF印刷pp.3–5、7–9；10样本均值/最佳范围、实验空白基底分母和3×FWHM焦圈定位。
 - [x] 仿真200×200 μm焦面功率分母另列；约2.8%为四离散谱点相对542 nm的报告，固定共同焦面未证明、SI未读。
-- [ ] PR审核并合并；EVD-014理论界限原文复核和EVD-003独立阵列、串扰/均匀性等任务仍待做。
+- [x] PR #3已审核并合并；EVD-014理论界限原文复核和EVD-003独立阵列、串扰/均匀性等任务仍待做。
 
 ### EVD-003a
 
@@ -271,8 +271,8 @@
 - [x] 不拼接不同样品系列；保留完整阵列尺寸、统计边界、串扰和SI未核验。
 - [x] 收窄既有单透镜编辑层次，不扩成阵列整体排名。
 - [x] 测试/构建与查询逻辑单元回归通过；提交草稿审核。
-- [ ] 真实浏览器展示验收：云浏览器无法连接本地预览，file协议被策略拒绝；单元回归不代替视觉验收。父任务仍缺第二个明确阵列实验与一致性/串扰证据。
-- [ ] PR审核并合并，另行记录实际私有发布状态。
+- [x] 本机独立Chrome无头会话补验指标页截图及best/sources/priority渲染内容；未做移动端或全站点击回归。父任务仍缺第二个明确阵列实验与一致性/串扰证据。
+- [x] PR #3已审核合并，并随v0.1.3私有发布；父任务未完成。
 
 ## 33 类应用覆盖快照
 
