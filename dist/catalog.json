@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "updated_on": "2026-11-06",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -760,7 +760,7 @@
       "id": "app_22",
       "name": "单模光纤准直与通信耦合",
       "category": "激光与科研",
-      "summary": "1550 nm准直镜规格与SCExAO约78%实验室注入分开收录；校准分母不同，不作统一排名。",
+      "summary": "商业准直镜、Subaru实验室与LBT在天注入分别记录；效率口径和装调模型不混合排名。",
       "metric_ids": [
         "coupling",
         "na",
@@ -803,7 +803,9 @@
       "record_ids": [
         "fiber1550",
         "fiber1550_compact",
-        "scexao_smf_lab"
+        "scexao_smf_lab",
+        "lbt_smf_180s",
+        "lbt_alignment_model"
       ],
       "updated_on": "2026-11-06"
     },
@@ -1564,6 +1566,18 @@
       "kind": "paper",
       "verification": "inherited_v2",
       "doi": null
+    },
+    {
+      "id": "bechter_lbt_2020",
+      "title": "Bechter 等：Characterization of Single-Mode Fiber Coupling at the Large Binocular Telescope（arXiv v1，2020）",
+      "url": "https://arxiv.org/html/2005.10737v1",
+      "doi": "10.1088/1538-3873/ab42cb",
+      "source_year": 2020,
+      "kind": "paper",
+      "location": "作者稿§2功率校准；§3波段；§4及Fig.2（pp.4–5）；§7.1；§8、Eq.4、Fig.8（pp.8–9）",
+      "evidence_scope": "本机独立Chrome无头读取arXiv v1 HTML相关章节，另读PDF并视觉核对pp.4、5、9；未独立核验期刊排版版本。2020为所读arXiv版本年，观测发生于2016年4月；相关期刊DOI由arXiv元数据给出。未读取原始观测文件，不从曲线估读新值。",
+      "checked_on": "2026-11-06",
+      "verification": "checked_excerpt"
     },
     {
       "id": "clareon",
@@ -3003,6 +3017,105 @@
       "checked_on": "2026-10-25",
       "record_status": "inherited_v2",
       "claim_type": "representative_result"
+    },
+    {
+      "application": "单模光纤准直与通信耦合",
+      "application_id": "app_22",
+      "source_ids": [
+        "bechter_lbt_2020"
+      ],
+      "checked_on": "2026-11-06",
+      "record_status": "checked_excerpt",
+      "claim_type": "representative_result",
+      "id": "lbt_alignment_model",
+      "name": "Bechter LBT单模注入：20%相对损失的单误差模型",
+      "evidence_type": "理论模型推算（非实测装调容差）",
+      "parameters": [
+        {
+          "name": "模型损失判据",
+          "value": "相对理想对准状态损失20%",
+          "evidence": {
+            "source_id": "bechter_lbt_2020",
+            "location": "§8 pp.8–9；不是20个百分点绝对耦合率"
+          }
+        },
+        {
+          "name": "纯横向偏移示例",
+          "value": "Δx = 1.4 μm",
+          "evidence": {
+            "source_id": "bechter_lbt_2020",
+            "location": "§8 p.9；独立单误差假设"
+          }
+        },
+        {
+          "name": "纯轴向离焦示例",
+          "value": "Δz = 125 μm",
+          "evidence": {
+            "source_id": "bechter_lbt_2020",
+            "location": "§8 p.9 Eq.4后；独立单误差假设"
+          }
+        },
+        {
+          "name": "相位误差尺度",
+          "value": "σ_rms = 0.5 rad",
+          "evidence": {
+            "source_id": "bechter_lbt_2020",
+            "location": "§8 pp.8–9；Fig.8横轴rad"
+          }
+        }
+      ],
+      "conditions": "用特定LBT瞳形和投影高斯模场的重叠模型分析。横向与轴向数值分别只含一种误差；不能同时作为组合允许误差。Eq.4中的离焦D以波为单位，而Fig.8的σ以rad表示，必须先换算再按给定焦比/波长使用。",
+      "unreported_or_not_verified": "未做物理位移扫描实验，不是制造公差或通用验收值；组合误差和实际模型焦比/参考波长的逐项复算未完成，不能外推至本项目945 μm方形透镜。同源于lbt_smf_180s，不是第二独立团队。"
+    },
+    {
+      "application": "单模光纤准直与通信耦合",
+      "application_id": "app_22",
+      "source_ids": [
+        "bechter_lbt_2020"
+      ],
+      "checked_on": "2026-11-06",
+      "record_status": "checked_excerpt",
+      "claim_type": "representative_result",
+      "id": "lbt_smf_180s",
+      "name": "Bechter LBT在天单模注入：HD 113496三分钟片段",
+      "evidence_type": "科研在天实验（2016年观测）",
+      "parameters": [
+        {
+          "name": "耦合测量波段",
+          "value": "970–1065 nm",
+          "evidence": {
+            "source_id": "bechter_lbt_2020",
+            "location": "§3 Observational Summary"
+          }
+        },
+        {
+          "name": "180秒平均耦合效率",
+          "value": "23%",
+          "evidence": {
+            "source_id": "bechter_lbt_2020",
+            "location": "§4 p.4；Fig.2 p.5，400模式、HD 113496"
+          },
+          "metric_id": "coupling"
+        },
+        {
+          "name": "片段起始峰值（作者报告）",
+          "value": "约25%",
+          "evidence": {
+            "source_id": "bechter_lbt_2020",
+            "location": "§4 p.4；非平均值或通用最佳"
+          }
+        },
+        {
+          "name": "AO校正与时间窗",
+          "value": "400模式；180 s",
+          "evidence": {
+            "source_id": "bechter_lbt_2020",
+            "location": "§4 p.4及Fig.2图注"
+          }
+        }
+      ],
+      "conditions": "同一观测片段；由一对校准光电二极管测得SMF输出功率与光纤端入射功率之比（§2），不是望远镜入口到光纤输出的端到端透过率。原型无主动光束稳定或连续大气色散校正；未按瞳形理论上限0.78再次归一化。",
+      "unreported_or_not_verified": "Table 1同目标列22±2%，本条限定正文明确的180秒片段23%，不拼为同一统计值；差异的具体窗口对应关系未核。偏振、光纤实际长度及端面损耗校正的完整明细未核，不与Subaru实验室的78%直接排名。"
     },
     {
       "id": "lidar_meta",

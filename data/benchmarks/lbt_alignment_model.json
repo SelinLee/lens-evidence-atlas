@@ -1,0 +1,49 @@
+{
+  "application": "单模光纤准直与通信耦合",
+  "application_id": "app_22",
+  "source_ids": [
+    "bechter_lbt_2020"
+  ],
+  "checked_on": "2026-11-06",
+  "record_status": "checked_excerpt",
+  "claim_type": "representative_result",
+  "id": "lbt_alignment_model",
+  "name": "Bechter LBT单模注入：20%相对损失的单误差模型",
+  "evidence_type": "理论模型推算（非实测装调容差）",
+  "parameters": [
+    {
+      "name": "模型损失判据",
+      "value": "相对理想对准状态损失20%",
+      "evidence": {
+        "source_id": "bechter_lbt_2020",
+        "location": "§8 pp.8–9；不是20个百分点绝对耦合率"
+      }
+    },
+    {
+      "name": "纯横向偏移示例",
+      "value": "Δx = 1.4 μm",
+      "evidence": {
+        "source_id": "bechter_lbt_2020",
+        "location": "§8 p.9；独立单误差假设"
+      }
+    },
+    {
+      "name": "纯轴向离焦示例",
+      "value": "Δz = 125 μm",
+      "evidence": {
+        "source_id": "bechter_lbt_2020",
+        "location": "§8 p.9 Eq.4后；独立单误差假设"
+      }
+    },
+    {
+      "name": "相位误差尺度",
+      "value": "σ_rms = 0.5 rad",
+      "evidence": {
+        "source_id": "bechter_lbt_2020",
+        "location": "§8 pp.8–9；Fig.8横轴rad"
+      }
+    }
+  ],
+  "conditions": "用特定LBT瞳形和投影高斯模场的重叠模型分析。横向与轴向数值分别只含一种误差；不能同时作为组合允许误差。Eq.4中的离焦D以波为单位，而Fig.8的σ以rad表示，必须先换算再按给定焦比/波长使用。",
+  "unreported_or_not_verified": "未做物理位移扫描实验，不是制造公差或通用验收值；组合误差和实际模型焦比/参考波长的逐项复算未完成，不能外推至本项目945 μm方形透镜。同源于lbt_smf_180s，不是第二独立团队。"
+}
