@@ -437,3 +437,19 @@ test('focal uncertainty conflict and printed geometry are independently reproduc
  assert.ok(conflict.includes('U_s=2 μm'));assert.ok(conflict.includes('U_s=0.2 μm'));
  assert.ok(r.unreported_or_not_verified.includes('未解决'));
 });
+
+test('MLA centroid evidence separates model and experimental references and retains conflicts',()=>{
+ const d=load(),model=d.benchmarks.find(x=>x.id==='rouquette_mla_model_2026'),bench=d.benchmarks.find(x=>x.id==='rouquette_mla_bench_2026');
+ assert.match(model.evidence_type,/系统数值模拟/);assert.match(bench.evidence_type,/实测分子与高斯理论分母/);
+ assert.deepEqual(model.source_ids,bench.source_ids);
+ assert.equal(d.sources.find(x=>x.id===model.source_ids[0]).kind,'author_manuscript');
+ assert.match(model.conditions,/1.2.*1.15/);
+ assert.match(model.unreported_or_not_verified,/σ²_RON.*单位不一致/);
+ assert.match(model.parameters.find(p=>p.name==='拉长方向与相对惩罚').value,/y方向仍约1.7.*图估读/);
+ assert.match(bench.parameters.find(p=>p.name==='阵列内方差比分布std').value,/#2=0.16、#3=0.16/);
+ assert.match(bench.unreported_or_not_verified,/模拟#3.*台架#2/);
+ assert.ok(!d.bests.some(b=>b.cohort_record_ids?.some(id=>[model.id,bench.id].includes(id))));
+ const m=d.metrics.find(x=>x.id==='centroid_variance_ratio');
+ assert.match(m.definition,/标准差比是√R/);assert.match(m.definition,/两种分母不同/);
+ assert.equal(d.applications.find(x=>x.id==='app_14').ranking_status,'not_established');
+});

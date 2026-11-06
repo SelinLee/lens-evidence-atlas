@@ -1,0 +1,20 @@
+{
+  "id": "centroid_variance",
+  "name": "光斑质心位置方差",
+  "english_name": "Centroid Position Variance",
+  "definition": "对固定光斑及指定质心估计器，重复采样所得位置C的方差Var(C)=E[(C−E[C])²]；分别报告x/y方向。Rouquette作者v1 §2.3 Eqs.2–8讨论加权重心WCoG的光子噪声与读出噪声，§4.2用1000帧估计。它不是光斑强度分布的二阶宽度、面形RMS或波前RMS。本库统计说明：方差只描述随机离散；相对真值的均方误差还含偏差平方，低方差不能单独证明绝对定位准确。",
+  "unit": "pixel² / arcsec² / μm²（说明位置坐标）",
+  "direction": "lower",
+  "required_conditions": [
+    "波长、源形状和x/y光斑宽度",
+    "每子孔径每帧光子数及读出噪声",
+    "像素尺度、窗口与截断",
+    "质心算法、权重宽度及响应校正",
+    "重复次数、有效样本与漂移/偏差处理"
+  ],
+  "definition_refs": [
+    "rouquette_mla_wfs_v1_2026"
+  ],
+  "best_interpretation": "相同光通量、采样、噪声和算法下比较。WCoG响应因子b是乘性校正，不能直接当位置偏差；光斑更宽与质心位置方差更大也不是同一指标。",
+  "updated_on": "2026-11-07"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "centroid_variance_ratio",
+  "name": "质心方差比",
+  "english_name": "Centroid Variance Ratio",
+  "definition": "R=σ²_case/σ²_reference，为无量纲比。Rouquette作者v1的单元模拟用实测面形驱动模型/理想球面模型；§4.2台架用实测方差/同实测光通量及FWHM的高斯理论方差。这两种分母不同，不能合并排名。本库代数说明：标准差比是√R，不是R；只有指定光子噪声主导且方差∝1/N时，方差惩罚才可按等效光子通量因子解释，不能直接当透过率。",
+  "unit": "无量纲（必须标分子/分母）",
+  "direction": "lower",
+  "required_conditions": [
+    "分子与分母的实验/模型性质",
+    "参考模型、版本及方差坐标方向",
+    "光通量、FWHM、像素尺度和窗口",
+    "质心算法、权重及噪声区间",
+    "重复帧、有效子孔径集合和统计量"
+  ],
+  "definition_refs": [
+    "rouquette_mla_wfs_v1_2026"
+  ],
+  "best_interpretation": "在固定基准下R>1表示超过基准的方差；R=1是该模型基准而非通用合格线。阵列中位数、单元值和阵列间散布不能互换，图中std也不是中位数的测量不确定度。",
+  "updated_on": "2026-11-07"
+}
