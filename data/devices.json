@@ -78,6 +78,13 @@
       "url": "https://www.xreal.com/one-pro",
       "scope": "X Prism / Get the Highlights，官方页面文字；仅采用光学结构名称，不采纳零杂散光或无反射宣传，不声称独立测量。",
       "checked_on": "2026-11-13"
+    },
+    {
+      "id": "xreal_1s_official",
+      "title": "XREAL 1S official tutorial specifications",
+      "url": "https://tutorials.xreal.com/docs/glasses/one-series/spec/",
+      "scope": "XREAL 1S / Specifications text only; manufacturer claims, not independent measurements.",
+      "checked_on": "2026-11-13"
     }
   ],
   "domains": {
@@ -806,9 +813,35 @@
               "note": "厂商光学方案名称，不等于透过率、MTF或杂散光实测。"
             }
           }
+        },
+        {
+          "id": "xreal_1s",
+          "model": "XREAL 1S",
+          "module": "",
+          "variant": "官方教程；光学透视眼镜；厂商标称",
+          "values": {
+            "hz": {
+              "value": 120,
+              "source": "xreal_1s_official",
+              "location": "XREAL 1S / Refresh Rate",
+              "note": "原文固定90 Hz、最高120 Hz；未核最高档适用模式"
+            },
+            "ufov": {
+              "value": 52,
+              "source": "xreal_1s_official",
+              "location": "XREAL 1S / FOV",
+              "note": "方向未说明，不反推PPD"
+            },
+            "panel": {
+              "value": "Micro-OLED",
+              "source": "xreal_1s_official",
+              "location": "XREAL 1S / Display",
+              "note": "Sony 0.68英寸；3840×1200标为双眼，不直接拆成每眼；700 nit峰值亮度无眼位测量协议，暂不填亮度。"
+            }
+          }
         }
       ],
-      "scope": "6款VR/MR及光学透视眼镜候选；厂商规格，不是同条件实测排名。每眼与总像素分开；未明方向视场不并入H/V。"
+      "scope": "7款VR/MR及光学透视眼镜候选；厂商规格，不是同条件实测排名。每眼与总像素分开；未明方向视场不并入H/V。"
     }
   }
 }
