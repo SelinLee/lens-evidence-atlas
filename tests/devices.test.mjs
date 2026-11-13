@@ -109,3 +109,58 @@ test('XREAL optical scheme is sourced without adopting marketing performance cla
  assert.equal(r.values.optics.value,'X Prism');assert.equal(r.values.optics.source,'xreal_pro_product');
  assert.match(r.values.optics.note,/不等于/);assert.equal(r.values.mtf,undefined);
 });
+
+test('dense model labels avoid one another and every true point without mutating coordinates',()=>{
+ const code=fs.readFileSync(new URL('../web/devices.js',import.meta.url),'utf8');
+ const c=vm.createContext({});vm.runInContext(code.slice(code.indexOf('function layoutLabels('),code.indexOf('function chart(')),c);
+ const scenarios=[
+  [{x:156,y:86,label:'Pixel 11 Pro'},{x:156,y:95,label:'Xiaomi 17 Ultra'}],
+  [{x:148,y:344,label:'2 个型号'},{x:156,y:341,label:'Galaxy S26 Ultra'},{x:732,y:86,label:'Xiaomi 17 Ultra'}],
+  Array.from({length:6},(_,i)=>({x:150+i,y:330+i,label:'密集样本完整型号 '+i}))
+ ];
+ const overlap=(a,b)=>a.x<b.x+b.width&&a.x+a.width>b.x&&a.y<b.y+b.height&&a.y+a.height>b.y;
+ for(const items of scenarios){
+  const original=JSON.stringify(items);c.items=items;
+  const labels=vm.runInContext('layoutLabels(items)',c);
+  assert.equal(JSON.stringify(items),original);
+  assert.equal(labels.length,items.length);assert.ok(labels.every(Boolean),'all catalog-sized groups need a visible label');
+  labels.forEach((label,i)=>{
+   assert.ok(label.x>=100&&label.x+label.width<=800&&label.y>=40&&label.y+label.height<=360);
+   labels.slice(i+1).forEach(other=>assert.ok(!overlap(label,other),'model label boxes overlap'));
+   items.forEach(point=>assert.ok(!overlap(label,{x:point.x-7,y:point.y-7,width:14,height:14}),'a label covers a data point'));
+  });
+ }
+});
+
+test('label displacement leaves the PR60 dense telephoto marker coordinates exactly in place',()=>{
+ const f=deviceFixture();f.change('module','tele');f.change('x','mp');f.change('y','mp');
+ const html=f.el('chart').innerHTML;
+ const circles=[...html.matchAll(/<circle cx="([^"]+)" cy="([^"]+)"/g)].map(m=>[Number(m[1]),Number(m[2])]);
+ // Golden SVG positions from a232977 before the label-only repair.
+ const expected=[[148.33333333333334,344.1666666666667],[156.00877192982455,340.7675438596491],[731.6666666666666,85.83333333333337]];
+ assert.equal(circles.length,expected.length);
+ circles.forEach((point,i)=>point.forEach((value,j)=>assert.ok(Math.abs(value-expected[i][j])<1e-10)));
+ const leaders=[...html.matchAll(/<line class="label-leader" x1="([^"]+)" y1="([^"]+)"/g)].map(m=>[Number(m[1]),Number(m[2])]);
+ assert.deepEqual(leaders,circles,'each label leader must start on its unchanged data point');
+ assert.equal((html.match(/class="point-label"/g)||[]).length,3);
+});
+
+test('crowded and coincident labels keep every complete model in the readable legend',()=>{
+ const f=deviceFixture();
+ for(const module of ['main','tele']){
+  f.change('module',module);const html=f.el('chart').innerHTML;
+  const legend=html.slice(html.indexOf('<ul class="chart-legend"'));
+  for(const r of d.domains.phone.rows.filter(r=>r.module===module&&r.values.f))assert.ok(legend.includes(r.model));
+  assert.ok(!html.includes('部分文字标签'),'current catalog labels must all fit');
+ }
+ f.change('domain','xr');f.change('x','hz');f.change('y','hz');
+ const html=f.el('chart').innerHTML;assert.equal((html.match(/<circle /g)||[]).length,2);
+ assert.match(html,/5 个型号/);for(const r of d.domains.xr.rows)assert.ok(html.includes(r.model));
+ assert.ok(!html.includes('部分文字标签'));
+ const longName=structuredClone(d);longName.domains.phone.rows=[longName.domains.phone.rows[0]];
+ longName.domains.phone.rows[0].model='完整型号'.repeat(40);
+ const overflow=deviceFixture(longName).el('chart').innerHTML;
+ assert.match(overflow,/部分文字标签请见下方完整图例/);
+ assert.equal((overflow.match(/<circle /g)||[]).length,1);
+ assert.ok(overflow.includes(longName.domains.phone.rows[0].model),'even an oversized label must keep its complete identity');
+});
