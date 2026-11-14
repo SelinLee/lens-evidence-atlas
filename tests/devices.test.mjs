@@ -40,7 +40,7 @@ test('coincident model coordinates are grouped without jitter and retain every m
  assert.match(f.el('chart').innerHTML,/2 个型号/);assert.match(f.el('chart').innerHTML,/同坐标重合/);
  assert.match(f.el('chart').innerHTML,/iPhone 18 Pro/);assert.match(f.el('chart').innerHTML,/Pixel 11 Pro/);
  f.change('domain','xr');f.change('x','hz');f.change('y','hz');
- const html=f.el('chart').innerHTML;assert.equal((html.match(/<circle /g)||[]).length,2);assert.match(html,/6 个型号/);assert.match(html,/\(120, 120\)/);
+ const html=f.el('chart').innerHTML;assert.equal((html.match(/<circle /g)||[]).length,2);assert.match(html,/7 个型号/);assert.match(html,/\(120, 120\)/);
  for(const r of d.domains.xr.rows)assert.ok(html.includes(r.model));
 });
 
@@ -101,7 +101,7 @@ test('follow-up specifications preserve unresolved ranges and optical measuremen
  const x=d.domains.xr.rows.find(r=>r.id==='xreal_one_pro');
  for(const key of ['width','height','brightness','latency','hfov','ppd'])assert.equal(x.values[key],undefined);
  const v=d.domains.xr.rows.find(r=>r.id==='vive_focus_vision');assert.match(v.values.hz.note,/DisplayPort.*Beta/);assert.equal(v.values.hfov,undefined);
- assert.equal(d.domains.phone.rows.length,12);assert.equal(d.domains.xr.rows.length,7);
+ assert.equal(d.domains.phone.rows.length,12);assert.equal(d.domains.xr.rows.length,8);
 });
 
 test('XREAL optical scheme is sourced without adopting marketing performance claims',()=>{
@@ -155,7 +155,7 @@ test('crowded and coincident labels keep every complete model in the readable le
  }
  f.change('domain','xr');f.change('x','hz');f.change('y','hz');
  const html=f.el('chart').innerHTML;assert.equal((html.match(/<circle /g)||[]).length,2);
- assert.match(html,/6 个型号/);for(const r of d.domains.xr.rows)assert.ok(html.includes(r.model));
+ assert.match(html,/7 个型号/);for(const r of d.domains.xr.rows)assert.ok(html.includes(r.model));
  assert.ok(!html.includes('部分文字标签'));
  const longName=structuredClone(d);longName.domains.phone.rows=[longName.domains.phone.rows[0]];
  longName.domains.phone.rows[0].model='完整型号'.repeat(40);
@@ -171,3 +171,7 @@ test('XREAL 1S binocular and unmeasured optical quantities remain unfilled',()=>
  for(const k of ['width','height','brightness','ppd','hfov','vfov','latency'])assert.equal(r.values[k],undefined);
  for(const c of Object.values(r.values)){assert.equal(c.source,'xreal_1s_official');assert.match(c.location,/XREAL 1S/);}
 });
+
+ test('Luma Pro keeps explicit per-eye specs and missing measurement boundaries',()=>{const r=d.domains.xr.rows.find(r=>r.id==='viture_luma_pro');assert.equal(r.values.width.value,1920);assert.equal(r.values.height.value,1200);assert.equal(r.values.hz.value,120);assert.match(r.values.hz.note,/60 Hz/);assert.equal(r.values.ufov.value,52);for(const k of ['hfov','vfov','ppd','eyebox','eyerelief','brightness','mtf','latency'])assert.equal(r.values[k],undefined);});
+
+test('XR scope count follows current rows',()=>{assert.ok(d.domains.xr.scope.startsWith(`${d.domains.xr.rows.length}款`));});

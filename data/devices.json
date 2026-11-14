@@ -85,6 +85,13 @@
       "url": "https://tutorials.xreal.com/docs/glasses/one-series/spec/",
       "scope": "XREAL 1S / Specifications text only; manufacturer claims, not independent measurements.",
       "checked_on": "2026-11-13"
+    },
+    {
+      "id": "viture_luma_series_official_20261113",
+      "title": "VITURE Luma Series Academy",
+      "url": "https://www.viture.com/en-MY/academy/xr-glasses/luma-series",
+      "scope": "Manufacturer text: Luma Pro; Tech Specs Comparison; Change Display Refresh Rate. Not independent measurement.",
+      "checked_on": "2026-11-13"
     }
   ],
   "domains": {
@@ -839,9 +846,46 @@
               "note": "Sony 0.68英寸；3840×1200标为双眼，不直接拆成每眼；700 nit峰值亮度无眼位测量协议，暂不填亮度。"
             }
           }
+        },
+        {
+          "id": "viture_luma_pro",
+          "model": "VITURE Luma Pro",
+          "variant": "Regular / Large",
+          "values": {
+            "width": {
+              "value": 1920,
+              "source": "viture_luma_series_official_20261113",
+              "location": "Tech Specs Comparison / Luma Pro / Resolution",
+              "note": "Explicit per-eye width; not 4K native resolution."
+            },
+            "height": {
+              "value": 1200,
+              "source": "viture_luma_series_official_20261113",
+              "location": "Tech Specs Comparison / Luma Pro / Resolution",
+              "note": "Explicit per-eye height; Full SBS input is not native resolution."
+            },
+            "hz": {
+              "value": 120,
+              "source": "viture_luma_series_official_20261113",
+              "location": "Tech Specs Comparison / Refresh Rate; Change Display Refresh Rate",
+              "note": "Maximum; also supports 90 and 60 Hz. One Neckband, Pro Mobile Dock and One Mobile Dock limited to 60 Hz."
+            },
+            "ufov": {
+              "value": 52,
+              "source": "viture_luma_series_official_20261113",
+              "location": "Tech Specs Comparison / Luma Pro / FOV",
+              "note": "Direction unspecified; not horizontal or vertical FOV."
+            },
+            "panel": {
+              "value": "MicroOLED",
+              "source": "viture_luma_series_official_20261113",
+              "location": "VITURE Luma Pro XR Glasses introduction",
+              "note": "Sony panel; not evidence of measured MTF."
+            }
+          }
         }
       ],
-      "scope": "7款VR/MR及光学透视眼镜候选；厂商规格，不是同条件实测排名。每眼与总像素分开；未明方向视场不并入H/V。"
+      "scope": "8款VR/MR及光学透视眼镜候选；厂商规格，不是同条件实测排名。每眼与总像素分开；未明方向视场不并入H/V。"
     }
   }
 }

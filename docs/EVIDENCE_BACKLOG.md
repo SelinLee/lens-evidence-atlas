@@ -722,3 +722,6 @@ EVD-011a候选v0.1.24：两定义、一个PTB同研究三相机记录及一个FL
 002f准备检查：四条科研记录属于三个团队，Luo两个记录必须共享研究标识；ZEISS两配置为同一商业系统，不能当额外照明实验。Luo 152±1 μm是FOV；Battistella 0–3 mm是三位置测量跨度；Shi 16.8/18.0/20.0 μm是传播强度FWHM。对照要让这些差别可查，不把三个长度直接排序。仅复读当前已入库记录和旧核验笔记，尚未新增原文取证或实现此视图；不刷新其科学核验日期。
 
 002e限定交付验收：PR [#57](https://github.com/SelinLee/lens-evidence-atlas/pull/57)合并4f2028b，85项测试/构建及CI成功；Pages[42278801906](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/42278801906)成功。实际HTTPS v0.1.33 catalog.json与本地逐字节一致；Chrome无头1440/390 px三定义、两来源、六旧样本及重点应用回归通过。仅关闭原文/固定版静态实现核验，不代表运行MATLAB或解决发表物差异；父002继续按002f做逐项验收。
+
+
+| DEVICE-005 VITURE Luma Pro 厂商规格 | Q0 | in_progress | Dot | 2026-11-14 | 单眼像素/最高刷新率/方向未明FOV/显示技术；103项测试/构建通过；待PR、审核与公开验收 |
