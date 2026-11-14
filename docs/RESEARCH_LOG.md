@@ -537,3 +537,6 @@ ef84c19`；源提交与发布一致，保持owner-only访问。EVD-004d子任务
 用户明确按新目标恢复执行，先完善并发布已有矩阵，后续持续补证。执行依据为最新用户指令与LOCAL_RESEARCH_GOAL；旧运行器objective不可直接改写，get_goal仍返回旧paused记录，不将此误记为新目标已完成。独立release分支整合#59–63，解决研究日志/路线图的文档冲突并保留双方成果及最新目标。
 
 四手机/12配置和八XR、25字段；新增折线/多选/列选择/排序/分享恢复/导出。Google无地区链接跳转同意页；改合法US规格路径取得完整Rear camera段并核全部已有值，只有该来源刷新读取范围与日期。其他官网相关规格及旧核验记录复核见本批笔记，不刷新未完整重读的来源。106测试通过；新CSV测试初版提取到函数之前的同名事件字符串，修正测试提取范围后通过，不改CSV实现。Chrome无头1440/768/390/320覆盖全部轴选项、三模组、XR、缺失状态、多选、列、URL恢复与CSV/SVG下载，无页面错误或溢出。未标作已部署。
+
+- **真实发布**：PR #65合并352c600，106项测试/CI43561626717及主线43561669480成功；Pages43561669359同一运行跟踪到success。HTTPS四发布文件逐字节比对、线上Chrome1440/768/390/320全部轴/模组/域、多选/列、排序、分享恢复和两下载通过，无页面错误或溢出，截图已查看。文件指纹见DEVICE_RELEASE_2026-11-14.md。旧光片未提交目录未触碰。DEVICE-001完成，整体目标未完成。
+- **继续调研证据**：取得vivo X300 Pro原厂Camera段、OPPO Find X9 Ultra Global相关规格入口及其新X10 Pro Max导航；Sony日本spec页仍缺完整相机表，未用摘要补值。Meta官方比较表可直接读Quest3S和新VR Glasses字段，上市/地区边界未核，不先当市售先进样本。下一批按FOCUS-002补明确的型号/模组条件，再深化指标正式定义和独立测量；不把官方像素/F数当成像质量。来源链接：vivo https://www.vivo.com/en/products/param/x300-pro；OPPO https://www.oppo.com/en/smartphones/series-find-x/find-x9-ultra/specs/；Sony https://www.sony.jp/xperia/products/xperia1m7/spec.html；Meta https://developers.meta.com/vr/essentials/compare-devices/ 。

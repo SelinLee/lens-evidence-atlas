@@ -13,10 +13,10 @@
 | 稳定任务 | 状态 | 范围和验收 |
 | --- | --- | --- |
 | FOCUS-001 两类指标词典与任务依据 | todo | 定义、单位、测量口径、必要条件、出处；原文排序/编辑整理/未建立明确区分；候选规格不冒充成像质量 |
-| FOCUS-002 先进型号检索与逐格补证 | todo | 按检索截止日期覆盖跨品牌先进手机与AR/VR设备，记录纳排/地区/代际/独立实测缺口；手机逐模组、XR逐显示模式；单元格绑定定位证据 |
-| DEVICE-001 已有矩阵/散点候选接续 | review | [PR #59](https://github.com/SelinLee/lens-evidence-atlas/pull/59)及依赖的[#60](https://github.com/SelinLee/lens-evidence-atlas/pull/60)、[#61](https://github.com/SelinLee/lens-evidence-atlas/pull/61)、[#62](https://github.com/SelinLee/lens-evidence-atlas/pull/62)、[#63](https://github.com/SelinLee/lens-evidence-atlas/pull/63)目前开放；须核当前最终头、证据边界及真实浏览器，不将原PR说明当本次重新核验 |
+| FOCUS-002 先进型号检索与逐格补证 | in_progress | 按检索截止日期覆盖跨品牌先进手机与AR/VR设备，记录纳排/地区/代际/独立实测缺口；手机逐模组、XR逐显示模式；单元格绑定定位证据 |
+| DEVICE-001 已有矩阵/散点候选接续 | done | [PR #59](https://github.com/SelinLee/lens-evidence-atlas/pull/59)及依赖的[#60](https://github.com/SelinLee/lens-evidence-atlas/pull/60)、[#61](https://github.com/SelinLee/lens-evidence-atlas/pull/61)、[#62](https://github.com/SelinLee/lens-evidence-atlas/pull/62)、[#63](https://github.com/SelinLee/lens-evidence-atlas/pull/63)目前开放；须核当前最终头、证据边界及真实浏览器，不将原PR说明当本次重新核验 |
 | FOCUS-003 参数表补全与维护 | in_progress | 两类各有型号×指标主表，支持模组/类别/条件筛选、排序、列选择、逐格来源及导出；未知值与区间可见；表和图同一数据源 |
-| FOCUS-004 双指标轴散点与折线 | review | 两轴指标可选、型号多选、散点/折线切换、重复坐标可辨、按x排序连线并提示含义、缺失/区间/单位规则、分享状态及导出；核已有候选还缺哪些行为 |
+| FOCUS-004 双指标轴散点与折线 | in_progress | 两轴指标可选、型号多选、散点/折线切换、重复坐标可辨、按x排序连线并提示含义、缺失/区间/单位规则、分享状态及导出；核已有候选还缺哪些行为 |
 | FOCUS-005 测试、发布和完成审计 | in_progress | 校验/测试、Chrome无头桌面/手机、PR、实际Pages文件及数据核对；按新目标逐条审计，明确已有/候选/缺失，不能以仅有草稿或测试通过代替交付 |
 
 本次为目标调整，没有刷新科学数据版本、型号规格核验日期或声称新表格/图表已上线。旧目标全领域未完成部分被用户从当前范围撤下，不标记成完成。
@@ -742,3 +742,7 @@ EVD-011a候选v0.1.24：两定义、一个PTB同研究三相机记录及一个FL
 | DEVICE-005 VITURE Luma Pro 厂商规格 | Q0 | in_progress | Dot | 2026-11-14 | 单眼像素/最高刷新率/方向未明FOV/显示技术；103项测试/构建通过；待PR、审核与公开验收 |
 
 2026-11-14恢复执行：codex/phone-xr-release基于a2f5f23，整合#59–63候选，补折线、型号/列多选、排序、导出和URL恢复。106项测试通过，本机Google Chrome无头四视口通过，待PR及实际Pages发布。候选指标定义仍需学术来源/任务重要性，型号覆盖与独立实测仍不齐，不关闭整体目标。
+
+2026-11-14首批发布验收：DEVICE-001经PR #65整合，主线CI及Pages43561669359成功；实际0.2.4四发布文件与候选逐字节一致，Chrome四视口线上交互/导出通过，见[验收笔记](DEVICE_RELEASE_2026-11-14.md)。表格多选/列选择/排序、双轴散点与折线、URL恢复和CSV/SVG已上线；分类/测量条件的更细筛选、指标学术定义、独立实测及市场覆盖继续保留FOCUS任务。
+
+下一批来源线索（已读边界）：vivo X300 Pro Global参数页Camera给后摄50+50+200 MP及配对光圈，但尚需overview明确模组名称配对；OPPO Find X9 Ultra Global规格页可读，其导航已列Find X10 Pro Max，先进型号覆盖不得只停在X9。Sony日本Xperia 1 VII规格页文字依然没有完整相机表，未因此填值。原厂Meta比较表已读Quest 3S/Meta VR Glasses列，后者上市/地区/分类需核实后再收录。只记录下一轮取证入口，不将这些未落库型号冒充当前表格覆盖。
