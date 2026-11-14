@@ -227,3 +227,20 @@ test('physical bounds restrict padding on either axis without moving or omitting
  assert.match(html,/<text x="80" y="60"[^>]*>1<\/text>/);
  assert.match(html,/\(10000, 1\)/);
 });
+
+test('coincident publications retain an identifying journal and the full set of sample names',()=>{
+ const code=fs.readFileSync(new URL('../web/devices.js',import.meta.url),'utf8');
+ const c=vm.createContext({E:String});
+ vm.runInContext(code.slice(code.indexOf('function tickLabels('),code.indexOf('function chart(')),c);
+ const point=(paper,sample)=>({x:400,y:.02,label:paper+' · '+sample,row:{id:sample,study_id:paper,pointLabel:paper}});
+ const a=point('Nat. Mater. 2025','R'), b=point('Nat. Mater. 2025','G'), other=point('Nat. Commun. 2024','D400');
+ const same=c.scatterMarkup([[a,b]],'口径','NA');
+ assert.match(same,/<text class="point-label"[^>]*>Nat\. Mater\. 2025<\/text>/);
+ assert.deepEqual(Array.from(c.groupLabels([a,b,other])),['Nat. Mater. 2025','Nat. Commun. 2024']);
+ const mixed=c.scatterMarkup([[a,b,other]],'口径','NA');
+ assert.match(mixed,/<text class="point-label"[^>]*>Nat\. Mater\. 2025 \+1<\/text>/);
+ assert.ok([a,b,other].every(p=>mixed.includes(p.label)));
+ const empty=c.scatterMarkup([],'口径','NA',{zoom:[16,66,.02,.1]});
+ assert.match(empty,/data-x-min="16" data-x-max="66" data-y-min="0.02" data-y-max="0.1"/);
+ assert.doesNotMatch(empty,/NaN|Infinity|data-point=/);
+});
