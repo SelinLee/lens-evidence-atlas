@@ -126,7 +126,8 @@ function sortRows(rows) {
   });
 }
 function coordinateText(p, axis) {
-  return `${p.row.values[state[axis]]?.approximate ? '约' : ''}${p[axis]}`;
+  const value = p.row.values[state[axis]], error = value?.reported_error;
+  return `${value?.approximate ? '约' : ''}${p[axis]}${error ? ' ± ' + error.value : ''}`;
 }
 function pointDescription(p) {
   const d = domain(), xm = d.metrics.find(m => m.id === state.x), ym = d.metrics.find(m => m.id === state.y);

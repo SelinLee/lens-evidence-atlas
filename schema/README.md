@@ -35,3 +35,5 @@
 `focus_error_um`/`focus_error_pct`保存作者定义未完全明确的focal length error汇总，须有`focus_error_protocol`、实际`sample_wavelengths_nm`、`statistic: author_reported_focal_error`、作者实测计算性质和`reference_wavelength_nm`（未知显式null）。它们不替代最大互差/逐点焦移；有单值波长的行不能混填汇总。`thickness_um`表示完整堆叠厚度，和`height_nm`分开。
 
 设备材料可用`catalog_source`复用目录材料ID，跨域同论文不产生重复主文或SI。完整校验/构建同时检查别名目标、DOI与主文/SI归属；页面模型也拒绝不匹配。`sample_set_id`区分同结构配置的样品队列/选定单镜；单格`sample_size`和`statistic`保留原文n与均值，未知误差不补SD。
+
+`operation_efficiency_at_lambda_pct`和`operation_efficiency_band_mean_pct`保留作者Operation效率，必须有独立`operation_efficiency_protocol`，分别绑定实际波长或工作范围/带内统计；不能混入聚焦效率字段。`reported_error: {type: SD | not_specified, value, sample_size: null | n}`允许作者报告±但未给n的情形，未知n显式null、误差非负；定义不明不能升级为SD。`display`保留原文±和约值，散点读数也显示该±。旧`uncertainty`的已知n/SD规则保持。
