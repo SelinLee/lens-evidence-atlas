@@ -747,6 +747,12 @@ EVD-011a候选v0.1.24：两定义、一个PTB同研究三相机记录及一个FL
 
 下一批来源线索（已读边界）：vivo X300 Pro Global参数页Camera给后摄50+50+200 MP及配对光圈，但尚需overview明确模组名称配对；OPPO Find X9 Ultra Global规格页可读，其导航已列Find X10 Pro Max，先进型号覆盖不得只停在X9。Sony日本Xperia 1 VII规格页文字依然没有完整相机表，未因此填值。原厂Meta比较表已读Quest 3S/Meta VR Glasses列，后者上市/地区/分类需核实后再收录。只记录下一轮取证入口，不将这些未落库型号冒充当前表格覆盖。
 
-| DEVICE-006 OPPO先进型号与手机定义来源 | Q0 | review | Codex | 2026-11-14 | Find X10 Pro Max Global逐模组像素/F数/FOV；F数与物理焦距定义定位来源、前端可点击引用与引用校验；不以规格当画质或全市场覆盖 |
+| DEVICE-006 OPPO先进型号与手机定义来源 | Q0 | done | Codex | 2026-11-14 | Find X10 Pro Max Global逐模组像素/F数/FOV；F数与物理焦距定义定位来源、前端可点击引用与引用校验；不以规格当画质或全市场覆盖 |
 
 DEVICE-006候选0.2.5：108项测试、构建和差异检查通过；Chrome无头1440/768/390/320覆盖五手机/三模组/XR、定义出处跳转、缺失状态、分享恢复和导出。F数/物理焦距两处引用与AF/OIS字段有定位证据，其他定义仍不冒称已补齐。见[本批笔记](PHONE_OPPO_DEFINITIONS_REVIEW_2026-11-14.md)，待实际发布。
+
+DEVICE-006限定验收：PR #67合并07057dc，108测试/构建/CI通过，Pages43563596514成功；HTTPS四发布文件逐字节一致，线上Chrome无头四视口完成型号/模组/域、轴/折线、多选/排序、引用、分享恢复和两导出。仅关闭本次规格/定义引用交付，整体FOCUS证据任务开放。
+
+| DEVICE-007 XR角分辨与画质测量协议 | Q0 | todo | — | 2026-11-14 | 原文核PPD、CPD/MTF与取样/场点定义，核至少一项独立XR实验；标准目录与正文分开，不将60 PPD当通用合格线 |
+
+007入口：IEC官方62508页已读2019版简介、适用范围和出版元数据，未取得条款；当前页面生命周期表未展开，不据搜索结果判定最新版/合规。PMC9691731《Spatiotemporal image quality of virtual reality head mounted displays》为独立测量候选，仅检索元数据/摘要线索，正文、图表尚未读取。下一轮先取原文与图像，不能采纳搜索摘要数字。
