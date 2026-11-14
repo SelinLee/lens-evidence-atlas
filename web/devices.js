@@ -21,7 +21,17 @@ function groupPoints(points) {
  return [...groups.values()];
 }
 
-function scatterMarkup(groups, xLabel, yLabel, {width = 900, categorical = false, scrollable = false, mode = 'scatter'} = {}) {
+function axisRange(values, bounds = {}) {
+ const low = Math.min(...values), high = Math.max(...values);
+ const padding = ((high - low) || Math.abs(low) * .1 || 1) * .1;
+ // Bound the optional whitespace only. Keep every reported coordinate on the plot.
+ return [
+  Math.min(low, Math.max(low - padding, bounds.min ?? -Infinity)),
+  Math.max(high, Math.min(high + padding, bounds.max ?? Infinity))
+ ];
+}
+
+function scatterMarkup(groups, xLabel, yLabel, {width = 900, categorical = false, scrollable = false, mode = 'scatter', xBounds, yBounds} = {}) {
  const compact = width < 600;
  const height = compact ? 242 : 450;
  const left = compact ? 54 : 90, right = width - (compact ? 20 : 110);
@@ -29,9 +39,7 @@ function scatterMarkup(groups, xLabel, yLabel, {width = 900, categorical = false
  const xTickY = bottom + (compact ? 17 : 25);
  const coordinates = groups.map(([p]) => p);
  const xs = coordinates.map(p => p.x), ys = coordinates.map(p => p.y);
- let xmin = Math.min(...xs), xmax = Math.max(...xs), ymin = Math.min(...ys), ymax = Math.max(...ys);
- const dx = (xmax-xmin) || Math.abs(xmin)*.1 || 1, dy = (ymax-ymin) || Math.abs(ymin)*.1 || 1;
- xmin -= dx*.1; xmax += dx*.1; ymin -= dy*.1; ymax += dy*.1;
+ const [xmin, xmax] = axisRange(xs, xBounds), [ymin, ymax] = axisRange(ys, yBounds);
  const px = x => left + (x-xmin)/(xmax-xmin)*(right-left), py = y => bottom - (y-ymin)/(ymax-ymin)*(bottom-top);
  const xticks = tickLabels(xmin,xmax), yticks = tickLabels(ymin,ymax);
  const palette = ['#30776d','#4678aa','#8a61a3','#b1623f','#96721c','#466997','#a95472','#547e45'];
@@ -85,7 +93,8 @@ function scatterMarkup(groups, xLabel, yLabel, {width = 900, categorical = false
 function chart(rows,x,y,metrics,mode='scatter') {
  const groups = groupPoints(points(rows,x,y));
  if (!groups.length) return '<p>这两个指标暂无同时已知的型号。请选择其他指标；不会补零。</p>';
- return scatterMarkup(groups, metrics.find(m=>m.id===x).label, metrics.find(m=>m.id===y).label, {mode, scrollable:true});
+ const xm = metrics.find(m=>m.id===x), ym = metrics.find(m=>m.id===y);
+ return scatterMarkup(groups, xm.label, ym.label, {mode, scrollable:true, xBounds:xm.axis_bounds, yBounds:ym.axis_bounds});
 }
 window.LensPlot = {points,tickLabels,groupPoints,scatterMarkup,chart};
 if(!window.UNIFIED_WORKSPACE){

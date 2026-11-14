@@ -1,4 +1,4 @@
-import {createWorkspace, groupRows, valueSources, filteredRows, axisPoints, metricAvailability, availableAxes} from './workspace-data.js?v=e226c9f934eb446a';
+import {createWorkspace, groupRows, valueSources, filteredRows, axisPoints, metricAvailability, availableAxes} from './workspace-data.js?v=ed8601939ee4d675';
 
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -143,9 +143,11 @@ function drawChart() {
     return;
   }
   const groups = window.LensPlot.groupPoints(activePoints);
-  const xLabel = categorical ? '样本序号' : ms.find(m=>m.id===state.x).label;
-  const yLabel = ms.find(m=>m.id===state.y).label;
-  $('chart').innerHTML = window.LensPlot.scatterMarkup(groups, xLabel, yLabel, {width:plotWidth, categorical});
+  const xMetric = ms.find(m=>m.id===state.x), yMetric = ms.find(m=>m.id===state.y);
+  const xLabel = categorical ? '样本序号' : xMetric.label, yLabel = yMetric.label;
+  $('chart').innerHTML = window.LensPlot.scatterMarkup(groups, xLabel, yLabel, {
+    width:plotWidth, categorical, xBounds:xMetric?.axis_bounds, yBounds:yMetric.axis_bounds
+  });
   const svg = $('chart').querySelector('svg'), nodes = [...svg.querySelectorAll('[data-point]')];
   svg.setAttribute('aria-label', d.name + '散点图');
   const legend = $('chart').querySelector('.chart-legend');
