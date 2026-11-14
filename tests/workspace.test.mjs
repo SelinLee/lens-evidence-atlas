@@ -160,3 +160,10 @@ test('each publication group has one traceable bibliographic record for its samp
  assert.equal(atlas.sources.get('rouquette_mla_wfs_v1_2026').bibliography.short,'arXiv');
  assert.equal(atlas.sources.get('device-asnani_native_mtf_thesis_2022').bibliography.volume,undefined);
 });
+
+test('legacy aperture and efficiency fields carry limits while axial mismatch stays signed',()=>{
+ const field=name=>atlas.domains.filter(d=>d.app).flatMap(d=>d.metrics).find(m=>m.label===name);
+ assert.deepEqual(field('单元口径 (μm)').axis_bounds,{min:0});
+ assert.deepEqual(field('实测平均聚焦效率 (%)').axis_bounds,{min:0,max:100});
+ assert.equal(field('轴向失配 (mm)').axis_bounds,undefined);
+});

@@ -202,3 +202,45 @@ test('metric citations reject broken references and stay visible even with no se
  }
  assert.match(f.el('sources').innerHTML,/学术教材/);assert.match(f.el('sources').innerHTML,/原厂技术说明/);
 });
+
+test('physical bounds restrict padding on either axis without moving or omitting measurements',()=>{
+ const context=vm.createContext({});
+ const code=fs.readFileSync(new URL('../web/devices.js',import.meta.url),'utf8');
+ vm.runInContext(code.slice(code.indexOf('function tickLabels('),code.indexOf('function chart(')),context);
+ const range=(values,bounds)=>Array.from(context.axisRange(values,bounds));
+ const metrics=d.domains.metalens.metrics, limits=id=>metrics.find(m=>m.id===id).axis_bounds;
+ assert.deepEqual(range([16,10000],limits('diameter_um')),[0,10998.4]);
+ assert.deepEqual(range([99,100],limits('efficiency_at_lambda_pct')),[98.9,100]);
+ assert.deepEqual(range([0],limits('focus_variation_um')),[0,0.1]);
+ assert.deepEqual(range([1],limits('strehl')),[0.99,1]);
+ assert.ok(range([.2,1.4],limits('na'))[1]>1.4);
+ assert.deepEqual(range([-.9,.98],limits('ssim')),[-1,1]);
+ assert.ok(range([16,17],limits('diameter_um'))[0]>15);
+ assert.deepEqual(range([-20,-5],limits('design_focal_um')),[-20,-3.5]);
+ for(const id of ['snr','distortion','ca']){
+  const bounds=d.domains.phone.metrics.find(m=>m.id===id).axis_bounds;
+  assert.deepEqual(range([-4,10],bounds),[-5.4,11.4]);
+ }
+ // The unified entry handles literature rows; exercise its shared plot directly with both bound axes.
+ const html=vm.runInContext("scatterMarkup([[{id:'a',label:'a',x:16,y:0.2}],[{id:'b',label:'b',x:10000,y:1}]],'μm','Strehl',{xBounds:{min:0},yBounds:{min:0,max:1}})",Object.assign(context,{E:String}));
+ assert.match(html,/<text x="90" y="395"[^>]*>0<\/text>/);
+ assert.match(html,/<text x="80" y="60"[^>]*>1<\/text>/);
+ assert.match(html,/\(10000, 1\)/);
+});
+
+test('coincident publications retain an identifying journal and the full set of sample names',()=>{
+ const code=fs.readFileSync(new URL('../web/devices.js',import.meta.url),'utf8');
+ const c=vm.createContext({E:String});
+ vm.runInContext(code.slice(code.indexOf('function tickLabels('),code.indexOf('function chart(')),c);
+ const point=(paper,sample)=>({x:400,y:.02,label:paper+' · '+sample,row:{id:sample,study_id:paper,pointLabel:paper}});
+ const a=point('Nat. Mater. 2025','R'), b=point('Nat. Mater. 2025','G'), other=point('Nat. Commun. 2024','D400');
+ const same=c.scatterMarkup([[a,b]],'口径','NA');
+ assert.match(same,/<text class="point-label"[^>]*>Nat\. Mater\. 2025<\/text>/);
+ assert.deepEqual(Array.from(c.groupLabels([a,b,other])),['Nat. Mater. 2025','Nat. Commun. 2024']);
+ const mixed=c.scatterMarkup([[a,b,other]],'口径','NA');
+ assert.match(mixed,/<text class="point-label"[^>]*>Nat\. Mater\. 2025 \+1<\/text>/);
+ assert.ok([a,b,other].every(p=>mixed.includes(p.label)));
+ const empty=c.scatterMarkup([],'口径','NA',{zoom:[16,66,.02,.1]});
+ assert.match(empty,/data-x-min="16" data-x-max="66" data-y-min="0.02" data-y-max="0.1"/);
+ assert.doesNotMatch(empty,/NaN|Infinity|data-point=/);
+});

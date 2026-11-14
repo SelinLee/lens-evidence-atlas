@@ -8,7 +8,7 @@ const data=JSON.parse(fs.readFileSync(new URL('../data/devices.json',import.meta
 const lens=atlas.domains.find(d=>d.id==='metalens'),rows=lens.rows.filter(r=>r.study_id==='lin2019'),get=id=>rows.find(r=>r.id==='lin2019_'+id);
 
 test('Lin array main paper, author archive and SI form one publication with unit and camera configurations',()=>{
- assert.equal(validateDevices(data,catalog),true);assert.equal(rows.length,16);assert.equal(new Set(rows.map(r=>r.specimen_id)).size,2);assert.equal(groupRows(rows).length,1);
+ assert.equal(validateDevices(data,catalog),true);for(const id of ['operation_efficiency_at_lambda_pct','operation_efficiency_band_mean_pct'])assert.deepEqual(lens.metrics.find(m=>m.id===id).axis_bounds,{min:0,max:100});assert.equal(rows.length,16);assert.equal(new Set(rows.map(r=>r.specimen_id)).size,2);assert.equal(groupRows(rows).length,1);
  assert.ok(rows.every(r=>r.paper==='device-lin_array_2019'&&hasVisibleLight(lens,r)));
  for(const id of ['lin_array_full_2019','lin_array_si_2019'])assert.equal(atlas.sources.get('device-'+id).publication_source,'device-lin_array_2019');
  for(const r of rows)for(const v of Object.values(r.values))for(const id of valueSources(v))assert.ok(atlas.sources.has(id));

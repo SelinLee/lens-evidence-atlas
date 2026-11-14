@@ -456,7 +456,10 @@
           "label": "名义像素 (MP)",
           "definition": "厂商标注相机名义像素，不是MTF或有效细节。",
           "conditions": "模组、输出模式、合并/裁切条件",
-          "numeric": true
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "f",
@@ -469,7 +472,10 @@
               "source": "edmund_fnumber_20261114",
               "location": "§2.1 Eq.1；f/# Changes with a Working Distance Change / Eq.2"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "focal",
@@ -482,14 +488,20 @@
               "source": "tudelft_principal_planes_20261114",
               "location": "The Thick Lens，Fig.32–34对应正文"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "fov",
           "label": "视场角 (°，方向未明)",
           "definition": "厂家给出角度但未说明水平/垂直/对角。",
           "conditions": "同方向、裁切与输出模式后方可比较",
-          "numeric": true
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "sensor",
@@ -509,14 +521,20 @@
               "source": "asnani_native_mtf_thesis_2022",
               "location": "印刷pp.79–80 Eqs.4.2–4.3及§4.3.5；PDF pp.97–98"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "dr",
           "label": "动态范围 (EV)",
           "definition": "待收具有明确噪声阈值的系统动态范围。",
           "conditions": "ISO、曝光、SNR阈值、HDR/单帧、处理",
-          "numeric": true
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "snr",
@@ -589,7 +607,10 @@
               "source": "vennela_phone_snr_2026",
               "location": "Table 4，mean ± SD，n=30"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "mtf50_cpp",
@@ -606,7 +627,10 @@
               "source": "beveridge_native_mtf_2025",
               "location": "PDF p.4 / 印刷p.8168，脚注3"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "mtf50_app_reported",
@@ -619,7 +643,10 @@
               "source": "asnani_native_mtf_thesis_2022",
               "location": "PDF p.113 Table4.2；pp.143/146 Appendix B.3/B.5"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "mtf50_imatest_reported",
@@ -632,7 +659,10 @@
               "source": "asnani_native_mtf_thesis_2022",
               "location": "印刷pp.92/95，PDF pp.110/113 §4.5及Table4.2"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "mtf_protocol",
@@ -1931,14 +1961,20 @@
           "label": "每眼水平像素 (px)",
           "definition": "面板每眼水平方向像素数，非渲染或透视相机分辨率。",
           "conditions": "单眼、面板、有效显示区",
-          "numeric": true
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "height",
           "label": "每眼垂直像素 (px)",
           "definition": "面板每眼垂直方向像素数。",
           "conditions": "单眼、面板、有效显示区",
-          "numeric": true
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "hz",
@@ -1951,28 +1987,40 @@
               "source": "zhao_vr_spatiotemporal_2022",
               "location": "Methods / Temporal response measurement；Results / Temporal response"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "hfov",
           "label": "水平视场 (°)",
           "definition": "明确标为水平的显示视场角。",
           "conditions": "眼距、瞳距、面罩、可见区",
-          "numeric": true
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "vfov",
           "label": "垂直视场 (°)",
           "definition": "明确标为垂直的显示视场角。",
           "conditions": "眼距、瞳距、面罩、可见区",
-          "numeric": true
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "ufov",
           "label": "未明方向视场 (°)",
           "definition": "保留原厂未说明方向的角度，不混入水平或垂直。",
           "conditions": "方向缺失，不能跨口径排名",
-          "numeric": true
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "ppd",
@@ -1989,7 +2037,10 @@
               "source": "zhao_vr_spatiotemporal_2022",
               "location": "Methods / Spatial resolution measurement，角采样校准及中心视场限制；倒数关系为本库单位说明"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "panel",
@@ -2010,21 +2061,30 @@
           "label": "眼盒 (mm)",
           "definition": "待补可接受图像区域的眼位范围。",
           "conditions": "三维边界及清晰度/视场阈值",
-          "numeric": true
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "eyerelief",
           "label": "眼距 (mm)",
           "definition": "待补眼睛到最后光学表面的距离。",
           "conditions": "参考面及瞳位",
-          "numeric": true
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "brightness",
           "label": "入眼亮度 (cd/m²)",
           "definition": "待补用户眼位测得亮度，不填面板峰值亮度。",
           "conditions": "眼位、测试图案、APL、模式、测量仪器",
-          "numeric": true
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "mtf",
@@ -2037,14 +2097,20 @@
               "source": "zhao_vr_spatiotemporal_2022",
               "location": "Methods / Spatial resolution measurement；Spatiotemporal response model Eq.5；Fig.5/8"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "latency",
           "label": "运动到光子延迟 (ms)",
           "definition": "待补完整运动到显示更新延迟；不混入photon-to-photon。",
           "conditions": "事件定义、刷新模式、测量链路",
-          "numeric": true
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "duty_cycle",
@@ -2057,7 +2123,11 @@
               "source": "zhao_vr_spatiotemporal_2022",
               "location": "Methods / Temporal response measurement；Results / Temporal response；Fig.6"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0,
+            "max": 100
+          }
         },
         {
           "id": "emission_ms",
@@ -2070,7 +2140,10 @@
               "source": "zhao_vr_spatiotemporal_2022",
               "location": "Results / Temporal response，VIVE Pro 2 120/90 Hz对照段；Fig.6"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "luminance_study",
@@ -2083,7 +2156,10 @@
               "source": "zhao_vr_spatiotemporal_2022",
               "location": "Methods / VR head mounted displays，ILT5000与三设备设置段"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "spatial_protocol",
@@ -2109,7 +2185,10 @@
               "source": "zhao_vr_spatiotemporal_2022",
               "location": "出版PDF p.5 Results / Spatial performance；Fig.5"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "cutoff_white",
@@ -2122,7 +2201,10 @@
               "source": "zhao_vr_spatiotemporal_2022",
               "location": "出版PDF p.5 Results / Spatial performance；Fig.5"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "dfov",
@@ -2135,7 +2217,10 @@
               "source": "choi_rgb_ned_2025",
               "location": "PDF p.6 holographic NED / diagonal FOV"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         }
       ],
       "rows": [
@@ -2781,7 +2866,10 @@
               "source": "kang_uv_visible_2026",
               "location": "§2.3/2.4，PDF pp.6–8"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "design_focal_um",
@@ -2802,7 +2890,10 @@
               "source": "kang_uv_visible_2026",
               "location": "§2.3/2.4，PDF pp.6–8"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "na",
@@ -2819,7 +2910,10 @@
               "source": "kang_uv_visible_2026",
               "location": "§2.3/2.4 器件参数段"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "lambda_min_nm",
@@ -2840,7 +2934,10 @@
               "source": "kang_uv_visible_2026",
               "location": "§2.3/2.4，PDF pp.6–8"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "lambda_max_nm",
@@ -2861,7 +2958,10 @@
               "source": "kang_uv_visible_2026",
               "location": "§2.3/2.4，PDF pp.6–8"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "wavelength_nm",
@@ -2874,7 +2974,10 @@
               "source": "kang_uv_visible_2026",
               "location": "§2.3/2.4 逐波长测量段"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "measured_focal_um",
@@ -2887,7 +2990,10 @@
               "source": "kang_uv_visible_2026",
               "location": "§2.3/2.4 z扫描及逐波长焦距段"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "fwhm_um",
@@ -2904,7 +3010,10 @@
               "source": "kang_uv_visible_2026",
               "location": "§2.3/2.4 measured FWHM段"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "strehl",
@@ -2921,7 +3030,11 @@
               "source": "kang_uv_visible_2026",
               "location": "§2.3/2.4 Strehl定义及列值段"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0,
+            "max": 1
+          }
         },
         {
           "id": "height_nm",
@@ -2942,7 +3055,10 @@
               "source": "kang_uv_visible_2026",
               "location": "§2.2 meta-atom library高度"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "fnumber",
@@ -2959,7 +3075,10 @@
               "source": "engelberg_asnr_published_2020",
               "location": "p.3869 Methods；p.3870 F#定义"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "fov_deg",
@@ -2976,7 +3095,10 @@
               "source": "chen_visible_manuscript_2018",
               "location": "PDF p.13（正文p.12）30 degrees field of view；正式SI Fig.S7"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "psnr_db",
@@ -3002,7 +3124,11 @@
               "source": "tseng_neural_si_2021",
               "location": "SI p.43 Table12"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": -1,
+            "max": 1
+          }
         },
         {
           "id": "material",
@@ -3082,7 +3208,11 @@
               "source": "chen_visible_manuscript_2018",
               "location": "PDF p.19（正文p.18）Methods / Measurement"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0,
+            "max": 100
+          }
         },
         {
           "id": "efficiency_lambda_nm",
@@ -3099,7 +3229,10 @@
               "source": "chen_visible_si_2018",
               "location": "PDF p.10 Fig.S8(a)"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "efficiency_band_mean_pct",
@@ -3112,7 +3245,11 @@
               "source": "wang_visible_2018",
               "location": "PDF p.1 Abstract；p.4 Fig.3及对应正文"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0,
+            "max": 100
+          }
         },
         {
           "id": "polarization",
@@ -3175,7 +3312,10 @@
               "source": "lin_spdc_si_2025",
               "location": "Fig.S5c/d图注"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "fwhm_y_um",
@@ -3192,7 +3332,10 @@
               "source": "lin_spdc_si_2025",
               "location": "Fig.S5c/d图注"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "focus_variation_um",
@@ -3209,7 +3352,10 @@
               "source": "li_rgb_vr_2021",
               "location": "Results / Focusing and imaging characterizations第一段；Fig.2B"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "focus_variation_protocol",
@@ -3252,7 +3398,10 @@
               "source": "richards_2023",
               "location": "PDF p.3结构厚度；p.4 Focal length and focusing efficiency；SI p.9 Table S1"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "focus_error_um",
@@ -3265,7 +3414,10 @@
               "source": "richards_2023",
               "location": "PDF p.3结构厚度；p.4 Focal length and focusing efficiency；SI p.9 Table S1"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "focus_error_pct",
@@ -3278,7 +3430,10 @@
               "source": "richards_2023",
               "location": "PDF p.3结构厚度；p.4 Focal length and focusing efficiency；SI p.9 Table S1"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         },
         {
           "id": "focus_error_protocol",
@@ -3304,7 +3459,11 @@
               "source": "lin_array_full_2019",
               "location": "PDF p.2/印刷p.228效率段；SI p.8 S3图注"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0,
+            "max": 100
+          }
         },
         {
           "id": "operation_efficiency_band_mean_pct",
@@ -3317,7 +3476,11 @@
               "source": "lin_array_full_2019",
               "location": "PDF p.2/印刷p.228效率段；SI p.8 S3图注"
             }
-          ]
+          ],
+          "axis_bounds": {
+            "min": 0,
+            "max": 100
+          }
         },
         {
           "id": "operation_efficiency_protocol",
