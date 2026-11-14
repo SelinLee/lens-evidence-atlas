@@ -6,7 +6,7 @@ import {fileURLToPath} from 'node:url';
 import {isDeepStrictEqual} from 'node:util';
 export const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=(p)=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
-export function load(){const d={meta:read('data/catalog.json'),bests:read('data/scoped_bests.json'),standards:read('data/standards.json'),comparisons:read('data/comparisons.json')};for(const folder of ['applications','metrics','sources','benchmarks'])d[folder]=fs.readdirSync(path.join(root,'data',folder)).filter(f=>f.endsWith('.json')).sort().map(f=>read(`data/${folder}/${f}`));return d}
+export function load(){const d={meta:read('data/catalog.json'),bibliography:read('data/bibliography.json'),bests:read('data/scoped_bests.json'),standards:read('data/standards.json'),comparisons:read('data/comparisons.json')};for(const folder of ['applications','metrics','sources','benchmarks'])d[folder]=fs.readdirSync(path.join(root,'data',folder)).filter(f=>f.endsWith('.json')).sort().map(f=>read(`data/${folder}/${f}`));return d}
 export function validate(d){
  const errors=[];const expect=(ok,msg)=>{if(!ok)errors.push(msg)};const ids={};
  for(const type of ['applications','metrics','sources','benchmarks']){ids[type]=new Set();for(const x of d[type]){expect(typeof x.id==='string'&&/^[a-z0-9_]+$/.test(x.id),`${type}: invalid id`);expect(!ids[type].has(x.id),`${type}: duplicate ${x.id}`);ids[type].add(x.id)}}

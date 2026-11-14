@@ -125,3 +125,38 @@ test('visible-light filtering prioritizes the actual spectral row and keeps unkn
  assert.deepEqual(filteredRows(spectrometer,{visible:true,models:null}).map(r=>r.id),['spectro_vis']);
  const headset=atlas.domains.find(d=>d.id==='xr');assert.equal(filteredRows(headset,{visible:true,models:null}).length,headset.rows.length);
 });
+
+test('journal labels use the parent publication and disambiguate same-year papers across filters',()=>{
+ const lenses=atlas.domains.find(d=>d.id==='metalens');
+ const chang=lenses.rows.find(r=>r.study_id==='chang2024'&&r.model.includes('400'));
+ assert.equal(chang.pointLabel,'Nat. Commun. 2024');
+ assert.equal(chang.chartLabel,'Nat. Commun. 2024 · D400μm');
+ const points=axisPoints([chang],'$model','diameter_um');
+ assert.equal(points[0].label,chang.chartLabel);
+ assert.equal(points[0].y,400);
+ assert.equal(lenses.rows.find(r=>r.study_id==='chen2018').pointLabel,'Nat. Nanotechnol. 2018, 220');
+ assert.equal(lenses.rows.find(r=>r.study_id==='wang2018').pointLabel,'Nat. Nanotechnol. 2018, 227');
+ assert.ok(lenses.rows.every(r=>r.pointLabel));
+ assert.ok(filteredRows(lenses,{models:null,query:'Light Sci. Appl.'}).length>0);
+ const mla=atlas.domains.find(d=>d.id==='app_14');
+ const supplement=mla.rows.find(r=>r.id==='liu_mla_process_radius');
+ assert.match(supplement.chartLabel,/^Light Sci\. Appl\. 2023 · 制备尺寸/);
+ const phone=atlas.domains.find(d=>d.id==='phone').rows[0];
+ assert.equal(axisPoints([phone],'$model','mp')[0].label,phone.model);
+});
+
+test('each publication group has one traceable bibliographic record for its samples',()=>{
+ for(const d of atlas.domains)for(const group of groupRows(d.rows)){
+  if(!group.paper) continue;
+  const source=atlas.sources.get(group.paper), key=source.doi?.toLowerCase()||source.url;
+  assert.equal(source.bibliography,catalog.bibliography[key],key);
+  const b=source.bibliography;
+  assert.ok(b && b.authors && b.title && b.venue && b.short && Number.isInteger(b.year),key);
+ }
+ const chang=atlas.sources.get('device-chang_dispersion_2024').bibliography;
+ assert.deepEqual([chang.authors,chang.short,chang.volume,chang.locator,chang.year],['Chang, S. et al.','Nat. Commun.','15','9627',2024]);
+ assert.equal(atlas.sources.get('device-shrestha_achromatic_2018').bibliography.authors,'Shrestha, S., Overvig, A. C., Lu, M., Stein, A. & Yu, N.');
+ assert.equal(atlas.sources.get('device-li_inverse_2022').bibliography,atlas.sources.get('li').bibliography);
+ assert.equal(atlas.sources.get('rouquette_mla_wfs_v1_2026').bibliography.short,'arXiv');
+ assert.equal(atlas.sources.get('device-asnani_native_mtf_thesis_2022').bibliography.volume,undefined);
+});
