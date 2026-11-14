@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import {load,versionAssets} from '../scripts/catalog.mjs';
-import {scalar,createWorkspace,valueSources,filteredRows,axisPoints,metricAvailability,availableAxes} from '../web/workspace-data.js';
+import {scalar,createWorkspace,groupRows,hasVisibleLight,valueSources,filteredRows,axisPoints,metricAvailability,availableAxes} from '../web/workspace-data.js';
 const catalog=load(),devices=JSON.parse(fs.readFileSync(new URL('../data/devices.json',import.meta.url))),atlas=createWorkspace(catalog,devices);
 
 test('legacy scalars preserve unit and zero without guessing ranges, errors or composite measurements',()=>{
@@ -94,4 +94,34 @@ test('asset versions match the final bytes including transitive module imports a
   seed();fs.writeFileSync(path.join(directory,'workspace-data.js'),'changed dependency');versionAssets(directory);
   const second=fs.readFileSync(path.join(directory,'index.html'),'utf8');assert.notEqual(second,first);assert.ok(second.includes('workspace.js?v='+digest('workspace.js')));
  }finally{fs.rmSync(directory,{recursive:true,force:true});}
+});
+
+test('each paper owns its configurations and its supplementary source IDs resolve to the same publication',()=>{
+ const lenses=atlas.domains.find(d=>d.id==='metalens'), groups=groupRows(lenses.rows);
+ assert.equal(groups.length,10);
+ const balli=groups.find(g=>g.key==='balli2020');
+ assert.equal(balli.rows.length,37);
+ assert.equal(new Set(balli.rows.map(r=>r.specimen_id)).size,5);
+ assert.equal(balli.paper,'device-balli_haml_2020');
+ assert.equal(atlas.sources.get('device-balli_haml_source_2020').publication_source,balli.paper);
+ const mla=groupRows(atlas.domains.find(d=>d.id==='app_14').rows);
+ assert.equal(mla.find(g=>g.paper==='liu_mla_2023').rows.length,2);
+ const phone=groupRows(atlas.domains.find(d=>d.id==='phone').rows.filter(r=>r.module==='main'));
+ assert.equal(phone.length,5);assert.ok(phone.every(g=>!g.paper));
+ for(const s of atlas.sources.values())if(s.publication_source)assert.ok(atlas.sources.has(s.publication_source)&&!atlas.sources.get(s.publication_source).publication_source);
+});
+
+test('visible-light filtering prioritizes the actual spectral row and keeps unknown wavelengths separate',()=>{
+ const lens=atlas.domains.find(d=>d.id==='metalens'), filtered=filteredRows(lens,{visible:true,models:null});
+ assert.equal(filtered.length,29);
+ assert.deepEqual(filtered.filter(r=>r.study_id==='lin2025').map(r=>r.values.wavelength_nm.value),[650,700,650,700]);
+ assert.ok(!filtered.some(r=>['balli2020','shrestha2018','engelberg2020'].includes(r.study_id)));
+ assert.equal(groupRows(filtered).length,7);
+ const band={lambda_min_nm:{value:350},lambda_max_nm:{value:920}};
+ const passes=values=>hasVisibleLight({id:'metalens'},{values});
+ assert.ok(passes(band));assert.ok(!passes({}));assert.ok(!passes({...band,wavelength_nm:{value:1000}}));
+ for(const [nm,expected] of [[379,false],[380,true],[780,true],[781,false]])assert.equal(passes({efficiency_lambda_nm:{value:nm}}),expected);
+ const spectrometer=atlas.domains.find(d=>d.id==='app_27');
+ assert.deepEqual(filteredRows(spectrometer,{visible:true,models:null}).map(r=>r.id),['spectro_vis']);
+ const headset=atlas.domains.find(d=>d.id==='xr');assert.equal(filteredRows(headset,{visible:true,models:null}).length,headset.rows.length);
 });
