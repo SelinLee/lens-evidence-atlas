@@ -64,3 +64,16 @@ export function axisPoints(rows, x, y) {
     return Number.isFinite(xv) && Number.isFinite(yv) ? [{row, x: xv, y: yv}] : [];
   });
 }
+
+export function metricAvailability(rows, metric) {
+  return rows.filter(row => Number.isFinite(row.values[metric]?.value)).length;
+}
+
+export function availableAxes(domain, rows) {
+  const metrics = domain.metrics.filter(m => m.numeric);
+  const ranked = metrics.map(m => ({id:m.id, count:metricAvailability(rows,m.id)})).sort((a,b)=>b.count-a.count);
+  const x = ranked.find(m=>m.count)?.id;
+  if (!x) return {x:'$model', y:metrics[0]?.id || ''};
+  const y = ranked.filter(m=>m.id!==x).map(m=>({...m, pairs:axisPoints(rows,x,m.id).length})).sort((a,b)=>b.pairs-a.pairs)[0];
+  return y?.pairs ? {x, y:y.id} : {x:'$model', y:x};
+}

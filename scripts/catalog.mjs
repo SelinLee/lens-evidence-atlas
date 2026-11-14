@@ -81,5 +81,15 @@ export function isKnownCondition(v){
  return typeof v==='boolean';
 }
 export function canCompare(a,b,keys){return Boolean(a&&b&&Array.isArray(keys)&&keys.length>0&&keys.every(k=>Object.hasOwn(a,k)&&Object.hasOwn(b,k)&&isKnownCondition(a[k])&&isKnownCondition(b[k])&&isDeepStrictEqual(a[k],b[k])))}
-export function build(){validateDevices(read('data/devices.json'));const d=load();const stats=validate(d);fs.mkdirSync(path.join(root,'dist'),{recursive:true});for(const f of ['index.html','app.js','style.css','devices.html','devices.js','workspace.js','workspace-data.js','workspace.css'])fs.copyFileSync(path.join(root,'web',f),path.join(root,'dist',f));fs.writeFileSync(path.join(root,'dist/devices-data.js'),'window.DEVICE_DATA='+JSON.stringify(read('data/devices.json')).replaceAll('<','\\u003c')+';\n');const data=JSON.stringify(d);fs.writeFileSync(path.join(root,'dist/data.js'),'window.LENS_DATA='+data.replaceAll('<','\\u003c')+';\n');fs.writeFileSync(path.join(root,'dist/catalog.json'),JSON.stringify(d,null,2)+'\n');fs.writeFileSync(path.join(root,'dist/build.json'),JSON.stringify({version:d.meta.version,data_sha256:crypto.createHash('sha256').update(data).digest('hex'),...stats},null,2)+'\n');return stats}
+export function versionAssets(directory){
+ const digest=name=>crypto.createHash('sha256').update(fs.readFileSync(path.join(directory,name))).digest('hex').slice(0,16);
+ // Version the module dependency before hashing its importer.
+ const modulePath=path.join(directory,'workspace.js');
+ const module=fs.readFileSync(modulePath,'utf8').replace(/(['"])\.\/workspace-data\.js\1/g,(_,quote)=>quote+'./workspace-data.js?v='+digest('workspace-data.js')+quote);
+ fs.writeFileSync(modulePath,module);
+ const indexPath=path.join(directory,'index.html');
+ const index=fs.readFileSync(indexPath,'utf8').replace(/\b(src|href)="([a-zA-Z0-9_-]+\.(?:js|css))"/g,(_,attribute,name)=>`${attribute}="${name}?v=${digest(name)}"`);
+ fs.writeFileSync(indexPath,index);
+}
+export function build(){validateDevices(read('data/devices.json'));const d=load();const stats=validate(d);fs.mkdirSync(path.join(root,'dist'),{recursive:true});for(const f of ['index.html','app.js','style.css','devices.html','devices.js','workspace.js','workspace-data.js','workspace.css'])fs.copyFileSync(path.join(root,'web',f),path.join(root,'dist',f));fs.writeFileSync(path.join(root,'dist/devices-data.js'),'window.DEVICE_DATA='+JSON.stringify(read('data/devices.json')).replaceAll('<','\\u003c')+';\n');const data=JSON.stringify(d);fs.writeFileSync(path.join(root,'dist/data.js'),'window.LENS_DATA='+data.replaceAll('<','\\u003c')+';\n');fs.writeFileSync(path.join(root,'dist/catalog.json'),JSON.stringify(d,null,2)+'\n');fs.writeFileSync(path.join(root,'dist/build.json'),JSON.stringify({version:d.meta.version,data_sha256:crypto.createHash('sha256').update(data).digest('hex'),...stats},null,2)+'\n');versionAssets(path.join(root,'dist'));return stats}
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){console.log(JSON.stringify(process.argv[2]==='build'?build():validate(load()),null,2))}
