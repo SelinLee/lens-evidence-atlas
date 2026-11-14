@@ -1,6 +1,6 @@
 # Jeon2026三维RGB消色差与近眼系统：下一批检查点
 
-QUALITY-001o；2026-11-14。接续经典2017工作，补近期实制可见光与VR相关研究，不把单篇安排写进长期目标。最新库/题录按DOI与题名文本检索未匹配，入库前再次去重。选文理由为2026年三维可变柱高/直径、TPL及NIL复制、实测RGB焦斑/MTF与功率表和OLED系统；未用引用量/影响因子或作者“最佳”作独立纪录。
+QUALITY-001o；2026-11-14。此为启动时历史检查点，后续已核制程/定量归属与功率/曲线证据，当前以[核验](JEON_2026_REVIEW_2026-11-14.md)及[待办](EVIDENCE_BACKLOG.md)为准。接续经典2017工作，补近期实制可见光与VR相关研究，不把单篇安排写进长期目标。最新库/题录按DOI与题名文本检索未匹配，入库前再次去重。选文理由为2026年三维可变柱高/直径、TPL及NIL复制、实测RGB焦斑/MTF与功率表和OLED系统；未用引用量/影响因子或作者“最佳”作独立纪录。
 
 [Youngsun Jeon et al., Differentiable library-based inverse design of achromatic metalens for full-color near-eye displays](https://www.nature.com/articles/s41467-026-73103-2)，Nat. Commun. **17, 6310 (2026)**，DOI **10.1038/s41467-026-73103-2**，正式页2026-05-11上线。由2026可见光实制/PSF/MTF检索定位原作，不从综述抄参数。
 

@@ -29,7 +29,7 @@ test('author operation efficiencies preserve their denominator and errors instea
  assert.equal(band.operation_efficiency_band_mean_pct.value,39.1);assert.equal(band.operation_efficiency_band_mean_pct.approximate,true);assert.equal(band.operation_efficiency_band_mean_pct.statistic,'band_mean');assert.equal(band.operation_efficiency_band_mean_pct.reported_error.type,'not_specified');
  assert.match(point.operation_efficiency_protocol.value,/相反手性/);assert.match(point.operation_efficiency_protocol.value,/积分区域.*未给/);
  for(const r of rows)for(const k of ['efficiency_at_lambda_pct','efficiency_band_mean_pct'])assert.equal(r.values[k],undefined);
- assert.equal(axisPoints(rows,'wavelength_nm','operation_efficiency_at_lambda_pct').length,1);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,92);
+ assert.equal(axisPoints(rows,'wavelength_nm','operation_efficiency_at_lambda_pct').length,1);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,95);
 });
 
 test('the MTF audit keeps only three curve associations and explicitly unknown PSF provenance and raw arrays',()=>{

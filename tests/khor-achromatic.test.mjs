@@ -44,7 +44,7 @@ test('signed axial offsets are atlas calculations against the documented fixed p
 test('control geometry and inaccessible efficiency evidence never become AML measurement values or raw data',()=>{
  const g=get('gml_summary'),r=get('reverse_summary');assert.equal(g.chromatic.basis,'measured');assert.equal(r.chromatic.basis,'model');assert.equal(r.measured_focal_um.value,null);assert.match(r.chromatic.value,/局部非单调/);assert.match(r.chromatic.note,/500→510nm.*550→560nm/);
  for(const v of [g,r])for(const key of ['diameter_um','na','design_focal_um','fwhm_x_um','focal_spectral_sd_um','focus_variation_pct'])assert.equal(v[key],undefined);
- for(const r of rows)assert.equal(r.values.efficiency_at_lambda_pct,undefined);assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,0);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,92);assert.equal(axisPoints(lens.rows,'na','efficiency_band_mean_pct').length,6);
+ for(const r of rows)assert.equal(r.values.efficiency_at_lambda_pct,undefined);assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,0);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,95);assert.equal(axisPoints(lens.rows,'na','efficiency_band_mean_pct').length,6);
  assert.match(get('aml_summary').efficiency_protocol.note,/功率分母/);assert.match(get('aml_summary').mtf_curve.value,/SI内容仍待取得/);
 });
 

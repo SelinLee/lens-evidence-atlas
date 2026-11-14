@@ -15,6 +15,11 @@ export function validateDevices(d,catalog){
  for(const m of c.metrics){for(const ref of m.definition_refs||[])if(!ids.has(ref.source)||!ref.location)errors.push('metric definition provenance');}
  const rids=new Set();for(const r of c.rows){if(rids.has(r.id))errors.push('duplicate row');rids.add(r.id);
  if(r.evidence_type==='study'&&(!r.study_id||!r.measurement_scope))errors.push('study scope');
+ if(r.configuration_role==='unassigned_measurement_set'){
+  const candidates=r.candidate_specimen_ids;
+  if(!Array.isArray(candidates)||candidates.length<2||new Set(candidates).size!==candidates.length||
+   candidates.some(id=>id===r.specimen_id||!c.rows.some(other=>other.study_id===r.study_id&&other.specimen_id===id)))errors.push('unassigned specimen candidates');
+ }
  for(const [k,v]of Object.entries(r.values)){
   if(!mids.has(k)||!ids.has(v.source)||!v.location)errors.push('cell provenance');
   if(v.sourceIds&&(!Array.isArray(v.sourceIds)||!v.sourceIds.includes(v.source)||v.sourceIds.some(id=>!ids.has(id))))errors.push('cell multiple sources');
@@ -26,6 +31,9 @@ export function validateDevices(d,catalog){
    (v.reported_error.sample_size!==null&&(!Number.isInteger(v.reported_error.sample_size)||v.reported_error.sample_size<2))))errors.push('reported error context');
   if(v.uncertainty&&(!['SD','SEM'].includes(v.uncertainty.type)||!Number.isFinite(v.uncertainty.value)||v.uncertainty.value<0||!Number.isInteger(v.uncertainty.n)||v.uncertainty.n<2||v.statistic!=='mean'))errors.push('reported uncertainty');
   if(['fwhm_um','fwhm_x_um','fwhm_y_um'].includes(k)&&Number.isFinite(v.value)&&!(v.value>0&&r.values.wavelength_nm?.value>0&&v.basis==='measured'))errors.push('measured PSF FWHM context');
+  if(['incident_power_uw','focused_power_uw'].includes(k)&&Number.isFinite(v.value)&&
+   (v.value<0||v.basis!=='measured'||v.quantity!=='optical_power'||v.original_unit!=='μW'||
+    !(r.values.wavelength_nm?.value>0)||!r.values.efficiency_protocol?.value))errors.push('measured optical power context');
  }
  const aoi=r.values.aoi_deg;
  const focalMean=r.values.measured_focal_band_mean_um;
