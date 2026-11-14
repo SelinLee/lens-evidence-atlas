@@ -102,7 +102,7 @@ export function hasVisibleLight(domain, row) {
   // These camera modules and near-eye display configurations explicitly serve colour imaging/viewing.
   if (domain.id==='phone') return ['main','ultrawide','tele','external_macro','native_research'].includes(row.module);
   if (domain.id==='xr') return true;
-  return row.visibleLight === true;
+  return row.visible_light_use === true || row.visibleLight === true;
 }
 
 export function valueSources(value) { return value?.sourceIds || (value?.source ? [value.source] : []); }
