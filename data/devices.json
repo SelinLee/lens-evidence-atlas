@@ -224,6 +224,30 @@
       "kind": "supplementary_material",
       "scope": "正式16页SI（封面后印刷pp.1–15）；读S4/S6/S7/S8/S11，视觉核PDF pp.6/9/10的FWHM/Strehl、斜入射与效率图/图注。S8(a)明确NA=.02/D220µm，效率焦圈约Airy盘直径且分母同口径圆偏振入射；理论效率非实测。只录正文明确约20%@500nm，曲线/误差条不估读，Strehl>.8界限不压成精确点；S9模拟混合镜不当制成样品。",
       "checked_on": "2026-11-14"
+    },
+    {
+      "id": "asnani_native_mtf_thesis_2022",
+      "title": "Asnani (2022): Image Processing for Machine Vision Applications — Ch.4 / Appendix B",
+      "url": "https://iris.polito.it/handle/11583/2970991",
+      "kind": "doctoral_thesis",
+      "scope": "作者机构公开147页博士论文，只读第4章相关§4.3–4.6（印刷pp.79–96）及B.3–B.5（124–129）；视觉核PDF pp.111–113、143、146的Fig.4.7/4.8、Table4.2和代码片段。六历史手机同一研究；论文列2021会议文DOI 10.1109/ICSIP52628.2021.9688610，会议正式全文仍受限，未当第二项研究。只转录表4.2两软件原数值；附录ESF步长与FFT横轴有频率标定疑点，原表刻度不改标为已校准cycles/pixel，不反推校正值；未运行APK/代码或取得原始拍摄数据。",
+      "checked_on": "2026-11-14"
+    },
+    {
+      "id": "beveridge_native_mtf_2025",
+      "title": "Beveridge & Nayar (2025): Hierarchical Material Recognition from Local Appearance",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Beveridge_Hierarchical_Material_Recognition_from_Local_Appearance_ICCV_2025_paper.pdf",
+      "kind": "conference_paper",
+      "scope": "CVF正式接收版12页PDF。仅读摘要、§4 Data Collection及脚注3相关内容，视觉核PDF p.4/印刷p.8168；两手机MTF50及cycles/pixel为作者明确报告。未核到MTF测试图、模组、照明/曝光/物距、ROI、通道/处理或软件；没有复现标定。Matador图像采集的RAW/12MP/视场不自动当作MTF测试条件；不采纳作者选型优劣为当前市场排名。分类模型实验非本轮阅读范围。",
+      "checked_on": "2026-11-14"
+    },
+    {
+      "id": "beveridge_matador_si_2025",
+      "title": "Beveridge & Nayar (2025): Supplementary Material — Matador acquisition details",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/supplemental/Beveridge_Hierarchical_Material_Recognition_ICCV_2025_supplemental.pdf",
+      "kind": "supplementary_material",
+      "scope": "仅S2.1相关采集正文/图注，确认RAW、广角/超广角与采集设置属于Matador材料图像；文本检索未找到MTF测量协议，不据此声称作者所有材料均无方法。未视觉核其材料样例或精读分类/材料力学各节；不把采集12-bit RAW条件移用到主文脚注MTF。",
+      "checked_on": "2026-11-14"
     }
   ],
   "domains": {
@@ -278,10 +302,16 @@
         },
         {
           "id": "sfr",
-          "label": "SFR / MTF",
-          "definition": "空间频率响应；待收实验曲线或指定频率处响应。",
+          "label": "SFR / MTF（指定频率，1）",
+          "definition": "归一化的空间频率响应；本字段用于指定频率处的响应值。MTF50是50%响应位置的空间频率，另列；不把作者0.1338频率读数当无量纲MTF。相机测量含目标、像素和处理链，不等于裸镜MTF。",
           "conditions": "频率单位、场点、方向、波长、RAW/JPEG、锐化",
-          "numeric": true
+          "numeric": true,
+          "definition_refs": [
+            {
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "印刷pp.79–80 Eqs.4.2–4.3及§4.3.5；PDF pp.97–98"
+            }
+          ]
         },
         {
           "id": "dr",
@@ -360,6 +390,70 @@
             {
               "source": "vennela_phone_snr_2026",
               "location": "Table 4，mean ± SD，n=30"
+            }
+          ]
+        },
+        {
+          "id": "mtf50_cpp",
+          "label": "MTF50（作者报告，cycles/pixel）",
+          "definition": "作者明确以cycles/pixel报告的MTF50空间频率，区别于指定频率MTF响应和MTF50P。单位可追溯不等于测量链已独立校准。",
+          "conditions": "模组、测试图/ROI/方向、曝光/照度/物距、输出尺寸、色彩通道、归一化及处理；缺失项逐格保留，不将未明刻度换入",
+          "numeric": true,
+          "definition_refs": [
+            {
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "印刷p.80 §4.3.5 MTF50/MTF50P"
+            },
+            {
+              "source": "beveridge_native_mtf_2025",
+              "location": "PDF p.4 / 印刷p.8168，脚注3"
+            }
+          ]
+        },
+        {
+          "id": "mtf50_app_reported",
+          "label": "MTFCalculator MTF50（原表刻度）",
+          "definition": "Asnani表4.2的原始软件输出。数值可核，物理频率轴标定未核实；只保留作者刻度，不称已校准cycles/pixel、MTF响应或裸镜性能。",
+          "conditions": "仅限同文/同一处理管线解读；B.3的0.10步长与B.5的FFT横轴待消歧，不与其他研究的物理频率混列",
+          "numeric": true,
+          "definition_refs": [
+            {
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "PDF p.113 Table4.2；pp.143/146 Appendix B.3/B.5"
+            }
+          ]
+        },
+        {
+          "id": "mtf50_imatest_reported",
+          "label": "Imatest MTF50（原表刻度）",
+          "definition": "同一表的Imatest 2020.2输出。表头未独立标单位，保留原表刻度，不据软件通常设置补物理单位；与App为同一组图像的两种分析。",
+          "conditions": "同文1432×1080 ROI、相同捕获图像；不是独立研究/独立机组，不将二者差异作为通用校准误差",
+          "numeric": true,
+          "definition_refs": [
+            {
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "印刷pp.92/95，PDF pp.110/113 §4.5及Table4.2"
+            }
+          ]
+        },
+        {
+          "id": "mtf_protocol",
+          "label": "MTF测量协议 / 缺口",
+          "definition": "保存相机输出、测试目标、场点/ROI、处理与频率刻度可追溯范围；未知条件不由设备规格或其他采集流程补出。",
+          "conditions": "实测/作者报告、标尺状态、照度/曝光/物距、方向/通道、图像编码和重复统计",
+          "numeric": false,
+          "definition_refs": [
+            {
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "印刷pp.81–92 §4.4/4.5及Appendix B.3–B.5"
+            },
+            {
+              "source": "beveridge_native_mtf_2025",
+              "location": "PDF p.4 Data Collection及脚注3"
+            },
+            {
+              "source": "beveridge_matador_si_2025",
+              "location": "S2.1 Acquisition Details（用于区分采集设置）"
             }
           ]
         }
@@ -1306,9 +1400,331 @@
               "checked_on": "2026-11-14"
             }
           }
+        },
+        {
+          "id": "asnani2022_iphone11pro",
+          "model": "Apple iPhone 11 Pro（2022研究）",
+          "device_model": "Apple iPhone 11 Pro",
+          "module": "native_research",
+          "variant": "同一原生相机研究 / 作者刻度",
+          "evidence_type": "study",
+          "study_id": "asnani_mtfcalculator",
+          "measurement_scope": "作者2022论文第4章历史原生相机研究；两软件同一组捕获图像，ROI对齐1432×1080。保留原表MTF50刻度，物理频率标尺未核；不是当前旗舰/原厂模组规格，也不是裸镜MTF。",
+          "values": {
+            "mtf50_app_reported": {
+              "value": 0.1717,
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "PDF p.113（印刷p.95）Table4.2 / Apple iPhone 11 Pro / MTFCalculator",
+              "note": "Table4.2原数值；单位/频率标定未消歧，未换算cycles/pixel。Appendix B.3设ESF步长0.10，B.5用2048点FFT但另设arange(0,1,1/127)横轴。仅做静态一致性检查，未验证运行版本或从原数据校正表值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "0.1717",
+              "frequency_status": "author_scale_unverified",
+              "frequency_unit": "author_scale"
+            },
+            "mtf50_imatest_reported": {
+              "value": 0.1749,
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "PDF p.113（印刷p.95）Table4.2 / Apple iPhone 11 Pro / Imatest",
+              "note": "同表参考软件原输出，表头单位未明，不以通常默认设置补单位；与App共用图像，不能计第二项独立实验。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "0.1749",
+              "frequency_status": "author_scale_unverified",
+              "frequency_unit": "author_scale"
+            },
+            "mtf_protocol": {
+              "value": "9°斜边、目标对比21:1、A4打印/灯照；同图像两软件、ROI1432×1080；频率标尺待核",
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "PDF pp.99–110（印刷81–92）§4.4/4.5；pp.143/146 B.3/B.5",
+              "note": "作者2022论文第4章历史原生相机研究；两软件同一组捕获图像，ROI对齐1432×1080。保留原表MTF50刻度，物理频率标尺未核；不是当前旗舰/原厂模组规格，也不是裸镜MTF。 实验在家中、打印/照明非理想；照度、ISO/曝光、编码/锐化/降噪及具体选用模组未完整报告。18cm仅Mate10Pro示例，不分派各机。App常规三拍均值不直接当表4.2的n，未填SD或均值统计。表4.1借用规格未作为原厂取证。 iOS图像在桌面版分析，Android可用App；表4.2比较的两分析均使用相同捕获图像，未声称iPhone运行Android应用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "asnani2022_jiayu_s3",
+          "model": "JiaYu S3（2022研究）",
+          "device_model": "JiaYu S3",
+          "module": "native_research",
+          "variant": "同一原生相机研究 / 作者刻度",
+          "evidence_type": "study",
+          "study_id": "asnani_mtfcalculator",
+          "measurement_scope": "作者2022论文第4章历史原生相机研究；两软件同一组捕获图像，ROI对齐1432×1080。保留原表MTF50刻度，物理频率标尺未核；不是当前旗舰/原厂模组规格，也不是裸镜MTF。",
+          "values": {
+            "mtf50_app_reported": {
+              "value": 0.146,
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "PDF p.113（印刷p.95）Table4.2 / JiaYu S3 / MTFCalculator",
+              "note": "Table4.2原数值；单位/频率标定未消歧，未换算cycles/pixel。Appendix B.3设ESF步长0.10，B.5用2048点FFT但另设arange(0,1,1/127)横轴。仅做静态一致性检查，未验证运行版本或从原数据校正表值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "0.1460",
+              "frequency_status": "author_scale_unverified",
+              "frequency_unit": "author_scale"
+            },
+            "mtf50_imatest_reported": {
+              "value": 0.1399,
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "PDF p.113（印刷p.95）Table4.2 / JiaYu S3 / Imatest",
+              "note": "同表参考软件原输出，表头单位未明，不以通常默认设置补单位；与App共用图像，不能计第二项独立实验。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "0.1399",
+              "frequency_status": "author_scale_unverified",
+              "frequency_unit": "author_scale"
+            },
+            "mtf_protocol": {
+              "value": "9°斜边、目标对比21:1、A4打印/灯照；同图像两软件、ROI1432×1080；频率标尺待核",
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "PDF pp.99–110（印刷81–92）§4.4/4.5；pp.143/146 B.3/B.5",
+              "note": "作者2022论文第4章历史原生相机研究；两软件同一组捕获图像，ROI对齐1432×1080。保留原表MTF50刻度，物理频率标尺未核；不是当前旗舰/原厂模组规格，也不是裸镜MTF。 实验在家中、打印/照明非理想；照度、ISO/曝光、编码/锐化/降噪及具体选用模组未完整报告。18cm仅Mate10Pro示例，不分派各机。App常规三拍均值不直接当表4.2的n，未填SD或均值统计。表4.1借用规格未作为原厂取证。 iOS图像在桌面版分析，Android可用App；表4.2比较的两分析均使用相同捕获图像，未声称iPhone运行Android应用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "asnani2022_iphone11",
+          "model": "Apple iPhone 11（2022研究）",
+          "device_model": "Apple iPhone 11",
+          "module": "native_research",
+          "variant": "同一原生相机研究 / 作者刻度",
+          "evidence_type": "study",
+          "study_id": "asnani_mtfcalculator",
+          "measurement_scope": "作者2022论文第4章历史原生相机研究；两软件同一组捕获图像，ROI对齐1432×1080。保留原表MTF50刻度，物理频率标尺未核；不是当前旗舰/原厂模组规格，也不是裸镜MTF。",
+          "values": {
+            "mtf50_app_reported": {
+              "value": 0.1417,
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "PDF p.113（印刷p.95）Table4.2 / Apple iPhone 11 / MTFCalculator",
+              "note": "Table4.2原数值；单位/频率标定未消歧，未换算cycles/pixel。Appendix B.3设ESF步长0.10，B.5用2048点FFT但另设arange(0,1,1/127)横轴。仅做静态一致性检查，未验证运行版本或从原数据校正表值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "0.1417",
+              "frequency_status": "author_scale_unverified",
+              "frequency_unit": "author_scale"
+            },
+            "mtf50_imatest_reported": {
+              "value": 0.1312,
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "PDF p.113（印刷p.95）Table4.2 / Apple iPhone 11 / Imatest",
+              "note": "同表参考软件原输出，表头单位未明，不以通常默认设置补单位；与App共用图像，不能计第二项独立实验。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "0.1312",
+              "frequency_status": "author_scale_unverified",
+              "frequency_unit": "author_scale"
+            },
+            "mtf_protocol": {
+              "value": "9°斜边、目标对比21:1、A4打印/灯照；同图像两软件、ROI1432×1080；频率标尺待核",
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "PDF pp.99–110（印刷81–92）§4.4/4.5；pp.143/146 B.3/B.5",
+              "note": "作者2022论文第4章历史原生相机研究；两软件同一组捕获图像，ROI对齐1432×1080。保留原表MTF50刻度，物理频率标尺未核；不是当前旗舰/原厂模组规格，也不是裸镜MTF。 实验在家中、打印/照明非理想；照度、ISO/曝光、编码/锐化/降噪及具体选用模组未完整报告。18cm仅Mate10Pro示例，不分派各机。App常规三拍均值不直接当表4.2的n，未填SD或均值统计。表4.1借用规格未作为原厂取证。 iOS图像在桌面版分析，Android可用App；表4.2比较的两分析均使用相同捕获图像，未声称iPhone运行Android应用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "asnani2022_mate10pro",
+          "model": "Huawei Mate 10 Pro（2022研究）",
+          "device_model": "Huawei Mate 10 Pro",
+          "module": "native_research",
+          "variant": "同一原生相机研究 / 作者刻度",
+          "evidence_type": "study",
+          "study_id": "asnani_mtfcalculator",
+          "measurement_scope": "作者2022论文第4章历史原生相机研究；两软件同一组捕获图像，ROI对齐1432×1080。保留原表MTF50刻度，物理频率标尺未核；不是当前旗舰/原厂模组规格，也不是裸镜MTF。",
+          "values": {
+            "mtf50_app_reported": {
+              "value": 0.1338,
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "PDF p.113（印刷p.95）Table4.2 / Huawei Mate 10 Pro / MTFCalculator",
+              "note": "Table4.2原数值；单位/频率标定未消歧，未换算cycles/pixel。Appendix B.3设ESF步长0.10，B.5用2048点FFT但另设arange(0,1,1/127)横轴。仅做静态一致性检查，未验证运行版本或从原数据校正表值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "0.1338",
+              "frequency_status": "author_scale_unverified",
+              "frequency_unit": "author_scale"
+            },
+            "mtf50_imatest_reported": {
+              "value": 0.1306,
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "PDF p.113（印刷p.95）Table4.2 / Huawei Mate 10 Pro / Imatest",
+              "note": "同表参考软件原输出，表头单位未明，不以通常默认设置补单位；与App共用图像，不能计第二项独立实验。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "0.1306",
+              "frequency_status": "author_scale_unverified",
+              "frequency_unit": "author_scale"
+            },
+            "mtf_protocol": {
+              "value": "9°斜边、目标对比21:1、A4打印/灯照；同图像两软件、ROI1432×1080；频率标尺待核",
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "PDF pp.99–110（印刷81–92）§4.4/4.5；pp.143/146 B.3/B.5",
+              "note": "作者2022论文第4章历史原生相机研究；两软件同一组捕获图像，ROI对齐1432×1080。保留原表MTF50刻度，物理频率标尺未核；不是当前旗舰/原厂模组规格，也不是裸镜MTF。 实验在家中、打印/照明非理想；照度、ISO/曝光、编码/锐化/降噪及具体选用模组未完整报告。18cm仅Mate10Pro示例，不分派各机。App常规三拍均值不直接当表4.2的n，未填SD或均值统计。表4.1借用规格未作为原厂取证。 iOS图像在桌面版分析，Android可用App；表4.2比较的两分析均使用相同捕获图像，未声称iPhone运行Android应用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "asnani2022_p20pro",
+          "model": "Huawei P20 Pro（2022研究）",
+          "device_model": "Huawei P20 Pro",
+          "module": "native_research",
+          "variant": "同一原生相机研究 / 作者刻度",
+          "evidence_type": "study",
+          "study_id": "asnani_mtfcalculator",
+          "measurement_scope": "作者2022论文第4章历史原生相机研究；两软件同一组捕获图像，ROI对齐1432×1080。保留原表MTF50刻度，物理频率标尺未核；不是当前旗舰/原厂模组规格，也不是裸镜MTF。",
+          "values": {
+            "mtf50_app_reported": {
+              "value": 0.1259,
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "PDF p.113（印刷p.95）Table4.2 / Huawei P20 Pro / MTFCalculator",
+              "note": "Table4.2原数值；单位/频率标定未消歧，未换算cycles/pixel。Appendix B.3设ESF步长0.10，B.5用2048点FFT但另设arange(0,1,1/127)横轴。仅做静态一致性检查，未验证运行版本或从原数据校正表值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "0.1259",
+              "frequency_status": "author_scale_unverified",
+              "frequency_unit": "author_scale"
+            },
+            "mtf50_imatest_reported": {
+              "value": 0.1123,
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "PDF p.113（印刷p.95）Table4.2 / Huawei P20 Pro / Imatest",
+              "note": "同表参考软件原输出，表头单位未明，不以通常默认设置补单位；与App共用图像，不能计第二项独立实验。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "0.1123",
+              "frequency_status": "author_scale_unverified",
+              "frequency_unit": "author_scale"
+            },
+            "mtf_protocol": {
+              "value": "9°斜边、目标对比21:1、A4打印/灯照；同图像两软件、ROI1432×1080；频率标尺待核",
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "PDF pp.99–110（印刷81–92）§4.4/4.5；pp.143/146 B.3/B.5",
+              "note": "作者2022论文第4章历史原生相机研究；两软件同一组捕获图像，ROI对齐1432×1080。保留原表MTF50刻度，物理频率标尺未核；不是当前旗舰/原厂模组规格，也不是裸镜MTF。 实验在家中、打印/照明非理想；照度、ISO/曝光、编码/锐化/降噪及具体选用模组未完整报告。18cm仅Mate10Pro示例，不分派各机。App常规三拍均值不直接当表4.2的n，未填SD或均值统计。表4.1借用规格未作为原厂取证。 iOS图像在桌面版分析，Android可用App；表4.2比较的两分析均使用相同捕获图像，未声称iPhone运行Android应用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "asnani2022_iphonexsmax",
+          "model": "Apple iPhone XS Max（2022研究）",
+          "device_model": "Apple iPhone XS Max",
+          "module": "native_research",
+          "variant": "同一原生相机研究 / 作者刻度",
+          "evidence_type": "study",
+          "study_id": "asnani_mtfcalculator",
+          "measurement_scope": "作者2022论文第4章历史原生相机研究；两软件同一组捕获图像，ROI对齐1432×1080。保留原表MTF50刻度，物理频率标尺未核；不是当前旗舰/原厂模组规格，也不是裸镜MTF。",
+          "values": {
+            "mtf50_app_reported": {
+              "value": 0.114,
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "PDF p.113（印刷p.95）Table4.2 / Apple iPhone XS Max / MTFCalculator",
+              "note": "Table4.2原数值；单位/频率标定未消歧，未换算cycles/pixel。Appendix B.3设ESF步长0.10，B.5用2048点FFT但另设arange(0,1,1/127)横轴。仅做静态一致性检查，未验证运行版本或从原数据校正表值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "0.1140",
+              "frequency_status": "author_scale_unverified",
+              "frequency_unit": "author_scale"
+            },
+            "mtf50_imatest_reported": {
+              "value": 0.1088,
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "PDF p.113（印刷p.95）Table4.2 / Apple iPhone XS Max / Imatest",
+              "note": "同表参考软件原输出，表头单位未明，不以通常默认设置补单位；与App共用图像，不能计第二项独立实验。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "0.1088",
+              "frequency_status": "author_scale_unverified",
+              "frequency_unit": "author_scale"
+            },
+            "mtf_protocol": {
+              "value": "9°斜边、目标对比21:1、A4打印/灯照；同图像两软件、ROI1432×1080；频率标尺待核",
+              "source": "asnani_native_mtf_thesis_2022",
+              "location": "PDF pp.99–110（印刷81–92）§4.4/4.5；pp.143/146 B.3/B.5",
+              "note": "作者2022论文第4章历史原生相机研究；两软件同一组捕获图像，ROI对齐1432×1080。保留原表MTF50刻度，物理频率标尺未核；不是当前旗舰/原厂模组规格，也不是裸镜MTF。 实验在家中、打印/照明非理想；照度、ISO/曝光、编码/锐化/降噪及具体选用模组未完整报告。18cm仅Mate10Pro示例，不分派各机。App常规三拍均值不直接当表4.2的n，未填SD或均值统计。表4.1借用规格未作为原厂取证。 iOS图像在桌面版分析，Android可用App；表4.2比较的两分析均使用相同捕获图像，未声称iPhone运行Android应用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "beveridge2025_iphone15promax",
+          "model": "Apple iPhone 15 Pro Max（2025研究）",
+          "device_model": "Apple iPhone 15 Pro Max",
+          "module": "native_research",
+          "variant": "作者报告MTF50 / 未明测试模组",
+          "evidence_type": "study",
+          "study_id": "beveridge_matador_2025",
+          "measurement_scope": "Beveridge2025同文脚注3作者报告原生相机MTF50；MTF测试模组/方法未完整给出，按型号保留未明模组。Matador数据采集RAW/12MP/74°不自动套入本MTF测试；不等于2026先进型号覆盖或裸镜性能。",
+          "values": {
+            "mtf50_cpp": {
+              "value": 0.24,
+              "source": "beveridge_native_mtf_2025",
+              "location": "PDF p.4（印刷p.8168）§4 Data Collection脚注3",
+              "note": "Beveridge2025同文脚注3作者报告原生相机MTF50；MTF测试模组/方法未完整给出，按型号保留未明模组。Matador数据采集RAW/12MP/74°不自动套入本MTF测试；不等于2026先进型号覆盖或裸镜性能。 原文明示cycles/pixel；未得到原始MTF图/频率标定、照明/曝光/物距、ROI/通道/处理、重复或误差，不据此跨研究排名。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "0.240",
+              "frequency_status": "author_stated_unit",
+              "frequency_unit": "cycles/pixel"
+            },
+            "mtf_protocol": {
+              "value": "仅作者MTF50数值/单位明确；测试模组、ROI、照明/曝光、处理及标定待补",
+              "source": "beveridge_native_mtf_2025",
+              "location": "PDF p.4 Data Collection / 脚注3；正式SI S2.1",
+              "note": "Beveridge2025同文脚注3作者报告原生相机MTF50；MTF测试模组/方法未完整给出，按型号保留未明模组。Matador数据采集RAW/12MP/74°不自动套入本MTF测试；不等于2026先进型号覆盖或裸镜性能。 12-bit Bayer RAW是Matador材料图像的采集说明，未证实用于MTF。SI所读采集章节未补足MTF方法。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "beveridge_native_mtf_2025",
+                "beveridge_matador_si_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "beveridge2025_pixel8pro",
+          "model": "Google Pixel 8 Pro（2025研究）",
+          "device_model": "Google Pixel 8 Pro",
+          "module": "native_research",
+          "variant": "作者报告MTF50 / 未明测试模组",
+          "evidence_type": "study",
+          "study_id": "beveridge_matador_2025",
+          "measurement_scope": "Beveridge2025同文脚注3作者报告原生相机MTF50；MTF测试模组/方法未完整给出，按型号保留未明模组。Matador数据采集RAW/12MP/74°不自动套入本MTF测试；不等于2026先进型号覆盖或裸镜性能。",
+          "values": {
+            "mtf50_cpp": {
+              "value": 0.158,
+              "source": "beveridge_native_mtf_2025",
+              "location": "PDF p.4（印刷p.8168）§4 Data Collection脚注3",
+              "note": "Beveridge2025同文脚注3作者报告原生相机MTF50；MTF测试模组/方法未完整给出，按型号保留未明模组。Matador数据采集RAW/12MP/74°不自动套入本MTF测试；不等于2026先进型号覆盖或裸镜性能。 原文明示cycles/pixel；未得到原始MTF图/频率标定、照明/曝光/物距、ROI/通道/处理、重复或误差，不据此跨研究排名。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "0.158",
+              "frequency_status": "author_stated_unit",
+              "frequency_unit": "cycles/pixel"
+            },
+            "mtf_protocol": {
+              "value": "仅作者MTF50数值/单位明确；测试模组、ROI、照明/曝光、处理及标定待补",
+              "source": "beveridge_native_mtf_2025",
+              "location": "PDF p.4 Data Collection / 脚注3；正式SI S2.1",
+              "note": "Beveridge2025同文脚注3作者报告原生相机MTF50；MTF测试模组/方法未完整给出，按型号保留未明模组。Matador数据采集RAW/12MP/74°不自动套入本MTF测试；不等于2026先进型号覆盖或裸镜性能。 12-bit Bayer RAW是Matador材料图像的采集说明，未证实用于MTF。SI所读采集章节未补足MTF方法。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "beveridge_native_mtf_2025",
+                "beveridge_matador_si_2025"
+              ]
+            }
+          }
         }
       ],
-      "scope": "5款商业手机、15个原生后摄配置；另2款历史手机的14条外接微距研究配置来自同一论文。切换“外接微距（研究）”可查SNR；不填到当前旗舰主摄，也不据SNR独断画质。"
+      "scope": "5款商业手机/15原生后摄配置；外接微距同文14配置SNR；另两项研究的8条原生相机记录。MTF50作者报告cycles/pixel与原表待标定刻度分列，不作同标尺排名；测试模组/处理缺口保留，不称当前旗舰画质覆盖完成。"
     },
     "xr": {
       "metrics": [

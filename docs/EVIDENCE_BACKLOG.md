@@ -19,12 +19,13 @@
 | FOCUS-004 双指标轴散点 | in_progress | 两轴指标可选、型号多选、仅散点、重复坐标可辨、无样本间连线、缺失/区间/单位规则、分享状态及导出；核已有候选还缺哪些行为 |
 | UI-001 全应用统一图表模板 | done | 2026-11-14用户追加：手机/XR与33类既有应用统一入口；首屏图表与侧边设置、下方数据表/编号来源双向跳转、兼容旧链接；本地与Chrome无头验收见[统一界面记录](UNIFIED_WORKSPACE_2026-11-14.md)，[草稿PR #70](https://github.com/SelinLee/lens-evidence-atlas/pull/70)已合并，Pages在42e1011完成实际验收；当前散点/缓存修复另见UI-002 |
 | UI-002 散点图与缓存升级修复 | done | 用户报告白框并取消折线；复现旧脚本缓存混用、资源内容版本、缺值指标说明/恢复与加载失败操作；118项测试、Chrome已有缓存升级和35域交互通过，见[修复核验](SCATTER_CACHE_RECOVERY_2026-11-14.md)；[PR #71](https://github.com/SelinLee/lens-evidence-atlas/pull/71)已合并，Pages在4d3ddc0完成12文件和实际Chrome验收 |
-| QUALITY-001 消色差超透镜原文参数矩阵 | in_progress | 本机Codex，2026-11-14；按用户当前重点补口径/焦距/NA/波段/焦移/效率/PSF/MTF及实测/模拟边界，逐格原文定位；首批4研究已由PR #72发布；继续补Chen/Wang等原作、效率/MTF和色差曲线 |
+| QUALITY-001 消色差超透镜原文参数矩阵 | in_progress | 本机Codex，2026-11-14；按用户当前重点补口径/焦距/NA/波段/焦移/效率/PSF/MTF及实测/模拟边界，逐格原文定位；首批及可见光批次已由PR #72/#74发布，文献6研究；继续效率、MTF、色差与可复算原始曲线 |
 | QUALITY-002 手机SNR/MTF/色差独立测量 | in_progress | 本机Codex，2026-11-14；先核有型号和协议的SNR及MTF原始研究；外接镜组、场景与处理链不得写进原生模组，PSNR不替代SNR |
 | QUALITY-003 VRAR MTF与色差 | in_progress | 本机Codex，2026-11-14；复核开放PR #69数据及原文，优先MTF/截止频率、颜色/场点/眼位、色差和先进设备独立测量，不能从曲线猜统一单值 |
 | QUALITY-001a 文献器件首批 | done | 4项原始研究/8器件配置/21行，几何、波段、逐谱点焦距/FWHM/Strehl、PSNR及冲突；见[首批核验](QUALITY_BATCH_2026-11-14.md)；PR #72/23fdecb与Pages43571286647实页验收，不关闭父目标 |
 | QUALITY-001b 可见光消色差与效率口径 | done | Codex，2026-11-14，codex/visible-achromatic-evidence；核Wang 2018正式主文/SI与Chen 2018作者存档稿/正式SI，分离设计示例与实验器件、带内均值与指定波长效率、偏振与分母/焦圈；七配置及效率/偏振五字段，130项测试；见[原文核验](VISIBLE_ACHROMATIC_REVIEW_2026-11-14.md)，PR #74/f5f6394及Pages43573407984完成12文件/线上六视口验收；原生手机和先进XR任务保持开放 |
 | QUALITY-002a 外接微距SNR | done | 原作Table4的2历史手机×7视图均值/SD/n；只属外接研究模组，原生主摄和先进型号仍缺；PR #72发布及实页验收 |
+| QUALITY-002b 原生手机MTF与处理链 | review | Codex，2026-11-14，codex/native-phone-mtf-evidence；从MTFCalculator作者公开博士论文核六款历史手机数表/方法，确认单位、ROI/方向/归一化及ISP边界；同文工具比较不当独立研究；另核Beveridge脚注两报告值，共八行/四字段、135测试，见[原生核验](NATIVE_PHONE_MTF_REVIEW_2026-11-14.md)，待实际发布；不把MTF50填成MTF响应或裸镜指标 |
 | QUALITY-003a XR静态截止与研究协议 | done | 复用并复核PR #69三配置数据，新增正文6/8/9/12 CPD近似截止；不当MTF50；PR #72发布及实页验收，不关闭先进设备/AR缺口 |
 | FOCUS-005 测试、发布和完成审计 | in_progress | 校验/测试、Chrome无头桌面/手机、PR、实际Pages文件及数据核对；按新目标逐条审计，明确已有/候选/缺失，不能以仅有草稿或测试通过代替交付 |
 

@@ -1,4 +1,4 @@
-import {createWorkspace, valueSources, filteredRows, axisPoints, metricAvailability, availableAxes} from './workspace-data.js?v=0798cef0b3376e45';
+import {createWorkspace, valueSources, filteredRows, axisPoints, metricAvailability, availableAxes} from './workspace-data.js?v=07307433c6bbf8d0';
 
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -12,7 +12,7 @@ const cellAnchor = (r, m) => `cell-${state.domain}-${r.id}-${m.id}`;
 const definitionAnchor = m => `definition-${state.domain}-${m.id}`;
 const refAnchor = id => 'ref-' + id;
 const citation = id => citations.has(id) ? `<a class="citation" href="#${esc(refAnchor(id))}" aria-label="参考文献 ${citations.get(id)}">[${citations.get(id)}]</a>` : '';
-const sourceKind = kind => ({manufacturer:'厂商资料',manufacturer_technical:'原厂技术说明',scholarly_book:'学术书章',paper:'原始研究论文',peer_reviewed_paper:'同行评议论文',paper_review:'学术综述',standard:'标准 / 公开预览',supplementary_material:'论文补充材料',research_software:'作者研究代码',author_manuscript:'论文作者稿',conference_paper:'会议论文',metrology_reference:'计量与统计参考',trial_protocol:'原始试验方案',software_documentation:'原厂软件文档'})[kind] || kind || '厂商资料';
+const sourceKind = kind => ({manufacturer:'厂商资料',manufacturer_technical:'原厂技术说明',scholarly_book:'学术书章',paper:'原始研究论文',peer_reviewed_paper:'同行评议论文',paper_review:'学术综述',standard:'标准 / 公开预览',supplementary_material:'论文补充材料',research_software:'作者研究代码',author_manuscript:'论文作者稿',doctoral_thesis:'博士论文（原始研究）',conference_paper:'会议论文',metrology_reference:'计量与统计参考',trial_protocol:'原始试验方案',software_documentation:'原厂软件文档'})[kind] || kind || '厂商资料';
 const valueText = value => value?.display ?? (value?.value === null || value?.value === undefined ? '未公开 / 未核验' : String(value.value));
 
 function defaults(id) {
@@ -45,7 +45,7 @@ function saveView() {
 function restore(url) {
   const p = url.searchParams, id = p.get('domain') || (atlas.domains.some(d => d.id === oldRoute[0]) ? oldRoute[0] : 'phone');
   defaults(atlas.domains.some(d => d.id === id) ? id : 'phone');
-  const valid = {module:['main','ultrawide','tele','external_macro'], mode:['scatter'], sort:['original','model','x','y'], evidence:['','manufacturer','research']};
+  const valid = {module:['main','ultrawide','tele','external_macro','native_research'], mode:['scatter'], sort:['original','model','x','y'], evidence:['','manufacturer','research']};
   for (const [key, choices] of Object.entries(valid)) if (choices.includes(p.get(key))) state[key] = p.get(key);
   for (const key of ['x','y']) { const value = p.get(key); if (domain().metrics.some(m => m.numeric && m.id === value) || (key === 'x' && value === '$model')) state[key] = value; }
   // Older device links selected model names. New links use stable row IDs.
@@ -58,7 +58,7 @@ function restore(url) {
 }
 function controls() {
   const d = domain();
-  if(d.id==='phone')$('module').innerHTML=[...new Set(d.rows.map(r=>r.module))].map(id=>`<option value="${esc(id)}">${esc(({main:'主摄',ultrawide:'超广角',tele:'长焦',external_macro:'外接微距（研究）'})[id]||id)}</option>`).join('');
+  if(d.id==='phone')$('module').innerHTML=[...new Set(d.rows.map(r=>r.module))].map(id=>`<option value="${esc(id)}">${esc(({main:'主摄',ultrawide:'超广角',tele:'长焦',external_macro:'外接微距（研究）',native_research:'原生摄像头（研究）'})[id]||id)}</option>`).join('');
   $('domain').value = d.id; $('module').value = state.module; $('mode').value = state.mode; $('sort').value = state.sort; $('evidence').value = state.evidence;
   $('module-label').hidden = d.id !== 'phone';
   const numeric = d.metrics.filter(m => m.numeric);
