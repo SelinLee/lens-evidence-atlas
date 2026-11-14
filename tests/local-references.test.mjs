@@ -12,9 +12,9 @@ const get=id=>lens.rows.find(r=>r.id===id).values;
 test('four supplied studies are deduplicated across versions, supplements and spectral rows',()=>{
  assert.equal(added.length,54);assert.equal(new Set(added.map(r=>r.study_id)).size,4);
  assert.equal(new Set(added.map(r=>r.study_id+'/'+r.specimen_id)).size,12);
- assert.equal(lens.rows.length,189);assert.equal(new Set(lens.rows.map(r=>r.study_id)).size,16);
+ assert.equal(lens.rows.length,628);assert.equal(new Set(lens.rows.map(r=>r.study_id)).size,17);
  assert.ok(!added.some(r=>/arxiv|proxy/i.test(r.study_id)));
- assert.equal(data.sources.length,55);assert.ok(data.sources.filter(s=>/balli_|lin_spdc|chang_dispersion|choi_rgb/.test(s.id)).every(s=>s.checked_on==='2026-11-14'&&s.scope));
+ assert.equal(data.sources.length,57);assert.ok(data.sources.filter(s=>/balli_|lin_spdc|chang_dispersion|choi_rgb/.test(s.id)).every(s=>s.checked_on==='2026-11-14'&&s.scope));
 });
 
 test('Lin measured x and y PSF widths and complete-device efficiency retain the original ordered sequences',()=>{

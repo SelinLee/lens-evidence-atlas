@@ -27,6 +27,24 @@ export function validateDevices(d,catalog){
   if(v.uncertainty&&(!['SD','SEM'].includes(v.uncertainty.type)||!Number.isFinite(v.uncertainty.value)||v.uncertainty.value<0||!Number.isInteger(v.uncertainty.n)||v.uncertainty.n<2||v.statistic!=='mean'))errors.push('reported uncertainty');
   if(['fwhm_um','fwhm_x_um','fwhm_y_um'].includes(k)&&Number.isFinite(v.value)&&!(v.value>0&&r.values.wavelength_nm?.value>0&&v.basis==='measured'))errors.push('measured PSF FWHM context');
  }
+ const aoi=r.values.aoi_deg;
+ if(Number.isFinite(aoi?.value)&&(
+  Math.abs(aoi.value)>90||!['reported_configuration','measured'].includes(aoi.basis)||
+  aoi.angle_reference!=='incident_beam_to_optical_axis'||
+  (aoi.azimuth_deg!==null&&!(Number.isFinite(aoi.azimuth_deg)&&aoi.azimuth_deg>=0&&aoi.azimuth_deg<360))||
+  !r.values.psf_protocol?.value))errors.push('PSF incidence angle context');
+ const contrast=r.values.system_contrast_protocol;
+ if(contrast){
+  const waves=contrast.sample_wavelengths_nm,lambda=r.values.wavelength_nm?.value;
+  if(typeof contrast.value!=='string'||!contrast.value.trim()||contrast.metric_kind!=='usaf_michelson_linepair_contrast'||
+   !['horizontal','vertical','mean_of_horizontal_vertical'].includes(contrast.direction_aggregation)||
+   contrast.frequency_unit!=='lp/mm'||
+   !(contrast.field_point===null||typeof contrast.field_point==='string'&&contrast.field_point.trim())||
+   !Array.isArray(waves)||waves.length<1||new Set(waves).size!==waves.length||waves.some(w=>!(Number.isFinite(w)&&w>0))||
+   Number.isFinite(lambda)&&(waves.length!==1||waves[0]!==lambda)||
+   !((contrast.processing_stage==='captured'&&contrast.basis==='derived_from_measurement')||
+     (contrast.processing_stage==='deconvolved'&&contrast.basis==='reconstruction')))errors.push('system line-pair contrast context');
+ }
  for(const k of ['focus_error_um','focus_error_pct']){
   const v=r.values[k];if(!Number.isFinite(v?.value))continue;
   const waves=v.sample_wavelengths_nm,ref=v.reference_wavelength_nm;
