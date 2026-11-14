@@ -24,4 +24,4 @@
 
 ## 交付状态
 
-本记录描述已核验的本地候选。待PR审阅和合并，尚未部署到GitHub Pages。合并后需核主线CI、Pages发布结果与实际HTTPS构建文件，不能以本地验收代替线上验收。其他研究目标与缺口继续按清单维护。
+已提交[草稿PR #70](https://github.com/SelinLee/lens-evidence-atlas/pull/70)，功能提交`dc51ba98114510ffe5757f6edb6a10b94a2b94f0`。本记录描述已核验的本地候选。待PR审阅和合并，尚未部署到GitHub Pages。合并后需核主线CI、Pages发布结果与实际HTTPS构建文件，不能以本地验收代替线上验收。其他研究目标与缺口继续按清单维护。
