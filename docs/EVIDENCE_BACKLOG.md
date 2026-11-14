@@ -19,12 +19,12 @@
 | FOCUS-004 双指标轴散点 | in_progress | 两轴指标可选、型号多选、仅散点、重复坐标可辨、无样本间连线、缺失/区间/单位规则、分享状态及导出；核已有候选还缺哪些行为 |
 | UI-001 全应用统一图表模板 | done | 2026-11-14用户追加：手机/XR与33类既有应用统一入口；首屏图表与侧边设置、下方数据表/编号来源双向跳转、兼容旧链接；本地与Chrome无头验收见[统一界面记录](UNIFIED_WORKSPACE_2026-11-14.md)，[草稿PR #70](https://github.com/SelinLee/lens-evidence-atlas/pull/70)已合并，Pages在42e1011完成实际验收；当前散点/缓存修复另见UI-002 |
 | UI-002 散点图与缓存升级修复 | done | 用户报告白框并取消折线；复现旧脚本缓存混用、资源内容版本、缺值指标说明/恢复与加载失败操作；118项测试、Chrome已有缓存升级和35域交互通过，见[修复核验](SCATTER_CACHE_RECOVERY_2026-11-14.md)；[PR #71](https://github.com/SelinLee/lens-evidence-atlas/pull/71)已合并，Pages在4d3ddc0完成12文件和实际Chrome验收 |
-| QUALITY-001 消色差超透镜原文参数矩阵 | in_progress | 首要研究任务，执行[消色差超透镜文献调研目标](LOCAL_RESEARCH_GOAL.md#消色差超透镜文献调研)。现有 10 篇、27 个配置、82 条记录，可见光筛选为 7 篇、29 条。优先补逐波长焦距、轴向与横向色差、MTF 和带协议的效率。2026-11-14新会话已创建并确认active持续目标；Chang MTF公开性见001d，随后补Lin 2025焦距/焦移证据，不关闭父目标。 |
+| QUALITY-001 消色差超透镜原文参数矩阵 | in_progress | 长期首要研究任务，执行[消色差超透镜文献调研目标](LOCAL_RESEARCH_GOAL.md#消色差超透镜文献调研)。持续补逐波长实测焦距、轴向/横向色差、PSF、MTF、Strehl及带协议效率，逐项绑定原始材料。当前具体论文、数量和批次状态以下方子任务及日志为准，不将已完成的专有任务固化到父目标。单批验收不关闭父目标。 |
 | QUALITY-001d Chang 2024 MTF原始数据核查 | done | 本机Codex，2026-11-14；有范围的公开性核查完成，原始数值仍缺。PR #82/472cb0a、CI43585115931、Pages43585116051成功；公开12文件一致，Chrome六视口/散点读数/材料引用往返通过。仅核到曲线，数值留空，缺PSF/采样尺度/处理与场点；见[核查记录](CHANG_MTF_DATA_AUDIT_2026-11-14.md)。 |
 | QUALITY-001e Lin 2025焦距/焦移补证 | in_progress | 本机Codex，2026-11-14；两器件10谱点的证据边界已随PR #82发布并通过Pages/Chrome验收；实测焦距仍缺，保持补证开放。Fig.2模拟与Fig.3/S5实测分开；额外数据需向作者请求，不把模拟曲线当实测。 |
-| QUALITY-001f Chen 2019可见光偏振不敏感器件 | review | 本机Codex，2026-11-14，codex/chen-2019-achromatic-evidence；沿Chang参考文献20，三实制配置分开，录作者约6μm/30μm带内variation、几何与参考面/效率协议，逐谱点焦距仍缺。见[本批核验](CHEN_LI_VISIBLE_REVIEW_2026-11-14.md)，待PR/Pages验收。 |
-| QUALITY-001g Li 2021毫米级离散RGB器件 | review | 本机Codex，2026-11-14；沿Chang参考文献9，DOI 10.1126/sciadv.abe4458。两配置五行，NA0.7三色最大焦移约1μm与x向FWHM/SR印字，NA0.3不同RGB谱点；SI403、精确设计焦距/MTF/效率/逐点焦距缺口保留。与001f同批待发布。 |
-| QUALITY-001h Li 2022厘米级RGB与原始数据 | todo | —，2026-11-14；接续Li2021后续工作10.1038/s41467-022-29973-3，先核主文/SI/Source Data/代码与实际制成配置；不从综述或报道转录数值。 |
+| QUALITY-001f Chen 2019可见光偏振不敏感器件 | done | 本机Codex，2026-11-14；PR #84/edbf81f、CI43587422204、Pages43587422182成功，149测试及线上Chrome六视口/读数/引用往返通过，公开12文件一致。三实制配置、作者约6μm/30μm带内variation、几何及参考面/效率协议完成本批纳入；逐点焦距/原始PSF仍缺，不视为这些材料已公开。见[本批核验](CHEN_LI_VISIBLE_REVIEW_2026-11-14.md)。 |
+| QUALITY-001g Li 2021毫米级离散RGB器件 | done | 本机Codex，2026-11-14；PR #84同批完成Pages/线上Chrome验收。两配置五行，NA0.7三色最大焦移约1μm与x向FWHM/SR印字、NA0.3不同RGB谱点均入库；SI403及精确焦距/MTF/效率/原始PSF缺口继续保留。仅关闭本批明确范围，不关闭父目标。 |
+| QUALITY-001h Li 2022厘米级RGB与原始数据 | in_progress | 本机Codex，2026-11-14；10.1038/s41467-022-29973-3正式主文/SI已取得并开始正文/表格核验，待视觉复核及入库。Data availability指Harvard内部受限非商业库，代码合理请求，正式页面未列Source Data链接；不把SI表S3模拟23.8%当实测。 |
 | QUALITY-002 手机SNR/MTF/色差独立测量 | in_progress | 本机Codex，2026-11-14；先核有型号和协议的SNR及MTF原始研究；外接镜组、场景与处理链不得写进原生模组，PSNR不替代SNR |
 | QUALITY-003 VRAR MTF与色差 | in_progress | 本机Codex，2026-11-14；复核开放PR #69数据及原文，优先MTF/截止频率、颜色/场点/眼位、色差和先进设备独立测量，不能从曲线猜统一单值 |
 | QUALITY-001a 文献器件首批 | done | 4项原始研究/8器件配置/21行，几何、波段、逐谱点焦距/FWHM/Strehl、PSNR及冲突；见[首批核验](QUALITY_BATCH_2026-11-14.md)；PR #72/23fdecb与Pages43571286647实页验收，不关闭父目标 |
