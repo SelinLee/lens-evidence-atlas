@@ -19,7 +19,7 @@
 | FOCUS-004 双指标轴散点 | in_progress | 两轴指标可选、型号多选、仅散点、重复坐标可辨、无样本间连线、缺失/区间/单位规则、分享状态及导出；核已有候选还缺哪些行为 |
 | UI-001 全应用统一图表模板 | done | 2026-11-14用户追加：手机/XR与33类既有应用统一入口；首屏图表与侧边设置、下方数据表/编号来源双向跳转、兼容旧链接；本地与Chrome无头验收见[统一界面记录](UNIFIED_WORKSPACE_2026-11-14.md)，[草稿PR #70](https://github.com/SelinLee/lens-evidence-atlas/pull/70)已合并，Pages在42e1011完成实际验收；当前散点/缓存修复另见UI-002 |
 | UI-002 散点图与缓存升级修复 | done | 用户报告白框并取消折线；复现旧脚本缓存混用、资源内容版本、缺值指标说明/恢复与加载失败操作；118项测试、Chrome已有缓存升级和35域交互通过，见[修复核验](SCATTER_CACHE_RECOVERY_2026-11-14.md)；[PR #71](https://github.com/SelinLee/lens-evidence-atlas/pull/71)已合并，Pages在4d3ddc0完成12文件和实际Chrome验收 |
-| QUALITY-001 消色差超透镜原文参数矩阵 | in_progress | 本机Codex，2026-11-14；按用户当前重点补口径/焦距/NA/波段/焦移/效率/PSF/MTF及实测/模拟边界，逐格原文定位；首批及可见光批次已由PR #72/#74发布，加上用户指定四项后文献10研究（QUALITY-001c）；效率、MTF、色差与可复算原始曲线仍有缺口，持续队列暂停 |
+| QUALITY-001 消色差超透镜原文参数矩阵 | in_progress | 首要研究任务，执行[消色差超透镜文献调研目标](LOCAL_RESEARCH_GOAL.md#消色差超透镜文献调研)。现有 10 篇、27 个配置、82 条记录，可见光筛选为 7 篇、29 条。优先补逐波长焦距、轴向与横向色差、MTF 和带协议的效率。下一线索是 Chang 2024 的 400 μm 器件 MTF 数值数据。持续队列暂停。 |
 | QUALITY-002 手机SNR/MTF/色差独立测量 | in_progress | 本机Codex，2026-11-14；先核有型号和协议的SNR及MTF原始研究；外接镜组、场景与处理链不得写进原生模组，PSNR不替代SNR |
 | QUALITY-003 VRAR MTF与色差 | in_progress | 本机Codex，2026-11-14；复核开放PR #69数据及原文，优先MTF/截止频率、颜色/场点/眼位、色差和先进设备独立测量，不能从曲线猜统一单值 |
 | QUALITY-001a 文献器件首批 | done | 4项原始研究/8器件配置/21行，几何、波段、逐谱点焦距/FWHM/Strehl、PSNR及冲突；见[首批核验](QUALITY_BATCH_2026-11-14.md)；PR #72/23fdecb与Pages43571286647实页验收，不关闭父目标 |
