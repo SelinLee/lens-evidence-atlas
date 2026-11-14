@@ -23,7 +23,7 @@ test('all 420 S9 image conditions preserve structure, wavelength and field angle
   const selected=grid.filter(r=>r.specimen_id===spec);assert.equal(selected.length,84);assert.deepEqual([...new Set(selected.map(r=>r.values.wavelength_nm.value))],Array.from({length:21},(_,i)=>480+10*i));
   assert.deepEqual([...new Set(selected.map(r=>r.values.aoi_deg.value))],[0,5,10,15]);
  }
- for(const r of grid){const v=r.values;assert.equal(v.measured_focal_um.value,null);assert.equal(v.fwhm_um.value,null);assert.equal(v.diameter_um.value,10000);assert.equal(v.design_focal_um.value,20000);assert.equal(v.na.value,null);assert.equal(v.aoi_deg.azimuth_deg,null);assert.equal(v.strehl,undefined);}
+ for(const r of grid){const v=r.values;assert.equal(v.measured_focal_um.value,null);assert.equal(v.fwhm_um.value,null);assert.equal(v.diameter_um.value,10000);assert.equal(v.design_focal_um.value,20000);assert.equal(v.na.value,null);assert.equal(v.aoi_deg.azimuth_deg,null);assert.equal(v.strehl,undefined);assert.match(v.psf_protocol.value,/准直.*不能.*几何距离.*有限共轭/);assert.ok(!v.psf_protocol.note.includes('有限物距')); }
  assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(rows,'wavelength_nm','fwhm_um').length,0);assert.equal(axisPoints(rows,'wavelength_nm','aoi_deg').length,426);
 });
 
