@@ -55,6 +55,8 @@
 .paper-table > summary, .specimen-table > summary { display:flex; align-items:baseline; gap:10px; padding:12px 15px; cursor:pointer; font-size:13px; }
 .paper-table > summary::before, .specimen-table > summary::before { content:'▸'; color:var(--green); }
 .paper-table[open] > summary::before, .specimen-table[open] > summary::before { content:'▾'; }
+.paper-citation, .reference-title { overflow-wrap:anywhere; line-height:1.55; }
+.paper-citation abbr, .reference-title abbr { text-decoration:none; }
 .paper-table summary small { margin-left:auto; white-space:nowrap; font-size:11px; color:var(--muted); }
 .paper-table .table-scroll { border:0; border-top:1px solid var(--line); border-radius:0; }
 .specimen-table { margin:0 12px 8px; }
@@ -77,3 +79,12 @@
 .choice-list details label { padding-left:18px; }
 .chart-legend details > summary { padding:0; }
 .chart-legend details ul { list-style:none; padding:4px 0 2px 12px; }
+
+.inspection-tools { display:flex; gap:8px; align-items:stretch; margin-top:7px; flex-shrink:0; }
+.inspection-tools .point-detail { flex:1; min-width:0; margin:0; }
+#reset-zoom { align-self:center; padding:5px 9px; border:1px solid var(--line); border-radius:5px; background:#fff; color:var(--green); font-size:12px; }
+#reset-zoom:disabled { color:var(--muted); opacity:.65; cursor:default; }
+.workspace-chart svg { user-select:none; }
+@media (pointer:fine) { .workspace-chart svg { cursor:crosshair; } }
+.zoom-selection { fill:#258675; fill-opacity:.15; stroke:#176b60; stroke-dasharray:5 3; pointer-events:none; }
+.is-brushing .axis-inspection, .is-brushing .plot-readout { visibility:hidden; }

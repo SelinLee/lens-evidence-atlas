@@ -15,7 +15,7 @@
     window.addEventListener('error',atlasLoadFailure,true);
     window.addEventListener('unhandledrejection',atlasLoadFailure);
   </script>
-  <link rel="stylesheet" href="style.css?v=454c704d42d3eb95"><link rel="stylesheet" href="workspace.css?v=c8ffacfb3da9023f">
+  <link rel="stylesheet" href="style.css?v=454c704d42d3eb95"><link rel="stylesheet" href="workspace.css?v=6e2f74f584a71280">
 </head>
 <body class="atlas-workspace">
   <header class="atlas-header">
@@ -55,7 +55,7 @@
         <div class="chart-heading"><div><div class="eyebrow">EVIDENCE / EXPLORE</div><h1 id="view-title">指标与样本</h1></div><span id="view-count" class="count-pill"></span></div>
         <p id="scope" class="scope-line"></p>
         <div id="chart" class="workspace-chart"><div class="empty-plot"><strong>正在加载数据与散点图…</strong><noscript>请开启浏览器的 JavaScript 后重新加载。</noscript></div></div>
-        <div id="point-detail" class="point-detail" aria-live="polite">悬停或轻点圆点查看坐标，点击可固定读数。</div>
+        <div class="inspection-tools"><div id="point-detail" class="point-detail" aria-live="polite">鼠标拖动框选放大，点击圆点固定读数。</div><button id="reset-zoom" type="button" disabled>重置缩放</button></div>
         <div class="plot-footer"><p id="plot-note">虚线标出当前点的横、纵坐标。</p><span id="status" role="status" aria-live="polite"></span></div>
       </div>
     </section>
@@ -73,6 +73,6 @@
   </main>
   <dialog id="filter-dialog"><div class="dialog-head"><h2>样本与表格列</h2><button id="close-filters" aria-label="关闭筛选">×</button></div><div id="mobile-filter-content"></div></dialog>
   <dialog id="detail"><div class="dialog-head"><h2 id="detailTitle"></h2><button id="closeDialog" aria-label="关闭">×</button></div><div id="detailBody"></div></dialog>
-  <script>window.UNIFIED_WORKSPACE=true;</script><script src="data.js?v=ff89c7939a0fba33"></script><script src="devices-data.js?v=12541424e713fd73"></script><script src="app.js?v=573d45a5e32bb91d"></script><script src="devices.js?v=b3506d77271349c1"></script><script type="module" src="workspace.js?v=ecaf9df16ecdfbe0"></script>
+  <script>window.UNIFIED_WORKSPACE=true;</script><script src="data.js?v=f3759555ff6d04dd"></script><script src="devices-data.js?v=5382b71ad9593203"></script><script src="app.js?v=573d45a5e32bb91d"></script><script src="devices.js?v=d51fd1201e2694fd"></script><script type="module" src="workspace.js?v=17b5c7765890120a"></script>
 </body>
 </html>

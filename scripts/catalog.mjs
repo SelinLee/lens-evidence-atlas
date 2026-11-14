@@ -6,7 +6,7 @@ import {fileURLToPath} from 'node:url';
 import {isDeepStrictEqual} from 'node:util';
 export const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=(p)=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
-export function load(){const d={meta:read('data/catalog.json'),bests:read('data/scoped_bests.json'),standards:read('data/standards.json'),comparisons:read('data/comparisons.json')};for(const folder of ['applications','metrics','sources','benchmarks'])d[folder]=fs.readdirSync(path.join(root,'data',folder)).filter(f=>f.endsWith('.json')).sort().map(f=>read(`data/${folder}/${f}`));return d}
+export function load(){const d={meta:read('data/catalog.json'),bibliography:read('data/bibliography.json'),bests:read('data/scoped_bests.json'),standards:read('data/standards.json'),comparisons:read('data/comparisons.json')};for(const folder of ['applications','metrics','sources','benchmarks'])d[folder]=fs.readdirSync(path.join(root,'data',folder)).filter(f=>f.endsWith('.json')).sort().map(f=>read(`data/${folder}/${f}`));return d}
 export function validate(d){
  const errors=[];const expect=(ok,msg)=>{if(!ok)errors.push(msg)};const ids={};
  for(const type of ['applications','metrics','sources','benchmarks']){ids[type]=new Set();for(const x of d[type]){expect(typeof x.id==='string'&&/^[a-z0-9_]+$/.test(x.id),`${type}: invalid id`);expect(!ids[type].has(x.id),`${type}: duplicate ${x.id}`);ids[type].add(x.id)}}
@@ -92,5 +92,10 @@ export function versionAssets(directory){
  const index=fs.readFileSync(indexPath,'utf8').replace(/\b(src|href)="([a-zA-Z0-9_-]+\.(?:js|css))"/g,(_,attribute,name)=>`${attribute}="${name}?v=${digest(name)}"`);
  fs.writeFileSync(indexPath,index);
 }
-export function build(){validateDevices(read('data/devices.json'));const d=load();const stats=validate(d);fs.mkdirSync(path.join(root,'dist'),{recursive:true});for(const f of ['index.html','app.js','style.css','devices.html','devices.js','workspace.js','workspace-data.js','workspace.css'])fs.copyFileSync(path.join(root,'web',f),path.join(root,'dist',f));fs.writeFileSync(path.join(root,'dist/devices-data.js'),'window.DEVICE_DATA='+JSON.stringify(read('data/devices.json')).replaceAll('<','\\u003c')+';\n');const data=JSON.stringify(d);fs.writeFileSync(path.join(root,'dist/data.js'),'window.LENS_DATA='+data.replaceAll('<','\\u003c')+';\n');fs.writeFileSync(path.join(root,'dist/catalog.json'),JSON.stringify(d,null,2)+'\n');fs.writeFileSync(path.join(root,'dist/build.json'),JSON.stringify({version:d.meta.version,data_sha256:crypto.createHash('sha256').update(data).digest('hex'),...stats},null,2)+'\n');versionAssets(path.join(root,'dist'));return stats}
-if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){console.log(JSON.stringify(process.argv[2]==='build'?build():validate(load()),null,2))}
+export function build(){const d=load();validateDevices(read('data/devices.json'),d);const stats=validate(d);fs.mkdirSync(path.join(root,'dist'),{recursive:true});for(const f of ['index.html','app.js','style.css','devices.html','devices.js','workspace.js','workspace-data.js','workspace.css'])fs.copyFileSync(path.join(root,'web',f),path.join(root,'dist',f));fs.writeFileSync(path.join(root,'dist/devices-data.js'),'window.DEVICE_DATA='+JSON.stringify(read('data/devices.json')).replaceAll('<','\\u003c')+';\n');const data=JSON.stringify(d);fs.writeFileSync(path.join(root,'dist/data.js'),'window.LENS_DATA='+data.replaceAll('<','\\u003c')+';\n');fs.writeFileSync(path.join(root,'dist/catalog.json'),JSON.stringify(d,null,2)+'\n');fs.writeFileSync(path.join(root,'dist/build.json'),JSON.stringify({version:d.meta.version,data_sha256:crypto.createHash('sha256').update(data).digest('hex'),...stats},null,2)+'\n');versionAssets(path.join(root,'dist'));return stats}
+if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
+ let stats;
+ if(process.argv[2]==='build')stats=build();
+ else{const d=load();validateDevices(read('data/devices.json'),d);stats=validate(d);}
+ console.log(JSON.stringify(stats,null,2));
+}

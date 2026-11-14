@@ -6,16 +6,56 @@ export function scalar(text) {
   return Number.isFinite(value) ? {value, unit: match[1] ? 'F数' : (match[3] || '无量纲').replace('µ', 'μ')} : null;
 }
 
+// Untyped catalog fields share units with signed quantities such as axial displacement.
+const legacyNonnegativeFields = new Set([
+  '直径','机械直径','结构直径','先端外径','光学区直径','传感器出口光束直径','最大入射光束直径','热扩芯光纤模场直径','测试珠直径',
+  '口径','器件口径','物镜口径','单元口径','清孔径','孔径尺度','MTF测试孔径','冷光阑清孔径','入瞳','像圈',
+  '探测积分半径','改性区域半径','固化微透镜半径','基片厚度','像素尺寸','厂商适配像元','最小横向中心距','整体长度','TTL',
+  'NA','物方NA','镜头NA','照明NA','超透镜NA','厂商标称NA','F数','原焦F数','焦距','真实焦距','有效焦距','原焦焦距','单元焦距','EFL',
+  '工作距离','镜头工作距离','样机工作距离','相机镜头工作距离','两耦合器工作距离','焦距/工作距','最近对焦距离',
+  '波长','设计波长','对准波长','照明中心波长','测量照明波长','光谱FWHM','FOV','HFOV','标配FOV','扫描FOV','FX视角'
+]);
+const legacyEfficiencies = new Set(['实测平均聚焦效率','180秒平均耦合效率','组合失配耦合效率（实验段报告）','透过效率（作者报告）']);
+
+function legacyAxisBounds(parameter, unit) {
+  if (unit === '%' && (parameter.metric_id === 'coupling' || legacyEfficiencies.has(parameter.name))) return {min:0, max:100};
+  if (legacyNonnegativeFields.has(parameter.name) || parameter.metric_id === 'sheet_length' || unit === 'MP') return {min:0};
+}
+
 export function createWorkspace(catalog, devices) {
   const records = new Map(catalog.benchmarks.map(r => [r.id, r]));
   const definitions = new Map(catalog.metrics.map(m => [m.id, m]));
   const sources = new Map(catalog.sources.map(s => [s.id, s]));
-  for (const source of devices.sources) sources.set('device-' + source.id, {...source, id: 'device-' + source.id, publication_source: source.publication_source && 'device-' + source.publication_source, evidence_scope: source.scope});
+  const deviceSourceIds = new Map(devices.sources.map(s => [s.id, s.catalog_source || 'device-' + s.id]));
+  const deviceSourceId = id => deviceSourceIds.get(id) || 'device-' + id;
+  if (new Set(deviceSourceIds.values()).size !== devices.sources.length) throw new Error('invalid catalog source alias');
+  for (const source of devices.sources) {
+    if (source.catalog_source) {
+      const existing = sources.get(source.catalog_source);
+      if (!existing || existing.publication_source !== (source.publication_source && deviceSourceId(source.publication_source)) || typeof source.doi !== 'string' || !source.doi || existing.doi?.toLowerCase() !== source.doi.toLowerCase()) throw new Error('invalid catalog source alias');
+    }
+    const id = deviceSourceId(source.id);
+    sources.set(id, {...sources.get(id), ...source, id, publication_source: source.publication_source && deviceSourceId(source.publication_source), evidence_scope: source.scope});
+  }
+  // One bibliography entry can describe multiple source records for the same paper.
+  const byVenueYear = new Map();
+  for (const record of Object.values(catalog.bibliography || {})) {
+    const key = record.short + ' ' + record.year;
+    byVenueYear.set(key, (byVenueYear.get(key) || 0) + 1);
+  }
+  for (const [id, source] of sources) {
+    if (source.publication_source) continue;
+    const record = catalog.bibliography?.[source.doi?.toLowerCase() || source.url];
+    if (!record) continue;
+    const key = record.short + ' ' + record.year;
+    const suffix = byVenueYear.get(key) > 1 && record.locator ? ', ' + record.locator.split('–')[0] : '';
+    sources.set(id, {...source, bibliography:record, paperLabel:key + suffix});
+  }
   const deviceDomains = Object.entries(devices.domains).map(([id, domain]) => ({
     ...domain, id, name: domain.name || (id === 'phone' ? '手机镜头 / 摄像头' : 'AR / VR 显示'), category: domain.category || '手机与近眼显示',
-    task_guidance: (domain.task_guidance || []).map(g => ({...g, source: 'device-' + g.source})),
-    metrics: domain.metrics.map(m => ({...m, definition_refs: (m.definition_refs || []).map(r => ({...r, source: 'device-' + r.source}))})),
-    rows: domain.rows.map(r => ({...r, evidence: r.evidence_type === 'study' ? '研究记录 / 作者报告' : '厂商标称', variant: [r.variant, r.measurement_scope].filter(Boolean).join('；'), values: Object.fromEntries(Object.entries(r.values).map(([key, value]) => [key, {...value, ...(value.sourceIds ? {sourceIds:value.sourceIds.map(id=>'device-'+id)} : {}), evidence: value.frequency_status==='author_scale_unverified'?'作者原表刻度（未标定）':value.frequency_status==='author_stated_unit'?'作者报告实测（单位明示）':({measured:'研究实测',reported_configuration:'研究设备配置',modeled:'模型结果',model:'模型结果',derived_from_measurement:'由实测数据计算',reconstruction:'实验重建统计',unresolved:'原文待消歧',manufacturer_claim:'厂商标称'})[value.basis] || (r.evidence_type === 'study' ? '研究记录 / 作者报告' : '厂商标称'), source: 'device-' + value.source}]))})),
+    task_guidance: (domain.task_guidance || []).map(g => ({...g, source: deviceSourceId(g.source)})),
+    metrics: domain.metrics.map(m => ({...m, definition_refs: (m.definition_refs || []).map(r => ({...r, source: deviceSourceId(r.source)}))})),
+    rows: domain.rows.map(r => ({...r, evidence: r.evidence_type === 'study' ? '研究记录 / 作者报告' : '厂商标称', variant: [r.variant, r.measurement_scope].filter(Boolean).join('；'), values: Object.fromEntries(Object.entries(r.values).map(([key, value]) => [key, {...value, ...(value.sourceIds ? {sourceIds:value.sourceIds.map(deviceSourceId)} : {}), evidence: value.frequency_status==='author_scale_unverified'?'作者原表刻度（未标定）':value.frequency_status==='author_stated_unit'?'作者报告实测（单位明示）':({measured:'研究实测',reported_configuration:'研究设备配置',modeled:'模型结果',model:'模型结果',derived_from_measurement:'由实测数据计算',reconstruction:'实验重建统计',unresolved:'原文待消歧',manufacturer_claim:'厂商标称'})[value.basis] || (r.evidence_type === 'study' ? '研究记录 / 作者报告' : '厂商标称'), source: deviceSourceId(value.source)}]))})),
     sourceIds: [], asOf: devices.as_of
   }));
   const legacyDomains = catalog.applications.map(app => {
@@ -32,6 +72,7 @@ export function createWorkspace(catalog, devices) {
           metrics.push(field); byKey.set(key, field);
         }
         const field = byKey.get(key), source = p.evidence?.source_id;
+        if (number && !field.axis_bounds) field.axis_bounds = legacyAxisBounds(p, unit);
         values[field.id] = {value: number?.value ?? null, display: p.value, source: source || null,
           sourceIds: source ? [source] : record.source_ids, location: p.evidence?.location || '',
           note: record.conditions, evidence: record.evidence_type, checked_on: record.checked_on, parameterIndex: index};
@@ -52,13 +93,34 @@ export function createWorkspace(catalog, devices) {
       const ids = row.sourceIds || Object.values(row.values).flatMap(valueSources);
       const publications = new Set(ids.map(id=>sources.get(id)?.publication_source || id)
         .filter(id=>paperKinds.has(sources.get(id)?.kind)));
-      if (publications.size === 1 && (domain.app || row.study_id)) row.paper = [...publications][0];
+      if (publications.size !== 1 || !(domain.app || row.study_id)) continue;
+      row.paper = [...publications][0];
+      const source = sources.get(row.paper);
+      if (!source.paperLabel) continue;
+      row.paperLabel = source.paperLabel;
+      const sample = sampleAfterAttribution(row.model, source.bibliography);
+      if (sample !== null) {
+        row.pointLabel = source.paperLabel;
+        row.chartLabel = [source.paperLabel, sample].filter(Boolean).join(' · ');
+      }
     }
   }
   return {domains, sources};
 }
 
 const paperKinds = new Set(['paper','peer_reviewed_paper','workshop_paper','conference_paper','author_manuscript','doctoral_thesis']);
+
+// Commercial models cited in a research paper remain identifiable by their device name.
+function sampleAfterAttribution(model, publication) {
+  const surname = publication.authors.split(',')[0];
+  const prefix = model.match(/^(.+?)(?:\s+|等)((?:19|20)\d\d)(?=[\s·：:]|$)/u);
+  if (prefix && (prefix[1].split(/\s+/).includes(surname) || prefix[1] === publication.short || /^\p{Script=Han}+等\d{4}/u.test(model))) {
+    return model.slice(prefix[0].length).replace(/^[\s·：:]+/u, '');
+  }
+  // Some legacy sample names start with the author alone (e.g. Bechter LBT).
+  if (model.startsWith(surname + ' ')) return model.slice(surname.length).trimStart();
+  return null;
+}
 
 export function groupRows(rows) {
   const groups = new Map();
@@ -109,7 +171,7 @@ export function valueSources(value) { return value?.sourceIds || (value?.source 
 
 export function filteredRows(domain, state) {
   const available = domain.rows.filter(r => (!state.visible || hasVisibleLight(domain,r)) && (domain.id !== 'phone' || r.module === state.module) &&
-    (!state.query || [r.model, r.variant, r.evidence].join(' ').toLowerCase().includes(state.query.toLowerCase())) &&
+    (!state.query || [r.model, r.paperLabel, r.variant, r.evidence].join(' ').toLowerCase().includes(state.query.toLowerCase())) &&
     (!state.evidence || (state.evidence === 'manufacturer' ? /厂商|商业|manufacturer/.test(r.evidence || r.variant) : !/厂商|商业|manufacturer/.test(r.evidence || r.variant))));
   return available.filter(r => state.models === null || state.models.includes(r.id));
 }
@@ -117,7 +179,7 @@ export function filteredRows(domain, state) {
 export function axisPoints(rows, x, y) {
   return rows.flatMap((row, index) => {
     const xv = x === '$model' ? index + 1 : row.values[x]?.value, yv = row.values[y]?.value;
-    return Number.isFinite(xv) && Number.isFinite(yv) ? [{row, x: xv, y: yv}] : [];
+    return Number.isFinite(xv) && Number.isFinite(yv) ? [{row, label:row.chartLabel || row.model, x: xv, y: yv}] : [];
   });
 }
 
