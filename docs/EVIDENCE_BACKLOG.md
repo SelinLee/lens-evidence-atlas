@@ -12,7 +12,7 @@
 
 | 稳定任务 | 状态 | 范围和验收 |
 | --- | --- | --- |
-| FOCUS-001 两类指标词典与任务依据 | todo | 定义、单位、测量口径、必要条件、出处；原文排序/编辑整理/未建立明确区分；候选规格不冒充成像质量 |
+| FOCUS-001 两类指标词典与任务依据 | in_progress | 定义、单位、测量口径、必要条件、出处；原文排序/编辑整理/未建立明确区分；候选规格不冒充成像质量 |
 | FOCUS-002 先进型号检索与逐格补证 | in_progress | 按检索截止日期覆盖跨品牌先进手机与AR/VR设备，记录纳排/地区/代际/独立实测缺口；手机逐模组、XR逐显示模式；单元格绑定定位证据 |
 | DEVICE-001 已有矩阵/散点候选接续 | done | [PR #59](https://github.com/SelinLee/lens-evidence-atlas/pull/59)及依赖的[#60](https://github.com/SelinLee/lens-evidence-atlas/pull/60)、[#61](https://github.com/SelinLee/lens-evidence-atlas/pull/61)、[#62](https://github.com/SelinLee/lens-evidence-atlas/pull/62)、[#63](https://github.com/SelinLee/lens-evidence-atlas/pull/63)目前开放；须核当前最终头、证据边界及真实浏览器，不将原PR说明当本次重新核验 |
 | FOCUS-003 参数表补全与维护 | in_progress | 两类各有型号×指标主表，支持模组/类别/条件筛选、排序、列选择、逐格来源及导出；未知值与区间可见；表和图同一数据源 |
@@ -746,3 +746,7 @@ EVD-011a候选v0.1.24：两定义、一个PTB同研究三相机记录及一个FL
 2026-11-14首批发布验收：DEVICE-001经PR #65整合，主线CI及Pages43561669359成功；实际0.2.4四发布文件与候选逐字节一致，Chrome四视口线上交互/导出通过，见[验收笔记](DEVICE_RELEASE_2026-11-14.md)。表格多选/列选择/排序、双轴散点与折线、URL恢复和CSV/SVG已上线；分类/测量条件的更细筛选、指标学术定义、独立实测及市场覆盖继续保留FOCUS任务。
 
 下一批来源线索（已读边界）：vivo X300 Pro Global参数页Camera给后摄50+50+200 MP及配对光圈，但尚需overview明确模组名称配对；OPPO Find X9 Ultra Global规格页可读，其导航已列Find X10 Pro Max，先进型号覆盖不得只停在X9。Sony日本Xperia 1 VII规格页文字依然没有完整相机表，未因此填值。原厂Meta比较表已读Quest 3S/Meta VR Glasses列，后者上市/地区/分类需核实后再收录。只记录下一轮取证入口，不将这些未落库型号冒充当前表格覆盖。
+
+| DEVICE-006 OPPO先进型号与手机定义来源 | Q0 | review | Codex | 2026-11-14 | Find X10 Pro Max Global逐模组像素/F数/FOV；F数与物理焦距定义定位来源、前端可点击引用与引用校验；不以规格当画质或全市场覆盖 |
+
+DEVICE-006候选0.2.5：108项测试、构建和差异检查通过；Chrome无头1440/768/390/320覆盖五手机/三模组/XR、定义出处跳转、缺失状态、分享恢复和导出。F数/物理焦距两处引用与AF/OIS字段有定位证据，其他定义仍不冒称已补齐。见[本批笔记](PHONE_OPPO_DEFINITIONS_REVIEW_2026-11-14.md)，待实际发布。

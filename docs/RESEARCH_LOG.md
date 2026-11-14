@@ -540,3 +540,11 @@ ef84c19`；源提交与发布一致，保持owner-only访问。EVD-004d子任务
 
 - **真实发布**：PR #65合并352c600，106项测试/CI43561626717及主线43561669480成功；Pages43561669359同一运行跟踪到success。HTTPS四发布文件逐字节比对、线上Chrome1440/768/390/320全部轴/模组/域、多选/列、排序、分享恢复和两下载通过，无页面错误或溢出，截图已查看。文件指纹见DEVICE_RELEASE_2026-11-14.md。旧光片未提交目录未触碰。DEVICE-001完成，整体目标未完成。
 - **继续调研证据**：取得vivo X300 Pro原厂Camera段、OPPO Find X9 Ultra Global相关规格入口及其新X10 Pro Max导航；Sony日本spec页仍缺完整相机表，未用摘要补值。Meta官方比较表可直接读Quest3S和新VR Glasses字段，上市/地区边界未核，不先当市售先进样本。下一批按FOCUS-002补明确的型号/模组条件，再深化指标正式定义和独立测量；不把官方像素/F数当成像质量。来源链接：vivo https://www.vivo.com/en/products/param/x300-pro；OPPO https://www.oppo.com/en/smartphones/series-find-x/find-x9-ultra/specs/；Sony https://www.sony.jp/xperia/products/xperia1m7/spec.html；Meta https://developers.meta.com/vr/essentials/compare-devices/ 。
+
+## 42 — 2026-11-14 新目标实际激活与OPPO/定义补证
+
+本轮get_goal已返回用户新手机/XR目标，status=active；与此前仅改文档的状态区别明确。前次诊断查清运行器接口及用户命令，用户现已真正改写并激活，属于改变下一步行动的进展。main348b522，工作区干净、无开放PR，分支codex/phone-oppo-metric-evidence。只推进手机/XR。
+
+取得OPPO Find X10 Pro Max (CPH2913) Global Camera逐模组正文，不能把三颗200MP拼成600MP或用数字变焦当原生焦段。ISO OBP网页只显示JavaScript外壳，本机Chrome显示Cloudflare验证；停止该路径，不据搜索摘要收标准定义。TU Delft几何光学“Thick Lens”与“Stops”相关段读到；Stops对F数使用exit pupil口径，与本库入口定义不宜直接混用，本次仅使用明确的主平面/焦点参考面段。Edmund Eq.1/2与有限共轭说明直接可读，作为原厂技术定义并保持证据类型。
+
+- **落库与本地验证**：候选0.2.5新增OPPO三模组、AF/OIS两非数值字段及三个来源；5手机15后摄、8XR、27字段。F数/焦段增加definition_refs，校验拒绝悬空/缺定位；来源区包含独立于所选型号的定义证据。108测试及构建/diff通过；Chrome无头四视口全部轴、五手机/三模组与XR、引用跳转、空值、多选/列/排序、URL恢复和两个导出通过，无页面错误/横向溢出。已查看桌面F数定义、手机OPPO表格截图。教材仅实际视觉核Fig.32与相邻主平面文字；Fig.33/34对应正文读到，不声称这两张图已视觉核验。未将验证页、Nikon超时或未读方法当已取证。待PR/实际部署。
