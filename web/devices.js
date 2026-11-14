@@ -1,7 +1,7 @@
  'use strict';
 const E=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const $=id=>document.getElementById(id),D=window.DEVICE_DATA;
-function points(rows,x,y){return rows.filter(r=>Number.isFinite(r.values[x]?.value)&&Number.isFinite(r.values[y]?.value)).map(r=>({id:r.id,label:r.model,x:r.values[x].value,y:r.values[y].value}));}
+function points(rows,x,y){return rows.filter(r=>Number.isFinite(r.values[x]?.value)&&Number.isFinite(r.values[y]?.value)).map(r=>({id:r.id,label:r.model,x:r.values[x].value,y:r.values[y].value,cells:{[x]:r.values[x],[y]:r.values[y]}}));}
 function tickLabels(min,max){
  const values=Array.from({length:5},(_,i)=>min+(max-min)*i/4);
  for(let precision=3;precision<=17;precision++){
@@ -34,11 +34,12 @@ function layoutLabels(items){
  }
  return placed;
 }
+function pointDetails(p,x,y,metrics){return [p.label,...[...new Set([x,y])].map(k=>{const v=p.cells[k],s=D.sources.find(s=>s.id===v.source);return `${metrics.find(m=>m.id===k).label}: ${v.value} — ${evidenceLabel({},v)}; ${s?.title||v.source}; ${v.location}; ${v.note||''}`;})].join('\n');}
 function chart(rows,x,y,metrics,mode="scatter"){
  const ps=points(rows,x,y);
  if(!ps.length)return '<p>这两个指标暂无同时已知的型号。请选择其他指标；不会补零。</p>';
  const groups=new Map();
- for(const p of ps){const key=JSON.stringify([p.x,p.y]);if(!groups.has(key))groups.set(key,{x:p.x,y:p.y,labels:[]});groups.get(key).labels.push(p.label);}
+ for(const p of ps){const key=JSON.stringify([p.x,p.y]);if(!groups.has(key))groups.set(key,{x:p.x,y:p.y,labels:[],points:[]});groups.get(key).labels.push(p.label);groups.get(key).points.push(p);}
  const xs=ps.map(p=>p.x),ys=ps.map(p=>p.y);
  let xmin=Math.min(...xs),xmax=Math.max(...xs),ymin=Math.min(...ys),ymax=Math.max(...ys);
  const dx=(xmax-xmin)||Math.abs(xmin)*.1||1,dy=(ymax-ymin)||Math.abs(ymin)*.1||1;
@@ -59,42 +60,45 @@ function chart(rows,x,y,metrics,mode="scatter"){
   const leader=position?`<line class="label-leader" x1="${px(g.x)}" y1="${py(g.y)}" x2="${position.anchorX}" y2="${position.anchorY}" stroke="${color}" stroke-width="1" opacity="0.65" aria-hidden="true"/>`:'';
   const text=position?`<text class="point-label" x="${position.x}" y="${position.y+14}" font-size="13">${E(label)}</text>`:'';
   s+=leader;
-  markers+=`<g><circle cx="${px(g.x)}" cy="${py(g.y)}" r="7" fill="${color}"><title>${E(g.labels.join('、'))}: ${g.x}, ${g.y}</title></circle></g>`;
+  markers+=`<g><circle cx="${px(g.x)}" cy="${py(g.y)}" r="7" fill="${color}"><title>${E(g.points.map(p=>pointDetails(p,x,y,metrics)).join('\n\n'))}</title></circle></g>`;
   annotations+=text;
-  legend.push(`<li><span style="color:${color}" aria-hidden="true">●</span> ${E(g.labels.join('、'))}：(${g.x}, ${g.y})${g.labels.length>1?'，同坐标重合':''}</li>`);
+  legend.push(`<li><span style="color:${color}" aria-hidden="true">●</span> ${E(g.labels.join('、'))}：(${g.x}, ${g.y})${g.labels.length>1?'，同坐标重合':''} ${[...new Set(g.points.flatMap(p=>[x,y].map(k=>p.cells[k].source)))].map(id=>`<a href="#source-${E(id)}">出处与读取范围</a>`).join(' / ')}</li>`);
  });
  const ordered=[...groups.values()].sort((a,b)=>a.x-b.x||a.y-b.y);
  const line=mode==='line'&&ordered.length>1?`<polyline class="model-line" points="${ordered.map(g=>`${px(g.x)},${py(g.y)}`).join(' ')}" stroke="#526a82" stroke-width="2" fill="none"/>`:'';
  return s+line+markers+annotations+'</svg></div>'+(positions.some(p=>!p)?'<p>部分文字标签请见下方完整图例；圆点坐标未移动。</p>':'')+'<ul class="chart-legend" aria-label="散点型号与坐标">'+legend.join('')+'</ul>';
 }
 let chosenModels=null,chosenColumns=null;
-function viewRows(){const c=D.domains[$('domain').value];return c.rows.filter(r=>($('domain').value==='xr'||r.module===$('module').value)&&(chosenModels===null||chosenModels.includes(r.model)));}
+function evidenceMatch(r){const v=$('evidence').value;return !['manufacturer','study'].includes(v)||(r.evidence_type||'manufacturer')===v;}
+function viewRows(){const c=D.domains[$('domain').value];return c.rows.filter(r=>evidenceMatch(r)&&($('domain').value==='xr'||r.module===$('module').value)&&(chosenModels===null||chosenModels.includes(r.model)));}
 function sortedRows(rows,x,y){const key=$('sort').value;return [...rows].sort((a,b)=>key==='x'||key==='y'?((a.values[key==='x'?x:y]?.value??Infinity)-(b.values[key==='x'?x:y]?.value??Infinity)||a.model.localeCompare(b.model)):key==='model'?a.model.localeCompare(b.model):0);}
-function cellText(r,m){const v=r.values[m.id];return v&&v.value!==null?String(v.value):'未公开 / 未核验';}
+function cellText(r,m){const v=r.values[m.id];return v?.display||(v&&v.value!==null?String(v.value):'未公开 / 未核验');}
+function evidenceLabel(r,v){return ({reported_configuration:'论文所列配置',measured:'论文实测',model:'论文模型/模拟'})[v?.basis]||(r.evidence_type==='study'?'研究口径待核':'厂商规格');}
 function render(reset=false,resetScroll=false){
  const domain=$('domain').value,c=D.domains[domain],ms=c.metrics;
  if(reset){chosenModels=null;chosenColumns=null;}
- const available=c.rows.filter(r=>domain==='xr'||r.module===$('module').value),models=[...new Set(available.map(r=>r.model))];
+ const available=c.rows.filter(r=>evidenceMatch(r)&&(domain==='xr'||r.module===$('module').value)),models=[...new Set(available.map(r=>r.model))];
  $('models').innerHTML=models.map(m=>`<option${chosenModels===null||chosenModels.includes(m)?' selected':''}>${E(m)}</option>`).join('');
  $('columns').innerHTML=ms.map(m=>`<option value="${m.id}"${chosenColumns===null||chosenColumns.includes(m.id)?' selected':''}>${E(m.label)}</option>`).join('');
  $('module-label').hidden=domain==='xr';$('scope').textContent=c.scope;
  for(const id of ['x','y'])if(reset||!ms.some(m=>m.id===$(id).value)){$(id).innerHTML=ms.filter(m=>m.numeric).map(m=>`<option value="${m.id}">${E(m.label)}</option>`).join('');$(id).value=ms.filter(m=>m.numeric)[id==='x'?0:1].id;}
  const x=$('x').value,y=$('y').value,rs=sortedRows(viewRows(),x,y),columns=ms.filter(m=>chosenColumns===null||chosenColumns.includes(m.id)),ps=points(rs,x,y);
- $('chart').innerHTML=chart(rs,x,y,ms,$('mode').value);$('status').textContent=`当前 ${rs.length} 个型号，${ps.length} 个可绘制点；${rs.length-ps.length} 个缺少所选数值。证据：厂商公开规格，非同条件实测。`;
- $('table').innerHTML='<table><thead><tr><th>型号 / 配置</th>'+columns.map(m=>`<th><a href="#metric-${domain}-${m.id}">${E(m.label)}</a></th>`).join('')+'</tr></thead><tbody>'+rs.map(r=>'<tr><th>'+E(r.model)+'<small>'+E(r.variant)+'</small></th>'+columns.map(m=>{const v=r.values[m.id];return '<td>'+E(cellText(r,m))+(v?`<small>${E(v.note||'')} <a href="#source-${E(v.source)}">出处</a> · ${E(v.location)}</small>`:'')+'</td>';}).join('')+'</tr>').join('')+'</tbody></table>';
+ $('chart').innerHTML=chart(rs,x,y,ms,$('mode').value);$('status').textContent=`当前 ${rs.length} 个型号，${ps.length} 个可绘制点；${rs.length-ps.length} 个缺少所选数值。证据：${rs.filter(r=>r.evidence_type!=='study').length}个厂商规格、${rs.filter(r=>r.evidence_type==='study').length}个研究配置；口径不齐时不作性能排名。`;
+ $('table').innerHTML='<table><thead><tr><th>型号 / 配置</th>'+columns.map(m=>`<th><a href="#metric-${domain}-${m.id}">${E(m.label)}</a></th>`).join('')+'</tr></thead><tbody>'+rs.map(r=>'<tr><th>'+E(r.model)+'<small>'+E(r.variant)+'</small>'+(r.measurement_scope?'<details><summary>测量范围</summary><p>'+E(r.measurement_scope)+'</p></details>':'')+'</th>'+columns.map(m=>{const v=r.values[m.id];return '<td>'+E(cellText(r,m))+(v?`<small>${E(evidenceLabel(r,v))} · ${E(v.note||'')} <a href="#source-${E(v.source)}">出处</a> · ${E(v.location)}</small>`:'')+'</td>';}).join('')+'</tr>').join('')+'</tbody></table>';
+ $('guidance').innerHTML=(c.task_guidance||[]).map(g=>`<article><h3>${E(g.task)}</h3><p>${E(g.text)}</p><a href="#source-${E(g.source)}">依据与读取范围</a> · ${E(g.location)}</article>`).join('')||'<p>任务级重要性依据仍待补证；不按规格排列顺序生成排名。</p>';
  $('definitions').innerHTML=ms.map(m=>`<details id="metric-${domain}-${m.id}"><summary>${E(m.label)}</summary><p>${E(m.definition)}</p><p>比较前提：${E(m.conditions)}</p>${m.definition_refs?.length?'<p>定义/字段依据：'+m.definition_refs.map(ref=>{const source=D.sources.find(v=>v.id===ref.source);return `<a href="#source-${E(ref.source)}">${E(source.title)}</a> · ${E(ref.location)}`;}).join('；')+'</p>':'<p>完整定义出处仍待补证。</p>'}<p>未建立通用重要性排名；字段支持声明不等于同条件性能测量。</p></details>`).join('');
- $('sources').innerHTML=D.sources.filter(s=>rs.some(r=>Object.values(r.values).some(v=>v.source===s.id))||ms.some(m=>m.definition_refs?.some(ref=>ref.source===s.id))).map(s=>`<p id="source-${E(s.id)}"><a href="${E(s.url)}" target="_blank" rel="noopener">${E(s.title)}</a><br>${E(({scholarly_book:'学术教材',manufacturer_technical:'原厂技术说明',manufacturer:'厂商规格'})[s.kind]||'厂商规格')} · ${E(s.scope)} · 核验 ${E(s.checked_on)}</p>`).join('');
+ $('sources').innerHTML=D.sources.filter(s=>rs.some(r=>Object.values(r.values).some(v=>v.source===s.id))||ms.some(m=>m.definition_refs?.some(ref=>ref.source===s.id))||c.task_guidance?.some(g=>g.source===s.id)).map(s=>`<p id="source-${E(s.id)}"><a href="${E(s.url)}" target="_blank" rel="noopener">${E(s.title)}</a><br>${E(({peer_reviewed_paper:'同行评议研究论文',paper_review:'学术综述',scholarly_book:'学术教材',manufacturer_technical:'原厂技术说明',manufacturer:'厂商规格'})[s.kind]||'厂商规格')} · ${E(s.scope)} · 核验 ${E(s.checked_on)}</p>`).join('');
  $('date').textContent='样本截止 '+D.as_of+'；非完整市场清单，未知项保留。';if(resetScroll)$('table').scrollLeft=0;
  saveView();
 }
-function saveView(){if(!window.history||!window.location)return;const u=new URL(window.location.href);for(const id of ['domain','module','x','y','mode','sort'])u.searchParams.set(id,$(id).value);for(const [id,v]of [['models',chosenModels],['columns',chosenColumns]]){if(v===null)u.searchParams.delete(id);else u.searchParams.set(id,JSON.stringify(v));}window.history.replaceState(null,'',u);}
+function saveView(){if(!window.history||!window.location)return;const u=new URL(window.location.href);for(const id of ['domain','module','x','y','mode','sort','evidence'])u.searchParams.set(id,$(id).value);for(const [id,v]of [['models',chosenModels],['columns',chosenColumns]]){if(v===null)u.searchParams.delete(id);else u.searchParams.set(id,JSON.stringify(v));}window.history.replaceState(null,'',u);}
 function download(name,type,text){const a=document.createElement('a'),url=URL.createObjectURL(new Blob([text],{type}));a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
-function csvText(rows,metrics){const q=v=>'"'+String(v??'').replace(/"/g,'""')+'"';const safe=v=>/^[=+\-@\t\r]/.test(String(v))?"'"+v:v;return '\ufeff'+[['型号','配置',...metrics.flatMap(m=>[m.label,m.label+'备注',m.label+'来源',m.label+'原文位置'])],...rows.map(r=>[r.model,r.variant,...metrics.flatMap(m=>{const v=r.values[m.id];return [cellText(r,m),v?.note||'',D.sources.find(s=>s.id===v?.source)?.url||'',v?.location||''];})])].map(row=>row.map(v=>q(safe(v))).join(',')).join('\r\n');}
-['domain','module','x','y','mode','sort'].forEach(id=>$(id).addEventListener('change',()=>render(id==='domain',id==='domain'||id==='module')));
+function csvText(rows,metrics){const q=v=>'"'+String(v??'').replace(/"/g,'""')+'"';const safe=v=>/^[=+\-@\t\r]/.test(String(v))?"'"+v:v;return '\ufeff'+[['型号','配置','研究/测量范围',...metrics.flatMap(m=>[m.label,m.label+'证据性质',m.label+'备注',m.label+'来源',m.label+'原文位置'])],...rows.map(r=>[r.model,r.variant,r.measurement_scope||'',...metrics.flatMap(m=>{const v=r.values[m.id];return [cellText(r,m),v?evidenceLabel(r,v):'',v?.note||'',D.sources.find(s=>s.id===v?.source)?.url||'',v?.location||''];})])].map(row=>row.map(v=>q(safe(v))).join(',')).join('\r\n');}
+['domain','module','x','y','mode','sort','evidence'].forEach(id=>$(id).addEventListener('change',()=>{if(id==='evidence')chosenModels=null;render(id==='domain',id==='domain'||id==='module'||id==='evidence');}));
 for(const id of ['models','columns'])$(id).addEventListener('change',()=>{const values=[...$(id).selectedOptions].map(o=>o.value);if(id==='models')chosenModels=values;else chosenColumns=values;render();});
 $('all-models').addEventListener('click',()=>{chosenModels=null;render();});$('all-columns').addEventListener('click',()=>{chosenColumns=null;render();});
 $('export-csv').addEventListener('click',()=>{const c=D.domains[$('domain').value];download('lens-device-table.csv','text/csv;charset=utf-8',csvText(sortedRows(viewRows(),$('x').value,$('y').value),c.metrics.filter(m=>chosenColumns===null||chosenColumns.includes(m.id))));});
 $('export-svg').addEventListener('click',()=>{const svg=$('chart').querySelector('svg');if(!svg){$('status').textContent='当前无有效图表可导出';return;}const copy=svg.cloneNode(true);copy.setAttribute('xmlns','http://www.w3.org/2000/svg');const desc=document.createElementNS('http://www.w3.org/2000/svg','desc');desc.textContent=$('status').textContent+'；'+$('chart').textContent;copy.prepend(desc);download('lens-device-chart.svg','image/svg+xml',new XMLSerializer().serializeToString(copy));});
 $('share').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(window.location.href);$('status').textContent='已复制当前视图链接';}catch{$('status').textContent='可复制浏览器地址栏，当前选择已保存在链接中。';}});
 const initialSearch=window.location?.href;render(true);
-if(initialSearch){const p=new URL(initialSearch).searchParams;const domain=p.get('domain');if(D.domains[domain]){$('domain').value=domain;render(true);}for(const id of ['module','x','y','mode','sort']){const v=p.get(id);if(v&&[...$(id).options].some(o=>o.value===v))$(id).value=v;}for(const id of ['models','columns']){try{const v=JSON.parse(p.get(id));if(Array.isArray(v)&&v.every(x=>typeof x==='string')){if(id==='models')chosenModels=v;else chosenColumns=v;}}catch{}}render();}
+if(initialSearch){const p=new URL(initialSearch).searchParams;const domain=p.get('domain');if(D.domains[domain]){$('domain').value=domain;render(true);}for(const id of ['module','x','y','mode','sort','evidence']){const v=p.get(id);if(v&&[...$(id).options].some(o=>o.value===v))$(id).value=v;}for(const id of ['models','columns']){try{const v=JSON.parse(p.get(id));if(Array.isArray(v)&&v.every(x=>typeof x==='string')){if(id==='models')chosenModels=v;else chosenColumns=v;}}catch{}}render();}
