@@ -5,7 +5,7 @@ const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;',
 const atlas = createWorkspace(window.LENS_DATA, window.DEVICE_DATA), evidence = window.LensEvidence;
 const initial = new URL(location.href), oldRoute = initial.hash.slice(1).split('/');
 const state = {domain:'phone', module:'main', x:'mp', y:'f', mode:'scatter', sort:'original', visible:false, models:null, columns:null, query:'', evidence:'', evidenceTab:'metrics', compare:[]};
-let viewQuery = location.search;
+let viewQuery = location.search, zoom = null;
 let referenceGroups = new Map(), citations = new Map(), activeRows = [], activeColumns = [], activePoints = [], activeSetting = 'models';
 const domain = () => atlas.domains.find(d => d.id === state.domain);
 const rowAnchor = r => `row-${state.domain}-${r.id}`;
@@ -26,6 +26,7 @@ function citeSources(ids) {
 }
 
 function defaults(id) {
+  zoom = null;
   state.domain = id; state.models = null; state.columns = null; state.query = ''; state.evidence = ''; state.compare = [];
   const numeric = domain().metrics.filter(m => m.numeric);
   if (domain().app) {
@@ -57,6 +58,7 @@ function sourceIndex() {
 function saveView() {
   const url = new URL(location.href); url.search = '';
   for (const key of ['domain','module','x','y','mode','sort','evidence']) if (state[key]) url.searchParams.set(key, state[key]);
+  if (zoom) url.searchParams.set('zoom',JSON.stringify(zoom));
   if (state.visible) url.searchParams.set('visible','1');
   if (state.query) url.searchParams.set('q', state.query);
   for (const key of ['models','columns']) if (state[key] !== null) url.searchParams.set(key, JSON.stringify(state[key]));
@@ -75,6 +77,11 @@ function restore(url) {
   for (const key of ['models','columns','compare']) {
     try { const values = JSON.parse(p.get(key)); if (Array.isArray(values) && values.every(v => typeof v === 'string')) state[key] = key === 'models' ? domain().rows.filter(r => values.includes(r.id) || values.includes(r.model)).map(r => r.id) : values; } catch {}
   }
+  try {
+    const range = JSON.parse(p.get('zoom'));
+    if (Array.isArray(range) && range.length === 4 && range.every(Number.isFinite) &&
+        range[0] < range[1] && range[2] < range[3]) zoom = range;
+  } catch {}
   state.visible = p.get('visible')==='1';
   state.query = p.get('q') || '';
   if (oldRoute[1] === 'compare' && evidence.comparisonFor(state.domain)) { state.evidenceTab = 'compare'; state.compare = oldRoute.slice(2); }
@@ -126,7 +133,7 @@ function pointDescription(p) {
   const xv = p.row.values[state.x], yv = p.row.values[state.y];
   return `${p.label}；${xm?.label || '样本序号'}：${valueText(xv) === '未公开 / 未核验' && state.x === '$model' ? p.x : valueText(xv)}；${ym?.label || '纵轴'}：${valueText(yv)}；${p.row.variant}；${[xv,yv].filter(Boolean).map(v=>[v.evidence,v.note,v.location].filter(Boolean).join(' · ')).join('；')}；${[...new Set([...valueSources(xv), ...valueSources(yv)])].map(id => { const s = atlas.sources.get(id); return `[${citations.get(id)}] ${s?.title}；${s?.evidence_scope || s?.scope || ''}；核验 ${s?.checked_on}`; }).join('；')}`;
 }
-const inspectHint = '悬停或轻点圆点查看坐标，点击可固定读数。';
+const inspectHint = '鼠标拖动框选放大，点击圆点固定读数。';
 let plotWidth = 0, positionReadout;
 function drawChart() {
   plotWidth = Math.min(900, Math.max(280, $('chart').clientWidth - 2));
@@ -134,19 +141,30 @@ function drawChart() {
 
   $('point-detail').textContent = inspectHint;
   const d = domain(), ms = d.metrics, categorical = state.x === '$model';
-  activePoints = axisPoints(activeRows, state.x, state.y);
-  if (!activePoints.length) {
+  for (const row of $('table').querySelectorAll('.plot-selected')) row.classList.remove('plot-selected');
+  const allPoints = axisPoints(activeRows, state.x, state.y);
+  const xMetric = ms.find(m=>m.id===state.x), yMetric = ms.find(m=>m.id===state.y);
+  if (zoom) {
+    const limits = (axis, metric) => window.LensPlot.axisRange(allPoints.map(p=>p[axis]),metric?.axis_bounds);
+    const [left,right] = limits('x',xMetric), [bottom,top] = limits('y',yMetric);
+    if (!allPoints.length || zoom[0]<left || zoom[1]>right || zoom[2]<bottom || zoom[3]>top) zoom = null;
+  }
+  activePoints = zoom ? allPoints.filter(p=>p.x>=zoom[0] && p.x<=zoom[1] && p.y>=zoom[2] && p.y<=zoom[3]) : allPoints;
+  $('reset-zoom').disabled = !zoom;
+  $('status').textContent = zoom ? `局部显示 ${activePoints.length} / ${allPoints.length} 条记录` :
+    `${allPoints.length} 个点 · ${activeRows.length-allPoints.length} 项缺少所选单值`;
+  if (!allPoints.length) {
     const absent = [state.x,state.y].filter(id=>id!=='$model'&&!metricAvailability(activeRows,id)).map(id=>ms.find(m=>m.id===id)?.label).filter(Boolean);
     const reason = !activeRows.length ? (state.visible ? '当前范围没有符合可见光条件的记录。可取消可见光或调整样本筛选。' : '当前没有选中的样本，请全选样本或清除筛选条件。') : absent.length ? `当前 ${activeRows.length} 个样本尚无“${absent.join(' / ')}”的已核验数值。` : '所选两个指标没有同时具备数值的样本；各自已有的数据仍保留在表格中。';
     const recovery=availableAxes(d,activeRows),canRecover=axisPoints(activeRows,recovery.x,recovery.y).length>0;
     $('chart').innerHTML = `<div class="empty-plot" role="status"><strong>当前指标暂无可绘制数据</strong><p>${esc(reason)}</p><p>未知值不补零，区间或复合参数保留原文。</p>${canRecover?'<button class="recover-chart" data-recover-chart>显示已有数据的散点图</button>':''}<a href="#data-table">查看已收集的数据 ↓</a></div>`;
     return;
   }
+  if (!activePoints.length) $('point-detail').textContent = '框选范围内没有数据点，可重置缩放。';
   const groups = window.LensPlot.groupPoints(activePoints);
-  const xMetric = ms.find(m=>m.id===state.x), yMetric = ms.find(m=>m.id===state.y);
   const xLabel = categorical ? '样本序号' : xMetric.label, yLabel = yMetric.label;
   $('chart').innerHTML = window.LensPlot.scatterMarkup(groups, xLabel, yLabel, {
-    width:plotWidth, categorical, xBounds:xMetric?.axis_bounds, yBounds:yMetric.axis_bounds
+    width:plotWidth, categorical, zoom, xBounds:xMetric?.axis_bounds, yBounds:yMetric.axis_bounds
   });
   const svg = $('chart').querySelector('svg'), nodes = [...svg.querySelectorAll('[data-point]')];
   svg.setAttribute('aria-label', d.name + '散点图');
@@ -171,6 +189,7 @@ function drawChart() {
     return `<a data-legend-point="${index}" href="#${esc(rowAnchor(p.row))}"><i class="legend-dot" style="background:${color}" aria-hidden="true"></i>${categorical ? p.x+'. ' : ''}${esc(p.label)} · (${esc(coordinateText(p,'x'))}, ${esc(coordinateText(p,'y'))})</a>${citeSources(ids)}`;
   }, true);
   inspectPlot(svg, nodes, groups, xLabel, yLabel);
+  enableBoxZoom(svg);
 }
 
 function inspectPlot(svg, nodes, groups, xLabel, yLabel) {
@@ -245,7 +264,8 @@ function inspectPlot(svg, nodes, groups, xLabel, yLabel) {
       const t = tick.getBBox();
       if (badges.some(b=>t.x < b.x+b.width+2 && t.x+t.width > b.x-2 && t.y < b.y+b.height+2 && t.y+t.height > b.y-2)) tick.setAttribute('visibility','hidden');
     }
-    const name = group.length===1 ? group[0].label : group[0].label+' 等 '+group.length+' 个同坐标样本';
+    const name = group.length===1 ? group[0].label :
+      window.LensPlot.groupLabels(group).join('、') + ' · ' + group.length + ' 条同坐标记录';
     tip.innerHTML = `<strong>${esc(name)}</strong><dl><dt>${esc(xLabel)}</dt><dd>${esc(reading('x'))}</dd><dt>${esc(yLabel)}</dt><dd>${esc(reading('y'))}</dd></dl>`;
     placeTip();
   }
@@ -281,9 +301,82 @@ function inspectPlot(svg, nodes, groups, xLabel, yLabel) {
       pin(index===pinned ? null : index);
     }
   });
-  const dismiss = event=>{if(event.key==='Escape') pin(null);};
+  const dismiss = event=>{if(event.key==='Escape' && !plot.classList.contains('is-brushing')) pin(null);};
   plot.addEventListener('keydown',dismiss);
   chart.querySelector('.chart-legend').addEventListener('keydown',dismiss);
+}
+
+function applyZoom(range) {
+  zoom = range;
+  drawChart();
+  saveView();
+}
+
+function enableBoxZoom(svg) {
+  const data = svg.dataset;
+  const left = Number(data.axisLeft), right = Number(data.axisRight);
+  const top = Number(data.axisTop), bottom = Number(data.axisBottom);
+  const xmin = Number(data.xMin), xmax = Number(data.xMax), ymin = Number(data.yMin), ymax = Number(data.yMax);
+  const plot = svg.parentElement;
+  let start, pointerId, capture, rect, suppressClick = false;
+  const local = e => new DOMPoint(e.clientX,e.clientY).matrixTransform(svg.getScreenCTM().inverse());
+  const clamp = (v,min,max) => Math.max(min,Math.min(max,v));
+  function selection(e) {
+    const p = local(e), x = clamp(p.x,left,right), y = clamp(p.y,top,bottom);
+    return {x1:Math.min(start.x,x), x2:Math.max(start.x,x), y1:Math.min(start.y,y), y2:Math.max(start.y,y)};
+  }
+  function end() {
+    if (capture?.hasPointerCapture(pointerId)) capture.releasePointerCapture(pointerId);
+    rect?.remove();
+    rect = start = pointerId = capture = null;
+    plot.classList.remove('is-brushing');
+  }
+  svg.addEventListener('pointerdown',e=>{
+    if (e.button!==0 || !e.isPrimary || e.pointerType==='touch') return;
+    const p = local(e);
+    if (p.x<left || p.x>right || p.y<top || p.y>bottom) return;
+    start = p;
+    pointerId = e.pointerId;
+    suppressClick = false;
+    // Capture on the original target so an ordinary click still selects its point.
+    capture = e.target;
+    capture.setPointerCapture(pointerId);
+    if (!e.target.closest('[data-point]')) plot.focus({preventScroll:true});
+  });
+  svg.addEventListener('pointermove',e=>{
+    if (!start || e.pointerId!==pointerId) return;
+    const {x1,x2,y1,y2} = selection(e);
+    if (!rect) {
+      if (x2-x1<4 || y2-y1<4) return;
+      rect = document.createElementNS(svg.namespaceURI,'rect');
+      rect.setAttribute('class','zoom-selection');
+      svg.append(rect);
+      plot.classList.add('is-brushing');
+      capture = svg;
+      capture.setPointerCapture(pointerId);
+      suppressClick = true;
+    }
+    rect.setAttribute('x',x1); rect.setAttribute('width',x2-x1);
+    rect.setAttribute('y',y1); rect.setAttribute('height',y2-y1);
+  });
+  svg.addEventListener('pointerup',e=>{
+    if (!start || e.pointerId!==pointerId) return;
+    const {x1,x2,y1,y2} = selection(e), finish = rect && x2-x1>=4 && y2-y1>=4;
+    end();
+    if (!finish) return;
+    const toX = x=>clamp(xmin+(x-left)/(right-left)*(xmax-xmin),xmin,xmax);
+    const toY = y=>clamp(ymin+(bottom-y)/(bottom-top)*(ymax-ymin),ymin,ymax);
+    const range = [toX(x1),toX(x2),toY(y2),toY(y1)];
+    if (range[0]<range[1] && range[2]<range[3]) applyZoom(range);
+  });
+  svg.addEventListener('pointercancel',e=>{if(e.pointerId===pointerId) end();});
+  svg.addEventListener('lostpointercapture',e=>{
+    if (e.pointerId===pointerId && !capture.hasPointerCapture(pointerId)) end();
+  });
+  plot.addEventListener('keydown',e=>{if(e.key==='Escape' && start){suppressClick=true;end();}});
+  plot.addEventListener('click',e=>{
+    if (suppressClick) {e.stopImmediatePropagation();suppressClick=false;}
+  },true);
 }
 
 function table() {
@@ -393,7 +486,6 @@ function render(updateControls = true) {
   $('view-count').textContent=(paperCount ? paperCount+' 篇文献 · ' : '')+activeRows.length+' 条记录';
   document.title=d.name+' · 透镜评价证据库';
   drawChart();
-  $('status').textContent=`${activePoints.length} 个点 · ${activeRows.length-activePoints.length} 项缺少所选单值`;
   $('plot-note').textContent=(state.visible?'可见光 380–780 nm。保留波段交叠及明确可见光用途的记录，波段未知时隐藏。 ':'')+'虚线标出当前点的横、纵坐标。'+(d.app?' 同名同单位仍需核对条件。':d.id==='metalens'?' 同器件多个谱点不计作独立镜片。':' 厂商标称与独立实测分别理解。');
   referenceList(table()); renderDefinitions();
   $('date').textContent=`本页样本维护日期 ${d.asOf}；逐条保留原核验日期与读取范围。样本不代表完整市场覆盖。`;
@@ -412,12 +504,14 @@ $('domain').innerHTML=[...groups].map(([category,ds])=>`<optgroup label="${esc(c
 restore(initial); render();
 if(oldRoute[1]) { if(oldRoute[1]==='sources')location.hash='references';else if(oldRoute[1]!=='metrics'){$('evidence-notes').open=true;location.hash='evidence-notes';} }
 for(const key of ['domain','module','x','y','sort','evidence']) $(key).addEventListener('change',()=>{
+  zoom=null;
   if(key==='domain')defaults($(key).value);else {state[key]=$(key).value;if(key==='module')state.models=null;}
   render();
 });
-$('model-search').addEventListener('input',()=>{state.query=$('model-search').value;render();$('model-search').focus();});
-for(const [id,key,value] of [['all-models','models',null],['no-models','models',[]],['all-columns','columns',null],['no-columns','columns',[]]]) $(id).addEventListener('click',()=>{state[key]=value;render();});
-$('visible-light').addEventListener('change',()=>{state.visible=$('visible-light').checked;render();});
+$('model-search').addEventListener('input',()=>{zoom=null;state.query=$('model-search').value;render();$('model-search').focus();});
+for(const [id,key,value] of [['all-models','models',null],['no-models','models',[]],['all-columns','columns',null],['no-columns','columns',[]]]) $(id).addEventListener('click',()=>{if(key==='models')zoom=null;state[key]=value;render();});
+$('visible-light').addEventListener('change',()=>{zoom=null;state.visible=$('visible-light').checked;render();});
+$('reset-zoom').addEventListener('click',()=>applyZoom(null));
 $('reset-view').addEventListener('click',()=>{defaults(state.domain);state.visible=false;state.mode='scatter';state.sort='original';render();});
 document.addEventListener('change',event=>{
   const target=event.target;
@@ -425,6 +519,7 @@ document.addEventListener('change',event=>{
     const model=target.hasAttribute('data-row'),key=model?'models':'columns',id=model?target.dataset.row:target.dataset.column;
     const all=model?domain().rows.map(r=>r.id):domain().metrics.map(m=>m.id);
     const set=new Set(state[key]===null?all:state[key]);if(target.checked)set.add(id);else set.delete(id);state[key]=[...set];
+    if (model) zoom=null;
     render();document.querySelector(`[data-${model?'row':'column'}="${CSS.escape(id)}"]`)?.focus();
   }
   if(target.matches('[data-compare]')){
@@ -433,7 +528,7 @@ document.addEventListener('change',event=>{
 });
 document.addEventListener('click',event=>{
   const setting=event.target.closest('[data-setting]'),tab=event.target.closest('[data-evidence-tab]'),metric=event.target.closest('[data-metric]'),record=event.target.closest('[data-record]'),definition=event.target.closest('[data-definition]');
-  if(event.target.closest('[data-recover-chart]')){Object.assign(state,availableAxes(domain(),activeRows));render();}
+  if(event.target.closest('[data-recover-chart]')){zoom=null;Object.assign(state,availableAxes(domain(),activeRows));render();}
   if(setting){activeSetting=setting.dataset.setting;for(const button of document.querySelectorAll('[data-setting]')){button.setAttribute('aria-selected',String(button===setting));button.tabIndex=button===setting?0:-1;}$('model-controls').hidden=activeSetting!=='models';$('column-controls').hidden=activeSetting!=='columns';}
   if(tab){state.evidenceTab=tab.dataset.evidenceTab;renderDefinitions();document.querySelector(`[data-evidence-tab="${state.evidenceTab}"]`).focus();}
   if(metric)evidence.openMetric(metric.dataset.metric);
@@ -451,6 +546,7 @@ $('export-svg').addEventListener('click',()=>{
   const copy = svg.cloneNode(true);
   copy.setAttribute('xmlns','http://www.w3.org/2000/svg');
   copy.querySelector('.axis-inspection')?.remove();
+  copy.querySelector('.zoom-selection')?.remove();
   for (const tick of copy.querySelectorAll('.axis-ticks text')) tick.removeAttribute('visibility');
   for (const point of copy.querySelectorAll('[data-point]')) {
     const title = document.createElementNS(svg.namespaceURI,'title');

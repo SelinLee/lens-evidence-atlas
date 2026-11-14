@@ -21,6 +21,16 @@ function groupPoints(points) {
  return [...groups.values()];
 }
 
+function groupLabels(group) {
+ const publications = new Set(), models = new Set();
+ for (const point of group) {
+  const paper = point.row?.pointLabel || point.row?.paperLabel;
+  if (paper) publications.add(paper);
+  else models.add(point.label ?? point.row?.model);
+ }
+ return [...publications, ...models];
+}
+
 function axisRange(values, bounds = {}) {
  const low = Math.min(...values), high = Math.max(...values);
  const padding = ((high - low) || Math.abs(low) * .1 || 1) * .1;
@@ -31,7 +41,7 @@ function axisRange(values, bounds = {}) {
  ];
 }
 
-function scatterMarkup(groups, xLabel, yLabel, {width = 900, categorical = false, scrollable = false, mode = 'scatter', xBounds, yBounds} = {}) {
+function scatterMarkup(groups, xLabel, yLabel, {width = 900, categorical = false, scrollable = false, mode = 'scatter', xBounds, yBounds, zoom} = {}) {
  const compact = width < 600;
  const height = compact ? 242 : 450;
  const left = compact ? 54 : 90, right = width - (compact ? 20 : 110);
@@ -39,7 +49,7 @@ function scatterMarkup(groups, xLabel, yLabel, {width = 900, categorical = false
  const xTickY = bottom + (compact ? 17 : 25);
  const coordinates = groups.map(([p]) => p);
  const xs = coordinates.map(p => p.x), ys = coordinates.map(p => p.y);
- const [xmin, xmax] = axisRange(xs, xBounds), [ymin, ymax] = axisRange(ys, yBounds);
+ const [xmin, xmax, ymin, ymax] = zoom || [...axisRange(xs, xBounds), ...axisRange(ys, yBounds)];
  const px = x => left + (x-xmin)/(xmax-xmin)*(right-left), py = y => bottom - (y-ymin)/(ymax-ymin)*(bottom-top);
  const xticks = tickLabels(xmin,xmax), yticks = tickLabels(ymin,ymax);
  const palette = ['#30776d','#4678aa','#8a61a3','#b1623f','#96721c','#466997','#a95472','#547e45'];
@@ -66,10 +76,12 @@ function scatterMarkup(groups, xLabel, yLabel, {width = 900, categorical = false
   const series = [...new Set(group.map(p=>p.row?.study_id || p.row?.id || p.id))];
   const hash = Array.from(series[0]).reduce((n,c)=>(n*31+c.codePointAt(0))>>>0,0);
   const color = series.length === 1 ? palette[hash%palette.length] : '#53636d';
-  const name = group.length > 1 ? `${group.length} 个样本` : (p.row?.pointLabel || names[0]);
+  const identities = groupLabels(group);
+  const name = group.length === 1 ? (p.row?.pointLabel || names[0]) :
+   identities[0] + (identities.length > 1 ? ' +' + (identities.length - 1) : '');
   markers.push(`<g data-point="${i}"><rect x="${x-9}" y="${y-9}" width="18" height="18" fill="transparent"/><circle cx="${x}" cy="${y}" r="5" fill="${color}" stroke="white" stroke-width="1"><title>${E(names.join('、'))} (${p.x}, ${p.y})</title></circle></g>`);
   // Only place a complete name immediately beside its point. Dense views use inspection.
-  if (groups.length <= (compact ? 5 : 12) && name.length <= 28) {
+  if ((group.some(point=>point.row?.pointLabel || point.row?.paperLabel) || groups.length <= (compact ? 5 : 12)) && name.length <= 42) {
    const w = Array.from(name).reduce((sum,c)=>sum+(c.charCodeAt(0)<128 ? 6.4 : 10.5),0)+3;
    for (const start of [x+9,x-9-w]) {
     const box = {x:start,y:y-7,w,h:14};
@@ -87,7 +99,7 @@ function scatterMarkup(groups, xLabel, yLabel, {width = 900, categorical = false
   line = `<polyline class="model-line" points="${ordered.map(p=>px(p.x)+','+py(p.y)).join(' ')}" stroke="#526a82" stroke-width="2" fill="none"/>`;
  }
  const hint = scrollable ? '<p class="chart-scroll-hint" id="chart-scroll-hint">窄屏可横向滚动查看完整散点图。</p>' : '';
- return `${hint}<div class="scroll plot-scroll" role="region" aria-label="指标散点图"${scrollable?' aria-describedby="chart-scroll-hint"':''} tabindex="0"><svg viewBox="0 0 ${width} ${height}" role="group" aria-label="样本指标散点图" data-axis-left="${left}" data-axis-bottom="${bottom}" data-x-tick-y="${xTickY}"><path d="${grid.join(' ')}" stroke="#e2eae7" fill="none"/><path d="M${left} ${top-(compact?4:20)}V${bottom}H${right+(compact?5:20)}" stroke="#83968e" fill="none"/><g class="axis-ticks">${ticks.join('')}</g><text x="${(left+right)/2}" y="${height-(compact?4:17)}" text-anchor="middle" font-size="13">${E(xLabel)}</text><text x="12" y="20" font-size="13">${E(yLabel)}</text>${line}${labels.join('')}${markers.join('')}</svg></div><ul class="chart-legend" aria-label="散点型号与坐标">${legend.join('')}</ul>`;
+ return `${hint}<div class="scroll plot-scroll" role="region" aria-label="指标散点图"${scrollable?' aria-describedby="chart-scroll-hint"':''} tabindex="0"><svg viewBox="0 0 ${width} ${height}" role="group" aria-label="样本指标散点图" data-axis-left="${left}" data-axis-right="${right}" data-axis-top="${top}" data-axis-bottom="${bottom}" data-x-min="${xmin}" data-x-max="${xmax}" data-y-min="${ymin}" data-y-max="${ymax}" data-x-tick-y="${xTickY}"><path d="${grid.join(' ')}" stroke="#e2eae7" fill="none"/><path d="M${left} ${top-(compact?4:20)}V${bottom}H${right+(compact?5:20)}" stroke="#83968e" fill="none"/><g class="axis-ticks">${ticks.join('')}</g><text x="${(left+right)/2}" y="${height-(compact?4:17)}" text-anchor="middle" font-size="13">${E(xLabel)}</text><text x="12" y="20" font-size="13">${E(yLabel)}</text>${line}${labels.join('')}${markers.join('')}</svg></div><ul class="chart-legend" aria-label="散点型号与坐标">${legend.join('')}</ul>`;
 }
 
 function chart(rows,x,y,metrics,mode='scatter') {
@@ -96,7 +108,7 @@ function chart(rows,x,y,metrics,mode='scatter') {
  const xm = metrics.find(m=>m.id===x), ym = metrics.find(m=>m.id===y);
  return scatterMarkup(groups, xm.label, ym.label, {mode, scrollable:true, xBounds:xm.axis_bounds, yBounds:ym.axis_bounds});
 }
-window.LensPlot = {points,tickLabels,groupPoints,scatterMarkup,chart};
+window.LensPlot = {points,tickLabels,groupPoints,groupLabels,axisRange,scatterMarkup,chart};
 if(!window.UNIFIED_WORKSPACE){
 let chosenModels=null,chosenColumns=null;
 function viewRows(){const c=D.domains[$('domain').value];return c.rows.filter(r=>($('domain').value==='xr'||r.module===$('module').value)&&(chosenModels===null||chosenModels.includes(r.model)));}
