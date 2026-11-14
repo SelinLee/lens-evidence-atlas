@@ -24,7 +24,7 @@
 | QUALITY-001e Lin 2025焦距/焦移补证 | in_progress | 本机Codex，2026-11-14；两器件10谱点的证据边界已随PR #82发布并通过Pages/Chrome验收；实测焦距仍缺，保持补证开放。Fig.2模拟与Fig.3/S5实测分开；额外数据需向作者请求，不把模拟曲线当实测。 |
 | QUALITY-001f Chen 2019可见光偏振不敏感器件 | done | 本机Codex，2026-11-14；PR #84/edbf81f、CI43587422204、Pages43587422182成功，149测试及线上Chrome六视口/读数/引用往返通过，公开12文件一致。三实制配置、作者约6μm/30μm带内variation、几何及参考面/效率协议完成本批纳入；逐点焦距/原始PSF仍缺，不视为这些材料已公开。见[本批核验](CHEN_LI_VISIBLE_REVIEW_2026-11-14.md)。 |
 | QUALITY-001g Li 2021毫米级离散RGB器件 | done | 本机Codex，2026-11-14；PR #84同批完成Pages/线上Chrome验收。两配置五行，NA0.7三色最大焦移约1μm与x向FWHM/SR印字、NA0.3不同RGB谱点均入库；SI403及精确焦距/MTF/效率/原始PSF缺口继续保留。仅关闭本批明确范围，不关闭父目标。 |
-| QUALITY-001h Li 2022厘米级RGB与原始数据 | in_progress | 本机Codex，2026-11-14；10.1038/s41467-022-29973-3正式主文/SI已取得并开始正文/表格核验，待视觉复核及入库。Data availability指Harvard内部受限非商业库，代码合理请求，正式页面未列Source Data链接；不把SI表S3模拟23.8%当实测。 |
+| QUALITY-001h Li 2022厘米级RGB与原始数据 | in_progress | 本机Codex，2026-11-14；四实制配置/19行已逐项核主文及SI，新增3跨谱点最大焦差、9实测FWHM、6作者计算Strehl和9效率，光源条件分行；153测试/校验/构建及本地独立Chrome验收通过，待PR/Pages线上验收。元胞受限库不当原始PSF，S3模拟23.8%排除；见[本批核验](LI_INVERSE_REVIEW_2026-11-14.md)。 |
 | QUALITY-002 手机SNR/MTF/色差独立测量 | in_progress | 本机Codex，2026-11-14；先核有型号和协议的SNR及MTF原始研究；外接镜组、场景与处理链不得写进原生模组，PSNR不替代SNR |
 | QUALITY-003 VRAR MTF与色差 | in_progress | 本机Codex，2026-11-14；复核开放PR #69数据及原文，优先MTF/截止频率、颜色/场点/眼位、色差和先进设备独立测量，不能从曲线猜统一单值 |
 | QUALITY-001a 文献器件首批 | done | 4项原始研究/8器件配置/21行，几何、波段、逐谱点焦距/FWHM/Strehl、PSNR及冲突；见[首批核验](QUALITY_BATCH_2026-11-14.md)；PR #72/23fdecb与Pages43571286647实页验收，不关闭父目标 |

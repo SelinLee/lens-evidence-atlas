@@ -375,6 +375,24 @@
       "kind": "peer_reviewed_paper",
       "scope": "PMC正式全文HTML与Europe PMC全文XML；读设计、RGB聚焦/成像、Methods、Discussion及数据声明，视觉核正式Fig.1–3，采用Fig.2F–H直接印出的FWHM/SR标签，不数字化曲线。D2mm/NA0.7与NA0.3是两个实制配置，各自RGB测点不同；约1μm最大焦移仅归NA0.7。Science/作者PDF与SI入口403，Europe PMC supplementaryFiles ZIP仅10张主文图像，不是SI/原始PSF；未声称读到S3/S14。模拟厘米镜、双片校正及系统显示参数不当裸镜实测。",
       "checked_on": "2026-11-14"
+    },
+    {
+      "id": "li_inverse_2022",
+      "title": "Li, Pestourie et al. (2022): Inverse design enables large-scale high-performance meta-optics reshaping virtual reality",
+      "doi": "10.1038/s41467-022-29973-3",
+      "url": "https://www.nature.com/articles/s41467-022-29973-3",
+      "kind": "peer_reviewed_paper",
+      "scope": "正式11页主文及2026-11-14正式网页；读摘要、Large-scale inverse-designed polychromatic metalenses及相关Methods/Data/Code availability，视觉核PDF pp.5–7 Fig.3–5和对应文字。四实制配置分开；三色2mm/NA0.7约1.5μm、六色2mm/NA0.3的500nm、1cm/NA0.3约4.5μm是作者跨谱点最大差。图4e–j的六个FWHM标签直接录入；模拟Fig.3b/4b/5b不当实测，精确设计焦距未由NA或百分数反算。网页注明2023-09-15只更正参考文献69链接，未据此宣称整篇数据更正。",
+      "checked_on": "2026-11-14"
+    },
+    {
+      "id": "li_inverse_si_2022",
+      "publication_source": "li_inverse_2022",
+      "title": "Li, Pestourie et al. (2022): Supplementary Information — polychromatic metalenses and measured efficiencies",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-022-29973-3/MediaObjects/41467_2022_29973_MOESM1_ESM.pdf",
+      "kind": "supplementary_material",
+      "scope": "正式18页SI，限定读光学测量装置、Fig.S5–S17相关正文/图注、Tables S1–S3，视觉核PDF pp.7–10/12–16。S6的激光二极管Strehl与S7/S8超连续谱FWHM分条件；S1/S2实测效率逐列录入，S3模拟23.8%不填实测。相机/继像描述未代替原始PSF数组、物方采样、轴向步长或MTF处理说明；焦圈/功率采样面积仍缺。",
+      "checked_on": "2026-11-14"
     }
   ],
   "domains": {
@@ -3154,6 +3172,19 @@
             {
               "source": "li_rgb_vr_2021",
               "location": "Results / Focusing and imaging characterizations第一段；Fig.2B"
+            }
+          ]
+        },
+        {
+          "id": "illumination",
+          "label": "照明 / 光谱线宽",
+          "definition": "保存实际光源、中心谱点与光谱FWHM/线宽，及其对应测量类型；照明带宽不等同器件连续消色差带宽。",
+          "conditions": "同一器件的不同光源测量不得合并PSF宽度、Strehl与效率；原文仅给范围时不分派为每个中心波长的精确线宽。",
+          "numeric": false,
+          "definition_refs": [
+            {
+              "source": "li_inverse_si_2022",
+              "location": "PDF pp.8–10 Fig.S6–S9及p.12 Fig.S13对应正文"
             }
           ]
         }
@@ -14580,9 +14611,2048 @@
               "checked_on": "2026-11-14"
             }
           }
+        },
+        {
+          "id": "li2022_rgb2_na07_summary",
+          "model": "Li 2022 · D2mm RGB NA0.7 · 汇总",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2022",
+          "specimen_id": "rgb2_na07",
+          "illumination_id": "aggregate",
+          "visible_light_use": true,
+          "measurement_scope": "Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.4–7 Large-scale inverse-designed polychromatic metalenses；Fig.3/4/5图注",
+              "note": "原文2mm×1000→2000μm。Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3/4/5图注与相应正文",
+              "note": "Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "TiO2鳍结构高600nm；不含基底，不把约210nm ALD沉积工艺厚度当最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，方格周期p=400nm",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "矩形各向异性单元与单元轴平行；径向参数布局/偏振转换共同实现作者所称偏振不敏感聚焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "作者报告偏振不敏感聚焦；各向异性单元的正交通道转换",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4结构/Jones矩阵段；SI p.7 Fig.S5及正文",
+              "note": "SI明确RGB 2mm/NA0.7分别测LCP→RCP、RCP→LCP及无偏振选择；其他配置不冒称也逐一完成相同三组测试。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3–5波长标签及图注",
+              "note": "Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "488/532/658 nm（离散RGB汇总）"
+            },
+            "chromatic": {
+              "value": "三色最大互差约1.5μm，作者称约0.15%焦距",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4 RGB聚焦表征段；Fig.3c p.5；SI p.10 Fig.S10及正文",
+              "note": "保留作者报告及原始百分数文字，不反算精确设计焦距或分派成单谱点有符号Δf；Z轴零点为相对焦点坐标。 SI S10还明确532nm附近非设计波长有色散焦移；20nm内可聚焦不等于连续消色差，未估读曲线峰位。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            },
+            "mtf_curve": {
+              "value": "实测PSF/线剖面及部分效率表可核；未取得定量MTF数表或可复算原始PSF",
+              "source": "li_inverse_si_2022",
+              "location": "SI pp.7–15 Fig.S5–S17/Tables S1–S2；主文p.10 Data/Code availability",
+              "note": "元胞库在Harvard内部受限非商业数据库，代码合理请求；正式附件目录只列SI及影片，无Source Data。元胞库不等于实测PSF；缺原始数组、物方采样、轴向步长及MTF裁剪/背景/归一化，未复算。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_si_2022",
+                "li_inverse_2022"
+              ]
+            },
+            "focus_variation_protocol": {
+              "value": "488/532/658nm三色实测轴向峰位互比；作者给最大两谱点差，未指定单参考波长。",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4 RGB聚焦表征段；Fig.3c p.5",
+              "note": "设计焦距、逐波长绝对焦距/符号、峰值拟合、轴向采样及误差未取得；不从NA、相对坐标图或百分数反推。六色NA0.3的横向PSF明确在共同焦面（主文p.6），其参考波长未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "focus_variation_um": {
+              "value": 1.5,
+              "source": "li_inverse_2022",
+              "location": "PDF p.4 RGB聚焦表征段；Fig.3c p.5",
+              "note": "作者从实测PSF报告的跨谱点最大互差；本行是器件汇总，未复制到某个数值波长。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "approximate": true,
+              "display": "约1.5（跨谱点最大差）",
+              "statistic": "maximum_pairwise_difference",
+              "sample_wavelengths_nm": [
+                488,
+                532,
+                658
+              ],
+              "calculation_origin": "authors"
+            },
+            "illumination": {
+              "value": "RGB激光二极管与超连续谱分别测量，线宽范围分别0.5–1nm与4–7nm",
+              "source": "li_inverse_si_2022",
+              "location": "SI pp.8–10 Fig.S6–S9正文",
+              "note": "不把主文概述约0.5/5nm变成逐波长精确线宽；窄线宽Strehl与宽光谱FWHM分行。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "li2022_rgb2_na07_diode_488",
+          "model": "Li 2022 · D2mm RGB NA0.7 · 二极管 488nm",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2022",
+          "specimen_id": "rgb2_na07",
+          "illumination_id": "diode",
+          "visible_light_use": true,
+          "measurement_scope": "Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。 本行照明条件：激光二极管；作者光谱线宽范围0.5–1nm",
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.4–7 Large-scale inverse-designed polychromatic metalenses；Fig.3/4/5图注",
+              "note": "原文2mm×1000→2000μm。Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3/4/5图注与相应正文",
+              "note": "Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "TiO2鳍结构高600nm；不含基底，不把约210nm ALD沉积工艺厚度当最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，方格周期p=400nm",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "矩形各向异性单元与单元轴平行；径向参数布局/偏振转换共同实现作者所称偏振不敏感聚焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "作者报告偏振不敏感聚焦；各向异性单元的正交通道转换",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4结构/Jones矩阵段；SI p.7 Fig.S5及正文",
+              "note": "SI明确RGB 2mm/NA0.7分别测LCP→RCP、RCP→LCP及无偏振选择；其他配置不冒称也逐一完成相同三组测试。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 488,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3–5及SI相应谱点标签",
+              "note": "Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "激光二极管；作者光谱线宽范围0.5–1nm",
+              "source": "li_inverse_si_2022",
+              "location": "SI p.8 Fig.S6正文；pp.9–10 Fig.S9及正文",
+              "note": "此组Strehl不是超连续谱结果；每色精确线宽未独立列数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "strehl": {
+              "value": 0.97,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.8 Fig.S6后正文，依488/532/658nm顺序；主文p.5 Fig.3d印字",
+              "note": "作者由实测PSF与Airy参考计算；图注明确峰值按Airy参考归一化，完整总功率匹配步骤未说明；未套用他文第二瓣规则。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_si_2022",
+                "li_inverse_2022"
+              ],
+              "display": "0.97"
+            }
+          }
+        },
+        {
+          "id": "li2022_rgb2_na07_diode_532",
+          "model": "Li 2022 · D2mm RGB NA0.7 · 二极管 532nm",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2022",
+          "specimen_id": "rgb2_na07",
+          "illumination_id": "diode",
+          "visible_light_use": true,
+          "measurement_scope": "Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。 本行照明条件：激光二极管；作者光谱线宽范围0.5–1nm",
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.4–7 Large-scale inverse-designed polychromatic metalenses；Fig.3/4/5图注",
+              "note": "原文2mm×1000→2000μm。Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3/4/5图注与相应正文",
+              "note": "Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "TiO2鳍结构高600nm；不含基底，不把约210nm ALD沉积工艺厚度当最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，方格周期p=400nm",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "矩形各向异性单元与单元轴平行；径向参数布局/偏振转换共同实现作者所称偏振不敏感聚焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "作者报告偏振不敏感聚焦；各向异性单元的正交通道转换",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4结构/Jones矩阵段；SI p.7 Fig.S5及正文",
+              "note": "SI明确RGB 2mm/NA0.7分别测LCP→RCP、RCP→LCP及无偏振选择；其他配置不冒称也逐一完成相同三组测试。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3–5及SI相应谱点标签",
+              "note": "Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "激光二极管；作者光谱线宽范围0.5–1nm",
+              "source": "li_inverse_si_2022",
+              "location": "SI p.8 Fig.S6正文；pp.9–10 Fig.S9及正文",
+              "note": "此组Strehl不是超连续谱结果；每色精确线宽未独立列数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "strehl": {
+              "value": 0.96,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.8 Fig.S6后正文，依488/532/658nm顺序；主文p.5 Fig.3d印字",
+              "note": "作者由实测PSF与Airy参考计算；图注明确峰值按Airy参考归一化，完整总功率匹配步骤未说明；未套用他文第二瓣规则。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_si_2022",
+                "li_inverse_2022"
+              ],
+              "display": "0.96"
+            }
+          }
+        },
+        {
+          "id": "li2022_rgb2_na07_diode_658",
+          "model": "Li 2022 · D2mm RGB NA0.7 · 二极管 658nm",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2022",
+          "specimen_id": "rgb2_na07",
+          "illumination_id": "diode",
+          "visible_light_use": true,
+          "measurement_scope": "Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。 本行照明条件：激光二极管；作者光谱线宽范围0.5–1nm",
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.4–7 Large-scale inverse-designed polychromatic metalenses；Fig.3/4/5图注",
+              "note": "原文2mm×1000→2000μm。Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3/4/5图注与相应正文",
+              "note": "Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "TiO2鳍结构高600nm；不含基底，不把约210nm ALD沉积工艺厚度当最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，方格周期p=400nm",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "矩形各向异性单元与单元轴平行；径向参数布局/偏振转换共同实现作者所称偏振不敏感聚焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "作者报告偏振不敏感聚焦；各向异性单元的正交通道转换",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4结构/Jones矩阵段；SI p.7 Fig.S5及正文",
+              "note": "SI明确RGB 2mm/NA0.7分别测LCP→RCP、RCP→LCP及无偏振选择；其他配置不冒称也逐一完成相同三组测试。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 658,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3–5及SI相应谱点标签",
+              "note": "Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "激光二极管；作者光谱线宽范围0.5–1nm",
+              "source": "li_inverse_si_2022",
+              "location": "SI p.8 Fig.S6正文；pp.9–10 Fig.S9及正文",
+              "note": "此组Strehl不是超连续谱结果；每色精确线宽未独立列数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "strehl": {
+              "value": 0.94,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.8 Fig.S6后正文，依488/532/658nm顺序；主文p.5 Fig.3d印字",
+              "note": "作者由实测PSF与Airy参考计算；图注明确峰值按Airy参考归一化，完整总功率匹配步骤未说明；未套用他文第二瓣规则。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_si_2022",
+                "li_inverse_2022"
+              ],
+              "display": "0.94"
+            }
+          }
+        },
+        {
+          "id": "li2022_rgb2_na07_scl_488",
+          "model": "Li 2022 · D2mm RGB NA0.7 · 超连续谱 488nm",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2022",
+          "specimen_id": "rgb2_na07",
+          "illumination_id": "scl",
+          "visible_light_use": true,
+          "measurement_scope": "Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。 本行照明条件：超连续谱；作者最低光谱线宽范围4–7nm",
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.4–7 Large-scale inverse-designed polychromatic metalenses；Fig.3/4/5图注",
+              "note": "原文2mm×1000→2000μm。Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3/4/5图注与相应正文",
+              "note": "Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "TiO2鳍结构高600nm；不含基底，不把约210nm ALD沉积工艺厚度当最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，方格周期p=400nm",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "矩形各向异性单元与单元轴平行；径向参数布局/偏振转换共同实现作者所称偏振不敏感聚焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "作者报告偏振不敏感聚焦；各向异性单元的正交通道转换",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4结构/Jones矩阵段；SI p.7 Fig.S5及正文",
+              "note": "SI明确RGB 2mm/NA0.7分别测LCP→RCP、RCP→LCP及无偏振选择；其他配置不冒称也逐一完成相同三组测试。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 488,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3–5及SI相应谱点标签",
+              "note": "Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "超连续谱；作者最低光谱线宽范围4–7nm",
+              "source": "li_inverse_si_2022",
+              "location": "SI pp.8–10 Fig.S7–S9正文",
+              "note": "同一RGB物理器件，不是新结构；宽光谱导致焦斑展宽/尾部为作者解释，未计算其独立MTF或效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "fwhm_um": {
+              "value": 0.45,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.9 Fig.S8后正文，488nm对应450nm",
+              "note": "直接采用作者正文数值，nm÷1000→μm；S7剖面横轴x，S8标量FWHM未另分x/y，故保留未分方向字段。不填理想358/391/483nm，不套二极管Strehl。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "0.450"
+            }
+          }
+        },
+        {
+          "id": "li2022_rgb2_na07_scl_532",
+          "model": "Li 2022 · D2mm RGB NA0.7 · 超连续谱 532nm",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2022",
+          "specimen_id": "rgb2_na07",
+          "illumination_id": "scl",
+          "visible_light_use": true,
+          "measurement_scope": "Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。 本行照明条件：超连续谱；作者最低光谱线宽范围4–7nm",
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.4–7 Large-scale inverse-designed polychromatic metalenses；Fig.3/4/5图注",
+              "note": "原文2mm×1000→2000μm。Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3/4/5图注与相应正文",
+              "note": "Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "TiO2鳍结构高600nm；不含基底，不把约210nm ALD沉积工艺厚度当最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，方格周期p=400nm",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "矩形各向异性单元与单元轴平行；径向参数布局/偏振转换共同实现作者所称偏振不敏感聚焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "作者报告偏振不敏感聚焦；各向异性单元的正交通道转换",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4结构/Jones矩阵段；SI p.7 Fig.S5及正文",
+              "note": "SI明确RGB 2mm/NA0.7分别测LCP→RCP、RCP→LCP及无偏振选择；其他配置不冒称也逐一完成相同三组测试。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3–5及SI相应谱点标签",
+              "note": "Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "超连续谱；作者最低光谱线宽范围4–7nm",
+              "source": "li_inverse_si_2022",
+              "location": "SI pp.8–10 Fig.S7–S9正文",
+              "note": "同一RGB物理器件，不是新结构；宽光谱导致焦斑展宽/尾部为作者解释，未计算其独立MTF或效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "fwhm_um": {
+              "value": 0.468,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.9 Fig.S8后正文，532nm对应468nm",
+              "note": "直接采用作者正文数值，nm÷1000→μm；S7剖面横轴x，S8标量FWHM未另分x/y，故保留未分方向字段。不填理想358/391/483nm，不套二极管Strehl。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "0.468"
+            }
+          }
+        },
+        {
+          "id": "li2022_rgb2_na07_scl_658",
+          "model": "Li 2022 · D2mm RGB NA0.7 · 超连续谱 658nm",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2022",
+          "specimen_id": "rgb2_na07",
+          "illumination_id": "scl",
+          "visible_light_use": true,
+          "measurement_scope": "Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。 本行照明条件：超连续谱；作者最低光谱线宽范围4–7nm",
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.4–7 Large-scale inverse-designed polychromatic metalenses；Fig.3/4/5图注",
+              "note": "原文2mm×1000→2000μm。Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3/4/5图注与相应正文",
+              "note": "Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "TiO2鳍结构高600nm；不含基底，不把约210nm ALD沉积工艺厚度当最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，方格周期p=400nm",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "矩形各向异性单元与单元轴平行；径向参数布局/偏振转换共同实现作者所称偏振不敏感聚焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "作者报告偏振不敏感聚焦；各向异性单元的正交通道转换",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4结构/Jones矩阵段；SI p.7 Fig.S5及正文",
+              "note": "SI明确RGB 2mm/NA0.7分别测LCP→RCP、RCP→LCP及无偏振选择；其他配置不冒称也逐一完成相同三组测试。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 658,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3–5及SI相应谱点标签",
+              "note": "Li2022同一研究，D2000μm/NA0.7实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "超连续谱；作者最低光谱线宽范围4–7nm",
+              "source": "li_inverse_si_2022",
+              "location": "SI pp.8–10 Fig.S7–S9正文",
+              "note": "同一RGB物理器件，不是新结构；宽光谱导致焦斑展宽/尾部为作者解释，未计算其独立MTF或效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "fwhm_um": {
+              "value": 0.52,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.9 Fig.S8后正文，658nm对应520nm",
+              "note": "直接采用作者正文数值，nm÷1000→μm；S7剖面横轴x，S8标量FWHM未另分x/y，故保留未分方向字段。不填理想358/391/483nm，不套二极管Strehl。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "0.520"
+            }
+          }
+        },
+        {
+          "id": "li2022_six2_na03_summary",
+          "model": "Li 2022 · D2mm 六色 NA0.3 · 汇总",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2022",
+          "specimen_id": "six2_na03",
+          "illumination_id": "aggregate",
+          "visible_light_use": true,
+          "measurement_scope": "Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.4–7 Large-scale inverse-designed polychromatic metalenses；Fig.3/4/5图注",
+              "note": "原文2mm×1000→2000μm。Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.3,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3/4/5图注与相应正文",
+              "note": "Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "TiO2鳍结构高600nm；不含基底，不把约210nm ALD沉积工艺厚度当最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，方格周期p=400nm",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "矩形各向异性单元与单元轴平行；径向参数布局/偏振转换共同实现作者所称偏振不敏感聚焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "作者报告偏振不敏感聚焦；各向异性单元的正交通道转换",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4结构/Jones矩阵段；SI p.7 Fig.S5及正文",
+              "note": "SI明确RGB 2mm/NA0.7分别测LCP→RCP、RCP→LCP及无偏振选择；其他配置不冒称也逐一完成相同三组测试。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3–5波长标签及图注",
+              "note": "Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "490/520/540/570/610/650 nm（离散六色汇总）"
+            },
+            "chromatic": {
+              "value": "六谱点最大互差500nm=0.5μm，作者称小于0.02%焦距",
+              "source": "li_inverse_2022",
+              "location": "PDF p.5末段；Fig.4c p.6",
+              "note": "保留作者报告及原始百分数文字，不反算精确设计焦距或分派成单谱点有符号Δf；Z轴零点为相对焦点坐标。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "实测PSF/线剖面及部分效率表可核；未取得定量MTF数表或可复算原始PSF",
+              "source": "li_inverse_si_2022",
+              "location": "SI pp.7–15 Fig.S5–S17/Tables S1–S2；主文p.10 Data/Code availability",
+              "note": "元胞库在Harvard内部受限非商业数据库，代码合理请求；正式附件目录只列SI及影片，无Source Data。元胞库不等于实测PSF；缺原始数组、物方采样、轴向步长及MTF裁剪/背景/归一化，未复算。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_si_2022",
+                "li_inverse_2022"
+              ]
+            },
+            "focus_variation_protocol": {
+              "value": "490/520/540/570/610/650nm六色实测轴向峰位互比；作者给最大两谱点差，未指定单参考波长。",
+              "source": "li_inverse_2022",
+              "location": "PDF p.5末段；Fig.4c p.6",
+              "note": "设计焦距、逐波长绝对焦距/符号、峰值拟合、轴向采样及误差未取得；不从NA、相对坐标图或百分数反推。六色NA0.3的横向PSF明确在共同焦面（主文p.6），其参考波长未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "focus_variation_um": {
+              "value": 0.5,
+              "source": "li_inverse_2022",
+              "location": "PDF p.5末段；Fig.4c p.6",
+              "note": "作者从实测PSF报告的跨谱点最大互差；本行是器件汇总，未复制到某个数值波长。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "approximate": false,
+              "display": "0.5（跨谱点最大差）",
+              "statistic": "maximum_pairwise_difference",
+              "sample_wavelengths_nm": [
+                490,
+                520,
+                540,
+                570,
+                610,
+                650
+              ],
+              "calculation_origin": "authors"
+            },
+            "illumination": {
+              "value": "超连续谱光源；六中心波长光谱FWHM范围4.5–7nm",
+              "source": "li_inverse_si_2022",
+              "location": "SI p.12 Fig.S13及正文；主文p.6",
+              "note": "范围来自作者测量，不逐点分派5nm常数；不当作器件连续消色差工作带宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_si_2022",
+                "li_inverse_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2022_six2_na03_scl_490",
+          "model": "Li 2022 · D2mm 六色 NA0.3 · 超连续谱 490nm",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2022",
+          "specimen_id": "six2_na03",
+          "illumination_id": "scl",
+          "visible_light_use": true,
+          "measurement_scope": "Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。 本行照明条件：超连续谱；六中心光谱FWHM范围4.5–7nm",
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.4–7 Large-scale inverse-designed polychromatic metalenses；Fig.3/4/5图注",
+              "note": "原文2mm×1000→2000μm。Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.3,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3/4/5图注与相应正文",
+              "note": "Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "TiO2鳍结构高600nm；不含基底，不把约210nm ALD沉积工艺厚度当最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，方格周期p=400nm",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "矩形各向异性单元与单元轴平行；径向参数布局/偏振转换共同实现作者所称偏振不敏感聚焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "作者报告偏振不敏感聚焦；各向异性单元的正交通道转换",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4结构/Jones矩阵段；SI p.7 Fig.S5及正文",
+              "note": "SI明确RGB 2mm/NA0.7分别测LCP→RCP、RCP→LCP及无偏振选择；其他配置不冒称也逐一完成相同三组测试。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 490,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3–5及SI相应谱点标签",
+              "note": "Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "超连续谱；六中心光谱FWHM范围4.5–7nm",
+              "source": "li_inverse_si_2022",
+              "location": "SI p.12 Fig.S13正文；主文p.6",
+              "note": "实际六离散中心；图4e–j为共同焦面，不指定未报告的参考波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_si_2022",
+                "li_inverse_2022"
+              ]
+            },
+            "fwhm_um": {
+              "value": 0.873,
+              "source": "li_inverse_2022",
+              "location": "PDF p.6 Fig.4e，直接印字FWHM: 873nm",
+              "note": "采用子图直接标签而非曲线估读；nm÷1000→μm。作者未将该单值分x/y；共同像面焦斑，不与六色NA0.7曲线混用。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "0.873"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 8.7,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.14 Table S1，Focusing efficiency行，490nm列（从左第1个数据列）",
+              "note": "表注明2mm、NA0.3、六波长实测；没有误差或重复数，不用模拟值或带内约8%概述代替。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_lambda_nm": {
+              "value": 490,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.14 Table S1，Wavelength行，490nm列",
+              "note": "实测效率所属离散设计波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_protocol": {
+              "value": "主文同名绝对聚焦效率定义：焦斑功率/入射功率；表S1未另列积分焦圈和功率采样面积",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4效率定义；SI p.14 Table S1",
+              "note": "SI未重述分母标定；积分半径/直径、评价焦面规则、偏振检出与入射功率面积仍缺。不改写为同孔径基底透过功率或r=3FWHM。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2022_six2_na03_scl_520",
+          "model": "Li 2022 · D2mm 六色 NA0.3 · 超连续谱 520nm",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2022",
+          "specimen_id": "six2_na03",
+          "illumination_id": "scl",
+          "visible_light_use": true,
+          "measurement_scope": "Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。 本行照明条件：超连续谱；六中心光谱FWHM范围4.5–7nm",
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.4–7 Large-scale inverse-designed polychromatic metalenses；Fig.3/4/5图注",
+              "note": "原文2mm×1000→2000μm。Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.3,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3/4/5图注与相应正文",
+              "note": "Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "TiO2鳍结构高600nm；不含基底，不把约210nm ALD沉积工艺厚度当最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，方格周期p=400nm",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "矩形各向异性单元与单元轴平行；径向参数布局/偏振转换共同实现作者所称偏振不敏感聚焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "作者报告偏振不敏感聚焦；各向异性单元的正交通道转换",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4结构/Jones矩阵段；SI p.7 Fig.S5及正文",
+              "note": "SI明确RGB 2mm/NA0.7分别测LCP→RCP、RCP→LCP及无偏振选择；其他配置不冒称也逐一完成相同三组测试。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 520,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3–5及SI相应谱点标签",
+              "note": "Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "超连续谱；六中心光谱FWHM范围4.5–7nm",
+              "source": "li_inverse_si_2022",
+              "location": "SI p.12 Fig.S13正文；主文p.6",
+              "note": "实际六离散中心；图4e–j为共同焦面，不指定未报告的参考波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_si_2022",
+                "li_inverse_2022"
+              ]
+            },
+            "fwhm_um": {
+              "value": 0.914,
+              "source": "li_inverse_2022",
+              "location": "PDF p.6 Fig.4f，直接印字FWHM: 914nm",
+              "note": "采用子图直接标签而非曲线估读；nm÷1000→μm。作者未将该单值分x/y；共同像面焦斑，不与六色NA0.7曲线混用。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "0.914"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 7.8,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.14 Table S1，Focusing efficiency行，520nm列（从左第2个数据列）",
+              "note": "表注明2mm、NA0.3、六波长实测；没有误差或重复数，不用模拟值或带内约8%概述代替。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_lambda_nm": {
+              "value": 520,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.14 Table S1，Wavelength行，520nm列",
+              "note": "实测效率所属离散设计波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_protocol": {
+              "value": "主文同名绝对聚焦效率定义：焦斑功率/入射功率；表S1未另列积分焦圈和功率采样面积",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4效率定义；SI p.14 Table S1",
+              "note": "SI未重述分母标定；积分半径/直径、评价焦面规则、偏振检出与入射功率面积仍缺。不改写为同孔径基底透过功率或r=3FWHM。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2022_six2_na03_scl_540",
+          "model": "Li 2022 · D2mm 六色 NA0.3 · 超连续谱 540nm",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2022",
+          "specimen_id": "six2_na03",
+          "illumination_id": "scl",
+          "visible_light_use": true,
+          "measurement_scope": "Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。 本行照明条件：超连续谱；六中心光谱FWHM范围4.5–7nm",
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.4–7 Large-scale inverse-designed polychromatic metalenses；Fig.3/4/5图注",
+              "note": "原文2mm×1000→2000μm。Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.3,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3/4/5图注与相应正文",
+              "note": "Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "TiO2鳍结构高600nm；不含基底，不把约210nm ALD沉积工艺厚度当最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，方格周期p=400nm",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "矩形各向异性单元与单元轴平行；径向参数布局/偏振转换共同实现作者所称偏振不敏感聚焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "作者报告偏振不敏感聚焦；各向异性单元的正交通道转换",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4结构/Jones矩阵段；SI p.7 Fig.S5及正文",
+              "note": "SI明确RGB 2mm/NA0.7分别测LCP→RCP、RCP→LCP及无偏振选择；其他配置不冒称也逐一完成相同三组测试。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 540,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3–5及SI相应谱点标签",
+              "note": "Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "超连续谱；六中心光谱FWHM范围4.5–7nm",
+              "source": "li_inverse_si_2022",
+              "location": "SI p.12 Fig.S13正文；主文p.6",
+              "note": "实际六离散中心；图4e–j为共同焦面，不指定未报告的参考波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_si_2022",
+                "li_inverse_2022"
+              ]
+            },
+            "fwhm_um": {
+              "value": 0.936,
+              "source": "li_inverse_2022",
+              "location": "PDF p.6 Fig.4g，直接印字FWHM: 936nm",
+              "note": "采用子图直接标签而非曲线估读；nm÷1000→μm。作者未将该单值分x/y；共同像面焦斑，不与六色NA0.7曲线混用。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "0.936"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 8.3,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.14 Table S1，Focusing efficiency行，540nm列（从左第3个数据列）",
+              "note": "表注明2mm、NA0.3、六波长实测；没有误差或重复数，不用模拟值或带内约8%概述代替。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_lambda_nm": {
+              "value": 540,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.14 Table S1，Wavelength行，540nm列",
+              "note": "实测效率所属离散设计波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_protocol": {
+              "value": "主文同名绝对聚焦效率定义：焦斑功率/入射功率；表S1未另列积分焦圈和功率采样面积",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4效率定义；SI p.14 Table S1",
+              "note": "SI未重述分母标定；积分半径/直径、评价焦面规则、偏振检出与入射功率面积仍缺。不改写为同孔径基底透过功率或r=3FWHM。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2022_six2_na03_scl_570",
+          "model": "Li 2022 · D2mm 六色 NA0.3 · 超连续谱 570nm",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2022",
+          "specimen_id": "six2_na03",
+          "illumination_id": "scl",
+          "visible_light_use": true,
+          "measurement_scope": "Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。 本行照明条件：超连续谱；六中心光谱FWHM范围4.5–7nm",
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.4–7 Large-scale inverse-designed polychromatic metalenses；Fig.3/4/5图注",
+              "note": "原文2mm×1000→2000μm。Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.3,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3/4/5图注与相应正文",
+              "note": "Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "TiO2鳍结构高600nm；不含基底，不把约210nm ALD沉积工艺厚度当最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，方格周期p=400nm",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "矩形各向异性单元与单元轴平行；径向参数布局/偏振转换共同实现作者所称偏振不敏感聚焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "作者报告偏振不敏感聚焦；各向异性单元的正交通道转换",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4结构/Jones矩阵段；SI p.7 Fig.S5及正文",
+              "note": "SI明确RGB 2mm/NA0.7分别测LCP→RCP、RCP→LCP及无偏振选择；其他配置不冒称也逐一完成相同三组测试。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 570,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3–5及SI相应谱点标签",
+              "note": "Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "超连续谱；六中心光谱FWHM范围4.5–7nm",
+              "source": "li_inverse_si_2022",
+              "location": "SI p.12 Fig.S13正文；主文p.6",
+              "note": "实际六离散中心；图4e–j为共同焦面，不指定未报告的参考波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_si_2022",
+                "li_inverse_2022"
+              ]
+            },
+            "fwhm_um": {
+              "value": 0.988,
+              "source": "li_inverse_2022",
+              "location": "PDF p.6 Fig.4h，直接印字FWHM: 988nm",
+              "note": "采用子图直接标签而非曲线估读；nm÷1000→μm。作者未将该单值分x/y；共同像面焦斑，不与六色NA0.7曲线混用。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "0.988"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 8.2,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.14 Table S1，Focusing efficiency行，570nm列（从左第4个数据列）",
+              "note": "表注明2mm、NA0.3、六波长实测；没有误差或重复数，不用模拟值或带内约8%概述代替。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_lambda_nm": {
+              "value": 570,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.14 Table S1，Wavelength行，570nm列",
+              "note": "实测效率所属离散设计波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_protocol": {
+              "value": "主文同名绝对聚焦效率定义：焦斑功率/入射功率；表S1未另列积分焦圈和功率采样面积",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4效率定义；SI p.14 Table S1",
+              "note": "SI未重述分母标定；积分半径/直径、评价焦面规则、偏振检出与入射功率面积仍缺。不改写为同孔径基底透过功率或r=3FWHM。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2022_six2_na03_scl_610",
+          "model": "Li 2022 · D2mm 六色 NA0.3 · 超连续谱 610nm",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2022",
+          "specimen_id": "six2_na03",
+          "illumination_id": "scl",
+          "visible_light_use": true,
+          "measurement_scope": "Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。 本行照明条件：超连续谱；六中心光谱FWHM范围4.5–7nm",
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.4–7 Large-scale inverse-designed polychromatic metalenses；Fig.3/4/5图注",
+              "note": "原文2mm×1000→2000μm。Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.3,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3/4/5图注与相应正文",
+              "note": "Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "TiO2鳍结构高600nm；不含基底，不把约210nm ALD沉积工艺厚度当最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，方格周期p=400nm",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "矩形各向异性单元与单元轴平行；径向参数布局/偏振转换共同实现作者所称偏振不敏感聚焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "作者报告偏振不敏感聚焦；各向异性单元的正交通道转换",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4结构/Jones矩阵段；SI p.7 Fig.S5及正文",
+              "note": "SI明确RGB 2mm/NA0.7分别测LCP→RCP、RCP→LCP及无偏振选择；其他配置不冒称也逐一完成相同三组测试。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 610,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3–5及SI相应谱点标签",
+              "note": "Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "超连续谱；六中心光谱FWHM范围4.5–7nm",
+              "source": "li_inverse_si_2022",
+              "location": "SI p.12 Fig.S13正文；主文p.6",
+              "note": "实际六离散中心；图4e–j为共同焦面，不指定未报告的参考波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_si_2022",
+                "li_inverse_2022"
+              ]
+            },
+            "fwhm_um": {
+              "value": 1.049,
+              "source": "li_inverse_2022",
+              "location": "PDF p.6 Fig.4i，直接印字FWHM: 1049nm",
+              "note": "采用子图直接标签而非曲线估读；nm÷1000→μm。作者未将该单值分x/y；共同像面焦斑，不与六色NA0.7曲线混用。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "1.049"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 8.1,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.14 Table S1，Focusing efficiency行，610nm列（从左第5个数据列）",
+              "note": "表注明2mm、NA0.3、六波长实测；没有误差或重复数，不用模拟值或带内约8%概述代替。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_lambda_nm": {
+              "value": 610,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.14 Table S1，Wavelength行，610nm列",
+              "note": "实测效率所属离散设计波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_protocol": {
+              "value": "主文同名绝对聚焦效率定义：焦斑功率/入射功率；表S1未另列积分焦圈和功率采样面积",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4效率定义；SI p.14 Table S1",
+              "note": "SI未重述分母标定；积分半径/直径、评价焦面规则、偏振检出与入射功率面积仍缺。不改写为同孔径基底透过功率或r=3FWHM。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2022_six2_na03_scl_650",
+          "model": "Li 2022 · D2mm 六色 NA0.3 · 超连续谱 650nm",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2022",
+          "specimen_id": "six2_na03",
+          "illumination_id": "scl",
+          "visible_light_use": true,
+          "measurement_scope": "Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。 本行照明条件：超连续谱；六中心光谱FWHM范围4.5–7nm",
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.4–7 Large-scale inverse-designed polychromatic metalenses；Fig.3/4/5图注",
+              "note": "原文2mm×1000→2000μm。Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.3,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3/4/5图注与相应正文",
+              "note": "Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "TiO2鳍结构高600nm；不含基底，不把约210nm ALD沉积工艺厚度当最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，方格周期p=400nm",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "矩形各向异性单元与单元轴平行；径向参数布局/偏振转换共同实现作者所称偏振不敏感聚焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "作者报告偏振不敏感聚焦；各向异性单元的正交通道转换",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4结构/Jones矩阵段；SI p.7 Fig.S5及正文",
+              "note": "SI明确RGB 2mm/NA0.7分别测LCP→RCP、RCP→LCP及无偏振选择；其他配置不冒称也逐一完成相同三组测试。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 650,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3–5及SI相应谱点标签",
+              "note": "Li2022同一研究，D2000μm/NA0.3实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "超连续谱；六中心光谱FWHM范围4.5–7nm",
+              "source": "li_inverse_si_2022",
+              "location": "SI p.12 Fig.S13正文；主文p.6",
+              "note": "实际六离散中心；图4e–j为共同焦面，不指定未报告的参考波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_si_2022",
+                "li_inverse_2022"
+              ]
+            },
+            "fwhm_um": {
+              "value": 1.074,
+              "source": "li_inverse_2022",
+              "location": "PDF p.6 Fig.4j，直接印字FWHM: 1074nm",
+              "note": "采用子图直接标签而非曲线估读；nm÷1000→μm。作者未将该单值分x/y；共同像面焦斑，不与六色NA0.7曲线混用。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "1.074"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 7.2,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.14 Table S1，Focusing efficiency行，650nm列（从左第6个数据列）",
+              "note": "表注明2mm、NA0.3、六波长实测；没有误差或重复数，不用模拟值或带内约8%概述代替。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_lambda_nm": {
+              "value": 650,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.14 Table S1，Wavelength行，650nm列",
+              "note": "实测效率所属离散设计波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_protocol": {
+              "value": "主文同名绝对聚焦效率定义：焦斑功率/入射功率；表S1未另列积分焦圈和功率采样面积",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4效率定义；SI p.14 Table S1",
+              "note": "SI未重述分母标定；积分半径/直径、评价焦面规则、偏振检出与入射功率面积仍缺。不改写为同孔径基底透过功率或r=3FWHM。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2022_six2_na07_summary",
+          "model": "Li 2022 · D2mm 六色 NA0.7 · 汇总",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2022",
+          "specimen_id": "six2_na07",
+          "illumination_id": "aggregate",
+          "visible_light_use": true,
+          "measurement_scope": "Li2022同一研究，D2000μm/NA0.7实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.4–7 Large-scale inverse-designed polychromatic metalenses；Fig.3/4/5图注",
+              "note": "原文2mm×1000→2000μm。Li2022同一研究，D2000μm/NA0.7实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3/4/5图注与相应正文",
+              "note": "Li2022同一研究，D2000μm/NA0.7实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "TiO2鳍结构高600nm；不含基底，不把约210nm ALD沉积工艺厚度当最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，方格周期p=400nm",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "矩形各向异性单元与单元轴平行；径向参数布局/偏振转换共同实现作者所称偏振不敏感聚焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "作者报告偏振不敏感聚焦；各向异性单元的正交通道转换",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4结构/Jones矩阵段；SI p.7 Fig.S5及正文",
+              "note": "SI明确RGB 2mm/NA0.7分别测LCP→RCP、RCP→LCP及无偏振选择；其他配置不冒称也逐一完成相同三组测试。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3–5波长标签及图注",
+              "note": "Li2022同一研究，D2000μm/NA0.7实制六色镜，离散490/520/540/570/610/650nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "490/520/540/570/610/650 nm（离散六色汇总）"
+            },
+            "chromatic": {
+              "value": "已测六色PSF/宽度曲线，未报告可单独归此镜的数值焦移",
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–6 Fig.4d；SI pp.13–14 Fig.S14/S15",
+              "note": "保留作者报告及原始百分数文字，不反算精确设计焦距或分派成单谱点有符号Δf；Z轴零点为相对焦点坐标。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "实测PSF/线剖面及部分效率表可核；未取得定量MTF数表或可复算原始PSF",
+              "source": "li_inverse_si_2022",
+              "location": "SI pp.7–15 Fig.S5–S17/Tables S1–S2；主文p.10 Data/Code availability",
+              "note": "元胞库在Harvard内部受限非商业数据库，代码合理请求；正式附件目录只列SI及影片，无Source Data。元胞库不等于实测PSF；缺原始数组、物方采样、轴向步长及MTF裁剪/背景/归一化，未复算。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_si_2022",
+                "li_inverse_2022"
+              ]
+            },
+            "focus_variation_protocol": {
+              "value": "490/520/540/570/610/650nm六色实测轴向峰位互比；此配置最大焦差数值未报告。",
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–6 Fig.4d；SI pp.13–14 Fig.S14/S15",
+              "note": "设计焦距、逐波长绝对焦距/符号、峰值拟合、轴向采样及误差未取得；不从NA、相对坐标图或百分数反推。六色NA0.3的横向PSF明确在共同焦面（主文p.6），其参考波长未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "超连续谱光源；六中心波长光谱FWHM范围4.5–7nm",
+              "source": "li_inverse_si_2022",
+              "location": "SI p.12 Fig.S13及正文；主文p.6",
+              "note": "范围来自作者测量，不逐点分派5nm常数；不当作器件连续消色差工作带宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_si_2022",
+                "li_inverse_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2022_rgb10_na03_summary",
+          "model": "Li 2022 · D10mm RGB NA0.3 · 汇总",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2022",
+          "specimen_id": "rgb10_na03",
+          "illumination_id": "aggregate",
+          "visible_light_use": true,
+          "measurement_scope": "Li2022同一研究，D10000μm/NA0.3实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+          "values": {
+            "diameter_um": {
+              "value": 10000,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.4–7 Large-scale inverse-designed polychromatic metalenses；Fig.3/4/5图注",
+              "note": "原文10mm×1000→10000μm。Li2022同一研究，D10000μm/NA0.3实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.3,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3/4/5图注与相应正文",
+              "note": "Li2022同一研究，D10000μm/NA0.3实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "TiO2鳍结构高600nm；不含基底，不把约210nm ALD沉积工艺厚度当最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，方格周期p=400nm",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "矩形各向异性单元与单元轴平行；径向参数布局/偏振转换共同实现作者所称偏振不敏感聚焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "作者报告偏振不敏感聚焦；各向异性单元的正交通道转换",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4结构/Jones矩阵段；SI p.7 Fig.S5及正文",
+              "note": "SI明确RGB 2mm/NA0.7分别测LCP→RCP、RCP→LCP及无偏振选择；其他配置不冒称也逐一完成相同三组测试。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3–5波长标签及图注",
+              "note": "Li2022同一研究，D10000μm/NA0.3实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "488/532/658 nm（离散RGB汇总）"
+            },
+            "chromatic": {
+              "value": "三色最大互差约4.5μm，作者称约0.03%设计焦距",
+              "source": "li_inverse_2022",
+              "location": "PDF p.7厘米级聚焦表征段；Fig.5c",
+              "note": "保留作者报告及原始百分数文字，不反算精确设计焦距或分派成单谱点有符号Δf；Z轴零点为相对焦点坐标。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "实测PSF/线剖面及部分效率表可核；未取得定量MTF数表或可复算原始PSF",
+              "source": "li_inverse_si_2022",
+              "location": "SI pp.7–15 Fig.S5–S17/Tables S1–S2；主文p.10 Data/Code availability",
+              "note": "元胞库在Harvard内部受限非商业数据库，代码合理请求；正式附件目录只列SI及影片，无Source Data。元胞库不等于实测PSF；缺原始数组、物方采样、轴向步长及MTF裁剪/背景/归一化，未复算。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_si_2022",
+                "li_inverse_2022"
+              ]
+            },
+            "focus_variation_protocol": {
+              "value": "488/532/658nm三色实测轴向峰位互比；作者给最大两谱点差，未指定单参考波长。",
+              "source": "li_inverse_2022",
+              "location": "PDF p.7厘米级聚焦表征段；Fig.5c",
+              "note": "设计焦距、逐波长绝对焦距/符号、峰值拟合、轴向采样及误差未取得；不从NA、相对坐标图或百分数反推。六色NA0.3的横向PSF明确在共同焦面（主文p.6），其参考波长未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "focus_variation_um": {
+              "value": 4.5,
+              "source": "li_inverse_2022",
+              "location": "PDF p.7厘米级聚焦表征段；Fig.5c",
+              "note": "作者从实测PSF报告的跨谱点最大互差；本行是器件汇总，未复制到某个数值波长。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "approximate": true,
+              "display": "约4.5（跨谱点最大差）",
+              "statistic": "maximum_pairwise_difference",
+              "sample_wavelengths_nm": [
+                488,
+                532,
+                658
+              ],
+              "calculation_origin": "authors"
+            },
+            "illumination": {
+              "value": "离散488/532/658nm；1cm口径照明不均匀",
+              "source": "li_inverse_si_2022",
+              "location": "SI p.15 Fig.S17正文；主文p.7",
+              "note": "该配置正文未逐色单列光谱线宽；不从2mm镜的二极管或超连续谱测量自动复制。作者将焦斑不对称归于非均匀照明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_si_2022",
+                "li_inverse_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2022_rgb10_na03_rgb_488",
+          "model": "Li 2022 · D10mm RGB NA0.3 · RGB 488nm",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2022",
+          "specimen_id": "rgb10_na03",
+          "illumination_id": "rgb",
+          "visible_light_use": true,
+          "measurement_scope": "Li2022同一研究，D10000μm/NA0.3实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。 本行照明条件：488/532/658nm离散RGB；非均匀照明覆盖1cm口径",
+          "values": {
+            "diameter_um": {
+              "value": 10000,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.4–7 Large-scale inverse-designed polychromatic metalenses；Fig.3/4/5图注",
+              "note": "原文10mm×1000→10000μm。Li2022同一研究，D10000μm/NA0.3实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.3,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3/4/5图注与相应正文",
+              "note": "Li2022同一研究，D10000μm/NA0.3实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "TiO2鳍结构高600nm；不含基底，不把约210nm ALD沉积工艺厚度当最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，方格周期p=400nm",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "矩形各向异性单元与单元轴平行；径向参数布局/偏振转换共同实现作者所称偏振不敏感聚焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "作者报告偏振不敏感聚焦；各向异性单元的正交通道转换",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4结构/Jones矩阵段；SI p.7 Fig.S5及正文",
+              "note": "SI明确RGB 2mm/NA0.7分别测LCP→RCP、RCP→LCP及无偏振选择；其他配置不冒称也逐一完成相同三组测试。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 488,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3–5及SI相应谱点标签",
+              "note": "Li2022同一研究，D10000μm/NA0.3实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "488/532/658nm离散RGB；非均匀照明覆盖1cm口径",
+              "source": "li_inverse_si_2022",
+              "location": "SI p.15 Fig.S17正文；主文p.7",
+              "note": "本配置未逐色列出光谱线宽，不从2mm照明条件转移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_si_2022",
+                "li_inverse_2022"
+              ]
+            },
+            "strehl": {
+              "value": 0.9,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.15 Fig.S17后正文，依488/532/658nm顺序；主文p.7 Fig.5d印字",
+              "note": "作者由实测PSF/Airy比较计算；非均匀入射导致焦斑轻微不对称是作者解释，归一化/功率匹配细节未完整给出。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_si_2022",
+                "li_inverse_2022"
+              ],
+              "display": "0.90"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 16.1,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.15 Table S2，Focusing efficiency行，488nm列（从左第1个数据列）",
+              "note": "实测效率原表；不填Table S3的模拟23.8%，也不把主文约15%平均分派为精确单色值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_lambda_nm": {
+              "value": 488,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.15 Table S2，Wavelength行，488nm列",
+              "note": "该效率原表所属RGB中心波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_protocol": {
+              "value": "主文同名绝对聚焦效率定义：焦斑功率/入射功率；表S2未另列焦圈、功率采样面积及非均匀照明标定",
+              "source": "li_inverse_2022",
+              "location": "PDF pp.4/7效率定义及厘米镜段；SI p.15 Table S2",
+              "note": "保留原表数值与作者分母，跨配置适用的积分区域/焦面选择/功率面积待补。模拟与实测效率差异不能单独归因残余色差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2022_rgb10_na03_rgb_532",
+          "model": "Li 2022 · D10mm RGB NA0.3 · RGB 532nm",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2022",
+          "specimen_id": "rgb10_na03",
+          "illumination_id": "rgb",
+          "visible_light_use": true,
+          "measurement_scope": "Li2022同一研究，D10000μm/NA0.3实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。 本行照明条件：488/532/658nm离散RGB；非均匀照明覆盖1cm口径",
+          "values": {
+            "diameter_um": {
+              "value": 10000,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.4–7 Large-scale inverse-designed polychromatic metalenses；Fig.3/4/5图注",
+              "note": "原文10mm×1000→10000μm。Li2022同一研究，D10000μm/NA0.3实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.3,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3/4/5图注与相应正文",
+              "note": "Li2022同一研究，D10000μm/NA0.3实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "TiO2鳍结构高600nm；不含基底，不把约210nm ALD沉积工艺厚度当最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，方格周期p=400nm",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "矩形各向异性单元与单元轴平行；径向参数布局/偏振转换共同实现作者所称偏振不敏感聚焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "作者报告偏振不敏感聚焦；各向异性单元的正交通道转换",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4结构/Jones矩阵段；SI p.7 Fig.S5及正文",
+              "note": "SI明确RGB 2mm/NA0.7分别测LCP→RCP、RCP→LCP及无偏振选择；其他配置不冒称也逐一完成相同三组测试。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3–5及SI相应谱点标签",
+              "note": "Li2022同一研究，D10000μm/NA0.3实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "488/532/658nm离散RGB；非均匀照明覆盖1cm口径",
+              "source": "li_inverse_si_2022",
+              "location": "SI p.15 Fig.S17正文；主文p.7",
+              "note": "本配置未逐色列出光谱线宽，不从2mm照明条件转移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_si_2022",
+                "li_inverse_2022"
+              ]
+            },
+            "strehl": {
+              "value": 0.92,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.15 Fig.S17后正文，依488/532/658nm顺序；主文p.7 Fig.5e印字",
+              "note": "作者由实测PSF/Airy比较计算；非均匀入射导致焦斑轻微不对称是作者解释，归一化/功率匹配细节未完整给出。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_si_2022",
+                "li_inverse_2022"
+              ],
+              "display": "0.92"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 13.6,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.15 Table S2，Focusing efficiency行，532nm列（从左第2个数据列）",
+              "note": "实测效率原表；不填Table S3的模拟23.8%，也不把主文约15%平均分派为精确单色值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_lambda_nm": {
+              "value": 532,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.15 Table S2，Wavelength行，532nm列",
+              "note": "该效率原表所属RGB中心波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_protocol": {
+              "value": "主文同名绝对聚焦效率定义：焦斑功率/入射功率；表S2未另列焦圈、功率采样面积及非均匀照明标定",
+              "source": "li_inverse_2022",
+              "location": "PDF pp.4/7效率定义及厘米镜段；SI p.15 Table S2",
+              "note": "保留原表数值与作者分母，跨配置适用的积分区域/焦面选择/功率面积待补。模拟与实测效率差异不能单独归因残余色差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2022_rgb10_na03_rgb_658",
+          "model": "Li 2022 · D10mm RGB NA0.3 · RGB 658nm",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2022",
+          "specimen_id": "rgb10_na03",
+          "illumination_id": "rgb",
+          "visible_light_use": true,
+          "measurement_scope": "Li2022同一研究，D10000μm/NA0.3实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。 本行照明条件：488/532/658nm离散RGB；非均匀照明覆盖1cm口径",
+          "values": {
+            "diameter_um": {
+              "value": 10000,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.4–7 Large-scale inverse-designed polychromatic metalenses；Fig.3/4/5图注",
+              "note": "原文10mm×1000→10000μm。Li2022同一研究，D10000μm/NA0.3实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.3,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3/4/5图注与相应正文",
+              "note": "Li2022同一研究，D10000μm/NA0.3实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "TiO2鳍结构高600nm；不含基底，不把约210nm ALD沉积工艺厚度当最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，方格周期p=400nm",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4器件结构段；p.10 Methods/Fabrication",
+              "note": "矩形各向异性单元与单元轴平行；径向参数布局/偏振转换共同实现作者所称偏振不敏感聚焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "作者报告偏振不敏感聚焦；各向异性单元的正交通道转换",
+              "source": "li_inverse_2022",
+              "location": "PDF p.4结构/Jones矩阵段；SI p.7 Fig.S5及正文",
+              "note": "SI明确RGB 2mm/NA0.7分别测LCP→RCP、RCP→LCP及无偏振选择；其他配置不冒称也逐一完成相同三组测试。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 658,
+              "source": "li_inverse_2022",
+              "location": "PDF pp.5–7 Fig.3–5及SI相应谱点标签",
+              "note": "Li2022同一研究，D10000μm/NA0.3实制RGB镜，离散488/532/658nm；同一specimen的谱点/光源测量不计新实物。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "488/532/658nm离散RGB；非均匀照明覆盖1cm口径",
+              "source": "li_inverse_si_2022",
+              "location": "SI p.15 Fig.S17正文；主文p.7",
+              "note": "本配置未逐色列出光谱线宽，不从2mm照明条件转移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_si_2022",
+                "li_inverse_2022"
+              ]
+            },
+            "strehl": {
+              "value": 0.84,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.15 Fig.S17后正文，依488/532/658nm顺序；主文p.7 Fig.5f印字",
+              "note": "作者由实测PSF/Airy比较计算；非均匀入射导致焦斑轻微不对称是作者解释，归一化/功率匹配细节未完整给出。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_si_2022",
+                "li_inverse_2022"
+              ],
+              "display": "0.84"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 15.8,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.15 Table S2，Focusing efficiency行，658nm列（从左第3个数据列）",
+              "note": "实测效率原表；不填Table S3的模拟23.8%，也不把主文约15%平均分派为精确单色值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_lambda_nm": {
+              "value": 658,
+              "source": "li_inverse_si_2022",
+              "location": "SI p.15 Table S2，Wavelength行，658nm列",
+              "note": "该效率原表所属RGB中心波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_protocol": {
+              "value": "主文同名绝对聚焦效率定义：焦斑功率/入射功率；表S2未另列焦圈、功率采样面积及非均匀照明标定",
+              "source": "li_inverse_2022",
+              "location": "PDF pp.4/7效率定义及厘米镜段；SI p.15 Table S2",
+              "note": "保留原表数值与作者分母，跨配置适用的积分区域/焦面选择/功率面积待补。模拟与实测效率差异不能单独归因残余色差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_inverse_2022",
+                "li_inverse_si_2022"
+              ]
+            }
+          }
         }
       ],
-      "scope": "12项原始研究、32个器件/系统配置、90条记录。新增Chen2019消色差/普通色散对照与独立成像配置，Li2021两个D2mm离散RGB实制配置及NA0.7三色PSF；跨波长汇总与逐谱点测量分开。连续工作波段、离散RGB、模拟/实测、方向/效率协议与缺口分别保留；谱点不算独立器件或研究。",
+      "scope": "13项原始研究、36个器件/系统配置、109条记录。连续工作波段与离散RGB/六色分别标明；同一实物的谱点、光源条件和跨波长汇总共用器件标识。光源带宽、实测/模拟、焦斑方向、Strehl归一化与效率协议/缺口分别保留，不把未知值补零。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
