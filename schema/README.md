@@ -37,3 +37,5 @@
 设备材料可用`catalog_source`复用目录材料ID，跨域同论文不产生重复主文或SI。完整校验/构建同时检查别名目标、DOI与主文/SI归属；页面模型也拒绝不匹配。`sample_set_id`区分同结构配置的样品队列/选定单镜；单格`sample_size`和`statistic`保留原文n与均值，未知误差不补SD。
 
 `operation_efficiency_at_lambda_pct`和`operation_efficiency_band_mean_pct`保留作者Operation效率，必须有独立`operation_efficiency_protocol`，分别绑定实际波长或工作范围/带内统计；不能混入聚焦效率字段。`reported_error: {type: SD | not_specified, value, sample_size: null | n}`允许作者报告±但未给n的情形，未知n显式null、误差非负；定义不明不能升级为SD。`display`保留原文±和约值，散点读数也显示该±。旧`uncertainty`的已知n/SD规则保持。
+
+`focus_variation_pct`保存作者实测焦点的百分比variation，沿用`focus_variation_um`的实际谱点、协议、作者计算与汇总约束；另保留`denominator`和`reference_wavelength_nm`/`reference_focal_um`（未知显式null）。`denominator: not_defined`不允许解释成已知分母；不能由百分数倒算μm、把作者中心焦点复制为各波长精确焦距，或和RMS/最大互差直接混用。原作冲突参数使用null+display/note保存，不选择一个值打点。

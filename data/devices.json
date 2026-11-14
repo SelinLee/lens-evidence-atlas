@@ -446,6 +446,33 @@
       "kind": "supplementary_material",
       "scope": "正式15页SI，读设计/制造与S1/S3/S4/S5相关内容，视觉核PDF pp.3–4、8–10（关键S3/S4 p.8/9）。S3有14轴向谱点与焦距/效率/FWHM曲线；S4为PSF Fourier transform所得MTF，PSF输入实测/模拟、单镜/系统归属未单独说明。未读曲线取数、未复算MTF，原始PSF/横向采样仍缺。",
       "checked_on": "2026-11-14"
+    },
+    {
+      "id": "zhang_onchip_2025",
+      "title": "Zhang et al. (2025): On-chip integration of achromatic metalens arrays",
+      "doi": "10.1038/s41467-025-62539-7",
+      "url": "https://www.nature.com/articles/s41467-025-62539-7",
+      "kind": "peer_reviewed_paper",
+      "scope": "正式网页/8页主文，读取摘要、设计、单镜表征、两种集成及Methods/Data/Code availability；视觉核PDF pp.2、4–7。Fig.1d模拟和1e实测效率分开，中心焦点97.33μm与5% variation不分派成6个实测焦距；93.5/100μm设计声明冲突保留。",
+      "checked_on": "2026-11-14"
+    },
+    {
+      "id": "zhang_onchip_si_2025",
+      "publication_source": "zhang_onchip_2025",
+      "title": "Zhang et al. (2025): Supplementary Information — single lens, mounted array and direct chip fabrication",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-025-62539-7/MediaObjects/41467_2025_62539_MOESM1_ESM.pdf",
+      "kind": "supplementary_material",
+      "scope": "33页SI，限定读取Note6–12的测量/焦斑/阵列/重建/直接制备，视觉核pp.20–23、25、30–31。S16/S18只核坐标/波长和测量归属，不读图估值；S18a/b的535nm、S18c的540nm及b轴μm/mm冲突保留。TableS1不作其他论文数值依据。",
+      "checked_on": "2026-11-14"
+    },
+    {
+      "id": "zhang_onchip_review_2025",
+      "publication_source": "zhang_onchip_2025",
+      "title": "Zhang et al. (2025): Peer Review File — selected author responses",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-025-62539-7/MediaObjects/41467_2025_62539_MOESM3_ESM.pdf",
+      "kind": "supplementary_material",
+      "scope": "公开透明审稿文件，限定文本检索/读取pp.21–24的安装式/直接式集成、93.5/100/125μm与NA声明及p.34图像拼接回应；未冒称逐页精读，未从审稿版本替代正式图表提数。未核到原始PSF、MTF或逐波长数表；参数差异未得到消歧。",
+      "checked_on": "2026-11-14"
     }
   ],
   "domains": {
@@ -3494,6 +3521,22 @@
               "location": "PDF p.2/印刷p.228效率段；SI p.8 S3图注"
             }
           ]
+        },
+        {
+          "id": "focus_variation_pct",
+          "label": "作者报告焦距variation（%；定义见协议）",
+          "numeric": true,
+          "definition": "作者从实测焦点报告的带内百分比variation；参考分母未定义时明确保留未知，不改称RMS/峰峰焦差或逐点有符号焦移。",
+          "conditions": "同一器件、实际谱点、参考波长/焦距与分母、聚合公式及轴向采样；未知分母不得换算μm或直接排名。",
+          "definition_refs": [
+            {
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d对应正文；p.7 Optical characterization"
+            }
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         }
       ],
       "rows": [
@@ -24386,6 +24429,2479 @@
                   1
                 ]
               }
+            }
+          }
+        },
+        {
+          "id": "zhang2025_unit_summary",
+          "model": "Zhang 2025 · 30μm单镜 · 带内汇总",
+          "study_id": "zhang2025",
+          "specimen_id": "unit_30",
+          "module": "",
+          "variant": "可见光Si3N4消色差单镜/阵列研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "独立单镜NA0.155，实测聚焦/焦斑与作者带内汇总；不与90μm阵列共用效率或焦距。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.2 Fig.1图注；p.4 Fig.3及表征正文",
+              "note": "实制单镜沿用Fig.1设计的名义口径，非SEM独立尺寸计量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.155,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3标题/正文",
+              "note": "单镜设计NA，不用收集物镜NA0.8替代。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3对应正文；SI p.30 Note12；Peer Review pp.22/24相关回应（文本核）",
+              "note": "主文写F93.5μm，SI回指Fig.3却写100μm；审稿回应未消歧，不选择单一值打点。公开审稿相关回应仍含100/93.5声明，未提供差异的消歧说明。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "主文93.5；SI100（待消歧）",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025",
+                "zhang_onchip_review_2025"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 460,
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.4–5 单镜表征/成像段",
+              "note": "作者可见光工作范围；六谱点不等于所有波长均逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 650,
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.4–5 单镜表征/成像段",
+              "note": "与460nm下限共同保存工作范围，实际谱点单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d/e标签",
+              "note": "实测谱点460/488/540/580/610/650nm；汇总行不分派单值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "460/488/540/580/610/650nm"
+            },
+            "height_nm": {
+              "value": 1300,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4制备段；p.6 Methods/Film deposition",
+              "note": "Si3N4名义厚度；43.33高宽比来自30nm宽测试光栅，不能视为所有透镜单元的高宽比。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si3N4多形状C4对称meta-units / K9光学玻璃；period350nm",
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.2、6 Methods/Numerical simulations与Film deposition",
+              "note": "结构库高度1300nm、周期350nm；低温PECVD工艺不等于整个器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "未偏振照明；C4旋转对称设计",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.2设计段；p.4单镜光学表征段",
+              "note": "作者偏振不敏感设计；未将其当所有偏振逐项测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "SuperK Fianium FIU-15超连续谱 + 带通/颜色滤片",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.20 Note6/Fig.S12；主文p.4",
+              "note": "未给滤片线宽；轴向0.1μm步长不是横向像素采样。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d及表征段",
+              "note": "作者汇总称焦点97.33μm附近、variation5%；没有六谱点原始焦距，不将97.33复制给每个波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "逐点数表未公开"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.23 Note7/Fig.S16b",
+              "note": "Measured曲线横轴Wavelength(nm)、纵轴FWHM(μm)，与Theory分开；未读图估数，方向/评价焦面与原始PSF采样仍缺。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "仅Measured曲线"
+            },
+            "strehl": {
+              "value": null,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4表征段；SI p.23 S16a",
+              "note": "正文概述0.88 across entire visible spectrum，S16a实际随波长变化；未定义此0.88的聚合，不能填为每个谱点精确值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "作者称0.88；逐点仅曲线",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "分子：焦面半径3×FWHM圆内的透射功率；分母：入射光穿过与透镜同半径圆区域的功率（主文p.7 Optical characterization）。入射为未偏振超连续谱+带通滤片；100×/NA0.8物镜+20cm镜头收集。滤片光谱线宽、相机横向物方采样、背景/裁剪和功率校准未给；轴向扫描步长0.1μm。",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.7 Optical characterization；SI p.20 Note6",
+              "note": "Fig.1e红方块实测与蓝圆点模拟分开；未将数值模拟或平均效率填给每个谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "作者报告焦点97.33μm附近、variation5%；无逐点f/有符号轴向焦移/横向色差数表",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d/e及表征段",
+              "note": "97.33μm的聚合未定义，5%分母/最大互差或RMS未定义；与设计93.5μm之差不作为色差。图中白虚线为numerical focal length。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "Fig.1e实测效率；S16a/b Strehl/FWHM曲线；本轮未核到MTF曲线或数组",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.2 Fig.1e；SI p.23 S16；PDF p.7 Data/Code availability",
+              "note": "效率曲线x波长nm/y效率%；S16a为无量纲Strehl，b为μm。主文p.7 Data/Code均需向通讯作者请求；正式附件为SI/影片/审稿文件，未列Source Data。本轮主文/SI相关图、审稿相关回应、作者关联主页/实验室出版列表、DataCite与GitHub精确查询中未核到原始PSF/MTF/逐波长数表。缺原始二维PSF、横向物方像素尺度、裁剪/背景/归一化、场点和方向；没有独立复算MTF。检索范围见docs/ZHANG_ONCHIP_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "efficiency_band_mean_pct": {
+              "value": 80.39,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4表征末段；p.1 Abstract",
+              "note": "作者实验带内平均效率；谱权重/平均公式/重复样本量与误差未给；不分派为逐波长效率。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "statistic": "band_mean"
+            },
+            "focus_variation_pct": {
+              "value": 5,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d对应正文，97.33μm away ... variation of5%",
+              "note": "作者实测焦点的带内variation；公式、参考分母与聚合未知，不称RMS/峰峰值，不换算成μm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "statistic": "author_reported_band_variation",
+              "sample_wavelengths_nm": [
+                460,
+                488,
+                540,
+                580,
+                610,
+                650
+              ],
+              "calculation_origin": "authors",
+              "reference_wavelength_nm": null,
+              "reference_focal_um": null,
+              "denominator": "not_defined"
+            },
+            "focus_variation_protocol": {
+              "value": "六实测谱点460/488/540/580/610/650nm，轴向扫描0.1μm；作者称焦点距Si3N4透镜97.33μm附近、variation5%。未定义5%的分母、参考波长/焦面、最大差/RMS或97.33的聚合；未由5%反算μm，也未从设计偏置推色差。",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d正文；p.7 Optical characterization；SI p.20 Note6",
+              "note": "保留作者原始汇总，不当逐点有符号焦移或固定焦面全场色差证据。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhang2025_unit_460",
+          "model": "Zhang 2025 · 30μm单镜 · 460nm",
+          "study_id": "zhang2025",
+          "specimen_id": "unit_30",
+          "module": "",
+          "variant": "可见光Si3N4消色差单镜/阵列研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.3实测光谱点；S16仅曲线，逐点数值留空；带内80.39%/5%仅保存在汇总。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.2 Fig.1图注；p.4 Fig.3及表征正文",
+              "note": "实制单镜沿用Fig.1设计的名义口径，非SEM独立尺寸计量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.155,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3标题/正文",
+              "note": "单镜设计NA，不用收集物镜NA0.8替代。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3对应正文；SI p.30 Note12；Peer Review pp.22/24相关回应（文本核）",
+              "note": "主文写F93.5μm，SI回指Fig.3却写100μm；审稿回应未消歧，不选择单一值打点。公开审稿相关回应仍含100/93.5声明，未提供差异的消歧说明。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "主文93.5；SI100（待消歧）",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025",
+                "zhang_onchip_review_2025"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 460,
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.4–5 单镜表征/成像段",
+              "note": "作者可见光工作范围；六谱点不等于所有波长均逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 650,
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.4–5 单镜表征/成像段",
+              "note": "与460nm下限共同保存工作范围，实际谱点单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 460,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d/e第1谱点标签",
+              "note": "同一单镜的实测轴向/横向强度图，不是另一个物理器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 1300,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4制备段；p.6 Methods/Film deposition",
+              "note": "Si3N4名义厚度；43.33高宽比来自30nm宽测试光栅，不能视为所有透镜单元的高宽比。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si3N4多形状C4对称meta-units / K9光学玻璃；period350nm",
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.2、6 Methods/Numerical simulations与Film deposition",
+              "note": "结构库高度1300nm、周期350nm；低温PECVD工艺不等于整个器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "未偏振照明；C4旋转对称设计",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.2设计段；p.4单镜光学表征段",
+              "note": "作者偏振不敏感设计；未将其当所有偏振逐项测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "SuperK Fianium FIU-15超连续谱 + 带通/颜色滤片",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.20 Note6/Fig.S12；主文p.4",
+              "note": "未给滤片线宽；轴向0.1μm步长不是横向像素采样。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d及表征段",
+              "note": "作者汇总称焦点97.33μm附近、variation5%；没有六谱点原始焦距，不将97.33复制给每个波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "逐点数表未公开"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.23 Note7/Fig.S16b",
+              "note": "Measured曲线横轴Wavelength(nm)、纵轴FWHM(μm)，与Theory分开；未读图估数，方向/评价焦面与原始PSF采样仍缺。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "仅Measured曲线"
+            },
+            "strehl": {
+              "value": null,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4表征段；SI p.23 S16a",
+              "note": "正文概述0.88 across entire visible spectrum，S16a实际随波长变化；未定义此0.88的聚合，不能填为每个谱点精确值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "作者称0.88；逐点仅曲线",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "分子：焦面半径3×FWHM圆内的透射功率；分母：入射光穿过与透镜同半径圆区域的功率（主文p.7 Optical characterization）。入射为未偏振超连续谱+带通滤片；100×/NA0.8物镜+20cm镜头收集。滤片光谱线宽、相机横向物方采样、背景/裁剪和功率校准未给；轴向扫描步长0.1μm。",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.7 Optical characterization；SI p.20 Note6",
+              "note": "Fig.1e红方块实测与蓝圆点模拟分开；未将数值模拟或平均效率填给每个谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "作者报告焦点97.33μm附近、variation5%；无逐点f/有符号轴向焦移/横向色差数表",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d/e及表征段",
+              "note": "97.33μm的聚合未定义，5%分母/最大互差或RMS未定义；与设计93.5μm之差不作为色差。图中白虚线为numerical focal length。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "Fig.1e实测效率；S16a/b Strehl/FWHM曲线；本轮未核到MTF曲线或数组",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.2 Fig.1e；SI p.23 S16；PDF p.7 Data/Code availability",
+              "note": "效率曲线x波长nm/y效率%；S16a为无量纲Strehl，b为μm。主文p.7 Data/Code均需向通讯作者请求；正式附件为SI/影片/审稿文件，未列Source Data。本轮主文/SI相关图、审稿相关回应、作者关联主页/实验室出版列表、DataCite与GitHub精确查询中未核到原始PSF/MTF/逐波长数表。缺原始二维PSF、横向物方像素尺度、裁剪/背景/归一化、场点和方向；没有独立复算MTF。检索范围见docs/ZHANG_ONCHIP_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhang2025_unit_488",
+          "model": "Zhang 2025 · 30μm单镜 · 488nm",
+          "study_id": "zhang2025",
+          "specimen_id": "unit_30",
+          "module": "",
+          "variant": "可见光Si3N4消色差单镜/阵列研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.3实测光谱点；S16仅曲线，逐点数值留空；带内80.39%/5%仅保存在汇总。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.2 Fig.1图注；p.4 Fig.3及表征正文",
+              "note": "实制单镜沿用Fig.1设计的名义口径，非SEM独立尺寸计量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.155,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3标题/正文",
+              "note": "单镜设计NA，不用收集物镜NA0.8替代。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3对应正文；SI p.30 Note12；Peer Review pp.22/24相关回应（文本核）",
+              "note": "主文写F93.5μm，SI回指Fig.3却写100μm；审稿回应未消歧，不选择单一值打点。公开审稿相关回应仍含100/93.5声明，未提供差异的消歧说明。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "主文93.5；SI100（待消歧）",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025",
+                "zhang_onchip_review_2025"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 460,
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.4–5 单镜表征/成像段",
+              "note": "作者可见光工作范围；六谱点不等于所有波长均逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 650,
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.4–5 单镜表征/成像段",
+              "note": "与460nm下限共同保存工作范围，实际谱点单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 488,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d/e第2谱点标签",
+              "note": "同一单镜的实测轴向/横向强度图，不是另一个物理器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 1300,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4制备段；p.6 Methods/Film deposition",
+              "note": "Si3N4名义厚度；43.33高宽比来自30nm宽测试光栅，不能视为所有透镜单元的高宽比。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si3N4多形状C4对称meta-units / K9光学玻璃；period350nm",
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.2、6 Methods/Numerical simulations与Film deposition",
+              "note": "结构库高度1300nm、周期350nm；低温PECVD工艺不等于整个器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "未偏振照明；C4旋转对称设计",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.2设计段；p.4单镜光学表征段",
+              "note": "作者偏振不敏感设计；未将其当所有偏振逐项测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "SuperK Fianium FIU-15超连续谱 + 带通/颜色滤片",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.20 Note6/Fig.S12；主文p.4",
+              "note": "未给滤片线宽；轴向0.1μm步长不是横向像素采样。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d及表征段",
+              "note": "作者汇总称焦点97.33μm附近、variation5%；没有六谱点原始焦距，不将97.33复制给每个波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "逐点数表未公开"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.23 Note7/Fig.S16b",
+              "note": "Measured曲线横轴Wavelength(nm)、纵轴FWHM(μm)，与Theory分开；未读图估数，方向/评价焦面与原始PSF采样仍缺。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "仅Measured曲线"
+            },
+            "strehl": {
+              "value": null,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4表征段；SI p.23 S16a",
+              "note": "正文概述0.88 across entire visible spectrum，S16a实际随波长变化；未定义此0.88的聚合，不能填为每个谱点精确值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "作者称0.88；逐点仅曲线",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "分子：焦面半径3×FWHM圆内的透射功率；分母：入射光穿过与透镜同半径圆区域的功率（主文p.7 Optical characterization）。入射为未偏振超连续谱+带通滤片；100×/NA0.8物镜+20cm镜头收集。滤片光谱线宽、相机横向物方采样、背景/裁剪和功率校准未给；轴向扫描步长0.1μm。",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.7 Optical characterization；SI p.20 Note6",
+              "note": "Fig.1e红方块实测与蓝圆点模拟分开；未将数值模拟或平均效率填给每个谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "作者报告焦点97.33μm附近、variation5%；无逐点f/有符号轴向焦移/横向色差数表",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d/e及表征段",
+              "note": "97.33μm的聚合未定义，5%分母/最大互差或RMS未定义；与设计93.5μm之差不作为色差。图中白虚线为numerical focal length。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "Fig.1e实测效率；S16a/b Strehl/FWHM曲线；本轮未核到MTF曲线或数组",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.2 Fig.1e；SI p.23 S16；PDF p.7 Data/Code availability",
+              "note": "效率曲线x波长nm/y效率%；S16a为无量纲Strehl，b为μm。主文p.7 Data/Code均需向通讯作者请求；正式附件为SI/影片/审稿文件，未列Source Data。本轮主文/SI相关图、审稿相关回应、作者关联主页/实验室出版列表、DataCite与GitHub精确查询中未核到原始PSF/MTF/逐波长数表。缺原始二维PSF、横向物方像素尺度、裁剪/背景/归一化、场点和方向；没有独立复算MTF。检索范围见docs/ZHANG_ONCHIP_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhang2025_unit_540",
+          "model": "Zhang 2025 · 30μm单镜 · 540nm",
+          "study_id": "zhang2025",
+          "specimen_id": "unit_30",
+          "module": "",
+          "variant": "可见光Si3N4消色差单镜/阵列研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.3实测光谱点；S16仅曲线，逐点数值留空；带内80.39%/5%仅保存在汇总。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.2 Fig.1图注；p.4 Fig.3及表征正文",
+              "note": "实制单镜沿用Fig.1设计的名义口径，非SEM独立尺寸计量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.155,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3标题/正文",
+              "note": "单镜设计NA，不用收集物镜NA0.8替代。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3对应正文；SI p.30 Note12；Peer Review pp.22/24相关回应（文本核）",
+              "note": "主文写F93.5μm，SI回指Fig.3却写100μm；审稿回应未消歧，不选择单一值打点。公开审稿相关回应仍含100/93.5声明，未提供差异的消歧说明。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "主文93.5；SI100（待消歧）",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025",
+                "zhang_onchip_review_2025"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 460,
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.4–5 单镜表征/成像段",
+              "note": "作者可见光工作范围；六谱点不等于所有波长均逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 650,
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.4–5 单镜表征/成像段",
+              "note": "与460nm下限共同保存工作范围，实际谱点单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 540,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d/e第3谱点标签",
+              "note": "同一单镜的实测轴向/横向强度图，不是另一个物理器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 1300,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4制备段；p.6 Methods/Film deposition",
+              "note": "Si3N4名义厚度；43.33高宽比来自30nm宽测试光栅，不能视为所有透镜单元的高宽比。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si3N4多形状C4对称meta-units / K9光学玻璃；period350nm",
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.2、6 Methods/Numerical simulations与Film deposition",
+              "note": "结构库高度1300nm、周期350nm；低温PECVD工艺不等于整个器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "未偏振照明；C4旋转对称设计",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.2设计段；p.4单镜光学表征段",
+              "note": "作者偏振不敏感设计；未将其当所有偏振逐项测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "SuperK Fianium FIU-15超连续谱 + 带通/颜色滤片",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.20 Note6/Fig.S12；主文p.4",
+              "note": "未给滤片线宽；轴向0.1μm步长不是横向像素采样。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d及表征段",
+              "note": "作者汇总称焦点97.33μm附近、variation5%；没有六谱点原始焦距，不将97.33复制给每个波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "逐点数表未公开"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.23 Note7/Fig.S16b",
+              "note": "Measured曲线横轴Wavelength(nm)、纵轴FWHM(μm)，与Theory分开；未读图估数，方向/评价焦面与原始PSF采样仍缺。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "仅Measured曲线"
+            },
+            "strehl": {
+              "value": null,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4表征段；SI p.23 S16a",
+              "note": "正文概述0.88 across entire visible spectrum，S16a实际随波长变化；未定义此0.88的聚合，不能填为每个谱点精确值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "作者称0.88；逐点仅曲线",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "分子：焦面半径3×FWHM圆内的透射功率；分母：入射光穿过与透镜同半径圆区域的功率（主文p.7 Optical characterization）。入射为未偏振超连续谱+带通滤片；100×/NA0.8物镜+20cm镜头收集。滤片光谱线宽、相机横向物方采样、背景/裁剪和功率校准未给；轴向扫描步长0.1μm。",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.7 Optical characterization；SI p.20 Note6",
+              "note": "Fig.1e红方块实测与蓝圆点模拟分开；未将数值模拟或平均效率填给每个谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "作者报告焦点97.33μm附近、variation5%；无逐点f/有符号轴向焦移/横向色差数表",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d/e及表征段",
+              "note": "97.33μm的聚合未定义，5%分母/最大互差或RMS未定义；与设计93.5μm之差不作为色差。图中白虚线为numerical focal length。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "Fig.1e实测效率；S16a/b Strehl/FWHM曲线；本轮未核到MTF曲线或数组",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.2 Fig.1e；SI p.23 S16；PDF p.7 Data/Code availability",
+              "note": "效率曲线x波长nm/y效率%；S16a为无量纲Strehl，b为μm。主文p.7 Data/Code均需向通讯作者请求；正式附件为SI/影片/审稿文件，未列Source Data。本轮主文/SI相关图、审稿相关回应、作者关联主页/实验室出版列表、DataCite与GitHub精确查询中未核到原始PSF/MTF/逐波长数表。缺原始二维PSF、横向物方像素尺度、裁剪/背景/归一化、场点和方向；没有独立复算MTF。检索范围见docs/ZHANG_ONCHIP_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhang2025_unit_580",
+          "model": "Zhang 2025 · 30μm单镜 · 580nm",
+          "study_id": "zhang2025",
+          "specimen_id": "unit_30",
+          "module": "",
+          "variant": "可见光Si3N4消色差单镜/阵列研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.3实测光谱点；S16仅曲线，逐点数值留空；带内80.39%/5%仅保存在汇总。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.2 Fig.1图注；p.4 Fig.3及表征正文",
+              "note": "实制单镜沿用Fig.1设计的名义口径，非SEM独立尺寸计量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.155,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3标题/正文",
+              "note": "单镜设计NA，不用收集物镜NA0.8替代。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3对应正文；SI p.30 Note12；Peer Review pp.22/24相关回应（文本核）",
+              "note": "主文写F93.5μm，SI回指Fig.3却写100μm；审稿回应未消歧，不选择单一值打点。公开审稿相关回应仍含100/93.5声明，未提供差异的消歧说明。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "主文93.5；SI100（待消歧）",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025",
+                "zhang_onchip_review_2025"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 460,
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.4–5 单镜表征/成像段",
+              "note": "作者可见光工作范围；六谱点不等于所有波长均逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 650,
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.4–5 单镜表征/成像段",
+              "note": "与460nm下限共同保存工作范围，实际谱点单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 580,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d/e第4谱点标签",
+              "note": "同一单镜的实测轴向/横向强度图，不是另一个物理器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 1300,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4制备段；p.6 Methods/Film deposition",
+              "note": "Si3N4名义厚度；43.33高宽比来自30nm宽测试光栅，不能视为所有透镜单元的高宽比。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si3N4多形状C4对称meta-units / K9光学玻璃；period350nm",
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.2、6 Methods/Numerical simulations与Film deposition",
+              "note": "结构库高度1300nm、周期350nm；低温PECVD工艺不等于整个器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "未偏振照明；C4旋转对称设计",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.2设计段；p.4单镜光学表征段",
+              "note": "作者偏振不敏感设计；未将其当所有偏振逐项测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "SuperK Fianium FIU-15超连续谱 + 带通/颜色滤片",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.20 Note6/Fig.S12；主文p.4",
+              "note": "未给滤片线宽；轴向0.1μm步长不是横向像素采样。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d及表征段",
+              "note": "作者汇总称焦点97.33μm附近、variation5%；没有六谱点原始焦距，不将97.33复制给每个波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "逐点数表未公开"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.23 Note7/Fig.S16b",
+              "note": "Measured曲线横轴Wavelength(nm)、纵轴FWHM(μm)，与Theory分开；未读图估数，方向/评价焦面与原始PSF采样仍缺。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "仅Measured曲线"
+            },
+            "strehl": {
+              "value": null,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4表征段；SI p.23 S16a",
+              "note": "正文概述0.88 across entire visible spectrum，S16a实际随波长变化；未定义此0.88的聚合，不能填为每个谱点精确值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "作者称0.88；逐点仅曲线",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "分子：焦面半径3×FWHM圆内的透射功率；分母：入射光穿过与透镜同半径圆区域的功率（主文p.7 Optical characterization）。入射为未偏振超连续谱+带通滤片；100×/NA0.8物镜+20cm镜头收集。滤片光谱线宽、相机横向物方采样、背景/裁剪和功率校准未给；轴向扫描步长0.1μm。",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.7 Optical characterization；SI p.20 Note6",
+              "note": "Fig.1e红方块实测与蓝圆点模拟分开；未将数值模拟或平均效率填给每个谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "作者报告焦点97.33μm附近、variation5%；无逐点f/有符号轴向焦移/横向色差数表",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d/e及表征段",
+              "note": "97.33μm的聚合未定义，5%分母/最大互差或RMS未定义；与设计93.5μm之差不作为色差。图中白虚线为numerical focal length。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "Fig.1e实测效率；S16a/b Strehl/FWHM曲线；本轮未核到MTF曲线或数组",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.2 Fig.1e；SI p.23 S16；PDF p.7 Data/Code availability",
+              "note": "效率曲线x波长nm/y效率%；S16a为无量纲Strehl，b为μm。主文p.7 Data/Code均需向通讯作者请求；正式附件为SI/影片/审稿文件，未列Source Data。本轮主文/SI相关图、审稿相关回应、作者关联主页/实验室出版列表、DataCite与GitHub精确查询中未核到原始PSF/MTF/逐波长数表。缺原始二维PSF、横向物方像素尺度、裁剪/背景/归一化、场点和方向；没有独立复算MTF。检索范围见docs/ZHANG_ONCHIP_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhang2025_unit_610",
+          "model": "Zhang 2025 · 30μm单镜 · 610nm",
+          "study_id": "zhang2025",
+          "specimen_id": "unit_30",
+          "module": "",
+          "variant": "可见光Si3N4消色差单镜/阵列研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.3实测光谱点；S16仅曲线，逐点数值留空；带内80.39%/5%仅保存在汇总。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.2 Fig.1图注；p.4 Fig.3及表征正文",
+              "note": "实制单镜沿用Fig.1设计的名义口径，非SEM独立尺寸计量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.155,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3标题/正文",
+              "note": "单镜设计NA，不用收集物镜NA0.8替代。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3对应正文；SI p.30 Note12；Peer Review pp.22/24相关回应（文本核）",
+              "note": "主文写F93.5μm，SI回指Fig.3却写100μm；审稿回应未消歧，不选择单一值打点。公开审稿相关回应仍含100/93.5声明，未提供差异的消歧说明。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "主文93.5；SI100（待消歧）",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025",
+                "zhang_onchip_review_2025"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 460,
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.4–5 单镜表征/成像段",
+              "note": "作者可见光工作范围；六谱点不等于所有波长均逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 650,
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.4–5 单镜表征/成像段",
+              "note": "与460nm下限共同保存工作范围，实际谱点单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 610,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d/e第5谱点标签",
+              "note": "同一单镜的实测轴向/横向强度图，不是另一个物理器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 1300,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4制备段；p.6 Methods/Film deposition",
+              "note": "Si3N4名义厚度；43.33高宽比来自30nm宽测试光栅，不能视为所有透镜单元的高宽比。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si3N4多形状C4对称meta-units / K9光学玻璃；period350nm",
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.2、6 Methods/Numerical simulations与Film deposition",
+              "note": "结构库高度1300nm、周期350nm；低温PECVD工艺不等于整个器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "未偏振照明；C4旋转对称设计",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.2设计段；p.4单镜光学表征段",
+              "note": "作者偏振不敏感设计；未将其当所有偏振逐项测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "SuperK Fianium FIU-15超连续谱 + 带通/颜色滤片",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.20 Note6/Fig.S12；主文p.4",
+              "note": "未给滤片线宽；轴向0.1μm步长不是横向像素采样。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d及表征段",
+              "note": "作者汇总称焦点97.33μm附近、variation5%；没有六谱点原始焦距，不将97.33复制给每个波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "逐点数表未公开"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.23 Note7/Fig.S16b",
+              "note": "Measured曲线横轴Wavelength(nm)、纵轴FWHM(μm)，与Theory分开；未读图估数，方向/评价焦面与原始PSF采样仍缺。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "仅Measured曲线"
+            },
+            "strehl": {
+              "value": null,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4表征段；SI p.23 S16a",
+              "note": "正文概述0.88 across entire visible spectrum，S16a实际随波长变化；未定义此0.88的聚合，不能填为每个谱点精确值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "作者称0.88；逐点仅曲线",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "分子：焦面半径3×FWHM圆内的透射功率；分母：入射光穿过与透镜同半径圆区域的功率（主文p.7 Optical characterization）。入射为未偏振超连续谱+带通滤片；100×/NA0.8物镜+20cm镜头收集。滤片光谱线宽、相机横向物方采样、背景/裁剪和功率校准未给；轴向扫描步长0.1μm。",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.7 Optical characterization；SI p.20 Note6",
+              "note": "Fig.1e红方块实测与蓝圆点模拟分开；未将数值模拟或平均效率填给每个谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "作者报告焦点97.33μm附近、variation5%；无逐点f/有符号轴向焦移/横向色差数表",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d/e及表征段",
+              "note": "97.33μm的聚合未定义，5%分母/最大互差或RMS未定义；与设计93.5μm之差不作为色差。图中白虚线为numerical focal length。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "Fig.1e实测效率；S16a/b Strehl/FWHM曲线；本轮未核到MTF曲线或数组",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.2 Fig.1e；SI p.23 S16；PDF p.7 Data/Code availability",
+              "note": "效率曲线x波长nm/y效率%；S16a为无量纲Strehl，b为μm。主文p.7 Data/Code均需向通讯作者请求；正式附件为SI/影片/审稿文件，未列Source Data。本轮主文/SI相关图、审稿相关回应、作者关联主页/实验室出版列表、DataCite与GitHub精确查询中未核到原始PSF/MTF/逐波长数表。缺原始二维PSF、横向物方像素尺度、裁剪/背景/归一化、场点和方向；没有独立复算MTF。检索范围见docs/ZHANG_ONCHIP_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhang2025_unit_650",
+          "model": "Zhang 2025 · 30μm单镜 · 650nm",
+          "study_id": "zhang2025",
+          "specimen_id": "unit_30",
+          "module": "",
+          "variant": "可见光Si3N4消色差单镜/阵列研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.3实测光谱点；S16仅曲线，逐点数值留空；带内80.39%/5%仅保存在汇总。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.2 Fig.1图注；p.4 Fig.3及表征正文",
+              "note": "实制单镜沿用Fig.1设计的名义口径，非SEM独立尺寸计量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.155,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3标题/正文",
+              "note": "单镜设计NA，不用收集物镜NA0.8替代。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3对应正文；SI p.30 Note12；Peer Review pp.22/24相关回应（文本核）",
+              "note": "主文写F93.5μm，SI回指Fig.3却写100μm；审稿回应未消歧，不选择单一值打点。公开审稿相关回应仍含100/93.5声明，未提供差异的消歧说明。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "主文93.5；SI100（待消歧）",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025",
+                "zhang_onchip_review_2025"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 460,
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.4–5 单镜表征/成像段",
+              "note": "作者可见光工作范围；六谱点不等于所有波长均逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 650,
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.4–5 单镜表征/成像段",
+              "note": "与460nm下限共同保存工作范围，实际谱点单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 650,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d/e第6谱点标签",
+              "note": "同一单镜的实测轴向/横向强度图，不是另一个物理器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 1300,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4制备段；p.6 Methods/Film deposition",
+              "note": "Si3N4名义厚度；43.33高宽比来自30nm宽测试光栅，不能视为所有透镜单元的高宽比。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si3N4多形状C4对称meta-units / K9光学玻璃；period350nm",
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.2、6 Methods/Numerical simulations与Film deposition",
+              "note": "结构库高度1300nm、周期350nm；低温PECVD工艺不等于整个器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "未偏振照明；C4旋转对称设计",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.2设计段；p.4单镜光学表征段",
+              "note": "作者偏振不敏感设计；未将其当所有偏振逐项测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "SuperK Fianium FIU-15超连续谱 + 带通/颜色滤片",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.20 Note6/Fig.S12；主文p.4",
+              "note": "未给滤片线宽；轴向0.1μm步长不是横向像素采样。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d及表征段",
+              "note": "作者汇总称焦点97.33μm附近、variation5%；没有六谱点原始焦距，不将97.33复制给每个波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "逐点数表未公开"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.23 Note7/Fig.S16b",
+              "note": "Measured曲线横轴Wavelength(nm)、纵轴FWHM(μm)，与Theory分开；未读图估数，方向/评价焦面与原始PSF采样仍缺。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "仅Measured曲线"
+            },
+            "strehl": {
+              "value": null,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4表征段；SI p.23 S16a",
+              "note": "正文概述0.88 across entire visible spectrum，S16a实际随波长变化；未定义此0.88的聚合，不能填为每个谱点精确值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "作者称0.88；逐点仅曲线",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "分子：焦面半径3×FWHM圆内的透射功率；分母：入射光穿过与透镜同半径圆区域的功率（主文p.7 Optical characterization）。入射为未偏振超连续谱+带通滤片；100×/NA0.8物镜+20cm镜头收集。滤片光谱线宽、相机横向物方采样、背景/裁剪和功率校准未给；轴向扫描步长0.1μm。",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.7 Optical characterization；SI p.20 Note6",
+              "note": "Fig.1e红方块实测与蓝圆点模拟分开；未将数值模拟或平均效率填给每个谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "作者报告焦点97.33μm附近、variation5%；无逐点f/有符号轴向焦移/横向色差数表",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.4 Fig.3d/e及表征段",
+              "note": "97.33μm的聚合未定义，5%分母/最大互差或RMS未定义；与设计93.5μm之差不作为色差。图中白虚线为numerical focal length。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "Fig.1e实测效率；S16a/b Strehl/FWHM曲线；本轮未核到MTF曲线或数组",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.2 Fig.1e；SI p.23 S16；PDF p.7 Data/Code availability",
+              "note": "效率曲线x波长nm/y效率%；S16a为无量纲Strehl，b为μm。主文p.7 Data/Code均需向通讯作者请求；正式附件为SI/影片/审稿文件，未列Source Data。本轮主文/SI相关图、审稿相关回应、作者关联主页/实验室出版列表、DataCite与GitHub精确查询中未核到原始PSF/MTF/逐波长数表。缺原始二维PSF、横向物方像素尺度、裁剪/背景/归一化、场点和方向；没有独立复算MTF。检索范围见docs/ZHANG_ONCHIP_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhang2025_array_summary",
+          "model": "Zhang 2025 · 5×5阵列子镜 · 汇总",
+          "study_id": "zhang2025",
+          "specimen_id": "array_90",
+          "module": "",
+          "variant": "可见光Si3N4消色差单镜/阵列研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "25分离子镜表征；同一结构队列，不虚增25种配置；随机子镜轴向图与队列平均不混同。",
+          "values": {
+            "diameter_um": {
+              "value": 90,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段，Each metalens diameter90μm",
+              "note": "5×5阵列中单个子镜口径，不是阵列总口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": 980,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段",
+              "note": "名义设计焦距；S18实测曲线不回填为980μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.046,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段",
+              "note": "作者设计值；25子镜实测均值曲线不是25个不同设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18a/b图例与c标签",
+              "note": "a/b标460/488/535/580/610/650nm，c标460/488/540/580/610/650nm；535与540不同材料条目分别保存，不静默改正。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "曲线535nm / 轴向图540nm"
+            },
+            "lambda_min_nm": {
+              "value": 460,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；SI p.25 S18",
+              "note": "作者可见光阵列工作范围与逐波长测量分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "lambda_max_nm": {
+              "value": 650,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；SI p.25 S18",
+              "note": "实际曲线/轴向图绿光标签有差异，波段端点不能消除这一差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "height_nm": {
+              "value": 1300,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration第一段",
+              "note": "阵列使用固定柱高1300nm工艺；非980μm焦距或传感器间距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "5×5 Si3N4透镜阵列；每子镜D90μm/design f980μm/NA0.046",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；p.6 Fig.5a–e",
+              "note": "此行为阵列子镜光学表征；25单位索引N，不是25个波长或25种设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "SuperK Fianium FIU-15超连续谱 + 带通/颜色滤片",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.20 Note6/Fig.S12；主文p.4",
+              "note": "未给滤片线宽；轴向0.1μm步长不是横向像素采样。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 S18b/c；主文p.6 Fig.5d",
+              "note": "S18b纵轴印Focal length(μm)但刻度0.7–1.2；主文5d明确Focal length(mm)、设计980μm。单位存在冲突，保留原图且不读图取数。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ],
+              "display": "仅曲线；SI轴单位待核"
+            },
+            "efficiency_protocol": {
+              "value": "分子：焦面半径3×FWHM圆内的透射功率；分母：入射光穿过与透镜同半径圆区域的功率（主文p.7 Optical characterization）。入射为未偏振超连续谱+带通滤片；100×/NA0.8物镜+20cm镜头收集。滤片光谱线宽、相机横向物方采样、背景/裁剪和功率校准未给；轴向扫描步长0.1μm。 阵列：主文p.5报告平均约67%±2%，Fig.5c为25分离子镜的averaged efficiency；跨波长/跨子镜聚合及±统计未定义。",
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.5–7 Fig.5c及Optical characterization；SI p.25 Note9/S18",
+              "note": "67±2保留文字，不在未知聚合下自动当单个波长值、带内均值或SD/n25。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "25个子镜实测f/效率曲线；随机一个子镜的六波长轴向强度图",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Note9/S18；主文p.6 Fig.5c–e",
+              "note": "S18a/b横轴N为子镜序号；c随机子镜身份未知，白虚线为numerical focal length。未取得每子镜逐波长焦距/轴向变化量/横向色差原表，不把平均曲线当每镜完全相等。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            },
+            "mtf_curve": {
+              "value": "S18a效率、S18b焦距；本轮未核到MTF数组/原始PSF",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Note9/S18；PDF p.7 Data/Code availability",
+              "note": "a纵轴Efficiency(%)0–100，b纵轴印μm而刻度与主文mm冲突；x为N=1–25。主文p.7 Data/Code均需向通讯作者请求；正式附件为SI/影片/审稿文件，未列Source Data。本轮主文/SI相关图、审稿相关回应、作者关联主页/实验室出版列表、DataCite与GitHub精确查询中未核到原始PSF/MTF/逐波长数表。缺原始二维PSF、横向物方像素尺度、裁剪/背景/归一化、场点和方向；没有独立复算MTF。检索范围见docs/ZHANG_ONCHIP_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhang2025_array_460",
+          "model": "Zhang 2025 · 5×5阵列子镜 · 460nm",
+          "study_id": "zhang2025",
+          "specimen_id": "array_90",
+          "module": "",
+          "variant": "可见光Si3N4消色差单镜/阵列研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "S18的波长/测量类型记录；535曲线与540轴向图分开；没有为25个未知单位生成精确测量行。",
+          "values": {
+            "diameter_um": {
+              "value": 90,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段，Each metalens diameter90μm",
+              "note": "5×5阵列中单个子镜口径，不是阵列总口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": 980,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段",
+              "note": "名义设计焦距；S18实测曲线不回填为980μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.046,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段",
+              "note": "作者设计值；25子镜实测均值曲线不是25个不同设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 460,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18a/b图例与c标签",
+              "note": "原图标签照录；535nm只属于效率/焦距曲线，540nm只属于随机子镜轴向图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 460,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；SI p.25 S18",
+              "note": "作者可见光阵列工作范围与逐波长测量分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "lambda_max_nm": {
+              "value": 650,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；SI p.25 S18",
+              "note": "实际曲线/轴向图绿光标签有差异，波段端点不能消除这一差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "height_nm": {
+              "value": 1300,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration第一段",
+              "note": "阵列使用固定柱高1300nm工艺；非980μm焦距或传感器间距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "5×5 Si3N4透镜阵列；每子镜D90μm/design f980μm/NA0.046",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；p.6 Fig.5a–e",
+              "note": "此行为阵列子镜光学表征；25单位索引N，不是25个波长或25种设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "SuperK Fianium FIU-15超连续谱 + 带通/颜色滤片",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.20 Note6/Fig.S12；主文p.4",
+              "note": "未给滤片线宽；轴向0.1μm步长不是横向像素采样。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 S18b/c；主文p.6 Fig.5d",
+              "note": "S18b纵轴印Focal length(μm)但刻度0.7–1.2；主文5d明确Focal length(mm)、设计980μm。单位存在冲突，保留原图且不读图取数。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ],
+              "display": "仅曲线；SI轴单位待核"
+            },
+            "efficiency_protocol": {
+              "value": "分子：焦面半径3×FWHM圆内的透射功率；分母：入射光穿过与透镜同半径圆区域的功率（主文p.7 Optical characterization）。入射为未偏振超连续谱+带通滤片；100×/NA0.8物镜+20cm镜头收集。滤片光谱线宽、相机横向物方采样、背景/裁剪和功率校准未给；轴向扫描步长0.1μm。 阵列：主文p.5报告平均约67%±2%，Fig.5c为25分离子镜的averaged efficiency；跨波长/跨子镜聚合及±统计未定义。",
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.5–7 Fig.5c及Optical characterization；SI p.25 Note9/S18",
+              "note": "67±2保留文字，不在未知聚合下自动当单个波长值、带内均值或SD/n25。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "队列效率/f曲线（N1–25）；随机子镜轴向PSF图",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18a/b图例与c标签",
+              "note": "保持535/540两标注差异，不认为已经测了七个共同谱点；随机子镜编号未给。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "S18a/b曲线；S18c轴向图；无可复算原始数组",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18a/b图例与c标签",
+              "note": "关联依据为原图标签；不从像素估值，未取得MTF/PSF原始数据。主文p.7 Data/Code均需向通讯作者请求；正式附件为SI/影片/审稿文件，未列Source Data。本轮主文/SI相关图、审稿相关回应、作者关联主页/实验室出版列表、DataCite与GitHub精确查询中未核到原始PSF/MTF/逐波长数表。缺原始二维PSF、横向物方像素尺度、裁剪/背景/归一化、场点和方向；没有独立复算MTF。检索范围见docs/ZHANG_ONCHIP_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhang2025_array_488",
+          "model": "Zhang 2025 · 5×5阵列子镜 · 488nm",
+          "study_id": "zhang2025",
+          "specimen_id": "array_90",
+          "module": "",
+          "variant": "可见光Si3N4消色差单镜/阵列研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "S18的波长/测量类型记录；535曲线与540轴向图分开；没有为25个未知单位生成精确测量行。",
+          "values": {
+            "diameter_um": {
+              "value": 90,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段，Each metalens diameter90μm",
+              "note": "5×5阵列中单个子镜口径，不是阵列总口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": 980,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段",
+              "note": "名义设计焦距；S18实测曲线不回填为980μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.046,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段",
+              "note": "作者设计值；25子镜实测均值曲线不是25个不同设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 488,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18a/b图例与c标签",
+              "note": "原图标签照录；535nm只属于效率/焦距曲线，540nm只属于随机子镜轴向图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 460,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；SI p.25 S18",
+              "note": "作者可见光阵列工作范围与逐波长测量分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "lambda_max_nm": {
+              "value": 650,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；SI p.25 S18",
+              "note": "实际曲线/轴向图绿光标签有差异，波段端点不能消除这一差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "height_nm": {
+              "value": 1300,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration第一段",
+              "note": "阵列使用固定柱高1300nm工艺；非980μm焦距或传感器间距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "5×5 Si3N4透镜阵列；每子镜D90μm/design f980μm/NA0.046",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；p.6 Fig.5a–e",
+              "note": "此行为阵列子镜光学表征；25单位索引N，不是25个波长或25种设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "SuperK Fianium FIU-15超连续谱 + 带通/颜色滤片",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.20 Note6/Fig.S12；主文p.4",
+              "note": "未给滤片线宽；轴向0.1μm步长不是横向像素采样。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 S18b/c；主文p.6 Fig.5d",
+              "note": "S18b纵轴印Focal length(μm)但刻度0.7–1.2；主文5d明确Focal length(mm)、设计980μm。单位存在冲突，保留原图且不读图取数。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ],
+              "display": "仅曲线；SI轴单位待核"
+            },
+            "efficiency_protocol": {
+              "value": "分子：焦面半径3×FWHM圆内的透射功率；分母：入射光穿过与透镜同半径圆区域的功率（主文p.7 Optical characterization）。入射为未偏振超连续谱+带通滤片；100×/NA0.8物镜+20cm镜头收集。滤片光谱线宽、相机横向物方采样、背景/裁剪和功率校准未给；轴向扫描步长0.1μm。 阵列：主文p.5报告平均约67%±2%，Fig.5c为25分离子镜的averaged efficiency；跨波长/跨子镜聚合及±统计未定义。",
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.5–7 Fig.5c及Optical characterization；SI p.25 Note9/S18",
+              "note": "67±2保留文字，不在未知聚合下自动当单个波长值、带内均值或SD/n25。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "队列效率/f曲线（N1–25）；随机子镜轴向PSF图",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18a/b图例与c标签",
+              "note": "保持535/540两标注差异，不认为已经测了七个共同谱点；随机子镜编号未给。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "S18a/b曲线；S18c轴向图；无可复算原始数组",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18a/b图例与c标签",
+              "note": "关联依据为原图标签；不从像素估值，未取得MTF/PSF原始数据。主文p.7 Data/Code均需向通讯作者请求；正式附件为SI/影片/审稿文件，未列Source Data。本轮主文/SI相关图、审稿相关回应、作者关联主页/实验室出版列表、DataCite与GitHub精确查询中未核到原始PSF/MTF/逐波长数表。缺原始二维PSF、横向物方像素尺度、裁剪/背景/归一化、场点和方向；没有独立复算MTF。检索范围见docs/ZHANG_ONCHIP_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhang2025_array_535",
+          "model": "Zhang 2025 · 5×5阵列子镜 · 535nm（曲线标签）",
+          "study_id": "zhang2025",
+          "specimen_id": "array_90",
+          "module": "",
+          "variant": "可见光Si3N4消色差单镜/阵列研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "S18的波长/测量类型记录；535曲线与540轴向图分开；没有为25个未知单位生成精确测量行。",
+          "values": {
+            "diameter_um": {
+              "value": 90,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段，Each metalens diameter90μm",
+              "note": "5×5阵列中单个子镜口径，不是阵列总口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": 980,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段",
+              "note": "名义设计焦距；S18实测曲线不回填为980μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.046,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段",
+              "note": "作者设计值；25子镜实测均值曲线不是25个不同设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 535,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18a/b图例",
+              "note": "原图标签照录；535nm只属于效率/焦距曲线，540nm只属于随机子镜轴向图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 460,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；SI p.25 S18",
+              "note": "作者可见光阵列工作范围与逐波长测量分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "lambda_max_nm": {
+              "value": 650,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；SI p.25 S18",
+              "note": "实际曲线/轴向图绿光标签有差异，波段端点不能消除这一差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "height_nm": {
+              "value": 1300,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration第一段",
+              "note": "阵列使用固定柱高1300nm工艺；非980μm焦距或传感器间距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "5×5 Si3N4透镜阵列；每子镜D90μm/design f980μm/NA0.046",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；p.6 Fig.5a–e",
+              "note": "此行为阵列子镜光学表征；25单位索引N，不是25个波长或25种设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "SuperK Fianium FIU-15超连续谱 + 带通/颜色滤片",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.20 Note6/Fig.S12；主文p.4",
+              "note": "未给滤片线宽；轴向0.1μm步长不是横向像素采样。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 S18b/c；主文p.6 Fig.5d",
+              "note": "S18b纵轴印Focal length(μm)但刻度0.7–1.2；主文5d明确Focal length(mm)、设计980μm。单位存在冲突，保留原图且不读图取数。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ],
+              "display": "仅曲线；SI轴单位待核"
+            },
+            "efficiency_protocol": {
+              "value": "分子：焦面半径3×FWHM圆内的透射功率；分母：入射光穿过与透镜同半径圆区域的功率（主文p.7 Optical characterization）。入射为未偏振超连续谱+带通滤片；100×/NA0.8物镜+20cm镜头收集。滤片光谱线宽、相机横向物方采样、背景/裁剪和功率校准未给；轴向扫描步长0.1μm。 阵列：主文p.5报告平均约67%±2%，Fig.5c为25分离子镜的averaged efficiency；跨波长/跨子镜聚合及±统计未定义。",
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.5–7 Fig.5c及Optical characterization；SI p.25 Note9/S18",
+              "note": "67±2保留文字，不在未知聚合下自动当单个波长值、带内均值或SD/n25。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "队列效率/f曲线（N1–25）",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18a/b图例",
+              "note": "保持535/540两标注差异，不认为已经测了七个共同谱点；随机子镜编号未给。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "S18a/b曲线；无可复算原始数组",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18a/b图例",
+              "note": "关联依据为原图标签；不从像素估值，未取得MTF/PSF原始数据。主文p.7 Data/Code均需向通讯作者请求；正式附件为SI/影片/审稿文件，未列Source Data。本轮主文/SI相关图、审稿相关回应、作者关联主页/实验室出版列表、DataCite与GitHub精确查询中未核到原始PSF/MTF/逐波长数表。缺原始二维PSF、横向物方像素尺度、裁剪/背景/归一化、场点和方向；没有独立复算MTF。检索范围见docs/ZHANG_ONCHIP_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhang2025_array_540",
+          "model": "Zhang 2025 · 5×5阵列子镜 · 540nm（轴向图）",
+          "study_id": "zhang2025",
+          "specimen_id": "array_90",
+          "module": "",
+          "variant": "可见光Si3N4消色差单镜/阵列研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "S18的波长/测量类型记录；535曲线与540轴向图分开；没有为25个未知单位生成精确测量行。",
+          "values": {
+            "diameter_um": {
+              "value": 90,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段，Each metalens diameter90μm",
+              "note": "5×5阵列中单个子镜口径，不是阵列总口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": 980,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段",
+              "note": "名义设计焦距；S18实测曲线不回填为980μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.046,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段",
+              "note": "作者设计值；25子镜实测均值曲线不是25个不同设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 540,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18c第3轴向图",
+              "note": "原图标签照录；535nm只属于效率/焦距曲线，540nm只属于随机子镜轴向图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 460,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；SI p.25 S18",
+              "note": "作者可见光阵列工作范围与逐波长测量分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "lambda_max_nm": {
+              "value": 650,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；SI p.25 S18",
+              "note": "实际曲线/轴向图绿光标签有差异，波段端点不能消除这一差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "height_nm": {
+              "value": 1300,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration第一段",
+              "note": "阵列使用固定柱高1300nm工艺；非980μm焦距或传感器间距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "5×5 Si3N4透镜阵列；每子镜D90μm/design f980μm/NA0.046",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；p.6 Fig.5a–e",
+              "note": "此行为阵列子镜光学表征；25单位索引N，不是25个波长或25种设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "SuperK Fianium FIU-15超连续谱 + 带通/颜色滤片",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.20 Note6/Fig.S12；主文p.4",
+              "note": "未给滤片线宽；轴向0.1μm步长不是横向像素采样。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18c第3轴向图",
+              "note": "只有随机子镜轴向强度图；不将535nm队列焦距/效率曲线关联到540nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "只有轴向强度图"
+            },
+            "efficiency_protocol": {
+              "value": "分子：焦面半径3×FWHM圆内的透射功率；分母：入射光穿过与透镜同半径圆区域的功率（主文p.7 Optical characterization）。入射为未偏振超连续谱+带通滤片；100×/NA0.8物镜+20cm镜头收集。滤片光谱线宽、相机横向物方采样、背景/裁剪和功率校准未给；轴向扫描步长0.1μm。 阵列：主文p.5报告平均约67%±2%，Fig.5c为25分离子镜的averaged efficiency；跨波长/跨子镜聚合及±统计未定义。",
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.5–7 Fig.5c及Optical characterization；SI p.25 Note9/S18",
+              "note": "67±2保留文字，不在未知聚合下自动当单个波长值、带内均值或SD/n25。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "；随机子镜轴向PSF图",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18c第3轴向图",
+              "note": "保持535/540两标注差异，不认为已经测了七个共同谱点；随机子镜编号未给。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "；S18c轴向图；无可复算原始数组",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18c第3轴向图",
+              "note": "关联依据为原图标签；不从像素估值，未取得MTF/PSF原始数据。主文p.7 Data/Code均需向通讯作者请求；正式附件为SI/影片/审稿文件，未列Source Data。本轮主文/SI相关图、审稿相关回应、作者关联主页/实验室出版列表、DataCite与GitHub精确查询中未核到原始PSF/MTF/逐波长数表。缺原始二维PSF、横向物方像素尺度、裁剪/背景/归一化、场点和方向；没有独立复算MTF。检索范围见docs/ZHANG_ONCHIP_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhang2025_array_580",
+          "model": "Zhang 2025 · 5×5阵列子镜 · 580nm",
+          "study_id": "zhang2025",
+          "specimen_id": "array_90",
+          "module": "",
+          "variant": "可见光Si3N4消色差单镜/阵列研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "S18的波长/测量类型记录；535曲线与540轴向图分开；没有为25个未知单位生成精确测量行。",
+          "values": {
+            "diameter_um": {
+              "value": 90,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段，Each metalens diameter90μm",
+              "note": "5×5阵列中单个子镜口径，不是阵列总口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": 980,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段",
+              "note": "名义设计焦距；S18实测曲线不回填为980μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.046,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段",
+              "note": "作者设计值；25子镜实测均值曲线不是25个不同设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 580,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18a/b图例与c标签",
+              "note": "原图标签照录；535nm只属于效率/焦距曲线，540nm只属于随机子镜轴向图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 460,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；SI p.25 S18",
+              "note": "作者可见光阵列工作范围与逐波长测量分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "lambda_max_nm": {
+              "value": 650,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；SI p.25 S18",
+              "note": "实际曲线/轴向图绿光标签有差异，波段端点不能消除这一差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "height_nm": {
+              "value": 1300,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration第一段",
+              "note": "阵列使用固定柱高1300nm工艺；非980μm焦距或传感器间距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "5×5 Si3N4透镜阵列；每子镜D90μm/design f980μm/NA0.046",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；p.6 Fig.5a–e",
+              "note": "此行为阵列子镜光学表征；25单位索引N，不是25个波长或25种设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "SuperK Fianium FIU-15超连续谱 + 带通/颜色滤片",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.20 Note6/Fig.S12；主文p.4",
+              "note": "未给滤片线宽；轴向0.1μm步长不是横向像素采样。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 S18b/c；主文p.6 Fig.5d",
+              "note": "S18b纵轴印Focal length(μm)但刻度0.7–1.2；主文5d明确Focal length(mm)、设计980μm。单位存在冲突，保留原图且不读图取数。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ],
+              "display": "仅曲线；SI轴单位待核"
+            },
+            "efficiency_protocol": {
+              "value": "分子：焦面半径3×FWHM圆内的透射功率；分母：入射光穿过与透镜同半径圆区域的功率（主文p.7 Optical characterization）。入射为未偏振超连续谱+带通滤片；100×/NA0.8物镜+20cm镜头收集。滤片光谱线宽、相机横向物方采样、背景/裁剪和功率校准未给；轴向扫描步长0.1μm。 阵列：主文p.5报告平均约67%±2%，Fig.5c为25分离子镜的averaged efficiency；跨波长/跨子镜聚合及±统计未定义。",
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.5–7 Fig.5c及Optical characterization；SI p.25 Note9/S18",
+              "note": "67±2保留文字，不在未知聚合下自动当单个波长值、带内均值或SD/n25。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "队列效率/f曲线（N1–25）；随机子镜轴向PSF图",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18a/b图例与c标签",
+              "note": "保持535/540两标注差异，不认为已经测了七个共同谱点；随机子镜编号未给。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "S18a/b曲线；S18c轴向图；无可复算原始数组",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18a/b图例与c标签",
+              "note": "关联依据为原图标签；不从像素估值，未取得MTF/PSF原始数据。主文p.7 Data/Code均需向通讯作者请求；正式附件为SI/影片/审稿文件，未列Source Data。本轮主文/SI相关图、审稿相关回应、作者关联主页/实验室出版列表、DataCite与GitHub精确查询中未核到原始PSF/MTF/逐波长数表。缺原始二维PSF、横向物方像素尺度、裁剪/背景/归一化、场点和方向；没有独立复算MTF。检索范围见docs/ZHANG_ONCHIP_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhang2025_array_610",
+          "model": "Zhang 2025 · 5×5阵列子镜 · 610nm",
+          "study_id": "zhang2025",
+          "specimen_id": "array_90",
+          "module": "",
+          "variant": "可见光Si3N4消色差单镜/阵列研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "S18的波长/测量类型记录；535曲线与540轴向图分开；没有为25个未知单位生成精确测量行。",
+          "values": {
+            "diameter_um": {
+              "value": 90,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段，Each metalens diameter90μm",
+              "note": "5×5阵列中单个子镜口径，不是阵列总口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": 980,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段",
+              "note": "名义设计焦距；S18实测曲线不回填为980μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.046,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段",
+              "note": "作者设计值；25子镜实测均值曲线不是25个不同设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 610,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18a/b图例与c标签",
+              "note": "原图标签照录；535nm只属于效率/焦距曲线，540nm只属于随机子镜轴向图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 460,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；SI p.25 S18",
+              "note": "作者可见光阵列工作范围与逐波长测量分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "lambda_max_nm": {
+              "value": 650,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；SI p.25 S18",
+              "note": "实际曲线/轴向图绿光标签有差异，波段端点不能消除这一差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "height_nm": {
+              "value": 1300,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration第一段",
+              "note": "阵列使用固定柱高1300nm工艺；非980μm焦距或传感器间距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "5×5 Si3N4透镜阵列；每子镜D90μm/design f980μm/NA0.046",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；p.6 Fig.5a–e",
+              "note": "此行为阵列子镜光学表征；25单位索引N，不是25个波长或25种设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "SuperK Fianium FIU-15超连续谱 + 带通/颜色滤片",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.20 Note6/Fig.S12；主文p.4",
+              "note": "未给滤片线宽；轴向0.1μm步长不是横向像素采样。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 S18b/c；主文p.6 Fig.5d",
+              "note": "S18b纵轴印Focal length(μm)但刻度0.7–1.2；主文5d明确Focal length(mm)、设计980μm。单位存在冲突，保留原图且不读图取数。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ],
+              "display": "仅曲线；SI轴单位待核"
+            },
+            "efficiency_protocol": {
+              "value": "分子：焦面半径3×FWHM圆内的透射功率；分母：入射光穿过与透镜同半径圆区域的功率（主文p.7 Optical characterization）。入射为未偏振超连续谱+带通滤片；100×/NA0.8物镜+20cm镜头收集。滤片光谱线宽、相机横向物方采样、背景/裁剪和功率校准未给；轴向扫描步长0.1μm。 阵列：主文p.5报告平均约67%±2%，Fig.5c为25分离子镜的averaged efficiency；跨波长/跨子镜聚合及±统计未定义。",
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.5–7 Fig.5c及Optical characterization；SI p.25 Note9/S18",
+              "note": "67±2保留文字，不在未知聚合下自动当单个波长值、带内均值或SD/n25。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "队列效率/f曲线（N1–25）；随机子镜轴向PSF图",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18a/b图例与c标签",
+              "note": "保持535/540两标注差异，不认为已经测了七个共同谱点；随机子镜编号未给。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "S18a/b曲线；S18c轴向图；无可复算原始数组",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18a/b图例与c标签",
+              "note": "关联依据为原图标签；不从像素估值，未取得MTF/PSF原始数据。主文p.7 Data/Code均需向通讯作者请求；正式附件为SI/影片/审稿文件，未列Source Data。本轮主文/SI相关图、审稿相关回应、作者关联主页/实验室出版列表、DataCite与GitHub精确查询中未核到原始PSF/MTF/逐波长数表。缺原始二维PSF、横向物方像素尺度、裁剪/背景/归一化、场点和方向；没有独立复算MTF。检索范围见docs/ZHANG_ONCHIP_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhang2025_array_650",
+          "model": "Zhang 2025 · 5×5阵列子镜 · 650nm",
+          "study_id": "zhang2025",
+          "specimen_id": "array_90",
+          "module": "",
+          "variant": "可见光Si3N4消色差单镜/阵列研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "S18的波长/测量类型记录；535曲线与540轴向图分开；没有为25个未知单位生成精确测量行。",
+          "values": {
+            "diameter_um": {
+              "value": 90,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段，Each metalens diameter90μm",
+              "note": "5×5阵列中单个子镜口径，不是阵列总口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": 980,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段",
+              "note": "名义设计焦距；S18实测曲线不回填为980μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.046,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段",
+              "note": "作者设计值；25子镜实测均值曲线不是25个不同设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 650,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18a/b图例与c标签",
+              "note": "原图标签照录；535nm只属于效率/焦距曲线，540nm只属于随机子镜轴向图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 460,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；SI p.25 S18",
+              "note": "作者可见光阵列工作范围与逐波长测量分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "lambda_max_nm": {
+              "value": 650,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；SI p.25 S18",
+              "note": "实际曲线/轴向图绿光标签有差异，波段端点不能消除这一差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "height_nm": {
+              "value": 1300,
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration第一段",
+              "note": "阵列使用固定柱高1300nm工艺；非980μm焦距或传感器间距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "5×5 Si3N4透镜阵列；每子镜D90μm/design f980μm/NA0.046",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；p.6 Fig.5a–e",
+              "note": "此行为阵列子镜光学表征；25单位索引N，不是25个波长或25种设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "SuperK Fianium FIU-15超连续谱 + 带通/颜色滤片",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.20 Note6/Fig.S12；主文p.4",
+              "note": "未给滤片线宽；轴向0.1μm步长不是横向像素采样。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 S18b/c；主文p.6 Fig.5d",
+              "note": "S18b纵轴印Focal length(μm)但刻度0.7–1.2；主文5d明确Focal length(mm)、设计980μm。单位存在冲突，保留原图且不读图取数。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ],
+              "display": "仅曲线；SI轴单位待核"
+            },
+            "efficiency_protocol": {
+              "value": "分子：焦面半径3×FWHM圆内的透射功率；分母：入射光穿过与透镜同半径圆区域的功率（主文p.7 Optical characterization）。入射为未偏振超连续谱+带通滤片；100×/NA0.8物镜+20cm镜头收集。滤片光谱线宽、相机横向物方采样、背景/裁剪和功率校准未给；轴向扫描步长0.1μm。 阵列：主文p.5报告平均约67%±2%，Fig.5c为25分离子镜的averaged efficiency；跨波长/跨子镜聚合及±统计未定义。",
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.5–7 Fig.5c及Optical characterization；SI p.25 Note9/S18",
+              "note": "67±2保留文字，不在未知聚合下自动当单个波长值、带内均值或SD/n25。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "队列效率/f曲线（N1–25）；随机子镜轴向PSF图",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18a/b图例与c标签",
+              "note": "保持535/540两标注差异，不认为已经测了七个共同谱点；随机子镜编号未给。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "S18a/b曲线；S18c轴向图；无可复算原始数组",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.25 Fig.S18a/b图例与c标签",
+              "note": "关联依据为原图标签；不从像素估值，未取得MTF/PSF原始数据。主文p.7 Data/Code均需向通讯作者请求；正式附件为SI/影片/审稿文件，未列Source Data。本轮主文/SI相关图、审稿相关回应、作者关联主页/实验室出版列表、DataCite与GitHub精确查询中未核到原始PSF/MTF/逐波长数表。缺原始二维PSF、横向物方像素尺度、裁剪/背景/归一化、场点和方向；没有独立复算MTF。检索范围见docs/ZHANG_ONCHIP_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhang2025_mounted_system",
+          "model": "Zhang 2025 · 安装式5×5阵列 / CMOS图像处理",
+          "study_id": "zhang2025",
+          "specimen_id": "mounted_system",
+          "module": "",
+          "variant": "可见光Si3N4消色差单镜/阵列研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "完整投影/阵列/CMOS及PTGui拼接处理，不把子镜参数和渲染图当完整系统裸镜指标。",
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI pp.21–22 Note6/S15",
+              "note": "微投影全彩成像；未分派单一中心波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "全彩投影 / 系统"
+            },
+            "material": {
+              "value": "预制5×5 Si3N4阵列安装在CMOS上；微投影+5/20cm镜头",
+              "source": "zhang_onchip_2025",
+              "location": "PDF p.5 Integration段；SI pp.21–22 S15",
+              "note": "阵列与CMOS间距1mm，约2500pixels采集；不同于独立单镜放大成像约3.5MP，也不同于8×8直接制备。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "Fig.5f原始25子图；Fig.5g为PTGui拼接、颜色畸变修正和背景扣除结果",
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.5–6 Fig.5f/g；SI Note10/S20",
+              "note": "处理后5μm标靶线宽不是单镜FWHM；没有将渲染后图像质量当裸镜MTF/SNR/横向色差数值。",
+              "basis": "reconstruction",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_2025",
+                "zhang_onchip_si_2025"
+              ]
+            },
+            "mtf_curve": {
+              "value": "本轮未核到独立系统MTF/SNR数表",
+              "source": "zhang_onchip_2025",
+              "location": "PDF pp.5–7 Fig.5及Data/Code availability",
+              "note": "作者彩色图像与拼接演示不能量化无色差或SNR；主文p.7 Data/Code均需向通讯作者请求；正式附件为SI/影片/审稿文件，未列Source Data。本轮主文/SI相关图、审稿相关回应、作者关联主页/实验室出版列表、DataCite与GitHub精确查询中未核到原始PSF/MTF/逐波长数表。缺原始二维PSF、横向物方像素尺度、裁剪/背景/归一化、场点和方向；没有独立复算MTF。检索范围见docs/ZHANG_ONCHIP_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "zhang2025_direct_8x8",
+          "model": "Zhang 2025 · 直接制备8×8阵列 / 125μm聚合物台阶",
+          "study_id": "zhang2025",
+          "specimen_id": "direct_8x8",
+          "module": "",
+          "variant": "可见光Si3N4消色差单镜/阵列研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "与安装式5×5及独立30μm单镜不同；白光焦点定性表征，不移用其余两组效率。",
+          "values": {
+            "diameter_um": {
+              "value": 52,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.30 Note12，designed radius26μm",
+              "note": "由作者名义半径26μm显式乘2得到口径52μm；不是独立实测或从SEM图估值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "original_radius_um": 26,
+              "conversion": "D=2R"
+            },
+            "design_focal_um": {
+              "value": 125,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.30 Note12",
+              "note": "8×8直接制备组设计焦距；125μm聚合物台阶高度是另一个工艺参数；未填写实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": null,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.30 Note12",
+              "note": "作者称NA0.155，同时R26μm/f125μm在空气、几何半角假设下算约0.204；传播介质/有效孔径或参数差异未明，不重写原述、不选择单值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "作者0.155；几何定义待核"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "zhang_onchip_si_2025",
+              "location": "SI pp.31–32 S24正文/S25",
+              "note": "准直白光沿法向照明，未给逐波长量化测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "白光 / 定性焦斑"
+            },
+            "material": {
+              "value": "直接在CMOS上DLW制备125μm高聚合物台阶，再制Si3N4 8×8阵列",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI pp.30–31 Note12/S24",
+              "note": "台阶高度不当纳米柱高度或整机厚度；本组独立于5×5预制阵列安装方案。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "S25白光焦点定性演示；作者称色散影响很小",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI p.31 S24后正文与p.32 S25",
+              "note": "未给逐波长f、焦移、FWHM、Strehl、效率或MTF数表；台阶表面不平引起焦点亮度差异是作者说明，未将亮度读成效率。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "未核到该直接制备组的MTF或原始PSF数组",
+              "source": "zhang_onchip_si_2025",
+              "location": "SI pp.30–32 Note12/S24/S25；PDF p.7 Data/Code availability",
+              "note": "不移用30μm单镜80.39%或90μm阵列约67±2%；主文p.7 Data/Code均需向通讯作者请求；正式附件为SI/影片/审稿文件，未列Source Data。本轮主文/SI相关图、审稿相关回应、作者关联主页/实验室出版列表、DataCite与GitHub精确查询中未核到原始PSF/MTF/逐波长数表。缺原始二维PSF、横向物方像素尺度、裁剪/背景/归一化、场点和方向；没有独立复算MTF。检索范围见docs/ZHANG_ONCHIP_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "zhang_onchip_si_2025",
+                "zhang_onchip_2025"
+              ]
             }
           }
         }
