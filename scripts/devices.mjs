@@ -56,13 +56,16 @@ export function validateDevices(d,catalog){
   if(k==='mtf50_cpp'&&(v.frequency_unit!=='cycles/pixel'||!['author_stated_unit','calibrated'].includes(v.frequency_status)))errors.push('MTF physical frequency unit');
   if(k!=='mtf50_cpp'&&(v.frequency_unit!=='author_scale'||v.frequency_status!=='author_scale_unverified'))errors.push('MTF author scale');
  }
- const variation=r.values.focus_variation_um;
+ for(const metric of ['focus_variation_um','focus_variation_pct']){
+ const variation=r.values[metric];
  if(Number.isFinite(variation?.value)){
   const waves=variation.sample_wavelengths_nm,protocol=r.values.focus_variation_protocol?.value;
   if(variation.value<0||Number.isFinite(r.values.wavelength_nm?.value)||typeof protocol!=='string'||!protocol.trim()||
    !['author_reported_band_variation','maximum_pairwise_difference'].includes(variation.statistic)||
    !Array.isArray(waves)||waves.length<2||new Set(waves).size!==waves.length||!waves.every(w=>Number.isFinite(w)&&w>0)||
    variation.calculation_origin!=='authors'||variation.basis!=='derived_from_measurement')errors.push('focal variation context');
+  if(metric==='focus_variation_pct'&&(!variation.denominator||variation.reference_wavelength_nm!==null&&(!Number.isFinite(variation.reference_wavelength_nm)||!waves.includes(variation.reference_wavelength_nm))||variation.reference_focal_um!==null&&!(variation.reference_focal_um>0)))errors.push('focal variation percent reference');
+ }
  }
  }
  }

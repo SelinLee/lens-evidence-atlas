@@ -27,7 +27,7 @@
 | QUALITY-001h Li 2022厘米级RGB与原始数据 | done | 本机Codex，2026-11-14；PR #87/64b7547、CI43589333431及Pages43589333379成功，公开12文件一致，153测试及线上独立Chrome六视口/读数/引用通过。四配置/19行、3跨谱点最大差、9FWHM、6Strehl和9效率已发布；原始PSF/MTF/逐点绝对焦距仍缺。见[本批核验](LI_INVERSE_REVIEW_2026-11-14.md)。 |
 | QUALITY-001i Richards 2023已有混合器件补SI/谱点 | done | 本机Codex，2026-11-14；PR #89/03a215e、CI43591072657及Pages43591072682成功，公开12文件一致，160测试（含并行主线显示更新复验）和线上独立Chrome六视口/读数/引用/旧app_14与Li2022回归通过。11配置/47行、32效率与4单镜SR、作者误差汇总完成本批；逐点f/原始PSF/MTF仍缺。见[本批核验](RICHARDS_REVIEW_2026-11-14.md)。 |
 | QUALITY-001j Lin 2019 GaN阵列与MTF原始数据 | done | 本机Codex，2026-11-14；PR #94/4889d26、CI43594149455及Pages43594149421成功，公开12文件一致。168测试、线上独立Chrome六视口/读数/来源/空态/框选缩放通过。新增两配置16行，Operation效率分列；MTF仅三波长曲线，原始数组/PSF/横向采样与逐点f仍缺，未复算。见[本批核查](LIN_ARRAY_REVIEW_2026-11-14.md)。 |
-| QUALITY-001k Zhang 2025片上集成阵列新增研究 | in_progress | 本机Codex，2026-11-14；近期实制可见光Si3N4/CMOS研究，正式主文8页/SI33页已取得并视觉核主文pp.4–5/SI pp.30–31。单镜/5×5/8×8组分开，F93.5/100与半径26/f125/NA0.155差异待核；尚未录新数值，见[检查点](ZHANG_ONCHIP_NEXT_CHECKPOINT_2026-11-14.md)。 |
+| QUALITY-001k Zhang 2025片上Si3N4阵列 | in_progress | 本机Codex，2026-11-14；主文/SI/审稿相关回应完成本批限定核验，新增4配置17行、作者80.39%带内效率和5% variation，参考分母/焦距及535/540/单位/NA冲突保留；173测试/校验/构建通过，待PR/Pages/线上Chrome验收。见[本批核验](ZHANG_ONCHIP_REVIEW_2026-11-14.md)。 |
 | QUALITY-002 手机SNR/MTF/色差独立测量 | in_progress | 本机Codex，2026-11-14；先核有型号和协议的SNR及MTF原始研究；外接镜组、场景与处理链不得写进原生模组，PSNR不替代SNR |
 | QUALITY-003 VRAR MTF与色差 | in_progress | 本机Codex，2026-11-14；复核开放PR #69数据及原文，优先MTF/截止频率、颜色/场点/眼位、色差和先进设备独立测量，不能从曲线猜统一单值 |
 | QUALITY-001a 文献器件首批 | done | 4项原始研究/8器件配置/21行，几何、波段、逐谱点焦距/FWHM/Strehl、PSNR及冲突；见[首批核验](QUALITY_BATCH_2026-11-14.md)；PR #72/23fdecb与Pages43571286647实页验收，不关闭父目标 |
