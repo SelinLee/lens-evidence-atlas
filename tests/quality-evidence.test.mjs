@@ -61,8 +61,8 @@ test('XR cutoff frequency is not MTF50, a dimensionless MTF value, display PPD o
 });
 test('literature domain and accessory selector use the shared data model and traceable unit-consistent points',()=>{
  const workspace=createWorkspace(load(),d),domain=workspace.domains.find(v=>v.id==='metalens');
- assert.equal(domain.name,'消色差超透镜与对照（文献）');assert.equal(domain.category,'文献器件与计算成像');assert.equal(domain.rows.length,21);
- const rows=filteredRows(domain,{module:'main',query:'',models:null,evidence:'research'});assert.equal(rows.length,21);
+ assert.equal(domain.name,'消色差超透镜与对照（文献）');assert.equal(domain.category,'文献器件与计算成像');assert.equal(domain.rows.length,28);
+ const rows=filteredRows(domain,{module:'main',query:'',models:null,evidence:'research'});assert.equal(rows.length,28);
  const ps=axisPoints(rows,'wavelength_nm','measured_focal_um');assert.equal(ps.length,15);
  for(const row of domain.rows)for(const value of Object.values(row.values)){assert.ok(workspace.sources.has(value.source));assert.ok(value.location);assert.ok(value.note);}
 });

@@ -15,7 +15,7 @@ export function createWorkspace(catalog, devices) {
     ...domain, id, name: domain.name || (id === 'phone' ? '手机镜头 / 摄像头' : 'AR / VR 显示'), category: domain.category || '手机与近眼显示',
     task_guidance: (domain.task_guidance || []).map(g => ({...g, source: 'device-' + g.source})),
     metrics: domain.metrics.map(m => ({...m, definition_refs: (m.definition_refs || []).map(r => ({...r, source: 'device-' + r.source}))})),
-    rows: domain.rows.map(r => ({...r, evidence: r.evidence_type === 'study' ? '研究记录 / 作者报告' : '厂商标称', variant: [r.variant, r.measurement_scope].filter(Boolean).join('；'), values: Object.fromEntries(Object.entries(r.values).map(([key, value]) => [key, {...value, evidence: ({measured:'研究实测',reported_configuration:'研究设备配置',modeled:'模型结果',model:'模型结果',derived_from_measurement:'由实测数据计算',reconstruction:'实验重建统计',manufacturer_claim:'厂商标称'})[value.basis] || (r.evidence_type === 'study' ? '研究记录 / 作者报告' : '厂商标称'), source: 'device-' + value.source}]))})),
+    rows: domain.rows.map(r => ({...r, evidence: r.evidence_type === 'study' ? '研究记录 / 作者报告' : '厂商标称', variant: [r.variant, r.measurement_scope].filter(Boolean).join('；'), values: Object.fromEntries(Object.entries(r.values).map(([key, value]) => [key, {...value, ...(value.sourceIds ? {sourceIds:value.sourceIds.map(id=>'device-'+id)} : {}), evidence: ({measured:'研究实测',reported_configuration:'研究设备配置',modeled:'模型结果',model:'模型结果',derived_from_measurement:'由实测数据计算',reconstruction:'实验重建统计',unresolved:'原文待消歧',manufacturer_claim:'厂商标称'})[value.basis] || (r.evidence_type === 'study' ? '研究记录 / 作者报告' : '厂商标称'), source: 'device-' + value.source}]))})),
     sourceIds: [], asOf: devices.as_of
   }));
   const legacyDomains = catalog.applications.map(app => {

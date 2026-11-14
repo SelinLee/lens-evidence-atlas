@@ -82,6 +82,9 @@ function sortRows(rows) {
     return 0;
   });
 }
+function coordinateText(p, axis) {
+  return `${p.row.values[state[axis]]?.approximate ? '约' : ''}${p[axis]}`;
+}
 function pointDescription(p) {
   const d = domain(), xm = d.metrics.find(m => m.id === state.x), ym = d.metrics.find(m => m.id === state.y);
   const xv = p.row.values[state.x], yv = p.row.values[state.y];
@@ -118,7 +121,7 @@ function drawChart() {
   legend.setAttribute('aria-label','样本、坐标与来源');
   legend.innerHTML = activePoints.map((p, index) => {
     const ids = [...new Set([...valueSources(p.row.values[state.x]), ...valueSources(p.row.values[state.y])])];
-    return `<li><a href="#${esc(rowAnchor(p.row))}" title="${esc(pointDescription(p))}">${categorical ? `${p.x}. ` : ''}${esc(p.row.model)} · (${p.x}, ${p.y})</a>${ids.map(citation).join('')}</li>`;
+    return `<li><a href="#${esc(rowAnchor(p.row))}" title="${esc(pointDescription(p))}">${categorical ? `${p.x}. ` : ''}${esc(p.row.model)} · (${esc(coordinateText(p,'x'))}, ${esc(coordinateText(p,'y'))})</a>${ids.map(citation).join('')}</li>`;
   }).join('');
 }
 function table() {
@@ -174,7 +177,7 @@ function render(updateControls = true) {
 }
 function focusPoint(index) {
   const groups = new Map(); for(const p of activePoints){const key=JSON.stringify([p.x,p.y]);if(!groups.has(key))groups.set(key,[]);groups.get(key).push(p);}
-  $('point-detail').innerHTML=([...groups.values()][index]||[]).map(p=>`${esc(p.row.model)} · (${p.x}, ${p.y}) <a href="#${esc(rowAnchor(p.row))}">查看数据表 ↓</a>${[...new Set([...valueSources(p.row.values[state.x]),...valueSources(p.row.values[state.y])])].map(citation).join('')}<span> · ${esc(p.row.variant)}</span>`).join('<br>');
+  $('point-detail').innerHTML=([...groups.values()][index]||[]).map(p=>`${esc(p.row.model)} · (${esc(coordinateText(p,'x'))}, ${esc(coordinateText(p,'y'))}) <a href="#${esc(rowAnchor(p.row))}">查看数据表 ↓</a>${[...new Set([...valueSources(p.row.values[state.x]),...valueSources(p.row.values[state.y])])].map(citation).join('')}<span> · ${esc(p.row.variant)}</span>`).join('<br>');
 }
 function download(name,type,text){const a=document.createElement('a'),url=URL.createObjectURL(new Blob([text],{type}));a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 function exportCSV(){
