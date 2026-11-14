@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "version": "0.3.5",
+    "version": "0.3.6",
     "updated_on": "2026-11-14",
     "legacy_checked_on": "2026-10-25",
     "legacy_sha256": "d595a996927b005d8687764c1a7efe470d530a4410c034e68cd04608abdfbff6",
@@ -3332,14 +3332,27 @@
     {
       "id": "richards",
       "title": "Richards 等 Hybrid achromatic microlenses",
-      "url": "https://backend.orbit.dtu.dk/ws/files/325782423/s41467_023_38858_y.pdf",
-      "location": "出版社版本pp.4–5 Focal length and focusing efficiency / Fig.3；p.8 Focusing efficiency；p.9 Focal length measurements / Simulations；p.6 Individually tuning… / pp.6–7 Imaging with an achromatic microlens array，p.7 Fig.5、p.8 Fig.6",
-      "evidence_scope": "DTU机构库出版社版本；读取并实际渲染查看印刷pp.3–9（PDF页序+1）。本批补核pp.6–8的NA/效率/焦移与加工取舍、18单元阵列及作者未来设计建议；区分单透镜测量与阵列示例。未读补充材料，不从曲线估读新数值。",
+      "url": "https://www.nature.com/articles/s41467-023-38858-y",
+      "location": "正式PDF pp.2–9 Fig.1–6、结构/焦差与Methods；主文p.9 Data availability；pp.6–7 高NA/阵列与Discussion",
+      "evidence_scope": "正式11页主文，读摘要/结构/聚焦与效率/高NA及Methods/Data availability，视觉核PDF pp.2–9 Fig.1–6、式1–6及相关文字。折射/衍射混合、GRIN与两色散对照分开；约4μm/2.8%为作者中心542nm附近误差报告，非逐点Δf或最大互差。复用原app_14同一论文来源；不反算未知设计/实测焦距。",
       "source_year": 2023,
-      "checked_on": "2026-11-06",
+      "checked_on": "2026-11-14",
       "kind": "paper",
       "verification": "checked_excerpt",
       "doi": "10.1038/s41467-023-38858-y"
+    },
+    {
+      "id": "richards_si",
+      "title": "Richards 2023 Supplementary Information",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-023-38858-y/MediaObjects/41467_2023_38858_MOESM1_ESM.pdf",
+      "doi": "10.1038/s41467-023-38858-y",
+      "publication_source": "richards",
+      "location": "SI PDF pp.5–6 Fig.S4–S6；p.9 Table S1",
+      "evidence_scope": "正式15页SI，读§4/5/8，视觉核PDF pp.5–6 S4–S6与p.9 Table S1。S1八配置×四波长效率逐项录入，首配置n=10均值，其余n=1；S5a四个Strehl直接印字来自随机一镜，不与效率均值拼成同组。曲线未估读，未取得原始PSF与物方采样尺度，未复算MTF。",
+      "source_year": 2023,
+      "checked_on": "2026-11-14",
+      "kind": "supplementary_material",
+      "verification": "checked_excerpt"
     },
     {
       "id": "rouquette_mla_wfs_v1_2026",
@@ -7334,27 +7347,40 @@
       "name": "Richards 2023 高NA方案",
       "evidence_type": "科研实验示例",
       "source_ids": [
-        "richards"
+        "richards",
+        "richards_si"
       ],
       "parameters": [
         {
           "name": "NA",
-          "value": "0.471 @633 nm"
+          "value": "0.471 @633 nm",
+          "evidence": {
+            "source_id": "richards_si",
+            "location": "SI p.9 Table S1，Fig.5h行 / NA at633nm列"
+          }
         },
         {
           "name": "聚焦效率",
-          "value": "30–40%"
+          "value": "488nm:38.9%；542nm:29.3%；612nm:35.7%；633nm:35%（各n=1）",
+          "evidence": {
+            "source_id": "richards_si",
+            "location": "SI p.9 Table S1，Fig.5h行 / Focusing Efficiency四波长条目列"
+          }
         },
         {
           "name": "焦距误差",
-          "value": "7.5%"
+          "value": "7.5%",
+          "evidence": {
+            "source_id": "richards_si",
+            "location": "SI p.9 Table S1，Fig.5h行 / Focusing Error列"
+          }
         }
       ],
-      "conditions": "Fig.5h；高NA及70%效率不能拼成同一器件；效率定义同本论文。",
-      "unreported_or_not_verified": "此配置独立全场MTF",
+      "conditions": "Fig.5h九区衍射+双凸折射混合；n=1，NA0.471@633nm。实测效率来自SI S1，不用主文约30–40%概述代替精确表。半径3FWHM针孔/邻近空白基底同口径参考，逐波长最佳焦面；模拟分母不同。",
+      "unreported_or_not_verified": "连续400–700nm逐波长焦距/共同固定焦面效率、逐点绝对焦距原表、原始PSF/物方采样、MTF；作者误差百分数公式仍不明确。SI已取得，详见统一文献矩阵。",
       "application_id": "app_14",
-      "checked_on": "2026-10-25",
-      "record_status": "inherited_v2",
+      "checked_on": "2026-11-14",
+      "record_status": "checked_excerpt",
       "claim_type": "representative_result"
     },
     {
@@ -7363,7 +7389,8 @@
       "name": "Richards 2023 折衍混合主方案",
       "evidence_type": "科研实验示例",
       "source_ids": [
-        "richards"
+        "richards",
+        "richards_si"
       ],
       "parameters": [
         {
@@ -7415,10 +7442,10 @@
           }
         }
       ],
-      "conditions": "几何折射+衍射混合方案；4个离散测量波长。实验分子为半径3×FWHM针孔内焦斑功率，分母为邻近空白基底同物方孔径参考功率（p.8）。移台使收集物镜对准焦点，未证明四波长共用固定z平面。仿真以200×200 μm焦面屏幕总功率为分母（p.9），与实验不等价。",
-      "unreported_or_not_verified": "连续400–700 nm逐波长验收、共同固定焦面效率、独立总透过率、补充材料；正文约2.8%的聚合公式不清楚，不改写为峰峰值或最大绝对相对误差。",
+      "conditions": "几何折射+衍射混合方案；4个离散测量波长。实验分子为半径3×FWHM针孔内焦斑功率，分母为邻近空白基底同物方孔径参考功率（p.8）。移台使收集物镜对准焦点，未证明四波长共用固定z平面。仿真以200×200 μm焦面屏幕总功率为分母（p.9），与实验不等价。 SI S1 Fig.5a精确均值依488/542/612/633nm为45.3/53.1/60/64%，n=10；SR是另选单镜，不能和效率均值混成一组。",
+      "unreported_or_not_verified": "连续400–700nm逐波长焦距/共同固定焦面效率、逐点绝对焦距原表、原始PSF/物方采样、MTF；作者误差百分数公式仍不明确。SI已取得，详见统一文献矩阵。",
       "application_id": "app_14",
-      "checked_on": "2026-11-06",
+      "checked_on": "2026-11-14",
       "record_status": "checked_excerpt",
       "claim_type": "representative_result"
     },

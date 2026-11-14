@@ -1,5 +1,13 @@
-export function validateDevices(d){
+export function validateDevices(d,catalog){
  const errors=[],ids=new Set(d.sources.map(s=>s.id));
+ const aliases=new Set();
+ for(const s of d.sources)if(s.catalog_source!==undefined){
+  const target=catalog?.sources.find(p=>p.id===s.catalog_source);
+  if(typeof s.catalog_source!=='string'||!s.catalog_source||typeof s.doi!=='string'||!s.doi||aliases.has(s.catalog_source)||
+   (catalog&&(!target||target.publication_source!==(s.publication_source&&(d.sources.find(p=>p.id===s.publication_source)?.catalog_source||'device-'+s.publication_source))||target.doi?.toLowerCase()!==s.doi.toLowerCase())))errors.push('catalog source alias');
+  aliases.add(s.catalog_source);
+ }
+
  for(const s of d.sources)if(s.publication_source&&!d.sources.some(p=>p.id===s.publication_source&&p.id!==s.id&&!p.publication_source))errors.push('invalid publication source');
  for(const s of d.sources)if(!s.scope||!/^https:\/\//.test(s.url)||!/^\d{4}-\d{2}-\d{2}$/.test(s.checked_on))errors.push('source metadata');
  for(const c of Object.values(d.domains)){
@@ -16,6 +24,14 @@ export function validateDevices(d){
   if(r.evidence_type==='study'&&(!['reported_configuration','measured','model','modeled','derived_from_measurement','reconstruction','unresolved'].includes(v.basis)||!v.note))errors.push('study cell evidence');
   if(v.uncertainty&&(!['SD','SEM'].includes(v.uncertainty.type)||!Number.isFinite(v.uncertainty.value)||v.uncertainty.value<0||!Number.isInteger(v.uncertainty.n)||v.uncertainty.n<2||v.statistic!=='mean'))errors.push('reported uncertainty');
   if(['fwhm_um','fwhm_x_um','fwhm_y_um'].includes(k)&&Number.isFinite(v.value)&&!(v.value>0&&r.values.wavelength_nm?.value>0&&v.basis==='measured'))errors.push('measured PSF FWHM context');
+ }
+ for(const k of ['focus_error_um','focus_error_pct']){
+  const v=r.values[k];if(!Number.isFinite(v?.value))continue;
+  const waves=v.sample_wavelengths_nm,ref=v.reference_wavelength_nm;
+  if(v.value<0||!r.values.focus_error_protocol?.value||v.statistic!=='author_reported_focal_error'||v.calculation_origin!=='authors'||
+   v.basis!=='derived_from_measurement'||Number.isFinite(r.values.wavelength_nm?.value)||!Array.isArray(waves)||waves.length<2||
+   new Set(waves).size!==waves.length||waves.some(w=>!(w>0&&Number.isFinite(w)))||
+   (ref!==null&&(!Number.isFinite(ref)||!waves.includes(ref))))errors.push('focal error context');
  }
  for(const k of ['efficiency_at_lambda_pct','efficiency_band_mean_pct']){
   const v=r.values[k];if(!Number.isFinite(v?.value))continue;

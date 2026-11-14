@@ -4,26 +4,39 @@
   "name": "Richards 2023 高NA方案",
   "evidence_type": "科研实验示例",
   "source_ids": [
-    "richards"
+    "richards",
+    "richards_si"
   ],
   "parameters": [
     {
       "name": "NA",
-      "value": "0.471 @633 nm"
+      "value": "0.471 @633 nm",
+      "evidence": {
+        "source_id": "richards_si",
+        "location": "SI p.9 Table S1，Fig.5h行 / NA at633nm列"
+      }
     },
     {
       "name": "聚焦效率",
-      "value": "30–40%"
+      "value": "488nm:38.9%；542nm:29.3%；612nm:35.7%；633nm:35%（各n=1）",
+      "evidence": {
+        "source_id": "richards_si",
+        "location": "SI p.9 Table S1，Fig.5h行 / Focusing Efficiency四波长条目列"
+      }
     },
     {
       "name": "焦距误差",
-      "value": "7.5%"
+      "value": "7.5%",
+      "evidence": {
+        "source_id": "richards_si",
+        "location": "SI p.9 Table S1，Fig.5h行 / Focusing Error列"
+      }
     }
   ],
-  "conditions": "Fig.5h；高NA及70%效率不能拼成同一器件；效率定义同本论文。",
-  "unreported_or_not_verified": "此配置独立全场MTF",
+  "conditions": "Fig.5h九区衍射+双凸折射混合；n=1，NA0.471@633nm。实测效率来自SI S1，不用主文约30–40%概述代替精确表。半径3FWHM针孔/邻近空白基底同口径参考，逐波长最佳焦面；模拟分母不同。",
+  "unreported_or_not_verified": "连续400–700nm逐波长焦距/共同固定焦面效率、逐点绝对焦距原表、原始PSF/物方采样、MTF；作者误差百分数公式仍不明确。SI已取得，详见统一文献矩阵。",
   "application_id": "app_14",
-  "checked_on": "2026-10-25",
-  "record_status": "inherited_v2",
+  "checked_on": "2026-11-14",
+  "record_status": "checked_excerpt",
   "claim_type": "representative_result"
 }

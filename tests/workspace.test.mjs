@@ -98,7 +98,7 @@ test('asset versions match the final bytes including transitive module imports a
 
 test('each paper owns its configurations and its supplementary source IDs resolve to the same publication',()=>{
  const lenses=atlas.domains.find(d=>d.id==='metalens'), groups=groupRows(lenses.rows);
- assert.equal(groups.length,13);
+ assert.equal(groups.length,14);
  const balli=groups.find(g=>g.key==='balli2020');
  assert.equal(balli.rows.length,37);
  assert.equal(new Set(balli.rows.map(r=>r.specimen_id)).size,5);
@@ -113,10 +113,10 @@ test('each paper owns its configurations and its supplementary source IDs resolv
 
 test('visible-light filtering prioritizes the actual spectral row and keeps unknown wavelengths separate',()=>{
  const lens=atlas.domains.find(d=>d.id==='metalens'), filtered=filteredRows(lens,{visible:true,models:null});
- assert.equal(filtered.length,56);
+ assert.equal(filtered.length,103);
  assert.deepEqual(filtered.filter(r=>r.study_id==='lin2025').map(r=>r.values.wavelength_nm.value),[650,700,650,700]);
  assert.ok(!filtered.some(r=>['balli2020','shrestha2018','engelberg2020'].includes(r.study_id)));
- assert.equal(groupRows(filtered).length,10);
+ assert.equal(groupRows(filtered).length,11);
  const band={lambda_min_nm:{value:350},lambda_max_nm:{value:920}};
  const passes=values=>hasVisibleLight({id:'metalens'},{values});
  assert.ok(passes(band));assert.ok(!passes({}));assert.ok(!passes({...band,wavelength_nm:{value:1000}}));
