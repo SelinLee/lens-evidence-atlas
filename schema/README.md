@@ -17,3 +17,5 @@
 同一格可用sourceIds列多个原始来源，必须包含主source且各ID有效；统一界面须将这些ID全部映射并显示，不能只保留首项。efficiency_at_lambda_pct须有efficiency_lambda_nm及efficiency_protocol；efficiency_band_mean_pct须有工作波段、statistic=band_mean及协议。两类百分数都不能混成单元转换效率、最大效率或不明分母的统一排名。approximate=true的坐标保留“约”字。
 
 手机MTF50的frequency_status区分author_scale_unverified（原表输出、标尺未核）与author_stated_unit（原文单位明确、方法仍可能缺失）。前者只允许在mtf50_app_reported/mtf50_imatest_reported，frequency_unit=author_scale，不能流入sfr或mtf50_cpp。后者的mtf50_cpp须明确frequency_unit=cycles/pixel；均须mtf_protocol保存边界。原表数字本身可追溯不代表已校准物理频率；多个软件处理同组图像不算独立研究。
+
+原文方向明确的实测PSF宽度可用`fwhm_x_um`/`fwhm_y_um`，与未区分方向的`fwhm_um`分开；有限数值须为正、保留测量波长及`basis: measured`。XR对角FOV用`dfov`，不借给水平/垂直/方向未明列。原型SLM频率、CGH帧数与系统刷新率/延迟不互填；RGB离散测量不填写连续带宽。
