@@ -15,7 +15,7 @@ function deviceFixture(data=d){
 }
 test('device domain and module controls can be changed repeatedly',()=>{
  const f=deviceFixture();
- for(const module of ['ultrawide','tele','main']){f.change('module',module);assert.match(f.el('status').textContent,/当前 4 个型号/);assert.match(f.el('table').innerHTML,/iPhone/);}
+ for(const module of ['ultrawide','tele','main']){f.change('module',module);assert.ok(f.el('status').textContent.includes('当前 '+d.domains.phone.rows.filter(r=>r.module===module).length+' 个型号'));assert.match(f.el('table').innerHTML,/iPhone/);}
  for(let i=0;i<2;i++){
   f.change('domain','xr');assert.equal(f.el('module-label').hidden,true);assert.match(f.el('table').innerHTML,/Vision Pro/);assert.ok(!f.el('table').innerHTML.includes('iPhone'));
   f.change('domain','phone');assert.equal(f.el('module-label').hidden,false);assert.match(f.el('table').innerHTML,/iPhone/);
@@ -101,7 +101,7 @@ test('follow-up specifications preserve unresolved ranges and optical measuremen
  const x=d.domains.xr.rows.find(r=>r.id==='xreal_one_pro');
  for(const key of ['width','height','brightness','latency','hfov','ppd'])assert.equal(x.values[key],undefined);
  const v=d.domains.xr.rows.find(r=>r.id==='vive_focus_vision');assert.match(v.values.hz.note,/DisplayPort.*Beta/);assert.equal(v.values.hfov,undefined);
- assert.equal(d.domains.phone.rows.length,12);assert.equal(d.domains.xr.rows.length,8);
+ assert.equal(d.domains.phone.rows.length,15);assert.equal(d.domains.xr.rows.length,8);
 });
 
 test('XREAL optical scheme is sourced without adopting marketing performance claims',()=>{
@@ -190,4 +190,25 @@ test('CSV exports missing values, notes and provenance with formula and quoting 
  vm.runInContext(code.slice(code.indexOf('function cellText('),code.indexOf('function render('))+code.slice(code.indexOf('function csvText('),code.indexOf("['domain','module','x','y','mode','sort']",code.indexOf('function csvText('))),c);
  c.rows=[{model:'=1+2',variant:'a,"b',values:{mp:{value:48,source:'apple_phone',location:'Camera',note:'line\n2'}}}];c.ms=[{id:'mp',label:'MP'},{id:'dr',label:'DR'}];
  const s=vm.runInContext('csvText(rows,ms)',c);assert.ok(s.startsWith('\ufeff'));assert.ok(s.includes("'=1+2"));assert.ok(s.includes('a,""b'));assert.ok(s.includes('未公开 / 未核验'));assert.ok(s.includes('https://www.apple.com/iphone-18-pro/specs/'));
+});
+
+test('OPPO Global camera fields are paired by module without inferred focal length or negative OIS',()=>{
+ const rows=d.domains.phone.rows.filter(r=>r.id.startsWith('oppo_x10_pro_max_'));
+ assert.equal(rows.length,3);
+ for(const [module,f,fov] of [['main',1.5,84],['ultrawide',2.2,124],['tele',2.1,34]]){
+  const r=rows.find(r=>r.module===module);assert.equal(r.values.mp.value,200);assert.equal(r.values.f.value,f);assert.equal(r.values.fov.value,fov);
+  assert.equal(r.values.focal,undefined);assert.equal(r.values.sensor,undefined);assert.equal(r.values.sfr,undefined);
+  assert.equal(r.values.af.value,'支持');if(module==='ultrawide')assert.equal(r.values.ois,undefined);else assert.equal(r.values.ois.value,'两轴 OIS');
+  assert.ok(Object.values(r.values).every(v=>v.source==='oppo_x10_pro_max_global_20261114'&&v.location.includes('Camera / Rear')));
+ }
+});
+test('metric citations reject broken references and stay visible even with no selected rows',()=>{
+ for(const ref of [{source:'missing',location:'test'},{source:'edmund_fnumber_20261114'}]){
+  const x=structuredClone(d);x.domains.phone.metrics[0].definition_refs=[ref];assert.throws(()=>validateDevices(x),/metric definition provenance/);
+ }
+ const empty=structuredClone(d);empty.domains.phone.rows=[];const f=deviceFixture(empty);
+ for(const id of ['edmund_fnumber_20261114','tudelft_principal_planes_20261114']){
+  assert.ok(f.el('definitions').innerHTML.includes(`href="#source-${id}"`));assert.ok(f.el('sources').innerHTML.includes(`id="source-${id}"`));
+ }
+ assert.match(f.el('sources').innerHTML,/学术教材/);assert.match(f.el('sources').innerHTML,/原厂技术说明/);
 });
