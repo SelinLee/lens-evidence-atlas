@@ -1,0 +1,100 @@
+ 'use strict';
+const E=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const $=id=>document.getElementById(id),D=window.DEVICE_DATA;
+function points(rows,x,y){return rows.filter(r=>Number.isFinite(r.values[x]?.value)&&Number.isFinite(r.values[y]?.value)).map(r=>({id:r.id,label:r.model,x:r.values[x].value,y:r.values[y].value}));}
+function tickLabels(min,max){
+ const values=Array.from({length:5},(_,i)=>min+(max-min)*i/4);
+ for(let precision=3;precision<=17;precision++){
+  const labels=values.map(value=>String(Number(value.toPrecision(precision))));
+  if(new Set(labels).size===values.length)return labels;
+ }
+ return values.map(String);
+}
+function layoutLabels(items){
+ const placed=[],padding=4,height=18;
+ const overlaps=(a,b,gap)=>a.x<b.x+b.width+gap&&a.x+a.width+gap>b.x&&a.y<b.y+b.height+gap&&a.y+a.height+gap>b.y;
+ const clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
+ for(const item of items){
+  // One em per character is deliberately conservative for the 13px labels.
+  const width=Array.from(item.label).length*13+8;
+  const box=(x,y)=>({x:clamp(x,100,800-width),y:clamp(y,40,360-height),width,height});
+  const free=b=>width<=700&&!placed.some(p=>p&&overlaps(b,p,padding))&&!items.some(p=>overlaps(b,{x:p.x-10,y:p.y-10,width:20,height:20},0));
+  const candidates=[box(item.x+14,item.y-36),box(item.x+14,item.y+14),box(item.x-width-14,item.y-36),box(item.x-width-14,item.y+14)];
+  let chosen=candidates.find(free);
+  if(!chosen){
+   let distance=Infinity;
+   for(let y=40;y<=360-height;y+=24)for(let x=100;x<=800-width;x+=24){
+    const b=box(x,y),dx=item.x-clamp(item.x,b.x,b.x+b.width),dy=item.y-clamp(item.y,b.y,b.y+b.height),d=dx*dx+dy*dy;
+    if(free(b)&&d<distance){chosen=b;distance=d;}
+   }
+  }
+  if(!chosen){placed.push(null);continue;}
+  // Connect to the visible start of the text, not its conservative width estimate.
+  placed.push({...chosen,anchorX:chosen.x,anchorY:item.y<chosen.y+height/2?chosen.y:chosen.y+height});
+ }
+ return placed;
+}
+function chart(rows,x,y,metrics,mode="scatter"){
+ const ps=points(rows,x,y);
+ if(!ps.length)return '<p>这两个指标暂无同时已知的型号。请选择其他指标；不会补零。</p>';
+ const groups=new Map();
+ for(const p of ps){const key=JSON.stringify([p.x,p.y]);if(!groups.has(key))groups.set(key,{x:p.x,y:p.y,labels:[]});groups.get(key).labels.push(p.label);}
+ const xs=ps.map(p=>p.x),ys=ps.map(p=>p.y);
+ let xmin=Math.min(...xs),xmax=Math.max(...xs),ymin=Math.min(...ys),ymax=Math.max(...ys);
+ const dx=(xmax-xmin)||Math.abs(xmin)*.1||1,dy=(ymax-ymin)||Math.abs(ymin)*.1||1;
+ xmin-=dx*.1;xmax+=dx*.1;ymin-=dy*.1;ymax+=dy*.1;
+ const px=v=>90+(v-xmin)/(xmax-xmin)*700,py=v=>370-(v-ymin)/(ymax-ymin)*310;
+ const xticks=tickLabels(xmin,xmax),yticks=tickLabels(ymin,ymax);
+ let s='<p class="chart-scroll-hint" id="chart-scroll-hint">窄屏可横向滚动查看完整散点图；下方图例保留全部型号与坐标。</p><div class="scroll plot-scroll" role="region" aria-label="散点图横向滚动区域" aria-describedby="chart-scroll-hint" tabindex="0"><svg viewBox="0 0 900 450" role="img" aria-label="型号指标散点图；重合点按坐标分组，型号见下方图例"><path d="M90 40V370H810" stroke="#718096" fill="none"/>';
+ for(let i=0;i<=4;i++){
+  const xv=xmin+(xmax-xmin)*i/4,yv=ymin+(ymax-ymin)*i/4;
+  s+=`<text x="${px(xv)}" y="395" text-anchor="middle" font-size="12">${E(xticks[i])}</text><text x="80" y="${py(yv)}" text-anchor="end" font-size="12">${E(yticks[i])}</text>`;
+ }
+ s+=`<text x="450" y="435" text-anchor="middle">${E(metrics.find(m=>m.id===x).label)}</text><text x="12" y="20">${E(metrics.find(m=>m.id===y).label)}</text>`;
+ const legend=[];let markers='',annotations='';
+ const entries=[...groups.values()],labels=entries.map(g=>g.labels.length>1?`${g.labels.length} 个型号`:g.labels[0]);
+ const positions=layoutLabels(entries.map((g,i)=>({x:px(g.x),y:py(g.y),label:labels[i]})));
+ entries.forEach((g,i)=>{
+  const label=labels[i],position=positions[i],color=`hsl(${i*97%360} 65% 40%)`;
+  const leader=position?`<line class="label-leader" x1="${px(g.x)}" y1="${py(g.y)}" x2="${position.anchorX}" y2="${position.anchorY}" stroke="${color}" stroke-width="1" opacity="0.65" aria-hidden="true"/>`:'';
+  const text=position?`<text class="point-label" x="${position.x}" y="${position.y+14}" font-size="13">${E(label)}</text>`:'';
+  s+=leader;
+  markers+=`<g><circle cx="${px(g.x)}" cy="${py(g.y)}" r="7" fill="${color}"><title>${E(g.labels.join('、'))}: ${g.x}, ${g.y}</title></circle></g>`;
+  annotations+=text;
+  legend.push(`<li><span style="color:${color}" aria-hidden="true">●</span> ${E(g.labels.join('、'))}：(${g.x}, ${g.y})${g.labels.length>1?'，同坐标重合':''}</li>`);
+ });
+ const ordered=[...groups.values()].sort((a,b)=>a.x-b.x||a.y-b.y);
+ const line=mode==='line'&&ordered.length>1?`<polyline class="model-line" points="${ordered.map(g=>`${px(g.x)},${py(g.y)}`).join(' ')}" stroke="#526a82" stroke-width="2" fill="none"/>`:'';
+ return s+line+markers+annotations+'</svg></div>'+(positions.some(p=>!p)?'<p>部分文字标签请见下方完整图例；圆点坐标未移动。</p>':'')+'<ul class="chart-legend" aria-label="散点型号与坐标">'+legend.join('')+'</ul>';
+}
+let chosenModels=null,chosenColumns=null;
+function viewRows(){const c=D.domains[$('domain').value];return c.rows.filter(r=>($('domain').value==='xr'||r.module===$('module').value)&&(chosenModels===null||chosenModels.includes(r.model)));}
+function sortedRows(rows,x,y){const key=$('sort').value;return [...rows].sort((a,b)=>key==='x'||key==='y'?((a.values[key==='x'?x:y]?.value??Infinity)-(b.values[key==='x'?x:y]?.value??Infinity)||a.model.localeCompare(b.model)):key==='model'?a.model.localeCompare(b.model):0);}
+function cellText(r,m){const v=r.values[m.id];return v&&v.value!==null?String(v.value):'未公开 / 未核验';}
+function render(reset=false,resetScroll=false){
+ const domain=$('domain').value,c=D.domains[domain],ms=c.metrics;
+ if(reset){chosenModels=null;chosenColumns=null;}
+ const available=c.rows.filter(r=>domain==='xr'||r.module===$('module').value),models=[...new Set(available.map(r=>r.model))];
+ $('models').innerHTML=models.map(m=>`<option${chosenModels===null||chosenModels.includes(m)?' selected':''}>${E(m)}</option>`).join('');
+ $('columns').innerHTML=ms.map(m=>`<option value="${m.id}"${chosenColumns===null||chosenColumns.includes(m.id)?' selected':''}>${E(m.label)}</option>`).join('');
+ $('module-label').hidden=domain==='xr';$('scope').textContent=c.scope;
+ for(const id of ['x','y'])if(reset||!ms.some(m=>m.id===$(id).value)){$(id).innerHTML=ms.filter(m=>m.numeric).map(m=>`<option value="${m.id}">${E(m.label)}</option>`).join('');$(id).value=ms.filter(m=>m.numeric)[id==='x'?0:1].id;}
+ const x=$('x').value,y=$('y').value,rs=sortedRows(viewRows(),x,y),columns=ms.filter(m=>chosenColumns===null||chosenColumns.includes(m.id)),ps=points(rs,x,y);
+ $('chart').innerHTML=chart(rs,x,y,ms,$('mode').value);$('status').textContent=`当前 ${rs.length} 个型号，${ps.length} 个可绘制点；${rs.length-ps.length} 个缺少所选数值。证据：厂商公开规格，非同条件实测。`;
+ $('table').innerHTML='<table><thead><tr><th>型号 / 配置</th>'+columns.map(m=>`<th><a href="#metric-${domain}-${m.id}">${E(m.label)}</a></th>`).join('')+'</tr></thead><tbody>'+rs.map(r=>'<tr><th>'+E(r.model)+'<small>'+E(r.variant)+'</small></th>'+columns.map(m=>{const v=r.values[m.id];return '<td>'+E(cellText(r,m))+(v?`<small>${E(v.note||'')} <a href="#source-${E(v.source)}">出处</a> · ${E(v.location)}</small>`:'')+'</td>';}).join('')+'</tr>').join('')+'</tbody></table>';
+ $('definitions').innerHTML=ms.map(m=>`<details id="metric-${domain}-${m.id}"><summary>${E(m.label)}</summary><p>${E(m.definition)}</p><p>比较前提：${E(m.conditions)}</p><p>当前为字段口径说明；完整学术定义与任务重要性依据仍在补证，未建立通用排名。</p></details>`).join('');
+ $('sources').innerHTML=D.sources.filter(s=>rs.some(r=>Object.values(r.values).some(v=>v.source===s.id))).map(s=>`<p id="source-${E(s.id)}"><a href="${E(s.url)}" target="_blank" rel="noopener">${E(s.title)}</a><br>${E(s.scope)} · 核验 ${E(s.checked_on)}</p>`).join('');
+ $('date').textContent='样本截止 '+D.as_of+'；非完整市场清单，未知项保留。';if(resetScroll)$('table').scrollLeft=0;
+ saveView();
+}
+function saveView(){if(!window.history||!window.location)return;const u=new URL(window.location.href);for(const id of ['domain','module','x','y','mode','sort'])u.searchParams.set(id,$(id).value);for(const [id,v]of [['models',chosenModels],['columns',chosenColumns]]){if(v===null)u.searchParams.delete(id);else u.searchParams.set(id,JSON.stringify(v));}window.history.replaceState(null,'',u);}
+function download(name,type,text){const a=document.createElement('a'),url=URL.createObjectURL(new Blob([text],{type}));a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+function csvText(rows,metrics){const q=v=>'"'+String(v??'').replace(/"/g,'""')+'"';const safe=v=>/^[=+\-@\t\r]/.test(String(v))?"'"+v:v;return '\ufeff'+[['型号','配置',...metrics.flatMap(m=>[m.label,m.label+'备注',m.label+'来源',m.label+'原文位置'])],...rows.map(r=>[r.model,r.variant,...metrics.flatMap(m=>{const v=r.values[m.id];return [cellText(r,m),v?.note||'',D.sources.find(s=>s.id===v?.source)?.url||'',v?.location||''];})])].map(row=>row.map(v=>q(safe(v))).join(',')).join('\r\n');}
+['domain','module','x','y','mode','sort'].forEach(id=>$(id).addEventListener('change',()=>render(id==='domain',id==='domain'||id==='module')));
+for(const id of ['models','columns'])$(id).addEventListener('change',()=>{const values=[...$(id).selectedOptions].map(o=>o.value);if(id==='models')chosenModels=values;else chosenColumns=values;render();});
+$('all-models').addEventListener('click',()=>{chosenModels=null;render();});$('all-columns').addEventListener('click',()=>{chosenColumns=null;render();});
+$('export-csv').addEventListener('click',()=>{const c=D.domains[$('domain').value];download('lens-device-table.csv','text/csv;charset=utf-8',csvText(sortedRows(viewRows(),$('x').value,$('y').value),c.metrics.filter(m=>chosenColumns===null||chosenColumns.includes(m.id))));});
+$('export-svg').addEventListener('click',()=>{const svg=$('chart').querySelector('svg');if(!svg){$('status').textContent='当前无有效图表可导出';return;}const copy=svg.cloneNode(true);copy.setAttribute('xmlns','http://www.w3.org/2000/svg');const desc=document.createElementNS('http://www.w3.org/2000/svg','desc');desc.textContent=$('status').textContent+'；'+$('chart').textContent;copy.prepend(desc);download('lens-device-chart.svg','image/svg+xml',new XMLSerializer().serializeToString(copy));});
+$('share').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(window.location.href);$('status').textContent='已复制当前视图链接';}catch{$('status').textContent='可复制浏览器地址栏，当前选择已保存在链接中。';}});
+const initialSearch=window.location?.href;render(true);
+if(initialSearch){const p=new URL(initialSearch).searchParams;const domain=p.get('domain');if(D.domains[domain]){$('domain').value=domain;render(true);}for(const id of ['module','x','y','mode','sort']){const v=p.get(id);if(v&&[...$(id).options].some(o=>o.value===v))$(id).value=v;}for(const id of ['models','columns']){try{const v=JSON.parse(p.get(id));if(Array.isArray(v)&&v.every(x=>typeof x==='string')){if(id==='models')chosenModels=v;else chosenColumns=v;}}catch{}}render();}
