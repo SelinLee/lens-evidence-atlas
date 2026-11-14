@@ -69,7 +69,7 @@ test('visible-only summary records retain one publication while known infrared w
  }
  assert.equal(hasVisibleLight(domain,{visible_light_use:true,values:{}}),true);
  assert.equal(hasVisibleLight(domain,{visible_light_use:true,values:{wavelength_nm:{value:1000}}}),false);
- assert.equal(axisPoints(domain.rows,'na','focus_variation_um').length,3);
+ assert.equal(axisPoints(domain.rows,'na','focus_variation_um').length,6);
  assert.equal(axisPoints(domain.rows,'wavelength_nm','measured_focal_um').length,15);
  assert.equal(axisPoints(domain.rows.filter(r=>r.study_id==='li2021'),'wavelength_nm','fwhm_x_um').length,3);
 });
