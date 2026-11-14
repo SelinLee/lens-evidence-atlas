@@ -14,7 +14,7 @@
 | --- | --- | --- |
 | FOCUS-001 两类指标词典与任务依据 | in_progress | 定义、单位、测量口径、必要条件、出处；原文排序/编辑整理/未建立明确区分；候选规格不冒充成像质量 |
 | FOCUS-002 先进型号检索与逐格补证 | in_progress | 按检索截止日期覆盖跨品牌先进手机与AR/VR设备，记录纳排/地区/代际/独立实测缺口；手机逐模组、XR逐显示模式；单元格绑定定位证据 |
-| DEVICE-001 已有矩阵/散点候选接续 | done | [PR #59](https://github.com/SelinLee/lens-evidence-atlas/pull/59)及依赖的[#60](https://github.com/SelinLee/lens-evidence-atlas/pull/60)、[#61](https://github.com/SelinLee/lens-evidence-atlas/pull/61)、[#62](https://github.com/SelinLee/lens-evidence-atlas/pull/62)、[#63](https://github.com/SelinLee/lens-evidence-atlas/pull/63)目前开放；须核当前最终头、证据边界及真实浏览器，不将原PR说明当本次重新核验 |
+| DEVICE-001 已有矩阵/散点候选接续 | done | 历史候选PR #59–#63已由PR #65整合，实际发布与浏览器验收见[设备发布记录](DEVICE_RELEASE_2026-11-14.md)；后续统一模板/散点修复见UI-001/002。2026-11-14当前开放PR仅#69，不再把旧候选称为待合并 |
 | FOCUS-003 参数表补全与维护 | in_progress | 两类各有型号×指标主表，支持模组/类别/条件筛选、排序、列选择、逐格来源及导出；未知值与区间可见；表和图同一数据源 |
 | FOCUS-004 双指标轴散点 | in_progress | 两轴指标可选、型号多选、仅散点、重复坐标可辨、无样本间连线、缺失/区间/单位规则、分享状态及导出；核已有候选还缺哪些行为 |
 | UI-001 全应用统一图表模板 | done | 2026-11-14用户追加：手机/XR与33类既有应用统一入口；首屏图表与侧边设置、下方数据表/编号来源双向跳转、兼容旧链接；本地与Chrome无头验收见[统一界面记录](UNIFIED_WORKSPACE_2026-11-14.md)，[草稿PR #70](https://github.com/SelinLee/lens-evidence-atlas/pull/70)已合并，Pages在42e1011完成实际验收；当前散点/缓存修复另见UI-002 |
@@ -25,7 +25,7 @@
 | QUALITY-001a 文献器件首批 | done | 4项原始研究/8器件配置/21行，几何、波段、逐谱点焦距/FWHM/Strehl、PSNR及冲突；见[首批核验](QUALITY_BATCH_2026-11-14.md)；PR #72/23fdecb与Pages43571286647实页验收，不关闭父目标 |
 | QUALITY-001b 可见光消色差与效率口径 | done | Codex，2026-11-14，codex/visible-achromatic-evidence；核Wang 2018正式主文/SI与Chen 2018作者存档稿/正式SI，分离设计示例与实验器件、带内均值与指定波长效率、偏振与分母/焦圈；七配置及效率/偏振五字段，130项测试；见[原文核验](VISIBLE_ACHROMATIC_REVIEW_2026-11-14.md)，PR #74/f5f6394及Pages43573407984完成12文件/线上六视口验收；原生手机和先进XR任务保持开放 |
 | QUALITY-002a 外接微距SNR | done | 原作Table4的2历史手机×7视图均值/SD/n；只属外接研究模组，原生主摄和先进型号仍缺；PR #72发布及实页验收 |
-| QUALITY-002b 原生手机MTF与处理链 | review | Codex，2026-11-14，codex/native-phone-mtf-evidence；从MTFCalculator作者公开博士论文核六款历史手机数表/方法，确认单位、ROI/方向/归一化及ISP边界；同文工具比较不当独立研究；另核Beveridge脚注两报告值，共八行/四字段、135测试，见[原生核验](NATIVE_PHONE_MTF_REVIEW_2026-11-14.md)，待实际发布；不把MTF50填成MTF响应或裸镜指标 |
+| QUALITY-002b 原生手机MTF与处理链 | done | Codex，2026-11-14；六历史手机的软件原表刻度与Beveridge脚注两单位明示报告共八行/四字段，保留频率轴/模组/统计缺口；135测试及Chrome六视口通过。PR #76/31d8b05、CI43577108604、Pages43577108577成功，公开12文件一致及线上引用返回/分享/导出实测通过，见[原生核验](NATIVE_PHONE_MTF_REVIEW_2026-11-14.md)；仅关闭本批，原生SNR/色差和当前旗舰父任务继续开放 |
 | QUALITY-003a XR静态截止与研究协议 | done | 复用并复核PR #69三配置数据，新增正文6/8/9/12 CPD近似截止；不当MTF50；PR #72发布及实页验收，不关闭先进设备/AR缺口 |
 | FOCUS-005 测试、发布和完成审计 | in_progress | 校验/测试、Chrome无头桌面/手机、PR、实际Pages文件及数据核对；按新目标逐条审计，明确已有/候选/缺失，不能以仅有草稿或测试通过代替交付 |
 
