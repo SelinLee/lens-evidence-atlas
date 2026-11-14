@@ -21,3 +21,5 @@
 原文方向明确的实测PSF宽度可用`fwhm_x_um`/`fwhm_y_um`，与未区分方向的`fwhm_um`分开；有限数值须为正、保留测量波长及`basis: measured`。XR对角FOV用`dfov`，不借给水平/垂直/方向未明列。原型SLM频率、CGH帧数与系统刷新率/延迟不互填；RGB离散测量不填写连续带宽。
 
 来源的可选字段 `publication_source` 指向同一来源目录内的主文 ID。补充材料、作者数据和更正仍各保留原链接和定位，页面按主文统一编号。`visible_light_use` 用于已有原始记录明确描述可见光用途、但没有独立数值波长字段的旧样本。波长筛选优先采用逐点测量，其次判断工作波段是否与 380–780 nm 交叠。
+
+研究格可附可选的 `data_availability` 核查元数据。`status: curves_only` 表示在所列范围内只核到曲线，`author_numeric_mtf`、`raw_psf`、`independently_recomputed_mtf` 为 `null`，不表示作者没有这些数据。实际波长/方向/单位与缺失的场点、归一化及采样尺度分别保留，`search_log` 指向有日期和覆盖边界的核查记录。可展示的结论仍写入该格 `note`/`location`，数据获取声明的主文加入 `sourceIds`；元数据不直接生成数值坐标。作者由实测PSF计算与本库复算不能混称。
