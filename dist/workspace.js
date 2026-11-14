@@ -1,12 +1,12 @@
-import {createWorkspace, valueSources, filteredRows, axisPoints, metricAvailability, availableAxes} from './workspace-data.js?v=07307433c6bbf8d0';
+import {createWorkspace, groupRows, valueSources, filteredRows, axisPoints, metricAvailability, availableAxes} from './workspace-data.js?v=b0afb6606f76d9de';
 
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const atlas = createWorkspace(window.LENS_DATA, window.DEVICE_DATA), evidence = window.LensEvidence;
 const initial = new URL(location.href), oldRoute = initial.hash.slice(1).split('/');
-const state = {domain:'phone', module:'main', x:'mp', y:'f', mode:'scatter', sort:'original', models:null, columns:null, query:'', evidence:'', evidenceTab:'metrics', compare:[]};
+const state = {domain:'phone', module:'main', x:'mp', y:'f', mode:'scatter', sort:'original', visible:false, models:null, columns:null, query:'', evidence:'', evidenceTab:'metrics', compare:[]};
 let viewQuery = location.search;
-let citations = new Map(), activeRows = [], activeColumns = [], activePoints = [], activeSetting = 'models';
+let referenceGroups = new Map(), citations = new Map(), activeRows = [], activeColumns = [], activePoints = [], activeSetting = 'models';
 const domain = () => atlas.domains.find(d => d.id === state.domain);
 const rowAnchor = r => `row-${state.domain}-${r.id}`;
 const cellAnchor = (r, m) => `cell-${state.domain}-${r.id}-${m.id}`;
@@ -15,6 +15,15 @@ const refAnchor = id => 'ref-' + id;
 const citation = id => citations.has(id) ? `<a class="citation" href="#${esc(refAnchor(id))}" aria-label="参考文献 ${citations.get(id)}">[${citations.get(id)}]</a>` : '';
 const sourceKind = kind => ({manufacturer:'厂商资料',manufacturer_technical:'原厂技术说明',scholarly_book:'学术书章',paper:'原始研究论文',peer_reviewed_paper:'同行评议论文',paper_review:'学术综述',standard:'标准 / 公开预览',supplementary_material:'论文补充材料',research_data:'作者原始数据',research_software:'作者研究代码',author_manuscript:'论文作者稿',doctoral_thesis:'博士论文（原始研究）',conference_paper:'会议论文',metrology_reference:'计量与统计参考',trial_protocol:'原始试验方案',software_documentation:'原厂软件文档'})[kind] || kind || '厂商资料';
 const valueText = value => value?.display ?? (value?.value === null || value?.value === undefined ? '未公开 / 未核验' : String(value.value));
+
+function citeSources(ids) {
+  const targets = new Map();
+  for (const id of new Set(ids)) {
+    const main = atlas.sources.get(id)?.publication_source || id;
+    if (!targets.has(main)) targets.set(main,id);
+  }
+  return [...targets.values()].map(citation).join('');
+}
 
 function defaults(id) {
   state.domain = id; state.models = null; state.columns = null; state.query = ''; state.evidence = ''; state.compare = [];
@@ -28,19 +37,31 @@ function defaults(id) {
 function sourceIndex() {
   const d = domain(), ids = new Set([...d.sourceIds, ...(d.task_guidance || []).map(g=>g.source)]);
   for (const m of d.metrics) for (const ref of m.definition_refs || []) ids.add(ref.source);
-  for (const r of d.rows) {
+  for (const r of activeRows) {
     for (const id of r.sourceIds || []) ids.add(id);
     for (const v of Object.values(r.values)) for (const id of valueSources(v)) ids.add(id);
   }
-  citations = new Map([...ids].filter(id => atlas.sources.has(id)).map((id, i) => [id, i + 1]));
+  referenceGroups = new Map();
+  citations = new Map();
+  for (const id of ids) {
+    const source = atlas.sources.get(id);
+    if (!source) continue;
+    const main = source.publication_source || id;
+    if (!referenceGroups.has(main)) referenceGroups.set(main,{number:referenceGroups.size+1, materials:new Set([main])});
+    const group = referenceGroups.get(main);
+    group.materials.add(id);
+    citations.set(id,group.number);
+    citations.set(main,group.number);
+  }
 }
 function saveView() {
   const url = new URL(location.href); url.search = '';
   for (const key of ['domain','module','x','y','mode','sort','evidence']) if (state[key]) url.searchParams.set(key, state[key]);
+  if (state.visible) url.searchParams.set('visible','1');
   if (state.query) url.searchParams.set('q', state.query);
   for (const key of ['models','columns']) if (state[key] !== null) url.searchParams.set(key, JSON.stringify(state[key]));
   if (state.compare.length) url.searchParams.set('compare', JSON.stringify(state.compare));
-  if (/^#app_\d+/.test(url.hash)) url.hash = '';
+  if (/^#app_\d+/.test(url.hash) || (/^#(?:row|cell|ref|paper|specimen)-/.test(url.hash) && !document.getElementById(url.hash.slice(1)))) url.hash = '';
   history.replaceState(null, '', url);
   viewQuery = url.search;
 }
@@ -54,9 +75,20 @@ function restore(url) {
   for (const key of ['models','columns','compare']) {
     try { const values = JSON.parse(p.get(key)); if (Array.isArray(values) && values.every(v => typeof v === 'string')) state[key] = key === 'models' ? domain().rows.filter(r => values.includes(r.id) || values.includes(r.model)).map(r => r.id) : values; } catch {}
   }
+  state.visible = p.get('visible')==='1';
   state.query = p.get('q') || '';
   if (oldRoute[1] === 'compare' && evidence.comparisonFor(state.domain)) { state.evidenceTab = 'compare'; state.compare = oldRoute.slice(2); }
   else if (['metrics','priority','best'].includes(oldRoute[1])) state.evidenceTab = oldRoute[1];
+}
+function groupedSamples(container, rows, item, list=false) {
+  const opened = new Set([...container.querySelectorAll('details[open]')].map(el=>el.dataset.paper));
+  const wrap = html => list ? '<li>'+html+'</li>' : html;
+  return groupRows(rows).map(group=>{
+    const items = group.rows.map(row=>wrap(item(row))).join('');
+    if (!group.paper || group.rows.length===1) return items;
+    const title = atlas.sources.get(group.paper).title.split(/[:：]/)[0];
+    return wrap(`<details data-paper="${esc(group.paper)}" ${opened.has(group.paper)?'open':''}><summary>${esc(title)} · ${group.rows.length} 条记录</summary>${list?'<ul>'+items+'</ul>':items}</details>`);
+  }).join('');
 }
 function controls() {
   const d = domain();
@@ -68,10 +100,11 @@ function controls() {
     $(axis).innerHTML = (axis === 'x' ? '<option value="$model">型号 / 样本（类别轴）</option>' : '') + numeric.map(m => {const count=metricAvailability(activeRows,m.id);return `<option value="${esc(m.id)}"${count?'':' disabled'}>${esc(m.label)} · ${count?count+'项有值':'暂无数据'}</option>`;}).join('') + (!numeric.length && axis === 'y' ? '<option value="">暂无可绘制单值</option>' : '');
     $(axis).value = state[axis];
   }
+  $('visible-light').checked = state.visible;
   $('model-search').value = state.query;
   const candidates = filteredRows(d, {...state, models:null});
-  $('selection-count').textContent = `${activeRows.length} / ${candidates.length} 个样本`;
-  $('models').innerHTML = candidates.length ? candidates.map(r => `<label><input type="checkbox" data-row="${esc(r.id)}" ${state.models === null || state.models.includes(r.id) ? 'checked' : ''}><span>${esc(r.model)}</span></label>`).join('') : '<p class="muted">没有匹配样本</p>';
+  $('selection-count').textContent = `${activeRows.length} / ${candidates.length} 条记录`;
+  $('models').innerHTML = candidates.length ? groupedSamples($('models'),candidates,r => `<label><input type="checkbox" data-row="${esc(r.id)}" ${state.models === null || state.models.includes(r.id) ? 'checked' : ''}><span>${esc(r.model)}</span></label>`) : '<p class="muted">没有匹配样本</p>';
   $('columns').innerHTML = d.metrics.map(m => `<label><input type="checkbox" data-column="${esc(m.id)}" ${state.columns === null || state.columns.includes(m.id) ? 'checked' : ''}><span>${esc(m.label)}</span></label>`).join('');
 }
 function sortRows(rows) {
@@ -103,7 +136,7 @@ function drawChart() {
   activePoints = axisPoints(activeRows, state.x, state.y);
   if (!activePoints.length) {
     const absent = [state.x,state.y].filter(id=>id!=='$model'&&!metricAvailability(activeRows,id)).map(id=>ms.find(m=>m.id===id)?.label).filter(Boolean);
-    const reason = !activeRows.length ? '当前没有选中的样本，请全选样本或清除筛选条件。' : absent.length ? `当前 ${activeRows.length} 个样本尚无“${absent.join(' / ')}”的已核验数值。` : '所选两个指标没有同时具备数值的样本；各自已有的数据仍保留在表格中。';
+    const reason = !activeRows.length ? (state.visible ? '当前范围没有符合可见光条件的记录。可取消可见光或调整样本筛选。' : '当前没有选中的样本，请全选样本或清除筛选条件。') : absent.length ? `当前 ${activeRows.length} 个样本尚无“${absent.join(' / ')}”的已核验数值。` : '所选两个指标没有同时具备数值的样本；各自已有的数据仍保留在表格中。';
     const recovery=availableAxes(d,activeRows),canRecover=axisPoints(activeRows,recovery.x,recovery.y).length>0;
     $('chart').innerHTML = `<div class="empty-plot" role="status"><strong>当前指标暂无可绘制数据</strong><p>${esc(reason)}</p><p>未知值不补零，区间或复合参数保留原文。</p>${canRecover?'<button class="recover-chart" data-recover-chart>显示已有数据的散点图</button>':''}<a href="#data-table">查看已收集的数据 ↓</a></div>`;
     return;
@@ -127,11 +160,13 @@ function drawChart() {
     node.setAttribute('aria-label',group.map(p=>p.row.model).join('、') + '，' + xLabel + ' ' + coordinateText(group[0],'x') + '，' + yLabel + ' ' + coordinateText(group[0],'y'));
     node.querySelector('title').remove(); // The inspector supplies the visible tooltip.
   });
-  legend.innerHTML = activePoints.map(p => {
+  const pointByRow = new Map(activePoints.map(p=>[p.row,p]));
+  legend.innerHTML = groupedSamples(legend,[...pointByRow.keys()],row=>{
+    const p = pointByRow.get(row);
     const ids = [...new Set([...valueSources(p.row.values[state.x]), ...valueSources(p.row.values[state.y])])];
     const index = groupByRow.get(p.row.id), color = nodes[index].querySelector('circle').getAttribute('fill');
-    return `<li><a data-legend-point="${index}" href="#${esc(rowAnchor(p.row))}"><i class="legend-dot" style="background:${color}" aria-hidden="true"></i>${categorical ? p.x+'. ' : ''}${esc(p.row.model)} · (${esc(coordinateText(p,'x'))}, ${esc(coordinateText(p,'y'))})</a>${ids.map(citation).join('')}</li>`;
-  }).join('');
+    return `<a data-legend-point="${index}" href="#${esc(rowAnchor(p.row))}"><i class="legend-dot" style="background:${color}" aria-hidden="true"></i>${categorical ? p.x+'. ' : ''}${esc(p.row.model)} · (${esc(coordinateText(p,'x'))}, ${esc(coordinateText(p,'y'))})</a>${citeSources(ids)}`;
+  }, true);
   inspectPlot(svg, nodes, groups, xLabel, yLabel);
 }
 
@@ -221,7 +256,7 @@ function inspectPlot(svg, nodes, groups, xLabel, yLabel) {
     } else {
       nodes[index].setAttribute('aria-pressed','true');
       for (const p of groups[index]) document.getElementById(rowAnchor(p.row))?.classList.add('plot-selected');
-      $('point-detail').innerHTML = groups[index].map(p=>`${esc(p.row.model)} · (${esc(coordinateText(p,'x'))}, ${esc(coordinateText(p,'y'))}) <a href="#${esc(rowAnchor(p.row))}">查看数据表 ↓</a>${[...new Set([...valueSources(p.row.values[state.x]),...valueSources(p.row.values[state.y])])].map(citation).join('')}<span> · ${esc(p.row.variant)}</span>`).join('<br>');
+      $('point-detail').innerHTML = groups[index].map(p=>`${esc(p.row.model)} · (${esc(coordinateText(p,'x'))}, ${esc(coordinateText(p,'y'))}) <a href="#${esc(rowAnchor(p.row))}">查看数据表 ↓</a>${citeSources([...valueSources(p.row.values[state.x]),...valueSources(p.row.values[state.y])])}<span> · ${esc(p.row.variant)}</span>`).join('<br>');
     }
     show();
   }
@@ -250,24 +285,72 @@ function inspectPlot(svg, nodes, groups, xLabel, yLabel) {
 
 function table() {
   const backlinks = new Map([...citations.keys()].map(id => [id, new Map()]));
-  const linkBack = (id, anchor, label) => backlinks.get(id)?.set(anchor, label);
-  $('table').innerHTML = `<table><thead><tr><th scope="col">型号 / 样本与配置</th>${activeColumns.map(m => `<th scope="col"><a href="#${esc(definitionAnchor(m))}" data-definition="${esc(m.id)}">${esc(m.label)}</a></th>`).join('')}</tr></thead><tbody>${activeRows.map(r => {
+  const linkBack = (id, row, metric) => {
+    const byRow = backlinks.get(id);
+    if (!byRow) return;
+    if (!byRow.has(row.id)) byRow.set(row.id,{row,metrics:[]});
+    if (metric) byRow.get(row.id).metrics.push(metric);
+  };
+  const columns = `<thead><tr><th scope="col">型号 / 样本与配置</th>${activeColumns.map(m=>`<th scope="col"><a href="#${esc(definitionAnchor(m))}" data-definition="${esc(m.id)}">${esc(m.label)}</a></th>`).join('')}</tr></thead>`;
+  function dataRow(r) {
     const rowSources = r.sourceIds || [...new Set(Object.values(r.values).flatMap(valueSources))];
-    rowSources.forEach(id => linkBack(id, rowAnchor(r), r.model));
-    return `<tr id="${esc(rowAnchor(r))}"><th scope="row">${esc(r.model)}<small>${esc(r.variant)}</small><small>${esc(r.evidence || '厂商标称；非独立实测')} ${rowSources.map(citation).join('')}</small>${r.missing ? `<small>记录缺口：${esc(r.missing)}</small>` : ''}</th>${activeColumns.map(m => {
+    rowSources.forEach(id => linkBack(id, r));
+    return `<tr id="${esc(rowAnchor(r))}"><th scope="row">${esc(r.model)}<small>${esc(r.variant)}</small><small>${esc(r.evidence || '厂商标称；非独立实测')} ${citeSources(rowSources)}</small>${r.missing ? `<small>记录缺口：${esc(r.missing)}</small>` : ''}</th>${activeColumns.map(m => {
       const v = r.values[m.id], ids = valueSources(v), anchor = cellAnchor(r,m), valid = v?.display !== undefined || (v?.value !== undefined && v?.value !== null);
-      ids.forEach(id => linkBack(id, anchor, `${r.model} · ${m.label}`));
-      return `<td id="${esc(anchor)}"><span class="value${valid ? '' : ' missing'}">${esc(valueText(v))}</span>${ids.map(citation).join('')}${v ? `<small>${esc(v.note || '')}</small><small>${esc(v.evidence || r.evidence || '厂商标称')} · ${esc(v.checked_on || atlas.sources.get(ids[0])?.checked_on || r.checked_on || '')}</small><small>${v.location ? '原文位置：' + esc(v.location) : ids.length ? '仅记录级来源；未核逐参数定位。' : '逐参数来源待补。'}</small>` : '<small>本库未取得该配置可核验的参数；不表示原来源完全未涉及。</small>'}</td>`;
+      ids.forEach(id => linkBack(id, r, m));
+      return `<td id="${esc(anchor)}"><span class="value${valid ? '' : ' missing'}">${esc(valueText(v))}</span>${citeSources(ids)}${v ? `<small>${esc(v.note || '')}</small><small>${esc(v.evidence || r.evidence || '厂商标称')} · ${esc(v.checked_on || atlas.sources.get(ids[0])?.checked_on || r.checked_on || '')}</small><small>${v.location ? '原文位置：' + esc(v.location) : ids.length ? '仅记录级来源；未核逐参数定位。' : '逐参数来源待补。'}</small>` : '<small>本库未取得该配置可核验的参数；不表示原来源完全未涉及。</small>'}</td>`;
     }).join('')}</tr>`;
-  }).join('')}</tbody></table>${!activeRows.length ? '<p class="empty-table">当前未选择样本；可在侧边全选或清除搜索条件。</p>' : ''}`;
+  }
+  function specimenTables(rows) {
+    const groups = new Map();
+    for (const r of rows) {
+      const key = r.specimen_id || r.id;
+      if (!groups.has(key)) groups.set(key,[]);
+      groups.get(key).push(r);
+    }
+    if (![...groups.values()].some(group=>group.length>1)) return dataTable(rows);
+    return [...groups.values()].map(group=>{
+      const row = group[0], id = 'specimen-'+state.domain+'-'+row.study_id+'-'+(row.specimen_id || row.id);
+      const parts = row.model.split(' · ').filter((part,i)=>group.every(r=>r.model.split(' · ')[i]===part));
+      const name = parts.join(' · ') || row.model;
+      return `<details class="specimen-table" id="${esc(id)}" ${open.has(id)?'open':''}><summary><span>${esc(name)}</span><small>${group.length} 条记录</small></summary>${dataTable(group)}</details>`;
+    }).join('');
+  }
+  const dataTable = rows => `<div class="table-scroll" role="region" aria-label="样本指标" tabindex="0"><table>${columns}<tbody>${rows.map(dataRow).join('')}</tbody></table></div>`;
+  let output='', other=[];
+  const open = new Set([...$('table').querySelectorAll('details[open]')].map(el=>el.id));
+  function flushOther() {
+    if (other.length) output+=dataTable(other);
+    other=[];
+  }
+  for (const group of groupRows(activeRows)) {
+    const {paper,rows} = group;
+    if (!paper && !rows[0].study_id) { other.push(...rows); continue; }
+    flushOther();
+    const id = `paper-${state.domain}-${group.key}`;
+    const title = atlas.sources.get(paper)?.title || group.key;
+    const samples = new Set(rows.map(r=>r.specimen_id || r.id));
+    const count = (rows.some(r=>r.specimen_id) ? samples.size+' 个配置 · ' : '')+rows.length+' 条记录';
+    output+=`<details class="paper-table" id="${esc(id)}" ${open.has(id)?'open':''}><summary><span>${esc(title)}</span><small>${count}</small></summary>${specimenTables(rows)}</details>`;
+  }
+  flushOther();
+  $('table').innerHTML = output || '<p class="empty-table">当前筛选范围没有记录。</p>';
   return backlinks;
 }
 function referenceList(backlinks) {
-  $('sources').innerHTML = [...citations].map(([id, number]) => {
-    const s = atlas.sources.get(id), backs = backlinks.get(id);
-    return `<li id="${esc(refAnchor(id))}" value="${number}"><div class="reference-title"><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)} ↗</a>${s.source_year ? ` (${esc(s.source_year)})` : ''}.</div>${s.doi ? `<p>DOI：${esc(s.doi)}</p>` : ''}<p>${esc(sourceKind(s.kind))} · 核验 ${esc(s.checked_on)}${s.verification === 'inherited_v2' ? '（沿用原核验记录）' : ''}</p>${s.location ? `<p>原文位置：${esc(s.location)}</p>` : ''}<p>读取范围：${esc(s.evidence_scope || s.scope || '以记录所列范围为准')}</p><div class="backlinks">${backs?.size ? [...backs].map(([anchor,label]) => `<a href="#${esc(anchor)}">↑ ${esc(label)}</a>`).join('') : '<a href="#evidence-notes">↑ 指标定义 / 任务依据</a>'}</div></li>`;
+  function material(id,main) {
+    const s = atlas.sources.get(id), rows = [...(backlinks.get(id)?.values() || [])];
+    const url = `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)} ↗</a>`;
+    const back = rows.length ? `<details class="source-uses"><summary>表中引用 · ${rows.length} 条记录</summary>${rows.map(({row,metrics})=>
+      `<div class="backlinks"><a href="#${esc(rowAnchor(row))}">${esc(row.model)} ↑</a>${metrics.map(m=>`<a href="#${esc(cellAnchor(row,m))}">${esc(m.label)}</a>`).join('')}</div>`).join('')}</details>` : '<a class="source-definition" href="#evidence-notes">指标定义 / 任务依据 ↑</a>';
+    return `<div class="reference-material"${id===main?'':` id="${esc(refAnchor(id))}"`}>${id===main?'':`<div class="reference-title">${url}</div>`}${s.doi?`<p>DOI：${esc(s.doi)}</p>`:''}<p>${esc(sourceKind(s.kind))} · 核验 ${esc(s.checked_on)}${s.verification==='inherited_v2'?'（沿用原核验记录）':''}</p>${s.location?`<p>原文位置：${esc(s.location)}</p>`:''}<p>读取范围：${esc(s.evidence_scope || s.scope || '以记录所列范围为准')}</p>${back}</div>`;
+  }
+  $('sources').innerHTML = [...referenceGroups].map(([main,group])=>{
+    const s = atlas.sources.get(main);
+    return `<li id="${esc(refAnchor(main))}" value="${group.number}"><div class="reference-title"><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)} ↗</a>${s.source_year?' ('+esc(s.source_year)+')':''}</div><details class="source-materials"><summary>来源详情${group.materials.size>1?' · '+group.materials.size+' 份材料':''}</summary>${[...group.materials].map(id=>material(id,main)).join('')}</details></li>`;
   }).join('');
 }
+
 function linkEvidence() {
   $('definitions').querySelectorAll('[data-source]').forEach(button => {const id=button.dataset.source, a=document.createElement('a');a.href='#'+refAnchor(id);a.textContent=button.textContent+(citations.has(id)?` [${citations.get(id)}]`:'');button.replaceWith(a);});
 }
@@ -286,14 +369,15 @@ function renderDefinitions() {
   linkEvidence();
 }
 function render(updateControls = true) {
-  const d=domain(); sourceIndex(); activeRows=sortRows(filteredRows(d,state)); activeColumns=d.metrics.filter(m=>state.columns===null||state.columns.includes(m.id));
+  const d=domain(); activeRows=sortRows(filteredRows(d,state)); sourceIndex(); activeColumns=d.metrics.filter(m=>state.columns===null||state.columns.includes(m.id));
   if(updateControls) controls();
   $('view-title').textContent=d.name; $('scope').textContent=d.scope; $('scope').title=d.scope;
-  $('view-count').textContent=`${activeRows.length} ${d.row_unit||'个样本'} · ${d.metrics.length} 个字段`;
+  const paperCount = groupRows(activeRows).filter(g=>g.paper || g.rows[0].study_id).length;
+  $('view-count').textContent=(paperCount ? paperCount+' 篇文献 · ' : '')+activeRows.length+' 条记录';
   document.title=d.name+' · 透镜评价证据库';
   drawChart();
   $('status').textContent=`${activePoints.length} 个点 · ${activeRows.length-activePoints.length} 项缺少所选单值`;
-  $('plot-note').textContent='虚线标出当前点的横、纵坐标。'+(d.app?' 同名同单位仍需核对条件。':d.id==='metalens'?' 同器件多个谱点不计作独立镜片。':' 厂商标称与独立实测分别理解。');
+  $('plot-note').textContent=(state.visible?'可见光 380–780 nm。保留波段交叠及明确可见光用途的记录，波段未知时隐藏。 ':'')+'虚线标出当前点的横、纵坐标。'+(d.app?' 同名同单位仍需核对条件。':d.id==='metalens'?' 同器件多个谱点不计作独立镜片。':' 厂商标称与独立实测分别理解。');
   referenceList(table()); renderDefinitions();
   $('date').textContent=`本页样本维护日期 ${d.asOf}；逐条保留原核验日期与读取范围。样本不代表完整市场覆盖。`;
   saveView();
@@ -312,11 +396,12 @@ restore(initial); render();
 if(oldRoute[1]) { if(oldRoute[1]==='sources')location.hash='references';else if(oldRoute[1]!=='metrics'){$('evidence-notes').open=true;location.hash='evidence-notes';} }
 for(const key of ['domain','module','x','y','sort','evidence']) $(key).addEventListener('change',()=>{
   if(key==='domain')defaults($(key).value);else {state[key]=$(key).value;if(key==='module')state.models=null;}
-  render(); if(key==='domain'||key==='module')$('table').scrollLeft=0;
+  render();
 });
 $('model-search').addEventListener('input',()=>{state.query=$('model-search').value;render();$('model-search').focus();});
 for(const [id,key,value] of [['all-models','models',null],['no-models','models',[]],['all-columns','columns',null],['no-columns','columns',[]]]) $(id).addEventListener('click',()=>{state[key]=value;render();});
-$('reset-view').addEventListener('click',()=>{defaults(state.domain);state.mode='scatter';state.sort='original';render();});
+$('visible-light').addEventListener('change',()=>{state.visible=$('visible-light').checked;render();});
+$('reset-view').addEventListener('click',()=>{defaults(state.domain);state.visible=false;state.mode='scatter';state.sort='original';render();});
 document.addEventListener('change',event=>{
   const target=event.target;
   if(target.matches('[data-row],[data-column]')){
@@ -365,7 +450,34 @@ $('share').addEventListener('click',async()=>{try{await navigator.clipboard.writ
 window.addEventListener('popstate',()=>{
   if (location.search !== viewQuery) { restore(new URL(location.href)); render(); }
 });
-function revealAnchor(){let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}if(id.startsWith('definition-')){$('evidence-notes').open=true;if(state.evidenceTab!=='metrics'){state.evidenceTab='metrics';renderDefinitions();}}requestAnimationFrame(()=>document.getElementById(id)?.scrollIntoView({block:'start'}));}
+function revealAnchor() {
+  let id;
+  try { id=decodeURIComponent(location.hash.slice(1)); } catch { return; }
+  if (id.startsWith('definition-')) {
+    $('evidence-notes').open=true;
+    if (state.evidenceTab!=='metrics') { state.evidenceTab='metrics'; renderDefinitions(); }
+  }
+  const target = document.getElementById(id);
+  if (!target) return;
+  if (target.matches('#sources li')) target.querySelector('.source-materials').open=true;
+  for (let parent=target.closest('details'); parent; parent=parent.parentElement?.closest('details')) parent.open=true;
+  requestAnimationFrame(()=>target.scrollIntoView({block:'start',inline:'nearest'}));
+}
+document.addEventListener('click',event=>{
+  const link=event.target.closest('a[href^="#"]');
+  const cell = link?.classList.contains('citation') && link.closest('td[id],tr[id]');
+  if (cell) {
+    const material = document.getElementById(link.hash.slice(1));
+    if (material) {
+      document.querySelector('.source-return')?.remove();
+      const back = document.createElement('a');
+      back.className='source-return'; back.href='#'+cell.id; back.textContent='↑ 返回刚才查看的数据';
+      const heading = material.querySelector('.reference-title');
+      if (heading) heading.after(back); else material.prepend(back);
+    }
+  }
+  if (link && link.hash===location.hash) revealAnchor();
+});
 window.addEventListener('hashchange',revealAnchor);if(location.hash)revealAnchor();
 
 const selectionControls=$('selection-controls'), selectionHome=selectionControls.parentElement;

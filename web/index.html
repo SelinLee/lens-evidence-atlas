@@ -33,7 +33,7 @@
         </div>
         <div class="axis-controls"><label>横轴指标<select id="x"></select></label><label>纵轴指标<select id="y"></select></label></div>
         <div class="control-pair">
-          <div class="chart-kind"><span>图形</span><strong>散点图</strong><input id="mode" type="hidden" value="scatter"></div>
+          <div class="spectrum-setting"><label for="visible-light" title="按测量波长或工作波段筛选。保留已知可见光用途的记录，波段未知的记录暂时隐藏。"><span>波段筛选</span><span class="visible-check"><input id="visible-light" type="checkbox">仅可见光</span></label><input id="mode" type="hidden" value="scatter"></div>
           <label>排列方式<select id="sort"><option value="original">目录顺序</option><option value="model">名称顺序</option><option value="x">横轴值升序</option><option value="y">纵轴值升序</option></select></label>
         </div>
         <button id="mobile-filter-toggle" class="mobile-filter-toggle" aria-haspopup="dialog">筛选样本 / 选择表格列</button>
@@ -60,12 +60,12 @@
       </div>
     </section>
     <section class="data-section" id="data-table" aria-labelledby="table-title">
-      <div class="section-heading"><div><div class="eyebrow">01 / COLLECTED DATA</div><h2 id="table-title">收集到的数据</h2><p>保留原始参数、测量条件与缺失原因。点击编号，跳转到下方参考文献。</p></div><div class="section-actions"><button id="export-csv">下载当前表格 CSV ↓</button><a href="#workspace">返回图表 ↑</a></div></div>
-      <div class="table-scroll" id="table" role="region" aria-label="指标表，可横向滚动" tabindex="0"></div>
+      <div class="section-heading"><div><div class="eyebrow">01 / COLLECTED DATA</div><h2 id="table-title">收集到的数据</h2><p>展开论文查看样本和测量条件，点击数值旁的编号查阅原始来源。</p></div><div class="section-actions"><button id="export-csv">下载当前表格 CSV ↓</button><a href="#workspace">返回图表 ↑</a></div></div>
+      <div id="table" aria-label="文献与样本数据表"></div>
       <details class="evidence-notes" id="evidence-notes"><summary>指标定义、任务权衡与限定范围参考</summary><div class="evidence-tabs" role="tablist" aria-label="证据资料"><button data-evidence-tab="metrics" role="tab">指标定义</button><button data-evidence-tab="priority" role="tab">任务权衡</button><button data-evidence-tab="best" role="tab">限定范围参考</button><button data-evidence-tab="compare" role="tab" hidden>条件对照</button></div><div id="definitions" role="tabpanel"></div></details>
     </section>
     <section class="data-section reference-section" id="references" aria-labelledby="references-title">
-      <div class="section-heading"><div><div class="eyebrow">02 / REFERENCES</div><h2 id="references-title">数据来源与参考文献</h2><p>编号对应上方表格；每条保留原文位置、读取范围与核验日期。</p></div><a href="#data-table">返回数据表 ↑</a></div>
+      <div class="section-heading"><div><div class="eyebrow">02 / REFERENCES</div><h2 id="references-title">数据来源与参考文献</h2><p>每篇论文使用一个编号。展开可查正文、补充材料及使用这些材料的记录。</p></div><a href="#data-table">返回数据表 ↑</a></div>
       <ol id="sources" class="reference-list"></ol>
       <p id="date" class="data-date"></p>
     </section>

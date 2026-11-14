@@ -14,7 +14,11 @@
 
 .recover-chart{padding:9px 15px;border:1px solid var(--green);border-radius:5px;background:var(--green);color:#fff;font-size:12px}.empty-plot>a{font-size:12px}.empty-plot p{margin:2px 0}.settings select option:disabled{color:#8b9691}
 
-.chart-kind{font-size:11px;color:var(--muted);min-width:0}.chart-kind strong{display:block;margin-top:4px;padding:7px 9px;min-height:34px;line-height:18px;border:1px solid var(--line);border-radius:5px;font-size:12px;font-weight:500;color:var(--green);background:#f4f8f5}
+.spectrum-setting label { cursor: pointer; }
+.visible-check { display:flex; align-items:center; gap:8px; margin-top:4px; padding:6px 9px; min-height:34px; border:1px solid var(--line); border-radius:5px; color:var(--ink); background:#fff; font-size:12px; }
+.visible-check:has(:checked) { background:#edf6f2; border-color:#92b9ac; }
+.visible-check input { accent-color:var(--green); margin:0; }
+
 
 .table-scroll tr[id],.table-scroll td[id]{scroll-margin-top:84px}.table-scroll td[id]{scroll-margin-left:280px}
 @media(max-width:759px){.table-scroll td[id]{scroll-margin-left:196px}}
@@ -46,3 +50,30 @@
 .table-scroll .plot-selected > td, .table-scroll .plot-selected > th { background-color: #edf6f2; }
 .table-scroll .plot-selected > th { box-shadow: inset 3px 0 #237568; }
 .legend-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 3px; }
+
+.paper-table, .specimen-table { background:#fff; border:1px solid var(--line); border-radius:6px; margin-bottom:6px; }
+.paper-table > summary, .specimen-table > summary { display:flex; align-items:baseline; gap:10px; padding:12px 15px; cursor:pointer; font-size:13px; }
+.paper-table > summary::before, .specimen-table > summary::before { content:'▸'; color:var(--green); }
+.paper-table[open] > summary::before, .specimen-table[open] > summary::before { content:'▾'; }
+.paper-table summary small { margin-left:auto; white-space:nowrap; font-size:11px; color:var(--muted); }
+.paper-table .table-scroll { border:0; border-top:1px solid var(--line); border-radius:0; }
+.specimen-table { margin:0 12px 8px; }
+.specimen-table > summary { padding:8px 12px; font-size:12px; }
+.source-materials > summary, .source-uses > summary { cursor:pointer; font-size:11px; color:var(--green); }
+.source-materials { margin-top:5px; }
+.reference-material { padding:10px 0; scroll-margin-top:84px; }
+.reference-material + .reference-material { border-top:1px solid var(--line); }
+.reference-material:target { background:#f0f6f3; }
+.source-uses .backlinks { margin:8px 0; }
+.source-return, .source-definition { font-size:11px; }
+@media(max-width:759px) {
+  .paper-table > summary { flex-wrap:wrap; gap:4px 7px; padding:9px; }
+  .paper-table > summary > span { flex:1; }
+  .paper-table > summary > small { width:100%; padding-left:16px; }
+}
+
+.choice-list details > summary, .chart-legend details > summary { padding:5px 8px; cursor:pointer; color:var(--green); }
+.choice-list details { border-bottom:1px solid var(--line); }
+.choice-list details label { padding-left:18px; }
+.chart-legend details > summary { padding:0; }
+.chart-legend details ul { list-style:none; padding:4px 0 2px 12px; }
