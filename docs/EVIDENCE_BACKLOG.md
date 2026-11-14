@@ -23,6 +23,7 @@
 | QUALITY-002 手机SNR/MTF/色差独立测量 | in_progress | 本机Codex，2026-11-14；先核有型号和协议的SNR及MTF原始研究；外接镜组、场景与处理链不得写进原生模组，PSNR不替代SNR |
 | QUALITY-003 VRAR MTF与色差 | in_progress | 本机Codex，2026-11-14；复核开放PR #69数据及原文，优先MTF/截止频率、颜色/场点/眼位、色差和先进设备独立测量，不能从曲线猜统一单值 |
 | QUALITY-001a 文献器件首批 | done | 4项原始研究/8器件配置/21行，几何、波段、逐谱点焦距/FWHM/Strehl、PSNR及冲突；见[首批核验](QUALITY_BATCH_2026-11-14.md)；PR #72/23fdecb与Pages43571286647实页验收，不关闭父目标 |
+| QUALITY-001b 可见光消色差与效率口径 | review | Codex，2026-11-14，codex/visible-achromatic-evidence；核Wang 2018正式主文/SI与Chen 2018作者存档稿/正式SI，分离设计示例与实验器件、带内均值与指定波长效率、偏振与分母/焦圈；七配置及效率/偏振五字段，130项测试；见[原文核验](VISIBLE_ACHROMATIC_REVIEW_2026-11-14.md)，待真实发布；原生手机和先进XR任务保持开放 |
 | QUALITY-002a 外接微距SNR | done | 原作Table4的2历史手机×7视图均值/SD/n；只属外接研究模组，原生主摄和先进型号仍缺；PR #72发布及实页验收 |
 | QUALITY-003a XR静态截止与研究协议 | done | 复用并复核PR #69三配置数据，新增正文6/8/9/12 CPD近似截止；不当MTF50；PR #72发布及实页验收，不关闭先进设备/AR缺口 |
 | FOCUS-005 测试、发布和完成审计 | in_progress | 校验/测试、Chrome无头桌面/手机、PR、实际Pages文件及数据核对；按新目标逐条审计，明确已有/候选/缺失，不能以仅有草稿或测试通过代替交付 |

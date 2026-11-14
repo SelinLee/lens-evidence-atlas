@@ -188,6 +188,42 @@
       "kind": "peer_reviewed_paper",
       "scope": "作者机构托管Optics Letters出版版3869–3872，读取Methods/Eqs.1–3与Fig.2/3对应正文；不同于已有DTU预印本。本器件是普通色散Huygens超透镜对照，不是物理消色差镜。只取明确配置及约50 nm个案最佳带宽；SNR/ASNR/MTF曲线未估读，不称新独立研究或通用最佳。",
       "checked_on": "2026-11-14"
+    },
+    {
+      "id": "wang_visible_2018",
+      "title": "Wang et al. (2018): A broadband achromatic metalens in the visible",
+      "url": "https://dsl.nju.edu.cn/litao/res/paper/Wang_SM-nnano_13_227%282018%29.pdf",
+      "doi": "10.1038/s41565-017-0052-4",
+      "kind": "peer_reviewed_paper",
+      "scope": "作者机构托管正式6页PDF（227–232），读设计/实测/成像相关正文，视觉核PDF pp.3–4 Fig.2–4与Eqs.1–2。三个NA配置同一研究；Fig.3b每谱点为四样品均值、误差条SD。只录正文/摘要明确数值，不估读焦距、效率、FWHM曲线。摘要明确NA=.106带内平均效率约40%；最高67%总述未强行绑定波长/单枚。消色差不记成零焦移。",
+      "checked_on": "2026-11-14"
+    },
+    {
+      "id": "wang_visible_si_2018",
+      "title": "Wang et al. (2018): Supplementary Information — visible achromatic metalens",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41565-017-0052-4/MediaObjects/41565_2017_52_MOESM1_ESM.pdf",
+      "doi": "10.1038/s41565-017-0052-4",
+      "kind": "supplementary_material",
+      "scope": "正式8页SI，读Sections1–2及Fig.S1–9相关图注/方法；视觉核PDF pp.3–4 TableS1/S2及p.6 Fig.S4/S5。核GaN800nm、圆偏振/AOTF及收集物镜；纳米结构转换效率模拟不当整镜聚焦效率。未从显微图比例尺反推精确整镜直径，也未数字化曲线。",
+      "checked_on": "2026-11-14"
+    },
+    {
+      "id": "chen_visible_manuscript_2018",
+      "title": "Chen et al. (2018): A broadband achromatic metalens for focusing and imaging in the visible — 作者存档稿",
+      "url": "https://dash.harvard.edu/server/api/core/bitstreams/7312037e-9b57-6bd4-e053-0100007fdf3b/content",
+      "doi": "10.1038/s41565-017-0034-6",
+      "kind": "author_manuscript",
+      "scope": "DASH作者存档稿31页（含1页存储库封面；正文印刷pp.1–30），不是正式排版PDF。读Achromatic focusing/imaging、Methods与Fig.1–4相关内容，视觉核PDF pp.25–26 Fig.3及续注；正式出版社Fig.1/3图注另经Chrome核对。区分Fig.1理论20µm/49µm与Fig.3实验配置设计63µm；NA=.2与NA=.02成像样品分列。摘要约20%效率的NA标签与SI S8(a)不同，NA=.2效率不择值打点；曲线未估读。",
+      "checked_on": "2026-11-14"
+    },
+    {
+      "id": "chen_visible_si_2018",
+      "title": "Chen et al. (2018): Supplementary Information — achromatic focusing and imaging",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41565-017-0034-6/MediaObjects/41565_2017_34_MOESM1_ESM.pdf",
+      "doi": "10.1038/s41565-017-0034-6",
+      "kind": "supplementary_material",
+      "scope": "正式16页SI（封面后印刷pp.1–15）；读S4/S6/S7/S8/S11，视觉核PDF pp.6/9/10的FWHM/Strehl、斜入射与效率图/图注。S8(a)明确NA=.02/D220µm，效率焦圈约Airy盘直径且分母同口径圆偏振入射；理论效率非实测。只录正文明确约20%@500nm，曲线/误差条不估读，Strehl>.8界限不压成精确点；S9模拟混合镜不当制成样品。",
+      "checked_on": "2026-11-14"
     }
   ],
   "domains": {
@@ -2246,6 +2282,10 @@
             {
               "source": "tseng_neural_si_2021",
               "location": "SI p.2 Table1 / Neural Nano-Optics"
+            },
+            {
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF p.13（正文p.12）30 degrees field of view；正式SI Fig.S7"
             }
           ]
         },
@@ -2337,6 +2377,99 @@
               "location": "pp.3870–3871 Eqs.1–3"
             }
           ]
+        },
+        {
+          "id": "efficiency_at_lambda_pct",
+          "label": "指定波长聚焦效率 (%)",
+          "definition": "指定波长下焦点收集功率与作者定义的入射/参考功率之比。与带内均值、峰值、透过率和单元偏振转换效率分列。",
+          "conditions": "效率测量波长、偏振、分母、焦圈/像面光阑、器件与实测/模拟；条件不齐不互排名",
+          "numeric": true,
+          "definition_refs": [
+            {
+              "source": "chen_visible_si_2018",
+              "location": "PDF p.10（印刷p.9）Fig.S8(a)图注"
+            },
+            {
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF p.19（正文p.18）Methods / Measurement"
+            }
+          ]
+        },
+        {
+          "id": "efficiency_lambda_nm",
+          "label": "效率测量波长 (nm)",
+          "definition": "只约束同一行的指定波长效率，不改写器件工作波段或逐波长焦距配置。",
+          "conditions": "与efficiency_at_lambda_pct同一器件/测量口径；原文约值保留",
+          "numeric": true,
+          "definition_refs": [
+            {
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF p.13（正文p.12）Achromatic focusing and imaging"
+            },
+            {
+              "source": "chen_visible_si_2018",
+              "location": "PDF p.10 Fig.S8(a)"
+            }
+          ]
+        },
+        {
+          "id": "efficiency_band_mean_pct",
+          "label": "带内聚焦效率均值 (%)",
+          "definition": "作者报告的工作波段内聚焦效率平均值，不作为每个波长效率、最大效率或无偏振总效率。",
+          "conditions": "波段、谱权重/采样、偏振、参考功率、焦圈和重复样品；未报告权重则明确缺失",
+          "numeric": true,
+          "definition_refs": [
+            {
+              "source": "wang_visible_2018",
+              "location": "PDF p.1 Abstract；p.4 Fig.3及对应正文"
+            }
+          ]
+        },
+        {
+          "id": "polarization",
+          "label": "偏振 / 检出通道",
+          "definition": "记录器件所需的入射偏振及检测选择；偏振转换通道不能直接冒充无偏振总体效率。",
+          "conditions": "入射/出射手性、QWP/偏振片、偏振不敏感的适用范围",
+          "numeric": false,
+          "definition_refs": [
+            {
+              "source": "wang_visible_si_2018",
+              "location": "PDF p.6 Fig.S4；p.8 Fig.S8"
+            },
+            {
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF p.19 Methods / Measurement"
+            },
+            {
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.9 Conclusion"
+            },
+            {
+              "source": "tseng_neural_2021",
+              "location": "PDF p.2 Introduction"
+            }
+          ]
+        },
+        {
+          "id": "efficiency_protocol",
+          "label": "聚焦效率协议 / 缺口",
+          "definition": "保留分母与收集区域、偏振通道、重复/聚合及未知项，便于核对效率是否可比。",
+          "conditions": "同口径参考/入射功率、收集焦圈、光路与不确定度；不同定义不得直接统一排名",
+          "numeric": false,
+          "definition_refs": [
+            {
+              "source": "wang_visible_2018",
+              "location": "PDF p.4 Fig.3b及对应正文"
+            },
+            {
+              "source": "chen_visible_si_2018",
+              "location": "PDF p.10 Fig.S8(a)图注"
+            },
+            {
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.10 Methods / Metalens characterization"
+            }
+          ]
         }
       ],
       "rows": [
@@ -2422,6 +2555,14 @@
               "basis": "reported_configuration",
               "checked_on": "2026-11-14",
               "approximate": true
+            },
+            "polarization": {
+              "value": "透射、偏振无关（作者报告）",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.1 Abstract；p.9 Conclusion",
+              "note": "复用已核的原作声明；不刷新旧效率/焦距曲线为已提取。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
             }
           }
         },
@@ -2516,6 +2657,14 @@
               "basis": "derived_from_measurement",
               "checked_on": "2026-11-14",
               "display": ">0.8（作者报告界限）"
+            },
+            "polarization": {
+              "value": "透射、偏振无关（作者报告）",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.1 Abstract；p.9 Conclusion",
+              "note": "复用已核的原作声明；不刷新旧效率/焦距曲线为已提取。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
             }
           }
         },
@@ -2610,6 +2759,14 @@
               "basis": "derived_from_measurement",
               "checked_on": "2026-11-14",
               "display": ">0.8（作者报告界限）"
+            },
+            "polarization": {
+              "value": "透射、偏振无关（作者报告）",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.1 Abstract；p.9 Conclusion",
+              "note": "复用已核的原作声明；不刷新旧效率/焦距曲线为已提取。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
             }
           }
         },
@@ -2695,6 +2852,14 @@
               "basis": "reported_configuration",
               "checked_on": "2026-11-14",
               "display": "正文≈0.88；Fig.4c=0.85"
+            },
+            "polarization": {
+              "value": "透射、偏振无关（作者报告）",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.1 Abstract；p.9 Conclusion",
+              "note": "复用已核的原作声明；不刷新旧效率/焦距曲线为已提取。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
             }
           }
         },
@@ -2801,6 +2966,14 @@
               "source": "tseng_neural_si_2021",
               "location": "SI p.24 Note8 / Existing Meta-Optics Designs，包含proposed design的共同配置段",
               "note": "原文明示f0=1 mm，×1000换算μm；是名义/设计焦距，不是逐波长焦移曲线。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "偏振不敏感（作者报告）",
+              "source": "tseng_neural_2021",
+              "location": "PDF p.2 Introduction",
+              "note": "联合计算成像系统的作者声明；PSNR仍属实验重建统计。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
             }
@@ -4540,9 +4713,631 @@
               "checked_on": "2026-11-14"
             }
           }
+        },
+        {
+          "id": "wang2018_na0106",
+          "model": "Wang 2018 · NA 0.106",
+          "module": "",
+          "variant": "原作制成器件配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "wang2018",
+          "measurement_scope": "Wang2018同文GaN/蓝宝石透射器件；圆偏振入射及相反手性检出；Fig.3b各谱点为四样品均值/SD，非四项独立研究；未取得原始曲线数组。",
+          "values": {
+            "na": {
+              "value": 0.106,
+              "source": "wang_visible_2018",
+              "location": "PDF pp.3–4 Fig.2/3及对应正文",
+              "note": "Wang2018同文GaN/蓝宝石透射器件；圆偏振入射及相反手性检出；Fig.3b各谱点为四样品均值/SD，非四项独立研究；未取得原始曲线数组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "wang_visible_2018",
+              "location": "PDF p.1 Abstract；p.3 Fig.2d对应正文",
+              "note": "作者声明工作波段400–660nm；不据“remained unchanged”赋零焦移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 660,
+              "source": "wang_visible_2018",
+              "location": "PDF p.1 Abstract；p.3 Fig.2d对应正文",
+              "note": "作者声明工作波段400–660nm；不据“remained unchanged”赋零焦移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "wang_visible_si_2018",
+              "location": "PDF p.3 Fig.S1；p.5 Section2",
+              "note": "GaN纳米结构/外延层厚度，非含蓝宝石总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "GaN实心/反结构 IRUEs / Al2O3（蓝宝石）",
+              "source": "wang_visible_si_2018",
+              "location": "PDF pp.3–5 Section1/2",
+              "note": "共振相位补偿与Pancharatnam–Berry几何相位联合；单元转换效率模拟与整镜实测分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "圆偏振入射；相反手性聚焦通道",
+              "source": "wang_visible_si_2018",
+              "location": "PDF p.6 Fig.S4；主文p.3测量段",
+              "note": "QWP及线偏振片选择入射/检测通道，不声称偏振无关。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_protocol": {
+              "value": "焦点圆偏振功率 / 相反手性入射功率；每谱点4样品均值±SD",
+              "source": "wang_visible_2018",
+              "location": "PDF p.4 Fig.3b图注与效率定义段",
+              "note": "未报告可复算的焦圈尺寸或带内谱权重；误差条SD未数字化，不能捏造不确定度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "Fig.3a/S6实测存在残余焦移；未数字化曲线",
+              "source": "wang_visible_2018",
+              "location": "PDF p.4 Fig.3a；SI Fig.S6",
+              "note": "作者近似消色差描述不等于严格df/dλ=0，不录零焦移或估读单值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "Fig.3a焦距、3b效率、3c FWHM；所读材料无MTF单值",
+              "source": "wang_visible_2018",
+              "location": "PDF p.4 Fig.3；p.5 Fig.4对应正文",
+              "note": "USAF约2.19µm是作者可辨线宽，不转成FWHM、MTF50或同阈值分辨率；最高67%总述不分派到未明谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": 235,
+              "source": "wang_visible_2018",
+              "location": "PDF p.3 Fig.2d对应正文",
+              "note": "设计焦距；不是Fig.3a逐谱点实测均值。整镜直径未在所读段落直接给出，不由NA/f反推。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_band_mean_pct": {
+              "value": 40,
+              "source": "wang_visible_2018",
+              "location": "PDF p.1 Abstract（明确NA=.106）；p.4效率正文",
+              "note": "作者约40%，工作波段400–660nm；圆偏振指定通道。每谱点n=4，不等于带内平均值的不确定度；谱权重/均值计算细节未给。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "约40",
+              "approximate": true,
+              "statistic": "band_mean"
+            }
+          }
+        },
+        {
+          "id": "wang2018_na0125",
+          "model": "Wang 2018 · NA 0.125",
+          "module": "",
+          "variant": "原作制成器件配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "wang2018",
+          "measurement_scope": "Wang2018同文GaN/蓝宝石透射器件；圆偏振入射及相反手性检出；Fig.3b各谱点为四样品均值/SD，非四项独立研究；未取得原始曲线数组。",
+          "values": {
+            "na": {
+              "value": 0.125,
+              "source": "wang_visible_2018",
+              "location": "PDF pp.3–4 Fig.2/3及对应正文",
+              "note": "Wang2018同文GaN/蓝宝石透射器件；圆偏振入射及相反手性检出；Fig.3b各谱点为四样品均值/SD，非四项独立研究；未取得原始曲线数组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "wang_visible_2018",
+              "location": "PDF p.1 Abstract；p.3 Fig.2d对应正文",
+              "note": "作者声明工作波段400–660nm；不据“remained unchanged”赋零焦移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 660,
+              "source": "wang_visible_2018",
+              "location": "PDF p.1 Abstract；p.3 Fig.2d对应正文",
+              "note": "作者声明工作波段400–660nm；不据“remained unchanged”赋零焦移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "wang_visible_si_2018",
+              "location": "PDF p.3 Fig.S1；p.5 Section2",
+              "note": "GaN纳米结构/外延层厚度，非含蓝宝石总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "GaN实心/反结构 IRUEs / Al2O3（蓝宝石）",
+              "source": "wang_visible_si_2018",
+              "location": "PDF pp.3–5 Section1/2",
+              "note": "共振相位补偿与Pancharatnam–Berry几何相位联合；单元转换效率模拟与整镜实测分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "圆偏振入射；相反手性聚焦通道",
+              "source": "wang_visible_si_2018",
+              "location": "PDF p.6 Fig.S4；主文p.3测量段",
+              "note": "QWP及线偏振片选择入射/检测通道，不声称偏振无关。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_protocol": {
+              "value": "焦点圆偏振功率 / 相反手性入射功率；每谱点4样品均值±SD",
+              "source": "wang_visible_2018",
+              "location": "PDF p.4 Fig.3b图注与效率定义段",
+              "note": "未报告可复算的焦圈尺寸或带内谱权重；误差条SD未数字化，不能捏造不确定度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "Fig.3a/S6实测存在残余焦移；未数字化曲线",
+              "source": "wang_visible_2018",
+              "location": "PDF p.4 Fig.3a；SI Fig.S6",
+              "note": "作者近似消色差描述不等于严格df/dλ=0，不录零焦移或估读单值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "Fig.3a焦距、3b效率、3c FWHM；所读材料无MTF单值",
+              "source": "wang_visible_2018",
+              "location": "PDF p.4 Fig.3；p.5 Fig.4对应正文",
+              "note": "USAF约2.19µm是作者可辨线宽，不转成FWHM、MTF50或同阈值分辨率；最高67%总述不分派到未明谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "wang2018_na015",
+          "model": "Wang 2018 · NA 0.15",
+          "module": "",
+          "variant": "原作制成器件配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "wang2018",
+          "measurement_scope": "Wang2018同文GaN/蓝宝石透射器件；圆偏振入射及相反手性检出；Fig.3b各谱点为四样品均值/SD，非四项独立研究；未取得原始曲线数组。",
+          "values": {
+            "na": {
+              "value": 0.15,
+              "source": "wang_visible_2018",
+              "location": "PDF pp.3–4 Fig.2/3及对应正文",
+              "note": "Wang2018同文GaN/蓝宝石透射器件；圆偏振入射及相反手性检出；Fig.3b各谱点为四样品均值/SD，非四项独立研究；未取得原始曲线数组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "wang_visible_2018",
+              "location": "PDF p.1 Abstract；p.3 Fig.2d对应正文",
+              "note": "作者声明工作波段400–660nm；不据“remained unchanged”赋零焦移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 660,
+              "source": "wang_visible_2018",
+              "location": "PDF p.1 Abstract；p.3 Fig.2d对应正文",
+              "note": "作者声明工作波段400–660nm；不据“remained unchanged”赋零焦移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "wang_visible_si_2018",
+              "location": "PDF p.3 Fig.S1；p.5 Section2",
+              "note": "GaN纳米结构/外延层厚度，非含蓝宝石总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "GaN实心/反结构 IRUEs / Al2O3（蓝宝石）",
+              "source": "wang_visible_si_2018",
+              "location": "PDF pp.3–5 Section1/2",
+              "note": "共振相位补偿与Pancharatnam–Berry几何相位联合；单元转换效率模拟与整镜实测分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "圆偏振入射；相反手性聚焦通道",
+              "source": "wang_visible_si_2018",
+              "location": "PDF p.6 Fig.S4；主文p.3测量段",
+              "note": "QWP及线偏振片选择入射/检测通道，不声称偏振无关。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_protocol": {
+              "value": "焦点圆偏振功率 / 相反手性入射功率；每谱点4样品均值±SD",
+              "source": "wang_visible_2018",
+              "location": "PDF p.4 Fig.3b图注与效率定义段",
+              "note": "未报告可复算的焦圈尺寸或带内谱权重；误差条SD未数字化，不能捏造不确定度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "Fig.3a/S6实测存在残余焦移；未数字化曲线",
+              "source": "wang_visible_2018",
+              "location": "PDF p.4 Fig.3a；SI Fig.S6",
+              "note": "作者近似消色差描述不等于严格df/dλ=0，不录零焦移或估读单值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "Fig.3a焦距、3b效率、3c FWHM；所读材料无MTF单值",
+              "source": "wang_visible_2018",
+              "location": "PDF p.4 Fig.3；p.5 Fig.4对应正文",
+              "note": "USAF约2.19µm是作者可辨线宽，不转成FWHM、MTF50或同阈值分辨率；最高67%总述不分派到未明谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "chen2018_na02",
+          "model": "Chen 2018 · NA 0.2 聚焦器件",
+          "module": "",
+          "variant": "原作制成器件配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "chen2018",
+          "measurement_scope": "Chen2018作者存档稿的Fig.3制成器件；NA=.2，λ0=530nm设计f63µm；轴向1µm步进、峰强度焦面，横向PSF固定在470nm焦面；圆偏振交叉检出。Fig.1的20µm/49µm只是理论相位示例，未移用其口径。",
+          "values": {
+            "na": {
+              "value": 0.2,
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF pp.25–26 Fig.3图注（正文pp.24–25）",
+              "note": "Chen2018作者存档稿的Fig.3制成器件；NA=.2，λ0=530nm设计f63µm；轴向1µm步进、峰强度焦面，横向PSF固定在470nm焦面；圆偏振交叉检出。Fig.1的20µm/49µm只是理论相位示例，未移用其口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 470,
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF p.2 Abstract；pp.11–13 Achromatic focusing and imaging",
+              "note": "作者报告聚焦/成像带宽470–670nm；优化设计带宽120nm中心530nm不等于该实验工作带宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 670,
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF p.2 Abstract；pp.11–13 Achromatic focusing and imaging",
+              "note": "未以该波段证明全视场无色差，逐谱点焦移曲线未提取。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF p.23 Fig.2a图注（正文p.22）",
+              "note": "结构库TiO2纳米鳍高度；不是基底/器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍对 / fused silica",
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF pp.7–8 Optical properties；p.23 Fig.2a",
+              "note": "600nm高、400nm单元间距与60nm鳍间隙属于结构设计；未把结构库元件当独立透镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "圆偏振入射；交叉圆偏振检出",
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF p.19 Methods / Measurement；SI PDF p.16 Fig.S11",
+              "note": "交叉QWP/偏振片抑制背景；不能以此声称无偏振光效率相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_protocol": {
+              "value": "焦点功率 / 同口径圆偏振入射功率；像面光阑约Airy盘直径",
+              "source": "chen_visible_si_2018",
+              "location": "PDF p.10（印刷p.9）Fig.S8(a)；作者稿PDF p.19 Methods",
+              "note": "S8(a)对应NA=.02/D220µm；理论约50%为单元偏振转换效率平均的上限，未计耦合/衍射，不是实测。误差条来源/重复次数未补造。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "主文Fig.3/4及SI S4/S6/S7为PSF/Strehl；未录MTF50",
+              "source": "chen_visible_si_2018",
+              "location": "PDF p.6 Fig.S4",
+              "note": "未将USAF线宽或Strehl界限换成MTF。FWHM/效率曲线未数字化。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": 63,
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF p.26 Fig.3(a)续注（正文p.25）；正式出版社Fig.3图注同值",
+              "note": "Chen2018作者存档稿的Fig.3制成器件；NA=.2，λ0=530nm设计f63µm；轴向1µm步进、峰强度焦面，横向PSF固定在470nm焦面；圆偏振交叉检出。Fig.1的20µm/49µm只是理论相位示例，未移用其口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "strehl": {
+              "value": null,
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF p.12（正文p.11）及正式SI PDF p.6 Fig.S4",
+              "note": "作者报告>0.8；相应PSF在470nm参考焦面，界限不是精确0.8。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": ">0.8（作者界限）"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF p.3 Abstract（正文p.2）；正式SI PDF p.10 Fig.S8(a)",
+              "note": "摘要将约20%@500nm描述在NA=.2设计；SI S8(a)及成像正文对应NA=.02/D220µm。保留器件归属差异，NA=.2效率不选择单值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "摘要约20%@500nm；与S8(a)器件标签待消歧",
+              "sourceIds": [
+                "chen_visible_manuscript_2018",
+                "chen_visible_si_2018"
+              ]
+            },
+            "chromatic": {
+              "value": "Fig.3a实测符号与模型线分开；轴向步长1µm；未赋零焦移",
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF pp.11–12 Achromatic focusing and imaging；pp.25–26 Fig.3",
+              "note": "设计焦距63µm并非各波长实测定值；理论示例49µm和缩小FDTD模型NA=.6/D6µm均未移用。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "chen2018_na002",
+          "model": "Chen 2018 · NA 0.02 成像器件",
+          "module": "",
+          "variant": "原作制成器件配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "chen2018",
+          "measurement_scope": "Chen2018同文D220µm/NA=.02制成成像器件；固定470nm参考像面，圆偏振交叉检出；FOV作者报30°且SI S7只测三个波长/有限角度，不当全场MTF验收。",
+          "values": {
+            "na": {
+              "value": 0.02,
+              "source": "chen_visible_si_2018",
+              "location": "PDF pp.8–10 Fig.S6–S8",
+              "note": "Chen2018同文D220µm/NA=.02制成成像器件；固定470nm参考像面，圆偏振交叉检出；FOV作者报30°且SI S7只测三个波长/有限角度，不当全场MTF验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 470,
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF p.2 Abstract；pp.11–13 Achromatic focusing and imaging",
+              "note": "作者报告聚焦/成像带宽470–670nm；优化设计带宽120nm中心530nm不等于该实验工作带宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 670,
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF p.2 Abstract；pp.11–13 Achromatic focusing and imaging",
+              "note": "未以该波段证明全视场无色差，逐谱点焦移曲线未提取。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF p.23 Fig.2a图注（正文p.22）",
+              "note": "结构库TiO2纳米鳍高度；不是基底/器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍对 / fused silica",
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF pp.7–8 Optical properties；p.23 Fig.2a",
+              "note": "600nm高、400nm单元间距与60nm鳍间隙属于结构设计；未把结构库元件当独立透镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "圆偏振入射；交叉圆偏振检出",
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF p.19 Methods / Measurement；SI PDF p.16 Fig.S11",
+              "note": "交叉QWP/偏振片抑制背景；不能以此声称无偏振光效率相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_protocol": {
+              "value": "焦点功率 / 同口径圆偏振入射功率；像面光阑约Airy盘直径",
+              "source": "chen_visible_si_2018",
+              "location": "PDF p.10（印刷p.9）Fig.S8(a)；作者稿PDF p.19 Methods",
+              "note": "S8(a)对应NA=.02/D220µm；理论约50%为单元偏振转换效率平均的上限，未计耦合/衍射，不是实测。误差条来源/重复次数未补造。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "主文Fig.3/4及SI S4/S6/S7为PSF/Strehl；未录MTF50",
+              "source": "chen_visible_si_2018",
+              "location": "PDF pp.8–9 Fig.S6/S7",
+              "note": "未将USAF线宽或Strehl界限换成MTF。FWHM/效率曲线未数字化。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "diameter_um": {
+              "value": 220,
+              "source": "chen_visible_si_2018",
+              "location": "PDF pp.8–10 Fig.S6/S7/S8(a)",
+              "note": "制成成像器件的作者名义口径；未以NA与D反推并冒充原报告焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "fov_deg": {
+              "value": 30,
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF p.13（正文p.12）imaging/FOV段；SI PDF p.9 Fig.S7",
+              "note": "作者报告30°FOV；Strehl>.8至约15°入射为有限波长/方向范围，不能扩成全场/全色MTF。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 20,
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF p.13（正文p.12）效率段，指向正式SI Fig.S8(a)",
+              "note": "作者测得约20%，around500nm；正式SI S8(a)明确NA=.02、D220µm。本值非平均/峰值，无误差条数值或原始数组；摘要的NA标签差异在NA=.2行单列。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "约20（约500nm）",
+              "approximate": true,
+              "sourceIds": [
+                "chen_visible_manuscript_2018",
+                "chen_visible_si_2018"
+              ]
+            },
+            "efficiency_lambda_nm": {
+              "value": 500,
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF p.13（正文p.12）around 500 nm",
+              "note": "效率测量所指约波长，不用于覆盖其他PSF/FOV指标的测试波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "约500",
+              "approximate": true
+            },
+            "chromatic": {
+              "value": "固定470nm参考像面；SI S6/S7比较像点及斜入射；焦距未直接填值",
+              "source": "chen_visible_si_2018",
+              "location": "PDF pp.8–9 Fig.S6/S7；p.16 Fig.S11",
+              "note": "未将D/(2NA)计算的焦距当原作报告值，也未从焦面稳定外推零横向色差。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "chen2018_na002_d180",
+          "model": "Chen 2018 · NA 0.02 · D 180µm 效率变体",
+          "module": "",
+          "variant": "原作制成小口径效率变体；非D220µm成像样品",
+          "evidence_type": "study",
+          "study_id": "chen2018",
+          "measurement_scope": "正式SI Fig.S8(b)图例明确D180µm、NA=.02；本变体只核到几何与实测效率曲线，未移用D220µm样品的FOV/PSF/逐点效率，未估读曲线。",
+          "values": {
+            "height_nm": {
+              "value": 600,
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF p.23 Fig.2a图注（正文p.22）",
+              "note": "结构库TiO2纳米鳍高度；不是基底/器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍对 / fused silica",
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF pp.7–8 Optical properties；p.23 Fig.2a",
+              "note": "600nm高、400nm单元间距与60nm鳍间隙属于结构设计；未把结构库元件当独立透镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "圆偏振入射；交叉圆偏振检出",
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF p.19 Methods / Measurement；SI PDF p.16 Fig.S11",
+              "note": "交叉QWP/偏振片抑制背景；不能以此声称无偏振光效率相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.02,
+              "source": "chen_visible_si_2018",
+              "location": "正式SI PDF p.10（印刷p.9）Fig.S8(b)图注",
+              "note": "正式SI Fig.S8(b)图例明确D180µm、NA=.02；本变体只核到几何与实测效率曲线，未移用D220µm样品的FOV/PSF/逐点效率，未估读曲线。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "diameter_um": {
+              "value": 180,
+              "source": "chen_visible_si_2018",
+              "location": "正式SI PDF p.10（印刷p.9）Fig.S8(b)图例",
+              "note": "正式SI Fig.S8(b)图例明确D180µm、NA=.02；本变体只核到几何与实测效率曲线，未移用D220µm样品的FOV/PSF/逐点效率，未估读曲线。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "SI Fig.S8(b)实测效率曲线；未取单值或MTF",
+              "source": "chen_visible_si_2018",
+              "location": "PDF p.10（印刷p.9）Fig.S8(b)",
+              "note": "主文两个较小口径约40%的概述没有明确每个波长/聚合，不作为本变体40%标量。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "chen2018_na002_d160",
+          "model": "Chen 2018 · NA 0.02 · D 160µm 效率变体",
+          "module": "",
+          "variant": "原作制成小口径效率变体；非D220µm成像样品",
+          "evidence_type": "study",
+          "study_id": "chen2018",
+          "measurement_scope": "正式SI Fig.S8(b)图例明确D160µm、NA=.02；本变体只核到几何与实测效率曲线，未移用D220µm样品的FOV/PSF/逐点效率，未估读曲线。",
+          "values": {
+            "height_nm": {
+              "value": 600,
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF p.23 Fig.2a图注（正文p.22）",
+              "note": "结构库TiO2纳米鳍高度；不是基底/器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍对 / fused silica",
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF pp.7–8 Optical properties；p.23 Fig.2a",
+              "note": "600nm高、400nm单元间距与60nm鳍间隙属于结构设计；未把结构库元件当独立透镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "圆偏振入射；交叉圆偏振检出",
+              "source": "chen_visible_manuscript_2018",
+              "location": "PDF p.19 Methods / Measurement；SI PDF p.16 Fig.S11",
+              "note": "交叉QWP/偏振片抑制背景；不能以此声称无偏振光效率相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.02,
+              "source": "chen_visible_si_2018",
+              "location": "正式SI PDF p.10（印刷p.9）Fig.S8(b)图注",
+              "note": "正式SI Fig.S8(b)图例明确D160µm、NA=.02；本变体只核到几何与实测效率曲线，未移用D220µm样品的FOV/PSF/逐点效率，未估读曲线。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "diameter_um": {
+              "value": 160,
+              "source": "chen_visible_si_2018",
+              "location": "正式SI PDF p.10（印刷p.9）Fig.S8(b)图例",
+              "note": "正式SI Fig.S8(b)图例明确D160µm、NA=.02；本变体只核到几何与实测效率曲线，未移用D220µm样品的FOV/PSF/逐点效率，未估读曲线。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "SI Fig.S8(b)实测效率曲线；未取单值或MTF",
+              "source": "chen_visible_si_2018",
+              "location": "PDF p.10（印刷p.9）Fig.S8(b)",
+              "note": "主文两个较小口径约40%的概述没有明确每个波长/聚合，不作为本变体40%标量。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            }
+          }
         }
       ],
-      "scope": "4项原始研究、8个物理器件/系统配置、21条行记录：Shrestha四镜片、Tseng计算对照、Kang两器件15谱点、Engelberg普通色散对照。谱点不是独立镜片；实测/设计/模拟/重建逐格标注，原文冲突保持可见，不生成排名。",
+      "scope": "6项原始研究、15个器件/系统配置、28条行记录：Shrestha四配置、Tseng计算成像、Kang两器件15谱点、Engelberg普通色散对照、Wang三个NA配置、Chen聚焦/成像及两个小口径效率变体。效率指定波长/带内均值分列；冲突/界限不打点，同器件谱点不计作独立研究。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
