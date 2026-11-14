@@ -16,7 +16,7 @@
 
 ## 画质与消色差超透镜证据（v0.3.4）
 
-[统一散点、表格与来源](https://selinlee.github.io/lens-evidence-atlas/)覆盖原有33类应用、手机、XR及超透镜文献器件。当前5款商业手机/15原生后摄配置，另2款历史手机的14条外接微距SNR研究配置及两项研究的8条原生摄像头MTF记录；8款厂商XR配置、同一研究的3款历史头显记录及Choi全息VR近眼原型。未把外接镜组的SNR写入原生主摄，也不称最新商业画质覆盖完成。
+[统一散点、表格与来源](https://selinlee.github.io/lens-evidence-atlas/)覆盖原有33类应用、手机、XR及超透镜文献器件。当前5款商业手机/15原生后摄配置，另2款历史手机的14条外接微距SNR研究配置及两项研究的8条原生摄像头MTF记录；9款厂商XR配置、同一研究的3款历史头显记录及Choi全息VR近眼原型。未把外接镜组的SNR写入原生主摄，也不称最新商业画质覆盖完成。
 
 [超透镜文献矩阵](https://selinlee.github.io/lens-evidence-atlas/?domain=metalens)收录12项原始研究、32个器件/系统配置、90条记录（汇总与同器件光谱点分别记录，不计作更多实物），包括口径、设计/实测焦距、NA冲突、波段、FWHM、Strehl及重建PSNR。物理消色差、计算重建和普通色散对照分开；每格保留原始来源与位置。手机/XR/文献共65个领域字段，定义完整性和先进型号独立测量继续补证。焦距变化幅度附参考/统计协议，离散RGB不当连续消色差；效率归属差异保留，不选值排名。详见[Chen/Li可见光核验](docs/CHEN_LI_VISIBLE_REVIEW_2026-11-14.md)、[Chang原始MTF核查](docs/CHANG_MTF_DATA_AUDIT_2026-11-14.md)与[首批核验](docs/QUALITY_BATCH_2026-11-14.md)。
 

@@ -375,6 +375,22 @@
       "kind": "peer_reviewed_paper",
       "scope": "PMC正式全文HTML与Europe PMC全文XML；读设计、RGB聚焦/成像、Methods、Discussion及数据声明，视觉核正式Fig.1–3，采用Fig.2F–H直接印出的FWHM/SR标签，不数字化曲线。D2mm/NA0.7与NA0.3是两个实制配置，各自RGB测点不同；约1μm最大焦移仅归NA0.7。Science/作者PDF与SI入口403，Europe PMC supplementaryFiles ZIP仅10张主文图像，不是SI/原始PSF；未声称读到S3/S14。模拟厘米镜、双片校正及系统显示参数不当裸镜实测。",
       "checked_on": "2026-11-14"
+    },
+    {
+      "id": "pico4ultra_uk_specs_20261114",
+      "title": "PICO 4 Ultra UK specifications",
+      "url": "https://www.picoxr.com/uk/products/pico4-ultra/specs",
+      "checked_on": "2026-11-14",
+      "scope": "Manufacturer Display & Optics table, directly read HTML; UK consumer model.",
+      "kind": "manufacturer"
+    },
+    {
+      "id": "pico4ultra_overview_20261114",
+      "title": "PICO 4 Ultra product overview",
+      "url": "https://www.picoxr.com/games/products/pico4-ultra",
+      "checked_on": "2026-11-14",
+      "scope": "Direct HTML: binocular display section and note 1; per-eye pixel convention and central PPD meaning.",
+      "kind": "manufacturer"
     }
   ],
   "domains": {
@@ -2342,6 +2358,87 @@
           }
         },
         {
+          "id": "pico4_ultra_uk",
+          "model": "PICO 4 Ultra",
+          "module": "",
+          "variant": "UK consumer model; video-passthrough MR; not Enterprise",
+          "values": {
+            "width": {
+              "value": 2160,
+              "source": "pico4ultra_uk_specs_20261114",
+              "location": "Display & Optics; product overview: A 4K+ Binocular Vision Display",
+              "note": "Per eye explicitly confirmed by product overview; not 1920 rendering width.",
+              "basis": "manufacturer_claim",
+              "sources": [
+                {
+                  "source": "pico4ultra_uk_specs_20261114",
+                  "location": "Display & Optics"
+                },
+                {
+                  "source": "pico4ultra_overview_20261114",
+                  "location": "A 4K+ Binocular Vision Display; note 1"
+                }
+              ]
+            },
+            "height": {
+              "value": 2160,
+              "source": "pico4ultra_uk_specs_20261114",
+              "location": "Display & Optics; product overview: A 4K+ Binocular Vision Display",
+              "note": "Per eye; not camera pixels or rendering dimensions.",
+              "basis": "manufacturer_claim",
+              "sources": [
+                {
+                  "source": "pico4ultra_uk_specs_20261114",
+                  "location": "Display & Optics"
+                },
+                {
+                  "source": "pico4ultra_overview_20261114",
+                  "location": "A 4K+ Binocular Vision Display; note 1"
+                }
+              ]
+            },
+            "hz": {
+              "value": 90,
+              "source": "pico4ultra_uk_specs_20261114",
+              "location": "Display & Optics",
+              "note": "Maximum display refresh; not proof all MR modes are 90 Hz.",
+              "basis": "manufacturer_claim"
+            },
+            "ufov": {
+              "value": 105,
+              "source": "pico4ultra_uk_specs_20261114",
+              "location": "Display & Optics",
+              "note": "Direction unspecified; not horizontal or vertical.",
+              "basis": "manufacturer_claim"
+            },
+            "optics": {
+              "value": "Pancake",
+              "source": "pico4ultra_uk_specs_20261114",
+              "location": "Display & Optics",
+              "note": "Manufacturer optical scheme label; not measured optical quality.",
+              "basis": "manufacturer_claim"
+            },
+            "ppd": {
+              "value": 22.5,
+              "source": "pico4ultra_uk_specs_20261114",
+              "location": "Display & Optics; product overview note 1",
+              "note": "Manufacturer central-area angular pixel density, not independent measured resolving power. Average 20.6 is a different aggregation; no inference from pixels/FOV.",
+              "basis": "manufacturer_claim",
+              "sources": [
+                {
+                  "source": "pico4ultra_uk_specs_20261114",
+                  "location": "Display & Optics"
+                },
+                {
+                  "source": "pico4ultra_overview_20261114",
+                  "location": "A 4K+ Binocular Vision Display; note 1"
+                }
+              ]
+            }
+          },
+          "evidence_type": "manufacturer"
+        },
+        {
           "id": "vive_2022_study",
           "model": "HTC VIVE（2022研究）",
           "module": "",
@@ -2676,7 +2773,7 @@
           }
         }
       ],
-      "scope": "8款厂商XR配置、同一2022研究的3条历史头显配置及Choi2025全息VR台式原型。中心静态CPD曲线与原型cycles/mm条纹对比、对角FOV分开；不等于2026先进商用覆盖或全场/眼盒验收。",
+      "scope": "9款厂商XR配置、同一2022研究的3条历史头显配置及Choi2025全息VR台式原型。中心静态CPD曲线与原型cycles/mm条纹对比、对角FOV分开；不等于2026先进商用覆盖或全场/眼盒验收。",
       "task_guidance": [
         {
           "task": "运动内容与平滑追踪",

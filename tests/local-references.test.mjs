@@ -14,7 +14,7 @@ test('four supplied studies are deduplicated across versions, supplements and sp
  assert.equal(new Set(added.map(r=>r.study_id+'/'+r.specimen_id)).size,12);
  assert.equal(lens.rows.length,90);assert.equal(new Set(lens.rows.map(r=>r.study_id)).size,12);
  assert.ok(!added.some(r=>/arxiv|proxy/i.test(r.study_id)));
- assert.equal(data.sources.length,45);assert.ok(data.sources.filter(s=>/balli_|lin_spdc|chang_dispersion|choi_rgb/.test(s.id)).every(s=>s.checked_on==='2026-11-14'&&s.scope));
+ assert.equal(data.sources.length,47);assert.ok(data.sources.filter(s=>/balli_|lin_spdc|chang_dispersion|choi_rgb/.test(s.id)).every(s=>s.checked_on==='2026-11-14'&&s.scope));
 });
 
 test('Lin measured x and y PSF widths and complete-device efficiency retain the original ordered sequences',()=>{
@@ -99,5 +99,5 @@ test('new measurements and their original references use the existing shared sca
  assert.equal(axisPoints(domain.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,51);
  assert.equal(axisPoints(domain.rows,'na','efficiency_band_mean_pct').length,4);
  for(const r of domain.rows)for(const v of Object.values(r.values))for(const s of valueSources(v))assert.ok(workspace.sources.has(s));
- assert.equal(data.domains.phone.rows.length,37);assert.equal(data.domains.xr.rows.filter(r=>r.evidence_type!=='study').length,8);
+ assert.equal(data.domains.phone.rows.length,37);assert.equal(data.domains.xr.rows.filter(r=>r.evidence_type!=='study').length,9);
 });

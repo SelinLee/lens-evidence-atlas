@@ -772,3 +772,5 @@ DEVICE-006限定验收：PR #67合并07057dc，108测试/构建/CI通过，Pages
 | DEVICE-007 XR角分辨与画质测量协议 | Q0 | done | Codex | 2026-11-14 | 首项原始实验及PPD/CPD定义已由QUALITY-003a复核、经PR #72发布验收；见[本批核验](QUALITY_BATCH_2026-11-14.md)。标准条款、全场协议与先进设备证据继续保留缺口 |
 
 007入口：IEC官方62508页已读2019版简介、适用范围和出版元数据，未取得条款；当前页面生命周期表未展开，不据搜索结果判定最新版/合规。PMC9691731《Spatiotemporal image quality of virtual reality head mounted displays》为独立测量候选，仅检索元数据/摘要线索，正文、图表尚未读取。下一轮先取原文与图像，不能采纳搜索摘要数字。
+
+| DEVICE-008 PICO 4 Ultra UK规格 | review | 六项厂商声明及两原厂HTML出处；待PR审核，无视觉/部署验收，见PICO4_ULTRA_REVIEW_2026-11-14.md |

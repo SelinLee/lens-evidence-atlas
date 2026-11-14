@@ -101,7 +101,7 @@ test('follow-up specifications preserve unresolved ranges and optical measuremen
  const x=d.domains.xr.rows.find(r=>r.id==='xreal_one_pro');
  for(const key of ['width','height','brightness','latency','hfov','ppd'])assert.equal(x.values[key],undefined);
  const v=d.domains.xr.rows.find(r=>r.id==='vive_focus_vision');assert.match(v.values.hz.note,/DisplayPort.*Beta/);assert.equal(v.values.hfov,undefined);
- assert.equal(d.domains.phone.rows.filter(r=>r.evidence_type!=='study').length,15);assert.equal(d.domains.xr.rows.filter(r=>r.evidence_type!=='study').length,8);
+ assert.equal(d.domains.phone.rows.filter(r=>r.evidence_type!=='study').length,15);assert.equal(d.domains.xr.rows.filter(r=>r.evidence_type!=='study').length,9);
 });
 
 test('XREAL optical scheme is sourced without adopting marketing performance claims',()=>{
