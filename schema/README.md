@@ -12,6 +12,8 @@
 
 `data/devices.json`的domains可扩展，并可声明name/category/row_unit；新文献器件沿用统一散点/表格/引用模板。研究行用evidence_type=study、study_id、measurement_scope，同一器件不同谱点用specimen_id关联，不计为独立研究。
 
+数值指标的可选 `axis_bounds` 指定散点图自动留白的下限 `min` 和上限 `max`。例如器件口径的下限为 0，百分比聚焦效率的范围为 0–100。上下限仅约束留白，原始数值始终计入坐标范围。带符号畸变、位移与 dB 信噪比按实际范围展示。
+
 研究每格必须有source、location、note、basis；basis区分reported_configuration、measured、model、derived_from_measurement、reconstruction、unresolved（原文待消歧）。实测PSF计算、模拟MTF与实验重建PSNR不能都标为measured。`value=null`配display可保留原文界限、冲突或曲线入口，不参加坐标绘制。均值可保存statistic=mean及uncertainty={type:SD,value,n}，原文±与样本量须保留；SD不是CI。语义校验由scripts/devices.mjs执行，不替代科学复核。
 
 同一格可用sourceIds列多个原始来源，必须包含主source且各ID有效；统一界面须将这些ID全部映射并显示，不能只保留首项。efficiency_at_lambda_pct须有efficiency_lambda_nm及efficiency_protocol；efficiency_band_mean_pct须有工作波段、statistic=band_mean及协议。两类百分数都不能混成单元转换效率、最大效率或不明分母的统一排名。approximate=true的坐标保留“约”字。

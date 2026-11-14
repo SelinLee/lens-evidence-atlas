@@ -6,6 +6,22 @@ export function scalar(text) {
   return Number.isFinite(value) ? {value, unit: match[1] ? 'F数' : (match[3] || '无量纲').replace('µ', 'μ')} : null;
 }
 
+// Untyped catalog fields share units with signed quantities such as axial displacement.
+const legacyNonnegativeFields = new Set([
+  '直径','机械直径','结构直径','先端外径','光学区直径','传感器出口光束直径','最大入射光束直径','热扩芯光纤模场直径','测试珠直径',
+  '口径','器件口径','物镜口径','单元口径','清孔径','孔径尺度','MTF测试孔径','冷光阑清孔径','入瞳','像圈',
+  '探测积分半径','改性区域半径','固化微透镜半径','基片厚度','像素尺寸','厂商适配像元','最小横向中心距','整体长度','TTL',
+  'NA','物方NA','镜头NA','照明NA','超透镜NA','厂商标称NA','F数','原焦F数','焦距','真实焦距','有效焦距','原焦焦距','单元焦距','EFL',
+  '工作距离','镜头工作距离','样机工作距离','相机镜头工作距离','两耦合器工作距离','焦距/工作距','最近对焦距离',
+  '波长','设计波长','对准波长','照明中心波长','测量照明波长','光谱FWHM','FOV','HFOV','标配FOV','扫描FOV','FX视角'
+]);
+const legacyEfficiencies = new Set(['实测平均聚焦效率','180秒平均耦合效率','组合失配耦合效率（实验段报告）','透过效率（作者报告）']);
+
+function legacyAxisBounds(parameter, unit) {
+  if (unit === '%' && (parameter.metric_id === 'coupling' || legacyEfficiencies.has(parameter.name))) return {min:0, max:100};
+  if (legacyNonnegativeFields.has(parameter.name) || parameter.metric_id === 'sheet_length' || unit === 'MP') return {min:0};
+}
+
 export function createWorkspace(catalog, devices) {
   const records = new Map(catalog.benchmarks.map(r => [r.id, r]));
   const definitions = new Map(catalog.metrics.map(m => [m.id, m]));
@@ -56,6 +72,7 @@ export function createWorkspace(catalog, devices) {
           metrics.push(field); byKey.set(key, field);
         }
         const field = byKey.get(key), source = p.evidence?.source_id;
+        if (number && !field.axis_bounds) field.axis_bounds = legacyAxisBounds(p, unit);
         values[field.id] = {value: number?.value ?? null, display: p.value, source: source || null,
           sourceIds: source ? [source] : record.source_ids, location: p.evidence?.location || '',
           note: record.conditions, evidence: record.evidence_type, checked_on: record.checked_on, parameterIndex: index};
