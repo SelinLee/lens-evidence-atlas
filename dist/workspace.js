@@ -5,6 +5,7 @@ const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;',
 const atlas = createWorkspace(window.LENS_DATA, window.DEVICE_DATA), evidence = window.LensEvidence;
 const initial = new URL(location.href), oldRoute = initial.hash.slice(1).split('/');
 const state = {domain:'phone', module:'main', x:'mp', y:'f', mode:'scatter', sort:'original', models:null, columns:null, query:'', evidence:'', evidenceTab:'metrics', compare:[]};
+let viewQuery = location.search;
 let citations = new Map(), activeRows = [], activeColumns = [], activePoints = [], activeSetting = 'models';
 const domain = () => atlas.domains.find(d => d.id === state.domain);
 const rowAnchor = r => `row-${state.domain}-${r.id}`;
@@ -41,6 +42,7 @@ function saveView() {
   if (state.compare.length) url.searchParams.set('compare', JSON.stringify(state.compare));
   if (/^#app_\d+/.test(url.hash)) url.hash = '';
   history.replaceState(null, '', url);
+  viewQuery = url.search;
 }
 function restore(url) {
   const p = url.searchParams, id = p.get('domain') || (atlas.domains.some(d => d.id === oldRoute[0]) ? oldRoute[0] : 'phone');
@@ -90,7 +92,13 @@ function pointDescription(p) {
   const xv = p.row.values[state.x], yv = p.row.values[state.y];
   return `${p.row.model}；${xm?.label || '样本序号'}：${valueText(xv) === '未公开 / 未核验' && state.x === '$model' ? p.x : valueText(xv)}；${ym?.label || '纵轴'}：${valueText(yv)}；${p.row.variant}；${[xv,yv].filter(Boolean).map(v=>[v.evidence,v.note,v.location].filter(Boolean).join(' · ')).join('；')}；${[...new Set([...valueSources(xv), ...valueSources(yv)])].map(id => { const s = atlas.sources.get(id); return `[${citations.get(id)}] ${s?.title}；${s?.evidence_scope || s?.scope || ''}；核验 ${s?.checked_on}`; }).join('；')}`;
 }
+const inspectHint = '悬停或轻点圆点查看坐标，点击可固定读数。';
+let plotWidth = 0, positionReadout;
 function drawChart() {
+  plotWidth = Math.min(900, Math.max(280, $('chart').clientWidth - 2));
+  positionReadout = null;
+
+  $('point-detail').textContent = inspectHint;
   const d = domain(), ms = d.metrics, categorical = state.x === '$model';
   activePoints = axisPoints(activeRows, state.x, state.y);
   if (!activePoints.length) {
@@ -100,30 +108,146 @@ function drawChart() {
     $('chart').innerHTML = `<div class="empty-plot" role="status"><strong>当前指标暂无可绘制数据</strong><p>${esc(reason)}</p><p>未知值不补零，区间或复合参数保留原文。</p>${canRecover?'<button class="recover-chart" data-recover-chart>显示已有数据的散点图</button>':''}<a href="#data-table">查看已收集的数据 ↓</a></div>`;
     return;
   }
-  const plotRows = activePoints.map(p => ({...p.row, values:{...p.row.values, $model:{value:p.x}}}));
-  const plotMetrics = [...ms, {id:'$model',label:'型号 / 样本序号（对应图例）'}];
-  $('chart').innerHTML = window.LensPlot.chart(plotRows, state.x, state.y, plotMetrics, 'scatter').replace(/个型号/g,d.row_unit?'个配置':'个型号');
-  const svg = $('chart').querySelector('svg');
-  svg.setAttribute('aria-label', `${d.name} 散点图；数据来源见图例与表格`);
-  svg.insertAdjacentHTML('afterbegin','<defs><pattern id="grid" width="175" height="77.5" patternUnits="userSpaceOnUse" x="90" y="60"><path d="M175 0H0V77.5" fill="none" stroke="#e8eeeb" stroke-width="1"/></pattern></defs><rect x="90" y="60" width="700" height="310" fill="url(#grid)"/>');
-  const grouped = new Map();
-  for (const p of activePoints) {const key = JSON.stringify([p.x,p.y]); if (!grouped.has(key)) grouped.set(key, []); grouped.get(key).push(p);}
-  [...svg.querySelectorAll('circle')].forEach((circle, index) => {
-    const group = [...grouped.values()][index], node = circle.parentElement;
-    node.classList.add('plot-point'); node.setAttribute('tabindex', '0'); node.setAttribute('role', 'button'); node.dataset.point = String(index);
-    node.setAttribute('aria-label', group.map(pointDescription).join('\n')); circle.querySelector('title').textContent = group.map(pointDescription).join('\n\n');
-  });
-  if (categorical) {
-    svg.querySelectorAll('text[y="395"]').forEach(t=>t.remove());
-    [...svg.querySelectorAll('circle')].forEach((circle,index)=>svg.insertAdjacentHTML('beforeend',`<text x="${circle.getAttribute('cx')}" y="395" text-anchor="middle" font-size="12">${activePoints[index].x}</text>`));
-  }
+  const groups = window.LensPlot.groupPoints(activePoints);
+  const xLabel = categorical ? '样本序号' : ms.find(m=>m.id===state.x).label;
+  const yLabel = ms.find(m=>m.id===state.y).label;
+  $('chart').innerHTML = window.LensPlot.scatterMarkup(groups, xLabel, yLabel, {width:plotWidth, categorical});
+  const svg = $('chart').querySelector('svg'), nodes = [...svg.querySelectorAll('[data-point]')];
+  svg.setAttribute('aria-label', d.name + '散点图');
   const legend = $('chart').querySelector('.chart-legend');
   legend.setAttribute('aria-label','样本、坐标与来源');
-  legend.innerHTML = activePoints.map((p, index) => {
+  const groupByRow = new Map();
+  groups.forEach((group,index) => {
+    group.forEach(p => groupByRow.set(p.row.id,index));
+    const node = nodes[index];
+    node.classList.add('plot-point');
+    node.setAttribute('tabindex','0');
+    node.setAttribute('role','button');
+    node.setAttribute('aria-pressed','false');
+    node.setAttribute('aria-label',group.map(p=>p.row.model).join('、') + '，' + xLabel + ' ' + coordinateText(group[0],'x') + '，' + yLabel + ' ' + coordinateText(group[0],'y'));
+    node.querySelector('title').remove(); // The inspector supplies the visible tooltip.
+  });
+  legend.innerHTML = activePoints.map(p => {
     const ids = [...new Set([...valueSources(p.row.values[state.x]), ...valueSources(p.row.values[state.y])])];
-    return `<li><a href="#${esc(rowAnchor(p.row))}" title="${esc(pointDescription(p))}">${categorical ? `${p.x}. ` : ''}${esc(p.row.model)} · (${esc(coordinateText(p,'x'))}, ${esc(coordinateText(p,'y'))})</a>${ids.map(citation).join('')}</li>`;
+    const index = groupByRow.get(p.row.id), color = nodes[index].querySelector('circle').getAttribute('fill');
+    return `<li><a data-legend-point="${index}" href="#${esc(rowAnchor(p.row))}"><i class="legend-dot" style="background:${color}" aria-hidden="true"></i>${categorical ? p.x+'. ' : ''}${esc(p.row.model)} · (${esc(coordinateText(p,'x'))}, ${esc(coordinateText(p,'y'))})</a>${ids.map(citation).join('')}</li>`;
   }).join('');
+  inspectPlot(svg, nodes, groups, xLabel, yLabel);
 }
+
+function inspectPlot(svg, nodes, groups, xLabel, yLabel) {
+  const chart = $('chart'), plot = svg.parentElement;
+  const left = Number(svg.dataset.axisLeft), bottom = Number(svg.dataset.axisBottom);
+  svg.insertAdjacentHTML('beforeend', `<g class="axis-inspection" display="none" pointer-events="none" aria-hidden="true">
+    <path fill="none" stroke="#176b60" stroke-width="1.4" stroke-dasharray="4 4"/>
+    <g class="x-reading"><rect rx="3" fill="#185f56"/><text text-anchor="middle" dominant-baseline="middle" font-size="13" fill="white"></text></g>
+    <g class="y-reading"><rect rx="3" fill="#185f56"/><text text-anchor="end" dominant-baseline="middle" font-size="13" fill="white"></text></g>
+  </g>`);
+  const guides = svg.querySelector('.axis-inspection');
+  const tip = document.createElement('div');
+  tip.className = 'plot-readout'; tip.hidden = true; tip.setAttribute('aria-hidden','true');
+  plot.append(tip);
+  let hover = null, focus = null, pinned = null, shown = null;
+  const readIndex = el => {
+    const item = el?.closest('[data-point],[data-legend-point]');
+    return item ? Number(item.dataset.point ?? item.dataset.legendPoint) : null;
+  };
+  const centers = nodes.map(node=>node.querySelector('circle'));
+  function pointerIndex(event) {
+    const index = readIndex(event.target);
+    if (index===null || !plot.contains(event.target)) return index;
+    // When hit targets overlap, choose the closest true coordinate to the pointer.
+    const pointer = new DOMPoint(event.clientX,event.clientY).matrixTransform(svg.getScreenCTM().inverse());
+    let nearest = index, min = Infinity;
+    centers.forEach((circle,i)=>{
+      const distance = (circle.cx.baseVal.value-pointer.x)**2 + (circle.cy.baseVal.value-pointer.y)**2;
+      if (distance < min) { nearest = i; min = distance; }
+    });
+    return nearest;
+  }
+  function placeTip() {
+    if (shown === null) return;
+    const bounds = plot.getBoundingClientRect(), marker = nodes[shown].getBoundingClientRect();
+    const x = marker.left+marker.width/2-bounds.left, y = marker.top+marker.height/2-bounds.top;
+    const w = tip.offsetWidth, h = tip.offsetHeight;
+    const beside = x+12+w <= bounds.width-4 ? x+12 : x-12-w;
+    tip.style.left = Math.max(4,Math.min(beside,bounds.width-w-4))+'px';
+    const top = y-h-8 >= 4 ? y-h-8 : y+10;
+    tip.style.top = Math.max(4, Math.min(top,bounds.height-h-4))+'px';
+  }
+  positionReadout = placeTip;
+  const ticks = [...svg.querySelectorAll('.axis-ticks text')];
+  function badge(selector, value, x, y) {
+    const g = guides.querySelector(selector), label = g.querySelector('text'), rect = g.querySelector('rect');
+    label.textContent = value; label.setAttribute('x',x); label.setAttribute('y',y);
+    const box = label.getBBox();
+    // Keep long decimals fully inside the SVG at either edge.
+    const shift = Math.max(0,5-box.x) + Math.min(0,plotWidth-5-box.x-box.width);
+    label.setAttribute('x',x+shift);
+    rect.setAttribute('x',box.x+shift-4); rect.setAttribute('y',box.y-2);
+    rect.setAttribute('width',box.width+8); rect.setAttribute('height',box.height+4);
+    return rect.getBBox();
+  }
+  function show() {
+    const index = pinned ?? hover ?? focus;
+    if (index === shown) return;
+    if (shown !== null) nodes[shown].classList.remove('is-inspected');
+    shown = index;
+    guides.setAttribute('display', index === null ? 'none' : 'inline');
+    tip.hidden = index === null;
+    for (const tick of ticks) tick.removeAttribute('visibility');
+    if (index === null) return;
+    const group = groups[index], circle = centers[index];
+    const x = Number(circle.getAttribute('cx')), y = Number(circle.getAttribute('cy'));
+    const reading = axis => [...new Set(group.map(p=>coordinateText(p,axis)))].join(' / ');
+    nodes[index].classList.add('is-inspected');
+    guides.querySelector('path').setAttribute('d',`M${left} ${y}H${x}V${bottom}`);
+    const badges = [badge('.x-reading',reading('x'),x,Number(svg.dataset.xTickY)-3), badge('.y-reading',reading('y'),left-8,y)];
+    for (const tick of ticks) {
+      const t = tick.getBBox();
+      if (badges.some(b=>t.x < b.x+b.width+2 && t.x+t.width > b.x-2 && t.y < b.y+b.height+2 && t.y+t.height > b.y-2)) tick.setAttribute('visibility','hidden');
+    }
+    const name = group.length===1 ? group[0].row.model : group[0].row.model+' 等 '+group.length+' 个同坐标样本';
+    tip.innerHTML = `<strong>${esc(name)}</strong><dl><dt>${esc(xLabel)}</dt><dd>${esc(reading('x'))}</dd><dt>${esc(yLabel)}</dt><dd>${esc(reading('y'))}</dd></dl>`;
+    placeTip();
+  }
+  function pin(index) {
+    for (const p of groups[pinned] || []) document.getElementById(rowAnchor(p.row))?.classList.remove('plot-selected');
+    if (pinned !== null) nodes[pinned].setAttribute('aria-pressed','false');
+    pinned = index;
+    if (index === null) {
+      hover = focus = null;
+      $('point-detail').textContent = inspectHint;
+    } else {
+      nodes[index].setAttribute('aria-pressed','true');
+      for (const p of groups[index]) document.getElementById(rowAnchor(p.row))?.classList.add('plot-selected');
+      $('point-detail').innerHTML = groups[index].map(p=>`${esc(p.row.model)} · (${esc(coordinateText(p,'x'))}, ${esc(coordinateText(p,'y'))}) <a href="#${esc(rowAnchor(p.row))}">查看数据表 ↓</a>${[...new Set([...valueSources(p.row.values[state.x]),...valueSources(p.row.values[state.y])])].map(citation).join('')}<span> · ${esc(p.row.variant)}</span>`).join('<br>');
+    }
+    show();
+  }
+  // Bind to the newly rendered elements so a filter change discards the old interaction state.
+  for (const region of [plot, chart.querySelector('.chart-legend')]) {
+    region.addEventListener('pointermove',event=>{if(event.pointerType!=='touch'){hover=pointerIndex(event); show();}});
+    region.addEventListener('pointerout',event=>{hover=readIndex(event.relatedTarget); show();});
+    region.addEventListener('focusin',event=>{focus=readIndex(event.target); show();});
+    region.addEventListener('focusout',event=>{focus=readIndex(event.relatedTarget); show();});
+  }
+  plot.addEventListener('click',event=>{
+    const index = pointerIndex(event);
+    pin(index===pinned ? null : index);
+  });
+  plot.addEventListener('keydown',event=>{
+    const index = readIndex(event.target);
+    if (index!==null && ['Enter',' '].includes(event.key)) {
+      event.preventDefault();
+      pin(index===pinned ? null : index);
+    }
+  });
+  const dismiss = event=>{if(event.key==='Escape') pin(null);};
+  plot.addEventListener('keydown',dismiss);
+  chart.querySelector('.chart-legend').addEventListener('keydown',dismiss);
+}
+
 function table() {
   const backlinks = new Map([...citations.keys()].map(id => [id, new Map()]));
   const linkBack = (id, anchor, label) => backlinks.get(id)?.set(anchor, label);
@@ -168,16 +292,11 @@ function render(updateControls = true) {
   $('view-count').textContent=`${activeRows.length} ${d.row_unit||'个样本'} · ${d.metrics.length} 个字段`;
   document.title=d.name+' · 透镜评价证据库';
   drawChart();
-  $('point-detail').textContent='选择图中数据点，查看数值、条件与出处。';
   $('status').textContent=`${activePoints.length} 个点 · ${activeRows.length-activePoints.length} 项缺少所选单值`;
-  $('plot-note').textContent='每个圆点代表一个样本；短细线仅指向名称标签，样本之间不连线。'+(d.app?' 同名同单位仍需核对条件。':d.id==='metalens'?' 同器件多个谱点不计作独立镜片。':' 厂商标称与独立实测分别理解。');
+  $('plot-note').textContent='虚线标出当前点的横、纵坐标。'+(d.app?' 同名同单位仍需核对条件。':d.id==='metalens'?' 同器件多个谱点不计作独立镜片。':' 厂商标称与独立实测分别理解。');
   referenceList(table()); renderDefinitions();
   $('date').textContent=`本页样本维护日期 ${d.asOf}；逐条保留原核验日期与读取范围。样本不代表完整市场覆盖。`;
   saveView();
-}
-function focusPoint(index) {
-  const groups = new Map(); for(const p of activePoints){const key=JSON.stringify([p.x,p.y]);if(!groups.has(key))groups.set(key,[]);groups.get(key).push(p);}
-  $('point-detail').innerHTML=([...groups.values()][index]||[]).map(p=>`${esc(p.row.model)} · (${esc(coordinateText(p,'x'))}, ${esc(coordinateText(p,'y'))}) <a href="#${esc(rowAnchor(p.row))}">查看数据表 ↓</a>${[...new Set([...valueSources(p.row.values[state.x]),...valueSources(p.row.values[state.y])])].map(citation).join('')}<span> · ${esc(p.row.variant)}</span>`).join('<br>');
 }
 function download(name,type,text){const a=document.createElement('a'),url=URL.createObjectURL(new Blob([text],{type}));a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 function exportCSV(){
@@ -211,24 +330,41 @@ document.addEventListener('change',event=>{
   }
 });
 document.addEventListener('click',event=>{
-  const setting=event.target.closest('[data-setting]'),tab=event.target.closest('[data-evidence-tab]'),metric=event.target.closest('[data-metric]'),record=event.target.closest('[data-record]'),point=event.target.closest('[data-point]'),definition=event.target.closest('[data-definition]');
+  const setting=event.target.closest('[data-setting]'),tab=event.target.closest('[data-evidence-tab]'),metric=event.target.closest('[data-metric]'),record=event.target.closest('[data-record]'),definition=event.target.closest('[data-definition]');
   if(event.target.closest('[data-recover-chart]')){Object.assign(state,availableAxes(domain(),activeRows));render();}
   if(setting){activeSetting=setting.dataset.setting;for(const button of document.querySelectorAll('[data-setting]')){button.setAttribute('aria-selected',String(button===setting));button.tabIndex=button===setting?0:-1;}$('model-controls').hidden=activeSetting!=='models';$('column-controls').hidden=activeSetting!=='columns';}
   if(tab){state.evidenceTab=tab.dataset.evidenceTab;renderDefinitions();document.querySelector(`[data-evidence-tab="${state.evidenceTab}"]`).focus();}
   if(metric)evidence.openMetric(metric.dataset.metric);
   if(record){const r=window.LENS_DATA.benchmarks.find(r=>r.id===record.dataset.record);evidence.openDialog(r.name,evidence.recordCard(r,true));}
-  if(point)focusPoint(Number(point.dataset.point));
   if(definition){$('evidence-notes').open=true;state.evidenceTab='metrics';renderDefinitions();}
 });
 document.addEventListener('keydown',event=>{
-  const point=event.target.closest('[data-point]');if(point&&['Enter',' '].includes(event.key)){event.preventDefault();focusPoint(Number(point.dataset.point));}
   const tab=event.target.closest('[role="tab"]');if(tab&&['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){event.preventDefault();const buttons=[...tab.parentElement.querySelectorAll('[role="tab"]')].filter(b=>!b.hidden),index=buttons.indexOf(tab),next=event.key==='Home'?0:event.key==='End'?buttons.length-1:(index+(event.key==='ArrowRight'?1:buttons.length-1))%buttons.length;buttons[next].click();buttons[next].focus();}
 });
 $('closeDialog').addEventListener('click',()=>$('detail').close());$('methodButton').addEventListener('click',()=>evidence.method());
 $('export-csv').addEventListener('click',exportCSV);
-$('export-svg').addEventListener('click',()=>{const svg=$('chart').querySelector('svg');if(!svg){$('status').textContent='当前无有效图表可导出';return;}const copy=svg.cloneNode(true);copy.setAttribute('xmlns','http://www.w3.org/2000/svg');const desc=document.createElementNS('http://www.w3.org/2000/svg','desc');desc.textContent=$('plot-note').textContent+'\n'+activePoints.map(pointDescription).join('\n');copy.prepend(desc);download('lens-'+state.domain+'-chart.svg','image/svg+xml',new XMLSerializer().serializeToString(copy));});
+$('export-svg').addEventListener('click',()=>{
+  const svg = $('chart').querySelector('svg');
+  if (!svg) { $('status').textContent='当前无有效图表可导出'; return; }
+  const copy = svg.cloneNode(true);
+  copy.setAttribute('xmlns','http://www.w3.org/2000/svg');
+  copy.querySelector('.axis-inspection')?.remove();
+  for (const tick of copy.querySelectorAll('.axis-ticks text')) tick.removeAttribute('visibility');
+  for (const point of copy.querySelectorAll('[data-point]')) {
+    const title = document.createElementNS(svg.namespaceURI,'title');
+    title.textContent = point.getAttribute('aria-label');
+    point.prepend(title);
+  }
+  const desc = document.createElementNS(svg.namespaceURI,'desc');
+  desc.textContent = $('plot-note').textContent+'\n'+activePoints.map(pointDescription).join('\n');
+  copy.prepend(desc);
+  download('lens-'+state.domain+'-chart.svg','image/svg+xml',new XMLSerializer().serializeToString(copy));
+});
 $('share').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(location.href);$('status').textContent='已复制当前视图链接';}catch{$('status').textContent='当前选择已保存，可复制地址栏分享。';}});
-window.addEventListener('popstate',()=>{restore(new URL(location.href));render();});
+// Following a citation only changes the fragment. Keep the pinned chart and table rows.
+window.addEventListener('popstate',()=>{
+  if (location.search !== viewQuery) { restore(new URL(location.href)); render(); }
+});
 function revealAnchor(){let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}if(id.startsWith('definition-')){$('evidence-notes').open=true;if(state.evidenceTab!=='metrics'){state.evidenceTab='metrics';renderDefinitions();}}requestAnimationFrame(()=>document.getElementById(id)?.scrollIntoView({block:'start'}));}
 window.addEventListener('hashchange',revealAnchor);if(location.hash)revealAnchor();
 
@@ -237,5 +373,13 @@ $('mobile-filter-toggle').addEventListener('click',()=>{$('mobile-filter-content
 $('close-filters').addEventListener('click',()=>$('filter-dialog').close());
 $('filter-dialog').addEventListener('close',()=>{selectionHome.insertBefore(selectionControls,selectionHome.querySelector('.settings-actions'));});
 window.matchMedia('(min-width:760px)').addEventListener('change',event=>{if(event.matches&&$('filter-dialog').open)$('filter-dialog').close();});
+
+new ResizeObserver(()=>{
+  const width = Math.min(900, Math.max(280, $('chart').clientWidth - 2));
+  if (width !== plotWidth) {
+    for (const row of $('table').querySelectorAll('.plot-selected')) row.classList.remove('plot-selected');
+    drawChart();
+  } else positionReadout?.();
+}).observe($('chart'));
 
 window.ATLAS_READY=true;
