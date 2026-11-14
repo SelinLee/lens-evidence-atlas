@@ -1,10 +1,10 @@
-import {createWorkspace, valueSources, filteredRows, axisPoints} from './workspace-data.js';
+import {createWorkspace, valueSources, filteredRows, axisPoints, metricAvailability, availableAxes} from './workspace-data.js?v=c050b70bf78a0f91';
 
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const atlas = createWorkspace(window.LENS_DATA, window.DEVICE_DATA), evidence = window.LensEvidence;
 const initial = new URL(location.href), oldRoute = initial.hash.slice(1).split('/');
-const state = {domain:'phone', module:'main', x:'mp', y:'f', mode:'line', sort:'original', models:null, columns:null, query:'', evidence:'', evidenceTab:'metrics', compare:[]};
+const state = {domain:'phone', module:'main', x:'mp', y:'f', mode:'scatter', sort:'original', models:null, columns:null, query:'', evidence:'', evidenceTab:'metrics', compare:[]};
 let citations = new Map(), activeRows = [], activeColumns = [], activePoints = [], activeSetting = 'models';
 const domain = () => atlas.domains.find(d => d.id === state.domain);
 const rowAnchor = r => `row-${state.domain}-${r.id}`;
@@ -45,7 +45,7 @@ function saveView() {
 function restore(url) {
   const p = url.searchParams, id = p.get('domain') || (atlas.domains.some(d => d.id === oldRoute[0]) ? oldRoute[0] : 'phone');
   defaults(atlas.domains.some(d => d.id === id) ? id : 'phone');
-  const valid = {module:['main','ultrawide','tele'], mode:['line','scatter'], sort:['original','model','x','y'], evidence:['','manufacturer','research']};
+  const valid = {module:['main','ultrawide','tele'], mode:['scatter'], sort:['original','model','x','y'], evidence:['','manufacturer','research']};
   for (const [key, choices] of Object.entries(valid)) if (choices.includes(p.get(key))) state[key] = p.get(key);
   for (const key of ['x','y']) { const value = p.get(key); if (domain().metrics.some(m => m.numeric && m.id === value) || (key === 'x' && value === '$model')) state[key] = value; }
   // Older device links selected model names. New links use stable row IDs.
@@ -62,7 +62,7 @@ function controls() {
   $('module-label').hidden = d.id !== 'phone';
   const numeric = d.metrics.filter(m => m.numeric);
   for (const axis of ['x','y']) {
-    $(axis).innerHTML = (axis === 'x' ? '<option value="$model">型号 / 样本（类别轴）</option>' : '') + numeric.map(m => `<option value="${esc(m.id)}">${esc(m.label)}</option>`).join('') + (!numeric.length && axis === 'y' ? '<option value="">暂无可绘制单值</option>' : '');
+    $(axis).innerHTML = (axis === 'x' ? '<option value="$model">型号 / 样本（类别轴）</option>' : '') + numeric.map(m => {const count=metricAvailability(activeRows,m.id);return `<option value="${esc(m.id)}"${count?'':' disabled'}>${esc(m.label)} · ${count?count+'项有值':'暂无数据'}</option>`;}).join('') + (!numeric.length && axis === 'y' ? '<option value="">暂无可绘制单值</option>' : '');
     $(axis).value = state[axis];
   }
   $('model-search').value = state.query;
@@ -90,14 +90,17 @@ function drawChart() {
   const d = domain(), ms = d.metrics, categorical = state.x === '$model';
   activePoints = axisPoints(activeRows, state.x, state.y);
   if (!activePoints.length) {
-    $('chart').innerHTML = '<div class="empty-plot"><span class="eyebrow">NO VERIFIED NUMERIC PAIR</span><strong>当前选择暂无可绘制数据</strong><p>试试其他指标或样本。区间、复合参数与缺失值保留在下方表格，未补零，也未提取中点。</p><a href="#data-table">查看已收集的数据 ↓</a></div>';
+    const absent = [state.x,state.y].filter(id=>id!=='$model'&&!metricAvailability(activeRows,id)).map(id=>ms.find(m=>m.id===id)?.label).filter(Boolean);
+    const reason = !activeRows.length ? '当前没有选中的样本，请全选样本或清除筛选条件。' : absent.length ? `当前 ${activeRows.length} 个样本尚无“${absent.join(' / ')}”的已核验数值。` : '所选两个指标没有同时具备数值的样本；各自已有的数据仍保留在表格中。';
+    const recovery=availableAxes(d,activeRows),canRecover=axisPoints(activeRows,recovery.x,recovery.y).length>0;
+    $('chart').innerHTML = `<div class="empty-plot" role="status"><strong>当前指标暂无可绘制数据</strong><p>${esc(reason)}</p><p>未知值不补零，区间或复合参数保留原文。</p>${canRecover?'<button class="recover-chart" data-recover-chart>显示已有数据的散点图</button>':''}<a href="#data-table">查看已收集的数据 ↓</a></div>`;
     return;
   }
   const plotRows = activePoints.map(p => ({...p.row, values:{...p.row.values, $model:{value:p.x}}}));
   const plotMetrics = [...ms, {id:'$model',label:'型号 / 样本序号（对应图例）'}];
-  $('chart').innerHTML = window.LensPlot.chart(plotRows, state.x, state.y, plotMetrics, state.mode);
+  $('chart').innerHTML = window.LensPlot.chart(plotRows, state.x, state.y, plotMetrics, 'scatter');
   const svg = $('chart').querySelector('svg');
-  svg.setAttribute('aria-label', `${d.name} ${state.mode === 'line' ? '折线图' : '散点图'}；数据来源见图例与表格`);
+  svg.setAttribute('aria-label', `${d.name} 散点图；数据来源见图例与表格`);
   svg.insertAdjacentHTML('afterbegin','<defs><pattern id="grid" width="175" height="77.5" patternUnits="userSpaceOnUse" x="90" y="60"><path d="M175 0H0V77.5" fill="none" stroke="#e8eeeb" stroke-width="1"/></pattern></defs><rect x="90" y="60" width="700" height="310" fill="url(#grid)"/>');
   const grouped = new Map();
   for (const p of activePoints) {const key = JSON.stringify([p.x,p.y]); if (!grouped.has(key)) grouped.set(key, []); grouped.get(key).push(p);}
@@ -163,7 +166,7 @@ function render(updateControls = true) {
   drawChart();
   $('point-detail').textContent='选择图中数据点，查看数值、条件与出处。';
   $('status').textContent=`${activePoints.length} 个点 · ${activeRows.length-activePoints.length} 项缺少所选单值`;
-  $('plot-note').textContent=(state.mode==='line'?'长折线按横轴数值连接样本；短细线指向名称标签。不表示时间趋势或性能排名。':'短细线只连接名称标签与数据点；重合点共同列出。')+(d.app?' 同名同单位仍需核对条件。':' 厂商标称与独立实测分别理解。');
+  $('plot-note').textContent='每个圆点代表一个样本；短细线仅指向名称标签，样本之间不连线。'+(d.app?' 同名同单位仍需核对条件。':' 厂商标称与独立实测分别理解。');
   referenceList(table()); renderDefinitions();
   $('date').textContent=`本页样本维护日期 ${d.asOf}；逐条保留原核验日期与读取范围。样本不代表完整市场覆盖。`;
   saveView();
@@ -184,13 +187,13 @@ const groups=new Map(); for(const d of atlas.domains){if(!groups.has(d.category)
 $('domain').innerHTML=[...groups].map(([category,ds])=>`<optgroup label="${esc(category)}">${ds.map(d=>`<option value="${d.id}">${esc(d.name)}</option>`).join('')}</optgroup>`).join('');
 restore(initial); render();
 if(oldRoute[1]) { if(oldRoute[1]==='sources')location.hash='references';else if(oldRoute[1]!=='metrics'){$('evidence-notes').open=true;location.hash='evidence-notes';} }
-for(const key of ['domain','module','x','y','mode','sort','evidence']) $(key).addEventListener('change',()=>{
+for(const key of ['domain','module','x','y','sort','evidence']) $(key).addEventListener('change',()=>{
   if(key==='domain')defaults($(key).value);else {state[key]=$(key).value;if(key==='module')state.models=null;}
   render(); if(key==='domain'||key==='module')$('table').scrollLeft=0;
 });
 $('model-search').addEventListener('input',()=>{state.query=$('model-search').value;render();$('model-search').focus();});
 for(const [id,key,value] of [['all-models','models',null],['no-models','models',[]],['all-columns','columns',null],['no-columns','columns',[]]]) $(id).addEventListener('click',()=>{state[key]=value;render();});
-$('reset-view').addEventListener('click',()=>{defaults(state.domain);state.mode='line';state.sort='original';render();});
+$('reset-view').addEventListener('click',()=>{defaults(state.domain);state.mode='scatter';state.sort='original';render();});
 document.addEventListener('change',event=>{
   const target=event.target;
   if(target.matches('[data-row],[data-column]')){
@@ -205,6 +208,7 @@ document.addEventListener('change',event=>{
 });
 document.addEventListener('click',event=>{
   const setting=event.target.closest('[data-setting]'),tab=event.target.closest('[data-evidence-tab]'),metric=event.target.closest('[data-metric]'),record=event.target.closest('[data-record]'),point=event.target.closest('[data-point]'),definition=event.target.closest('[data-definition]');
+  if(event.target.closest('[data-recover-chart]')){Object.assign(state,availableAxes(domain(),activeRows));render();}
   if(setting){activeSetting=setting.dataset.setting;for(const button of document.querySelectorAll('[data-setting]')){button.setAttribute('aria-selected',String(button===setting));button.tabIndex=button===setting?0:-1;}$('model-controls').hidden=activeSetting!=='models';$('column-controls').hidden=activeSetting!=='columns';}
   if(tab){state.evidenceTab=tab.dataset.evidenceTab;renderDefinitions();document.querySelector(`[data-evidence-tab="${state.evidenceTab}"]`).focus();}
   if(metric)evidence.openMetric(metric.dataset.metric);
@@ -229,3 +233,5 @@ $('mobile-filter-toggle').addEventListener('click',()=>{$('mobile-filter-content
 $('close-filters').addEventListener('click',()=>$('filter-dialog').close());
 $('filter-dialog').addEventListener('close',()=>{selectionHome.insertBefore(selectionControls,selectionHome.querySelector('.settings-actions'));});
 window.matchMedia('(min-width:760px)').addEventListener('change',event=>{if(event.matches&&$('filter-dialog').open)$('filter-dialog').close();});
+
+window.ATLAS_READY=true;

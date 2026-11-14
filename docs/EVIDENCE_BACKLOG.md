@@ -16,8 +16,9 @@
 | FOCUS-002 先进型号检索与逐格补证 | in_progress | 按检索截止日期覆盖跨品牌先进手机与AR/VR设备，记录纳排/地区/代际/独立实测缺口；手机逐模组、XR逐显示模式；单元格绑定定位证据 |
 | DEVICE-001 已有矩阵/散点候选接续 | done | [PR #59](https://github.com/SelinLee/lens-evidence-atlas/pull/59)及依赖的[#60](https://github.com/SelinLee/lens-evidence-atlas/pull/60)、[#61](https://github.com/SelinLee/lens-evidence-atlas/pull/61)、[#62](https://github.com/SelinLee/lens-evidence-atlas/pull/62)、[#63](https://github.com/SelinLee/lens-evidence-atlas/pull/63)目前开放；须核当前最终头、证据边界及真实浏览器，不将原PR说明当本次重新核验 |
 | FOCUS-003 参数表补全与维护 | in_progress | 两类各有型号×指标主表，支持模组/类别/条件筛选、排序、列选择、逐格来源及导出；未知值与区间可见；表和图同一数据源 |
-| FOCUS-004 双指标轴散点与折线 | in_progress | 两轴指标可选、型号多选、散点/折线切换、重复坐标可辨、按x排序连线并提示含义、缺失/区间/单位规则、分享状态及导出；核已有候选还缺哪些行为 |
-| UI-001 全应用统一图表模板 | review | 2026-11-14用户追加：手机/XR与33类既有应用统一入口；首屏折线与侧边设置、下方数据表/编号来源双向跳转、兼容旧链接；本地与Chrome无头验收见[统一界面记录](UNIFIED_WORKSPACE_2026-11-14.md)，[草稿PR #70](https://github.com/SelinLee/lens-evidence-atlas/pull/70)待审阅，合并与实际Pages另核 |
+| FOCUS-004 双指标轴散点 | in_progress | 两轴指标可选、型号多选、仅散点、重复坐标可辨、无样本间连线、缺失/区间/单位规则、分享状态及导出；核已有候选还缺哪些行为 |
+| UI-001 全应用统一图表模板 | done | 2026-11-14用户追加：手机/XR与33类既有应用统一入口；首屏图表与侧边设置、下方数据表/编号来源双向跳转、兼容旧链接；本地与Chrome无头验收见[统一界面记录](UNIFIED_WORKSPACE_2026-11-14.md)，[草稿PR #70](https://github.com/SelinLee/lens-evidence-atlas/pull/70)已合并，Pages在42e1011完成实际验收；当前散点/缓存修复另见UI-002 |
+| UI-002 散点图与缓存升级修复 | review | 用户报告白框并取消折线；复现旧脚本缓存混用、资源内容版本、缺值指标说明/恢复与加载失败操作；118项测试、Chrome已有缓存升级和35域交互通过，见[修复核验](SCATTER_CACHE_RECOVERY_2026-11-14.md)；实际Pages随合并核验 |
 | FOCUS-005 测试、发布和完成审计 | in_progress | 校验/测试、Chrome无头桌面/手机、PR、实际Pages文件及数据核对；按新目标逐条审计，明确已有/候选/缺失，不能以仅有草稿或测试通过代替交付 |
 
 本次为目标调整，没有刷新科学数据版本、型号规格核验日期或声称新表格/图表已上线。旧目标全领域未完成部分被用户从当前范围撤下，不标记成完成。

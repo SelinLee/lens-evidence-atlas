@@ -1,8 +1,11 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {load} from '../scripts/catalog.mjs';
-import {scalar,createWorkspace,valueSources,filteredRows,axisPoints} from '../web/workspace-data.js';
+import os from 'node:os';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import {load,versionAssets} from '../scripts/catalog.mjs';
+import {scalar,createWorkspace,valueSources,filteredRows,axisPoints,metricAvailability,availableAxes} from '../web/workspace-data.js';
 const catalog=load(),devices=JSON.parse(fs.readFileSync(new URL('../data/devices.json',import.meta.url))),atlas=createWorkspace(catalog,devices);
 
 test('legacy scalars preserve unit and zero without guessing ranges, errors or composite measurements',()=>{
@@ -62,4 +65,33 @@ test('device evidence categories preserve manufacturer, study configuration and 
  assert.deepEqual(filteredRows(domain,base).map(r=>r.id),['fixture-study']);
  assert.equal(filteredRows(domain,{...base,evidence:'manufacturer'}).length,d.domains.xr.rows.length-1);
  const study=domain.rows.at(-1);assert.match(study.variant,/right eye, center only/);assert.equal(study.values.width.evidence,'研究设备配置');assert.equal(study.values.hz.evidence,'研究实测');
+});
+test('missing SNR is distinguished from zero and recovery chooses existing values without inventing data',()=>{
+ const phone=atlas.domains.find(d=>d.id==='phone'),rows=phone.rows.filter(r=>r.module==='main');
+ assert.equal(metricAvailability(rows,'snr'),0);
+ assert.equal(metricAvailability([{values:{snr:{value:0}}}],'snr'),1);
+ const recovery=availableAxes(phone,rows);
+ assert.ok(axisPoints(rows,recovery.x,recovery.y).length>0);
+ assert.equal(metricAvailability(rows,'snr'),0);
+ const sparse={metrics:[{id:'only',numeric:true}],rows:[]};
+ assert.deepEqual(availableAxes(sparse,[{values:{only:{value:2}}}]),{x:'$model',y:'only'});
+ assert.deepEqual(availableAxes(sparse,[]),{x:'$model',y:'only'});
+});
+test('asset versions match the final bytes including transitive module imports and change with those bytes',()=>{
+ const directory=fs.mkdtempSync(path.join(os.tmpdir(),'lens-assets-'));
+ const seed=()=>{
+  fs.writeFileSync(path.join(directory,'index.html'),'<link href="style.css"><script src="app.js"></script><script type="module" src="workspace.js"></script>');
+  fs.writeFileSync(path.join(directory,'workspace.js'),"import {value} from './workspace-data.js';");
+ };
+ const digest=name=>crypto.createHash('sha256').update(fs.readFileSync(path.join(directory,name))).digest('hex').slice(0,16);
+ try{
+  seed();for(const name of ['app.js','style.css','workspace-data.js'])fs.writeFileSync(path.join(directory,name),'initial '+name);
+  versionAssets(directory);
+  const first=fs.readFileSync(path.join(directory,'index.html'),'utf8');
+  for(const name of ['app.js','style.css','workspace.js'])assert.ok(first.includes(name+'?v='+digest(name)));
+  assert.ok(fs.readFileSync(path.join(directory,'workspace.js'),'utf8').includes('workspace-data.js?v='+digest('workspace-data.js')));
+  seed();versionAssets(directory);assert.equal(fs.readFileSync(path.join(directory,'index.html'),'utf8'),first,'builds must be deterministic');
+  seed();fs.writeFileSync(path.join(directory,'workspace-data.js'),'changed dependency');versionAssets(directory);
+  const second=fs.readFileSync(path.join(directory,'index.html'),'utf8');assert.notEqual(second,first);assert.ok(second.includes('workspace.js?v='+digest('workspace.js')));
+ }finally{fs.rmSync(directory,{recursive:true,force:true});}
 });

@@ -3,6 +3,18 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
   <title>透镜评价证据库 · Lens Evidence Atlas</title>
+  <script>
+    // A failed asset must leave a visible recovery action, not a blank chart.
+    function atlasLoadFailure(){
+      if(window.ATLAS_READY)return;
+      const chart=document.getElementById('chart');
+      if(!chart){document.addEventListener('DOMContentLoaded',atlasLoadFailure,{once:true});return;}
+      chart.innerHTML='<div class="empty-plot" role="alert"><strong>页面加载不完整</strong><p>请重新加载页面，获取当前版本的数据和图表。</p><a id="reload-atlas">重新加载页面</a></div>';
+      const url=new URL(location.href);url.searchParams.set('reload',Date.now());document.getElementById('reload-atlas').href=url.href;
+    }
+    window.addEventListener('error',atlasLoadFailure,true);
+    window.addEventListener('unhandledrejection',atlasLoadFailure);
+  </script>
   <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="workspace.css">
 </head>
 <body class="atlas-workspace">
@@ -21,7 +33,7 @@
         </div>
         <div class="axis-controls"><label>横轴指标<select id="x"></select></label><label>纵轴指标<select id="y"></select></label></div>
         <div class="control-pair">
-          <label>图形<select id="mode"><option value="line">折线图</option><option value="scatter">散点图</option></select></label>
+          <div class="chart-kind"><span>图形</span><strong>散点图</strong><input id="mode" type="hidden" value="scatter"></div>
           <label>排列方式<select id="sort"><option value="original">目录顺序</option><option value="model">名称顺序</option><option value="x">横轴值升序</option><option value="y">纵轴值升序</option></select></label>
         </div>
         <button id="mobile-filter-toggle" class="mobile-filter-toggle" aria-haspopup="dialog">筛选样本 / 选择表格列</button>
@@ -42,9 +54,9 @@
       <div class="chart-panel">
         <div class="chart-heading"><div><div class="eyebrow">EVIDENCE / EXPLORE</div><h1 id="view-title">指标与样本</h1></div><span id="view-count" class="count-pill"></span></div>
         <p id="scope" class="scope-line"></p>
-        <div id="chart" class="workspace-chart"></div>
+        <div id="chart" class="workspace-chart"><div class="empty-plot"><strong>正在加载数据与散点图…</strong><noscript>请开启浏览器的 JavaScript 后重新加载。</noscript></div></div>
         <div id="point-detail" class="point-detail" aria-live="polite">选择图中数据点，查看数值、条件与出处。</div>
-        <div class="plot-footer"><p id="plot-note">长折线按横轴数值连接样本；短细线指向名称标签。连线仅辅助比较。</p><span id="status" role="status" aria-live="polite"></span></div>
+        <div class="plot-footer"><p id="plot-note">每个圆点代表一个样本；短细线仅指向名称标签，样本之间不连线。</p><span id="status" role="status" aria-live="polite"></span></div>
       </div>
     </section>
     <section class="data-section" id="data-table" aria-labelledby="table-title">
