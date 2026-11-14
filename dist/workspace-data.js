@@ -10,12 +10,22 @@ export function createWorkspace(catalog, devices) {
   const records = new Map(catalog.benchmarks.map(r => [r.id, r]));
   const definitions = new Map(catalog.metrics.map(m => [m.id, m]));
   const sources = new Map(catalog.sources.map(s => [s.id, s]));
-  for (const source of devices.sources) sources.set('device-' + source.id, {...source, id: 'device-' + source.id, publication_source: source.publication_source && 'device-' + source.publication_source, evidence_scope: source.scope});
+  const deviceSourceIds = new Map(devices.sources.map(s => [s.id, s.catalog_source || 'device-' + s.id]));
+  const deviceSourceId = id => deviceSourceIds.get(id) || 'device-' + id;
+  if (new Set(deviceSourceIds.values()).size !== devices.sources.length) throw new Error('invalid catalog source alias');
+  for (const source of devices.sources) {
+    if (source.catalog_source) {
+      const existing = sources.get(source.catalog_source);
+      if (!existing || existing.publication_source !== (source.publication_source && deviceSourceId(source.publication_source)) || typeof source.doi !== 'string' || !source.doi || existing.doi?.toLowerCase() !== source.doi.toLowerCase()) throw new Error('invalid catalog source alias');
+    }
+    const id = deviceSourceId(source.id);
+    sources.set(id, {...sources.get(id), ...source, id, publication_source: source.publication_source && deviceSourceId(source.publication_source), evidence_scope: source.scope});
+  }
   const deviceDomains = Object.entries(devices.domains).map(([id, domain]) => ({
     ...domain, id, name: domain.name || (id === 'phone' ? '手机镜头 / 摄像头' : 'AR / VR 显示'), category: domain.category || '手机与近眼显示',
-    task_guidance: (domain.task_guidance || []).map(g => ({...g, source: 'device-' + g.source})),
-    metrics: domain.metrics.map(m => ({...m, definition_refs: (m.definition_refs || []).map(r => ({...r, source: 'device-' + r.source}))})),
-    rows: domain.rows.map(r => ({...r, evidence: r.evidence_type === 'study' ? '研究记录 / 作者报告' : '厂商标称', variant: [r.variant, r.measurement_scope].filter(Boolean).join('；'), values: Object.fromEntries(Object.entries(r.values).map(([key, value]) => [key, {...value, ...(value.sourceIds ? {sourceIds:value.sourceIds.map(id=>'device-'+id)} : {}), evidence: value.frequency_status==='author_scale_unverified'?'作者原表刻度（未标定）':value.frequency_status==='author_stated_unit'?'作者报告实测（单位明示）':({measured:'研究实测',reported_configuration:'研究设备配置',modeled:'模型结果',model:'模型结果',derived_from_measurement:'由实测数据计算',reconstruction:'实验重建统计',unresolved:'原文待消歧',manufacturer_claim:'厂商标称'})[value.basis] || (r.evidence_type === 'study' ? '研究记录 / 作者报告' : '厂商标称'), source: 'device-' + value.source}]))})),
+    task_guidance: (domain.task_guidance || []).map(g => ({...g, source: deviceSourceId(g.source)})),
+    metrics: domain.metrics.map(m => ({...m, definition_refs: (m.definition_refs || []).map(r => ({...r, source: deviceSourceId(r.source)}))})),
+    rows: domain.rows.map(r => ({...r, evidence: r.evidence_type === 'study' ? '研究记录 / 作者报告' : '厂商标称', variant: [r.variant, r.measurement_scope].filter(Boolean).join('；'), values: Object.fromEntries(Object.entries(r.values).map(([key, value]) => [key, {...value, ...(value.sourceIds ? {sourceIds:value.sourceIds.map(deviceSourceId)} : {}), evidence: value.frequency_status==='author_scale_unverified'?'作者原表刻度（未标定）':value.frequency_status==='author_stated_unit'?'作者报告实测（单位明示）':({measured:'研究实测',reported_configuration:'研究设备配置',modeled:'模型结果',model:'模型结果',derived_from_measurement:'由实测数据计算',reconstruction:'实验重建统计',unresolved:'原文待消歧',manufacturer_claim:'厂商标称'})[value.basis] || (r.evidence_type === 'study' ? '研究记录 / 作者报告' : '厂商标称'), source: deviceSourceId(value.source)}]))})),
     sourceIds: [], asOf: devices.as_of
   }));
   const legacyDomains = catalog.applications.map(app => {

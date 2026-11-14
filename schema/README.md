@@ -27,3 +27,7 @@
 `focus_variation_um`保存作者报告的跨波长非负焦距变化幅度，与逐波长`measured_focal_um`分开。须有`focus_variation_protocol`、实际`sample_wavelengths_nm`及`statistic`：`author_reported_band_variation`仅表示作者所称variation，不能自动改称已复核的峰峰值；`maximum_pairwise_difference`表示作者明确的谱点最大互差。当前两种均为`basis: derived_from_measurement`、`calculation_origin: authors`；本库自行重算须另设记录/协议，不能覆盖作者报告。参考、轴向采样和缺失定义写入协议，约值保留`approximate`与`display`。汇总行不同时填写数值型`wavelength_nm`，不由百分数倒推绝对焦距或任意分派到一个波长。
 
 可见光用途明确而仅有离散谱点汇总的研究器件可设`visible_light_use: true`，无需捏造连续工作波段或一个数值波长；实际单谱点波长已知时仍优先按其筛选。该规则同时适用于文献器件与旧记录。
+
+`focus_error_um`/`focus_error_pct`保存作者定义未完全明确的focal length error汇总，须有`focus_error_protocol`、实际`sample_wavelengths_nm`、`statistic: author_reported_focal_error`、作者实测计算性质和`reference_wavelength_nm`（未知显式null）。它们不替代最大互差/逐点焦移；有单值波长的行不能混填汇总。`thickness_um`表示完整堆叠厚度，和`height_nm`分开。
+
+设备材料可用`catalog_source`复用目录材料ID，跨域同论文不产生重复主文或SI。完整校验/构建同时检查别名目标、DOI与主文/SI归属；页面模型也拒绝不匹配。`sample_set_id`区分同结构配置的样品队列/选定单镜；单格`sample_size`和`statistic`保留原文n与均值，未知误差不补SD。
