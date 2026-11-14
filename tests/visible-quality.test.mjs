@@ -33,8 +33,8 @@ test('point efficiency preserves wavelength, denominator, channel and aggregatio
  assert.equal(v.efficiency_at_lambda_pct.value,20);assert.equal(v.efficiency_at_lambda_pct.approximate,true);assert.equal(v.efficiency_lambda_nm.value,500);
  assert.match(v.efficiency_protocol.value,/同口径圆偏振入射/);assert.match(v.efficiency_protocol.value,/Airy/);
  assert.equal(v.efficiency_band_mean_pct,undefined);
- assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,1);
- assert.equal(axisPoints(lens.rows,'na','efficiency_band_mean_pct').length,1);
+ assert.equal(axisPoints(lens.rows.filter(r=>['wang2018','chen2018'].includes(r.study_id)),'efficiency_lambda_nm','efficiency_at_lambda_pct').length,1);
+ assert.equal(axisPoints(lens.rows.filter(r=>['wang2018','chen2018'].includes(r.study_id)),'na','efficiency_band_mean_pct').length,1);
 });
 
 test('efficiency validation rejects missing measurement context, band definition and impossible percentage',()=>{

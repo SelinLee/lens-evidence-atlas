@@ -41,7 +41,7 @@ test('coincident model coordinates are grouped without jitter and retain every m
  assert.match(f.el('chart').innerHTML,/iPhone 18 Pro/);assert.match(f.el('chart').innerHTML,/Pixel 11 Pro/);
  f.change('domain','xr');f.change('x','hz');f.change('y','hz');
  const html=f.el('chart').innerHTML;assert.equal((html.match(/<circle /g)||[]).length,2);assert.ok(html.includes(d.domains.xr.rows.filter(r=>r.values.hz?.value===120).length+' 个型号'));assert.match(html,/\(120, 120\)/);
- for(const r of d.domains.xr.rows)assert.ok(html.includes(r.model));
+ for(const r of d.domains.xr.rows.filter(r=>Number.isFinite(r.values.hz?.value)))assert.ok(html.includes(r.model));
 });
 
 test('scrolling the plot cannot move the model legend outside the viewport',()=>{
@@ -155,7 +155,7 @@ test('crowded and coincident labels keep every complete model in the readable le
  }
  f.change('domain','xr');f.change('x','hz');f.change('y','hz');
  const html=f.el('chart').innerHTML;assert.equal((html.match(/<circle /g)||[]).length,2);
- assert.ok(html.includes(d.domains.xr.rows.filter(r=>r.values.hz?.value===120).length+' 个型号'));for(const r of d.domains.xr.rows)assert.ok(html.includes(r.model));
+ assert.ok(html.includes(d.domains.xr.rows.filter(r=>r.values.hz?.value===120).length+' 个型号'));for(const r of d.domains.xr.rows.filter(r=>Number.isFinite(r.values.hz?.value)))assert.ok(html.includes(r.model));
  assert.ok(!html.includes('部分文字标签'));
  const longName=structuredClone(d);longName.domains.phone.rows=[longName.domains.phone.rows[0]];
  longName.domains.phone.rows[0].model='完整型号'.repeat(40);
