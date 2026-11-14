@@ -551,3 +551,11 @@ ef84c19`；源提交与发布一致，保持owner-only访问。EVD-004d子任务
 
 - **实际公开验收**：PR #67最终头dd404c3，CI43563547005成功，合并07057dc；主线CI43563596546和Pages43563596514成功，同一运行跟踪至终态。线上devices.html/js/data.js与catalog.json逐字节等于本地dist，SHA256依次518712d5b6954be9f3e73ba28a6216baa415bd7899863d3e9ae04d12591e5176、6ebe7c160486f217b5f0eda2dcaa7a62aea18f77f7b8252af1fd2ee44bcb667c、55555f84df8b3f9f6c03da2167537c5433920a7f599587f00654a22559c45ef1、9c92d5eeb4dd80b71d3539796b241db9e03b13e84aa1f5262adbf3c35ecbb8ea。Chrome无头线上四视口交互/引用/分享恢复/两导出通过。图像复核与读取边界沿用本批笔记。新目标仍active，不标记整体完成。
 - **下一步XR**：研究入口PMC9691731（Spatiotemporal image quality of virtual reality head mounted displays），仅找到检索摘要，未读全文/图，不落性能值。IEC https://webstore.iec.ch/en/publication/62508 已读简介和2019出版元数据，生命周期表动态内容空，不据搜索摘要写最新版。新建DEVICE-007，优先将独立画质测量与PPD/CPD定义补进XR，而非只堆厂商像素数。
+
+## 43 — 2026-11-14 持续画质目标与超透镜首批
+
+用户要求继续补齐手机/VRAR的SNR、MTF和成像色散，特别关注消色差超透镜参数，随后明确建立持续目标。已实际创建active目标，不沿用旧paused记录；当前批次不关闭整体目标。基线为散点/缓存修复PR #71的4d3ddc0，工作分支codex/quality-achromatic-evidence。
+
+本批6项原始研究：新增超透镜4研究/8物理器件或系统配置/21行（Kang两枚器件15谱点），手机外接微距同一研究14配置的SNR均值/SD，以及Zhao同一研究3历史VR设备及4个正文近似截止频率。复用开放PR #69的结构化数据后独立核出版PDF，不合入其旧界面；已有33应用和商业规格保留。读取范围、参数/单位核验、冲突NA、PSNR与SNR边界、未取得的SI和接续入口详见[首批核验](QUALITY_BATCH_2026-11-14.md)。原文全文与临时图像不提交公开仓库。
+
+本地125项测试通过；统一36领域的引用、21文献行/15谱点、手机14研究行、XR两截止坐标、原生SNR缺口、分享恢复和CSV/SVG通过Chrome无头检查；六视口无页面错误/横向溢出，已查看文献/XR及手机宽度文献截图。下一步先完成本批PR、构建一致性和实际Pages验收，再继续原生手机MTF/色差、可见光消色差原作完整参数及先进XR测量；不把当前候选当成已上线。
