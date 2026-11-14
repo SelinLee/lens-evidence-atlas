@@ -2,7 +2,7 @@
 
 用户于2026-11-14要求继续补齐手机/VRAR的SNR、MTF、成像色散，并把消色差超透镜文献参数列为重点，随后明确建立持续目标。目标保持active，本批不代表全部画质/先进型号缺口完成。
 
-基于已发布`4d3ddc0`，候选v0.3.0。复用开放PR #69在`a7c924e1963591b52e130aca0e8f25215c6dff4e`的Zhao三设备数据和定义结构，经本批原始出版PDF复核后补入统一界面；没有合并其旧前端代码或更改该PR头。Chang综述的PPD定义沿用该批已记录的有限阅读范围，本轮PMC验证页阻断，未称重新读到全文。
+基于已发布`4d3ddc0`，v0.3.0经[PR #72](https://github.com/SelinLee/lens-evidence-atlas/pull/72)发布于`23fdecb`，验收见下文。复用开放PR #69在`a7c924e1963591b52e130aca0e8f25215c6dff4e`的Zhao三设备数据和定义结构，经本批原始出版PDF复核后补入统一界面；没有合并其旧前端代码或更改该PR头。Chang综述的PPD定义沿用该批已记录的有限阅读范围，本轮PMC验证页阻断，未称重新读到全文。
 
 ## 宏观定位与范围
 
@@ -53,5 +53,7 @@ Zhao Fig.5横轴cycles/degree，纵轴归一化MTF；曲线存在尾部及非单
 独立Google Chrome无头会话检查36个领域的引用目标及散点模式；文献域21行/15个逐谱点坐标、外接手机14行/14个SNR坐标、XR三研究行/两个截止频率坐标、原生主摄SNR缺值均符合预期。来源往返、分享刷新恢复、CSV/SVG下载通过；1440/1366/1280/768/390/320 px六视口无页面错误或横向溢出，图表处于首屏。已实际查看桌面文献/XR及390 px文献截图。首次脚本误用option.isDisabled()判定，检查真实DOM disabled属性后修正脚本并完整重验；没有据此改动正常的指标控制。
 
 另以独立直达链接查看外接手机SNR桌面与超透镜默认几何图截图，数值/坐标、重复坐标配置数和同器件谱点说明可见。构建及语法检查通过；生成文件内容版本保持确定性。
+
+实际发布：PR #72最终头`42bd6c1a3314c45e7b15d95cc0ab4843a0bb132c`，PR CI [43571233220](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/43571233220)成功，合并`23fdecb06565481d173d5bbe41f5614212068afd`。主线CI [43571286619](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/43571286619)及Pages [43571286647](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/43571286647)成功，同一运行跟踪到终态。实际HTTPS的12个文件与本地逐字节一致，`devices-data.js` SHA256为`8d71ecabd3269142905094ddee6e660777804ac58d3dc41f19d4dfe0aec299e2`，`index.html`为`da42e71e890039d918514d2515e6d00d0e3d04ed9da94d212407dc20c82cac1d`。线上Chrome无头完整重复36领域/六视口/引用往返/坐标与缺值/分享恢复/两导出，全部通过且无页面错误/横向溢出；实际查看线上手机SNR桌面与390 px文献截图。仅关闭本批明确范围的三个子任务，持续目标和先进设备/原生MTF/色差缺口保持开放。
 
 临时原文/截图不提交公共仓库。用于核验的下载版本SHA256：Shrestha正式PDF `37501f649ba8100c4cc90b8c55eaedacc3b894f2613cb58dbab6d7d7a0716b57`；Tseng主文 `aa99b660925cea6c6007d06f673b98929bf3d886c9f2575092364ca29bc659d5`，作者SI `ca52a4211f2938d19bc9b54248b14e7b608b5633fa794acc33cb6a54b82e4dac`；Zhao正式PDF `232f7156f8c71f534939487aaeb1734061375a48c92f97ea428892e2ce1023f7`；Engelberg出版版 `5ef05f76b5f4c132d780caa9c0d011108415777a5204eda2531c6180726f5394`。
