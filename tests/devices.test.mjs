@@ -40,7 +40,7 @@ test('coincident model coordinates are grouped without jitter and retain every m
  assert.match(f.el('chart').innerHTML,/2 个型号/);assert.match(f.el('chart').innerHTML,/同坐标重合/);
  assert.match(f.el('chart').innerHTML,/iPhone 18 Pro/);assert.match(f.el('chart').innerHTML,/Pixel 11 Pro/);
  f.change('domain','xr');f.change('x','hz');f.change('y','hz');
- const html=f.el('chart').innerHTML;assert.equal((html.match(/<circle /g)||[]).length,2);assert.match(html,/7 个型号/);assert.match(html,/\(120, 120\)/);
+ const html=f.el('chart').innerHTML;assert.equal((html.match(/<circle /g)||[]).length,2);assert.match(html,/8 个型号/);assert.match(html,/\(120, 120\)/);
  for(const r of d.domains.xr.rows)assert.ok(html.includes(r.model));
 });
 
@@ -101,7 +101,7 @@ test('follow-up specifications preserve unresolved ranges and optical measuremen
  const x=d.domains.xr.rows.find(r=>r.id==='xreal_one_pro');
  for(const key of ['width','height','brightness','latency','hfov','ppd'])assert.equal(x.values[key],undefined);
  const v=d.domains.xr.rows.find(r=>r.id==='vive_focus_vision');assert.match(v.values.hz.note,/DisplayPort.*Beta/);assert.equal(v.values.hfov,undefined);
- assert.equal(d.domains.phone.rows.length,15);assert.equal(d.domains.xr.rows.length,8);
+ assert.equal(d.domains.phone.rows.length,15);assert.equal(d.domains.xr.rows.length,11);
 });
 
 test('XREAL optical scheme is sourced without adopting marketing performance claims',()=>{
@@ -155,7 +155,7 @@ test('crowded and coincident labels keep every complete model in the readable le
  }
  f.change('domain','xr');f.change('x','hz');f.change('y','hz');
  const html=f.el('chart').innerHTML;assert.equal((html.match(/<circle /g)||[]).length,2);
- assert.match(html,/7 个型号/);for(const r of d.domains.xr.rows)assert.ok(html.includes(r.model));
+ assert.match(html,/8 个型号/);for(const r of d.domains.xr.rows)assert.ok(html.includes(r.model));
  assert.ok(!html.includes('部分文字标签'));
  const longName=structuredClone(d);longName.domains.phone.rows=[longName.domains.phone.rows[0]];
  longName.domains.phone.rows[0].model='完整型号'.repeat(40);
@@ -187,7 +187,7 @@ test('line mode orders by numeric x and keeps the same point coordinates',()=>{
 
 test('CSV exports missing values, notes and provenance with formula and quoting protection',()=>{
  const code=fs.readFileSync(new URL('../web/devices.js',import.meta.url),'utf8');const c=vm.createContext({D:d});
- vm.runInContext(code.slice(code.indexOf('function cellText('),code.indexOf('function render('))+code.slice(code.indexOf('function csvText('),code.indexOf("['domain','module','x','y','mode','sort']",code.indexOf('function csvText('))),c);
+ vm.runInContext(code.slice(code.indexOf('function cellText('),code.indexOf('function render('))+code.slice(code.indexOf('function csvText('),code.indexOf("['domain','module','x','y','mode','sort','evidence']",code.indexOf('function csvText('))),c);
  c.rows=[{model:'=1+2',variant:'a,"b',values:{mp:{value:48,source:'apple_phone',location:'Camera',note:'line\n2'}}}];c.ms=[{id:'mp',label:'MP'},{id:'dr',label:'DR'}];
  const s=vm.runInContext('csvText(rows,ms)',c);assert.ok(s.startsWith('\ufeff'));assert.ok(s.includes("'=1+2"));assert.ok(s.includes('a,""b'));assert.ok(s.includes('未公开 / 未核验'));assert.ok(s.includes('https://www.apple.com/iphone-18-pro/specs/'));
 });
@@ -211,4 +211,19 @@ test('metric citations reject broken references and stay visible even with no se
   assert.ok(f.el('definitions').innerHTML.includes(`href="#source-${id}"`));assert.ok(f.el('sources').innerHTML.includes(`id="source-${id}"`));
  }
  assert.match(f.el('sources').innerHTML,/学术教材/);assert.match(f.el('sources').innerHTML,/原厂技术说明/);
+});
+
+test('XR study records retain measured, reported and unavailable scalar boundaries',()=>{
+ const rs=d.domains.xr.rows.filter(r=>r.evidence_type==='study');assert.equal(rs.length,3);assert.equal(new Set(rs.map(r=>r.study_id)).size,1);
+ for(const r of rs){assert.equal(r.values.mtf.value,null);assert.match(r.values.mtf.display,/曲线/);assert.equal(r.values.width.basis,'reported_configuration');assert.equal(r.values.duty_cycle.basis,'measured');assert.equal(r.values.brightness,undefined);assert.equal(r.values.ppd,undefined);assert.equal(r.values.latency,undefined);}
+ assert.deepEqual(rs.map(r=>r.values.duty_cycle.value),[17,17,5]);assert.deepEqual(rs.map(r=>r.values.luminance_study.value),[208,130,79]);
+ const v=rs.find(r=>r.id==='vive_pro2_2022_study');assert.equal(v.values.emission_ms.value,.42);assert.match(v.measurement_scope,/中心/);
+ const f=deviceFixture();f.change('domain','xr');f.change('evidence','study');assert.match(f.el('status').textContent,/当前 3 个型号/);assert.match(f.el('table').innerHTML,/论文所列配置/);assert.match(f.el('table').innerHTML,/论文实测/);assert.match(f.el('table').innerHTML,/曲线见Fig.5/);assert.ok(!f.el('table').innerHTML.includes('Meta Quest 3'));
+ f.change('x','mtf');assert.ok(!f.el('chart').innerHTML.includes('<circle'));f.change('evidence','manufacturer');assert.match(f.el('status').textContent,/当前 8 个型号/);assert.ok(!f.el('table').innerHTML.includes('2022研究'));assert.match(f.el('guidance').innerHTML,/平滑追踪/);assert.match(f.el('sources').innerHTML,/同行评议研究论文/);
+});
+test('study provenance and curve placeholders cannot silently become numeric measured points',()=>{
+ for(const change of [r=>delete r.study_id,r=>delete r.measurement_scope,r=>delete r.values.width.basis,r=>r.values.mtf.value=.8]){
+  const x=structuredClone(d),r=x.domains.xr.rows.find(r=>r.evidence_type==='study');change(r);assert.throws(()=>validateDevices(x),/study|curve/);
+ }
+ const x=structuredClone(d);x.domains.xr.task_guidance[0].source='missing';assert.throws(()=>validateDevices(x),/task guidance provenance/);
 });

@@ -116,6 +116,24 @@
       "kind": "scholarly_book",
       "scope": "在线教材“The Thick Lens”主平面/前后焦点相关段及Fig.32–34；正文已读，图页另见本批笔记，不称全章精读。仅用于物理焦距参考面，不证明任何手机厂商焦段为物理或35mm等效。Stops段的exit-pupil F数口径未直接用于本库F数定义。",
       "checked_on": "2026-11-14"
+    },
+    {
+      "id": "zhao_vr_spatiotemporal_2022",
+      "title": "Zhao, Kim, Beams & Badano (2022): Spatiotemporal image quality of virtual reality head mounted displays",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9691731/",
+      "doi": "10.1038/s41598-022-24345-9",
+      "kind": "peer_reviewed_paper",
+      "scope": "Scientific Reports 12:20235。PMC主文Methods/Results/Discussion相关正文；视觉核Fig.1、5、6、7、8原图。只收中心视场的研究配置、光电二极管时序及实验设置亮度；不把模型运动MTF/SSIM当实测，不视为FDA合格要求或当前市场最佳。未复现原始数据/代码，完整误差及眼位亮度协议缺口保留。",
+      "checked_on": "2026-11-14"
+    },
+    {
+      "id": "chang_holographic_review_2020",
+      "title": "Chang et al. (2020): Toward the next-generation VR/AR optics — holographic near-eye displays review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8208705/",
+      "doi": "10.1364/OPTICA.406004",
+      "kind": "paper_review",
+      "scope": "Optica 7:1563–1578；仅§4.B Resolution and Foveated Rendering正文。读取PPD表述与中央/周边分辨分配，不取图中性能数值；未视觉核Fig.13，未精读全篇。2020商业水平与视觉参考不是2026通用门槛。网页工具受检查、Europe PMC XML返回500；普通HTTP主文可读，未处理验证码或绕过访问限制。",
+      "checked_on": "2026-11-14"
     }
   ],
   "domains": {
@@ -697,10 +715,16 @@
         },
         {
           "id": "hz",
-          "label": "所读规格最高刷新率 (Hz)",
-          "definition": "所读官方条目中最大标注刷新率；其他档位记备注。",
+          "label": "刷新率 (Hz；模式见备注)",
+          "definition": "厂商记录采用所读规格最大档位；研究记录采用论文指定的实验配置，其他档位记备注。不等于输入内容帧率或持续渲染帧率。",
           "conditions": "软件支持、模式；不等于持续渲染帧率",
-          "numeric": true
+          "numeric": true,
+          "definition_refs": [
+            {
+              "source": "zhao_vr_spatiotemporal_2022",
+              "location": "Methods / Temporal response measurement；Results / Temporal response"
+            }
+          ]
         },
         {
           "id": "hfov",
@@ -726,9 +750,19 @@
         {
           "id": "ppd",
           "label": "显示 PPD",
-          "definition": "厂商标注显示每度像素；场点/峰值或平均未说明则保留缺口。",
+          "definition": "PPD（pixels per degree）是每视角度的像素采样密度。均匀局部角采样时可写为1/Δθ（Δθ用度/像素）；它不是MTF、可辨线对数或人眼合格分数。中心/周边、峰值/平均和显示/透视相机PPD须分别报告；不把整幅像素除未明方向FOV直接当已测局部PPD。",
           "conditions": "场点、角度映射、瞳孔位置；不可简单分辨率除FOV",
-          "numeric": true
+          "numeric": true,
+          "definition_refs": [
+            {
+              "source": "chang_holographic_review_2020",
+              "location": "§4.B Resolution and Foveated Rendering，前两段"
+            },
+            {
+              "source": "zhao_vr_spatiotemporal_2022",
+              "location": "Methods / Spatial resolution measurement，角采样校准及中心视场限制；倒数关系为本库单位说明"
+            }
+          ]
         },
         {
           "id": "panel",
@@ -767,10 +801,16 @@
         },
         {
           "id": "mtf",
-          "label": "显示 MTF",
-          "definition": "待补近眼显示光学或系统空间响应。",
-          "conditions": "场点、瞳孔、颜色、cycles/degree、算法",
-          "numeric": true
+          "label": "显示 MTF（指定频率，1）",
+          "definition": "显示/光学系统对比度随空间频率的传递函数，无量纲；角空间频率用cycles/degree（CPD），不是PPD。Zhao等从垂直单像素线的LSF计算归一化傅里叶响应；频率、阈值、颜色及场点必须报告。MTF50指响应降至0.5的频率，单位为CPD，不能填在本字段充当MTF响应值。 单像素线测量包含像素、显示光学和测量链响应，不据此分离裸光学MTF。",
+          "conditions": "静态/动态、空间频率CPD、中心/周边、线方向/颜色、眼位/相机孔径、曝光、处理及测量/模型性质；曲线未提取单值则不打点",
+          "numeric": true,
+          "definition_refs": [
+            {
+              "source": "zhao_vr_spatiotemporal_2022",
+              "location": "Methods / Spatial resolution measurement；Spatiotemporal response model Eq.5；Fig.5/8"
+            }
+          ]
         },
         {
           "id": "latency",
@@ -778,6 +818,58 @@
           "definition": "待补完整运动到显示更新延迟；不混入photon-to-photon。",
           "conditions": "事件定义、刷新模式、测量链路",
           "numeric": true
+        },
+        {
+          "id": "duty_cycle",
+          "label": "发光占空比 (%)",
+          "definition": "发光持续时间与周期之比的百分数，Zhao以光电二极管波形表征。较低占空比可减轻所研究平滑追踪场景的运动模糊，但不是所有显示的统一合格线或越低越好。",
+          "conditions": "刷新率、亮度模式、时间波形/判阈、内容帧率、运动速度和测量不确定度",
+          "numeric": true,
+          "definition_refs": [
+            {
+              "source": "zhao_vr_spatiotemporal_2022",
+              "location": "Methods / Temporal response measurement；Results / Temporal response；Fig.6"
+            }
+          ]
+        },
+        {
+          "id": "emission_ms",
+          "label": "发光脉冲宽度 (ms)",
+          "definition": "一个发光周期中的脉冲持续时间；须说明判阈与刷新配置。不是运动到光子延迟或整帧渲染时间。",
+          "conditions": "周期/刷新配置、亮度/波形判阈、测量仪器与不确定度",
+          "numeric": true,
+          "definition_refs": [
+            {
+              "source": "zhao_vr_spatiotemporal_2022",
+              "location": "Results / Temporal response，VIVE Pro 2 120/90 Hz对照段；Fig.6"
+            }
+          ]
+        },
+        {
+          "id": "luminance_study",
+          "label": "研究设置亮度 (cd/m²)",
+          "definition": "论文所用亮度设置及其仪器测得值；此列不等同于统一眼位/瞳孔/APL协议下的入眼亮度或产品峰值能力。",
+          "conditions": "实验设置/最大档、测量仪器、眼位/距离/孔径/测试图案/模式；缺失项必须保留",
+          "numeric": true,
+          "definition_refs": [
+            {
+              "source": "zhao_vr_spatiotemporal_2022",
+              "location": "Methods / VR head mounted displays，ILT5000与三设备设置段"
+            }
+          ]
+        },
+        {
+          "id": "spatial_protocol",
+          "label": "空间测量范围",
+          "definition": "记录LSF/MTF的场点、方向、设备与处理边界，帮助区分配置、实测和模型；不是数值质量分。",
+          "conditions": "眼位、曝光、线宽、颜色、方向和是否去除相机/像素影响",
+          "numeric": false,
+          "definition_refs": [
+            {
+              "source": "zhao_vr_spatiotemporal_2022",
+              "location": "Methods / Spatial resolution measurement；Fig.1/5"
+            }
+          ]
         }
       ],
       "rows": [
@@ -1053,9 +1145,249 @@
               "note": "Sony panel; not evidence of measured MTF."
             }
           }
+        },
+        {
+          "id": "vive_2022_study",
+          "model": "HTC VIVE（2022研究）",
+          "module": "",
+          "variant": "历史研究配置；同一团队/同一论文，非2026先进产品清单",
+          "evidence_type": "study",
+          "study_id": "zhao2022",
+          "measurement_scope": "2022年论文右眼中心最佳对准；外接显示模式，不开空间/运动平滑；静态相机25 mm f/2.8、相机距HMD镜片约25 mm、33.3 ms曝光、100行平均；非全场/双眼知觉验收，系统跟踪/渲染延迟被排除。",
+          "values": {
+            "width": {
+              "value": 1080,
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "reported_configuration",
+              "location": "Methods / VR head mounted displays",
+              "note": "论文设备描述；不是本库独立测量或现售型号最新规格"
+            },
+            "height": {
+              "value": 1200,
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "reported_configuration",
+              "location": "Methods / VR head mounted displays",
+              "note": "论文设备描述；不是本库独立测量或现售型号最新规格"
+            },
+            "hfov": {
+              "value": 110,
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "reported_configuration",
+              "location": "Methods / VR head mounted displays",
+              "note": "论文设备描述；不是本库独立测量或现售型号最新规格；作者约值"
+            },
+            "panel": {
+              "value": "PenTile OLED",
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "reported_configuration",
+              "location": "Methods / VR head mounted displays",
+              "note": "论文设备描述；不是本库独立测量或现售型号最新规格"
+            },
+            "hz": {
+              "value": 90,
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "measured",
+              "location": "Results / Temporal response；Fig.6",
+              "note": "所收实验配置；不等于内容帧率或渲染能力"
+            },
+            "duty_cycle": {
+              "value": 17,
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "measured",
+              "location": "Results / Temporal response；Fig.6",
+              "note": "作者约值；Newport 1621光电二极管/示波器，完整判阈及不确定度未报告"
+            },
+            "luminance_study": {
+              "value": 208,
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "measured",
+              "location": "Methods / VR head mounted displays",
+              "note": "最大亮度设置；ILT5000测得，距离/孔径/APL等未完整列明；不填入统一入眼亮度列"
+            },
+            "spatial_protocol": {
+              "value": "右眼中心垂直单像素线",
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "measured",
+              "location": "Methods / Spatial resolution measurement；Fig.1/5",
+              "note": "2022年论文右眼中心最佳对准；外接显示模式，不开空间/运动平滑；静态相机25 mm f/2.8、相机距HMD镜片约25 mm、33.3 ms曝光、100行平均；非全场/双眼知觉验收，系统跟踪/渲染延迟被排除。"
+            },
+            "mtf": {
+              "value": null,
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "measured",
+              "location": "Methods / Spatial resolution measurement；Results / Spatial performance；Fig.5",
+              "note": "实测静态曲线，未估读单点/MTF50；Fig.8为模型动态结果，不移入实测字段",
+              "display": "实测曲线见Fig.5；未提取单值"
+            }
+          }
+        },
+        {
+          "id": "vive_pro_2022_study",
+          "model": "VIVE Pro（2022研究）",
+          "module": "",
+          "variant": "历史研究配置；同一团队/同一论文，非2026先进产品清单",
+          "evidence_type": "study",
+          "study_id": "zhao2022",
+          "measurement_scope": "2022年论文右眼中心最佳对准；外接显示模式，不开空间/运动平滑；静态相机25 mm f/2.8、相机距HMD镜片约25 mm、33.3 ms曝光、100行平均；非全场/双眼知觉验收，系统跟踪/渲染延迟被排除。",
+          "values": {
+            "width": {
+              "value": 1440,
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "reported_configuration",
+              "location": "Methods / VR head mounted displays",
+              "note": "论文设备描述；不是本库独立测量或现售型号最新规格"
+            },
+            "height": {
+              "value": 1600,
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "reported_configuration",
+              "location": "Methods / VR head mounted displays",
+              "note": "论文设备描述；不是本库独立测量或现售型号最新规格"
+            },
+            "hfov": {
+              "value": 110,
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "reported_configuration",
+              "location": "Methods / VR head mounted displays",
+              "note": "论文设备描述；不是本库独立测量或现售型号最新规格；作者约值"
+            },
+            "panel": {
+              "value": "PenTile OLED",
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "reported_configuration",
+              "location": "Methods / VR head mounted displays",
+              "note": "论文设备描述；不是本库独立测量或现售型号最新规格"
+            },
+            "hz": {
+              "value": 90,
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "measured",
+              "location": "Results / Temporal response；Fig.6",
+              "note": "所收实验配置；不等于内容帧率或渲染能力"
+            },
+            "duty_cycle": {
+              "value": 17,
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "measured",
+              "location": "Results / Temporal response；Fig.6",
+              "note": "作者约值；Newport 1621光电二极管/示波器，完整判阈及不确定度未报告"
+            },
+            "luminance_study": {
+              "value": 130,
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "measured",
+              "location": "Methods / VR head mounted displays",
+              "note": "最大亮度设置；ILT5000测得，距离/孔径/APL等未完整列明；不填入统一入眼亮度列"
+            },
+            "spatial_protocol": {
+              "value": "右眼中心垂直单像素线",
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "measured",
+              "location": "Methods / Spatial resolution measurement；Fig.1/5",
+              "note": "2022年论文右眼中心最佳对准；外接显示模式，不开空间/运动平滑；静态相机25 mm f/2.8、相机距HMD镜片约25 mm、33.3 ms曝光、100行平均；非全场/双眼知觉验收，系统跟踪/渲染延迟被排除。"
+            },
+            "mtf": {
+              "value": null,
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "measured",
+              "location": "Methods / Spatial resolution measurement；Results / Spatial performance；Fig.5",
+              "note": "实测静态曲线，未估读单点/MTF50；Fig.8为模型动态结果，不移入实测字段",
+              "display": "实测曲线见Fig.5；未提取单值"
+            }
+          }
+        },
+        {
+          "id": "vive_pro2_2022_study",
+          "model": "VIVE Pro 2（2022研究）",
+          "module": "",
+          "variant": "历史研究配置；同一团队/同一论文，非2026先进产品清单",
+          "evidence_type": "study",
+          "study_id": "zhao2022",
+          "measurement_scope": "2022年论文右眼中心最佳对准；外接显示模式，不开空间/运动平滑；静态相机25 mm f/2.8、相机距HMD镜片约25 mm、33.3 ms曝光、100行平均；非全场/双眼知觉验收，系统跟踪/渲染延迟被排除。",
+          "values": {
+            "width": {
+              "value": 2448,
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "reported_configuration",
+              "location": "Methods / VR head mounted displays",
+              "note": "论文设备描述；不是本库独立测量或现售型号最新规格"
+            },
+            "height": {
+              "value": 2448,
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "reported_configuration",
+              "location": "Methods / VR head mounted displays",
+              "note": "论文设备描述；不是本库独立测量或现售型号最新规格"
+            },
+            "hfov": {
+              "value": 120,
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "reported_configuration",
+              "location": "Methods / VR head mounted displays",
+              "note": "论文设备描述；不是本库独立测量或现售型号最新规格；作者约值"
+            },
+            "panel": {
+              "value": "RGB LCD",
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "reported_configuration",
+              "location": "Methods / VR head mounted displays",
+              "note": "论文设备描述；不是本库独立测量或现售型号最新规格"
+            },
+            "hz": {
+              "value": 120,
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "measured",
+              "location": "Results / Temporal response；Fig.6",
+              "note": "所收实验配置；不等于内容帧率或渲染能力"
+            },
+            "duty_cycle": {
+              "value": 5,
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "measured",
+              "location": "Results / Temporal response；Fig.6",
+              "note": "作者约值；Newport 1621光电二极管/示波器，完整判阈及不确定度未报告"
+            },
+            "luminance_study": {
+              "value": 79,
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "measured",
+              "location": "Methods / VR head mounted displays",
+              "note": "最大亮度设置；ILT5000测得，距离/孔径/APL等未完整列明；不填入统一入眼亮度列"
+            },
+            "spatial_protocol": {
+              "value": "右眼中心垂直单像素线",
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "measured",
+              "location": "Methods / Spatial resolution measurement；Fig.1/5",
+              "note": "2022年论文右眼中心最佳对准；外接显示模式，不开空间/运动平滑；静态相机25 mm f/2.8、相机距HMD镜片约25 mm、33.3 ms曝光、100行平均；非全场/双眼知觉验收，系统跟踪/渲染延迟被排除。"
+            },
+            "mtf": {
+              "value": null,
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "measured",
+              "location": "Methods / Spatial resolution measurement；Results / Spatial performance；Fig.5",
+              "note": "实测静态曲线，未估读单点/MTF50；Fig.8为模型动态结果，不移入实测字段",
+              "display": "实测曲线见Fig.5；未提取单值"
+            },
+            "emission_ms": {
+              "value": 0.42,
+              "source": "zhao_vr_spatiotemporal_2022",
+              "basis": "measured",
+              "location": "Results / Temporal response；Fig.6c–d",
+              "note": "120 Hz；同文90 Hz约0.55 ms为另一配置；不是motion-to-photon延迟"
+            }
+          }
         }
       ],
-      "scope": "8款VR/MR及光学透视眼镜候选；厂商规格，不是同条件实测排名。每眼与总像素分开；未明方向视场不并入H/V。"
+      "scope": "11款XR型号/研究记录：8款厂商规格配置 + 3款2022历史研究记录（同一项独立研究）；可按证据筛选。中心单线/时序实测不替代全场、双眼或当前整机体验，配置、实测和模型按单元格注明。未明方向FOV不并入H/V。",
+      "task_guidance": [
+        {
+          "task": "运动内容与平滑追踪",
+          "text": "所研究条件下，刷新率、发光占空比和输入内容帧率共同影响运动模糊；仅增加面板像素不足以保证改善。文中中心测量和理想追踪假设不能扩展为所有任务的指标名次。",
+          "source": "zhao_vr_spatiotemporal_2022",
+          "location": "Discussion，前三段及limitations；Results / Impact of display refresh rate and duty cycle"
+        }
+      ]
     }
   }
 }
