@@ -1,3 +1,4 @@
+{
  'use strict';
 const E=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const $=id=>document.getElementById(id),D=window.DEVICE_DATA;
@@ -67,6 +68,8 @@ function chart(rows,x,y,metrics,mode="scatter"){
  const line=mode==='line'&&ordered.length>1?`<polyline class="model-line" points="${ordered.map(g=>`${px(g.x)},${py(g.y)}`).join(' ')}" stroke="#526a82" stroke-width="2" fill="none"/>`:'';
  return s+line+markers+annotations+'</svg></div>'+(positions.some(p=>!p)?'<p>部分文字标签请见下方完整图例；圆点坐标未移动。</p>':'')+'<ul class="chart-legend" aria-label="散点型号与坐标">'+legend.join('')+'</ul>';
 }
+window.LensPlot={points,tickLabels,layoutLabels,chart};
+if(!window.UNIFIED_WORKSPACE){
 let chosenModels=null,chosenColumns=null;
 function viewRows(){const c=D.domains[$('domain').value];return c.rows.filter(r=>($('domain').value==='xr'||r.module===$('module').value)&&(chosenModels===null||chosenModels.includes(r.model)));}
 function sortedRows(rows,x,y){const key=$('sort').value;return [...rows].sort((a,b)=>key==='x'||key==='y'?((a.values[key==='x'?x:y]?.value??Infinity)-(b.values[key==='x'?x:y]?.value??Infinity)||a.model.localeCompare(b.model)):key==='model'?a.model.localeCompare(b.model):0);}
@@ -98,3 +101,7 @@ $('export-svg').addEventListener('click',()=>{const svg=$('chart').querySelector
 $('share').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(window.location.href);$('status').textContent='已复制当前视图链接';}catch{$('status').textContent='可复制浏览器地址栏，当前选择已保存在链接中。';}});
 const initialSearch=window.location?.href;render(true);
 if(initialSearch){const p=new URL(initialSearch).searchParams;const domain=p.get('domain');if(D.domains[domain]){$('domain').value=domain;render(true);}for(const id of ['module','x','y','mode','sort']){const v=p.get(id);if(v&&[...$(id).options].some(o=>o.value===v))$(id).value=v;}for(const id of ['models','columns']){try{const v=JSON.parse(p.get(id));if(Array.isArray(v)&&v.every(x=>typeof x==='string')){if(id==='models')chosenModels=v;else chosenColumns=v;}}catch{}}render();}
+
+}
+
+}

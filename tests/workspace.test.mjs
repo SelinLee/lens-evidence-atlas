@@ -1,0 +1,65 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {load} from '../scripts/catalog.mjs';
+import {scalar,createWorkspace,valueSources,filteredRows,axisPoints} from '../web/workspace-data.js';
+const catalog=load(),devices=JSON.parse(fs.readFileSync(new URL('../data/devices.json',import.meta.url))),atlas=createWorkspace(catalog,devices);
+
+test('legacy scalars preserve unit and zero without guessing ranges, errors or composite measurements',()=>{
+ assert.deepEqual(scalar('0 mm'),{value:0,unit:'mm'});
+ assert.deepEqual(scalar('f/2.8'),{value:2.8,unit:'F数'});
+ assert.deepEqual(scalar('88.5%'),{value:88.5,unit:'%'});
+ for(const text of ['20–41%','7.8 ± 1.3 μm','约4×','532 nm / 655 nm','f/2.8 mm','NA=0.1','10 mm²','12 mm text','Infinity',''])assert.equal(scalar(text),null,text);
+});
+test('all applications and device domains share a template without losing original parameter strings',()=>{
+ assert.equal(atlas.domains.length,catalog.applications.length+2);
+ for(const app of catalog.applications){
+  const domain=atlas.domains.find(d=>d.id===app.id);assert.equal(domain.rows.length,app.record_ids.length);
+  for(const row of domain.rows){const record=catalog.benchmarks.find(r=>r.id===row.id);assert.equal(Object.keys(row.values).length,record.parameters.length);for(const value of Object.values(row.values))assert.equal(value.display,record.parameters[value.parameterIndex].value);}
+ }
+});
+test('same parameter names with incompatible units never enter the same numeric axis',()=>{
+ const d=structuredClone(catalog),app=d.applications[0];app.record_ids=['fixture-a','fixture-b','fixture-c'];
+ d.benchmarks.push(...[['a','10 mm'],['b','20 μm'],['c','10–20 mm']].map(([id,value])=>({id:'fixture-'+id,name:id,parameters:[{name:'焦距',value}],source_ids:[d.sources[0].id]})));
+ const domain=createWorkspace(d,devices).domains.find(v=>v.id===app.id);
+ assert.equal(domain.metrics.length,3);assert.equal(domain.metrics.filter(m=>m.numeric).length,2);
+ const x=domain.rows[0].values,y=domain.rows[1].values;assert.notEqual(Object.keys(x)[0],Object.keys(y)[0]);
+});
+test('parameter citations retain specific source and locator; record-level fallback is explicit',()=>{
+ for(const domain of atlas.domains.filter(d=>d.app))for(const row of domain.rows){
+  const r=catalog.benchmarks.find(v=>v.id===row.id);
+  for(const value of Object.values(row.values)){
+   const p=r.parameters[value.parameterIndex];assert.deepEqual(valueSources(value),p.evidence?[p.evidence.source_id]:r.source_ids);
+   assert.equal(value.location,p.evidence?.location||'');
+   for(const source of valueSources(value))assert.ok(atlas.sources.has(source));
+  }
+ }
+});
+test('device and catalog source IDs cannot collide or silently replace provenance',()=>{
+ const copy=structuredClone(devices);copy.sources[0].id=catalog.sources[0].id;
+ const old=devices.sources[0].id;for(const d of Object.values(copy.domains))for(const r of d.rows)for(const v of Object.values(r.values))if(v.source===old)v.source=copy.sources[0].id;
+ const merged=createWorkspace(catalog,copy);assert.equal(merged.sources.get(catalog.sources[0].id).url,catalog.sources[0].url);
+ assert.equal(merged.sources.get('device-'+catalog.sources[0].id).url,copy.sources[0].url);
+});
+test('empty selections, zero values and camera modules stay consistent between rows and plotted points',()=>{
+ const phone=atlas.domains.find(d=>d.id==='phone'),base={module:'main',models:null,query:'',evidence:''};
+ assert.equal(filteredRows(phone,{...base,models:[]}).length,0);
+ assert.ok(filteredRows(phone,{...base,module:'tele'}).every(r=>r.module==='tele'));
+ assert.equal(filteredRows(phone,{...base,query:'nonexistent_768'}).length,0);
+ const rows=[{id:'a',values:{x:{value:0},y:{value:2}}},{id:'b',values:{x:{value:null},y:{value:4}}}];
+ assert.equal(axisPoints(rows,'x','y').length,1);assert.equal(axisPoints(rows,'x','y')[0].x,0);
+ assert.deepEqual(axisPoints(rows,'$model','y').map(p=>p.x),[1,2]);
+});
+test('unified entry loads both data sets and old device links retain selection parameters',()=>{
+ const html=fs.readFileSync(new URL('../web/index.html',import.meta.url),'utf8'),redirect=fs.readFileSync(new URL('../web/devices.html',import.meta.url),'utf8');
+ for(const script of ['data.js','devices-data.js','workspace.js'])assert.ok(html.includes(script));
+ assert.ok(html.indexOf('id="workspace"')<html.indexOf('id="data-table"'));assert.ok(html.indexOf('id="data-table"')<html.indexOf('id="references"'));
+ assert.match(redirect,/target.search=location.search/);assert.match(redirect,/target.hash=location.hash/);assert.match(redirect,/location.replace/);
+});
+test('device evidence categories preserve manufacturer, study configuration and measurement boundaries',()=>{
+ const d=structuredClone(devices),row=structuredClone(d.domains.xr.rows[0]);row.id='fixture-study';row.evidence_type='study';row.measurement_scope='right eye, center only';row.values.width.basis='reported_configuration';row.values.hz.basis='measured';d.domains.xr.rows.push(row);
+ const domain=createWorkspace(catalog,d).domains.find(v=>v.id==='xr'),base={module:'main',models:null,query:'',evidence:'research'};
+ assert.deepEqual(filteredRows(domain,base).map(r=>r.id),['fixture-study']);
+ assert.equal(filteredRows(domain,{...base,evidence:'manufacturer'}).length,d.domains.xr.rows.length-1);
+ const study=domain.rows.at(-1);assert.match(study.variant,/right eye, center only/);assert.equal(study.values.width.evidence,'研究设备配置');assert.equal(study.values.hz.evidence,'研究实测');
+});
