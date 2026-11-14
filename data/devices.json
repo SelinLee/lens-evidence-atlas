@@ -509,6 +509,35 @@
       "kind": "supplementary_material",
       "checked_on": "2026-11-14",
       "scope": "8页SI，读取S1制备/S2参数与S3测量光路、S4–S6光学重建相关文字，视觉核p.2与p.4 S1/S3及TableS1；系统图S4–S6只相关文字/图注。S3给100×/NA0.95收集物镜、分束器/功率计/iris，但未给完整效率焦圈与功率分母、原始PSF/采样或MTF。TableS1为结构几何，非焦距/效率原始表。"
+    },
+    {
+      "id": "khor_achromatic_2017",
+      "title": "Khorasaninejad et al. (2017): Achromatic Metalens over 60 nm Bandwidth in the Visible and Metalens with Reverse Chromatic Dispersion",
+      "doi": "10.1021/acs.nanolett.6b05137",
+      "url": "https://pubs.acs.org/doi/10.1021/acs.nanolett.6b05137",
+      "kind": "peer_reviewed_paper",
+      "checked_on": "2026-11-14",
+      "scope": "正式题录/Crossref及作者Capasso站正式PDF的网页解析文字；限定读取印刷pp.1819–1823设计/表征/图2/4/5/6图注/文末，正式图内印字未视觉核。Chrome正式页及作者站403，不伪称取得本机正式PDF；与作者arXiv v1及公开排版稿图核对。正式图注证实1.5%实测variation、2.7μm光谱SD与六个方向FWHM，3个绝对f印字使用独立arXiv来源。"
+    },
+    {
+      "id": "khor_achromatic_arxiv_2017",
+      "publication_source": "khor_achromatic_2017",
+      "title": "Khorasaninejad et al. (2017): arXiv:1701.06696v1 author manuscript — measured focal-plane labels and PSFs",
+      "doi": "10.48550/arXiv.1701.06696",
+      "url": "https://arxiv.org/pdf/1701.06696v1",
+      "kind": "author_manuscript",
+      "checked_on": "2026-11-14",
+      "scope": "作者2017-01-24提交，只有v1；19页PDF与DOI关联已核，读取设计/表征/讨论/文末及图，视觉核pp.15/17–19（图2/4/5/6）。p.18图5d/e/f直接印f491/483/485μm，非曲线估读；p.15/17/18图注与正式版相关文字对照。该PDF仅主文与图，不含所称S1–S9；/src响应也是同一PDF，未当原始PSF或代码。"
+    },
+    {
+      "id": "khor_achromatic_si_2017",
+      "publication_source": "khor_achromatic_2017",
+      "title": "Khorasaninejad et al. (2017): Supporting Information — registered component, content not retrieved",
+      "doi": "10.1021/acs.nanolett.6b05137.s001",
+      "url": "https://pubs.acs.org/doi/suppl/10.1021/acs.nanolett.6b05137/suppl_file/nl6b05137_si_001.pdf",
+      "kind": "supplementary_material",
+      "checked_on": "2026-11-14",
+      "scope": "仅核Crossref组件DOI与is-component-of关系、主文Associated Content所述Note1/S1–S9以及标准文件路径。Chrome403，未取得或读取SI内容，尤其S9效率图/定义仍待核；元数据登记日期不是研究发表日期。不作为已读数值来源。"
     }
   ],
   "domains": {
@@ -3572,6 +3601,10 @@
             {
               "source": "zhang_onchip_2025",
               "location": "PDF p.4 Fig.3d对应正文；p.7 Optical characterization"
+            },
+            {
+              "source": "khor_achromatic_2017",
+              "location": "印刷p.1820 Fig.2实测1.5%；p.1821同名fractional change公式"
             }
           ],
           "axis_bounds": {
@@ -3638,6 +3671,39 @@
             {
               "source": "fan_array_2019",
               "location": "PDF p.5平均实测焦距段；p.6 Fig.4图注"
+            }
+          ]
+        },
+        {
+          "id": "focal_spectral_sd_um",
+          "label": "作者跨波长焦距SD (μm；非测量不确定度)",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition": "作者报告同器件各实测波长最佳焦距的光谱标准差，不能当逐点±误差、DOF或有符号焦移。",
+          "conditions": "实际波长集合、作者计算、sample_unit=wavelength、ddof及物理重复数（未知null），绑定focus_variation_protocol；只在汇总行使用。",
+          "definition_refs": [
+            {
+              "source": "khor_achromatic_2017",
+              "location": "印刷p.1822 Fig.4a图注"
+            },
+            {
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "PDF p.17 Fig.4a图注"
+            }
+          ]
+        },
+        {
+          "id": "axial_focus_offset_um",
+          "label": "相对指定像面的轴向焦差 (μm；本库计算)",
+          "numeric": true,
+          "definition": "本库以作者实测f减去明确指定的固定评价面z_ref得到的有符号焦差；正值为最佳焦点z更大，不自动选设计f或某参考波长。",
+          "conditions": "本行实测f/实际λ、参考面位置和原文定位、公式、计算归属、源版本及PSF协议必须保留；不是作者原始焦移表或MTF复算。",
+          "definition_refs": [
+            {
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "PDF p.18 Fig.5a–f固定Z与最佳f的印字"
             }
           ]
         }
@@ -103010,9 +103076,2597 @@
               ]
             }
           }
+        },
+        {
+          "id": "khor2017_aml_summary",
+          "model": "Khorasaninejad 2017 · D200μm AML · 带内统计",
+          "study_id": "khor2017",
+          "specimen_id": "aml_200",
+          "module": "",
+          "variant": "早期可见光反射式AML / 实测普通色散与仅模拟反色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实制反射式AML的汇总统计；作者SD/variation与单谱点实测分开。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.2图注、p.1821设计/制备；arXiv v1 pp.5–6/15",
+              "note": "AML名义口径；不移给GML/反色散设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 485,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1821设计段；arXiv v1 p.5设计段",
+              "note": "设计相位使用f485μm；不是各λ实际最佳焦距，也不是实测均值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "na": {
+              "value": 0.2,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1821制备末段；arXiv v1 p.6",
+              "note": "作者由名义D200μm/f485μm给NA0.2；不是独立角度测量，也不取收集物镜NA0.28。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 490,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1819摘要/设计；arXiv v1 pp.1–2/17 Fig.4a",
+              "note": "作者连续工作带宽490–550nm；实际轴向PSF仅七个10nm间隔谱点，不称每个λ都测过。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "lambda_max_nm": {
+              "value": 550,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1819摘要/设计；arXiv v1 pp.1–2/17 Fig.4a",
+              "note": "工作带宽与七实测谱点、六个优化波长的数量分开；不反推优化谱点为实验谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv v1 p.17 Fig.4a左侧七标签",
+              "note": "轴向测量490/500/510/520/530/540/550nm；图2还含带外曲线，本批不估读或猜其逐点参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "490–550nm / 10nm；7实测谱点"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.1b/设计；arXiv v1 pp.5/14 Fig.1",
+              "note": "TiO2柱高600nm；SiO2 spacer180nm和Al镜110nm另记，不当器件含石英总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "material": {
+              "value": "反射式方柱TiO2 / SiO2 spacer180nm / Al110nm / fused silica；格点480nm",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820–1821 Fig.1/制备；arXiv v1 pp.4–6/14",
+              "note": "依方柱宽度实现色散工程/多2π相位；全波材料单元设计与Fresnel–Kirchhoff器件模拟分开，不把单元反射率当聚焦效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "polarization": {
+              "value": "方截面柱，作者称偏振不敏感；实际入射偏振/检出通道未明确核到",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820方柱设计段；arXiv v1 p.4",
+              "note": "不把结构对称声明当逐偏振验收，也不将几何相位GML对照的偏振条件借给AML。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "illumination": {
+              "value": "准直laser + 50:50 beamsplitter，反射聚焦",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1821–1822测量段/Fig.3d；arXiv v1 pp.7/16",
+              "note": "本轮所读主文未给光源型号/谱线宽；50:50是光路分束比例，不是透镜效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "psf_protocol": {
+              "value": "准直反射光由10×/NA0.28 Mitutoyo+f200mm tube lens、4×Olympus+f180mm tube lens至Andor Zyla sCMOS；总倍率40×，作者用已知尺寸物体验证。沿z实际步长2μm拼接xz强度。",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1821–1822测量段/Fig.3d；arXiv v1 pp.7/16–18",
+              "note": "平台最小移动100nm不是本次扫描步长；传感器像元/物方μm每像素、背景/裁剪/归一化和最佳峰位算法未齐。图4色标0–1但不等于已给完整归一化流程；图5固定面与最佳焦面分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.2实测曲线；arXiv v1 pp.15/17–18",
+              "note": "只有图5d/e/f三个印字f可确切录入；其余曲线不估点。图2称f485@530但未独立列实测530nm值，不用该设计/参考说明补点。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "逐λ原表缺；只录明确图内印字"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5图注；arXiv v1 p.18",
+              "note": "仅490/520/550nm最佳焦斑有水平切线FWHM印字；固定z485μm三图不借用这些宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "本条件未给方向数值"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5图注；arXiv v1 p.18",
+              "note": "vertical视为图像y/竖直方向，与horizontal/x分列；不是已定义弧矢/切向。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "本条件未给方向数值"
+            },
+            "efficiency_protocol": {
+              "value": "主文仅将聚焦效率影响指向Fig.S9；独立SI组件已核但内容403未取得",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1823讨论/Associated Content；arXiv v1 pp.8/10",
+              "note": "焦圈积分/功率分母、偏振通道、校准、实际谱点与误差未核，效率数值留空；不借其他论文约20%或单元反射率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017",
+                "khor_achromatic_si_2017"
+              ]
+            },
+            "mtf_curve": {
+              "value": "本轮主文/作者稿没有已核MTF或Strehl数表；SI内容仍待取得",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820–1823图2/4/5和文末；arXiv v1 pp.15/17–18",
+              "note": "图2x:Wavelength(nm), y:Focal length(μm)；图4z(mm)、色标0–1；图5标尺2μm不是原始数组采样。公开arXiv v1为主文/图，无原始PSF或数表；Crossref已证实独立SI组件，但期刊SI/作者站Chrome403，不能据此称数据未公开。DataCite精确关联仅1条本篇预印本、非原始数据集；GitHub仓库名称/描述精确DOI/题名无匹配，非全代码搜索。主文未核到原始数据获取声明，未联系作者；完整范围见docs/KHORASANINEJAD_2017_REVIEW_2026-11-14.md。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017",
+                "khor_achromatic_si_2017"
+              ]
+            },
+            "chromatic": {
+              "value": "连续490–550nm设计/工作带宽，7谱点实测；作者1.5%焦距variation及光谱SD2.7μm另列",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820/1822 Fig.2/4；arXiv v1 pp.15/17",
+              "note": "有残余色差，不填零焦移；轴向实测不证明全场无横向色差。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "focus_variation_protocol": {
+              "value": "Fig.2作者实测fractional change1.5%；正文在模拟1.2%段定义(max(f)−min(f))/mean(f)×100%。Fig.4a七实测λ；SD2.7μm为跨波长焦距散布。",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.2、p.1821公式段、p.1822 Fig.4；arXiv v1 pp.6/15/17",
+              "note": "实测沿用同名fractional change的分母为按语境关联，未从原始焦距重算；mean(f)数值、SD分母n或n−1和重复样品数未给。不能用设计485反推μm变化，不能用三点整数印字重现完整七点统计。参考面/轴向算法未完整给，2μm实际采样≠100nm平台最小步长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "focus_variation_pct": {
+              "value": 1.5,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.2图注；arXiv v1 p.15 Fig.2图注",
+              "note": "作者报告实测1.5%，模拟1.2%不混入。正文同名指标的max−min/mean公式按语境关联到实测，未复算；均值的数值未给。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "statistic": "author_reported_band_variation",
+              "calculation_origin": "authors",
+              "sample_wavelengths_nm": [
+                490,
+                500,
+                510,
+                520,
+                530,
+                540,
+                550
+              ],
+              "denominator": "mean(f)；同名指标公式的语境关联，实测均值未给",
+              "reference_wavelength_nm": null,
+              "reference_focal_um": null,
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "focal_spectral_sd_um": {
+              "value": 2.7,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.4a图注；arXiv v1 p.17 Fig.4a图注",
+              "note": "作者跨490–550nm焦距光谱SD，不是单个f的±2.7测量不确定度、DOF、RMS焦差或物理样品重复统计；ddof与重复数未知。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "statistic": "spectral_standard_deviation",
+              "calculation_origin": "authors",
+              "sample_wavelengths_nm": [
+                490,
+                500,
+                510,
+                520,
+                530,
+                540,
+                550
+              ],
+              "sample_unit": "wavelength",
+              "ddof": null,
+              "measurement_repeat_count": null,
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            }
+          }
+        },
+        {
+          "id": "khor2017_aml_490",
+          "model": "Khorasaninejad 2017 · D200μm AML · 490nm · 轴向/最佳焦斑 · arXiv v1印字",
+          "study_id": "khor2017",
+          "specimen_id": "aml_200",
+          "module": "",
+          "variant": "早期可见光反射式AML / 实测普通色散与仅模拟反色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一AML实测；三个f印字来自作者arXiv v1，固定像面PSF另行。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.2图注、p.1821设计/制备；arXiv v1 pp.5–6/15",
+              "note": "AML名义口径；不移给GML/反色散设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 485,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1821设计段；arXiv v1 p.5设计段",
+              "note": "设计相位使用f485μm；不是各λ实际最佳焦距，也不是实测均值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "na": {
+              "value": 0.2,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1821制备末段；arXiv v1 p.6",
+              "note": "作者由名义D200μm/f485μm给NA0.2；不是独立角度测量，也不取收集物镜NA0.28。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 490,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1819摘要/设计；arXiv v1 pp.1–2/17 Fig.4a",
+              "note": "作者连续工作带宽490–550nm；实际轴向PSF仅七个10nm间隔谱点，不称每个λ都测过。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "lambda_max_nm": {
+              "value": 550,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1819摘要/设计；arXiv v1 pp.1–2/17 Fig.4a",
+              "note": "工作带宽与七实测谱点、六个优化波长的数量分开；不反推优化谱点为实验谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 490,
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv v1 p.17 Fig.4a第1条波长标签",
+              "note": "实测轴向PSF谱点，不是优化六波长清单。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.1b/设计；arXiv v1 pp.5/14 Fig.1",
+              "note": "TiO2柱高600nm；SiO2 spacer180nm和Al镜110nm另记，不当器件含石英总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "material": {
+              "value": "反射式方柱TiO2 / SiO2 spacer180nm / Al110nm / fused silica；格点480nm",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820–1821 Fig.1/制备；arXiv v1 pp.4–6/14",
+              "note": "依方柱宽度实现色散工程/多2π相位；全波材料单元设计与Fresnel–Kirchhoff器件模拟分开，不把单元反射率当聚焦效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "polarization": {
+              "value": "方截面柱，作者称偏振不敏感；实际入射偏振/检出通道未明确核到",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820方柱设计段；arXiv v1 p.4",
+              "note": "不把结构对称声明当逐偏振验收，也不将几何相位GML对照的偏振条件借给AML。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "illumination": {
+              "value": "准直laser + 50:50 beamsplitter，反射聚焦",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1821–1822测量段/Fig.3d；arXiv v1 pp.7/16",
+              "note": "本轮所读主文未给光源型号/谱线宽；50:50是光路分束比例，不是透镜效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "psf_protocol": {
+              "value": "准直反射光由10×/NA0.28 Mitutoyo+f200mm tube lens、4×Olympus+f180mm tube lens至Andor Zyla sCMOS；总倍率40×，作者用已知尺寸物体验证。沿z实际步长2μm拼接xz强度。",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1821–1822测量段/Fig.3d；arXiv v1 pp.7/16–18",
+              "note": "平台最小移动100nm不是本次扫描步长；传感器像元/物方μm每像素、背景/裁剪/归一化和最佳峰位算法未齐。图4色标0–1但不等于已给完整归一化流程；图5固定面与最佳焦面分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "measured_focal_um": {
+              "value": 491,
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv:1701.06696v1 PDF p.18 Fig.5d右下角f印字",
+              "note": "作者稿明确f=491μm，非曲线估读或本库峰值重建；公开排版稿同印字，正式版图内未视觉复核，保留作者稿版本。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "491（arXiv v1印字）",
+              "reading_version": "arXiv:1701.06696v1"
+            },
+            "fwhm_x_um": {
+              "value": 1.29,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5图注，λ490nm horizontal / x项；arXiv v1 p.18 Fig.5d",
+              "note": "该λ最佳焦面f=491μm的horizontal / x切线宽度，来自作者图注印字，正式图注与作者稿一致；不是固定z485μm的宽度，不当S/T。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "fwhm_y_um": {
+              "value": 1.27,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5图注，λ490nm vertical / y项；arXiv v1 p.18 Fig.5d",
+              "note": "该λ最佳焦面f=491μm的vertical / y切线宽度，来自作者图注印字，正式图注与作者稿一致；不是固定z485μm的宽度，不当S/T。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "主文仅将聚焦效率影响指向Fig.S9；独立SI组件已核但内容403未取得",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1823讨论/Associated Content；arXiv v1 pp.8/10",
+              "note": "焦圈积分/功率分母、偏振通道、校准、实际谱点与误差未核，效率数值留空；不借其他论文约20%或单元反射率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017",
+                "khor_achromatic_si_2017"
+              ]
+            },
+            "mtf_curve": {
+              "value": "本轮主文/作者稿没有已核MTF或Strehl数表；SI内容仍待取得",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820–1823图2/4/5和文末；arXiv v1 pp.15/17–18",
+              "note": "图2x:Wavelength(nm), y:Focal length(μm)；图4z(mm)、色标0–1；图5标尺2μm不是原始数组采样。公开arXiv v1为主文/图，无原始PSF或数表；Crossref已证实独立SI组件，但期刊SI/作者站Chrome403，不能据此称数据未公开。DataCite精确关联仅1条本篇预印本、非原始数据集；GitHub仓库名称/描述精确DOI/题名无匹配，非全代码搜索。主文未核到原始数据获取声明，未联系作者；完整范围见docs/KHORASANINEJAD_2017_REVIEW_2026-11-14.md。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017",
+                "khor_achromatic_si_2017"
+              ]
+            },
+            "chromatic": {
+              "value": "最佳焦面f491μm；相对图5固定z485μm，本库计算焦差+6μm",
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv v1 p.18 Fig.5d及5a–c",
+              "note": "焦差仅对指定固定像面成立；不是相对530nm、不是作者逐λ焦移原表；FWHM属于各λ最佳焦斑。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14"
+            },
+            "axial_focus_offset_um": {
+              "value": 6,
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv v1 p.18 Fig.5d f印字与Fig.5a–c固定Z=485μm印字",
+              "note": "本库由作者印字计算f−z_ref=491−485=+6μm；参考是作者图5a–c固定评价面，不默认把设计f当实测参考。正值为最佳焦点z更大，非作者原始焦移数表；整数印字精度保留，不补不确定度。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "+6（本库计算）",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 485,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "作者Fig.5a–c固定z485μm评价面；不是参考波长"
+            }
+          }
+        },
+        {
+          "id": "khor2017_aml_500",
+          "model": "Khorasaninejad 2017 · D200μm AML · 500nm · 轴向/最佳焦斑",
+          "study_id": "khor2017",
+          "specimen_id": "aml_200",
+          "module": "",
+          "variant": "早期可见光反射式AML / 实测普通色散与仅模拟反色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一AML实测；三个f印字来自作者arXiv v1，固定像面PSF另行。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.2图注、p.1821设计/制备；arXiv v1 pp.5–6/15",
+              "note": "AML名义口径；不移给GML/反色散设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 485,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1821设计段；arXiv v1 p.5设计段",
+              "note": "设计相位使用f485μm；不是各λ实际最佳焦距，也不是实测均值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "na": {
+              "value": 0.2,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1821制备末段；arXiv v1 p.6",
+              "note": "作者由名义D200μm/f485μm给NA0.2；不是独立角度测量，也不取收集物镜NA0.28。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 490,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1819摘要/设计；arXiv v1 pp.1–2/17 Fig.4a",
+              "note": "作者连续工作带宽490–550nm；实际轴向PSF仅七个10nm间隔谱点，不称每个λ都测过。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "lambda_max_nm": {
+              "value": 550,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1819摘要/设计；arXiv v1 pp.1–2/17 Fig.4a",
+              "note": "工作带宽与七实测谱点、六个优化波长的数量分开；不反推优化谱点为实验谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 500,
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv v1 p.17 Fig.4a第2条波长标签",
+              "note": "实测轴向PSF谱点，不是优化六波长清单。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.1b/设计；arXiv v1 pp.5/14 Fig.1",
+              "note": "TiO2柱高600nm；SiO2 spacer180nm和Al镜110nm另记，不当器件含石英总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "material": {
+              "value": "反射式方柱TiO2 / SiO2 spacer180nm / Al110nm / fused silica；格点480nm",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820–1821 Fig.1/制备；arXiv v1 pp.4–6/14",
+              "note": "依方柱宽度实现色散工程/多2π相位；全波材料单元设计与Fresnel–Kirchhoff器件模拟分开，不把单元反射率当聚焦效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "polarization": {
+              "value": "方截面柱，作者称偏振不敏感；实际入射偏振/检出通道未明确核到",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820方柱设计段；arXiv v1 p.4",
+              "note": "不把结构对称声明当逐偏振验收，也不将几何相位GML对照的偏振条件借给AML。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "illumination": {
+              "value": "准直laser + 50:50 beamsplitter，反射聚焦",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1821–1822测量段/Fig.3d；arXiv v1 pp.7/16",
+              "note": "本轮所读主文未给光源型号/谱线宽；50:50是光路分束比例，不是透镜效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "psf_protocol": {
+              "value": "准直反射光由10×/NA0.28 Mitutoyo+f200mm tube lens、4×Olympus+f180mm tube lens至Andor Zyla sCMOS；总倍率40×，作者用已知尺寸物体验证。沿z实际步长2μm拼接xz强度。",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1821–1822测量段/Fig.3d；arXiv v1 pp.7/16–18",
+              "note": "平台最小移动100nm不是本次扫描步长；传感器像元/物方μm每像素、背景/裁剪/归一化和最佳峰位算法未齐。图4色标0–1但不等于已给完整归一化流程；图5固定面与最佳焦面分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.2实测曲线；arXiv v1 pp.15/17–18",
+              "note": "只有图5d/e/f三个印字f可确切录入；其余曲线不估点。图2称f485@530但未独立列实测530nm值，不用该设计/参考说明补点。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "逐λ原表缺；只录明确图内印字"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5图注；arXiv v1 p.18",
+              "note": "仅490/520/550nm最佳焦斑有水平切线FWHM印字；固定z485μm三图不借用这些宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "本条件未给方向数值"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5图注；arXiv v1 p.18",
+              "note": "vertical视为图像y/竖直方向，与horizontal/x分列；不是已定义弧矢/切向。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "本条件未给方向数值"
+            },
+            "efficiency_protocol": {
+              "value": "主文仅将聚焦效率影响指向Fig.S9；独立SI组件已核但内容403未取得",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1823讨论/Associated Content；arXiv v1 pp.8/10",
+              "note": "焦圈积分/功率分母、偏振通道、校准、实际谱点与误差未核，效率数值留空；不借其他论文约20%或单元反射率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017",
+                "khor_achromatic_si_2017"
+              ]
+            },
+            "mtf_curve": {
+              "value": "本轮主文/作者稿没有已核MTF或Strehl数表；SI内容仍待取得",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820–1823图2/4/5和文末；arXiv v1 pp.15/17–18",
+              "note": "图2x:Wavelength(nm), y:Focal length(μm)；图4z(mm)、色标0–1；图5标尺2μm不是原始数组采样。公开arXiv v1为主文/图，无原始PSF或数表；Crossref已证实独立SI组件，但期刊SI/作者站Chrome403，不能据此称数据未公开。DataCite精确关联仅1条本篇预印本、非原始数据集；GitHub仓库名称/描述精确DOI/题名无匹配，非全代码搜索。主文未核到原始数据获取声明，未联系作者；完整范围见docs/KHORASANINEJAD_2017_REVIEW_2026-11-14.md。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017",
+                "khor_achromatic_si_2017"
+              ]
+            },
+            "chromatic": {
+              "value": "连续490–550nm设计/工作带宽，7谱点实测；作者1.5%焦距variation及光谱SD2.7μm另列",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820/1822 Fig.2/4；arXiv v1 pp.15/17",
+              "note": "有残余色差，不填零焦移；轴向实测不证明全场无横向色差。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            }
+          }
+        },
+        {
+          "id": "khor2017_aml_510",
+          "model": "Khorasaninejad 2017 · D200μm AML · 510nm · 轴向/最佳焦斑",
+          "study_id": "khor2017",
+          "specimen_id": "aml_200",
+          "module": "",
+          "variant": "早期可见光反射式AML / 实测普通色散与仅模拟反色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一AML实测；三个f印字来自作者arXiv v1，固定像面PSF另行。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.2图注、p.1821设计/制备；arXiv v1 pp.5–6/15",
+              "note": "AML名义口径；不移给GML/反色散设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 485,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1821设计段；arXiv v1 p.5设计段",
+              "note": "设计相位使用f485μm；不是各λ实际最佳焦距，也不是实测均值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "na": {
+              "value": 0.2,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1821制备末段；arXiv v1 p.6",
+              "note": "作者由名义D200μm/f485μm给NA0.2；不是独立角度测量，也不取收集物镜NA0.28。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 490,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1819摘要/设计；arXiv v1 pp.1–2/17 Fig.4a",
+              "note": "作者连续工作带宽490–550nm；实际轴向PSF仅七个10nm间隔谱点，不称每个λ都测过。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "lambda_max_nm": {
+              "value": 550,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1819摘要/设计；arXiv v1 pp.1–2/17 Fig.4a",
+              "note": "工作带宽与七实测谱点、六个优化波长的数量分开；不反推优化谱点为实验谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 510,
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv v1 p.17 Fig.4a第3条波长标签",
+              "note": "实测轴向PSF谱点，不是优化六波长清单。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.1b/设计；arXiv v1 pp.5/14 Fig.1",
+              "note": "TiO2柱高600nm；SiO2 spacer180nm和Al镜110nm另记，不当器件含石英总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "material": {
+              "value": "反射式方柱TiO2 / SiO2 spacer180nm / Al110nm / fused silica；格点480nm",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820–1821 Fig.1/制备；arXiv v1 pp.4–6/14",
+              "note": "依方柱宽度实现色散工程/多2π相位；全波材料单元设计与Fresnel–Kirchhoff器件模拟分开，不把单元反射率当聚焦效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "polarization": {
+              "value": "方截面柱，作者称偏振不敏感；实际入射偏振/检出通道未明确核到",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820方柱设计段；arXiv v1 p.4",
+              "note": "不把结构对称声明当逐偏振验收，也不将几何相位GML对照的偏振条件借给AML。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "illumination": {
+              "value": "准直laser + 50:50 beamsplitter，反射聚焦",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1821–1822测量段/Fig.3d；arXiv v1 pp.7/16",
+              "note": "本轮所读主文未给光源型号/谱线宽；50:50是光路分束比例，不是透镜效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "psf_protocol": {
+              "value": "准直反射光由10×/NA0.28 Mitutoyo+f200mm tube lens、4×Olympus+f180mm tube lens至Andor Zyla sCMOS；总倍率40×，作者用已知尺寸物体验证。沿z实际步长2μm拼接xz强度。",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1821–1822测量段/Fig.3d；arXiv v1 pp.7/16–18",
+              "note": "平台最小移动100nm不是本次扫描步长；传感器像元/物方μm每像素、背景/裁剪/归一化和最佳峰位算法未齐。图4色标0–1但不等于已给完整归一化流程；图5固定面与最佳焦面分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.2实测曲线；arXiv v1 pp.15/17–18",
+              "note": "只有图5d/e/f三个印字f可确切录入；其余曲线不估点。图2称f485@530但未独立列实测530nm值，不用该设计/参考说明补点。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "逐λ原表缺；只录明确图内印字"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5图注；arXiv v1 p.18",
+              "note": "仅490/520/550nm最佳焦斑有水平切线FWHM印字；固定z485μm三图不借用这些宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "本条件未给方向数值"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5图注；arXiv v1 p.18",
+              "note": "vertical视为图像y/竖直方向，与horizontal/x分列；不是已定义弧矢/切向。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "本条件未给方向数值"
+            },
+            "efficiency_protocol": {
+              "value": "主文仅将聚焦效率影响指向Fig.S9；独立SI组件已核但内容403未取得",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1823讨论/Associated Content；arXiv v1 pp.8/10",
+              "note": "焦圈积分/功率分母、偏振通道、校准、实际谱点与误差未核，效率数值留空；不借其他论文约20%或单元反射率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017",
+                "khor_achromatic_si_2017"
+              ]
+            },
+            "mtf_curve": {
+              "value": "本轮主文/作者稿没有已核MTF或Strehl数表；SI内容仍待取得",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820–1823图2/4/5和文末；arXiv v1 pp.15/17–18",
+              "note": "图2x:Wavelength(nm), y:Focal length(μm)；图4z(mm)、色标0–1；图5标尺2μm不是原始数组采样。公开arXiv v1为主文/图，无原始PSF或数表；Crossref已证实独立SI组件，但期刊SI/作者站Chrome403，不能据此称数据未公开。DataCite精确关联仅1条本篇预印本、非原始数据集；GitHub仓库名称/描述精确DOI/题名无匹配，非全代码搜索。主文未核到原始数据获取声明，未联系作者；完整范围见docs/KHORASANINEJAD_2017_REVIEW_2026-11-14.md。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017",
+                "khor_achromatic_si_2017"
+              ]
+            },
+            "chromatic": {
+              "value": "连续490–550nm设计/工作带宽，7谱点实测；作者1.5%焦距variation及光谱SD2.7μm另列",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820/1822 Fig.2/4；arXiv v1 pp.15/17",
+              "note": "有残余色差，不填零焦移；轴向实测不证明全场无横向色差。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            }
+          }
+        },
+        {
+          "id": "khor2017_aml_520",
+          "model": "Khorasaninejad 2017 · D200μm AML · 520nm · 轴向/最佳焦斑 · arXiv v1印字",
+          "study_id": "khor2017",
+          "specimen_id": "aml_200",
+          "module": "",
+          "variant": "早期可见光反射式AML / 实测普通色散与仅模拟反色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一AML实测；三个f印字来自作者arXiv v1，固定像面PSF另行。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.2图注、p.1821设计/制备；arXiv v1 pp.5–6/15",
+              "note": "AML名义口径；不移给GML/反色散设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 485,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1821设计段；arXiv v1 p.5设计段",
+              "note": "设计相位使用f485μm；不是各λ实际最佳焦距，也不是实测均值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "na": {
+              "value": 0.2,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1821制备末段；arXiv v1 p.6",
+              "note": "作者由名义D200μm/f485μm给NA0.2；不是独立角度测量，也不取收集物镜NA0.28。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 490,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1819摘要/设计；arXiv v1 pp.1–2/17 Fig.4a",
+              "note": "作者连续工作带宽490–550nm；实际轴向PSF仅七个10nm间隔谱点，不称每个λ都测过。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "lambda_max_nm": {
+              "value": 550,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1819摘要/设计；arXiv v1 pp.1–2/17 Fig.4a",
+              "note": "工作带宽与七实测谱点、六个优化波长的数量分开；不反推优化谱点为实验谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 520,
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv v1 p.17 Fig.4a第4条波长标签",
+              "note": "实测轴向PSF谱点，不是优化六波长清单。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.1b/设计；arXiv v1 pp.5/14 Fig.1",
+              "note": "TiO2柱高600nm；SiO2 spacer180nm和Al镜110nm另记，不当器件含石英总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "material": {
+              "value": "反射式方柱TiO2 / SiO2 spacer180nm / Al110nm / fused silica；格点480nm",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820–1821 Fig.1/制备；arXiv v1 pp.4–6/14",
+              "note": "依方柱宽度实现色散工程/多2π相位；全波材料单元设计与Fresnel–Kirchhoff器件模拟分开，不把单元反射率当聚焦效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "polarization": {
+              "value": "方截面柱，作者称偏振不敏感；实际入射偏振/检出通道未明确核到",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820方柱设计段；arXiv v1 p.4",
+              "note": "不把结构对称声明当逐偏振验收，也不将几何相位GML对照的偏振条件借给AML。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "illumination": {
+              "value": "准直laser + 50:50 beamsplitter，反射聚焦",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1821–1822测量段/Fig.3d；arXiv v1 pp.7/16",
+              "note": "本轮所读主文未给光源型号/谱线宽；50:50是光路分束比例，不是透镜效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "psf_protocol": {
+              "value": "准直反射光由10×/NA0.28 Mitutoyo+f200mm tube lens、4×Olympus+f180mm tube lens至Andor Zyla sCMOS；总倍率40×，作者用已知尺寸物体验证。沿z实际步长2μm拼接xz强度。",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1821–1822测量段/Fig.3d；arXiv v1 pp.7/16–18",
+              "note": "平台最小移动100nm不是本次扫描步长；传感器像元/物方μm每像素、背景/裁剪/归一化和最佳峰位算法未齐。图4色标0–1但不等于已给完整归一化流程；图5固定面与最佳焦面分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "measured_focal_um": {
+              "value": 483,
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv:1701.06696v1 PDF p.18 Fig.5e右下角f印字",
+              "note": "作者稿明确f=483μm，非曲线估读或本库峰值重建；公开排版稿同印字，正式版图内未视觉复核，保留作者稿版本。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "483（arXiv v1印字）",
+              "reading_version": "arXiv:1701.06696v1"
+            },
+            "fwhm_x_um": {
+              "value": 1.45,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5图注，λ520nm horizontal / x项；arXiv v1 p.18 Fig.5e",
+              "note": "该λ最佳焦面f=483μm的horizontal / x切线宽度，来自作者图注印字，正式图注与作者稿一致；不是固定z485μm的宽度，不当S/T。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "fwhm_y_um": {
+              "value": 1.52,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5图注，λ520nm vertical / y项；arXiv v1 p.18 Fig.5e",
+              "note": "该λ最佳焦面f=483μm的vertical / y切线宽度，来自作者图注印字，正式图注与作者稿一致；不是固定z485μm的宽度，不当S/T。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "主文仅将聚焦效率影响指向Fig.S9；独立SI组件已核但内容403未取得",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1823讨论/Associated Content；arXiv v1 pp.8/10",
+              "note": "焦圈积分/功率分母、偏振通道、校准、实际谱点与误差未核，效率数值留空；不借其他论文约20%或单元反射率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017",
+                "khor_achromatic_si_2017"
+              ]
+            },
+            "mtf_curve": {
+              "value": "本轮主文/作者稿没有已核MTF或Strehl数表；SI内容仍待取得",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820–1823图2/4/5和文末；arXiv v1 pp.15/17–18",
+              "note": "图2x:Wavelength(nm), y:Focal length(μm)；图4z(mm)、色标0–1；图5标尺2μm不是原始数组采样。公开arXiv v1为主文/图，无原始PSF或数表；Crossref已证实独立SI组件，但期刊SI/作者站Chrome403，不能据此称数据未公开。DataCite精确关联仅1条本篇预印本、非原始数据集；GitHub仓库名称/描述精确DOI/题名无匹配，非全代码搜索。主文未核到原始数据获取声明，未联系作者；完整范围见docs/KHORASANINEJAD_2017_REVIEW_2026-11-14.md。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017",
+                "khor_achromatic_si_2017"
+              ]
+            },
+            "chromatic": {
+              "value": "最佳焦面f483μm；相对图5固定z485μm，本库计算焦差-2μm",
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv v1 p.18 Fig.5e及5a–c",
+              "note": "焦差仅对指定固定像面成立；不是相对530nm、不是作者逐λ焦移原表；FWHM属于各λ最佳焦斑。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14"
+            },
+            "axial_focus_offset_um": {
+              "value": -2,
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv v1 p.18 Fig.5e f印字与Fig.5a–c固定Z=485μm印字",
+              "note": "本库由作者印字计算f−z_ref=483−485=-2μm；参考是作者图5a–c固定评价面，不默认把设计f当实测参考。正值为最佳焦点z更大，非作者原始焦移数表；整数印字精度保留，不补不确定度。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "-2（本库计算）",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 485,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "作者Fig.5a–c固定z485μm评价面；不是参考波长"
+            }
+          }
+        },
+        {
+          "id": "khor2017_aml_530",
+          "model": "Khorasaninejad 2017 · D200μm AML · 530nm · 轴向/最佳焦斑",
+          "study_id": "khor2017",
+          "specimen_id": "aml_200",
+          "module": "",
+          "variant": "早期可见光反射式AML / 实测普通色散与仅模拟反色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一AML实测；三个f印字来自作者arXiv v1，固定像面PSF另行。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.2图注、p.1821设计/制备；arXiv v1 pp.5–6/15",
+              "note": "AML名义口径；不移给GML/反色散设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 485,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1821设计段；arXiv v1 p.5设计段",
+              "note": "设计相位使用f485μm；不是各λ实际最佳焦距，也不是实测均值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "na": {
+              "value": 0.2,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1821制备末段；arXiv v1 p.6",
+              "note": "作者由名义D200μm/f485μm给NA0.2；不是独立角度测量，也不取收集物镜NA0.28。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 490,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1819摘要/设计；arXiv v1 pp.1–2/17 Fig.4a",
+              "note": "作者连续工作带宽490–550nm；实际轴向PSF仅七个10nm间隔谱点，不称每个λ都测过。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "lambda_max_nm": {
+              "value": 550,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1819摘要/设计；arXiv v1 pp.1–2/17 Fig.4a",
+              "note": "工作带宽与七实测谱点、六个优化波长的数量分开；不反推优化谱点为实验谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv v1 p.17 Fig.4a第5条波长标签",
+              "note": "实测轴向PSF谱点，不是优化六波长清单。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.1b/设计；arXiv v1 pp.5/14 Fig.1",
+              "note": "TiO2柱高600nm；SiO2 spacer180nm和Al镜110nm另记，不当器件含石英总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "material": {
+              "value": "反射式方柱TiO2 / SiO2 spacer180nm / Al110nm / fused silica；格点480nm",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820–1821 Fig.1/制备；arXiv v1 pp.4–6/14",
+              "note": "依方柱宽度实现色散工程/多2π相位；全波材料单元设计与Fresnel–Kirchhoff器件模拟分开，不把单元反射率当聚焦效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "polarization": {
+              "value": "方截面柱，作者称偏振不敏感；实际入射偏振/检出通道未明确核到",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820方柱设计段；arXiv v1 p.4",
+              "note": "不把结构对称声明当逐偏振验收，也不将几何相位GML对照的偏振条件借给AML。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "illumination": {
+              "value": "准直laser + 50:50 beamsplitter，反射聚焦",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1821–1822测量段/Fig.3d；arXiv v1 pp.7/16",
+              "note": "本轮所读主文未给光源型号/谱线宽；50:50是光路分束比例，不是透镜效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "psf_protocol": {
+              "value": "准直反射光由10×/NA0.28 Mitutoyo+f200mm tube lens、4×Olympus+f180mm tube lens至Andor Zyla sCMOS；总倍率40×，作者用已知尺寸物体验证。沿z实际步长2μm拼接xz强度。",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1821–1822测量段/Fig.3d；arXiv v1 pp.7/16–18",
+              "note": "平台最小移动100nm不是本次扫描步长；传感器像元/物方μm每像素、背景/裁剪/归一化和最佳峰位算法未齐。图4色标0–1但不等于已给完整归一化流程；图5固定面与最佳焦面分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.2实测曲线；arXiv v1 pp.15/17–18",
+              "note": "只有图5d/e/f三个印字f可确切录入；其余曲线不估点。图2称f485@530但未独立列实测530nm值，不用该设计/参考说明补点。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "逐λ原表缺；只录明确图内印字"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5图注；arXiv v1 p.18",
+              "note": "仅490/520/550nm最佳焦斑有水平切线FWHM印字；固定z485μm三图不借用这些宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "本条件未给方向数值"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5图注；arXiv v1 p.18",
+              "note": "vertical视为图像y/竖直方向，与horizontal/x分列；不是已定义弧矢/切向。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "本条件未给方向数值"
+            },
+            "efficiency_protocol": {
+              "value": "主文仅将聚焦效率影响指向Fig.S9；独立SI组件已核但内容403未取得",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1823讨论/Associated Content；arXiv v1 pp.8/10",
+              "note": "焦圈积分/功率分母、偏振通道、校准、实际谱点与误差未核，效率数值留空；不借其他论文约20%或单元反射率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017",
+                "khor_achromatic_si_2017"
+              ]
+            },
+            "mtf_curve": {
+              "value": "本轮主文/作者稿没有已核MTF或Strehl数表；SI内容仍待取得",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820–1823图2/4/5和文末；arXiv v1 pp.15/17–18",
+              "note": "图2x:Wavelength(nm), y:Focal length(μm)；图4z(mm)、色标0–1；图5标尺2μm不是原始数组采样。公开arXiv v1为主文/图，无原始PSF或数表；Crossref已证实独立SI组件，但期刊SI/作者站Chrome403，不能据此称数据未公开。DataCite精确关联仅1条本篇预印本、非原始数据集；GitHub仓库名称/描述精确DOI/题名无匹配，非全代码搜索。主文未核到原始数据获取声明，未联系作者；完整范围见docs/KHORASANINEJAD_2017_REVIEW_2026-11-14.md。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017",
+                "khor_achromatic_si_2017"
+              ]
+            },
+            "chromatic": {
+              "value": "连续490–550nm设计/工作带宽，7谱点实测；作者1.5%焦距variation及光谱SD2.7μm另列",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820/1822 Fig.2/4；arXiv v1 pp.15/17",
+              "note": "有残余色差，不填零焦移；轴向实测不证明全场无横向色差。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            }
+          }
+        },
+        {
+          "id": "khor2017_aml_540",
+          "model": "Khorasaninejad 2017 · D200μm AML · 540nm · 轴向/最佳焦斑",
+          "study_id": "khor2017",
+          "specimen_id": "aml_200",
+          "module": "",
+          "variant": "早期可见光反射式AML / 实测普通色散与仅模拟反色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一AML实测；三个f印字来自作者arXiv v1，固定像面PSF另行。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.2图注、p.1821设计/制备；arXiv v1 pp.5–6/15",
+              "note": "AML名义口径；不移给GML/反色散设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 485,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1821设计段；arXiv v1 p.5设计段",
+              "note": "设计相位使用f485μm；不是各λ实际最佳焦距，也不是实测均值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "na": {
+              "value": 0.2,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1821制备末段；arXiv v1 p.6",
+              "note": "作者由名义D200μm/f485μm给NA0.2；不是独立角度测量，也不取收集物镜NA0.28。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 490,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1819摘要/设计；arXiv v1 pp.1–2/17 Fig.4a",
+              "note": "作者连续工作带宽490–550nm；实际轴向PSF仅七个10nm间隔谱点，不称每个λ都测过。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "lambda_max_nm": {
+              "value": 550,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1819摘要/设计；arXiv v1 pp.1–2/17 Fig.4a",
+              "note": "工作带宽与七实测谱点、六个优化波长的数量分开；不反推优化谱点为实验谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 540,
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv v1 p.17 Fig.4a第6条波长标签",
+              "note": "实测轴向PSF谱点，不是优化六波长清单。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.1b/设计；arXiv v1 pp.5/14 Fig.1",
+              "note": "TiO2柱高600nm；SiO2 spacer180nm和Al镜110nm另记，不当器件含石英总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "material": {
+              "value": "反射式方柱TiO2 / SiO2 spacer180nm / Al110nm / fused silica；格点480nm",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820–1821 Fig.1/制备；arXiv v1 pp.4–6/14",
+              "note": "依方柱宽度实现色散工程/多2π相位；全波材料单元设计与Fresnel–Kirchhoff器件模拟分开，不把单元反射率当聚焦效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "polarization": {
+              "value": "方截面柱，作者称偏振不敏感；实际入射偏振/检出通道未明确核到",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820方柱设计段；arXiv v1 p.4",
+              "note": "不把结构对称声明当逐偏振验收，也不将几何相位GML对照的偏振条件借给AML。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "illumination": {
+              "value": "准直laser + 50:50 beamsplitter，反射聚焦",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1821–1822测量段/Fig.3d；arXiv v1 pp.7/16",
+              "note": "本轮所读主文未给光源型号/谱线宽；50:50是光路分束比例，不是透镜效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "psf_protocol": {
+              "value": "准直反射光由10×/NA0.28 Mitutoyo+f200mm tube lens、4×Olympus+f180mm tube lens至Andor Zyla sCMOS；总倍率40×，作者用已知尺寸物体验证。沿z实际步长2μm拼接xz强度。",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1821–1822测量段/Fig.3d；arXiv v1 pp.7/16–18",
+              "note": "平台最小移动100nm不是本次扫描步长；传感器像元/物方μm每像素、背景/裁剪/归一化和最佳峰位算法未齐。图4色标0–1但不等于已给完整归一化流程；图5固定面与最佳焦面分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.2实测曲线；arXiv v1 pp.15/17–18",
+              "note": "只有图5d/e/f三个印字f可确切录入；其余曲线不估点。图2称f485@530但未独立列实测530nm值，不用该设计/参考说明补点。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "逐λ原表缺；只录明确图内印字"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5图注；arXiv v1 p.18",
+              "note": "仅490/520/550nm最佳焦斑有水平切线FWHM印字；固定z485μm三图不借用这些宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "本条件未给方向数值"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5图注；arXiv v1 p.18",
+              "note": "vertical视为图像y/竖直方向，与horizontal/x分列；不是已定义弧矢/切向。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "本条件未给方向数值"
+            },
+            "efficiency_protocol": {
+              "value": "主文仅将聚焦效率影响指向Fig.S9；独立SI组件已核但内容403未取得",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1823讨论/Associated Content；arXiv v1 pp.8/10",
+              "note": "焦圈积分/功率分母、偏振通道、校准、实际谱点与误差未核，效率数值留空；不借其他论文约20%或单元反射率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017",
+                "khor_achromatic_si_2017"
+              ]
+            },
+            "mtf_curve": {
+              "value": "本轮主文/作者稿没有已核MTF或Strehl数表；SI内容仍待取得",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820–1823图2/4/5和文末；arXiv v1 pp.15/17–18",
+              "note": "图2x:Wavelength(nm), y:Focal length(μm)；图4z(mm)、色标0–1；图5标尺2μm不是原始数组采样。公开arXiv v1为主文/图，无原始PSF或数表；Crossref已证实独立SI组件，但期刊SI/作者站Chrome403，不能据此称数据未公开。DataCite精确关联仅1条本篇预印本、非原始数据集；GitHub仓库名称/描述精确DOI/题名无匹配，非全代码搜索。主文未核到原始数据获取声明，未联系作者；完整范围见docs/KHORASANINEJAD_2017_REVIEW_2026-11-14.md。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017",
+                "khor_achromatic_si_2017"
+              ]
+            },
+            "chromatic": {
+              "value": "连续490–550nm设计/工作带宽，7谱点实测；作者1.5%焦距variation及光谱SD2.7μm另列",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820/1822 Fig.2/4；arXiv v1 pp.15/17",
+              "note": "有残余色差，不填零焦移；轴向实测不证明全场无横向色差。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            }
+          }
+        },
+        {
+          "id": "khor2017_aml_550",
+          "model": "Khorasaninejad 2017 · D200μm AML · 550nm · 轴向/最佳焦斑 · arXiv v1印字",
+          "study_id": "khor2017",
+          "specimen_id": "aml_200",
+          "module": "",
+          "variant": "早期可见光反射式AML / 实测普通色散与仅模拟反色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一AML实测；三个f印字来自作者arXiv v1，固定像面PSF另行。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.2图注、p.1821设计/制备；arXiv v1 pp.5–6/15",
+              "note": "AML名义口径；不移给GML/反色散设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 485,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1821设计段；arXiv v1 p.5设计段",
+              "note": "设计相位使用f485μm；不是各λ实际最佳焦距，也不是实测均值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "na": {
+              "value": 0.2,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1821制备末段；arXiv v1 p.6",
+              "note": "作者由名义D200μm/f485μm给NA0.2；不是独立角度测量，也不取收集物镜NA0.28。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 490,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1819摘要/设计；arXiv v1 pp.1–2/17 Fig.4a",
+              "note": "作者连续工作带宽490–550nm；实际轴向PSF仅七个10nm间隔谱点，不称每个λ都测过。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "lambda_max_nm": {
+              "value": 550,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1819摘要/设计；arXiv v1 pp.1–2/17 Fig.4a",
+              "note": "工作带宽与七实测谱点、六个优化波长的数量分开；不反推优化谱点为实验谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 550,
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv v1 p.17 Fig.4a第7条波长标签",
+              "note": "实测轴向PSF谱点，不是优化六波长清单。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.1b/设计；arXiv v1 pp.5/14 Fig.1",
+              "note": "TiO2柱高600nm；SiO2 spacer180nm和Al镜110nm另记，不当器件含石英总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "material": {
+              "value": "反射式方柱TiO2 / SiO2 spacer180nm / Al110nm / fused silica；格点480nm",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820–1821 Fig.1/制备；arXiv v1 pp.4–6/14",
+              "note": "依方柱宽度实现色散工程/多2π相位；全波材料单元设计与Fresnel–Kirchhoff器件模拟分开，不把单元反射率当聚焦效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "polarization": {
+              "value": "方截面柱，作者称偏振不敏感；实际入射偏振/检出通道未明确核到",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820方柱设计段；arXiv v1 p.4",
+              "note": "不把结构对称声明当逐偏振验收，也不将几何相位GML对照的偏振条件借给AML。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "illumination": {
+              "value": "准直laser + 50:50 beamsplitter，反射聚焦",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1821–1822测量段/Fig.3d；arXiv v1 pp.7/16",
+              "note": "本轮所读主文未给光源型号/谱线宽；50:50是光路分束比例，不是透镜效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "psf_protocol": {
+              "value": "准直反射光由10×/NA0.28 Mitutoyo+f200mm tube lens、4×Olympus+f180mm tube lens至Andor Zyla sCMOS；总倍率40×，作者用已知尺寸物体验证。沿z实际步长2μm拼接xz强度。",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1821–1822测量段/Fig.3d；arXiv v1 pp.7/16–18",
+              "note": "平台最小移动100nm不是本次扫描步长；传感器像元/物方μm每像素、背景/裁剪/归一化和最佳峰位算法未齐。图4色标0–1但不等于已给完整归一化流程；图5固定面与最佳焦面分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "measured_focal_um": {
+              "value": 485,
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv:1701.06696v1 PDF p.18 Fig.5f右下角f印字",
+              "note": "作者稿明确f=485μm，非曲线估读或本库峰值重建；公开排版稿同印字，正式版图内未视觉复核，保留作者稿版本。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "485（arXiv v1印字）",
+              "reading_version": "arXiv:1701.06696v1"
+            },
+            "fwhm_x_um": {
+              "value": 1.59,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5图注，λ550nm horizontal / x项；arXiv v1 p.18 Fig.5f",
+              "note": "该λ最佳焦面f=485μm的horizontal / x切线宽度，来自作者图注印字，正式图注与作者稿一致；不是固定z485μm的宽度，不当S/T。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "fwhm_y_um": {
+              "value": 1.68,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5图注，λ550nm vertical / y项；arXiv v1 p.18 Fig.5f",
+              "note": "该λ最佳焦面f=485μm的vertical / y切线宽度，来自作者图注印字，正式图注与作者稿一致；不是固定z485μm的宽度，不当S/T。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "主文仅将聚焦效率影响指向Fig.S9；独立SI组件已核但内容403未取得",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1823讨论/Associated Content；arXiv v1 pp.8/10",
+              "note": "焦圈积分/功率分母、偏振通道、校准、实际谱点与误差未核，效率数值留空；不借其他论文约20%或单元反射率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017",
+                "khor_achromatic_si_2017"
+              ]
+            },
+            "mtf_curve": {
+              "value": "本轮主文/作者稿没有已核MTF或Strehl数表；SI内容仍待取得",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820–1823图2/4/5和文末；arXiv v1 pp.15/17–18",
+              "note": "图2x:Wavelength(nm), y:Focal length(μm)；图4z(mm)、色标0–1；图5标尺2μm不是原始数组采样。公开arXiv v1为主文/图，无原始PSF或数表；Crossref已证实独立SI组件，但期刊SI/作者站Chrome403，不能据此称数据未公开。DataCite精确关联仅1条本篇预印本、非原始数据集；GitHub仓库名称/描述精确DOI/题名无匹配，非全代码搜索。主文未核到原始数据获取声明，未联系作者；完整范围见docs/KHORASANINEJAD_2017_REVIEW_2026-11-14.md。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017",
+                "khor_achromatic_si_2017"
+              ]
+            },
+            "chromatic": {
+              "value": "最佳焦面f485μm；相对图5固定z485μm，本库计算焦差+0μm",
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv v1 p.18 Fig.5f及5a–c",
+              "note": "焦差仅对指定固定像面成立；不是相对530nm、不是作者逐λ焦移原表；FWHM属于各λ最佳焦斑。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14"
+            },
+            "axial_focus_offset_um": {
+              "value": 0,
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv v1 p.18 Fig.5f f印字与Fig.5a–c固定Z=485μm印字",
+              "note": "本库由作者印字计算f−z_ref=485−485=+0μm；参考是作者图5a–c固定评价面，不默认把设计f当实测参考。正值为最佳焦点z更大，非作者原始焦移数表；整数印字精度保留，不补不确定度。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "+0（本库计算）",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 485,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "作者Fig.5a–c固定z485μm评价面；不是参考波长"
+            }
+          }
+        },
+        {
+          "id": "khor2017_fixed_490",
+          "model": "Khorasaninejad 2017 · D200μm AML · 490nm · 固定z485面",
+          "study_id": "khor2017",
+          "specimen_id": "aml_200",
+          "module": "",
+          "variant": "早期可见光反射式AML / 实测普通色散与仅模拟反色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一AML的固定像面PSF，与逐λ最佳焦斑/轴向扫描分测量记录。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.2图注、p.1821设计/制备；arXiv v1 pp.5–6/15",
+              "note": "AML名义口径；不移给GML/反色散设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 485,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1821设计段；arXiv v1 p.5设计段",
+              "note": "设计相位使用f485μm；不是各λ实际最佳焦距，也不是实测均值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "na": {
+              "value": 0.2,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1821制备末段；arXiv v1 p.6",
+              "note": "作者由名义D200μm/f485μm给NA0.2；不是独立角度测量，也不取收集物镜NA0.28。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 490,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1819摘要/设计；arXiv v1 pp.1–2/17 Fig.4a",
+              "note": "作者连续工作带宽490–550nm；实际轴向PSF仅七个10nm间隔谱点，不称每个λ都测过。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "lambda_max_nm": {
+              "value": 550,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1819摘要/设计；arXiv v1 pp.1–2/17 Fig.4a",
+              "note": "工作带宽与七实测谱点、六个优化波长的数量分开；不反推优化谱点为实验谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 490,
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv v1 p.18 Fig.5aλ印字",
+              "note": "固定z485μm评价面；本行不重复最佳f/FWHM/焦差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.1b/设计；arXiv v1 pp.5/14 Fig.1",
+              "note": "TiO2柱高600nm；SiO2 spacer180nm和Al镜110nm另记，不当器件含石英总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "material": {
+              "value": "反射式方柱TiO2 / SiO2 spacer180nm / Al110nm / fused silica；格点480nm",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820–1821 Fig.1/制备；arXiv v1 pp.4–6/14",
+              "note": "依方柱宽度实现色散工程/多2π相位；全波材料单元设计与Fresnel–Kirchhoff器件模拟分开，不把单元反射率当聚焦效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "polarization": {
+              "value": "方截面柱，作者称偏振不敏感；实际入射偏振/检出通道未明确核到",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820方柱设计段；arXiv v1 p.4",
+              "note": "不把结构对称声明当逐偏振验收，也不将几何相位GML对照的偏振条件借给AML。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "illumination": {
+              "value": "准直laser + 50:50 beamsplitter，反射聚焦",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1821–1822测量段/Fig.3d；arXiv v1 pp.7/16",
+              "note": "本轮所读主文未给光源型号/谱线宽；50:50是光路分束比例，不是透镜效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "psf_protocol": {
+              "value": "Fig.5a固定z485μm的490nm实测PSF；2μm图中标尺/0–1色标",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5上排图注；arXiv v1 p.18 Fig.5a",
+              "note": "不将下排最佳焦斑宽度复制到本行；原始数组、像素采样、归一化/背景流程与固定面MTF仍缺。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv v1 p.18 Fig.5a Z=485μm印字",
+              "note": "Z485是固定传感器/评价面位置，不是该λ最佳焦距；同λ最佳焦斑在下排，单独记录。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "固定Z485；非最佳焦距"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5图注；arXiv v1 p.18",
+              "note": "仅490/520/550nm最佳焦斑有水平切线FWHM印字；固定z485μm三图不借用这些宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "本条件未给方向数值"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5图注；arXiv v1 p.18",
+              "note": "vertical视为图像y/竖直方向，与horizontal/x分列；不是已定义弧矢/切向。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "本条件未给方向数值"
+            },
+            "efficiency_protocol": {
+              "value": "主文仅将聚焦效率影响指向Fig.S9；独立SI组件已核但内容403未取得",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1823讨论/Associated Content；arXiv v1 pp.8/10",
+              "note": "焦圈积分/功率分母、偏振通道、校准、实际谱点与误差未核，效率数值留空；不借其他论文约20%或单元反射率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017",
+                "khor_achromatic_si_2017"
+              ]
+            },
+            "mtf_curve": {
+              "value": "本轮主文/作者稿没有已核MTF或Strehl数表；SI内容仍待取得",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820–1823图2/4/5和文末；arXiv v1 pp.15/17–18",
+              "note": "图2x:Wavelength(nm), y:Focal length(μm)；图4z(mm)、色标0–1；图5标尺2μm不是原始数组采样。公开arXiv v1为主文/图，无原始PSF或数表；Crossref已证实独立SI组件，但期刊SI/作者站Chrome403，不能据此称数据未公开。DataCite精确关联仅1条本篇预印本、非原始数据集；GitHub仓库名称/描述精确DOI/题名无匹配，非全代码搜索。主文未核到原始数据获取声明，未联系作者；完整范围见docs/KHORASANINEJAD_2017_REVIEW_2026-11-14.md。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017",
+                "khor_achromatic_si_2017"
+              ]
+            },
+            "chromatic": {
+              "value": "固定z485μm PSF可视比较；未量化MTF/效率损失",
+              "source": "khor_achromatic_2017",
+              "location": "arXiv v1 p.18 Fig.5a；正式p.1823对应讨论",
+              "note": "不同λ最佳焦点不完全在该面；图像“接近”不等于已测零焦移/零横向色差。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            }
+          }
+        },
+        {
+          "id": "khor2017_fixed_520",
+          "model": "Khorasaninejad 2017 · D200μm AML · 520nm · 固定z485面",
+          "study_id": "khor2017",
+          "specimen_id": "aml_200",
+          "module": "",
+          "variant": "早期可见光反射式AML / 实测普通色散与仅模拟反色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一AML的固定像面PSF，与逐λ最佳焦斑/轴向扫描分测量记录。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.2图注、p.1821设计/制备；arXiv v1 pp.5–6/15",
+              "note": "AML名义口径；不移给GML/反色散设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 485,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1821设计段；arXiv v1 p.5设计段",
+              "note": "设计相位使用f485μm；不是各λ实际最佳焦距，也不是实测均值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "na": {
+              "value": 0.2,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1821制备末段；arXiv v1 p.6",
+              "note": "作者由名义D200μm/f485μm给NA0.2；不是独立角度测量，也不取收集物镜NA0.28。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 490,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1819摘要/设计；arXiv v1 pp.1–2/17 Fig.4a",
+              "note": "作者连续工作带宽490–550nm；实际轴向PSF仅七个10nm间隔谱点，不称每个λ都测过。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "lambda_max_nm": {
+              "value": 550,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1819摘要/设计；arXiv v1 pp.1–2/17 Fig.4a",
+              "note": "工作带宽与七实测谱点、六个优化波长的数量分开；不反推优化谱点为实验谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 520,
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv v1 p.18 Fig.5bλ印字",
+              "note": "固定z485μm评价面；本行不重复最佳f/FWHM/焦差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.1b/设计；arXiv v1 pp.5/14 Fig.1",
+              "note": "TiO2柱高600nm；SiO2 spacer180nm和Al镜110nm另记，不当器件含石英总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "material": {
+              "value": "反射式方柱TiO2 / SiO2 spacer180nm / Al110nm / fused silica；格点480nm",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820–1821 Fig.1/制备；arXiv v1 pp.4–6/14",
+              "note": "依方柱宽度实现色散工程/多2π相位；全波材料单元设计与Fresnel–Kirchhoff器件模拟分开，不把单元反射率当聚焦效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "polarization": {
+              "value": "方截面柱，作者称偏振不敏感；实际入射偏振/检出通道未明确核到",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820方柱设计段；arXiv v1 p.4",
+              "note": "不把结构对称声明当逐偏振验收，也不将几何相位GML对照的偏振条件借给AML。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "illumination": {
+              "value": "准直laser + 50:50 beamsplitter，反射聚焦",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1821–1822测量段/Fig.3d；arXiv v1 pp.7/16",
+              "note": "本轮所读主文未给光源型号/谱线宽；50:50是光路分束比例，不是透镜效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "psf_protocol": {
+              "value": "Fig.5b固定z485μm的520nm实测PSF；2μm图中标尺/0–1色标",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5上排图注；arXiv v1 p.18 Fig.5b",
+              "note": "不将下排最佳焦斑宽度复制到本行；原始数组、像素采样、归一化/背景流程与固定面MTF仍缺。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv v1 p.18 Fig.5b Z=485μm印字",
+              "note": "Z485是固定传感器/评价面位置，不是该λ最佳焦距；同λ最佳焦斑在下排，单独记录。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "固定Z485；非最佳焦距"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5图注；arXiv v1 p.18",
+              "note": "仅490/520/550nm最佳焦斑有水平切线FWHM印字；固定z485μm三图不借用这些宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "本条件未给方向数值"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5图注；arXiv v1 p.18",
+              "note": "vertical视为图像y/竖直方向，与horizontal/x分列；不是已定义弧矢/切向。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "本条件未给方向数值"
+            },
+            "efficiency_protocol": {
+              "value": "主文仅将聚焦效率影响指向Fig.S9；独立SI组件已核但内容403未取得",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1823讨论/Associated Content；arXiv v1 pp.8/10",
+              "note": "焦圈积分/功率分母、偏振通道、校准、实际谱点与误差未核，效率数值留空；不借其他论文约20%或单元反射率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017",
+                "khor_achromatic_si_2017"
+              ]
+            },
+            "mtf_curve": {
+              "value": "本轮主文/作者稿没有已核MTF或Strehl数表；SI内容仍待取得",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820–1823图2/4/5和文末；arXiv v1 pp.15/17–18",
+              "note": "图2x:Wavelength(nm), y:Focal length(μm)；图4z(mm)、色标0–1；图5标尺2μm不是原始数组采样。公开arXiv v1为主文/图，无原始PSF或数表；Crossref已证实独立SI组件，但期刊SI/作者站Chrome403，不能据此称数据未公开。DataCite精确关联仅1条本篇预印本、非原始数据集；GitHub仓库名称/描述精确DOI/题名无匹配，非全代码搜索。主文未核到原始数据获取声明，未联系作者；完整范围见docs/KHORASANINEJAD_2017_REVIEW_2026-11-14.md。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017",
+                "khor_achromatic_si_2017"
+              ]
+            },
+            "chromatic": {
+              "value": "固定z485μm PSF可视比较；未量化MTF/效率损失",
+              "source": "khor_achromatic_2017",
+              "location": "arXiv v1 p.18 Fig.5b；正式p.1823对应讨论",
+              "note": "不同λ最佳焦点不完全在该面；图像“接近”不等于已测零焦移/零横向色差。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            }
+          }
+        },
+        {
+          "id": "khor2017_fixed_550",
+          "model": "Khorasaninejad 2017 · D200μm AML · 550nm · 固定z485面",
+          "study_id": "khor2017",
+          "specimen_id": "aml_200",
+          "module": "",
+          "variant": "早期可见光反射式AML / 实测普通色散与仅模拟反色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一AML的固定像面PSF，与逐λ最佳焦斑/轴向扫描分测量记录。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.2图注、p.1821设计/制备；arXiv v1 pp.5–6/15",
+              "note": "AML名义口径；不移给GML/反色散设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 485,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1821设计段；arXiv v1 p.5设计段",
+              "note": "设计相位使用f485μm；不是各λ实际最佳焦距，也不是实测均值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "na": {
+              "value": 0.2,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1821制备末段；arXiv v1 p.6",
+              "note": "作者由名义D200μm/f485μm给NA0.2；不是独立角度测量，也不取收集物镜NA0.28。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 490,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1819摘要/设计；arXiv v1 pp.1–2/17 Fig.4a",
+              "note": "作者连续工作带宽490–550nm；实际轴向PSF仅七个10nm间隔谱点，不称每个λ都测过。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "lambda_max_nm": {
+              "value": 550,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1819摘要/设计；arXiv v1 pp.1–2/17 Fig.4a",
+              "note": "工作带宽与七实测谱点、六个优化波长的数量分开；不反推优化谱点为实验谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 550,
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv v1 p.18 Fig.5cλ印字",
+              "note": "固定z485μm评价面；本行不重复最佳f/FWHM/焦差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.1b/设计；arXiv v1 pp.5/14 Fig.1",
+              "note": "TiO2柱高600nm；SiO2 spacer180nm和Al镜110nm另记，不当器件含石英总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "material": {
+              "value": "反射式方柱TiO2 / SiO2 spacer180nm / Al110nm / fused silica；格点480nm",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820–1821 Fig.1/制备；arXiv v1 pp.4–6/14",
+              "note": "依方柱宽度实现色散工程/多2π相位；全波材料单元设计与Fresnel–Kirchhoff器件模拟分开，不把单元反射率当聚焦效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "polarization": {
+              "value": "方截面柱，作者称偏振不敏感；实际入射偏振/检出通道未明确核到",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820方柱设计段；arXiv v1 p.4",
+              "note": "不把结构对称声明当逐偏振验收，也不将几何相位GML对照的偏振条件借给AML。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "illumination": {
+              "value": "准直laser + 50:50 beamsplitter，反射聚焦",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1821–1822测量段/Fig.3d；arXiv v1 pp.7/16",
+              "note": "本轮所读主文未给光源型号/谱线宽；50:50是光路分束比例，不是透镜效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "psf_protocol": {
+              "value": "Fig.5c固定z485μm的550nm实测PSF；2μm图中标尺/0–1色标",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5上排图注；arXiv v1 p.18 Fig.5c",
+              "note": "不将下排最佳焦斑宽度复制到本行；原始数组、像素采样、归一化/背景流程与固定面MTF仍缺。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv v1 p.18 Fig.5c Z=485μm印字",
+              "note": "Z485是固定传感器/评价面位置，不是该λ最佳焦距；同λ最佳焦斑在下排，单独记录。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "固定Z485；非最佳焦距"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5图注；arXiv v1 p.18",
+              "note": "仅490/520/550nm最佳焦斑有水平切线FWHM印字；固定z485μm三图不借用这些宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "本条件未给方向数值"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.5图注；arXiv v1 p.18",
+              "note": "vertical视为图像y/竖直方向，与horizontal/x分列；不是已定义弧矢/切向。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "本条件未给方向数值"
+            },
+            "efficiency_protocol": {
+              "value": "主文仅将聚焦效率影响指向Fig.S9；独立SI组件已核但内容403未取得",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1823讨论/Associated Content；arXiv v1 pp.8/10",
+              "note": "焦圈积分/功率分母、偏振通道、校准、实际谱点与误差未核，效率数值留空；不借其他论文约20%或单元反射率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017",
+                "khor_achromatic_si_2017"
+              ]
+            },
+            "mtf_curve": {
+              "value": "本轮主文/作者稿没有已核MTF或Strehl数表；SI内容仍待取得",
+              "source": "khor_achromatic_2017",
+              "location": "正式pp.1820–1823图2/4/5和文末；arXiv v1 pp.15/17–18",
+              "note": "图2x:Wavelength(nm), y:Focal length(μm)；图4z(mm)、色标0–1；图5标尺2μm不是原始数组采样。公开arXiv v1为主文/图，无原始PSF或数表；Crossref已证实独立SI组件，但期刊SI/作者站Chrome403，不能据此称数据未公开。DataCite精确关联仅1条本篇预印本、非原始数据集；GitHub仓库名称/描述精确DOI/题名无匹配，非全代码搜索。主文未核到原始数据获取声明，未联系作者；完整范围见docs/KHORASANINEJAD_2017_REVIEW_2026-11-14.md。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017",
+                "khor_achromatic_si_2017"
+              ]
+            },
+            "chromatic": {
+              "value": "固定z485μm PSF可视比较；未量化MTF/效率损失",
+              "source": "khor_achromatic_2017",
+              "location": "arXiv v1 p.18 Fig.5c；正式p.1823对应讨论",
+              "note": "不同λ最佳焦点不完全在该面；图像“接近”不等于已测零焦移/零横向色差。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            }
+          }
+        },
+        {
+          "id": "khor2017_gml_summary",
+          "model": "Khorasaninejad 2017 · GML · 普通色散实测对照",
+          "study_id": "khor2017",
+          "specimen_id": "gml_control",
+          "module": "",
+          "variant": "早期可见光反射式AML / 实测普通色散与仅模拟反色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "几何相位GML独立配置，只有实测曲线与机制，几何/原始数值缺。",
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.2 GML experiment；arXiv v1 p.15",
+              "note": "可见光实测普通色散曲线，未估读各谱点或猜全部扫描端点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "Fig.2可见光曲线；未估点"
+            },
+            "material": {
+              "value": "TiO2 nanofins，几何相位GML实制对照",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.2图注；p.1823对照段",
+              "note": "通过旋转nanofins赋相位；与方柱反射式AML不同结构，D/f/NA与偏振未独立核，不借参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1820 Fig.2 GML experiment；arXiv v1 p.15橙色曲线",
+              "note": "实测f随λ减小；无原始数表，不估读，不将AML焦距移用。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "GML实测仅曲线"
+            },
+            "chromatic": {
+              "value": "普通色散对照：实测f随λ增加而减小",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1823对照段/Fig.2；arXiv v1 pp.9/15",
+              "note": "本篇确有实制GML对照；不把后面的反色散模型称实测，也不赋零焦差。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            }
+          }
+        },
+        {
+          "id": "khor2017_reverse_summary",
+          "model": "Khorasaninejad 2017 · 反色散 · 仅模拟设计",
+          "study_id": "khor2017",
+          "specimen_id": "reverse_design",
+          "module": "",
+          "variant": "早期可见光反射式AML / 实测普通色散与仅模拟反色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "仅模拟配置；与实制AML及GML分别记录。",
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "khor_achromatic_arxiv_2017",
+              "location": "arXiv v1 p.19 Fig.6a λ标签；正式p.1822 Fig.6图注",
+              "note": "490/500/510/520/530/540/550/560nm为模拟，不当实测谱点或连续消色差带宽。",
+              "basis": "model",
+              "checked_on": "2026-11-14",
+              "display": "490–560nm；仅模拟"
+            },
+            "material": {
+              "value": "反色散metalens设计 / 模拟对照",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.6；p.1823讨论",
+              "note": "该配置仅模拟；未核对应D/NA/结构详值，不借AML f485或D200。",
+              "basis": "model",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.6a/b；arXiv v1 p.19",
+              "note": "Fig.6为模拟f曲线，不存入实测焦距；y为Focal length(mm)，不读图换算数值。",
+              "basis": "model",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ],
+              "display": "仅模拟，无实测f"
+            },
+            "chromatic": {
+              "value": "模拟反色散总体趋势：f随λ增大；图6b含局部非单调点",
+              "source": "khor_achromatic_2017",
+              "location": "正式p.1822 Fig.6图注；arXiv v1 p.19",
+              "note": "作者图注描述反色散总体趋势；图6b在500→510nm和550→560nm有局部回落（仅定性，不估数值），不能宣称严格逐点单调。仅设计/模拟，不等于反色散实物或消色差实测成果。",
+              "basis": "model",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "khor_achromatic_2017",
+                "khor_achromatic_arxiv_2017"
+              ]
+            }
+          }
         }
       ],
-      "scope": "18项原始研究、67个器件/系统配置、662条记录。光谱/场角与系统条件不算更多实物；逐点焦距、作者光谱均值、DOF公共区与残余焦移分开。PSF/MTF、光学重建/数字处理与效率协议分别溯源，未知数值不补零。",
+      "scope": "19项原始研究、70个器件/系统配置、675条记录。光谱/场角/焦面不算更多实物；实测、模拟与重建分开。作者光谱SD/variation、逐点f与本库指定参考面焦差各自溯源，未知数值不补零。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",

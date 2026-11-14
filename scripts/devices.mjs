@@ -36,6 +36,25 @@ export function validateDevices(d,catalog){
    !Array.isArray(waves)||waves.length<2||new Set(waves).size!==waves.length||waves.some(w=>!(Number.isFinite(w)&&w>0))||
    !focalMean.reference_plane||!focalMean.aggregation_note||!r.values.psf_protocol?.value)errors.push('spectral focal mean context');
  }
+ const spectralSD=r.values.focal_spectral_sd_um;
+ if(Number.isFinite(spectralSD?.value)){
+  const waves=spectralSD.sample_wavelengths_nm;
+  if(spectralSD.value<0||spectralSD.basis!=='derived_from_measurement'||spectralSD.calculation_origin!=='authors'||
+   spectralSD.statistic!=='spectral_standard_deviation'||spectralSD.sample_unit!=='wavelength'||Number.isFinite(r.values.wavelength_nm?.value)||
+   !Array.isArray(waves)||waves.length<2||new Set(waves).size!==waves.length||waves.some(w=>!(Number.isFinite(w)&&w>0))||
+   !(spectralSD.ddof===null||[0,1].includes(spectralSD.ddof))||
+   !(spectralSD.measurement_repeat_count===null||Number.isInteger(spectralSD.measurement_repeat_count)&&spectralSD.measurement_repeat_count>=2)||
+   !r.values.focus_variation_protocol?.value)errors.push('spectral focal SD context');
+ }
+ const axialOffset=r.values.axial_focus_offset_um;
+ if(Number.isFinite(axialOffset?.value)){
+  const focal=r.values.measured_focal_um,reference=axialOffset.reference_plane_um;
+  if(axialOffset.basis!=='derived_from_measurement'||axialOffset.calculation_origin!=='atlas'||
+   !(r.values.wavelength_nm?.value>0)||!Number.isFinite(focal?.value)||focal.basis!=='measured'||!Number.isFinite(reference)||
+   axialOffset.reference_wavelength_nm!==null||!axialOffset.reference_plane_description||
+   axialOffset.formula!=='measured_focal_um - reference_plane_um'||Math.abs(axialOffset.value-(focal.value-reference))>1e-9||
+   !r.values.psf_protocol?.value)errors.push('atlas axial offset reference/input');
+ }
  if(Number.isFinite(aoi?.value)&&(
   Math.abs(aoi.value)>90||!['reported_configuration','measured'].includes(aoi.basis)||
   aoi.angle_reference!=='incident_beam_to_optical_axis'||

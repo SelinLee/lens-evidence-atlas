@@ -42,6 +42,10 @@
 
 `measured_focal_band_mean_um`仅保存作者明确给出的同器件跨实测波长平均焦距，须为正数、`basis: derived_from_measurement`、`calculation_origin: authors`、`statistic: author_reported_spectral_mean`，并有至少两个不同的实际`sample_wavelengths_nm`、`reference_plane`、`aggregation_note`及`psf_protocol`。未知参考原点、谱权重、重复数和不确定度须在说明中保留；汇总行不绑定一个数值波长，不将均值复制为逐波长`measured_focal_um`或设计焦距。DOF公共区与DOF误差条不是残余焦移或统计SD/CI，不据区间宽度生成色差数值。
 
+`focal_spectral_sd_um`是作者跨实测波长的焦距光谱SD，非逐点±不确定度、重复样品SD或DOF。要求非负、`basis: derived_from_measurement`、`calculation_origin: authors`、`statistic: spectral_standard_deviation`、`sample_unit: wavelength`、至少两个实际谱点及`focus_variation_protocol`；只在无单值波长的汇总行填写。`ddof`为0/1或未知null，`measurement_repeat_count`为实际重复数或未知null；不把谱点数量充当实物重复n，不用通用`uncertainty`把它附到每个焦距。
+
+`axial_focus_offset_um`是本库由作者实测f减去明确固定像面`reference_plane_um`算出的有符号焦差，`basis: derived_from_measurement`、`calculation_origin: atlas`，`formula: measured_focal_um - reference_plane_um`。要求本行实际波长/实测f、`reference_plane_description`、`psf_protocol`及精确来源位置；该固定面类型的`reference_wavelength_nm`显式null。验证数值与输入差一致，允许正、负和真实零；不默认选择设计f，不称作者原始焦移表或PSF/MTF复算。版本只核到作者稿的输入须在display/note保留版本，原作者量与本库计算分别标明。
+
 `aoi_deg`是入射光相对光轴的测量角度，不是FOV；须有`angle_reference: incident_beam_to_optical_axis`、`azimuth_deg`（未知null）及`psf_protocol`说明光路/焦面。固定传感器面PSF不代表该波长最佳焦距，轴向扫描步长不替代横向物方标尺。不同光源/继像条件可在同一结构配置中分测量行，不虚增物理样品。
 
 `system_contrast_protocol`区分作者称MTF contrast的USAF线对Michelson对比度与PSF-FFT/严格正弦MTF。`metric_kind: usaf_michelson_linepair_contrast`、`direction_aggregation`（horizontal/vertical/mean_of_horizontal_vertical）、`frequency_unit: lp/mm`、`field_point`（未知null）、实际谱点和`processing_stage`必须保留；captured标作者`derived_from_measurement`、deconvolved标`reconstruction`，不能互换或把横纵平均改成独立S/T。多谱点汇总不绑定一个数值波长。MTF低于0.01的阈值不是频率测量值，中心像素/传感器圆域总计数也不混入聚焦功率效率。

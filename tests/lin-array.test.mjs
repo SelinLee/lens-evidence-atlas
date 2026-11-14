@@ -19,7 +19,7 @@ test('design focal length and collection objectives never backfill fourteen miss
  const spectral=rows.filter(r=>Number.isFinite(r.values.wavelength_nm.value));assert.deepEqual(spectral.map(r=>r.values.wavelength_nm.value),Array.from({length:14},(_,i)=>400+20*i));
  for(const r of spectral){const v=r.values;assert.equal(v.diameter_um.value,21.65);assert.equal(v.na.value,.2157);assert.equal(v.design_focal_um.value,49);assert.equal(v.design_focal_um.basis,'reported_configuration');assert.equal(v.measured_focal_um.value,null);assert.equal(v.fwhm_um.value,null);assert.equal(v.height_nm.value,800);assert.equal(v.focus_variation_um,undefined);}
  const camera=get('lightfield_system').values;for(const k of ['diameter_um','na','design_focal_um','measured_focal_um','fwhm_um'])assert.equal(camera[k],undefined);
- assert.match(camera.material.value,/60×60/);assert.equal(camera.chromatic.basis,'reconstruction');assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,15);
+ assert.match(camera.material.value,/60×60/);assert.equal(camera.chromatic.basis,'reconstruction');assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,18);
 });
 
 test('author operation efficiencies preserve their denominator and errors instead of joining focusing efficiency data',()=>{
