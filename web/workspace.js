@@ -86,7 +86,8 @@ function groupedSamples(container, rows, item, list=false) {
   return groupRows(rows).map(group=>{
     const items = group.rows.map(row=>wrap(item(row))).join('');
     if (!group.paper || group.rows.length===1) return items;
-    const title = atlas.sources.get(group.paper).title.split(/[:：]/)[0];
+    const paper = atlas.sources.get(group.paper);
+    const title = (list && paper.paperLabel) || paper.title.split(/[:：]/)[0];
     return wrap(`<details data-paper="${esc(group.paper)}" ${opened.has(group.paper)?'open':''}><summary>${esc(title)} · ${group.rows.length} 条记录</summary>${list?'<ul>'+items+'</ul>':items}</details>`);
   }).join('');
 }
@@ -123,7 +124,7 @@ function coordinateText(p, axis) {
 function pointDescription(p) {
   const d = domain(), xm = d.metrics.find(m => m.id === state.x), ym = d.metrics.find(m => m.id === state.y);
   const xv = p.row.values[state.x], yv = p.row.values[state.y];
-  return `${p.row.model}；${xm?.label || '样本序号'}：${valueText(xv) === '未公开 / 未核验' && state.x === '$model' ? p.x : valueText(xv)}；${ym?.label || '纵轴'}：${valueText(yv)}；${p.row.variant}；${[xv,yv].filter(Boolean).map(v=>[v.evidence,v.note,v.location].filter(Boolean).join(' · ')).join('；')}；${[...new Set([...valueSources(xv), ...valueSources(yv)])].map(id => { const s = atlas.sources.get(id); return `[${citations.get(id)}] ${s?.title}；${s?.evidence_scope || s?.scope || ''}；核验 ${s?.checked_on}`; }).join('；')}`;
+  return `${p.label}；${xm?.label || '样本序号'}：${valueText(xv) === '未公开 / 未核验' && state.x === '$model' ? p.x : valueText(xv)}；${ym?.label || '纵轴'}：${valueText(yv)}；${p.row.variant}；${[xv,yv].filter(Boolean).map(v=>[v.evidence,v.note,v.location].filter(Boolean).join(' · ')).join('；')}；${[...new Set([...valueSources(xv), ...valueSources(yv)])].map(id => { const s = atlas.sources.get(id); return `[${citations.get(id)}] ${s?.title}；${s?.evidence_scope || s?.scope || ''}；核验 ${s?.checked_on}`; }).join('；')}`;
 }
 const inspectHint = '悬停或轻点圆点查看坐标，点击可固定读数。';
 let plotWidth = 0, positionReadout;
@@ -157,7 +158,7 @@ function drawChart() {
     node.setAttribute('tabindex','0');
     node.setAttribute('role','button');
     node.setAttribute('aria-pressed','false');
-    node.setAttribute('aria-label',group.map(p=>p.row.model).join('、') + '，' + xLabel + ' ' + coordinateText(group[0],'x') + '，' + yLabel + ' ' + coordinateText(group[0],'y'));
+    node.setAttribute('aria-label',group.map(p=>p.label).join('、') + '，' + xLabel + ' ' + coordinateText(group[0],'x') + '，' + yLabel + ' ' + coordinateText(group[0],'y'));
     node.querySelector('title').remove(); // The inspector supplies the visible tooltip.
   });
   const pointByRow = new Map(activePoints.map(p=>[p.row,p]));
@@ -165,7 +166,7 @@ function drawChart() {
     const p = pointByRow.get(row);
     const ids = [...new Set([...valueSources(p.row.values[state.x]), ...valueSources(p.row.values[state.y])])];
     const index = groupByRow.get(p.row.id), color = nodes[index].querySelector('circle').getAttribute('fill');
-    return `<a data-legend-point="${index}" href="#${esc(rowAnchor(p.row))}"><i class="legend-dot" style="background:${color}" aria-hidden="true"></i>${categorical ? p.x+'. ' : ''}${esc(p.row.model)} · (${esc(coordinateText(p,'x'))}, ${esc(coordinateText(p,'y'))})</a>${citeSources(ids)}`;
+    return `<a data-legend-point="${index}" href="#${esc(rowAnchor(p.row))}"><i class="legend-dot" style="background:${color}" aria-hidden="true"></i>${categorical ? p.x+'. ' : ''}${esc(p.label)} · (${esc(coordinateText(p,'x'))}, ${esc(coordinateText(p,'y'))})</a>${citeSources(ids)}`;
   }, true);
   inspectPlot(svg, nodes, groups, xLabel, yLabel);
 }
@@ -242,7 +243,7 @@ function inspectPlot(svg, nodes, groups, xLabel, yLabel) {
       const t = tick.getBBox();
       if (badges.some(b=>t.x < b.x+b.width+2 && t.x+t.width > b.x-2 && t.y < b.y+b.height+2 && t.y+t.height > b.y-2)) tick.setAttribute('visibility','hidden');
     }
-    const name = group.length===1 ? group[0].row.model : group[0].row.model+' 等 '+group.length+' 个同坐标样本';
+    const name = group.length===1 ? group[0].label : group[0].label+' 等 '+group.length+' 个同坐标样本';
     tip.innerHTML = `<strong>${esc(name)}</strong><dl><dt>${esc(xLabel)}</dt><dd>${esc(reading('x'))}</dd><dt>${esc(yLabel)}</dt><dd>${esc(reading('y'))}</dd></dl>`;
     placeTip();
   }
@@ -256,7 +257,7 @@ function inspectPlot(svg, nodes, groups, xLabel, yLabel) {
     } else {
       nodes[index].setAttribute('aria-pressed','true');
       for (const p of groups[index]) document.getElementById(rowAnchor(p.row))?.classList.add('plot-selected');
-      $('point-detail').innerHTML = groups[index].map(p=>`${esc(p.row.model)} · (${esc(coordinateText(p,'x'))}, ${esc(coordinateText(p,'y'))}) <a href="#${esc(rowAnchor(p.row))}">查看数据表 ↓</a>${citeSources([...valueSources(p.row.values[state.x]),...valueSources(p.row.values[state.y])])}<span> · ${esc(p.row.variant)}</span>`).join('<br>');
+      $('point-detail').innerHTML = groups[index].map(p=>`${esc(p.label)} · (${esc(coordinateText(p,'x'))}, ${esc(coordinateText(p,'y'))}) <a href="#${esc(rowAnchor(p.row))}">查看数据表 ↓</a>${citeSources([...valueSources(p.row.values[state.x]),...valueSources(p.row.values[state.y])])}<span> · ${esc(p.row.variant)}</span>`).join('<br>');
     }
     show();
   }
@@ -328,26 +329,40 @@ function table() {
     if (!paper && !rows[0].study_id) { other.push(...rows); continue; }
     flushOther();
     const id = `paper-${state.domain}-${group.key}`;
-    const title = atlas.sources.get(paper)?.title || group.key;
+    const source = atlas.sources.get(paper);
+    const heading = source?.bibliography ? citation(paper) + ' ' + paperCitation(source) : esc(source?.title || group.key);
     const samples = new Set(rows.map(r=>r.specimen_id || r.id));
     const count = (rows.some(r=>r.specimen_id) ? samples.size+' 个配置 · ' : '')+rows.length+' 条记录';
-    output+=`<details class="paper-table" id="${esc(id)}" ${open.has(id)?'open':''}><summary><span>${esc(title)}</span><small>${count}</small></summary>${specimenTables(rows)}</details>`;
+    output+=`<details class="paper-table" id="${esc(id)}" ${open.has(id)?'open':''}><summary><span class="paper-citation">${heading}</span><small>${count}</small></summary>${specimenTables(rows)}</details>`;
   }
   flushOther();
   $('table').innerHTML = output || '<p class="empty-table">当前筛选范围没有记录。</p>';
   return backlinks;
 }
+function paperCitation(source) {
+  const b = source.bibliography;
+  const endTitle = /[.?!]$/.test(b.title) ? '' : '.';
+  const venue = `<i><abbr title="${esc(b.venue)}">${esc(b.short)}</abbr></i>`;
+  const volume = b.volume ? ' <b>' + esc(b.volume) + '</b>' : '';
+  const locator = b.locator ? (volume ? ', ' : ' ') + esc(b.locator) : '';
+  const link = source.doi
+    ? `<a href="https://doi.org/${esc(source.doi)}" target="_blank" rel="noopener noreferrer">DOI ${esc(source.doi)}</a>`
+    : `<a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">原文 ↗</a>`;
+  return `${esc(b.authors)} ${esc(b.title)}${endTitle} ${venue}${volume}${locator} (${b.year}). ${link}`;
+}
+
 function referenceList(backlinks) {
   function material(id,main) {
     const s = atlas.sources.get(id), rows = [...(backlinks.get(id)?.values() || [])];
     const url = `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)} ↗</a>`;
     const back = rows.length ? `<details class="source-uses"><summary>表中引用 · ${rows.length} 条记录</summary>${rows.map(({row,metrics})=>
       `<div class="backlinks"><a href="#${esc(rowAnchor(row))}">${esc(row.model)} ↑</a>${metrics.map(m=>`<a href="#${esc(cellAnchor(row,m))}">${esc(m.label)}</a>`).join('')}</div>`).join('')}</details>` : '<a class="source-definition" href="#evidence-notes">指标定义 / 任务依据 ↑</a>';
-    return `<div class="reference-material"${id===main?'':` id="${esc(refAnchor(id))}"`}>${id===main?'':`<div class="reference-title">${url}</div>`}${s.doi?`<p>DOI：${esc(s.doi)}</p>`:''}<p>${esc(sourceKind(s.kind))} · 核验 ${esc(s.checked_on)}${s.verification==='inherited_v2'?'（沿用原核验记录）':''}</p>${s.location?`<p>原文位置：${esc(s.location)}</p>`:''}<p>读取范围：${esc(s.evidence_scope || s.scope || '以记录所列范围为准')}</p>${back}</div>`;
+    return `<div class="reference-material"${id===main?'':` id="${esc(refAnchor(id))}"`}>${id===main&&!s.bibliography?'':`<div class="reference-title">${url}</div>`}${s.doi?`<p>DOI：${esc(s.doi)}</p>`:''}<p>${esc(sourceKind(s.kind))} · 核验 ${esc(s.checked_on)}${s.verification==='inherited_v2'?'（沿用原核验记录）':''}</p>${s.location?`<p>原文位置：${esc(s.location)}</p>`:''}<p>读取范围：${esc(s.evidence_scope || s.scope || '以记录所列范围为准')}</p>${back}</div>`;
   }
   $('sources').innerHTML = [...referenceGroups].map(([main,group])=>{
     const s = atlas.sources.get(main);
-    return `<li id="${esc(refAnchor(main))}" value="${group.number}"><div class="reference-title"><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)} ↗</a>${s.source_year?' ('+esc(s.source_year)+')':''}</div><details class="source-materials"><summary>来源详情${group.materials.size>1?' · '+group.materials.size+' 份材料':''}</summary>${[...group.materials].map(id=>material(id,main)).join('')}</details></li>`;
+    const heading = s.bibliography ? paperCitation(s) : `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)} ↗</a>${s.source_year?' ('+esc(s.source_year)+')':''}`;
+    return `<li id="${esc(refAnchor(main))}" value="${group.number}"><div class="reference-title">${heading}</div><details class="source-materials"><summary>来源详情${group.materials.size>1?' · '+group.materials.size+' 份材料':''}</summary>${[...group.materials].map(id=>material(id,main)).join('')}</details></li>`;
   }).join('');
 }
 

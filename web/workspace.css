@@ -55,6 +55,8 @@
 .paper-table > summary, .specimen-table > summary { display:flex; align-items:baseline; gap:10px; padding:12px 15px; cursor:pointer; font-size:13px; }
 .paper-table > summary::before, .specimen-table > summary::before { content:'▸'; color:var(--green); }
 .paper-table[open] > summary::before, .specimen-table[open] > summary::before { content:'▾'; }
+.paper-citation, .reference-title { overflow-wrap:anywhere; line-height:1.55; }
+.paper-citation abbr, .reference-title abbr { text-decoration:none; }
 .paper-table summary small { margin-left:auto; white-space:nowrap; font-size:11px; color:var(--muted); }
 .paper-table .table-scroll { border:0; border-top:1px solid var(--line); border-radius:0; }
 .specimen-table { margin:0 12px 8px; }
