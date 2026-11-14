@@ -418,6 +418,34 @@
       "kind": "supplementary_material",
       "scope": "正式15页SI，读§4/5/8，视觉核PDF pp.5–6 S4–S6与p.9 Table S1。S1八配置×四波长效率逐项录入，首配置n=10均值，其余n=1；S5a四个Strehl直接印字来自随机一镜，不与效率均值拼成同组。曲线未估读，未取得原始PSF与物方采样尺度，未复算MTF。",
       "checked_on": "2026-11-14"
+    },
+    {
+      "id": "lin_array_2019",
+      "title": "Lin et al. (2019): Achromatic metalens array for full-colour light-field imaging",
+      "doi": "10.1038/s41565-018-0347-0",
+      "url": "https://www.nature.com/articles/s41565-018-0347-0",
+      "kind": "peer_reviewed_paper",
+      "scope": "正式网页元数据、摘要、Data/Code availability与附件目录HTTP200；主文全文通过共同作者大学存档读取。正文/SI/作者全文同一研究，未因存档重复计文献。",
+      "checked_on": "2026-11-14"
+    },
+    {
+      "id": "lin_array_full_2019",
+      "publication_source": "lin_array_2019",
+      "doi": "10.1038/s41565-018-0347-0",
+      "title": "Lin et al. (2019): coauthor archive of the publisher-layout full paper",
+      "url": "https://dsl.nju.edu.cn/litao/papers/Lin_RJ-nnano-14-227%282019%29.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "共同作者Tao Li大学主页存档的6页出版社排版主文；视觉核PDF p.2/印刷p.228 Fig.1及效率正文、p.3图2/3与p.6 Methods/Data/Code availability。设计f49μm不代替每色实测；作者Operation效率按原始偏振分母保存；光场重建不当裸镜MTF。",
+      "checked_on": "2026-11-14"
+    },
+    {
+      "id": "lin_array_si_2019",
+      "publication_source": "lin_array_2019",
+      "title": "Lin et al. (2019): Supplementary Information — single-lens scans and three-wavelength MTF curves",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41565-018-0347-0/MediaObjects/41565_2018_347_MOESM1_ESM.pdf",
+      "kind": "supplementary_material",
+      "scope": "正式15页SI，读设计/制造与S1/S3/S4/S5相关内容，视觉核PDF pp.3–4、8–10（关键S3/S4 p.8/9）。S3有14轴向谱点与焦距/效率/FWHM曲线；S4为PSF Fourier transform所得MTF，PSF输入实测/模拟、单镜/系统归属未单独说明。未读曲线取数、未复算MTF，原始PSF/横向采样仍缺。",
+      "checked_on": "2026-11-14"
     }
   ],
   "domains": {
@@ -3262,6 +3290,45 @@
             {
               "source": "richards_2023",
               "location": "PDF p.3结构厚度；p.4 Focal length and focusing efficiency；SI p.9 Table S1"
+            }
+          ]
+        },
+        {
+          "id": "operation_efficiency_at_lambda_pct",
+          "label": "作者Operation效率：指定波长 (%)",
+          "numeric": true,
+          "definition": "作者原称operation efficiency，输出圆偏振功率/相反手性入射功率；未给焦斑积分范围时不改称已核聚焦效率。",
+          "conditions": "不能混入efficiency_at_lambda_pct/efficiency_band_mean_pct；保留作者术语、约值、误差及未知样品数；不与焦圈/分母不同的结果排名。",
+          "definition_refs": [
+            {
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228效率段；SI p.8 S3图注"
+            }
+          ]
+        },
+        {
+          "id": "operation_efficiency_band_mean_pct",
+          "label": "作者Operation效率：带内均值 (%)",
+          "numeric": true,
+          "definition": "作者报告连续工作范围内的operation efficiency均值；与指定波长值和焦圈定义明确的聚焦效率分列。",
+          "conditions": "不能混入efficiency_at_lambda_pct/efficiency_band_mean_pct；保留作者术语、约值、误差及未知样品数；不与焦圈/分母不同的结果排名。",
+          "definition_refs": [
+            {
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228效率段；SI p.8 S3图注"
+            }
+          ]
+        },
+        {
+          "id": "operation_efficiency_protocol",
+          "label": "Operation效率分母 / 积分与统计",
+          "numeric": false,
+          "definition": "保留原文偏振通道、功率分母、积分区域、均值/误差与缺失定义。",
+          "conditions": "不能混入efficiency_at_lambda_pct/efficiency_band_mean_pct；保留作者术语、约值、误差及未知样品数；不与焦圈/分母不同的结果排名。",
+          "definition_refs": [
+            {
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228效率段；SI p.8 S3图注"
             }
           ]
         }
@@ -21864,9 +21931,2303 @@
               ]
             }
           }
+        },
+        {
+          "id": "lin2019_unit_summary",
+          "model": "Lin 2019 · 子透镜 · 工作范围与数据核查",
+          "study_id": "lin2019",
+          "specimen_id": "unit_21p65",
+          "module": "",
+          "variant": "GaN消色差子透镜或光场研究系统，非独立商业镜头",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "从60×60阵列中表征单子透镜的配置汇总；主文设计几何与SI S3实验，S4 MTF输入配置/PSF性质待作者原始数据澄清。",
+          "values": {
+            "diameter_um": {
+              "value": 21.65,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228 Fig.1图注，d=21.65μm",
+              "note": "单个子透镜设计口径，不是60×60阵列总尺寸。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.2157,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注；SI p.8 S3b图注",
+              "note": "子透镜名义/设计NA0.2157；不把收集物镜NA0.5或系统继像NA0.4填到此镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "design_focal_um": {
+              "value": 49,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注，designed focal length f=49μm",
+              "note": "设计值；SI S3b白虚线49μm是展示参考面，不等于14谱点均测49μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；pp.2–3 Fabrication",
+              "note": "GaN实心/反结构高800nm；蓝宝石为基底，400nm SiO2和40nm Cr为工艺硬掩膜，不当结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "作者连续消色差设计工作范围400–660nm；实际测量14离散谱点，不称逐纳米连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 660,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "与λmin共同表示作者工作范围，非只测RGB的设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "GaN实心纳米柱+inverse结构 / c面蓝宝石Al2O3；h=800nm，p=120nm",
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；p.2 Fabrication",
+              "note": "p=120nm按原图注保留；不由显微图比例重测，也不把基底/硬掩膜并入纳米柱高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "圆偏振输入，分析相反手性输出；选择性通道",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2效率定义；SI p.8 S3a光路与图注",
+              "note": "LCP/RCP的功率比不能自动证明全偏振消色差；保留LP/QWP检出选择。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "超连续谱SC laser+AOTF；400–660nm，20nm间隔",
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3a/b",
+              "note": "源线宽未单列；实验表征14个实际中心波长，不能补每点精确线宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "operation_efficiency_protocol": {
+              "value": "输出圆偏振光功率 / 相反手性入射光功率；焦面积分区域与功率采样面积未给",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228效率定义；SI p.8 S3图注",
+              "note": "原作称operation efficiency，不将未知积分范围改成r=3FWHM、总透过率或已核聚焦效率。S3称不同子透镜实验均值/SD，n未给；带内均值±的统计合成未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b各子图波长标签",
+              "note": "400起每20nm到660，共14实际轴向谱点；本行为汇总。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "400–660nm，20nm间隔（14点汇总）"
+            },
+            "chromatic": {
+              "value": "连续400–660nm设计；14点实测f/PSF仅曲线，未取得逐点原表",
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b/c/e；主文p.2设计段",
+              "note": "轴向扫描步长1μm，f曲线非平坦常数49；未估读Δf或从曲线极值计算带内误差。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_si_2019",
+                "lin_array_full_2019"
+              ]
+            },
+            "mtf_curve": {
+              "value": "S4仅400/540/660nm MTF曲线；PSF来源与器件/系统归属未单独说明",
+              "source": "lin_array_si_2019",
+              "location": "SI p.9 S4图/图注；主文PDF p.2 MTF段、p.6 Data/Code availability",
+              "note": "横轴frequency(linepair/mm)，纵轴MTF无量纲；未给S/T、场点、完整归一化/裁剪/背景、原始PSF及横向采样。轴向1μm不当横向像素；作者PSF→MTF不自动认作已核实测MTF。未读图填值或自行复算。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_si_2019",
+                "lin_array_full_2019",
+                "lin_array_2019"
+              ],
+              "data_availability": {
+                "status": "curves_only",
+                "checked_on": "2026-11-14",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "wavelengths_nm": [
+                  400,
+                  540,
+                  660
+                ],
+                "directions": null,
+                "field_point": null,
+                "frequency_unit": "linepair/mm",
+                "normalization": null,
+                "psf_provenance": null,
+                "device_assignment": "SI S4称achromatic metalens；主文p.228称imaging system，未给唯一输入PSF采集配置",
+                "method": "PSF Fourier transform，作者方法；未取得可复算原始数组",
+                "search_log": "docs/LIN_ARRAY_REVIEW_2026-11-14.md#原始数据核查",
+                "frequency_axis_ticks": [
+                  0,
+                  200,
+                  400,
+                  600,
+                  800,
+                  1000,
+                  1200
+                ],
+                "mtf_axis_ticks": [
+                  0,
+                  0.2,
+                  0.4,
+                  0.6,
+                  0.8,
+                  1
+                ]
+              }
+            },
+            "operation_efficiency_band_mean_pct": {
+              "value": 39.1,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228，average efficiency approximately39.1%±1.8% over whole working bandwidth",
+              "note": "作者带内均值约值；采样权重、平均公式及±1.8的统计合成未单独说明，未将其自动标SD/SEM。n未给，未把带内均值分派给每个波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "statistic": "band_mean",
+              "approximate": true,
+              "display": "约39.1 ± 1.8",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 1.8,
+                "sample_size": null
+              }
+            }
+          }
+        },
+        {
+          "id": "lin2019_unit_400",
+          "model": "Lin 2019 · 子透镜 · 400nm",
+          "study_id": "lin2019",
+          "specimen_id": "unit_21p65",
+          "module": "",
+          "variant": "GaN消色差子透镜或光场研究系统，非独立商业镜头",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "SI S3单子透镜光学表征；不同波长共享结构配置，未知原始PSF/f/FWHM不补零；作者operation效率和聚焦效率协议分开。",
+          "values": {
+            "diameter_um": {
+              "value": 21.65,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228 Fig.1图注，d=21.65μm",
+              "note": "单个子透镜设计口径，不是60×60阵列总尺寸。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.2157,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注；SI p.8 S3b图注",
+              "note": "子透镜名义/设计NA0.2157；不把收集物镜NA0.5或系统继像NA0.4填到此镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "design_focal_um": {
+              "value": 49,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注，designed focal length f=49μm",
+              "note": "设计值；SI S3b白虚线49μm是展示参考面，不等于14谱点均测49μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；pp.2–3 Fabrication",
+              "note": "GaN实心/反结构高800nm；蓝宝石为基底，400nm SiO2和40nm Cr为工艺硬掩膜，不当结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "作者连续消色差设计工作范围400–660nm；实际测量14离散谱点，不称逐纳米连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 660,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "与λmin共同表示作者工作范围，非只测RGB的设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "GaN实心纳米柱+inverse结构 / c面蓝宝石Al2O3；h=800nm，p=120nm",
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；p.2 Fabrication",
+              "note": "p=120nm按原图注保留；不由显微图比例重测，也不把基底/硬掩膜并入纳米柱高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "圆偏振输入，分析相反手性输出；选择性通道",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2效率定义；SI p.8 S3a光路与图注",
+              "note": "LCP/RCP的功率比不能自动证明全偏振消色差；保留LP/QWP检出选择。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "超连续谱SC laser+AOTF；400–660nm，20nm间隔",
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3a/b",
+              "note": "源线宽未单列；实验表征14个实际中心波长，不能补每点精确线宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "operation_efficiency_protocol": {
+              "value": "输出圆偏振光功率 / 相反手性入射光功率；焦面积分区域与功率采样面积未给",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228效率定义；SI p.8 S3图注",
+              "note": "原作称operation efficiency，不将未知积分范围改成r=3FWHM、总透过率或已核聚焦效率。S3称不同子透镜实验均值/SD，n未给；带内均值±的统计合成未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 400,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b，λ=400nm子图标签",
+              "note": "实际实验谱点；与连续设计工作波段分列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b/c，400nm谱点",
+              "note": "作者给实测f均值/误差曲线，未给原始数字与n；1μm轴向步长，未估读，也未复制设计49μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3c实测曲线；数值未取得"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3e，400nm谱点",
+              "note": "左轴FWHM(μm)、右轴FWHM(λ)；方向/逐波长评价焦面规则未单列，未读曲线估值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3e曲线；数值未取得"
+            },
+            "mtf_curve": {
+              "value": "S4仅400/540/660nm MTF曲线；PSF来源与器件/系统归属未单独说明",
+              "source": "lin_array_si_2019",
+              "location": "SI p.9 S4图/图注；主文PDF p.2 MTF段、p.6 Data/Code availability",
+              "note": "横轴frequency(linepair/mm)，纵轴MTF无量纲；未给S/T、场点、完整归一化/裁剪/背景、原始PSF及横向采样。轴向1μm不当横向像素；作者PSF→MTF不自动认作已核实测MTF。未读图填值或自行复算。 本行关联S4的400nm曲线，归属缺口保持。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_si_2019",
+                "lin_array_full_2019",
+                "lin_array_2019"
+              ],
+              "data_availability": {
+                "status": "curves_only",
+                "checked_on": "2026-11-14",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "wavelengths_nm": [
+                  400,
+                  540,
+                  660
+                ],
+                "directions": null,
+                "field_point": null,
+                "frequency_unit": "linepair/mm",
+                "normalization": null,
+                "psf_provenance": null,
+                "device_assignment": "SI S4称achromatic metalens；主文p.228称imaging system，未给唯一输入PSF采集配置",
+                "method": "PSF Fourier transform，作者方法；未取得可复算原始数组",
+                "search_log": "docs/LIN_ARRAY_REVIEW_2026-11-14.md#原始数据核查",
+                "frequency_axis_ticks": [
+                  0,
+                  200,
+                  400,
+                  600,
+                  800,
+                  1000,
+                  1200
+                ],
+                "mtf_axis_ticks": [
+                  0,
+                  0.2,
+                  0.4,
+                  0.6,
+                  0.8,
+                  1
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "lin2019_unit_420",
+          "model": "Lin 2019 · 子透镜 · 420nm",
+          "study_id": "lin2019",
+          "specimen_id": "unit_21p65",
+          "module": "",
+          "variant": "GaN消色差子透镜或光场研究系统，非独立商业镜头",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "SI S3单子透镜光学表征；不同波长共享结构配置，未知原始PSF/f/FWHM不补零；作者operation效率和聚焦效率协议分开。",
+          "values": {
+            "diameter_um": {
+              "value": 21.65,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228 Fig.1图注，d=21.65μm",
+              "note": "单个子透镜设计口径，不是60×60阵列总尺寸。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.2157,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注；SI p.8 S3b图注",
+              "note": "子透镜名义/设计NA0.2157；不把收集物镜NA0.5或系统继像NA0.4填到此镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "design_focal_um": {
+              "value": 49,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注，designed focal length f=49μm",
+              "note": "设计值；SI S3b白虚线49μm是展示参考面，不等于14谱点均测49μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；pp.2–3 Fabrication",
+              "note": "GaN实心/反结构高800nm；蓝宝石为基底，400nm SiO2和40nm Cr为工艺硬掩膜，不当结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "作者连续消色差设计工作范围400–660nm；实际测量14离散谱点，不称逐纳米连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 660,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "与λmin共同表示作者工作范围，非只测RGB的设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "GaN实心纳米柱+inverse结构 / c面蓝宝石Al2O3；h=800nm，p=120nm",
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；p.2 Fabrication",
+              "note": "p=120nm按原图注保留；不由显微图比例重测，也不把基底/硬掩膜并入纳米柱高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "圆偏振输入，分析相反手性输出；选择性通道",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2效率定义；SI p.8 S3a光路与图注",
+              "note": "LCP/RCP的功率比不能自动证明全偏振消色差；保留LP/QWP检出选择。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "超连续谱SC laser+AOTF；400–660nm，20nm间隔",
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3a/b",
+              "note": "源线宽未单列；实验表征14个实际中心波长，不能补每点精确线宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "operation_efficiency_protocol": {
+              "value": "输出圆偏振光功率 / 相反手性入射光功率；焦面积分区域与功率采样面积未给",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228效率定义；SI p.8 S3图注",
+              "note": "原作称operation efficiency，不将未知积分范围改成r=3FWHM、总透过率或已核聚焦效率。S3称不同子透镜实验均值/SD，n未给；带内均值±的统计合成未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 420,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b，λ=420nm子图标签",
+              "note": "实际实验谱点；与连续设计工作波段分列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b/c，420nm谱点",
+              "note": "作者给实测f均值/误差曲线，未给原始数字与n；1μm轴向步长，未估读，也未复制设计49μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3c实测曲线；数值未取得"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3e，420nm谱点",
+              "note": "左轴FWHM(μm)、右轴FWHM(λ)；方向/逐波长评价焦面规则未单列，未读曲线估值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3e曲线；数值未取得"
+            },
+            "operation_efficiency_at_lambda_pct": {
+              "value": 74.8,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228，highest efficiency74.8%±2.6% at420nm",
+              "note": "该波长谱点均值的峰值报告，非最好单镜；SI S3将点/误差棒定义为不同子透镜实验均值/SD，据此保留SD2.6个百分点，n未给。不是本库估读的75%。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "statistic": "mean",
+              "display": "74.8 ± 2.6",
+              "reported_error": {
+                "type": "SD",
+                "value": 2.6,
+                "sample_size": null
+              },
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "lin2019_unit_440",
+          "model": "Lin 2019 · 子透镜 · 440nm",
+          "study_id": "lin2019",
+          "specimen_id": "unit_21p65",
+          "module": "",
+          "variant": "GaN消色差子透镜或光场研究系统，非独立商业镜头",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "SI S3单子透镜光学表征；不同波长共享结构配置，未知原始PSF/f/FWHM不补零；作者operation效率和聚焦效率协议分开。",
+          "values": {
+            "diameter_um": {
+              "value": 21.65,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228 Fig.1图注，d=21.65μm",
+              "note": "单个子透镜设计口径，不是60×60阵列总尺寸。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.2157,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注；SI p.8 S3b图注",
+              "note": "子透镜名义/设计NA0.2157；不把收集物镜NA0.5或系统继像NA0.4填到此镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "design_focal_um": {
+              "value": 49,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注，designed focal length f=49μm",
+              "note": "设计值；SI S3b白虚线49μm是展示参考面，不等于14谱点均测49μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；pp.2–3 Fabrication",
+              "note": "GaN实心/反结构高800nm；蓝宝石为基底，400nm SiO2和40nm Cr为工艺硬掩膜，不当结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "作者连续消色差设计工作范围400–660nm；实际测量14离散谱点，不称逐纳米连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 660,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "与λmin共同表示作者工作范围，非只测RGB的设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "GaN实心纳米柱+inverse结构 / c面蓝宝石Al2O3；h=800nm，p=120nm",
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；p.2 Fabrication",
+              "note": "p=120nm按原图注保留；不由显微图比例重测，也不把基底/硬掩膜并入纳米柱高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "圆偏振输入，分析相反手性输出；选择性通道",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2效率定义；SI p.8 S3a光路与图注",
+              "note": "LCP/RCP的功率比不能自动证明全偏振消色差；保留LP/QWP检出选择。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "超连续谱SC laser+AOTF；400–660nm，20nm间隔",
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3a/b",
+              "note": "源线宽未单列；实验表征14个实际中心波长，不能补每点精确线宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "operation_efficiency_protocol": {
+              "value": "输出圆偏振光功率 / 相反手性入射光功率；焦面积分区域与功率采样面积未给",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228效率定义；SI p.8 S3图注",
+              "note": "原作称operation efficiency，不将未知积分范围改成r=3FWHM、总透过率或已核聚焦效率。S3称不同子透镜实验均值/SD，n未给；带内均值±的统计合成未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 440,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b，λ=440nm子图标签",
+              "note": "实际实验谱点；与连续设计工作波段分列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b/c，440nm谱点",
+              "note": "作者给实测f均值/误差曲线，未给原始数字与n；1μm轴向步长，未估读，也未复制设计49μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3c实测曲线；数值未取得"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3e，440nm谱点",
+              "note": "左轴FWHM(μm)、右轴FWHM(λ)；方向/逐波长评价焦面规则未单列，未读曲线估值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3e曲线；数值未取得"
+            }
+          }
+        },
+        {
+          "id": "lin2019_unit_460",
+          "model": "Lin 2019 · 子透镜 · 460nm",
+          "study_id": "lin2019",
+          "specimen_id": "unit_21p65",
+          "module": "",
+          "variant": "GaN消色差子透镜或光场研究系统，非独立商业镜头",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "SI S3单子透镜光学表征；不同波长共享结构配置，未知原始PSF/f/FWHM不补零；作者operation效率和聚焦效率协议分开。",
+          "values": {
+            "diameter_um": {
+              "value": 21.65,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228 Fig.1图注，d=21.65μm",
+              "note": "单个子透镜设计口径，不是60×60阵列总尺寸。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.2157,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注；SI p.8 S3b图注",
+              "note": "子透镜名义/设计NA0.2157；不把收集物镜NA0.5或系统继像NA0.4填到此镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "design_focal_um": {
+              "value": 49,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注，designed focal length f=49μm",
+              "note": "设计值；SI S3b白虚线49μm是展示参考面，不等于14谱点均测49μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；pp.2–3 Fabrication",
+              "note": "GaN实心/反结构高800nm；蓝宝石为基底，400nm SiO2和40nm Cr为工艺硬掩膜，不当结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "作者连续消色差设计工作范围400–660nm；实际测量14离散谱点，不称逐纳米连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 660,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "与λmin共同表示作者工作范围，非只测RGB的设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "GaN实心纳米柱+inverse结构 / c面蓝宝石Al2O3；h=800nm，p=120nm",
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；p.2 Fabrication",
+              "note": "p=120nm按原图注保留；不由显微图比例重测，也不把基底/硬掩膜并入纳米柱高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "圆偏振输入，分析相反手性输出；选择性通道",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2效率定义；SI p.8 S3a光路与图注",
+              "note": "LCP/RCP的功率比不能自动证明全偏振消色差；保留LP/QWP检出选择。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "超连续谱SC laser+AOTF；400–660nm，20nm间隔",
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3a/b",
+              "note": "源线宽未单列；实验表征14个实际中心波长，不能补每点精确线宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "operation_efficiency_protocol": {
+              "value": "输出圆偏振光功率 / 相反手性入射光功率；焦面积分区域与功率采样面积未给",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228效率定义；SI p.8 S3图注",
+              "note": "原作称operation efficiency，不将未知积分范围改成r=3FWHM、总透过率或已核聚焦效率。S3称不同子透镜实验均值/SD，n未给；带内均值±的统计合成未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 460,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b，λ=460nm子图标签",
+              "note": "实际实验谱点；与连续设计工作波段分列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b/c，460nm谱点",
+              "note": "作者给实测f均值/误差曲线，未给原始数字与n；1μm轴向步长，未估读，也未复制设计49μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3c实测曲线；数值未取得"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3e，460nm谱点",
+              "note": "左轴FWHM(μm)、右轴FWHM(λ)；方向/逐波长评价焦面规则未单列，未读曲线估值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3e曲线；数值未取得"
+            }
+          }
+        },
+        {
+          "id": "lin2019_unit_480",
+          "model": "Lin 2019 · 子透镜 · 480nm",
+          "study_id": "lin2019",
+          "specimen_id": "unit_21p65",
+          "module": "",
+          "variant": "GaN消色差子透镜或光场研究系统，非独立商业镜头",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "SI S3单子透镜光学表征；不同波长共享结构配置，未知原始PSF/f/FWHM不补零；作者operation效率和聚焦效率协议分开。",
+          "values": {
+            "diameter_um": {
+              "value": 21.65,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228 Fig.1图注，d=21.65μm",
+              "note": "单个子透镜设计口径，不是60×60阵列总尺寸。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.2157,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注；SI p.8 S3b图注",
+              "note": "子透镜名义/设计NA0.2157；不把收集物镜NA0.5或系统继像NA0.4填到此镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "design_focal_um": {
+              "value": 49,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注，designed focal length f=49μm",
+              "note": "设计值；SI S3b白虚线49μm是展示参考面，不等于14谱点均测49μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；pp.2–3 Fabrication",
+              "note": "GaN实心/反结构高800nm；蓝宝石为基底，400nm SiO2和40nm Cr为工艺硬掩膜，不当结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "作者连续消色差设计工作范围400–660nm；实际测量14离散谱点，不称逐纳米连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 660,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "与λmin共同表示作者工作范围，非只测RGB的设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "GaN实心纳米柱+inverse结构 / c面蓝宝石Al2O3；h=800nm，p=120nm",
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；p.2 Fabrication",
+              "note": "p=120nm按原图注保留；不由显微图比例重测，也不把基底/硬掩膜并入纳米柱高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "圆偏振输入，分析相反手性输出；选择性通道",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2效率定义；SI p.8 S3a光路与图注",
+              "note": "LCP/RCP的功率比不能自动证明全偏振消色差；保留LP/QWP检出选择。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "超连续谱SC laser+AOTF；400–660nm，20nm间隔",
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3a/b",
+              "note": "源线宽未单列；实验表征14个实际中心波长，不能补每点精确线宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "operation_efficiency_protocol": {
+              "value": "输出圆偏振光功率 / 相反手性入射光功率；焦面积分区域与功率采样面积未给",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228效率定义；SI p.8 S3图注",
+              "note": "原作称operation efficiency，不将未知积分范围改成r=3FWHM、总透过率或已核聚焦效率。S3称不同子透镜实验均值/SD，n未给；带内均值±的统计合成未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 480,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b，λ=480nm子图标签",
+              "note": "实际实验谱点；与连续设计工作波段分列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b/c，480nm谱点",
+              "note": "作者给实测f均值/误差曲线，未给原始数字与n；1μm轴向步长，未估读，也未复制设计49μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3c实测曲线；数值未取得"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3e，480nm谱点",
+              "note": "左轴FWHM(μm)、右轴FWHM(λ)；方向/逐波长评价焦面规则未单列，未读曲线估值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3e曲线；数值未取得"
+            }
+          }
+        },
+        {
+          "id": "lin2019_unit_500",
+          "model": "Lin 2019 · 子透镜 · 500nm",
+          "study_id": "lin2019",
+          "specimen_id": "unit_21p65",
+          "module": "",
+          "variant": "GaN消色差子透镜或光场研究系统，非独立商业镜头",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "SI S3单子透镜光学表征；不同波长共享结构配置，未知原始PSF/f/FWHM不补零；作者operation效率和聚焦效率协议分开。",
+          "values": {
+            "diameter_um": {
+              "value": 21.65,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228 Fig.1图注，d=21.65μm",
+              "note": "单个子透镜设计口径，不是60×60阵列总尺寸。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.2157,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注；SI p.8 S3b图注",
+              "note": "子透镜名义/设计NA0.2157；不把收集物镜NA0.5或系统继像NA0.4填到此镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "design_focal_um": {
+              "value": 49,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注，designed focal length f=49μm",
+              "note": "设计值；SI S3b白虚线49μm是展示参考面，不等于14谱点均测49μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；pp.2–3 Fabrication",
+              "note": "GaN实心/反结构高800nm；蓝宝石为基底，400nm SiO2和40nm Cr为工艺硬掩膜，不当结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "作者连续消色差设计工作范围400–660nm；实际测量14离散谱点，不称逐纳米连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 660,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "与λmin共同表示作者工作范围，非只测RGB的设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "GaN实心纳米柱+inverse结构 / c面蓝宝石Al2O3；h=800nm，p=120nm",
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；p.2 Fabrication",
+              "note": "p=120nm按原图注保留；不由显微图比例重测，也不把基底/硬掩膜并入纳米柱高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "圆偏振输入，分析相反手性输出；选择性通道",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2效率定义；SI p.8 S3a光路与图注",
+              "note": "LCP/RCP的功率比不能自动证明全偏振消色差；保留LP/QWP检出选择。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "超连续谱SC laser+AOTF；400–660nm，20nm间隔",
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3a/b",
+              "note": "源线宽未单列；实验表征14个实际中心波长，不能补每点精确线宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "operation_efficiency_protocol": {
+              "value": "输出圆偏振光功率 / 相反手性入射光功率；焦面积分区域与功率采样面积未给",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228效率定义；SI p.8 S3图注",
+              "note": "原作称operation efficiency，不将未知积分范围改成r=3FWHM、总透过率或已核聚焦效率。S3称不同子透镜实验均值/SD，n未给；带内均值±的统计合成未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 500,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b，λ=500nm子图标签",
+              "note": "实际实验谱点；与连续设计工作波段分列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b/c，500nm谱点",
+              "note": "作者给实测f均值/误差曲线，未给原始数字与n；1μm轴向步长，未估读，也未复制设计49μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3c实测曲线；数值未取得"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3e，500nm谱点",
+              "note": "左轴FWHM(μm)、右轴FWHM(λ)；方向/逐波长评价焦面规则未单列，未读曲线估值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3e曲线；数值未取得"
+            }
+          }
+        },
+        {
+          "id": "lin2019_unit_520",
+          "model": "Lin 2019 · 子透镜 · 520nm",
+          "study_id": "lin2019",
+          "specimen_id": "unit_21p65",
+          "module": "",
+          "variant": "GaN消色差子透镜或光场研究系统，非独立商业镜头",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "SI S3单子透镜光学表征；不同波长共享结构配置，未知原始PSF/f/FWHM不补零；作者operation效率和聚焦效率协议分开。",
+          "values": {
+            "diameter_um": {
+              "value": 21.65,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228 Fig.1图注，d=21.65μm",
+              "note": "单个子透镜设计口径，不是60×60阵列总尺寸。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.2157,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注；SI p.8 S3b图注",
+              "note": "子透镜名义/设计NA0.2157；不把收集物镜NA0.5或系统继像NA0.4填到此镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "design_focal_um": {
+              "value": 49,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注，designed focal length f=49μm",
+              "note": "设计值；SI S3b白虚线49μm是展示参考面，不等于14谱点均测49μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；pp.2–3 Fabrication",
+              "note": "GaN实心/反结构高800nm；蓝宝石为基底，400nm SiO2和40nm Cr为工艺硬掩膜，不当结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "作者连续消色差设计工作范围400–660nm；实际测量14离散谱点，不称逐纳米连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 660,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "与λmin共同表示作者工作范围，非只测RGB的设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "GaN实心纳米柱+inverse结构 / c面蓝宝石Al2O3；h=800nm，p=120nm",
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；p.2 Fabrication",
+              "note": "p=120nm按原图注保留；不由显微图比例重测，也不把基底/硬掩膜并入纳米柱高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "圆偏振输入，分析相反手性输出；选择性通道",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2效率定义；SI p.8 S3a光路与图注",
+              "note": "LCP/RCP的功率比不能自动证明全偏振消色差；保留LP/QWP检出选择。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "超连续谱SC laser+AOTF；400–660nm，20nm间隔",
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3a/b",
+              "note": "源线宽未单列；实验表征14个实际中心波长，不能补每点精确线宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "operation_efficiency_protocol": {
+              "value": "输出圆偏振光功率 / 相反手性入射光功率；焦面积分区域与功率采样面积未给",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228效率定义；SI p.8 S3图注",
+              "note": "原作称operation efficiency，不将未知积分范围改成r=3FWHM、总透过率或已核聚焦效率。S3称不同子透镜实验均值/SD，n未给；带内均值±的统计合成未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 520,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b，λ=520nm子图标签",
+              "note": "实际实验谱点；与连续设计工作波段分列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b/c，520nm谱点",
+              "note": "作者给实测f均值/误差曲线，未给原始数字与n；1μm轴向步长，未估读，也未复制设计49μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3c实测曲线；数值未取得"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3e，520nm谱点",
+              "note": "左轴FWHM(μm)、右轴FWHM(λ)；方向/逐波长评价焦面规则未单列，未读曲线估值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3e曲线；数值未取得"
+            }
+          }
+        },
+        {
+          "id": "lin2019_unit_540",
+          "model": "Lin 2019 · 子透镜 · 540nm",
+          "study_id": "lin2019",
+          "specimen_id": "unit_21p65",
+          "module": "",
+          "variant": "GaN消色差子透镜或光场研究系统，非独立商业镜头",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "SI S3单子透镜光学表征；不同波长共享结构配置，未知原始PSF/f/FWHM不补零；作者operation效率和聚焦效率协议分开。",
+          "values": {
+            "diameter_um": {
+              "value": 21.65,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228 Fig.1图注，d=21.65μm",
+              "note": "单个子透镜设计口径，不是60×60阵列总尺寸。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.2157,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注；SI p.8 S3b图注",
+              "note": "子透镜名义/设计NA0.2157；不把收集物镜NA0.5或系统继像NA0.4填到此镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "design_focal_um": {
+              "value": 49,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注，designed focal length f=49μm",
+              "note": "设计值；SI S3b白虚线49μm是展示参考面，不等于14谱点均测49μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；pp.2–3 Fabrication",
+              "note": "GaN实心/反结构高800nm；蓝宝石为基底，400nm SiO2和40nm Cr为工艺硬掩膜，不当结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "作者连续消色差设计工作范围400–660nm；实际测量14离散谱点，不称逐纳米连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 660,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "与λmin共同表示作者工作范围，非只测RGB的设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "GaN实心纳米柱+inverse结构 / c面蓝宝石Al2O3；h=800nm，p=120nm",
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；p.2 Fabrication",
+              "note": "p=120nm按原图注保留；不由显微图比例重测，也不把基底/硬掩膜并入纳米柱高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "圆偏振输入，分析相反手性输出；选择性通道",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2效率定义；SI p.8 S3a光路与图注",
+              "note": "LCP/RCP的功率比不能自动证明全偏振消色差；保留LP/QWP检出选择。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "超连续谱SC laser+AOTF；400–660nm，20nm间隔",
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3a/b",
+              "note": "源线宽未单列；实验表征14个实际中心波长，不能补每点精确线宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "operation_efficiency_protocol": {
+              "value": "输出圆偏振光功率 / 相反手性入射光功率；焦面积分区域与功率采样面积未给",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228效率定义；SI p.8 S3图注",
+              "note": "原作称operation efficiency，不将未知积分范围改成r=3FWHM、总透过率或已核聚焦效率。S3称不同子透镜实验均值/SD，n未给；带内均值±的统计合成未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 540,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b，λ=540nm子图标签",
+              "note": "实际实验谱点；与连续设计工作波段分列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b/c，540nm谱点",
+              "note": "作者给实测f均值/误差曲线，未给原始数字与n；1μm轴向步长，未估读，也未复制设计49μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3c实测曲线；数值未取得"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3e，540nm谱点",
+              "note": "左轴FWHM(μm)、右轴FWHM(λ)；方向/逐波长评价焦面规则未单列，未读曲线估值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3e曲线；数值未取得"
+            },
+            "mtf_curve": {
+              "value": "S4仅400/540/660nm MTF曲线；PSF来源与器件/系统归属未单独说明",
+              "source": "lin_array_si_2019",
+              "location": "SI p.9 S4图/图注；主文PDF p.2 MTF段、p.6 Data/Code availability",
+              "note": "横轴frequency(linepair/mm)，纵轴MTF无量纲；未给S/T、场点、完整归一化/裁剪/背景、原始PSF及横向采样。轴向1μm不当横向像素；作者PSF→MTF不自动认作已核实测MTF。未读图填值或自行复算。 本行关联S4的540nm曲线，归属缺口保持。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_si_2019",
+                "lin_array_full_2019",
+                "lin_array_2019"
+              ],
+              "data_availability": {
+                "status": "curves_only",
+                "checked_on": "2026-11-14",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "wavelengths_nm": [
+                  400,
+                  540,
+                  660
+                ],
+                "directions": null,
+                "field_point": null,
+                "frequency_unit": "linepair/mm",
+                "normalization": null,
+                "psf_provenance": null,
+                "device_assignment": "SI S4称achromatic metalens；主文p.228称imaging system，未给唯一输入PSF采集配置",
+                "method": "PSF Fourier transform，作者方法；未取得可复算原始数组",
+                "search_log": "docs/LIN_ARRAY_REVIEW_2026-11-14.md#原始数据核查",
+                "frequency_axis_ticks": [
+                  0,
+                  200,
+                  400,
+                  600,
+                  800,
+                  1000,
+                  1200
+                ],
+                "mtf_axis_ticks": [
+                  0,
+                  0.2,
+                  0.4,
+                  0.6,
+                  0.8,
+                  1
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "lin2019_unit_560",
+          "model": "Lin 2019 · 子透镜 · 560nm",
+          "study_id": "lin2019",
+          "specimen_id": "unit_21p65",
+          "module": "",
+          "variant": "GaN消色差子透镜或光场研究系统，非独立商业镜头",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "SI S3单子透镜光学表征；不同波长共享结构配置，未知原始PSF/f/FWHM不补零；作者operation效率和聚焦效率协议分开。",
+          "values": {
+            "diameter_um": {
+              "value": 21.65,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228 Fig.1图注，d=21.65μm",
+              "note": "单个子透镜设计口径，不是60×60阵列总尺寸。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.2157,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注；SI p.8 S3b图注",
+              "note": "子透镜名义/设计NA0.2157；不把收集物镜NA0.5或系统继像NA0.4填到此镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "design_focal_um": {
+              "value": 49,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注，designed focal length f=49μm",
+              "note": "设计值；SI S3b白虚线49μm是展示参考面，不等于14谱点均测49μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；pp.2–3 Fabrication",
+              "note": "GaN实心/反结构高800nm；蓝宝石为基底，400nm SiO2和40nm Cr为工艺硬掩膜，不当结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "作者连续消色差设计工作范围400–660nm；实际测量14离散谱点，不称逐纳米连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 660,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "与λmin共同表示作者工作范围，非只测RGB的设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "GaN实心纳米柱+inverse结构 / c面蓝宝石Al2O3；h=800nm，p=120nm",
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；p.2 Fabrication",
+              "note": "p=120nm按原图注保留；不由显微图比例重测，也不把基底/硬掩膜并入纳米柱高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "圆偏振输入，分析相反手性输出；选择性通道",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2效率定义；SI p.8 S3a光路与图注",
+              "note": "LCP/RCP的功率比不能自动证明全偏振消色差；保留LP/QWP检出选择。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "超连续谱SC laser+AOTF；400–660nm，20nm间隔",
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3a/b",
+              "note": "源线宽未单列；实验表征14个实际中心波长，不能补每点精确线宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "operation_efficiency_protocol": {
+              "value": "输出圆偏振光功率 / 相反手性入射光功率；焦面积分区域与功率采样面积未给",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228效率定义；SI p.8 S3图注",
+              "note": "原作称operation efficiency，不将未知积分范围改成r=3FWHM、总透过率或已核聚焦效率。S3称不同子透镜实验均值/SD，n未给；带内均值±的统计合成未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 560,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b，λ=560nm子图标签",
+              "note": "实际实验谱点；与连续设计工作波段分列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b/c，560nm谱点",
+              "note": "作者给实测f均值/误差曲线，未给原始数字与n；1μm轴向步长，未估读，也未复制设计49μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3c实测曲线；数值未取得"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3e，560nm谱点",
+              "note": "左轴FWHM(μm)、右轴FWHM(λ)；方向/逐波长评价焦面规则未单列，未读曲线估值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3e曲线；数值未取得"
+            }
+          }
+        },
+        {
+          "id": "lin2019_unit_580",
+          "model": "Lin 2019 · 子透镜 · 580nm",
+          "study_id": "lin2019",
+          "specimen_id": "unit_21p65",
+          "module": "",
+          "variant": "GaN消色差子透镜或光场研究系统，非独立商业镜头",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "SI S3单子透镜光学表征；不同波长共享结构配置，未知原始PSF/f/FWHM不补零；作者operation效率和聚焦效率协议分开。",
+          "values": {
+            "diameter_um": {
+              "value": 21.65,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228 Fig.1图注，d=21.65μm",
+              "note": "单个子透镜设计口径，不是60×60阵列总尺寸。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.2157,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注；SI p.8 S3b图注",
+              "note": "子透镜名义/设计NA0.2157；不把收集物镜NA0.5或系统继像NA0.4填到此镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "design_focal_um": {
+              "value": 49,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注，designed focal length f=49μm",
+              "note": "设计值；SI S3b白虚线49μm是展示参考面，不等于14谱点均测49μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；pp.2–3 Fabrication",
+              "note": "GaN实心/反结构高800nm；蓝宝石为基底，400nm SiO2和40nm Cr为工艺硬掩膜，不当结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "作者连续消色差设计工作范围400–660nm；实际测量14离散谱点，不称逐纳米连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 660,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "与λmin共同表示作者工作范围，非只测RGB的设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "GaN实心纳米柱+inverse结构 / c面蓝宝石Al2O3；h=800nm，p=120nm",
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；p.2 Fabrication",
+              "note": "p=120nm按原图注保留；不由显微图比例重测，也不把基底/硬掩膜并入纳米柱高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "圆偏振输入，分析相反手性输出；选择性通道",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2效率定义；SI p.8 S3a光路与图注",
+              "note": "LCP/RCP的功率比不能自动证明全偏振消色差；保留LP/QWP检出选择。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "超连续谱SC laser+AOTF；400–660nm，20nm间隔",
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3a/b",
+              "note": "源线宽未单列；实验表征14个实际中心波长，不能补每点精确线宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "operation_efficiency_protocol": {
+              "value": "输出圆偏振光功率 / 相反手性入射光功率；焦面积分区域与功率采样面积未给",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228效率定义；SI p.8 S3图注",
+              "note": "原作称operation efficiency，不将未知积分范围改成r=3FWHM、总透过率或已核聚焦效率。S3称不同子透镜实验均值/SD，n未给；带内均值±的统计合成未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 580,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b，λ=580nm子图标签",
+              "note": "实际实验谱点；与连续设计工作波段分列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b/c，580nm谱点",
+              "note": "作者给实测f均值/误差曲线，未给原始数字与n；1μm轴向步长，未估读，也未复制设计49μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3c实测曲线；数值未取得"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3e，580nm谱点",
+              "note": "左轴FWHM(μm)、右轴FWHM(λ)；方向/逐波长评价焦面规则未单列，未读曲线估值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3e曲线；数值未取得"
+            }
+          }
+        },
+        {
+          "id": "lin2019_unit_600",
+          "model": "Lin 2019 · 子透镜 · 600nm",
+          "study_id": "lin2019",
+          "specimen_id": "unit_21p65",
+          "module": "",
+          "variant": "GaN消色差子透镜或光场研究系统，非独立商业镜头",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "SI S3单子透镜光学表征；不同波长共享结构配置，未知原始PSF/f/FWHM不补零；作者operation效率和聚焦效率协议分开。",
+          "values": {
+            "diameter_um": {
+              "value": 21.65,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228 Fig.1图注，d=21.65μm",
+              "note": "单个子透镜设计口径，不是60×60阵列总尺寸。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.2157,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注；SI p.8 S3b图注",
+              "note": "子透镜名义/设计NA0.2157；不把收集物镜NA0.5或系统继像NA0.4填到此镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "design_focal_um": {
+              "value": 49,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注，designed focal length f=49μm",
+              "note": "设计值；SI S3b白虚线49μm是展示参考面，不等于14谱点均测49μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；pp.2–3 Fabrication",
+              "note": "GaN实心/反结构高800nm；蓝宝石为基底，400nm SiO2和40nm Cr为工艺硬掩膜，不当结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "作者连续消色差设计工作范围400–660nm；实际测量14离散谱点，不称逐纳米连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 660,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "与λmin共同表示作者工作范围，非只测RGB的设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "GaN实心纳米柱+inverse结构 / c面蓝宝石Al2O3；h=800nm，p=120nm",
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；p.2 Fabrication",
+              "note": "p=120nm按原图注保留；不由显微图比例重测，也不把基底/硬掩膜并入纳米柱高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "圆偏振输入，分析相反手性输出；选择性通道",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2效率定义；SI p.8 S3a光路与图注",
+              "note": "LCP/RCP的功率比不能自动证明全偏振消色差；保留LP/QWP检出选择。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "超连续谱SC laser+AOTF；400–660nm，20nm间隔",
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3a/b",
+              "note": "源线宽未单列；实验表征14个实际中心波长，不能补每点精确线宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "operation_efficiency_protocol": {
+              "value": "输出圆偏振光功率 / 相反手性入射光功率；焦面积分区域与功率采样面积未给",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228效率定义；SI p.8 S3图注",
+              "note": "原作称operation efficiency，不将未知积分范围改成r=3FWHM、总透过率或已核聚焦效率。S3称不同子透镜实验均值/SD，n未给；带内均值±的统计合成未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 600,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b，λ=600nm子图标签",
+              "note": "实际实验谱点；与连续设计工作波段分列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b/c，600nm谱点",
+              "note": "作者给实测f均值/误差曲线，未给原始数字与n；1μm轴向步长，未估读，也未复制设计49μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3c实测曲线；数值未取得"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3e，600nm谱点",
+              "note": "左轴FWHM(μm)、右轴FWHM(λ)；方向/逐波长评价焦面规则未单列，未读曲线估值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3e曲线；数值未取得"
+            }
+          }
+        },
+        {
+          "id": "lin2019_unit_620",
+          "model": "Lin 2019 · 子透镜 · 620nm",
+          "study_id": "lin2019",
+          "specimen_id": "unit_21p65",
+          "module": "",
+          "variant": "GaN消色差子透镜或光场研究系统，非独立商业镜头",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "SI S3单子透镜光学表征；不同波长共享结构配置，未知原始PSF/f/FWHM不补零；作者operation效率和聚焦效率协议分开。",
+          "values": {
+            "diameter_um": {
+              "value": 21.65,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228 Fig.1图注，d=21.65μm",
+              "note": "单个子透镜设计口径，不是60×60阵列总尺寸。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.2157,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注；SI p.8 S3b图注",
+              "note": "子透镜名义/设计NA0.2157；不把收集物镜NA0.5或系统继像NA0.4填到此镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "design_focal_um": {
+              "value": 49,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注，designed focal length f=49μm",
+              "note": "设计值；SI S3b白虚线49μm是展示参考面，不等于14谱点均测49μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；pp.2–3 Fabrication",
+              "note": "GaN实心/反结构高800nm；蓝宝石为基底，400nm SiO2和40nm Cr为工艺硬掩膜，不当结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "作者连续消色差设计工作范围400–660nm；实际测量14离散谱点，不称逐纳米连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 660,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "与λmin共同表示作者工作范围，非只测RGB的设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "GaN实心纳米柱+inverse结构 / c面蓝宝石Al2O3；h=800nm，p=120nm",
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；p.2 Fabrication",
+              "note": "p=120nm按原图注保留；不由显微图比例重测，也不把基底/硬掩膜并入纳米柱高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "圆偏振输入，分析相反手性输出；选择性通道",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2效率定义；SI p.8 S3a光路与图注",
+              "note": "LCP/RCP的功率比不能自动证明全偏振消色差；保留LP/QWP检出选择。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "超连续谱SC laser+AOTF；400–660nm，20nm间隔",
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3a/b",
+              "note": "源线宽未单列；实验表征14个实际中心波长，不能补每点精确线宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "operation_efficiency_protocol": {
+              "value": "输出圆偏振光功率 / 相反手性入射光功率；焦面积分区域与功率采样面积未给",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228效率定义；SI p.8 S3图注",
+              "note": "原作称operation efficiency，不将未知积分范围改成r=3FWHM、总透过率或已核聚焦效率。S3称不同子透镜实验均值/SD，n未给；带内均值±的统计合成未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 620,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b，λ=620nm子图标签",
+              "note": "实际实验谱点；与连续设计工作波段分列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b/c，620nm谱点",
+              "note": "作者给实测f均值/误差曲线，未给原始数字与n；1μm轴向步长，未估读，也未复制设计49μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3c实测曲线；数值未取得"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3e，620nm谱点",
+              "note": "左轴FWHM(μm)、右轴FWHM(λ)；方向/逐波长评价焦面规则未单列，未读曲线估值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3e曲线；数值未取得"
+            }
+          }
+        },
+        {
+          "id": "lin2019_unit_640",
+          "model": "Lin 2019 · 子透镜 · 640nm",
+          "study_id": "lin2019",
+          "specimen_id": "unit_21p65",
+          "module": "",
+          "variant": "GaN消色差子透镜或光场研究系统，非独立商业镜头",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "SI S3单子透镜光学表征；不同波长共享结构配置，未知原始PSF/f/FWHM不补零；作者operation效率和聚焦效率协议分开。",
+          "values": {
+            "diameter_um": {
+              "value": 21.65,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228 Fig.1图注，d=21.65μm",
+              "note": "单个子透镜设计口径，不是60×60阵列总尺寸。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.2157,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注；SI p.8 S3b图注",
+              "note": "子透镜名义/设计NA0.2157；不把收集物镜NA0.5或系统继像NA0.4填到此镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "design_focal_um": {
+              "value": 49,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注，designed focal length f=49μm",
+              "note": "设计值；SI S3b白虚线49μm是展示参考面，不等于14谱点均测49μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；pp.2–3 Fabrication",
+              "note": "GaN实心/反结构高800nm；蓝宝石为基底，400nm SiO2和40nm Cr为工艺硬掩膜，不当结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "作者连续消色差设计工作范围400–660nm；实际测量14离散谱点，不称逐纳米连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 660,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "与λmin共同表示作者工作范围，非只测RGB的设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "GaN实心纳米柱+inverse结构 / c面蓝宝石Al2O3；h=800nm，p=120nm",
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；p.2 Fabrication",
+              "note": "p=120nm按原图注保留；不由显微图比例重测，也不把基底/硬掩膜并入纳米柱高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "圆偏振输入，分析相反手性输出；选择性通道",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2效率定义；SI p.8 S3a光路与图注",
+              "note": "LCP/RCP的功率比不能自动证明全偏振消色差；保留LP/QWP检出选择。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "超连续谱SC laser+AOTF；400–660nm，20nm间隔",
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3a/b",
+              "note": "源线宽未单列；实验表征14个实际中心波长，不能补每点精确线宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "operation_efficiency_protocol": {
+              "value": "输出圆偏振光功率 / 相反手性入射光功率；焦面积分区域与功率采样面积未给",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228效率定义；SI p.8 S3图注",
+              "note": "原作称operation efficiency，不将未知积分范围改成r=3FWHM、总透过率或已核聚焦效率。S3称不同子透镜实验均值/SD，n未给；带内均值±的统计合成未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 640,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b，λ=640nm子图标签",
+              "note": "实际实验谱点；与连续设计工作波段分列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b/c，640nm谱点",
+              "note": "作者给实测f均值/误差曲线，未给原始数字与n；1μm轴向步长，未估读，也未复制设计49μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3c实测曲线；数值未取得"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3e，640nm谱点",
+              "note": "左轴FWHM(μm)、右轴FWHM(λ)；方向/逐波长评价焦面规则未单列，未读曲线估值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3e曲线；数值未取得"
+            }
+          }
+        },
+        {
+          "id": "lin2019_unit_660",
+          "model": "Lin 2019 · 子透镜 · 660nm",
+          "study_id": "lin2019",
+          "specimen_id": "unit_21p65",
+          "module": "",
+          "variant": "GaN消色差子透镜或光场研究系统，非独立商业镜头",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "SI S3单子透镜光学表征；不同波长共享结构配置，未知原始PSF/f/FWHM不补零；作者operation效率和聚焦效率协议分开。",
+          "values": {
+            "diameter_um": {
+              "value": 21.65,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228 Fig.1图注，d=21.65μm",
+              "note": "单个子透镜设计口径，不是60×60阵列总尺寸。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.2157,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注；SI p.8 S3b图注",
+              "note": "子透镜名义/设计NA0.2157；不把收集物镜NA0.5或系统继像NA0.4填到此镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "design_focal_um": {
+              "value": 49,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 Fig.1图注，designed focal length f=49μm",
+              "note": "设计值；SI S3b白虚线49μm是展示参考面，不等于14谱点均测49μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；pp.2–3 Fabrication",
+              "note": "GaN实心/反结构高800nm；蓝宝石为基底，400nm SiO2和40nm Cr为工艺硬掩膜，不当结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "作者连续消色差设计工作范围400–660nm；实际测量14离散谱点，不称逐纳米连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 660,
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228工作范围段",
+              "note": "与λmin共同表示作者工作范围，非只测RGB的设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "GaN实心纳米柱+inverse结构 / c面蓝宝石Al2O3；h=800nm，p=120nm",
+              "source": "lin_array_si_2019",
+              "location": "SI p.4 S1图注；p.2 Fabrication",
+              "note": "p=120nm按原图注保留；不由显微图比例重测，也不把基底/硬掩膜并入纳米柱高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "圆偏振输入，分析相反手性输出；选择性通道",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2效率定义；SI p.8 S3a光路与图注",
+              "note": "LCP/RCP的功率比不能自动证明全偏振消色差；保留LP/QWP检出选择。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "超连续谱SC laser+AOTF；400–660nm，20nm间隔",
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3a/b",
+              "note": "源线宽未单列；实验表征14个实际中心波长，不能补每点精确线宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "operation_efficiency_protocol": {
+              "value": "输出圆偏振光功率 / 相反手性入射光功率；焦面积分区域与功率采样面积未给",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2/印刷p.228效率定义；SI p.8 S3图注",
+              "note": "原作称operation efficiency，不将未知积分范围改成r=3FWHM、总透过率或已核聚焦效率。S3称不同子透镜实验均值/SD，n未给；带内均值±的统计合成未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 660,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b，λ=660nm子图标签",
+              "note": "实际实验谱点；与连续设计工作波段分列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3b/c，660nm谱点",
+              "note": "作者给实测f均值/误差曲线，未给原始数字与n；1μm轴向步长，未估读，也未复制设计49μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3c实测曲线；数值未取得"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.8 S3e，660nm谱点",
+              "note": "左轴FWHM(μm)、右轴FWHM(λ)；方向/逐波长评价焦面规则未单列，未读曲线估值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "S3e曲线；数值未取得"
+            },
+            "mtf_curve": {
+              "value": "S4仅400/540/660nm MTF曲线；PSF来源与器件/系统归属未单独说明",
+              "source": "lin_array_si_2019",
+              "location": "SI p.9 S4图/图注；主文PDF p.2 MTF段、p.6 Data/Code availability",
+              "note": "横轴frequency(linepair/mm)，纵轴MTF无量纲；未给S/T、场点、完整归一化/裁剪/背景、原始PSF及横向采样。轴向1μm不当横向像素；作者PSF→MTF不自动认作已核实测MTF。未读图填值或自行复算。 本行关联S4的660nm曲线，归属缺口保持。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_si_2019",
+                "lin_array_full_2019",
+                "lin_array_2019"
+              ],
+              "data_availability": {
+                "status": "curves_only",
+                "checked_on": "2026-11-14",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "wavelengths_nm": [
+                  400,
+                  540,
+                  660
+                ],
+                "directions": null,
+                "field_point": null,
+                "frequency_unit": "linepair/mm",
+                "normalization": null,
+                "psf_provenance": null,
+                "device_assignment": "SI S4称achromatic metalens；主文p.228称imaging system，未给唯一输入PSF采集配置",
+                "method": "PSF Fourier transform，作者方法；未取得可复算原始数组",
+                "search_log": "docs/LIN_ARRAY_REVIEW_2026-11-14.md#原始数据核查",
+                "frequency_axis_ticks": [
+                  0,
+                  200,
+                  400,
+                  600,
+                  800,
+                  1000,
+                  1200
+                ],
+                "mtf_axis_ticks": [
+                  0,
+                  0.2,
+                  0.4,
+                  0.6,
+                  0.8,
+                  1
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "lin2019_lightfield_system",
+          "model": "Lin 2019 · 60×60阵列光场系统 / 重建",
+          "study_id": "lin2019",
+          "specimen_id": "lightfield_system",
+          "module": "",
+          "variant": "GaN消色差子透镜或光场研究系统，非独立商业镜头",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "不同于S3单子镜表征：主镜头、阵列与继像/相机组成光场系统，a300μm/b58.5μm为文中像面距离，不是系统焦距。",
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "lin_array_si_2019",
+              "location": "SI p.10 S5图/图注；主文图2/3",
+              "note": "卤素白光光场采集与计算渲染，不分派一个中心波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "卤素白光 / 光场系统"
+            },
+            "material": {
+              "value": "60×60 GaN子透镜阵列+商业主镜头+物镜继像+Nikon7500相机（原图标注）",
+              "source": "lin_array_si_2019",
+              "location": "SI p.10 S5图/图注；主文p.2 Fig.1",
+              "note": "阵列每子镜d21.65μm、设计f49μm；这些数值不填作完整相机/阵列口径和系统焦距。实际采集55×40子图不当新阵列设计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_si_2019",
+                "lin_array_full_2019"
+              ]
+            },
+            "illumination": {
+              "value": "卤素白光；LP+λ/4片产生圆偏振；继像后再次偏振选择",
+              "source": "lin_array_si_2019",
+              "location": "SI p.10 S5光路/图注",
+              "note": "7.5×/NA0.21为输入物镜，20×/NA0.4为相机继像；不替代子透镜NA0.2157或单镜实验100×/NA0.5收集物镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "作者全彩图像/深度重建演示；系统残余色差无独立数表",
+              "source": "lin_array_full_2019",
+              "location": "PDF pp.2–3 Fig.1–3；p.6 Rendering/Depth estimation",
+              "note": "1.95μm是作者系统分辨率声明，不当单镜实测FWHM；CMOS/色平衡修正可影响色彩，不把重建图当裸镜MTF或SNR。",
+              "basis": "reconstruction",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "主文将S4称imaging system MTF；未明确PSF输入配置，未取得独立系统数表",
+              "source": "lin_array_full_2019",
+              "location": "PDF p.2 MTF段；SI p.9 S4",
+              "note": "与单镜关联记录指向同一组三波长曲线，不算另一组独立测量，不当渲染后MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "lin_array_full_2019",
+                "lin_array_si_2019"
+              ],
+              "data_availability": {
+                "status": "curves_only",
+                "checked_on": "2026-11-14",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "wavelengths_nm": [
+                  400,
+                  540,
+                  660
+                ],
+                "directions": null,
+                "field_point": null,
+                "frequency_unit": "linepair/mm",
+                "normalization": null,
+                "psf_provenance": null,
+                "device_assignment": "SI S4称achromatic metalens；主文p.228称imaging system，未给唯一输入PSF采集配置",
+                "method": "PSF Fourier transform，作者方法；未取得可复算原始数组",
+                "search_log": "docs/LIN_ARRAY_REVIEW_2026-11-14.md#原始数据核查",
+                "frequency_axis_ticks": [
+                  0,
+                  200,
+                  400,
+                  600,
+                  800,
+                  1000,
+                  1200
+                ],
+                "mtf_axis_ticks": [
+                  0,
+                  0.2,
+                  0.4,
+                  0.6,
+                  0.8,
+                  1
+                ]
+              }
+            }
+          }
         }
       ],
-      "scope": "14项原始研究、47个器件/系统配置、156条记录。连续工作波段与离散实测谱点分别标明；同一结构配置的样品均值、随机单镜及汇总/逐色记录共享配置标识。焦差/误差定义、光源、PSF方向、效率分母与统计分别保留，未知值不补零。",
+      "scope": "15项原始研究、49个器件/系统配置、172条记录。连续工作波段与实际离散谱点分开；设计/实测焦距、单子镜/阵列系统、样品统计、偏振Operation效率/聚焦效率及曲线原始数据缺口分别保留，未知值不补零。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
