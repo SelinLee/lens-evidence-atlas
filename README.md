@@ -14,9 +14,9 @@
 - [本机研究维护目标](docs/LOCAL_RESEARCH_GOAL.md)
 - [第一批审计与核验记录](docs/AUDIT_2026-11-06.md)
 
-## 手机与 AR/VR 新主线（v0.2.0）
+## 手机与 AR/VR 新主线（v0.2.4）
 
-[型号指标表与可选 XY 打点](https://selinlee.github.io/lens-evidence-atlas/devices.html)：3款手机、9个模组选项和3款VR/MR头显，25字段。未知不补零，厂商标称不等于实测；AR光学透视设备与同条件质量测量待补。验收范围见[本批记录](docs/DEVICE_MATRIX_2026-11-13.md)，线上状态以实际Pages部署为准。
+[型号指标表与散点/折线图](https://selinlee.github.io/lens-evidence-atlas/devices.html)：4款手机的12个摄像头配置、8款AR/VR设备、25个字段。支持双轴指标、型号/列多选、排序、CSV/SVG导出和恢复分享视图；未知不补零，厂商标称不等于同条件实测。定义词典的学术出处及独立质量测量仍待补。详见[发布验收记录](docs/DEVICE_RELEASE_2026-11-14.md)。
 
 ## 历史范围
 

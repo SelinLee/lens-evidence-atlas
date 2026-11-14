@@ -175,3 +175,19 @@ test('XREAL 1S binocular and unmeasured optical quantities remain unfilled',()=>
  test('Luma Pro keeps explicit per-eye specs and missing measurement boundaries',()=>{const r=d.domains.xr.rows.find(r=>r.id==='viture_luma_pro');assert.equal(r.values.width.value,1920);assert.equal(r.values.height.value,1200);assert.equal(r.values.hz.value,120);assert.match(r.values.hz.note,/60 Hz/);assert.equal(r.values.ufov.value,52);for(const k of ['hfov','vfov','ppd','eyebox','eyerelief','brightness','mtf','latency'])assert.equal(r.values[k],undefined);});
 
 test('XR scope count follows current rows',()=>{assert.ok(d.domains.xr.scope.startsWith(`${d.domains.xr.rows.length}款`));});
+
+test('line mode orders by numeric x and keeps the same point coordinates',()=>{
+ const f=deviceFixture();const scatter=f.el('chart').innerHTML;f.change('mode','line');const line=f.el('chart').innerHTML;
+ assert.match(line,/class="model-line"/);
+ const coords=s=>[...s.matchAll(/<circle cx="([^"]+)" cy="([^"]+)"/g)].map(m=>[+m[1],+m[2]]);
+ assert.deepEqual(coords(scatter),coords(line));
+ const xs=line.match(/class="model-line" points="([^"]+)"/)[1].split(' ').map(s=>+s.split(',')[0]);assert.ok(xs.every((x,i)=>i===0||x>=xs[i-1]));
+ f.change('x','sfr');assert.ok(!f.el('chart').innerHTML.includes('polyline'));assert.ok(!f.el('chart').innerHTML.includes('<circle'));
+});
+
+test('CSV exports missing values, notes and provenance with formula and quoting protection',()=>{
+ const code=fs.readFileSync(new URL('../web/devices.js',import.meta.url),'utf8');const c=vm.createContext({D:d});
+ vm.runInContext(code.slice(code.indexOf('function cellText('),code.indexOf('function render('))+code.slice(code.indexOf('function csvText('),code.indexOf("['domain','module','x','y','mode','sort']",code.indexOf('function csvText('))),c);
+ c.rows=[{model:'=1+2',variant:'a,"b',values:{mp:{value:48,source:'apple_phone',location:'Camera',note:'line\n2'}}}];c.ms=[{id:'mp',label:'MP'},{id:'dr',label:'DR'}];
+ const s=vm.runInContext('csvText(rows,ms)',c);assert.ok(s.startsWith('\ufeff'));assert.ok(s.includes("'=1+2"));assert.ok(s.includes('a,""b'));assert.ok(s.includes('未公开 / 未核验'));assert.ok(s.includes('https://www.apple.com/iphone-18-pro/specs/'));
+});

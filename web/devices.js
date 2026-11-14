@@ -34,7 +34,7 @@ function layoutLabels(items){
  }
  return placed;
 }
-function chart(rows,x,y,metrics){
+function chart(rows,x,y,metrics,mode="scatter"){
  const ps=points(rows,x,y);
  if(!ps.length)return '<p>这两个指标暂无同时已知的型号。请选择其他指标；不会补零。</p>';
  const groups=new Map();
@@ -63,7 +63,38 @@ function chart(rows,x,y,metrics){
   annotations+=text;
   legend.push(`<li><span style="color:${color}" aria-hidden="true">●</span> ${E(g.labels.join('、'))}：(${g.x}, ${g.y})${g.labels.length>1?'，同坐标重合':''}</li>`);
  });
- return s+markers+annotations+'</svg></div>'+(positions.some(p=>!p)?'<p>部分文字标签请见下方完整图例；圆点坐标未移动。</p>':'')+'<ul class="chart-legend" aria-label="散点型号与坐标">'+legend.join('')+'</ul>';
+ const ordered=[...groups.values()].sort((a,b)=>a.x-b.x||a.y-b.y);
+ const line=mode==='line'&&ordered.length>1?`<polyline class="model-line" points="${ordered.map(g=>`${px(g.x)},${py(g.y)}`).join(' ')}" stroke="#526a82" stroke-width="2" fill="none"/>`:'';
+ return s+line+markers+annotations+'</svg></div>'+(positions.some(p=>!p)?'<p>部分文字标签请见下方完整图例；圆点坐标未移动。</p>':'')+'<ul class="chart-legend" aria-label="散点型号与坐标">'+legend.join('')+'</ul>';
 }
-function render(reset=false,resetScroll=false){const domain=$('domain').value,c=D.domains[domain],ms=c.metrics,rs=c.rows.filter(r=>domain==='xr'||r.module===$('module').value);$('module-label').hidden=domain==='xr';$('scope').textContent=c.scope;for(const id of ['x','y']){if(reset||!ms.some(m=>m.id===$(id).value)){$(id).innerHTML=ms.filter(m=>m.numeric).map(m=>`<option value="${m.id}">${E(m.label)}</option>`).join('');$(id).value=ms.filter(m=>m.numeric)[id==='x'?0:1].id;}}const x=$('x').value,y=$('y').value,ps=points(rs,x,y);$('chart').innerHTML=chart(rs,x,y,ms);$('status').textContent=`当前 ${rs.length} 个型号，${ps.length} 个可绘制点；${rs.length-ps.length} 个缺少所选数值。证据：厂商公开规格，非同条件实测。`;$('table').innerHTML='<table><thead><tr><th>型号 / 配置</th>'+ms.map(m=>`<th>${E(m.label)}</th>`).join('')+'</tr></thead><tbody>'+rs.map(r=>'<tr><th>'+E(r.model)+'<small>'+E(r.variant)+'</small></th>'+ms.map(m=>{const v=r.values[m.id];return '<td>'+(v&&v.value!==null?E(v.value):'未公开 / 未核验')+(v?`<small>${E(v.note||'')} <a href="#source-${E(v.source)}">出处</a> · ${E(v.location)}</small>`:'')+'</td>';}).join('')+'</tr>').join('')+'</tbody></table>';$('definitions').innerHTML=ms.map(m=>`<details><summary>${E(m.label)}</summary><p>${E(m.definition)}</p><p>比较前提：${E(m.conditions)}</p></details>`).join('');$('sources').innerHTML=D.sources.filter(s=>rs.some(r=>Object.values(r.values).some(v=>v.source===s.id))).map(s=>`<p id="source-${E(s.id)}"><a href="${E(s.url)}" target="_blank" rel="noopener">${E(s.title)}</a><br>${E(s.scope)} · 核验 ${E(s.checked_on)}</p>`).join('');$('date').textContent='样本截止 '+D.as_of+'；非完整市场清单，未知项保留。';if(resetScroll)$('table').scrollLeft=0;}
-['domain','module','x','y'].forEach(id=>$(id).addEventListener('change',()=>render(id==='domain',id==='domain'||id==='module')));render(true);
+let chosenModels=null,chosenColumns=null;
+function viewRows(){const c=D.domains[$('domain').value];return c.rows.filter(r=>($('domain').value==='xr'||r.module===$('module').value)&&(chosenModels===null||chosenModels.includes(r.model)));}
+function sortedRows(rows,x,y){const key=$('sort').value;return [...rows].sort((a,b)=>key==='x'||key==='y'?((a.values[key==='x'?x:y]?.value??Infinity)-(b.values[key==='x'?x:y]?.value??Infinity)||a.model.localeCompare(b.model)):key==='model'?a.model.localeCompare(b.model):0);}
+function cellText(r,m){const v=r.values[m.id];return v&&v.value!==null?String(v.value):'未公开 / 未核验';}
+function render(reset=false,resetScroll=false){
+ const domain=$('domain').value,c=D.domains[domain],ms=c.metrics;
+ if(reset){chosenModels=null;chosenColumns=null;}
+ const available=c.rows.filter(r=>domain==='xr'||r.module===$('module').value),models=[...new Set(available.map(r=>r.model))];
+ $('models').innerHTML=models.map(m=>`<option${chosenModels===null||chosenModels.includes(m)?' selected':''}>${E(m)}</option>`).join('');
+ $('columns').innerHTML=ms.map(m=>`<option value="${m.id}"${chosenColumns===null||chosenColumns.includes(m.id)?' selected':''}>${E(m.label)}</option>`).join('');
+ $('module-label').hidden=domain==='xr';$('scope').textContent=c.scope;
+ for(const id of ['x','y'])if(reset||!ms.some(m=>m.id===$(id).value)){$(id).innerHTML=ms.filter(m=>m.numeric).map(m=>`<option value="${m.id}">${E(m.label)}</option>`).join('');$(id).value=ms.filter(m=>m.numeric)[id==='x'?0:1].id;}
+ const x=$('x').value,y=$('y').value,rs=sortedRows(viewRows(),x,y),columns=ms.filter(m=>chosenColumns===null||chosenColumns.includes(m.id)),ps=points(rs,x,y);
+ $('chart').innerHTML=chart(rs,x,y,ms,$('mode').value);$('status').textContent=`当前 ${rs.length} 个型号，${ps.length} 个可绘制点；${rs.length-ps.length} 个缺少所选数值。证据：厂商公开规格，非同条件实测。`;
+ $('table').innerHTML='<table><thead><tr><th>型号 / 配置</th>'+columns.map(m=>`<th><a href="#metric-${domain}-${m.id}">${E(m.label)}</a></th>`).join('')+'</tr></thead><tbody>'+rs.map(r=>'<tr><th>'+E(r.model)+'<small>'+E(r.variant)+'</small></th>'+columns.map(m=>{const v=r.values[m.id];return '<td>'+E(cellText(r,m))+(v?`<small>${E(v.note||'')} <a href="#source-${E(v.source)}">出处</a> · ${E(v.location)}</small>`:'')+'</td>';}).join('')+'</tr>').join('')+'</tbody></table>';
+ $('definitions').innerHTML=ms.map(m=>`<details id="metric-${domain}-${m.id}"><summary>${E(m.label)}</summary><p>${E(m.definition)}</p><p>比较前提：${E(m.conditions)}</p><p>当前为字段口径说明；完整学术定义与任务重要性依据仍在补证，未建立通用排名。</p></details>`).join('');
+ $('sources').innerHTML=D.sources.filter(s=>rs.some(r=>Object.values(r.values).some(v=>v.source===s.id))).map(s=>`<p id="source-${E(s.id)}"><a href="${E(s.url)}" target="_blank" rel="noopener">${E(s.title)}</a><br>${E(s.scope)} · 核验 ${E(s.checked_on)}</p>`).join('');
+ $('date').textContent='样本截止 '+D.as_of+'；非完整市场清单，未知项保留。';if(resetScroll)$('table').scrollLeft=0;
+ saveView();
+}
+function saveView(){if(!window.history||!window.location)return;const u=new URL(window.location.href);for(const id of ['domain','module','x','y','mode','sort'])u.searchParams.set(id,$(id).value);for(const [id,v]of [['models',chosenModels],['columns',chosenColumns]]){if(v===null)u.searchParams.delete(id);else u.searchParams.set(id,JSON.stringify(v));}window.history.replaceState(null,'',u);}
+function download(name,type,text){const a=document.createElement('a'),url=URL.createObjectURL(new Blob([text],{type}));a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+function csvText(rows,metrics){const q=v=>'"'+String(v??'').replace(/"/g,'""')+'"';const safe=v=>/^[=+\-@\t\r]/.test(String(v))?"'"+v:v;return '\ufeff'+[['型号','配置',...metrics.flatMap(m=>[m.label,m.label+'备注',m.label+'来源',m.label+'原文位置'])],...rows.map(r=>[r.model,r.variant,...metrics.flatMap(m=>{const v=r.values[m.id];return [cellText(r,m),v?.note||'',D.sources.find(s=>s.id===v?.source)?.url||'',v?.location||''];})])].map(row=>row.map(v=>q(safe(v))).join(',')).join('\r\n');}
+['domain','module','x','y','mode','sort'].forEach(id=>$(id).addEventListener('change',()=>render(id==='domain',id==='domain'||id==='module')));
+for(const id of ['models','columns'])$(id).addEventListener('change',()=>{const values=[...$(id).selectedOptions].map(o=>o.value);if(id==='models')chosenModels=values;else chosenColumns=values;render();});
+$('all-models').addEventListener('click',()=>{chosenModels=null;render();});$('all-columns').addEventListener('click',()=>{chosenColumns=null;render();});
+$('export-csv').addEventListener('click',()=>{const c=D.domains[$('domain').value];download('lens-device-table.csv','text/csv;charset=utf-8',csvText(sortedRows(viewRows(),$('x').value,$('y').value),c.metrics.filter(m=>chosenColumns===null||chosenColumns.includes(m.id))));});
+$('export-svg').addEventListener('click',()=>{const svg=$('chart').querySelector('svg');if(!svg){$('status').textContent='当前无有效图表可导出';return;}const copy=svg.cloneNode(true);copy.setAttribute('xmlns','http://www.w3.org/2000/svg');const desc=document.createElementNS('http://www.w3.org/2000/svg','desc');desc.textContent=$('status').textContent+'；'+$('chart').textContent;copy.prepend(desc);download('lens-device-chart.svg','image/svg+xml',new XMLSerializer().serializeToString(copy));});
+$('share').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(window.location.href);$('status').textContent='已复制当前视图链接';}catch{$('status').textContent='可复制浏览器地址栏，当前选择已保存在链接中。';}});
+const initialSearch=window.location?.href;render(true);
+if(initialSearch){const p=new URL(initialSearch).searchParams;const domain=p.get('domain');if(D.domains[domain]){$('domain').value=domain;render(true);}for(const id of ['module','x','y','mode','sort']){const v=p.get(id);if(v&&[...$(id).options].some(o=>o.value===v))$(id).value=v;}for(const id of ['models','columns']){try{const v=JSON.parse(p.get(id));if(Array.isArray(v)&&v.every(x=>typeof x==='string')){if(id==='models')chosenModels=v;else chosenColumns=v;}}catch{}}render();}
