@@ -491,6 +491,24 @@
       "kind": "supplementary_material",
       "checked_on": "2026-11-14",
       "scope": "24页SI，限定读Note1/3/5–7与相机/重建相关位置，视觉核pp.2、11、14–18。S9有5光学结构×21波长×4入射角的实测PSF图片；S10为PSF峰比和FFT阈值曲线，S11是横纵USAF线对平均，S12另有6波长轴向扫描。公开作者关联仓库PSF候选归属/标尺未核实，未冒充本篇原始数组；本库未复算MTF。"
+    },
+    {
+      "id": "fan_array_2019",
+      "title": "Fan et al. (2019): A broadband achromatic metalens array for integral imaging in the visible",
+      "doi": "10.1038/s41377-019-0178-2",
+      "url": "https://www.nature.com/articles/s41377-019-0178-2",
+      "kind": "peer_reviewed_paper",
+      "checked_on": "2026-11-14",
+      "scope": "正式网页及10页主文，限定读取设计/单镜表征、15×15阵列、60×60光学重建系统及Methods/文末；视觉核PDF pp.3–9。单镜平均实测f约81.5μm、作者实验NA0.086与平均效率47%单列；Fig.4d图注颜色/符号对调、Fig.6图10×与正文20×冲突保留。DOF是0.95强度范围而非SD/焦移，逐波长f/FWHM曲线未估读。"
+    },
+    {
+      "id": "fan_array_si_2019",
+      "publication_source": "fan_array_2019",
+      "title": "Fan et al. (2019): Supplementary Material — fabrication, optical setup and integral-image reconstruction",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41377-019-0178-2/MediaObjects/41377_2019_178_MOESM1_ESM.pdf",
+      "kind": "supplementary_material",
+      "checked_on": "2026-11-14",
+      "scope": "8页SI，读取S1制备/S2参数与S3测量光路、S4–S6光学重建相关文字，视觉核p.2与p.4 S1/S3及TableS1；系统图S4–S6只相关文字/图注。S3给100×/NA0.95收集物镜、分束器/功率计/iris，但未给完整效率焦圈与功率分母、原始PSF/采样或MTF。TableS1为结构几何，非焦距/效率原始表。"
     }
   ],
   "domains": {
@@ -2942,8 +2960,8 @@
         },
         {
           "id": "na",
-          "label": "NA（名义；冲突不打点）",
-          "definition": "数值孔径及原文口径；正文/图注或几何一致性冲突时保留原文并不选择单值。",
+          "label": "NA（性质与冲突见说明）",
+          "definition": "作者报告的NA，含设计名义或由实验几何得到的NA；性质与计算依据逐格保留。原文/几何冲突时不选择单值打点。",
           "conditions": "介质、半角/全角、口径/焦距、实测/设计与原文冲突",
           "numeric": true,
           "definition_refs": [
@@ -2954,6 +2972,10 @@
             {
               "source": "kang_uv_visible_2026",
               "location": "§2.3/2.4 器件参数段"
+            },
+            {
+              "source": "fan_array_2019",
+              "location": "PDF p.5平均实测焦距/实验NA段；p.6 Fig.4图注"
             }
           ],
           "axis_bounds": {
@@ -3600,6 +3622,22 @@
             {
               "source": "froch_broadband_2025",
               "location": "PDF p.4 Fig.2g–i"
+            }
+          ]
+        },
+        {
+          "id": "measured_focal_band_mean_um",
+          "label": "作者平均实测焦距 (μm；谱点汇总)",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition": "作者明确报告的跨实测波长平均焦距；与逐波长焦距、设计f、DOF公共区和残余焦距最大互差分开。",
+          "conditions": "同器件、实际谱点、参考面、平均/谱权重、作者计算和未知重复/不确定度；不把均值分派给每λ。",
+          "definition_refs": [
+            {
+              "source": "fan_array_2019",
+              "location": "PDF p.5平均实测焦距段；p.6 Fig.4图注"
             }
           ]
         }
@@ -99095,9 +99133,3886 @@
               "checked_on": "2026-11-14"
             }
           }
+        },
+        {
+          "id": "fan2019_single_summary",
+          "model": "Fan 2019 · D14μm单镜 · 带内汇总",
+          "study_id": "fan2019",
+          "specimen_id": "single_14",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "单镜的实测均值和DOF公共区；不当逐波长精确焦距或阵列参数。",
+          "values": {
+            "diameter_um": {
+              "value": 14,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "单个子透镜名义口径，不是阵列整体或相机口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.3–5设计/器件表征；p.6 Fig.4",
+              "note": "未核到对应实制单镜的明确设计焦距；理论f50μm/r<9μm是示例，不移用，平均实测81.5μm也不填设计f。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "实制设计f未明确核到"
+            },
+            "na": {
+              "value": 0.086,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "作者称experimental NA，由单镜平均实测f约81.5μm与D14μm对应；不是独立角度计量，不随意分派逐λ NA。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "calculation_origin": "authors"
+            },
+            "lambda_min_nm": {
+              "value": 430,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者工作波段430–780nm，实际8谱点单列；并不证明任意λ/全场最佳焦点相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 780,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者波段上限与实际780nm谱点保留，780nm按本库可见光端点纳入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4a/c标签",
+              "note": "实际430/480/530/580/630/680/730/780nm，不混入系统RGB488/532/633nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "430–780nm / 50nm；8谱点"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "fan_array_si_2019",
+              "location": "SI p.2 S1；主文p.3/4设计/图2c",
+              "note": "实制SiN名义厚度400nm；理论尺寸极限示例d0.8μm不移用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ]
+            },
+            "material": {
+              "value": "SiN / quartz（silica）；hexagonal lattice a320nm，十类带孔nanoposts",
+              "source": "fan_array_2019",
+              "location": "PDF p.3设计末段；p.4 Fig.2c/d；SI p.2 S1、p.4 TableS1",
+              "note": "320nm为纳米结构格点，不是阵列子镜中心距15μm；TableS1的单元参数不替代器件焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "polarization": {
+              "value": "作者偏振不敏感设计；Fig.4为y偏振、从silica侧法向入射",
+              "source": "fan_array_2019",
+              "location": "PDF pp.3/5设计及实测段；SI p.4 S3",
+              "note": "90°旋转对称设计声明与实际线偏振测量分开；不把单次y偏振图当全偏振逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Fianium WL-SC480-20-PP + LLTF-VIS2-HP-FDS-SM + OQGLC-15线偏振片",
+              "source": "fan_array_si_2019",
+              "location": "SI p.4 S3图注",
+              "note": "单镜/阵列表征光源；实际滤波线宽未给，成像RGB10nm滤片是另一光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "psf_protocol": {
+              "value": "100×/NA0.95物镜收集透射场，tube lens/CCD；记录y-z轴向分布及焦面PSF。DOF定义为焦点附近归一化强度降至0.95的范围，图4d/e误差条分别表示DOF和DOF内宽度范围。",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–6 Fig.4及正文；SI p.4 S3",
+              "note": "未核到轴向步长/横向物方像素/原始PSF和背景/归一化流程；DOF不是测量SD或CI，NA0.95属于收集物镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4d；p.5对应正文",
+              "note": "仅曲线，无逐波长原始焦距表；正文/图内legend是模拟蓝方块、实测红三角，图注却反写，保留差异。平均81.5不复制为各λ焦距。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "仅曲线；图注符号差异保留"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4e，Measured FWHMx蓝三角",
+              "note": "x方向实测宽度仅曲线；误差条是DOF内宽度范围，不当SD，不读图估点。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "x向实测仅曲线"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4e，Measured FWHMy红三角",
+              "note": "y方向与x方向分列；未取得数表，不取平均或把模拟方块当实测。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "y向实测仅曲线"
+            },
+            "efficiency_protocol": {
+              "value": "作者报告单镜平均聚焦效率47%、测点范围约36–55%、峰在730nm；SI S3用分束器/功率计与可调iris限制clear aperture",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7 Fig.4d/正文；SI p.4 S3",
+              "note": "积分焦圈半径/直径、焦面、功率分母、偏振功率通道/校准、谱权重和重复数未完整给；不能直接与其他文献效率排名，也不把47%分派给每λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "chromatic": {
+              "value": "各λ DOF公共区域z82.5–89.4μm（I/Ipeak≥0.95判据），不是最佳焦距最大差",
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4d图注",
+              "note": "0.95是作者DOF强度判据；区间宽度6.9μm不当残余色差，平均实测f与设计f/固定像面另论。未取得逐λ轴向/横向色差原表。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "common_focus_region_um": {
+                "min": 82.5,
+                "max": 89.4
+              },
+              "dof_relative_intensity": 0.95,
+              "error_bar_meaning": "depth_of_focus_interval",
+              "statistical_uncertainty": null
+            },
+            "mtf_curve": {
+              "value": "Fig.4d焦距/效率与4e方向FWHM曲线；本轮未核到MTF/Strehl原始证据",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7 Fig.4及文末；SI S1–S6",
+              "note": "Fig.4d x为Wavelength(nm)，左y为Focal length(μm)，右y效率无量纲；4e y为FWHM(μm)。正式页/主文/SI所读范围未定位到Data/Code availability声明，附件未列Source Data；作者SYSU出版列表只给主文链接。DataCite精确关联DOI及GitHub仓库名称/描述精确DOI/题名查询无匹配；未取得已确认本篇原始PSF/MTF/逐波长数表，不默认套用其他论文的“向作者请求”。核查范围见docs/FAN_ARRAY_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "measured_focal_band_mean_um": {
+              "value": 81.5,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "作者平均实测f约81.5μm，仅为8个测量波长的汇总；谱权重/平均公式、原始峰位、重复样品数与统计不确定度未给，不赋给每λ。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "approximate": true,
+              "display": "约81.5",
+              "statistic": "author_reported_spectral_mean",
+              "sample_wavelengths_nm": [
+                430,
+                480,
+                530,
+                580,
+                630,
+                680,
+                730,
+                780
+              ],
+              "calculation_origin": "authors",
+              "reference_plane": "作者z/镜片焦距；精确原点/表面定义未报告",
+              "aggregation_note": "作者平均实测焦距，谱权重/平均公式和重复数未报告"
+            },
+            "efficiency_band_mean_pct": {
+              "value": 47,
+              "source": "fan_array_2019",
+              "location": "PDF p.7首段，average efficiency47%",
+              "note": "作者针对430–780nm单镜的平均效率，误差/谱权重未给；协议缺分母/焦圈，不补齐为统一可比定义。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "statistic": "band_mean"
+            }
+          }
+        },
+        {
+          "id": "fan2019_single_430",
+          "model": "Fan 2019 · D14μm单镜 · 430nm",
+          "study_id": "fan2019",
+          "specimen_id": "single_14",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一单镜8谱点；方向宽度/焦距只核到曲线，不填估值。",
+          "values": {
+            "diameter_um": {
+              "value": 14,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "单个子透镜名义口径，不是阵列整体或相机口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.3–5设计/器件表征；p.6 Fig.4",
+              "note": "未核到对应实制单镜的明确设计焦距；理论f50μm/r<9μm是示例，不移用，平均实测81.5μm也不填设计f。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "实制设计f未明确核到"
+            },
+            "na": {
+              "value": 0.086,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "作者称experimental NA，由单镜平均实测f约81.5μm与D14μm对应；不是独立角度计量，不随意分派逐λ NA。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "calculation_origin": "authors"
+            },
+            "lambda_min_nm": {
+              "value": 430,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者工作波段430–780nm，实际8谱点单列；并不证明任意λ/全场最佳焦点相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 780,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者波段上限与实际780nm谱点保留，780nm按本库可见光端点纳入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 430,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4a/c第1谱点标签",
+              "note": "单镜实测波长，与系统RGB滤片配置分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "fan_array_si_2019",
+              "location": "SI p.2 S1；主文p.3/4设计/图2c",
+              "note": "实制SiN名义厚度400nm；理论尺寸极限示例d0.8μm不移用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ]
+            },
+            "material": {
+              "value": "SiN / quartz（silica）；hexagonal lattice a320nm，十类带孔nanoposts",
+              "source": "fan_array_2019",
+              "location": "PDF p.3设计末段；p.4 Fig.2c/d；SI p.2 S1、p.4 TableS1",
+              "note": "320nm为纳米结构格点，不是阵列子镜中心距15μm；TableS1的单元参数不替代器件焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "polarization": {
+              "value": "作者偏振不敏感设计；Fig.4为y偏振、从silica侧法向入射",
+              "source": "fan_array_2019",
+              "location": "PDF pp.3/5设计及实测段；SI p.4 S3",
+              "note": "90°旋转对称设计声明与实际线偏振测量分开；不把单次y偏振图当全偏振逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Fianium WL-SC480-20-PP + LLTF-VIS2-HP-FDS-SM + OQGLC-15线偏振片",
+              "source": "fan_array_si_2019",
+              "location": "SI p.4 S3图注",
+              "note": "单镜/阵列表征光源；实际滤波线宽未给，成像RGB10nm滤片是另一光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "psf_protocol": {
+              "value": "100×/NA0.95物镜收集透射场，tube lens/CCD；记录y-z轴向分布及焦面PSF。DOF定义为焦点附近归一化强度降至0.95的范围，图4d/e误差条分别表示DOF和DOF内宽度范围。",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–6 Fig.4及正文；SI p.4 S3",
+              "note": "未核到轴向步长/横向物方像素/原始PSF和背景/归一化流程；DOF不是测量SD或CI，NA0.95属于收集物镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4d；p.5对应正文",
+              "note": "仅曲线，无逐波长原始焦距表；正文/图内legend是模拟蓝方块、实测红三角，图注却反写，保留差异。平均81.5不复制为各λ焦距。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "仅曲线；图注符号差异保留"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4e，Measured FWHMx蓝三角",
+              "note": "x方向实测宽度仅曲线；误差条是DOF内宽度范围，不当SD，不读图估点。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "x向实测仅曲线"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4e，Measured FWHMy红三角",
+              "note": "y方向与x方向分列；未取得数表，不取平均或把模拟方块当实测。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "y向实测仅曲线"
+            },
+            "efficiency_protocol": {
+              "value": "作者报告单镜平均聚焦效率47%、测点范围约36–55%、峰在730nm；SI S3用分束器/功率计与可调iris限制clear aperture",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7 Fig.4d/正文；SI p.4 S3",
+              "note": "积分焦圈半径/直径、焦面、功率分母、偏振功率通道/校准、谱权重和重复数未完整给；不能直接与其他文献效率排名，也不把47%分派给每λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "chromatic": {
+              "value": "各λ DOF公共区域z82.5–89.4μm（I/Ipeak≥0.95判据），不是最佳焦距最大差",
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4d图注",
+              "note": "0.95是作者DOF强度判据；区间宽度6.9μm不当残余色差，平均实测f与设计f/固定像面另论。未取得逐λ轴向/横向色差原表。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "common_focus_region_um": {
+                "min": 82.5,
+                "max": 89.4
+              },
+              "dof_relative_intensity": 0.95,
+              "error_bar_meaning": "depth_of_focus_interval",
+              "statistical_uncertainty": null
+            },
+            "mtf_curve": {
+              "value": "Fig.4d焦距/效率与4e方向FWHM曲线；本轮未核到MTF/Strehl原始证据",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7 Fig.4及文末；SI S1–S6",
+              "note": "Fig.4d x为Wavelength(nm)，左y为Focal length(μm)，右y效率无量纲；4e y为FWHM(μm)。正式页/主文/SI所读范围未定位到Data/Code availability声明，附件未列Source Data；作者SYSU出版列表只给主文链接。DataCite精确关联DOI及GitHub仓库名称/描述精确DOI/题名查询无匹配；未取得已确认本篇原始PSF/MTF/逐波长数表，不默认套用其他论文的“向作者请求”。核查范围见docs/FAN_ARRAY_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_single_480",
+          "model": "Fan 2019 · D14μm单镜 · 480nm",
+          "study_id": "fan2019",
+          "specimen_id": "single_14",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一单镜8谱点；方向宽度/焦距只核到曲线，不填估值。",
+          "values": {
+            "diameter_um": {
+              "value": 14,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "单个子透镜名义口径，不是阵列整体或相机口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.3–5设计/器件表征；p.6 Fig.4",
+              "note": "未核到对应实制单镜的明确设计焦距；理论f50μm/r<9μm是示例，不移用，平均实测81.5μm也不填设计f。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "实制设计f未明确核到"
+            },
+            "na": {
+              "value": 0.086,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "作者称experimental NA，由单镜平均实测f约81.5μm与D14μm对应；不是独立角度计量，不随意分派逐λ NA。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "calculation_origin": "authors"
+            },
+            "lambda_min_nm": {
+              "value": 430,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者工作波段430–780nm，实际8谱点单列；并不证明任意λ/全场最佳焦点相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 780,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者波段上限与实际780nm谱点保留，780nm按本库可见光端点纳入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 480,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4a/c第2谱点标签",
+              "note": "单镜实测波长，与系统RGB滤片配置分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "fan_array_si_2019",
+              "location": "SI p.2 S1；主文p.3/4设计/图2c",
+              "note": "实制SiN名义厚度400nm；理论尺寸极限示例d0.8μm不移用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ]
+            },
+            "material": {
+              "value": "SiN / quartz（silica）；hexagonal lattice a320nm，十类带孔nanoposts",
+              "source": "fan_array_2019",
+              "location": "PDF p.3设计末段；p.4 Fig.2c/d；SI p.2 S1、p.4 TableS1",
+              "note": "320nm为纳米结构格点，不是阵列子镜中心距15μm；TableS1的单元参数不替代器件焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "polarization": {
+              "value": "作者偏振不敏感设计；Fig.4为y偏振、从silica侧法向入射",
+              "source": "fan_array_2019",
+              "location": "PDF pp.3/5设计及实测段；SI p.4 S3",
+              "note": "90°旋转对称设计声明与实际线偏振测量分开；不把单次y偏振图当全偏振逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Fianium WL-SC480-20-PP + LLTF-VIS2-HP-FDS-SM + OQGLC-15线偏振片",
+              "source": "fan_array_si_2019",
+              "location": "SI p.4 S3图注",
+              "note": "单镜/阵列表征光源；实际滤波线宽未给，成像RGB10nm滤片是另一光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "psf_protocol": {
+              "value": "100×/NA0.95物镜收集透射场，tube lens/CCD；记录y-z轴向分布及焦面PSF。DOF定义为焦点附近归一化强度降至0.95的范围，图4d/e误差条分别表示DOF和DOF内宽度范围。",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–6 Fig.4及正文；SI p.4 S3",
+              "note": "未核到轴向步长/横向物方像素/原始PSF和背景/归一化流程；DOF不是测量SD或CI，NA0.95属于收集物镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4d；p.5对应正文",
+              "note": "仅曲线，无逐波长原始焦距表；正文/图内legend是模拟蓝方块、实测红三角，图注却反写，保留差异。平均81.5不复制为各λ焦距。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "仅曲线；图注符号差异保留"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4e，Measured FWHMx蓝三角",
+              "note": "x方向实测宽度仅曲线；误差条是DOF内宽度范围，不当SD，不读图估点。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "x向实测仅曲线"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4e，Measured FWHMy红三角",
+              "note": "y方向与x方向分列；未取得数表，不取平均或把模拟方块当实测。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "y向实测仅曲线"
+            },
+            "efficiency_protocol": {
+              "value": "作者报告单镜平均聚焦效率47%、测点范围约36–55%、峰在730nm；SI S3用分束器/功率计与可调iris限制clear aperture",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7 Fig.4d/正文；SI p.4 S3",
+              "note": "积分焦圈半径/直径、焦面、功率分母、偏振功率通道/校准、谱权重和重复数未完整给；不能直接与其他文献效率排名，也不把47%分派给每λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "chromatic": {
+              "value": "各λ DOF公共区域z82.5–89.4μm（I/Ipeak≥0.95判据），不是最佳焦距最大差",
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4d图注",
+              "note": "0.95是作者DOF强度判据；区间宽度6.9μm不当残余色差，平均实测f与设计f/固定像面另论。未取得逐λ轴向/横向色差原表。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "common_focus_region_um": {
+                "min": 82.5,
+                "max": 89.4
+              },
+              "dof_relative_intensity": 0.95,
+              "error_bar_meaning": "depth_of_focus_interval",
+              "statistical_uncertainty": null
+            },
+            "mtf_curve": {
+              "value": "Fig.4d焦距/效率与4e方向FWHM曲线；本轮未核到MTF/Strehl原始证据",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7 Fig.4及文末；SI S1–S6",
+              "note": "Fig.4d x为Wavelength(nm)，左y为Focal length(μm)，右y效率无量纲；4e y为FWHM(μm)。正式页/主文/SI所读范围未定位到Data/Code availability声明，附件未列Source Data；作者SYSU出版列表只给主文链接。DataCite精确关联DOI及GitHub仓库名称/描述精确DOI/题名查询无匹配；未取得已确认本篇原始PSF/MTF/逐波长数表，不默认套用其他论文的“向作者请求”。核查范围见docs/FAN_ARRAY_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_single_530",
+          "model": "Fan 2019 · D14μm单镜 · 530nm",
+          "study_id": "fan2019",
+          "specimen_id": "single_14",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一单镜8谱点；方向宽度/焦距只核到曲线，不填估值。",
+          "values": {
+            "diameter_um": {
+              "value": 14,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "单个子透镜名义口径，不是阵列整体或相机口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.3–5设计/器件表征；p.6 Fig.4",
+              "note": "未核到对应实制单镜的明确设计焦距；理论f50μm/r<9μm是示例，不移用，平均实测81.5μm也不填设计f。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "实制设计f未明确核到"
+            },
+            "na": {
+              "value": 0.086,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "作者称experimental NA，由单镜平均实测f约81.5μm与D14μm对应；不是独立角度计量，不随意分派逐λ NA。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "calculation_origin": "authors"
+            },
+            "lambda_min_nm": {
+              "value": 430,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者工作波段430–780nm，实际8谱点单列；并不证明任意λ/全场最佳焦点相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 780,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者波段上限与实际780nm谱点保留，780nm按本库可见光端点纳入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4a/c第3谱点标签",
+              "note": "单镜实测波长，与系统RGB滤片配置分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "fan_array_si_2019",
+              "location": "SI p.2 S1；主文p.3/4设计/图2c",
+              "note": "实制SiN名义厚度400nm；理论尺寸极限示例d0.8μm不移用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ]
+            },
+            "material": {
+              "value": "SiN / quartz（silica）；hexagonal lattice a320nm，十类带孔nanoposts",
+              "source": "fan_array_2019",
+              "location": "PDF p.3设计末段；p.4 Fig.2c/d；SI p.2 S1、p.4 TableS1",
+              "note": "320nm为纳米结构格点，不是阵列子镜中心距15μm；TableS1的单元参数不替代器件焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "polarization": {
+              "value": "作者偏振不敏感设计；Fig.4为y偏振、从silica侧法向入射",
+              "source": "fan_array_2019",
+              "location": "PDF pp.3/5设计及实测段；SI p.4 S3",
+              "note": "90°旋转对称设计声明与实际线偏振测量分开；不把单次y偏振图当全偏振逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Fianium WL-SC480-20-PP + LLTF-VIS2-HP-FDS-SM + OQGLC-15线偏振片",
+              "source": "fan_array_si_2019",
+              "location": "SI p.4 S3图注",
+              "note": "单镜/阵列表征光源；实际滤波线宽未给，成像RGB10nm滤片是另一光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "psf_protocol": {
+              "value": "100×/NA0.95物镜收集透射场，tube lens/CCD；记录y-z轴向分布及焦面PSF。DOF定义为焦点附近归一化强度降至0.95的范围，图4d/e误差条分别表示DOF和DOF内宽度范围。",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–6 Fig.4及正文；SI p.4 S3",
+              "note": "未核到轴向步长/横向物方像素/原始PSF和背景/归一化流程；DOF不是测量SD或CI，NA0.95属于收集物镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4d；p.5对应正文",
+              "note": "仅曲线，无逐波长原始焦距表；正文/图内legend是模拟蓝方块、实测红三角，图注却反写，保留差异。平均81.5不复制为各λ焦距。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "仅曲线；图注符号差异保留"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4e，Measured FWHMx蓝三角",
+              "note": "x方向实测宽度仅曲线；误差条是DOF内宽度范围，不当SD，不读图估点。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "x向实测仅曲线"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4e，Measured FWHMy红三角",
+              "note": "y方向与x方向分列；未取得数表，不取平均或把模拟方块当实测。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "y向实测仅曲线"
+            },
+            "efficiency_protocol": {
+              "value": "作者报告单镜平均聚焦效率47%、测点范围约36–55%、峰在730nm；SI S3用分束器/功率计与可调iris限制clear aperture",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7 Fig.4d/正文；SI p.4 S3",
+              "note": "积分焦圈半径/直径、焦面、功率分母、偏振功率通道/校准、谱权重和重复数未完整给；不能直接与其他文献效率排名，也不把47%分派给每λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "chromatic": {
+              "value": "各λ DOF公共区域z82.5–89.4μm（I/Ipeak≥0.95判据），不是最佳焦距最大差",
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4d图注",
+              "note": "0.95是作者DOF强度判据；区间宽度6.9μm不当残余色差，平均实测f与设计f/固定像面另论。未取得逐λ轴向/横向色差原表。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "common_focus_region_um": {
+                "min": 82.5,
+                "max": 89.4
+              },
+              "dof_relative_intensity": 0.95,
+              "error_bar_meaning": "depth_of_focus_interval",
+              "statistical_uncertainty": null
+            },
+            "mtf_curve": {
+              "value": "Fig.4d焦距/效率与4e方向FWHM曲线；本轮未核到MTF/Strehl原始证据",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7 Fig.4及文末；SI S1–S6",
+              "note": "Fig.4d x为Wavelength(nm)，左y为Focal length(μm)，右y效率无量纲；4e y为FWHM(μm)。正式页/主文/SI所读范围未定位到Data/Code availability声明，附件未列Source Data；作者SYSU出版列表只给主文链接。DataCite精确关联DOI及GitHub仓库名称/描述精确DOI/题名查询无匹配；未取得已确认本篇原始PSF/MTF/逐波长数表，不默认套用其他论文的“向作者请求”。核查范围见docs/FAN_ARRAY_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_single_580",
+          "model": "Fan 2019 · D14μm单镜 · 580nm",
+          "study_id": "fan2019",
+          "specimen_id": "single_14",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一单镜8谱点；方向宽度/焦距只核到曲线，不填估值。",
+          "values": {
+            "diameter_um": {
+              "value": 14,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "单个子透镜名义口径，不是阵列整体或相机口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.3–5设计/器件表征；p.6 Fig.4",
+              "note": "未核到对应实制单镜的明确设计焦距；理论f50μm/r<9μm是示例，不移用，平均实测81.5μm也不填设计f。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "实制设计f未明确核到"
+            },
+            "na": {
+              "value": 0.086,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "作者称experimental NA，由单镜平均实测f约81.5μm与D14μm对应；不是独立角度计量，不随意分派逐λ NA。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "calculation_origin": "authors"
+            },
+            "lambda_min_nm": {
+              "value": 430,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者工作波段430–780nm，实际8谱点单列；并不证明任意λ/全场最佳焦点相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 780,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者波段上限与实际780nm谱点保留，780nm按本库可见光端点纳入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 580,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4a/c第4谱点标签",
+              "note": "单镜实测波长，与系统RGB滤片配置分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "fan_array_si_2019",
+              "location": "SI p.2 S1；主文p.3/4设计/图2c",
+              "note": "实制SiN名义厚度400nm；理论尺寸极限示例d0.8μm不移用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ]
+            },
+            "material": {
+              "value": "SiN / quartz（silica）；hexagonal lattice a320nm，十类带孔nanoposts",
+              "source": "fan_array_2019",
+              "location": "PDF p.3设计末段；p.4 Fig.2c/d；SI p.2 S1、p.4 TableS1",
+              "note": "320nm为纳米结构格点，不是阵列子镜中心距15μm；TableS1的单元参数不替代器件焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "polarization": {
+              "value": "作者偏振不敏感设计；Fig.4为y偏振、从silica侧法向入射",
+              "source": "fan_array_2019",
+              "location": "PDF pp.3/5设计及实测段；SI p.4 S3",
+              "note": "90°旋转对称设计声明与实际线偏振测量分开；不把单次y偏振图当全偏振逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Fianium WL-SC480-20-PP + LLTF-VIS2-HP-FDS-SM + OQGLC-15线偏振片",
+              "source": "fan_array_si_2019",
+              "location": "SI p.4 S3图注",
+              "note": "单镜/阵列表征光源；实际滤波线宽未给，成像RGB10nm滤片是另一光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "psf_protocol": {
+              "value": "100×/NA0.95物镜收集透射场，tube lens/CCD；记录y-z轴向分布及焦面PSF。DOF定义为焦点附近归一化强度降至0.95的范围，图4d/e误差条分别表示DOF和DOF内宽度范围。",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–6 Fig.4及正文；SI p.4 S3",
+              "note": "未核到轴向步长/横向物方像素/原始PSF和背景/归一化流程；DOF不是测量SD或CI，NA0.95属于收集物镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4d；p.5对应正文",
+              "note": "仅曲线，无逐波长原始焦距表；正文/图内legend是模拟蓝方块、实测红三角，图注却反写，保留差异。平均81.5不复制为各λ焦距。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "仅曲线；图注符号差异保留"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4e，Measured FWHMx蓝三角",
+              "note": "x方向实测宽度仅曲线；误差条是DOF内宽度范围，不当SD，不读图估点。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "x向实测仅曲线"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4e，Measured FWHMy红三角",
+              "note": "y方向与x方向分列；未取得数表，不取平均或把模拟方块当实测。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "y向实测仅曲线"
+            },
+            "efficiency_protocol": {
+              "value": "作者报告单镜平均聚焦效率47%、测点范围约36–55%、峰在730nm；SI S3用分束器/功率计与可调iris限制clear aperture",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7 Fig.4d/正文；SI p.4 S3",
+              "note": "积分焦圈半径/直径、焦面、功率分母、偏振功率通道/校准、谱权重和重复数未完整给；不能直接与其他文献效率排名，也不把47%分派给每λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "chromatic": {
+              "value": "各λ DOF公共区域z82.5–89.4μm（I/Ipeak≥0.95判据），不是最佳焦距最大差",
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4d图注",
+              "note": "0.95是作者DOF强度判据；区间宽度6.9μm不当残余色差，平均实测f与设计f/固定像面另论。未取得逐λ轴向/横向色差原表。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "common_focus_region_um": {
+                "min": 82.5,
+                "max": 89.4
+              },
+              "dof_relative_intensity": 0.95,
+              "error_bar_meaning": "depth_of_focus_interval",
+              "statistical_uncertainty": null
+            },
+            "mtf_curve": {
+              "value": "Fig.4d焦距/效率与4e方向FWHM曲线；本轮未核到MTF/Strehl原始证据",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7 Fig.4及文末；SI S1–S6",
+              "note": "Fig.4d x为Wavelength(nm)，左y为Focal length(μm)，右y效率无量纲；4e y为FWHM(μm)。正式页/主文/SI所读范围未定位到Data/Code availability声明，附件未列Source Data；作者SYSU出版列表只给主文链接。DataCite精确关联DOI及GitHub仓库名称/描述精确DOI/题名查询无匹配；未取得已确认本篇原始PSF/MTF/逐波长数表，不默认套用其他论文的“向作者请求”。核查范围见docs/FAN_ARRAY_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_single_630",
+          "model": "Fan 2019 · D14μm单镜 · 630nm",
+          "study_id": "fan2019",
+          "specimen_id": "single_14",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一单镜8谱点；方向宽度/焦距只核到曲线，不填估值。",
+          "values": {
+            "diameter_um": {
+              "value": 14,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "单个子透镜名义口径，不是阵列整体或相机口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.3–5设计/器件表征；p.6 Fig.4",
+              "note": "未核到对应实制单镜的明确设计焦距；理论f50μm/r<9μm是示例，不移用，平均实测81.5μm也不填设计f。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "实制设计f未明确核到"
+            },
+            "na": {
+              "value": 0.086,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "作者称experimental NA，由单镜平均实测f约81.5μm与D14μm对应；不是独立角度计量，不随意分派逐λ NA。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "calculation_origin": "authors"
+            },
+            "lambda_min_nm": {
+              "value": 430,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者工作波段430–780nm，实际8谱点单列；并不证明任意λ/全场最佳焦点相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 780,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者波段上限与实际780nm谱点保留，780nm按本库可见光端点纳入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 630,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4a/c第5谱点标签",
+              "note": "单镜实测波长，与系统RGB滤片配置分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "fan_array_si_2019",
+              "location": "SI p.2 S1；主文p.3/4设计/图2c",
+              "note": "实制SiN名义厚度400nm；理论尺寸极限示例d0.8μm不移用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ]
+            },
+            "material": {
+              "value": "SiN / quartz（silica）；hexagonal lattice a320nm，十类带孔nanoposts",
+              "source": "fan_array_2019",
+              "location": "PDF p.3设计末段；p.4 Fig.2c/d；SI p.2 S1、p.4 TableS1",
+              "note": "320nm为纳米结构格点，不是阵列子镜中心距15μm；TableS1的单元参数不替代器件焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "polarization": {
+              "value": "作者偏振不敏感设计；Fig.4为y偏振、从silica侧法向入射",
+              "source": "fan_array_2019",
+              "location": "PDF pp.3/5设计及实测段；SI p.4 S3",
+              "note": "90°旋转对称设计声明与实际线偏振测量分开；不把单次y偏振图当全偏振逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Fianium WL-SC480-20-PP + LLTF-VIS2-HP-FDS-SM + OQGLC-15线偏振片",
+              "source": "fan_array_si_2019",
+              "location": "SI p.4 S3图注",
+              "note": "单镜/阵列表征光源；实际滤波线宽未给，成像RGB10nm滤片是另一光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "psf_protocol": {
+              "value": "100×/NA0.95物镜收集透射场，tube lens/CCD；记录y-z轴向分布及焦面PSF。DOF定义为焦点附近归一化强度降至0.95的范围，图4d/e误差条分别表示DOF和DOF内宽度范围。",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–6 Fig.4及正文；SI p.4 S3",
+              "note": "未核到轴向步长/横向物方像素/原始PSF和背景/归一化流程；DOF不是测量SD或CI，NA0.95属于收集物镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4d；p.5对应正文",
+              "note": "仅曲线，无逐波长原始焦距表；正文/图内legend是模拟蓝方块、实测红三角，图注却反写，保留差异。平均81.5不复制为各λ焦距。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "仅曲线；图注符号差异保留"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4e，Measured FWHMx蓝三角",
+              "note": "x方向实测宽度仅曲线；误差条是DOF内宽度范围，不当SD，不读图估点。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "x向实测仅曲线"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4e，Measured FWHMy红三角",
+              "note": "y方向与x方向分列；未取得数表，不取平均或把模拟方块当实测。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "y向实测仅曲线"
+            },
+            "efficiency_protocol": {
+              "value": "作者报告单镜平均聚焦效率47%、测点范围约36–55%、峰在730nm；SI S3用分束器/功率计与可调iris限制clear aperture",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7 Fig.4d/正文；SI p.4 S3",
+              "note": "积分焦圈半径/直径、焦面、功率分母、偏振功率通道/校准、谱权重和重复数未完整给；不能直接与其他文献效率排名，也不把47%分派给每λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "chromatic": {
+              "value": "各λ DOF公共区域z82.5–89.4μm（I/Ipeak≥0.95判据），不是最佳焦距最大差",
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4d图注",
+              "note": "0.95是作者DOF强度判据；区间宽度6.9μm不当残余色差，平均实测f与设计f/固定像面另论。未取得逐λ轴向/横向色差原表。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "common_focus_region_um": {
+                "min": 82.5,
+                "max": 89.4
+              },
+              "dof_relative_intensity": 0.95,
+              "error_bar_meaning": "depth_of_focus_interval",
+              "statistical_uncertainty": null
+            },
+            "mtf_curve": {
+              "value": "Fig.4d焦距/效率与4e方向FWHM曲线；本轮未核到MTF/Strehl原始证据",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7 Fig.4及文末；SI S1–S6",
+              "note": "Fig.4d x为Wavelength(nm)，左y为Focal length(μm)，右y效率无量纲；4e y为FWHM(μm)。正式页/主文/SI所读范围未定位到Data/Code availability声明，附件未列Source Data；作者SYSU出版列表只给主文链接。DataCite精确关联DOI及GitHub仓库名称/描述精确DOI/题名查询无匹配；未取得已确认本篇原始PSF/MTF/逐波长数表，不默认套用其他论文的“向作者请求”。核查范围见docs/FAN_ARRAY_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_single_680",
+          "model": "Fan 2019 · D14μm单镜 · 680nm",
+          "study_id": "fan2019",
+          "specimen_id": "single_14",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一单镜8谱点；方向宽度/焦距只核到曲线，不填估值。",
+          "values": {
+            "diameter_um": {
+              "value": 14,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "单个子透镜名义口径，不是阵列整体或相机口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.3–5设计/器件表征；p.6 Fig.4",
+              "note": "未核到对应实制单镜的明确设计焦距；理论f50μm/r<9μm是示例，不移用，平均实测81.5μm也不填设计f。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "实制设计f未明确核到"
+            },
+            "na": {
+              "value": 0.086,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "作者称experimental NA，由单镜平均实测f约81.5μm与D14μm对应；不是独立角度计量，不随意分派逐λ NA。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "calculation_origin": "authors"
+            },
+            "lambda_min_nm": {
+              "value": 430,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者工作波段430–780nm，实际8谱点单列；并不证明任意λ/全场最佳焦点相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 780,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者波段上限与实际780nm谱点保留，780nm按本库可见光端点纳入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 680,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4a/c第6谱点标签",
+              "note": "单镜实测波长，与系统RGB滤片配置分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "fan_array_si_2019",
+              "location": "SI p.2 S1；主文p.3/4设计/图2c",
+              "note": "实制SiN名义厚度400nm；理论尺寸极限示例d0.8μm不移用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ]
+            },
+            "material": {
+              "value": "SiN / quartz（silica）；hexagonal lattice a320nm，十类带孔nanoposts",
+              "source": "fan_array_2019",
+              "location": "PDF p.3设计末段；p.4 Fig.2c/d；SI p.2 S1、p.4 TableS1",
+              "note": "320nm为纳米结构格点，不是阵列子镜中心距15μm；TableS1的单元参数不替代器件焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "polarization": {
+              "value": "作者偏振不敏感设计；Fig.4为y偏振、从silica侧法向入射",
+              "source": "fan_array_2019",
+              "location": "PDF pp.3/5设计及实测段；SI p.4 S3",
+              "note": "90°旋转对称设计声明与实际线偏振测量分开；不把单次y偏振图当全偏振逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Fianium WL-SC480-20-PP + LLTF-VIS2-HP-FDS-SM + OQGLC-15线偏振片",
+              "source": "fan_array_si_2019",
+              "location": "SI p.4 S3图注",
+              "note": "单镜/阵列表征光源；实际滤波线宽未给，成像RGB10nm滤片是另一光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "psf_protocol": {
+              "value": "100×/NA0.95物镜收集透射场，tube lens/CCD；记录y-z轴向分布及焦面PSF。DOF定义为焦点附近归一化强度降至0.95的范围，图4d/e误差条分别表示DOF和DOF内宽度范围。",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–6 Fig.4及正文；SI p.4 S3",
+              "note": "未核到轴向步长/横向物方像素/原始PSF和背景/归一化流程；DOF不是测量SD或CI，NA0.95属于收集物镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4d；p.5对应正文",
+              "note": "仅曲线，无逐波长原始焦距表；正文/图内legend是模拟蓝方块、实测红三角，图注却反写，保留差异。平均81.5不复制为各λ焦距。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "仅曲线；图注符号差异保留"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4e，Measured FWHMx蓝三角",
+              "note": "x方向实测宽度仅曲线；误差条是DOF内宽度范围，不当SD，不读图估点。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "x向实测仅曲线"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4e，Measured FWHMy红三角",
+              "note": "y方向与x方向分列；未取得数表，不取平均或把模拟方块当实测。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "y向实测仅曲线"
+            },
+            "efficiency_protocol": {
+              "value": "作者报告单镜平均聚焦效率47%、测点范围约36–55%、峰在730nm；SI S3用分束器/功率计与可调iris限制clear aperture",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7 Fig.4d/正文；SI p.4 S3",
+              "note": "积分焦圈半径/直径、焦面、功率分母、偏振功率通道/校准、谱权重和重复数未完整给；不能直接与其他文献效率排名，也不把47%分派给每λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "chromatic": {
+              "value": "各λ DOF公共区域z82.5–89.4μm（I/Ipeak≥0.95判据），不是最佳焦距最大差",
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4d图注",
+              "note": "0.95是作者DOF强度判据；区间宽度6.9μm不当残余色差，平均实测f与设计f/固定像面另论。未取得逐λ轴向/横向色差原表。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "common_focus_region_um": {
+                "min": 82.5,
+                "max": 89.4
+              },
+              "dof_relative_intensity": 0.95,
+              "error_bar_meaning": "depth_of_focus_interval",
+              "statistical_uncertainty": null
+            },
+            "mtf_curve": {
+              "value": "Fig.4d焦距/效率与4e方向FWHM曲线；本轮未核到MTF/Strehl原始证据",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7 Fig.4及文末；SI S1–S6",
+              "note": "Fig.4d x为Wavelength(nm)，左y为Focal length(μm)，右y效率无量纲；4e y为FWHM(μm)。正式页/主文/SI所读范围未定位到Data/Code availability声明，附件未列Source Data；作者SYSU出版列表只给主文链接。DataCite精确关联DOI及GitHub仓库名称/描述精确DOI/题名查询无匹配；未取得已确认本篇原始PSF/MTF/逐波长数表，不默认套用其他论文的“向作者请求”。核查范围见docs/FAN_ARRAY_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_single_730",
+          "model": "Fan 2019 · D14μm单镜 · 730nm",
+          "study_id": "fan2019",
+          "specimen_id": "single_14",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一单镜8谱点；方向宽度/焦距只核到曲线，不填估值。",
+          "values": {
+            "diameter_um": {
+              "value": 14,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "单个子透镜名义口径，不是阵列整体或相机口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.3–5设计/器件表征；p.6 Fig.4",
+              "note": "未核到对应实制单镜的明确设计焦距；理论f50μm/r<9μm是示例，不移用，平均实测81.5μm也不填设计f。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "实制设计f未明确核到"
+            },
+            "na": {
+              "value": 0.086,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "作者称experimental NA，由单镜平均实测f约81.5μm与D14μm对应；不是独立角度计量，不随意分派逐λ NA。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "calculation_origin": "authors"
+            },
+            "lambda_min_nm": {
+              "value": 430,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者工作波段430–780nm，实际8谱点单列；并不证明任意λ/全场最佳焦点相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 780,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者波段上限与实际780nm谱点保留，780nm按本库可见光端点纳入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 730,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4a/c第7谱点标签",
+              "note": "单镜实测波长，与系统RGB滤片配置分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "fan_array_si_2019",
+              "location": "SI p.2 S1；主文p.3/4设计/图2c",
+              "note": "实制SiN名义厚度400nm；理论尺寸极限示例d0.8μm不移用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ]
+            },
+            "material": {
+              "value": "SiN / quartz（silica）；hexagonal lattice a320nm，十类带孔nanoposts",
+              "source": "fan_array_2019",
+              "location": "PDF p.3设计末段；p.4 Fig.2c/d；SI p.2 S1、p.4 TableS1",
+              "note": "320nm为纳米结构格点，不是阵列子镜中心距15μm；TableS1的单元参数不替代器件焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "polarization": {
+              "value": "作者偏振不敏感设计；Fig.4为y偏振、从silica侧法向入射",
+              "source": "fan_array_2019",
+              "location": "PDF pp.3/5设计及实测段；SI p.4 S3",
+              "note": "90°旋转对称设计声明与实际线偏振测量分开；不把单次y偏振图当全偏振逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Fianium WL-SC480-20-PP + LLTF-VIS2-HP-FDS-SM + OQGLC-15线偏振片",
+              "source": "fan_array_si_2019",
+              "location": "SI p.4 S3图注",
+              "note": "单镜/阵列表征光源；实际滤波线宽未给，成像RGB10nm滤片是另一光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "psf_protocol": {
+              "value": "100×/NA0.95物镜收集透射场，tube lens/CCD；记录y-z轴向分布及焦面PSF。DOF定义为焦点附近归一化强度降至0.95的范围，图4d/e误差条分别表示DOF和DOF内宽度范围。",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–6 Fig.4及正文；SI p.4 S3",
+              "note": "未核到轴向步长/横向物方像素/原始PSF和背景/归一化流程；DOF不是测量SD或CI，NA0.95属于收集物镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4d；p.5对应正文",
+              "note": "仅曲线，无逐波长原始焦距表；正文/图内legend是模拟蓝方块、实测红三角，图注却反写，保留差异。平均81.5不复制为各λ焦距。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "仅曲线；图注符号差异保留"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4e，Measured FWHMx蓝三角",
+              "note": "x方向实测宽度仅曲线；误差条是DOF内宽度范围，不当SD，不读图估点。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "x向实测仅曲线"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4e，Measured FWHMy红三角",
+              "note": "y方向与x方向分列；未取得数表，不取平均或把模拟方块当实测。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "y向实测仅曲线"
+            },
+            "efficiency_protocol": {
+              "value": "作者报告单镜平均聚焦效率47%、测点范围约36–55%、峰在730nm；SI S3用分束器/功率计与可调iris限制clear aperture",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7 Fig.4d/正文；SI p.4 S3",
+              "note": "积分焦圈半径/直径、焦面、功率分母、偏振功率通道/校准、谱权重和重复数未完整给；不能直接与其他文献效率排名，也不把47%分派给每λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "chromatic": {
+              "value": "各λ DOF公共区域z82.5–89.4μm（I/Ipeak≥0.95判据），不是最佳焦距最大差",
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4d图注",
+              "note": "0.95是作者DOF强度判据；区间宽度6.9μm不当残余色差，平均实测f与设计f/固定像面另论。未取得逐λ轴向/横向色差原表。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "common_focus_region_um": {
+                "min": 82.5,
+                "max": 89.4
+              },
+              "dof_relative_intensity": 0.95,
+              "error_bar_meaning": "depth_of_focus_interval",
+              "statistical_uncertainty": null
+            },
+            "mtf_curve": {
+              "value": "Fig.4d焦距/效率与4e方向FWHM曲线；本轮未核到MTF/Strehl原始证据",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7 Fig.4及文末；SI S1–S6",
+              "note": "Fig.4d x为Wavelength(nm)，左y为Focal length(μm)，右y效率无量纲；4e y为FWHM(μm)。正式页/主文/SI所读范围未定位到Data/Code availability声明，附件未列Source Data；作者SYSU出版列表只给主文链接。DataCite精确关联DOI及GitHub仓库名称/描述精确DOI/题名查询无匹配；未取得已确认本篇原始PSF/MTF/逐波长数表，不默认套用其他论文的“向作者请求”。核查范围见docs/FAN_ARRAY_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.6–7 Fig.4d/图注及平均效率正文",
+              "note": "作者仅称范围约36–55%、最大在730nm；没有独立列出730nm精确原始值，不由约上界反填。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "作者称峰在730nm；数表缺"
+            }
+          }
+        },
+        {
+          "id": "fan2019_single_780",
+          "model": "Fan 2019 · D14μm单镜 · 780nm",
+          "study_id": "fan2019",
+          "specimen_id": "single_14",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一单镜8谱点；方向宽度/焦距只核到曲线，不填估值。",
+          "values": {
+            "diameter_um": {
+              "value": 14,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "单个子透镜名义口径，不是阵列整体或相机口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.3–5设计/器件表征；p.6 Fig.4",
+              "note": "未核到对应实制单镜的明确设计焦距；理论f50μm/r<9μm是示例，不移用，平均实测81.5μm也不填设计f。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "实制设计f未明确核到"
+            },
+            "na": {
+              "value": 0.086,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "作者称experimental NA，由单镜平均实测f约81.5μm与D14μm对应；不是独立角度计量，不随意分派逐λ NA。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "calculation_origin": "authors"
+            },
+            "lambda_min_nm": {
+              "value": 430,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者工作波段430–780nm，实际8谱点单列；并不证明任意λ/全场最佳焦点相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 780,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者波段上限与实际780nm谱点保留，780nm按本库可见光端点纳入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 780,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4a/c第8谱点标签",
+              "note": "单镜实测波长，与系统RGB滤片配置分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "fan_array_si_2019",
+              "location": "SI p.2 S1；主文p.3/4设计/图2c",
+              "note": "实制SiN名义厚度400nm；理论尺寸极限示例d0.8μm不移用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ]
+            },
+            "material": {
+              "value": "SiN / quartz（silica）；hexagonal lattice a320nm，十类带孔nanoposts",
+              "source": "fan_array_2019",
+              "location": "PDF p.3设计末段；p.4 Fig.2c/d；SI p.2 S1、p.4 TableS1",
+              "note": "320nm为纳米结构格点，不是阵列子镜中心距15μm；TableS1的单元参数不替代器件焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "polarization": {
+              "value": "作者偏振不敏感设计；Fig.4为y偏振、从silica侧法向入射",
+              "source": "fan_array_2019",
+              "location": "PDF pp.3/5设计及实测段；SI p.4 S3",
+              "note": "90°旋转对称设计声明与实际线偏振测量分开；不把单次y偏振图当全偏振逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Fianium WL-SC480-20-PP + LLTF-VIS2-HP-FDS-SM + OQGLC-15线偏振片",
+              "source": "fan_array_si_2019",
+              "location": "SI p.4 S3图注",
+              "note": "单镜/阵列表征光源；实际滤波线宽未给，成像RGB10nm滤片是另一光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "psf_protocol": {
+              "value": "100×/NA0.95物镜收集透射场，tube lens/CCD；记录y-z轴向分布及焦面PSF。DOF定义为焦点附近归一化强度降至0.95的范围，图4d/e误差条分别表示DOF和DOF内宽度范围。",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–6 Fig.4及正文；SI p.4 S3",
+              "note": "未核到轴向步长/横向物方像素/原始PSF和背景/归一化流程；DOF不是测量SD或CI，NA0.95属于收集物镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4d；p.5对应正文",
+              "note": "仅曲线，无逐波长原始焦距表；正文/图内legend是模拟蓝方块、实测红三角，图注却反写，保留差异。平均81.5不复制为各λ焦距。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "仅曲线；图注符号差异保留"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4e，Measured FWHMx蓝三角",
+              "note": "x方向实测宽度仅曲线；误差条是DOF内宽度范围，不当SD，不读图估点。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "x向实测仅曲线"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4e，Measured FWHMy红三角",
+              "note": "y方向与x方向分列；未取得数表，不取平均或把模拟方块当实测。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "y向实测仅曲线"
+            },
+            "efficiency_protocol": {
+              "value": "作者报告单镜平均聚焦效率47%、测点范围约36–55%、峰在730nm；SI S3用分束器/功率计与可调iris限制clear aperture",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7 Fig.4d/正文；SI p.4 S3",
+              "note": "积分焦圈半径/直径、焦面、功率分母、偏振功率通道/校准、谱权重和重复数未完整给；不能直接与其他文献效率排名，也不把47%分派给每λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "chromatic": {
+              "value": "各λ DOF公共区域z82.5–89.4μm（I/Ipeak≥0.95判据），不是最佳焦距最大差",
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4d图注",
+              "note": "0.95是作者DOF强度判据；区间宽度6.9μm不当残余色差，平均实测f与设计f/固定像面另论。未取得逐λ轴向/横向色差原表。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "common_focus_region_um": {
+                "min": 82.5,
+                "max": 89.4
+              },
+              "dof_relative_intensity": 0.95,
+              "error_bar_meaning": "depth_of_focus_interval",
+              "statistical_uncertainty": null
+            },
+            "mtf_curve": {
+              "value": "Fig.4d焦距/效率与4e方向FWHM曲线；本轮未核到MTF/Strehl原始证据",
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7 Fig.4及文末；SI S1–S6",
+              "note": "Fig.4d x为Wavelength(nm)，左y为Focal length(μm)，右y效率无量纲；4e y为FWHM(μm)。正式页/主文/SI所读范围未定位到Data/Code availability声明，附件未列Source Data；作者SYSU出版列表只给主文链接。DataCite精确关联DOI及GitHub仓库名称/描述精确DOI/题名查询无匹配；未取得已确认本篇原始PSF/MTF/逐波长数表，不默认套用其他论文的“向作者请求”。核查范围见docs/FAN_ARRAY_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_array15_summary",
+          "model": "Fan 2019 · 15×15阵列 · 汇总",
+          "study_id": "fan2019",
+          "specimen_id": "array15",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "15×15子镜结构表征；中央子镜谱点不代表225个子镜逐一验收。",
+          "values": {
+            "diameter_um": {
+              "value": 14,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "单个子透镜名义口径，不是阵列整体或相机口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.3–5设计/器件表征；p.6 Fig.4",
+              "note": "未核到对应实制单镜的明确设计焦距；理论f50μm/r<9μm是示例，不移用，平均实测81.5μm也不填设计f。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "实制设计f未明确核到"
+            },
+            "na": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.7–8 Fig.5；对照p.5单镜NA",
+              "note": "未给15×15阵列中心子镜的独立NA；不移用单镜平均f81.5μm计算得到的NA0.086。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "阵列子镜NA未单独核到"
+            },
+            "lambda_min_nm": {
+              "value": 430,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者工作波段430–780nm，实际8谱点单列；并不证明任意λ/全场最佳焦点相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 780,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者波段上限与实际780nm谱点保留，780nm按本库可见光端点纳入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.6 Fig.4a/c标签",
+              "note": "实际430/480/530/580/630/680/730/780nm，不混入系统RGB488/532/633nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "430–780nm / 50nm；8谱点"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "fan_array_si_2019",
+              "location": "SI p.2 S1；主文p.3/4设计/图2c",
+              "note": "实制SiN名义厚度400nm；理论尺寸极限示例d0.8μm不移用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ]
+            },
+            "material": {
+              "value": "15×15 SiN子镜阵列；每镜D14μm、中心距15μm；400nm层/320nm纳米格点",
+              "source": "fan_array_2019",
+              "location": "PDF p.7阵列段、p.8 Fig.5标题；SI S1/S3",
+              "note": "子镜中心距与纳米结构格点分开，未算整体清口径；225个子镜不算225种结构配置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "polarization": {
+              "value": "作者偏振不敏感设计；Fig.4为y偏振、从silica侧法向入射",
+              "source": "fan_array_2019",
+              "location": "PDF pp.3/5设计及实测段；SI p.4 S3",
+              "note": "90°旋转对称设计声明与实际线偏振测量分开；不把单次y偏振图当全偏振逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Fianium WL-SC480-20-PP + LLTF-VIS2-HP-FDS-SM + OQGLC-15线偏振片",
+              "source": "fan_array_si_2019",
+              "location": "SI p.4 S3图注",
+              "note": "单镜/阵列表征光源；实际滤波线宽未给，成像RGB10nm滤片是另一光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "psf_protocol": {
+              "value": "SI S3的100×/NA0.95物镜、tube lens/CCD收集透射强度；Fig.5a/b在630nm测阵列场，5c/d测中心子镜8谱点轴向分布",
+              "source": "fan_array_si_2019",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ],
+              "location": "SI p.4 S3；主文p.8 Fig.5",
+              "note": "不把单镜Fig.4的0.95 DOF判据/公共区移作阵列定量结果；未核到轴向步长、横向物方像素及原始归一化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.7–8 Fig.5a/c/d",
+              "note": "主焦区约z80μm并有多个局部峰；弱二级焦点约150μm，不能填成另一个主焦距/逐λ精确峰位。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "主焦区约80；逐点峰位未核"
+            },
+            "chromatic": {
+              "value": "中心子镜8波长主聚焦区约z80μm，多峰；周期阵列还产生有色散的弱二级焦点",
+              "source": "fan_array_2019",
+              "location": "PDF p.7阵列段；p.8 Fig.5c/d",
+              "note": "单镜DOF公共区82.5–89.4μm不复制给阵列；作者二级焦点说明不等于横向色差/主峰零焦移。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "Fig.5c/d轴向强度/截线；本轮未核到阵列MTF/效率原表",
+              "source": "fan_array_2019",
+              "location": "PDF p.8 Fig.5；SI S3",
+              "note": "x为z(μm)0–200，y为Intensity(a.u.)并逐λ上下平移；不能比较这些平移曲线的绝对峰功率。正式页/主文/SI所读范围未定位到Data/Code availability声明，附件未列Source Data；作者SYSU出版列表只给主文链接。DataCite精确关联DOI及GitHub仓库名称/描述精确DOI/题名查询无匹配；未取得已确认本篇原始PSF/MTF/逐波长数表，不默认套用其他论文的“向作者请求”。核查范围见docs/FAN_ARRAY_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_array15_430",
+          "model": "Fan 2019 · 15×15阵列 · 中心子镜 · 430nm",
+          "study_id": "fan2019",
+          "specimen_id": "array15",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.5红箭头所示中心子镜；周期阵列二级焦点与主焦区分开。",
+          "values": {
+            "diameter_um": {
+              "value": 14,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "单个子透镜名义口径，不是阵列整体或相机口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.3–5设计/器件表征；p.6 Fig.4",
+              "note": "未核到对应实制单镜的明确设计焦距；理论f50μm/r<9μm是示例，不移用，平均实测81.5μm也不填设计f。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "实制设计f未明确核到"
+            },
+            "na": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.7–8 Fig.5；对照p.5单镜NA",
+              "note": "未给15×15阵列中心子镜的独立NA；不移用单镜平均f81.5μm计算得到的NA0.086。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "阵列子镜NA未单独核到"
+            },
+            "lambda_min_nm": {
+              "value": 430,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者工作波段430–780nm，实际8谱点单列；并不证明任意λ/全场最佳焦点相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 780,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者波段上限与实际780nm谱点保留，780nm按本库可见光端点纳入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 430,
+              "source": "fan_array_2019",
+              "location": "PDF p.8 Fig.5c第1λ标签/5d对应曲线",
+              "note": "中央子镜8谱点，630nm另有阵列横向/纵向总场，不当另一器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "fan_array_si_2019",
+              "location": "SI p.2 S1；主文p.3/4设计/图2c",
+              "note": "实制SiN名义厚度400nm；理论尺寸极限示例d0.8μm不移用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ]
+            },
+            "material": {
+              "value": "15×15 SiN子镜阵列；每镜D14μm、中心距15μm；400nm层/320nm纳米格点",
+              "source": "fan_array_2019",
+              "location": "PDF p.7阵列段、p.8 Fig.5标题；SI S1/S3",
+              "note": "子镜中心距与纳米结构格点分开，未算整体清口径；225个子镜不算225种结构配置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "polarization": {
+              "value": "作者偏振不敏感设计；Fig.4为y偏振、从silica侧法向入射",
+              "source": "fan_array_2019",
+              "location": "PDF pp.3/5设计及实测段；SI p.4 S3",
+              "note": "90°旋转对称设计声明与实际线偏振测量分开；不把单次y偏振图当全偏振逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Fianium WL-SC480-20-PP + LLTF-VIS2-HP-FDS-SM + OQGLC-15线偏振片",
+              "source": "fan_array_si_2019",
+              "location": "SI p.4 S3图注",
+              "note": "单镜/阵列表征光源；实际滤波线宽未给，成像RGB10nm滤片是另一光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "psf_protocol": {
+              "value": "SI S3的100×/NA0.95物镜、tube lens/CCD收集透射强度；Fig.5a/b在630nm测阵列场，5c/d测中心子镜8谱点轴向分布",
+              "source": "fan_array_si_2019",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ],
+              "location": "SI p.4 S3；主文p.8 Fig.5",
+              "note": "不把单镜Fig.4的0.95 DOF判据/公共区移作阵列定量结果；未核到轴向步长、横向物方像素及原始归一化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.7–8 Fig.5a/c/d",
+              "note": "主焦区约z80μm并有多个局部峰；弱二级焦点约150μm，不能填成另一个主焦距/逐λ精确峰位。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "主焦区约80；逐点峰位未核"
+            },
+            "chromatic": {
+              "value": "中心子镜8波长主聚焦区约z80μm，多峰；周期阵列还产生有色散的弱二级焦点",
+              "source": "fan_array_2019",
+              "location": "PDF p.7阵列段；p.8 Fig.5c/d",
+              "note": "单镜DOF公共区82.5–89.4μm不复制给阵列；作者二级焦点说明不等于横向色差/主峰零焦移。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "Fig.5c/d轴向强度/截线；本轮未核到阵列MTF/效率原表",
+              "source": "fan_array_2019",
+              "location": "PDF p.8 Fig.5；SI S3",
+              "note": "x为z(μm)0–200，y为Intensity(a.u.)并逐λ上下平移；不能比较这些平移曲线的绝对峰功率。正式页/主文/SI所读范围未定位到Data/Code availability声明，附件未列Source Data；作者SYSU出版列表只给主文链接。DataCite精确关联DOI及GitHub仓库名称/描述精确DOI/题名查询无匹配；未取得已确认本篇原始PSF/MTF/逐波长数表，不默认套用其他论文的“向作者请求”。核查范围见docs/FAN_ARRAY_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_array15_480",
+          "model": "Fan 2019 · 15×15阵列 · 中心子镜 · 480nm",
+          "study_id": "fan2019",
+          "specimen_id": "array15",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.5红箭头所示中心子镜；周期阵列二级焦点与主焦区分开。",
+          "values": {
+            "diameter_um": {
+              "value": 14,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "单个子透镜名义口径，不是阵列整体或相机口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.3–5设计/器件表征；p.6 Fig.4",
+              "note": "未核到对应实制单镜的明确设计焦距；理论f50μm/r<9μm是示例，不移用，平均实测81.5μm也不填设计f。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "实制设计f未明确核到"
+            },
+            "na": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.7–8 Fig.5；对照p.5单镜NA",
+              "note": "未给15×15阵列中心子镜的独立NA；不移用单镜平均f81.5μm计算得到的NA0.086。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "阵列子镜NA未单独核到"
+            },
+            "lambda_min_nm": {
+              "value": 430,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者工作波段430–780nm，实际8谱点单列；并不证明任意λ/全场最佳焦点相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 780,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者波段上限与实际780nm谱点保留，780nm按本库可见光端点纳入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 480,
+              "source": "fan_array_2019",
+              "location": "PDF p.8 Fig.5c第2λ标签/5d对应曲线",
+              "note": "中央子镜8谱点，630nm另有阵列横向/纵向总场，不当另一器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "fan_array_si_2019",
+              "location": "SI p.2 S1；主文p.3/4设计/图2c",
+              "note": "实制SiN名义厚度400nm；理论尺寸极限示例d0.8μm不移用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ]
+            },
+            "material": {
+              "value": "15×15 SiN子镜阵列；每镜D14μm、中心距15μm；400nm层/320nm纳米格点",
+              "source": "fan_array_2019",
+              "location": "PDF p.7阵列段、p.8 Fig.5标题；SI S1/S3",
+              "note": "子镜中心距与纳米结构格点分开，未算整体清口径；225个子镜不算225种结构配置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "polarization": {
+              "value": "作者偏振不敏感设计；Fig.4为y偏振、从silica侧法向入射",
+              "source": "fan_array_2019",
+              "location": "PDF pp.3/5设计及实测段；SI p.4 S3",
+              "note": "90°旋转对称设计声明与实际线偏振测量分开；不把单次y偏振图当全偏振逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Fianium WL-SC480-20-PP + LLTF-VIS2-HP-FDS-SM + OQGLC-15线偏振片",
+              "source": "fan_array_si_2019",
+              "location": "SI p.4 S3图注",
+              "note": "单镜/阵列表征光源；实际滤波线宽未给，成像RGB10nm滤片是另一光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "psf_protocol": {
+              "value": "SI S3的100×/NA0.95物镜、tube lens/CCD收集透射强度；Fig.5a/b在630nm测阵列场，5c/d测中心子镜8谱点轴向分布",
+              "source": "fan_array_si_2019",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ],
+              "location": "SI p.4 S3；主文p.8 Fig.5",
+              "note": "不把单镜Fig.4的0.95 DOF判据/公共区移作阵列定量结果；未核到轴向步长、横向物方像素及原始归一化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.7–8 Fig.5a/c/d",
+              "note": "主焦区约z80μm并有多个局部峰；弱二级焦点约150μm，不能填成另一个主焦距/逐λ精确峰位。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "主焦区约80；逐点峰位未核"
+            },
+            "chromatic": {
+              "value": "中心子镜8波长主聚焦区约z80μm，多峰；周期阵列还产生有色散的弱二级焦点",
+              "source": "fan_array_2019",
+              "location": "PDF p.7阵列段；p.8 Fig.5c/d",
+              "note": "单镜DOF公共区82.5–89.4μm不复制给阵列；作者二级焦点说明不等于横向色差/主峰零焦移。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "Fig.5c/d轴向强度/截线；本轮未核到阵列MTF/效率原表",
+              "source": "fan_array_2019",
+              "location": "PDF p.8 Fig.5；SI S3",
+              "note": "x为z(μm)0–200，y为Intensity(a.u.)并逐λ上下平移；不能比较这些平移曲线的绝对峰功率。正式页/主文/SI所读范围未定位到Data/Code availability声明，附件未列Source Data；作者SYSU出版列表只给主文链接。DataCite精确关联DOI及GitHub仓库名称/描述精确DOI/题名查询无匹配；未取得已确认本篇原始PSF/MTF/逐波长数表，不默认套用其他论文的“向作者请求”。核查范围见docs/FAN_ARRAY_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_array15_530",
+          "model": "Fan 2019 · 15×15阵列 · 中心子镜 · 530nm",
+          "study_id": "fan2019",
+          "specimen_id": "array15",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.5红箭头所示中心子镜；周期阵列二级焦点与主焦区分开。",
+          "values": {
+            "diameter_um": {
+              "value": 14,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "单个子透镜名义口径，不是阵列整体或相机口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.3–5设计/器件表征；p.6 Fig.4",
+              "note": "未核到对应实制单镜的明确设计焦距；理论f50μm/r<9μm是示例，不移用，平均实测81.5μm也不填设计f。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "实制设计f未明确核到"
+            },
+            "na": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.7–8 Fig.5；对照p.5单镜NA",
+              "note": "未给15×15阵列中心子镜的独立NA；不移用单镜平均f81.5μm计算得到的NA0.086。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "阵列子镜NA未单独核到"
+            },
+            "lambda_min_nm": {
+              "value": 430,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者工作波段430–780nm，实际8谱点单列；并不证明任意λ/全场最佳焦点相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 780,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者波段上限与实际780nm谱点保留，780nm按本库可见光端点纳入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "fan_array_2019",
+              "location": "PDF p.8 Fig.5c第3λ标签/5d对应曲线",
+              "note": "中央子镜8谱点，630nm另有阵列横向/纵向总场，不当另一器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "fan_array_si_2019",
+              "location": "SI p.2 S1；主文p.3/4设计/图2c",
+              "note": "实制SiN名义厚度400nm；理论尺寸极限示例d0.8μm不移用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ]
+            },
+            "material": {
+              "value": "15×15 SiN子镜阵列；每镜D14μm、中心距15μm；400nm层/320nm纳米格点",
+              "source": "fan_array_2019",
+              "location": "PDF p.7阵列段、p.8 Fig.5标题；SI S1/S3",
+              "note": "子镜中心距与纳米结构格点分开，未算整体清口径；225个子镜不算225种结构配置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "polarization": {
+              "value": "作者偏振不敏感设计；Fig.4为y偏振、从silica侧法向入射",
+              "source": "fan_array_2019",
+              "location": "PDF pp.3/5设计及实测段；SI p.4 S3",
+              "note": "90°旋转对称设计声明与实际线偏振测量分开；不把单次y偏振图当全偏振逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Fianium WL-SC480-20-PP + LLTF-VIS2-HP-FDS-SM + OQGLC-15线偏振片",
+              "source": "fan_array_si_2019",
+              "location": "SI p.4 S3图注",
+              "note": "单镜/阵列表征光源；实际滤波线宽未给，成像RGB10nm滤片是另一光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "psf_protocol": {
+              "value": "SI S3的100×/NA0.95物镜、tube lens/CCD收集透射强度；Fig.5a/b在630nm测阵列场，5c/d测中心子镜8谱点轴向分布",
+              "source": "fan_array_si_2019",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ],
+              "location": "SI p.4 S3；主文p.8 Fig.5",
+              "note": "不把单镜Fig.4的0.95 DOF判据/公共区移作阵列定量结果；未核到轴向步长、横向物方像素及原始归一化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.7–8 Fig.5a/c/d",
+              "note": "主焦区约z80μm并有多个局部峰；弱二级焦点约150μm，不能填成另一个主焦距/逐λ精确峰位。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "主焦区约80；逐点峰位未核"
+            },
+            "chromatic": {
+              "value": "中心子镜8波长主聚焦区约z80μm，多峰；周期阵列还产生有色散的弱二级焦点",
+              "source": "fan_array_2019",
+              "location": "PDF p.7阵列段；p.8 Fig.5c/d",
+              "note": "单镜DOF公共区82.5–89.4μm不复制给阵列；作者二级焦点说明不等于横向色差/主峰零焦移。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "Fig.5c/d轴向强度/截线；本轮未核到阵列MTF/效率原表",
+              "source": "fan_array_2019",
+              "location": "PDF p.8 Fig.5；SI S3",
+              "note": "x为z(μm)0–200，y为Intensity(a.u.)并逐λ上下平移；不能比较这些平移曲线的绝对峰功率。正式页/主文/SI所读范围未定位到Data/Code availability声明，附件未列Source Data；作者SYSU出版列表只给主文链接。DataCite精确关联DOI及GitHub仓库名称/描述精确DOI/题名查询无匹配；未取得已确认本篇原始PSF/MTF/逐波长数表，不默认套用其他论文的“向作者请求”。核查范围见docs/FAN_ARRAY_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_array15_580",
+          "model": "Fan 2019 · 15×15阵列 · 中心子镜 · 580nm",
+          "study_id": "fan2019",
+          "specimen_id": "array15",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.5红箭头所示中心子镜；周期阵列二级焦点与主焦区分开。",
+          "values": {
+            "diameter_um": {
+              "value": 14,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "单个子透镜名义口径，不是阵列整体或相机口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.3–5设计/器件表征；p.6 Fig.4",
+              "note": "未核到对应实制单镜的明确设计焦距；理论f50μm/r<9μm是示例，不移用，平均实测81.5μm也不填设计f。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "实制设计f未明确核到"
+            },
+            "na": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.7–8 Fig.5；对照p.5单镜NA",
+              "note": "未给15×15阵列中心子镜的独立NA；不移用单镜平均f81.5μm计算得到的NA0.086。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "阵列子镜NA未单独核到"
+            },
+            "lambda_min_nm": {
+              "value": 430,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者工作波段430–780nm，实际8谱点单列；并不证明任意λ/全场最佳焦点相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 780,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者波段上限与实际780nm谱点保留，780nm按本库可见光端点纳入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 580,
+              "source": "fan_array_2019",
+              "location": "PDF p.8 Fig.5c第4λ标签/5d对应曲线",
+              "note": "中央子镜8谱点，630nm另有阵列横向/纵向总场，不当另一器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "fan_array_si_2019",
+              "location": "SI p.2 S1；主文p.3/4设计/图2c",
+              "note": "实制SiN名义厚度400nm；理论尺寸极限示例d0.8μm不移用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ]
+            },
+            "material": {
+              "value": "15×15 SiN子镜阵列；每镜D14μm、中心距15μm；400nm层/320nm纳米格点",
+              "source": "fan_array_2019",
+              "location": "PDF p.7阵列段、p.8 Fig.5标题；SI S1/S3",
+              "note": "子镜中心距与纳米结构格点分开，未算整体清口径；225个子镜不算225种结构配置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "polarization": {
+              "value": "作者偏振不敏感设计；Fig.4为y偏振、从silica侧法向入射",
+              "source": "fan_array_2019",
+              "location": "PDF pp.3/5设计及实测段；SI p.4 S3",
+              "note": "90°旋转对称设计声明与实际线偏振测量分开；不把单次y偏振图当全偏振逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Fianium WL-SC480-20-PP + LLTF-VIS2-HP-FDS-SM + OQGLC-15线偏振片",
+              "source": "fan_array_si_2019",
+              "location": "SI p.4 S3图注",
+              "note": "单镜/阵列表征光源；实际滤波线宽未给，成像RGB10nm滤片是另一光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "psf_protocol": {
+              "value": "SI S3的100×/NA0.95物镜、tube lens/CCD收集透射强度；Fig.5a/b在630nm测阵列场，5c/d测中心子镜8谱点轴向分布",
+              "source": "fan_array_si_2019",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ],
+              "location": "SI p.4 S3；主文p.8 Fig.5",
+              "note": "不把单镜Fig.4的0.95 DOF判据/公共区移作阵列定量结果；未核到轴向步长、横向物方像素及原始归一化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.7–8 Fig.5a/c/d",
+              "note": "主焦区约z80μm并有多个局部峰；弱二级焦点约150μm，不能填成另一个主焦距/逐λ精确峰位。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "主焦区约80；逐点峰位未核"
+            },
+            "chromatic": {
+              "value": "中心子镜8波长主聚焦区约z80μm，多峰；周期阵列还产生有色散的弱二级焦点",
+              "source": "fan_array_2019",
+              "location": "PDF p.7阵列段；p.8 Fig.5c/d",
+              "note": "单镜DOF公共区82.5–89.4μm不复制给阵列；作者二级焦点说明不等于横向色差/主峰零焦移。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "Fig.5c/d轴向强度/截线；本轮未核到阵列MTF/效率原表",
+              "source": "fan_array_2019",
+              "location": "PDF p.8 Fig.5；SI S3",
+              "note": "x为z(μm)0–200，y为Intensity(a.u.)并逐λ上下平移；不能比较这些平移曲线的绝对峰功率。正式页/主文/SI所读范围未定位到Data/Code availability声明，附件未列Source Data；作者SYSU出版列表只给主文链接。DataCite精确关联DOI及GitHub仓库名称/描述精确DOI/题名查询无匹配；未取得已确认本篇原始PSF/MTF/逐波长数表，不默认套用其他论文的“向作者请求”。核查范围见docs/FAN_ARRAY_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_array15_630",
+          "model": "Fan 2019 · 15×15阵列 · 中心子镜 · 630nm",
+          "study_id": "fan2019",
+          "specimen_id": "array15",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.5红箭头所示中心子镜；周期阵列二级焦点与主焦区分开。",
+          "values": {
+            "diameter_um": {
+              "value": 14,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "单个子透镜名义口径，不是阵列整体或相机口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.3–5设计/器件表征；p.6 Fig.4",
+              "note": "未核到对应实制单镜的明确设计焦距；理论f50μm/r<9μm是示例，不移用，平均实测81.5μm也不填设计f。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "实制设计f未明确核到"
+            },
+            "na": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.7–8 Fig.5；对照p.5单镜NA",
+              "note": "未给15×15阵列中心子镜的独立NA；不移用单镜平均f81.5μm计算得到的NA0.086。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "阵列子镜NA未单独核到"
+            },
+            "lambda_min_nm": {
+              "value": 430,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者工作波段430–780nm，实际8谱点单列；并不证明任意λ/全场最佳焦点相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 780,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者波段上限与实际780nm谱点保留，780nm按本库可见光端点纳入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 630,
+              "source": "fan_array_2019",
+              "location": "PDF p.8 Fig.5c第5λ标签/5d对应曲线",
+              "note": "中央子镜8谱点，630nm另有阵列横向/纵向总场，不当另一器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "fan_array_si_2019",
+              "location": "SI p.2 S1；主文p.3/4设计/图2c",
+              "note": "实制SiN名义厚度400nm；理论尺寸极限示例d0.8μm不移用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ]
+            },
+            "material": {
+              "value": "15×15 SiN子镜阵列；每镜D14μm、中心距15μm；400nm层/320nm纳米格点",
+              "source": "fan_array_2019",
+              "location": "PDF p.7阵列段、p.8 Fig.5标题；SI S1/S3",
+              "note": "子镜中心距与纳米结构格点分开，未算整体清口径；225个子镜不算225种结构配置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "polarization": {
+              "value": "作者偏振不敏感设计；Fig.4为y偏振、从silica侧法向入射",
+              "source": "fan_array_2019",
+              "location": "PDF pp.3/5设计及实测段；SI p.4 S3",
+              "note": "90°旋转对称设计声明与实际线偏振测量分开；不把单次y偏振图当全偏振逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Fianium WL-SC480-20-PP + LLTF-VIS2-HP-FDS-SM + OQGLC-15线偏振片",
+              "source": "fan_array_si_2019",
+              "location": "SI p.4 S3图注",
+              "note": "单镜/阵列表征光源；实际滤波线宽未给，成像RGB10nm滤片是另一光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "psf_protocol": {
+              "value": "SI S3的100×/NA0.95物镜、tube lens/CCD收集透射强度；Fig.5a/b在630nm测阵列场，5c/d测中心子镜8谱点轴向分布",
+              "source": "fan_array_si_2019",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ],
+              "location": "SI p.4 S3；主文p.8 Fig.5",
+              "note": "不把单镜Fig.4的0.95 DOF判据/公共区移作阵列定量结果；未核到轴向步长、横向物方像素及原始归一化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.7–8 Fig.5a/c/d",
+              "note": "主焦区约z80μm并有多个局部峰；弱二级焦点约150μm，不能填成另一个主焦距/逐λ精确峰位。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "主焦区约80；逐点峰位未核"
+            },
+            "chromatic": {
+              "value": "中心子镜8波长主聚焦区约z80μm，多峰；周期阵列还产生有色散的弱二级焦点",
+              "source": "fan_array_2019",
+              "location": "PDF p.7阵列段；p.8 Fig.5c/d",
+              "note": "单镜DOF公共区82.5–89.4μm不复制给阵列；作者二级焦点说明不等于横向色差/主峰零焦移。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "Fig.5c/d轴向强度/截线；本轮未核到阵列MTF/效率原表",
+              "source": "fan_array_2019",
+              "location": "PDF p.8 Fig.5；SI S3",
+              "note": "x为z(μm)0–200，y为Intensity(a.u.)并逐λ上下平移；不能比较这些平移曲线的绝对峰功率。正式页/主文/SI所读范围未定位到Data/Code availability声明，附件未列Source Data；作者SYSU出版列表只给主文链接。DataCite精确关联DOI及GitHub仓库名称/描述精确DOI/题名查询无匹配；未取得已确认本篇原始PSF/MTF/逐波长数表，不默认套用其他论文的“向作者请求”。核查范围见docs/FAN_ARRAY_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_array15_680",
+          "model": "Fan 2019 · 15×15阵列 · 中心子镜 · 680nm",
+          "study_id": "fan2019",
+          "specimen_id": "array15",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.5红箭头所示中心子镜；周期阵列二级焦点与主焦区分开。",
+          "values": {
+            "diameter_um": {
+              "value": 14,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "单个子透镜名义口径，不是阵列整体或相机口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.3–5设计/器件表征；p.6 Fig.4",
+              "note": "未核到对应实制单镜的明确设计焦距；理论f50μm/r<9μm是示例，不移用，平均实测81.5μm也不填设计f。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "实制设计f未明确核到"
+            },
+            "na": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.7–8 Fig.5；对照p.5单镜NA",
+              "note": "未给15×15阵列中心子镜的独立NA；不移用单镜平均f81.5μm计算得到的NA0.086。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "阵列子镜NA未单独核到"
+            },
+            "lambda_min_nm": {
+              "value": 430,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者工作波段430–780nm，实际8谱点单列；并不证明任意λ/全场最佳焦点相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 780,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者波段上限与实际780nm谱点保留，780nm按本库可见光端点纳入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 680,
+              "source": "fan_array_2019",
+              "location": "PDF p.8 Fig.5c第6λ标签/5d对应曲线",
+              "note": "中央子镜8谱点，630nm另有阵列横向/纵向总场，不当另一器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "fan_array_si_2019",
+              "location": "SI p.2 S1；主文p.3/4设计/图2c",
+              "note": "实制SiN名义厚度400nm；理论尺寸极限示例d0.8μm不移用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ]
+            },
+            "material": {
+              "value": "15×15 SiN子镜阵列；每镜D14μm、中心距15μm；400nm层/320nm纳米格点",
+              "source": "fan_array_2019",
+              "location": "PDF p.7阵列段、p.8 Fig.5标题；SI S1/S3",
+              "note": "子镜中心距与纳米结构格点分开，未算整体清口径；225个子镜不算225种结构配置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "polarization": {
+              "value": "作者偏振不敏感设计；Fig.4为y偏振、从silica侧法向入射",
+              "source": "fan_array_2019",
+              "location": "PDF pp.3/5设计及实测段；SI p.4 S3",
+              "note": "90°旋转对称设计声明与实际线偏振测量分开；不把单次y偏振图当全偏振逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Fianium WL-SC480-20-PP + LLTF-VIS2-HP-FDS-SM + OQGLC-15线偏振片",
+              "source": "fan_array_si_2019",
+              "location": "SI p.4 S3图注",
+              "note": "单镜/阵列表征光源；实际滤波线宽未给，成像RGB10nm滤片是另一光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "psf_protocol": {
+              "value": "SI S3的100×/NA0.95物镜、tube lens/CCD收集透射强度；Fig.5a/b在630nm测阵列场，5c/d测中心子镜8谱点轴向分布",
+              "source": "fan_array_si_2019",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ],
+              "location": "SI p.4 S3；主文p.8 Fig.5",
+              "note": "不把单镜Fig.4的0.95 DOF判据/公共区移作阵列定量结果；未核到轴向步长、横向物方像素及原始归一化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.7–8 Fig.5a/c/d",
+              "note": "主焦区约z80μm并有多个局部峰；弱二级焦点约150μm，不能填成另一个主焦距/逐λ精确峰位。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "主焦区约80；逐点峰位未核"
+            },
+            "chromatic": {
+              "value": "中心子镜8波长主聚焦区约z80μm，多峰；周期阵列还产生有色散的弱二级焦点",
+              "source": "fan_array_2019",
+              "location": "PDF p.7阵列段；p.8 Fig.5c/d",
+              "note": "单镜DOF公共区82.5–89.4μm不复制给阵列；作者二级焦点说明不等于横向色差/主峰零焦移。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "Fig.5c/d轴向强度/截线；本轮未核到阵列MTF/效率原表",
+              "source": "fan_array_2019",
+              "location": "PDF p.8 Fig.5；SI S3",
+              "note": "x为z(μm)0–200，y为Intensity(a.u.)并逐λ上下平移；不能比较这些平移曲线的绝对峰功率。正式页/主文/SI所读范围未定位到Data/Code availability声明，附件未列Source Data；作者SYSU出版列表只给主文链接。DataCite精确关联DOI及GitHub仓库名称/描述精确DOI/题名查询无匹配；未取得已确认本篇原始PSF/MTF/逐波长数表，不默认套用其他论文的“向作者请求”。核查范围见docs/FAN_ARRAY_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_array15_730",
+          "model": "Fan 2019 · 15×15阵列 · 中心子镜 · 730nm",
+          "study_id": "fan2019",
+          "specimen_id": "array15",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.5红箭头所示中心子镜；周期阵列二级焦点与主焦区分开。",
+          "values": {
+            "diameter_um": {
+              "value": 14,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "单个子透镜名义口径，不是阵列整体或相机口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.3–5设计/器件表征；p.6 Fig.4",
+              "note": "未核到对应实制单镜的明确设计焦距；理论f50μm/r<9μm是示例，不移用，平均实测81.5μm也不填设计f。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "实制设计f未明确核到"
+            },
+            "na": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.7–8 Fig.5；对照p.5单镜NA",
+              "note": "未给15×15阵列中心子镜的独立NA；不移用单镜平均f81.5μm计算得到的NA0.086。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "阵列子镜NA未单独核到"
+            },
+            "lambda_min_nm": {
+              "value": 430,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者工作波段430–780nm，实际8谱点单列；并不证明任意λ/全场最佳焦点相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 780,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者波段上限与实际780nm谱点保留，780nm按本库可见光端点纳入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 730,
+              "source": "fan_array_2019",
+              "location": "PDF p.8 Fig.5c第7λ标签/5d对应曲线",
+              "note": "中央子镜8谱点，630nm另有阵列横向/纵向总场，不当另一器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "fan_array_si_2019",
+              "location": "SI p.2 S1；主文p.3/4设计/图2c",
+              "note": "实制SiN名义厚度400nm；理论尺寸极限示例d0.8μm不移用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ]
+            },
+            "material": {
+              "value": "15×15 SiN子镜阵列；每镜D14μm、中心距15μm；400nm层/320nm纳米格点",
+              "source": "fan_array_2019",
+              "location": "PDF p.7阵列段、p.8 Fig.5标题；SI S1/S3",
+              "note": "子镜中心距与纳米结构格点分开，未算整体清口径；225个子镜不算225种结构配置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "polarization": {
+              "value": "作者偏振不敏感设计；Fig.4为y偏振、从silica侧法向入射",
+              "source": "fan_array_2019",
+              "location": "PDF pp.3/5设计及实测段；SI p.4 S3",
+              "note": "90°旋转对称设计声明与实际线偏振测量分开；不把单次y偏振图当全偏振逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Fianium WL-SC480-20-PP + LLTF-VIS2-HP-FDS-SM + OQGLC-15线偏振片",
+              "source": "fan_array_si_2019",
+              "location": "SI p.4 S3图注",
+              "note": "单镜/阵列表征光源；实际滤波线宽未给，成像RGB10nm滤片是另一光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "psf_protocol": {
+              "value": "SI S3的100×/NA0.95物镜、tube lens/CCD收集透射强度；Fig.5a/b在630nm测阵列场，5c/d测中心子镜8谱点轴向分布",
+              "source": "fan_array_si_2019",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ],
+              "location": "SI p.4 S3；主文p.8 Fig.5",
+              "note": "不把单镜Fig.4的0.95 DOF判据/公共区移作阵列定量结果；未核到轴向步长、横向物方像素及原始归一化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.7–8 Fig.5a/c/d",
+              "note": "主焦区约z80μm并有多个局部峰；弱二级焦点约150μm，不能填成另一个主焦距/逐λ精确峰位。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "主焦区约80；逐点峰位未核"
+            },
+            "chromatic": {
+              "value": "中心子镜8波长主聚焦区约z80μm，多峰；周期阵列还产生有色散的弱二级焦点",
+              "source": "fan_array_2019",
+              "location": "PDF p.7阵列段；p.8 Fig.5c/d",
+              "note": "单镜DOF公共区82.5–89.4μm不复制给阵列；作者二级焦点说明不等于横向色差/主峰零焦移。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "Fig.5c/d轴向强度/截线；本轮未核到阵列MTF/效率原表",
+              "source": "fan_array_2019",
+              "location": "PDF p.8 Fig.5；SI S3",
+              "note": "x为z(μm)0–200，y为Intensity(a.u.)并逐λ上下平移；不能比较这些平移曲线的绝对峰功率。正式页/主文/SI所读范围未定位到Data/Code availability声明，附件未列Source Data；作者SYSU出版列表只给主文链接。DataCite精确关联DOI及GitHub仓库名称/描述精确DOI/题名查询无匹配；未取得已确认本篇原始PSF/MTF/逐波长数表，不默认套用其他论文的“向作者请求”。核查范围见docs/FAN_ARRAY_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_array15_780",
+          "model": "Fan 2019 · 15×15阵列 · 中心子镜 · 780nm",
+          "study_id": "fan2019",
+          "specimen_id": "array15",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.5红箭头所示中心子镜；周期阵列二级焦点与主焦区分开。",
+          "values": {
+            "diameter_um": {
+              "value": 14,
+              "source": "fan_array_2019",
+              "location": "PDF p.5 Characteristics段；p.6 Fig.4图注",
+              "note": "单个子透镜名义口径，不是阵列整体或相机口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.3–5设计/器件表征；p.6 Fig.4",
+              "note": "未核到对应实制单镜的明确设计焦距；理论f50μm/r<9μm是示例，不移用，平均实测81.5μm也不填设计f。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "实制设计f未明确核到"
+            },
+            "na": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.7–8 Fig.5；对照p.5单镜NA",
+              "note": "未给15×15阵列中心子镜的独立NA；不移用单镜平均f81.5μm计算得到的NA0.086。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "阵列子镜NA未单独核到"
+            },
+            "lambda_min_nm": {
+              "value": 430,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者工作波段430–780nm，实际8谱点单列；并不证明任意λ/全场最佳焦点相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 780,
+              "source": "fan_array_2019",
+              "location": "PDF pp.5–7实测表征；p.7 Discussion",
+              "note": "作者波段上限与实际780nm谱点保留，780nm按本库可见光端点纳入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 780,
+              "source": "fan_array_2019",
+              "location": "PDF p.8 Fig.5c第8λ标签/5d对应曲线",
+              "note": "中央子镜8谱点，630nm另有阵列横向/纵向总场，不当另一器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "fan_array_si_2019",
+              "location": "SI p.2 S1；主文p.3/4设计/图2c",
+              "note": "实制SiN名义厚度400nm；理论尺寸极限示例d0.8μm不移用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ]
+            },
+            "material": {
+              "value": "15×15 SiN子镜阵列；每镜D14μm、中心距15μm；400nm层/320nm纳米格点",
+              "source": "fan_array_2019",
+              "location": "PDF p.7阵列段、p.8 Fig.5标题；SI S1/S3",
+              "note": "子镜中心距与纳米结构格点分开，未算整体清口径；225个子镜不算225种结构配置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "polarization": {
+              "value": "作者偏振不敏感设计；Fig.4为y偏振、从silica侧法向入射",
+              "source": "fan_array_2019",
+              "location": "PDF pp.3/5设计及实测段；SI p.4 S3",
+              "note": "90°旋转对称设计声明与实际线偏振测量分开；不把单次y偏振图当全偏振逐项验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Fianium WL-SC480-20-PP + LLTF-VIS2-HP-FDS-SM + OQGLC-15线偏振片",
+              "source": "fan_array_si_2019",
+              "location": "SI p.4 S3图注",
+              "note": "单镜/阵列表征光源；实际滤波线宽未给，成像RGB10nm滤片是另一光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "psf_protocol": {
+              "value": "SI S3的100×/NA0.95物镜、tube lens/CCD收集透射强度；Fig.5a/b在630nm测阵列场，5c/d测中心子镜8谱点轴向分布",
+              "source": "fan_array_si_2019",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ],
+              "location": "SI p.4 S3；主文p.8 Fig.5",
+              "note": "不把单镜Fig.4的0.95 DOF判据/公共区移作阵列定量结果；未核到轴向步长、横向物方像素及原始归一化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF pp.7–8 Fig.5a/c/d",
+              "note": "主焦区约z80μm并有多个局部峰；弱二级焦点约150μm，不能填成另一个主焦距/逐λ精确峰位。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "主焦区约80；逐点峰位未核"
+            },
+            "chromatic": {
+              "value": "中心子镜8波长主聚焦区约z80μm，多峰；周期阵列还产生有色散的弱二级焦点",
+              "source": "fan_array_2019",
+              "location": "PDF p.7阵列段；p.8 Fig.5c/d",
+              "note": "单镜DOF公共区82.5–89.4μm不复制给阵列；作者二级焦点说明不等于横向色差/主峰零焦移。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "Fig.5c/d轴向强度/截线；本轮未核到阵列MTF/效率原表",
+              "source": "fan_array_2019",
+              "location": "PDF p.8 Fig.5；SI S3",
+              "note": "x为z(μm)0–200，y为Intensity(a.u.)并逐λ上下平移；不能比较这些平移曲线的绝对峰功率。正式页/主文/SI所读范围未定位到Data/Code availability声明，附件未列Source Data；作者SYSU出版列表只给主文链接。DataCite精确关联DOI及GitHub仓库名称/描述精确DOI/题名查询无匹配；未取得已确认本篇原始PSF/MTF/逐波长数表，不默认套用其他论文的“向作者请求”。核查范围见docs/FAN_ARRAY_REVIEW_2026-11-14.md#原始数据核查。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_array15_image_blue",
+          "model": "Fan 2019 · 15×15光学重建 · blue",
+          "study_id": "fan2019",
+          "specimen_id": "array15_system",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "补充S6成像系统，与Fig.5聚焦表征和Fig.6的60×60系统分配置。",
+          "values": {
+            "wavelength_nm": {
+              "value": 488,
+              "source": "fan_array_si_2019",
+              "location": "SI p.7 S6图注",
+              "note": "蓝/绿/红488/532/633nm滤片10nm带宽；白光没有一个单值λ，不当8点单镜表征。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "15×15 SiN阵列 + computer-generated object film“D” + 显微成像",
+              "source": "fan_array_si_2019",
+              "location": "SI p.7 S6；主文p.7阵列段",
+              "note": "单镜几何不填为完整光学重建系统D/f/NA；S6是15×15成像补充，不混作主图60×60系统。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "灯照明 + 10nm RGB滤片 / 白光",
+              "source": "fan_array_si_2019",
+              "location": "SI p.7 S6图注；主文pp.7–9 Imaging setup",
+              "note": "成像源不是S3的超连续谱/LLTF；继像倍率主图10×与正文20×有差异，未给S6独立倍率，不推像素尺度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ]
+            },
+            "chromatic": {
+              "value": "由计算编码的film经阵列在自由空间光学重建，记录D图像",
+              "source": "fan_array_si_2019",
+              "location": "SI p.7 S6及S4/S5相关说明",
+              "note": "实验光学重建实拍，不是对相机图像反卷积；没有横向色差位移、FWHM/MTF/SNR数表，不凭白色图像判断零色差。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "fan2019_array15_image_green",
+          "model": "Fan 2019 · 15×15光学重建 · green",
+          "study_id": "fan2019",
+          "specimen_id": "array15_system",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "补充S6成像系统，与Fig.5聚焦表征和Fig.6的60×60系统分配置。",
+          "values": {
+            "wavelength_nm": {
+              "value": 532,
+              "source": "fan_array_si_2019",
+              "location": "SI p.7 S6图注",
+              "note": "蓝/绿/红488/532/633nm滤片10nm带宽；白光没有一个单值λ，不当8点单镜表征。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "15×15 SiN阵列 + computer-generated object film“D” + 显微成像",
+              "source": "fan_array_si_2019",
+              "location": "SI p.7 S6；主文p.7阵列段",
+              "note": "单镜几何不填为完整光学重建系统D/f/NA；S6是15×15成像补充，不混作主图60×60系统。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "灯照明 + 10nm RGB滤片 / 白光",
+              "source": "fan_array_si_2019",
+              "location": "SI p.7 S6图注；主文pp.7–9 Imaging setup",
+              "note": "成像源不是S3的超连续谱/LLTF；继像倍率主图10×与正文20×有差异，未给S6独立倍率，不推像素尺度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ]
+            },
+            "chromatic": {
+              "value": "由计算编码的film经阵列在自由空间光学重建，记录D图像",
+              "source": "fan_array_si_2019",
+              "location": "SI p.7 S6及S4/S5相关说明",
+              "note": "实验光学重建实拍，不是对相机图像反卷积；没有横向色差位移、FWHM/MTF/SNR数表，不凭白色图像判断零色差。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "fan2019_array15_image_red",
+          "model": "Fan 2019 · 15×15光学重建 · red",
+          "study_id": "fan2019",
+          "specimen_id": "array15_system",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "补充S6成像系统，与Fig.5聚焦表征和Fig.6的60×60系统分配置。",
+          "values": {
+            "wavelength_nm": {
+              "value": 633,
+              "source": "fan_array_si_2019",
+              "location": "SI p.7 S6图注",
+              "note": "蓝/绿/红488/532/633nm滤片10nm带宽；白光没有一个单值λ，不当8点单镜表征。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "15×15 SiN阵列 + computer-generated object film“D” + 显微成像",
+              "source": "fan_array_si_2019",
+              "location": "SI p.7 S6；主文p.7阵列段",
+              "note": "单镜几何不填为完整光学重建系统D/f/NA；S6是15×15成像补充，不混作主图60×60系统。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "灯照明 + 10nm RGB滤片 / 白光",
+              "source": "fan_array_si_2019",
+              "location": "SI p.7 S6图注；主文pp.7–9 Imaging setup",
+              "note": "成像源不是S3的超连续谱/LLTF；继像倍率主图10×与正文20×有差异，未给S6独立倍率，不推像素尺度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ]
+            },
+            "chromatic": {
+              "value": "由计算编码的film经阵列在自由空间光学重建，记录D图像",
+              "source": "fan_array_si_2019",
+              "location": "SI p.7 S6及S4/S5相关说明",
+              "note": "实验光学重建实拍，不是对相机图像反卷积；没有横向色差位移、FWHM/MTF/SNR数表，不凭白色图像判断零色差。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "fan2019_array15_image_white",
+          "model": "Fan 2019 · 15×15光学重建 · white",
+          "study_id": "fan2019",
+          "specimen_id": "array15_system",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "补充S6成像系统，与Fig.5聚焦表征和Fig.6的60×60系统分配置。",
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "fan_array_si_2019",
+              "location": "SI p.7 S6图注",
+              "note": "蓝/绿/红488/532/633nm滤片10nm带宽；白光没有一个单值λ，不当8点单镜表征。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "白光 / 光学重建"
+            },
+            "material": {
+              "value": "15×15 SiN阵列 + computer-generated object film“D” + 显微成像",
+              "source": "fan_array_si_2019",
+              "location": "SI p.7 S6；主文p.7阵列段",
+              "note": "单镜几何不填为完整光学重建系统D/f/NA；S6是15×15成像补充，不混作主图60×60系统。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "灯照明 + 10nm RGB滤片 / 白光",
+              "source": "fan_array_si_2019",
+              "location": "SI p.7 S6图注；主文pp.7–9 Imaging setup",
+              "note": "成像源不是S3的超连续谱/LLTF；继像倍率主图10×与正文20×有差异，未给S6独立倍率，不推像素尺度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_si_2019",
+                "fan_array_2019"
+              ]
+            },
+            "chromatic": {
+              "value": "由计算编码的film经阵列在自由空间光学重建，记录D图像",
+              "source": "fan_array_si_2019",
+              "location": "SI p.7 S6及S4/S5相关说明",
+              "note": "实验光学重建实拍，不是对相机图像反卷积；没有横向色差位移、FWHM/MTF/SNR数表，不凭白色图像判断零色差。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "fan2019_array60_equal_depth_blue",
+          "model": "Fan 2019 · 60×60光学重建 · 同深度：focus on3&D · blue",
+          "study_id": "fan2019",
+          "specimen_id": "array60_system",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "不同对象深度/观察焦面/颜色的同一60×60阵列系统，保持光学重建与数字后处理区别。",
+          "values": {
+            "wavelength_nm": {
+              "value": 488,
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6b/c/d与图注；p.7系统段",
+              "note": "488/532/633nm、10nm滤片与白光；同系统的颜色/焦面条件不算独立器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "60×60 SiN阵列 + computer-generated EIA film + lamp + microscope/CCD",
+              "source": "fan_array_2019",
+              "location": "PDF p.7系统段；p.9 Fig.6；SI S4/S5",
+              "note": "本组为60×60阵列系统，不能借15×15全部子镜表征数据作系统性能，未填整体D/f/NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Thorlabs OSL2灯；10nm RGB滤片或白光；Mshot MC20 CCD",
+              "source": "fan_array_2019",
+              "location": "PDF pp.8–9 Materials and methods/Imaging setup与Fig.6a",
+              "note": "图6a写10X objective，正文写×20 Olympus MPLFLN20xBD+TTL180；保留冲突，不反推有效倍率/物方像元/MTF频率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "同深度：focus on3&D；实验光学重建的3/D清晰/模糊随观察焦面变化",
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6b；SI S4/S5",
+              "note": "物体film经计算编码、在自由空间重建，再由显微系统采集；图像深度效应不是单镜色散焦移或横向颜色通道位移原表。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_array60_equal_depth_green",
+          "model": "Fan 2019 · 60×60光学重建 · 同深度：focus on3&D · green",
+          "study_id": "fan2019",
+          "specimen_id": "array60_system",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "不同对象深度/观察焦面/颜色的同一60×60阵列系统，保持光学重建与数字后处理区别。",
+          "values": {
+            "wavelength_nm": {
+              "value": 532,
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6b/c/d与图注；p.7系统段",
+              "note": "488/532/633nm、10nm滤片与白光；同系统的颜色/焦面条件不算独立器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "60×60 SiN阵列 + computer-generated EIA film + lamp + microscope/CCD",
+              "source": "fan_array_2019",
+              "location": "PDF p.7系统段；p.9 Fig.6；SI S4/S5",
+              "note": "本组为60×60阵列系统，不能借15×15全部子镜表征数据作系统性能，未填整体D/f/NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Thorlabs OSL2灯；10nm RGB滤片或白光；Mshot MC20 CCD",
+              "source": "fan_array_2019",
+              "location": "PDF pp.8–9 Materials and methods/Imaging setup与Fig.6a",
+              "note": "图6a写10X objective，正文写×20 Olympus MPLFLN20xBD+TTL180；保留冲突，不反推有效倍率/物方像元/MTF频率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "同深度：focus on3&D；实验光学重建的3/D清晰/模糊随观察焦面变化",
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6b；SI S4/S5",
+              "note": "物体film经计算编码、在自由空间重建，再由显微系统采集；图像深度效应不是单镜色散焦移或横向颜色通道位移原表。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_array60_equal_depth_red",
+          "model": "Fan 2019 · 60×60光学重建 · 同深度：focus on3&D · red",
+          "study_id": "fan2019",
+          "specimen_id": "array60_system",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "不同对象深度/观察焦面/颜色的同一60×60阵列系统，保持光学重建与数字后处理区别。",
+          "values": {
+            "wavelength_nm": {
+              "value": 633,
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6b/c/d与图注；p.7系统段",
+              "note": "488/532/633nm、10nm滤片与白光；同系统的颜色/焦面条件不算独立器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "60×60 SiN阵列 + computer-generated EIA film + lamp + microscope/CCD",
+              "source": "fan_array_2019",
+              "location": "PDF p.7系统段；p.9 Fig.6；SI S4/S5",
+              "note": "本组为60×60阵列系统，不能借15×15全部子镜表征数据作系统性能，未填整体D/f/NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Thorlabs OSL2灯；10nm RGB滤片或白光；Mshot MC20 CCD",
+              "source": "fan_array_2019",
+              "location": "PDF pp.8–9 Materials and methods/Imaging setup与Fig.6a",
+              "note": "图6a写10X objective，正文写×20 Olympus MPLFLN20xBD+TTL180；保留冲突，不反推有效倍率/物方像元/MTF频率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "同深度：focus on3&D；实验光学重建的3/D清晰/模糊随观察焦面变化",
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6b；SI S4/S5",
+              "note": "物体film经计算编码、在自由空间重建，再由显微系统采集；图像深度效应不是单镜色散焦移或横向颜色通道位移原表。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_array60_equal_depth_white",
+          "model": "Fan 2019 · 60×60光学重建 · 同深度：focus on3&D · white",
+          "study_id": "fan2019",
+          "specimen_id": "array60_system",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "不同对象深度/观察焦面/颜色的同一60×60阵列系统，保持光学重建与数字后处理区别。",
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6b/c/d与图注；p.7系统段",
+              "note": "488/532/633nm、10nm滤片与白光；同系统的颜色/焦面条件不算独立器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "白光 / 光学重建"
+            },
+            "material": {
+              "value": "60×60 SiN阵列 + computer-generated EIA film + lamp + microscope/CCD",
+              "source": "fan_array_2019",
+              "location": "PDF p.7系统段；p.9 Fig.6；SI S4/S5",
+              "note": "本组为60×60阵列系统，不能借15×15全部子镜表征数据作系统性能，未填整体D/f/NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Thorlabs OSL2灯；10nm RGB滤片或白光；Mshot MC20 CCD",
+              "source": "fan_array_2019",
+              "location": "PDF pp.8–9 Materials and methods/Imaging setup与Fig.6a",
+              "note": "图6a写10X objective，正文写×20 Olympus MPLFLN20xBD+TTL180；保留冲突，不反推有效倍率/物方像元/MTF频率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "同深度：focus on3&D；实验光学重建的3/D清晰/模糊随观察焦面变化",
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6b；SI S4/S5",
+              "note": "物体film经计算编码、在自由空间重建，再由显微系统采集；图像深度效应不是单镜色散焦移或横向颜色通道位移原表。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_array60_focus_3_blue",
+          "model": "Fan 2019 · 60×60光学重建 · 不同深度：focus on3 · blue",
+          "study_id": "fan2019",
+          "specimen_id": "array60_system",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "不同对象深度/观察焦面/颜色的同一60×60阵列系统，保持光学重建与数字后处理区别。",
+          "values": {
+            "wavelength_nm": {
+              "value": 488,
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6b/c/d与图注；p.7系统段",
+              "note": "488/532/633nm、10nm滤片与白光；同系统的颜色/焦面条件不算独立器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "60×60 SiN阵列 + computer-generated EIA film + lamp + microscope/CCD",
+              "source": "fan_array_2019",
+              "location": "PDF p.7系统段；p.9 Fig.6；SI S4/S5",
+              "note": "本组为60×60阵列系统，不能借15×15全部子镜表征数据作系统性能，未填整体D/f/NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Thorlabs OSL2灯；10nm RGB滤片或白光；Mshot MC20 CCD",
+              "source": "fan_array_2019",
+              "location": "PDF pp.8–9 Materials and methods/Imaging setup与Fig.6a",
+              "note": "图6a写10X objective，正文写×20 Olympus MPLFLN20xBD+TTL180；保留冲突，不反推有效倍率/物方像元/MTF频率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "不同深度：focus on3；实验光学重建的3/D清晰/模糊随观察焦面变化",
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6c；SI S4/S5",
+              "note": "物体film经计算编码、在自由空间重建，再由显微系统采集；图像深度效应不是单镜色散焦移或横向颜色通道位移原表。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_array60_focus_3_green",
+          "model": "Fan 2019 · 60×60光学重建 · 不同深度：focus on3 · green",
+          "study_id": "fan2019",
+          "specimen_id": "array60_system",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "不同对象深度/观察焦面/颜色的同一60×60阵列系统，保持光学重建与数字后处理区别。",
+          "values": {
+            "wavelength_nm": {
+              "value": 532,
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6b/c/d与图注；p.7系统段",
+              "note": "488/532/633nm、10nm滤片与白光；同系统的颜色/焦面条件不算独立器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "60×60 SiN阵列 + computer-generated EIA film + lamp + microscope/CCD",
+              "source": "fan_array_2019",
+              "location": "PDF p.7系统段；p.9 Fig.6；SI S4/S5",
+              "note": "本组为60×60阵列系统，不能借15×15全部子镜表征数据作系统性能，未填整体D/f/NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Thorlabs OSL2灯；10nm RGB滤片或白光；Mshot MC20 CCD",
+              "source": "fan_array_2019",
+              "location": "PDF pp.8–9 Materials and methods/Imaging setup与Fig.6a",
+              "note": "图6a写10X objective，正文写×20 Olympus MPLFLN20xBD+TTL180；保留冲突，不反推有效倍率/物方像元/MTF频率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "不同深度：focus on3；实验光学重建的3/D清晰/模糊随观察焦面变化",
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6c；SI S4/S5",
+              "note": "物体film经计算编码、在自由空间重建，再由显微系统采集；图像深度效应不是单镜色散焦移或横向颜色通道位移原表。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_array60_focus_3_red",
+          "model": "Fan 2019 · 60×60光学重建 · 不同深度：focus on3 · red",
+          "study_id": "fan2019",
+          "specimen_id": "array60_system",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "不同对象深度/观察焦面/颜色的同一60×60阵列系统，保持光学重建与数字后处理区别。",
+          "values": {
+            "wavelength_nm": {
+              "value": 633,
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6b/c/d与图注；p.7系统段",
+              "note": "488/532/633nm、10nm滤片与白光；同系统的颜色/焦面条件不算独立器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "60×60 SiN阵列 + computer-generated EIA film + lamp + microscope/CCD",
+              "source": "fan_array_2019",
+              "location": "PDF p.7系统段；p.9 Fig.6；SI S4/S5",
+              "note": "本组为60×60阵列系统，不能借15×15全部子镜表征数据作系统性能，未填整体D/f/NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Thorlabs OSL2灯；10nm RGB滤片或白光；Mshot MC20 CCD",
+              "source": "fan_array_2019",
+              "location": "PDF pp.8–9 Materials and methods/Imaging setup与Fig.6a",
+              "note": "图6a写10X objective，正文写×20 Olympus MPLFLN20xBD+TTL180；保留冲突，不反推有效倍率/物方像元/MTF频率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "不同深度：focus on3；实验光学重建的3/D清晰/模糊随观察焦面变化",
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6c；SI S4/S5",
+              "note": "物体film经计算编码、在自由空间重建，再由显微系统采集；图像深度效应不是单镜色散焦移或横向颜色通道位移原表。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_array60_focus_3_white",
+          "model": "Fan 2019 · 60×60光学重建 · 不同深度：focus on3 · white",
+          "study_id": "fan2019",
+          "specimen_id": "array60_system",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "不同对象深度/观察焦面/颜色的同一60×60阵列系统，保持光学重建与数字后处理区别。",
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6b/c/d与图注；p.7系统段",
+              "note": "488/532/633nm、10nm滤片与白光；同系统的颜色/焦面条件不算独立器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "白光 / 光学重建"
+            },
+            "material": {
+              "value": "60×60 SiN阵列 + computer-generated EIA film + lamp + microscope/CCD",
+              "source": "fan_array_2019",
+              "location": "PDF p.7系统段；p.9 Fig.6；SI S4/S5",
+              "note": "本组为60×60阵列系统，不能借15×15全部子镜表征数据作系统性能，未填整体D/f/NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Thorlabs OSL2灯；10nm RGB滤片或白光；Mshot MC20 CCD",
+              "source": "fan_array_2019",
+              "location": "PDF pp.8–9 Materials and methods/Imaging setup与Fig.6a",
+              "note": "图6a写10X objective，正文写×20 Olympus MPLFLN20xBD+TTL180；保留冲突，不反推有效倍率/物方像元/MTF频率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "不同深度：focus on3；实验光学重建的3/D清晰/模糊随观察焦面变化",
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6c；SI S4/S5",
+              "note": "物体film经计算编码、在自由空间重建，再由显微系统采集；图像深度效应不是单镜色散焦移或横向颜色通道位移原表。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_array60_focus_D_blue",
+          "model": "Fan 2019 · 60×60光学重建 · 不同深度：focus onD · blue",
+          "study_id": "fan2019",
+          "specimen_id": "array60_system",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "不同对象深度/观察焦面/颜色的同一60×60阵列系统，保持光学重建与数字后处理区别。",
+          "values": {
+            "wavelength_nm": {
+              "value": 488,
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6b/c/d与图注；p.7系统段",
+              "note": "488/532/633nm、10nm滤片与白光；同系统的颜色/焦面条件不算独立器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "60×60 SiN阵列 + computer-generated EIA film + lamp + microscope/CCD",
+              "source": "fan_array_2019",
+              "location": "PDF p.7系统段；p.9 Fig.6；SI S4/S5",
+              "note": "本组为60×60阵列系统，不能借15×15全部子镜表征数据作系统性能，未填整体D/f/NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Thorlabs OSL2灯；10nm RGB滤片或白光；Mshot MC20 CCD",
+              "source": "fan_array_2019",
+              "location": "PDF pp.8–9 Materials and methods/Imaging setup与Fig.6a",
+              "note": "图6a写10X objective，正文写×20 Olympus MPLFLN20xBD+TTL180；保留冲突，不反推有效倍率/物方像元/MTF频率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "不同深度：focus onD；实验光学重建的3/D清晰/模糊随观察焦面变化",
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6d；SI S4/S5",
+              "note": "物体film经计算编码、在自由空间重建，再由显微系统采集；图像深度效应不是单镜色散焦移或横向颜色通道位移原表。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_array60_focus_D_green",
+          "model": "Fan 2019 · 60×60光学重建 · 不同深度：focus onD · green",
+          "study_id": "fan2019",
+          "specimen_id": "array60_system",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "不同对象深度/观察焦面/颜色的同一60×60阵列系统，保持光学重建与数字后处理区别。",
+          "values": {
+            "wavelength_nm": {
+              "value": 532,
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6b/c/d与图注；p.7系统段",
+              "note": "488/532/633nm、10nm滤片与白光；同系统的颜色/焦面条件不算独立器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "60×60 SiN阵列 + computer-generated EIA film + lamp + microscope/CCD",
+              "source": "fan_array_2019",
+              "location": "PDF p.7系统段；p.9 Fig.6；SI S4/S5",
+              "note": "本组为60×60阵列系统，不能借15×15全部子镜表征数据作系统性能，未填整体D/f/NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Thorlabs OSL2灯；10nm RGB滤片或白光；Mshot MC20 CCD",
+              "source": "fan_array_2019",
+              "location": "PDF pp.8–9 Materials and methods/Imaging setup与Fig.6a",
+              "note": "图6a写10X objective，正文写×20 Olympus MPLFLN20xBD+TTL180；保留冲突，不反推有效倍率/物方像元/MTF频率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "不同深度：focus onD；实验光学重建的3/D清晰/模糊随观察焦面变化",
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6d；SI S4/S5",
+              "note": "物体film经计算编码、在自由空间重建，再由显微系统采集；图像深度效应不是单镜色散焦移或横向颜色通道位移原表。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_array60_focus_D_red",
+          "model": "Fan 2019 · 60×60光学重建 · 不同深度：focus onD · red",
+          "study_id": "fan2019",
+          "specimen_id": "array60_system",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "不同对象深度/观察焦面/颜色的同一60×60阵列系统，保持光学重建与数字后处理区别。",
+          "values": {
+            "wavelength_nm": {
+              "value": 633,
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6b/c/d与图注；p.7系统段",
+              "note": "488/532/633nm、10nm滤片与白光；同系统的颜色/焦面条件不算独立器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "60×60 SiN阵列 + computer-generated EIA film + lamp + microscope/CCD",
+              "source": "fan_array_2019",
+              "location": "PDF p.7系统段；p.9 Fig.6；SI S4/S5",
+              "note": "本组为60×60阵列系统，不能借15×15全部子镜表征数据作系统性能，未填整体D/f/NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Thorlabs OSL2灯；10nm RGB滤片或白光；Mshot MC20 CCD",
+              "source": "fan_array_2019",
+              "location": "PDF pp.8–9 Materials and methods/Imaging setup与Fig.6a",
+              "note": "图6a写10X objective，正文写×20 Olympus MPLFLN20xBD+TTL180；保留冲突，不反推有效倍率/物方像元/MTF频率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "不同深度：focus onD；实验光学重建的3/D清晰/模糊随观察焦面变化",
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6d；SI S4/S5",
+              "note": "物体film经计算编码、在自由空间重建，再由显微系统采集；图像深度效应不是单镜色散焦移或横向颜色通道位移原表。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "fan2019_array60_focus_D_white",
+          "model": "Fan 2019 · 60×60光学重建 · 不同深度：focus onD · white",
+          "study_id": "fan2019",
+          "specimen_id": "array60_system",
+          "module": "",
+          "variant": "SiN实制消色差单镜/阵列及光学重建研究配置",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "不同对象深度/观察焦面/颜色的同一60×60阵列系统，保持光学重建与数字后处理区别。",
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6b/c/d与图注；p.7系统段",
+              "note": "488/532/633nm、10nm滤片与白光；同系统的颜色/焦面条件不算独立器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "白光 / 光学重建"
+            },
+            "material": {
+              "value": "60×60 SiN阵列 + computer-generated EIA film + lamp + microscope/CCD",
+              "source": "fan_array_2019",
+              "location": "PDF p.7系统段；p.9 Fig.6；SI S4/S5",
+              "note": "本组为60×60阵列系统，不能借15×15全部子镜表征数据作系统性能，未填整体D/f/NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            },
+            "illumination": {
+              "value": "Thorlabs OSL2灯；10nm RGB滤片或白光；Mshot MC20 CCD",
+              "source": "fan_array_2019",
+              "location": "PDF pp.8–9 Materials and methods/Imaging setup与Fig.6a",
+              "note": "图6a写10X objective，正文写×20 Olympus MPLFLN20xBD+TTL180；保留冲突，不反推有效倍率/物方像元/MTF频率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "不同深度：focus onD；实验光学重建的3/D清晰/模糊随观察焦面变化",
+              "source": "fan_array_2019",
+              "location": "PDF p.9 Fig.6d；SI S4/S5",
+              "note": "物体film经计算编码、在自由空间重建，再由显微系统采集；图像深度效应不是单镜色散焦移或横向颜色通道位移原表。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "fan_array_2019",
+                "fan_array_si_2019"
+              ]
+            }
+          }
         }
       ],
-      "scope": "17项原始研究、63个器件/系统配置、628条记录。汇总、光谱/场角条件及不同测量光路不计作更多独立实物；物理消色差、普通色散对照与计算校正分开。PSF-FFT阈值、USAF线对对比度和反卷积结果分列，未知焦距/原始数表不补零。",
+      "scope": "18项原始研究、67个器件/系统配置、662条记录。光谱/场角与系统条件不算更多实物；逐点焦距、作者光谱均值、DOF公共区与残余焦移分开。PSF/MTF、光学重建/数字处理与效率协议分别溯源，未知数值不补零。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",

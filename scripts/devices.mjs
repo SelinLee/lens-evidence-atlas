@@ -28,6 +28,14 @@ export function validateDevices(d,catalog){
   if(['fwhm_um','fwhm_x_um','fwhm_y_um'].includes(k)&&Number.isFinite(v.value)&&!(v.value>0&&r.values.wavelength_nm?.value>0&&v.basis==='measured'))errors.push('measured PSF FWHM context');
  }
  const aoi=r.values.aoi_deg;
+ const focalMean=r.values.measured_focal_band_mean_um;
+ if(Number.isFinite(focalMean?.value)){
+  const waves=focalMean.sample_wavelengths_nm;
+  if(!(focalMean.value>0)||focalMean.basis!=='derived_from_measurement'||focalMean.calculation_origin!=='authors'||
+   focalMean.statistic!=='author_reported_spectral_mean'||Number.isFinite(r.values.wavelength_nm?.value)||
+   !Array.isArray(waves)||waves.length<2||new Set(waves).size!==waves.length||waves.some(w=>!(Number.isFinite(w)&&w>0))||
+   !focalMean.reference_plane||!focalMean.aggregation_note||!r.values.psf_protocol?.value)errors.push('spectral focal mean context');
+ }
  if(Number.isFinite(aoi?.value)&&(
   Math.abs(aoi.value)>90||!['reported_configuration','measured'].includes(aoi.basis)||
   aoi.angle_reference!=='incident_beam_to_optical_axis'||
