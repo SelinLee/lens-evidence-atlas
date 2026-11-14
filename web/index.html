@@ -1,5 +1,66 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>透镜评价证据库 · Lens Evidence Atlas</title><link rel="stylesheet" href="style.css"></head><body>
-<header><a class="brand" href="#app_25"><span class="brand-mark">L / E</span><span>透镜评价证据库<small>LENS EVIDENCE ATLAS</small></span></a><div class="header-tools"><a href="devices.html">手机 / AR·VR 指标矩阵 ↗</a><button id="methodButton">证据与维护规则</button><a id="repoLink" href="https://github.com/SelinLee/lens-evidence-atlas" target="_blank" rel="noopener">GitHub ↗</a><span class="private">文献与指标查询</span></div></header>
-<div class="layout"><aside aria-label="应用查询"><div class="side-title">按应用查指标</div><label class="sr-only" for="search">搜索应用、指标或型号</label><input id="search" type="search" placeholder="搜索应用、指标、型号…"><label class="sr-only" for="category">应用分类</label><select id="category"><option value="">全部应用领域</option></select><div class="filter-line"><label><input type="checkbox" id="rankedOnly"> 仅看已有优先级依据</label></div><div id="resultCount" class="muted"></div><nav id="appList"></nav><div class="side-footer"><b id="version"></b><span id="provenance"></span></div></aside>
-<main id="main"><section class="page-head"><div id="crumb" class="eyebrow"></div><h1 id="appTitle"></h1><p id="appSummary"></p><div id="coverage"></div></section><nav class="tabs" role="tablist" aria-label="应用资料"><button role="tab" data-tab="metrics">指标与定义</button><button role="tab" data-tab="priority">重要性排序</button><button role="tab" data-tab="best">最佳水平与参考</button><button role="tab" data-tab="compare" hidden>条件对照</button><button role="tab" data-tab="sources">可验证出处</button></nav><section id="panel" role="tabpanel" tabindex="0"></section><footer class="main-footer"><span>指标、排序与“最佳”分别核验，缺失值保持未知。</span><a href="catalog.json" download>下载结构化资料 JSON ↓</a></footer></main></div>
-<dialog id="detail"><div class="dialog-head"><h2 id="detailTitle"></h2><button id="closeDialog" aria-label="关闭">×</button></div><div id="detailBody"></div></dialog><div class="sr-only" id="live" aria-live="polite"></div><script src="data.js"></script><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+  <title>透镜评价证据库 · Lens Evidence Atlas</title>
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="workspace.css">
+</head>
+<body class="atlas-workspace">
+  <header class="atlas-header">
+    <a class="brand" href="index.html"><span class="brand-mark">L / E</span><span>透镜评价证据库<small>LENS EVIDENCE ATLAS</small></span></a>
+    <nav class="header-tools" aria-label="页面导航"><a href="#workspace">图表</a><a href="#data-table">数据表</a><a href="#references">参考文献</a><button id="methodButton">使用说明</button><a href="https://github.com/SelinLee/lens-evidence-atlas" target="_blank" rel="noopener">GitHub ↗</a></nav>
+  </header>
+  <main class="atlas-main">
+    <section class="workspace" id="workspace" aria-label="指标图表工作区">
+      <aside class="settings" aria-label="应用、指标与图表设置">
+        <div class="settings-title"><span>图表设置</span><button id="reset-view" class="quiet-button">重置视图</button></div>
+        <label class="control-label" for="domain">应用领域</label><select id="domain"></select>
+        <div class="control-pair">
+          <label id="module-label">摄像头<select id="module"><option value="main">主摄</option><option value="ultrawide">超广角</option><option value="tele">长焦</option></select></label>
+          <label id="evidence-label">证据范围<select id="evidence"><option value="">全部证据</option><option value="manufacturer">厂商 / 商业规格</option><option value="research">科研 / 标准等</option></select></label>
+        </div>
+        <div class="axis-controls"><label>横轴指标<select id="x"></select></label><label>纵轴指标<select id="y"></select></label></div>
+        <div class="control-pair">
+          <label>图形<select id="mode"><option value="line">折线图</option><option value="scatter">散点图</option></select></label>
+          <label>排列方式<select id="sort"><option value="original">目录顺序</option><option value="model">名称顺序</option><option value="x">横轴值升序</option><option value="y">纵轴值升序</option></select></label>
+        </div>
+        <button id="mobile-filter-toggle" class="mobile-filter-toggle" aria-haspopup="dialog">筛选样本 / 选择表格列</button>
+        <div id="selection-controls" class="selection-controls"><div class="setting-tabs" role="tablist" aria-label="筛选与表格设置"><button id="models-tab" role="tab" aria-selected="true" aria-controls="model-controls" data-setting="models">样本筛选</button><button id="columns-tab" role="tab" aria-selected="false" aria-controls="column-controls" tabindex="-1" data-setting="columns">表格指标列</button></div>
+        <div id="model-controls" role="tabpanel" aria-labelledby="models-tab">
+          <label class="sr-only" for="model-search">搜索型号或样本</label><input type="search" id="model-search" placeholder="搜索型号 / 样本…">
+          <div class="choice-actions"><span id="selection-count"></span><button id="all-models">全选</button><button id="no-models">清空</button></div>
+          <div id="models" class="choice-list" aria-label="显示样本"></div>
+        </div>
+        <div id="column-controls" role="tabpanel" aria-labelledby="columns-tab" hidden>
+          <div class="choice-actions"><span>选择表格中的指标</span><button id="all-columns">全选</button><button id="no-columns">清空</button></div>
+          <div id="columns" class="choice-list" aria-label="显示指标列"></div>
+        </div>
+        </div>
+        <div class="settings-actions"><button id="export-svg">下载图表 SVG ↓</button><button id="share">复制视图链接</button></div>
+        <p class="settings-foot">缺失值保留未知 · 每项数据均可追溯</p>
+      </aside>
+      <div class="chart-panel">
+        <div class="chart-heading"><div><div class="eyebrow">EVIDENCE / EXPLORE</div><h1 id="view-title">指标与样本</h1></div><span id="view-count" class="count-pill"></span></div>
+        <p id="scope" class="scope-line"></p>
+        <div id="chart" class="workspace-chart"></div>
+        <div id="point-detail" class="point-detail" aria-live="polite">选择图中数据点，查看数值、条件与出处。</div>
+        <div class="plot-footer"><p id="plot-note">长折线按横轴数值连接样本；短细线指向名称标签。连线仅辅助比较。</p><span id="status" role="status" aria-live="polite"></span></div>
+      </div>
+    </section>
+    <section class="data-section" id="data-table" aria-labelledby="table-title">
+      <div class="section-heading"><div><div class="eyebrow">01 / COLLECTED DATA</div><h2 id="table-title">收集到的数据</h2><p>保留原始参数、测量条件与缺失原因。点击编号，跳转到下方参考文献。</p></div><div class="section-actions"><button id="export-csv">下载当前表格 CSV ↓</button><a href="#workspace">返回图表 ↑</a></div></div>
+      <div class="table-scroll" id="table" role="region" aria-label="指标表，可横向滚动" tabindex="0"></div>
+      <details class="evidence-notes" id="evidence-notes"><summary>指标定义、任务权衡与限定范围参考</summary><div class="evidence-tabs" role="tablist" aria-label="证据资料"><button data-evidence-tab="metrics" role="tab">指标定义</button><button data-evidence-tab="priority" role="tab">任务权衡</button><button data-evidence-tab="best" role="tab">限定范围参考</button><button data-evidence-tab="compare" role="tab" hidden>条件对照</button></div><div id="definitions" role="tabpanel"></div></details>
+    </section>
+    <section class="data-section reference-section" id="references" aria-labelledby="references-title">
+      <div class="section-heading"><div><div class="eyebrow">02 / REFERENCES</div><h2 id="references-title">数据来源与参考文献</h2><p>编号对应上方表格；每条保留原文位置、读取范围与核验日期。</p></div><a href="#data-table">返回数据表 ↑</a></div>
+      <ol id="sources" class="reference-list"></ol>
+      <p id="date" class="data-date"></p>
+    </section>
+    <footer class="atlas-footer"><span>Lens Evidence Atlas · 条件先于比较，证据随数据保留</span><a href="catalog.json" download>下载完整结构化资料 JSON ↓</a></footer>
+  </main>
+  <dialog id="filter-dialog"><div class="dialog-head"><h2>样本与表格列</h2><button id="close-filters" aria-label="关闭筛选">×</button></div><div id="mobile-filter-content"></div></dialog>
+  <dialog id="detail"><div class="dialog-head"><h2 id="detailTitle"></h2><button id="closeDialog" aria-label="关闭">×</button></div><div id="detailBody"></div></dialog>
+  <script>window.UNIFIED_WORKSPACE=true;</script><script src="data.js"></script><script src="devices-data.js"></script><script src="app.js"></script><script src="devices.js"></script><script type="module" src="workspace.js"></script>
+</body>
+</html>
