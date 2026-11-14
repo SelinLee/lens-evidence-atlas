@@ -15,7 +15,7 @@ test('legacy scalars preserve unit and zero without guessing ranges, errors or c
  for(const text of ['20–41%','7.8 ± 1.3 μm','约4×','532 nm / 655 nm','f/2.8 mm','NA=0.1','10 mm²','12 mm text','Infinity',''])assert.equal(scalar(text),null,text);
 });
 test('all applications and device domains share a template without losing original parameter strings',()=>{
- assert.equal(atlas.domains.length,catalog.applications.length+2);
+ assert.equal(atlas.domains.length,catalog.applications.length+Object.keys(devices.domains).length);
  for(const app of catalog.applications){
   const domain=atlas.domains.find(d=>d.id===app.id);assert.equal(domain.rows.length,app.record_ids.length);
   for(const row of domain.rows){const record=catalog.benchmarks.find(r=>r.id===row.id);assert.equal(Object.keys(row.values).length,record.parameters.length);for(const value of Object.values(row.values))assert.equal(value.display,record.parameters[value.parameterIndex].value);}
@@ -62,8 +62,8 @@ test('unified entry loads both data sets and old device links retain selection p
 test('device evidence categories preserve manufacturer, study configuration and measurement boundaries',()=>{
  const d=structuredClone(devices),row=structuredClone(d.domains.xr.rows[0]);row.id='fixture-study';row.evidence_type='study';row.measurement_scope='right eye, center only';row.values.width.basis='reported_configuration';row.values.hz.basis='measured';d.domains.xr.rows.push(row);
  const domain=createWorkspace(catalog,d).domains.find(v=>v.id==='xr'),base={module:'main',models:null,query:'',evidence:'research'};
- assert.deepEqual(filteredRows(domain,base).map(r=>r.id),['fixture-study']);
- assert.equal(filteredRows(domain,{...base,evidence:'manufacturer'}).length,d.domains.xr.rows.length-1);
+ assert.deepEqual(filteredRows(domain,base).map(r=>r.id),d.domains.xr.rows.filter(r=>r.evidence_type==='study').map(r=>r.id));
+ assert.equal(filteredRows(domain,{...base,evidence:'manufacturer'}).length,d.domains.xr.rows.filter(r=>r.evidence_type!=='study').length);
  const study=domain.rows.at(-1);assert.match(study.variant,/right eye, center only/);assert.equal(study.values.width.evidence,'研究设备配置');assert.equal(study.values.hz.evidence,'研究实测');
 });
 test('missing SNR is distinguished from zero and recovery chooses existing values without inventing data',()=>{

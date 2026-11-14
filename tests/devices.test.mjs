@@ -3,7 +3,7 @@ const d=JSON.parse(fs.readFileSync(new URL('../data/devices.json',import.meta.ur
 test('device matrix validates provenance and finite numeric fields',()=>{assert.equal(validateDevices(d),true);for(const change of [x=>x.domains.phone.rows[0].values.mp.source='missing',x=>x.domains.phone.rows[0].values.mp.value='48',x=>x.domains.phone.rows.push(x.domains.phone.rows[0])]){const x=structuredClone(d);change(x);assert.throws(()=>validateDevices(x));}});
 test('missing values are excluded, zero is not treated as missing',()=>{const code=fs.readFileSync(new URL('../web/devices.js',import.meta.url),'utf8');const f=code.slice(code.indexOf('function points('),code.indexOf('function chart('));const c=vm.createContext({});vm.runInContext(f,c);assert.equal(vm.runInContext("points([{values:{x:{value:null},y:{value:2}}},{values:{x:{value:0},y:{value:2}}}], 'x','y').length",c),1);});
 test('no invented VisionPro per-eye values or motion-to-photon',()=>{const v=d.domains.xr.rows.find(r=>r.id==='visionprom5');assert.equal(v.values.width,undefined);assert.equal(v.values.latency,undefined);assert.equal(v.values.hz.value,120);});
-test('FOV axes and camera modules remain separate',()=>{assert.deepEqual([...new Set(d.domains.phone.rows.map(r=>r.module))].sort(),['main','tele','ultrawide']);const p=d.domains.xr.rows.find(r=>r.id==='psvr2');assert.equal(p.values.hfov,undefined);assert.equal(p.values.ufov.value,110);});
+test('FOV axes and camera modules remain separate',()=>{assert.deepEqual([...new Set(d.domains.phone.rows.map(r=>r.module))].sort(),['external_macro','main','tele','ultrawide']);const p=d.domains.xr.rows.find(r=>r.id==='psvr2');assert.equal(p.values.hfov,undefined);assert.equal(p.values.ufov.value,110);});
 
 // Content/interaction fixture only, not browser or visual acceptance.
 function deviceFixture(data=d){
@@ -40,7 +40,7 @@ test('coincident model coordinates are grouped without jitter and retain every m
  assert.match(f.el('chart').innerHTML,/2 个型号/);assert.match(f.el('chart').innerHTML,/同坐标重合/);
  assert.match(f.el('chart').innerHTML,/iPhone 18 Pro/);assert.match(f.el('chart').innerHTML,/Pixel 11 Pro/);
  f.change('domain','xr');f.change('x','hz');f.change('y','hz');
- const html=f.el('chart').innerHTML;assert.equal((html.match(/<circle /g)||[]).length,2);assert.match(html,/7 个型号/);assert.match(html,/\(120, 120\)/);
+ const html=f.el('chart').innerHTML;assert.equal((html.match(/<circle /g)||[]).length,2);assert.ok(html.includes(d.domains.xr.rows.filter(r=>r.values.hz?.value===120).length+' 个型号'));assert.match(html,/\(120, 120\)/);
  for(const r of d.domains.xr.rows)assert.ok(html.includes(r.model));
 });
 
@@ -101,7 +101,7 @@ test('follow-up specifications preserve unresolved ranges and optical measuremen
  const x=d.domains.xr.rows.find(r=>r.id==='xreal_one_pro');
  for(const key of ['width','height','brightness','latency','hfov','ppd'])assert.equal(x.values[key],undefined);
  const v=d.domains.xr.rows.find(r=>r.id==='vive_focus_vision');assert.match(v.values.hz.note,/DisplayPort.*Beta/);assert.equal(v.values.hfov,undefined);
- assert.equal(d.domains.phone.rows.length,15);assert.equal(d.domains.xr.rows.length,8);
+ assert.equal(d.domains.phone.rows.filter(r=>r.evidence_type!=='study').length,15);assert.equal(d.domains.xr.rows.filter(r=>r.evidence_type!=='study').length,8);
 });
 
 test('XREAL optical scheme is sourced without adopting marketing performance claims',()=>{
@@ -155,7 +155,7 @@ test('crowded and coincident labels keep every complete model in the readable le
  }
  f.change('domain','xr');f.change('x','hz');f.change('y','hz');
  const html=f.el('chart').innerHTML;assert.equal((html.match(/<circle /g)||[]).length,2);
- assert.match(html,/7 个型号/);for(const r of d.domains.xr.rows)assert.ok(html.includes(r.model));
+ assert.ok(html.includes(d.domains.xr.rows.filter(r=>r.values.hz?.value===120).length+' 个型号'));for(const r of d.domains.xr.rows)assert.ok(html.includes(r.model));
  assert.ok(!html.includes('部分文字标签'));
  const longName=structuredClone(d);longName.domains.phone.rows=[longName.domains.phone.rows[0]];
  longName.domains.phone.rows[0].model='完整型号'.repeat(40);
@@ -174,7 +174,7 @@ test('XREAL 1S binocular and unmeasured optical quantities remain unfilled',()=>
 
  test('Luma Pro keeps explicit per-eye specs and missing measurement boundaries',()=>{const r=d.domains.xr.rows.find(r=>r.id==='viture_luma_pro');assert.equal(r.values.width.value,1920);assert.equal(r.values.height.value,1200);assert.equal(r.values.hz.value,120);assert.match(r.values.hz.note,/60 Hz/);assert.equal(r.values.ufov.value,52);for(const k of ['hfov','vfov','ppd','eyebox','eyerelief','brightness','mtf','latency'])assert.equal(r.values[k],undefined);});
 
-test('XR scope count follows current rows',()=>{assert.ok(d.domains.xr.scope.startsWith(`${d.domains.xr.rows.length}款`));});
+test('XR scope count follows current rows',()=>{assert.ok(d.domains.xr.scope.startsWith(`${d.domains.xr.rows.filter(r=>r.evidence_type!=='study').length}款厂商`));});
 
 test('line mode orders by numeric x and keeps the same point coordinates',()=>{
  const f=deviceFixture();const scatter=f.el('chart').innerHTML;f.change('mode','line');const line=f.el('chart').innerHTML;

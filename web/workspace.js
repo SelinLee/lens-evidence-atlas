@@ -45,7 +45,7 @@ function saveView() {
 function restore(url) {
   const p = url.searchParams, id = p.get('domain') || (atlas.domains.some(d => d.id === oldRoute[0]) ? oldRoute[0] : 'phone');
   defaults(atlas.domains.some(d => d.id === id) ? id : 'phone');
-  const valid = {module:['main','ultrawide','tele'], mode:['scatter'], sort:['original','model','x','y'], evidence:['','manufacturer','research']};
+  const valid = {module:['main','ultrawide','tele','external_macro'], mode:['scatter'], sort:['original','model','x','y'], evidence:['','manufacturer','research']};
   for (const [key, choices] of Object.entries(valid)) if (choices.includes(p.get(key))) state[key] = p.get(key);
   for (const key of ['x','y']) { const value = p.get(key); if (domain().metrics.some(m => m.numeric && m.id === value) || (key === 'x' && value === '$model')) state[key] = value; }
   // Older device links selected model names. New links use stable row IDs.
@@ -58,6 +58,7 @@ function restore(url) {
 }
 function controls() {
   const d = domain();
+  if(d.id==='phone')$('module').innerHTML=[...new Set(d.rows.map(r=>r.module))].map(id=>`<option value="${esc(id)}">${esc(({main:'主摄',ultrawide:'超广角',tele:'长焦',external_macro:'外接微距（研究）'})[id]||id)}</option>`).join('');
   $('domain').value = d.id; $('module').value = state.module; $('mode').value = state.mode; $('sort').value = state.sort; $('evidence').value = state.evidence;
   $('module-label').hidden = d.id !== 'phone';
   const numeric = d.metrics.filter(m => m.numeric);
@@ -98,7 +99,7 @@ function drawChart() {
   }
   const plotRows = activePoints.map(p => ({...p.row, values:{...p.row.values, $model:{value:p.x}}}));
   const plotMetrics = [...ms, {id:'$model',label:'型号 / 样本序号（对应图例）'}];
-  $('chart').innerHTML = window.LensPlot.chart(plotRows, state.x, state.y, plotMetrics, 'scatter');
+  $('chart').innerHTML = window.LensPlot.chart(plotRows, state.x, state.y, plotMetrics, 'scatter').replace(/个型号/g,d.row_unit?'个配置':'个型号');
   const svg = $('chart').querySelector('svg');
   svg.setAttribute('aria-label', `${d.name} 散点图；数据来源见图例与表格`);
   svg.insertAdjacentHTML('afterbegin','<defs><pattern id="grid" width="175" height="77.5" patternUnits="userSpaceOnUse" x="90" y="60"><path d="M175 0H0V77.5" fill="none" stroke="#e8eeeb" stroke-width="1"/></pattern></defs><rect x="90" y="60" width="700" height="310" fill="url(#grid)"/>');
@@ -161,12 +162,12 @@ function render(updateControls = true) {
   const d=domain(); sourceIndex(); activeRows=sortRows(filteredRows(d,state)); activeColumns=d.metrics.filter(m=>state.columns===null||state.columns.includes(m.id));
   if(updateControls) controls();
   $('view-title').textContent=d.name; $('scope').textContent=d.scope; $('scope').title=d.scope;
-  $('view-count').textContent=`${activeRows.length} 个样本 · ${d.metrics.length} 个字段`;
+  $('view-count').textContent=`${activeRows.length} ${d.row_unit||'个样本'} · ${d.metrics.length} 个字段`;
   document.title=d.name+' · 透镜评价证据库';
   drawChart();
   $('point-detail').textContent='选择图中数据点，查看数值、条件与出处。';
   $('status').textContent=`${activePoints.length} 个点 · ${activeRows.length-activePoints.length} 项缺少所选单值`;
-  $('plot-note').textContent='每个圆点代表一个样本；短细线仅指向名称标签，样本之间不连线。'+(d.app?' 同名同单位仍需核对条件。':' 厂商标称与独立实测分别理解。');
+  $('plot-note').textContent='每个圆点代表一个样本；短细线仅指向名称标签，样本之间不连线。'+(d.app?' 同名同单位仍需核对条件。':d.id==='metalens'?' 同器件多个谱点不计作独立镜片。':' 厂商标称与独立实测分别理解。');
   referenceList(table()); renderDefinitions();
   $('date').textContent=`本页样本维护日期 ${d.asOf}；逐条保留原核验日期与读取范围。样本不代表完整市场覆盖。`;
   saveView();
