@@ -15,7 +15,7 @@
     window.addEventListener('error',atlasLoadFailure,true);
     window.addEventListener('unhandledrejection',atlasLoadFailure);
   </script>
-  <link rel="stylesheet" href="style.css?v=454c704d42d3eb95"><link rel="stylesheet" href="workspace.css?v=d9711c442e8a2f93">
+  <link rel="stylesheet" href="style.css?v=454c704d42d3eb95"><link rel="stylesheet" href="workspace.css?v=3631980182f8eb53">
 </head>
 <body class="atlas-workspace">
   <header class="atlas-header">
@@ -55,8 +55,8 @@
         <div class="chart-heading"><div><div class="eyebrow">EVIDENCE / EXPLORE</div><h1 id="view-title">指标与样本</h1></div><span id="view-count" class="count-pill"></span></div>
         <p id="scope" class="scope-line"></p>
         <div id="chart" class="workspace-chart"><div class="empty-plot"><strong>正在加载数据与散点图…</strong><noscript>请开启浏览器的 JavaScript 后重新加载。</noscript></div></div>
-        <div id="point-detail" class="point-detail" aria-live="polite">选择图中数据点，查看数值、条件与出处。</div>
-        <div class="plot-footer"><p id="plot-note">每个圆点代表一个样本；短细线仅指向名称标签，样本之间不连线。</p><span id="status" role="status" aria-live="polite"></span></div>
+        <div id="point-detail" class="point-detail" aria-live="polite">悬停或轻点圆点查看坐标，点击可固定读数。</div>
+        <div class="plot-footer"><p id="plot-note">虚线标出当前点的横、纵坐标。</p><span id="status" role="status" aria-live="polite"></span></div>
       </div>
     </section>
     <section class="data-section" id="data-table" aria-labelledby="table-title">
@@ -73,6 +73,6 @@
   </main>
   <dialog id="filter-dialog"><div class="dialog-head"><h2>样本与表格列</h2><button id="close-filters" aria-label="关闭筛选">×</button></div><div id="mobile-filter-content"></div></dialog>
   <dialog id="detail"><div class="dialog-head"><h2 id="detailTitle"></h2><button id="closeDialog" aria-label="关闭">×</button></div><div id="detailBody"></div></dialog>
-  <script>window.UNIFIED_WORKSPACE=true;</script><script src="data.js?v=9968ef9f6342859c"></script><script src="devices-data.js?v=bf8568d91607b546"></script><script src="app.js?v=573d45a5e32bb91d"></script><script src="devices.js?v=545473bd83f53562"></script><script type="module" src="workspace.js?v=a65e18aa08570170"></script>
+  <script>window.UNIFIED_WORKSPACE=true;</script><script src="data.js?v=9968ef9f6342859c"></script><script src="devices-data.js?v=bf8568d91607b546"></script><script src="app.js?v=573d45a5e32bb91d"></script><script src="devices.js?v=b3506d77271349c1"></script><script type="module" src="workspace.js?v=4bf975586b955626"></script>
 </body>
 </html>

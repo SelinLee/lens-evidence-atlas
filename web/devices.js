@@ -11,64 +11,83 @@ function tickLabels(min,max){
  }
  return values.map(String);
 }
-function layoutLabels(items){
- const placed=[],padding=4,height=18;
- const overlaps=(a,b,gap)=>a.x<b.x+b.width+gap&&a.x+a.width+gap>b.x&&a.y<b.y+b.height+gap&&a.y+a.height+gap>b.y;
- const clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
- for(const item of items){
-  // One em per character is deliberately conservative for the 13px labels.
-  const width=Array.from(item.label).length*13+8;
-  const box=(x,y)=>({x:clamp(x,100,800-width),y:clamp(y,40,360-height),width,height});
-  const free=b=>width<=700&&!placed.some(p=>p&&overlaps(b,p,padding))&&!items.some(p=>overlaps(b,{x:p.x-10,y:p.y-10,width:20,height:20},0));
-  const candidates=[box(item.x+14,item.y-36),box(item.x+14,item.y+14),box(item.x-width-14,item.y-36),box(item.x-width-14,item.y+14)];
-  let chosen=candidates.find(free);
-  if(!chosen){
-   let distance=Infinity;
-   for(let y=40;y<=360-height;y+=24)for(let x=100;x<=800-width;x+=24){
-    const b=box(x,y),dx=item.x-clamp(item.x,b.x,b.x+b.width),dy=item.y-clamp(item.y,b.y,b.y+b.height),d=dx*dx+dy*dy;
-    if(free(b)&&d<distance){chosen=b;distance=d;}
+function groupPoints(points) {
+ const groups = new Map();
+ for (const point of points) {
+  const key = JSON.stringify([point.x, point.y]);
+  if (!groups.has(key)) groups.set(key, []);
+  groups.get(key).push(point);
+ }
+ return [...groups.values()];
+}
+
+function scatterMarkup(groups, xLabel, yLabel, {width = 900, categorical = false, scrollable = false, mode = 'scatter'} = {}) {
+ const compact = width < 600;
+ const height = compact ? 242 : 450;
+ const left = compact ? 54 : 90, right = width - (compact ? 20 : 110);
+ const top = compact ? 34 : 60, bottom = height - (compact ? 46 : 80);
+ const xTickY = bottom + (compact ? 17 : 25);
+ const coordinates = groups.map(([p]) => p);
+ const xs = coordinates.map(p => p.x), ys = coordinates.map(p => p.y);
+ let xmin = Math.min(...xs), xmax = Math.max(...xs), ymin = Math.min(...ys), ymax = Math.max(...ys);
+ const dx = (xmax-xmin) || Math.abs(xmin)*.1 || 1, dy = (ymax-ymin) || Math.abs(ymin)*.1 || 1;
+ xmin -= dx*.1; xmax += dx*.1; ymin -= dy*.1; ymax += dy*.1;
+ const px = x => left + (x-xmin)/(xmax-xmin)*(right-left), py = y => bottom - (y-ymin)/(ymax-ymin)*(bottom-top);
+ const xticks = tickLabels(xmin,xmax), yticks = tickLabels(ymin,ymax);
+ const palette = ['#30776d','#4678aa','#8a61a3','#b1623f','#96721c','#466997','#a95472','#547e45'];
+ const marks = coordinates.map(p => ({x:px(p.x), y:py(p.y)}));
+ const boxOverlaps = (a,b) => a.x < b.x+b.w && a.x+a.w > b.x && a.y < b.y+b.h && a.y+a.h > b.y;
+ const occupied = marks.map(p => ({x:p.x-8,y:p.y-8,w:16,h:16}));
+ const markers = [], labels = [], legend = [], ticks = [], grid = [];
+ for (let i=0; i<5; i++) {
+  const x = left+(right-left)*i/4, y = bottom-(bottom-top)*i/4;
+  grid.push(`M${x} ${top}V${bottom} M${left} ${y}H${right}`);
+  ticks.push(`<text x="${left-10}" y="${y}" text-anchor="end" dominant-baseline="middle" font-size="12">${E(yticks[i])}</text>`);
+  if (!categorical) ticks.push(`<text x="${x}" y="${xTickY}" text-anchor="middle" font-size="12">${E(xticks[i])}</text>`);
+ }
+ if (categorical) {
+  let previous = -Infinity;
+  for (const x of [...xs].sort((a,b)=>a-b)) {
+   if (px(x)-previous < 35) continue;
+   ticks.push(`<text x="${px(x)}" y="${xTickY}" text-anchor="middle" font-size="12">${E(x)}</text>`);
+   previous = px(x);
+  }
+ }
+ groups.forEach((group,i) => {
+  const p = group[0], {x,y} = marks[i], names = group.map(p=>p.row?.model ?? p.label);
+  const series = [...new Set(group.map(p=>p.row?.study_id || p.row?.id || p.id))];
+  const hash = Array.from(series[0]).reduce((n,c)=>(n*31+c.codePointAt(0))>>>0,0);
+  const color = series.length === 1 ? palette[hash%palette.length] : '#53636d';
+  const name = group.length > 1 ? `${group.length} 个样本` : names[0];
+  markers.push(`<g data-point="${i}"><rect x="${x-9}" y="${y-9}" width="18" height="18" fill="transparent"/><circle cx="${x}" cy="${y}" r="5" fill="${color}" stroke="white" stroke-width="1"><title>${E(names.join('、'))} (${p.x}, ${p.y})</title></circle></g>`);
+  // Only place a complete name immediately beside its point. Dense views use inspection.
+  if (groups.length <= (compact ? 5 : 12) && name.length <= 28) {
+   const w = Array.from(name).reduce((sum,c)=>sum+(c.charCodeAt(0)<128 ? 6.4 : 10.5),0)+3;
+   for (const start of [x+9,x-9-w]) {
+    const box = {x:start,y:y-7,w,h:14};
+    if (start < left || start+w > right || occupied.some(b=>boxOverlaps(b,box))) continue;
+    labels.push(`<text class="point-label" x="${start}" y="${y}" dominant-baseline="middle" font-size="10" fill="#506560" pointer-events="none">${E(name)}</text>`);
+    occupied.push(box);
+    break;
    }
   }
-  if(!chosen){placed.push(null);continue;}
-  // Connect to the visible start of the text, not its conservative width estimate.
-  placed.push({...chosen,anchorX:chosen.x,anchorY:item.y<chosen.y+height/2?chosen.y:chosen.y+height});
- }
- return placed;
-}
-function chart(rows,x,y,metrics,mode="scatter"){
- const ps=points(rows,x,y);
- if(!ps.length)return '<p>这两个指标暂无同时已知的型号。请选择其他指标；不会补零。</p>';
- const groups=new Map();
- for(const p of ps){const key=JSON.stringify([p.x,p.y]);if(!groups.has(key))groups.set(key,{x:p.x,y:p.y,labels:[]});groups.get(key).labels.push(p.label);}
- const xs=ps.map(p=>p.x),ys=ps.map(p=>p.y);
- let xmin=Math.min(...xs),xmax=Math.max(...xs),ymin=Math.min(...ys),ymax=Math.max(...ys);
- const dx=(xmax-xmin)||Math.abs(xmin)*.1||1,dy=(ymax-ymin)||Math.abs(ymin)*.1||1;
- xmin-=dx*.1;xmax+=dx*.1;ymin-=dy*.1;ymax+=dy*.1;
- const px=v=>90+(v-xmin)/(xmax-xmin)*700,py=v=>370-(v-ymin)/(ymax-ymin)*310;
- const xticks=tickLabels(xmin,xmax),yticks=tickLabels(ymin,ymax);
- let s='<p class="chart-scroll-hint" id="chart-scroll-hint">窄屏可横向滚动查看完整散点图；下方图例保留全部型号与坐标。</p><div class="scroll plot-scroll" role="region" aria-label="散点图横向滚动区域" aria-describedby="chart-scroll-hint" tabindex="0"><svg viewBox="0 0 900 450" role="img" aria-label="型号指标散点图；重合点按坐标分组，型号见下方图例"><path d="M90 40V370H810" stroke="#718096" fill="none"/>';
- for(let i=0;i<=4;i++){
-  const xv=xmin+(xmax-xmin)*i/4,yv=ymin+(ymax-ymin)*i/4;
-  s+=`<text x="${px(xv)}" y="395" text-anchor="middle" font-size="12">${E(xticks[i])}</text><text x="80" y="${py(yv)}" text-anchor="end" font-size="12">${E(yticks[i])}</text>`;
- }
- s+=`<text x="450" y="435" text-anchor="middle">${E(metrics.find(m=>m.id===x).label)}</text><text x="12" y="20">${E(metrics.find(m=>m.id===y).label)}</text>`;
- const legend=[];let markers='',annotations='';
- const entries=[...groups.values()],labels=entries.map(g=>g.labels.length>1?`${g.labels.length} 个型号`:g.labels[0]);
- const positions=layoutLabels(entries.map((g,i)=>({x:px(g.x),y:py(g.y),label:labels[i]})));
- entries.forEach((g,i)=>{
-  const label=labels[i],position=positions[i],color=`hsl(${i*97%360} 65% 40%)`;
-  const leader=position?`<line class="label-leader" x1="${px(g.x)}" y1="${py(g.y)}" x2="${position.anchorX}" y2="${position.anchorY}" stroke="${color}" stroke-width="1" opacity="0.65" aria-hidden="true"/>`:'';
-  const text=position?`<text class="point-label" x="${position.x}" y="${position.y+14}" font-size="13">${E(label)}</text>`:'';
-  s+=leader;
-  markers+=`<g><circle cx="${px(g.x)}" cy="${py(g.y)}" r="7" fill="${color}"><title>${E(g.labels.join('、'))}: ${g.x}, ${g.y}</title></circle></g>`;
-  annotations+=text;
-  legend.push(`<li><span style="color:${color}" aria-hidden="true">●</span> ${E(g.labels.join('、'))}：(${g.x}, ${g.y})${g.labels.length>1?'，同坐标重合':''}</li>`);
+  legend.push(`<li>${E(names.join('、'))}：(${p.x}, ${p.y})${group.length>1?'，'+group.length+' 个型号同坐标重合':''}</li>`);
  });
- const ordered=[...groups.values()].sort((a,b)=>a.x-b.x||a.y-b.y);
- const line=mode==='line'&&ordered.length>1?`<polyline class="model-line" points="${ordered.map(g=>`${px(g.x)},${py(g.y)}`).join(' ')}" stroke="#526a82" stroke-width="2" fill="none"/>`:'';
- return s+line+markers+annotations+'</svg></div>'+(positions.some(p=>!p)?'<p>部分文字标签请见下方完整图例；圆点坐标未移动。</p>':'')+'<ul class="chart-legend" aria-label="散点型号与坐标">'+legend.join('')+'</ul>';
+ let line = '';
+ if (mode==='line' && marks.length>1) {
+  const ordered = [...coordinates].sort((a,b)=>a.x-b.x||a.y-b.y);
+  line = `<polyline class="model-line" points="${ordered.map(p=>px(p.x)+','+py(p.y)).join(' ')}" stroke="#526a82" stroke-width="2" fill="none"/>`;
+ }
+ const hint = scrollable ? '<p class="chart-scroll-hint" id="chart-scroll-hint">窄屏可横向滚动查看完整散点图。</p>' : '';
+ return `${hint}<div class="scroll plot-scroll" role="region" aria-label="指标散点图"${scrollable?' aria-describedby="chart-scroll-hint"':''} tabindex="0"><svg viewBox="0 0 ${width} ${height}" role="group" aria-label="样本指标散点图" data-axis-left="${left}" data-axis-bottom="${bottom}" data-x-tick-y="${xTickY}"><path d="${grid.join(' ')}" stroke="#e2eae7" fill="none"/><path d="M${left} ${top-(compact?4:20)}V${bottom}H${right+(compact?5:20)}" stroke="#83968e" fill="none"/><g class="axis-ticks">${ticks.join('')}</g><text x="${(left+right)/2}" y="${height-(compact?4:17)}" text-anchor="middle" font-size="13">${E(xLabel)}</text><text x="12" y="20" font-size="13">${E(yLabel)}</text>${line}${labels.join('')}${markers.join('')}</svg></div><ul class="chart-legend" aria-label="散点型号与坐标">${legend.join('')}</ul>`;
 }
-window.LensPlot={points,tickLabels,layoutLabels,chart};
+
+function chart(rows,x,y,metrics,mode='scatter') {
+ const groups = groupPoints(points(rows,x,y));
+ if (!groups.length) return '<p>这两个指标暂无同时已知的型号。请选择其他指标；不会补零。</p>';
+ return scatterMarkup(groups, metrics.find(m=>m.id===x).label, metrics.find(m=>m.id===y).label, {mode, scrollable:true});
+}
+window.LensPlot = {points,tickLabels,groupPoints,scatterMarkup,chart};
 if(!window.UNIFIED_WORKSPACE){
 let chosenModels=null,chosenColumns=null;
 function viewRows(){const c=D.domains[$('domain').value];return c.rows.filter(r=>($('domain').value==='xr'||r.module===$('module').value)&&(chosenModels===null||chosenModels.includes(r.model)));}
