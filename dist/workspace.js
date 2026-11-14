@@ -1,4 +1,4 @@
-import {createWorkspace, groupRows, valueSources, filteredRows, axisPoints, metricAvailability, availableAxes} from './workspace-data.js?v=b0afb6606f76d9de';
+import {createWorkspace, groupRows, valueSources, filteredRows, axisPoints, metricAvailability, availableAxes} from './workspace-data.js?v=2a5f9cff3359f778';
 
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

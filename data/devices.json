@@ -339,6 +339,42 @@
       "kind": "author_webpage",
       "scope": "2026-11-14独立无头Google Chrome读取该论文题名对应条目及链接；Link为正式DOI，SOM为同一MOESM1补充PDF，未列作者数据仓库。只核此条目，不把课题组其它研究的数据或软件归给本论文。",
       "checked_on": "2026-11-14"
+    },
+    {
+      "id": "chen_polarization_2019",
+      "title": "Chen et al. (2019): A broadband achromatic polarization-insensitive metalens consisting of anisotropic nanostructures",
+      "doi": "10.1038/s41467-019-08305-y",
+      "url": "https://www.nature.com/articles/s41467-019-08305-y",
+      "kind": "peer_reviewed_paper",
+      "scope": "正式7页主文及正式网页/PMC镜像；读摘要、Results的设计/聚焦与效率表征、Discussion和Data availability，视觉核PDF pp.3–5 Fig.1–3及相应正文。NA0.2聚焦、同几何普通色散对照与NA0.05/D120μm成像分开；约6μm/30μm是作者报告的带内变化，不是逐波长绝对焦距表；9%分母未明不单独数字化。92%/70%属于偏折器，不填透镜效率。",
+      "checked_on": "2026-11-14"
+    },
+    {
+      "id": "chen_polarization_si_2019",
+      "publication_source": "chen_polarization_2019",
+      "title": "Chen et al. (2019): Supplementary Information — polarization-insensitive achromatic metalens",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-019-08305-y/MediaObjects/41467_2019_8305_MOESM2_ESM.pdf",
+      "kind": "supplementary_material",
+      "scope": "正式6页SI；读Fig.S1–S6图注并视觉核PDF p.3 Fig.S2/S3、p.4 Fig.S4。S3的Strehl以实测与理想Airy功率积分至第二瓣相等为条件；FWHM/SR只有曲线，未估读。S1 D7.5μm/NA0.6为FDTD，不计实制器件；S5单元转换效率/S6偏折器效率不写入透镜。",
+      "checked_on": "2026-11-14"
+    },
+    {
+      "id": "chen_polarization_review_2019",
+      "publication_source": "chen_polarization_2019",
+      "title": "Chen et al. (2019): Peer Review File — efficiency denominator and revision context",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-019-08305-y/MediaObjects/41467_2019_8305_MOESM4_ESM.pdf",
+      "kind": "supplementary_material",
+      "scope": "限定读Reviewer1问题1的作者回应（PDF p.3）及Reviewer2成像回应（p.5），均视觉核。效率分母为同直径圆孔透过功率，焦圈未给；早期回应NA0.1与正式Fig.3c/S4的NA0.05分开，录正式版值，不把版本差异拼成两枚新实物。未取审稿人估值。",
+      "checked_on": "2026-11-14"
+    },
+    {
+      "id": "li_rgb_vr_2021",
+      "title": "Li et al. (2021): Meta-optics achieves RGB-achromatic focusing for virtual reality",
+      "doi": "10.1126/sciadv.abe4458",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7840120/",
+      "kind": "peer_reviewed_paper",
+      "scope": "PMC正式全文HTML与Europe PMC全文XML；读设计、RGB聚焦/成像、Methods、Discussion及数据声明，视觉核正式Fig.1–3，采用Fig.2F–H直接印出的FWHM/SR标签，不数字化曲线。D2mm/NA0.7与NA0.3是两个实制配置，各自RGB测点不同；约1μm最大焦移仅归NA0.7。Science/作者PDF与SI入口403，Europe PMC supplementaryFiles ZIP仅10张主文图像，不是SI/原始PSF；未声称读到S3/S14。模拟厘米镜、双片校正及系统显示参数不当裸镜实测。",
+      "checked_on": "2026-11-14"
     }
   ],
   "domains": {
@@ -3084,6 +3120,40 @@
             {
               "source": "lin_spdc_si_2025",
               "location": "Fig.S5c/d图注"
+            }
+          ]
+        },
+        {
+          "id": "focus_variation_um",
+          "label": "跨波长焦距变化幅度 (μm；定义见协议)",
+          "definition": "作者从实测焦点报告的跨波长非负变化幅度；可为明确的最大两谱点差或原文未完整定义的带内variation。不是逐波长有符号焦移，也不补作绝对焦距。",
+          "conditions": "同一器件、实际波长集合、作者统计定义/参考、测量与计算归属及轴向采样必须在focus_variation_protocol中查明；定义未明的报告不能当已复核的峰峰值或跨文排名。",
+          "numeric": true,
+          "definition_refs": [
+            {
+              "source": "chen_polarization_2019",
+              "location": "PDF p.3 Focal spot and focusing efficiency characterizations；Fig.3a/b p.5"
+            },
+            {
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Focusing and imaging characterizations第一段；Fig.2B"
+            }
+          ]
+        },
+        {
+          "id": "focus_variation_protocol",
+          "label": "焦距变化协议 / 参考面 / 谱点",
+          "definition": "保存跨波长焦距变化的统计定义、参考与采样，以及固定像面PSF和各波长焦面是否相同；未知条件逐项注明。",
+          "conditions": "不将单谱点误差、设计焦距或工作波段端点当作已测焦移；离散RGB与连续工作波段分别保存。",
+          "numeric": false,
+          "definition_refs": [
+            {
+              "source": "chen_polarization_2019",
+              "location": "PDF p.3正文及Fig.3a/b图注p.5"
+            },
+            {
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Focusing and imaging characterizations第一段；Fig.2B"
             }
           ]
         }
@@ -13746,9 +13816,773 @@
               "checked_on": "2026-11-14"
             }
           }
+        },
+        {
+          "id": "chen2019_achromatic_na02",
+          "model": "Chen 2019 · 消色差 D26.4μm",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "chen2019",
+          "specimen_id": "achromatic_na02",
+          "measurement_scope": "Chen2019同一研究；D26.4μm/NA0.2/消色差聚焦器件，名义f=67μm@560nm；不是D120μm成像样品或SI D7.5μm仿真。",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 26.4,
+              "source": "chen_polarization_2019",
+              "location": "PDF pp.1/3 Fig.1a；p.3同直径对照段",
+              "note": "Chen2019同一研究；D26.4μm/NA0.2/消色差聚焦器件，名义f=67μm@560nm；不是D120μm成像样品或SI D7.5μm仿真。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "chen_polarization_2019",
+              "location": "PDF p.3 Fig.1a；p.5 Fig.3图注",
+              "note": "Chen2019同一研究；D26.4μm/NA0.2/消色差聚焦器件，名义f=67μm@560nm；不是D120μm成像样品或SI D7.5μm仿真。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": 67,
+              "source": "chen_polarization_2019",
+              "location": "PDF p.5 Fig.3图注首句",
+              "note": "聚焦表征两镜片设计NA0.2、f=67μm@560nm；不是实测逐波长焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 460,
+              "source": "chen_polarization_2019",
+              "location": "PDF p.2 Introduction；p.5 Fig.3a",
+              "note": "作者声明工作/表征范围；实际轴向扫描九波长另列；普通色散对照不因此成为消色差器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "chen_polarization_2019",
+              "location": "PDF p.2 Introduction；p.5 Fig.3a",
+              "note": "工作/表征范围上限；实际九波长另列，不把连续声明等同连续测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "chen_polarization_2019",
+              "location": "PDF p.5 Fig.3a左侧九波长标签",
+              "note": "该行为同一器件的跨波长汇总；不填一个伪单谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "460/490/520/550/580/610/640/670/700 nm（轴向扫描）"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / 透射；色散工程＋0°/90°单元；h=600nm，p=400nm",
+              "source": "chen_polarization_2019",
+              "location": "PDF p.3 Fig.1a及Focal spot and focusing efficiency characterizations",
+              "note": "Chen2019同一研究；D26.4μm/NA0.2/消色差聚焦器件，名义f=67μm@560nm；不是D120μm成像样品或SI D7.5μm仿真。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "focus_variation_um": {
+              "value": 6,
+              "source": "chen_polarization_2019",
+              "location": "PDF p.3 Focal spot and focusing efficiency characterizations，约6μm与30μm比较句",
+              "note": "作者由实测轴向PSF报告的带内variation；原文未给逐谱点数表/完整极差公式，不转换为相对460nm的有符号Δf。9%分母未明确，未录为独立百分数。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "approximate": true,
+              "statistic": "author_reported_band_variation",
+              "sample_wavelengths_nm": [
+                460,
+                490,
+                520,
+                550,
+                580,
+                610,
+                640,
+                670,
+                700
+              ],
+              "calculation_origin": "authors",
+              "display": "约6（作者带内variation）"
+            },
+            "focus_variation_protocol": {
+              "value": "460–700nm九谱点轴向扫描，z分辨率1μm；作者报告带内variation，统计参考未完整定义。固定像面PSF另以460nm焦面为参考。",
+              "source": "chen_polarization_2019",
+              "location": "PDF p.3正文；p.5 Fig.3a/b图注",
+              "note": "轴向谱点460/490/520/550/580/610/640/670/700nm；共同像面横向PSF为460/500/540/580/620/660/700nm，不能混为同一采样序列。缺逐波长绝对焦距、符号/极差明确定义、峰值拟合及误差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "带内焦距variation约6μm；作者另称9%，分母未明",
+              "source": "chen_polarization_2019",
+              "location": "PDF p.2 Introduction；p.3表征段；p.5 Fig.3a/b",
+              "note": "约6/30是作者文字报告而非本库读图；共同参考像面PSF的比较与逐波长最佳焦斑分开。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "主文Fig.3a轴向PSF；Fig.3b与SI Fig.S2为固定460nm焦面PSF；未找到MTF数表",
+              "source": "chen_polarization_2019",
+              "location": "PDF p.5 Fig.3a/b；SI PDF p.3 Fig.S2/S3",
+              "note": "PSF图像与FWHM/SR曲线不是原始数组，不能按图复算MTF；未经公开数表不填逐谱点绝对焦距/FWHM/SR。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "chen_polarization_2019",
+                "chen_polarization_si_2019"
+              ]
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_polarization_2019",
+              "location": "PDF p.3 Fig.1a图注",
+              "note": "TiO2纳米鳍高度，不含基底；周期400nm另记材料。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "作者报告偏振不敏感；线偏振角每4°表征，另示RCP/LCP",
+              "source": "chen_polarization_2019",
+              "location": "PDF p.5 Fig.3d图注",
+              "note": "效率光源为532nm单色及570nm中心/200nm带宽光，不能当作全带每波长都测试相同效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_protocol": {
+              "value": "焦斑功率 / 与透镜同直径圆孔透过功率；焦圈及半径未报告",
+              "source": "chen_polarization_2019",
+              "location": "PDF pp.3–4跨页效率定义；p.5 Fig.3d；审稿PDF p.3 Reviewer1问题1回应",
+              "note": "532nm单色和570nm中心、200nm带宽的宽带结果分开，随偏振角每4°变化，误差棒范围为2SD；未给n或积分焦圈。曲线不估读；92%衍射/70%绝对效率属于偏折器。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "chen_polarization_2019",
+                "chen_polarization_review_2019"
+              ]
+            },
+            "strehl": {
+              "value": null,
+              "source": "chen_polarization_si_2019",
+              "location": "SI PDF p.3 Fig.S3a图注",
+              "note": "由实测峰值与理想Airy峰值之比计算，二者功率积分至第二瓣相等；只有曲线，不填常数0.8或1。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "display": "仅曲线；功率积分至第二瓣归一化"
+            }
+          }
+        },
+        {
+          "id": "chen2019_chromatic_control_na02",
+          "model": "Chen 2019 · 普通色散对照 D26.4μm",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "chen2019",
+          "specimen_id": "chromatic_control_na02",
+          "measurement_scope": "Chen2019同一研究；D26.4μm/NA0.2/普通色散对照聚焦器件，名义f=67μm@560nm；不是D120μm成像样品或SI D7.5μm仿真。",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 26.4,
+              "source": "chen_polarization_2019",
+              "location": "PDF pp.1/3 Fig.1a；p.3同直径对照段",
+              "note": "Chen2019同一研究；D26.4μm/NA0.2/普通色散对照聚焦器件，名义f=67μm@560nm；不是D120μm成像样品或SI D7.5μm仿真。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "chen_polarization_2019",
+              "location": "PDF p.3 Fig.1a；p.5 Fig.3图注",
+              "note": "Chen2019同一研究；D26.4μm/NA0.2/普通色散对照聚焦器件，名义f=67μm@560nm；不是D120μm成像样品或SI D7.5μm仿真。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": 67,
+              "source": "chen_polarization_2019",
+              "location": "PDF p.5 Fig.3图注首句",
+              "note": "聚焦表征两镜片设计NA0.2、f=67μm@560nm；不是实测逐波长焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 460,
+              "source": "chen_polarization_2019",
+              "location": "PDF p.2 Introduction；p.5 Fig.3a",
+              "note": "作者声明工作/表征范围；实际轴向扫描九波长另列；普通色散对照不因此成为消色差器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "chen_polarization_2019",
+              "location": "PDF p.2 Introduction；p.5 Fig.3a",
+              "note": "工作/表征范围上限；实际九波长另列，不把连续声明等同连续测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "chen_polarization_2019",
+              "location": "PDF p.5 Fig.3a左侧九波长标签",
+              "note": "该行为同一器件的跨波长汇总；不填一个伪单谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "460/490/520/550/580/610/640/670/700 nm（轴向扫描）"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / 透射；同长宽纳米鳍旋转P–B相位、未作色散工程",
+              "source": "chen_polarization_2019",
+              "location": "PDF p.3 Fig.1a及Focal spot and focusing efficiency characterizations",
+              "note": "Chen2019同一研究；D26.4μm/NA0.2/普通色散对照聚焦器件，名义f=67μm@560nm；不是D120μm成像样品或SI D7.5μm仿真。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "focus_variation_um": {
+              "value": 30,
+              "source": "chen_polarization_2019",
+              "location": "PDF p.3 Focal spot and focusing efficiency characterizations，约6μm与30μm比较句",
+              "note": "作者由实测轴向PSF报告的带内variation；原文未给逐谱点数表/完整极差公式，不转换为相对460nm的有符号Δf。9%分母未明确，未录为独立百分数。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "approximate": false,
+              "statistic": "author_reported_band_variation",
+              "sample_wavelengths_nm": [
+                460,
+                490,
+                520,
+                550,
+                580,
+                610,
+                640,
+                670,
+                700
+              ],
+              "calculation_origin": "authors",
+              "display": "30（作者带内variation）"
+            },
+            "focus_variation_protocol": {
+              "value": "460–700nm九谱点轴向扫描，z分辨率1μm；作者报告带内variation，统计参考未完整定义。固定像面PSF另以460nm焦面为参考。",
+              "source": "chen_polarization_2019",
+              "location": "PDF p.3正文；p.5 Fig.3a/b图注",
+              "note": "轴向谱点460/490/520/550/580/610/640/670/700nm；共同像面横向PSF为460/500/540/580/620/660/700nm，不能混为同一采样序列。缺逐波长绝对焦距、符号/极差明确定义、峰值拟合及误差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "普通色散对照带内variation 30μm；固定460nm焦面下长波PSF失焦",
+              "source": "chen_polarization_2019",
+              "location": "PDF p.2 Introduction；p.3表征段；p.5 Fig.3a/b",
+              "note": "约6/30是作者文字报告而非本库读图；共同参考像面PSF的比较与逐波长最佳焦斑分开。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "主文Fig.3a轴向PSF；Fig.3b与SI Fig.S2为固定460nm焦面PSF；未找到MTF数表",
+              "source": "chen_polarization_2019",
+              "location": "PDF p.5 Fig.3a/b；SI PDF p.3 Fig.S2/S3",
+              "note": "PSF图像与FWHM/SR曲线不是原始数组，不能按图复算MTF；未经公开数表不填逐谱点绝对焦距/FWHM/SR。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "chen_polarization_2019",
+                "chen_polarization_si_2019"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2019_imaging120",
+          "model": "Chen 2019 · 成像 D120μm",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "chen2019",
+          "specimen_id": "imaging120",
+          "measurement_scope": "Chen2019同一研究的独立D120μm/NA0.05成像配置；实际中心谱点470/500/530/560/590/620/650/680nm，各带宽40nm；不是NA0.2聚焦表征。",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 120,
+              "source": "chen_polarization_2019",
+              "location": "PDF p.5 Fig.3c图注；SI PDF p.4 Fig.S4图注",
+              "note": "Chen2019同一研究的独立D120μm/NA0.05成像配置；实际中心谱点470/500/530/560/590/620/650/680nm，各带宽40nm；不是NA0.2聚焦表征。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "chen_polarization_2019",
+                "chen_polarization_si_2019"
+              ]
+            },
+            "na": {
+              "value": 0.05,
+              "source": "chen_polarization_2019",
+              "location": "正式PDF p.5 Fig.3c图注；SI PDF p.4 Fig.S4图注",
+              "note": "正式版明确NA0.05；早期审稿回应p.5曾称0.1，按版本区分，不改成正文冲突或复制为新样品。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "chen_polarization_2019",
+                "chen_polarization_si_2019",
+                "chen_polarization_review_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "chen_polarization_2019",
+              "location": "PDF p.5 Fig.3c各面板及图注",
+              "note": "这是离散带通中心波长，各宽40nm；未把其中心跨度填成连续消色差带宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "470/500/530/560/590/620/650/680 nm（各带宽40nm）"
+            },
+            "chromatic": {
+              "value": "彩色成像：离散中心470–680nm；设计/逐谱点实测焦距、横向色差数表未报告",
+              "source": "chen_polarization_2019",
+              "location": "PDF p.5 Fig.3c；SI PDF p.4 Fig.S4",
+              "note": "亮度/对比度/颜色经调整，背景用偏振片/检偏器抑制；不能由图像质量外推未处理PSF或SNR。未由D与NA反推焦距。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "chen_polarization_2019",
+                "chen_polarization_si_2019"
+              ]
+            },
+            "mtf_curve": {
+              "value": "USAF成像与彩色对象演示；未报告本配置定量MTF/效率/横向色差",
+              "source": "chen_polarization_2019",
+              "location": "PDF p.5 Fig.3c；SI PDF p.4 Fig.S4",
+              "note": "图3c目标线宽8.77μm属于该成像条件，不能移作NA0.2镜片FWHM或MTF50。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "li2021_na07_summary",
+          "model": "Li 2021 · NA0.7 · RGB汇总",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2021",
+          "specimen_id": "na07",
+          "measurement_scope": "Li2021同一研究，D2mm/NA0.7实制RGB镜；离散488/532/658nm，不是连续470–670nm整镜消色差或1cm/双片仿真。",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Simulation results首段及Focusing and imaging characterizations首段",
+              "note": "原文2mm×1000→2000μm。Li2021同一研究，D2mm/NA0.7实制RGB镜；离散488/532/658nm，不是连续470–670nm整镜消色差或1cm/双片仿真。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Simulation results首段；Focusing and imaging characterizations；Fig.2A/3I–K",
+              "note": "Li2021同一研究，D2mm/NA0.7实制RGB镜；离散488/532/658nm，不是连续470–670nm整镜消色差或1cm/双片仿真。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_rgb_vr_2021",
+              "location": "Materials and Methods / Simulation；Fabrication",
+              "note": "最终TiO2纳米鳍高600nm；ALD约210nm为沉积膜/工艺厚度，不作最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，p=400nm",
+              "source": "li_rgb_vr_2021",
+              "location": "Materials and Methods / Simulation and Fabrication",
+              "note": "正胶模板＋TiO2 ALD填充/刻蚀/去胶；不是210nm总结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "li_rgb_vr_2021",
+              "location": "Fig.2B（NA0.7）/Fig.3I–K（NA0.3）及相应图注",
+              "note": "Li2021同一研究，D2mm/NA0.7实制RGB镜；离散488/532/658nm，不是连续470–670nm整镜消色差或1cm/双片仿真。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "488/532/658 nm（离散RGB）"
+            },
+            "polarization": {
+              "value": "LCP入射→RCP检出通道（作者设计）",
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Simulation results；Methods / Simulation",
+              "note": "不是偏振不敏感透镜；不可套Chen2019无检偏器配置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "三色最大焦移约1μm，约为设计焦距0.1%；逐波长绝对焦距未公开列数",
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Focusing and imaging characterizations第一段；Fig.2B；Fig.3I–K",
+              "note": "只把约1μm归NA0.7；不由1μm/0.1%反推设计焦距，不把单区470–670nm范围当全镜连续带宽。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "NA0.7的Fig.2F–H印有x向FWHM/SR；MTF与原始PSF数组未取得",
+              "source": "li_rgb_vr_2021",
+              "location": "Fig.2F–H或Fig.3I–K；Data and materials availability",
+              "note": "Science/作者PDF及SI入口403；PMC/Europe PMC全文可读，supplementaryFiles ZIP只有主文图，不能当SI/原始PSF。额外数据可向作者请求。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14"
+            },
+            "focus_variation_um": {
+              "value": 1,
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Focusing and imaging characterizations，maximum focal shift among three focal spots句；Fig.2B",
+              "note": "三色峰位间最大差，属于同一器件的跨波长汇总，不是488nm单点误差；作者约值，未自行估读峰位置。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "approximate": true,
+              "statistic": "maximum_pairwise_difference",
+              "sample_wavelengths_nm": [
+                488,
+                532,
+                658
+              ],
+              "calculation_origin": "authors",
+              "display": "约1（三色最大差）"
+            },
+            "focus_variation_protocol": {
+              "value": "488/532/658nm三色实测轴向PSF峰位间最大差≈1μm；参考为三色互比，非单参考波长；z图为相对焦点坐标。",
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Focusing and imaging characterizations首段；Fig.2B",
+              "note": "轴向扫描步长/峰值拟合/误差和绝对焦距数表需SI/原始数据；未将约0.1%倒算成精确设计焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "li2021_na07_488",
+          "model": "Li 2021 · NA0.7 · 488nm",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2021",
+          "specimen_id": "na07",
+          "measurement_scope": "Li2021同一研究，D2mm/NA0.7实制RGB镜；离散488/532/658nm，不是连续470–670nm整镜消色差或1cm/双片仿真。 本行是该波长焦斑，不复制跨三色焦移汇总。",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Simulation results首段及Focusing and imaging characterizations首段",
+              "note": "原文2mm×1000→2000μm。Li2021同一研究，D2mm/NA0.7实制RGB镜；离散488/532/658nm，不是连续470–670nm整镜消色差或1cm/双片仿真。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Simulation results首段；Focusing and imaging characterizations；Fig.2A/3I–K",
+              "note": "Li2021同一研究，D2mm/NA0.7实制RGB镜；离散488/532/658nm，不是连续470–670nm整镜消色差或1cm/双片仿真。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_rgb_vr_2021",
+              "location": "Materials and Methods / Simulation；Fabrication",
+              "note": "最终TiO2纳米鳍高600nm；ALD约210nm为沉积膜/工艺厚度，不作最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，p=400nm",
+              "source": "li_rgb_vr_2021",
+              "location": "Materials and Methods / Simulation and Fabrication",
+              "note": "正胶模板＋TiO2 ALD填充/刻蚀/去胶；不是210nm总结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "LCP入射→RCP检出通道（作者设计）",
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Simulation results；Methods / Simulation",
+              "note": "不是偏振不敏感透镜；不可套Chen2019无检偏器配置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 488,
+              "source": "li_rgb_vr_2021",
+              "location": "Fig.2B/C–E及F波长标签",
+              "note": "Li2021同一研究，D2mm/NA0.7实制RGB镜；离散488/532/658nm，不是连续470–670nm整镜消色差或1cm/双片仿真。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "fwhm_x_um": {
+              "value": 0.351,
+              "source": "li_rgb_vr_2021",
+              "location": "Fig.2F，原始主文图abe4458-F2.jpg，FWHM=351nm印字",
+              "note": "作者图中直接印出的测量FWHM，nm÷1000→μm；横截面轴X(μm)。不是由曲线宽度估读，也不是理想Airy曲线。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "strehl": {
+              "value": 1.0,
+              "source": "li_rgb_vr_2021",
+              "location": "Fig.2F，abe4458-F2.jpg，Strehl ratio约值标签",
+              "note": "作者由实测PSF报告的近似Strehl；完整总功率归一化/计算细节当前缺SI，不套用Chen2019第二瓣规则。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "approximate": true,
+              "display": "约1.0"
+            }
+          }
+        },
+        {
+          "id": "li2021_na07_532",
+          "model": "Li 2021 · NA0.7 · 532nm",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2021",
+          "specimen_id": "na07",
+          "measurement_scope": "Li2021同一研究，D2mm/NA0.7实制RGB镜；离散488/532/658nm，不是连续470–670nm整镜消色差或1cm/双片仿真。 本行是该波长焦斑，不复制跨三色焦移汇总。",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Simulation results首段及Focusing and imaging characterizations首段",
+              "note": "原文2mm×1000→2000μm。Li2021同一研究，D2mm/NA0.7实制RGB镜；离散488/532/658nm，不是连续470–670nm整镜消色差或1cm/双片仿真。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Simulation results首段；Focusing and imaging characterizations；Fig.2A/3I–K",
+              "note": "Li2021同一研究，D2mm/NA0.7实制RGB镜；离散488/532/658nm，不是连续470–670nm整镜消色差或1cm/双片仿真。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_rgb_vr_2021",
+              "location": "Materials and Methods / Simulation；Fabrication",
+              "note": "最终TiO2纳米鳍高600nm；ALD约210nm为沉积膜/工艺厚度，不作最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，p=400nm",
+              "source": "li_rgb_vr_2021",
+              "location": "Materials and Methods / Simulation and Fabrication",
+              "note": "正胶模板＋TiO2 ALD填充/刻蚀/去胶；不是210nm总结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "LCP入射→RCP检出通道（作者设计）",
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Simulation results；Methods / Simulation",
+              "note": "不是偏振不敏感透镜；不可套Chen2019无检偏器配置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "li_rgb_vr_2021",
+              "location": "Fig.2B/C–E及G波长标签",
+              "note": "Li2021同一研究，D2mm/NA0.7实制RGB镜；离散488/532/658nm，不是连续470–670nm整镜消色差或1cm/双片仿真。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "fwhm_x_um": {
+              "value": 0.391,
+              "source": "li_rgb_vr_2021",
+              "location": "Fig.2G，原始主文图abe4458-F2.jpg，FWHM=391nm印字",
+              "note": "作者图中直接印出的测量FWHM，nm÷1000→μm；横截面轴X(μm)。不是由曲线宽度估读，也不是理想Airy曲线。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "strehl": {
+              "value": 0.98,
+              "source": "li_rgb_vr_2021",
+              "location": "Fig.2G，abe4458-F2.jpg，Strehl ratio约值标签",
+              "note": "作者由实测PSF报告的近似Strehl；完整总功率归一化/计算细节当前缺SI，不套用Chen2019第二瓣规则。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "approximate": true,
+              "display": "约0.98"
+            }
+          }
+        },
+        {
+          "id": "li2021_na07_658",
+          "model": "Li 2021 · NA0.7 · 658nm",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2021",
+          "specimen_id": "na07",
+          "measurement_scope": "Li2021同一研究，D2mm/NA0.7实制RGB镜；离散488/532/658nm，不是连续470–670nm整镜消色差或1cm/双片仿真。 本行是该波长焦斑，不复制跨三色焦移汇总。",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Simulation results首段及Focusing and imaging characterizations首段",
+              "note": "原文2mm×1000→2000μm。Li2021同一研究，D2mm/NA0.7实制RGB镜；离散488/532/658nm，不是连续470–670nm整镜消色差或1cm/双片仿真。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Simulation results首段；Focusing and imaging characterizations；Fig.2A/3I–K",
+              "note": "Li2021同一研究，D2mm/NA0.7实制RGB镜；离散488/532/658nm，不是连续470–670nm整镜消色差或1cm/双片仿真。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_rgb_vr_2021",
+              "location": "Materials and Methods / Simulation；Fabrication",
+              "note": "最终TiO2纳米鳍高600nm；ALD约210nm为沉积膜/工艺厚度，不作最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，p=400nm",
+              "source": "li_rgb_vr_2021",
+              "location": "Materials and Methods / Simulation and Fabrication",
+              "note": "正胶模板＋TiO2 ALD填充/刻蚀/去胶；不是210nm总结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "LCP入射→RCP检出通道（作者设计）",
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Simulation results；Methods / Simulation",
+              "note": "不是偏振不敏感透镜；不可套Chen2019无检偏器配置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 658,
+              "source": "li_rgb_vr_2021",
+              "location": "Fig.2B/C–E及H波长标签",
+              "note": "Li2021同一研究，D2mm/NA0.7实制RGB镜；离散488/532/658nm，不是连续470–670nm整镜消色差或1cm/双片仿真。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "fwhm_x_um": {
+              "value": 0.485,
+              "source": "li_rgb_vr_2021",
+              "location": "Fig.2H，原始主文图abe4458-F2.jpg，FWHM=485nm印字",
+              "note": "作者图中直接印出的测量FWHM，nm÷1000→μm；横截面轴X(μm)。不是由曲线宽度估读，也不是理想Airy曲线。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "strehl": {
+              "value": 0.97,
+              "source": "li_rgb_vr_2021",
+              "location": "Fig.2H，abe4458-F2.jpg，Strehl ratio约值标签",
+              "note": "作者由实测PSF报告的近似Strehl；完整总功率归一化/计算细节当前缺SI，不套用Chen2019第二瓣规则。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "approximate": true,
+              "display": "约0.97"
+            }
+          }
+        },
+        {
+          "id": "li2021_na03_summary",
+          "model": "Li 2021 · NA0.3 · RGB汇总",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置；非现售商业整机",
+          "evidence_type": "study",
+          "study_id": "li2021",
+          "specimen_id": "na03",
+          "measurement_scope": "Li2021同一研究，D2mm/NA0.3实制RGB镜；离散470/548/647nm，不是连续470–670nm整镜消色差或1cm/双片仿真。",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Simulation results首段及Focusing and imaging characterizations首段",
+              "note": "原文2mm×1000→2000μm。Li2021同一研究，D2mm/NA0.3实制RGB镜；离散470/548/647nm，不是连续470–670nm整镜消色差或1cm/双片仿真。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.3,
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Simulation results首段；Focusing and imaging characterizations；Fig.2A/3I–K",
+              "note": "Li2021同一研究，D2mm/NA0.3实制RGB镜；离散470/548/647nm，不是连续470–670nm整镜消色差或1cm/双片仿真。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_rgb_vr_2021",
+              "location": "Materials and Methods / Simulation；Fabrication",
+              "note": "最终TiO2纳米鳍高600nm；ALD约210nm为沉积膜/工艺厚度，不作最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，p=400nm",
+              "source": "li_rgb_vr_2021",
+              "location": "Materials and Methods / Simulation and Fabrication",
+              "note": "正胶模板＋TiO2 ALD填充/刻蚀/去胶；不是210nm总结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "li_rgb_vr_2021",
+              "location": "Fig.2B（NA0.7）/Fig.3I–K（NA0.3）及相应图注",
+              "note": "Li2021同一研究，D2mm/NA0.3实制RGB镜；离散470/548/647nm，不是连续470–670nm整镜消色差或1cm/双片仿真。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "470/548/647 nm（离散RGB）"
+            },
+            "polarization": {
+              "value": "LCP入射→RCP检出通道（作者设计）",
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Simulation results；Methods / Simulation",
+              "note": "不是偏振不敏感透镜；不可套Chen2019无检偏器配置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "作者报告RGB聚焦近似消色差；定量焦移及PSF详指SI S3，当前未取得",
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Focusing and imaging characterizations第一段；Fig.2B；Fig.3I–K",
+              "note": "只把约1μm归NA0.7；不由1μm/0.1%反推设计焦距，不把单区470–670nm范围当全镜连续带宽。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "mtf_curve": {
+              "value": "Fig.3I–K实测成像；SI S3聚焦细节未取得，MTF/效率数值待补",
+              "source": "li_rgb_vr_2021",
+              "location": "Fig.2F–H或Fig.3I–K；Data and materials availability",
+              "note": "Science/作者PDF及SI入口403；PMC/Europe PMC全文可读，supplementaryFiles ZIP只有主文图，不能当SI/原始PSF。额外数据可向作者请求。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            }
+          }
         }
       ],
-      "scope": "10项原始研究、27个器件/系统配置、82条记录：新增Balli的四聚焦器件36谱点与300μm成像、Lin两器件10谱点、Chang四器件和Choi同一RGB镜片3谱点。既有Kang两器件15谱点保留；谱点不算独立器件/研究。指定波长/带内效率、实测/模拟、方向及冲突分开；RGB不当连续带宽。",
+      "scope": "12项原始研究、32个器件/系统配置、90条记录。新增Chen2019消色差/普通色散对照与独立成像配置，Li2021两个D2mm离散RGB实制配置及NA0.7三色PSF；跨波长汇总与逐谱点测量分开。连续工作波段、离散RGB、模拟/实测、方向/效率协议与缺口分别保留；谱点不算独立器件或研究。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
