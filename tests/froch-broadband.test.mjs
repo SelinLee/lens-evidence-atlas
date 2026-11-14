@@ -37,7 +37,7 @@ test('PSF Fourier thresholds, peak-count ratios, line-pair contrast and reconstr
  assert.equal(summary.mtf_curve.data_availability.threshold,.01);assert.equal(summary.mtf_curve.data_availability.raw_psf,null);assert.equal(summary.mtf_curve.data_availability.independently_recomputed_mtf,null);
  assert.match(summary.efficiency_protocol.note,/不录到efficiency_at_lambda_pct/);assert.equal(pre.system_contrast_protocol.basis,'derived_from_measurement');assert.equal(post.system_contrast_protocol.basis,'reconstruction');
  for(const v of [pre,post]){assert.equal(v.aoi_deg.value,null);assert.equal(v.wavelength_nm.value,null);assert.equal(v.system_contrast_protocol.direction_aggregation,'mean_of_horizontal_vertical');assert.equal(v.system_contrast_protocol.sample_wavelengths_nm.length,101);assert.equal(v.system_contrast_protocol.field_point,null);}
- assert.match(post.mtf_curve.note,/20%或更高/);assert.ok(rows.every(r=>r.values.efficiency_at_lambda_pct===undefined&&r.values.efficiency_band_mean_pct===undefined));assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,92);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,18);
+ assert.match(post.mtf_curve.note,/20%或更高/);assert.ok(rows.every(r=>r.values.efficiency_at_lambda_pct===undefined&&r.values.efficiency_band_mean_pct===undefined));assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,95);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,18);
  assert.equal(get('ambient_camera').fov_deg.direction,'diagonal');assert.equal(get('paired_diffusion').fov_deg,undefined);
 });
 

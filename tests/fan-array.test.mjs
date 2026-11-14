@@ -30,7 +30,7 @@ test('DOF overlap and plotting inconsistencies remain evidence conditions instea
 test('only the declared efficiency band mean is numeric and the reported peak wavelength does not become an inferred exact efficiency',()=>{
  assert.equal(get('single_summary').efficiency_band_mean_pct.value,47);assert.match(get('single_summary').efficiency_protocol.note,/功率分母/);assert.equal(get('single_730').efficiency_at_lambda_pct.value,null);
  for(const r of rows.filter(r=>r.specimen_id!=='single_14'))assert.equal(r.values.efficiency_band_mean_pct,undefined);
- assert.equal(axisPoints(rows,'na','efficiency_band_mean_pct').length,1);assert.equal(axisPoints(lens.rows,'na','efficiency_band_mean_pct').length,6);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,92);
+ assert.equal(axisPoints(rows,'na','efficiency_band_mean_pct').length,1);assert.equal(axisPoints(lens.rows,'na','efficiency_band_mean_pct').length,6);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,95);
 });
 
 test('optical reconstruction keeps its RGB bandwidths, object depths and unresolved collection magnification',()=>{

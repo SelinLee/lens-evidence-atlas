@@ -46,6 +46,10 @@
 
 `axial_focus_offset_um`是本库由作者实测f减去明确固定像面`reference_plane_um`算出的有符号焦差，`basis: derived_from_measurement`、`calculation_origin: atlas`，`formula: measured_focal_um - reference_plane_um`。要求本行实际波长/实测f、`reference_plane_description`、`psf_protocol`及精确来源位置；该固定面类型的`reference_wavelength_nm`显式null。验证数值与输入差一致，允许正、负和真实零；不默认选择设计f，不称作者原始焦移表或PSF/MTF复算。版本只核到作者稿的输入须在display/note保留版本，原作者量与本库计算分别标明。
 
+当同篇有多种制程而定量表征归属未明确时，可用`configuration_role: unassigned_measurement_set`保留该测量配置，`candidate_specimen_ids`列至少两个同study中存在且不同的候选结构配置。样本名和`measurement_scope`须明确待核且非额外独立实物；不能仅据共同几何/定性成像就将整组PSF/效率复制给每个候选。
+
+`incident_power_uw`与`focused_power_uw`保存原表的μW光功率，须有实际波长、`basis: measured`、`quantity: optical_power`、`original_unit: μW`和`efficiency_protocol`，非负且保留原列头/数值精度。原列名写intensity但单位为μW时按功率量纲说明，不当W/m²；未知积分焦圈/功率计/校准继续注明。作者由功率比给出的效率可为`derived_from_measurement`/`calculation_origin: authors`，与模拟百分数分开；本库只做舍入一致性检查时不覆盖作者值或创建新测量。
+
 `aoi_deg`是入射光相对光轴的测量角度，不是FOV；须有`angle_reference: incident_beam_to_optical_axis`、`azimuth_deg`（未知null）及`psf_protocol`说明光路/焦面。固定传感器面PSF不代表该波长最佳焦距，轴向扫描步长不替代横向物方标尺。不同光源/继像条件可在同一结构配置中分测量行，不虚增物理样品。
 
 `system_contrast_protocol`区分作者称MTF contrast的USAF线对Michelson对比度与PSF-FFT/严格正弦MTF。`metric_kind: usaf_michelson_linepair_contrast`、`direction_aggregation`（horizontal/vertical/mean_of_horizontal_vertical）、`frequency_unit: lp/mm`、`field_point`（未知null）、实际谱点和`processing_stage`必须保留；captured标作者`derived_from_measurement`、deconvolved标`reconstruction`，不能互换或把横纵平均改成独立S/T。多谱点汇总不绑定一个数值波长。MTF低于0.01的阈值不是频率测量值，中心像素/传感器圆域总计数也不混入聚焦功率效率。

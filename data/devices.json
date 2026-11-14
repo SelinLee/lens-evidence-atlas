@@ -538,6 +538,33 @@
       "kind": "supplementary_material",
       "checked_on": "2026-11-14",
       "scope": "仅核Crossref组件DOI与is-component-of关系、主文Associated Content所述Note1/S1–S9以及标准文件路径。Chrome403，未取得或读取SI内容，尤其S9效率图/定义仍待核；元数据登记日期不是研究发表日期。不作为已读数值来源。"
+    },
+    {
+      "id": "jeon_rgb_2026",
+      "title": "Jeon et al. (2026): Differentiable library-based inverse design of achromatic metalens for full-color near-eye displays",
+      "doi": "10.1038/s41467-026-73103-2",
+      "url": "https://www.nature.com/articles/s41467-026-73103-2",
+      "kind": "peer_reviewed_paper",
+      "checked_on": "2026-11-14",
+      "scope": "11页正式主文，限定读设计/制备、PSF/效率/近眼系统、Methods和Data availability；视觉核pp.5/7/8。RGB450/532/635nm为离散设计/实测，不是410–750nm连续实测；后者为模拟。定量表征未明确逐项绑定TPL或NIL，保留未归属表征集，不复制性能。f4.5mm仅汇总，不补逐λ精确f；NA0.21与理想FWHM近似差异保留。"
+    },
+    {
+      "id": "jeon_rgb_si_2026",
+      "publication_source": "jeon_rgb_2026",
+      "title": "Jeon et al. (2026): Supplementary Information — measured RGB powers, PSF-derived MTF and fabrication/system comparisons",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-026-73103-2/MediaObjects/41467_2026_73103_MOESM1_ESM.pdf",
+      "kind": "supplementary_material",
+      "checked_on": "2026-11-14",
+      "scope": "42页SI，限定读取Note7–9/14–17/20–22/25及相关表图；视觉核pp.16/17/26/28/34/39，其他只相关文字/图注。Table2逐色μW功率/实测效率与模拟列分开；S15频率为f/fc，蓝MTF线型与红绿不同，按各行图例，不据此判错。实验焦圈未完整定义，不移用模拟3FWHMideal半径。47°为作者系统报告，眼距/公式参数条件差异保留。"
+    },
+    {
+      "id": "jeon_rgb_review_2026",
+      "publication_source": "jeon_rgb_2026",
+      "title": "Jeon et al. (2026): Transparent Peer Review — selected responses on efficiency correction and RGB scope",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-026-73103-2/MediaObjects/41467_2026_73103_MOESM5_ESM.pdf",
+      "kind": "supplementary_material",
+      "checked_on": "2026-11-14",
+      "scope": "78页公开审稿仅检索并读Response1.5(p22)、2.9(p55)、3.4(pp75–76)及TPL/NIL比较相关段，视觉核p75；不称78页全文精读。Response3.4承认修正红光效率，最终主文/SI635nm为29.1%；只用当前正式值，不建新研究或补造旧值。Response2.9明确RGB而非全可见光消色差。未核到原始PSF/代码仓库。"
     }
   ],
   "domains": {
@@ -3704,6 +3731,38 @@
             {
               "source": "khor_achromatic_arxiv_2017",
               "location": "PDF p.18 Fig.5a–f固定Z与最佳f的印字"
+            }
+          ]
+        },
+        {
+          "id": "incident_power_uw",
+          "label": "效率分母：入射功率 (μW)",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition": "作者功率计量表中的光功率；原表intensity列单位μW按功率量纲保存，不当辐照度。",
+          "conditions": "实际波长、original_unit=μW、quantity=optical_power、测量性质与efficiency_protocol；功率分子和分母同条件，未知焦圈/校准/误差保留。",
+          "definition_refs": [
+            {
+              "source": "jeon_rgb_si_2026",
+              "location": "PDF p.28 Note17/Table2入射/聚焦intensity列（μW）"
+            }
+          ]
+        },
+        {
+          "id": "focused_power_uw",
+          "label": "效率分子：聚焦功率 (μW)",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition": "作者功率计量表中的光功率；原表intensity列单位μW按功率量纲保存，不当辐照度。",
+          "conditions": "实际波长、original_unit=μW、quantity=optical_power、测量性质与efficiency_protocol；功率分子和分母同条件，未知焦圈/校准/误差保留。",
+          "definition_refs": [
+            {
+              "source": "jeon_rgb_si_2026",
+              "location": "PDF p.28 Note17/Table2入射/聚焦intensity列（μW）"
             }
           ]
         }
@@ -105664,9 +105723,1385 @@
               ]
             }
           }
+        },
+        {
+          "id": "jeon2026_characterization_summary",
+          "model": "Jeon 2026 · Fig4定量表征 · TPL/NIL归属待核",
+          "study_id": "jeon2026",
+          "specimen_id": "characterization",
+          "module": "",
+          "variant": "聚合物3D离散RGB消色差 / TPL-NIL与OLED系统；配置数不是实物数",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.4/S15/Table2的定量表征集未明确逐项绑定TPL master或NIL replica，候选归属保留；该配置不代表第三种独立实物/结构。",
+          "values": {
+            "diameter_um": {
+              "value": 1890,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5制备段D1.89mm；p.7 Fig.4",
+              "note": "由1.89mm换为1890μm；同篇RGB设计/表征，具体TPL/NIL量测归属未完全明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": 4500,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5 Demonstration段；审稿p22 Response1.5",
+              "note": "作者设计f4.5mm→4500μm；实测4.5mm为汇总文字，不填成三点精确f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_review_2026"
+              ]
+            },
+            "na": {
+              "value": 0.21,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5 Demonstration段；p.7 Fig.4b三图内NA=0.21",
+              "note": "作者NA0.21；D1.89mm/f4.5mm几何值约0.2055相符。作者ideal FWHM数列实际对应其λ/(2NA)中NA约0.20，保留近似差异，不改作者NA或反推实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.2/5/7 Fig.4b；SI p.28 Table2",
+              "note": "450/532/635nm离散RGB；410–750nm/20nm扫描为模拟，不建连续实测波段。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "450 / 532 / 635nm；离散RGB",
+              "sample_wavelengths_nm": [
+                450,
+                532,
+                635
+              ]
+            },
+            "height_nm": {
+              "value": null,
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.17 Table1 H列；主文p.3设计/制备段",
+              "note": "可变柱高0.6–1.3μm→600–1300nm，不选平均高度或含基底总厚度；Table1为51类几何，不是51个独立透镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "600–1300（空间变化）",
+              "range_nm": {
+                "min": 600,
+                "max": 1300
+              }
+            },
+            "material": {
+              "value": "聚合物可变H/D圆柱 / fused silica，周期450nm；量测器件TPL/NIL归属待核",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.2–5设计/制备；SI p.17 Table1、p.39 S23",
+              "note": "TPL master为IP-DIP2(n约1.55)，NIL replica为MINS-311RM(n约1.53)；定量表征未明确映射，不把其中一种材料/效率强加给另一种。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "polarization": {
+              "value": "作者柱形结构称偏振不敏感；实验经LPVISE050-A线偏振片",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.2/9 Optical measurement；p.7 Fig.4a",
+              "note": "入射线偏振轴/逐偏振验证和检出分析器未完整给；不借模拟linear polarization证明实测全偏振相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "CPS450/CPS532/CPS635 DPSS激光；二向色镜合束、光纤准直/Gaussian、线偏振片、aperture匹配镜片口径",
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.9 Optical measurement；p.7 Fig.4a",
+              "note": "激光谱线宽未给；780nm/100fs/80MHz为TPL制备光源，不是器件工作或测量谱点。OLED系统是另一光源。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "psf_protocol": {
+              "value": "50×/NA0.5 MXPLFLN物镜+TTL180-A+INFINITY2-1RC CCD收集；轴向步长2μm、扫描焦面附近300μm范围。Fig.4b/c为焦面PSF及x截线。",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.5/7 Fig.4、p.9 Optical measurement",
+              "note": "NA0.5为收集物镜，不是器件NA0.21；作者只称focal plane，未逐λ明确固定4500μm或各自寻峰。物方像素标定/背景/曝光/裁剪/归一化与逐λ峰位表未齐。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5“designed…measured…4.5mm”；p.7 Fig.4e",
+              "note": "4.5mm为作者汇总，未给逐λ精确峰位数表/精度；不从曲线估峰、不把设计f/汇总值复制为三次测量。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "汇总4.5mm；逐λ精确f缺"
+            },
+            "chromatic": {
+              "value": "实测离散RGB近同焦；逐λ残余焦移数表仍缺",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.5/7 Fig.4e；SI p.16 S8；审稿p55 Response2.9",
+              "note": "S8是模拟，RGBΔz被设作参考零；不把它当实测零焦移，也不以OLED彩色图证明连续消色差或全场横向色差为零。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026",
+                "jeon_rgb_review_2026"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "实验：聚焦功率/经aperture限定为镜片有效面积的入射功率；SI Table2给三色μW功率与效率",
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5效率段；SI p.28 Note17/Table2",
+              "note": "实验焦圈半径/直径、功率计/积分方法、校准/重复数未完整报告。SI p14 Eq.S6半径3×FWHMideal仅为模拟优化指标，不移作实验焦圈；Gaussian照明与均匀模拟分母也分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "mtf_curve": {
+              "value": "S15b作者实验PSF-FFT MTF；空间频率f/fc归一化，数值表未核",
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5 Fourier transform of PSFs；SI p.26 S15b/d",
+              "note": "MTF纵轴0–1；b横轴f/fc 0–1，c/d二维fx/fc、fy/fc。fc的物理值/单位、线截方向/场点与DC归一化/窗口未给，不改成lp/mm、独立S/T或MTF50。主文p9数据按合理请求由通讯作者提供；SI Table2有公开功率表，但当前正式附件未列Source Data。作者POSTECH论文条目只链正式页；DataCite精确关联0、GitHub名称/描述精确DOI/题名无匹配。未核到本篇原始PSF/MTF数组或完整采样/归一化，不能说全网无数据；未联系作者，未估图或复算MTF。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ],
+              "frequency_unit": "normalized_f_over_fc",
+              "physical_cutoff_frequency": null,
+              "direction": null,
+              "field_point": null,
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            }
+          },
+          "configuration_role": "unassigned_measurement_set",
+          "candidate_specimen_ids": [
+            "tpl_master",
+            "nil_replica"
+          ]
+        },
+        {
+          "id": "jeon2026_characterization_450",
+          "model": "Jeon 2026 · Fig4定量表征 · 450nm · 归属待核",
+          "study_id": "jeon2026",
+          "specimen_id": "characterization",
+          "module": "",
+          "variant": "聚合物3D离散RGB消色差 / TPL-NIL与OLED系统；配置数不是实物数",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.4/S15/Table2的定量表征集未明确逐项绑定TPL master或NIL replica，候选归属保留；该配置不代表第三种独立实物/结构。",
+          "values": {
+            "diameter_um": {
+              "value": 1890,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5制备段D1.89mm；p.7 Fig.4",
+              "note": "由1.89mm换为1890μm；同篇RGB设计/表征，具体TPL/NIL量测归属未完全明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": 4500,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5 Demonstration段；审稿p22 Response1.5",
+              "note": "作者设计f4.5mm→4500μm；实测4.5mm为汇总文字，不填成三点精确f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_review_2026"
+              ]
+            },
+            "na": {
+              "value": 0.21,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5 Demonstration段；p.7 Fig.4b三图内NA=0.21",
+              "note": "作者NA0.21；D1.89mm/f4.5mm几何值约0.2055相符。作者ideal FWHM数列实际对应其λ/(2NA)中NA约0.20，保留近似差异，不改作者NA或反推实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 450,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.7 Fig.4b 左/蓝λ标签；SI p.28 Table2第1数据行",
+              "note": "离散实际测量波长，不是模拟扫频区间。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "height_nm": {
+              "value": null,
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.17 Table1 H列；主文p.3设计/制备段",
+              "note": "可变柱高0.6–1.3μm→600–1300nm，不选平均高度或含基底总厚度；Table1为51类几何，不是51个独立透镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "600–1300（空间变化）",
+              "range_nm": {
+                "min": 600,
+                "max": 1300
+              }
+            },
+            "material": {
+              "value": "聚合物可变H/D圆柱 / fused silica，周期450nm；量测器件TPL/NIL归属待核",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.2–5设计/制备；SI p.17 Table1、p.39 S23",
+              "note": "TPL master为IP-DIP2(n约1.55)，NIL replica为MINS-311RM(n约1.53)；定量表征未明确映射，不把其中一种材料/效率强加给另一种。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "polarization": {
+              "value": "作者柱形结构称偏振不敏感；实验经LPVISE050-A线偏振片",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.2/9 Optical measurement；p.7 Fig.4a",
+              "note": "入射线偏振轴/逐偏振验证和检出分析器未完整给；不借模拟linear polarization证明实测全偏振相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "CPS450/CPS532/CPS635 DPSS激光；二向色镜合束、光纤准直/Gaussian、线偏振片、aperture匹配镜片口径",
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.9 Optical measurement；p.7 Fig.4a",
+              "note": "激光谱线宽未给；780nm/100fs/80MHz为TPL制备光源，不是器件工作或测量谱点。OLED系统是另一光源。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "psf_protocol": {
+              "value": "50×/NA0.5 MXPLFLN物镜+TTL180-A+INFINITY2-1RC CCD收集；轴向步长2μm、扫描焦面附近300μm范围。Fig.4b/c为焦面PSF及x截线。",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.5/7 Fig.4、p.9 Optical measurement",
+              "note": "NA0.5为收集物镜，不是器件NA0.21；作者只称focal plane，未逐λ明确固定4500μm或各自寻峰。物方像素标定/背景/曝光/裁剪/归一化与逐λ峰位表未齐。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5“designed…measured…4.5mm”；p.7 Fig.4e",
+              "note": "4.5mm为作者汇总，未给逐λ精确峰位数表/精度；不从曲线估峰、不把设计f/汇总值复制为三次测量。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "汇总4.5mm；逐λ精确f缺"
+            },
+            "chromatic": {
+              "value": "实测离散RGB近同焦；逐λ残余焦移数表仍缺",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.5/7 Fig.4e；SI p.16 S8；审稿p55 Response2.9",
+              "note": "S8是模拟，RGBΔz被设作参考零；不把它当实测零焦移，也不以OLED彩色图证明连续消色差或全场横向色差为零。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026",
+                "jeon_rgb_review_2026"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "实验：聚焦功率/经aperture限定为镜片有效面积的入射功率；SI Table2给三色μW功率与效率",
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5效率段；SI p.28 Note17/Table2",
+              "note": "实验焦圈半径/直径、功率计/积分方法、校准/重复数未完整报告。SI p14 Eq.S6半径3×FWHMideal仅为模拟优化指标，不移作实验焦圈；Gaussian照明与均匀模拟分母也分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "mtf_curve": {
+              "value": "S15b作者实验PSF-FFT MTF；空间频率f/fc归一化，数值表未核",
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5 PSF Fourier方法；SI p.26 S15b 下/蓝行及S15d对应色面",
+              "note": "本λ按该行图例：黑虚线Exp / 蓝实线Sim。蓝通道线型对应不同于红绿，不默认所有实线实测；这种差异本身不等于图例错误。MTF纵轴0–1；b横轴f/fc 0–1，c/d二维fx/fc、fy/fc。fc的物理值/单位、线截方向/场点与DC归一化/窗口未给，不改成lp/mm、独立S/T或MTF50。主文p9数据按合理请求由通讯作者提供；SI Table2有公开功率表，但当前正式附件未列Source Data。作者POSTECH论文条目只链正式页；DataCite精确关联0、GitHub名称/描述精确DOI/题名无匹配。未核到本篇原始PSF/MTF数组或完整采样/归一化，不能说全网无数据；未联系作者，未估图或复算MTF。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ],
+              "frequency_unit": "normalized_f_over_fc",
+              "physical_cutoff_frequency": null,
+              "direction": null,
+              "field_point": null,
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "fwhm_x_um": {
+              "value": 1.147,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.7 Fig.4c 左/蓝面板FWHM印字；p.5正文",
+              "note": "x方向实测PSF截线，非曲线读图；y方向宽度未独立给，不补平均/S/T。焦面固定或逐λ寻峰未完整说明，不绑定精确z。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.7 Fig.4b/c",
+              "note": "二维PSF图存在，但未给y向独立FWHM数表；不从图估读，不复用x值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "y向未给独立数值"
+            },
+            "strehl": {
+              "value": 0.9,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.7 Fig.4c 左/蓝Strehl ratio印字；p.5正文",
+              "note": "作者由焦斑归一化峰值报告，模拟/参考能量匹配和处理细节未完整给；不是由本库FWHM推算，也不借S15a曲线估值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "calculation_origin": "authors",
+              "display": "0.90"
+            },
+            "incident_power_uw": {
+              "value": 40.9,
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.28 Table2 λ=450nm行，Incident intensity列（μW）",
+              "note": "原表列头为intensity但单位μW是光功率，保留列头与量纲；给定印字精度不补测量不确定度。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "quantity": "optical_power",
+              "original_unit": "μW",
+              "original_column_header": "Incident intensity"
+            },
+            "focused_power_uw": {
+              "value": 11.1,
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.28 Table2 λ=450nm行，Focused intensity列（μW）",
+              "note": "原表列头为intensity但单位μW是光功率，保留列头与量纲；给定印字精度不补测量不确定度。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "quantity": "optical_power",
+              "original_unit": "μW",
+              "original_column_header": "Focused intensity"
+            },
+            "efficiency_lambda_nm": {
+              "value": 450,
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.28 Table2 λ=450nm行",
+              "note": "只绑定该行功率比，不填全可见光效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 27.1,
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.28 Table2 λ=450nm行 Focusing efficiency列；PDF p.5正文",
+              "note": "作者由实测功率比报告的百分数，保留一位小数；用表中已四舍五入功率只做一致性核对，不覆盖作者值。635nm采用最终29.1%，审稿Response3.4确认修正。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "jeon_rgb_si_2026",
+                "jeon_rgb_2026",
+                "jeon_rgb_review_2026"
+              ],
+              "ratio_numerator": "focused_power_uw",
+              "ratio_denominator": "incident_power_uw"
+            }
+          },
+          "configuration_role": "unassigned_measurement_set",
+          "candidate_specimen_ids": [
+            "tpl_master",
+            "nil_replica"
+          ]
+        },
+        {
+          "id": "jeon2026_characterization_532",
+          "model": "Jeon 2026 · Fig4定量表征 · 532nm · 归属待核",
+          "study_id": "jeon2026",
+          "specimen_id": "characterization",
+          "module": "",
+          "variant": "聚合物3D离散RGB消色差 / TPL-NIL与OLED系统；配置数不是实物数",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.4/S15/Table2的定量表征集未明确逐项绑定TPL master或NIL replica，候选归属保留；该配置不代表第三种独立实物/结构。",
+          "values": {
+            "diameter_um": {
+              "value": 1890,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5制备段D1.89mm；p.7 Fig.4",
+              "note": "由1.89mm换为1890μm；同篇RGB设计/表征，具体TPL/NIL量测归属未完全明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": 4500,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5 Demonstration段；审稿p22 Response1.5",
+              "note": "作者设计f4.5mm→4500μm；实测4.5mm为汇总文字，不填成三点精确f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_review_2026"
+              ]
+            },
+            "na": {
+              "value": 0.21,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5 Demonstration段；p.7 Fig.4b三图内NA=0.21",
+              "note": "作者NA0.21；D1.89mm/f4.5mm几何值约0.2055相符。作者ideal FWHM数列实际对应其λ/(2NA)中NA约0.20，保留近似差异，不改作者NA或反推实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.7 Fig.4b 中/绿λ标签；SI p.28 Table2第2数据行",
+              "note": "离散实际测量波长，不是模拟扫频区间。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "height_nm": {
+              "value": null,
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.17 Table1 H列；主文p.3设计/制备段",
+              "note": "可变柱高0.6–1.3μm→600–1300nm，不选平均高度或含基底总厚度；Table1为51类几何，不是51个独立透镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "600–1300（空间变化）",
+              "range_nm": {
+                "min": 600,
+                "max": 1300
+              }
+            },
+            "material": {
+              "value": "聚合物可变H/D圆柱 / fused silica，周期450nm；量测器件TPL/NIL归属待核",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.2–5设计/制备；SI p.17 Table1、p.39 S23",
+              "note": "TPL master为IP-DIP2(n约1.55)，NIL replica为MINS-311RM(n约1.53)；定量表征未明确映射，不把其中一种材料/效率强加给另一种。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "polarization": {
+              "value": "作者柱形结构称偏振不敏感；实验经LPVISE050-A线偏振片",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.2/9 Optical measurement；p.7 Fig.4a",
+              "note": "入射线偏振轴/逐偏振验证和检出分析器未完整给；不借模拟linear polarization证明实测全偏振相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "CPS450/CPS532/CPS635 DPSS激光；二向色镜合束、光纤准直/Gaussian、线偏振片、aperture匹配镜片口径",
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.9 Optical measurement；p.7 Fig.4a",
+              "note": "激光谱线宽未给；780nm/100fs/80MHz为TPL制备光源，不是器件工作或测量谱点。OLED系统是另一光源。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "psf_protocol": {
+              "value": "50×/NA0.5 MXPLFLN物镜+TTL180-A+INFINITY2-1RC CCD收集；轴向步长2μm、扫描焦面附近300μm范围。Fig.4b/c为焦面PSF及x截线。",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.5/7 Fig.4、p.9 Optical measurement",
+              "note": "NA0.5为收集物镜，不是器件NA0.21；作者只称focal plane，未逐λ明确固定4500μm或各自寻峰。物方像素标定/背景/曝光/裁剪/归一化与逐λ峰位表未齐。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5“designed…measured…4.5mm”；p.7 Fig.4e",
+              "note": "4.5mm为作者汇总，未给逐λ精确峰位数表/精度；不从曲线估峰、不把设计f/汇总值复制为三次测量。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "汇总4.5mm；逐λ精确f缺"
+            },
+            "chromatic": {
+              "value": "实测离散RGB近同焦；逐λ残余焦移数表仍缺",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.5/7 Fig.4e；SI p.16 S8；审稿p55 Response2.9",
+              "note": "S8是模拟，RGBΔz被设作参考零；不把它当实测零焦移，也不以OLED彩色图证明连续消色差或全场横向色差为零。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026",
+                "jeon_rgb_review_2026"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "实验：聚焦功率/经aperture限定为镜片有效面积的入射功率；SI Table2给三色μW功率与效率",
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5效率段；SI p.28 Note17/Table2",
+              "note": "实验焦圈半径/直径、功率计/积分方法、校准/重复数未完整报告。SI p14 Eq.S6半径3×FWHMideal仅为模拟优化指标，不移作实验焦圈；Gaussian照明与均匀模拟分母也分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "mtf_curve": {
+              "value": "S15b作者实验PSF-FFT MTF；空间频率f/fc归一化，数值表未核",
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5 PSF Fourier方法；SI p.26 S15b 中/绿行及S15d对应色面",
+              "note": "本λ按该行图例：绿实线Exp / 黑虚线Sim。蓝通道线型对应不同于红绿，不默认所有实线实测；这种差异本身不等于图例错误。MTF纵轴0–1；b横轴f/fc 0–1，c/d二维fx/fc、fy/fc。fc的物理值/单位、线截方向/场点与DC归一化/窗口未给，不改成lp/mm、独立S/T或MTF50。主文p9数据按合理请求由通讯作者提供；SI Table2有公开功率表，但当前正式附件未列Source Data。作者POSTECH论文条目只链正式页；DataCite精确关联0、GitHub名称/描述精确DOI/题名无匹配。未核到本篇原始PSF/MTF数组或完整采样/归一化，不能说全网无数据；未联系作者，未估图或复算MTF。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ],
+              "frequency_unit": "normalized_f_over_fc",
+              "physical_cutoff_frequency": null,
+              "direction": null,
+              "field_point": null,
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "fwhm_x_um": {
+              "value": 1.376,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.7 Fig.4c 中/绿面板FWHM印字；p.5正文",
+              "note": "x方向实测PSF截线，非曲线读图；y方向宽度未独立给，不补平均/S/T。焦面固定或逐λ寻峰未完整说明，不绑定精确z。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.7 Fig.4b/c",
+              "note": "二维PSF图存在，但未给y向独立FWHM数表；不从图估读，不复用x值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "y向未给独立数值"
+            },
+            "strehl": {
+              "value": 0.89,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.7 Fig.4c 中/绿Strehl ratio印字；p.5正文",
+              "note": "作者由焦斑归一化峰值报告，模拟/参考能量匹配和处理细节未完整给；不是由本库FWHM推算，也不借S15a曲线估值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "calculation_origin": "authors",
+              "display": "0.89"
+            },
+            "incident_power_uw": {
+              "value": 50.3,
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.28 Table2 λ=532nm行，Incident intensity列（μW）",
+              "note": "原表列头为intensity但单位μW是光功率，保留列头与量纲；给定印字精度不补测量不确定度。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "quantity": "optical_power",
+              "original_unit": "μW",
+              "original_column_header": "Incident intensity"
+            },
+            "focused_power_uw": {
+              "value": 14.2,
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.28 Table2 λ=532nm行，Focused intensity列（μW）",
+              "note": "原表列头为intensity但单位μW是光功率，保留列头与量纲；给定印字精度不补测量不确定度。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "quantity": "optical_power",
+              "original_unit": "μW",
+              "original_column_header": "Focused intensity"
+            },
+            "efficiency_lambda_nm": {
+              "value": 532,
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.28 Table2 λ=532nm行",
+              "note": "只绑定该行功率比，不填全可见光效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 28.2,
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.28 Table2 λ=532nm行 Focusing efficiency列；PDF p.5正文",
+              "note": "作者由实测功率比报告的百分数，保留一位小数；用表中已四舍五入功率只做一致性核对，不覆盖作者值。635nm采用最终29.1%，审稿Response3.4确认修正。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "jeon_rgb_si_2026",
+                "jeon_rgb_2026",
+                "jeon_rgb_review_2026"
+              ],
+              "ratio_numerator": "focused_power_uw",
+              "ratio_denominator": "incident_power_uw"
+            }
+          },
+          "configuration_role": "unassigned_measurement_set",
+          "candidate_specimen_ids": [
+            "tpl_master",
+            "nil_replica"
+          ]
+        },
+        {
+          "id": "jeon2026_characterization_635",
+          "model": "Jeon 2026 · Fig4定量表征 · 635nm · 归属待核",
+          "study_id": "jeon2026",
+          "specimen_id": "characterization",
+          "module": "",
+          "variant": "聚合物3D离散RGB消色差 / TPL-NIL与OLED系统；配置数不是实物数",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.4/S15/Table2的定量表征集未明确逐项绑定TPL master或NIL replica，候选归属保留；该配置不代表第三种独立实物/结构。",
+          "values": {
+            "diameter_um": {
+              "value": 1890,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5制备段D1.89mm；p.7 Fig.4",
+              "note": "由1.89mm换为1890μm；同篇RGB设计/表征，具体TPL/NIL量测归属未完全明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": 4500,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5 Demonstration段；审稿p22 Response1.5",
+              "note": "作者设计f4.5mm→4500μm；实测4.5mm为汇总文字，不填成三点精确f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_review_2026"
+              ]
+            },
+            "na": {
+              "value": 0.21,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5 Demonstration段；p.7 Fig.4b三图内NA=0.21",
+              "note": "作者NA0.21；D1.89mm/f4.5mm几何值约0.2055相符。作者ideal FWHM数列实际对应其λ/(2NA)中NA约0.20，保留近似差异，不改作者NA或反推实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 635,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.7 Fig.4b 右/红λ标签；SI p.28 Table2第3数据行",
+              "note": "离散实际测量波长，不是模拟扫频区间。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "height_nm": {
+              "value": null,
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.17 Table1 H列；主文p.3设计/制备段",
+              "note": "可变柱高0.6–1.3μm→600–1300nm，不选平均高度或含基底总厚度；Table1为51类几何，不是51个独立透镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "600–1300（空间变化）",
+              "range_nm": {
+                "min": 600,
+                "max": 1300
+              }
+            },
+            "material": {
+              "value": "聚合物可变H/D圆柱 / fused silica，周期450nm；量测器件TPL/NIL归属待核",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.2–5设计/制备；SI p.17 Table1、p.39 S23",
+              "note": "TPL master为IP-DIP2(n约1.55)，NIL replica为MINS-311RM(n约1.53)；定量表征未明确映射，不把其中一种材料/效率强加给另一种。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "polarization": {
+              "value": "作者柱形结构称偏振不敏感；实验经LPVISE050-A线偏振片",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.2/9 Optical measurement；p.7 Fig.4a",
+              "note": "入射线偏振轴/逐偏振验证和检出分析器未完整给；不借模拟linear polarization证明实测全偏振相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "illumination": {
+              "value": "CPS450/CPS532/CPS635 DPSS激光；二向色镜合束、光纤准直/Gaussian、线偏振片、aperture匹配镜片口径",
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.9 Optical measurement；p.7 Fig.4a",
+              "note": "激光谱线宽未给；780nm/100fs/80MHz为TPL制备光源，不是器件工作或测量谱点。OLED系统是另一光源。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "psf_protocol": {
+              "value": "50×/NA0.5 MXPLFLN物镜+TTL180-A+INFINITY2-1RC CCD收集；轴向步长2μm、扫描焦面附近300μm范围。Fig.4b/c为焦面PSF及x截线。",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.5/7 Fig.4、p.9 Optical measurement",
+              "note": "NA0.5为收集物镜，不是器件NA0.21；作者只称focal plane，未逐λ明确固定4500μm或各自寻峰。物方像素标定/背景/曝光/裁剪/归一化与逐λ峰位表未齐。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5“designed…measured…4.5mm”；p.7 Fig.4e",
+              "note": "4.5mm为作者汇总，未给逐λ精确峰位数表/精度；不从曲线估峰、不把设计f/汇总值复制为三次测量。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "汇总4.5mm；逐λ精确f缺"
+            },
+            "chromatic": {
+              "value": "实测离散RGB近同焦；逐λ残余焦移数表仍缺",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.5/7 Fig.4e；SI p.16 S8；审稿p55 Response2.9",
+              "note": "S8是模拟，RGBΔz被设作参考零；不把它当实测零焦移，也不以OLED彩色图证明连续消色差或全场横向色差为零。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026",
+                "jeon_rgb_review_2026"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "实验：聚焦功率/经aperture限定为镜片有效面积的入射功率；SI Table2给三色μW功率与效率",
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5效率段；SI p.28 Note17/Table2",
+              "note": "实验焦圈半径/直径、功率计/积分方法、校准/重复数未完整报告。SI p14 Eq.S6半径3×FWHMideal仅为模拟优化指标，不移作实验焦圈；Gaussian照明与均匀模拟分母也分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "mtf_curve": {
+              "value": "S15b作者实验PSF-FFT MTF；空间频率f/fc归一化，数值表未核",
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5 PSF Fourier方法；SI p.26 S15b 上/红行及S15d对应色面",
+              "note": "本λ按该行图例：红实线Exp / 黑虚线Sim。蓝通道线型对应不同于红绿，不默认所有实线实测；这种差异本身不等于图例错误。MTF纵轴0–1；b横轴f/fc 0–1，c/d二维fx/fc、fy/fc。fc的物理值/单位、线截方向/场点与DC归一化/窗口未给，不改成lp/mm、独立S/T或MTF50。主文p9数据按合理请求由通讯作者提供；SI Table2有公开功率表，但当前正式附件未列Source Data。作者POSTECH论文条目只链正式页；DataCite精确关联0、GitHub名称/描述精确DOI/题名无匹配。未核到本篇原始PSF/MTF数组或完整采样/归一化，不能说全网无数据；未联系作者，未估图或复算MTF。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ],
+              "frequency_unit": "normalized_f_over_fc",
+              "physical_cutoff_frequency": null,
+              "direction": null,
+              "field_point": null,
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "fwhm_x_um": {
+              "value": 1.646,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.7 Fig.4c 右/红面板FWHM印字；p.5正文",
+              "note": "x方向实测PSF截线，非曲线读图；y方向宽度未独立给，不补平均/S/T。焦面固定或逐λ寻峰未完整说明，不绑定精确z。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.7 Fig.4b/c",
+              "note": "二维PSF图存在，但未给y向独立FWHM数表；不从图估读，不复用x值。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "y向未给独立数值"
+            },
+            "strehl": {
+              "value": 0.93,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.7 Fig.4c 右/红Strehl ratio印字；p.5正文",
+              "note": "作者由焦斑归一化峰值报告，模拟/参考能量匹配和处理细节未完整给；不是由本库FWHM推算，也不借S15a曲线估值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "calculation_origin": "authors",
+              "display": "0.93"
+            },
+            "incident_power_uw": {
+              "value": 80.7,
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.28 Table2 λ=635nm行，Incident intensity列（μW）",
+              "note": "原表列头为intensity但单位μW是光功率，保留列头与量纲；给定印字精度不补测量不确定度。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "quantity": "optical_power",
+              "original_unit": "μW",
+              "original_column_header": "Incident intensity"
+            },
+            "focused_power_uw": {
+              "value": 23.5,
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.28 Table2 λ=635nm行，Focused intensity列（μW）",
+              "note": "原表列头为intensity但单位μW是光功率，保留列头与量纲；给定印字精度不补测量不确定度。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "quantity": "optical_power",
+              "original_unit": "μW",
+              "original_column_header": "Focused intensity"
+            },
+            "efficiency_lambda_nm": {
+              "value": 635,
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.28 Table2 λ=635nm行",
+              "note": "只绑定该行功率比，不填全可见光效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 29.1,
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.28 Table2 λ=635nm行 Focusing efficiency列；PDF p.5正文",
+              "note": "作者由实测功率比报告的百分数，保留一位小数；用表中已四舍五入功率只做一致性核对，不覆盖作者值。635nm采用最终29.1%，审稿Response3.4确认修正。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-14",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "jeon_rgb_si_2026",
+                "jeon_rgb_2026",
+                "jeon_rgb_review_2026"
+              ],
+              "ratio_numerator": "focused_power_uw",
+              "ratio_denominator": "incident_power_uw"
+            }
+          },
+          "configuration_role": "unassigned_measurement_set",
+          "candidate_specimen_ids": [
+            "tpl_master",
+            "nil_replica"
+          ]
+        },
+        {
+          "id": "jeon2026_tpl_master",
+          "model": "Jeon 2026 · TPL原制模板 · 结构记录",
+          "study_id": "jeon2026",
+          "specimen_id": "tpl_master",
+          "module": "",
+          "variant": "聚合物3D离散RGB消色差 / TPL-NIL与OLED系统；配置数不是实物数",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "TPL结构配置；与未明确TPL/NIL归属的定量表征、近眼系统分开。",
+          "values": {
+            "diameter_um": {
+              "value": 1890,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5制备段；SI p.25 S14图注",
+              "note": "TPL master及NIL镜均报告1.89mm；不是整个OLED模块口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5设计/制备段",
+              "note": "复制的是同一RGB设计；没有新增该实体逐λPSF/效率表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "450 / 532 / 635nm设计；非连续带宽"
+            },
+            "height_nm": {
+              "value": null,
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.17 Table1 H列；主文p.3设计/制备段",
+              "note": "可变柱高0.6–1.3μm→600–1300nm，不选平均高度或含基底总厚度；Table1为51类几何，不是51个独立透镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "600–1300（空间变化）",
+              "range_nm": {
+                "min": 600,
+                "max": 1300
+              }
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.5–7；SI p.39 S23",
+              "note": "不把Fig4/Table2未归属表征直接赋给结构样本，不复制4.5mm为独立实测。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "本结构未独立给逐λf"
+            },
+            "chromatic": {
+              "value": "结构/复制与图像对照；本行不继承Fig4定量PSF/效率",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.5–7 Fig.3；SI p.39 S23",
+              "note": "结构相似与定性成像不证明逐λ残余焦移、MTF或效率完全相同。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "material": {
+              "value": "TPL master：IP-DIP2 / fused silica，周期450nm、H/D可变",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.2–5制备、p.6 Fig.3b–d；SI p.17 Table1",
+              "note": "n约1.55为材料描述；780nm激光是制备，不当工作波长。Fig4定量测量归属未明确，不附加给TPL。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "design_focal_um": {
+              "value": 4500,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5设计f/制备段",
+              "note": "同篇共同RGB目标f4.5mm，不是独立TPL实测峰位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "jeon2026_nil_replica",
+          "model": "Jeon 2026 · NIL复制镜 · 结构记录",
+          "study_id": "jeon2026",
+          "specimen_id": "nil_replica",
+          "module": "",
+          "variant": "聚合物3D离散RGB消色差 / TPL-NIL与OLED系统；配置数不是实物数",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "NIL结构配置，非额外独立PSF/MTF/效率测量。",
+          "values": {
+            "diameter_um": {
+              "value": 1890,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5制备段；SI p.25 S14图注",
+              "note": "TPL master及NIL镜均报告1.89mm；不是整个OLED模块口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5设计/制备段",
+              "note": "复制的是同一RGB设计；没有新增该实体逐λPSF/效率表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "450 / 532 / 635nm设计；非连续带宽"
+            },
+            "height_nm": {
+              "value": null,
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.17 Table1 H列；主文p.3设计/制备段",
+              "note": "可变柱高0.6–1.3μm→600–1300nm，不选平均高度或含基底总厚度；Table1为51类几何，不是51个独立透镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "600–1300（空间变化）",
+              "range_nm": {
+                "min": 600,
+                "max": 1300
+              }
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.5–7；SI p.39 S23",
+              "note": "不把Fig4/Table2未归属表征直接赋给结构样本，不复制4.5mm为独立实测。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "本结构未独立给逐λf"
+            },
+            "chromatic": {
+              "value": "结构/复制与图像对照；本行不继承Fig4定量PSF/效率",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.5–7 Fig.3；SI p.39 S23",
+              "note": "结构相似与定性成像不证明逐λ残余焦移、MTF或效率完全相同。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "material": {
+              "value": "NIL replica：MINS-311RM(n约1.53)；SiO2保护TPL模板制软模后复制",
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5复制段、p.6 Fig.3e–g；SI p.25/39 S14/S23",
+              "note": "SiO2保护层沉积在TPL master，不直接据此断言NIL复制镜也有同厚SiO2覆层；定性5/10次复制不当重复效率统计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.5复制段；SI p.39 S23",
+              "note": "同设计复制，但未单独核到NIL定量焦距；不由折射率近似相同推实测相同。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "复制镜未独立核设计/测量f"
+            },
+            "na": {
+              "value": null,
+              "source": "jeon_rgb_2026",
+              "location": "SI p.39 S23；对照PDF p.7 Fig.4b",
+              "note": "NA0.21来自定量表征图，未明确NIL独立量测，不移用。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-14",
+              "display": "NIL未独立核NA"
+            }
+          }
+        },
+        {
+          "id": "jeon2026_oled_main",
+          "model": "Jeon 2026 · OLED近眼系统 · 主文/视场",
+          "study_id": "jeon2026",
+          "specimen_id": "oled_main",
+          "module": "",
+          "variant": "聚合物3D离散RGB消色差 / TPL-NIL与OLED系统；配置数不是实物数",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "主文/Note21的系统配置；未明确TPL/NIL对应，不与裸镜PSF数值混用。",
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.5–9 Fig.5/Optical measurement；SI p.31 S17",
+              "note": "OLED宽谱全色，不将三DPSS激光中心波长或410–750nm模拟扫描当系统实际谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ],
+              "display": "OLED全色；峰/约40nm线宽另见协议"
+            },
+            "illumination": {
+              "value": "SY103WAM01 OLED，像元7.2μm；Arducam EK007 / MT9N001 CMOS采集",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.5/6/9系统与Optical measurement；SI S17",
+              "note": "OLED约40nm线宽/空间非相干与激光PSF测量不同；型号/像元不代替系统SNR或MTF。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "material": {
+              "value": "3D RGB metalens + OLED近眼实验系统",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.6–9 Fig.5；SI S19/S23",
+              "note": "系统D/f/NA不填作整套模块的单镜参数；主Fig5未逐图给TPL/NIL归属，S23两种工艺另列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "chromatic": {
+              "value": "全色OLED实拍；作者将轻微模糊归于焦距失配、空间非相干及OLED非理想谱/线宽",
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.6系统讨论及p.8 Fig.5c",
+              "note": "有定性色散/倍率与颜色差异，没有位移/像高/通道数表，不填零横向色差、SNR、PSNR或物理MTF；不把光学成像当反卷积。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            },
+            "fov_deg": {
+              "value": 47,
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.34 Note21末段，checkerboard imaging测量",
+              "note": "作者报告的系统视场47°，方向H/V/对角及测量细节未明确。S19给le2mm又讨论le10mm/df10mm，与45°计算的条件对应不清；不更改47或借给S23 TPL/NIL图片。",
+              "basis": "measured",
+              "checked_on": "2026-11-14",
+              "display": "47（作者报告；方向未明）"
+            }
+          }
+        },
+        {
+          "id": "jeon2026_oled_tpl",
+          "model": "Jeon 2026 · OLED · TPL镜成像对照",
+          "study_id": "jeon2026",
+          "specimen_id": "oled_tpl",
+          "module": "",
+          "variant": "聚合物3D离散RGB消色差 / TPL-NIL与OLED系统；配置数不是实物数",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "SI S23的独立工艺成像条件，不算另一种新裸镜实物或定量效率测量。",
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.5–9 Fig.5/Optical measurement；SI p.31 S17",
+              "note": "OLED宽谱全色，不将三DPSS激光中心波长或410–750nm模拟扫描当系统实际谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ],
+              "display": "OLED全色；峰/约40nm线宽另见协议"
+            },
+            "illumination": {
+              "value": "SY103WAM01 OLED，像元7.2μm；Arducam EK007 / MT9N001 CMOS采集",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.5/6/9系统与Optical measurement；SI S17",
+              "note": "OLED约40nm线宽/空间非相干与激光PSF测量不同；型号/像元不代替系统SNR或MTF。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "material": {
+              "value": "TPL制备镜片 + OLED近眼成像，SI S23c",
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.39 S23及图注",
+              "note": "此处工艺对应明确，但仅SEM/文字图像，不复制主表征的FWHM/SR/效率或系统47°。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "S23c的TPL全色字样实拍，与另一工艺作定性比较",
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.39 Fig.S23c",
+              "note": "作者称成像质量相近；没有同场点/同通道的残余色差或MTF定量原表。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "jeon2026_oled_nil",
+          "model": "Jeon 2026 · OLED · NIL镜成像对照",
+          "study_id": "jeon2026",
+          "specimen_id": "oled_nil",
+          "module": "",
+          "variant": "聚合物3D离散RGB消色差 / TPL-NIL与OLED系统；配置数不是实物数",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "SI S23的独立工艺成像条件，不算另一种新裸镜实物或定量效率测量。",
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.5–9 Fig.5/Optical measurement；SI p.31 S17",
+              "note": "OLED宽谱全色，不将三DPSS激光中心波长或410–750nm模拟扫描当系统实际谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ],
+              "display": "OLED全色；峰/约40nm线宽另见协议"
+            },
+            "illumination": {
+              "value": "SY103WAM01 OLED，像元7.2μm；Arducam EK007 / MT9N001 CMOS采集",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.5/6/9系统与Optical measurement；SI S17",
+              "note": "OLED约40nm线宽/空间非相干与激光PSF测量不同；型号/像元不代替系统SNR或MTF。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "material": {
+              "value": "NIL制备镜片 + OLED近眼成像，SI S23d",
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.39 S23及图注",
+              "note": "此处工艺对应明确，但仅SEM/文字图像，不复制主表征的FWHM/SR/效率或系统47°。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "S23d的NIL全色字样实拍，与另一工艺作定性比较",
+              "source": "jeon_rgb_si_2026",
+              "location": "SI p.39 Fig.S23d",
+              "note": "作者称成像质量相近；没有同场点/同通道的残余色差或MTF定量原表。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "jeon2026_oled_control_blue",
+          "model": "Jeon 2026 · OLED色散对照 · B观察焦面",
+          "study_id": "jeon2026",
+          "specimen_id": "oled_control",
+          "module": "",
+          "variant": "聚合物3D离散RGB消色差 / TPL-NIL与OLED系统；配置数不是实物数",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一普通色散系统的三个观察焦面，不是三个单色光源或独立镜片。",
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.8 Fig.5c右侧蓝/绿/红虚线组",
+              "note": "这些是全色OLED经普通色散镜在不同观察焦面成像，不是单色450/532/635nm曝光。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "OLED全色；B观察焦面"
+            },
+            "illumination": {
+              "value": "SY103WAM01 OLED，像元7.2μm；Arducam EK007 / MT9N001 CMOS采集",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.5/6/9系统与Optical measurement；SI S17",
+              "note": "OLED约40nm线宽/空间非相干与激光PSF测量不同；型号/像元不代替系统SNR或MTF。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "material": {
+              "value": "普通色散近眼系统对照（文中引用既有SiO2-TiO2混合镜）",
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.6系统对照段及p.8 Fig.5c",
+              "note": "正文给所引镜NA0.2/D5mm/f12.25mm@532，非整套系统尺寸；本行仅本篇对照图像，不重复建立前作研究或移用RGB器件参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "B观察焦面的普通色散全色图；作者称蓝光像尺寸较大",
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.6解释；p.8 Fig.5c blue虚线列",
+              "note": "评价面改变与各颜色失焦/倍率差分开描述；未给焦面数值、位移/场点或S/T/MTF数表，不从图量像素。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "jeon2026_oled_control_green",
+          "model": "Jeon 2026 · OLED色散对照 · G观察焦面",
+          "study_id": "jeon2026",
+          "specimen_id": "oled_control",
+          "module": "",
+          "variant": "聚合物3D离散RGB消色差 / TPL-NIL与OLED系统；配置数不是实物数",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一普通色散系统的三个观察焦面，不是三个单色光源或独立镜片。",
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.8 Fig.5c右侧蓝/绿/红虚线组",
+              "note": "这些是全色OLED经普通色散镜在不同观察焦面成像，不是单色450/532/635nm曝光。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "OLED全色；G观察焦面"
+            },
+            "illumination": {
+              "value": "SY103WAM01 OLED，像元7.2μm；Arducam EK007 / MT9N001 CMOS采集",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.5/6/9系统与Optical measurement；SI S17",
+              "note": "OLED约40nm线宽/空间非相干与激光PSF测量不同；型号/像元不代替系统SNR或MTF。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "material": {
+              "value": "普通色散近眼系统对照（文中引用既有SiO2-TiO2混合镜）",
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.6系统对照段及p.8 Fig.5c",
+              "note": "正文给所引镜NA0.2/D5mm/f12.25mm@532，非整套系统尺寸；本行仅本篇对照图像，不重复建立前作研究或移用RGB器件参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "G观察焦面的普通色散全色图；作者称蓝光像尺寸较大",
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.6解释；p.8 Fig.5c green虚线列",
+              "note": "评价面改变与各颜色失焦/倍率差分开描述；未给焦面数值、位移/场点或S/T/MTF数表，不从图量像素。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "jeon2026_oled_control_red",
+          "model": "Jeon 2026 · OLED色散对照 · R观察焦面",
+          "study_id": "jeon2026",
+          "specimen_id": "oled_control",
+          "module": "",
+          "variant": "聚合物3D离散RGB消色差 / TPL-NIL与OLED系统；配置数不是实物数",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一普通色散系统的三个观察焦面，不是三个单色光源或独立镜片。",
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.8 Fig.5c右侧蓝/绿/红虚线组",
+              "note": "这些是全色OLED经普通色散镜在不同观察焦面成像，不是单色450/532/635nm曝光。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "display": "OLED全色；R观察焦面"
+            },
+            "illumination": {
+              "value": "SY103WAM01 OLED，像元7.2μm；Arducam EK007 / MT9N001 CMOS采集",
+              "source": "jeon_rgb_2026",
+              "location": "PDF pp.5/6/9系统与Optical measurement；SI S17",
+              "note": "OLED约40nm线宽/空间非相干与激光PSF测量不同；型号/像元不代替系统SNR或MTF。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "jeon_rgb_2026",
+                "jeon_rgb_si_2026"
+              ]
+            },
+            "material": {
+              "value": "普通色散近眼系统对照（文中引用既有SiO2-TiO2混合镜）",
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.6系统对照段及p.8 Fig.5c",
+              "note": "正文给所引镜NA0.2/D5mm/f12.25mm@532，非整套系统尺寸；本行仅本篇对照图像，不重复建立前作研究或移用RGB器件参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "chromatic": {
+              "value": "R观察焦面的普通色散全色图；作者称蓝光像尺寸较大",
+              "source": "jeon_rgb_2026",
+              "location": "PDF p.6解释；p.8 Fig.5c red虚线列",
+              "note": "评价面改变与各颜色失焦/倍率差分开描述；未给焦面数值、位移/场点或S/T/MTF数表，不从图量像素。",
+              "basis": "measured",
+              "checked_on": "2026-11-14"
+            }
+          }
         }
       ],
-      "scope": "19项原始研究、70个器件/系统配置、675条记录。光谱/场角/焦面不算更多实物；实测、模拟与重建分开。作者光谱SD/variation、逐点f与本库指定参考面焦差各自溯源，未知数值不补零。",
+      "scope": "20项原始研究、77个器件/测量/系统配置、687条记录。未归属表征集、工艺结构、谱点和系统条件不算更多实物。离散RGB/连续波段、实测功率/模拟效率及PSF-FFT曲线分开，未知数值不补零。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
