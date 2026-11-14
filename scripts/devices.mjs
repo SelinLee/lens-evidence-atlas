@@ -11,6 +11,7 @@ export function validateDevices(d){
   if(v.sourceIds&&(!Array.isArray(v.sourceIds)||!v.sourceIds.includes(v.source)||v.sourceIds.some(id=>!ids.has(id))))errors.push('cell multiple sources');
   const m=c.metrics.find(m=>m.id===k);if(v.value!==null&&m?.numeric&&!Number.isFinite(v.value))errors.push('nonfinite numeric');
   if(m?.numeric&&v.basis==='unresolved'&&v.value!==null)errors.push('unresolved value');
+  if(m?.numeric&&v.frequency_status==='author_scale_unverified'&&!['mtf50_app_reported','mtf50_imatest_reported'].includes(k))errors.push('unverified frequency axis');
   if(r.evidence_type==='study'&&(!['reported_configuration','measured','model','modeled','derived_from_measurement','reconstruction','unresolved'].includes(v.basis)||!v.note))errors.push('study cell evidence');
   if(v.uncertainty&&(!['SD','SEM'].includes(v.uncertainty.type)||!Number.isFinite(v.uncertainty.value)||v.uncertainty.value<0||!Number.isInteger(v.uncertainty.n)||v.uncertainty.n<2||v.statistic!=='mean'))errors.push('reported uncertainty');
  }
@@ -20,6 +21,13 @@ export function validateDevices(d){
   if(v.value<0||v.value>100||typeof protocol!=='string'||!protocol.trim())errors.push('efficiency protocol/range');
   if(k==='efficiency_at_lambda_pct'&&!(r.values.efficiency_lambda_nm?.value>0&&Number.isFinite(r.values.efficiency_lambda_nm.value)))errors.push('efficiency wavelength');
   if(k==='efficiency_band_mean_pct'&&!(v.statistic==='band_mean'&&r.values.lambda_min_nm?.value>0&&r.values.lambda_max_nm?.value>r.values.lambda_min_nm.value))errors.push('efficiency band mean');
+ }
+ for(const k of ['mtf50_cpp','mtf50_app_reported','mtf50_imatest_reported']){
+  const v=r.values[k];if(!Number.isFinite(v?.value))continue;
+  const protocol=r.values.mtf_protocol?.value;
+  if(v.value<=0||typeof protocol!=='string'||!protocol.trim())errors.push('MTF frequency/protocol');
+  if(k==='mtf50_cpp'&&(v.frequency_unit!=='cycles/pixel'||!['author_stated_unit','calibrated'].includes(v.frequency_status)))errors.push('MTF physical frequency unit');
+  if(k!=='mtf50_cpp'&&(v.frequency_unit!=='author_scale'||v.frequency_status!=='author_scale_unverified'))errors.push('MTF author scale');
  }
  }
  }

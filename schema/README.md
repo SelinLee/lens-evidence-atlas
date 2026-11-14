@@ -15,3 +15,5 @@
 研究每格必须有source、location、note、basis；basis区分reported_configuration、measured、model、derived_from_measurement、reconstruction、unresolved（原文待消歧）。实测PSF计算、模拟MTF与实验重建PSNR不能都标为measured。`value=null`配display可保留原文界限、冲突或曲线入口，不参加坐标绘制。均值可保存statistic=mean及uncertainty={type:SD,value,n}，原文±与样本量须保留；SD不是CI。语义校验由scripts/devices.mjs执行，不替代科学复核。
 
 同一格可用sourceIds列多个原始来源，必须包含主source且各ID有效；统一界面须将这些ID全部映射并显示，不能只保留首项。efficiency_at_lambda_pct须有efficiency_lambda_nm及efficiency_protocol；efficiency_band_mean_pct须有工作波段、statistic=band_mean及协议。两类百分数都不能混成单元转换效率、最大效率或不明分母的统一排名。approximate=true的坐标保留“约”字。
+
+手机MTF50的frequency_status区分author_scale_unverified（原表输出、标尺未核）与author_stated_unit（原文单位明确、方法仍可能缺失）。前者只允许在mtf50_app_reported/mtf50_imatest_reported，frequency_unit=author_scale，不能流入sfr或mtf50_cpp。后者的mtf50_cpp须明确frequency_unit=cycles/pixel；均须mtf_protocol保存边界。原表数字本身可追溯不代表已校准物理频率；多个软件处理同组图像不算独立研究。
