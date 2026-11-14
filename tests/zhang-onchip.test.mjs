@@ -20,7 +20,7 @@ test('aggregate focal position and variation never become six fabricated exact f
  assert.deepEqual(spectra.map(r=>r.values.wavelength_nm.value),[460,488,540,580,610,650]);
  assert.equal(summary.focus_variation_pct.value,5);assert.equal(summary.focus_variation_pct.denominator,'not_defined');assert.equal(summary.focus_variation_pct.reference_focal_um,null);assert.equal(summary.focus_variation_um,undefined);
  for(const r of spectra){assert.equal(r.values.measured_focal_um.value,null);assert.equal(r.values.design_focal_um.value,null);assert.equal(r.values.fwhm_um.value,null);assert.equal(r.values.strehl.value,null);assert.equal(r.values.focus_variation_pct,undefined);}
- assert.match(summary.chromatic.value,/97.33/);assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,15);
+ assert.match(summary.chromatic.value,/97.33/);assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,18);
 });
 
 test('80.39 percent remains a single band mean and array aggregate errors do not gain an invented denominator or SD',()=>{

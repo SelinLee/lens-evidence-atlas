@@ -1,6 +1,6 @@
 # Khorasaninejad2017可见光消色差：下一批检查点
 
-QUALITY-001n；2026-11-14。接续Fan2019批次，沿其参考31补经典奠基工作。按最新数据/题录及用户文献目录的文本检索未匹配该DOI，仍须入库前再次去重。选择理由为早期实制连续可见光消色差及实测普通色散对照，不使用未查询的引用量/期刊影响因子。
+QUALITY-001n；2026-11-14。此为启动时历史检查点；后续已取得作者arXiv v1及核图，当前入库/证据边界以[本批核验](KHORASANINEJAD_2017_REVIEW_2026-11-14.md)和[待办](EVIDENCE_BACKLOG.md)为准。接续Fan2019批次，沿其参考31补经典奠基工作。按最新数据/题录及用户文献目录的文本检索未匹配该DOI，仍须入库前再次去重。选择理由为早期实制连续可见光消色差及实测普通色散对照，不使用未查询的引用量/期刊影响因子。
 
 [M. Khorasaninejad et al., Achromatic Metalens over 60 nm Bandwidth in the Visible and Metalens with Reverse Chromatic Dispersion](https://pubs.acs.org/doi/10.1021/acs.nanolett.6b05137)，Nano Lett. **17(3), 1819–1824 (2017)**，DOI **10.1021/acs.nanolett.6b05137**。ACS题录与[Harvard DASH条目](https://dash.harvard.edu/entities/publication/98897fea-605a-4b8a-af1c-8ddc759e8297)交叉确认DOI/题名/页码。
 

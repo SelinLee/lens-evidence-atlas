@@ -18,7 +18,7 @@ test('the author average focal length never becomes a design value or eight iden
  const summary=get('single_summary');assert.equal(summary.measured_focal_band_mean_um.value,81.5);assert.equal(summary.measured_focal_band_mean_um.approximate,true);assert.equal(summary.measured_focal_band_mean_um.statistic,'author_reported_spectral_mean');assert.equal(summary.design_focal_um.value,null);
  const spectral=rows.filter(r=>r.specimen_id==='single_14'&&Number.isFinite(r.values.wavelength_nm.value));assert.deepEqual(spectral.map(r=>r.values.wavelength_nm.value),[430,480,530,580,630,680,730,780]);
  for(const r of spectral){const v=r.values;assert.equal(v.measured_focal_um.value,null);assert.equal(v.measured_focal_band_mean_um,undefined);assert.equal(v.fwhm_x_um.value,null);assert.equal(v.fwhm_y_um.value,null);assert.equal(v.na.value,.086);assert.equal(v.na.basis,'derived_from_measurement');}
- assert.equal(axisPoints(rows,'diameter_um','measured_focal_band_mean_um').length,1);assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,15);
+ assert.equal(axisPoints(rows,'diameter_um','measured_focal_band_mean_um').length,1);assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,18);
 });
 
 test('DOF overlap and plotting inconsistencies remain evidence conditions instead of statistical errors or chromatic-shift scalars',()=>{

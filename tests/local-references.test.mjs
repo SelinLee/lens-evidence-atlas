@@ -12,9 +12,9 @@ const get=id=>lens.rows.find(r=>r.id===id).values;
 test('four supplied studies are deduplicated across versions, supplements and spectral rows',()=>{
  assert.equal(added.length,54);assert.equal(new Set(added.map(r=>r.study_id)).size,4);
  assert.equal(new Set(added.map(r=>r.study_id+'/'+r.specimen_id)).size,12);
- assert.equal(lens.rows.length,662);assert.equal(new Set(lens.rows.map(r=>r.study_id)).size,18);
+ assert.equal(lens.rows.length,675);assert.equal(new Set(lens.rows.map(r=>r.study_id)).size,19);
  assert.ok(!added.some(r=>/arxiv|proxy/i.test(r.study_id)));
- assert.equal(data.sources.length,59);assert.ok(data.sources.filter(s=>/balli_|lin_spdc|chang_dispersion|choi_rgb/.test(s.id)).every(s=>s.checked_on==='2026-11-14'&&s.scope));
+ assert.equal(data.sources.length,62);assert.ok(data.sources.filter(s=>/balli_|lin_spdc|chang_dispersion|choi_rgb/.test(s.id)).every(s=>s.checked_on==='2026-11-14'&&s.scope));
 });
 
 test('Lin measured x and y PSF widths and complete-device efficiency retain the original ordered sequences',()=>{
@@ -94,7 +94,7 @@ test('measured directional widths require a physical wavelength and cannot silen
 
 test('new measurements and their original references use the existing shared scatter model without altering old spectral focus points',()=>{
  const workspace=createWorkspace(load(),data),domain=workspace.domains.find(d=>d.id==='metalens');
- assert.equal(axisPoints(domain.rows,'wavelength_nm','measured_focal_um').length,15);
+ assert.equal(axisPoints(domain.rows,'wavelength_nm','measured_focal_um').length,18);
  assert.equal(axisPoints(domain.rows.filter(r=>studies.includes(r.study_id)),'wavelength_nm','fwhm_x_um').length,10);
  assert.equal(axisPoints(domain.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,92);
  assert.equal(axisPoints(domain.rows,'na','efficiency_band_mean_pct').length,6);
