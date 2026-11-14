@@ -1,7 +1,7 @@
  'use strict';
 const E=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const $=id=>document.getElementById(id),D=window.DEVICE_DATA;
-function points(rows,x,y){return rows.filter(r=>Number.isFinite(r.values[x]?.value)&&Number.isFinite(r.values[y]?.value)).map(r=>({id:r.id,label:r.model,x:r.values[x].value,y:r.values[y].value}));}
+function points(rows,x,y){return rows.filter(r=>Number.isFinite(r.values[x]?.value)&&Number.isFinite(r.values[y]?.value)).map(r=>({id:r.id,label:r.model,x:r.values[x].value,y:r.values[y].value,cells:{[x]:r.values[x],[y]:r.values[y]}}));}
 function tickLabels(min,max){
  const values=Array.from({length:5},(_,i)=>min+(max-min)*i/4);
  for(let precision=3;precision<=17;precision++){
@@ -34,11 +34,12 @@ function layoutLabels(items){
  }
  return placed;
 }
+function pointDetails(p,x,y,metrics){return [p.label,...[...new Set([x,y])].map(k=>{const v=p.cells[k],s=D.sources.find(s=>s.id===v.source);return `${metrics.find(m=>m.id===k).label}: ${v.value} — ${evidenceLabel({},v)}; ${s?.title||v.source}; ${v.location}; ${v.note||''}`;})].join('\n');}
 function chart(rows,x,y,metrics,mode="scatter"){
  const ps=points(rows,x,y);
  if(!ps.length)return '<p>这两个指标暂无同时已知的型号。请选择其他指标；不会补零。</p>';
  const groups=new Map();
- for(const p of ps){const key=JSON.stringify([p.x,p.y]);if(!groups.has(key))groups.set(key,{x:p.x,y:p.y,labels:[]});groups.get(key).labels.push(p.label);}
+ for(const p of ps){const key=JSON.stringify([p.x,p.y]);if(!groups.has(key))groups.set(key,{x:p.x,y:p.y,labels:[],points:[]});groups.get(key).labels.push(p.label);groups.get(key).points.push(p);}
  const xs=ps.map(p=>p.x),ys=ps.map(p=>p.y);
  let xmin=Math.min(...xs),xmax=Math.max(...xs),ymin=Math.min(...ys),ymax=Math.max(...ys);
  const dx=(xmax-xmin)||Math.abs(xmin)*.1||1,dy=(ymax-ymin)||Math.abs(ymin)*.1||1;
@@ -59,9 +60,9 @@ function chart(rows,x,y,metrics,mode="scatter"){
   const leader=position?`<line class="label-leader" x1="${px(g.x)}" y1="${py(g.y)}" x2="${position.anchorX}" y2="${position.anchorY}" stroke="${color}" stroke-width="1" opacity="0.65" aria-hidden="true"/>`:'';
   const text=position?`<text class="point-label" x="${position.x}" y="${position.y+14}" font-size="13">${E(label)}</text>`:'';
   s+=leader;
-  markers+=`<g><circle cx="${px(g.x)}" cy="${py(g.y)}" r="7" fill="${color}"><title>${E(g.labels.join('、'))}: ${g.x}, ${g.y}</title></circle></g>`;
+  markers+=`<g><circle cx="${px(g.x)}" cy="${py(g.y)}" r="7" fill="${color}"><title>${E(g.points.map(p=>pointDetails(p,x,y,metrics)).join('\n\n'))}</title></circle></g>`;
   annotations+=text;
-  legend.push(`<li><span style="color:${color}" aria-hidden="true">●</span> ${E(g.labels.join('、'))}：(${g.x}, ${g.y})${g.labels.length>1?'，同坐标重合':''}</li>`);
+  legend.push(`<li><span style="color:${color}" aria-hidden="true">●</span> ${E(g.labels.join('、'))}：(${g.x}, ${g.y})${g.labels.length>1?'，同坐标重合':''} ${[...new Set(g.points.flatMap(p=>[x,y].map(k=>p.cells[k].source)))].map(id=>`<a href="#source-${E(id)}">出处与读取范围</a>`).join(' / ')}</li>`);
  });
  const ordered=[...groups.values()].sort((a,b)=>a.x-b.x||a.y-b.y);
  const line=mode==='line'&&ordered.length>1?`<polyline class="model-line" points="${ordered.map(g=>`${px(g.x)},${py(g.y)}`).join(' ')}" stroke="#526a82" stroke-width="2" fill="none"/>`:'';

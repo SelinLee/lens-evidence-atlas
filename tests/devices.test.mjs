@@ -227,3 +227,17 @@ test('study provenance and curve placeholders cannot silently become numeric mea
  }
  const x=structuredClone(d);x.domains.xr.task_guidance[0].source='missing';assert.throws(()=>validateDevices(x),/task guidance provenance/);
 });
+
+test('chart hover retains every coincident study record and its measured provenance',()=>{
+ const x=structuredClone(d),r=x.domains.xr.rows.find(r=>r.id==='vive_2022_study');
+ r.values.duty_cycle.note='<script>untrusted note</script>';
+ const f=deviceFixture(x);f.change('domain','xr');f.change('evidence','study');f.change('x','hz');f.change('y','duty_cycle');
+ const html=f.el('chart').innerHTML,titles=[...html.matchAll(/<circle[^>]*><title>([\s\S]*?)<\/title>/g)].map(m=>m[1]);
+ assert.equal(titles.length,2);
+ const shared=titles.find(t=>t.includes('HTC VIVE'));
+ assert.match(shared,/VIVE Pro（2022研究）/);
+ assert.match(shared,/论文实测/);assert.match(shared,/Spatiotemporal image quality/);assert.match(shared,/Fig\.6/);
+ assert.match(shared,/&lt;script&gt;untrusted note&lt;\/script&gt;/);assert.ok(!shared.includes('<script>'));
+ assert.match(html,/<a href="#source-zhao_vr_spatiotemporal_2022">出处与读取范围<\/a>/);
+ f.change('domain','phone');f.change('evidence','manufacturer');f.change('x','mp');f.change('y','f');assert.match(f.el('chart').innerHTML,/<title>[^<]*厂商规格/);
+});
