@@ -12,9 +12,9 @@ const get=id=>lens.rows.find(r=>r.id===id).values;
 test('four supplied studies are deduplicated across versions, supplements and spectral rows',()=>{
  assert.equal(added.length,54);assert.equal(new Set(added.map(r=>r.study_id)).size,4);
  assert.equal(new Set(added.map(r=>r.study_id+'/'+r.specimen_id)).size,12);
- assert.equal(lens.rows.length,628);assert.equal(new Set(lens.rows.map(r=>r.study_id)).size,17);
+ assert.equal(lens.rows.length,662);assert.equal(new Set(lens.rows.map(r=>r.study_id)).size,18);
  assert.ok(!added.some(r=>/arxiv|proxy/i.test(r.study_id)));
- assert.equal(data.sources.length,57);assert.ok(data.sources.filter(s=>/balli_|lin_spdc|chang_dispersion|choi_rgb/.test(s.id)).every(s=>s.checked_on==='2026-11-14'&&s.scope));
+ assert.equal(data.sources.length,59);assert.ok(data.sources.filter(s=>/balli_|lin_spdc|chang_dispersion|choi_rgb/.test(s.id)).every(s=>s.checked_on==='2026-11-14'&&s.scope));
 });
 
 test('Lin measured x and y PSF widths and complete-device efficiency retain the original ordered sequences',()=>{
@@ -97,7 +97,7 @@ test('new measurements and their original references use the existing shared sca
  assert.equal(axisPoints(domain.rows,'wavelength_nm','measured_focal_um').length,15);
  assert.equal(axisPoints(domain.rows.filter(r=>studies.includes(r.study_id)),'wavelength_nm','fwhm_x_um').length,10);
  assert.equal(axisPoints(domain.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,92);
- assert.equal(axisPoints(domain.rows,'na','efficiency_band_mean_pct').length,5);
+ assert.equal(axisPoints(domain.rows,'na','efficiency_band_mean_pct').length,6);
  for(const r of domain.rows)for(const v of Object.values(r.values))for(const s of valueSources(v))assert.ok(workspace.sources.has(s));
  assert.equal(data.domains.phone.rows.length,37);assert.equal(data.domains.xr.rows.filter(r=>r.evidence_type!=='study').length,8);
 });

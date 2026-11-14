@@ -40,6 +40,8 @@
 
 `focus_variation_pct`保存作者实测焦点的百分比variation，沿用`focus_variation_um`的实际谱点、协议、作者计算与汇总约束；另保留`denominator`和`reference_wavelength_nm`/`reference_focal_um`（未知显式null）。`denominator: not_defined`不允许解释成已知分母；不能由百分数倒算μm、把作者中心焦点复制为各波长精确焦距，或和RMS/最大互差直接混用。原作冲突参数使用null+display/note保存，不选择一个值打点。
 
+`measured_focal_band_mean_um`仅保存作者明确给出的同器件跨实测波长平均焦距，须为正数、`basis: derived_from_measurement`、`calculation_origin: authors`、`statistic: author_reported_spectral_mean`，并有至少两个不同的实际`sample_wavelengths_nm`、`reference_plane`、`aggregation_note`及`psf_protocol`。未知参考原点、谱权重、重复数和不确定度须在说明中保留；汇总行不绑定一个数值波长，不将均值复制为逐波长`measured_focal_um`或设计焦距。DOF公共区与DOF误差条不是残余焦移或统计SD/CI，不据区间宽度生成色差数值。
+
 `aoi_deg`是入射光相对光轴的测量角度，不是FOV；须有`angle_reference: incident_beam_to_optical_axis`、`azimuth_deg`（未知null）及`psf_protocol`说明光路/焦面。固定传感器面PSF不代表该波长最佳焦距，轴向扫描步长不替代横向物方标尺。不同光源/继像条件可在同一结构配置中分测量行，不虚增物理样品。
 
 `system_contrast_protocol`区分作者称MTF contrast的USAF线对Michelson对比度与PSF-FFT/严格正弦MTF。`metric_kind: usaf_michelson_linepair_contrast`、`direction_aggregation`（horizontal/vertical/mean_of_horizontal_vertical）、`frequency_unit: lp/mm`、`field_point`（未知null）、实际谱点和`processing_stage`必须保留；captured标作者`derived_from_measurement`、deconvolved标`reconstruction`，不能互换或把横纵平均改成独立S/T。多谱点汇总不绑定一个数值波长。MTF低于0.01的阈值不是频率测量值，中心像素/传感器圆域总计数也不混入聚焦功率效率。
