@@ -21,6 +21,20 @@ export function createWorkspace(catalog, devices) {
     const id = deviceSourceId(source.id);
     sources.set(id, {...sources.get(id), ...source, id, publication_source: source.publication_source && deviceSourceId(source.publication_source), evidence_scope: source.scope});
   }
+  // One bibliography entry can describe multiple source records for the same paper.
+  const byVenueYear = new Map();
+  for (const record of Object.values(catalog.bibliography || {})) {
+    const key = record.short + ' ' + record.year;
+    byVenueYear.set(key, (byVenueYear.get(key) || 0) + 1);
+  }
+  for (const [id, source] of sources) {
+    if (source.publication_source) continue;
+    const record = catalog.bibliography?.[source.doi?.toLowerCase() || source.url];
+    if (!record) continue;
+    const key = record.short + ' ' + record.year;
+    const suffix = byVenueYear.get(key) > 1 && record.locator ? ', ' + record.locator.split('–')[0] : '';
+    sources.set(id, {...source, bibliography:record, paperLabel:key + suffix});
+  }
   const deviceDomains = Object.entries(devices.domains).map(([id, domain]) => ({
     ...domain, id, name: domain.name || (id === 'phone' ? '手机镜头 / 摄像头' : 'AR / VR 显示'), category: domain.category || '手机与近眼显示',
     task_guidance: (domain.task_guidance || []).map(g => ({...g, source: deviceSourceId(g.source)})),
@@ -62,13 +76,34 @@ export function createWorkspace(catalog, devices) {
       const ids = row.sourceIds || Object.values(row.values).flatMap(valueSources);
       const publications = new Set(ids.map(id=>sources.get(id)?.publication_source || id)
         .filter(id=>paperKinds.has(sources.get(id)?.kind)));
-      if (publications.size === 1 && (domain.app || row.study_id)) row.paper = [...publications][0];
+      if (publications.size !== 1 || !(domain.app || row.study_id)) continue;
+      row.paper = [...publications][0];
+      const source = sources.get(row.paper);
+      if (!source.paperLabel) continue;
+      row.paperLabel = source.paperLabel;
+      const sample = sampleAfterAttribution(row.model, source.bibliography);
+      if (sample !== null) {
+        row.pointLabel = source.paperLabel;
+        row.chartLabel = [source.paperLabel, sample].filter(Boolean).join(' · ');
+      }
     }
   }
   return {domains, sources};
 }
 
 const paperKinds = new Set(['paper','peer_reviewed_paper','workshop_paper','conference_paper','author_manuscript','doctoral_thesis']);
+
+// Commercial models cited in a research paper remain identifiable by their device name.
+function sampleAfterAttribution(model, publication) {
+  const surname = publication.authors.split(',')[0];
+  const prefix = model.match(/^(.+?)(?:\s+|等)((?:19|20)\d\d)(?=[\s·：:]|$)/u);
+  if (prefix && (prefix[1].split(/\s+/).includes(surname) || prefix[1] === publication.short || /^\p{Script=Han}+等\d{4}/u.test(model))) {
+    return model.slice(prefix[0].length).replace(/^[\s·：:]+/u, '');
+  }
+  // Some legacy sample names start with the author alone (e.g. Bechter LBT).
+  if (model.startsWith(surname + ' ')) return model.slice(surname.length).trimStart();
+  return null;
+}
 
 export function groupRows(rows) {
   const groups = new Map();
@@ -119,7 +154,7 @@ export function valueSources(value) { return value?.sourceIds || (value?.source 
 
 export function filteredRows(domain, state) {
   const available = domain.rows.filter(r => (!state.visible || hasVisibleLight(domain,r)) && (domain.id !== 'phone' || r.module === state.module) &&
-    (!state.query || [r.model, r.variant, r.evidence].join(' ').toLowerCase().includes(state.query.toLowerCase())) &&
+    (!state.query || [r.model, r.paperLabel, r.variant, r.evidence].join(' ').toLowerCase().includes(state.query.toLowerCase())) &&
     (!state.evidence || (state.evidence === 'manufacturer' ? /厂商|商业|manufacturer/.test(r.evidence || r.variant) : !/厂商|商业|manufacturer/.test(r.evidence || r.variant))));
   return available.filter(r => state.models === null || state.models.includes(r.id));
 }
@@ -127,7 +162,7 @@ export function filteredRows(domain, state) {
 export function axisPoints(rows, x, y) {
   return rows.flatMap((row, index) => {
     const xv = x === '$model' ? index + 1 : row.values[x]?.value, yv = row.values[y]?.value;
-    return Number.isFinite(xv) && Number.isFinite(yv) ? [{row, x: xv, y: yv}] : [];
+    return Number.isFinite(xv) && Number.isFinite(yv) ? [{row, label:row.chartLabel || row.model, x: xv, y: yv}] : [];
   });
 }
 

@@ -54,11 +54,11 @@ function scatterMarkup(groups, xLabel, yLabel, {width = 900, categorical = false
   }
  }
  groups.forEach((group,i) => {
-  const p = group[0], {x,y} = marks[i], names = group.map(p=>p.row?.model ?? p.label);
+  const p = group[0], {x,y} = marks[i], names = group.map(p=>p.label ?? p.row?.model);
   const series = [...new Set(group.map(p=>p.row?.study_id || p.row?.id || p.id))];
   const hash = Array.from(series[0]).reduce((n,c)=>(n*31+c.codePointAt(0))>>>0,0);
   const color = series.length === 1 ? palette[hash%palette.length] : '#53636d';
-  const name = group.length > 1 ? `${group.length} 个样本` : names[0];
+  const name = group.length > 1 ? `${group.length} 个样本` : (p.row?.pointLabel || names[0]);
   markers.push(`<g data-point="${i}"><rect x="${x-9}" y="${y-9}" width="18" height="18" fill="transparent"/><circle cx="${x}" cy="${y}" r="5" fill="${color}" stroke="white" stroke-width="1"><title>${E(names.join('、'))} (${p.x}, ${p.y})</title></circle></g>`);
   // Only place a complete name immediately beside its point. Dense views use inspection.
   if (groups.length <= (compact ? 5 : 12) && name.length <= 28) {
