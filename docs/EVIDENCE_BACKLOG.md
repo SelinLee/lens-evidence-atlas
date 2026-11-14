@@ -19,7 +19,9 @@
 | FOCUS-004 双指标轴散点 | in_progress | 两轴指标可选、型号多选、仅散点、重复坐标可辨、无样本间连线、缺失/区间/单位规则、分享状态及导出；核已有候选还缺哪些行为 |
 | UI-001 全应用统一图表模板 | done | 2026-11-14用户追加：手机/XR与33类既有应用统一入口；首屏图表与侧边设置、下方数据表/编号来源双向跳转、兼容旧链接；本地与Chrome无头验收见[统一界面记录](UNIFIED_WORKSPACE_2026-11-14.md)，[草稿PR #70](https://github.com/SelinLee/lens-evidence-atlas/pull/70)已合并，Pages在42e1011完成实际验收；当前散点/缓存修复另见UI-002 |
 | UI-002 散点图与缓存升级修复 | done | 用户报告白框并取消折线；复现旧脚本缓存混用、资源内容版本、缺值指标说明/恢复与加载失败操作；118项测试、Chrome已有缓存升级和35域交互通过，见[修复核验](SCATTER_CACHE_RECOVERY_2026-11-14.md)；[PR #71](https://github.com/SelinLee/lens-evidence-atlas/pull/71)已合并，Pages在4d3ddc0完成12文件和实际Chrome验收 |
-| QUALITY-001 消色差超透镜原文参数矩阵 | in_progress | 首要研究任务，执行[消色差超透镜文献调研目标](LOCAL_RESEARCH_GOAL.md#消色差超透镜文献调研)。现有 10 篇、27 个配置、82 条记录，可见光筛选为 7 篇、29 条。优先补逐波长焦距、轴向与横向色差、MTF 和带协议的效率。下一线索是 Chang 2024 的 400 μm 器件 MTF 数值数据。持续队列暂停。 |
+| QUALITY-001 消色差超透镜原文参数矩阵 | in_progress | 首要研究任务，执行[消色差超透镜文献调研目标](LOCAL_RESEARCH_GOAL.md#消色差超透镜文献调研)。现有 10 篇、27 个配置、82 条记录，可见光筛选为 7 篇、29 条。优先补逐波长焦距、轴向与横向色差、MTF 和带协议的效率。2026-11-14新会话已创建并确认active持续目标；Chang MTF公开性见001d，随后补Lin 2025焦距/焦移证据，不关闭父目标。 |
+| QUALITY-001d Chang 2024 MTF原始数据核查 | review | 本机Codex，2026-11-14，codex/chang-mtf-source-audit；主文Methods/Data availability、SI S5/Fig.S6、期刊全部附件、审稿回应、作者课题组条目与定向仓库检索。仅核到曲线，数值留空，缺PSF/采样尺度/处理与场点；见[核查记录](CHANG_MTF_DATA_AUDIT_2026-11-14.md)，待PR与实际Pages验收。 |
+| QUALITY-001e Lin 2025焦距/焦移补证 | review | 本机Codex，2026-11-14；已补两器件10谱点的焦距证据边界，实测焦距保持空缺；复核主文Fig.2模拟与Fig.3实测、SI Fig.S5、Data availability及附件目录，不把模拟曲线当实测。与001d同批待发布；下一篇Chen 2019（Chang参考文献20）。 |
 | QUALITY-002 手机SNR/MTF/色差独立测量 | in_progress | 本机Codex，2026-11-14；先核有型号和协议的SNR及MTF原始研究；外接镜组、场景与处理链不得写进原生模组，PSNR不替代SNR |
 | QUALITY-003 VRAR MTF与色差 | in_progress | 本机Codex，2026-11-14；复核开放PR #69数据及原文，优先MTF/截止频率、颜色/场点/眼位、色差和先进设备独立测量，不能从曲线猜统一单值 |
 | QUALITY-001a 文献器件首批 | done | 4项原始研究/8器件配置/21行，几何、波段、逐谱点焦距/FWHM/Strehl、PSNR及冲突；见[首批核验](QUALITY_BATCH_2026-11-14.md)；PR #72/23fdecb与Pages43571286647实页验收，不关闭父目标 |

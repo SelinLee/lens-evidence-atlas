@@ -14,7 +14,7 @@ test('four supplied studies are deduplicated across versions, supplements and sp
  assert.equal(new Set(added.map(r=>r.study_id+'/'+r.specimen_id)).size,12);
  assert.equal(lens.rows.length,82);assert.equal(new Set(lens.rows.map(r=>r.study_id)).size,10);
  assert.ok(!added.some(r=>/arxiv|proxy/i.test(r.study_id)));
- assert.equal(data.sources.length,39);assert.ok(data.sources.filter(s=>/balli_|lin_spdc|chang_dispersion|choi_rgb/.test(s.id)).every(s=>s.checked_on==='2026-11-14'&&s.scope));
+ assert.equal(data.sources.length,41);assert.ok(data.sources.filter(s=>/balli_|lin_spdc|chang_dispersion|choi_rgb/.test(s.id)).every(s=>s.checked_on==='2026-11-14'&&s.scope));
 });
 
 test('Lin measured x and y PSF widths and complete-device efficiency retain the original ordered sequences',()=>{
@@ -54,7 +54,16 @@ test('Chang only imports an explicitly assigned efficiency point and an explicit
   const v=get('chang2024_d'+diam);assert.equal(v.diameter_um.value,diam);assert.equal(v.na.value,na);assert.equal(v.height_nm.value,600);
   assert.equal(v.strehl.value,null);assert.equal(v.efficiency_band_mean_pct,undefined);assert.match(v.efficiency_protocol.value,/半径\/直径待核/);
   if(diam===66){assert.equal(v.efficiency_at_lambda_pct.value,88);assert.equal(v.efficiency_lambda_nm.value,550);}else assert.equal(v.efficiency_at_lambda_pct,undefined);
-  if(diam===400){assert.equal(v.design_focal_um.value,12500);assert.match(v.mtf_curve.value,/Fourier/);}else assert.equal(v.design_focal_um,undefined);
+  if(diam===400){
+   assert.equal(v.design_focal_um.value,12500);assert.match(v.mtf_curve.value,/Fourier/);
+   const a=v.mtf_curve.data_availability;
+   assert.equal(a.status,'curves_only');
+   for(const k of ['author_numeric_mtf','raw_psf','independently_recomputed_mtf','normalization_method','object_plane_pixel_size_um','field_angle_deg'])assert.equal(a[k],null);
+   assert.deepEqual(a.wavelengths_nm,[400,450,500,550,600,650,700]);
+   assert.equal(a.spatial_frequency_unit,'cycles/mm');
+   assert.ok(v.mtf_curve.sourceIds.includes('chang_dispersion_2024'));
+   assert.equal(v.mtf_curve.basis,'derived_from_measurement');
+  }else assert.equal(v.design_focal_um,undefined);
  }
 });
 
