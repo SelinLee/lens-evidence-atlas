@@ -32,7 +32,7 @@ test('six white-light SNR values preserve object contrast and channel without ma
  assert.equal(axisPoints(rows,'diameter_um','image_snr_db').length,15);
 });
 test('MTF curve axes and fixed planes survive without numeric thresholds, unexplained FFT assumptions or transferred processed MTF and simulated unit efficiency',()=>{
- const m=get('summary').mtf_curve,a=m.data_availability;assert.equal(m.basis,'unresolved');assert.equal(a.spatial_frequency_unit,'lp/mm');assert.equal(a.directions,null);for(const k of ['author_numeric_mtf','raw_psf','independently_recomputed_mtf','object_plane_pixel_size_um','normalization_method'])assert.equal(a[k],null);assert.match(m.note,/不能复制为2阶或减法后MTF/);
+ const m=get('summary').mtf_curve,a=m.data_availability;assert.equal(m.basis,'unresolved');assert.equal(a.spatial_frequency_unit,'lp/mm');assert.equal(a.directions,null);assert.equal(a.frequency_reference_plane,null);assert.match(m.note,/不以1.0669μm.*反推/);for(const k of ['author_numeric_mtf','raw_psf','independently_recomputed_mtf','object_plane_pixel_size_um','normalization_method'])assert.equal(a[k],null);assert.match(m.note,/不能复制为2阶或减法后MTF/);
  for(const z of [200,400,500])assert.equal(get('mtf530_z'+z).psf_protocol.evaluation_plane_um,z);for(const z of [200,300,400,500]){const v=get('image_sub_z'+z);assert.equal(v.psf_protocol.evaluation_plane_um,z);assert.equal(v.image_snr_db,undefined);}
  for(const r of rows){assert.equal(r.values.efficiency_at_lambda_pct,undefined);assert.equal(r.values.efficiency_band_mean_pct,undefined);assert.equal(r.values.operation_efficiency_at_lambda_pct,undefined);assert.match(r.values.efficiency_protocol.value,/95%为模拟单元库/);}
 });
