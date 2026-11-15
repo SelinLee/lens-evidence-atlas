@@ -26,7 +26,7 @@ test('geometric design focal lengths are explicitly atlas model calculations wit
 
 test('experimental efficiency ranges remain ranges while contradictory aggregate claims never become measured band means',()=>{
  for(const [spec,min,max]of [['na05',22.5,42.7],['na07',13.3,22.1]]){const v=get(spec+'_summary');assert.deepEqual(v.mtf_curve.efficiency_range_pct,{min,max});assert.equal(v.efficiency_band_mean_pct.value,null);assert.equal(v.efficiency_band_mean_pct.basis,'unresolved');assert.match(v.efficiency_protocol.value,/直径3×FWHM/);assert.match(v.efficiency_protocol.note,/移除MAM.*aperture匹配MAM像面积/);assert.match(v.efficiency_protocol.note,/不改成半径/);}
- assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,0);assert.equal(axisPoints(rows,'na','efficiency_band_mean_pct').length,0);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,98);
+ assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,0);assert.equal(axisPoints(rows,'na','efficiency_band_mean_pct').length,0);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,99);
 });
 
 test('the 560 nm original and rounded simulation MTFs preserve manuscript axes without becoming experimental S/T or a cutoff',()=>{
