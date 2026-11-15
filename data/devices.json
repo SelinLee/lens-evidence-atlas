@@ -619,6 +619,24 @@
       "kind": "repository_metadata",
       "checked_on": "2026-11-15",
       "scope": "DASH公开检索/ORIGINAL bundle/bitstream元数据200，核同DOI、题名/卷页，原文件67670 acs-2enanolett-2e5b01727.pdf标6047252字节。content401，未取得/读取文件，目录MD5不是本库内容校验；META_ONLY与OpenAlex/S2的OA标记差异保留，不能声称开放PDF实际已获。SI/原始PSF/MTF仓库未核。"
+    },
+    {
+      "id": "avayu_composite_2017",
+      "title": "Avayu et al. (2017): Composite functional metasurfaces for multispectral achromatic optics",
+      "doi": "10.1038/ncomms14992",
+      "url": "https://www.nature.com/articles/ncomms14992",
+      "kind": "peer_reviewed_paper",
+      "checked_on": "2026-11-15",
+      "scope": "正式HTML/7页PDF均本机独立无头Chrome200；PDF1477087字节，SHA256 2b4c62078cda909e8fb52def309de3caace35bb547e265d5d53d3d2ff7e649c8。限定读pp.1–6摘要/设计/相关结果、Methods/Data availability，视觉核pp.3–6 Fig1–4/数值单位；不冒称全部引文逐篇阅读。RGB宽度2.11/2.43μm直报；650nm主文2.6μm与SI2.3μm未消歧，值空；逐λf仅曲线、效率5.8–8.7%范围无配对。期刊SI+两STED影片（影片未读取），无Source Data链接；作者NEO/Almeida出版列表200回链主文/PDF，DataCite精确关联1条arXiv预印本非数据、GitHub仓库名/描述精确DOI0，不称全网无数据。数据可向作者合理请求，未联系作者。"
+    },
+    {
+      "id": "avayu_composite_si_2017",
+      "publication_source": "avayu_composite_2017",
+      "title": "Avayu et al. (2017): Supplementary Information — figures, discussion and methods",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fncomms14992/MediaObjects/41467_2017_BFncomms14992_MOESM3270_ESM.pdf",
+      "kind": "supplementary_information",
+      "checked_on": "2026-11-15",
+      "scope": "本机独立无头Chrome200有效10页PDF，974259字节，SHA256 9d30b6bccf5f83f50d937684f36cf08725080c2c0b9271fa671e0d5cfa4aa0d2。读取10页文字，视觉核p.2 S2尺寸、p.3 S3实测圈/理论线、p.4 S4图注2.3μm与主文差异、p.5 S5模拟及p.10焦斑/效率/成像方法。S3额外谱点仅曲线，不估读；20轴向点未给全局步长/物方像素；束腰ROI约86%无完整几何定义。S5约40%/4倍为模拟，不混实验效率；无原始PSF/MTF数组，未复算。"
     }
   ],
   "domains": {
@@ -112163,9 +112181,2018 @@
               "calculation_origin": "authors"
             }
           }
+        },
+        {
+          "id": "avayu2017_rgb_summary",
+          "model": "Avayu 2017 · 三层RGB · 参数/证据边界",
+          "study_id": "avayu2017",
+          "specimen_id": "triplet_rgb",
+          "module": "",
+          "variant": "可见光三层/双层频谱复用；离散通道与残余色散分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "三层二元FZP实制透镜；三设计RGB离散校正，不能视为450–650nm连续消色差。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "avayu_composite_si_2017",
+              "location": "主文Fig.1/Methods；SI p.10 Imaging with the metasurface lens",
+              "note": "SI称投影物尺寸与lens size相当（约500μm），未独立定义清孔径或给逐配置直径；Fig.1b/S2的125/85/120nm是纳米盘直径，不是透镜口径，图像不量尺估读。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_si_2017",
+                "avayu_composite_2017"
+              ],
+              "display": "有效口径未明确；约500μm为成像尺寸说明"
+            },
+            "na": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Experimental optical set-up；SI p.10成像方法",
+              "note": "Mitutoyo 20X 0.42为收集/继像物镜，不是超透镜NA；未由投影物尺寸、焦斑或图尺倒推器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "器件NA未明确；0.42属收集物镜"
+            },
+            "height_nm": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Sample fabrication",
+              "note": "Au沉积30nm、蚀刻30nm；工艺重复用于Ag/Al，未逐层单列膜厚。200nm为SiO2间隔，不当纳米盘厚度或总堆叠厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "Au30nm；其余金属膜厚未单列"
+            },
+            "material": {
+              "value": "Au/Ag/Al纳米盘三层二元FZP；SiO2间隔200nm；ITO玻璃基底",
+              "source": "avayu_composite_2017",
+              "location": "主文pp.2–3 Fig.1b；p.6制备；SI p.2 Fig.S2",
+              "note": "三层分别针对650/550/450nm；S2实测盘径Au125/Ag85/Al120nm，盘间separation185/195/150nm。S2明确略偏离设计，保留作者separation用词，不推成统一周期；不将这些nm尺寸录为光学口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ]
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文pp.2–5 Fig.1/2/3；SI p.3 S3",
+              "note": "离散RGB设计/实测450/550/650nm；S3另有离设计点测量但点的精确λ/f未给数表，不由图坐标估点，不填连续消色差带宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "RGB450/550/650nm；S3额外谱点仅曲线",
+              "sample_wavelengths_nm": [
+                450,
+                550,
+                650
+              ]
+            },
+            "polarization": {
+              "value": "盘形结构以偏振不敏感为设计动机；激光实测为线偏振，白光为非偏振",
+              "source": "avayu_composite_2017",
+              "location": "主文p.2结构段；p.6 Experimental optical set-up",
+              "note": "没有核到逐偏振同条件PSF/效率数表，不把设计对称性当所有偏振性能已实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "Chameleon OPO VIS线偏振激光，约140fs、80MHz；白光为Xenon arc lamp",
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Experimental optical set-up",
+              "note": "未给RGB各激光测量的实际光谱线宽；NKT SuperK compact用于STED配置，不混入普通RGB激光表征。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "预期焦区沿传播方向取20个平面，逐面测Gaussian宽度，按ω(z)=ω0√[1+(z/zR)²]拟合找焦面/束腰；Mitutoyo20X/0.42继像，Nanomax606移动样品。",
+              "source": "avayu_composite_si_2017",
+              "location": "SI p.10 Focal spot characterisation/Eq.S2；主文p.4 Fig.2/p.6方法",
+              "note": "作者实测拟合束腰/焦平面；轴向实际步长/范围、像素到物方标定、二维原始PSF、背景/裁剪、重复/不确定度未公开给齐。S4b相对z(μm)不是绝对镜面到焦点距离，不能由20点或该轴反算全局步长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_si_2017",
+                "avayu_composite_2017"
+              ]
+            },
+            "mtf_curve": {
+              "value": "所核主文/SI未见MTF数表或MTF曲线；Fig.2给PSF图及Gaussian剖面，Fig.3i/S3给焦位曲线",
+              "source": "avayu_composite_2017",
+              "location": "主文pp.4–6 Fig.2/3与Data availability；SI pp.3/4/10",
+              "note": "Data availability说明数据可向作者合理请求，未联系作者。期刊附件仅SI和两段STED影片；作者两实验室出版列表回链主文/PDF，DataCite精确关联1条为arXiv预印本而非数据集，GitHub仓库名/描述精确DOI检索0。未核到原始PSF/MTF、采样尺度及处理全条件；不作全网不存在声明，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "avayu_composite_2017",
+              "location": "主文pp.2–3设计段/Eq.1及Fig.1图注",
+              "note": "三层RGB共焦设计1mm→1000μm；白光焦点在约1mm的文字描述不展开为三个精确实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "主焦点功率/入射到透镜的总功率；校准CMOS测两者，Gaussian拟合后在束腰范围积分，作者称覆盖约86%总功率。",
+              "source": "avayu_composite_si_2017",
+              "location": "SI p.10 Lens efficiency calculation；主文p.4效率段",
+              "note": "原文未明确该束腰ROI的形状、半径/直径及1/e还是1/e²定义，不因86%而假定1/e²圆圈；入射功率的实际孔/光束匹配、标定、背景和误差未给齐。5.8–8.7%仅RGB实测范围，未分配各λ，不是带内均值；~10%为理论二元FZP，~40%/4倍为S5反射pFZP模拟。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_si_2017",
+                "avayu_composite_2017"
+              ],
+              "integration_geometry": null,
+              "width_definition": null,
+              "encircled_fraction_approx": 0.86
+            },
+            "chromatic": {
+              "value": "RGB离散点近同焦；离开设计λ仍有分段残余色散（S3）；设计λ其他颜色残余功率<10%主束",
+              "source": "avayu_composite_2017",
+              "location": "主文p.5 Fig.3i及紧接正文；SI p.3 S3",
+              "note": "Fig.3i横轴Wavelength(nm)、纵轴Focal distance(mm)，圆圈为本器件实测、十字为普通FZP、红线为普通FZP理论；S3蓝圈为实测，三彩曲线为理论，黑虚线为550nm普通FZP。没有逐点表/峰位误差，不把图上同焦改成零焦差；<10%是光谱串扰功率比，不是聚焦效率/焦距variation。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "calculation_origin": "authors"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.4 Fig.2后效率段；SI p.10效率定义",
+              "note": "正文仅直报所有测量颜色5.8–8.7%的范围，没有各λ配对；不赋端点给颜色，也不取中点或填带内平均。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "RGB实测范围5.8–8.7%；逐λ未配对"
+            }
+          }
+        },
+        {
+          "id": "avayu2017_rgb_450",
+          "model": "Avayu 2017 · 三层RGB · 450nm · 主文宽度",
+          "study_id": "avayu2017",
+          "specimen_id": "triplet_rgb",
+          "module": "",
+          "variant": "可见光三层/双层频谱复用；离散通道与残余色散分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一三层透镜的实测RGB光谱条件；焦面由轴扫Gaussian传播拟合，实测f仍仅曲线。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "avayu_composite_si_2017",
+              "location": "主文Fig.1/Methods；SI p.10 Imaging with the metasurface lens",
+              "note": "SI称投影物尺寸与lens size相当（约500μm），未独立定义清孔径或给逐配置直径；Fig.1b/S2的125/85/120nm是纳米盘直径，不是透镜口径，图像不量尺估读。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_si_2017",
+                "avayu_composite_2017"
+              ],
+              "display": "有效口径未明确；约500μm为成像尺寸说明"
+            },
+            "na": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Experimental optical set-up；SI p.10成像方法",
+              "note": "Mitutoyo 20X 0.42为收集/继像物镜，不是超透镜NA；未由投影物尺寸、焦斑或图尺倒推器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "器件NA未明确；0.42属收集物镜"
+            },
+            "height_nm": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Sample fabrication",
+              "note": "Au沉积30nm、蚀刻30nm；工艺重复用于Ag/Al，未逐层单列膜厚。200nm为SiO2间隔，不当纳米盘厚度或总堆叠厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "Au30nm；其余金属膜厚未单列"
+            },
+            "material": {
+              "value": "Au/Ag/Al纳米盘三层二元FZP；SiO2间隔200nm；ITO玻璃基底",
+              "source": "avayu_composite_2017",
+              "location": "主文pp.2–3 Fig.1b；p.6制备；SI p.2 Fig.S2",
+              "note": "三层分别针对650/550/450nm；S2实测盘径Au125/Ag85/Al120nm，盘间separation185/195/150nm。S2明确略偏离设计，保留作者separation用词，不推成统一周期；不将这些nm尺寸录为光学口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 450,
+              "source": "avayu_composite_2017",
+              "location": "主文p.4 Fig.2a–c图注及FWHM段；p.5 Fig.3f–i",
+              "note": "该λ实际激光表征，和设计波长一致；不推成连续带宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "盘形结构以偏振不敏感为设计动机；激光实测为线偏振，白光为非偏振",
+              "source": "avayu_composite_2017",
+              "location": "主文p.2结构段；p.6 Experimental optical set-up",
+              "note": "没有核到逐偏振同条件PSF/效率数表，不把设计对称性当所有偏振性能已实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "Chameleon OPO VIS线偏振激光，约140fs、80MHz；白光为Xenon arc lamp",
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Experimental optical set-up",
+              "note": "未给RGB各激光测量的实际光谱线宽；NKT SuperK compact用于STED配置，不混入普通RGB激光表征。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "预期焦区沿传播方向取20个平面，逐面测Gaussian宽度，按ω(z)=ω0√[1+(z/zR)²]拟合找焦面/束腰；Mitutoyo20X/0.42继像，Nanomax606移动样品。",
+              "source": "avayu_composite_si_2017",
+              "location": "SI p.10 Focal spot characterisation/Eq.S2；主文p.4 Fig.2/p.6方法",
+              "note": "作者实测拟合束腰/焦平面；轴向实际步长/范围、像素到物方标定、二维原始PSF、背景/裁剪、重复/不确定度未公开给齐。S4b相对z(μm)不是绝对镜面到焦点距离，不能由20点或该轴反算全局步长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_si_2017",
+                "avayu_composite_2017"
+              ]
+            },
+            "mtf_curve": {
+              "value": "所核主文/SI未见MTF数表或MTF曲线；Fig.2给PSF图及Gaussian剖面，Fig.3i/S3给焦位曲线",
+              "source": "avayu_composite_2017",
+              "location": "主文pp.4–6 Fig.2/3与Data availability；SI pp.3/4/10",
+              "note": "Data availability说明数据可向作者合理请求，未联系作者。期刊附件仅SI和两段STED影片；作者两实验室出版列表回链主文/PDF，DataCite精确关联1条为arXiv预印本而非数据集，GitHub仓库名/描述精确DOI检索0。未核到原始PSF/MTF、采样尺度及处理全条件；不作全网不存在声明，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "avayu_composite_2017",
+              "location": "主文pp.2–3设计段/Eq.1及Fig.1图注",
+              "note": "三层RGB共焦设计1mm→1000μm；白光焦点在约1mm的文字描述不展开为三个精确实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "主焦点功率/入射到透镜的总功率；校准CMOS测两者，Gaussian拟合后在束腰范围积分，作者称覆盖约86%总功率。",
+              "source": "avayu_composite_si_2017",
+              "location": "SI p.10 Lens efficiency calculation；主文p.4效率段",
+              "note": "原文未明确该束腰ROI的形状、半径/直径及1/e还是1/e²定义，不因86%而假定1/e²圆圈；入射功率的实际孔/光束匹配、标定、背景和误差未给齐。5.8–8.7%仅RGB实测范围，未分配各λ，不是带内均值；~10%为理论二元FZP，~40%/4倍为S5反射pFZP模拟。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_si_2017",
+                "avayu_composite_2017"
+              ],
+              "integration_geometry": null,
+              "width_definition": null,
+              "encircled_fraction_approx": 0.86
+            },
+            "chromatic": {
+              "value": "RGB离散点近同焦；离开设计λ仍有分段残余色散（S3）；设计λ其他颜色残余功率<10%主束",
+              "source": "avayu_composite_2017",
+              "location": "主文p.5 Fig.3i及紧接正文；SI p.3 S3",
+              "note": "Fig.3i横轴Wavelength(nm)、纵轴Focal distance(mm)，圆圈为本器件实测、十字为普通FZP、红线为普通FZP理论；S3蓝圈为实测，三彩曲线为理论，黑虚线为550nm普通FZP。没有逐点表/峰位误差，不把图上同焦改成零焦差；<10%是光谱串扰功率比，不是聚焦效率/焦距variation。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "calculation_origin": "authors"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.4 Fig.2后效率段；SI p.10效率定义",
+              "note": "正文仅直报所有测量颜色5.8–8.7%的范围，没有各λ配对；不赋端点给颜色，也不取中点或填带内平均。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "RGB实测范围5.8–8.7%；逐λ未配对"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.5 Fig.3i圆圈；SI p.3 S3蓝圈",
+              "note": "精确逐λ焦点仅曲线，正文共同1mm描述不是各λ独立峰位数表，不填写1000或焦移0。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "逐λ精确f仅曲线；未读图赋值"
+            },
+            "efficiency_lambda_nm": {
+              "value": 450,
+              "source": "avayu_composite_2017",
+              "location": "主文p.4各色效率范围段",
+              "note": "实际测量λ已知，但未公开本λ对应效率，数值继续空。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "fwhm_um": {
+              "value": 2.11,
+              "source": "avayu_composite_2017",
+              "location": "主文p.4 Fig.2后FWHM正文，红/绿/蓝顺序对应2.6/2.43/2.11μm",
+              "note": "正文直接报告的焦点强度半高全宽；单位经PDF视觉核为μm（文本提取曾误成mm）；蓝/绿未独立标截面方向，不当x/y双向数值，不补误差。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "reading_version": "Nature Communications 8,14992 (2017) VOR",
+              "display": "2.11（主文直报；方向未单列）"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.4 Fig.2d仅红光x剖面；SI p.4 S4",
+              "note": "红光主文x剖面与S4宽度未消歧；蓝/绿正文未单列方向，不复制为x数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "display": "方向/红光跨材料差异未消歧"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.4 Fig.2及SI p.4 S4",
+              "note": "没有独立逐λ y向FWHM数表，不从圆斑或另方向复制。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "display": "未给独立y向宽度"
+            }
+          }
+        },
+        {
+          "id": "avayu2017_rgb_550",
+          "model": "Avayu 2017 · 三层RGB · 550nm · 主文宽度",
+          "study_id": "avayu2017",
+          "specimen_id": "triplet_rgb",
+          "module": "",
+          "variant": "可见光三层/双层频谱复用；离散通道与残余色散分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一三层透镜的实测RGB光谱条件；焦面由轴扫Gaussian传播拟合，实测f仍仅曲线。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "avayu_composite_si_2017",
+              "location": "主文Fig.1/Methods；SI p.10 Imaging with the metasurface lens",
+              "note": "SI称投影物尺寸与lens size相当（约500μm），未独立定义清孔径或给逐配置直径；Fig.1b/S2的125/85/120nm是纳米盘直径，不是透镜口径，图像不量尺估读。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_si_2017",
+                "avayu_composite_2017"
+              ],
+              "display": "有效口径未明确；约500μm为成像尺寸说明"
+            },
+            "na": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Experimental optical set-up；SI p.10成像方法",
+              "note": "Mitutoyo 20X 0.42为收集/继像物镜，不是超透镜NA；未由投影物尺寸、焦斑或图尺倒推器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "器件NA未明确；0.42属收集物镜"
+            },
+            "height_nm": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Sample fabrication",
+              "note": "Au沉积30nm、蚀刻30nm；工艺重复用于Ag/Al，未逐层单列膜厚。200nm为SiO2间隔，不当纳米盘厚度或总堆叠厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "Au30nm；其余金属膜厚未单列"
+            },
+            "material": {
+              "value": "Au/Ag/Al纳米盘三层二元FZP；SiO2间隔200nm；ITO玻璃基底",
+              "source": "avayu_composite_2017",
+              "location": "主文pp.2–3 Fig.1b；p.6制备；SI p.2 Fig.S2",
+              "note": "三层分别针对650/550/450nm；S2实测盘径Au125/Ag85/Al120nm，盘间separation185/195/150nm。S2明确略偏离设计，保留作者separation用词，不推成统一周期；不将这些nm尺寸录为光学口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 550,
+              "source": "avayu_composite_2017",
+              "location": "主文p.4 Fig.2a–c图注及FWHM段；p.5 Fig.3f–i",
+              "note": "该λ实际激光表征，和设计波长一致；不推成连续带宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "盘形结构以偏振不敏感为设计动机；激光实测为线偏振，白光为非偏振",
+              "source": "avayu_composite_2017",
+              "location": "主文p.2结构段；p.6 Experimental optical set-up",
+              "note": "没有核到逐偏振同条件PSF/效率数表，不把设计对称性当所有偏振性能已实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "Chameleon OPO VIS线偏振激光，约140fs、80MHz；白光为Xenon arc lamp",
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Experimental optical set-up",
+              "note": "未给RGB各激光测量的实际光谱线宽；NKT SuperK compact用于STED配置，不混入普通RGB激光表征。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "预期焦区沿传播方向取20个平面，逐面测Gaussian宽度，按ω(z)=ω0√[1+(z/zR)²]拟合找焦面/束腰；Mitutoyo20X/0.42继像，Nanomax606移动样品。",
+              "source": "avayu_composite_si_2017",
+              "location": "SI p.10 Focal spot characterisation/Eq.S2；主文p.4 Fig.2/p.6方法",
+              "note": "作者实测拟合束腰/焦平面；轴向实际步长/范围、像素到物方标定、二维原始PSF、背景/裁剪、重复/不确定度未公开给齐。S4b相对z(μm)不是绝对镜面到焦点距离，不能由20点或该轴反算全局步长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_si_2017",
+                "avayu_composite_2017"
+              ]
+            },
+            "mtf_curve": {
+              "value": "所核主文/SI未见MTF数表或MTF曲线；Fig.2给PSF图及Gaussian剖面，Fig.3i/S3给焦位曲线",
+              "source": "avayu_composite_2017",
+              "location": "主文pp.4–6 Fig.2/3与Data availability；SI pp.3/4/10",
+              "note": "Data availability说明数据可向作者合理请求，未联系作者。期刊附件仅SI和两段STED影片；作者两实验室出版列表回链主文/PDF，DataCite精确关联1条为arXiv预印本而非数据集，GitHub仓库名/描述精确DOI检索0。未核到原始PSF/MTF、采样尺度及处理全条件；不作全网不存在声明，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "avayu_composite_2017",
+              "location": "主文pp.2–3设计段/Eq.1及Fig.1图注",
+              "note": "三层RGB共焦设计1mm→1000μm；白光焦点在约1mm的文字描述不展开为三个精确实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "主焦点功率/入射到透镜的总功率；校准CMOS测两者，Gaussian拟合后在束腰范围积分，作者称覆盖约86%总功率。",
+              "source": "avayu_composite_si_2017",
+              "location": "SI p.10 Lens efficiency calculation；主文p.4效率段",
+              "note": "原文未明确该束腰ROI的形状、半径/直径及1/e还是1/e²定义，不因86%而假定1/e²圆圈；入射功率的实际孔/光束匹配、标定、背景和误差未给齐。5.8–8.7%仅RGB实测范围，未分配各λ，不是带内均值；~10%为理论二元FZP，~40%/4倍为S5反射pFZP模拟。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_si_2017",
+                "avayu_composite_2017"
+              ],
+              "integration_geometry": null,
+              "width_definition": null,
+              "encircled_fraction_approx": 0.86
+            },
+            "chromatic": {
+              "value": "RGB离散点近同焦；离开设计λ仍有分段残余色散（S3）；设计λ其他颜色残余功率<10%主束",
+              "source": "avayu_composite_2017",
+              "location": "主文p.5 Fig.3i及紧接正文；SI p.3 S3",
+              "note": "Fig.3i横轴Wavelength(nm)、纵轴Focal distance(mm)，圆圈为本器件实测、十字为普通FZP、红线为普通FZP理论；S3蓝圈为实测，三彩曲线为理论，黑虚线为550nm普通FZP。没有逐点表/峰位误差，不把图上同焦改成零焦差；<10%是光谱串扰功率比，不是聚焦效率/焦距variation。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "calculation_origin": "authors"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.4 Fig.2后效率段；SI p.10效率定义",
+              "note": "正文仅直报所有测量颜色5.8–8.7%的范围，没有各λ配对；不赋端点给颜色，也不取中点或填带内平均。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "RGB实测范围5.8–8.7%；逐λ未配对"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.5 Fig.3i圆圈；SI p.3 S3蓝圈",
+              "note": "精确逐λ焦点仅曲线，正文共同1mm描述不是各λ独立峰位数表，不填写1000或焦移0。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "逐λ精确f仅曲线；未读图赋值"
+            },
+            "efficiency_lambda_nm": {
+              "value": 550,
+              "source": "avayu_composite_2017",
+              "location": "主文p.4各色效率范围段",
+              "note": "实际测量λ已知，但未公开本λ对应效率，数值继续空。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "fwhm_um": {
+              "value": 2.43,
+              "source": "avayu_composite_2017",
+              "location": "主文p.4 Fig.2后FWHM正文，红/绿/蓝顺序对应2.6/2.43/2.11μm",
+              "note": "正文直接报告的焦点强度半高全宽；单位经PDF视觉核为μm（文本提取曾误成mm）；蓝/绿未独立标截面方向，不当x/y双向数值，不补误差。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "reading_version": "Nature Communications 8,14992 (2017) VOR",
+              "display": "2.43（主文直报；方向未单列）"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.4 Fig.2d仅红光x剖面；SI p.4 S4",
+              "note": "红光主文x剖面与S4宽度未消歧；蓝/绿正文未单列方向，不复制为x数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "display": "方向/红光跨材料差异未消歧"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.4 Fig.2及SI p.4 S4",
+              "note": "没有独立逐λ y向FWHM数表，不从圆斑或另方向复制。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "display": "未给独立y向宽度"
+            }
+          }
+        },
+        {
+          "id": "avayu2017_rgb_650",
+          "model": "Avayu 2017 · 三层RGB · 650nm · FWHM跨材料冲突",
+          "study_id": "avayu2017",
+          "specimen_id": "triplet_rgb",
+          "module": "",
+          "variant": "可见光三层/双层频谱复用；离散通道与残余色散分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一三层透镜的实测RGB光谱条件；焦面由轴扫Gaussian传播拟合，实测f仍仅曲线。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "avayu_composite_si_2017",
+              "location": "主文Fig.1/Methods；SI p.10 Imaging with the metasurface lens",
+              "note": "SI称投影物尺寸与lens size相当（约500μm），未独立定义清孔径或给逐配置直径；Fig.1b/S2的125/85/120nm是纳米盘直径，不是透镜口径，图像不量尺估读。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_si_2017",
+                "avayu_composite_2017"
+              ],
+              "display": "有效口径未明确；约500μm为成像尺寸说明"
+            },
+            "na": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Experimental optical set-up；SI p.10成像方法",
+              "note": "Mitutoyo 20X 0.42为收集/继像物镜，不是超透镜NA；未由投影物尺寸、焦斑或图尺倒推器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "器件NA未明确；0.42属收集物镜"
+            },
+            "height_nm": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Sample fabrication",
+              "note": "Au沉积30nm、蚀刻30nm；工艺重复用于Ag/Al，未逐层单列膜厚。200nm为SiO2间隔，不当纳米盘厚度或总堆叠厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "Au30nm；其余金属膜厚未单列"
+            },
+            "material": {
+              "value": "Au/Ag/Al纳米盘三层二元FZP；SiO2间隔200nm；ITO玻璃基底",
+              "source": "avayu_composite_2017",
+              "location": "主文pp.2–3 Fig.1b；p.6制备；SI p.2 Fig.S2",
+              "note": "三层分别针对650/550/450nm；S2实测盘径Au125/Ag85/Al120nm，盘间separation185/195/150nm。S2明确略偏离设计，保留作者separation用词，不推成统一周期；不将这些nm尺寸录为光学口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 650,
+              "source": "avayu_composite_2017",
+              "location": "主文p.4 Fig.2a–c图注及FWHM段；p.5 Fig.3f–i",
+              "note": "该λ实际激光表征，和设计波长一致；不推成连续带宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "盘形结构以偏振不敏感为设计动机；激光实测为线偏振，白光为非偏振",
+              "source": "avayu_composite_2017",
+              "location": "主文p.2结构段；p.6 Experimental optical set-up",
+              "note": "没有核到逐偏振同条件PSF/效率数表，不把设计对称性当所有偏振性能已实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "Chameleon OPO VIS线偏振激光，约140fs、80MHz；白光为Xenon arc lamp",
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Experimental optical set-up",
+              "note": "未给RGB各激光测量的实际光谱线宽；NKT SuperK compact用于STED配置，不混入普通RGB激光表征。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "预期焦区沿传播方向取20个平面，逐面测Gaussian宽度，按ω(z)=ω0√[1+(z/zR)²]拟合找焦面/束腰；Mitutoyo20X/0.42继像，Nanomax606移动样品。",
+              "source": "avayu_composite_si_2017",
+              "location": "SI p.10 Focal spot characterisation/Eq.S2；主文p.4 Fig.2/p.6方法",
+              "note": "作者实测拟合束腰/焦平面；轴向实际步长/范围、像素到物方标定、二维原始PSF、背景/裁剪、重复/不确定度未公开给齐。S4b相对z(μm)不是绝对镜面到焦点距离，不能由20点或该轴反算全局步长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_si_2017",
+                "avayu_composite_2017"
+              ]
+            },
+            "mtf_curve": {
+              "value": "所核主文/SI未见MTF数表或MTF曲线；Fig.2给PSF图及Gaussian剖面，Fig.3i/S3给焦位曲线",
+              "source": "avayu_composite_2017",
+              "location": "主文pp.4–6 Fig.2/3与Data availability；SI pp.3/4/10",
+              "note": "Data availability说明数据可向作者合理请求，未联系作者。期刊附件仅SI和两段STED影片；作者两实验室出版列表回链主文/PDF，DataCite精确关联1条为arXiv预印本而非数据集，GitHub仓库名/描述精确DOI检索0。未核到原始PSF/MTF、采样尺度及处理全条件；不作全网不存在声明，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "avayu_composite_2017",
+              "location": "主文pp.2–3设计段/Eq.1及Fig.1图注",
+              "note": "三层RGB共焦设计1mm→1000μm；白光焦点在约1mm的文字描述不展开为三个精确实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "主焦点功率/入射到透镜的总功率；校准CMOS测两者，Gaussian拟合后在束腰范围积分，作者称覆盖约86%总功率。",
+              "source": "avayu_composite_si_2017",
+              "location": "SI p.10 Lens efficiency calculation；主文p.4效率段",
+              "note": "原文未明确该束腰ROI的形状、半径/直径及1/e还是1/e²定义，不因86%而假定1/e²圆圈；入射功率的实际孔/光束匹配、标定、背景和误差未给齐。5.8–8.7%仅RGB实测范围，未分配各λ，不是带内均值；~10%为理论二元FZP，~40%/4倍为S5反射pFZP模拟。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_si_2017",
+                "avayu_composite_2017"
+              ],
+              "integration_geometry": null,
+              "width_definition": null,
+              "encircled_fraction_approx": 0.86
+            },
+            "chromatic": {
+              "value": "RGB离散点近同焦；离开设计λ仍有分段残余色散（S3）；设计λ其他颜色残余功率<10%主束",
+              "source": "avayu_composite_2017",
+              "location": "主文p.5 Fig.3i及紧接正文；SI p.3 S3",
+              "note": "Fig.3i横轴Wavelength(nm)、纵轴Focal distance(mm)，圆圈为本器件实测、十字为普通FZP、红线为普通FZP理论；S3蓝圈为实测，三彩曲线为理论，黑虚线为550nm普通FZP。没有逐点表/峰位误差，不把图上同焦改成零焦差；<10%是光谱串扰功率比，不是聚焦效率/焦距variation。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "calculation_origin": "authors"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.4 Fig.2后效率段；SI p.10效率定义",
+              "note": "正文仅直报所有测量颜色5.8–8.7%的范围，没有各λ配对；不赋端点给颜色，也不取中点或填带内平均。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "RGB实测范围5.8–8.7%；逐λ未配对"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.5 Fig.3i圆圈；SI p.3 S3蓝圈",
+              "note": "精确逐λ焦点仅曲线，正文共同1mm描述不是各λ独立峰位数表，不填写1000或焦移0。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "逐λ精确f仅曲线；未读图赋值"
+            },
+            "efficiency_lambda_nm": {
+              "value": 650,
+              "source": "avayu_composite_2017",
+              "location": "主文p.4各色效率范围段",
+              "note": "实际测量λ已知，但未公开本λ对应效率，数值继续空。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.4正文及Fig.2d：2.6μm；SI p.4 Fig.S4图注：2.3μm",
+              "note": "两处均针对650nm，S4是轴向Gaussian宽度拟合于计算焦点的FWHM，主文Fig.2d为x剖面。没有原始数据/换算定义解释二者，不择一或平均，不作为两个独立实测样品打点；S4b纵轴Beam width约2.6的曲线也不覆盖图注2.3。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "display": "650nm冲突：主文2.6μm；S4图注2.3μm",
+              "reported_values_um": {
+                "main_fig2d": 2.6,
+                "si_figS4_caption": 2.3
+              }
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.4 Fig.2d仅红光x剖面；SI p.4 S4",
+              "note": "红光主文x剖面与S4宽度未消歧；蓝/绿正文未单列方向，不复制为x数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "display": "方向/红光跨材料差异未消歧"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.4 Fig.2及SI p.4 S4",
+              "note": "没有独立逐λ y向FWHM数表，不从圆斑或另方向复制。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "display": "未给独立y向宽度"
+            }
+          }
+        },
+        {
+          "id": "avayu2017_rgb_residual",
+          "model": "Avayu 2017 · 三层RGB · S3离设计点残余色散",
+          "study_id": "avayu2017",
+          "specimen_id": "triplet_rgb",
+          "module": "",
+          "variant": "可见光三层/双层频谱复用；离散通道与残余色散分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一器件的额外光谱扫描入口；实际点的精确λ/f未知，整条曲线只记一入口，不虚造光谱测量行。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "avayu_composite_si_2017",
+              "location": "主文Fig.1/Methods；SI p.10 Imaging with the metasurface lens",
+              "note": "SI称投影物尺寸与lens size相当（约500μm），未独立定义清孔径或给逐配置直径；Fig.1b/S2的125/85/120nm是纳米盘直径，不是透镜口径，图像不量尺估读。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_si_2017",
+                "avayu_composite_2017"
+              ],
+              "display": "有效口径未明确；约500μm为成像尺寸说明"
+            },
+            "na": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Experimental optical set-up；SI p.10成像方法",
+              "note": "Mitutoyo 20X 0.42为收集/继像物镜，不是超透镜NA；未由投影物尺寸、焦斑或图尺倒推器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "器件NA未明确；0.42属收集物镜"
+            },
+            "height_nm": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Sample fabrication",
+              "note": "Au沉积30nm、蚀刻30nm；工艺重复用于Ag/Al，未逐层单列膜厚。200nm为SiO2间隔，不当纳米盘厚度或总堆叠厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "Au30nm；其余金属膜厚未单列"
+            },
+            "material": {
+              "value": "Au/Ag/Al纳米盘三层二元FZP；SiO2间隔200nm；ITO玻璃基底",
+              "source": "avayu_composite_2017",
+              "location": "主文pp.2–3 Fig.1b；p.6制备；SI p.2 Fig.S2",
+              "note": "三层分别针对650/550/450nm；S2实测盘径Au125/Ag85/Al120nm，盘间separation185/195/150nm。S2明确略偏离设计，保留作者separation用词，不推成统一周期；不将这些nm尺寸录为光学口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ]
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文pp.2–5 Fig.1/2/3；SI p.3 S3",
+              "note": "离散RGB设计/实测450/550/650nm；S3另有离设计点测量但点的精确λ/f未给数表，不由图坐标估点，不填连续消色差带宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "RGB450/550/650nm；S3额外谱点仅曲线",
+              "sample_wavelengths_nm": [
+                450,
+                550,
+                650
+              ]
+            },
+            "polarization": {
+              "value": "盘形结构以偏振不敏感为设计动机；激光实测为线偏振，白光为非偏振",
+              "source": "avayu_composite_2017",
+              "location": "主文p.2结构段；p.6 Experimental optical set-up",
+              "note": "没有核到逐偏振同条件PSF/效率数表，不把设计对称性当所有偏振性能已实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "Chameleon OPO VIS线偏振激光，约140fs、80MHz；白光为Xenon arc lamp",
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Experimental optical set-up",
+              "note": "未给RGB各激光测量的实际光谱线宽；NKT SuperK compact用于STED配置，不混入普通RGB激光表征。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "预期焦区沿传播方向取20个平面，逐面测Gaussian宽度，按ω(z)=ω0√[1+(z/zR)²]拟合找焦面/束腰；Mitutoyo20X/0.42继像，Nanomax606移动样品。",
+              "source": "avayu_composite_si_2017",
+              "location": "SI p.10 Focal spot characterisation/Eq.S2；主文p.4 Fig.2/p.6方法",
+              "note": "作者实测拟合束腰/焦平面；轴向实际步长/范围、像素到物方标定、二维原始PSF、背景/裁剪、重复/不确定度未公开给齐。S4b相对z(μm)不是绝对镜面到焦点距离，不能由20点或该轴反算全局步长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_si_2017",
+                "avayu_composite_2017"
+              ]
+            },
+            "mtf_curve": {
+              "value": "所核主文/SI未见MTF数表或MTF曲线；Fig.2给PSF图及Gaussian剖面，Fig.3i/S3给焦位曲线",
+              "source": "avayu_composite_2017",
+              "location": "主文pp.4–6 Fig.2/3与Data availability；SI pp.3/4/10",
+              "note": "Data availability说明数据可向作者合理请求，未联系作者。期刊附件仅SI和两段STED影片；作者两实验室出版列表回链主文/PDF，DataCite精确关联1条为arXiv预印本而非数据集，GitHub仓库名/描述精确DOI检索0。未核到原始PSF/MTF、采样尺度及处理全条件；不作全网不存在声明，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "avayu_composite_2017",
+              "location": "主文pp.2–3设计段/Eq.1及Fig.1图注",
+              "note": "三层RGB共焦设计1mm→1000μm；白光焦点在约1mm的文字描述不展开为三个精确实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "主焦点功率/入射到透镜的总功率；校准CMOS测两者，Gaussian拟合后在束腰范围积分，作者称覆盖约86%总功率。",
+              "source": "avayu_composite_si_2017",
+              "location": "SI p.10 Lens efficiency calculation；主文p.4效率段",
+              "note": "原文未明确该束腰ROI的形状、半径/直径及1/e还是1/e²定义，不因86%而假定1/e²圆圈；入射功率的实际孔/光束匹配、标定、背景和误差未给齐。5.8–8.7%仅RGB实测范围，未分配各λ，不是带内均值；~10%为理论二元FZP，~40%/4倍为S5反射pFZP模拟。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_si_2017",
+                "avayu_composite_2017"
+              ],
+              "integration_geometry": null,
+              "width_definition": null,
+              "encircled_fraction_approx": 0.86
+            },
+            "chromatic": {
+              "value": "S3离设计波长的实测焦位曲线：三段仍有残余色散；不是一条平坦连续消色差曲线",
+              "source": "avayu_composite_2017",
+              "location": "SI p.3 Fig.S3全图/图注；主文p.5离设计λ段",
+              "note": "Fig.3i横轴Wavelength(nm)、纵轴Focal distance(mm)，圆圈为本器件实测、十字为普通FZP、红线为普通FZP理论；S3蓝圈为实测，三彩曲线为理论，黑虚线为550nm普通FZP。没有逐点表/峰位误差，不把图上同焦改成零焦差；<10%是光谱串扰功率比，不是聚焦效率/焦距variation。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "calculation_origin": "authors"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.4 Fig.2后效率段；SI p.10效率定义",
+              "note": "正文仅直报所有测量颜色5.8–8.7%的范围，没有各λ配对；不赋端点给颜色，也不取中点或填带内平均。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "RGB实测范围5.8–8.7%；逐λ未配对"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "avayu_composite_si_2017",
+              "location": "SI p.3 Fig.S3蓝圈",
+              "note": "x轴Wavelength(nm)、y轴Focal distance(mm)；图示轴400–700nm/约0.8–1.4mm，非逐点精确表。未估读λ/f、不把理论曲线作为实测焦位。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "S3多谱点仅曲线；原始λ/f表缺失"
+            }
+          }
+        },
+        {
+          "id": "avayu2017_control_summary",
+          "model": "Avayu 2017 · 普通FZP对照 · 白光/RGB曲线",
+          "study_id": "avayu2017",
+          "specimen_id": "conventional_fzp",
+          "module": "",
+          "variant": "可见光三层/双层频谱复用；离散通道与残余色散分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "普通二元FZP另配置，不是三层校正器件。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文Fig.3普通FZP或Fig.4多功能器件及Methods",
+              "note": "本配置未给独立有效口径数表；不继承三层成像例子的约500μm物尺寸、不据图尺估读，也不将纳米盘直径当透镜口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "本配置有效口径未明确"
+            },
+            "na": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Experimental optical set-up；SI p.10成像方法",
+              "note": "Mitutoyo 20X 0.42为收集/继像物镜，不是超透镜NA；未由投影物尺寸、焦斑或图尺倒推器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "器件NA未明确；0.42属收集物镜"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文pp.2–5 Fig.1/2/3；SI p.3 S3",
+              "note": "离散RGB设计/实测450/550/650nm；S3另有离设计点测量但点的精确λ/f未给数表，不由图坐标估点，不填连续消色差带宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "RGB450/550/650nm；S3额外谱点仅曲线",
+              "sample_wavelengths_nm": [
+                450,
+                550,
+                650
+              ]
+            },
+            "mtf_curve": {
+              "value": "所核主文/SI未见MTF数表或MTF曲线；Fig.2给PSF图及Gaussian剖面，Fig.3i/S3给焦位曲线",
+              "source": "avayu_composite_2017",
+              "location": "主文pp.4–6 Fig.2/3与Data availability；SI pp.3/4/10",
+              "note": "Data availability说明数据可向作者合理请求，未联系作者。期刊附件仅SI和两段STED影片；作者两实验室出版列表回链主文/PDF，DataCite精确关联1条为arXiv预印本而非数据集，GitHub仓库名/描述精确DOI检索0。未核到原始PSF/MTF、采样尺度及处理全条件；不作全网不存在声明，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "avayu_composite_2017",
+              "location": "主文p.2普通FZP例子；SI p.3 S3黑虚线图注",
+              "note": "普通FZP设计λ550nm/f1mm；实际对照测450/550/650nm，不复制成三个实测焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ]
+            },
+            "material": {
+              "value": "普通二元FZP：连续薄膜的透明环对照",
+              "source": "avayu_composite_2017",
+              "location": "主文p.4普通FZP比较段；p.5 Fig.3a/c–e",
+              "note": "是另一实制配置；未核到该对照单独膜材料/厚度，不继承Au/Ag/Al三层结构或效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "chromatic": {
+              "value": "白光聚焦色散>400μm（作者下界）；RGB轴向图及焦位曲线",
+              "source": "avayu_composite_2017",
+              "location": "主文p.4比较段、p.5 Fig.3a/c–e/i",
+              "note": ">400μm是白光轴向色散下界，不当精确400或单λ有符号焦移；Fig3a/b对比度为展示归一化，不能据两图亮度比较绝对效率。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "avayu2017_control_450",
+          "model": "Avayu 2017 · 普通FZP对照 · 450nm",
+          "study_id": "avayu2017",
+          "specimen_id": "conventional_fzp",
+          "module": "",
+          "variant": "可见光三层/双层频谱复用；离散通道与残余色散分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一普通FZP对照的RGB激光条件。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文Fig.3普通FZP或Fig.4多功能器件及Methods",
+              "note": "本配置未给独立有效口径数表；不继承三层成像例子的约500μm物尺寸、不据图尺估读，也不将纳米盘直径当透镜口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "本配置有效口径未明确"
+            },
+            "na": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Experimental optical set-up；SI p.10成像方法",
+              "note": "Mitutoyo 20X 0.42为收集/继像物镜，不是超透镜NA；未由投影物尺寸、焦斑或图尺倒推器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "器件NA未明确；0.42属收集物镜"
+            },
+            "wavelength_nm": {
+              "value": 450,
+              "source": "avayu_composite_2017",
+              "location": "主文p.5 Fig.3c–e/i图注",
+              "note": "普通FZP实际激光表征λ；保留对照性质。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "mtf_curve": {
+              "value": "所核主文/SI未见MTF数表或MTF曲线；Fig.2给PSF图及Gaussian剖面，Fig.3i/S3给焦位曲线",
+              "source": "avayu_composite_2017",
+              "location": "主文pp.4–6 Fig.2/3与Data availability；SI pp.3/4/10",
+              "note": "Data availability说明数据可向作者合理请求，未联系作者。期刊附件仅SI和两段STED影片；作者两实验室出版列表回链主文/PDF，DataCite精确关联1条为arXiv预印本而非数据集，GitHub仓库名/描述精确DOI检索0。未核到原始PSF/MTF、采样尺度及处理全条件；不作全网不存在声明，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "avayu_composite_2017",
+              "location": "主文p.2普通FZP例子；SI p.3 S3黑虚线图注",
+              "note": "普通FZP设计λ550nm/f1mm；实际对照测450/550/650nm，不复制成三个实测焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ]
+            },
+            "material": {
+              "value": "普通二元FZP：连续薄膜的透明环对照",
+              "source": "avayu_composite_2017",
+              "location": "主文p.4普通FZP比较段；p.5 Fig.3a/c–e",
+              "note": "是另一实制配置；未核到该对照单独膜材料/厚度，不继承Au/Ag/Al三层结构或效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "chromatic": {
+              "value": "白光聚焦色散>400μm（作者下界）；RGB轴向图及焦位曲线",
+              "source": "avayu_composite_2017",
+              "location": "主文p.4比较段、p.5 Fig.3a/c–e/i",
+              "note": ">400μm是白光轴向色散下界，不当精确400或单λ有符号焦移；Fig3a/b对比度为展示归一化，不能据两图亮度比较绝对效率。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.5 Fig.3i十字及c–e轴向图",
+              "note": "实测焦位只有图，不用Eq.2理论或图上坐标反填数值。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "普通FZP实测f仅曲线"
+            }
+          }
+        },
+        {
+          "id": "avayu2017_control_550",
+          "model": "Avayu 2017 · 普通FZP对照 · 550nm",
+          "study_id": "avayu2017",
+          "specimen_id": "conventional_fzp",
+          "module": "",
+          "variant": "可见光三层/双层频谱复用；离散通道与残余色散分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一普通FZP对照的RGB激光条件。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文Fig.3普通FZP或Fig.4多功能器件及Methods",
+              "note": "本配置未给独立有效口径数表；不继承三层成像例子的约500μm物尺寸、不据图尺估读，也不将纳米盘直径当透镜口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "本配置有效口径未明确"
+            },
+            "na": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Experimental optical set-up；SI p.10成像方法",
+              "note": "Mitutoyo 20X 0.42为收集/继像物镜，不是超透镜NA；未由投影物尺寸、焦斑或图尺倒推器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "器件NA未明确；0.42属收集物镜"
+            },
+            "wavelength_nm": {
+              "value": 550,
+              "source": "avayu_composite_2017",
+              "location": "主文p.5 Fig.3c–e/i图注",
+              "note": "普通FZP实际激光表征λ；保留对照性质。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "mtf_curve": {
+              "value": "所核主文/SI未见MTF数表或MTF曲线；Fig.2给PSF图及Gaussian剖面，Fig.3i/S3给焦位曲线",
+              "source": "avayu_composite_2017",
+              "location": "主文pp.4–6 Fig.2/3与Data availability；SI pp.3/4/10",
+              "note": "Data availability说明数据可向作者合理请求，未联系作者。期刊附件仅SI和两段STED影片；作者两实验室出版列表回链主文/PDF，DataCite精确关联1条为arXiv预印本而非数据集，GitHub仓库名/描述精确DOI检索0。未核到原始PSF/MTF、采样尺度及处理全条件；不作全网不存在声明，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "avayu_composite_2017",
+              "location": "主文p.2普通FZP例子；SI p.3 S3黑虚线图注",
+              "note": "普通FZP设计λ550nm/f1mm；实际对照测450/550/650nm，不复制成三个实测焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ]
+            },
+            "material": {
+              "value": "普通二元FZP：连续薄膜的透明环对照",
+              "source": "avayu_composite_2017",
+              "location": "主文p.4普通FZP比较段；p.5 Fig.3a/c–e",
+              "note": "是另一实制配置；未核到该对照单独膜材料/厚度，不继承Au/Ag/Al三层结构或效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "chromatic": {
+              "value": "白光聚焦色散>400μm（作者下界）；RGB轴向图及焦位曲线",
+              "source": "avayu_composite_2017",
+              "location": "主文p.4比较段、p.5 Fig.3a/c–e/i",
+              "note": ">400μm是白光轴向色散下界，不当精确400或单λ有符号焦移；Fig3a/b对比度为展示归一化，不能据两图亮度比较绝对效率。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.5 Fig.3i十字及c–e轴向图",
+              "note": "实测焦位只有图，不用Eq.2理论或图上坐标反填数值。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "普通FZP实测f仅曲线"
+            }
+          }
+        },
+        {
+          "id": "avayu2017_control_650",
+          "model": "Avayu 2017 · 普通FZP对照 · 650nm",
+          "study_id": "avayu2017",
+          "specimen_id": "conventional_fzp",
+          "module": "",
+          "variant": "可见光三层/双层频谱复用；离散通道与残余色散分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一普通FZP对照的RGB激光条件。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文Fig.3普通FZP或Fig.4多功能器件及Methods",
+              "note": "本配置未给独立有效口径数表；不继承三层成像例子的约500μm物尺寸、不据图尺估读，也不将纳米盘直径当透镜口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "本配置有效口径未明确"
+            },
+            "na": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Experimental optical set-up；SI p.10成像方法",
+              "note": "Mitutoyo 20X 0.42为收集/继像物镜，不是超透镜NA；未由投影物尺寸、焦斑或图尺倒推器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "器件NA未明确；0.42属收集物镜"
+            },
+            "wavelength_nm": {
+              "value": 650,
+              "source": "avayu_composite_2017",
+              "location": "主文p.5 Fig.3c–e/i图注",
+              "note": "普通FZP实际激光表征λ；保留对照性质。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "mtf_curve": {
+              "value": "所核主文/SI未见MTF数表或MTF曲线；Fig.2给PSF图及Gaussian剖面，Fig.3i/S3给焦位曲线",
+              "source": "avayu_composite_2017",
+              "location": "主文pp.4–6 Fig.2/3与Data availability；SI pp.3/4/10",
+              "note": "Data availability说明数据可向作者合理请求，未联系作者。期刊附件仅SI和两段STED影片；作者两实验室出版列表回链主文/PDF，DataCite精确关联1条为arXiv预印本而非数据集，GitHub仓库名/描述精确DOI检索0。未核到原始PSF/MTF、采样尺度及处理全条件；不作全网不存在声明，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "avayu_composite_2017",
+              "location": "主文p.2普通FZP例子；SI p.3 S3黑虚线图注",
+              "note": "普通FZP设计λ550nm/f1mm；实际对照测450/550/650nm，不复制成三个实测焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ]
+            },
+            "material": {
+              "value": "普通二元FZP：连续薄膜的透明环对照",
+              "source": "avayu_composite_2017",
+              "location": "主文p.4普通FZP比较段；p.5 Fig.3a/c–e",
+              "note": "是另一实制配置；未核到该对照单独膜材料/厚度，不继承Au/Ag/Al三层结构或效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "chromatic": {
+              "value": "白光聚焦色散>400μm（作者下界）；RGB轴向图及焦位曲线",
+              "source": "avayu_composite_2017",
+              "location": "主文p.4比较段、p.5 Fig.3a/c–e/i",
+              "note": ">400μm是白光轴向色散下界，不当精确400或单λ有符号焦移；Fig3a/b对比度为展示归一化，不能据两图亮度比较绝对效率。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.5 Fig.3i十字及c–e轴向图",
+              "note": "实测焦位只有图，不用Eq.2理论或图上坐标反填数值。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "普通FZP实测f仅曲线"
+            }
+          }
+        },
+        {
+          "id": "avayu2017_sted_l1",
+          "model": "Avayu 2017 · 双层STED形状 · l=1",
+          "study_id": "avayu2017",
+          "specimen_id": "sted_l1",
+          "module": "",
+          "variant": "可见光三层/双层频谱复用；离散通道与残余色散分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "不同拓扑荷/结构分配置；光学形状演示，未宣称实测STED显微成像性能。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文Fig.3普通FZP或Fig.4多功能器件及Methods",
+              "note": "本配置未给独立有效口径数表；不继承三层成像例子的约500μm物尺寸、不据图尺估读，也不将纳米盘直径当透镜口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "本配置有效口径未明确"
+            },
+            "na": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Experimental optical set-up；SI p.10成像方法",
+              "note": "Mitutoyo 20X 0.42为收集/继像物镜，不是超透镜NA；未由投影物尺寸、焦斑或图尺倒推器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "器件NA未明确；0.42属收集物镜"
+            },
+            "height_nm": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Sample fabrication",
+              "note": "Au沉积30nm、蚀刻30nm；工艺重复用于Ag/Al，未逐层单列膜厚。200nm为SiO2间隔，不当纳米盘厚度或总堆叠厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "Au30nm；其余金属膜厚未单列"
+            },
+            "mtf_curve": {
+              "value": "所核主文/SI未见MTF数表或MTF曲线；Fig.2给PSF图及Gaussian剖面，Fig.3i/S3给焦位曲线",
+              "source": "avayu_composite_2017",
+              "location": "主文pp.4–6 Fig.2/3与Data availability；SI pp.3/4/10",
+              "note": "Data availability说明数据可向作者合理请求，未联系作者。期刊附件仅SI和两段STED影片；作者两实验室出版列表回链主文/PDF，DataCite精确关联1条为arXiv预印本而非数据集，GitHub仓库名/描述精确DOI检索0。未核到原始PSF/MTF、采样尺度及处理全条件；不作全网不存在声明，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Fig.4a–d图注；SI p.9 STED设计段",
+              "note": "绿光圆束与红光涡旋共同设计f1mm；未给逐通道精确实测峰位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ]
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Fig.4图注；SI p.9设计段",
+              "note": "绿/红设计中心550/650nm；本例用SuperK超连续谱照明，未单列实验各检出通道中心/带宽，不填作两个单色实测λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "设计550/650nm；SuperK双色图",
+              "design_wavelengths_nm": [
+                550,
+                650
+              ]
+            },
+            "material": {
+              "value": "Au螺旋FZP（拓扑荷l=1）+Ag圆斑FZP；双层SiO2间隔200nm",
+              "source": "avayu_composite_2017",
+              "location": "主文p.5多功能段/p.6 Fig.4；SI p.9",
+              "note": "双层结构独立配置，盘径/间距同三层方案；l=1/l=4两实制器件分开，不继承三层RGB效率/FWHM。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ]
+            },
+            "psf_protocol": {
+              "value": "SuperK compact照明；绿圆斑/红涡旋光学演示，20X0.42继像",
+              "source": "avayu_composite_2017",
+              "location": "主文p.6方法与Fig.4；SI p.9",
+              "note": "演示STED所需自对准形状，不是实际荧光STED分辨率/MTF测试；未读取两段Supplementary Movies，不称影片有原始PSF标定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "chromatic": {
+              "value": "绿/红共焦形状演示；未给逐λ轴向残差/横向通道误差/MTF",
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Fig.4a–d图注",
+              "note": "涡旋与背景透过光干涉形成旋纹/四叶，不将其强度图作为单峰Gaussian FWHM或Strehl。",
+              "basis": "measured",
+              "checked_on": "2026-11-15"
+            }
+          }
+        },
+        {
+          "id": "avayu2017_sted_l4",
+          "model": "Avayu 2017 · 双层STED形状 · l=4",
+          "study_id": "avayu2017",
+          "specimen_id": "sted_l4",
+          "module": "",
+          "variant": "可见光三层/双层频谱复用；离散通道与残余色散分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "不同拓扑荷/结构分配置；光学形状演示，未宣称实测STED显微成像性能。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文Fig.3普通FZP或Fig.4多功能器件及Methods",
+              "note": "本配置未给独立有效口径数表；不继承三层成像例子的约500μm物尺寸、不据图尺估读，也不将纳米盘直径当透镜口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "本配置有效口径未明确"
+            },
+            "na": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Experimental optical set-up；SI p.10成像方法",
+              "note": "Mitutoyo 20X 0.42为收集/继像物镜，不是超透镜NA；未由投影物尺寸、焦斑或图尺倒推器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "器件NA未明确；0.42属收集物镜"
+            },
+            "height_nm": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Sample fabrication",
+              "note": "Au沉积30nm、蚀刻30nm；工艺重复用于Ag/Al，未逐层单列膜厚。200nm为SiO2间隔，不当纳米盘厚度或总堆叠厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "Au30nm；其余金属膜厚未单列"
+            },
+            "mtf_curve": {
+              "value": "所核主文/SI未见MTF数表或MTF曲线；Fig.2给PSF图及Gaussian剖面，Fig.3i/S3给焦位曲线",
+              "source": "avayu_composite_2017",
+              "location": "主文pp.4–6 Fig.2/3与Data availability；SI pp.3/4/10",
+              "note": "Data availability说明数据可向作者合理请求，未联系作者。期刊附件仅SI和两段STED影片；作者两实验室出版列表回链主文/PDF，DataCite精确关联1条为arXiv预印本而非数据集，GitHub仓库名/描述精确DOI检索0。未核到原始PSF/MTF、采样尺度及处理全条件；不作全网不存在声明，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Fig.4a–d图注；SI p.9 STED设计段",
+              "note": "绿光圆束与红光涡旋共同设计f1mm；未给逐通道精确实测峰位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ]
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Fig.4图注；SI p.9设计段",
+              "note": "绿/红设计中心550/650nm；本例用SuperK超连续谱照明，未单列实验各检出通道中心/带宽，不填作两个单色实测λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "设计550/650nm；SuperK双色图",
+              "design_wavelengths_nm": [
+                550,
+                650
+              ]
+            },
+            "material": {
+              "value": "Au螺旋FZP（拓扑荷l=4）+Ag圆斑FZP；双层SiO2间隔200nm",
+              "source": "avayu_composite_2017",
+              "location": "主文p.5多功能段/p.6 Fig.4；SI p.9",
+              "note": "双层结构独立配置，盘径/间距同三层方案；l=1/l=4两实制器件分开，不继承三层RGB效率/FWHM。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ]
+            },
+            "psf_protocol": {
+              "value": "SuperK compact照明；绿圆斑/红涡旋光学演示，20X0.42继像",
+              "source": "avayu_composite_2017",
+              "location": "主文p.6方法与Fig.4；SI p.9",
+              "note": "演示STED所需自对准形状，不是实际荧光STED分辨率/MTF测试；未读取两段Supplementary Movies，不称影片有原始PSF标定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "chromatic": {
+              "value": "绿/红共焦形状演示；未给逐λ轴向残差/横向通道误差/MTF",
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Fig.4a–d图注",
+              "note": "涡旋与背景透过光干涉形成旋纹/四叶，不将其强度图作为单峰Gaussian FWHM或Strehl。",
+              "basis": "measured",
+              "checked_on": "2026-11-15"
+            }
+          }
+        },
+        {
+          "id": "avayu2017_anomalous_summary",
+          "model": "Avayu 2017 · 异常色散 · 三色设计/图像面",
+          "study_id": "avayu2017",
+          "specimen_id": "anomalous_rgb",
+          "module": "",
+          "variant": "可见光三层/双层频谱复用；离散通道与残余色散分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "不是消色差校正，作为有意色散控制配置；具体实际λ/精确焦点未核。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文Fig.3普通FZP或Fig.4多功能器件及Methods",
+              "note": "本配置未给独立有效口径数表；不继承三层成像例子的约500μm物尺寸、不据图尺估读，也不将纳米盘直径当透镜口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "本配置有效口径未明确"
+            },
+            "na": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Experimental optical set-up；SI p.10成像方法",
+              "note": "Mitutoyo 20X 0.42为收集/继像物镜，不是超透镜NA；未由投影物尺寸、焦斑或图尺倒推器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "器件NA未明确；0.42属收集物镜"
+            },
+            "mtf_curve": {
+              "value": "所核主文/SI未见MTF数表或MTF曲线；Fig.2给PSF图及Gaussian剖面，Fig.3i/S3给焦位曲线",
+              "source": "avayu_composite_2017",
+              "location": "主文pp.4–6 Fig.2/3与Data availability；SI pp.3/4/10",
+              "note": "Data availability说明数据可向作者合理请求，未联系作者。期刊附件仅SI和两段STED影片；作者两实验室出版列表回链主文/PDF，DataCite精确关联1条为arXiv预印本而非数据集，GitHub仓库名/描述精确DOI检索0。未核到原始PSF/MTF、采样尺度及处理全条件；不作全网不存在声明，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "material": {
+              "value": "异常色散多层FZP；短波先聚焦",
+              "source": "avayu_composite_2017",
+              "location": "主文p.5最后结果段/p.6 Fig.4e",
+              "note": "不同焦距目标的另一个器件；未单列该配置几何/层厚，不套用校正器件NA/效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.5异常色散段/p.6 Fig.4e",
+              "note": "本例只写蓝/绿/红通道，未单独给实际中心λ/带宽；不自动复制450/550/650nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "异常色散蓝/绿/红；该例中心λ未单列"
+            },
+            "chromatic": {
+              "value": "蓝/绿/红设计焦位300/400/500μm；Fig4e给z0.3/0.4/0.5mm图像面",
+              "source": "avayu_composite_2017",
+              "location": "主文p.5异常色散设计段及p.6 Fig.4e",
+              "note": "正文将焦距写为设计目标、图4e为实测功能演示，未给独立拟合峰位表；不把图像采集z面升级为逐λ精确实测f或本库轴向残差。",
+              "basis": "measured",
+              "checked_on": "2026-11-15"
+            }
+          }
+        },
+        {
+          "id": "avayu2017_anomalous_300",
+          "model": "Avayu 2017 · 异常色散 · 蓝通道 · 设计300μm",
+          "study_id": "avayu2017",
+          "specimen_id": "anomalous_rgb",
+          "module": "",
+          "variant": "可见光三层/双层频谱复用；离散通道与残余色散分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一有意异常色散器件的通道设计/图像面，不伪造实际单色波长或精确峰位。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文Fig.3普通FZP或Fig.4多功能器件及Methods",
+              "note": "本配置未给独立有效口径数表；不继承三层成像例子的约500μm物尺寸、不据图尺估读，也不将纳米盘直径当透镜口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "本配置有效口径未明确"
+            },
+            "na": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Experimental optical set-up；SI p.10成像方法",
+              "note": "Mitutoyo 20X 0.42为收集/继像物镜，不是超透镜NA；未由投影物尺寸、焦斑或图尺倒推器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "器件NA未明确；0.42属收集物镜"
+            },
+            "mtf_curve": {
+              "value": "所核主文/SI未见MTF数表或MTF曲线；Fig.2给PSF图及Gaussian剖面，Fig.3i/S3给焦位曲线",
+              "source": "avayu_composite_2017",
+              "location": "主文pp.4–6 Fig.2/3与Data availability；SI pp.3/4/10",
+              "note": "Data availability说明数据可向作者合理请求，未联系作者。期刊附件仅SI和两段STED影片；作者两实验室出版列表回链主文/PDF，DataCite精确关联1条为arXiv预印本而非数据集，GitHub仓库名/描述精确DOI检索0。未核到原始PSF/MTF、采样尺度及处理全条件；不作全网不存在声明，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "material": {
+              "value": "异常色散多层FZP；短波先聚焦",
+              "source": "avayu_composite_2017",
+              "location": "主文p.5最后结果段/p.6 Fig.4e",
+              "note": "不同焦距目标的另一个器件；未单列该配置几何/层厚，不套用校正器件NA/效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.5异常色散段/p.6 Fig.4e",
+              "note": "本例只写蓝/绿/红通道，未单独给实际中心λ/带宽；不自动复制450/550/650nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "蓝通道；实际中心λ未单列"
+            },
+            "chromatic": {
+              "value": "蓝/绿/红设计焦位300/400/500μm；Fig4e给z0.3/0.4/0.5mm图像面",
+              "source": "avayu_composite_2017",
+              "location": "主文p.5异常色散设计段及p.6 Fig.4e",
+              "note": "正文将焦距写为设计目标、图4e为实测功能演示，未给独立拟合峰位表；不把图像采集z面升级为逐λ精确实测f或本库轴向残差。",
+              "basis": "measured",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 300,
+              "source": "avayu_composite_2017",
+              "location": "主文p.5异常色散段，蓝/绿/红顺序300/400/500μm",
+              "note": "正文明确designed，图像z面相符；单位经视觉核为μm，不填逐λ实测焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Fig.4e",
+              "note": "只有指定z面实测图，未独立寻峰/数表；实际单色λ也未单列。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "设计f/图像面不是独立峰位"
+            }
+          }
+        },
+        {
+          "id": "avayu2017_anomalous_400",
+          "model": "Avayu 2017 · 异常色散 · 绿通道 · 设计400μm",
+          "study_id": "avayu2017",
+          "specimen_id": "anomalous_rgb",
+          "module": "",
+          "variant": "可见光三层/双层频谱复用；离散通道与残余色散分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一有意异常色散器件的通道设计/图像面，不伪造实际单色波长或精确峰位。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文Fig.3普通FZP或Fig.4多功能器件及Methods",
+              "note": "本配置未给独立有效口径数表；不继承三层成像例子的约500μm物尺寸、不据图尺估读，也不将纳米盘直径当透镜口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "本配置有效口径未明确"
+            },
+            "na": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Experimental optical set-up；SI p.10成像方法",
+              "note": "Mitutoyo 20X 0.42为收集/继像物镜，不是超透镜NA；未由投影物尺寸、焦斑或图尺倒推器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "器件NA未明确；0.42属收集物镜"
+            },
+            "mtf_curve": {
+              "value": "所核主文/SI未见MTF数表或MTF曲线；Fig.2给PSF图及Gaussian剖面，Fig.3i/S3给焦位曲线",
+              "source": "avayu_composite_2017",
+              "location": "主文pp.4–6 Fig.2/3与Data availability；SI pp.3/4/10",
+              "note": "Data availability说明数据可向作者合理请求，未联系作者。期刊附件仅SI和两段STED影片；作者两实验室出版列表回链主文/PDF，DataCite精确关联1条为arXiv预印本而非数据集，GitHub仓库名/描述精确DOI检索0。未核到原始PSF/MTF、采样尺度及处理全条件；不作全网不存在声明，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "material": {
+              "value": "异常色散多层FZP；短波先聚焦",
+              "source": "avayu_composite_2017",
+              "location": "主文p.5最后结果段/p.6 Fig.4e",
+              "note": "不同焦距目标的另一个器件；未单列该配置几何/层厚，不套用校正器件NA/效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.5异常色散段/p.6 Fig.4e",
+              "note": "本例只写蓝/绿/红通道，未单独给实际中心λ/带宽；不自动复制450/550/650nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "绿通道；实际中心λ未单列"
+            },
+            "chromatic": {
+              "value": "蓝/绿/红设计焦位300/400/500μm；Fig4e给z0.3/0.4/0.5mm图像面",
+              "source": "avayu_composite_2017",
+              "location": "主文p.5异常色散设计段及p.6 Fig.4e",
+              "note": "正文将焦距写为设计目标、图4e为实测功能演示，未给独立拟合峰位表；不把图像采集z面升级为逐λ精确实测f或本库轴向残差。",
+              "basis": "measured",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 400,
+              "source": "avayu_composite_2017",
+              "location": "主文p.5异常色散段，蓝/绿/红顺序300/400/500μm",
+              "note": "正文明确designed，图像z面相符；单位经视觉核为μm，不填逐λ实测焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Fig.4e",
+              "note": "只有指定z面实测图，未独立寻峰/数表；实际单色λ也未单列。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "设计f/图像面不是独立峰位"
+            }
+          }
+        },
+        {
+          "id": "avayu2017_anomalous_500",
+          "model": "Avayu 2017 · 异常色散 · 红通道 · 设计500μm",
+          "study_id": "avayu2017",
+          "specimen_id": "anomalous_rgb",
+          "module": "",
+          "variant": "可见光三层/双层频谱复用；离散通道与残余色散分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一有意异常色散器件的通道设计/图像面，不伪造实际单色波长或精确峰位。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文Fig.3普通FZP或Fig.4多功能器件及Methods",
+              "note": "本配置未给独立有效口径数表；不继承三层成像例子的约500μm物尺寸、不据图尺估读，也不将纳米盘直径当透镜口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "本配置有效口径未明确"
+            },
+            "na": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Experimental optical set-up；SI p.10成像方法",
+              "note": "Mitutoyo 20X 0.42为收集/继像物镜，不是超透镜NA；未由投影物尺寸、焦斑或图尺倒推器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "器件NA未明确；0.42属收集物镜"
+            },
+            "mtf_curve": {
+              "value": "所核主文/SI未见MTF数表或MTF曲线；Fig.2给PSF图及Gaussian剖面，Fig.3i/S3给焦位曲线",
+              "source": "avayu_composite_2017",
+              "location": "主文pp.4–6 Fig.2/3与Data availability；SI pp.3/4/10",
+              "note": "Data availability说明数据可向作者合理请求，未联系作者。期刊附件仅SI和两段STED影片；作者两实验室出版列表回链主文/PDF，DataCite精确关联1条为arXiv预印本而非数据集，GitHub仓库名/描述精确DOI检索0。未核到原始PSF/MTF、采样尺度及处理全条件；不作全网不存在声明，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "material": {
+              "value": "异常色散多层FZP；短波先聚焦",
+              "source": "avayu_composite_2017",
+              "location": "主文p.5最后结果段/p.6 Fig.4e",
+              "note": "不同焦距目标的另一个器件；未单列该配置几何/层厚，不套用校正器件NA/效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.5异常色散段/p.6 Fig.4e",
+              "note": "本例只写蓝/绿/红通道，未单独给实际中心λ/带宽；不自动复制450/550/650nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "红通道；实际中心λ未单列"
+            },
+            "chromatic": {
+              "value": "蓝/绿/红设计焦位300/400/500μm；Fig4e给z0.3/0.4/0.5mm图像面",
+              "source": "avayu_composite_2017",
+              "location": "主文p.5异常色散设计段及p.6 Fig.4e",
+              "note": "正文将焦距写为设计目标、图4e为实测功能演示，未给独立拟合峰位表；不把图像采集z面升级为逐λ精确实测f或本库轴向残差。",
+              "basis": "measured",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 500,
+              "source": "avayu_composite_2017",
+              "location": "主文p.5异常色散段，蓝/绿/红顺序300/400/500μm",
+              "note": "正文明确designed，图像z面相符；单位经视觉核为μm，不填逐λ实测焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Fig.4e",
+              "note": "只有指定z面实测图，未独立寻峰/数表；实际单色λ也未单列。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "设计f/图像面不是独立峰位"
+            }
+          }
+        },
+        {
+          "id": "avayu2017_pfzp_model",
+          "model": "Avayu 2017 · 反射pFZP · 效率增强模拟",
+          "study_id": "avayu2017",
+          "specimen_id": "reflective_pfzp_model",
+          "module": "",
+          "variant": "可见光三层/双层频谱复用；离散通道与残余色散分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "模型配置，不能当第六个实制器件或实验效率增益。",
+          "values": {
+            "mtf_curve": {
+              "value": "所核主文/SI未见MTF数表或MTF曲线；Fig.2给PSF图及Gaussian剖面，Fig.3i/S3给焦位曲线",
+              "source": "avayu_composite_2017",
+              "location": "主文pp.4–6 Fig.2/3与Data availability；SI pp.3/4/10",
+              "note": "Data availability说明数据可向作者合理请求，未联系作者。期刊附件仅SI和两段STED影片；作者两实验室出版列表回链主文/PDF，DataCite精确关联1条为arXiv预印本而非数据集，GitHub仓库名/描述精确DOI检索0。未核到原始PSF/MTF、采样尺度及处理全条件；不作全网不存在声明，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "avayu_composite_si_2017",
+              "location": "SI p.5 S5/p.8 pFZP设计",
+              "note": "三层RGB反射pFZP模拟，不是实制三层透射器件效率实验。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "RGB反射pFZP模拟"
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "avayu_composite_si_2017",
+              "location": "SI p.5 S5图注",
+              "note": "模拟截面在z1mm；不是实测焦位。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "三层相位FZP+共同反射镜（提议设计）",
+              "source": "avayu_composite_si_2017",
+              "location": "SI p.5 S5a/p.8效率设计段",
+              "note": "不同反射结构/模拟配置，不计额外实制器件；相对镜距离为往返π相位。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "avayu_composite_si_2017",
+              "location": "SI p.8 pFZP讨论、p.5 S5b",
+              "note": "约40%及4倍提高为理论/beam-propagation模拟，未给本文该方案实测效率或逐λ标定表；模拟曲线峰值不当实验积分功率。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "模拟/理论约40%与4倍；非实测效率"
+            }
+          }
+        },
+        {
+          "id": "avayu2017_imaging",
+          "model": "Avayu 2017 · RGB成像系统 · Fig.3j/S7",
+          "study_id": "avayu2017",
+          "specimen_id": "rgb_imaging_system",
+          "module": "",
+          "variant": "可见光三层/双层频谱复用；离散通道与残余色散分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "与裸三层透镜共用实物但增加投影/继像系统配置，不能据此虚增物理样品或继承未给的系统MTF。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "avayu_composite_si_2017",
+              "location": "主文Fig.1/Methods；SI p.10 Imaging with the metasurface lens",
+              "note": "SI称投影物尺寸与lens size相当（约500μm），未独立定义清孔径或给逐配置直径；Fig.1b/S2的125/85/120nm是纳米盘直径，不是透镜口径，图像不量尺估读。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_si_2017",
+                "avayu_composite_2017"
+              ],
+              "display": "有效口径未明确；约500μm为成像尺寸说明"
+            },
+            "na": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文p.6 Experimental optical set-up；SI p.10成像方法",
+              "note": "Mitutoyo 20X 0.42为收集/继像物镜，不是超透镜NA；未由投影物尺寸、焦斑或图尺倒推器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "器件NA未明确；0.42属收集物镜"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "avayu_composite_2017",
+              "location": "主文pp.2–5 Fig.1/2/3；SI p.3 S3",
+              "note": "RGB离散设计中心450/550/650nm来自裸镜设计，成像使用LED投影仪，不是同一单色激光测量；本系统各通道实际中心λ/谱宽未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "投影仪RGB图样；系统通道光谱未单列",
+              "sample_wavelengths_nm": [
+                450,
+                550,
+                650
+              ]
+            },
+            "mtf_curve": {
+              "value": "所核主文/SI未见MTF数表或MTF曲线；Fig.2给PSF图及Gaussian剖面，Fig.3i/S3给焦位曲线",
+              "source": "avayu_composite_2017",
+              "location": "主文pp.4–6 Fig.2/3与Data availability；SI pp.3/4/10",
+              "note": "Data availability说明数据可向作者合理请求，未联系作者。期刊附件仅SI和两段STED影片；作者两实验室出版列表回链主文/PDF，DataCite精确关联1条为arXiv预印本而非数据集，GitHub仓库名/描述精确DOI检索0。未核到原始PSF/MTF、采样尺度及处理全条件；不作全网不存在声明，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "avayu_composite_2017",
+              "location": "主文pp.2–3设计段/Eq.1及Fig.1图注",
+              "note": "三层RGB共焦设计1mm→1000μm；白光焦点在约1mm的文字描述不展开为三个精确实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "三层RGB透镜+投影仪/4f物缩小+Mitutoyo20X0.42+彩色CCD",
+              "source": "avayu_composite_si_2017",
+              "location": "SI pp.7/10 S7/Imaging；主文Fig.3j",
+              "note": "使用同一三层透镜的系统配置，非额外独立实物样品。投影物约500μm；物距/放大率/通道谱宽与全场指标未给齐。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_si_2017",
+                "avayu_composite_2017"
+              ]
+            },
+            "chromatic": {
+              "value": "RGB字样同屏成像；未量化横向色差/全视场MTF",
+              "source": "avayu_composite_2017",
+              "location": "主文Fig.3j；SI Fig.S7",
+              "note": "字样清晰或白焦点不证明连续消色差、全场零横向色差或绝对效率。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_2017",
+                "avayu_composite_si_2017"
+              ]
+            },
+            "psf_protocol": {
+              "value": "RGB字样的直接彩色成像演示；无定量线对对比度或MTF",
+              "source": "avayu_composite_si_2017",
+              "location": "主文p.5 Fig.3j；SI pp.7/10 Fig.S7/成像方法",
+              "note": "4f缩小物尺寸以适应透镜NA，再20X物镜放大到CCD；没有PSNR/SNR、场点MTF/横向通道位移，未数字重建。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "avayu_composite_si_2017",
+                "avayu_composite_2017"
+              ]
+            }
+          }
         }
       ],
-      "scope": "22项原始研究、85个器件/测量/系统配置、719条记录。线/点聚焦、近红外离散校正与可见连续设计分开；谱点和角度条件不计更多实物，缺值不补零，本库焦差计算附明确参考面。",
+      "scope": "23项原始研究、92个器件/测量/系统配置、736条记录。离散RGB、连续设计、普通色散/异常色散对照、涡旋形状、系统成像和模拟分开；同实物谱点/曲线不增加样品，未消歧值不打点。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
