@@ -50,6 +50,8 @@
 
 `incident_power_uw`与`focused_power_uw`保存原表的μW光功率，须有实际波长、`basis: measured`、`quantity: optical_power`、`original_unit: μW`和`efficiency_protocol`，非负且保留原列头/数值精度。原列名写intensity但单位为μW时按功率量纲说明，不当W/m²；未知积分焦圈/功率计/校准继续注明。作者由功率比给出的效率可为`derived_from_measurement`/`calculation_origin: authors`，与模拟百分数分开；本库只做舍入一致性检查时不覆盖作者值或创建新测量。
 
+当作者明确提供圆形口径的几何设计式及D/NA，而未印出数值设计f时，可在`design_focal_um`标`basis: model`、`calculation_origin: atlas`、`calculation_method: circular_aperture_na_relation`，保留`formula: diameter_um / (2 * tan(asin(na)))`、与本行一致的`inputs`、`rounding_increment_um: 0.01`和`approximate: true`。该方法要求D>0、0<NA<1，并核对0.01μm舍入结果；display明确本库按作者式计算，不能称作者原始实测、复制到`measured_focal_um`或默认与轴向z相减。其他历史设计计算仍按各自方法和证据保留。`value:null`的焦移界限可附`bound`及实际谱点，但不把界限3μm当精确数值打点；效率区间也不自动生成逐λ或均值。
+
 `aoi_deg`是入射光相对光轴的测量角度，不是FOV；须有`angle_reference: incident_beam_to_optical_axis`、`azimuth_deg`（未知null）及`psf_protocol`说明光路/焦面。固定传感器面PSF不代表该波长最佳焦距，轴向扫描步长不替代横向物方标尺。不同光源/继像条件可在同一结构配置中分测量行，不虚增物理样品。
 
 `system_contrast_protocol`区分作者称MTF contrast的USAF线对Michelson对比度与PSF-FFT/严格正弦MTF。`metric_kind: usaf_michelson_linepair_contrast`、`direction_aggregation`（horizontal/vertical/mean_of_horizontal_vertical）、`frequency_unit: lp/mm`、`field_point`（未知null）、实际谱点和`processing_stage`必须保留；captured标作者`derived_from_measurement`、deconvolved标`reconstruction`，不能互换或把横纵平均改成独立S/T。多谱点汇总不绑定一个数值波长。MTF低于0.01的阈值不是频率测量值，中心像素/传感器圆域总计数也不混入聚焦功率效率。
