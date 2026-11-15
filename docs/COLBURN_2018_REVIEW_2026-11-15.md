@@ -68,3 +68,11 @@ v0.3.17新增1研究、12配置26行：两裸镜各汇总+三LED共8行；普通
 共享指标ID保持不变，SSIM列名改为“图像SSIM（参考/处理见说明）”，避免把普通直拍结果标成重建；平均效率列名/定义明确波段或已测波长集合及统计条件，图点标签保留“三LED平均（非全谱积分）”。既有Tseng等重建结果仍按各格性质保留，未改历史数值或分享轴ID。
 
 本地校验/构建、234项测试、diff检查通过。独立无头Google Chrome核两作者平均效率63/57、两跨色SSIM0.748/0.956与投影/点进表、约NA标记、26行12配置5材料同编号/引用往返、CSV/分享、逐λf/效率/FWHM缺值、可见光筛选及六视口通过；已实际查看效率/SSIM桌面与320截图，无脚本错误/溢出。全量25研究793行/可见光21研究730行符合。Science403，UW主PDF/官方主PDF/SI/元数据均200，PDF魔数/三个SHA与JSON身份核通过。报告仅`/tmp/lens-mtf-audit/colburn2018-qa-local.json`。待PR/Pages线上验收。
+
+## 实际发布验收
+
+PR [#116](https://github.com/SelinLee/lens-evidence-atlas/pull/116)头`ca83d118925e1fed43b2ebed3e127da5227cfec5`通过CI43667770934，合并`b1217dc850a357a80d74926911cefc6d68e66714`；主线CI43667898844/Pages43667898780均成功。公开12文件逐字节一致，devices-data.js SHA256=`870f14023e6f18a2ef2fc937b009c54f742cc64b221641e00fd79e5fca7cdea2`。
+
+线上独立无头Google Chrome复核两作者谱点均值63/57、两蓝对红SSIM0.748/0.956及投影/图点进表、约NA标记、26行12配置5材料同编号/引用往返、CSV/分享、缺值、可见光筛选和六视口通过；已实际查看线上效率/SSIM桌面与320图，无脚本错误/溢出。全量25研究793行与可见光21研究730行符合。Science403；UW正式主文/官方云主文/SI/JSON均200，PDF魔数/三SHA和JSON身份核。官方主PDF/SI与UW主PDF各查0嵌入文件，未发现内嵌原始PSF/MTF。报告仅`/tmp/lens-mtf-audit/colburn2018-qa-live.json`与`colburn2018-live-hashes.json`。
+
+001t只关闭上述有限核验/录入/发布批次，原始数组、逐λ最佳f/效率/CI数字、方向/采样/ROI及复原完整条件仍缺。已继续[新云入口对此前资料的补检](PMC_CLOUD_RECHECK_2026-11-15.md)，先核用户指定400μm器件；目前仅取得同DOI元数据/非截断10对象清单，没有预填新测量，目标active。
