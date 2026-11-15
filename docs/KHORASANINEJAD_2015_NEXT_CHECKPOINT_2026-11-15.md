@@ -15,5 +15,6 @@ Pan2023正式原作R1指向[Aieta et al., Multiwavelength achromatic metasurface
 - 原始作者[论文条目](https://capasso.seas.harvard.edu/publications/achromatic-metasurface-lens-telecommunication-wavelengths)及ACS原页由网页检索返回题录/摘要；作者托管[PDF](https://capasso.seas.harvard.edu/sites/g/files/omnuum6306/files/capasso/files/acs_nanolett_5b01727.pdf)只读到检索返回的首页/引言节选，未完成逐图/方法核验。
 - 本机独立无头Chrome作者PDF403，ACS原页403/“请稍候…”；未取得有效本机PDF，不能把网络索引解析文本说成200下载或视觉核。
 - 主文/SI、Data availability、原始PSF/逐λ数表/作者数据仓库均待继续查，未联系作者。摘要“f保持不变”不填成三个相同f或零残余色差。
+- 11-15本机Chrome请求Crossref主DOI元数据200，核线上出版2015-07-14、期次2015-08-12及正式题名/主资源链接；`.s001`组件查询404，只说明该查询未匹配，不能据此断言无SI。有效元数据仅`/tmp/lens-mtf-audit/khor2015-metadata.json`，不是论文PDF或支持数据。
 
 下一步先取合法作者稿/正式SI并视觉核，确定线聚焦/口径维度、NA/设计f、实际轴扫及残余焦差、焦斑/效率分母。不同结构与模拟/实测分列，同篇材料统一编号；缺原始数值留空，不估图。
