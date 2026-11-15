@@ -673,6 +673,51 @@
       "kind": "published_figure",
       "checked_on": "2026-11-15",
       "scope": "正式PMC正文图像元素定位后独立Chrome request200取得WebP，22234字节，SHA256 c79a4639e6bf3d318a45adacf281400edb8f20197468f5eea224a44aba29d2a6；已视觉核。Fig.6图内第5点明确575nm，与方法576nm有冲突；横向μm/轴向mm及归一化曲线已核。Da=D/4为同实物截光，峰位/宽度不估点，不当原始数组。"
+    },
+    {
+      "id": "colburn_computational_2018",
+      "title": "Colburn, Zhan & Majumdar (2018): Metasurface optics for full-color computational imaging",
+      "doi": "10.1126/sciadv.aar2114",
+      "url": "https://www.science.org/doi/10.1126/sciadv.aar2114",
+      "kind": "peer_reviewed_paper",
+      "checked_on": "2026-11-15",
+      "scope": "正式原始研究：Science Advances4(2),eaar2114，2018-02-09；Science入口403，题录/数值回到同篇UW托管正式排版与PMC正式云PDF/SI核。一篇一编号；计算成像/EDOF不称裸镜连续零色差。后续引用Avayu2017在正式参考24实际核，未用引用量/IF。"
+    },
+    {
+      "id": "colburn_computational_author_2018",
+      "publication_source": "colburn_computational_2018",
+      "title": "Colburn et al. (2018): author UW-hosted published paper — 7-page file",
+      "url": "https://labs.ece.uw.edu/amlab/Papers_Journals/Shane_Full_color_imaging.pdf",
+      "kind": "author_hosted_published_paper",
+      "checked_on": "2026-11-15",
+      "scope": "Chrome200有效7页/571626字节；前6页为正式论文，末页出版信息。SHA256 88dba7698443995f5e09baa3a310ca5b82d2850d921e81145e858b7882cdf8cb。限定读摘要/pp.2–6设计、相关结果/方法/数据声明/参考24，视觉核pp.2–5 Fig1–4/公式/单位；200μm及633nm已核，提取μm误成mm不采。两镜D/f200μm；作者三LED平均效率63/57%、原始PSF/MTF曲线和数字复原分开，未估图。"
+    },
+    {
+      "id": "colburn_computational_pdf_2018",
+      "publication_source": "colburn_computational_2018",
+      "title": "Colburn et al. (2018): official PMC Cloud published PDF, PMC5817919.1",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC5817919.1/PMC5817919.1.pdf",
+      "kind": "repository_published_paper",
+      "checked_on": "2026-11-15",
+      "scope": "官方新云目录200取得6页/527373字节，SHA256 5982b5abc74a019ff5a09f8ccaec2acd7d284485606f784cb1c8d69e5e4b2856；MD5 bcc6fd2053987ba65f7db4e35c1adc81与官方JSON一致。文字核200μm、63/57%、579cycles/mm、0.209等与UW正式版同条述，图视觉核用UW版，不冒称每像素版本相同。"
+    },
+    {
+      "id": "colburn_computational_si_2018",
+      "publication_source": "colburn_computational_2018",
+      "title": "Colburn et al. (2018): official Supplementary Materials — aar2114_SM.pdf",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC5817919.1/aar2114_SM.pdf",
+      "kind": "supplementary_information",
+      "checked_on": "2026-11-15",
+      "scope": "官方新云目录200取得13页/1557563字节，SHA256 92fc4ee971c580cef913e278a13afee812f648ad362c1108ef284e3bffa2f719；MD5 3f992a493c5867be9a8169dc639d75c2与官方JSON一致。读§1–5及S1–S10相关图注，视觉核p3 SSIM/MTF公式、p8 S4/S5、p9 S6、p10 S7、p11 S8、p12 S9、p13 S10。S6A α0/20π/40π/60π与B0/40π/80π按各自条件；S10每LED重复3次/95%CI曲线不估数。SSIM0.748/0.956为同系统蓝对红参考，不是真值评价，图号/差值舍入差异留注；没有原始PSF/MTF数组。"
+    },
+    {
+      "id": "colburn_computational_cloud_2018",
+      "publication_source": "colburn_computational_2018",
+      "title": "Colburn et al. (2018): official PMC Cloud version metadata and media inventory",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC5817919.1/PMC5817919.1.json",
+      "kind": "repository_metadata",
+      "checked_on": "2026-11-15",
+      "scope": "官方README/Cloud文档确认2026-08旧OA接口停用，匿名HTTPS新路径可读。prefix清单10对象，JSON200核DOI/题名、version1、is_manuscript=false、is_retracted=false、CC BY-NC及主PDF/SI媒体MD5；实际文件MD5逐项匹配并另算SHA。目录只有4期刊JPEG/1SI/索引和主文JSON/XML/TXT/PDF，非原始PSF/MTF数据包；未把OA标志替代文件可读性。作者出版列表条目63回链主文；DataCite精确关联1条为arXiv预印本非数据、GitHub仓库名描述精确DOI0。"
     }
   ],
   "domains": {
@@ -3346,14 +3391,18 @@
         },
         {
           "id": "ssim",
-          "label": "实验重建SSIM (1)",
-          "definition": "相对参考图像的结构相似性；不能当光学分辨率或通用合格率。",
-          "conditions": "参考图像、重建与聚合协议",
+          "label": "图像SSIM（参考/处理见说明；1）",
+          "definition": "相对指定参考图像/通道的结构相似性，直接成像与数字重建的性质逐格保留；不能当光学分辨率、SNR或通用合格率。",
+          "conditions": "参考图像/通道、直接成像或重建、配准与聚合协议；红通道作参考不等无像差真值",
           "numeric": true,
           "definition_refs": [
             {
               "source": "tseng_neural_si_2021",
               "location": "SI p.43 Table12"
+            },
+            {
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.3 §3蓝图对红图SSIM及主文p.3处理条件"
             }
           ],
           "axis_bounds": {
@@ -3467,14 +3516,18 @@
         },
         {
           "id": "efficiency_band_mean_pct",
-          "label": "带内聚焦效率均值 (%)",
-          "definition": "作者报告的工作波段内聚焦效率平均值，不作为每个波长效率、最大效率或无偏振总效率。",
+          "label": "作者平均聚焦效率（统计见说明；%）",
+          "definition": "作者报告的工作波段内或已测波长集合的平均聚焦效率；实际谱点/权重/平均类型逐格保留，不默认连续全谱积分，不作为每λ、最大或无偏振总效率。",
           "conditions": "波段、谱权重/采样、偏振、参考功率、焦圈和重复样品；未报告权重则明确缺失",
           "numeric": true,
           "definition_refs": [
             {
               "source": "wang_visible_2018",
               "location": "PDF p.1 Abstract；p.4 Fig.3及对应正文"
+            },
+            {
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2三LED谱点平均效率；SI p.13 S10"
             }
           ],
           "axis_bounds": {
@@ -118943,9 +118996,3535 @@
               "checked_on": "2026-11-15"
             }
           }
+        },
+        {
+          "id": "colburn2018_singlet_summary",
+          "model": "Colburn 2018 · α0π · 三LED平均（非全谱积分）",
+          "study_id": "colburn2018",
+          "specimen_id": "singlet",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "两种结构分配置；均值只在汇总行，RGB参考面条件不增加物理样品。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.4 Discussion：small(200μm) focal length and aperture width",
+              "note": "作者口径用width称谓，Fig.1F/G为圆盘图像；单位视觉核为μm，文本提取误成mm。不从图尺估D或用NA反推。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计段及Fig.1D/E图注",
+              "note": "两镜在550nm设计f200μm；实测LED绿光530nm参考焦面的位置未单列，不把200填作各λ实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 633,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构段、p.5 Fabrication",
+              "note": "SiN薄膜/纳米柱名义633nm；熔石英基底不计入此高度，8nm Au/Pd临时消电荷层与Al硬掩膜随后移除。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "作者可见光连续设计/白光成像目标400–700nm；实测只有三个约30nm宽LED，不代表逐λ同焦或全场连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "与连续设计/计算成像声明配对；不是单镜实测连续零色差波段。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2/成像段；SI p.8 S4/S5、p.13 S10",
+              "note": "实际三LED中心455/530/625nm，模拟400/550/700nm另记；汇总不伪造一个测量λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "实测LED455/530/625nm；约30nm谱宽",
+              "sample_wavelengths_nm": [
+                455,
+                530,
+                625
+              ]
+            },
+            "material": {
+              "value": "α=0π 普通SiN singlet；height633nm / period400nm / fused silica",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计与p.5方法",
+              "note": "几何相位函数为聚焦项加α(x³+y³)/L³，L为半口径width；α=0为普通镜，55π为EDOF。不能把其他α原型默认同几何或同效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "圆柱选择旨在偏振不敏感；所读测量未单列独立偏振通道",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构设计、SI p.8 S4/S5",
+              "note": "设计对称性不等于已测全偏振PSF/效率数表；不补RCP/LCP或偏振零差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "Fiber-coupled LED：M455F1/M530F2/M625F2；约30nm带宽（绿LED FWHM约30nm）",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.3、SI pp.3–4 §4及p.8 S4",
+              "note": "成像另用MCWHF2白LED；实际入射角、束腰/照度均匀性与每个LED精确谱形/带宽未齐，不默认0°。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            },
+            "psf_protocol": {
+              "value": "三LED照明；40X Nikon Plan Fluor NA0.75/WD0.66mm+ITL200继像至AmScope MU300，平移物镜寻参考焦面；镜头盖暗噪声序列扣除。",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.5 Device characterization；SI p.8 S4；p.11 S8",
+              "note": "Fig.2/S8实验以绿光530nm为对焦参考，RGB固定参考面PSF不等每λ最佳焦PSF；物理z、轴步长、物方像素/总放大率、曝光/裁剪/插值、标定/重复未给齐。0.75是收集物镜NA，不是器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "Newport818-SL测焦面功率/入射功率；同表征光路加flip mirror/pinhole；分母通过玻璃测量，针孔成像区域width匹配透镜。",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.5 Device characterization；SI p.13 Fig.S10",
+              "note": "分子焦斑积分半径/直径、针孔/ROI确切尺寸和传递标定未给齐，不假定3×FWHM。三LED各重复3次，误差条为传播SD得到的95%CI，未给数值CI/详细传播公式；不能把n3当3片物理样品或给跨谱点均值附同一CI。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_si_2018"
+              ],
+              "integration_geometry": null,
+              "replicates_per_wavelength": 3,
+              "error_bar_type": "95_percent_confidence_interval_from_propagated_SD"
+            },
+            "mtf_curve": {
+              "value": "主文Fig.2D/H：RGB实测PSF的傅里叶模值MTF；归一化频率1对应579cycles/mm。SI S8另给绿光物理频率曲线。",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2图注、p.5 Device characterization；SI pp.3–4 §4及p.11 S8",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018",
+                "colburn_computational_si_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "frequency_scale_cyc_per_mm": 579,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            },
+            "chromatic": {
+              "value": "普通镜RGB参考面PSF/MTF变化大；EDOF保留相近模糊传递后用单一数字滤波复原",
+              "source": "colburn_computational_author_2018",
+              "location": "主文pp.1–4 Fig.1/2/3/4；SI §4/S8",
+              "note": "实际逐λ最佳f/有符号轴向或横向色差数表未给；Fig1轴向图为模拟，不能将设计200或模拟400/550/700nm焦位填成LED实测。EDOF/数字复原不是裸镜各λ同一个最佳焦点。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "na": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要及p.4 Discussion：EDOF系统NA约0.45",
+              "note": "作者NA约0.45明确用于EDOF系统；普通镜仅同D/f几何，未单独直报NA，不复制EDOF报告。0.75属于40X收集物镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "普通镜NA未单列"
+            },
+            "efficiency_band_mean_pct": {
+              "value": 63,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2实制效率段；SI p.13 Fig.S10三LED/重复说明",
+              "note": "作者直报测试谱点平均，455/530/625nm三LED，非400–700nm连续光谱积分均值；平均权重/物理样本n/跨波长误差未给齐。不从曲线读各λ或CI、不分配到每个λ。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018",
+                "colburn_computational_si_2018"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "band_mean",
+              "sample_unit": "wavelength",
+              "sample_wavelengths_nm": [
+                455,
+                530,
+                625
+              ],
+              "sampling": "measured_wavelength_subset",
+              "display": "63（作者三LED谱点平均；非全谱积分）"
+            }
+          }
+        },
+        {
+          "id": "colburn2018_singlet_455",
+          "model": "Colburn 2018 · α=0π · LED455nm · PSF/MTF",
+          "study_id": "colburn2018",
+          "specimen_id": "singlet",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一结构的三个LED参考面测量；MTF是作者由实测PSF计算，非原始数值表或本库复算。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.4 Discussion：small(200μm) focal length and aperture width",
+              "note": "作者口径用width称谓，Fig.1F/G为圆盘图像；单位视觉核为μm，文本提取误成mm。不从图尺估D或用NA反推。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计段及Fig.1D/E图注",
+              "note": "两镜在550nm设计f200μm；实测LED绿光530nm参考焦面的位置未单列，不把200填作各λ实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 633,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构段、p.5 Fabrication",
+              "note": "SiN薄膜/纳米柱名义633nm；熔石英基底不计入此高度，8nm Au/Pd临时消电荷层与Al硬掩膜随后移除。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "作者可见光连续设计/白光成像目标400–700nm；实测只有三个约30nm宽LED，不代表逐λ同焦或全场连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "与连续设计/计算成像声明配对；不是单镜实测连续零色差波段。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": 455,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3实测PSF段/ Fig.2；SI p.8 S4",
+              "note": "LED中心波长，不是单色零谱宽或模拟波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "α=0π 普通SiN singlet；height633nm / period400nm / fused silica",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计与p.5方法",
+              "note": "几何相位函数为聚焦项加α(x³+y³)/L³，L为半口径width；α=0为普通镜，55π为EDOF。不能把其他α原型默认同几何或同效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "圆柱选择旨在偏振不敏感；所读测量未单列独立偏振通道",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构设计、SI p.8 S4/S5",
+              "note": "设计对称性不等于已测全偏振PSF/效率数表；不补RCP/LCP或偏振零差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "Fiber-coupled LED：M455F1/M530F2/M625F2；约30nm带宽（绿LED FWHM约30nm）",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.3、SI pp.3–4 §4及p.8 S4",
+              "note": "成像另用MCWHF2白LED；实际入射角、束腰/照度均匀性与每个LED精确谱形/带宽未齐，不默认0°。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            },
+            "psf_protocol": {
+              "value": "三LED照明；40X Nikon Plan Fluor NA0.75/WD0.66mm+ITL200继像至AmScope MU300，平移物镜寻参考焦面；镜头盖暗噪声序列扣除。",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.5 Device characterization；SI p.8 S4；p.11 S8",
+              "note": "Fig.2/S8实验以绿光530nm为对焦参考，RGB固定参考面PSF不等每λ最佳焦PSF；物理z、轴步长、物方像素/总放大率、曝光/裁剪/插值、标定/重复未给齐。0.75是收集物镜NA，不是器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "Newport818-SL测焦面功率/入射功率；同表征光路加flip mirror/pinhole；分母通过玻璃测量，针孔成像区域width匹配透镜。",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.5 Device characterization；SI p.13 Fig.S10",
+              "note": "分子焦斑积分半径/直径、针孔/ROI确切尺寸和传递标定未给齐，不假定3×FWHM。三LED各重复3次，误差条为传播SD得到的95%CI，未给数值CI/详细传播公式；不能把n3当3片物理样品或给跨谱点均值附同一CI。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_si_2018"
+              ],
+              "integration_geometry": null,
+              "replicates_per_wavelength": 3,
+              "error_bar_type": "95_percent_confidence_interval_from_propagated_SD"
+            },
+            "mtf_curve": {
+              "value": "主文Fig.2D/H：RGB实测PSF的傅里叶模值MTF；归一化频率1对应579cycles/mm。SI S8另给绿光物理频率曲线。",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2图注、p.5 Device characterization；SI pp.3–4 §4及p.11 S8",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018",
+                "colburn_computational_si_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "frequency_scale_cyc_per_mm": 579,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            },
+            "chromatic": {
+              "value": "普通镜RGB参考面PSF/MTF变化大；EDOF保留相近模糊传递后用单一数字滤波复原",
+              "source": "colburn_computational_author_2018",
+              "location": "主文pp.1–4 Fig.1/2/3/4；SI §4/S8",
+              "note": "实际逐λ最佳f/有符号轴向或横向色差数表未给；Fig1轴向图为模拟，不能将设计200或模拟400/550/700nm焦位填成LED实测。EDOF/数字复原不是裸镜各λ同一个最佳焦点。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "na": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要及p.4 Discussion：EDOF系统NA约0.45",
+              "note": "作者NA约0.45明确用于EDOF系统；普通镜仅同D/f几何，未单独直报NA，不复制EDOF报告。0.75属于40X收集物镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "普通镜NA未单列"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文Fig.2参考面PSF；SI S8以绿光对焦",
+              "note": "未给本λ最佳焦位数表，不将固定评价面、设计f200或Fig1模拟峰位填成实测焦距。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "绿光参考面PSF；逐λ最佳f未给"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2A–C/E–G",
+              "note": "归一化二维PSF图，无逐λ实测FWHM数表；EDOF有非对称长尾，不以理想Airy公式/图尺估宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "PSF图已核；无逐λFWHM表"
+            },
+            "efficiency_lambda_nm": {
+              "value": 455,
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.13 Fig.S10图注/横轴",
+              "note": "该LED下效率/95%CI只有曲线，不以谱点均值替代。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.13 Fig.S10红/蓝实测误差棒",
+              "note": "未估读三λ效率或误差棒；星号为理论效率，不填实测。每点n3/95%CI协议保留，具体数值未知。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "S10仅曲线/95%CI；数值未估读"
+            }
+          }
+        },
+        {
+          "id": "colburn2018_singlet_530",
+          "model": "Colburn 2018 · α=0π · LED530nm · PSF/MTF",
+          "study_id": "colburn2018",
+          "specimen_id": "singlet",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一结构的三个LED参考面测量；MTF是作者由实测PSF计算，非原始数值表或本库复算。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.4 Discussion：small(200μm) focal length and aperture width",
+              "note": "作者口径用width称谓，Fig.1F/G为圆盘图像；单位视觉核为μm，文本提取误成mm。不从图尺估D或用NA反推。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计段及Fig.1D/E图注",
+              "note": "两镜在550nm设计f200μm；实测LED绿光530nm参考焦面的位置未单列，不把200填作各λ实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 633,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构段、p.5 Fabrication",
+              "note": "SiN薄膜/纳米柱名义633nm；熔石英基底不计入此高度，8nm Au/Pd临时消电荷层与Al硬掩膜随后移除。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "作者可见光连续设计/白光成像目标400–700nm；实测只有三个约30nm宽LED，不代表逐λ同焦或全场连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "与连续设计/计算成像声明配对；不是单镜实测连续零色差波段。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3实测PSF段/ Fig.2；SI p.8 S4",
+              "note": "LED中心波长，不是单色零谱宽或模拟波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "α=0π 普通SiN singlet；height633nm / period400nm / fused silica",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计与p.5方法",
+              "note": "几何相位函数为聚焦项加α(x³+y³)/L³，L为半口径width；α=0为普通镜，55π为EDOF。不能把其他α原型默认同几何或同效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "圆柱选择旨在偏振不敏感；所读测量未单列独立偏振通道",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构设计、SI p.8 S4/S5",
+              "note": "设计对称性不等于已测全偏振PSF/效率数表；不补RCP/LCP或偏振零差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "Fiber-coupled LED：M455F1/M530F2/M625F2；约30nm带宽（绿LED FWHM约30nm）",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.3、SI pp.3–4 §4及p.8 S4",
+              "note": "成像另用MCWHF2白LED；实际入射角、束腰/照度均匀性与每个LED精确谱形/带宽未齐，不默认0°。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            },
+            "psf_protocol": {
+              "value": "三LED照明；40X Nikon Plan Fluor NA0.75/WD0.66mm+ITL200继像至AmScope MU300，平移物镜寻参考焦面；镜头盖暗噪声序列扣除。",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.5 Device characterization；SI p.8 S4；p.11 S8",
+              "note": "Fig.2/S8实验以绿光530nm为对焦参考，RGB固定参考面PSF不等每λ最佳焦PSF；物理z、轴步长、物方像素/总放大率、曝光/裁剪/插值、标定/重复未给齐。0.75是收集物镜NA，不是器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "Newport818-SL测焦面功率/入射功率；同表征光路加flip mirror/pinhole；分母通过玻璃测量，针孔成像区域width匹配透镜。",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.5 Device characterization；SI p.13 Fig.S10",
+              "note": "分子焦斑积分半径/直径、针孔/ROI确切尺寸和传递标定未给齐，不假定3×FWHM。三LED各重复3次，误差条为传播SD得到的95%CI，未给数值CI/详细传播公式；不能把n3当3片物理样品或给跨谱点均值附同一CI。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_si_2018"
+              ],
+              "integration_geometry": null,
+              "replicates_per_wavelength": 3,
+              "error_bar_type": "95_percent_confidence_interval_from_propagated_SD"
+            },
+            "mtf_curve": {
+              "value": "主文Fig.2D/H：RGB实测PSF的傅里叶模值MTF；归一化频率1对应579cycles/mm。SI S8另给绿光物理频率曲线。",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2图注、p.5 Device characterization；SI pp.3–4 §4及p.11 S8",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018",
+                "colburn_computational_si_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "frequency_scale_cyc_per_mm": 579,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            },
+            "chromatic": {
+              "value": "普通镜RGB参考面PSF/MTF变化大；EDOF保留相近模糊传递后用单一数字滤波复原",
+              "source": "colburn_computational_author_2018",
+              "location": "主文pp.1–4 Fig.1/2/3/4；SI §4/S8",
+              "note": "实际逐λ最佳f/有符号轴向或横向色差数表未给；Fig1轴向图为模拟，不能将设计200或模拟400/550/700nm焦位填成LED实测。EDOF/数字复原不是裸镜各λ同一个最佳焦点。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "na": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要及p.4 Discussion：EDOF系统NA约0.45",
+              "note": "作者NA约0.45明确用于EDOF系统；普通镜仅同D/f几何，未单独直报NA，不复制EDOF报告。0.75属于40X收集物镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "普通镜NA未单列"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文Fig.2参考面PSF；SI S8以绿光对焦",
+              "note": "未给本λ最佳焦位数表，不将固定评价面、设计f200或Fig1模拟峰位填成实测焦距。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "绿光参考面PSF；逐λ最佳f未给"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2A–C/E–G",
+              "note": "归一化二维PSF图，无逐λ实测FWHM数表；EDOF有非对称长尾，不以理想Airy公式/图尺估宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "PSF图已核；无逐λFWHM表"
+            },
+            "efficiency_lambda_nm": {
+              "value": 530,
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.13 Fig.S10图注/横轴",
+              "note": "该LED下效率/95%CI只有曲线，不以谱点均值替代。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.13 Fig.S10红/蓝实测误差棒",
+              "note": "未估读三λ效率或误差棒；星号为理论效率，不填实测。每点n3/95%CI协议保留，具体数值未知。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "S10仅曲线/95%CI；数值未估读"
+            }
+          }
+        },
+        {
+          "id": "colburn2018_singlet_625",
+          "model": "Colburn 2018 · α=0π · LED625nm · PSF/MTF",
+          "study_id": "colburn2018",
+          "specimen_id": "singlet",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一结构的三个LED参考面测量；MTF是作者由实测PSF计算，非原始数值表或本库复算。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.4 Discussion：small(200μm) focal length and aperture width",
+              "note": "作者口径用width称谓，Fig.1F/G为圆盘图像；单位视觉核为μm，文本提取误成mm。不从图尺估D或用NA反推。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计段及Fig.1D/E图注",
+              "note": "两镜在550nm设计f200μm；实测LED绿光530nm参考焦面的位置未单列，不把200填作各λ实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 633,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构段、p.5 Fabrication",
+              "note": "SiN薄膜/纳米柱名义633nm；熔石英基底不计入此高度，8nm Au/Pd临时消电荷层与Al硬掩膜随后移除。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "作者可见光连续设计/白光成像目标400–700nm；实测只有三个约30nm宽LED，不代表逐λ同焦或全场连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "与连续设计/计算成像声明配对；不是单镜实测连续零色差波段。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3实测PSF段/ Fig.2；SI p.8 S4",
+              "note": "LED中心波长，不是单色零谱宽或模拟波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "α=0π 普通SiN singlet；height633nm / period400nm / fused silica",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计与p.5方法",
+              "note": "几何相位函数为聚焦项加α(x³+y³)/L³，L为半口径width；α=0为普通镜，55π为EDOF。不能把其他α原型默认同几何或同效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "圆柱选择旨在偏振不敏感；所读测量未单列独立偏振通道",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构设计、SI p.8 S4/S5",
+              "note": "设计对称性不等于已测全偏振PSF/效率数表；不补RCP/LCP或偏振零差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "Fiber-coupled LED：M455F1/M530F2/M625F2；约30nm带宽（绿LED FWHM约30nm）",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.3、SI pp.3–4 §4及p.8 S4",
+              "note": "成像另用MCWHF2白LED；实际入射角、束腰/照度均匀性与每个LED精确谱形/带宽未齐，不默认0°。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            },
+            "psf_protocol": {
+              "value": "三LED照明；40X Nikon Plan Fluor NA0.75/WD0.66mm+ITL200继像至AmScope MU300，平移物镜寻参考焦面；镜头盖暗噪声序列扣除。",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.5 Device characterization；SI p.8 S4；p.11 S8",
+              "note": "Fig.2/S8实验以绿光530nm为对焦参考，RGB固定参考面PSF不等每λ最佳焦PSF；物理z、轴步长、物方像素/总放大率、曝光/裁剪/插值、标定/重复未给齐。0.75是收集物镜NA，不是器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "Newport818-SL测焦面功率/入射功率；同表征光路加flip mirror/pinhole；分母通过玻璃测量，针孔成像区域width匹配透镜。",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.5 Device characterization；SI p.13 Fig.S10",
+              "note": "分子焦斑积分半径/直径、针孔/ROI确切尺寸和传递标定未给齐，不假定3×FWHM。三LED各重复3次，误差条为传播SD得到的95%CI，未给数值CI/详细传播公式；不能把n3当3片物理样品或给跨谱点均值附同一CI。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_si_2018"
+              ],
+              "integration_geometry": null,
+              "replicates_per_wavelength": 3,
+              "error_bar_type": "95_percent_confidence_interval_from_propagated_SD"
+            },
+            "mtf_curve": {
+              "value": "主文Fig.2D/H：RGB实测PSF的傅里叶模值MTF；归一化频率1对应579cycles/mm。SI S8另给绿光物理频率曲线。",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2图注、p.5 Device characterization；SI pp.3–4 §4及p.11 S8",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018",
+                "colburn_computational_si_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "frequency_scale_cyc_per_mm": 579,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            },
+            "chromatic": {
+              "value": "普通镜RGB参考面PSF/MTF变化大；EDOF保留相近模糊传递后用单一数字滤波复原",
+              "source": "colburn_computational_author_2018",
+              "location": "主文pp.1–4 Fig.1/2/3/4；SI §4/S8",
+              "note": "实际逐λ最佳f/有符号轴向或横向色差数表未给；Fig1轴向图为模拟，不能将设计200或模拟400/550/700nm焦位填成LED实测。EDOF/数字复原不是裸镜各λ同一个最佳焦点。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "na": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要及p.4 Discussion：EDOF系统NA约0.45",
+              "note": "作者NA约0.45明确用于EDOF系统；普通镜仅同D/f几何，未单独直报NA，不复制EDOF报告。0.75属于40X收集物镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "普通镜NA未单列"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文Fig.2参考面PSF；SI S8以绿光对焦",
+              "note": "未给本λ最佳焦位数表，不将固定评价面、设计f200或Fig1模拟峰位填成实测焦距。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "绿光参考面PSF；逐λ最佳f未给"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2A–C/E–G",
+              "note": "归一化二维PSF图，无逐λ实测FWHM数表；EDOF有非对称长尾，不以理想Airy公式/图尺估宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "PSF图已核；无逐λFWHM表"
+            },
+            "efficiency_lambda_nm": {
+              "value": 625,
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.13 Fig.S10图注/横轴",
+              "note": "该LED下效率/95%CI只有曲线，不以谱点均值替代。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.13 Fig.S10红/蓝实测误差棒",
+              "note": "未估读三λ效率或误差棒；星号为理论效率，不填实测。每点n3/95%CI协议保留，具体数值未知。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "S10仅曲线/95%CI；数值未估读"
+            }
+          }
+        },
+        {
+          "id": "colburn2018_edof_summary",
+          "model": "Colburn 2018 · α55π · 三LED平均（非全谱积分）",
+          "study_id": "colburn2018",
+          "specimen_id": "edof",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "两种结构分配置；均值只在汇总行，RGB参考面条件不增加物理样品。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.4 Discussion：small(200μm) focal length and aperture width",
+              "note": "作者口径用width称谓，Fig.1F/G为圆盘图像；单位视觉核为μm，文本提取误成mm。不从图尺估D或用NA反推。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计段及Fig.1D/E图注",
+              "note": "两镜在550nm设计f200μm；实测LED绿光530nm参考焦面的位置未单列，不把200填作各λ实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 633,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构段、p.5 Fabrication",
+              "note": "SiN薄膜/纳米柱名义633nm；熔石英基底不计入此高度，8nm Au/Pd临时消电荷层与Al硬掩膜随后移除。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "作者可见光连续设计/白光成像目标400–700nm；实测只有三个约30nm宽LED，不代表逐λ同焦或全场连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "与连续设计/计算成像声明配对；不是单镜实测连续零色差波段。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2/成像段；SI p.8 S4/S5、p.13 S10",
+              "note": "实际三LED中心455/530/625nm，模拟400/550/700nm另记；汇总不伪造一个测量λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "实测LED455/530/625nm；约30nm谱宽",
+              "sample_wavelengths_nm": [
+                455,
+                530,
+                625
+              ]
+            },
+            "material": {
+              "value": "α=55π SiN cubic-phase EDOF；height633nm / period400nm / fused silica",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计与p.5方法",
+              "note": "几何相位函数为聚焦项加α(x³+y³)/L³，L为半口径width；α=0为普通镜，55π为EDOF。不能把其他α原型默认同几何或同效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "圆柱选择旨在偏振不敏感；所读测量未单列独立偏振通道",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构设计、SI p.8 S4/S5",
+              "note": "设计对称性不等于已测全偏振PSF/效率数表；不补RCP/LCP或偏振零差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "Fiber-coupled LED：M455F1/M530F2/M625F2；约30nm带宽（绿LED FWHM约30nm）",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.3、SI pp.3–4 §4及p.8 S4",
+              "note": "成像另用MCWHF2白LED；实际入射角、束腰/照度均匀性与每个LED精确谱形/带宽未齐，不默认0°。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            },
+            "psf_protocol": {
+              "value": "三LED照明；40X Nikon Plan Fluor NA0.75/WD0.66mm+ITL200继像至AmScope MU300，平移物镜寻参考焦面；镜头盖暗噪声序列扣除。",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.5 Device characterization；SI p.8 S4；p.11 S8",
+              "note": "Fig.2/S8实验以绿光530nm为对焦参考，RGB固定参考面PSF不等每λ最佳焦PSF；物理z、轴步长、物方像素/总放大率、曝光/裁剪/插值、标定/重复未给齐。0.75是收集物镜NA，不是器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "Newport818-SL测焦面功率/入射功率；同表征光路加flip mirror/pinhole；分母通过玻璃测量，针孔成像区域width匹配透镜。",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.5 Device characterization；SI p.13 Fig.S10",
+              "note": "分子焦斑积分半径/直径、针孔/ROI确切尺寸和传递标定未给齐，不假定3×FWHM。三LED各重复3次，误差条为传播SD得到的95%CI，未给数值CI/详细传播公式；不能把n3当3片物理样品或给跨谱点均值附同一CI。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_si_2018"
+              ],
+              "integration_geometry": null,
+              "replicates_per_wavelength": 3,
+              "error_bar_type": "95_percent_confidence_interval_from_propagated_SD"
+            },
+            "mtf_curve": {
+              "value": "主文Fig.2D/H：RGB实测PSF的傅里叶模值MTF；归一化频率1对应579cycles/mm。SI S8另给绿光物理频率曲线。",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2图注、p.5 Device characterization；SI pp.3–4 §4及p.11 S8",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018",
+                "colburn_computational_si_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "frequency_scale_cyc_per_mm": 579,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            },
+            "chromatic": {
+              "value": "普通镜RGB参考面PSF/MTF变化大；EDOF保留相近模糊传递后用单一数字滤波复原",
+              "source": "colburn_computational_author_2018",
+              "location": "主文pp.1–4 Fig.1/2/3/4；SI §4/S8",
+              "note": "实际逐λ最佳f/有符号轴向或横向色差数表未给；Fig1轴向图为模拟，不能将设计200或模拟400/550/700nm焦位填成LED实测。EDOF/数字复原不是裸镜各λ同一个最佳焦点。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "na": {
+              "value": 0.45,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要及p.4 Discussion：EDOF系统NA约0.45",
+              "note": "作者NA约0.45明确用于EDOF系统；普通镜仅同D/f几何，未单独直报NA，不复制EDOF报告。0.75属于40X收集物镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "approximate": true,
+              "display": "约0.45（作者EDOF系统）"
+            },
+            "efficiency_band_mean_pct": {
+              "value": 57,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2实制效率段；SI p.13 Fig.S10三LED/重复说明",
+              "note": "作者直报测试谱点平均，455/530/625nm三LED，非400–700nm连续光谱积分均值；平均权重/物理样本n/跨波长误差未给齐。不从曲线读各λ或CI、不分配到每个λ。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018",
+                "colburn_computational_si_2018"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "band_mean",
+              "sample_unit": "wavelength",
+              "sample_wavelengths_nm": [
+                455,
+                530,
+                625
+              ],
+              "sampling": "measured_wavelength_subset",
+              "display": "57（作者三LED谱点平均；非全谱积分）"
+            }
+          }
+        },
+        {
+          "id": "colburn2018_edof_455",
+          "model": "Colburn 2018 · α=55π · LED455nm · PSF/MTF",
+          "study_id": "colburn2018",
+          "specimen_id": "edof",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一结构的三个LED参考面测量；MTF是作者由实测PSF计算，非原始数值表或本库复算。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.4 Discussion：small(200μm) focal length and aperture width",
+              "note": "作者口径用width称谓，Fig.1F/G为圆盘图像；单位视觉核为μm，文本提取误成mm。不从图尺估D或用NA反推。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计段及Fig.1D/E图注",
+              "note": "两镜在550nm设计f200μm；实测LED绿光530nm参考焦面的位置未单列，不把200填作各λ实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 633,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构段、p.5 Fabrication",
+              "note": "SiN薄膜/纳米柱名义633nm；熔石英基底不计入此高度，8nm Au/Pd临时消电荷层与Al硬掩膜随后移除。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "作者可见光连续设计/白光成像目标400–700nm；实测只有三个约30nm宽LED，不代表逐λ同焦或全场连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "与连续设计/计算成像声明配对；不是单镜实测连续零色差波段。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": 455,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3实测PSF段/ Fig.2；SI p.8 S4",
+              "note": "LED中心波长，不是单色零谱宽或模拟波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "α=55π SiN cubic-phase EDOF；height633nm / period400nm / fused silica",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计与p.5方法",
+              "note": "几何相位函数为聚焦项加α(x³+y³)/L³，L为半口径width；α=0为普通镜，55π为EDOF。不能把其他α原型默认同几何或同效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "圆柱选择旨在偏振不敏感；所读测量未单列独立偏振通道",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构设计、SI p.8 S4/S5",
+              "note": "设计对称性不等于已测全偏振PSF/效率数表；不补RCP/LCP或偏振零差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "Fiber-coupled LED：M455F1/M530F2/M625F2；约30nm带宽（绿LED FWHM约30nm）",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.3、SI pp.3–4 §4及p.8 S4",
+              "note": "成像另用MCWHF2白LED；实际入射角、束腰/照度均匀性与每个LED精确谱形/带宽未齐，不默认0°。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            },
+            "psf_protocol": {
+              "value": "三LED照明；40X Nikon Plan Fluor NA0.75/WD0.66mm+ITL200继像至AmScope MU300，平移物镜寻参考焦面；镜头盖暗噪声序列扣除。",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.5 Device characterization；SI p.8 S4；p.11 S8",
+              "note": "Fig.2/S8实验以绿光530nm为对焦参考，RGB固定参考面PSF不等每λ最佳焦PSF；物理z、轴步长、物方像素/总放大率、曝光/裁剪/插值、标定/重复未给齐。0.75是收集物镜NA，不是器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "Newport818-SL测焦面功率/入射功率；同表征光路加flip mirror/pinhole；分母通过玻璃测量，针孔成像区域width匹配透镜。",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.5 Device characterization；SI p.13 Fig.S10",
+              "note": "分子焦斑积分半径/直径、针孔/ROI确切尺寸和传递标定未给齐，不假定3×FWHM。三LED各重复3次，误差条为传播SD得到的95%CI，未给数值CI/详细传播公式；不能把n3当3片物理样品或给跨谱点均值附同一CI。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_si_2018"
+              ],
+              "integration_geometry": null,
+              "replicates_per_wavelength": 3,
+              "error_bar_type": "95_percent_confidence_interval_from_propagated_SD"
+            },
+            "mtf_curve": {
+              "value": "主文Fig.2D/H：RGB实测PSF的傅里叶模值MTF；归一化频率1对应579cycles/mm。SI S8另给绿光物理频率曲线。",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2图注、p.5 Device characterization；SI pp.3–4 §4及p.11 S8",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018",
+                "colburn_computational_si_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "frequency_scale_cyc_per_mm": 579,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            },
+            "chromatic": {
+              "value": "普通镜RGB参考面PSF/MTF变化大；EDOF保留相近模糊传递后用单一数字滤波复原",
+              "source": "colburn_computational_author_2018",
+              "location": "主文pp.1–4 Fig.1/2/3/4；SI §4/S8",
+              "note": "实际逐λ最佳f/有符号轴向或横向色差数表未给；Fig1轴向图为模拟，不能将设计200或模拟400/550/700nm焦位填成LED实测。EDOF/数字复原不是裸镜各λ同一个最佳焦点。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "na": {
+              "value": 0.45,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要及p.4 Discussion：EDOF系统NA约0.45",
+              "note": "作者NA约0.45明确用于EDOF系统；普通镜仅同D/f几何，未单独直报NA，不复制EDOF报告。0.75属于40X收集物镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "approximate": true,
+              "display": "约0.45（作者EDOF系统）"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文Fig.2参考面PSF；SI S8以绿光对焦",
+              "note": "未给本λ最佳焦位数表，不将固定评价面、设计f200或Fig1模拟峰位填成实测焦距。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "绿光参考面PSF；逐λ最佳f未给"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2A–C/E–G",
+              "note": "归一化二维PSF图，无逐λ实测FWHM数表；EDOF有非对称长尾，不以理想Airy公式/图尺估宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "PSF图已核；无逐λFWHM表"
+            },
+            "efficiency_lambda_nm": {
+              "value": 455,
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.13 Fig.S10图注/横轴",
+              "note": "该LED下效率/95%CI只有曲线，不以谱点均值替代。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.13 Fig.S10红/蓝实测误差棒",
+              "note": "未估读三λ效率或误差棒；星号为理论效率，不填实测。每点n3/95%CI协议保留，具体数值未知。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "S10仅曲线/95%CI；数值未估读"
+            }
+          }
+        },
+        {
+          "id": "colburn2018_edof_530",
+          "model": "Colburn 2018 · α=55π · LED530nm · PSF/MTF",
+          "study_id": "colburn2018",
+          "specimen_id": "edof",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一结构的三个LED参考面测量；MTF是作者由实测PSF计算，非原始数值表或本库复算。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.4 Discussion：small(200μm) focal length and aperture width",
+              "note": "作者口径用width称谓，Fig.1F/G为圆盘图像；单位视觉核为μm，文本提取误成mm。不从图尺估D或用NA反推。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计段及Fig.1D/E图注",
+              "note": "两镜在550nm设计f200μm；实测LED绿光530nm参考焦面的位置未单列，不把200填作各λ实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 633,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构段、p.5 Fabrication",
+              "note": "SiN薄膜/纳米柱名义633nm；熔石英基底不计入此高度，8nm Au/Pd临时消电荷层与Al硬掩膜随后移除。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "作者可见光连续设计/白光成像目标400–700nm；实测只有三个约30nm宽LED，不代表逐λ同焦或全场连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "与连续设计/计算成像声明配对；不是单镜实测连续零色差波段。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3实测PSF段/ Fig.2；SI p.8 S4",
+              "note": "LED中心波长，不是单色零谱宽或模拟波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "α=55π SiN cubic-phase EDOF；height633nm / period400nm / fused silica",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计与p.5方法",
+              "note": "几何相位函数为聚焦项加α(x³+y³)/L³，L为半口径width；α=0为普通镜，55π为EDOF。不能把其他α原型默认同几何或同效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "圆柱选择旨在偏振不敏感；所读测量未单列独立偏振通道",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构设计、SI p.8 S4/S5",
+              "note": "设计对称性不等于已测全偏振PSF/效率数表；不补RCP/LCP或偏振零差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "Fiber-coupled LED：M455F1/M530F2/M625F2；约30nm带宽（绿LED FWHM约30nm）",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.3、SI pp.3–4 §4及p.8 S4",
+              "note": "成像另用MCWHF2白LED；实际入射角、束腰/照度均匀性与每个LED精确谱形/带宽未齐，不默认0°。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            },
+            "psf_protocol": {
+              "value": "三LED照明；40X Nikon Plan Fluor NA0.75/WD0.66mm+ITL200继像至AmScope MU300，平移物镜寻参考焦面；镜头盖暗噪声序列扣除。",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.5 Device characterization；SI p.8 S4；p.11 S8",
+              "note": "Fig.2/S8实验以绿光530nm为对焦参考，RGB固定参考面PSF不等每λ最佳焦PSF；物理z、轴步长、物方像素/总放大率、曝光/裁剪/插值、标定/重复未给齐。0.75是收集物镜NA，不是器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "Newport818-SL测焦面功率/入射功率；同表征光路加flip mirror/pinhole；分母通过玻璃测量，针孔成像区域width匹配透镜。",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.5 Device characterization；SI p.13 Fig.S10",
+              "note": "分子焦斑积分半径/直径、针孔/ROI确切尺寸和传递标定未给齐，不假定3×FWHM。三LED各重复3次，误差条为传播SD得到的95%CI，未给数值CI/详细传播公式；不能把n3当3片物理样品或给跨谱点均值附同一CI。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_si_2018"
+              ],
+              "integration_geometry": null,
+              "replicates_per_wavelength": 3,
+              "error_bar_type": "95_percent_confidence_interval_from_propagated_SD"
+            },
+            "mtf_curve": {
+              "value": "主文Fig.2D/H：RGB实测PSF的傅里叶模值MTF；归一化频率1对应579cycles/mm。SI S8另给绿光物理频率曲线。",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2图注、p.5 Device characterization；SI pp.3–4 §4及p.11 S8",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018",
+                "colburn_computational_si_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "frequency_scale_cyc_per_mm": 579,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            },
+            "chromatic": {
+              "value": "普通镜RGB参考面PSF/MTF变化大；EDOF保留相近模糊传递后用单一数字滤波复原",
+              "source": "colburn_computational_author_2018",
+              "location": "主文pp.1–4 Fig.1/2/3/4；SI §4/S8",
+              "note": "实际逐λ最佳f/有符号轴向或横向色差数表未给；Fig1轴向图为模拟，不能将设计200或模拟400/550/700nm焦位填成LED实测。EDOF/数字复原不是裸镜各λ同一个最佳焦点。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "na": {
+              "value": 0.45,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要及p.4 Discussion：EDOF系统NA约0.45",
+              "note": "作者NA约0.45明确用于EDOF系统；普通镜仅同D/f几何，未单独直报NA，不复制EDOF报告。0.75属于40X收集物镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "approximate": true,
+              "display": "约0.45（作者EDOF系统）"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文Fig.2参考面PSF；SI S8以绿光对焦",
+              "note": "未给本λ最佳焦位数表，不将固定评价面、设计f200或Fig1模拟峰位填成实测焦距。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "绿光参考面PSF；逐λ最佳f未给"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2A–C/E–G",
+              "note": "归一化二维PSF图，无逐λ实测FWHM数表；EDOF有非对称长尾，不以理想Airy公式/图尺估宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "PSF图已核；无逐λFWHM表"
+            },
+            "efficiency_lambda_nm": {
+              "value": 530,
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.13 Fig.S10图注/横轴",
+              "note": "该LED下效率/95%CI只有曲线，不以谱点均值替代。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.13 Fig.S10红/蓝实测误差棒",
+              "note": "未估读三λ效率或误差棒；星号为理论效率，不填实测。每点n3/95%CI协议保留，具体数值未知。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "S10仅曲线/95%CI；数值未估读"
+            }
+          }
+        },
+        {
+          "id": "colburn2018_edof_625",
+          "model": "Colburn 2018 · α=55π · LED625nm · PSF/MTF",
+          "study_id": "colburn2018",
+          "specimen_id": "edof",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一结构的三个LED参考面测量；MTF是作者由实测PSF计算，非原始数值表或本库复算。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.4 Discussion：small(200μm) focal length and aperture width",
+              "note": "作者口径用width称谓，Fig.1F/G为圆盘图像；单位视觉核为μm，文本提取误成mm。不从图尺估D或用NA反推。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计段及Fig.1D/E图注",
+              "note": "两镜在550nm设计f200μm；实测LED绿光530nm参考焦面的位置未单列，不把200填作各λ实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 633,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构段、p.5 Fabrication",
+              "note": "SiN薄膜/纳米柱名义633nm；熔石英基底不计入此高度，8nm Au/Pd临时消电荷层与Al硬掩膜随后移除。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "作者可见光连续设计/白光成像目标400–700nm；实测只有三个约30nm宽LED，不代表逐λ同焦或全场连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "与连续设计/计算成像声明配对；不是单镜实测连续零色差波段。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3实测PSF段/ Fig.2；SI p.8 S4",
+              "note": "LED中心波长，不是单色零谱宽或模拟波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "α=55π SiN cubic-phase EDOF；height633nm / period400nm / fused silica",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计与p.5方法",
+              "note": "几何相位函数为聚焦项加α(x³+y³)/L³，L为半口径width；α=0为普通镜，55π为EDOF。不能把其他α原型默认同几何或同效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "圆柱选择旨在偏振不敏感；所读测量未单列独立偏振通道",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构设计、SI p.8 S4/S5",
+              "note": "设计对称性不等于已测全偏振PSF/效率数表；不补RCP/LCP或偏振零差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "Fiber-coupled LED：M455F1/M530F2/M625F2；约30nm带宽（绿LED FWHM约30nm）",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.3、SI pp.3–4 §4及p.8 S4",
+              "note": "成像另用MCWHF2白LED；实际入射角、束腰/照度均匀性与每个LED精确谱形/带宽未齐，不默认0°。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            },
+            "psf_protocol": {
+              "value": "三LED照明；40X Nikon Plan Fluor NA0.75/WD0.66mm+ITL200继像至AmScope MU300，平移物镜寻参考焦面；镜头盖暗噪声序列扣除。",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.5 Device characterization；SI p.8 S4；p.11 S8",
+              "note": "Fig.2/S8实验以绿光530nm为对焦参考，RGB固定参考面PSF不等每λ最佳焦PSF；物理z、轴步长、物方像素/总放大率、曝光/裁剪/插值、标定/重复未给齐。0.75是收集物镜NA，不是器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "Newport818-SL测焦面功率/入射功率；同表征光路加flip mirror/pinhole；分母通过玻璃测量，针孔成像区域width匹配透镜。",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.5 Device characterization；SI p.13 Fig.S10",
+              "note": "分子焦斑积分半径/直径、针孔/ROI确切尺寸和传递标定未给齐，不假定3×FWHM。三LED各重复3次，误差条为传播SD得到的95%CI，未给数值CI/详细传播公式；不能把n3当3片物理样品或给跨谱点均值附同一CI。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_si_2018"
+              ],
+              "integration_geometry": null,
+              "replicates_per_wavelength": 3,
+              "error_bar_type": "95_percent_confidence_interval_from_propagated_SD"
+            },
+            "mtf_curve": {
+              "value": "主文Fig.2D/H：RGB实测PSF的傅里叶模值MTF；归一化频率1对应579cycles/mm。SI S8另给绿光物理频率曲线。",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2图注、p.5 Device characterization；SI pp.3–4 §4及p.11 S8",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018",
+                "colburn_computational_si_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "frequency_scale_cyc_per_mm": 579,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            },
+            "chromatic": {
+              "value": "普通镜RGB参考面PSF/MTF变化大；EDOF保留相近模糊传递后用单一数字滤波复原",
+              "source": "colburn_computational_author_2018",
+              "location": "主文pp.1–4 Fig.1/2/3/4；SI §4/S8",
+              "note": "实际逐λ最佳f/有符号轴向或横向色差数表未给；Fig1轴向图为模拟，不能将设计200或模拟400/550/700nm焦位填成LED实测。EDOF/数字复原不是裸镜各λ同一个最佳焦点。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "na": {
+              "value": 0.45,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要及p.4 Discussion：EDOF系统NA约0.45",
+              "note": "作者NA约0.45明确用于EDOF系统；普通镜仅同D/f几何，未单独直报NA，不复制EDOF报告。0.75属于40X收集物镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "approximate": true,
+              "display": "约0.45（作者EDOF系统）"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文Fig.2参考面PSF；SI S8以绿光对焦",
+              "note": "未给本λ最佳焦位数表，不将固定评价面、设计f200或Fig1模拟峰位填成实测焦距。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "绿光参考面PSF；逐λ最佳f未给"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2A–C/E–G",
+              "note": "归一化二维PSF图，无逐λ实测FWHM数表；EDOF有非对称长尾，不以理想Airy公式/图尺估宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "PSF图已核；无逐λFWHM表"
+            },
+            "efficiency_lambda_nm": {
+              "value": 625,
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.13 Fig.S10图注/横轴",
+              "note": "该LED下效率/95%CI只有曲线，不以谱点均值替代。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.13 Fig.S10红/蓝实测误差棒",
+              "note": "未估读三λ效率或误差棒；星号为理论效率，不填实测。每点n3/95%CI协议保留，具体数值未知。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "S10仅曲线/95%CI；数值未估读"
+            }
+          }
+        },
+        {
+          "id": "colburn2018_singlet_imaging_rgb",
+          "model": "Colburn 2018 · 普通镜直接成像 · 蓝图对红图",
+          "study_id": "colburn2018",
+          "specimen_id": "singlet_imaging",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "成像/数字处理配置共享相应裸镜；不同处理链分开，不据此增加独立镜片。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.4 Discussion：small(200μm) focal length and aperture width",
+              "note": "作者口径用width称谓，Fig.1F/G为圆盘图像；单位视觉核为μm，文本提取误成mm。不从图尺估D或用NA反推。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计段及Fig.1D/E图注",
+              "note": "两镜在550nm设计f200μm；实测LED绿光530nm参考焦面的位置未单列，不把200填作各λ实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 633,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构段、p.5 Fabrication",
+              "note": "SiN薄膜/纳米柱名义633nm；熔石英基底不计入此高度，8nm Au/Pd临时消电荷层与Al硬掩膜随后移除。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "作者可见光连续设计/白光成像目标400–700nm；实测只有三个约30nm宽LED，不代表逐λ同焦或全场连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "与连续设计/计算成像声明配对；不是单镜实测连续零色差波段。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2/成像段；SI p.8 S4/S5、p.13 S10",
+              "note": "实际三LED中心455/530/625nm，模拟400/550/700nm另记；汇总不伪造一个测量λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "实测LED455/530/625nm；约30nm谱宽",
+              "sample_wavelengths_nm": [
+                455,
+                530,
+                625
+              ]
+            },
+            "material": {
+              "value": "α=0普通镜 + 40X/ITL200/AmScope MU300成像系统",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计与p.5方法",
+              "note": "几何相位函数为聚焦项加α(x³+y³)/L³，L为半口径width；α=0为普通镜，55π为EDOF。不能把其他α原型默认同几何或同效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "圆柱选择旨在偏振不敏感；所读测量未单列独立偏振通道",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构设计、SI p.8 S4/S5",
+              "note": "设计对称性不等于已测全偏振PSF/效率数表；不补RCP/LCP或偏振零差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "mtf_curve": {
+              "value": "系统所用裸镜的光学MTF入口（主文Fig.2/S8）；未给当前数字输出MTF",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2图注、p.5 Device characterization；SI pp.3–4 §4及p.11 S8",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。 当前处理后输出MTF没有独立数表；不能把裸镜PSF的傅里叶模值曲线当复原后系统MTF。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018",
+                "colburn_computational_si_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "frequency_scale_cyc_per_mm": 579,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            },
+            "chromatic": {
+              "value": "普通镜直接成像，蓝/红比绿光模糊",
+              "source": "colburn_computational_author_2018",
+              "location": "主文pp.1–4 Fig.1/2/3/4；SI §4/S8",
+              "note": "实际逐λ最佳f/有符号轴向或横向色差数表未给；Fig1轴向图为模拟，不能将设计200或模拟400/550/700nm焦位填成LED实测。EDOF/数字复原不是裸镜各λ同一个最佳焦点。 作者承认小口径光收集/SNR限制、方向伪影和几何像差；未给dB SNR或全视场性能。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "psf_protocol": {
+              "value": "纸上USAF/图像物，物距为数cm量级；离轴LED照明物体，透镜收集散射光；40X Nikon/ITL200继像到MU300，减去镜头盖暗噪声。",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.3/5 Imaging；SI p.8 S5",
+              "note": "物面离轴照明不等于已知透镜入射场角；光学像面z/总放大率/场点/像素标定、匹配ROI及噪声功率谱未给齐。RGB固定参考面比较与数字处理状态须保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            },
+            "illumination": {
+              "value": "三LED455/530/625nm，约30nm带宽",
+              "source": "colburn_computational_author_2018",
+              "location": "主文pp.3–4 Fig.3/4；SI p.8 S5",
+              "note": "白光图中的印刷颜色不是三条单色测量；不由白光图自动补逐λf/MTF/SNR。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_si_2018"
+              ]
+            },
+            "ssim": {
+              "value": 0.748,
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.3 §3蓝光图对红光参考的作者SSIM段；主文p.3对应成像段",
+              "note": "同系统蓝LED455nm图与红LED625nm图之间的相似性，红图是参考，不是无像差真值/跨系统ground truth。SI子图引述3A/3C与正式主文布局3C/3E不一致，按段落文字定位。作者称提高0.209；印出0.956−0.748=0.208，完整精度未公开，不改作者结论或另填增量。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ],
+              "calculation_origin": "authors",
+              "reference_wavelength_nm": 625,
+              "test_wavelength_nm": 455,
+              "reference_type": "red_image_same_system",
+              "display": "0.748（蓝图对同系统红图；非真值）"
+            }
+          }
+        },
+        {
+          "id": "colburn2018_singlet_imaging_white",
+          "model": "Colburn 2018 · 普通镜直接成像 · 白光图像",
+          "study_id": "colburn2018",
+          "specimen_id": "singlet_imaging",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "成像/数字处理配置共享相应裸镜；不同处理链分开，不据此增加独立镜片。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.4 Discussion：small(200μm) focal length and aperture width",
+              "note": "作者口径用width称谓，Fig.1F/G为圆盘图像；单位视觉核为μm，文本提取误成mm。不从图尺估D或用NA反推。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计段及Fig.1D/E图注",
+              "note": "两镜在550nm设计f200μm；实测LED绿光530nm参考焦面的位置未单列，不把200填作各λ实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 633,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构段、p.5 Fabrication",
+              "note": "SiN薄膜/纳米柱名义633nm；熔石英基底不计入此高度，8nm Au/Pd临时消电荷层与Al硬掩膜随后移除。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "作者可见光连续设计/白光成像目标400–700nm；实测只有三个约30nm宽LED，不代表逐λ同焦或全场连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "与连续设计/计算成像声明配对；不是单镜实测连续零色差波段。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2/成像段；SI p.8 S4/S5、p.13 S10",
+              "note": "实际三LED中心455/530/625nm，模拟400/550/700nm另记；汇总不伪造一个测量λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "实测LED455/530/625nm；约30nm谱宽",
+              "sample_wavelengths_nm": [
+                455,
+                530,
+                625
+              ]
+            },
+            "material": {
+              "value": "α=0普通镜 + 40X/ITL200/AmScope MU300成像系统",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计与p.5方法",
+              "note": "几何相位函数为聚焦项加α(x³+y³)/L³，L为半口径width；α=0为普通镜，55π为EDOF。不能把其他α原型默认同几何或同效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "圆柱选择旨在偏振不敏感；所读测量未单列独立偏振通道",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构设计、SI p.8 S4/S5",
+              "note": "设计对称性不等于已测全偏振PSF/效率数表；不补RCP/LCP或偏振零差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "mtf_curve": {
+              "value": "系统所用裸镜的光学MTF入口（主文Fig.2/S8）；未给当前数字输出MTF",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2图注、p.5 Device characterization；SI pp.3–4 §4及p.11 S8",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。 当前处理后输出MTF没有独立数表；不能把裸镜PSF的傅里叶模值曲线当复原后系统MTF。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018",
+                "colburn_computational_si_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "frequency_scale_cyc_per_mm": 579,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            },
+            "chromatic": {
+              "value": "普通镜直接成像，蓝/红比绿光模糊",
+              "source": "colburn_computational_author_2018",
+              "location": "主文pp.1–4 Fig.1/2/3/4；SI §4/S8",
+              "note": "实际逐λ最佳f/有符号轴向或横向色差数表未给；Fig1轴向图为模拟，不能将设计200或模拟400/550/700nm焦位填成LED实测。EDOF/数字复原不是裸镜各λ同一个最佳焦点。 作者承认小口径光收集/SNR限制、方向伪影和几何像差；未给dB SNR或全视场性能。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "psf_protocol": {
+              "value": "纸上USAF/图像物，物距为数cm量级；离轴LED照明物体，透镜收集散射光；40X Nikon/ITL200继像到MU300，减去镜头盖暗噪声。",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.3/5 Imaging；SI p.8 S5",
+              "note": "物面离轴照明不等于已知透镜入射场角；光学像面z/总放大率/场点/像素标定、匹配ROI及噪声功率谱未给齐。RGB固定参考面比较与数字处理状态须保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            },
+            "illumination": {
+              "value": "MCWHF2白光LED，实际谱形/光谱权重未给",
+              "source": "colburn_computational_author_2018",
+              "location": "主文pp.3–4 Fig.3/4；SI p.8 S5",
+              "note": "白光图中的印刷颜色不是三条单色测量；不由白光图自动补逐λf/MTF/SNR。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_si_2018"
+              ]
+            }
+          }
+        },
+        {
+          "id": "colburn2018_edof_imaging_raw_rgb",
+          "model": "Colburn 2018 · EDOF直接成像 · 蓝图对红图",
+          "study_id": "colburn2018",
+          "specimen_id": "edof_imaging_raw",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "成像/数字处理配置共享相应裸镜；不同处理链分开，不据此增加独立镜片。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.4 Discussion：small(200μm) focal length and aperture width",
+              "note": "作者口径用width称谓，Fig.1F/G为圆盘图像；单位视觉核为μm，文本提取误成mm。不从图尺估D或用NA反推。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计段及Fig.1D/E图注",
+              "note": "两镜在550nm设计f200μm；实测LED绿光530nm参考焦面的位置未单列，不把200填作各λ实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 633,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构段、p.5 Fabrication",
+              "note": "SiN薄膜/纳米柱名义633nm；熔石英基底不计入此高度，8nm Au/Pd临时消电荷层与Al硬掩膜随后移除。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "作者可见光连续设计/白光成像目标400–700nm；实测只有三个约30nm宽LED，不代表逐λ同焦或全场连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "与连续设计/计算成像声明配对；不是单镜实测连续零色差波段。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2/成像段；SI p.8 S4/S5、p.13 S10",
+              "note": "实际三LED中心455/530/625nm，模拟400/550/700nm另记；汇总不伪造一个测量λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "实测LED455/530/625nm；约30nm谱宽",
+              "sample_wavelengths_nm": [
+                455,
+                530,
+                625
+              ]
+            },
+            "material": {
+              "value": "α=55π EDOF + 40X/ITL200/AmScope MU300成像系统",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计与p.5方法",
+              "note": "几何相位函数为聚焦项加α(x³+y³)/L³，L为半口径width；α=0为普通镜，55π为EDOF。不能把其他α原型默认同几何或同效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "圆柱选择旨在偏振不敏感；所读测量未单列独立偏振通道",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构设计、SI p.8 S4/S5",
+              "note": "设计对称性不等于已测全偏振PSF/效率数表；不补RCP/LCP或偏振零差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "mtf_curve": {
+              "value": "系统所用裸镜的光学MTF入口（主文Fig.2/S8）；未给当前数字输出MTF",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2图注、p.5 Device characterization；SI pp.3–4 §4及p.11 S8",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。 当前处理后输出MTF没有独立数表；不能把裸镜PSF的傅里叶模值曲线当复原后系统MTF。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018",
+                "colburn_computational_si_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "frequency_scale_cyc_per_mm": 579,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            },
+            "chromatic": {
+              "value": "EDOF直接成像：多色较一致模糊，未数字复原",
+              "source": "colburn_computational_author_2018",
+              "location": "主文pp.1–4 Fig.1/2/3/4；SI §4/S8",
+              "note": "实际逐λ最佳f/有符号轴向或横向色差数表未给；Fig1轴向图为模拟，不能将设计200或模拟400/550/700nm焦位填成LED实测。EDOF/数字复原不是裸镜各λ同一个最佳焦点。 作者承认小口径光收集/SNR限制、方向伪影和几何像差；未给dB SNR或全视场性能。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "psf_protocol": {
+              "value": "纸上USAF/图像物，物距为数cm量级；离轴LED照明物体，透镜收集散射光；40X Nikon/ITL200继像到MU300，减去镜头盖暗噪声。",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.3/5 Imaging；SI p.8 S5",
+              "note": "物面离轴照明不等于已知透镜入射场角；光学像面z/总放大率/场点/像素标定、匹配ROI及噪声功率谱未给齐。RGB固定参考面比较与数字处理状态须保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            },
+            "illumination": {
+              "value": "三LED455/530/625nm，约30nm带宽",
+              "source": "colburn_computational_author_2018",
+              "location": "主文pp.3–4 Fig.3/4；SI p.8 S5",
+              "note": "白光图中的印刷颜色不是三条单色测量；不由白光图自动补逐λf/MTF/SNR。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_si_2018"
+              ]
+            }
+          }
+        },
+        {
+          "id": "colburn2018_edof_imaging_raw_white",
+          "model": "Colburn 2018 · EDOF直接成像 · 白光图像",
+          "study_id": "colburn2018",
+          "specimen_id": "edof_imaging_raw",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "成像/数字处理配置共享相应裸镜；不同处理链分开，不据此增加独立镜片。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.4 Discussion：small(200μm) focal length and aperture width",
+              "note": "作者口径用width称谓，Fig.1F/G为圆盘图像；单位视觉核为μm，文本提取误成mm。不从图尺估D或用NA反推。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计段及Fig.1D/E图注",
+              "note": "两镜在550nm设计f200μm；实测LED绿光530nm参考焦面的位置未单列，不把200填作各λ实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 633,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构段、p.5 Fabrication",
+              "note": "SiN薄膜/纳米柱名义633nm；熔石英基底不计入此高度，8nm Au/Pd临时消电荷层与Al硬掩膜随后移除。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "作者可见光连续设计/白光成像目标400–700nm；实测只有三个约30nm宽LED，不代表逐λ同焦或全场连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "与连续设计/计算成像声明配对；不是单镜实测连续零色差波段。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2/成像段；SI p.8 S4/S5、p.13 S10",
+              "note": "实际三LED中心455/530/625nm，模拟400/550/700nm另记；汇总不伪造一个测量λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "实测LED455/530/625nm；约30nm谱宽",
+              "sample_wavelengths_nm": [
+                455,
+                530,
+                625
+              ]
+            },
+            "material": {
+              "value": "α=55π EDOF + 40X/ITL200/AmScope MU300成像系统",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计与p.5方法",
+              "note": "几何相位函数为聚焦项加α(x³+y³)/L³，L为半口径width；α=0为普通镜，55π为EDOF。不能把其他α原型默认同几何或同效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "圆柱选择旨在偏振不敏感；所读测量未单列独立偏振通道",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构设计、SI p.8 S4/S5",
+              "note": "设计对称性不等于已测全偏振PSF/效率数表；不补RCP/LCP或偏振零差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "mtf_curve": {
+              "value": "系统所用裸镜的光学MTF入口（主文Fig.2/S8）；未给当前数字输出MTF",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2图注、p.5 Device characterization；SI pp.3–4 §4及p.11 S8",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。 当前处理后输出MTF没有独立数表；不能把裸镜PSF的傅里叶模值曲线当复原后系统MTF。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018",
+                "colburn_computational_si_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "frequency_scale_cyc_per_mm": 579,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            },
+            "chromatic": {
+              "value": "EDOF直接成像：多色较一致模糊，未数字复原",
+              "source": "colburn_computational_author_2018",
+              "location": "主文pp.1–4 Fig.1/2/3/4；SI §4/S8",
+              "note": "实际逐λ最佳f/有符号轴向或横向色差数表未给；Fig1轴向图为模拟，不能将设计200或模拟400/550/700nm焦位填成LED实测。EDOF/数字复原不是裸镜各λ同一个最佳焦点。 作者承认小口径光收集/SNR限制、方向伪影和几何像差；未给dB SNR或全视场性能。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "psf_protocol": {
+              "value": "纸上USAF/图像物，物距为数cm量级；离轴LED照明物体，透镜收集散射光；40X Nikon/ITL200继像到MU300，减去镜头盖暗噪声。",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.3/5 Imaging；SI p.8 S5",
+              "note": "物面离轴照明不等于已知透镜入射场角；光学像面z/总放大率/场点/像素标定、匹配ROI及噪声功率谱未给齐。RGB固定参考面比较与数字处理状态须保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            },
+            "illumination": {
+              "value": "MCWHF2白光LED，实际谱形/光谱权重未给",
+              "source": "colburn_computational_author_2018",
+              "location": "主文pp.3–4 Fig.3/4；SI p.8 S5",
+              "note": "白光图中的印刷颜色不是三条单色测量；不由白光图自动补逐λf/MTF/SNR。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_si_2018"
+              ]
+            }
+          }
+        },
+        {
+          "id": "colburn2018_edof_imaging_wiener_rgb",
+          "model": "Colburn 2018 · EDOF+Wiener复原 · 蓝图对红图",
+          "study_id": "colburn2018",
+          "specimen_id": "edof_imaging_wiener",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "成像/数字处理配置共享相应裸镜；不同处理链分开，不据此增加独立镜片。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.4 Discussion：small(200μm) focal length and aperture width",
+              "note": "作者口径用width称谓，Fig.1F/G为圆盘图像；单位视觉核为μm，文本提取误成mm。不从图尺估D或用NA反推。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计段及Fig.1D/E图注",
+              "note": "两镜在550nm设计f200μm；实测LED绿光530nm参考焦面的位置未单列，不把200填作各λ实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 633,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构段、p.5 Fabrication",
+              "note": "SiN薄膜/纳米柱名义633nm；熔石英基底不计入此高度，8nm Au/Pd临时消电荷层与Al硬掩膜随后移除。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "作者可见光连续设计/白光成像目标400–700nm；实测只有三个约30nm宽LED，不代表逐λ同焦或全场连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "与连续设计/计算成像声明配对；不是单镜实测连续零色差波段。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2/成像段；SI p.8 S4/S5、p.13 S10",
+              "note": "实际三LED中心455/530/625nm，模拟400/550/700nm另记；汇总不伪造一个测量λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "实测LED455/530/625nm；约30nm谱宽",
+              "sample_wavelengths_nm": [
+                455,
+                530,
+                625
+              ]
+            },
+            "material": {
+              "value": "α=55π EDOF + 40X/ITL200/AmScope MU300成像系统",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计与p.5方法",
+              "note": "几何相位函数为聚焦项加α(x³+y³)/L³，L为半口径width；α=0为普通镜，55π为EDOF。不能把其他α原型默认同几何或同效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "圆柱选择旨在偏振不敏感；所读测量未单列独立偏振通道",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构设计、SI p.8 S4/S5",
+              "note": "设计对称性不等于已测全偏振PSF/效率数表；不补RCP/LCP或偏振零差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "mtf_curve": {
+              "value": "系统所用裸镜的光学MTF入口（主文Fig.2/S8）；未给当前数字输出MTF",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2图注、p.5 Device characterization；SI pp.3–4 §4及p.11 S8",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。 当前处理后输出MTF没有独立数表；不能把裸镜PSF的傅里叶模值曲线当复原后系统MTF。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018",
+                "colburn_computational_si_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "frequency_scale_cyc_per_mm": 579,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            },
+            "chromatic": {
+              "value": "EDOF+单一校准PSF的Wiener复原；不是裸镜消色差焦距",
+              "source": "colburn_computational_author_2018",
+              "location": "主文pp.1–4 Fig.1/2/3/4；SI §4/S8",
+              "note": "实际逐λ最佳f/有符号轴向或横向色差数表未给；Fig1轴向图为模拟，不能将设计200或模拟400/550/700nm焦位填成LED实测。EDOF/数字复原不是裸镜各λ同一个最佳焦点。 作者承认小口径光收集/SNR限制、方向伪影和几何像差；未给dB SNR或全视场性能。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "psf_protocol": {
+              "value": "纸上USAF/图像物，物距为数cm量级；离轴LED照明物体，透镜收集散射光；40X Nikon/ITL200继像到MU300，减去镜头盖暗噪声。",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.3/5 Imaging；SI p.8 S5",
+              "note": "物面离轴照明不等于已知透镜入射场角；光学像面z/总放大率/场点/像素标定、匹配ROI及噪声功率谱未给齐。RGB固定参考面比较与数字处理状态须保留。 复原核由校准PSF测得，具体核波长、Wiener噪声参数/边界处理/原始数组未给齐；不称本库复算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            },
+            "illumination": {
+              "value": "三LED455/530/625nm，约30nm带宽",
+              "source": "colburn_computational_author_2018",
+              "location": "主文pp.3–4 Fig.3/4；SI p.8 S5",
+              "note": "白光图中的印刷颜色不是三条单色测量；不由白光图自动补逐λf/MTF/SNR。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_si_2018"
+              ]
+            },
+            "ssim": {
+              "value": 0.956,
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.3 §3蓝光图对红光参考的作者SSIM段；主文p.3对应成像段",
+              "note": "同系统蓝LED455nm图与红LED625nm图之间的相似性，红图是参考，不是无像差真值/跨系统ground truth。SI子图引述3A/3C与正式主文布局3C/3E不一致，按段落文字定位。作者称提高0.209；印出0.956−0.748=0.208，完整精度未公开，不改作者结论或另填增量。",
+              "basis": "reconstruction",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ],
+              "calculation_origin": "authors",
+              "reference_wavelength_nm": 625,
+              "test_wavelength_nm": 455,
+              "reference_type": "red_image_same_system",
+              "display": "0.956（蓝图对同系统红图；非真值）"
+            }
+          }
+        },
+        {
+          "id": "colburn2018_edof_imaging_wiener_white",
+          "model": "Colburn 2018 · EDOF+Wiener复原 · 白光图像",
+          "study_id": "colburn2018",
+          "specimen_id": "edof_imaging_wiener",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "成像/数字处理配置共享相应裸镜；不同处理链分开，不据此增加独立镜片。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.4 Discussion：small(200μm) focal length and aperture width",
+              "note": "作者口径用width称谓，Fig.1F/G为圆盘图像；单位视觉核为μm，文本提取误成mm。不从图尺估D或用NA反推。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计段及Fig.1D/E图注",
+              "note": "两镜在550nm设计f200μm；实测LED绿光530nm参考焦面的位置未单列，不把200填作各λ实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 633,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构段、p.5 Fabrication",
+              "note": "SiN薄膜/纳米柱名义633nm；熔石英基底不计入此高度，8nm Au/Pd临时消电荷层与Al硬掩膜随后移除。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "作者可见光连续设计/白光成像目标400–700nm；实测只有三个约30nm宽LED，不代表逐λ同焦或全场连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "与连续设计/计算成像声明配对；不是单镜实测连续零色差波段。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2/成像段；SI p.8 S4/S5、p.13 S10",
+              "note": "实际三LED中心455/530/625nm，模拟400/550/700nm另记；汇总不伪造一个测量λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "实测LED455/530/625nm；约30nm谱宽",
+              "sample_wavelengths_nm": [
+                455,
+                530,
+                625
+              ]
+            },
+            "material": {
+              "value": "α=55π EDOF + 40X/ITL200/AmScope MU300成像系统",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计与p.5方法",
+              "note": "几何相位函数为聚焦项加α(x³+y³)/L³，L为半口径width；α=0为普通镜，55π为EDOF。不能把其他α原型默认同几何或同效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "圆柱选择旨在偏振不敏感；所读测量未单列独立偏振通道",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构设计、SI p.8 S4/S5",
+              "note": "设计对称性不等于已测全偏振PSF/效率数表；不补RCP/LCP或偏振零差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "mtf_curve": {
+              "value": "系统所用裸镜的光学MTF入口（主文Fig.2/S8）；未给当前数字输出MTF",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2图注、p.5 Device characterization；SI pp.3–4 §4及p.11 S8",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。 当前处理后输出MTF没有独立数表；不能把裸镜PSF的傅里叶模值曲线当复原后系统MTF。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018",
+                "colburn_computational_si_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "frequency_scale_cyc_per_mm": 579,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            },
+            "chromatic": {
+              "value": "EDOF+单一校准PSF的Wiener复原；不是裸镜消色差焦距",
+              "source": "colburn_computational_author_2018",
+              "location": "主文pp.1–4 Fig.1/2/3/4；SI §4/S8",
+              "note": "实际逐λ最佳f/有符号轴向或横向色差数表未给；Fig1轴向图为模拟，不能将设计200或模拟400/550/700nm焦位填成LED实测。EDOF/数字复原不是裸镜各λ同一个最佳焦点。 作者承认小口径光收集/SNR限制、方向伪影和几何像差；未给dB SNR或全视场性能。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "psf_protocol": {
+              "value": "纸上USAF/图像物，物距为数cm量级；离轴LED照明物体，透镜收集散射光；40X Nikon/ITL200继像到MU300，减去镜头盖暗噪声。",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.3/5 Imaging；SI p.8 S5",
+              "note": "物面离轴照明不等于已知透镜入射场角；光学像面z/总放大率/场点/像素标定、匹配ROI及噪声功率谱未给齐。RGB固定参考面比较与数字处理状态须保留。 复原核由校准PSF测得，具体核波长、Wiener噪声参数/边界处理/原始数组未给齐；不称本库复算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            },
+            "illumination": {
+              "value": "MCWHF2白光LED，实际谱形/光谱权重未给",
+              "source": "colburn_computational_author_2018",
+              "location": "主文pp.3–4 Fig.3/4；SI p.8 S5",
+              "note": "白光图中的印刷颜色不是三条单色测量；不由白光图自动补逐λf/MTF/SNR。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_si_2018"
+              ]
+            }
+          }
+        },
+        {
+          "id": "colburn2018_tv_1000",
+          "model": "Colburn 2018 · EDOF + TV · 正则λ1000",
+          "study_id": "colburn2018",
+          "specimen_id": "edof_imaging_tv",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一α55π采集图像的不同正则条件，不是三片透镜或额外测量波长。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.4 Discussion：small(200μm) focal length and aperture width",
+              "note": "作者口径用width称谓，Fig.1F/G为圆盘图像；单位视觉核为μm，文本提取误成mm。不从图尺估D或用NA反推。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计段及Fig.1D/E图注",
+              "note": "两镜在550nm设计f200μm；实测LED绿光530nm参考焦面的位置未单列，不把200填作各λ实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 633,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构段、p.5 Fabrication",
+              "note": "SiN薄膜/纳米柱名义633nm；熔石英基底不计入此高度，8nm Au/Pd临时消电荷层与Al硬掩膜随后移除。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "作者可见光连续设计/白光成像目标400–700nm；实测只有三个约30nm宽LED，不代表逐λ同焦或全场连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "与连续设计/计算成像声明配对；不是单镜实测连续零色差波段。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2/成像段；SI p.8 S4/S5、p.13 S10",
+              "note": "实际三LED中心455/530/625nm，模拟400/550/700nm另记；汇总不伪造一个测量λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "实测LED455/530/625nm；约30nm谱宽",
+              "sample_wavelengths_nm": [
+                455,
+                530,
+                625
+              ]
+            },
+            "material": {
+              "value": "α=55π EDOF + 40X/ITL200/AmScope MU300成像系统",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计与p.5方法",
+              "note": "几何相位函数为聚焦项加α(x³+y³)/L³，L为半口径width；α=0为普通镜，55π为EDOF。不能把其他α原型默认同几何或同效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "圆柱选择旨在偏振不敏感；所读测量未单列独立偏振通道",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构设计、SI p.8 S4/S5",
+              "note": "设计对称性不等于已测全偏振PSF/效率数表；不补RCP/LCP或偏振零差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "mtf_curve": {
+              "value": "系统所用裸镜的光学MTF入口（主文Fig.2/S8）；未给当前数字输出MTF",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2图注、p.5 Device characterization；SI pp.3–4 §4及p.11 S8",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。 当前处理后输出MTF没有独立数表；不能把裸镜PSF的傅里叶模值曲线当复原后系统MTF。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018",
+                "colburn_computational_si_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "frequency_scale_cyc_per_mm": 579,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            },
+            "chromatic": {
+              "value": "α55π EDOF + TV正则复原，正则参数λ=1000（不是光波长）",
+              "source": "colburn_computational_author_2018",
+              "location": "SI p.2 §2及p.10 S7A/B/C",
+              "note": "RGB图像的后处理比较；约20迭代/平均55.5s对Wiener0.56s为作者该实现时长，硬件/图尺寸未齐，不当实际相机帧率或延迟指标。未给该正则参数独立SSIM/PSNR/SNR，不复制Wiener0.956。",
+              "basis": "reconstruction",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "psf_protocol": {
+              "value": "纸上USAF/图像物，物距为数cm量级；离轴LED照明物体，透镜收集散射光；40X Nikon/ITL200继像到MU300，减去镜头盖暗噪声。",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.3/5 Imaging；SI p.8 S5",
+              "note": "物面离轴照明不等于已知透镜入射场角；光学像面z/总放大率/场点/像素标定、匹配ROI及噪声功率谱未给齐。RGB固定参考面比较与数字处理状态须保留。 TV使用Split Bregman公开方法；λ为正则参数，不能填wavelength_nm或把作者算法运行当本库重建。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            }
+          }
+        },
+        {
+          "id": "colburn2018_tv_5000",
+          "model": "Colburn 2018 · EDOF + TV · 正则λ5000",
+          "study_id": "colburn2018",
+          "specimen_id": "edof_imaging_tv",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一α55π采集图像的不同正则条件，不是三片透镜或额外测量波长。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.4 Discussion：small(200μm) focal length and aperture width",
+              "note": "作者口径用width称谓，Fig.1F/G为圆盘图像；单位视觉核为μm，文本提取误成mm。不从图尺估D或用NA反推。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计段及Fig.1D/E图注",
+              "note": "两镜在550nm设计f200μm；实测LED绿光530nm参考焦面的位置未单列，不把200填作各λ实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 633,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构段、p.5 Fabrication",
+              "note": "SiN薄膜/纳米柱名义633nm；熔石英基底不计入此高度，8nm Au/Pd临时消电荷层与Al硬掩膜随后移除。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "作者可见光连续设计/白光成像目标400–700nm；实测只有三个约30nm宽LED，不代表逐λ同焦或全场连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "与连续设计/计算成像声明配对；不是单镜实测连续零色差波段。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2/成像段；SI p.8 S4/S5、p.13 S10",
+              "note": "实际三LED中心455/530/625nm，模拟400/550/700nm另记；汇总不伪造一个测量λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "实测LED455/530/625nm；约30nm谱宽",
+              "sample_wavelengths_nm": [
+                455,
+                530,
+                625
+              ]
+            },
+            "material": {
+              "value": "α=55π EDOF + 40X/ITL200/AmScope MU300成像系统",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计与p.5方法",
+              "note": "几何相位函数为聚焦项加α(x³+y³)/L³，L为半口径width；α=0为普通镜，55π为EDOF。不能把其他α原型默认同几何或同效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "圆柱选择旨在偏振不敏感；所读测量未单列独立偏振通道",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构设计、SI p.8 S4/S5",
+              "note": "设计对称性不等于已测全偏振PSF/效率数表；不补RCP/LCP或偏振零差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "mtf_curve": {
+              "value": "系统所用裸镜的光学MTF入口（主文Fig.2/S8）；未给当前数字输出MTF",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2图注、p.5 Device characterization；SI pp.3–4 §4及p.11 S8",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。 当前处理后输出MTF没有独立数表；不能把裸镜PSF的傅里叶模值曲线当复原后系统MTF。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018",
+                "colburn_computational_si_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "frequency_scale_cyc_per_mm": 579,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            },
+            "chromatic": {
+              "value": "α55π EDOF + TV正则复原，正则参数λ=5000（不是光波长）",
+              "source": "colburn_computational_author_2018",
+              "location": "SI p.2 §2及p.10 S7A/B/C",
+              "note": "RGB图像的后处理比较；约20迭代/平均55.5s对Wiener0.56s为作者该实现时长，硬件/图尺寸未齐，不当实际相机帧率或延迟指标。未给该正则参数独立SSIM/PSNR/SNR，不复制Wiener0.956。",
+              "basis": "reconstruction",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "psf_protocol": {
+              "value": "纸上USAF/图像物，物距为数cm量级；离轴LED照明物体，透镜收集散射光；40X Nikon/ITL200继像到MU300，减去镜头盖暗噪声。",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.3/5 Imaging；SI p.8 S5",
+              "note": "物面离轴照明不等于已知透镜入射场角；光学像面z/总放大率/场点/像素标定、匹配ROI及噪声功率谱未给齐。RGB固定参考面比较与数字处理状态须保留。 TV使用Split Bregman公开方法；λ为正则参数，不能填wavelength_nm或把作者算法运行当本库重建。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            }
+          }
+        },
+        {
+          "id": "colburn2018_tv_10000",
+          "model": "Colburn 2018 · EDOF + TV · 正则λ10000",
+          "study_id": "colburn2018",
+          "specimen_id": "edof_imaging_tv",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一α55π采集图像的不同正则条件，不是三片透镜或额外测量波长。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.4 Discussion：small(200μm) focal length and aperture width",
+              "note": "作者口径用width称谓，Fig.1F/G为圆盘图像；单位视觉核为μm，文本提取误成mm。不从图尺估D或用NA反推。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计段及Fig.1D/E图注",
+              "note": "两镜在550nm设计f200μm；实测LED绿光530nm参考焦面的位置未单列，不把200填作各λ实测f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 633,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构段、p.5 Fabrication",
+              "note": "SiN薄膜/纳米柱名义633nm；熔石英基底不计入此高度，8nm Au/Pd临时消电荷层与Al硬掩膜随后移除。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "作者可见光连续设计/白光成像目标400–700nm；实测只有三个约30nm宽LED，不代表逐λ同焦或全场连续验收。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "colburn_computational_author_2018",
+              "location": "主文摘要/p.2设计段、p.5 Design and simulation",
+              "note": "与连续设计/计算成像声明配对；不是单镜实测连续零色差波段。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2/成像段；SI p.8 S4/S5、p.13 S10",
+              "note": "实际三LED中心455/530/625nm，模拟400/550/700nm另记；汇总不伪造一个测量λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "实测LED455/530/625nm；约30nm谱宽",
+              "sample_wavelengths_nm": [
+                455,
+                530,
+                625
+              ]
+            },
+            "material": {
+              "value": "α=55π EDOF + 40X/ITL200/AmScope MU300成像系统",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计与p.5方法",
+              "note": "几何相位函数为聚焦项加α(x³+y³)/L³，L为半口径width；α=0为普通镜，55π为EDOF。不能把其他α原型默认同几何或同效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "圆柱选择旨在偏振不敏感；所读测量未单列独立偏振通道",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构设计、SI p.8 S4/S5",
+              "note": "设计对称性不等于已测全偏振PSF/效率数表；不补RCP/LCP或偏振零差异。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "mtf_curve": {
+              "value": "系统所用裸镜的光学MTF入口（主文Fig.2/S8）；未给当前数字输出MTF",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2图注、p.5 Device characterization；SI pp.3–4 §4及p.11 S8",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。 当前处理后输出MTF没有独立数表；不能把裸镜PSF的傅里叶模值曲线当复原后系统MTF。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018",
+                "colburn_computational_si_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "frequency_scale_cyc_per_mm": 579,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            },
+            "chromatic": {
+              "value": "α55π EDOF + TV正则复原，正则参数λ=10000（不是光波长）",
+              "source": "colburn_computational_author_2018",
+              "location": "SI p.2 §2及p.10 S7A/B/C",
+              "note": "RGB图像的后处理比较；约20迭代/平均55.5s对Wiener0.56s为作者该实现时长，硬件/图尺寸未齐，不当实际相机帧率或延迟指标。未给该正则参数独立SSIM/PSNR/SNR，不复制Wiener0.956。",
+              "basis": "reconstruction",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "psf_protocol": {
+              "value": "纸上USAF/图像物，物距为数cm量级；离轴LED照明物体，透镜收集散射光；40X Nikon/ITL200继像到MU300，减去镜头盖暗噪声。",
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.3/5 Imaging；SI p.8 S5",
+              "note": "物面离轴照明不等于已知透镜入射场角；光学像面z/总放大率/场点/像素标定、匹配ROI及噪声功率谱未给齐。RGB固定参考面比较与数字处理状态须保留。 TV使用Split Bregman公开方法；λ为正则参数，不能填wavelength_nm或把作者算法运行当本库重建。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ]
+            }
+          }
+        },
+        {
+          "id": "colburn2018_alpha20_white",
+          "model": "Colburn 2018 · 附加α20π · 白光复原",
+          "study_id": "colburn2018",
+          "specimen_id": "alpha20",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同α的图像/MTF条件可分行；附加参数配置不是主文α55π镜的更多谱点。",
+          "values": {
+            "material": {
+              "value": "附加实制cubic-phase α=20π配置",
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.2 §1及p.9 S6A/B",
+              "note": "S6A列α0/20π/40π/60π，S6B曲线列0/40π/80π；按各自标签保存，不把60π与80π混为一镜，不能继承主文55π效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.9 S6A/B",
+              "note": "白光成像与green-MTF分别记录；S6B未独立印中心nm，数值波长留空，不把图中α数值当λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "白光复原图"
+            },
+            "diameter_um": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "SI §1/S6附加α实验",
+              "note": "该附加结构没有逐配置独立几何数表，不自动复制主文D200/f200/NA约0.45。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "附加α口径未单列"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "SI §1/S6",
+              "note": "附加α配置未单列独立f；不套主文两个镜片的设计值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "附加α设计f未单列"
+            },
+            "mtf_curve": {
+              "value": "S6A附加α的白光复原图；没有对应本行定量MTF",
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.2 §1及p.9 Fig.S6",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。 S6不同α的MTF趋势不能直接换算dB SNR；噪声谱/信号归一化条件未知，579cycles/mm只在主文Fig2明确，不自动校准S6频率。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            }
+          }
+        },
+        {
+          "id": "colburn2018_alpha40_white",
+          "model": "Colburn 2018 · 附加α40π · 白光复原",
+          "study_id": "colburn2018",
+          "specimen_id": "alpha40",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同α的图像/MTF条件可分行；附加参数配置不是主文α55π镜的更多谱点。",
+          "values": {
+            "material": {
+              "value": "附加实制cubic-phase α=40π配置",
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.2 §1及p.9 S6A/B",
+              "note": "S6A列α0/20π/40π/60π，S6B曲线列0/40π/80π；按各自标签保存，不把60π与80π混为一镜，不能继承主文55π效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.9 S6A/B",
+              "note": "白光成像与green-MTF分别记录；S6B未独立印中心nm，数值波长留空，不把图中α数值当λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "白光复原图"
+            },
+            "diameter_um": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "SI §1/S6附加α实验",
+              "note": "该附加结构没有逐配置独立几何数表，不自动复制主文D200/f200/NA约0.45。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "附加α口径未单列"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "SI §1/S6",
+              "note": "附加α配置未单列独立f；不套主文两个镜片的设计值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "附加α设计f未单列"
+            },
+            "mtf_curve": {
+              "value": "S6A附加α的白光复原图；没有对应本行定量MTF",
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.2 §1及p.9 Fig.S6",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。 S6不同α的MTF趋势不能直接换算dB SNR；噪声谱/信号归一化条件未知，579cycles/mm只在主文Fig2明确，不自动校准S6频率。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            }
+          }
+        },
+        {
+          "id": "colburn2018_alpha40_green_mtf",
+          "model": "Colburn 2018 · 附加α40π · 绿光MTF",
+          "study_id": "colburn2018",
+          "specimen_id": "alpha40",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同α的图像/MTF条件可分行；附加参数配置不是主文α55π镜的更多谱点。",
+          "values": {
+            "material": {
+              "value": "附加实制cubic-phase α=40π配置",
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.2 §1及p.9 S6A/B",
+              "note": "S6A列α0/20π/40π/60π，S6B曲线列0/40π/80π；按各自标签保存，不把60π与80π混为一镜，不能继承主文55π效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.9 S6A/B",
+              "note": "白光成像与green-MTF分别记录；S6B未独立印中心nm，数值波长留空，不把图中α数值当λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "S6B绿光MTF；中心nm未单列"
+            },
+            "diameter_um": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "SI §1/S6附加α实验",
+              "note": "该附加结构没有逐配置独立几何数表，不自动复制主文D200/f200/NA约0.45。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "附加α口径未单列"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "SI §1/S6",
+              "note": "附加α配置未单列独立f；不套主文两个镜片的设计值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "附加α设计f未单列"
+            },
+            "mtf_curve": {
+              "value": "S6B绿光MTF曲线：α0/40π/80π，横轴归一化频率，纵轴0–1",
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.2 §1及p.9 Fig.S6",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。 S6不同α的MTF趋势不能直接换算dB SNR；噪声谱/信号归一化条件未知，579cycles/mm只在主文Fig2明确，不自动校准S6频率。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            }
+          }
+        },
+        {
+          "id": "colburn2018_alpha60_white",
+          "model": "Colburn 2018 · 附加α60π · 白光复原",
+          "study_id": "colburn2018",
+          "specimen_id": "alpha60",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同α的图像/MTF条件可分行；附加参数配置不是主文α55π镜的更多谱点。",
+          "values": {
+            "material": {
+              "value": "附加实制cubic-phase α=60π配置",
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.2 §1及p.9 S6A/B",
+              "note": "S6A列α0/20π/40π/60π，S6B曲线列0/40π/80π；按各自标签保存，不把60π与80π混为一镜，不能继承主文55π效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.9 S6A/B",
+              "note": "白光成像与green-MTF分别记录；S6B未独立印中心nm，数值波长留空，不把图中α数值当λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "白光复原图"
+            },
+            "diameter_um": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "SI §1/S6附加α实验",
+              "note": "该附加结构没有逐配置独立几何数表，不自动复制主文D200/f200/NA约0.45。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "附加α口径未单列"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "SI §1/S6",
+              "note": "附加α配置未单列独立f；不套主文两个镜片的设计值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "附加α设计f未单列"
+            },
+            "mtf_curve": {
+              "value": "S6A附加α的白光复原图；没有对应本行定量MTF",
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.2 §1及p.9 Fig.S6",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。 S6不同α的MTF趋势不能直接换算dB SNR；噪声谱/信号归一化条件未知，579cycles/mm只在主文Fig2明确，不自动校准S6频率。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            }
+          }
+        },
+        {
+          "id": "colburn2018_alpha80_green_mtf",
+          "model": "Colburn 2018 · 附加α80π · 绿光MTF",
+          "study_id": "colburn2018",
+          "specimen_id": "alpha80",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同α的图像/MTF条件可分行；附加参数配置不是主文α55π镜的更多谱点。",
+          "values": {
+            "material": {
+              "value": "附加实制cubic-phase α=80π配置",
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.2 §1及p.9 S6A/B",
+              "note": "S6A列α0/20π/40π/60π，S6B曲线列0/40π/80π；按各自标签保存，不把60π与80π混为一镜，不能继承主文55π效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.9 S6A/B",
+              "note": "白光成像与green-MTF分别记录；S6B未独立印中心nm，数值波长留空，不把图中α数值当λ。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "S6B绿光MTF；中心nm未单列"
+            },
+            "diameter_um": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "SI §1/S6附加α实验",
+              "note": "该附加结构没有逐配置独立几何数表，不自动复制主文D200/f200/NA约0.45。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "附加α口径未单列"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "SI §1/S6",
+              "note": "附加α配置未单列独立f；不套主文两个镜片的设计值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "附加α设计f未单列"
+            },
+            "mtf_curve": {
+              "value": "S6B绿光MTF曲线：α0/40π/80π，横轴归一化频率，纵轴0–1",
+              "source": "colburn_computational_si_2018",
+              "location": "SI p.2 §1及p.9 Fig.S6",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。 S6不同α的MTF趋势不能直接换算dB SNR；噪声谱/信号归一化条件未知，579cycles/mm只在主文Fig2明确，不自动校准S6频率。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            }
+          }
+        },
+        {
+          "id": "colburn2018_singlet_model_axial",
+          "model": "Colburn 2018 · 普通镜 · 轴向/离轴模拟",
+          "study_id": "colburn2018",
+          "specimen_id": "singlet_model",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "模型配置与实制分开；同模型多λ/角度汇总为曲线入口，不伪造逐点原始数表。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.4 Discussion：small(200μm) focal length and aperture width",
+              "note": "作者口径用width称谓，Fig.1F/G为圆盘图像；单位视觉核为μm，文本提取误成mm。不从图尺估D或用NA反推。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计段及Fig.1D/E图注",
+              "note": "两镜在550nm设计f200μm；实测LED绿光530nm参考焦面的位置未单列，不把200填作各λ实测f。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 633,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构段、p.5 Fabrication",
+              "note": "SiN薄膜/纳米柱名义633nm；熔石英基底不计入此高度，8nm Au/Pd临时消电荷层与Al硬掩膜随后移除。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "α0普通镜的RCWA单元+角谱传播模型（非整器件FDTD）",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计与p.5方法",
+              "note": "几何相位函数为聚焦项加α(x³+y³)/L³，L为半口径width；α=0为普通镜，55π为EDOF。不能把其他α原型默认同几何或同效率。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            },
+            "mtf_curve": {
+              "value": "主文Fig.2D/H：RGB实测PSF的傅里叶模值MTF；归一化频率1对应579cycles/mm。SI S8另给绿光物理频率曲线。",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2图注、p.5 Device characterization；SI pp.3–4 §4及p.11 S8",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018",
+                "colburn_computational_si_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "frequency_scale_cyc_per_mm": 579,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.2 Fig.1D/E；SI p.12 S9",
+              "note": "模拟400/550/700nm、入射角0/5/10°；不是LED实际测量，模型角度不填成实测FOV或逐角实测焦距。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ],
+              "display": "模拟400/550/700nm；角度0/5/10°",
+              "simulation_wavelengths_nm": [
+                400,
+                550,
+                700
+              ],
+              "simulation_angles_deg": [
+                0,
+                5,
+                10
+              ]
+            },
+            "chromatic": {
+              "value": "Fig1/S9模拟轴向强度；EDOF在设计平面有延长焦区但仍存在几何像差",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2 Fig.1/p.5模拟方法；SI §5/S9",
+              "note": "内存限制使整器件全FDTD不可行，采用复振幅薄掩膜/Rayleigh-Sommerfeld角谱；未从曲线估焦距、DOF或横向色差，不称全场已消像差。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_si_2018"
+              ]
+            }
+          }
+        },
+        {
+          "id": "colburn2018_singlet_model_bw0",
+          "model": "Colburn 2018 · 普通镜模型 · 530nm / 谱宽0nm",
+          "study_id": "colburn2018",
+          "specimen_id": "singlet_model",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同普通镜模型的光谱宽度条件；不当额外实物/实测截止。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.4 Discussion：small(200μm) focal length and aperture width",
+              "note": "作者口径用width称谓，Fig.1F/G为圆盘图像；单位视觉核为μm，文本提取误成mm。不从图尺估D或用NA反推。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计段及Fig.1D/E图注",
+              "note": "两镜在550nm设计f200μm；实测LED绿光530nm参考焦面的位置未单列，不把200填作各λ实测f。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 633,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构段、p.5 Fabrication",
+              "note": "SiN薄膜/纳米柱名义633nm；熔石英基底不计入此高度，8nm Au/Pd临时消电荷层与Al硬掩膜随后移除。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "α0普通镜的RCWA单元+角谱传播模型（非整器件FDTD）",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计与p.5方法",
+              "note": "几何相位函数为聚焦项加α(x³+y³)/L³，L为半口径width；α=0为普通镜，55π为EDOF。不能把其他α原型默认同几何或同效率。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "colburn_computational_si_2018",
+              "location": "SI pp.3–4 §4及p.11 S8",
+              "note": "绿光中心530nm的模拟条件，不是另一个单色实测点。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "模拟光源FWHM 0nm；与分析衍射极限比较",
+              "source": "colburn_computational_si_2018",
+              "location": "SI §4/S8",
+              "note": "零带宽/30nm模型分开；约900cycles/mm只为30nm模拟的作者近似描述，不填实验截止或MTF50。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            },
+            "mtf_curve": {
+              "value": "S8单色/有限谱宽理论MTF曲线，横轴cycles/mm、纵轴MTF",
+              "source": "colburn_computational_si_2018",
+              "location": "SI pp.3–4 §4/p.11 S8",
+              "note": "不是实测PSF计算或本库复算；频率阈值/精确曲线表未给，未估读数值。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            }
+          }
+        },
+        {
+          "id": "colburn2018_singlet_model_bw30",
+          "model": "Colburn 2018 · 普通镜模型 · 530nm / 谱宽30nm",
+          "study_id": "colburn2018",
+          "specimen_id": "singlet_model",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同普通镜模型的光谱宽度条件；不当额外实物/实测截止。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.4 Discussion：small(200μm) focal length and aperture width",
+              "note": "作者口径用width称谓，Fig.1F/G为圆盘图像；单位视觉核为μm，文本提取误成mm。不从图尺估D或用NA反推。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计段及Fig.1D/E图注",
+              "note": "两镜在550nm设计f200μm；实测LED绿光530nm参考焦面的位置未单列，不把200填作各λ实测f。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 633,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构段、p.5 Fabrication",
+              "note": "SiN薄膜/纳米柱名义633nm；熔石英基底不计入此高度，8nm Au/Pd临时消电荷层与Al硬掩膜随后移除。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "α0普通镜的RCWA单元+角谱传播模型（非整器件FDTD）",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计与p.5方法",
+              "note": "几何相位函数为聚焦项加α(x³+y³)/L³，L为半口径width；α=0为普通镜，55π为EDOF。不能把其他α原型默认同几何或同效率。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "colburn_computational_si_2018",
+              "location": "SI pp.3–4 §4及p.11 S8",
+              "note": "绿光中心530nm的模拟条件，不是另一个单色实测点。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "模拟光源FWHM 30nm；与分析衍射极限比较",
+              "source": "colburn_computational_si_2018",
+              "location": "SI §4/S8",
+              "note": "零带宽/30nm模型分开；约900cycles/mm只为30nm模拟的作者近似描述，不填实验截止或MTF50。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            },
+            "mtf_curve": {
+              "value": "S8单色/有限谱宽理论MTF曲线，横轴cycles/mm、纵轴MTF",
+              "source": "colburn_computational_si_2018",
+              "location": "SI pp.3–4 §4/p.11 S8",
+              "note": "不是实测PSF计算或本库复算；频率阈值/精确曲线表未给，未估读数值。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            }
+          }
+        },
+        {
+          "id": "colburn2018_edof_model_axial",
+          "model": "Colburn 2018 · EDOF · 轴向/离轴模拟",
+          "study_id": "colburn2018",
+          "specimen_id": "edof_model",
+          "module": "",
+          "variant": "普通singlet / cubic-phase EDOF / 数字复原分开；主文与正式SI核验",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "模型配置与实制分开；同模型多λ/角度汇总为曲线入口，不伪造逐点原始数表。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.4 Discussion：small(200μm) focal length and aperture width",
+              "note": "作者口径用width称谓，Fig.1F/G为圆盘图像；单位视觉核为μm，文本提取误成mm。不从图尺估D或用NA反推。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计段及Fig.1D/E图注",
+              "note": "两镜在550nm设计f200μm；实测LED绿光530nm参考焦面的位置未单列，不把200填作各λ实测f。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 633,
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2结构段、p.5 Fabrication",
+              "note": "SiN薄膜/纳米柱名义633nm；熔石英基底不计入此高度，8nm Au/Pd临时消电荷层与Al硬掩膜随后移除。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "α55π EDOF的RCWA单元+角谱传播模型（非整器件FDTD）",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2设计与p.5方法",
+              "note": "几何相位函数为聚焦项加α(x³+y³)/L³，L为半口径width；α=0为普通镜，55π为EDOF。不能把其他α原型默认同几何或同效率。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            },
+            "mtf_curve": {
+              "value": "主文Fig.2D/H：RGB实测PSF的傅里叶模值MTF；归一化频率1对应579cycles/mm。SI S8另给绿光物理频率曲线。",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.3 Fig.2图注、p.5 Device characterization；SI pp.3–4 §4及p.11 S8",
+              "note": "作者由实测PSF计算，非本库复算。Fig2横轴归一化频率−1至1，纵轴0–1；S8横轴Spatial Frequency(cycles/mm)、纵轴MTF。S/T、x/y截取或径向平均、DC归一化操作、场点、物方像素、窗口/背景全条件未给齐。579是作者横轴参考标尺，非本库已核每λ截止/MTF50；S8约900cycles/mm是30nm谱宽模拟，不填实测。正式PMC云清单10对象仅主文/XML/TXT/元数据、4张期刊JPEG、SI与索引，未见原始PSF/MTF数组；额外数据可向作者请求，未联系作者、未估图或复算。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_pdf_2018",
+                "colburn_computational_si_2018",
+                "colburn_computational_cloud_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null,
+              "frequency_scale_cyc_per_mm": 579,
+              "direction": null,
+              "field_point": null,
+              "dc_normalization": null
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "colburn_computational_si_2018",
+              "location": "主文p.2 Fig.1D/E；SI p.12 S9",
+              "note": "模拟400/550/700nm、入射角0/5/10°；不是LED实际测量，模型角度不填成实测FOV或逐角实测焦距。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_si_2018",
+                "colburn_computational_author_2018"
+              ],
+              "display": "模拟400/550/700nm；角度0/5/10°",
+              "simulation_wavelengths_nm": [
+                400,
+                550,
+                700
+              ],
+              "simulation_angles_deg": [
+                0,
+                5,
+                10
+              ]
+            },
+            "chromatic": {
+              "value": "Fig1/S9模拟轴向强度；EDOF在设计平面有延长焦区但仍存在几何像差",
+              "source": "colburn_computational_author_2018",
+              "location": "主文p.2 Fig.1/p.5模拟方法；SI §5/S9",
+              "note": "内存限制使整器件全FDTD不可行，采用复振幅薄掩膜/Rayleigh-Sommerfeld角谱；未从曲线估焦距、DOF或横向色差，不称全场已消像差。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "colburn_computational_author_2018",
+                "colburn_computational_si_2018"
+              ]
+            }
+          }
         }
       ],
-      "scope": "24项原始研究、98个器件/测量/系统配置、767条记录。实制与截光/偏振、固定面系统和模型分开；分布焦位/长焦深不填成单一实测焦距或零焦差；正文直报、仅曲线、冲突与原始数组缺口保留。",
+      "scope": "25项原始研究、110个器件/测量/系统配置、793条记录。实测PSF计算MTF、连续同焦、EDOF/数字复原、谱点平均效率与模拟分开；多波长/处理/角度不增加独立实物，曲线不估值。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
