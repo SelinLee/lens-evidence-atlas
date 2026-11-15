@@ -48,3 +48,11 @@ QUALITY-001q；2026-11-15；基线340f997，`codex/khor-2015-telecom-evidence`�
 待PR/Pages线上验收。有限文字证据可入库，不将它称为全文/图像/SI核验完成；原始证据缺口继续开放。后续[Avayu2017可见光三层](AVAYU_2017_NEXT_CHECKPOINT_2026-11-15.md)已取得正式主文/SI，具名安排仅入待办/日志，目标active。
 
 Pan2023完整本地回归通过（设计f、本库标记、界限/缺值/模拟分离、引用往返/CSV和六视口）；仅更新其全量计数预期，未改Pan任何单元格。
+
+## 实际发布验收
+
+PR [#110](https://github.com/SelinLee/lens-evidence-atlas/pull/110)头f2562391f78914b0acbd8dc80c2c61c36e9dfe4e通过CI43661767020，合并43ad73ebabeead4bc6f0d852f973fff432625206；主线CI43661959192/Pages43661959154成功。公开12文件逐字节一致，devices-data.js SHA256=`56901c4606034c6ef851ca5db485cdf9af152cc71f0ebb1da7d52b4bc73c6661`。
+
+线上独立无头Chrome本站验收通过：三宽度27.5/29/25及三效率15/10/21、1690nm f3830与−3670本库焦差/投影、图点进表/引用往返/分享CSV、1配置10记录3材料、近红外隐藏与恢复、22研究719行及可见光18研究656行、六视口。已实际查看线上桌面/320截图，无页面脚本错误/溢出。原始出处实际复查ACS403、作者PDF403、DASH公共元数据200/DOI匹配，不称获得原文件或视觉复核原论文。报告`/tmp/lens-mtf-audit/khor2015-qa-live.json`及`khor2015-live-hashes.json`。
+
+001q只关闭本批正文直报的有限范围；有效本机PDF/原图/SI、逐λ精确峰位、原始PSF/MTF与积分/校准缺口仍开放。001r可见光三层原作已取得，目标保持active。
