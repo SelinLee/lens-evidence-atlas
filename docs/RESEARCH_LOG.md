@@ -781,3 +781,9 @@ Methods/Data availability、附件、作者两实验室列表、DataCite精确�
 基线cd58b76，分支codex/pmc-supplement-evidence；main/远程一致、#69/#86不混入。持续目标实际确认active，具名论文只放待办。新云实际200取得Chang两同字节附件及Javed主PDF/SI PDF/DOCX，核魔数/官方MD5/SHA256；读取/视觉/文件定位与公开性边界见[本批核验](PMC_CLOUD_RECHECK_2026-11-15.md)。Chang没有新增MTF数表/PSF；Javed S3提供16个20μm模型焦位，单列模拟字段，不填实测f。正式PDF视觉纠正NAmax=2/√5；SI S6的575对主文576冲突也保留到全孔两通道，原稳定行ID未变。25研究/110配置/809记录、可见光21/746，设备89来源/文献44字段；实测f19、逐λ效率99不变。241测试/结构校验通过，构建/Chrome/PR/Pages尚待验收；下一篇沿SI ref7查Du2025原作，不抄比较表。
 
 本地补充验收：241测试/校验/构建/diff通过；独立无头Chrome16模拟点/两个633nm读数与原19%效率、47行6配置/Javed8与Chang7材料往返、冲突/缺值/CSV/分享/可见光及六视口通过，七新来源200且字节匹配，实际查看桌面/320截图。横轴通用波长标签保留测量/模拟性质边界。PR/Pages待完成。
+
+001u实际验收：PR #118头3c113e5/CI43669651755通过，合并ed461404bd92bc1343f004e0d19cb0bac75b5de9；主线CI43669708837/Pages43669708773成功，公开12文件一致，devices-data.js SHA256 a20bcd47b07777ddea36a1d2993e3761b377d35cfbd87bdbe5cf1c4ad1ae936a。线上独立Chrome16模拟点/633nm24.44与21.47/原19%、Javed47行6配置8材料/Chang7材料、出处200同字节/往返、缺值/冲突/CSV/分享/全量与可见光/六视口通过，桌面/320截图实际查看，无错误/溢出。关闭001u有限批次，原始MTF/PSF等仍缺，长期目标active。
+
+## 2026-11-15-66 · Du2025原作入口与版本初查
+
+沿Javed本次实际读取SI ref7扩展，按库study/DOI与只读08_references文件名限定检索无匹配，不用引用量/IF。Crossref/ePMC元数据200，作者2025列表第11条与DOI同块PDF链接已核；作者公开8页PDF实际200/7899845字节，SHA256 01602926b7f74ae4fbe2d61fbcc948b25e2b3893f25d9255bf7432bb0597cecb，只检查metadata/第一页题名作者DOI及摘要/附件链接，未读正文结果或视觉核图表，未入性能。ACS主文/Supp导航403；PDF注释给出nl5c00695_si_001.pdf，独立请求403/5943字节检查页，未保存为有效PDF、未读SI。001v保持in_progress，详细边界与下一步见[检查点](DU_2025_NEXT_CHECKPOINT_2026-11-15.md)。
