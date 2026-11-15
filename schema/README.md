@@ -57,3 +57,5 @@
 `aoi_deg`是入射光相对光轴的测量角度，不是FOV；须有`angle_reference: incident_beam_to_optical_axis`、`azimuth_deg`（未知null）及`psf_protocol`说明光路/焦面。固定传感器面PSF不代表该波长最佳焦距，轴向扫描步长不替代横向物方标尺。不同光源/继像条件可在同一结构配置中分测量行，不虚增物理样品。
 
 `system_contrast_protocol`区分作者称MTF contrast的USAF线对Michelson对比度与PSF-FFT/严格正弦MTF。`metric_kind: usaf_michelson_linepair_contrast`、`direction_aggregation`（horizontal/vertical/mean_of_horizontal_vertical）、`frequency_unit: lp/mm`、`field_point`（未知null）、实际谱点和`processing_stage`必须保留；captured标作者`derived_from_measurement`、deconvolved标`reconstruction`，不能互换或把横纵平均改成独立S/T。多谱点汇总不绑定一个数值波长。MTF低于0.01的阈值不是频率测量值，中心像素/传感器圆域总计数也不混入聚焦功率效率。
+
+`simulated_focal_um`单独保存作者逐波长模拟轴向焦位，正值、`basis: model`、`calculation_origin: authors`、`position_definition: axial_intensity_maximum`，须绑定模型谱点（wavelength_nm也为model）和`psf_protocol`。不混同设计f/实测f/质心公式预测；同一行不能同时有数值型实测焦距。原表列名Measured若所属段明确Simulations，仍按模型处理；未明的取峰步长/插值/偏振保留未知。作者Focal Shift的符号/参考及DoF单位/阈值未明时只保存原述，不从模拟焦位生成实测色差或DOF坐标。
