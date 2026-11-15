@@ -592,6 +592,33 @@
       "kind": "author_manuscript",
       "checked_on": "2026-11-15",
       "scope": "37页作者稿v1（2023-08-27），主文22页加SI15页；限定读设计/表征/Methods、SI Note8–12及相关图，视觉核PDF pp.6/13/15/18/32–36。正式Fig3C在v1不存在，Level3插值20nm与正式25nm不同。S7仅560nm模拟MTF，fx(mm⁻¹)0–800；正文3FWHM为直径，实测焦圈标定未齐；S10±5μm为观察离焦，非逐谱点色差。未精读SI文献综述表或拿其数值替原作。"
+    },
+    {
+      "id": "khor_telecom_2015",
+      "title": "Khorasaninejad et al. (2015): Achromatic Metasurface Lens at Telecommunication Wavelengths",
+      "doi": "10.1021/acs.nanolett.5b01727",
+      "url": "https://pubs.acs.org/doi/10.1021/acs.nanolett.5b01727",
+      "kind": "peer_reviewed_paper",
+      "checked_on": "2026-11-15",
+      "scope": "ACS正式题录/摘要由网页检索读取，Crossref主DOI元数据本机Chrome200核题名/卷页及2015-07-14/08-12日期；ACS页面本机403，不称读到正式VOR图像。实验数值来自同篇作者托管A–E预刊排版稿正文，逐格指向该材料。近红外三λ不是RGB或连续消色差。"
+    },
+    {
+      "id": "khor_telecom_author_2015",
+      "publication_source": "khor_telecom_2015",
+      "title": "Khorasaninejad et al. (2015): author-hosted prepublication proof A–E — original text extraction only",
+      "url": "https://capasso.seas.harvard.edu/sites/g/files/omnuum6306/files/capasso/files/acs_nanolett_5b01727.pdf",
+      "kind": "author_manuscript",
+      "checked_on": "2026-11-15",
+      "scope": "网页工具实际解析原始作者PDF五页A–E，限定读A–D相关正文/图注；B页直接给三λ FWHM/绝对效率及焦线束腰定义，D页1690nm实测f3.83mm和Fig6固定z7.5mm。版面含XXXX/A–E，保留预刊版本，不称VOR同图已核。本机Chrome/curl/官方MURI与legacy入口403，未取得有效本机PDF、未视觉核图；截图工具亦未返回可视图像，不填写SHA或冒称原图复核。所录为正文直报，曲线不估读；SI未读。"
+    },
+    {
+      "id": "khor_telecom_dash_2015",
+      "publication_source": "khor_telecom_2015",
+      "title": "Khorasaninejad et al. (2015): Harvard DASH public item/bundle metadata; file content not accessed",
+      "url": "https://dash.harvard.edu/server/api/core/items/7bd1878e-0a9e-41f9-919b-07948065dba5",
+      "kind": "repository_metadata",
+      "checked_on": "2026-11-15",
+      "scope": "DASH公开检索/ORIGINAL bundle/bitstream元数据200，核同DOI、题名/卷页，原文件67670 acs-2enanolett-2e5b01727.pdf标6047252字节。content401，未取得/读取文件，目录MD5不是本库内容校验；META_ONLY与OpenAlex/S2的OA标记差异保留，不能声称开放PDF实际已获。SI/原始PSF/MTF仓库未核。"
     }
   ],
   "domains": {
@@ -110574,9 +110601,1571 @@
               "checked_on": "2026-11-15"
             }
           }
+        },
+        {
+          "id": "khor2015_summary",
+          "model": "Khorasaninejad 2015 · D600μm线透镜 · 作者稿参数/缺口",
+          "study_id": "khor2015",
+          "specimen_id": "line_lens",
+          "module": "",
+          "variant": "a-Si线聚焦 / 近红外离散校正；作者稿正文核验",
+          "evidence_type": "study",
+          "measurement_scope": "同一物理线透镜；设计三λ与未校正三λ、轴扫与固定面角度曲线分条件，非更多器件。只核原始作者稿文字，图像/SI未取得。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "khor_telecom_author_2015",
+              "location": "作者托管预刊稿B页正文/ Fig.1b图注；效率定义段600×600μm",
+              "note": "作者称D600μm，记录为x向有效口径；实际匹配入射孔为600×600μm。此为线聚焦器件，不把它理解成圆孔或二维点聚焦。原始PDF文字可解析，本机403，未视觉核图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.04,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1b图注及FWHM比较段",
+              "note": "作者NA0.04；D600μm/f7500μm给x方向几何NA约0.03997，仅数量级核对；10×是继像物镜倍率，不是器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 7500,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页设计段/ Fig.1b图注",
+              "note": "设计f7.5mm换为7500μm；不复制成三个设计波长的精确实测峰位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页结构/制备段、Fig.1c图注",
+              "note": "a-Si沉积层/谐振器名义高度400nm；Al20nm为后续去除的刻蚀掩膜，Au30nm仅图2b SEM制样描述，不并入光学器件厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "a-Si双矩形耦合RDR / fused silica；单元1μm、方形区域600×600μm",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1c及制备段、C页Fig.2图注",
+              "note": "沿x排布相位形成焦线；WL/WR/g可变，不选择平均宽度。原始文字可读，未视觉核SEM或制造公差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页设计λ；D页Fig.5正文/图注",
+              "note": "校正1300/1550/1800nm为离散近红外三点；另实测1410/1690/1940nm未校正对照，不称1300–1800nm连续消色差或可见RGB。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "校正1300/1550/1800；另测1410/1690/1940nm",
+              "sample_wavelengths_nm": [
+                1300,
+                1410,
+                1550,
+                1690,
+                1800,
+                1940
+              ]
+            },
+            "polarization": {
+              "value": "入射E沿y，即RDR长度方向；焦线横向剖面沿x",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1c、C页Fig.3图注、D页Fig.4图注",
+              "note": "未核其他入射偏振的实验性能，不推偏振不敏感或将y偏振称y向焦斑宽度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK超连续谱源+可调带通，作者线宽15nm；反射准直器、y向线偏振片，从基底侧入射",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段、Fig.1c及C页Fig.2c图注",
+              "note": "15nm仅保留作者line-width称谓，FWHM谱宽定义未核；入射准直束直径4mm与600μm器件口径分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "10×物镜+管镜继像至InGaAs相机；整体随xyz台沿z移动，约120μm步长（0.12mm）拼接xz，起点为器件面，扫至z12mm。",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段、C页Fig.2c/Fig.3图注、D页Fig.4/6图注",
+              "note": "正文z约7.5mm处报告三λx剖面；精确逐λ峰值表/峰位拟合/横向μm每像素/背景/归一化未核。步长不是横向采样或±不确定度，7.5mm汇总不补三个精确f；原图未视觉核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段约z7.5mm、D页Fig.5图注",
+              "note": "作者给设计三λ近同焦汇总，缺逐λ精确峰位/精度；只在1690nm有正文独立数值3.83mm，未估读图5。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "约7.5mm汇总；逐λ精确f未核"
+            },
+            "chromatic": {
+              "value": "近红外三校正λ约同焦；未校正谱点焦位改变，1690nm正文报告3.83mm",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页焦斑段及D页Fig.5前正文/图注",
+              "note": "三点校正不是连续消色差；不由同焦文字推零残余色差或全场无横向色差。三设计λ、1410/1940nm精确f与横向色差仍缺。",
+              "basis": "measured",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者绝对效率：焦线束腰内功率 / 通过与镜片同尺寸600×600μm孔的入射功率；入射准直束直径4mm。",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页绝对效率定义段",
+              "note": "束腰为焦线强度经Gaussian拟合后的1/e²全宽，沿x；y向积分长度/实际ROI/功率计、背景校准与重复数未齐。不是圆形焦圈半径，也不把1/e²全宽当FWHM；模拟24/22/28%和理论透射48/48/65%不充实测效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "integration_geometry": "focal_line_waist",
+              "width_definition": "full_width_at_1_over_e_squared",
+              "denominator_geometry_um": {
+                "x": 600,
+                "y": 600
+              }
+            },
+            "mtf_curve": {
+              "value": "Figs3/4强度及x剖面；Fig5焦位、Fig6角度宽度曲线；所读正文未核到MTF或Strehl",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B–D页相关正文/图注及Associated Content；SI仅声明未读取",
+              "note": "只读原始作者PDF网络解析文字，未取得本机PDF或视觉图；SI入口403、Figshare403；DASH元数据200但原文件401，OpenAlex/S2的OA标志不等于已获全文。限定正文未见独立数据仓库声明，DataCite精确关联0、GitHub仓库名/描述精确DOI0。原始PSF/MTF数表、空间标定/处理条件仍未核，不能称全网无数据；未联系作者，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "khor_telecom_author_2015",
+                "khor_telecom_2015",
+                "khor_telecom_dash_2015"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            }
+          }
+        },
+        {
+          "id": "khor2015_axial_1300",
+          "model": "Khorasaninejad 2015 · 1300nm · 校正点 · 作者稿正文直报",
+          "study_id": "khor2015",
+          "specimen_id": "line_lens",
+          "module": "",
+          "variant": "a-Si线聚焦 / 近红外离散校正；作者稿正文核验",
+          "evidence_type": "study",
+          "measurement_scope": "同一线透镜的光谱/轴扫条件；三校正λ在约7.5mm焦线评价，未校正点看Fig.5，精确数字仅正文1690nm。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "khor_telecom_author_2015",
+              "location": "作者托管预刊稿B页正文/ Fig.1b图注；效率定义段600×600μm",
+              "note": "作者称D600μm，记录为x向有效口径；实际匹配入射孔为600×600μm。此为线聚焦器件，不把它理解成圆孔或二维点聚焦。原始PDF文字可解析，本机403，未视觉核图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.04,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1b图注及FWHM比较段",
+              "note": "作者NA0.04；D600μm/f7500μm给x方向几何NA约0.03997，仅数量级核对；10×是继像物镜倍率，不是器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 7500,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页设计段/ Fig.1b图注",
+              "note": "设计f7.5mm换为7500μm；不复制成三个设计波长的精确实测峰位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页结构/制备段、Fig.1c图注",
+              "note": "a-Si沉积层/谐振器名义高度400nm；Al20nm为后续去除的刻蚀掩膜，Au30nm仅图2b SEM制样描述，不并入光学器件厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "a-Si双矩形耦合RDR / fused silica；单元1μm、方形区域600×600μm",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1c及制备段、C页Fig.2图注",
+              "note": "沿x排布相位形成焦线；WL/WR/g可变，不选择平均宽度。原始文字可读，未视觉核SEM或制造公差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": 1300,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页设计λ/三λ性能段、D页Fig.5正文/图注",
+              "note": "实际光谱表征点；设计校正与未校正点分别标明，不是模拟扫描或伪色RGB。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "入射E沿y，即RDR长度方向；焦线横向剖面沿x",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1c、C页Fig.3图注、D页Fig.4图注",
+              "note": "未核其他入射偏振的实验性能，不推偏振不敏感或将y偏振称y向焦斑宽度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK超连续谱源+可调带通，作者线宽15nm；反射准直器、y向线偏振片，从基底侧入射",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段、Fig.1c及C页Fig.2c图注",
+              "note": "15nm仅保留作者line-width称谓，FWHM谱宽定义未核；入射准直束直径4mm与600μm器件口径分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "10×物镜+管镜继像至InGaAs相机；整体随xyz台沿z移动，约120μm步长（0.12mm）拼接xz，起点为器件面，扫至z12mm。",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段、C页Fig.2c/Fig.3图注、D页Fig.4/6图注",
+              "note": "正文z约7.5mm处报告三λx剖面；精确逐λ峰值表/峰位拟合/横向μm每像素/背景/归一化未核。步长不是横向采样或±不确定度，7.5mm汇总不补三个精确f；原图未视觉核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段约z7.5mm、D页Fig.5图注",
+              "note": "作者给设计三λ近同焦汇总，缺逐λ精确峰位/精度；只在1690nm有正文独立数值3.83mm，未估读图5。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "约7.5mm汇总；逐λ精确f未核"
+            },
+            "chromatic": {
+              "value": "近红外三校正λ约同焦；未校正谱点焦位改变，1690nm正文报告3.83mm",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页焦斑段及D页Fig.5前正文/图注",
+              "note": "三点校正不是连续消色差；不由同焦文字推零残余色差或全场无横向色差。三设计λ、1410/1940nm精确f与横向色差仍缺。",
+              "basis": "measured",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者绝对效率：焦线束腰内功率 / 通过与镜片同尺寸600×600μm孔的入射功率；入射准直束直径4mm。",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页绝对效率定义段",
+              "note": "束腰为焦线强度经Gaussian拟合后的1/e²全宽，沿x；y向积分长度/实际ROI/功率计、背景校准与重复数未齐。不是圆形焦圈半径，也不把1/e²全宽当FWHM；模拟24/22/28%和理论透射48/48/65%不充实测效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "integration_geometry": "focal_line_waist",
+              "width_definition": "full_width_at_1_over_e_squared",
+              "denominator_geometry_um": {
+                "x": 600,
+                "y": 600
+              }
+            },
+            "mtf_curve": {
+              "value": "Figs3/4强度及x剖面；Fig5焦位、Fig6角度宽度曲线；所读正文未核到MTF或Strehl",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B–D页相关正文/图注及Associated Content；SI仅声明未读取",
+              "note": "只读原始作者PDF网络解析文字，未取得本机PDF或视觉图；SI入口403、Figshare403；DASH元数据200但原文件401，OpenAlex/S2的OA标志不等于已获全文。限定正文未见独立数据仓库声明，DataCite精确关联0、GitHub仓库名/描述精确DOI0。原始PSF/MTF数表、空间标定/处理条件仍未核，不能称全网无数据；未联系作者，未估图或复算MTF。 本λ模拟效率24%只作文字对照，不填本λ实测字段。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "khor_telecom_author_2015",
+                "khor_telecom_2015",
+                "khor_telecom_dash_2015"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页Fig.4图注x方向剖面",
+              "note": "线聚焦沿x宽度不能复制到y；未核独立y向数值。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "未给独立y向宽度"
+            },
+            "fwhm_x_um": {
+              "value": 27.5,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页FWHM正文按λ1300/1550/1800排序的第1项；D页Fig.4图注",
+              "note": "正文直接报告实测x剖面宽度，非曲线估读；原始图未视觉核，使用预刊作者版文字定位，不补测量不确定度。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "reading_version": "author-hosted prepublication proof A–E",
+              "display": "27.5（作者稿正文直报）"
+            },
+            "efficiency_lambda_nm": {
+              "value": 1300,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页绝对效率三λ顺序",
+              "note": "仅绑定正文对应的实验绝对效率，不生成带内均值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 15,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Absolute efficiency正文第1个实测百分数",
+              "note": "作者正文直接实测功率比；与同段模拟效率和D页理论总透射分开。未读SI，不称其完整数表或原始功率表。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "reading_version": "author-hosted prepublication proof A–E",
+              "display": "15（作者稿正文直报）"
+            }
+          }
+        },
+        {
+          "id": "khor2015_axial_1410",
+          "model": "Khorasaninejad 2015 · 1410nm · 未校正 · 仅曲线",
+          "study_id": "khor2015",
+          "specimen_id": "line_lens",
+          "module": "",
+          "variant": "a-Si线聚焦 / 近红外离散校正；作者稿正文核验",
+          "evidence_type": "study",
+          "measurement_scope": "同一线透镜的光谱/轴扫条件；三校正λ在约7.5mm焦线评价，未校正点看Fig.5，精确数字仅正文1690nm。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "khor_telecom_author_2015",
+              "location": "作者托管预刊稿B页正文/ Fig.1b图注；效率定义段600×600μm",
+              "note": "作者称D600μm，记录为x向有效口径；实际匹配入射孔为600×600μm。此为线聚焦器件，不把它理解成圆孔或二维点聚焦。原始PDF文字可解析，本机403，未视觉核图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.04,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1b图注及FWHM比较段",
+              "note": "作者NA0.04；D600μm/f7500μm给x方向几何NA约0.03997，仅数量级核对；10×是继像物镜倍率，不是器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 7500,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页设计段/ Fig.1b图注",
+              "note": "设计f7.5mm换为7500μm；不复制成三个设计波长的精确实测峰位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页结构/制备段、Fig.1c图注",
+              "note": "a-Si沉积层/谐振器名义高度400nm；Al20nm为后续去除的刻蚀掩膜，Au30nm仅图2b SEM制样描述，不并入光学器件厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "a-Si双矩形耦合RDR / fused silica；单元1μm、方形区域600×600μm",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1c及制备段、C页Fig.2图注",
+              "note": "沿x排布相位形成焦线；WL/WR/g可变，不选择平均宽度。原始文字可读，未视觉核SEM或制造公差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": 1410,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页设计λ/三λ性能段、D页Fig.5正文/图注",
+              "note": "实际光谱表征点；设计校正与未校正点分别标明，不是模拟扫描或伪色RGB。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "入射E沿y，即RDR长度方向；焦线横向剖面沿x",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1c、C页Fig.3图注、D页Fig.4图注",
+              "note": "未核其他入射偏振的实验性能，不推偏振不敏感或将y偏振称y向焦斑宽度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK超连续谱源+可调带通，作者线宽15nm；反射准直器、y向线偏振片，从基底侧入射",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段、Fig.1c及C页Fig.2c图注",
+              "note": "15nm仅保留作者line-width称谓，FWHM谱宽定义未核；入射准直束直径4mm与600μm器件口径分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "10×物镜+管镜继像至InGaAs相机；整体随xyz台沿z移动，约120μm步长（0.12mm）拼接xz，起点为器件面，扫至z12mm。",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段、C页Fig.2c/Fig.3图注、D页Fig.4/6图注",
+              "note": "正文z约7.5mm处报告三λx剖面；精确逐λ峰值表/峰位拟合/横向μm每像素/背景/归一化未核。步长不是横向采样或±不确定度，7.5mm汇总不补三个精确f；原图未视觉核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段约z7.5mm、D页Fig.5图注",
+              "note": "作者给设计三λ近同焦汇总，缺逐λ精确峰位/精度；只在1690nm有正文独立数值3.83mm，未估读图5。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "约7.5mm汇总；逐λ精确f未核"
+            },
+            "chromatic": {
+              "value": "近红外三校正λ约同焦；未校正谱点焦位改变，1690nm正文报告3.83mm",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页焦斑段及D页Fig.5前正文/图注",
+              "note": "三点校正不是连续消色差；不由同焦文字推零残余色差或全场无横向色差。三设计λ、1410/1940nm精确f与横向色差仍缺。",
+              "basis": "measured",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者绝对效率：焦线束腰内功率 / 通过与镜片同尺寸600×600μm孔的入射功率；入射准直束直径4mm。",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页绝对效率定义段",
+              "note": "束腰为焦线强度经Gaussian拟合后的1/e²全宽，沿x；y向积分长度/实际ROI/功率计、背景校准与重复数未齐。不是圆形焦圈半径，也不把1/e²全宽当FWHM；模拟24/22/28%和理论透射48/48/65%不充实测效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "integration_geometry": "focal_line_waist",
+              "width_definition": "full_width_at_1_over_e_squared",
+              "denominator_geometry_um": {
+                "x": 600,
+                "y": 600
+              }
+            },
+            "mtf_curve": {
+              "value": "Figs3/4强度及x剖面；Fig5焦位、Fig6角度宽度曲线；所读正文未核到MTF或Strehl",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B–D页相关正文/图注及Associated Content；SI仅声明未读取",
+              "note": "只读原始作者PDF网络解析文字，未取得本机PDF或视觉图；SI入口403、Figshare403；DASH元数据200但原文件401，OpenAlex/S2的OA标志不等于已获全文。限定正文未见独立数据仓库声明，DataCite精确关联0、GitHub仓库名/描述精确DOI0。原始PSF/MTF数表、空间标定/处理条件仍未核，不能称全网无数据；未联系作者，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "khor_telecom_author_2015",
+                "khor_telecom_2015",
+                "khor_telecom_dash_2015"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页Fig.4图注x方向剖面",
+              "note": "线聚焦沿x宽度不能复制到y；未核独立y向数值。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "未给独立y向宽度"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页未校正波长段/ Fig.5；1690nm指向SI S3",
+              "note": "未核本λ独立宽度数值；不复用设计三λFWHM，不从SI引用推原始PSF已公开。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "未校正λ宽度数值未核"
+            }
+          }
+        },
+        {
+          "id": "khor2015_axial_1550",
+          "model": "Khorasaninejad 2015 · 1550nm · 校正点 · 作者稿正文直报",
+          "study_id": "khor2015",
+          "specimen_id": "line_lens",
+          "module": "",
+          "variant": "a-Si线聚焦 / 近红外离散校正；作者稿正文核验",
+          "evidence_type": "study",
+          "measurement_scope": "同一线透镜的光谱/轴扫条件；三校正λ在约7.5mm焦线评价，未校正点看Fig.5，精确数字仅正文1690nm。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "khor_telecom_author_2015",
+              "location": "作者托管预刊稿B页正文/ Fig.1b图注；效率定义段600×600μm",
+              "note": "作者称D600μm，记录为x向有效口径；实际匹配入射孔为600×600μm。此为线聚焦器件，不把它理解成圆孔或二维点聚焦。原始PDF文字可解析，本机403，未视觉核图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.04,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1b图注及FWHM比较段",
+              "note": "作者NA0.04；D600μm/f7500μm给x方向几何NA约0.03997，仅数量级核对；10×是继像物镜倍率，不是器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 7500,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页设计段/ Fig.1b图注",
+              "note": "设计f7.5mm换为7500μm；不复制成三个设计波长的精确实测峰位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页结构/制备段、Fig.1c图注",
+              "note": "a-Si沉积层/谐振器名义高度400nm；Al20nm为后续去除的刻蚀掩膜，Au30nm仅图2b SEM制样描述，不并入光学器件厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "a-Si双矩形耦合RDR / fused silica；单元1μm、方形区域600×600μm",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1c及制备段、C页Fig.2图注",
+              "note": "沿x排布相位形成焦线；WL/WR/g可变，不选择平均宽度。原始文字可读，未视觉核SEM或制造公差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": 1550,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页设计λ/三λ性能段、D页Fig.5正文/图注",
+              "note": "实际光谱表征点；设计校正与未校正点分别标明，不是模拟扫描或伪色RGB。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "入射E沿y，即RDR长度方向；焦线横向剖面沿x",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1c、C页Fig.3图注、D页Fig.4图注",
+              "note": "未核其他入射偏振的实验性能，不推偏振不敏感或将y偏振称y向焦斑宽度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK超连续谱源+可调带通，作者线宽15nm；反射准直器、y向线偏振片，从基底侧入射",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段、Fig.1c及C页Fig.2c图注",
+              "note": "15nm仅保留作者line-width称谓，FWHM谱宽定义未核；入射准直束直径4mm与600μm器件口径分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "10×物镜+管镜继像至InGaAs相机；整体随xyz台沿z移动，约120μm步长（0.12mm）拼接xz，起点为器件面，扫至z12mm。",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段、C页Fig.2c/Fig.3图注、D页Fig.4/6图注",
+              "note": "正文z约7.5mm处报告三λx剖面；精确逐λ峰值表/峰位拟合/横向μm每像素/背景/归一化未核。步长不是横向采样或±不确定度，7.5mm汇总不补三个精确f；原图未视觉核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段约z7.5mm、D页Fig.5图注",
+              "note": "作者给设计三λ近同焦汇总，缺逐λ精确峰位/精度；只在1690nm有正文独立数值3.83mm，未估读图5。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "约7.5mm汇总；逐λ精确f未核"
+            },
+            "chromatic": {
+              "value": "近红外三校正λ约同焦；未校正谱点焦位改变，1690nm正文报告3.83mm",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页焦斑段及D页Fig.5前正文/图注",
+              "note": "三点校正不是连续消色差；不由同焦文字推零残余色差或全场无横向色差。三设计λ、1410/1940nm精确f与横向色差仍缺。",
+              "basis": "measured",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者绝对效率：焦线束腰内功率 / 通过与镜片同尺寸600×600μm孔的入射功率；入射准直束直径4mm。",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页绝对效率定义段",
+              "note": "束腰为焦线强度经Gaussian拟合后的1/e²全宽，沿x；y向积分长度/实际ROI/功率计、背景校准与重复数未齐。不是圆形焦圈半径，也不把1/e²全宽当FWHM；模拟24/22/28%和理论透射48/48/65%不充实测效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "integration_geometry": "focal_line_waist",
+              "width_definition": "full_width_at_1_over_e_squared",
+              "denominator_geometry_um": {
+                "x": 600,
+                "y": 600
+              }
+            },
+            "mtf_curve": {
+              "value": "Figs3/4强度及x剖面；Fig5焦位、Fig6角度宽度曲线；所读正文未核到MTF或Strehl",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B–D页相关正文/图注及Associated Content；SI仅声明未读取",
+              "note": "只读原始作者PDF网络解析文字，未取得本机PDF或视觉图；SI入口403、Figshare403；DASH元数据200但原文件401，OpenAlex/S2的OA标志不等于已获全文。限定正文未见独立数据仓库声明，DataCite精确关联0、GitHub仓库名/描述精确DOI0。原始PSF/MTF数表、空间标定/处理条件仍未核，不能称全网无数据；未联系作者，未估图或复算MTF。 本λ模拟效率22%只作文字对照，不填本λ实测字段。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "khor_telecom_author_2015",
+                "khor_telecom_2015",
+                "khor_telecom_dash_2015"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页Fig.4图注x方向剖面",
+              "note": "线聚焦沿x宽度不能复制到y；未核独立y向数值。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "未给独立y向宽度"
+            },
+            "fwhm_x_um": {
+              "value": 29,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页FWHM正文按λ1300/1550/1800排序的第2项；D页Fig.4图注",
+              "note": "正文直接报告实测x剖面宽度，非曲线估读；原始图未视觉核，使用预刊作者版文字定位，不补测量不确定度。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "reading_version": "author-hosted prepublication proof A–E",
+              "display": "29（作者稿正文直报）"
+            },
+            "efficiency_lambda_nm": {
+              "value": 1550,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页绝对效率三λ顺序",
+              "note": "仅绑定正文对应的实验绝对效率，不生成带内均值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 10,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Absolute efficiency正文第2个实测百分数",
+              "note": "作者正文直接实测功率比；与同段模拟效率和D页理论总透射分开。未读SI，不称其完整数表或原始功率表。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "reading_version": "author-hosted prepublication proof A–E",
+              "display": "10（作者稿正文直报）"
+            }
+          }
+        },
+        {
+          "id": "khor2015_axial_1690",
+          "model": "Khorasaninejad 2015 · 1690nm · 未校正 · 作者稿f3.83mm",
+          "study_id": "khor2015",
+          "specimen_id": "line_lens",
+          "module": "",
+          "variant": "a-Si线聚焦 / 近红外离散校正；作者稿正文核验",
+          "evidence_type": "study",
+          "measurement_scope": "同一线透镜的光谱/轴扫条件；三校正λ在约7.5mm焦线评价，未校正点看Fig.5，精确数字仅正文1690nm。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "khor_telecom_author_2015",
+              "location": "作者托管预刊稿B页正文/ Fig.1b图注；效率定义段600×600μm",
+              "note": "作者称D600μm，记录为x向有效口径；实际匹配入射孔为600×600μm。此为线聚焦器件，不把它理解成圆孔或二维点聚焦。原始PDF文字可解析，本机403，未视觉核图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.04,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1b图注及FWHM比较段",
+              "note": "作者NA0.04；D600μm/f7500μm给x方向几何NA约0.03997，仅数量级核对；10×是继像物镜倍率，不是器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 7500,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页设计段/ Fig.1b图注",
+              "note": "设计f7.5mm换为7500μm；不复制成三个设计波长的精确实测峰位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页结构/制备段、Fig.1c图注",
+              "note": "a-Si沉积层/谐振器名义高度400nm；Al20nm为后续去除的刻蚀掩膜，Au30nm仅图2b SEM制样描述，不并入光学器件厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "a-Si双矩形耦合RDR / fused silica；单元1μm、方形区域600×600μm",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1c及制备段、C页Fig.2图注",
+              "note": "沿x排布相位形成焦线；WL/WR/g可变，不选择平均宽度。原始文字可读，未视觉核SEM或制造公差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": 1690,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页设计λ/三λ性能段、D页Fig.5正文/图注",
+              "note": "实际光谱表征点；设计校正与未校正点分别标明，不是模拟扫描或伪色RGB。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "入射E沿y，即RDR长度方向；焦线横向剖面沿x",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1c、C页Fig.3图注、D页Fig.4图注",
+              "note": "未核其他入射偏振的实验性能，不推偏振不敏感或将y偏振称y向焦斑宽度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK超连续谱源+可调带通，作者线宽15nm；反射准直器、y向线偏振片，从基底侧入射",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段、Fig.1c及C页Fig.2c图注",
+              "note": "15nm仅保留作者line-width称谓，FWHM谱宽定义未核；入射准直束直径4mm与600μm器件口径分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "10×物镜+管镜继像至InGaAs相机；整体随xyz台沿z移动，约120μm步长（0.12mm）拼接xz，起点为器件面，扫至z12mm。",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段、C页Fig.2c/Fig.3图注、D页Fig.4/6图注",
+              "note": "正文z约7.5mm处报告三λx剖面；精确逐λ峰值表/峰位拟合/横向μm每像素/背景/归一化未核。步长不是横向采样或±不确定度，7.5mm汇总不补三个精确f；原图未视觉核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "measured_focal_um": {
+              "value": 3830,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页正文紧接Fig.5引述，λ1690nm、z3.83mm",
+              "note": "原文独立逐λ实测焦位3.83mm→3830μm，非图5估读。保留作者0.01mm书写精度，未核峰位拟合及不确定度；约120μm轴步长不直接当误差。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "reading_version": "author-hosted prepublication proof A–E",
+              "display": "3830（作者稿正文3.83mm）"
+            },
+            "chromatic": {
+              "value": "近红外三校正λ约同焦；未校正谱点焦位改变，1690nm正文报告3.83mm",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页焦斑段及D页Fig.5前正文/图注",
+              "note": "三点校正不是连续消色差；不由同焦文字推零残余色差或全场无横向色差。三设计λ、1410/1940nm精确f与横向色差仍缺。",
+              "basis": "measured",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者绝对效率：焦线束腰内功率 / 通过与镜片同尺寸600×600μm孔的入射功率；入射准直束直径4mm。",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页绝对效率定义段",
+              "note": "束腰为焦线强度经Gaussian拟合后的1/e²全宽，沿x；y向积分长度/实际ROI/功率计、背景校准与重复数未齐。不是圆形焦圈半径，也不把1/e²全宽当FWHM；模拟24/22/28%和理论透射48/48/65%不充实测效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "integration_geometry": "focal_line_waist",
+              "width_definition": "full_width_at_1_over_e_squared",
+              "denominator_geometry_um": {
+                "x": 600,
+                "y": 600
+              }
+            },
+            "mtf_curve": {
+              "value": "Figs3/4强度及x剖面；Fig5焦位、Fig6角度宽度曲线；所读正文未核到MTF或Strehl",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B–D页相关正文/图注及Associated Content；SI仅声明未读取",
+              "note": "只读原始作者PDF网络解析文字，未取得本机PDF或视觉图；SI入口403、Figshare403；DASH元数据200但原文件401，OpenAlex/S2的OA标志不等于已获全文。限定正文未见独立数据仓库声明，DataCite精确关联0、GitHub仓库名/描述精确DOI0。原始PSF/MTF数表、空间标定/处理条件仍未核，不能称全网无数据；未联系作者，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "khor_telecom_author_2015",
+                "khor_telecom_2015",
+                "khor_telecom_dash_2015"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页Fig.4图注x方向剖面",
+              "note": "线聚焦沿x宽度不能复制到y；未核独立y向数值。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "未给独立y向宽度"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页未校正波长段/ Fig.5；1690nm指向SI S3",
+              "note": "未核本λ独立宽度数值；不复用设计三λFWHM，不从SI引用推原始PSF已公开。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "未校正λ宽度数值未核"
+            },
+            "axial_focus_offset_um": {
+              "value": -3670,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页正文1690nm焦位3.83mm；同页Fig.6图注明确固定z7.5mm评价面",
+              "note": "本库将作者正文f3830与作者指定固定z7500μm面相减：3830−7500=−3670μm。负值表示焦点在该面之前，不是作者原始残余焦差表、参考λ零点或PSF重建；不将设计三λ未知f补零。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 7500,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "作者Fig.6图注明确固定z7.5mm测量面；不是默认由设计f推定，也不是参考波长",
+              "display": "−3670（本库相对作者固定7.5mm面计算）"
+            }
+          }
+        },
+        {
+          "id": "khor2015_axial_1800",
+          "model": "Khorasaninejad 2015 · 1800nm · 校正点 · 作者稿正文直报",
+          "study_id": "khor2015",
+          "specimen_id": "line_lens",
+          "module": "",
+          "variant": "a-Si线聚焦 / 近红外离散校正；作者稿正文核验",
+          "evidence_type": "study",
+          "measurement_scope": "同一线透镜的光谱/轴扫条件；三校正λ在约7.5mm焦线评价，未校正点看Fig.5，精确数字仅正文1690nm。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "khor_telecom_author_2015",
+              "location": "作者托管预刊稿B页正文/ Fig.1b图注；效率定义段600×600μm",
+              "note": "作者称D600μm，记录为x向有效口径；实际匹配入射孔为600×600μm。此为线聚焦器件，不把它理解成圆孔或二维点聚焦。原始PDF文字可解析，本机403，未视觉核图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.04,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1b图注及FWHM比较段",
+              "note": "作者NA0.04；D600μm/f7500μm给x方向几何NA约0.03997，仅数量级核对；10×是继像物镜倍率，不是器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 7500,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页设计段/ Fig.1b图注",
+              "note": "设计f7.5mm换为7500μm；不复制成三个设计波长的精确实测峰位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页结构/制备段、Fig.1c图注",
+              "note": "a-Si沉积层/谐振器名义高度400nm；Al20nm为后续去除的刻蚀掩膜，Au30nm仅图2b SEM制样描述，不并入光学器件厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "a-Si双矩形耦合RDR / fused silica；单元1μm、方形区域600×600μm",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1c及制备段、C页Fig.2图注",
+              "note": "沿x排布相位形成焦线；WL/WR/g可变，不选择平均宽度。原始文字可读，未视觉核SEM或制造公差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": 1800,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页设计λ/三λ性能段、D页Fig.5正文/图注",
+              "note": "实际光谱表征点；设计校正与未校正点分别标明，不是模拟扫描或伪色RGB。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "入射E沿y，即RDR长度方向；焦线横向剖面沿x",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1c、C页Fig.3图注、D页Fig.4图注",
+              "note": "未核其他入射偏振的实验性能，不推偏振不敏感或将y偏振称y向焦斑宽度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK超连续谱源+可调带通，作者线宽15nm；反射准直器、y向线偏振片，从基底侧入射",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段、Fig.1c及C页Fig.2c图注",
+              "note": "15nm仅保留作者line-width称谓，FWHM谱宽定义未核；入射准直束直径4mm与600μm器件口径分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "10×物镜+管镜继像至InGaAs相机；整体随xyz台沿z移动，约120μm步长（0.12mm）拼接xz，起点为器件面，扫至z12mm。",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段、C页Fig.2c/Fig.3图注、D页Fig.4/6图注",
+              "note": "正文z约7.5mm处报告三λx剖面；精确逐λ峰值表/峰位拟合/横向μm每像素/背景/归一化未核。步长不是横向采样或±不确定度，7.5mm汇总不补三个精确f；原图未视觉核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段约z7.5mm、D页Fig.5图注",
+              "note": "作者给设计三λ近同焦汇总，缺逐λ精确峰位/精度；只在1690nm有正文独立数值3.83mm，未估读图5。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "约7.5mm汇总；逐λ精确f未核"
+            },
+            "chromatic": {
+              "value": "近红外三校正λ约同焦；未校正谱点焦位改变，1690nm正文报告3.83mm",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页焦斑段及D页Fig.5前正文/图注",
+              "note": "三点校正不是连续消色差；不由同焦文字推零残余色差或全场无横向色差。三设计λ、1410/1940nm精确f与横向色差仍缺。",
+              "basis": "measured",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者绝对效率：焦线束腰内功率 / 通过与镜片同尺寸600×600μm孔的入射功率；入射准直束直径4mm。",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页绝对效率定义段",
+              "note": "束腰为焦线强度经Gaussian拟合后的1/e²全宽，沿x；y向积分长度/实际ROI/功率计、背景校准与重复数未齐。不是圆形焦圈半径，也不把1/e²全宽当FWHM；模拟24/22/28%和理论透射48/48/65%不充实测效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "integration_geometry": "focal_line_waist",
+              "width_definition": "full_width_at_1_over_e_squared",
+              "denominator_geometry_um": {
+                "x": 600,
+                "y": 600
+              }
+            },
+            "mtf_curve": {
+              "value": "Figs3/4强度及x剖面；Fig5焦位、Fig6角度宽度曲线；所读正文未核到MTF或Strehl",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B–D页相关正文/图注及Associated Content；SI仅声明未读取",
+              "note": "只读原始作者PDF网络解析文字，未取得本机PDF或视觉图；SI入口403、Figshare403；DASH元数据200但原文件401，OpenAlex/S2的OA标志不等于已获全文。限定正文未见独立数据仓库声明，DataCite精确关联0、GitHub仓库名/描述精确DOI0。原始PSF/MTF数表、空间标定/处理条件仍未核，不能称全网无数据；未联系作者，未估图或复算MTF。 本λ模拟效率28%只作文字对照，不填本λ实测字段。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "khor_telecom_author_2015",
+                "khor_telecom_2015",
+                "khor_telecom_dash_2015"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页Fig.4图注x方向剖面",
+              "note": "线聚焦沿x宽度不能复制到y；未核独立y向数值。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "未给独立y向宽度"
+            },
+            "fwhm_x_um": {
+              "value": 25,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页FWHM正文按λ1300/1550/1800排序的第3项；D页Fig.4图注",
+              "note": "正文直接报告实测x剖面宽度，非曲线估读；原始图未视觉核，使用预刊作者版文字定位，不补测量不确定度。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "reading_version": "author-hosted prepublication proof A–E",
+              "display": "25（作者稿正文直报）"
+            },
+            "efficiency_lambda_nm": {
+              "value": 1800,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页绝对效率三λ顺序",
+              "note": "仅绑定正文对应的实验绝对效率，不生成带内均值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 21,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Absolute efficiency正文第3个实测百分数",
+              "note": "作者正文直接实测功率比；与同段模拟效率和D页理论总透射分开。未读SI，不称其完整数表或原始功率表。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "reading_version": "author-hosted prepublication proof A–E",
+              "display": "21（作者稿正文直报）"
+            }
+          }
+        },
+        {
+          "id": "khor2015_axial_1940",
+          "model": "Khorasaninejad 2015 · 1940nm · 未校正 · 仅曲线",
+          "study_id": "khor2015",
+          "specimen_id": "line_lens",
+          "module": "",
+          "variant": "a-Si线聚焦 / 近红外离散校正；作者稿正文核验",
+          "evidence_type": "study",
+          "measurement_scope": "同一线透镜的光谱/轴扫条件；三校正λ在约7.5mm焦线评价，未校正点看Fig.5，精确数字仅正文1690nm。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "khor_telecom_author_2015",
+              "location": "作者托管预刊稿B页正文/ Fig.1b图注；效率定义段600×600μm",
+              "note": "作者称D600μm，记录为x向有效口径；实际匹配入射孔为600×600μm。此为线聚焦器件，不把它理解成圆孔或二维点聚焦。原始PDF文字可解析，本机403，未视觉核图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.04,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1b图注及FWHM比较段",
+              "note": "作者NA0.04；D600μm/f7500μm给x方向几何NA约0.03997，仅数量级核对；10×是继像物镜倍率，不是器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 7500,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页设计段/ Fig.1b图注",
+              "note": "设计f7.5mm换为7500μm；不复制成三个设计波长的精确实测峰位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页结构/制备段、Fig.1c图注",
+              "note": "a-Si沉积层/谐振器名义高度400nm；Al20nm为后续去除的刻蚀掩膜，Au30nm仅图2b SEM制样描述，不并入光学器件厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "a-Si双矩形耦合RDR / fused silica；单元1μm、方形区域600×600μm",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1c及制备段、C页Fig.2图注",
+              "note": "沿x排布相位形成焦线；WL/WR/g可变，不选择平均宽度。原始文字可读，未视觉核SEM或制造公差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": 1940,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页设计λ/三λ性能段、D页Fig.5正文/图注",
+              "note": "实际光谱表征点；设计校正与未校正点分别标明，不是模拟扫描或伪色RGB。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "入射E沿y，即RDR长度方向；焦线横向剖面沿x",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1c、C页Fig.3图注、D页Fig.4图注",
+              "note": "未核其他入射偏振的实验性能，不推偏振不敏感或将y偏振称y向焦斑宽度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK超连续谱源+可调带通，作者线宽15nm；反射准直器、y向线偏振片，从基底侧入射",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段、Fig.1c及C页Fig.2c图注",
+              "note": "15nm仅保留作者line-width称谓，FWHM谱宽定义未核；入射准直束直径4mm与600μm器件口径分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "10×物镜+管镜继像至InGaAs相机；整体随xyz台沿z移动，约120μm步长（0.12mm）拼接xz，起点为器件面，扫至z12mm。",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段、C页Fig.2c/Fig.3图注、D页Fig.4/6图注",
+              "note": "正文z约7.5mm处报告三λx剖面；精确逐λ峰值表/峰位拟合/横向μm每像素/背景/归一化未核。步长不是横向采样或±不确定度，7.5mm汇总不补三个精确f；原图未视觉核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段约z7.5mm、D页Fig.5图注",
+              "note": "作者给设计三λ近同焦汇总，缺逐λ精确峰位/精度；只在1690nm有正文独立数值3.83mm，未估读图5。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "约7.5mm汇总；逐λ精确f未核"
+            },
+            "chromatic": {
+              "value": "近红外三校正λ约同焦；未校正谱点焦位改变，1690nm正文报告3.83mm",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页焦斑段及D页Fig.5前正文/图注",
+              "note": "三点校正不是连续消色差；不由同焦文字推零残余色差或全场无横向色差。三设计λ、1410/1940nm精确f与横向色差仍缺。",
+              "basis": "measured",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者绝对效率：焦线束腰内功率 / 通过与镜片同尺寸600×600μm孔的入射功率；入射准直束直径4mm。",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页绝对效率定义段",
+              "note": "束腰为焦线强度经Gaussian拟合后的1/e²全宽，沿x；y向积分长度/实际ROI/功率计、背景校准与重复数未齐。不是圆形焦圈半径，也不把1/e²全宽当FWHM；模拟24/22/28%和理论透射48/48/65%不充实测效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "integration_geometry": "focal_line_waist",
+              "width_definition": "full_width_at_1_over_e_squared",
+              "denominator_geometry_um": {
+                "x": 600,
+                "y": 600
+              }
+            },
+            "mtf_curve": {
+              "value": "Figs3/4强度及x剖面；Fig5焦位、Fig6角度宽度曲线；所读正文未核到MTF或Strehl",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B–D页相关正文/图注及Associated Content；SI仅声明未读取",
+              "note": "只读原始作者PDF网络解析文字，未取得本机PDF或视觉图；SI入口403、Figshare403；DASH元数据200但原文件401，OpenAlex/S2的OA标志不等于已获全文。限定正文未见独立数据仓库声明，DataCite精确关联0、GitHub仓库名/描述精确DOI0。原始PSF/MTF数表、空间标定/处理条件仍未核，不能称全网无数据；未联系作者，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "khor_telecom_author_2015",
+                "khor_telecom_2015",
+                "khor_telecom_dash_2015"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页Fig.4图注x方向剖面",
+              "note": "线聚焦沿x宽度不能复制到y；未核独立y向数值。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "未给独立y向宽度"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页未校正波长段/ Fig.5；1690nm指向SI S3",
+              "note": "未核本λ独立宽度数值；不复用设计三λFWHM，不从SI引用推原始PSF已公开。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "未校正λ宽度数值未核"
+            }
+          }
+        },
+        {
+          "id": "khor2015_angle_1300",
+          "model": "Khorasaninejad 2015 · 1300nm · 固定面角度曲线",
+          "study_id": "khor2015",
+          "specimen_id": "line_lens",
+          "module": "",
+          "variant": "a-Si线聚焦 / 近红外离散校正；作者稿正文核验",
+          "evidence_type": "study",
+          "measurement_scope": "同一物理线透镜的角度表征，固定z7.5mm；具体场角点未知，不另算镜片。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "khor_telecom_author_2015",
+              "location": "作者托管预刊稿B页正文/ Fig.1b图注；效率定义段600×600μm",
+              "note": "作者称D600μm，记录为x向有效口径；实际匹配入射孔为600×600μm。此为线聚焦器件，不把它理解成圆孔或二维点聚焦。原始PDF文字可解析，本机403，未视觉核图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.04,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1b图注及FWHM比较段",
+              "note": "作者NA0.04；D600μm/f7500μm给x方向几何NA约0.03997，仅数量级核对；10×是继像物镜倍率，不是器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 7500,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页设计段/ Fig.1b图注",
+              "note": "设计f7.5mm换为7500μm；不复制成三个设计波长的精确实测峰位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页结构/制备段、Fig.1c图注",
+              "note": "a-Si沉积层/谐振器名义高度400nm；Al20nm为后续去除的刻蚀掩膜，Au30nm仅图2b SEM制样描述，不并入光学器件厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "a-Si双矩形耦合RDR / fused silica；单元1μm、方形区域600×600μm",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1c及制备段、C页Fig.2图注",
+              "note": "沿x排布相位形成焦线；WL/WR/g可变，不选择平均宽度。原始文字可读，未视觉核SEM或制造公差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "入射E沿y，即RDR长度方向；焦线横向剖面沿x",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1c、C页Fig.3图注、D页Fig.4图注",
+              "note": "未核其他入射偏振的实验性能，不推偏振不敏感或将y偏振称y向焦斑宽度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK超连续谱源+可调带通，作者线宽15nm；反射准直器、y向线偏振片，从基底侧入射",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段、Fig.1c及C页Fig.2c图注",
+              "note": "15nm仅保留作者line-width称谓，FWHM谱宽定义未核；入射准直束直径4mm与600μm器件口径分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者绝对效率：焦线束腰内功率 / 通过与镜片同尺寸600×600μm孔的入射功率；入射准直束直径4mm。",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页绝对效率定义段",
+              "note": "束腰为焦线强度经Gaussian拟合后的1/e²全宽，沿x；y向积分长度/实际ROI/功率计、背景校准与重复数未齐。不是圆形焦圈半径，也不把1/e²全宽当FWHM；模拟24/22/28%和理论透射48/48/65%不充实测效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "integration_geometry": "focal_line_waist",
+              "width_definition": "full_width_at_1_over_e_squared",
+              "denominator_geometry_um": {
+                "x": 600,
+                "y": 600
+              }
+            },
+            "mtf_curve": {
+              "value": "Figs3/4强度及x剖面；Fig5焦位、Fig6角度宽度曲线；所读正文未核到MTF或Strehl",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B–D页相关正文/图注及Associated Content；SI仅声明未读取",
+              "note": "只读原始作者PDF网络解析文字，未取得本机PDF或视觉图；SI入口403、Figshare403；DASH元数据200但原文件401，OpenAlex/S2的OA标志不等于已获全文。限定正文未见独立数据仓库声明，DataCite精确关联0、GitHub仓库名/描述精确DOI0。原始PSF/MTF数表、空间标定/处理条件仍未核，不能称全网无数据；未联系作者，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "khor_telecom_author_2015",
+                "khor_telecom_2015",
+                "khor_telecom_dash_2015"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "wavelength_nm": {
+              "value": 1300,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页Fig.6图注",
+              "note": "实际入射角实验对应的近红外波长；各角度数值点未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "aoi_deg": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页角度实验正文及Fig.6图注",
+              "note": "入射角在xz面改变；作者仅文字称约10°以内FWHM变化小，具体角度采样和正负方向未视觉核，不填0或10作测点/系统FOV。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "仅角度曲线；具体点未核",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "固定z7.5mm处拍摄光分布，改变xz平面入射角并计算每角FWHM；非各角重新寻最佳焦。",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页角度测量正文及Fig.6图注",
+              "note": "所读为正文/图注；实际每角宽度、物方像素及归一化缺失，约10°趋势不填角度点或FOV。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页Fig.6图注",
+              "note": "各角仅曲线，未估读；不将正常入射三λ的宽度复制给全部角度。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "角度宽度仅曲线"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页Fig.6固定z7.5mm图注",
+              "note": "固定评价面不是本λ各角实测最佳焦位；不得填7500或零残余焦差。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "固定面；非逐角最佳f"
+            },
+            "chromatic": {
+              "value": "固定面角度PSF宽度：作者称约10°内变化小；数值点未核",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页角度段/ Fig.6",
+              "note": "不能由固定面宽度曲线推全场横向色差、实测MTF或系统视场；S4逐角焦距仅模拟且SI未读。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "khor2015_angle_1550",
+          "model": "Khorasaninejad 2015 · 1550nm · 固定面角度曲线",
+          "study_id": "khor2015",
+          "specimen_id": "line_lens",
+          "module": "",
+          "variant": "a-Si线聚焦 / 近红外离散校正；作者稿正文核验",
+          "evidence_type": "study",
+          "measurement_scope": "同一物理线透镜的角度表征，固定z7.5mm；具体场角点未知，不另算镜片。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "khor_telecom_author_2015",
+              "location": "作者托管预刊稿B页正文/ Fig.1b图注；效率定义段600×600μm",
+              "note": "作者称D600μm，记录为x向有效口径；实际匹配入射孔为600×600μm。此为线聚焦器件，不把它理解成圆孔或二维点聚焦。原始PDF文字可解析，本机403，未视觉核图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.04,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1b图注及FWHM比较段",
+              "note": "作者NA0.04；D600μm/f7500μm给x方向几何NA约0.03997，仅数量级核对；10×是继像物镜倍率，不是器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 7500,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页设计段/ Fig.1b图注",
+              "note": "设计f7.5mm换为7500μm；不复制成三个设计波长的精确实测峰位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页结构/制备段、Fig.1c图注",
+              "note": "a-Si沉积层/谐振器名义高度400nm；Al20nm为后续去除的刻蚀掩膜，Au30nm仅图2b SEM制样描述，不并入光学器件厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "a-Si双矩形耦合RDR / fused silica；单元1μm、方形区域600×600μm",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1c及制备段、C页Fig.2图注",
+              "note": "沿x排布相位形成焦线；WL/WR/g可变，不选择平均宽度。原始文字可读，未视觉核SEM或制造公差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "入射E沿y，即RDR长度方向；焦线横向剖面沿x",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1c、C页Fig.3图注、D页Fig.4图注",
+              "note": "未核其他入射偏振的实验性能，不推偏振不敏感或将y偏振称y向焦斑宽度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK超连续谱源+可调带通，作者线宽15nm；反射准直器、y向线偏振片，从基底侧入射",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段、Fig.1c及C页Fig.2c图注",
+              "note": "15nm仅保留作者line-width称谓，FWHM谱宽定义未核；入射准直束直径4mm与600μm器件口径分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者绝对效率：焦线束腰内功率 / 通过与镜片同尺寸600×600μm孔的入射功率；入射准直束直径4mm。",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页绝对效率定义段",
+              "note": "束腰为焦线强度经Gaussian拟合后的1/e²全宽，沿x；y向积分长度/实际ROI/功率计、背景校准与重复数未齐。不是圆形焦圈半径，也不把1/e²全宽当FWHM；模拟24/22/28%和理论透射48/48/65%不充实测效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "integration_geometry": "focal_line_waist",
+              "width_definition": "full_width_at_1_over_e_squared",
+              "denominator_geometry_um": {
+                "x": 600,
+                "y": 600
+              }
+            },
+            "mtf_curve": {
+              "value": "Figs3/4强度及x剖面；Fig5焦位、Fig6角度宽度曲线；所读正文未核到MTF或Strehl",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B–D页相关正文/图注及Associated Content；SI仅声明未读取",
+              "note": "只读原始作者PDF网络解析文字，未取得本机PDF或视觉图；SI入口403、Figshare403；DASH元数据200但原文件401，OpenAlex/S2的OA标志不等于已获全文。限定正文未见独立数据仓库声明，DataCite精确关联0、GitHub仓库名/描述精确DOI0。原始PSF/MTF数表、空间标定/处理条件仍未核，不能称全网无数据；未联系作者，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "khor_telecom_author_2015",
+                "khor_telecom_2015",
+                "khor_telecom_dash_2015"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "wavelength_nm": {
+              "value": 1550,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页Fig.6图注",
+              "note": "实际入射角实验对应的近红外波长；各角度数值点未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "aoi_deg": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页角度实验正文及Fig.6图注",
+              "note": "入射角在xz面改变；作者仅文字称约10°以内FWHM变化小，具体角度采样和正负方向未视觉核，不填0或10作测点/系统FOV。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "仅角度曲线；具体点未核",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "固定z7.5mm处拍摄光分布，改变xz平面入射角并计算每角FWHM；非各角重新寻最佳焦。",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页角度测量正文及Fig.6图注",
+              "note": "所读为正文/图注；实际每角宽度、物方像素及归一化缺失，约10°趋势不填角度点或FOV。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页Fig.6图注",
+              "note": "各角仅曲线，未估读；不将正常入射三λ的宽度复制给全部角度。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "角度宽度仅曲线"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页Fig.6固定z7.5mm图注",
+              "note": "固定评价面不是本λ各角实测最佳焦位；不得填7500或零残余焦差。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "固定面；非逐角最佳f"
+            },
+            "chromatic": {
+              "value": "固定面角度PSF宽度：作者称约10°内变化小；数值点未核",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页角度段/ Fig.6",
+              "note": "不能由固定面宽度曲线推全场横向色差、实测MTF或系统视场；S4逐角焦距仅模拟且SI未读。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "khor2015_angle_1800",
+          "model": "Khorasaninejad 2015 · 1800nm · 固定面角度曲线",
+          "study_id": "khor2015",
+          "specimen_id": "line_lens",
+          "module": "",
+          "variant": "a-Si线聚焦 / 近红外离散校正；作者稿正文核验",
+          "evidence_type": "study",
+          "measurement_scope": "同一物理线透镜的角度表征，固定z7.5mm；具体场角点未知，不另算镜片。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "khor_telecom_author_2015",
+              "location": "作者托管预刊稿B页正文/ Fig.1b图注；效率定义段600×600μm",
+              "note": "作者称D600μm，记录为x向有效口径；实际匹配入射孔为600×600μm。此为线聚焦器件，不把它理解成圆孔或二维点聚焦。原始PDF文字可解析，本机403，未视觉核图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.04,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1b图注及FWHM比较段",
+              "note": "作者NA0.04；D600μm/f7500μm给x方向几何NA约0.03997，仅数量级核对；10×是继像物镜倍率，不是器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 7500,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页设计段/ Fig.1b图注",
+              "note": "设计f7.5mm换为7500μm；不复制成三个设计波长的精确实测峰位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页结构/制备段、Fig.1c图注",
+              "note": "a-Si沉积层/谐振器名义高度400nm；Al20nm为后续去除的刻蚀掩膜，Au30nm仅图2b SEM制样描述，不并入光学器件厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "a-Si双矩形耦合RDR / fused silica；单元1μm、方形区域600×600μm",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1c及制备段、C页Fig.2图注",
+              "note": "沿x排布相位形成焦线；WL/WR/g可变，不选择平均宽度。原始文字可读，未视觉核SEM或制造公差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "polarization": {
+              "value": "入射E沿y，即RDR长度方向；焦线横向剖面沿x",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页Fig.1c、C页Fig.3图注、D页Fig.4图注",
+              "note": "未核其他入射偏振的实验性能，不推偏振不敏感或将y偏振称y向焦斑宽度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK超连续谱源+可调带通，作者线宽15nm；反射准直器、y向线偏振片，从基底侧入射",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页测量段、Fig.1c及C页Fig.2c图注",
+              "note": "15nm仅保留作者line-width称谓，FWHM谱宽定义未核；入射准直束直径4mm与600μm器件口径分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者绝对效率：焦线束腰内功率 / 通过与镜片同尺寸600×600μm孔的入射功率；入射准直束直径4mm。",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B页绝对效率定义段",
+              "note": "束腰为焦线强度经Gaussian拟合后的1/e²全宽，沿x；y向积分长度/实际ROI/功率计、背景校准与重复数未齐。不是圆形焦圈半径，也不把1/e²全宽当FWHM；模拟24/22/28%和理论透射48/48/65%不充实测效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "integration_geometry": "focal_line_waist",
+              "width_definition": "full_width_at_1_over_e_squared",
+              "denominator_geometry_um": {
+                "x": 600,
+                "y": 600
+              }
+            },
+            "mtf_curve": {
+              "value": "Figs3/4强度及x剖面；Fig5焦位、Fig6角度宽度曲线；所读正文未核到MTF或Strehl",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿B–D页相关正文/图注及Associated Content；SI仅声明未读取",
+              "note": "只读原始作者PDF网络解析文字，未取得本机PDF或视觉图；SI入口403、Figshare403；DASH元数据200但原文件401，OpenAlex/S2的OA标志不等于已获全文。限定正文未见独立数据仓库声明，DataCite精确关联0、GitHub仓库名/描述精确DOI0。原始PSF/MTF数表、空间标定/处理条件仍未核，不能称全网无数据；未联系作者，未估图或复算MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "khor_telecom_author_2015",
+                "khor_telecom_2015",
+                "khor_telecom_dash_2015"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "wavelength_nm": {
+              "value": 1800,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页Fig.6图注",
+              "note": "实际入射角实验对应的近红外波长；各角度数值点未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "aoi_deg": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页角度实验正文及Fig.6图注",
+              "note": "入射角在xz面改变；作者仅文字称约10°以内FWHM变化小，具体角度采样和正负方向未视觉核，不填0或10作测点/系统FOV。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "仅角度曲线；具体点未核",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "固定z7.5mm处拍摄光分布，改变xz平面入射角并计算每角FWHM；非各角重新寻最佳焦。",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页角度测量正文及Fig.6图注",
+              "note": "所读为正文/图注；实际每角宽度、物方像素及归一化缺失，约10°趋势不填角度点或FOV。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页Fig.6图注",
+              "note": "各角仅曲线，未估读；不将正常入射三λ的宽度复制给全部角度。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "角度宽度仅曲线"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页Fig.6固定z7.5mm图注",
+              "note": "固定评价面不是本λ各角实测最佳焦位；不得填7500或零残余焦差。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "固定面；非逐角最佳f"
+            },
+            "chromatic": {
+              "value": "固定面角度PSF宽度：作者称约10°内变化小；数值点未核",
+              "source": "khor_telecom_author_2015",
+              "location": "作者稿D页角度段/ Fig.6",
+              "note": "不能由固定面宽度曲线推全场横向色差、实测MTF或系统视场；S4逐角焦距仅模拟且SI未读。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            }
+          }
         }
       ],
-      "scope": "21项原始研究、84个器件/测量/系统配置、709条记录。谱点、模拟模型和成像条件不计更多实物；设计/模拟波段与实测范围、界限与标量、作者和本库计算分开，未知数值不补零。",
+      "scope": "22项原始研究、85个器件/测量/系统配置、719条记录。线/点聚焦、近红外离散校正与可见连续设计分开；谱点和角度条件不计更多实物，缺值不补零，本库焦差计算附明确参考面。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
