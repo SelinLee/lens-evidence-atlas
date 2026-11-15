@@ -35,6 +35,14 @@ export function validateDevices(d,catalog){
    (v.value<0||v.basis!=='measured'||v.quantity!=='optical_power'||v.original_unit!=='μW'||
     !(r.values.wavelength_nm?.value>0)||!r.values.efficiency_protocol?.value))errors.push('measured optical power context');
  }
+ const designFocal=r.values.design_focal_um;
+ if(designFocal?.calculation_method==='circular_aperture_na_relation'){
+  const diameter=r.values.diameter_um?.value,na=r.values.na?.value,inputs=designFocal.inputs;
+  if(designFocal.calculation_origin!=='atlas'||designFocal.basis!=='model'||!designFocal.approximate||!(diameter>0)||!(na>0&&na<1)||
+   designFocal.formula!=='diameter_um / (2 * tan(asin(na)))'||inputs?.diameter_um!==diameter||inputs?.na!==na||
+   designFocal.rounding_increment_um!==.01||
+   designFocal.value!==Math.round(100*diameter/(2*Math.tan(Math.asin(na))))/100)errors.push('atlas design focal input/formula');
+ }
  const aoi=r.values.aoi_deg;
  const focalMean=r.values.measured_focal_band_mean_um;
  if(Number.isFinite(focalMean?.value)){

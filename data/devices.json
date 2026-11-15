@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "as_of": "2026-11-14",
+  "as_of": "2026-11-15",
   "sources": [
     {
       "id": "apple_phone",
@@ -565,6 +565,33 @@
       "kind": "supplementary_material",
       "checked_on": "2026-11-14",
       "scope": "78页公开审稿仅检索并读Response1.5(p22)、2.9(p55)、3.4(pp75–76)及TPL/NIL比较相关段，视觉核p75；不称78页全文精读。Response3.4承认修正红光效率，最终主文/SI635nm为29.1%；只用当前正式值，不建新研究或补造旧值。Response2.9明确RGB而非全可见光消色差。未核到原始PSF/代码仓库。"
+    },
+    {
+      "id": "pan_multilayer_2023",
+      "title": "Pan et al. (2023): 3D-printed multilayer structures for high–numerical aperture achromatic metalenses",
+      "doi": "10.1126/sciadv.adj9262",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10732525/",
+      "kind": "peer_reviewed_paper",
+      "checked_on": "2026-11-15",
+      "scope": "期刊正式版PMC存档正文，限定读MAM design、制造/实验结果、Methods、图注与数据声明；11-14正文203可读，11-15原链接实点进入访问验证页，未取得正式PDF/SI或高清原图。D20μm/NA0.5与0.7；400–800nm为设计/模拟，实测六点442–646nm；<3μm焦位位移保留为界限，逐λ数表未核。引言/讨论平均效率与结果模拟均值归属差异保留。"
+    },
+    {
+      "id": "pan_multilayer_xml_2023",
+      "publication_source": "pan_multilayer_2023",
+      "title": "Pan et al. (2023): formal article JATS XML deposited in Europe PMC",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10732525/fullTextXML",
+      "kind": "authoritative_repository",
+      "checked_on": "2026-11-15",
+      "scope": "实际200取得并核PMC10732525.1、正式DOI/题录、MathML M3分式、设计/实测/Methods/Fig3C新增及数据声明；不是另篇研究，亦不称视觉核正式Fig3C。设计f由本库按作者式和D/NA计算，单列model/atlas。正式附件只链接SI，未列独立原始PSF/MTF数组；访问缺口不等于数据不存在。"
+    },
+    {
+      "id": "pan_multilayer_arxiv_2023",
+      "publication_source": "pan_multilayer_2023",
+      "title": "Pan et al. (2023): arXiv 2308.14051v1 author manuscript with supplementary notes",
+      "url": "https://arxiv.org/pdf/2308.14051v1",
+      "kind": "author_manuscript",
+      "checked_on": "2026-11-15",
+      "scope": "37页作者稿v1（2023-08-27），主文22页加SI15页；限定读设计/表征/Methods、SI Note8–12及相关图，视觉核PDF pp.6/13/15/18/32–36。正式Fig3C在v1不存在，Level3插值20nm与正式25nm不同。S7仅560nm模拟MTF，fx(mm⁻¹)0–800；正文3FWHM为直径，实测焦圈标定未齐；S10±5μm为观察离焦，非逐谱点色差。未精读SI文献综述表或拿其数值替原作。"
     }
   ],
   "domains": {
@@ -107099,9 +107126,3457 @@
               "checked_on": "2026-11-14"
             }
           }
+        },
+        {
+          "id": "pan2023_na05_summary",
+          "model": "Pan 2023 · NA0.5 · 六波长汇总（设计f本库计算）",
+          "study_id": "pan2023",
+          "specimen_id": "na05",
+          "module": "",
+          "variant": "TPL三维多层可见光 / 连续设计与六谱点实测分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一NA器件的汇总和六个实际波长；设计400–800nm，实测仅442/509/560/600/623/646nm。不同NA分配置；作者稿图、正式版文字/XML同篇，版本分开。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要、MAM design首段R=10μm；作者稿v1 p.6",
+              "note": "光学设计口径2R=20μm；2μm径向支撑环及S8约24μm外框尺寸不是有效光学口径。未把SEM外径/原稿图注radius歧义当成新口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.5,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3A；作者稿v1 p.13 Fig.3a",
+              "note": "作者器件NA；150×收集物镜及制备63×/NA1.4不是本器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 17.32,
+              "source": "pan_multilayer_xml_2023",
+              "location": "正式版MAM design首段MathML M3；作者稿v1 p.6公式（已视觉核）",
+              "note": "本库按作者设计式f=R/tan(asin(NA))和R10μm计算，并四舍五入到0.01μm；不是作者印字实测焦距，也不是各波长焦位。图3的z参考与设计f原点未有明确转换，不作残余焦移相减。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_xml_2023",
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "calculation_origin": "atlas",
+              "formula": "diameter_um / (2 * tan(asin(na)))",
+              "inputs": {
+                "diameter_um": 20,
+                "na": 0.5
+              },
+              "rounding_increment_um": 0.01,
+              "approximate": true,
+              "display": "约17.32（本库按作者设计式计算）",
+              "calculation_method": "circular_aperture_na_relation"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "400–800nm是设计/模拟目标；作者明确实测受CMOS限制只覆盖六谱点，不称完整连续实测。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "400（设计/模拟）"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "设计/模拟上限，不是800nm的实际PSF测点；补充宽带扫描亦为模拟。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "800（设计/模拟）"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3；作者稿v1 pp.13–14",
+              "note": "连续消色差设计与实际六个离散表征点分开；Methods450–650nm的泛述与442nm实际图标签不同，保留实际图示六点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "442 / 509 / 560 / 600 / 623 / 646nm（实际六点）",
+              "sample_wavelengths_nm": [
+                442,
+                509,
+                560,
+                600,
+                623,
+                646
+              ]
+            },
+            "height_nm": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design首段；作者稿v1 p.6",
+              "note": "每层环高设计0–1.2μm，上限非实测恒定厚度；支撑层0.5μm/层、层间距1.6μm、三层堆叠分别保留，不用1200nm当完整器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "0–1200nm（每层设计环高）",
+              "range_nm": {
+                "min": 0,
+                "max": 1200
+              }
+            },
+            "material": {
+              "value": "IP-Dip聚合物同心环 / fused silica；三层，层间距1.6μm、环宽200nm",
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design/Experimental results/Fig.2A/B/E；作者稿v1 pp.6/10/12、SI Note9 pp.33–34",
+              "note": "交联IP-Dip低折射率树脂，TPL；支撑层0.5μm，外侧支撑/UV固化及缩量补偿；不是Si/TiO2纳米柱。最高环高和层间距非总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "polarization": {
+              "value": "作者设计称偏振不敏感；模拟等幅x/y源表示非偏振",
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要及Methods / Finite-difference time domain simulations",
+              "note": "实测每一偏振轴、检出分析器与偏振验证完整数表未核；不由模拟等幅x/y源推成实测全偏振相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK SELECT UV/nIR1超连续谱源，经潜望镜和透镜准直；六个实际谱点",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization；作者稿v1 p.18及SI Note12 p.35",
+              "note": "源可调范围/Methods泛述不等于全带逐点实测；工作谱线宽与滤波带宽未完整报告。780nm为TPL制备激光，不是本次工作波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "150×物镜继像至DCC3260C CMOS；P-736.4CA压电台沿z步进20nm（0.02μm）；Fig.3实测xz/xy和归一化x截线。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization、Fig.3A图注；作者稿v1 pp.13–14/18及SI Note12 pp.35–36",
+              "note": "作者图注称z自样品顶部计；与几何设计f基准未明确转换。Fig.4A/B按NA各自同一焦面比较，不默认逐λ最佳焦；Fig.3与该固定面的对应仍待核。横向物方像素标定/曝光/背景/裁剪/峰值提取原始数组未核，20nm轴步长不是横向像素大小。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3C及Experimental results；作者稿v1 Fig.3 pp.13–14",
+              "note": "正式版增加Fig.3C焦位曲线，作者稿v1没有该子图；未核逐λ原始数表，不从xz热图或曲线估读，不把本库设计式结果填成实测f。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅焦位曲线；逐λ数表未核"
+            },
+            "chromatic": {
+              "value": "作者报告六波长焦点位移<3μm；逐点残余焦差/横向色差未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3C；作者稿v1 p.14",
+              "note": "小于3μm是作者汇总界限，非精确3或每一谱点误差；未明确参考λ/固定面/统计定义，不自动当峰峰值或零色差。白光彩色图不证明全场横向色差为零。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "focus_variation_protocol": {
+              "value": "实际谱点442/509/560/600/623/646nm；作者称焦点位移<3μm，z图注从样品顶部计，轴向步长20nm。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.3C及Methods / Characterization",
+              "note": "参考λ、固定焦面、精确最大互差/统计定义和不确定度未核；设计f不能作默认相减参考。未把界限转成标量焦距变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者名义定义：焦点直径3×FWHM圆内功率 / 入射至MAM面积的总功率；实验以焦斑aperture和S142C功率计收集。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版引言末段效率定义、Methods / Characterization、Fig.4A图注；作者稿v1 pp.5/15/18",
+              "note": "实验分母：移除MAM，同一继像系统、aperture匹配MAM像面积。Fig.4在各NA同一焦面；实际aperture大小如何标定为直径3FWHM、背景/校准/重复数未完整给。名义直径3FWHM不改成半径3FWHM；模拟效率/均值不充实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "efficiency_band_mean_pct": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版引言末段/Experimental results/DISCUSSION",
+              "note": "原文归属差异：引言42%，结果模拟44.2%，讨论称制成器件44.2%。结果段明确44.2/20.0%为模拟，不取42/44.2/20作实测带内均值；原始实验逐λ数表仍缺。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "display": "实测均值未核；引言/讨论与结果段归属差异"
+            },
+            "mtf_curve": {
+              "value": "实测效率22.5–42.7%（六谱点区间）；Fig.4A/B逐λ效率/FWHM仅曲线；实测MTF未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.4A/B；作者稿v1 p.15（已视觉核）",
+              "note": "区间来自正文，端点对应λ未知，不分派到谱点、不填均值。作者稿v1 Fig.4A横轴Wavelength400–700nm、纵轴Efficiency0–80%；B为FWHM μm。NA0.5实测蓝实心圆/蓝方宽度，NA0.7红实心三角，模拟空心/点线；图轴范围非实测全范围。S7为560nm模拟PSF/MTF，非实验MTF。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "efficiency_range_pct": {
+                "min": 22.5,
+                "max": 42.7
+              },
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3C；作者稿v1 p.14",
+              "note": "保留作者严格上界与未知参考/统计；不填3μm坐标，不补零或派到单波长。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "display": "<3（作者汇总界限，非精确值）",
+              "calculation_origin": "authors",
+              "bound": {
+                "operator": "<",
+                "value": 3,
+                "unit": "μm"
+              },
+              "sample_wavelengths_nm": [
+                442,
+                509,
+                560,
+                600,
+                623,
+                646
+              ]
+            }
+          }
+        },
+        {
+          "id": "pan2023_na05_442",
+          "model": "Pan 2023 · NA0.5 · 442nm（设计f本库计算）",
+          "study_id": "pan2023",
+          "specimen_id": "na05",
+          "module": "",
+          "variant": "TPL三维多层可见光 / 连续设计与六谱点实测分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一NA器件的汇总和六个实际波长；设计400–800nm，实测仅442/509/560/600/623/646nm。不同NA分配置；作者稿图、正式版文字/XML同篇，版本分开。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要、MAM design首段R=10μm；作者稿v1 p.6",
+              "note": "光学设计口径2R=20μm；2μm径向支撑环及S8约24μm外框尺寸不是有效光学口径。未把SEM外径/原稿图注radius歧义当成新口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.5,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3A；作者稿v1 p.13 Fig.3a",
+              "note": "作者器件NA；150×收集物镜及制备63×/NA1.4不是本器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 17.32,
+              "source": "pan_multilayer_xml_2023",
+              "location": "正式版MAM design首段MathML M3；作者稿v1 p.6公式（已视觉核）",
+              "note": "本库按作者设计式f=R/tan(asin(NA))和R10μm计算，并四舍五入到0.01μm；不是作者印字实测焦距，也不是各波长焦位。图3的z参考与设计f原点未有明确转换，不作残余焦移相减。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_xml_2023",
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "calculation_origin": "atlas",
+              "formula": "diameter_um / (2 * tan(asin(na)))",
+              "inputs": {
+                "diameter_um": 20,
+                "na": 0.5
+              },
+              "rounding_increment_um": 0.01,
+              "approximate": true,
+              "display": "约17.32（本库按作者设计式计算）",
+              "calculation_method": "circular_aperture_na_relation"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "400–800nm是设计/模拟目标；作者明确实测受CMOS限制只覆盖六谱点，不称完整连续实测。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "400（设计/模拟）"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "设计/模拟上限，不是800nm的实际PSF测点；补充宽带扫描亦为模拟。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "800（设计/模拟）"
+            },
+            "wavelength_nm": {
+              "value": 442,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3A及Experimental results；作者稿v1 p.13 Fig.3a第1列λ标签",
+              "note": "实际PSF表征点，非色彩图示滤波RGB。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design首段；作者稿v1 p.6",
+              "note": "每层环高设计0–1.2μm，上限非实测恒定厚度；支撑层0.5μm/层、层间距1.6μm、三层堆叠分别保留，不用1200nm当完整器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "0–1200nm（每层设计环高）",
+              "range_nm": {
+                "min": 0,
+                "max": 1200
+              }
+            },
+            "material": {
+              "value": "IP-Dip聚合物同心环 / fused silica；三层，层间距1.6μm、环宽200nm",
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design/Experimental results/Fig.2A/B/E；作者稿v1 pp.6/10/12、SI Note9 pp.33–34",
+              "note": "交联IP-Dip低折射率树脂，TPL；支撑层0.5μm，外侧支撑/UV固化及缩量补偿；不是Si/TiO2纳米柱。最高环高和层间距非总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "polarization": {
+              "value": "作者设计称偏振不敏感；模拟等幅x/y源表示非偏振",
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要及Methods / Finite-difference time domain simulations",
+              "note": "实测每一偏振轴、检出分析器与偏振验证完整数表未核；不由模拟等幅x/y源推成实测全偏振相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK SELECT UV/nIR1超连续谱源，经潜望镜和透镜准直；六个实际谱点",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization；作者稿v1 p.18及SI Note12 p.35",
+              "note": "源可调范围/Methods泛述不等于全带逐点实测；工作谱线宽与滤波带宽未完整报告。780nm为TPL制备激光，不是本次工作波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "150×物镜继像至DCC3260C CMOS；P-736.4CA压电台沿z步进20nm（0.02μm）；Fig.3实测xz/xy和归一化x截线。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization、Fig.3A图注；作者稿v1 pp.13–14/18及SI Note12 pp.35–36",
+              "note": "作者图注称z自样品顶部计；与几何设计f基准未明确转换。Fig.4A/B按NA各自同一焦面比较，不默认逐λ最佳焦；Fig.3与该固定面的对应仍待核。横向物方像素标定/曝光/背景/裁剪/峰值提取原始数组未核，20nm轴步长不是横向像素大小。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3C及Experimental results；作者稿v1 Fig.3 pp.13–14",
+              "note": "正式版增加Fig.3C焦位曲线，作者稿v1没有该子图；未核逐λ原始数表，不从xz热图或曲线估读，不把本库设计式结果填成实测f。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅焦位曲线；逐λ数表未核"
+            },
+            "chromatic": {
+              "value": "作者报告六波长焦点位移<3μm；逐点残余焦差/横向色差未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3C；作者稿v1 p.14",
+              "note": "小于3μm是作者汇总界限，非精确3或每一谱点误差；未明确参考λ/固定面/统计定义，不自动当峰峰值或零色差。白光彩色图不证明全场横向色差为零。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "focus_variation_protocol": {
+              "value": "实际谱点442/509/560/600/623/646nm；作者称焦点位移<3μm，z图注从样品顶部计，轴向步长20nm。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.3C及Methods / Characterization",
+              "note": "参考λ、固定焦面、精确最大互差/统计定义和不确定度未核；设计f不能作默认相减参考。未把界限转成标量焦距变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者名义定义：焦点直径3×FWHM圆内功率 / 入射至MAM面积的总功率；实验以焦斑aperture和S142C功率计收集。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版引言末段效率定义、Methods / Characterization、Fig.4A图注；作者稿v1 pp.5/15/18",
+              "note": "实验分母：移除MAM，同一继像系统、aperture匹配MAM像面积。Fig.4在各NA同一焦面；实际aperture大小如何标定为直径3FWHM、背景/校准/重复数未完整给。名义直径3FWHM不改成半径3FWHM；模拟效率/均值不充实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "mtf_curve": {
+              "value": "实测效率22.5–42.7%（六谱点区间）；Fig.4A/B逐λ效率/FWHM仅曲线；实测MTF未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.4A/B；作者稿v1 p.15（已视觉核）",
+              "note": "区间来自正文，端点对应λ未知，不分派到谱点、不填均值。作者稿v1 Fig.4A横轴Wavelength400–700nm、纵轴Efficiency0–80%；B为FWHM μm。NA0.5实测蓝实心圆/蓝方宽度，NA0.7红实心三角，模拟空心/点线；图轴范围非实测全范围。S7为560nm模拟PSF/MTF，非实验MTF。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "efficiency_range_pct": {
+                "min": 22.5,
+                "max": 42.7
+              },
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 442,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.4A对应实测谱点；作者稿v1 pp.14–15",
+              "note": "该实际谱点效率只核到曲线；不由区间端点或图像估读补数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.4A；作者稿v1 p.15 Fig.4a对应实测标记",
+              "note": "仅曲线，未核作者逐点数表；正文实验区间不分派给本λ。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；原始数表未核"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3A第三排x截线及Fig.4B；作者稿v1 pp.13/15",
+              "note": "归一化x截线存在；Fig.4B宽度只给曲线，未给逐λ印字/数表，不从曲线估读。峰值归一化不等于Strehl或能量归一化。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；逐λ宽度未核"
+            }
+          }
+        },
+        {
+          "id": "pan2023_na05_509",
+          "model": "Pan 2023 · NA0.5 · 509nm（设计f本库计算）",
+          "study_id": "pan2023",
+          "specimen_id": "na05",
+          "module": "",
+          "variant": "TPL三维多层可见光 / 连续设计与六谱点实测分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一NA器件的汇总和六个实际波长；设计400–800nm，实测仅442/509/560/600/623/646nm。不同NA分配置；作者稿图、正式版文字/XML同篇，版本分开。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要、MAM design首段R=10μm；作者稿v1 p.6",
+              "note": "光学设计口径2R=20μm；2μm径向支撑环及S8约24μm外框尺寸不是有效光学口径。未把SEM外径/原稿图注radius歧义当成新口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.5,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3A；作者稿v1 p.13 Fig.3a",
+              "note": "作者器件NA；150×收集物镜及制备63×/NA1.4不是本器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 17.32,
+              "source": "pan_multilayer_xml_2023",
+              "location": "正式版MAM design首段MathML M3；作者稿v1 p.6公式（已视觉核）",
+              "note": "本库按作者设计式f=R/tan(asin(NA))和R10μm计算，并四舍五入到0.01μm；不是作者印字实测焦距，也不是各波长焦位。图3的z参考与设计f原点未有明确转换，不作残余焦移相减。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_xml_2023",
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "calculation_origin": "atlas",
+              "formula": "diameter_um / (2 * tan(asin(na)))",
+              "inputs": {
+                "diameter_um": 20,
+                "na": 0.5
+              },
+              "rounding_increment_um": 0.01,
+              "approximate": true,
+              "display": "约17.32（本库按作者设计式计算）",
+              "calculation_method": "circular_aperture_na_relation"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "400–800nm是设计/模拟目标；作者明确实测受CMOS限制只覆盖六谱点，不称完整连续实测。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "400（设计/模拟）"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "设计/模拟上限，不是800nm的实际PSF测点；补充宽带扫描亦为模拟。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "800（设计/模拟）"
+            },
+            "wavelength_nm": {
+              "value": 509,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3A及Experimental results；作者稿v1 p.13 Fig.3a第2列λ标签",
+              "note": "实际PSF表征点，非色彩图示滤波RGB。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design首段；作者稿v1 p.6",
+              "note": "每层环高设计0–1.2μm，上限非实测恒定厚度；支撑层0.5μm/层、层间距1.6μm、三层堆叠分别保留，不用1200nm当完整器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "0–1200nm（每层设计环高）",
+              "range_nm": {
+                "min": 0,
+                "max": 1200
+              }
+            },
+            "material": {
+              "value": "IP-Dip聚合物同心环 / fused silica；三层，层间距1.6μm、环宽200nm",
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design/Experimental results/Fig.2A/B/E；作者稿v1 pp.6/10/12、SI Note9 pp.33–34",
+              "note": "交联IP-Dip低折射率树脂，TPL；支撑层0.5μm，外侧支撑/UV固化及缩量补偿；不是Si/TiO2纳米柱。最高环高和层间距非总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "polarization": {
+              "value": "作者设计称偏振不敏感；模拟等幅x/y源表示非偏振",
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要及Methods / Finite-difference time domain simulations",
+              "note": "实测每一偏振轴、检出分析器与偏振验证完整数表未核；不由模拟等幅x/y源推成实测全偏振相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK SELECT UV/nIR1超连续谱源，经潜望镜和透镜准直；六个实际谱点",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization；作者稿v1 p.18及SI Note12 p.35",
+              "note": "源可调范围/Methods泛述不等于全带逐点实测；工作谱线宽与滤波带宽未完整报告。780nm为TPL制备激光，不是本次工作波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "150×物镜继像至DCC3260C CMOS；P-736.4CA压电台沿z步进20nm（0.02μm）；Fig.3实测xz/xy和归一化x截线。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization、Fig.3A图注；作者稿v1 pp.13–14/18及SI Note12 pp.35–36",
+              "note": "作者图注称z自样品顶部计；与几何设计f基准未明确转换。Fig.4A/B按NA各自同一焦面比较，不默认逐λ最佳焦；Fig.3与该固定面的对应仍待核。横向物方像素标定/曝光/背景/裁剪/峰值提取原始数组未核，20nm轴步长不是横向像素大小。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3C及Experimental results；作者稿v1 Fig.3 pp.13–14",
+              "note": "正式版增加Fig.3C焦位曲线，作者稿v1没有该子图；未核逐λ原始数表，不从xz热图或曲线估读，不把本库设计式结果填成实测f。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅焦位曲线；逐λ数表未核"
+            },
+            "chromatic": {
+              "value": "作者报告六波长焦点位移<3μm；逐点残余焦差/横向色差未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3C；作者稿v1 p.14",
+              "note": "小于3μm是作者汇总界限，非精确3或每一谱点误差；未明确参考λ/固定面/统计定义，不自动当峰峰值或零色差。白光彩色图不证明全场横向色差为零。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "focus_variation_protocol": {
+              "value": "实际谱点442/509/560/600/623/646nm；作者称焦点位移<3μm，z图注从样品顶部计，轴向步长20nm。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.3C及Methods / Characterization",
+              "note": "参考λ、固定焦面、精确最大互差/统计定义和不确定度未核；设计f不能作默认相减参考。未把界限转成标量焦距变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者名义定义：焦点直径3×FWHM圆内功率 / 入射至MAM面积的总功率；实验以焦斑aperture和S142C功率计收集。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版引言末段效率定义、Methods / Characterization、Fig.4A图注；作者稿v1 pp.5/15/18",
+              "note": "实验分母：移除MAM，同一继像系统、aperture匹配MAM像面积。Fig.4在各NA同一焦面；实际aperture大小如何标定为直径3FWHM、背景/校准/重复数未完整给。名义直径3FWHM不改成半径3FWHM；模拟效率/均值不充实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "mtf_curve": {
+              "value": "实测效率22.5–42.7%（六谱点区间）；Fig.4A/B逐λ效率/FWHM仅曲线；实测MTF未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.4A/B；作者稿v1 p.15（已视觉核）",
+              "note": "区间来自正文，端点对应λ未知，不分派到谱点、不填均值。作者稿v1 Fig.4A横轴Wavelength400–700nm、纵轴Efficiency0–80%；B为FWHM μm。NA0.5实测蓝实心圆/蓝方宽度，NA0.7红实心三角，模拟空心/点线；图轴范围非实测全范围。S7为560nm模拟PSF/MTF，非实验MTF。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "efficiency_range_pct": {
+                "min": 22.5,
+                "max": 42.7
+              },
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 509,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.4A对应实测谱点；作者稿v1 pp.14–15",
+              "note": "该实际谱点效率只核到曲线；不由区间端点或图像估读补数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.4A；作者稿v1 p.15 Fig.4a对应实测标记",
+              "note": "仅曲线，未核作者逐点数表；正文实验区间不分派给本λ。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；原始数表未核"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3A第三排x截线及Fig.4B；作者稿v1 pp.13/15",
+              "note": "归一化x截线存在；Fig.4B宽度只给曲线，未给逐λ印字/数表，不从曲线估读。峰值归一化不等于Strehl或能量归一化。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；逐λ宽度未核"
+            }
+          }
+        },
+        {
+          "id": "pan2023_na05_560",
+          "model": "Pan 2023 · NA0.5 · 560nm（设计f本库计算）",
+          "study_id": "pan2023",
+          "specimen_id": "na05",
+          "module": "",
+          "variant": "TPL三维多层可见光 / 连续设计与六谱点实测分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一NA器件的汇总和六个实际波长；设计400–800nm，实测仅442/509/560/600/623/646nm。不同NA分配置；作者稿图、正式版文字/XML同篇，版本分开。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要、MAM design首段R=10μm；作者稿v1 p.6",
+              "note": "光学设计口径2R=20μm；2μm径向支撑环及S8约24μm外框尺寸不是有效光学口径。未把SEM外径/原稿图注radius歧义当成新口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.5,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3A；作者稿v1 p.13 Fig.3a",
+              "note": "作者器件NA；150×收集物镜及制备63×/NA1.4不是本器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 17.32,
+              "source": "pan_multilayer_xml_2023",
+              "location": "正式版MAM design首段MathML M3；作者稿v1 p.6公式（已视觉核）",
+              "note": "本库按作者设计式f=R/tan(asin(NA))和R10μm计算，并四舍五入到0.01μm；不是作者印字实测焦距，也不是各波长焦位。图3的z参考与设计f原点未有明确转换，不作残余焦移相减。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_xml_2023",
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "calculation_origin": "atlas",
+              "formula": "diameter_um / (2 * tan(asin(na)))",
+              "inputs": {
+                "diameter_um": 20,
+                "na": 0.5
+              },
+              "rounding_increment_um": 0.01,
+              "approximate": true,
+              "display": "约17.32（本库按作者设计式计算）",
+              "calculation_method": "circular_aperture_na_relation"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "400–800nm是设计/模拟目标；作者明确实测受CMOS限制只覆盖六谱点，不称完整连续实测。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "400（设计/模拟）"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "设计/模拟上限，不是800nm的实际PSF测点；补充宽带扫描亦为模拟。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "800（设计/模拟）"
+            },
+            "wavelength_nm": {
+              "value": 560,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3A及Experimental results；作者稿v1 p.13 Fig.3a第3列λ标签",
+              "note": "实际PSF表征点，非色彩图示滤波RGB。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design首段；作者稿v1 p.6",
+              "note": "每层环高设计0–1.2μm，上限非实测恒定厚度；支撑层0.5μm/层、层间距1.6μm、三层堆叠分别保留，不用1200nm当完整器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "0–1200nm（每层设计环高）",
+              "range_nm": {
+                "min": 0,
+                "max": 1200
+              }
+            },
+            "material": {
+              "value": "IP-Dip聚合物同心环 / fused silica；三层，层间距1.6μm、环宽200nm",
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design/Experimental results/Fig.2A/B/E；作者稿v1 pp.6/10/12、SI Note9 pp.33–34",
+              "note": "交联IP-Dip低折射率树脂，TPL；支撑层0.5μm，外侧支撑/UV固化及缩量补偿；不是Si/TiO2纳米柱。最高环高和层间距非总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "polarization": {
+              "value": "作者设计称偏振不敏感；模拟等幅x/y源表示非偏振",
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要及Methods / Finite-difference time domain simulations",
+              "note": "实测每一偏振轴、检出分析器与偏振验证完整数表未核；不由模拟等幅x/y源推成实测全偏振相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK SELECT UV/nIR1超连续谱源，经潜望镜和透镜准直；六个实际谱点",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization；作者稿v1 p.18及SI Note12 p.35",
+              "note": "源可调范围/Methods泛述不等于全带逐点实测；工作谱线宽与滤波带宽未完整报告。780nm为TPL制备激光，不是本次工作波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "150×物镜继像至DCC3260C CMOS；P-736.4CA压电台沿z步进20nm（0.02μm）；Fig.3实测xz/xy和归一化x截线。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization、Fig.3A图注；作者稿v1 pp.13–14/18及SI Note12 pp.35–36",
+              "note": "作者图注称z自样品顶部计；与几何设计f基准未明确转换。Fig.4A/B按NA各自同一焦面比较，不默认逐λ最佳焦；Fig.3与该固定面的对应仍待核。横向物方像素标定/曝光/背景/裁剪/峰值提取原始数组未核，20nm轴步长不是横向像素大小。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3C及Experimental results；作者稿v1 Fig.3 pp.13–14",
+              "note": "正式版增加Fig.3C焦位曲线，作者稿v1没有该子图；未核逐λ原始数表，不从xz热图或曲线估读，不把本库设计式结果填成实测f。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅焦位曲线；逐λ数表未核"
+            },
+            "chromatic": {
+              "value": "作者报告六波长焦点位移<3μm；逐点残余焦差/横向色差未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3C；作者稿v1 p.14",
+              "note": "小于3μm是作者汇总界限，非精确3或每一谱点误差；未明确参考λ/固定面/统计定义，不自动当峰峰值或零色差。白光彩色图不证明全场横向色差为零。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "focus_variation_protocol": {
+              "value": "实际谱点442/509/560/600/623/646nm；作者称焦点位移<3μm，z图注从样品顶部计，轴向步长20nm。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.3C及Methods / Characterization",
+              "note": "参考λ、固定焦面、精确最大互差/统计定义和不确定度未核；设计f不能作默认相减参考。未把界限转成标量焦距变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者名义定义：焦点直径3×FWHM圆内功率 / 入射至MAM面积的总功率；实验以焦斑aperture和S142C功率计收集。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版引言末段效率定义、Methods / Characterization、Fig.4A图注；作者稿v1 pp.5/15/18",
+              "note": "实验分母：移除MAM，同一继像系统、aperture匹配MAM像面积。Fig.4在各NA同一焦面；实际aperture大小如何标定为直径3FWHM、背景/校准/重复数未完整给。名义直径3FWHM不改成半径3FWHM；模拟效率/均值不充实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "mtf_curve": {
+              "value": "实测效率22.5–42.7%（六谱点区间）；Fig.4A/B逐λ效率/FWHM仅曲线；实测MTF未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.4A/B；作者稿v1 p.15（已视觉核）",
+              "note": "区间来自正文，端点对应λ未知，不分派到谱点、不填均值。作者稿v1 Fig.4A横轴Wavelength400–700nm、纵轴Efficiency0–80%；B为FWHM μm。NA0.5实测蓝实心圆/蓝方宽度，NA0.7红实心三角，模拟空心/点线；图轴范围非实测全范围。S7为560nm模拟PSF/MTF，非实验MTF。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "efficiency_range_pct": {
+                "min": 22.5,
+                "max": 42.7
+              },
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 560,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.4A对应实测谱点；作者稿v1 pp.14–15",
+              "note": "该实际谱点效率只核到曲线；不由区间端点或图像估读补数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.4A；作者稿v1 p.15 Fig.4a对应实测标记",
+              "note": "仅曲线，未核作者逐点数表；正文实验区间不分派给本λ。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；原始数表未核"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3A第三排x截线及Fig.4B；作者稿v1 pp.13/15",
+              "note": "归一化x截线存在；Fig.4B宽度只给曲线，未给逐λ印字/数表，不从曲线估读。峰值归一化不等于Strehl或能量归一化。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；逐λ宽度未核"
+            }
+          }
+        },
+        {
+          "id": "pan2023_na05_600",
+          "model": "Pan 2023 · NA0.5 · 600nm（设计f本库计算）",
+          "study_id": "pan2023",
+          "specimen_id": "na05",
+          "module": "",
+          "variant": "TPL三维多层可见光 / 连续设计与六谱点实测分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一NA器件的汇总和六个实际波长；设计400–800nm，实测仅442/509/560/600/623/646nm。不同NA分配置；作者稿图、正式版文字/XML同篇，版本分开。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要、MAM design首段R=10μm；作者稿v1 p.6",
+              "note": "光学设计口径2R=20μm；2μm径向支撑环及S8约24μm外框尺寸不是有效光学口径。未把SEM外径/原稿图注radius歧义当成新口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.5,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3A；作者稿v1 p.13 Fig.3a",
+              "note": "作者器件NA；150×收集物镜及制备63×/NA1.4不是本器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 17.32,
+              "source": "pan_multilayer_xml_2023",
+              "location": "正式版MAM design首段MathML M3；作者稿v1 p.6公式（已视觉核）",
+              "note": "本库按作者设计式f=R/tan(asin(NA))和R10μm计算，并四舍五入到0.01μm；不是作者印字实测焦距，也不是各波长焦位。图3的z参考与设计f原点未有明确转换，不作残余焦移相减。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_xml_2023",
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "calculation_origin": "atlas",
+              "formula": "diameter_um / (2 * tan(asin(na)))",
+              "inputs": {
+                "diameter_um": 20,
+                "na": 0.5
+              },
+              "rounding_increment_um": 0.01,
+              "approximate": true,
+              "display": "约17.32（本库按作者设计式计算）",
+              "calculation_method": "circular_aperture_na_relation"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "400–800nm是设计/模拟目标；作者明确实测受CMOS限制只覆盖六谱点，不称完整连续实测。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "400（设计/模拟）"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "设计/模拟上限，不是800nm的实际PSF测点；补充宽带扫描亦为模拟。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "800（设计/模拟）"
+            },
+            "wavelength_nm": {
+              "value": 600,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3A及Experimental results；作者稿v1 p.13 Fig.3a第4列λ标签",
+              "note": "实际PSF表征点，非色彩图示滤波RGB。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design首段；作者稿v1 p.6",
+              "note": "每层环高设计0–1.2μm，上限非实测恒定厚度；支撑层0.5μm/层、层间距1.6μm、三层堆叠分别保留，不用1200nm当完整器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "0–1200nm（每层设计环高）",
+              "range_nm": {
+                "min": 0,
+                "max": 1200
+              }
+            },
+            "material": {
+              "value": "IP-Dip聚合物同心环 / fused silica；三层，层间距1.6μm、环宽200nm",
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design/Experimental results/Fig.2A/B/E；作者稿v1 pp.6/10/12、SI Note9 pp.33–34",
+              "note": "交联IP-Dip低折射率树脂，TPL；支撑层0.5μm，外侧支撑/UV固化及缩量补偿；不是Si/TiO2纳米柱。最高环高和层间距非总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "polarization": {
+              "value": "作者设计称偏振不敏感；模拟等幅x/y源表示非偏振",
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要及Methods / Finite-difference time domain simulations",
+              "note": "实测每一偏振轴、检出分析器与偏振验证完整数表未核；不由模拟等幅x/y源推成实测全偏振相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK SELECT UV/nIR1超连续谱源，经潜望镜和透镜准直；六个实际谱点",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization；作者稿v1 p.18及SI Note12 p.35",
+              "note": "源可调范围/Methods泛述不等于全带逐点实测；工作谱线宽与滤波带宽未完整报告。780nm为TPL制备激光，不是本次工作波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "150×物镜继像至DCC3260C CMOS；P-736.4CA压电台沿z步进20nm（0.02μm）；Fig.3实测xz/xy和归一化x截线。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization、Fig.3A图注；作者稿v1 pp.13–14/18及SI Note12 pp.35–36",
+              "note": "作者图注称z自样品顶部计；与几何设计f基准未明确转换。Fig.4A/B按NA各自同一焦面比较，不默认逐λ最佳焦；Fig.3与该固定面的对应仍待核。横向物方像素标定/曝光/背景/裁剪/峰值提取原始数组未核，20nm轴步长不是横向像素大小。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3C及Experimental results；作者稿v1 Fig.3 pp.13–14",
+              "note": "正式版增加Fig.3C焦位曲线，作者稿v1没有该子图；未核逐λ原始数表，不从xz热图或曲线估读，不把本库设计式结果填成实测f。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅焦位曲线；逐λ数表未核"
+            },
+            "chromatic": {
+              "value": "作者报告六波长焦点位移<3μm；逐点残余焦差/横向色差未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3C；作者稿v1 p.14",
+              "note": "小于3μm是作者汇总界限，非精确3或每一谱点误差；未明确参考λ/固定面/统计定义，不自动当峰峰值或零色差。白光彩色图不证明全场横向色差为零。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "focus_variation_protocol": {
+              "value": "实际谱点442/509/560/600/623/646nm；作者称焦点位移<3μm，z图注从样品顶部计，轴向步长20nm。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.3C及Methods / Characterization",
+              "note": "参考λ、固定焦面、精确最大互差/统计定义和不确定度未核；设计f不能作默认相减参考。未把界限转成标量焦距变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者名义定义：焦点直径3×FWHM圆内功率 / 入射至MAM面积的总功率；实验以焦斑aperture和S142C功率计收集。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版引言末段效率定义、Methods / Characterization、Fig.4A图注；作者稿v1 pp.5/15/18",
+              "note": "实验分母：移除MAM，同一继像系统、aperture匹配MAM像面积。Fig.4在各NA同一焦面；实际aperture大小如何标定为直径3FWHM、背景/校准/重复数未完整给。名义直径3FWHM不改成半径3FWHM；模拟效率/均值不充实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "mtf_curve": {
+              "value": "实测效率22.5–42.7%（六谱点区间）；Fig.4A/B逐λ效率/FWHM仅曲线；实测MTF未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.4A/B；作者稿v1 p.15（已视觉核）",
+              "note": "区间来自正文，端点对应λ未知，不分派到谱点、不填均值。作者稿v1 Fig.4A横轴Wavelength400–700nm、纵轴Efficiency0–80%；B为FWHM μm。NA0.5实测蓝实心圆/蓝方宽度，NA0.7红实心三角，模拟空心/点线；图轴范围非实测全范围。S7为560nm模拟PSF/MTF，非实验MTF。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "efficiency_range_pct": {
+                "min": 22.5,
+                "max": 42.7
+              },
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 600,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.4A对应实测谱点；作者稿v1 pp.14–15",
+              "note": "该实际谱点效率只核到曲线；不由区间端点或图像估读补数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.4A；作者稿v1 p.15 Fig.4a对应实测标记",
+              "note": "仅曲线，未核作者逐点数表；正文实验区间不分派给本λ。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；原始数表未核"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3A第三排x截线及Fig.4B；作者稿v1 pp.13/15",
+              "note": "归一化x截线存在；Fig.4B宽度只给曲线，未给逐λ印字/数表，不从曲线估读。峰值归一化不等于Strehl或能量归一化。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；逐λ宽度未核"
+            }
+          }
+        },
+        {
+          "id": "pan2023_na05_623",
+          "model": "Pan 2023 · NA0.5 · 623nm（设计f本库计算）",
+          "study_id": "pan2023",
+          "specimen_id": "na05",
+          "module": "",
+          "variant": "TPL三维多层可见光 / 连续设计与六谱点实测分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一NA器件的汇总和六个实际波长；设计400–800nm，实测仅442/509/560/600/623/646nm。不同NA分配置；作者稿图、正式版文字/XML同篇，版本分开。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要、MAM design首段R=10μm；作者稿v1 p.6",
+              "note": "光学设计口径2R=20μm；2μm径向支撑环及S8约24μm外框尺寸不是有效光学口径。未把SEM外径/原稿图注radius歧义当成新口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.5,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3A；作者稿v1 p.13 Fig.3a",
+              "note": "作者器件NA；150×收集物镜及制备63×/NA1.4不是本器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 17.32,
+              "source": "pan_multilayer_xml_2023",
+              "location": "正式版MAM design首段MathML M3；作者稿v1 p.6公式（已视觉核）",
+              "note": "本库按作者设计式f=R/tan(asin(NA))和R10μm计算，并四舍五入到0.01μm；不是作者印字实测焦距，也不是各波长焦位。图3的z参考与设计f原点未有明确转换，不作残余焦移相减。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_xml_2023",
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "calculation_origin": "atlas",
+              "formula": "diameter_um / (2 * tan(asin(na)))",
+              "inputs": {
+                "diameter_um": 20,
+                "na": 0.5
+              },
+              "rounding_increment_um": 0.01,
+              "approximate": true,
+              "display": "约17.32（本库按作者设计式计算）",
+              "calculation_method": "circular_aperture_na_relation"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "400–800nm是设计/模拟目标；作者明确实测受CMOS限制只覆盖六谱点，不称完整连续实测。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "400（设计/模拟）"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "设计/模拟上限，不是800nm的实际PSF测点；补充宽带扫描亦为模拟。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "800（设计/模拟）"
+            },
+            "wavelength_nm": {
+              "value": 623,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3A及Experimental results；作者稿v1 p.13 Fig.3a第5列λ标签",
+              "note": "实际PSF表征点，非色彩图示滤波RGB。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design首段；作者稿v1 p.6",
+              "note": "每层环高设计0–1.2μm，上限非实测恒定厚度；支撑层0.5μm/层、层间距1.6μm、三层堆叠分别保留，不用1200nm当完整器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "0–1200nm（每层设计环高）",
+              "range_nm": {
+                "min": 0,
+                "max": 1200
+              }
+            },
+            "material": {
+              "value": "IP-Dip聚合物同心环 / fused silica；三层，层间距1.6μm、环宽200nm",
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design/Experimental results/Fig.2A/B/E；作者稿v1 pp.6/10/12、SI Note9 pp.33–34",
+              "note": "交联IP-Dip低折射率树脂，TPL；支撑层0.5μm，外侧支撑/UV固化及缩量补偿；不是Si/TiO2纳米柱。最高环高和层间距非总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "polarization": {
+              "value": "作者设计称偏振不敏感；模拟等幅x/y源表示非偏振",
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要及Methods / Finite-difference time domain simulations",
+              "note": "实测每一偏振轴、检出分析器与偏振验证完整数表未核；不由模拟等幅x/y源推成实测全偏振相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK SELECT UV/nIR1超连续谱源，经潜望镜和透镜准直；六个实际谱点",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization；作者稿v1 p.18及SI Note12 p.35",
+              "note": "源可调范围/Methods泛述不等于全带逐点实测；工作谱线宽与滤波带宽未完整报告。780nm为TPL制备激光，不是本次工作波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "150×物镜继像至DCC3260C CMOS；P-736.4CA压电台沿z步进20nm（0.02μm）；Fig.3实测xz/xy和归一化x截线。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization、Fig.3A图注；作者稿v1 pp.13–14/18及SI Note12 pp.35–36",
+              "note": "作者图注称z自样品顶部计；与几何设计f基准未明确转换。Fig.4A/B按NA各自同一焦面比较，不默认逐λ最佳焦；Fig.3与该固定面的对应仍待核。横向物方像素标定/曝光/背景/裁剪/峰值提取原始数组未核，20nm轴步长不是横向像素大小。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3C及Experimental results；作者稿v1 Fig.3 pp.13–14",
+              "note": "正式版增加Fig.3C焦位曲线，作者稿v1没有该子图；未核逐λ原始数表，不从xz热图或曲线估读，不把本库设计式结果填成实测f。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅焦位曲线；逐λ数表未核"
+            },
+            "chromatic": {
+              "value": "作者报告六波长焦点位移<3μm；逐点残余焦差/横向色差未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3C；作者稿v1 p.14",
+              "note": "小于3μm是作者汇总界限，非精确3或每一谱点误差；未明确参考λ/固定面/统计定义，不自动当峰峰值或零色差。白光彩色图不证明全场横向色差为零。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "focus_variation_protocol": {
+              "value": "实际谱点442/509/560/600/623/646nm；作者称焦点位移<3μm，z图注从样品顶部计，轴向步长20nm。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.3C及Methods / Characterization",
+              "note": "参考λ、固定焦面、精确最大互差/统计定义和不确定度未核；设计f不能作默认相减参考。未把界限转成标量焦距变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者名义定义：焦点直径3×FWHM圆内功率 / 入射至MAM面积的总功率；实验以焦斑aperture和S142C功率计收集。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版引言末段效率定义、Methods / Characterization、Fig.4A图注；作者稿v1 pp.5/15/18",
+              "note": "实验分母：移除MAM，同一继像系统、aperture匹配MAM像面积。Fig.4在各NA同一焦面；实际aperture大小如何标定为直径3FWHM、背景/校准/重复数未完整给。名义直径3FWHM不改成半径3FWHM；模拟效率/均值不充实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "mtf_curve": {
+              "value": "实测效率22.5–42.7%（六谱点区间）；Fig.4A/B逐λ效率/FWHM仅曲线；实测MTF未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.4A/B；作者稿v1 p.15（已视觉核）",
+              "note": "区间来自正文，端点对应λ未知，不分派到谱点、不填均值。作者稿v1 Fig.4A横轴Wavelength400–700nm、纵轴Efficiency0–80%；B为FWHM μm。NA0.5实测蓝实心圆/蓝方宽度，NA0.7红实心三角，模拟空心/点线；图轴范围非实测全范围。S7为560nm模拟PSF/MTF，非实验MTF。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "efficiency_range_pct": {
+                "min": 22.5,
+                "max": 42.7
+              },
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 623,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.4A对应实测谱点；作者稿v1 pp.14–15",
+              "note": "该实际谱点效率只核到曲线；不由区间端点或图像估读补数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.4A；作者稿v1 p.15 Fig.4a对应实测标记",
+              "note": "仅曲线，未核作者逐点数表；正文实验区间不分派给本λ。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；原始数表未核"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3A第三排x截线及Fig.4B；作者稿v1 pp.13/15",
+              "note": "归一化x截线存在；Fig.4B宽度只给曲线，未给逐λ印字/数表，不从曲线估读。峰值归一化不等于Strehl或能量归一化。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；逐λ宽度未核"
+            }
+          }
+        },
+        {
+          "id": "pan2023_na05_646",
+          "model": "Pan 2023 · NA0.5 · 646nm（设计f本库计算）",
+          "study_id": "pan2023",
+          "specimen_id": "na05",
+          "module": "",
+          "variant": "TPL三维多层可见光 / 连续设计与六谱点实测分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一NA器件的汇总和六个实际波长；设计400–800nm，实测仅442/509/560/600/623/646nm。不同NA分配置；作者稿图、正式版文字/XML同篇，版本分开。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要、MAM design首段R=10μm；作者稿v1 p.6",
+              "note": "光学设计口径2R=20μm；2μm径向支撑环及S8约24μm外框尺寸不是有效光学口径。未把SEM外径/原稿图注radius歧义当成新口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.5,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3A；作者稿v1 p.13 Fig.3a",
+              "note": "作者器件NA；150×收集物镜及制备63×/NA1.4不是本器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 17.32,
+              "source": "pan_multilayer_xml_2023",
+              "location": "正式版MAM design首段MathML M3；作者稿v1 p.6公式（已视觉核）",
+              "note": "本库按作者设计式f=R/tan(asin(NA))和R10μm计算，并四舍五入到0.01μm；不是作者印字实测焦距，也不是各波长焦位。图3的z参考与设计f原点未有明确转换，不作残余焦移相减。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_xml_2023",
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "calculation_origin": "atlas",
+              "formula": "diameter_um / (2 * tan(asin(na)))",
+              "inputs": {
+                "diameter_um": 20,
+                "na": 0.5
+              },
+              "rounding_increment_um": 0.01,
+              "approximate": true,
+              "display": "约17.32（本库按作者设计式计算）",
+              "calculation_method": "circular_aperture_na_relation"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "400–800nm是设计/模拟目标；作者明确实测受CMOS限制只覆盖六谱点，不称完整连续实测。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "400（设计/模拟）"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "设计/模拟上限，不是800nm的实际PSF测点；补充宽带扫描亦为模拟。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "800（设计/模拟）"
+            },
+            "wavelength_nm": {
+              "value": 646,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3A及Experimental results；作者稿v1 p.13 Fig.3a第6列λ标签",
+              "note": "实际PSF表征点，非色彩图示滤波RGB。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design首段；作者稿v1 p.6",
+              "note": "每层环高设计0–1.2μm，上限非实测恒定厚度；支撑层0.5μm/层、层间距1.6μm、三层堆叠分别保留，不用1200nm当完整器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "0–1200nm（每层设计环高）",
+              "range_nm": {
+                "min": 0,
+                "max": 1200
+              }
+            },
+            "material": {
+              "value": "IP-Dip聚合物同心环 / fused silica；三层，层间距1.6μm、环宽200nm",
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design/Experimental results/Fig.2A/B/E；作者稿v1 pp.6/10/12、SI Note9 pp.33–34",
+              "note": "交联IP-Dip低折射率树脂，TPL；支撑层0.5μm，外侧支撑/UV固化及缩量补偿；不是Si/TiO2纳米柱。最高环高和层间距非总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "polarization": {
+              "value": "作者设计称偏振不敏感；模拟等幅x/y源表示非偏振",
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要及Methods / Finite-difference time domain simulations",
+              "note": "实测每一偏振轴、检出分析器与偏振验证完整数表未核；不由模拟等幅x/y源推成实测全偏振相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK SELECT UV/nIR1超连续谱源，经潜望镜和透镜准直；六个实际谱点",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization；作者稿v1 p.18及SI Note12 p.35",
+              "note": "源可调范围/Methods泛述不等于全带逐点实测；工作谱线宽与滤波带宽未完整报告。780nm为TPL制备激光，不是本次工作波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "150×物镜继像至DCC3260C CMOS；P-736.4CA压电台沿z步进20nm（0.02μm）；Fig.3实测xz/xy和归一化x截线。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization、Fig.3A图注；作者稿v1 pp.13–14/18及SI Note12 pp.35–36",
+              "note": "作者图注称z自样品顶部计；与几何设计f基准未明确转换。Fig.4A/B按NA各自同一焦面比较，不默认逐λ最佳焦；Fig.3与该固定面的对应仍待核。横向物方像素标定/曝光/背景/裁剪/峰值提取原始数组未核，20nm轴步长不是横向像素大小。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3C及Experimental results；作者稿v1 Fig.3 pp.13–14",
+              "note": "正式版增加Fig.3C焦位曲线，作者稿v1没有该子图；未核逐λ原始数表，不从xz热图或曲线估读，不把本库设计式结果填成实测f。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅焦位曲线；逐λ数表未核"
+            },
+            "chromatic": {
+              "value": "作者报告六波长焦点位移<3μm；逐点残余焦差/横向色差未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3C；作者稿v1 p.14",
+              "note": "小于3μm是作者汇总界限，非精确3或每一谱点误差；未明确参考λ/固定面/统计定义，不自动当峰峰值或零色差。白光彩色图不证明全场横向色差为零。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "focus_variation_protocol": {
+              "value": "实际谱点442/509/560/600/623/646nm；作者称焦点位移<3μm，z图注从样品顶部计，轴向步长20nm。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.3C及Methods / Characterization",
+              "note": "参考λ、固定焦面、精确最大互差/统计定义和不确定度未核；设计f不能作默认相减参考。未把界限转成标量焦距变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者名义定义：焦点直径3×FWHM圆内功率 / 入射至MAM面积的总功率；实验以焦斑aperture和S142C功率计收集。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版引言末段效率定义、Methods / Characterization、Fig.4A图注；作者稿v1 pp.5/15/18",
+              "note": "实验分母：移除MAM，同一继像系统、aperture匹配MAM像面积。Fig.4在各NA同一焦面；实际aperture大小如何标定为直径3FWHM、背景/校准/重复数未完整给。名义直径3FWHM不改成半径3FWHM；模拟效率/均值不充实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "mtf_curve": {
+              "value": "实测效率22.5–42.7%（六谱点区间）；Fig.4A/B逐λ效率/FWHM仅曲线；实测MTF未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.4A/B；作者稿v1 p.15（已视觉核）",
+              "note": "区间来自正文，端点对应λ未知，不分派到谱点、不填均值。作者稿v1 Fig.4A横轴Wavelength400–700nm、纵轴Efficiency0–80%；B为FWHM μm。NA0.5实测蓝实心圆/蓝方宽度，NA0.7红实心三角，模拟空心/点线；图轴范围非实测全范围。S7为560nm模拟PSF/MTF，非实验MTF。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "efficiency_range_pct": {
+                "min": 22.5,
+                "max": 42.7
+              },
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 646,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.4A对应实测谱点；作者稿v1 pp.14–15",
+              "note": "该实际谱点效率只核到曲线；不由区间端点或图像估读补数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.4A；作者稿v1 p.15 Fig.4a对应实测标记",
+              "note": "仅曲线，未核作者逐点数表；正文实验区间不分派给本λ。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；原始数表未核"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3A第三排x截线及Fig.4B；作者稿v1 pp.13/15",
+              "note": "归一化x截线存在；Fig.4B宽度只给曲线，未给逐λ印字/数表，不从曲线估读。峰值归一化不等于Strehl或能量归一化。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；逐λ宽度未核"
+            }
+          }
+        },
+        {
+          "id": "pan2023_na07_summary",
+          "model": "Pan 2023 · NA0.7 · 六波长汇总（设计f本库计算）",
+          "study_id": "pan2023",
+          "specimen_id": "na07",
+          "module": "",
+          "variant": "TPL三维多层可见光 / 连续设计与六谱点实测分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一NA器件的汇总和六个实际波长；设计400–800nm，实测仅442/509/560/600/623/646nm。不同NA分配置；作者稿图、正式版文字/XML同篇，版本分开。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要、MAM design首段R=10μm；作者稿v1 p.6",
+              "note": "光学设计口径2R=20μm；2μm径向支撑环及S8约24μm外框尺寸不是有效光学口径。未把SEM外径/原稿图注radius歧义当成新口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3B；作者稿v1 p.13 Fig.3b",
+              "note": "作者器件NA；150×收集物镜及制备63×/NA1.4不是本器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 10.2,
+              "source": "pan_multilayer_xml_2023",
+              "location": "正式版MAM design首段MathML M3；作者稿v1 p.6公式（已视觉核）",
+              "note": "本库按作者设计式f=R/tan(asin(NA))和R10μm计算，并四舍五入到0.01μm；不是作者印字实测焦距，也不是各波长焦位。图3的z参考与设计f原点未有明确转换，不作残余焦移相减。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_xml_2023",
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "calculation_origin": "atlas",
+              "formula": "diameter_um / (2 * tan(asin(na)))",
+              "inputs": {
+                "diameter_um": 20,
+                "na": 0.7
+              },
+              "rounding_increment_um": 0.01,
+              "approximate": true,
+              "display": "约10.20（本库按作者设计式计算）",
+              "calculation_method": "circular_aperture_na_relation"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "400–800nm是设计/模拟目标；作者明确实测受CMOS限制只覆盖六谱点，不称完整连续实测。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "400（设计/模拟）"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "设计/模拟上限，不是800nm的实际PSF测点；补充宽带扫描亦为模拟。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "800（设计/模拟）"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3；作者稿v1 pp.13–14",
+              "note": "连续消色差设计与实际六个离散表征点分开；Methods450–650nm的泛述与442nm实际图标签不同，保留实际图示六点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "442 / 509 / 560 / 600 / 623 / 646nm（实际六点）",
+              "sample_wavelengths_nm": [
+                442,
+                509,
+                560,
+                600,
+                623,
+                646
+              ]
+            },
+            "height_nm": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design首段；作者稿v1 p.6",
+              "note": "每层环高设计0–1.2μm，上限非实测恒定厚度；支撑层0.5μm/层、层间距1.6μm、三层堆叠分别保留，不用1200nm当完整器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "0–1200nm（每层设计环高）",
+              "range_nm": {
+                "min": 0,
+                "max": 1200
+              }
+            },
+            "material": {
+              "value": "IP-Dip聚合物同心环 / fused silica；三层，层间距1.6μm、环宽200nm",
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design/Experimental results/Fig.2A/B/E；作者稿v1 pp.6/10/12、SI Note9 pp.33–34",
+              "note": "交联IP-Dip低折射率树脂，TPL；支撑层0.5μm，外侧支撑/UV固化及缩量补偿；不是Si/TiO2纳米柱。最高环高和层间距非总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "polarization": {
+              "value": "作者设计称偏振不敏感；模拟等幅x/y源表示非偏振",
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要及Methods / Finite-difference time domain simulations",
+              "note": "实测每一偏振轴、检出分析器与偏振验证完整数表未核；不由模拟等幅x/y源推成实测全偏振相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK SELECT UV/nIR1超连续谱源，经潜望镜和透镜准直；六个实际谱点",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization；作者稿v1 p.18及SI Note12 p.35",
+              "note": "源可调范围/Methods泛述不等于全带逐点实测；工作谱线宽与滤波带宽未完整报告。780nm为TPL制备激光，不是本次工作波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "150×物镜继像至DCC3260C CMOS；P-736.4CA压电台沿z步进20nm（0.02μm）；Fig.3实测xz/xy和归一化x截线。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization、Fig.3B图注；作者稿v1 pp.13–14/18及SI Note12 pp.35–36",
+              "note": "作者图注称z自样品顶部计；与几何设计f基准未明确转换。Fig.4A/B按NA各自同一焦面比较，不默认逐λ最佳焦；Fig.3与该固定面的对应仍待核。横向物方像素标定/曝光/背景/裁剪/峰值提取原始数组未核，20nm轴步长不是横向像素大小。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3C及Experimental results；作者稿v1 Fig.3 pp.13–14",
+              "note": "正式版增加Fig.3C焦位曲线，作者稿v1没有该子图；未核逐λ原始数表，不从xz热图或曲线估读，不把本库设计式结果填成实测f。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅焦位曲线；逐λ数表未核"
+            },
+            "chromatic": {
+              "value": "作者报告六波长焦点位移<3μm；逐点残余焦差/横向色差未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3C；作者稿v1 p.14",
+              "note": "小于3μm是作者汇总界限，非精确3或每一谱点误差；未明确参考λ/固定面/统计定义，不自动当峰峰值或零色差。白光彩色图不证明全场横向色差为零。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "focus_variation_protocol": {
+              "value": "实际谱点442/509/560/600/623/646nm；作者称焦点位移<3μm，z图注从样品顶部计，轴向步长20nm。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.3C及Methods / Characterization",
+              "note": "参考λ、固定焦面、精确最大互差/统计定义和不确定度未核；设计f不能作默认相减参考。未把界限转成标量焦距变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者名义定义：焦点直径3×FWHM圆内功率 / 入射至MAM面积的总功率；实验以焦斑aperture和S142C功率计收集。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版引言末段效率定义、Methods / Characterization、Fig.4A图注；作者稿v1 pp.5/15/18",
+              "note": "实验分母：移除MAM，同一继像系统、aperture匹配MAM像面积。Fig.4在各NA同一焦面；实际aperture大小如何标定为直径3FWHM、背景/校准/重复数未完整给。名义直径3FWHM不改成半径3FWHM；模拟效率/均值不充实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "efficiency_band_mean_pct": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版引言末段/Experimental results/DISCUSSION",
+              "note": "原文归属差异：引言/讨论20%，结果明确为模拟均值20.0%。结果段明确44.2/20.0%为模拟，不取42/44.2/20作实测带内均值；原始实验逐λ数表仍缺。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "display": "实测均值未核；引言/讨论与结果段归属差异"
+            },
+            "mtf_curve": {
+              "value": "实测效率13.3–22.1%（六谱点区间）；Fig.4A/B逐λ效率/FWHM仅曲线；实测MTF未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.4A/B；作者稿v1 p.15（已视觉核）",
+              "note": "区间来自正文，端点对应λ未知，不分派到谱点、不填均值。作者稿v1 Fig.4A横轴Wavelength400–700nm、纵轴Efficiency0–80%；B为FWHM μm。NA0.5实测蓝实心圆/蓝方宽度，NA0.7红实心三角，模拟空心/点线；图轴范围非实测全范围。S7为560nm模拟PSF/MTF，非实验MTF。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "efficiency_range_pct": {
+                "min": 13.3,
+                "max": 22.1
+              },
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3C；作者稿v1 p.14",
+              "note": "保留作者严格上界与未知参考/统计；不填3μm坐标，不补零或派到单波长。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "display": "<3（作者汇总界限，非精确值）",
+              "calculation_origin": "authors",
+              "bound": {
+                "operator": "<",
+                "value": 3,
+                "unit": "μm"
+              },
+              "sample_wavelengths_nm": [
+                442,
+                509,
+                560,
+                600,
+                623,
+                646
+              ]
+            }
+          }
+        },
+        {
+          "id": "pan2023_na07_442",
+          "model": "Pan 2023 · NA0.7 · 442nm（设计f本库计算）",
+          "study_id": "pan2023",
+          "specimen_id": "na07",
+          "module": "",
+          "variant": "TPL三维多层可见光 / 连续设计与六谱点实测分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一NA器件的汇总和六个实际波长；设计400–800nm，实测仅442/509/560/600/623/646nm。不同NA分配置；作者稿图、正式版文字/XML同篇，版本分开。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要、MAM design首段R=10μm；作者稿v1 p.6",
+              "note": "光学设计口径2R=20μm；2μm径向支撑环及S8约24μm外框尺寸不是有效光学口径。未把SEM外径/原稿图注radius歧义当成新口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3B；作者稿v1 p.13 Fig.3b",
+              "note": "作者器件NA；150×收集物镜及制备63×/NA1.4不是本器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 10.2,
+              "source": "pan_multilayer_xml_2023",
+              "location": "正式版MAM design首段MathML M3；作者稿v1 p.6公式（已视觉核）",
+              "note": "本库按作者设计式f=R/tan(asin(NA))和R10μm计算，并四舍五入到0.01μm；不是作者印字实测焦距，也不是各波长焦位。图3的z参考与设计f原点未有明确转换，不作残余焦移相减。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_xml_2023",
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "calculation_origin": "atlas",
+              "formula": "diameter_um / (2 * tan(asin(na)))",
+              "inputs": {
+                "diameter_um": 20,
+                "na": 0.7
+              },
+              "rounding_increment_um": 0.01,
+              "approximate": true,
+              "display": "约10.20（本库按作者设计式计算）",
+              "calculation_method": "circular_aperture_na_relation"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "400–800nm是设计/模拟目标；作者明确实测受CMOS限制只覆盖六谱点，不称完整连续实测。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "400（设计/模拟）"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "设计/模拟上限，不是800nm的实际PSF测点；补充宽带扫描亦为模拟。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "800（设计/模拟）"
+            },
+            "wavelength_nm": {
+              "value": 442,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3B及Experimental results；作者稿v1 p.13 Fig.3b第1列λ标签",
+              "note": "实际PSF表征点，非色彩图示滤波RGB。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design首段；作者稿v1 p.6",
+              "note": "每层环高设计0–1.2μm，上限非实测恒定厚度；支撑层0.5μm/层、层间距1.6μm、三层堆叠分别保留，不用1200nm当完整器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "0–1200nm（每层设计环高）",
+              "range_nm": {
+                "min": 0,
+                "max": 1200
+              }
+            },
+            "material": {
+              "value": "IP-Dip聚合物同心环 / fused silica；三层，层间距1.6μm、环宽200nm",
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design/Experimental results/Fig.2A/B/E；作者稿v1 pp.6/10/12、SI Note9 pp.33–34",
+              "note": "交联IP-Dip低折射率树脂，TPL；支撑层0.5μm，外侧支撑/UV固化及缩量补偿；不是Si/TiO2纳米柱。最高环高和层间距非总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "polarization": {
+              "value": "作者设计称偏振不敏感；模拟等幅x/y源表示非偏振",
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要及Methods / Finite-difference time domain simulations",
+              "note": "实测每一偏振轴、检出分析器与偏振验证完整数表未核；不由模拟等幅x/y源推成实测全偏振相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK SELECT UV/nIR1超连续谱源，经潜望镜和透镜准直；六个实际谱点",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization；作者稿v1 p.18及SI Note12 p.35",
+              "note": "源可调范围/Methods泛述不等于全带逐点实测；工作谱线宽与滤波带宽未完整报告。780nm为TPL制备激光，不是本次工作波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "150×物镜继像至DCC3260C CMOS；P-736.4CA压电台沿z步进20nm（0.02μm）；Fig.3实测xz/xy和归一化x截线。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization、Fig.3B图注；作者稿v1 pp.13–14/18及SI Note12 pp.35–36",
+              "note": "作者图注称z自样品顶部计；与几何设计f基准未明确转换。Fig.4A/B按NA各自同一焦面比较，不默认逐λ最佳焦；Fig.3与该固定面的对应仍待核。横向物方像素标定/曝光/背景/裁剪/峰值提取原始数组未核，20nm轴步长不是横向像素大小。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3C及Experimental results；作者稿v1 Fig.3 pp.13–14",
+              "note": "正式版增加Fig.3C焦位曲线，作者稿v1没有该子图；未核逐λ原始数表，不从xz热图或曲线估读，不把本库设计式结果填成实测f。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅焦位曲线；逐λ数表未核"
+            },
+            "chromatic": {
+              "value": "作者报告六波长焦点位移<3μm；逐点残余焦差/横向色差未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3C；作者稿v1 p.14",
+              "note": "小于3μm是作者汇总界限，非精确3或每一谱点误差；未明确参考λ/固定面/统计定义，不自动当峰峰值或零色差。白光彩色图不证明全场横向色差为零。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "focus_variation_protocol": {
+              "value": "实际谱点442/509/560/600/623/646nm；作者称焦点位移<3μm，z图注从样品顶部计，轴向步长20nm。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.3C及Methods / Characterization",
+              "note": "参考λ、固定焦面、精确最大互差/统计定义和不确定度未核；设计f不能作默认相减参考。未把界限转成标量焦距变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者名义定义：焦点直径3×FWHM圆内功率 / 入射至MAM面积的总功率；实验以焦斑aperture和S142C功率计收集。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版引言末段效率定义、Methods / Characterization、Fig.4A图注；作者稿v1 pp.5/15/18",
+              "note": "实验分母：移除MAM，同一继像系统、aperture匹配MAM像面积。Fig.4在各NA同一焦面；实际aperture大小如何标定为直径3FWHM、背景/校准/重复数未完整给。名义直径3FWHM不改成半径3FWHM；模拟效率/均值不充实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "mtf_curve": {
+              "value": "实测效率13.3–22.1%（六谱点区间）；Fig.4A/B逐λ效率/FWHM仅曲线；实测MTF未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.4A/B；作者稿v1 p.15（已视觉核）",
+              "note": "区间来自正文，端点对应λ未知，不分派到谱点、不填均值。作者稿v1 Fig.4A横轴Wavelength400–700nm、纵轴Efficiency0–80%；B为FWHM μm。NA0.5实测蓝实心圆/蓝方宽度，NA0.7红实心三角，模拟空心/点线；图轴范围非实测全范围。S7为560nm模拟PSF/MTF，非实验MTF。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "efficiency_range_pct": {
+                "min": 13.3,
+                "max": 22.1
+              },
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 442,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.4A对应实测谱点；作者稿v1 pp.14–15",
+              "note": "该实际谱点效率只核到曲线；不由区间端点或图像估读补数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.4A；作者稿v1 p.15 Fig.4a对应实测标记",
+              "note": "仅曲线，未核作者逐点数表；正文实验区间不分派给本λ。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；原始数表未核"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3B第三排x截线及Fig.4B；作者稿v1 pp.13/15",
+              "note": "归一化x截线存在；Fig.4B宽度只给曲线，未给逐λ印字/数表，不从曲线估读。峰值归一化不等于Strehl或能量归一化。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；逐λ宽度未核"
+            }
+          }
+        },
+        {
+          "id": "pan2023_na07_509",
+          "model": "Pan 2023 · NA0.7 · 509nm（设计f本库计算）",
+          "study_id": "pan2023",
+          "specimen_id": "na07",
+          "module": "",
+          "variant": "TPL三维多层可见光 / 连续设计与六谱点实测分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一NA器件的汇总和六个实际波长；设计400–800nm，实测仅442/509/560/600/623/646nm。不同NA分配置；作者稿图、正式版文字/XML同篇，版本分开。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要、MAM design首段R=10μm；作者稿v1 p.6",
+              "note": "光学设计口径2R=20μm；2μm径向支撑环及S8约24μm外框尺寸不是有效光学口径。未把SEM外径/原稿图注radius歧义当成新口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3B；作者稿v1 p.13 Fig.3b",
+              "note": "作者器件NA；150×收集物镜及制备63×/NA1.4不是本器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 10.2,
+              "source": "pan_multilayer_xml_2023",
+              "location": "正式版MAM design首段MathML M3；作者稿v1 p.6公式（已视觉核）",
+              "note": "本库按作者设计式f=R/tan(asin(NA))和R10μm计算，并四舍五入到0.01μm；不是作者印字实测焦距，也不是各波长焦位。图3的z参考与设计f原点未有明确转换，不作残余焦移相减。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_xml_2023",
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "calculation_origin": "atlas",
+              "formula": "diameter_um / (2 * tan(asin(na)))",
+              "inputs": {
+                "diameter_um": 20,
+                "na": 0.7
+              },
+              "rounding_increment_um": 0.01,
+              "approximate": true,
+              "display": "约10.20（本库按作者设计式计算）",
+              "calculation_method": "circular_aperture_na_relation"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "400–800nm是设计/模拟目标；作者明确实测受CMOS限制只覆盖六谱点，不称完整连续实测。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "400（设计/模拟）"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "设计/模拟上限，不是800nm的实际PSF测点；补充宽带扫描亦为模拟。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "800（设计/模拟）"
+            },
+            "wavelength_nm": {
+              "value": 509,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3B及Experimental results；作者稿v1 p.13 Fig.3b第2列λ标签",
+              "note": "实际PSF表征点，非色彩图示滤波RGB。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design首段；作者稿v1 p.6",
+              "note": "每层环高设计0–1.2μm，上限非实测恒定厚度；支撑层0.5μm/层、层间距1.6μm、三层堆叠分别保留，不用1200nm当完整器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "0–1200nm（每层设计环高）",
+              "range_nm": {
+                "min": 0,
+                "max": 1200
+              }
+            },
+            "material": {
+              "value": "IP-Dip聚合物同心环 / fused silica；三层，层间距1.6μm、环宽200nm",
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design/Experimental results/Fig.2A/B/E；作者稿v1 pp.6/10/12、SI Note9 pp.33–34",
+              "note": "交联IP-Dip低折射率树脂，TPL；支撑层0.5μm，外侧支撑/UV固化及缩量补偿；不是Si/TiO2纳米柱。最高环高和层间距非总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "polarization": {
+              "value": "作者设计称偏振不敏感；模拟等幅x/y源表示非偏振",
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要及Methods / Finite-difference time domain simulations",
+              "note": "实测每一偏振轴、检出分析器与偏振验证完整数表未核；不由模拟等幅x/y源推成实测全偏振相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK SELECT UV/nIR1超连续谱源，经潜望镜和透镜准直；六个实际谱点",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization；作者稿v1 p.18及SI Note12 p.35",
+              "note": "源可调范围/Methods泛述不等于全带逐点实测；工作谱线宽与滤波带宽未完整报告。780nm为TPL制备激光，不是本次工作波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "150×物镜继像至DCC3260C CMOS；P-736.4CA压电台沿z步进20nm（0.02μm）；Fig.3实测xz/xy和归一化x截线。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization、Fig.3B图注；作者稿v1 pp.13–14/18及SI Note12 pp.35–36",
+              "note": "作者图注称z自样品顶部计；与几何设计f基准未明确转换。Fig.4A/B按NA各自同一焦面比较，不默认逐λ最佳焦；Fig.3与该固定面的对应仍待核。横向物方像素标定/曝光/背景/裁剪/峰值提取原始数组未核，20nm轴步长不是横向像素大小。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3C及Experimental results；作者稿v1 Fig.3 pp.13–14",
+              "note": "正式版增加Fig.3C焦位曲线，作者稿v1没有该子图；未核逐λ原始数表，不从xz热图或曲线估读，不把本库设计式结果填成实测f。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅焦位曲线；逐λ数表未核"
+            },
+            "chromatic": {
+              "value": "作者报告六波长焦点位移<3μm；逐点残余焦差/横向色差未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3C；作者稿v1 p.14",
+              "note": "小于3μm是作者汇总界限，非精确3或每一谱点误差；未明确参考λ/固定面/统计定义，不自动当峰峰值或零色差。白光彩色图不证明全场横向色差为零。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "focus_variation_protocol": {
+              "value": "实际谱点442/509/560/600/623/646nm；作者称焦点位移<3μm，z图注从样品顶部计，轴向步长20nm。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.3C及Methods / Characterization",
+              "note": "参考λ、固定焦面、精确最大互差/统计定义和不确定度未核；设计f不能作默认相减参考。未把界限转成标量焦距变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者名义定义：焦点直径3×FWHM圆内功率 / 入射至MAM面积的总功率；实验以焦斑aperture和S142C功率计收集。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版引言末段效率定义、Methods / Characterization、Fig.4A图注；作者稿v1 pp.5/15/18",
+              "note": "实验分母：移除MAM，同一继像系统、aperture匹配MAM像面积。Fig.4在各NA同一焦面；实际aperture大小如何标定为直径3FWHM、背景/校准/重复数未完整给。名义直径3FWHM不改成半径3FWHM；模拟效率/均值不充实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "mtf_curve": {
+              "value": "实测效率13.3–22.1%（六谱点区间）；Fig.4A/B逐λ效率/FWHM仅曲线；实测MTF未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.4A/B；作者稿v1 p.15（已视觉核）",
+              "note": "区间来自正文，端点对应λ未知，不分派到谱点、不填均值。作者稿v1 Fig.4A横轴Wavelength400–700nm、纵轴Efficiency0–80%；B为FWHM μm。NA0.5实测蓝实心圆/蓝方宽度，NA0.7红实心三角，模拟空心/点线；图轴范围非实测全范围。S7为560nm模拟PSF/MTF，非实验MTF。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "efficiency_range_pct": {
+                "min": 13.3,
+                "max": 22.1
+              },
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 509,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.4A对应实测谱点；作者稿v1 pp.14–15",
+              "note": "该实际谱点效率只核到曲线；不由区间端点或图像估读补数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.4A；作者稿v1 p.15 Fig.4a对应实测标记",
+              "note": "仅曲线，未核作者逐点数表；正文实验区间不分派给本λ。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；原始数表未核"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3B第三排x截线及Fig.4B；作者稿v1 pp.13/15",
+              "note": "归一化x截线存在；Fig.4B宽度只给曲线，未给逐λ印字/数表，不从曲线估读。峰值归一化不等于Strehl或能量归一化。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；逐λ宽度未核"
+            }
+          }
+        },
+        {
+          "id": "pan2023_na07_560",
+          "model": "Pan 2023 · NA0.7 · 560nm（设计f本库计算）",
+          "study_id": "pan2023",
+          "specimen_id": "na07",
+          "module": "",
+          "variant": "TPL三维多层可见光 / 连续设计与六谱点实测分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一NA器件的汇总和六个实际波长；设计400–800nm，实测仅442/509/560/600/623/646nm。不同NA分配置；作者稿图、正式版文字/XML同篇，版本分开。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要、MAM design首段R=10μm；作者稿v1 p.6",
+              "note": "光学设计口径2R=20μm；2μm径向支撑环及S8约24μm外框尺寸不是有效光学口径。未把SEM外径/原稿图注radius歧义当成新口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3B；作者稿v1 p.13 Fig.3b",
+              "note": "作者器件NA；150×收集物镜及制备63×/NA1.4不是本器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 10.2,
+              "source": "pan_multilayer_xml_2023",
+              "location": "正式版MAM design首段MathML M3；作者稿v1 p.6公式（已视觉核）",
+              "note": "本库按作者设计式f=R/tan(asin(NA))和R10μm计算，并四舍五入到0.01μm；不是作者印字实测焦距，也不是各波长焦位。图3的z参考与设计f原点未有明确转换，不作残余焦移相减。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_xml_2023",
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "calculation_origin": "atlas",
+              "formula": "diameter_um / (2 * tan(asin(na)))",
+              "inputs": {
+                "diameter_um": 20,
+                "na": 0.7
+              },
+              "rounding_increment_um": 0.01,
+              "approximate": true,
+              "display": "约10.20（本库按作者设计式计算）",
+              "calculation_method": "circular_aperture_na_relation"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "400–800nm是设计/模拟目标；作者明确实测受CMOS限制只覆盖六谱点，不称完整连续实测。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "400（设计/模拟）"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "设计/模拟上限，不是800nm的实际PSF测点；补充宽带扫描亦为模拟。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "800（设计/模拟）"
+            },
+            "wavelength_nm": {
+              "value": 560,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3B及Experimental results；作者稿v1 p.13 Fig.3b第3列λ标签",
+              "note": "实际PSF表征点，非色彩图示滤波RGB。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design首段；作者稿v1 p.6",
+              "note": "每层环高设计0–1.2μm，上限非实测恒定厚度；支撑层0.5μm/层、层间距1.6μm、三层堆叠分别保留，不用1200nm当完整器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "0–1200nm（每层设计环高）",
+              "range_nm": {
+                "min": 0,
+                "max": 1200
+              }
+            },
+            "material": {
+              "value": "IP-Dip聚合物同心环 / fused silica；三层，层间距1.6μm、环宽200nm",
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design/Experimental results/Fig.2A/B/E；作者稿v1 pp.6/10/12、SI Note9 pp.33–34",
+              "note": "交联IP-Dip低折射率树脂，TPL；支撑层0.5μm，外侧支撑/UV固化及缩量补偿；不是Si/TiO2纳米柱。最高环高和层间距非总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "polarization": {
+              "value": "作者设计称偏振不敏感；模拟等幅x/y源表示非偏振",
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要及Methods / Finite-difference time domain simulations",
+              "note": "实测每一偏振轴、检出分析器与偏振验证完整数表未核；不由模拟等幅x/y源推成实测全偏振相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK SELECT UV/nIR1超连续谱源，经潜望镜和透镜准直；六个实际谱点",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization；作者稿v1 p.18及SI Note12 p.35",
+              "note": "源可调范围/Methods泛述不等于全带逐点实测；工作谱线宽与滤波带宽未完整报告。780nm为TPL制备激光，不是本次工作波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "150×物镜继像至DCC3260C CMOS；P-736.4CA压电台沿z步进20nm（0.02μm）；Fig.3实测xz/xy和归一化x截线。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization、Fig.3B图注；作者稿v1 pp.13–14/18及SI Note12 pp.35–36",
+              "note": "作者图注称z自样品顶部计；与几何设计f基准未明确转换。Fig.4A/B按NA各自同一焦面比较，不默认逐λ最佳焦；Fig.3与该固定面的对应仍待核。横向物方像素标定/曝光/背景/裁剪/峰值提取原始数组未核，20nm轴步长不是横向像素大小。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3C及Experimental results；作者稿v1 Fig.3 pp.13–14",
+              "note": "正式版增加Fig.3C焦位曲线，作者稿v1没有该子图；未核逐λ原始数表，不从xz热图或曲线估读，不把本库设计式结果填成实测f。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅焦位曲线；逐λ数表未核"
+            },
+            "chromatic": {
+              "value": "作者报告六波长焦点位移<3μm；逐点残余焦差/横向色差未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3C；作者稿v1 p.14",
+              "note": "小于3μm是作者汇总界限，非精确3或每一谱点误差；未明确参考λ/固定面/统计定义，不自动当峰峰值或零色差。白光彩色图不证明全场横向色差为零。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "focus_variation_protocol": {
+              "value": "实际谱点442/509/560/600/623/646nm；作者称焦点位移<3μm，z图注从样品顶部计，轴向步长20nm。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.3C及Methods / Characterization",
+              "note": "参考λ、固定焦面、精确最大互差/统计定义和不确定度未核；设计f不能作默认相减参考。未把界限转成标量焦距变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者名义定义：焦点直径3×FWHM圆内功率 / 入射至MAM面积的总功率；实验以焦斑aperture和S142C功率计收集。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版引言末段效率定义、Methods / Characterization、Fig.4A图注；作者稿v1 pp.5/15/18",
+              "note": "实验分母：移除MAM，同一继像系统、aperture匹配MAM像面积。Fig.4在各NA同一焦面；实际aperture大小如何标定为直径3FWHM、背景/校准/重复数未完整给。名义直径3FWHM不改成半径3FWHM；模拟效率/均值不充实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "mtf_curve": {
+              "value": "实测效率13.3–22.1%（六谱点区间）；Fig.4A/B逐λ效率/FWHM仅曲线；实测MTF未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.4A/B；作者稿v1 p.15（已视觉核）",
+              "note": "区间来自正文，端点对应λ未知，不分派到谱点、不填均值。作者稿v1 Fig.4A横轴Wavelength400–700nm、纵轴Efficiency0–80%；B为FWHM μm。NA0.5实测蓝实心圆/蓝方宽度，NA0.7红实心三角，模拟空心/点线；图轴范围非实测全范围。S7为560nm模拟PSF/MTF，非实验MTF。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "efficiency_range_pct": {
+                "min": 13.3,
+                "max": 22.1
+              },
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 560,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.4A对应实测谱点；作者稿v1 pp.14–15",
+              "note": "该实际谱点效率只核到曲线；不由区间端点或图像估读补数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.4A；作者稿v1 p.15 Fig.4a对应实测标记",
+              "note": "仅曲线，未核作者逐点数表；正文实验区间不分派给本λ。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；原始数表未核"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3B第三排x截线及Fig.4B；作者稿v1 pp.13/15",
+              "note": "归一化x截线存在；Fig.4B宽度只给曲线，未给逐λ印字/数表，不从曲线估读。峰值归一化不等于Strehl或能量归一化。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；逐λ宽度未核"
+            }
+          }
+        },
+        {
+          "id": "pan2023_na07_600",
+          "model": "Pan 2023 · NA0.7 · 600nm（设计f本库计算）",
+          "study_id": "pan2023",
+          "specimen_id": "na07",
+          "module": "",
+          "variant": "TPL三维多层可见光 / 连续设计与六谱点实测分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一NA器件的汇总和六个实际波长；设计400–800nm，实测仅442/509/560/600/623/646nm。不同NA分配置；作者稿图、正式版文字/XML同篇，版本分开。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要、MAM design首段R=10μm；作者稿v1 p.6",
+              "note": "光学设计口径2R=20μm；2μm径向支撑环及S8约24μm外框尺寸不是有效光学口径。未把SEM外径/原稿图注radius歧义当成新口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3B；作者稿v1 p.13 Fig.3b",
+              "note": "作者器件NA；150×收集物镜及制备63×/NA1.4不是本器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 10.2,
+              "source": "pan_multilayer_xml_2023",
+              "location": "正式版MAM design首段MathML M3；作者稿v1 p.6公式（已视觉核）",
+              "note": "本库按作者设计式f=R/tan(asin(NA))和R10μm计算，并四舍五入到0.01μm；不是作者印字实测焦距，也不是各波长焦位。图3的z参考与设计f原点未有明确转换，不作残余焦移相减。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_xml_2023",
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "calculation_origin": "atlas",
+              "formula": "diameter_um / (2 * tan(asin(na)))",
+              "inputs": {
+                "diameter_um": 20,
+                "na": 0.7
+              },
+              "rounding_increment_um": 0.01,
+              "approximate": true,
+              "display": "约10.20（本库按作者设计式计算）",
+              "calculation_method": "circular_aperture_na_relation"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "400–800nm是设计/模拟目标；作者明确实测受CMOS限制只覆盖六谱点，不称完整连续实测。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "400（设计/模拟）"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "设计/模拟上限，不是800nm的实际PSF测点；补充宽带扫描亦为模拟。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "800（设计/模拟）"
+            },
+            "wavelength_nm": {
+              "value": 600,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3B及Experimental results；作者稿v1 p.13 Fig.3b第4列λ标签",
+              "note": "实际PSF表征点，非色彩图示滤波RGB。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design首段；作者稿v1 p.6",
+              "note": "每层环高设计0–1.2μm，上限非实测恒定厚度；支撑层0.5μm/层、层间距1.6μm、三层堆叠分别保留，不用1200nm当完整器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "0–1200nm（每层设计环高）",
+              "range_nm": {
+                "min": 0,
+                "max": 1200
+              }
+            },
+            "material": {
+              "value": "IP-Dip聚合物同心环 / fused silica；三层，层间距1.6μm、环宽200nm",
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design/Experimental results/Fig.2A/B/E；作者稿v1 pp.6/10/12、SI Note9 pp.33–34",
+              "note": "交联IP-Dip低折射率树脂，TPL；支撑层0.5μm，外侧支撑/UV固化及缩量补偿；不是Si/TiO2纳米柱。最高环高和层间距非总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "polarization": {
+              "value": "作者设计称偏振不敏感；模拟等幅x/y源表示非偏振",
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要及Methods / Finite-difference time domain simulations",
+              "note": "实测每一偏振轴、检出分析器与偏振验证完整数表未核；不由模拟等幅x/y源推成实测全偏振相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK SELECT UV/nIR1超连续谱源，经潜望镜和透镜准直；六个实际谱点",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization；作者稿v1 p.18及SI Note12 p.35",
+              "note": "源可调范围/Methods泛述不等于全带逐点实测；工作谱线宽与滤波带宽未完整报告。780nm为TPL制备激光，不是本次工作波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "150×物镜继像至DCC3260C CMOS；P-736.4CA压电台沿z步进20nm（0.02μm）；Fig.3实测xz/xy和归一化x截线。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization、Fig.3B图注；作者稿v1 pp.13–14/18及SI Note12 pp.35–36",
+              "note": "作者图注称z自样品顶部计；与几何设计f基准未明确转换。Fig.4A/B按NA各自同一焦面比较，不默认逐λ最佳焦；Fig.3与该固定面的对应仍待核。横向物方像素标定/曝光/背景/裁剪/峰值提取原始数组未核，20nm轴步长不是横向像素大小。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3C及Experimental results；作者稿v1 Fig.3 pp.13–14",
+              "note": "正式版增加Fig.3C焦位曲线，作者稿v1没有该子图；未核逐λ原始数表，不从xz热图或曲线估读，不把本库设计式结果填成实测f。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅焦位曲线；逐λ数表未核"
+            },
+            "chromatic": {
+              "value": "作者报告六波长焦点位移<3μm；逐点残余焦差/横向色差未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3C；作者稿v1 p.14",
+              "note": "小于3μm是作者汇总界限，非精确3或每一谱点误差；未明确参考λ/固定面/统计定义，不自动当峰峰值或零色差。白光彩色图不证明全场横向色差为零。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "focus_variation_protocol": {
+              "value": "实际谱点442/509/560/600/623/646nm；作者称焦点位移<3μm，z图注从样品顶部计，轴向步长20nm。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.3C及Methods / Characterization",
+              "note": "参考λ、固定焦面、精确最大互差/统计定义和不确定度未核；设计f不能作默认相减参考。未把界限转成标量焦距变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者名义定义：焦点直径3×FWHM圆内功率 / 入射至MAM面积的总功率；实验以焦斑aperture和S142C功率计收集。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版引言末段效率定义、Methods / Characterization、Fig.4A图注；作者稿v1 pp.5/15/18",
+              "note": "实验分母：移除MAM，同一继像系统、aperture匹配MAM像面积。Fig.4在各NA同一焦面；实际aperture大小如何标定为直径3FWHM、背景/校准/重复数未完整给。名义直径3FWHM不改成半径3FWHM；模拟效率/均值不充实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "mtf_curve": {
+              "value": "实测效率13.3–22.1%（六谱点区间）；Fig.4A/B逐λ效率/FWHM仅曲线；实测MTF未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.4A/B；作者稿v1 p.15（已视觉核）",
+              "note": "区间来自正文，端点对应λ未知，不分派到谱点、不填均值。作者稿v1 Fig.4A横轴Wavelength400–700nm、纵轴Efficiency0–80%；B为FWHM μm。NA0.5实测蓝实心圆/蓝方宽度，NA0.7红实心三角，模拟空心/点线；图轴范围非实测全范围。S7为560nm模拟PSF/MTF，非实验MTF。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "efficiency_range_pct": {
+                "min": 13.3,
+                "max": 22.1
+              },
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 600,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.4A对应实测谱点；作者稿v1 pp.14–15",
+              "note": "该实际谱点效率只核到曲线；不由区间端点或图像估读补数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.4A；作者稿v1 p.15 Fig.4a对应实测标记",
+              "note": "仅曲线，未核作者逐点数表；正文实验区间不分派给本λ。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；原始数表未核"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3B第三排x截线及Fig.4B；作者稿v1 pp.13/15",
+              "note": "归一化x截线存在；Fig.4B宽度只给曲线，未给逐λ印字/数表，不从曲线估读。峰值归一化不等于Strehl或能量归一化。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；逐λ宽度未核"
+            }
+          }
+        },
+        {
+          "id": "pan2023_na07_623",
+          "model": "Pan 2023 · NA0.7 · 623nm（设计f本库计算）",
+          "study_id": "pan2023",
+          "specimen_id": "na07",
+          "module": "",
+          "variant": "TPL三维多层可见光 / 连续设计与六谱点实测分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一NA器件的汇总和六个实际波长；设计400–800nm，实测仅442/509/560/600/623/646nm。不同NA分配置；作者稿图、正式版文字/XML同篇，版本分开。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要、MAM design首段R=10μm；作者稿v1 p.6",
+              "note": "光学设计口径2R=20μm；2μm径向支撑环及S8约24μm外框尺寸不是有效光学口径。未把SEM外径/原稿图注radius歧义当成新口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3B；作者稿v1 p.13 Fig.3b",
+              "note": "作者器件NA；150×收集物镜及制备63×/NA1.4不是本器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 10.2,
+              "source": "pan_multilayer_xml_2023",
+              "location": "正式版MAM design首段MathML M3；作者稿v1 p.6公式（已视觉核）",
+              "note": "本库按作者设计式f=R/tan(asin(NA))和R10μm计算，并四舍五入到0.01μm；不是作者印字实测焦距，也不是各波长焦位。图3的z参考与设计f原点未有明确转换，不作残余焦移相减。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_xml_2023",
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "calculation_origin": "atlas",
+              "formula": "diameter_um / (2 * tan(asin(na)))",
+              "inputs": {
+                "diameter_um": 20,
+                "na": 0.7
+              },
+              "rounding_increment_um": 0.01,
+              "approximate": true,
+              "display": "约10.20（本库按作者设计式计算）",
+              "calculation_method": "circular_aperture_na_relation"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "400–800nm是设计/模拟目标；作者明确实测受CMOS限制只覆盖六谱点，不称完整连续实测。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "400（设计/模拟）"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "设计/模拟上限，不是800nm的实际PSF测点；补充宽带扫描亦为模拟。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "800（设计/模拟）"
+            },
+            "wavelength_nm": {
+              "value": 623,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3B及Experimental results；作者稿v1 p.13 Fig.3b第5列λ标签",
+              "note": "实际PSF表征点，非色彩图示滤波RGB。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design首段；作者稿v1 p.6",
+              "note": "每层环高设计0–1.2μm，上限非实测恒定厚度；支撑层0.5μm/层、层间距1.6μm、三层堆叠分别保留，不用1200nm当完整器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "0–1200nm（每层设计环高）",
+              "range_nm": {
+                "min": 0,
+                "max": 1200
+              }
+            },
+            "material": {
+              "value": "IP-Dip聚合物同心环 / fused silica；三层，层间距1.6μm、环宽200nm",
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design/Experimental results/Fig.2A/B/E；作者稿v1 pp.6/10/12、SI Note9 pp.33–34",
+              "note": "交联IP-Dip低折射率树脂，TPL；支撑层0.5μm，外侧支撑/UV固化及缩量补偿；不是Si/TiO2纳米柱。最高环高和层间距非总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "polarization": {
+              "value": "作者设计称偏振不敏感；模拟等幅x/y源表示非偏振",
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要及Methods / Finite-difference time domain simulations",
+              "note": "实测每一偏振轴、检出分析器与偏振验证完整数表未核；不由模拟等幅x/y源推成实测全偏振相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK SELECT UV/nIR1超连续谱源，经潜望镜和透镜准直；六个实际谱点",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization；作者稿v1 p.18及SI Note12 p.35",
+              "note": "源可调范围/Methods泛述不等于全带逐点实测；工作谱线宽与滤波带宽未完整报告。780nm为TPL制备激光，不是本次工作波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "150×物镜继像至DCC3260C CMOS；P-736.4CA压电台沿z步进20nm（0.02μm）；Fig.3实测xz/xy和归一化x截线。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization、Fig.3B图注；作者稿v1 pp.13–14/18及SI Note12 pp.35–36",
+              "note": "作者图注称z自样品顶部计；与几何设计f基准未明确转换。Fig.4A/B按NA各自同一焦面比较，不默认逐λ最佳焦；Fig.3与该固定面的对应仍待核。横向物方像素标定/曝光/背景/裁剪/峰值提取原始数组未核，20nm轴步长不是横向像素大小。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3C及Experimental results；作者稿v1 Fig.3 pp.13–14",
+              "note": "正式版增加Fig.3C焦位曲线，作者稿v1没有该子图；未核逐λ原始数表，不从xz热图或曲线估读，不把本库设计式结果填成实测f。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅焦位曲线；逐λ数表未核"
+            },
+            "chromatic": {
+              "value": "作者报告六波长焦点位移<3μm；逐点残余焦差/横向色差未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3C；作者稿v1 p.14",
+              "note": "小于3μm是作者汇总界限，非精确3或每一谱点误差；未明确参考λ/固定面/统计定义，不自动当峰峰值或零色差。白光彩色图不证明全场横向色差为零。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "focus_variation_protocol": {
+              "value": "实际谱点442/509/560/600/623/646nm；作者称焦点位移<3μm，z图注从样品顶部计，轴向步长20nm。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.3C及Methods / Characterization",
+              "note": "参考λ、固定焦面、精确最大互差/统计定义和不确定度未核；设计f不能作默认相减参考。未把界限转成标量焦距变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者名义定义：焦点直径3×FWHM圆内功率 / 入射至MAM面积的总功率；实验以焦斑aperture和S142C功率计收集。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版引言末段效率定义、Methods / Characterization、Fig.4A图注；作者稿v1 pp.5/15/18",
+              "note": "实验分母：移除MAM，同一继像系统、aperture匹配MAM像面积。Fig.4在各NA同一焦面；实际aperture大小如何标定为直径3FWHM、背景/校准/重复数未完整给。名义直径3FWHM不改成半径3FWHM；模拟效率/均值不充实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "mtf_curve": {
+              "value": "实测效率13.3–22.1%（六谱点区间）；Fig.4A/B逐λ效率/FWHM仅曲线；实测MTF未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.4A/B；作者稿v1 p.15（已视觉核）",
+              "note": "区间来自正文，端点对应λ未知，不分派到谱点、不填均值。作者稿v1 Fig.4A横轴Wavelength400–700nm、纵轴Efficiency0–80%；B为FWHM μm。NA0.5实测蓝实心圆/蓝方宽度，NA0.7红实心三角，模拟空心/点线；图轴范围非实测全范围。S7为560nm模拟PSF/MTF，非实验MTF。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "efficiency_range_pct": {
+                "min": 13.3,
+                "max": 22.1
+              },
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 623,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.4A对应实测谱点；作者稿v1 pp.14–15",
+              "note": "该实际谱点效率只核到曲线；不由区间端点或图像估读补数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.4A；作者稿v1 p.15 Fig.4a对应实测标记",
+              "note": "仅曲线，未核作者逐点数表；正文实验区间不分派给本λ。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；原始数表未核"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3B第三排x截线及Fig.4B；作者稿v1 pp.13/15",
+              "note": "归一化x截线存在；Fig.4B宽度只给曲线，未给逐λ印字/数表，不从曲线估读。峰值归一化不等于Strehl或能量归一化。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；逐λ宽度未核"
+            }
+          }
+        },
+        {
+          "id": "pan2023_na07_646",
+          "model": "Pan 2023 · NA0.7 · 646nm（设计f本库计算）",
+          "study_id": "pan2023",
+          "specimen_id": "na07",
+          "module": "",
+          "variant": "TPL三维多层可见光 / 连续设计与六谱点实测分开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一NA器件的汇总和六个实际波长；设计400–800nm，实测仅442/509/560/600/623/646nm。不同NA分配置；作者稿图、正式版文字/XML同篇，版本分开。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要、MAM design首段R=10μm；作者稿v1 p.6",
+              "note": "光学设计口径2R=20μm；2μm径向支撑环及S8约24μm外框尺寸不是有效光学口径。未把SEM外径/原稿图注radius歧义当成新口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3B；作者稿v1 p.13 Fig.3b",
+              "note": "作者器件NA；150×收集物镜及制备63×/NA1.4不是本器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "design_focal_um": {
+              "value": 10.2,
+              "source": "pan_multilayer_xml_2023",
+              "location": "正式版MAM design首段MathML M3；作者稿v1 p.6公式（已视觉核）",
+              "note": "本库按作者设计式f=R/tan(asin(NA))和R10μm计算，并四舍五入到0.01μm；不是作者印字实测焦距，也不是各波长焦位。图3的z参考与设计f原点未有明确转换，不作残余焦移相减。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_xml_2023",
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "calculation_origin": "atlas",
+              "formula": "diameter_um / (2 * tan(asin(na)))",
+              "inputs": {
+                "diameter_um": 20,
+                "na": 0.7
+              },
+              "rounding_increment_um": 0.01,
+              "approximate": true,
+              "display": "约10.20（本库按作者设计式计算）",
+              "calculation_method": "circular_aperture_na_relation"
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "400–800nm是设计/模拟目标；作者明确实测受CMOS限制只覆盖六谱点，不称完整连续实测。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "400（设计/模拟）"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要/设计；作者稿v1 pp.1/5/16",
+              "note": "设计/模拟上限，不是800nm的实际PSF测点；补充宽带扫描亦为模拟。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "display": "800（设计/模拟）"
+            },
+            "wavelength_nm": {
+              "value": 646,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3B及Experimental results；作者稿v1 p.13 Fig.3b第6列λ标签",
+              "note": "实际PSF表征点，非色彩图示滤波RGB。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "height_nm": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design首段；作者稿v1 p.6",
+              "note": "每层环高设计0–1.2μm，上限非实测恒定厚度；支撑层0.5μm/层、层间距1.6μm、三层堆叠分别保留，不用1200nm当完整器件总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "0–1200nm（每层设计环高）",
+              "range_nm": {
+                "min": 0,
+                "max": 1200
+              }
+            },
+            "material": {
+              "value": "IP-Dip聚合物同心环 / fused silica；三层，层间距1.6μm、环宽200nm",
+              "source": "pan_multilayer_2023",
+              "location": "正式版MAM design/Experimental results/Fig.2A/B/E；作者稿v1 pp.6/10/12、SI Note9 pp.33–34",
+              "note": "交联IP-Dip低折射率树脂，TPL；支撑层0.5μm，外侧支撑/UV固化及缩量补偿；不是Si/TiO2纳米柱。最高环高和层间距非总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "polarization": {
+              "value": "作者设计称偏振不敏感；模拟等幅x/y源表示非偏振",
+              "source": "pan_multilayer_2023",
+              "location": "正式版摘要及Methods / Finite-difference time domain simulations",
+              "note": "实测每一偏振轴、检出分析器与偏振验证完整数表未核；不由模拟等幅x/y源推成实测全偏振相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "illumination": {
+              "value": "SuperK SELECT UV/nIR1超连续谱源，经潜望镜和透镜准直；六个实际谱点",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization；作者稿v1 p.18及SI Note12 p.35",
+              "note": "源可调范围/Methods泛述不等于全带逐点实测；工作谱线宽与滤波带宽未完整报告。780nm为TPL制备激光，不是本次工作波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "150×物镜继像至DCC3260C CMOS；P-736.4CA压电台沿z步进20nm（0.02μm）；Fig.3实测xz/xy和归一化x截线。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Characterization、Fig.3B图注；作者稿v1 pp.13–14/18及SI Note12 pp.35–36",
+              "note": "作者图注称z自样品顶部计；与几何设计f基准未明确转换。Fig.4A/B按NA各自同一焦面比较，不默认逐λ最佳焦；Fig.3与该固定面的对应仍待核。横向物方像素标定/曝光/背景/裁剪/峰值提取原始数组未核，20nm轴步长不是横向像素大小。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3C及Experimental results；作者稿v1 Fig.3 pp.13–14",
+              "note": "正式版增加Fig.3C焦位曲线，作者稿v1没有该子图；未核逐λ原始数表，不从xz热图或曲线估读，不把本库设计式结果填成实测f。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅焦位曲线；逐λ数表未核"
+            },
+            "chromatic": {
+              "value": "作者报告六波长焦点位移<3μm；逐点残余焦差/横向色差未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.3C；作者稿v1 p.14",
+              "note": "小于3μm是作者汇总界限，非精确3或每一谱点误差；未明确参考λ/固定面/统计定义，不自动当峰峰值或零色差。白光彩色图不证明全场横向色差为零。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-15",
+              "calculation_origin": "authors"
+            },
+            "focus_variation_protocol": {
+              "value": "实际谱点442/509/560/600/623/646nm；作者称焦点位移<3μm，z图注从样品顶部计，轴向步长20nm。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.3C及Methods / Characterization",
+              "note": "参考λ、固定焦面、精确最大互差/统计定义和不确定度未核；设计f不能作默认相减参考。未把界限转成标量焦距变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_protocol": {
+              "value": "作者名义定义：焦点直径3×FWHM圆内功率 / 入射至MAM面积的总功率；实验以焦斑aperture和S142C功率计收集。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版引言末段效率定义、Methods / Characterization、Fig.4A图注；作者稿v1 pp.5/15/18",
+              "note": "实验分母：移除MAM，同一继像系统、aperture匹配MAM像面积。Fig.4在各NA同一焦面；实际aperture大小如何标定为直径3FWHM、背景/校准/重复数未完整给。名义直径3FWHM不改成半径3FWHM；模拟效率/均值不充实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "mtf_curve": {
+              "value": "实测效率13.3–22.1%（六谱点区间）；Fig.4A/B逐λ效率/FWHM仅曲线；实测MTF未核",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.4A/B；作者稿v1 p.15（已视觉核）",
+              "note": "区间来自正文，端点对应λ未知，不分派到谱点、不填均值。作者稿v1 Fig.4A横轴Wavelength400–700nm、纵轴Efficiency0–80%；B为FWHM μm。NA0.5实测蓝实心圆/蓝方宽度，NA0.7红实心三角，模拟空心/点线；图轴范围非实测全范围。S7为560nm模拟PSF/MTF，非实验MTF。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ],
+              "efficiency_range_pct": {
+                "min": 13.3,
+                "max": 22.1
+              },
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 646,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results及Fig.4A对应实测谱点；作者稿v1 pp.14–15",
+              "note": "该实际谱点效率只核到曲线；不由区间端点或图像估读补数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.4A；作者稿v1 p.15 Fig.4a对应实测标记",
+              "note": "仅曲线，未核作者逐点数表；正文实验区间不分派给本λ。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；原始数表未核"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.3B第三排x截线及Fig.4B；作者稿v1 pp.13/15",
+              "note": "归一化x截线存在；Fig.4B宽度只给曲线，未给逐λ印字/数表，不从曲线估读。峰值归一化不等于Strehl或能量归一化。",
+              "basis": "measured",
+              "checked_on": "2026-11-15",
+              "display": "仅曲线；逐λ宽度未核"
+            }
+          }
+        },
+        {
+          "id": "pan2023_sim_original",
+          "model": "Pan 2023 · 原设计模型 · 560nm · 模拟MTF",
+          "study_id": "pan2023",
+          "specimen_id": "sim_original",
+          "module": "",
+          "variant": "三维MAM数值结构 / 560nm PSF-MTF模型",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者稿v1模拟结构比较，非实验、非额外实物；正式版S7未视觉取得。",
+          "values": {
+            "wavelength_nm": {
+              "value": 560,
+              "source": "pan_multilayer_arxiv_2023",
+              "location": "作者稿v1 PDF p.32 / SI p.10 S7图内及p.33图注",
+              "note": "仅模拟PSF/MTF波长，不新增560nm实验器件。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "IP-Dip三维MAM数值结构：原设计模型",
+              "source": "pan_multilayer_arxiv_2023",
+              "location": "作者稿v1 pp.10–11 Fig.2c/d、SI Note8/S7 pp.32–33",
+              "note": "模型结构与实制MAM分别记录，不把S7算作实测MTF；正式版S7附件尚未取得。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            },
+            "mtf_curve": {
+              "value": "560nm模拟PSF/MTF；fx(mm⁻¹)轴0–800，MTF轴0–1；无数表",
+              "source": "pan_multilayer_arxiv_2023",
+              "location": "作者稿v1 PDF p.32 / SI p.10 S7a右图，p.33 / SI p.11图注（已视觉核）",
+              "note": "图注明确simulated；IFT箭头为作者原标记，具体变换/采样/窗口/归一化未给。不把横轴终点800当截止频率，不改为实测S/T或MTF50。主文Fig.2初始优化背景NA0.5，但S7未独立标NA/场点，保留未知。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "frequency_unit": "author_stated_mm_inverse",
+              "frequency_axis_label": "fx (mm⁻¹)",
+              "direction": "fx",
+              "field_point": null,
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "na": {
+              "value": null,
+              "source": "pan_multilayer_arxiv_2023",
+              "location": "作者稿v1 SI Note8/S7 pp.32–33；主文Fig.2背景",
+              "note": "主文初始优化为NA0.5，S7图注未独立重标，暂不把关联背景升级为独立明确参数。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "display": "S7未独立标NA"
+            }
+          }
+        },
+        {
+          "id": "pan2023_sim_level1",
+          "model": "Pan 2023 · Level1圆角模型 · 560nm · 模拟MTF",
+          "study_id": "pan2023",
+          "specimen_id": "sim_level1",
+          "module": "",
+          "variant": "三维MAM数值结构 / 560nm PSF-MTF模型",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者稿v1模拟结构比较，非实验、非额外实物；正式版S7未视觉取得。",
+          "values": {
+            "wavelength_nm": {
+              "value": 560,
+              "source": "pan_multilayer_arxiv_2023",
+              "location": "作者稿v1 PDF p.32 / SI p.10 S7图内及p.33图注",
+              "note": "仅模拟PSF/MTF波长，不新增560nm实验器件。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            },
+            "material": {
+              "value": "IP-Dip三维MAM数值结构：Level1圆角模型",
+              "source": "pan_multilayer_arxiv_2023",
+              "location": "作者稿v1 pp.10–11 Fig.2c/d、SI Note8/S7 pp.32–33",
+              "note": "模型结构与实制MAM分别记录，不把S7算作实测MTF；正式版S7附件尚未取得。",
+              "basis": "model",
+              "checked_on": "2026-11-15"
+            },
+            "mtf_curve": {
+              "value": "560nm模拟PSF/MTF；fx(mm⁻¹)轴0–800，MTF轴0–1；无数表",
+              "source": "pan_multilayer_arxiv_2023",
+              "location": "作者稿v1 PDF p.32 / SI p.10 S7b右图，p.33 / SI p.11图注（已视觉核）",
+              "note": "图注明确simulated；IFT箭头为作者原标记，具体变换/采样/窗口/归一化未给。不把横轴终点800当截止频率，不改为实测S/T或MTF50。主文Fig.2初始优化背景NA0.5，但S7未独立标NA/场点，保留未知。",
+              "basis": "model",
+              "checked_on": "2026-11-15",
+              "frequency_unit": "author_stated_mm_inverse",
+              "frequency_axis_label": "fx (mm⁻¹)",
+              "direction": "fx",
+              "field_point": null,
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "atlas_recomputed_mtf": null
+            },
+            "na": {
+              "value": null,
+              "source": "pan_multilayer_arxiv_2023",
+              "location": "作者稿v1 SI Note8/S7 pp.32–33；主文Fig.2背景",
+              "note": "主文初始优化为NA0.5，S7图注未独立重标，暂不把关联背景升级为独立明确参数。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "display": "S7未独立标NA"
+            }
+          }
+        },
+        {
+          "id": "pan2023_imaging_white",
+          "model": "Pan 2023 · NA0.5成像 · 白光",
+          "study_id": "pan2023",
+          "specimen_id": "imaging_na05",
+          "module": "",
+          "variant": "NA0.5 MAM成像 / 白光与滤色",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一NA0.5 MAM的成像系统，白光/滤色分行；蓝通道标签差异保留，非四件独立透镜。",
+          "values": {
+            "na": {
+              "value": 0.5,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.4C",
+              "note": "NA0.5 MAM成像系统；50×/NA0.4为观察显微物镜，不是器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.4C与Methods / Imaging；作者稿v1 pp.15/18",
+              "note": "白光系统不同于单谱点PSF表征；成像RGB与六个PSF波长不互填。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "白光"
+            },
+            "illumination": {
+              "value": "卤素灯透射照明，白光",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Imaging、Fig.4C",
+              "note": "缩小灯孔提高方向性；FL457.9-10/FL532-10/FL632.8-10，滤片型号后缀不在本库未经核验改作实测谱宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "USAF1951靶；约100μm间隔固定MAM/靶；Nikon Eclipse LV100ND、50×/NA0.4观察物镜，调显微镜到设计像面。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Imaging及Experimental results；作者稿v1 p.18",
+              "note": "此为成像测试，不是150×/20nm轴扫PSF协议；约100μm为装配/物距描述，不能作镜片焦距或色差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "chromatic": {
+              "value": "Fig.4C可见光成像；逐场点横向色差/图像MTF无独立数表",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.4C与Methods / Imaging；作者稿v1 p.15",
+              "note": "定性彩色图不证明残余轴向/横向色差为零；USAF目标可辨不等同已量化MTF/分辨率截止。",
+              "basis": "measured",
+              "checked_on": "2026-11-15"
+            }
+          }
+        },
+        {
+          "id": "pan2023_imaging_blue",
+          "model": "Pan 2023 · NA0.5成像 · 蓝通道450/458nm待核",
+          "study_id": "pan2023",
+          "specimen_id": "imaging_na05",
+          "module": "",
+          "variant": "NA0.5 MAM成像 / 白光与滤色",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一NA0.5 MAM的成像系统，白光/滤色分行；蓝通道标签差异保留，非四件独立透镜。",
+          "values": {
+            "na": {
+              "value": 0.5,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.4C",
+              "note": "NA0.5 MAM成像系统；50×/NA0.4为观察显微物镜，不是器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.4C与Methods / Imaging；作者稿v1 pp.15/18",
+              "note": "Fig.4C蓝450nm，而Methods/FL457.9-10及S9蓝458nm，保留冲突；绿532/红633与PSF六谱点分开。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-15",
+              "display": "450nm（Fig.4C） / 458nm（Methods），待核"
+            },
+            "illumination": {
+              "value": "卤素灯透射照明，对应色滤光片",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Imaging、Fig.4C",
+              "note": "缩小灯孔提高方向性；FL457.9-10/FL532-10/FL632.8-10，滤片型号后缀不在本库未经核验改作实测谱宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "USAF1951靶；约100μm间隔固定MAM/靶；Nikon Eclipse LV100ND、50×/NA0.4观察物镜，调显微镜到设计像面。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Imaging及Experimental results；作者稿v1 p.18",
+              "note": "此为成像测试，不是150×/20nm轴扫PSF协议；约100μm为装配/物距描述，不能作镜片焦距或色差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "chromatic": {
+              "value": "Fig.4C可见光成像；逐场点横向色差/图像MTF无独立数表",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.4C与Methods / Imaging；作者稿v1 p.15",
+              "note": "定性彩色图不证明残余轴向/横向色差为零；USAF目标可辨不等同已量化MTF/分辨率截止。",
+              "basis": "measured",
+              "checked_on": "2026-11-15"
+            }
+          }
+        },
+        {
+          "id": "pan2023_imaging_green",
+          "model": "Pan 2023 · NA0.5成像 · 绿通道532nm",
+          "study_id": "pan2023",
+          "specimen_id": "imaging_na05",
+          "module": "",
+          "variant": "NA0.5 MAM成像 / 白光与滤色",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一NA0.5 MAM的成像系统，白光/滤色分行；蓝通道标签差异保留，非四件独立透镜。",
+          "values": {
+            "na": {
+              "value": 0.5,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.4C",
+              "note": "NA0.5 MAM成像系统；50×/NA0.4为观察显微物镜，不是器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.4C与Methods / Imaging；作者稿v1 pp.15/18",
+              "note": "白光系统不同于单谱点PSF表征；成像RGB与六个PSF波长不互填。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "532"
+            },
+            "illumination": {
+              "value": "卤素灯透射照明，对应色滤光片",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Imaging、Fig.4C",
+              "note": "缩小灯孔提高方向性；FL457.9-10/FL532-10/FL632.8-10，滤片型号后缀不在本库未经核验改作实测谱宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "USAF1951靶；约100μm间隔固定MAM/靶；Nikon Eclipse LV100ND、50×/NA0.4观察物镜，调显微镜到设计像面。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Imaging及Experimental results；作者稿v1 p.18",
+              "note": "此为成像测试，不是150×/20nm轴扫PSF协议；约100μm为装配/物距描述，不能作镜片焦距或色差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "chromatic": {
+              "value": "Fig.4C可见光成像；逐场点横向色差/图像MTF无独立数表",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.4C与Methods / Imaging；作者稿v1 p.15",
+              "note": "定性彩色图不证明残余轴向/横向色差为零；USAF目标可辨不等同已量化MTF/分辨率截止。",
+              "basis": "measured",
+              "checked_on": "2026-11-15"
+            }
+          }
+        },
+        {
+          "id": "pan2023_imaging_red",
+          "model": "Pan 2023 · NA0.5成像 · 红通道633nm",
+          "study_id": "pan2023",
+          "specimen_id": "imaging_na05",
+          "module": "",
+          "variant": "NA0.5 MAM成像 / 白光与滤色",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一NA0.5 MAM的成像系统，白光/滤色分行；蓝通道标签差异保留，非四件独立透镜。",
+          "values": {
+            "na": {
+              "value": 0.5,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results、Fig.4C",
+              "note": "NA0.5 MAM成像系统；50×/NA0.4为观察显微物镜，不是器件NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": 633,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.4C与Methods / Imaging；作者稿v1 pp.15/18",
+              "note": "白光系统不同于单谱点PSF表征；成像RGB与六个PSF波长不互填。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "633"
+            },
+            "illumination": {
+              "value": "卤素灯透射照明，对应色滤光片",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Imaging、Fig.4C",
+              "note": "缩小灯孔提高方向性；FL457.9-10/FL532-10/FL632.8-10，滤片型号后缀不在本库未经核验改作实测谱宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "psf_protocol": {
+              "value": "USAF1951靶；约100μm间隔固定MAM/靶；Nikon Eclipse LV100ND、50×/NA0.4观察物镜，调显微镜到设计像面。",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Methods / Imaging及Experimental results；作者稿v1 p.18",
+              "note": "此为成像测试，不是150×/20nm轴扫PSF协议；约100μm为装配/物距描述，不能作镜片焦距或色差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "chromatic": {
+              "value": "Fig.4C可见光成像；逐场点横向色差/图像MTF无独立数表",
+              "source": "pan_multilayer_2023",
+              "location": "正式版Fig.4C与Methods / Imaging；作者稿v1 p.15",
+              "note": "定性彩色图不证明残余轴向/横向色差为零；USAF目标可辨不等同已量化MTF/分辨率截止。",
+              "basis": "measured",
+              "checked_on": "2026-11-15"
+            }
+          }
+        },
+        {
+          "id": "pan2023_fresnel_control",
+          "model": "Pan 2023 · Fresnel对照 · 普通色散",
+          "study_id": "pan2023",
+          "specimen_id": "fresnel_control",
+          "module": "",
+          "variant": "同树脂普通色散镜片 / 定性焦斑对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "普通色散实制对照，主文与作者稿SI同研究，不当消色差MAM或新独立发表。",
+          "values": {
+            "na": {
+              "value": 0.5,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results末段；作者稿v1 SI Note11 p.34",
+              "note": "作者明确的普通色散对照，不复制MAM的20μm口径/焦距/效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "material": {
+              "value": "IP-Dip三维打印Fresnel对照",
+              "source": "pan_multilayer_arxiv_2023",
+              "location": "作者稿v1 SI Note11及S10 pp.34–35",
+              "note": "同树脂对照，未核独立口径、焦距及定量PSF协议。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "pan_multilayer_arxiv_2023",
+              "location": "作者稿v1 SI S10 pp.34–35",
+              "note": "图示彩色/白光焦斑，没有独立单色波长标记，不分派六PSF谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "白光彩色图；单色λ未给"
+            },
+            "chromatic": {
+              "value": "S10定性色散对照；不同观察面/彩色焦斑",
+              "source": "pan_multilayer_arxiv_2023",
+              "location": "作者稿v1 SI S10a/b pp.34–35（已视觉核）",
+              "note": "图S10a的约−5/0/+5μm是Fresnel观察面离焦位置，不是逐波长焦移或透镜色差值；无原始PSF/MTF表，未估读。",
+              "basis": "measured",
+              "checked_on": "2026-11-15"
+            }
+          }
+        },
+        {
+          "id": "pan2023_spherical_control",
+          "model": "Pan 2023 · 球面对照 · 普通色散",
+          "study_id": "pan2023",
+          "specimen_id": "spherical_control",
+          "module": "",
+          "variant": "同树脂普通色散镜片 / 定性焦斑对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "普通色散实制对照，主文与作者稿SI同研究，不当消色差MAM或新独立发表。",
+          "values": {
+            "na": {
+              "value": 0.5,
+              "source": "pan_multilayer_2023",
+              "location": "正式版Experimental results末段；作者稿v1 SI Note11 p.34",
+              "note": "作者明确的普通色散对照，不复制MAM的20μm口径/焦距/效率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "sourceIds": [
+                "pan_multilayer_2023",
+                "pan_multilayer_arxiv_2023"
+              ]
+            },
+            "material": {
+              "value": "IP-Dip三维打印球面对照",
+              "source": "pan_multilayer_arxiv_2023",
+              "location": "作者稿v1 SI Note11及S10 pp.34–35",
+              "note": "同树脂对照，未核独立口径、焦距及定量PSF协议。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "pan_multilayer_arxiv_2023",
+              "location": "作者稿v1 SI S10 pp.34–35",
+              "note": "图示彩色/白光焦斑，没有独立单色波长标记，不分派六PSF谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-15",
+              "display": "白光彩色图；单色λ未给"
+            },
+            "chromatic": {
+              "value": "S10定性色散对照；不同观察面/彩色焦斑",
+              "source": "pan_multilayer_arxiv_2023",
+              "location": "作者稿v1 SI S10c pp.34–35（已视觉核）",
+              "note": "图S10a的约−5/0/+5μm是Fresnel观察面离焦位置，不是逐波长焦移或透镜色差值；无原始PSF/MTF表，未估读。",
+              "basis": "measured",
+              "checked_on": "2026-11-15"
+            }
+          }
         }
       ],
-      "scope": "20项原始研究、77个器件/测量/系统配置、687条记录。未归属表征集、工艺结构、谱点和系统条件不算更多实物。离散RGB/连续波段、实测功率/模拟效率及PSF-FFT曲线分开，未知数值不补零。",
+      "scope": "21项原始研究、84个器件/测量/系统配置、709条记录。谱点、模拟模型和成像条件不计更多实物；设计/模拟波段与实测范围、界限与标量、作者和本库计算分开，未知数值不补零。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
