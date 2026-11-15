@@ -135,6 +135,10 @@ export function validateDevices(d,catalog){
  }
  for(const k of ['efficiency_at_lambda_pct','efficiency_band_mean_pct']){
   const v=r.values[k];if(!Number.isFinite(v?.value))continue;
+  if(v.aggregation_scope==='publication_unassigned_devices'&&(
+   k!=='efficiency_band_mean_pct'||v.basis!=='derived_from_measurement'||v.calculation_origin!=='authors'||
+   r.configuration_role!=='unassigned_measurement_set'||r.values.diameter_um?.value!==null||r.values.na?.value!==null||
+   r.values.wavelength_nm?.value!==null||r.values.efficiency_protocol?.device_assignment!=='unassigned'||!v.sampling))errors.push('publication efficiency assignment');
   const protocol=r.values.efficiency_protocol?.value;
   if(v.value<0||v.value>100||typeof protocol!=='string'||!protocol.trim())errors.push('efficiency protocol/range');
   if(k==='efficiency_at_lambda_pct'&&!(r.values.efficiency_lambda_nm?.value>0&&Number.isFinite(r.values.efficiency_lambda_nm.value)))errors.push('efficiency wavelength');

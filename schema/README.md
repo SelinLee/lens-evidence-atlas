@@ -65,3 +65,7 @@
 `processed_psf_fwhm_um`与裸PSF宽度分列：正值、实际λ、`basis: reconstruction`、作者计算、`processing_stage: linear_intensity_subtraction`和非负系数；`psf_protocol`须绑定同系数与数值固定评价面。该行不能同时填写数值裸PSF FWHM。作者图内印字可录，负旁瓣/零点/归一化和未知拟合条件必须说明；不把处理后变窄当裸镜光学性能。
 
 `image_snr_db`是作者图像SNR，和phone的snr、PSNR及ASNR不同字段。须`calculation_origin: authors`、`statistic: author_reported_image_snr`与`image_snr_protocol`的信号/噪声公式、`metric_kind: author_image_signal_background_ratio`、靶、ROI/噪声估计（未知null）。captured行用derived_from_measurement，linear_intensity_subtraction行用reconstruction并保留非负系数；单λ或明确白光照明与null波长必须绑定。作者只称背景fluctuation时不擅自补为SD/方差或把10log改成20log；重复数、曝光/增益、基线/通道配准与误差缺口写入协议。
+
+`efficiency_band_mean_pct`可保存作者明确写出的论文级未分派均值，用`aggregation_scope: publication_unassigned_devices`、作者由实测计算与`sampling`（未报告可写not_reported）。此时行须unassigned_measurement_set及有效器件候选，diameter_um/na/wavelength_nm均显式null，协议device_assignment=unassigned；不可将该均值复制到各口径或各λ。约值保留approximate/display；图示谱点与平均权重未知分别记录，不称已核连续谱积分。
+
+`data_availability.status: no_mtf_in_checked_material`表示所列已读主文/SI只核到PSF/f/效率等图表，未报告MTF；与curves_only（已核MTF曲线）分开。无MTF轴就不填写频率单位/方向/数表；作者合理请求、搜索范围和原始PSF采样缺口继续保留。
