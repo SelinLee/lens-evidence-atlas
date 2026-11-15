@@ -36,6 +36,31 @@ export function validateDevices(d,catalog){
     !(r.values.wavelength_nm?.value>0)||!r.values.efficiency_protocol?.value))errors.push('measured optical power context');
  }
  const designFocal=r.values.design_focal_um;
+ const depth=r.values.author_longest_focal_depth_um;
+ if(Number.isFinite(depth?.value)&&(!(depth.value>0)||depth.basis!=='derived_from_measurement'||
+  depth.calculation_origin!=='authors'||depth.statistic!=='author_longest_focal_depth'||
+  !(depth.threshold_intensity_fraction>0&&depth.threshold_intensity_fraction<=1)||
+  !(r.values.wavelength_nm?.value>0)||['model','modeled'].includes(r.values.wavelength_nm?.basis)||!r.values.psf_protocol?.value||
+  !(depth.reference_origin===null||typeof depth.reference_origin==='string'&&depth.reference_origin)))errors.push('author focal depth context');
+ const processedWidth=r.values.processed_psf_fwhm_um,psf=r.values.psf_protocol;
+ if(Number.isFinite(processedWidth?.value)&&(!(processedWidth.value>0)||processedWidth.basis!=='reconstruction'||
+  processedWidth.calculation_origin!=='authors'||processedWidth.processing_stage!=='linear_intensity_subtraction'||
+  !(processedWidth.subtraction_coefficient>=0&&Number.isFinite(processedWidth.subtraction_coefficient))||
+  !psf?.value||psf.processing_stage!=='linear_intensity_subtraction'||psf.subtraction_coefficient!==processedWidth.subtraction_coefficient||
+  !Number.isFinite(psf.evaluation_plane_um)||!(r.values.wavelength_nm?.value>0)||
+  ['fwhm_um','fwhm_x_um','fwhm_y_um'].some(k=>Number.isFinite(r.values[k]?.value))))errors.push('processed PSF width context');
+ const imageSNR=r.values.image_snr_db,snrProtocol=r.values.image_snr_protocol;
+ if(Number.isFinite(imageSNR?.value)){
+  const stage=snrProtocol?.processing_stage;
+  if(imageSNR.calculation_origin!=='authors'||imageSNR.statistic!=='author_reported_image_snr'||
+   !snrProtocol?.value||snrProtocol.metric_kind!=='author_image_signal_background_ratio'||!snrProtocol.formula||!snrProtocol.target||
+   !(snrProtocol.roi===null||typeof snrProtocol.roi==='string'&&snrProtocol.roi)||
+   !(snrProtocol.noise_estimator===null||typeof snrProtocol.noise_estimator==='string'&&snrProtocol.noise_estimator)||
+   !(r.values.wavelength_nm?.value>0||r.values.wavelength_nm?.value===null&&r.values.illumination?.value)||
+   !((stage==='captured'&&imageSNR.basis==='derived_from_measurement')||
+    (stage==='linear_intensity_subtraction'&&imageSNR.basis==='reconstruction'&&
+     Number.isFinite(snrProtocol.subtraction_coefficient)&&snrProtocol.subtraction_coefficient>=0)))errors.push('image SNR context');
+ }
  const simulatedFocal=r.values.simulated_focal_um;
  if(Number.isFinite(simulatedFocal?.value)&&(!(simulatedFocal.value>0)||simulatedFocal.basis!=='model'||
   simulatedFocal.calculation_origin!=='authors'||simulatedFocal.position_definition!=='axial_intensity_maximum'||

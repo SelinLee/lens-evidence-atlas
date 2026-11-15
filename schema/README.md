@@ -59,3 +59,9 @@
 `system_contrast_protocol`区分作者称MTF contrast的USAF线对Michelson对比度与PSF-FFT/严格正弦MTF。`metric_kind: usaf_michelson_linepair_contrast`、`direction_aggregation`（horizontal/vertical/mean_of_horizontal_vertical）、`frequency_unit: lp/mm`、`field_point`（未知null）、实际谱点和`processing_stage`必须保留；captured标作者`derived_from_measurement`、deconvolved标`reconstruction`，不能互换或把横纵平均改成独立S/T。多谱点汇总不绑定一个数值波长。MTF低于0.01的阈值不是频率测量值，中心像素/传感器圆域总计数也不混入聚焦功率效率。
 
 `simulated_focal_um`单独保存作者逐波长模拟轴向焦位，正值、`basis: model`、`calculation_origin: authors`、`position_definition: axial_intensity_maximum`，须绑定模型谱点（wavelength_nm也为model）和`psf_protocol`。不混同设计f/实测f/质心公式预测；同一行不能同时有数值型实测焦距。原表列名Measured若所属段明确Simulations，仍按模型处理；未明的取峰步长/插值/偏振保留未知。作者Focal Shift的符号/参考及DoF单位/阈值未明时只保存原述，不从模拟焦位生成实测色差或DOF坐标。
+
+`author_longest_focal_depth_um`保存作者以指定轴向强度阈值定义的最长焦深/位置，不是最佳焦点或轴向DOF宽度。要求正值、实际λ、`basis: derived_from_measurement`、作者计算、`statistic: author_longest_focal_depth`、`threshold_intensity_fraction`在(0,1]、`reference_origin`（未知null）及`psf_protocol`。不能把阈值位置差当残余焦移。
+
+`processed_psf_fwhm_um`与裸PSF宽度分列：正值、实际λ、`basis: reconstruction`、作者计算、`processing_stage: linear_intensity_subtraction`和非负系数；`psf_protocol`须绑定同系数与数值固定评价面。该行不能同时填写数值裸PSF FWHM。作者图内印字可录，负旁瓣/零点/归一化和未知拟合条件必须说明；不把处理后变窄当裸镜光学性能。
+
+`image_snr_db`是作者图像SNR，和phone的snr、PSNR及ASNR不同字段。须`calculation_origin: authors`、`statistic: author_reported_image_snr`与`image_snr_protocol`的信号/噪声公式、`metric_kind: author_image_signal_background_ratio`、靶、ROI/噪声估计（未知null）。captured行用derived_from_measurement，linear_intensity_subtraction行用reconstruction并保留非负系数；单λ或明确白光照明与null波长必须绑定。作者只称背景fluctuation时不擅自补为SD/方差或把10log改成20log；重复数、曝光/增益、基线/通道配准与误差缺口写入协议。
