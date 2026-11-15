@@ -98,7 +98,7 @@ test('asset versions match the final bytes including transitive module imports a
 
 test('each paper owns its configurations and its supplementary source IDs resolve to the same publication',()=>{
  const lenses=atlas.domains.find(d=>d.id==='metalens'), groups=groupRows(lenses.rows);
- assert.equal(groups.length,21);
+ assert.equal(groups.length,22);
  const balli=groups.find(g=>g.key==='balli2020');
  assert.equal(balli.rows.length,37);
  assert.equal(new Set(balli.rows.map(r=>r.specimen_id)).size,5);
