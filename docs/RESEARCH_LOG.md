@@ -981,3 +981,9 @@ PR #150 合入 c8b35324981d3140ab912e7994021eb30a5d5317。PR 校验 44335226607�
 ## 2026-11-18-96 · Arbabi 2018 双波长物镜的峰位、焦斑与能量
 
 按 Crossref 109 次纳入经典研究。核了同一 1.6 mm、NA 0.5 实物的设计 605/820 nm、两个实际测点 600/822 nm 及不同正交偏振。作者印字 1380/1376 μm 与 0.68/0.93 μm 留在实测行。两峰位差 4 μm 由本库按两实验行计算。27% 与 61% 附各自等效焦圈直径和总入射功率分母。模型的 38%、63% 单列，作者模型辅助单色效率约 45% 留说明。已核正式补件和第一作者博士论文，逐频 MTF、PSF 原始数组及采样标定仍缺。新增 10 条、5 配置，全库 44 篇、255 配置、1567 条。[本批核验](ARBABI_DUAL_REVIEW_2026-11-18.md)
+
+## 2026-11-18-97 · Arbabi 双波长物镜上线与 Wang 反射式经典取证
+
+PR #152 合入 3596147e53c5b112e5593069c6da827c8b27ba60。PR 校验 44339830752、主线校验 44340061328 和 Pages 44340061284 成功。304 项测试通过。线上 12 文件与本机构建逐字节一致，devices-data.js SHA256 为 96343fa6af9bf4e265c18e8e6d2097fa869c7a5db83b72a80502517660c3f947。独立无头 Chrome 核 10 行、5 配置、两焦位、两 FWHM、两实验效率及 4 μm 峰位差散点、六视口、引用往返和 CSV。作者博士论文下载为 200，期刊补件经校方下载为 206，Caltech 馆藏、Crossref、DataCite 均为 200。ACS 与作者组索引在直连测试返回 403。新增 8 行进入可见光筛选，库中可见光共 38 篇、1417 条。[PR #152](https://github.com/SelinLee/lens-evidence-atlas/pull/152) · [Pages 部署](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44340061284)
+
+下一批补证 Wang 等 2017 年近红外反射式宽带消色差。Crossref 2026-11-18 为 992 次。作者组正式主文 9 页、5322809 字节，SHA256 c0bfc00c3058b663077dbbe0046fc39833bfcf1bb08ddb39ca1e2f05fb86d183。正式 SI 20 页、2416989 字节，SHA256 0ae9455ec9e14d327e03e681a9ab850f2e830198d9e6a7ee5b4be2a1843f4756。Fig.3 锁定 55.55 μm／NA 0.268／设计 f=100 μm 及六个轴扫谱点，Fig.4 区分三只消色差与三只色散对照。Fig.4 的效率分母为同像素范围的金属镜反射光强，焦位误差样式的线段指测量中保持最大焦点强度的轴向距离。正文声明数据可合理请求，PMC 仓库未附表。后续区分设计 1680 nm 上限、真实实验点、原文极值和图线。[作者组主文](https://dsl.nju.edu.cn/litao/res/paper/Wang_SM-ncomms_8_187%282017%29.pdf) · [正式 SI](https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-017-00166-7/MediaObjects/41467_2017_166_MOESM1_ESM.pdf) · [PMC 清单](https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC5543157.1%2F)
