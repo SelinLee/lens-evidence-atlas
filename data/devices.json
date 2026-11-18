@@ -1930,6 +1930,60 @@
       "scope": "DataCite 关联 DOI 10.6084/m9.figshare.5154367；正式补件另见 Caltech 文件。",
       "checked_on": "2026-11-19",
       "publication_source": "arbabi_dispersion_2017"
+    },
+    {
+      "id": "arbabi_metamolecule_2016",
+      "title": "Arbabi et al. (2016): Multiwavelength polarization-insensitive lenses based on dielectric metasurfaces with meta-molecules",
+      "url": "https://authors.library.caltech.edu/records/32je3-2pw19/files/optica-3-6-628.pdf?download=1",
+      "kind": "peer_reviewed_paper",
+      "scope": "正式 Optica 3(6), 628–633，1521044 字节，MD5 d318348d3c24ffc54c253868e86ff424。核 pp630–631 Figs.2–4 和正文。",
+      "checked_on": "2026-11-19",
+      "doi": "10.1364/optica.3.000628"
+    },
+    {
+      "id": "arbabi_metamolecule_si_2016",
+      "title": "CaltechAUTHORS · Optica 正式 Supplement 1",
+      "url": "https://authors.library.caltech.edu/records/32je3-2pw19/files/optica-3-6-628_si.pdf?download=1",
+      "kind": "supplementary_material",
+      "scope": "正式 6 页补件，3321335 字节，MD5 d9ad519e716439f639666a09a4ee4be7。核 S1 和 Figs.S1–S2。",
+      "checked_on": "2026-11-19",
+      "publication_source": "arbabi_metamolecule_2016"
+    },
+    {
+      "id": "arbabi_metamolecule_caltech_2016",
+      "title": "CaltechAUTHORS · Arbabi 2016 馆藏清单",
+      "url": "https://authors.library.caltech.edu/records/32je3-2pw19",
+      "kind": "publication_archive",
+      "scope": "可查正式出版版、正式补件和 arXiv v1 提交稿及各自文件长度和 MD5。",
+      "checked_on": "2026-11-19",
+      "publication_source": "arbabi_metamolecule_2016"
+    },
+    {
+      "id": "arbabi_metamolecule_crossref_2016",
+      "title": "Crossref · Arbabi 2016 DOI 与引用",
+      "url": "https://api.crossref.org/works/10.1364/optica.3.000628",
+      "kind": "repository_metadata",
+      "scope": "2016-06-10 正式出版。2026-11-19 查 452 次。",
+      "checked_on": "2026-11-19",
+      "publication_source": "arbabi_metamolecule_2016"
+    },
+    {
+      "id": "arbabi_metamolecule_datacite_2016",
+      "title": "DataCite · Arbabi 2016 关联 DOI 查询",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1364%2FOPTICA.3.000628%22&page%5Bsize%5D=25",
+      "kind": "repository_metadata",
+      "scope": "2026-11-19 精确关联有五项，均为补件、补件集合的版本和 arXiv。",
+      "checked_on": "2026-11-19",
+      "publication_source": "arbabi_metamolecule_2016"
+    },
+    {
+      "id": "arbabi_metamolecule_figshare_2016",
+      "title": "Optica Figshare · Supplement 1",
+      "url": "https://opticapublishing.figshare.com/articles/journal_contribution/Supplement_1_Multiwavelength_polarization-insensitive_lenses_based_on_dielectric_metasurfaces_with_meta-molecules/4922441",
+      "kind": "supplementary_material",
+      "scope": "DataCite 关联 DOI 10.6084/m9.figshare.4922441。正文与补件亦在校方馆藏。",
+      "checked_on": "2026-11-19",
+      "publication_source": "arbabi_metamolecule_2016"
     }
   ],
   "domains": {
@@ -5130,8 +5184,8 @@
           "id": "axial_focus_offset_um",
           "label": "相对指定像面的轴向焦差 (μm；本库计算)",
           "numeric": true,
-          "definition": "本库以作者实测f减去明确指定的固定评价面z_ref得到的有符号焦差；正值为最佳焦点z更大，不自动选设计f或某参考波长。",
-          "conditions": "本行实测f/实际λ、参考面位置和原文定位、公式、计算归属、源版本及PSF协议必须保留；不是作者原始焦移表或MTF复算。",
+          "definition": "以作者实测焦位或有限共轭实测像距减去明确指定的固定像面所得有符号焦差。正值表示焦点位于参考面之后。",
+          "conditions": "须有同一参考原点与共轭、实测谱点、参考面位置、公式、计算归属和PSF协议。",
           "definition_refs": [
             {
               "source": "khor_achromatic_arxiv_2017",
@@ -5769,6 +5823,54 @@
             {
               "source": "zhang_visible_hybrid_code_2025",
               "location": "hybrid_optimize/Load_optimized_Geometric_hybrid_vs_SingleLens.py L26–51；L82、L104"
+            }
+          ]
+        },
+        {
+          "id": "design_image_distance_um",
+          "label": "有限共轭设计像距 (μm)",
+          "definition": "在指定有限物距下，从文献定义的参考面到设计像面的轴向距离。",
+          "conditions": "物距参考、光路介质、像距参考与设计关系；与近轴焦距分开。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation，拟合相位抛物线段"
+            }
+          ]
+        },
+        {
+          "id": "measured_image_distance_um",
+          "label": "该波长实测像距 (μm；有限共轭)",
+          "definition": "指定有限物距与波长下实测聚焦面的轴向距离。",
+          "conditions": "波长、物方共轭、参考面、采样及取焦方法。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p4 Fig.S2a 图注"
+            }
+          ]
+        },
+        {
+          "id": "diffraction_limited_reference_fwhm_um",
+          "label": "衍射极限参考 FWHM (μm)",
+          "definition": "作者理想相位掩模传播的衍射极限焦斑半高全宽。",
+          "conditions": "理想参考模型、波长、照明、评价面与方向。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 左栏 perfect phase mask 段"
             }
           ]
         }
@@ -237027,9 +237129,1467 @@
               "display": "仅模型焦距曲线及传播图"
             }
           }
+        },
+        {
+          "id": "arbabi2016metamolecule_short_summary",
+          "model": "Arbabi 2016 · 超分子双波长 · NA 0.46 · 实物汇总",
+          "study_id": "arbabi2016metamolecule",
+          "specimen_id": "short",
+          "module": "",
+          "variant": "实制双波长近红外透射式超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "同一实物的离散双波长近红外聚焦。",
+          "values": {
+            "diameter_um": {
+              "value": 300,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p630 Experimental results 首段",
+              "note": "作者实物直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_2016",
+                "arbabi_metamolecule_si_2016"
+              ]
+            },
+            "na": {
+              "value": 0.46,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation，拟合相位抛物线段",
+              "note": "作者基于近轴相位拟合所列 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "paraxial_focal_source": true
+            },
+            "design_focal_um": {
+              "value": 286,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation，拟合相位抛物线段",
+              "note": "作者按设计相位的抛物线拟合求近轴焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "position_definition": "paraxial_focal_distance_from_phase_fit"
+            },
+            "design_image_distance_um": {
+              "value": 400,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation，拟合相位抛物线段；主文 p630 Experimental results 首段",
+              "note": "有限共轭单模光纤照明的设计像距，从超表面起算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "reference_plane": "lens_metasurface",
+              "object_conjugate": "finite"
+            },
+            "material": {
+              "value": "氢化非晶硅四柱超分子／熔融石英",
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 S1 p2 Simulation／Sample fabrication；主文 p630 Fig.2",
+              "note": "六角格距 720 nm，氢化 α-Si 718 nm。正文给最小柱径 72 nm、最小间隙 50 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "hexagonal_lattice_period_nm": 720,
+              "pattern_height_nm": 718,
+              "smallest_post_diameter_nm": 72,
+              "minimum_gap_nm": 50
+            },
+            "height_nm": {
+              "value": 718,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Sample fabrication；主文 p630 实验段",
+              "note": "作者制备氢化 α-Si 薄膜厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ]
+            },
+            "psf_protocol": {
+              "value": "有限距单模光纤照明，4 μm 轴向采样，图示插值至 2 μm",
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 S1 pp2–3 Measurement procedure 及 Fig. S1",
+              "note": "光纤端面至超表面约 1100 μm（600 μm 空气距离和 500 μm 基底厚度）。不同波长使用的激光和相机按测量行记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "object_conjugate": "finite",
+              "object_distance_um": 1100,
+              "object_distance_approximate": true,
+              "fiber_to_substrate_um": 600,
+              "substrate_thickness_um": 500,
+              "reference_plane": "lens_metasurface",
+              "axial_step_um": 4,
+              "displayed_axial_step_um": 2,
+              "collection_objective_magnification": 100,
+              "collection_objective_na": 0.95,
+              "tube_lens_focal_mm": 200,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "field_angle_deg": null,
+              "polarization_state": null
+            },
+            "polarization": {
+              "value": "作者报告随入射偏振变化未见可测差别",
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 Fig.4 下方左栏",
+              "note": "正文把结论置于 NA 0.46 镜实验。偏振状态、角度采样及噪声阈值未列。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "离散 915／1550 nm 有限共轭同焦设计",
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p628 摘要，pp630–631 实验段；补件 S1／S2",
+              "note": "按高被引经典纳入，2026-11-19 查 Crossref 452 次。Fig. 2d 图注的相位图写 950 nm；实验波长按 Fig. 4 和 S2 的 915 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_2016",
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_crossref_2016"
+              ],
+              "spectrum_kind": "discrete_multiwavelength",
+              "design_wavelengths_nm": [
+                915,
+                1550
+              ],
+              "checked_experimental_wavelengths_nm": [
+                915,
+                1550
+              ],
+              "phase_map_caption_phi2_nm": 950
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "主文 Fig.4c；补件 Fig.S2c–d",
+              "note": "两波长峰位差缺原始成对数值。低 NA 仅 915 nm 峰位有明文。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ]
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "主文 pp630–631 Fig.4；补件 S1 与 Fig.S2；Caltech 馆藏和 DataCite",
+              "note": "作者给焦斑图、剖面和聚焦效率。主文未见单独 Data availability，校方档案与关联 DOI 仅见正文版本和补件。未核原始 PSF、Strehl 或逐频 MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016",
+                "arbabi_metamolecule_caltech_2016",
+                "arbabi_metamolecule_datacite_2016",
+                "arbabi_metamolecule_figshare_2016"
+              ],
+              "display": "焦斑图与剖面已核，MTF 和原始 PSF 待补",
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "arbabi2016metamolecule_short_915",
+          "model": "Arbabi 2016 · 超分子双波长 · NA 0.46 · 915 nm 实验",
+          "study_id": "arbabi2016metamolecule",
+          "specimen_id": "short",
+          "module": "",
+          "variant": "实制双波长近红外透射式超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "实物焦斑、轴向图与光功率效率。",
+          "values": {
+            "diameter_um": {
+              "value": 300,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p630 Experimental results 首段",
+              "note": "作者实物直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_2016",
+                "arbabi_metamolecule_si_2016"
+              ]
+            },
+            "na": {
+              "value": 0.46,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation，拟合相位抛物线段",
+              "note": "作者基于近轴相位拟合所列 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "paraxial_focal_source": true
+            },
+            "design_focal_um": {
+              "value": 286,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation，拟合相位抛物线段",
+              "note": "作者按设计相位的抛物线拟合求近轴焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "position_definition": "paraxial_focal_distance_from_phase_fit"
+            },
+            "design_image_distance_um": {
+              "value": 400,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation，拟合相位抛物线段；主文 p630 Experimental results 首段",
+              "note": "有限共轭单模光纤照明的设计像距，从超表面起算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "reference_plane": "lens_metasurface",
+              "object_conjugate": "finite"
+            },
+            "wavelength_nm": {
+              "value": 915,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 Fig.4a 左列与 Fig.4c 上两图",
+              "note": "作者实际照明波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "有限距单模光纤照明，4 μm 轴向采样，图示插值至 2 μm",
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "主文 p631 Fig.4a 左列与 Fig.4c 上两图；补件 S1 pp2–3 Measurement procedure 及 Fig. S1",
+              "note": "光纤端面至超表面约 1100 μm（600 μm 空气距离和 500 μm 基底厚度）。100×／NA 0.95 物镜与 200 mm 管镜。915 nm 用带斜切接头的单模光纤与 CoolSNAP K4 CCD，校准样片的像素标定值未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "object_conjugate": "finite",
+              "object_distance_um": 1100,
+              "object_distance_approximate": true,
+              "fiber_to_substrate_um": 600,
+              "substrate_thickness_um": 500,
+              "reference_plane": "lens_metasurface",
+              "axial_step_um": 4,
+              "displayed_axial_step_um": 2,
+              "collection_objective_magnification": 100,
+              "collection_objective_na": 0.95,
+              "tube_lens_focal_mm": 200,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "field_angle_deg": null,
+              "polarization_state": null,
+              "camera": "Photometrics CoolSNAP K4"
+            },
+            "measured_image_distance_um": {
+              "value": null,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 Fig.4a 左列与 Fig.4c 上两图",
+              "note": "轴扫图给 z［μm］及峰的位置，正文未印该波长的实测像距数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅轴向强度图，像距数值待补"
+            },
+            "fwhm_x_um": {
+              "value": 1.9,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 Fig.4a 左列与 Fig.4c 上两图，p631 左栏 FWHM 段",
+              "note": "正文数值对应 Fig.4 一维 x 剖面。图注以约值标示。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "direction": "x",
+              "approximate": true,
+              "display": "约 1.9"
+            },
+            "efficiency_lambda_nm": {
+              "value": 915,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 S1 p2 915 nm 段与 p3 Fig.S1b；主文 p631",
+              "note": "实测效率对应的照明波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 22,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 Fig.4 左栏聚焦效率和第二只镜段；补件 S1 p2 915 nm 段与 p3 Fig.S1b；主文 p631",
+              "note": "作者实测功率比。保留该波长的完整分母。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "arbabi_metamolecule_2016",
+                "arbabi_metamolecule_si_2016"
+              ],
+              "denominator": "fiber_output_power"
+            },
+            "efficiency_protocol": {
+              "value": "20 μm 实体焦面针孔内功率 ÷ 光纤输出功率",
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 S1 p2 915 nm 段与 p3 Fig.S1b；主文 p631",
+              "note": "采用镀铬石英基底针孔。正文概述为对入射功率；S1 实际用光纤输出并保留基底及针孔玻璃反射损耗，作者称所得值为效率下界。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "denominator": "fiber_output_power",
+              "collection_aperture_shape": "circular",
+              "focus_collection_diameter_um": 20,
+              "aperture_diameter_approximate": false,
+              "measurement_wavelength_nm": 915,
+              "numerator": "power_through_physical_focal_plane_pinhole",
+              "author_reports_lower_bound": true,
+              "interface_reflection_corrected": false
+            }
+          }
+        },
+        {
+          "id": "arbabi2016metamolecule_short_1550",
+          "model": "Arbabi 2016 · 超分子双波长 · NA 0.46 · 1550 nm 实验",
+          "study_id": "arbabi2016metamolecule",
+          "specimen_id": "short",
+          "module": "",
+          "variant": "实制双波长近红外透射式超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "实物焦斑、轴向图与光功率效率。",
+          "values": {
+            "diameter_um": {
+              "value": 300,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p630 Experimental results 首段",
+              "note": "作者实物直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_2016",
+                "arbabi_metamolecule_si_2016"
+              ]
+            },
+            "na": {
+              "value": 0.46,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation，拟合相位抛物线段",
+              "note": "作者基于近轴相位拟合所列 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "paraxial_focal_source": true
+            },
+            "design_focal_um": {
+              "value": 286,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation，拟合相位抛物线段",
+              "note": "作者按设计相位的抛物线拟合求近轴焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "position_definition": "paraxial_focal_distance_from_phase_fit"
+            },
+            "design_image_distance_um": {
+              "value": 400,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation，拟合相位抛物线段；主文 p630 Experimental results 首段",
+              "note": "有限共轭单模光纤照明的设计像距，从超表面起算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "reference_plane": "lens_metasurface",
+              "object_conjugate": "finite"
+            },
+            "wavelength_nm": {
+              "value": 1550,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 Fig.4b 左列与 Fig.4c 下两图",
+              "note": "作者实际照明波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "有限距单模光纤照明，4 μm 轴向采样，图示插值至 2 μm",
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "主文 p631 Fig.4b 左列与 Fig.4c 下两图；补件 S1 pp2–3 Measurement procedure 及 Fig. S1",
+              "note": "光纤端面至超表面约 1100 μm（600 μm 空气距离和 500 μm 基底厚度）。同一 100×／NA 0.95 物镜与 200 mm 管镜。相机像元响应不均，轴向图数值去除高于自由空间传播常数两倍的空间频率噪声。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "object_conjugate": "finite",
+              "object_distance_um": 1100,
+              "object_distance_approximate": true,
+              "fiber_to_substrate_um": 600,
+              "substrate_thickness_um": 500,
+              "reference_plane": "lens_metasurface",
+              "axial_step_um": 4,
+              "displayed_axial_step_um": 2,
+              "collection_objective_magnification": 100,
+              "collection_objective_na": 0.95,
+              "tube_lens_focal_mm": 200,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "field_angle_deg": null,
+              "polarization_state": null,
+              "axial_noise_filter": "remove_spatial_frequencies_above_2k0",
+              "camera": "Applied Scintillation Technologies Digital CamIR 1550"
+            },
+            "measured_image_distance_um": {
+              "value": null,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 Fig.4b 左列与 Fig.4c 下两图",
+              "note": "轴扫图给 z［μm］及峰的位置，正文未印该波长的实测像距数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅轴向强度图，像距数值待补"
+            },
+            "fwhm_x_um": {
+              "value": 2.9,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 Fig.4b 左列与 Fig.4c 下两图，p631 左栏 FWHM 段",
+              "note": "正文数值对应 Fig.4 一维 x 剖面。图注以约值标示。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "direction": "x",
+              "approximate": true,
+              "display": "约 2.9"
+            },
+            "efficiency_lambda_nm": {
+              "value": 1550,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 S1 p2 1550 nm 段与 p3 Fig.S1c；主文 p631",
+              "note": "实测效率对应的照明波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 65,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 Fig.4 左栏聚焦效率和第二只镜段；补件 S1 p2 1550 nm 段与 p3 Fig.S1c；主文 p631",
+              "note": "作者实测功率比。保留该波长的完整分母。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "arbabi_metamolecule_2016",
+                "arbabi_metamolecule_si_2016"
+              ],
+              "denominator": "fiber_facet_image_power_with_same_setup_without_iris"
+            },
+            "efficiency_protocol": {
+              "value": "物方约 20 μm 焦区功率 ÷ 同光路无虹膜的光纤端面像功率",
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 S1 p2 1550 nm 段与 p3 Fig.S1c；主文 p631",
+              "note": "2 mm 像方虹膜约对应物方 20 μm。分母由同一光路无虹膜复像光纤端面所得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "denominator": "fiber_facet_image_power_with_same_setup_without_iris",
+              "collection_aperture_shape": "circular",
+              "focus_collection_diameter_um": 20,
+              "aperture_diameter_approximate": true,
+              "measurement_wavelength_nm": 1550,
+              "numerator": "power_through_image_plane_iris",
+              "physical_image_iris_diameter_mm": 2
+            }
+          }
+        },
+        {
+          "id": "arbabi2016metamolecule_long_summary",
+          "model": "Arbabi 2016 · 超分子双波长 · NA 0.29 · 实物汇总",
+          "study_id": "arbabi2016metamolecule",
+          "specimen_id": "long",
+          "module": "",
+          "variant": "实制双波长近红外透射式超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "同一实物的离散双波长近红外聚焦。",
+          "values": {
+            "diameter_um": {
+              "value": 300,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "主文 p631 实验段；补件 p4 Fig.S2 图注",
+              "note": "作者实物直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ]
+            },
+            "na": {
+              "value": 0.29,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation，拟合相位抛物线段",
+              "note": "作者基于近轴相位拟合所列 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "paraxial_focal_source": true
+            },
+            "design_focal_um": {
+              "value": 495,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation，拟合相位抛物线段",
+              "note": "作者按设计相位的抛物线拟合求近轴焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "position_definition": "paraxial_focal_distance_from_phase_fit"
+            },
+            "design_image_distance_um": {
+              "value": 1000,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation，拟合相位抛物线段；主文 p631 实验段；补件 p4 Fig.S2 图注",
+              "note": "有限共轭单模光纤照明的设计像距，从超表面起算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "reference_plane": "lens_metasurface",
+              "object_conjugate": "finite"
+            },
+            "material": {
+              "value": "氢化非晶硅四柱超分子／熔融石英",
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 S1 p2 Simulation／Sample fabrication；主文 p630 Fig.2",
+              "note": "六角格距 720 nm，氢化 α-Si 718 nm。正文给最小柱径 72 nm、最小间隙 50 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "hexagonal_lattice_period_nm": 720,
+              "pattern_height_nm": 718,
+              "smallest_post_diameter_nm": 72,
+              "minimum_gap_nm": 50
+            },
+            "height_nm": {
+              "value": 718,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Sample fabrication；主文 p630 实验段",
+              "note": "作者制备氢化 α-Si 薄膜厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ]
+            },
+            "psf_protocol": {
+              "value": "有限距单模光纤照明，4 μm 轴向采样，图示插值至 2 μm",
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 S1 pp2–3 Measurement procedure 及 Fig. S1",
+              "note": "光纤端面至超表面约 1100 μm（600 μm 空气距离和 500 μm 基底厚度）。不同波长使用的激光和相机按测量行记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "object_conjugate": "finite",
+              "object_distance_um": 1100,
+              "object_distance_approximate": true,
+              "fiber_to_substrate_um": 600,
+              "substrate_thickness_um": 500,
+              "reference_plane": "lens_metasurface",
+              "axial_step_um": 4,
+              "displayed_axial_step_um": 2,
+              "collection_objective_magnification": 100,
+              "collection_objective_na": 0.95,
+              "tube_lens_focal_mm": 200,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "field_angle_deg": null,
+              "polarization_state": null
+            },
+            "chromatic": {
+              "value": "离散 915／1550 nm 有限共轭同焦设计",
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p628 摘要，pp630–631 实验段；补件 S1／S2",
+              "note": "按高被引经典纳入，2026-11-19 查 Crossref 452 次。Fig. 2d 图注的相位图写 950 nm；实验波长按 Fig. 4 和 S2 的 915 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_2016",
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_crossref_2016"
+              ],
+              "spectrum_kind": "discrete_multiwavelength",
+              "design_wavelengths_nm": [
+                915,
+                1550
+              ],
+              "checked_experimental_wavelengths_nm": [
+                915,
+                1550
+              ],
+              "phase_map_caption_phi2_nm": 950
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "主文 Fig.4c；补件 Fig.S2c–d",
+              "note": "两波长峰位差缺原始成对数值。低 NA 仅 915 nm 峰位有明文。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ]
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "主文 pp630–631 Fig.4；补件 S1 与 Fig.S2；Caltech 馆藏和 DataCite",
+              "note": "作者给焦斑图、剖面和聚焦效率。主文未见单独 Data availability，校方档案与关联 DOI 仅见正文版本和补件。未核原始 PSF、Strehl 或逐频 MTF。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016",
+                "arbabi_metamolecule_caltech_2016",
+                "arbabi_metamolecule_datacite_2016",
+                "arbabi_metamolecule_figshare_2016"
+              ],
+              "display": "焦斑图与剖面已核，MTF 和原始 PSF 待补",
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "arbabi2016metamolecule_long_915",
+          "model": "Arbabi 2016 · 超分子双波长 · NA 0.29 · 915 nm 实验",
+          "study_id": "arbabi2016metamolecule",
+          "specimen_id": "long",
+          "module": "",
+          "variant": "实制双波长近红外透射式超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "实物焦斑、轴向图与光功率效率。",
+          "values": {
+            "diameter_um": {
+              "value": 300,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "主文 p631 实验段；补件 p4 Fig.S2 图注",
+              "note": "作者实物直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ]
+            },
+            "na": {
+              "value": 0.29,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation，拟合相位抛物线段",
+              "note": "作者基于近轴相位拟合所列 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "paraxial_focal_source": true
+            },
+            "design_focal_um": {
+              "value": 495,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation，拟合相位抛物线段",
+              "note": "作者按设计相位的抛物线拟合求近轴焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "position_definition": "paraxial_focal_distance_from_phase_fit"
+            },
+            "design_image_distance_um": {
+              "value": 1000,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation，拟合相位抛物线段；主文 p631 实验段；补件 p4 Fig.S2 图注",
+              "note": "有限共轭单模光纤照明的设计像距，从超表面起算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "reference_plane": "lens_metasurface",
+              "object_conjugate": "finite"
+            },
+            "wavelength_nm": {
+              "value": 915,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p4 Figs.S2a、S2c",
+              "note": "作者实际照明波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "有限距单模光纤照明，4 μm 轴向采样，图示插值至 2 μm",
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p4 Figs.S2a、S2c；补件 S1 pp2–3 Measurement procedure 及 Fig. S1",
+              "note": "光纤端面至超表面约 1100 μm（600 μm 空气距离和 500 μm 基底厚度）。100×／NA 0.95 物镜与 200 mm 管镜。915 nm 用带斜切接头的单模光纤与 CoolSNAP K4 CCD，校准样片的像素标定值未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "object_conjugate": "finite",
+              "object_distance_um": 1100,
+              "object_distance_approximate": true,
+              "fiber_to_substrate_um": 600,
+              "substrate_thickness_um": 500,
+              "reference_plane": "lens_metasurface",
+              "axial_step_um": 4,
+              "displayed_axial_step_um": 2,
+              "collection_objective_magnification": 100,
+              "collection_objective_na": 0.95,
+              "tube_lens_focal_mm": 200,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": 980,
+              "field_angle_deg": null,
+              "polarization_state": null,
+              "camera": "Photometrics CoolSNAP K4"
+            },
+            "measured_image_distance_um": {
+              "value": 980,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p4 Fig.S2a 图注与 S2c",
+              "note": "作者印出实验峰位距超表面 980 μm；图注称焦斑采集面约 980 μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "reference_plane": "lens_metasurface",
+              "object_conjugate": "finite"
+            },
+            "axial_focus_offset_um": {
+              "value": -20,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 拟合段，p4 Fig.S2a 图注",
+              "note": "本库按实测像距 980 μm 减同一有限共轭的设计像距 1000 μm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "atlas",
+              "input_metric": "measured_image_distance_um",
+              "formula": "measured_image_distance_um - reference_plane_um",
+              "reference_plane_um": 1000,
+              "reference_plane_description": "超表面外 1000 μm 的有限共轭设计像面",
+              "reference_wavelength_nm": null,
+              "display": "−20（本库计算）"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p4 Figs.S2a、S2c",
+              "note": "二维焦斑图可见，作者未印 x 向 FWHM。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅焦斑图，FWHM 待补"
+            },
+            "efficiency_lambda_nm": {
+              "value": 915,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 S1 p2 915 nm 段与 p3 Fig.S1b；主文 p631",
+              "note": "实测效率对应的照明波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 25,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 Fig.4 左栏聚焦效率和第二只镜段；补件 S1 p2 915 nm 段与 p3 Fig.S1b；主文 p631",
+              "note": "作者实测功率比。保留该波长的完整分母。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "arbabi_metamolecule_2016",
+                "arbabi_metamolecule_si_2016"
+              ],
+              "denominator": "fiber_output_power"
+            },
+            "efficiency_protocol": {
+              "value": "20 μm 实体焦面针孔内功率 ÷ 光纤输出功率",
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 S1 p2 915 nm 段与 p3 Fig.S1b；主文 p631",
+              "note": "采用镀铬石英基底针孔。正文概述为对入射功率；S1 实际用光纤输出并保留基底及针孔玻璃反射损耗，作者称所得值为效率下界。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "denominator": "fiber_output_power",
+              "collection_aperture_shape": "circular",
+              "focus_collection_diameter_um": 20,
+              "aperture_diameter_approximate": false,
+              "measurement_wavelength_nm": 915,
+              "numerator": "power_through_physical_focal_plane_pinhole",
+              "author_reports_lower_bound": true,
+              "interface_reflection_corrected": false
+            }
+          }
+        },
+        {
+          "id": "arbabi2016metamolecule_long_1550",
+          "model": "Arbabi 2016 · 超分子双波长 · NA 0.29 · 1550 nm 实验",
+          "study_id": "arbabi2016metamolecule",
+          "specimen_id": "long",
+          "module": "",
+          "variant": "实制双波长近红外透射式超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "实物焦斑、轴向图与光功率效率。",
+          "values": {
+            "diameter_um": {
+              "value": 300,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "主文 p631 实验段；补件 p4 Fig.S2 图注",
+              "note": "作者实物直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ]
+            },
+            "na": {
+              "value": 0.29,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation，拟合相位抛物线段",
+              "note": "作者基于近轴相位拟合所列 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "paraxial_focal_source": true
+            },
+            "design_focal_um": {
+              "value": 495,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation，拟合相位抛物线段",
+              "note": "作者按设计相位的抛物线拟合求近轴焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "position_definition": "paraxial_focal_distance_from_phase_fit"
+            },
+            "design_image_distance_um": {
+              "value": 1000,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation，拟合相位抛物线段；主文 p631 实验段；补件 p4 Fig.S2 图注",
+              "note": "有限共轭单模光纤照明的设计像距，从超表面起算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "reference_plane": "lens_metasurface",
+              "object_conjugate": "finite"
+            },
+            "wavelength_nm": {
+              "value": 1550,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p4 Figs.S2b、S2d",
+              "note": "作者实际照明波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "有限距单模光纤照明，4 μm 轴向采样，图示插值至 2 μm",
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p4 Figs.S2b、S2d；补件 S1 pp2–3 Measurement procedure 及 Fig. S1",
+              "note": "光纤端面至超表面约 1100 μm（600 μm 空气距离和 500 μm 基底厚度）。同一 100×／NA 0.95 物镜与 200 mm 管镜。相机像元响应不均，轴向图数值去除高于自由空间传播常数两倍的空间频率噪声。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "object_conjugate": "finite",
+              "object_distance_um": 1100,
+              "object_distance_approximate": true,
+              "fiber_to_substrate_um": 600,
+              "substrate_thickness_um": 500,
+              "reference_plane": "lens_metasurface",
+              "axial_step_um": 4,
+              "displayed_axial_step_um": 2,
+              "collection_objective_magnification": 100,
+              "collection_objective_na": 0.95,
+              "tube_lens_focal_mm": 200,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "field_angle_deg": null,
+              "polarization_state": null,
+              "axial_noise_filter": "remove_spatial_frequencies_above_2k0",
+              "camera": "Applied Scintillation Technologies Digital CamIR 1550"
+            },
+            "measured_image_distance_um": {
+              "value": null,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p4 Figs.S2b、S2d",
+              "note": "轴扫图给 z［μm］及峰的位置，正文未印该波长的实测像距数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅轴向强度图，像距数值待补"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p4 Figs.S2b、S2d",
+              "note": "二维焦斑图可见，作者未印 x 向 FWHM。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅焦斑图，FWHM 待补"
+            },
+            "efficiency_lambda_nm": {
+              "value": 1550,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 S1 p2 1550 nm 段与 p3 Fig.S1c；主文 p631",
+              "note": "实测效率对应的照明波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 72,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 Fig.4 左栏聚焦效率和第二只镜段；补件 S1 p2 1550 nm 段与 p3 Fig.S1c；主文 p631",
+              "note": "作者实测功率比。保留该波长的完整分母。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "arbabi_metamolecule_2016",
+                "arbabi_metamolecule_si_2016"
+              ],
+              "denominator": "fiber_facet_image_power_with_same_setup_without_iris"
+            },
+            "efficiency_protocol": {
+              "value": "物方约 20 μm 焦区功率 ÷ 同光路无虹膜的光纤端面像功率",
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 S1 p2 1550 nm 段与 p3 Fig.S1c；主文 p631",
+              "note": "2 mm 像方虹膜约对应物方 20 μm。分母由同一光路无虹膜复像光纤端面所得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "denominator": "fiber_facet_image_power_with_same_setup_without_iris",
+              "collection_aperture_shape": "circular",
+              "focus_collection_diameter_um": 20,
+              "aperture_diameter_approximate": true,
+              "measurement_wavelength_nm": 1550,
+              "numerator": "power_through_image_plane_iris",
+              "physical_image_iris_diameter_mm": 2
+            }
+          }
+        },
+        {
+          "id": "arbabi2016metamolecule_short_fdtd_915",
+          "model": "Arbabi 2016 · 超分子双波长 · 75 μm NA 0.46 · 915 nm 模型",
+          "study_id": "arbabi2016metamolecule",
+          "specimen_id": "short_fdtd",
+          "module": "",
+          "variant": "作者缩比传播模型",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "右列的相同 NA 缩比镜；模型数据单列。",
+          "values": {
+            "diameter_um": {
+              "value": 75,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 FDTD 段",
+              "note": "缩比模型口径。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.46,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "主文 p631 Fig.4a 右列与 Fig.4d；S1 拟合段",
+              "note": "作者给缩比模型和对应实物同 NA。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 915,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 Fig.4a 右列与 Fig.4d",
+              "note": "作者模型光源波长。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "design_image_distance_um": {
+              "value": 100,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 FDTD 段",
+              "note": "有限共轭缩比模型目标面，作者给距镜 100 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "reference_plane": "lens_metasurface",
+              "object_conjugate": "finite"
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 Fig.4a 右列与 Fig.4d",
+              "note": "出版图有轴向强度，逐波长峰位只见图。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "有限共轭缩比 MEEP FDTD 与平面波传播",
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation；主文 p631 Fig.4a 右列与 Fig.4d",
+              "note": "以同 NA 的 75 μm 模型缩减传播计算。S1 指定 150 μm 光纤至基底间距与 125 μm 基板。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "object_conjugate": "finite",
+              "reference_plane": "lens_metasurface",
+              "simulation_kind": "meep_fdtd_plus_plane_wave_expansion",
+              "fiber_to_substrate_um": 150,
+              "substrate_thickness_um": 125,
+              "fiber_mode_diameter_um": 6
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": 1.9,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 Fig.4a 右列与 Fig.4d；p631 页末 FDTD 段",
+              "note": "作者缩比 FDTD 的 x 向焦斑宽度，图注用约值。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "fwhm_at_model_focal_plane",
+              "approximate": true,
+              "display": "约 1.9"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 32,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 右栏 FDTD 段；补件 S1 光功率积分",
+              "note": "同一缩比模型在相应波长的聚焦效率。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_2016",
+                "arbabi_metamolecule_si_2016"
+              ],
+              "calculation_origin": "authors",
+              "denominator": "incident_power_on_metalens"
+            },
+            "efficiency_protocol": {
+              "value": "焦面直径 20 μm 圆盘内功率 ÷ 有效口径上入射功率",
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 FDTD 末段",
+              "note": "用于 75 μm、NA 0.46 缩比模型。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_power_on_metalens",
+              "focus_collection_diameter_um": 20
+            }
+          }
+        },
+        {
+          "id": "arbabi2016metamolecule_short_fdtd_1550",
+          "model": "Arbabi 2016 · 超分子双波长 · 75 μm NA 0.46 · 1550 nm 模型",
+          "study_id": "arbabi2016metamolecule",
+          "specimen_id": "short_fdtd",
+          "module": "",
+          "variant": "作者缩比传播模型",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "右列的相同 NA 缩比镜；模型数据单列。",
+          "values": {
+            "diameter_um": {
+              "value": 75,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 FDTD 段",
+              "note": "缩比模型口径。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.46,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "主文 p631 Fig.4b 右列与 Fig.4d；S1 拟合段",
+              "note": "作者给缩比模型和对应实物同 NA。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 1550,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 Fig.4b 右列与 Fig.4d",
+              "note": "作者模型光源波长。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "design_image_distance_um": {
+              "value": 100,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 FDTD 段",
+              "note": "有限共轭缩比模型目标面，作者给距镜 100 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "reference_plane": "lens_metasurface",
+              "object_conjugate": "finite"
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 Fig.4b 右列与 Fig.4d",
+              "note": "出版图有轴向强度，逐波长峰位只见图。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "有限共轭缩比 MEEP FDTD 与平面波传播",
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation；主文 p631 Fig.4b 右列与 Fig.4d",
+              "note": "以同 NA 的 75 μm 模型缩减传播计算。S1 指定 150 μm 光纤至基底间距与 125 μm 基板。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "object_conjugate": "finite",
+              "reference_plane": "lens_metasurface",
+              "simulation_kind": "meep_fdtd_plus_plane_wave_expansion",
+              "fiber_to_substrate_um": 150,
+              "substrate_thickness_um": 125,
+              "fiber_mode_diameter_um": 10.4
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": 3,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 Fig.4b 右列与 Fig.4d；p631 页末 FDTD 段",
+              "note": "作者缩比 FDTD 的 x 向焦斑宽度，图注用约值。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "fwhm_at_model_focal_plane",
+              "approximate": true,
+              "display": "约 3"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 73,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 右栏 FDTD 段；补件 S1 光功率积分",
+              "note": "同一缩比模型在相应波长的聚焦效率。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_2016",
+                "arbabi_metamolecule_si_2016"
+              ],
+              "calculation_origin": "authors",
+              "denominator": "incident_power_on_metalens"
+            },
+            "efficiency_protocol": {
+              "value": "焦面直径 20 μm 圆盘内功率 ÷ 有效口径上入射功率",
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 FDTD 末段",
+              "note": "用于 75 μm、NA 0.46 缩比模型。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_power_on_metalens",
+              "focus_collection_diameter_um": 20
+            }
+          }
+        },
+        {
+          "id": "arbabi2016metamolecule_long_fdtd_915",
+          "model": "Arbabi 2016 · 超分子双波长 · 75 μm NA 0.29 · 915 nm 模型",
+          "study_id": "arbabi2016metamolecule",
+          "specimen_id": "long_fdtd",
+          "module": "",
+          "variant": "作者缩比传播模型",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "右列的相同 NA 缩比镜；模型数据单列。",
+          "values": {
+            "diameter_um": {
+              "value": 75,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p4 Fig.S2e、S2g",
+              "note": "缩比模型口径。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.29,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p4 Fig.S2e、S2g；S1 拟合段",
+              "note": "作者给缩比模型和对应实物同 NA。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 915,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p4 Fig.S2e、S2g",
+              "note": "作者模型光源波长。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "design_image_distance_um": {
+              "value": null,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p4 Fig.S2e、S2g",
+              "note": "低 NA 缩比图的 z 轴包括 250 μm 刻度，数量未在图注定义为名义像距。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p4 Fig.S2e、S2g",
+              "note": "出版图有轴向强度，逐波长峰位只见图。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "SI 图版的 75 μm 低 NA 缩比模拟",
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation；补件 p4 Fig.S2e、S2g",
+              "note": "以同 NA 的 75 μm 模型缩减传播计算。图注给口径和 NA 对应关系。具体共轭输入和缩比模型峰位原值待核。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "object_conjugate": "finite",
+              "reference_plane": "lens_metasurface",
+              "simulation_kind": "scaled_full_wave_model"
+            }
+          }
+        },
+        {
+          "id": "arbabi2016metamolecule_long_fdtd_1550",
+          "model": "Arbabi 2016 · 超分子双波长 · 75 μm NA 0.29 · 1550 nm 模型",
+          "study_id": "arbabi2016metamolecule",
+          "specimen_id": "long_fdtd",
+          "module": "",
+          "variant": "作者缩比传播模型",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "右列的相同 NA 缩比镜；模型数据单列。",
+          "values": {
+            "diameter_um": {
+              "value": 75,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p4 Fig.S2f、S2h",
+              "note": "缩比模型口径。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.29,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p4 Fig.S2f、S2h；S1 拟合段",
+              "note": "作者给缩比模型和对应实物同 NA。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 1550,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p4 Fig.S2f、S2h",
+              "note": "作者模型光源波长。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "design_image_distance_um": {
+              "value": null,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p4 Fig.S2f、S2h",
+              "note": "低 NA 缩比图的 z 轴包括 250 μm 刻度，数量未在图注定义为名义像距。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p4 Fig.S2f、S2h",
+              "note": "出版图有轴向强度，逐波长峰位只见图。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "SI 图版的 75 μm 低 NA 缩比模拟",
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation；补件 p4 Fig.S2f、S2h",
+              "note": "以同 NA 的 75 μm 模型缩减传播计算。图注给口径和 NA 对应关系。具体共轭输入和缩比模型峰位原值待核。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "object_conjugate": "finite",
+              "reference_plane": "lens_metasurface",
+              "simulation_kind": "scaled_full_wave_model"
+            }
+          }
+        },
+        {
+          "id": "arbabi2016metamolecule_ideal_915",
+          "model": "Arbabi 2016 · 超分子双波长 · NA 0.46 理想相位参考 · 915 nm",
+          "study_id": "arbabi2016metamolecule",
+          "specimen_id": "ideal_short",
+          "module": "",
+          "variant": "作者理想相位掩模参考",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "短像距实验的同照明衍射极限参考，按物理光学传播。",
+          "values": {
+            "wavelength_nm": {
+              "value": 915,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 左栏 perfect phase mask 段",
+              "note": "该参考模型使用实验相同波长。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "diffraction_limited_reference_fwhm_um": {
+              "value": 1.6,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 左栏 perfect phase mask 段；补件 p2 S1",
+              "note": "作者理想掩模传播的参考 FWHM。对应剖面方向在该段未指明。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_2016",
+                "arbabi_metamolecule_si_2016"
+              ],
+              "direction": "unspecified",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_aspherical_phase_mask"
+            },
+            "psf_protocol": {
+              "value": "有限共轭理想非球面相位掩模与平面波展开",
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation 中间段",
+              "note": "按实验光纤照明构造理想相位，并由焦平面强度计算参考宽度。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "object_conjugate": "finite",
+              "reference_plane": "lens_metasurface",
+              "simulation_kind": "ideal_phase_mask_plus_plane_wave_expansion"
+            }
+          }
+        },
+        {
+          "id": "arbabi2016metamolecule_ideal_1550",
+          "model": "Arbabi 2016 · 超分子双波长 · NA 0.46 理想相位参考 · 1550 nm",
+          "study_id": "arbabi2016metamolecule",
+          "specimen_id": "ideal_short",
+          "module": "",
+          "variant": "作者理想相位掩模参考",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "短像距实验的同照明衍射极限参考，按物理光学传播。",
+          "values": {
+            "wavelength_nm": {
+              "value": 1550,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 左栏 perfect phase mask 段",
+              "note": "该参考模型使用实验相同波长。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "diffraction_limited_reference_fwhm_um": {
+              "value": 2.75,
+              "source": "arbabi_metamolecule_2016",
+              "location": "主文 p631 左栏 perfect phase mask 段；补件 p2 S1",
+              "note": "作者理想掩模传播的参考 FWHM。对应剖面方向在该段未指明。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_2016",
+                "arbabi_metamolecule_si_2016"
+              ],
+              "direction": "unspecified",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_aspherical_phase_mask"
+            },
+            "psf_protocol": {
+              "value": "有限共轭理想非球面相位掩模与平面波展开",
+              "source": "arbabi_metamolecule_si_2016",
+              "location": "补件 p2 S1 Simulation 中间段",
+              "note": "按实验光纤照明构造理想相位，并由焦平面强度计算参考宽度。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_metamolecule_si_2016",
+                "arbabi_metamolecule_2016"
+              ],
+              "object_conjugate": "finite",
+              "reference_plane": "lens_metasurface",
+              "simulation_kind": "ideal_phase_mask_plus_plane_wave_expansion"
+            }
+          }
         }
       ],
-      "scope": "47项原始研究、290个器件/测量/系统配置、1784条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
+      "scope": "48项原始研究、295个器件/测量/系统配置、1796条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
