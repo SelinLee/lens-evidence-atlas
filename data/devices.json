@@ -2119,6 +2119,51 @@
       "scope": "爱科学公开转载页。2025 年 3 月升级版，物理与天体物理 1 区，期刊 E-ISSN 2047-7538。",
       "checked_on": "2026-11-19",
       "publication_source": "wang_metaaxicon_pdf_2026"
+    },
+    {
+      "id": "li_bandpass_pdf_2021",
+      "title": "Li et al. (2021), Bandpass-filter-integrated multiwavelength achromatic metalens",
+      "url": "https://dsl.nju.edu.cn/litao/papers/Li_HM-prj-9-7-1384%282021%29.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "南京大学作者组存档正式版，Photonics Research 9(7), 1384–1390。§§3–6、Figs. 2–4。",
+      "checked_on": "2026-11-19",
+      "doi": "10.1364/PRJ.422280"
+    },
+    {
+      "id": "li_bandpass_publisher_2021",
+      "title": "Optica · 期刊正式入口",
+      "url": "https://doi.org/10.1364/PRJ.422280",
+      "kind": "publication_archive",
+      "scope": "原作正式发表入口。",
+      "checked_on": "2026-11-19",
+      "publication_source": "li_bandpass_pdf_2021"
+    },
+    {
+      "id": "li_bandpass_crossref_2021",
+      "title": "Crossref · 发表日期及被引量",
+      "url": "https://api.crossref.org/works/10.1364/PRJ.422280",
+      "kind": "repository_metadata",
+      "scope": "2021-07-01 正式发表。2026-11-19 查得 is-referenced-by-count 55。",
+      "checked_on": "2026-11-19",
+      "publication_source": "li_bandpass_pdf_2021"
+    },
+    {
+      "id": "li_bandpass_openalex_2021",
+      "title": "OpenAlex · 被引量与公开版本入口",
+      "url": "https://openalex.org/W3159657849",
+      "kind": "repository_metadata",
+      "scope": "2026-11-19 查得 cited_by_count 54，公开版本指向 DOI。",
+      "checked_on": "2026-11-19",
+      "publication_source": "li_bandpass_pdf_2021"
+    },
+    {
+      "id": "li_bandpass_data_lookup_2021",
+      "title": "DataCite · 关联数据查找",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1364%2FPRJ.422280%22&page%5Bsize%5D=25",
+      "kind": "repository_metadata",
+      "scope": "2026-11-19 按正式 DOI 精确关联检索为零。",
+      "checked_on": "2026-11-19",
+      "publication_source": "li_bandpass_pdf_2021"
     }
   ],
   "domains": {
@@ -246085,9 +246130,848 @@
               "author_reported_observed_scale_mm": 100
             }
           }
+        },
+        {
+          "id": "li2021bandpass_focus_490",
+          "study_id": "li2021bandpass",
+          "specimen_id": "filter_integrated",
+          "model": "Li 2021 · 带通滤片 RGB · 蓝光 490 nm · 焦斑",
+          "variant": "300 μm 带通滤片集成实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "外加 10 nm 滤光，Fig. 3b 为实测，Fig. 3c 给 x 向剖面。",
+          "values": {
+            "diameter_um": {
+              "value": 300,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3a 图注",
+              "note": "带通滤片集成实物的直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3a 图注",
+              "note": "作者给出的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 735,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1386 §3；p1388 Fig. 3b 图注",
+              "note": "设计焦面，也是 Fig. 3b 上排横向焦斑的评价面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "SiNₓ 纳米结构／SiNₓ–SiO₂ 多层滤片／熔融石英基底",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1387 Fig. 2a、§§4–5",
+              "note": "多层 DBR 与缺陷层产生三个透射通带。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 1000,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1387 §5 第一段",
+              "note": "作者报告用 PECVD 沉积到 1 μm 的最终厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "μm"
+            },
+            "wavelength_nm": {
+              "value": 490,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3b 右列",
+              "note": "外加带宽 10 nm 滤片的名义中心。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "illumination_bandwidth_nm": 10,
+              "spectral_mode": "discrete_rgb"
+            },
+            "polarization": {
+              "value": "线偏振",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3b 右列",
+              "note": "由照明线偏振器产生，方向未印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "同一设计面横向焦斑与 z 轴扫描",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3b 右列",
+              "note": "超连续谱光源经外部滤光，100×、NA 0.7 的无色差物镜与 CCD 随台移动。轴向扫描步长和物方像素标尺未印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 735,
+              "illumination_bandwidth_nm": 10,
+              "axial_scan_step_um": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3b 右列",
+              "note": "z 轴标到 700–800 μm，白虚线按图注为设计面。逐波长最佳峰位及残余焦移数值待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "离散 RGB 共焦图证",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3b 右列",
+              "note": "轴向截面与设计面横向焦斑均为实测，精确峰位和数值焦移待补。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 735,
+              "spectral_mode": "discrete_rgb"
+            },
+            "fwhm_x_um": {
+              "value": 1.42,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3c 下图",
+              "note": "数值在 p1387 §5 末段，方向对应 Fig. 3c 横轴 x（μm）。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "direction": "x",
+              "evaluation_plane_um": 735
+            },
+            "strehl": {
+              "value": 0.78,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3c 下图",
+              "note": "作者比较实测和模拟的归一化剖面并报告 Strehl，未印公式或参考积分范围。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 47,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3b 右列",
+              "note": "§5 实验报告，分母和焦圈以同文 §3 模拟定义为线索，实验实现方式待补。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "experiment_denominator": null,
+              "integration_diameter_um": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 490,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3b 右列",
+              "note": "外加带宽 10 nm 滤片的名义中心。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "illumination_bandwidth_nm": 10,
+              "spectral_mode": "discrete_rgb"
+            },
+            "efficiency_protocol": {
+              "value": "§5 聚焦效率实测；§3 给出模拟定义",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1386 §3、p1387 §5 末段",
+              "note": "§3 将焦斑中心直径 3×FWHM 的区域强度除以通过超透镜的强度。§5 未交代实测是否沿用该定义、滤片损耗是否计入分母及口径积分。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "li2021bandpass_image_490",
+          "study_id": "li2021bandpass",
+          "specimen_id": "filter_integrated",
+          "model": "Li 2021 · 带通滤片 RGB · 蓝光 490 nm · USAF 实拍",
+          "variant": "300 μm 带通滤片集成实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "有滤片的有限共轭标靶成像。",
+          "values": {
+            "diameter_um": {
+              "value": 300,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3a 图注",
+              "note": "带通滤片集成实物的直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3a 图注",
+              "note": "作者给出的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 735,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1386 §3；p1388 Fig. 3b 图注",
+              "note": "设计焦面，也是 Fig. 3b 上排横向焦斑的评价面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "SiNₓ 纳米结构／SiNₓ–SiO₂ 多层滤片／熔融石英基底",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1387 Fig. 2a、§§4–5",
+              "note": "多层 DBR 与缺陷层产生三个透射通带。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 1000,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1387 §5 第一段",
+              "note": "作者报告用 PECVD 沉积到 1 μm 的最终厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "μm"
+            },
+            "wavelength_nm": {
+              "value": 490,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1388 §5、p1389 Fig. 4c",
+              "note": "外加带宽 10 nm 滤片的名义中心。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "illumination_bandwidth_nm": 10,
+              "spectral_mode": "discrete_rgb"
+            },
+            "illumination": {
+              "value": "卤素灯，外加带宽 10 nm 滤片",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1388 §5、p1389 Fig. 4c",
+              "note": "标靶位于超透镜前 2f。作者称 4f 成像且无放大。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "illumination_bandwidth_nm": 10,
+              "object_distance_um": 1470
+            },
+            "resolved_test_line_width_um": {
+              "value": 1.95,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1388 §5、p1389 Fig. 4c",
+              "note": "作者报告 USAF 1951 Group 8 Element 1，数值为可辨条纹线宽。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "target": "USAF 1951",
+              "group": 8,
+              "element": 1
+            }
+          }
+        },
+        {
+          "id": "li2021bandpass_focus_540",
+          "study_id": "li2021bandpass",
+          "specimen_id": "filter_integrated",
+          "model": "Li 2021 · 带通滤片 RGB · 绿光 540 nm · 焦斑",
+          "variant": "300 μm 带通滤片集成实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "外加 10 nm 滤光，Fig. 3b 为实测，Fig. 3c 给 x 向剖面。",
+          "values": {
+            "diameter_um": {
+              "value": 300,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3a 图注",
+              "note": "带通滤片集成实物的直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3a 图注",
+              "note": "作者给出的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 735,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1386 §3；p1388 Fig. 3b 图注",
+              "note": "设计焦面，也是 Fig. 3b 上排横向焦斑的评价面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "SiNₓ 纳米结构／SiNₓ–SiO₂ 多层滤片／熔融石英基底",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1387 Fig. 2a、§§4–5",
+              "note": "多层 DBR 与缺陷层产生三个透射通带。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 1000,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1387 §5 第一段",
+              "note": "作者报告用 PECVD 沉积到 1 μm 的最终厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "μm"
+            },
+            "wavelength_nm": {
+              "value": 540,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3b 中列",
+              "note": "外加带宽 10 nm 滤片的名义中心。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "illumination_bandwidth_nm": 10,
+              "spectral_mode": "discrete_rgb"
+            },
+            "polarization": {
+              "value": "线偏振",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3b 中列",
+              "note": "由照明线偏振器产生，方向未印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "同一设计面横向焦斑与 z 轴扫描",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3b 中列",
+              "note": "超连续谱光源经外部滤光，100×、NA 0.7 的无色差物镜与 CCD 随台移动。轴向扫描步长和物方像素标尺未印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 735,
+              "illumination_bandwidth_nm": 10,
+              "axial_scan_step_um": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3b 中列",
+              "note": "z 轴标到 700–800 μm，白虚线按图注为设计面。逐波长最佳峰位及残余焦移数值待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "离散 RGB 共焦图证",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3b 中列",
+              "note": "轴向截面与设计面横向焦斑均为实测，精确峰位和数值焦移待补。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 735,
+              "spectral_mode": "discrete_rgb"
+            },
+            "fwhm_x_um": {
+              "value": 1.6,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3c 中图",
+              "note": "数值在 p1387 §5 末段，方向对应 Fig. 3c 横轴 x（μm）。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "direction": "x",
+              "evaluation_plane_um": 735
+            },
+            "strehl": {
+              "value": 0.91,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3c 中图",
+              "note": "作者比较实测和模拟的归一化剖面并报告 Strehl，未印公式或参考积分范围。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 48,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3b 中列",
+              "note": "§5 实验报告，分母和焦圈以同文 §3 模拟定义为线索，实验实现方式待补。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "experiment_denominator": null,
+              "integration_diameter_um": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 540,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3b 中列",
+              "note": "外加带宽 10 nm 滤片的名义中心。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "illumination_bandwidth_nm": 10,
+              "spectral_mode": "discrete_rgb"
+            },
+            "efficiency_protocol": {
+              "value": "§5 聚焦效率实测；§3 给出模拟定义",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1386 §3、p1387 §5 末段",
+              "note": "§3 将焦斑中心直径 3×FWHM 的区域强度除以通过超透镜的强度。§5 未交代实测是否沿用该定义、滤片损耗是否计入分母及口径积分。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "li2021bandpass_image_540",
+          "study_id": "li2021bandpass",
+          "specimen_id": "filter_integrated",
+          "model": "Li 2021 · 带通滤片 RGB · 绿光 540 nm · USAF 实拍",
+          "variant": "300 μm 带通滤片集成实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "有滤片的有限共轭标靶成像。",
+          "values": {
+            "diameter_um": {
+              "value": 300,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3a 图注",
+              "note": "带通滤片集成实物的直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3a 图注",
+              "note": "作者给出的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 735,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1386 §3；p1388 Fig. 3b 图注",
+              "note": "设计焦面，也是 Fig. 3b 上排横向焦斑的评价面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "SiNₓ 纳米结构／SiNₓ–SiO₂ 多层滤片／熔融石英基底",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1387 Fig. 2a、§§4–5",
+              "note": "多层 DBR 与缺陷层产生三个透射通带。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 1000,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1387 §5 第一段",
+              "note": "作者报告用 PECVD 沉积到 1 μm 的最终厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "μm"
+            },
+            "wavelength_nm": {
+              "value": 540,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1388 §5、p1389 Fig. 4b",
+              "note": "外加带宽 10 nm 滤片的名义中心。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "illumination_bandwidth_nm": 10,
+              "spectral_mode": "discrete_rgb"
+            },
+            "illumination": {
+              "value": "卤素灯，外加带宽 10 nm 滤片",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1388 §5、p1389 Fig. 4b",
+              "note": "标靶位于超透镜前 2f。作者称 4f 成像且无放大。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "illumination_bandwidth_nm": 10,
+              "object_distance_um": 1470
+            },
+            "resolved_test_line_width_um": {
+              "value": 1.95,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1388 §5、p1389 Fig. 4b",
+              "note": "作者报告 USAF 1951 Group 8 Element 1，数值为可辨条纹线宽。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "target": "USAF 1951",
+              "group": 8,
+              "element": 1
+            }
+          }
+        },
+        {
+          "id": "li2021bandpass_focus_610",
+          "study_id": "li2021bandpass",
+          "specimen_id": "filter_integrated",
+          "model": "Li 2021 · 带通滤片 RGB · 红光 610 nm · 焦斑",
+          "variant": "300 μm 带通滤片集成实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "外加 10 nm 滤光，Fig. 3b 为实测，Fig. 3c 给 x 向剖面。",
+          "values": {
+            "diameter_um": {
+              "value": 300,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3a 图注",
+              "note": "带通滤片集成实物的直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3a 图注",
+              "note": "作者给出的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 735,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1386 §3；p1388 Fig. 3b 图注",
+              "note": "设计焦面，也是 Fig. 3b 上排横向焦斑的评价面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "SiNₓ 纳米结构／SiNₓ–SiO₂ 多层滤片／熔融石英基底",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1387 Fig. 2a、§§4–5",
+              "note": "多层 DBR 与缺陷层产生三个透射通带。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 1000,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1387 §5 第一段",
+              "note": "作者报告用 PECVD 沉积到 1 μm 的最终厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "μm"
+            },
+            "wavelength_nm": {
+              "value": 610,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3b 左列",
+              "note": "外加带宽 10 nm 滤片的名义中心。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "illumination_bandwidth_nm": 10,
+              "spectral_mode": "discrete_rgb"
+            },
+            "polarization": {
+              "value": "线偏振",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3b 左列",
+              "note": "由照明线偏振器产生，方向未印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "同一设计面横向焦斑与 z 轴扫描",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3b 左列",
+              "note": "超连续谱光源经外部滤光，100×、NA 0.7 的无色差物镜与 CCD 随台移动。轴向扫描步长和物方像素标尺未印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 735,
+              "illumination_bandwidth_nm": 10,
+              "axial_scan_step_um": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3b 左列",
+              "note": "z 轴标到 700–800 μm，白虚线按图注为设计面。逐波长最佳峰位及残余焦移数值待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "离散 RGB 共焦图证",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3b 左列",
+              "note": "轴向截面与设计面横向焦斑均为实测，精确峰位和数值焦移待补。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 735,
+              "spectral_mode": "discrete_rgb"
+            },
+            "fwhm_x_um": {
+              "value": 1.81,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3c 上图",
+              "note": "数值在 p1387 §5 末段，方向对应 Fig. 3c 横轴 x（μm）。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "direction": "x",
+              "evaluation_plane_um": 735
+            },
+            "strehl": {
+              "value": 0.89,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3c 上图",
+              "note": "作者比较实测和模拟的归一化剖面并报告 Strehl，未印公式或参考积分范围。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 50,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3b 左列",
+              "note": "§5 实验报告，分母和焦圈以同文 §3 模拟定义为线索，实验实现方式待补。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "experiment_denominator": null,
+              "integration_diameter_um": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 610,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3b 左列",
+              "note": "外加带宽 10 nm 滤片的名义中心。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "illumination_bandwidth_nm": 10,
+              "spectral_mode": "discrete_rgb"
+            },
+            "efficiency_protocol": {
+              "value": "§5 聚焦效率实测；§3 给出模拟定义",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1386 §3、p1387 §5 末段",
+              "note": "§3 将焦斑中心直径 3×FWHM 的区域强度除以通过超透镜的强度。§5 未交代实测是否沿用该定义、滤片损耗是否计入分母及口径积分。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "li2021bandpass_image_610",
+          "study_id": "li2021bandpass",
+          "specimen_id": "filter_integrated",
+          "model": "Li 2021 · 带通滤片 RGB · 红光 610 nm · USAF 实拍",
+          "variant": "300 μm 带通滤片集成实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "有滤片的有限共轭标靶成像。",
+          "values": {
+            "diameter_um": {
+              "value": 300,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3a 图注",
+              "note": "带通滤片集成实物的直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3a 图注",
+              "note": "作者给出的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 735,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1386 §3；p1388 Fig. 3b 图注",
+              "note": "设计焦面，也是 Fig. 3b 上排横向焦斑的评价面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "SiNₓ 纳米结构／SiNₓ–SiO₂ 多层滤片／熔融石英基底",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1387 Fig. 2a、§§4–5",
+              "note": "多层 DBR 与缺陷层产生三个透射通带。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 1000,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1387 §5 第一段",
+              "note": "作者报告用 PECVD 沉积到 1 μm 的最终厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "μm"
+            },
+            "wavelength_nm": {
+              "value": 610,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1388 §5、p1389 Fig. 4a",
+              "note": "外加带宽 10 nm 滤片的名义中心。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "illumination_bandwidth_nm": 10,
+              "spectral_mode": "discrete_rgb"
+            },
+            "illumination": {
+              "value": "卤素灯，外加带宽 10 nm 滤片",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1388 §5、p1389 Fig. 4a",
+              "note": "标靶位于超透镜前 2f。作者称 4f 成像且无放大。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "illumination_bandwidth_nm": 10,
+              "object_distance_um": 1470
+            },
+            "resolved_test_line_width_um": {
+              "value": 1.95,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1388 §5、p1389 Fig. 4a",
+              "note": "作者报告 USAF 1951 Group 8 Element 1，数值为可辨条纹线宽。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "target": "USAF 1951",
+              "group": 8,
+              "element": 1
+            }
+          }
+        },
+        {
+          "id": "li2021bandpass_white_filtered",
+          "study_id": "li2021bandpass",
+          "specimen_id": "filter_integrated",
+          "model": "Li 2021 · 带通滤片 RGB · 白光 · 集成滤片实物",
+          "variant": "300 μm 带通滤片集成实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "系统白光标靶和白光轴扫的光源各自保留。",
+          "values": {
+            "diameter_um": {
+              "value": 300,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3a 图注",
+              "note": "带通滤片集成实物的直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1388 §5、Fig. 3a 图注",
+              "note": "作者给出的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 735,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1386 §3；p1388 Fig. 3b 图注",
+              "note": "设计焦面，也是 Fig. 3b 上排横向焦斑的评价面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "SiNₓ 纳米结构／SiNₓ–SiO₂ 多层滤片／熔融石英基底",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1387 Fig. 2a、§§4–5",
+              "note": "多层 DBR 与缺陷层产生三个透射通带。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 1000,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1387 §5 第一段",
+              "note": "作者报告用 PECVD 沉积到 1 μm 的最终厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "μm"
+            },
+            "illumination": {
+              "value": "宽谱入射、集成三通带",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1388 §5、p1389 Fig. 4d/f",
+              "note": "Fig. 4d 卤素灯成像取下外加 10 nm 滤片，Fig. 4f 聚焦用超连续谱光源。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "白光轴扫和标靶均有滤片对照",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1388 §5、p1389 Fig. 4d–g",
+              "note": "作者报告带通滤片减轻纵向、横向模糊，缺逐色中心及残余色差数值。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "li_bandpass_pdf_2021",
+                "li_bandpass_publisher_2021",
+                "li_bandpass_crossref_2021",
+                "li_bandpass_openalex_2021",
+                "li_bandpass_data_lookup_2021"
+              ],
+              "spectral_mode": "three_passbands_under_white_light"
+            },
+            "resolved_test_line_width_um": {
+              "value": 2,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1388 §5 Fig. 4d 讨论",
+              "note": "作者给约 2 μm 的白光标靶分辨尺寸。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "display": "约 2",
+              "approximate": true
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 pp1387–1389 Figs. 3–4；DataCite 精确关联查询",
+              "note": "本次核查图文未列 MTF 曲线或原始 PSF 文件，采样与方向待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "li_bandpass_pdf_2021",
+                "li_bandpass_data_lookup_2021"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2021bandpass_white_bare",
+          "study_id": "li2021bandpass",
+          "specimen_id": "bare_silica",
+          "model": "Li 2021 · 带通滤片 RGB · 白光 · 无滤片对照实物",
+          "variant": "裸熔融石英基底对照实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "白光对照为独立实物。",
+          "values": {
+            "illumination": {
+              "value": "宽谱入射、无集成滤片",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1388 §5、p1389 Fig. 4e/g",
+              "note": "Fig. 4e 卤素灯标靶，Fig. 4g 超连续谱轴扫。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "同一多波长版图制于裸熔融石英",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1388 §5 Fig. 4e/g 对照段",
+              "note": "作者另制无滤片样品。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "同版图无滤片的白光对照",
+              "source": "li_bandpass_pdf_2021",
+              "location": "主文 p1388 §5、p1389 Fig. 4e/g",
+              "note": "作者报告 Group 7 难分辨及三维焦域恶化。缺定量横向色差和最佳焦位。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            }
+          }
         }
       ],
-      "scope": "50项原始研究、304个器件/测量/系统配置、1869条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
+      "scope": "51项原始研究、306个器件/测量/系统配置、1877条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
