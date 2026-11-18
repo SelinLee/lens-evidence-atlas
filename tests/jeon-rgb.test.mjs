@@ -16,7 +16,7 @@ test('published optical powers and corrected experimental efficiencies stay sepa
   for(const key of ['incident_power_uw','focused_power_uw']){assert.equal(v[key].quantity,'optical_power');assert.equal(v[key].original_unit,'μW');assert.equal(v[key].basis,'measured');assert.match(v[key].location,/Table2.*μW/);}
   assert.match(v.efficiency_protocol.note,/实验焦圈.*未完整报告/);assert.match(v.efficiency_protocol.note,/3×FWHMideal仅为模拟/);assert.equal(v.efficiency_band_mean_pct,undefined);
  }
- assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,3);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,120);assert.equal(axisPoints(lens.rows,'na','efficiency_band_mean_pct').length,13);
+ assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,3);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,121);assert.equal(axisPoints(lens.rows,'na','efficiency_band_mean_pct').length,13);
 });
 
 test('RGB widths and Strehl retain their direction and measurement plane without three invented focal lengths or a continuous band',()=>{
