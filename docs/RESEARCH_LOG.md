@@ -961,3 +961,9 @@ PR #146 合入 e02d1927f56c23fe5a1a6139268c7a71dd7baaa1。PR 校验 44321875202�
 ## 2026-11-18-92 · Wang 2021 两只实物及效率图文对读
 
 按 Crossref 344 次纳入红光至近红外经典研究。沿用原应用基准的 DOI 和来源编号。在器件矩阵录 23 条、6 配置，包括 30 μm／NA 0.24、25 μm／NA 0.10 两只实物的五点实验，三种数值模型及一条 USAF 继像系统证据。Fig. 3e 的 60 μm 为图参考和正文焦位总述，逐波长焦距及残余焦移留空。两只实物主文带均值约 77.1% 和 88.5%，补充另报低 NA 为 88.1%。Fig. 4a／S8 与低 NA 700 nm 正文 90.2% 的波长归属存疑，该点留空并回写旧应用基准。核 3×FWHM 半径、孔径内入射分母和横移定标。可见光模型 450–700 nm 独立记录，公开作者网盘显示失效。全库 42 篇、241 配置、1525 条。[本批核验](WANG_BROADBAND_REVIEW_2026-11-18.md)
+
+## 2026-11-18-93 · Wang 上线验收与可见光扩展焦深变焦取证
+
+PR #148 合入 0bcdbd002a138493923c3bca0f523c0ea5f15da9。PR 校验 44326737128、主线校验 44326909221 与 Pages 44326909172 成功。300 项测试通过，线上 12 文件与本机构建逐字节一致，devices-data.js SHA256 为 c57952d31e3b49ce1660b661f104039d7eba08cce1e790c9c1c56e209b343a0b。独立无头 Chrome 核 23 行、6 配置、三处实测及两处模型效率散点、引用往返、CSV、六视口。主文、补件、评审 PDF 以文件签名和响应 206 验证。作者网盘为 200，页面显示链接失效。新论文的 13 行进入可见光筛选，筛后共 36 篇、1377 条。[PR #148](https://github.com/SelinLee/lens-evidence-atlas/pull/148) · [Pages 部署](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44326909172)
+
+下一批追溯 Colburn 与 Majumdar 的四次相位双片可见光调焦。ACS 正式在线日期为 2019-12-11，2020 年卷期，2026-11-18 查 Crossref 56 次。作者组存档 PDF 的 Fig.4 明确写有 455、530、625 nm，轴向焦点仍有显著色移。Fig.5 附近正文给 3 mm 与 1.5 mm 设定的跨色平均 MTF10 估值 11 和 9.6 cycles/mm，逐条件与 Fig. S3 核对后录入。已取 arXiv 22 页主稿，978820 字节，SHA256 467732a849489338a97f162cfc0a8b1f456b1af6ec4d3a5b1d8039c10553c26d。DataCite DOI 关联仅命中该预印稿，ACS 补件直接访问返回 403。后续区分扩展焦深容纳残余焦移、固定面的原始光学 PSF 与反卷积结果。[作者组存档](https://labs.ece.uw.edu/amlab/Papers_Journals/Shane_Achromatic_Varifocal.pdf) · [Crossref](https://api.crossref.org/works/10.1021/acsphotonics.9b01216) · [arXiv](https://arxiv.org/abs/1904.09622)
