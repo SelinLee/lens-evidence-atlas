@@ -1031,3 +1031,9 @@ PR #160 合入 c6d96cee22eede4ad20fdf857c0c6b33532f1a56。PR 校验 44360700240�
 ## 2026-11-19-106 · Sawant 2021 厘米级折超混合色差校正
 
 纳入一篇 Crossref 查 92 次的经典研究。LCAM、LSAM 和裸折射镜各为独立配置。1 cm、约 NA 0.1 与裸镜 600 nm 的标称 50 mm 各按归属保存。LCAM 和裸镜各有 11 个 550–800 nm 的轴扫谱点，作者 §3 报告用 600／800 nm 焦位差比较所得至少 80% 的轴向色差抑制。LCAM 焦区展宽且作者约 8.5% 的聚焦效率缺光谱聚合说明；LSAM 的 650 nm 约 20% 效率和 Fig. S5 MTF 报告单列。补件 5436264.pdf 的 DOI 按正式版内链核实，Figshare 返回 403，原始序列、PSF 尺度、频轴、积分范围和分母继续待补。新增 3 配置、33 条，累计 49 篇、298 配置、1829 条。[本批核验](SAWANT_HYBRID_REVIEW_2026-11-19.md)
+
+## 2026-11-19-107 · Sawant 2021 上线与 Wang 2026 贝塞尔超表面接续
+
+PR #162 合入 9a79c02fd1738cfba9b04d5504d6ed2cf1cc9b76。PR 校验 44365028956、主线 44365200414、Pages 44365200382 成功。314 项测试通过。线上构建 12 文件逐字节一致，devices-data.js SHA256 为 9351f8b3a7fedf96f7f306ee90fdb23f6ac8ce34af0bf16bcdbc2460d69b493b。独立无头 Chrome 核 33 条、3 配置、24 个几何标记、650 nm 的约 20% 效率散点与绝对焦位散点为空、六视口、CSV 和引用往返。仅可见光下本篇 31 条、22 个几何标记，全库 40 篇、1518 条。Chalmers 正式主文下载为 200，打印正文 pp1405–1411 的文本与归档副本完全一致，封面与文件字节可随请求变化。六个原文或书目入口为 200，补件及集合 DOI 均返回 403。[PR #162](https://github.com/SelinLee/lens-evidence-atlas/pull/162) · [Pages 部署](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44365200382)
+
+沿近期可见光实制样机检索，接续 Wang 等 2026 年的 Light: Science & Applications（10.1038/s41377-026-02272-y，2026-04-16）。2025 年中科院升级版公开分区条目显示物理与天体物理大类一区。KIT 12 页正式版 3959412 字节，Springer 补件 41377_2026_2272_MOESM1_ESM.docx 为 4601262 字节，均由独立无头 Chrome 取到，关联 DOI 查询 200、零项。Fig. 5 及 pp7–8 已核主镜 4 mm、八只离轴元件各 3 mm，主镜轴上 R/G/B 通道的实测径向 FWHM 为 2.89／2.87／2.85 μm。Fig. 3 采用设计计算的横向焦斑偏移。宽带贝塞尔焦区、固定 21 mm 工作面、离轴实测和重建分辨率需依证据分别读取。补件 S4、S6–S7 的全局 PSF、标靶和 DOF 已定位。会话目标保持 active。[正式版](https://publikationen.bibliothek.kit.edu/1000192715/180059684) · [正式补件](https://static-content.springer.com/esm/art%3A10.1038%2Fs41377-026-02272-y/MediaObjects/41377_2026_2272_MOESM1_ESM.docx) · [2025 分区](https://www.iikx.com/sci/technology/20600.html)
