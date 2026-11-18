@@ -92,6 +92,10 @@
 
 `system_slanted_edge_mtf` 保存作者由多色实拍斜边计算的无量纲MTF，和 `mtf_spatial_frequency_lpmm`、`mtf_curve` 的频率单位、处理阶段、方向及场点共同使用。全场平均和作者最大场点分开；数值角度未报告时写空。保留原始斜边、归一化、物像面频率和逐频表的缺口。
 
+`spectral_mean_mtf10_cycles_mm` 保存作者以多波长实测 PSF 得到的平均 MTF 的 10% 阈值频率。使用 `basis: derived_from_measurement`、作者计算、离散光谱样本和 `threshold_fraction: 0.1`。须有固定评价面和 `mtf_curve.mtf_kind: from_measured_psf_spectral_mean`。正文的 cycles/mm 和曲线的 lp/mm 各保留原标。尚未取得方向、频率参考面、dB 换算与原始数据时逐项留空。
+
+`diffraction_efficiency_mean_pct` 保存作者对波长与设备设定一并取平均的衍射效率。记录焦面和参照面各自的积分范围、功率分母及统计性质。计算来源为作者实测，统计用 `statistic: mean_across_wavelengths_and_settings`，平均值行的单波长留空。`aperture_width_um` 保存实物或模型孔径宽度，附形状、宽度定义及重叠光瞳的适用边界。圆孔直径继续使用 `diameter_um`。
+
 作者只给出带内焦距变化及波长范围时，`focus_variation_um`、`focus_variation_pct` 可用 `spectral_sample_scope: author_reported_range_only`，逐点列表留空，须有同一行的上下波长和协议。不能用抽样曲线推定精确采样点并作为原始数据。
 
 `effective_na_from_psf` 保存作者由焦斑推得的有效NA、公式与谱点，按原文保存汇总值。单波长的作者焦距误差用 `author_reported_single_wavelength_error` 与明确的设计面或设计焦距，波长须和行一致。界限用 `value=null` 保存。

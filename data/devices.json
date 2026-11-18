@@ -1615,6 +1615,69 @@
       "scope": "实验室成果页列摘要、出版社链接和一份论文 PDF。",
       "checked_on": "2026-11-18",
       "publication_source": "wang2021_publication"
+    },
+    {
+      "id": "colburn_quartic_2020",
+      "title": "Colburn & Majumdar (2020): Simultaneous Achromatic and Varifocal Imaging with Quartic Metasurfaces in the Visible",
+      "url": "https://labs.ece.uw.edu/amlab/Papers_Journals/Shane_Achromatic_Varifocal.pdf",
+      "doi": "10.1021/acsphotonics.9b01216",
+      "kind": "peer_reviewed_paper",
+      "scope": "作者组存档的 ACS 排版 PDF，印刷标页 A–H，核 pp B–G Figs.1–6。ACS Photonics 7(1), 120–127。在线 2019-12-11。",
+      "checked_on": "2026-11-18"
+    },
+    {
+      "id": "colburn_quartic_thesis_2020",
+      "title": "Shane Colburn 博士论文 · 第 5 章四次相位双片",
+      "url": "https://labs.ece.uw.edu/amlab/Thesis/Thesis_Shane_Colburn.pdf",
+      "kind": "author_dissertation",
+      "scope": "第 5 章注明复载同一研究。核 PDF pp78–109，尤其 §5.5.3 和 Figs.5.9–5.12、5.14–5.16。MTF 与效率曲线及测量光路。",
+      "publication_source": "colburn_quartic_2020",
+      "checked_on": "2026-11-18"
+    },
+    {
+      "id": "colburn_quartic_acs_2020",
+      "title": "ACS Photonics · Colburn 与 Majumdar 期刊记录",
+      "url": "https://pubs.acs.org/doi/10.1021/acsphotonics.9b01216",
+      "kind": "publisher_metadata",
+      "scope": "核期刊卷期、标题、摘要、补件目录。",
+      "publication_source": "colburn_quartic_2020",
+      "checked_on": "2026-11-18"
+    },
+    {
+      "id": "colburn_quartic_si_2020",
+      "title": "ACS Photonics · 期刊补充 PDF 入口",
+      "url": "https://pubs.acs.org/doi/suppl/10.1021/acsphotonics.9b01216/suppl_file/ph9b01216_si_001.pdf",
+      "kind": "supplementary_material",
+      "scope": "主文列出的补件直达路径，独立无头 Chrome 返回 403。原图以同一研究的第一作者博士论文第 5 章对读。",
+      "publication_source": "colburn_quartic_2020",
+      "checked_on": "2026-11-18"
+    },
+    {
+      "id": "colburn_quartic_crossref_2020",
+      "title": "Crossref · Colburn 与 Majumdar DOI 及引用计数",
+      "url": "https://api.crossref.org/works/10.1021/acsphotonics.9b01216",
+      "kind": "repository_metadata",
+      "scope": "2026-11-18 查询，is-referenced-by-count 56，2020 年卷期，2019-12-11 在线。",
+      "publication_source": "colburn_quartic_2020",
+      "checked_on": "2026-11-18"
+    },
+    {
+      "id": "colburn_quartic_arxiv_2020",
+      "title": "Colburn 与 Majumdar · arXiv v2",
+      "url": "https://arxiv.org/pdf/1904.09622",
+      "kind": "author_preprint",
+      "scope": "22 页作者预印稿，v2 2020-01-27，定位 Experimental Verification 与 Figs.3–6。",
+      "publication_source": "colburn_quartic_2020",
+      "checked_on": "2026-11-18"
+    },
+    {
+      "id": "colburn_quartic_datacite_2020",
+      "title": "DataCite · Colburn 与 Majumdar 关联 DOI 检索",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1021%2Facsphotonics.9b01216%22&page%5Bsize%5D=25",
+      "kind": "repository_metadata",
+      "scope": "2026-11-18 精确关联查询，仅见该文 arXiv 预印稿记录。",
+      "publication_source": "colburn_quartic_2020",
+      "checked_on": "2026-11-18"
     }
   ],
   "domains": {
@@ -5371,6 +5434,59 @@
           "axis_bounds": {
             "min": 0
           }
+        },
+        {
+          "id": "aperture_width_um",
+          "label": "孔径宽度 (μm)",
+          "definition": "作者报告的口径宽度或非圆孔边长。",
+          "conditions": "保存掩模形状及测量范围。圆孔直径有独立字段。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "colburn_quartic_thesis_2020",
+              "location": "PDF p105 §5.9，p109 Fig.5.16"
+            }
+          ]
+        },
+        {
+          "id": "spectral_mean_mtf10_cycles_mm",
+          "label": "跨波长平均 MTF10 (cycles/mm)",
+          "definition": "作者对多波长实测 PSF 的 MTF 取平均后报告的 10% 阈值频率。",
+          "conditions": "取像面、波长、方向、频率参考面、归一化及曲线资料。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "colburn_quartic_2020",
+              "location": "PDF p4（D）Experimental Verification"
+            },
+            {
+              "source": "colburn_quartic_thesis_2020",
+              "location": "PDF p101 Fig.5.9"
+            }
+          ]
+        },
+        {
+          "id": "diffraction_efficiency_mean_pct",
+          "label": "作者衍射效率均值 (%)",
+          "definition": "作者报告跨波长与设定的衍射效率均值。",
+          "conditions": "积分区、分母参考面、采样与平均权重。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0,
+            "max": 100
+          },
+          "definition_refs": [
+            {
+              "source": "colburn_quartic_thesis_2020",
+              "location": "PDF p97 §5.5.3，p102 Fig.5.10"
+            }
+          ]
         }
       ],
       "rows": [
@@ -210631,9 +210747,3073 @@
               ]
             }
           }
+        },
+        {
+          "id": "colburn2020quartic_summary",
+          "model": "Colburn 2020 · 1 mm 双片 · 光学与衍射效率汇总",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_sweep",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一对四次相位板的全部横移设置。",
+          "values": {
+            "lambda_min_nm": {
+              "value": 455,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p3（C）Design",
+              "note": "作者设计的蓝光端。实际轴扫仅用三个 LED 波段。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 625,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p3（C）Design",
+              "note": "作者设计的红光端。连续白光成像另存，440–640 nm 是模拟 PSF 相关窗口。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "na": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16，博士论文 PDF p97 §5.5.3，p103 Fig.5.11",
+              "note": "作者未列双片在各横移量下的有效 NA。示意的 0.42 属于显微继像物镜。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF pp96–97 §5.5.2 Fabrication，主文 PDF pp2–3（B–C）Fig.1",
+              "note": "石英上的氮化硅层。作者 RCWA 的周期 350 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "lattice_pitch_nm": 350
+            },
+            "material": {
+              "value": "石英基底上 Si₃N₄ 纳米柱",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF pp96–97 §5.5.2 Fabrication",
+              "note": "两片实际制于独立基片，对照单片另制。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "固定像面三色 PSF 接近。轴向峰位随波长移动",
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp4–5（D–E）Figs.3–5；Crossref 元数据",
+              "note": "按经典研究纳入，Crossref 2026-11-18 为 56 次。以扩展焦深容纳轴向色移，色彩成像用 TV 反卷积。作者的 4.8 mm 调焦跨度是在 530 nm 改变横移量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_crossref_2020"
+              ],
+              "sample_wavelengths_nm": [
+                455,
+                530,
+                625
+              ],
+              "nominal_lateral_displacements_um": [
+                25,
+                50,
+                75,
+                100,
+                125
+              ],
+              "single_wavelength_tuning_span_um": 4800,
+              "single_wavelength_tuning_wavelength_nm": 530,
+              "mitigation": "extended_depth_of_focus"
+            },
+            "diffraction_efficiency_mean_pct": {
+              "value": 37,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.4 前左栏效率段，博士论文 PDF pp97、102 Fig.5.10",
+              "note": "作者对三色及五个标称焦距设定给单一 37% 均值。每点系数只见曲线，平均权重未写。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "statistic": "mean_across_wavelengths_and_settings",
+              "sample_wavelengths_nm": [
+                455,
+                530,
+                625
+              ],
+              "nominal_lateral_displacements_um": [
+                25,
+                50,
+                75,
+                100,
+                125
+              ],
+              "denominator": "aperture_area_integral_at_second_metasurface_plane"
+            },
+            "efficiency_protocol": {
+              "value": "焦面孔径区域积分 ÷ 第二超表面平面相同区域积分",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3，p103 Fig.5.11，博士论文 PDF p102 Fig.5.10，主文 PDF p4（D）效率段",
+              "note": "分子与分母分别以器件孔径面积作强度积分。作者称 diffraction efficiency，未给像面 ROI 定标、各条件权重及误差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "denominator": "aperture_area_integral_at_second_metasurface_plane",
+              "integration_geometry": "device_aperture_area",
+              "integration_radius_multiple_of_fwhm": null
+            },
+            "mtf_curve": {
+              "value": "博士论文有 MTF 曲线。逐频表和 PSF 数组待补",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p101 Fig.5.9，主文 PDF p4（D）及 p7（G）Associated Content",
+              "note": "期刊补件直链与 Figshare 检索返回 403。DataCite 精确 DOI 关联仅有 arXiv 预印稿。已核期刊排版主文和博士论文，无内嵌文件。曲线归一、空间采样与逐频原始数值未取得。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020",
+                "colburn_quartic_acs_2020",
+                "colburn_quartic_si_2020",
+                "colburn_quartic_arxiv_2020",
+                "colburn_quartic_datacite_2020"
+              ],
+              "data_availability": {
+                "status": "curves_only",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d25_z530",
+          "model": "Colburn 2020 · d=25 μm / 6 mm · 530 nm 轴扫",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d25",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "沿 x=0 截面的绿色 LED 轴向扫焦。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 6000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p3（C）Design 的调焦端点；p4（D）Fig.3",
+              "note": "设计的名义焦距或固定像面位置。实测轴向峰位读取 Fig.3 和 Fig.4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 25,
+              "reference_kind": "nominal_image_plane"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.3，d=25 μm 面板及插图",
+              "note": "实测 LED 通道标注的是名义中心。博士论文 §5.8 给光源带宽 30 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "illumination_bandwidth_nm": 30
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.3，d=25 μm 面板及插图",
+              "note": "插图绘 z 轴强度最大值。逐设定实测值没有独立表，数值留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅轴扫及峰位图",
+              "position_definition": "axial_intensity_maximum"
+            },
+            "depth_of_focus_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.3，d=25 μm 面板及插图",
+              "note": "作者说明焦深随横移改变，未给本设定的定量区间。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅轴向强度剖面"
+            },
+            "psf_protocol": {
+              "value": "远场针孔 · 轴扫及固定面强度 PSF",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3，p103 Fig.5.11",
+              "note": "两片分别安装平移台。GT1930 CMOS、ITL200 筒镜及 Mitutoyo M Plan Apo 20×（NA 0.42）继像。轴向步进、采样标定、针孔距离及偏振未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "evaluation_plane_um": null,
+              "nominal_lateral_displacement_um": 25,
+              "field_point": null,
+              "object_conjugate": "far_field_pinhole",
+              "object_distance_m": null,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "collection_magnification": 20,
+              "collection_objective_na": 0.42
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d25_white_captured",
+          "model": "Colburn 2020 · d=25 μm / 6 mm · 白光原拍",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d25",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "白光标靶与彩色目标的 直接采集。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 6000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p3（C）Design 的调焦端点；p4（D）Fig.3",
+              "note": "设计的名义焦距或固定像面位置。实测轴向峰位读取 Fig.3 和 Fig.4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 25,
+              "reference_kind": "nominal_image_plane"
+            },
+            "illumination": {
+              "value": "非相干宽带白光",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3、p104 Fig.5.12",
+              "note": "商业面板灯照明纸面目标，光谱分布及物距未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ]
+            },
+            "chromatic": {
+              "value": "固定横移下的白光原拍",
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p6（F）Fig.6A–C，d=25 μm 的 Captured 行",
+              "note": "原始彩图保留跨色模糊。未报告数值横向色差、通道对齐或量化 SNR。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "processing_stage": "captured"
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d25_white_deconvolved",
+          "model": "Colburn 2020 · d=25 μm / 6 mm · 白光 TV 重建",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d25",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "白光标靶与彩色目标的 反卷积恢复。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 6000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p3（C）Design 的调焦端点；p4（D）Fig.3",
+              "note": "设计的名义焦距或固定像面位置。实测轴向峰位读取 Fig.3 和 Fig.4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 25,
+              "reference_kind": "nominal_image_plane"
+            },
+            "illumination": {
+              "value": "非相干宽带白光",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3、p104 Fig.5.12",
+              "note": "商业面板灯照明纸面目标，光谱分布及物距未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ]
+            },
+            "chromatic": {
+              "value": "同一横移使用一份 PSF 的 TV 反卷积",
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p6（F）Fig.6A–C，d=25 μm 的 Deconvolved 行",
+              "note": "作者使用 Split Bregman 求解 TV 正则化，μ=2.5×10⁴，每档 PSF 独立。彩图可辨但有噪声放大，未报告定量 SNR 或重建 MTF。",
+              "basis": "reconstruction",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "processing_stage": "deconvolved",
+              "regularization_weight": 25000
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d50_z530",
+          "model": "Colburn 2020 · d=50 μm / 3 mm · 530 nm 轴扫",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d50",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "沿 x=0 截面的绿色 LED 轴向扫焦。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 3000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p3（C）Fig.1d，pp4–5（D–E）Fig.4b",
+              "note": "设计的名义焦距或固定像面位置。实测轴向峰位读取 Fig.3 和 Fig.4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 50,
+              "reference_kind": "nominal_image_plane"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.3，d=50 μm 面板及插图",
+              "note": "实测 LED 通道标注的是名义中心。博士论文 §5.8 给光源带宽 30 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "illumination_bandwidth_nm": 30
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.3，d=50 μm 面板及插图",
+              "note": "插图绘 z 轴强度最大值。逐设定实测值没有独立表，数值留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅轴扫及峰位图",
+              "position_definition": "axial_intensity_maximum"
+            },
+            "depth_of_focus_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.3，d=50 μm 面板及插图",
+              "note": "作者说明焦深随横移改变，未给本设定的定量区间。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅轴向强度剖面"
+            },
+            "psf_protocol": {
+              "value": "远场针孔 · 轴扫及固定面强度 PSF",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3，p103 Fig.5.11",
+              "note": "两片分别安装平移台。GT1930 CMOS、ITL200 筒镜及 Mitutoyo M Plan Apo 20×（NA 0.42）继像。轴向步进、采样标定、针孔距离及偏振未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "evaluation_plane_um": null,
+              "nominal_lateral_displacement_um": 50,
+              "field_point": null,
+              "object_conjugate": "far_field_pinhole",
+              "object_distance_m": null,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "collection_magnification": 20,
+              "collection_objective_na": 0.42
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d50_mtf10",
+          "model": "Colburn 2020 · d=50 μm / 3 mm · 三色平均 MTF10",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d50",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者由固定面三通道 PSF 得出的跨色 MTF10。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 3000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p3（C）Fig.1d，pp4–5（D–E）Fig.4b",
+              "note": "设计的名义焦距或固定像面位置。实测轴向峰位读取 Fig.3 和 Fig.4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 50,
+              "reference_kind": "nominal_image_plane"
+            },
+            "spectral_mean_mtf10_cycles_mm": {
+              "value": 11,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.5 前测量段及所引 S3，博士论文 PDF p101 Fig.5.9B",
+              "note": "作者先对波长平均，再报告 MTF=0.10 的估计频率。三通道权重与频率标定未明。图的 dB 换算未知。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "display": "约 11 cycles/mm",
+              "approximate": true,
+              "threshold_fraction": 0.1,
+              "frequency_unit": "cycles/mm",
+              "sample_wavelengths_nm": [
+                455,
+                530,
+                625
+              ]
+            },
+            "mtf_curve": {
+              "value": "作者由实测 PSF 得出的跨波长平均 MTF 与原曲线",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p101 Fig.5.9B，主文 PDF p4（D）对应正文",
+              "note": "横轴 0–200 lp/mm，纵轴 −50 至 0 dB。双片实线，单片虚线，黑线为 530 nm 理想衍射极限。方向、频率参考面、零频归一与 dB 换算未明。出版物未附逐频数表或原始 PSF 数组。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "from_measured_psf_spectral_mean",
+              "sample_wavelengths_nm": [
+                455,
+                530,
+                625
+              ],
+              "direction_aggregation": "unspecified",
+              "frequency_unit": "lp/mm",
+              "field_point": null,
+              "frequency_reference_plane": null,
+              "normalization": null,
+              "decibel_convention": null,
+              "curve_style": "solid",
+              "processing_stage": "optical_psf",
+              "data_availability": {
+                "status": "curves_only",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "psf_protocol": {
+              "value": "远场针孔 · 轴扫及固定面强度 PSF",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3，p103 Fig.5.11",
+              "note": "两片分别安装平移台。GT1930 CMOS、ITL200 筒镜及 Mitutoyo M Plan Apo 20×（NA 0.42）继像。轴向步进、采样标定、针孔距离及偏振未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "evaluation_plane_um": 3000,
+              "nominal_lateral_displacement_um": 50,
+              "field_point": null,
+              "object_conjugate": "far_field_pinhole",
+              "object_distance_m": null,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "collection_magnification": 20,
+              "collection_objective_na": 0.42
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d50_psf_455",
+          "model": "Colburn 2020 · d=50 μm / 3 mm · 455 nm 固定面 PSF",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d50",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一采集面的双片 PSF 与独立轴扫图。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 3000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p3（C）Fig.1d，pp4–5（D–E）Fig.4b",
+              "note": "设计的名义焦距或固定像面位置。实测轴向峰位读取 Fig.3 和 Fig.4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 50,
+              "reference_kind": "nominal_image_plane"
+            },
+            "wavelength_nm": {
+              "value": 455,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4B、5L；博士论文 Figs.5.4–5.5",
+              "note": "实测 LED 通道标注的是名义中心。博士论文 §5.8 给光源带宽 25 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "illumination_bandwidth_nm": 25
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4B、5L；博士论文 Figs.5.4–5.5",
+              "note": "Fig.4 显示该通道轴向光强。虚线是固定像面，作者承认各色峰位有显著偏移，逐点峰位未给。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅轴向强度图",
+              "reference_plane_um": 3000
+            },
+            "axial_focus_offset_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4B、5L；博士论文 Figs.5.4–5.5",
+              "note": "相对虚线像面或相对绿光峰位的可追溯数值尚缺。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "reference_plane_um": 3000
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4B、5L；博士论文 Figs.5.4–5.5",
+              "note": "固定面彩图的标尺是 78.3 μm。原始采样、拟合宽度与 Strehl 未给。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅固定面 PSF 图",
+              "evaluation_plane_um": 3000
+            },
+            "mtf_curve": {
+              "value": "作者由实测 PSF 得出的单通道 MTF 曲线",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p101 Fig.5.9B，主文 PDF p4（D）对应正文",
+              "note": "横轴 0–200 lp/mm，纵轴 −50 至 0 dB。双片实线，单片虚线，黑线为 530 nm 理想衍射极限。方向、频率参考面、零频归一与 dB 换算未明。出版物未附逐频数表或原始 PSF 数组。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "from_measured_psf",
+              "sample_wavelengths_nm": [
+                455
+              ],
+              "direction_aggregation": "unspecified",
+              "frequency_unit": "lp/mm",
+              "field_point": null,
+              "frequency_reference_plane": null,
+              "normalization": null,
+              "decibel_convention": null,
+              "curve_style": "solid",
+              "processing_stage": "optical_psf",
+              "data_availability": {
+                "status": "curves_only",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "psf_protocol": {
+              "value": "远场针孔 · 轴扫及固定面强度 PSF",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3，p103 Fig.5.11",
+              "note": "两片分别安装平移台。GT1930 CMOS、ITL200 筒镜及 Mitutoyo M Plan Apo 20×（NA 0.42）继像。轴向步进、采样标定、针孔距离及偏振未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "evaluation_plane_um": 3000,
+              "nominal_lateral_displacement_um": 50,
+              "field_point": null,
+              "object_conjugate": "far_field_pinhole",
+              "object_distance_m": null,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "collection_magnification": 20,
+              "collection_objective_na": 0.42,
+              "illumination_bandwidth_nm": 25
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d50_psf_530",
+          "model": "Colburn 2020 · d=50 μm / 3 mm · 530 nm 固定面 PSF",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d50",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一采集面的双片 PSF 与独立轴扫图。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 3000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p3（C）Fig.1d，pp4–5（D–E）Fig.4b",
+              "note": "设计的名义焦距或固定像面位置。实测轴向峰位读取 Fig.3 和 Fig.4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 50,
+              "reference_kind": "nominal_image_plane"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4B、5K；博士论文 Figs.5.4–5.5",
+              "note": "实测 LED 通道标注的是名义中心。博士论文 §5.8 给光源带宽 30 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "illumination_bandwidth_nm": 30
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4B、5K；博士论文 Figs.5.4–5.5",
+              "note": "Fig.4 显示该通道轴向光强。虚线是固定像面，作者承认各色峰位有显著偏移，逐点峰位未给。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅轴向强度图",
+              "reference_plane_um": 3000
+            },
+            "axial_focus_offset_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4B、5K；博士论文 Figs.5.4–5.5",
+              "note": "相对虚线像面或相对绿光峰位的可追溯数值尚缺。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "reference_plane_um": 3000
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4B、5K；博士论文 Figs.5.4–5.5",
+              "note": "固定面彩图的标尺是 78.3 μm。原始采样、拟合宽度与 Strehl 未给。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅固定面 PSF 图",
+              "evaluation_plane_um": 3000
+            },
+            "mtf_curve": {
+              "value": "作者由实测 PSF 得出的单通道 MTF 曲线",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p101 Fig.5.9B，主文 PDF p4（D）对应正文",
+              "note": "横轴 0–200 lp/mm，纵轴 −50 至 0 dB。双片实线，单片虚线，黑线为 530 nm 理想衍射极限。方向、频率参考面、零频归一与 dB 换算未明。出版物未附逐频数表或原始 PSF 数组。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "from_measured_psf",
+              "sample_wavelengths_nm": [
+                530
+              ],
+              "direction_aggregation": "unspecified",
+              "frequency_unit": "lp/mm",
+              "field_point": null,
+              "frequency_reference_plane": null,
+              "normalization": null,
+              "decibel_convention": null,
+              "curve_style": "solid",
+              "processing_stage": "optical_psf",
+              "data_availability": {
+                "status": "curves_only",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "psf_protocol": {
+              "value": "远场针孔 · 轴扫及固定面强度 PSF",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3，p103 Fig.5.11",
+              "note": "两片分别安装平移台。GT1930 CMOS、ITL200 筒镜及 Mitutoyo M Plan Apo 20×（NA 0.42）继像。轴向步进、采样标定、针孔距离及偏振未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "evaluation_plane_um": 3000,
+              "nominal_lateral_displacement_um": 50,
+              "field_point": null,
+              "object_conjugate": "far_field_pinhole",
+              "object_distance_m": null,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "collection_magnification": 20,
+              "collection_objective_na": 0.42,
+              "illumination_bandwidth_nm": 30
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d50_psf_625",
+          "model": "Colburn 2020 · d=50 μm / 3 mm · 625 nm 固定面 PSF",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d50",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一采集面的双片 PSF 与独立轴扫图。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 3000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p3（C）Fig.1d，pp4–5（D–E）Fig.4b",
+              "note": "设计的名义焦距或固定像面位置。实测轴向峰位读取 Fig.3 和 Fig.4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 50,
+              "reference_kind": "nominal_image_plane"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4B、5J；博士论文 Figs.5.4–5.5",
+              "note": "实测 LED 通道标注的是名义中心。博士论文 §5.8 给光源带宽 15 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "illumination_bandwidth_nm": 15
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4B、5J；博士论文 Figs.5.4–5.5",
+              "note": "Fig.4 显示该通道轴向光强。虚线是固定像面，作者承认各色峰位有显著偏移，逐点峰位未给。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅轴向强度图",
+              "reference_plane_um": 3000
+            },
+            "axial_focus_offset_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4B、5J；博士论文 Figs.5.4–5.5",
+              "note": "相对虚线像面或相对绿光峰位的可追溯数值尚缺。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "reference_plane_um": 3000
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4B、5J；博士论文 Figs.5.4–5.5",
+              "note": "固定面彩图的标尺是 78.3 μm。原始采样、拟合宽度与 Strehl 未给。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅固定面 PSF 图",
+              "evaluation_plane_um": 3000
+            },
+            "mtf_curve": {
+              "value": "作者由实测 PSF 得出的单通道 MTF 曲线",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p101 Fig.5.9B，主文 PDF p4（D）对应正文",
+              "note": "横轴 0–200 lp/mm，纵轴 −50 至 0 dB。双片实线，单片虚线，黑线为 530 nm 理想衍射极限。方向、频率参考面、零频归一与 dB 换算未明。出版物未附逐频数表或原始 PSF 数组。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "from_measured_psf",
+              "sample_wavelengths_nm": [
+                625
+              ],
+              "direction_aggregation": "unspecified",
+              "frequency_unit": "lp/mm",
+              "field_point": null,
+              "frequency_reference_plane": null,
+              "normalization": null,
+              "decibel_convention": null,
+              "curve_style": "solid",
+              "processing_stage": "optical_psf",
+              "data_availability": {
+                "status": "curves_only",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "psf_protocol": {
+              "value": "远场针孔 · 轴扫及固定面强度 PSF",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3，p103 Fig.5.11",
+              "note": "两片分别安装平移台。GT1930 CMOS、ITL200 筒镜及 Mitutoyo M Plan Apo 20×（NA 0.42）继像。轴向步进、采样标定、针孔距离及偏振未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "evaluation_plane_um": 3000,
+              "nominal_lateral_displacement_um": 50,
+              "field_point": null,
+              "object_conjugate": "far_field_pinhole",
+              "object_distance_m": null,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "collection_magnification": 20,
+              "collection_objective_na": 0.42,
+              "illumination_bandwidth_nm": 15
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d50_white_captured",
+          "model": "Colburn 2020 · d=50 μm / 3 mm · 白光原拍",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d50",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "白光标靶与彩色目标的 直接采集。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 3000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p3（C）Fig.1d，pp4–5（D–E）Fig.4b",
+              "note": "设计的名义焦距或固定像面位置。实测轴向峰位读取 Fig.3 和 Fig.4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 50,
+              "reference_kind": "nominal_image_plane"
+            },
+            "illumination": {
+              "value": "非相干宽带白光",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3、p104 Fig.5.12",
+              "note": "商业面板灯照明纸面目标，光谱分布及物距未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ]
+            },
+            "chromatic": {
+              "value": "固定横移下的白光原拍",
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p6（F）Fig.6A–C，d=50 μm 的 Captured 行",
+              "note": "原始彩图保留跨色模糊。未报告数值横向色差、通道对齐或量化 SNR。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "processing_stage": "captured"
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d50_white_deconvolved",
+          "model": "Colburn 2020 · d=50 μm / 3 mm · 白光 TV 重建",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d50",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "白光标靶与彩色目标的 反卷积恢复。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 3000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p3（C）Fig.1d，pp4–5（D–E）Fig.4b",
+              "note": "设计的名义焦距或固定像面位置。实测轴向峰位读取 Fig.3 和 Fig.4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 50,
+              "reference_kind": "nominal_image_plane"
+            },
+            "illumination": {
+              "value": "非相干宽带白光",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3、p104 Fig.5.12",
+              "note": "商业面板灯照明纸面目标，光谱分布及物距未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ]
+            },
+            "chromatic": {
+              "value": "同一横移使用一份 PSF 的 TV 反卷积",
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p6（F）Fig.6A–C，d=50 μm 的 Deconvolved 行",
+              "note": "作者使用 Split Bregman 求解 TV 正则化，μ=2.5×10⁴，每档 PSF 独立。彩图可辨但有噪声放大，未报告定量 SNR 或重建 MTF。",
+              "basis": "reconstruction",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "processing_stage": "deconvolved",
+              "regularization_weight": 25000
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d75_z530",
+          "model": "Colburn 2020 · d=75 μm / 2 mm · 530 nm 轴扫",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d75",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "沿 x=0 截面的绿色 LED 轴向扫焦。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 2000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Eq.3 与端点；p4（D）Fig.3",
+              "note": "按 Eq.3 中 f 与 d 的反比及已给设定，得到该横移的名义焦距。实测峰位另列。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 75,
+              "reference_kind": "nominal_image_plane",
+              "calculation_origin": "atlas",
+              "reference_formula": "150000 µm² / d_µm"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.3，d=75 μm 面板及插图",
+              "note": "实测 LED 通道标注的是名义中心。博士论文 §5.8 给光源带宽 30 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "illumination_bandwidth_nm": 30
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.3，d=75 μm 面板及插图",
+              "note": "插图绘 z 轴强度最大值。逐设定实测值没有独立表，数值留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅轴扫及峰位图",
+              "position_definition": "axial_intensity_maximum"
+            },
+            "depth_of_focus_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.3，d=75 μm 面板及插图",
+              "note": "作者说明焦深随横移改变，未给本设定的定量区间。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅轴向强度剖面"
+            },
+            "psf_protocol": {
+              "value": "远场针孔 · 轴扫及固定面强度 PSF",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3，p103 Fig.5.11",
+              "note": "两片分别安装平移台。GT1930 CMOS、ITL200 筒镜及 Mitutoyo M Plan Apo 20×（NA 0.42）继像。轴向步进、采样标定、针孔距离及偏振未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "evaluation_plane_um": null,
+              "nominal_lateral_displacement_um": 75,
+              "field_point": null,
+              "object_conjugate": "far_field_pinhole",
+              "object_distance_m": null,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "collection_magnification": 20,
+              "collection_objective_na": 0.42
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d75_white_captured",
+          "model": "Colburn 2020 · d=75 μm / 2 mm · 白光原拍",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d75",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "白光标靶与彩色目标的 直接采集。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 2000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Eq.3 与端点；p4（D）Fig.3",
+              "note": "按 Eq.3 中 f 与 d 的反比及已给设定，得到该横移的名义焦距。实测峰位另列。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 75,
+              "reference_kind": "nominal_image_plane",
+              "calculation_origin": "atlas",
+              "reference_formula": "150000 µm² / d_µm"
+            },
+            "illumination": {
+              "value": "非相干宽带白光",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3、p104 Fig.5.12",
+              "note": "商业面板灯照明纸面目标，光谱分布及物距未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ]
+            },
+            "chromatic": {
+              "value": "固定横移下的白光原拍",
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p6（F）Fig.6A–C，d=75 μm 的 Captured 行",
+              "note": "原始彩图保留跨色模糊。未报告数值横向色差、通道对齐或量化 SNR。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "processing_stage": "captured"
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d75_white_deconvolved",
+          "model": "Colburn 2020 · d=75 μm / 2 mm · 白光 TV 重建",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d75",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "白光标靶与彩色目标的 反卷积恢复。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 2000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Eq.3 与端点；p4（D）Fig.3",
+              "note": "按 Eq.3 中 f 与 d 的反比及已给设定，得到该横移的名义焦距。实测峰位另列。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 75,
+              "reference_kind": "nominal_image_plane",
+              "calculation_origin": "atlas",
+              "reference_formula": "150000 µm² / d_µm"
+            },
+            "illumination": {
+              "value": "非相干宽带白光",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3、p104 Fig.5.12",
+              "note": "商业面板灯照明纸面目标，光谱分布及物距未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ]
+            },
+            "chromatic": {
+              "value": "同一横移使用一份 PSF 的 TV 反卷积",
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p6（F）Fig.6A–C，d=75 μm 的 Deconvolved 行",
+              "note": "作者使用 Split Bregman 求解 TV 正则化，μ=2.5×10⁴，每档 PSF 独立。彩图可辨但有噪声放大，未报告定量 SNR 或重建 MTF。",
+              "basis": "reconstruction",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "processing_stage": "deconvolved",
+              "regularization_weight": 25000
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d100_z530",
+          "model": "Colburn 2020 · d=100 μm / 1.5 mm · 530 nm 轴扫",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d100",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "沿 x=0 截面的绿色 LED 轴向扫焦。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 1500,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p3（C）Fig.1e，pp4–5（D–E）Fig.4a",
+              "note": "设计的名义焦距或固定像面位置。实测轴向峰位读取 Fig.3 和 Fig.4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 100,
+              "reference_kind": "nominal_image_plane"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.3，d=100 μm 面板及插图",
+              "note": "实测 LED 通道标注的是名义中心。博士论文 §5.8 给光源带宽 30 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "illumination_bandwidth_nm": 30
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.3，d=100 μm 面板及插图",
+              "note": "插图绘 z 轴强度最大值。逐设定实测值没有独立表，数值留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅轴扫及峰位图",
+              "position_definition": "axial_intensity_maximum"
+            },
+            "depth_of_focus_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.3，d=100 μm 面板及插图",
+              "note": "作者说明焦深随横移改变，未给本设定的定量区间。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅轴向强度剖面"
+            },
+            "psf_protocol": {
+              "value": "远场针孔 · 轴扫及固定面强度 PSF",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3，p103 Fig.5.11",
+              "note": "两片分别安装平移台。GT1930 CMOS、ITL200 筒镜及 Mitutoyo M Plan Apo 20×（NA 0.42）继像。轴向步进、采样标定、针孔距离及偏振未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "evaluation_plane_um": null,
+              "nominal_lateral_displacement_um": 100,
+              "field_point": null,
+              "object_conjugate": "far_field_pinhole",
+              "object_distance_m": null,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "collection_magnification": 20,
+              "collection_objective_na": 0.42
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d100_mtf10",
+          "model": "Colburn 2020 · d=100 μm / 1.5 mm · 三色平均 MTF10",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d100",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者由固定面三通道 PSF 得出的跨色 MTF10。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 1500,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p3（C）Fig.1e，pp4–5（D–E）Fig.4a",
+              "note": "设计的名义焦距或固定像面位置。实测轴向峰位读取 Fig.3 和 Fig.4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 100,
+              "reference_kind": "nominal_image_plane"
+            },
+            "spectral_mean_mtf10_cycles_mm": {
+              "value": 9.6,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.5 前测量段及所引 S3，博士论文 PDF p101 Fig.5.9A",
+              "note": "作者先对波长平均，再报告 MTF=0.10 的估计频率。三通道权重与频率标定未明。图的 dB 换算未知。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "display": "约 9.6 cycles/mm",
+              "approximate": true,
+              "threshold_fraction": 0.1,
+              "frequency_unit": "cycles/mm",
+              "sample_wavelengths_nm": [
+                455,
+                530,
+                625
+              ]
+            },
+            "mtf_curve": {
+              "value": "作者由实测 PSF 得出的跨波长平均 MTF 与原曲线",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p101 Fig.5.9A，主文 PDF p4（D）对应正文",
+              "note": "横轴 0–200 lp/mm，纵轴 −50 至 0 dB。双片实线，单片虚线，黑线为 530 nm 理想衍射极限。方向、频率参考面、零频归一与 dB 换算未明。出版物未附逐频数表或原始 PSF 数组。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "from_measured_psf_spectral_mean",
+              "sample_wavelengths_nm": [
+                455,
+                530,
+                625
+              ],
+              "direction_aggregation": "unspecified",
+              "frequency_unit": "lp/mm",
+              "field_point": null,
+              "frequency_reference_plane": null,
+              "normalization": null,
+              "decibel_convention": null,
+              "curve_style": "solid",
+              "processing_stage": "optical_psf",
+              "data_availability": {
+                "status": "curves_only",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "psf_protocol": {
+              "value": "远场针孔 · 轴扫及固定面强度 PSF",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3，p103 Fig.5.11",
+              "note": "两片分别安装平移台。GT1930 CMOS、ITL200 筒镜及 Mitutoyo M Plan Apo 20×（NA 0.42）继像。轴向步进、采样标定、针孔距离及偏振未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "evaluation_plane_um": 1500,
+              "nominal_lateral_displacement_um": 100,
+              "field_point": null,
+              "object_conjugate": "far_field_pinhole",
+              "object_distance_m": null,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "collection_magnification": 20,
+              "collection_objective_na": 0.42
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d100_psf_455",
+          "model": "Colburn 2020 · d=100 μm / 1.5 mm · 455 nm 固定面 PSF",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d100",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一采集面的双片 PSF 与独立轴扫图。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 1500,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p3（C）Fig.1e，pp4–5（D–E）Fig.4a",
+              "note": "设计的名义焦距或固定像面位置。实测轴向峰位读取 Fig.3 和 Fig.4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 100,
+              "reference_kind": "nominal_image_plane"
+            },
+            "wavelength_nm": {
+              "value": 455,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4A、5F；博士论文 Figs.5.4–5.5",
+              "note": "实测 LED 通道标注的是名义中心。博士论文 §5.8 给光源带宽 25 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "illumination_bandwidth_nm": 25
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4A、5F；博士论文 Figs.5.4–5.5",
+              "note": "Fig.4 显示该通道轴向光强。虚线是固定像面，作者承认各色峰位有显著偏移，逐点峰位未给。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅轴向强度图",
+              "reference_plane_um": 1500
+            },
+            "axial_focus_offset_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4A、5F；博士论文 Figs.5.4–5.5",
+              "note": "相对虚线像面或相对绿光峰位的可追溯数值尚缺。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "reference_plane_um": 1500
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4A、5F；博士论文 Figs.5.4–5.5",
+              "note": "固定面彩图的标尺是 78.3 μm。原始采样、拟合宽度与 Strehl 未给。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅固定面 PSF 图",
+              "evaluation_plane_um": 1500
+            },
+            "mtf_curve": {
+              "value": "作者由实测 PSF 得出的单通道 MTF 曲线",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p101 Fig.5.9A，主文 PDF p4（D）对应正文",
+              "note": "横轴 0–200 lp/mm，纵轴 −50 至 0 dB。双片实线，单片虚线，黑线为 530 nm 理想衍射极限。方向、频率参考面、零频归一与 dB 换算未明。出版物未附逐频数表或原始 PSF 数组。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "from_measured_psf",
+              "sample_wavelengths_nm": [
+                455
+              ],
+              "direction_aggregation": "unspecified",
+              "frequency_unit": "lp/mm",
+              "field_point": null,
+              "frequency_reference_plane": null,
+              "normalization": null,
+              "decibel_convention": null,
+              "curve_style": "solid",
+              "processing_stage": "optical_psf",
+              "data_availability": {
+                "status": "curves_only",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "psf_protocol": {
+              "value": "远场针孔 · 轴扫及固定面强度 PSF",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3，p103 Fig.5.11",
+              "note": "两片分别安装平移台。GT1930 CMOS、ITL200 筒镜及 Mitutoyo M Plan Apo 20×（NA 0.42）继像。轴向步进、采样标定、针孔距离及偏振未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "evaluation_plane_um": 1500,
+              "nominal_lateral_displacement_um": 100,
+              "field_point": null,
+              "object_conjugate": "far_field_pinhole",
+              "object_distance_m": null,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "collection_magnification": 20,
+              "collection_objective_na": 0.42,
+              "illumination_bandwidth_nm": 25
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d100_psf_530",
+          "model": "Colburn 2020 · d=100 μm / 1.5 mm · 530 nm 固定面 PSF",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d100",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一采集面的双片 PSF 与独立轴扫图。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 1500,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p3（C）Fig.1e，pp4–5（D–E）Fig.4a",
+              "note": "设计的名义焦距或固定像面位置。实测轴向峰位读取 Fig.3 和 Fig.4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 100,
+              "reference_kind": "nominal_image_plane"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4A、5E；博士论文 Figs.5.4–5.5",
+              "note": "实测 LED 通道标注的是名义中心。博士论文 §5.8 给光源带宽 30 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "illumination_bandwidth_nm": 30
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4A、5E；博士论文 Figs.5.4–5.5",
+              "note": "Fig.4 显示该通道轴向光强。虚线是固定像面，作者承认各色峰位有显著偏移，逐点峰位未给。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅轴向强度图",
+              "reference_plane_um": 1500
+            },
+            "axial_focus_offset_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4A、5E；博士论文 Figs.5.4–5.5",
+              "note": "相对虚线像面或相对绿光峰位的可追溯数值尚缺。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "reference_plane_um": 1500
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4A、5E；博士论文 Figs.5.4–5.5",
+              "note": "固定面彩图的标尺是 78.3 μm。原始采样、拟合宽度与 Strehl 未给。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅固定面 PSF 图",
+              "evaluation_plane_um": 1500
+            },
+            "mtf_curve": {
+              "value": "作者由实测 PSF 得出的单通道 MTF 曲线",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p101 Fig.5.9A，主文 PDF p4（D）对应正文",
+              "note": "横轴 0–200 lp/mm，纵轴 −50 至 0 dB。双片实线，单片虚线，黑线为 530 nm 理想衍射极限。方向、频率参考面、零频归一与 dB 换算未明。出版物未附逐频数表或原始 PSF 数组。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "from_measured_psf",
+              "sample_wavelengths_nm": [
+                530
+              ],
+              "direction_aggregation": "unspecified",
+              "frequency_unit": "lp/mm",
+              "field_point": null,
+              "frequency_reference_plane": null,
+              "normalization": null,
+              "decibel_convention": null,
+              "curve_style": "solid",
+              "processing_stage": "optical_psf",
+              "data_availability": {
+                "status": "curves_only",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "psf_protocol": {
+              "value": "远场针孔 · 轴扫及固定面强度 PSF",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3，p103 Fig.5.11",
+              "note": "两片分别安装平移台。GT1930 CMOS、ITL200 筒镜及 Mitutoyo M Plan Apo 20×（NA 0.42）继像。轴向步进、采样标定、针孔距离及偏振未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "evaluation_plane_um": 1500,
+              "nominal_lateral_displacement_um": 100,
+              "field_point": null,
+              "object_conjugate": "far_field_pinhole",
+              "object_distance_m": null,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "collection_magnification": 20,
+              "collection_objective_na": 0.42,
+              "illumination_bandwidth_nm": 30
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d100_psf_625",
+          "model": "Colburn 2020 · d=100 μm / 1.5 mm · 625 nm 固定面 PSF",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d100",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一采集面的双片 PSF 与独立轴扫图。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 1500,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p3（C）Fig.1e，pp4–5（D–E）Fig.4a",
+              "note": "设计的名义焦距或固定像面位置。实测轴向峰位读取 Fig.3 和 Fig.4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 100,
+              "reference_kind": "nominal_image_plane"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4A、5D；博士论文 Figs.5.4–5.5",
+              "note": "实测 LED 通道标注的是名义中心。博士论文 §5.8 给光源带宽 15 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "illumination_bandwidth_nm": 15
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4A、5D；博士论文 Figs.5.4–5.5",
+              "note": "Fig.4 显示该通道轴向光强。虚线是固定像面，作者承认各色峰位有显著偏移，逐点峰位未给。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅轴向强度图",
+              "reference_plane_um": 1500
+            },
+            "axial_focus_offset_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4A、5D；博士论文 Figs.5.4–5.5",
+              "note": "相对虚线像面或相对绿光峰位的可追溯数值尚缺。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "reference_plane_um": 1500
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Figs.4A、5D；博士论文 Figs.5.4–5.5",
+              "note": "固定面彩图的标尺是 78.3 μm。原始采样、拟合宽度与 Strehl 未给。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅固定面 PSF 图",
+              "evaluation_plane_um": 1500
+            },
+            "mtf_curve": {
+              "value": "作者由实测 PSF 得出的单通道 MTF 曲线",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p101 Fig.5.9A，主文 PDF p4（D）对应正文",
+              "note": "横轴 0–200 lp/mm，纵轴 −50 至 0 dB。双片实线，单片虚线，黑线为 530 nm 理想衍射极限。方向、频率参考面、零频归一与 dB 换算未明。出版物未附逐频数表或原始 PSF 数组。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "from_measured_psf",
+              "sample_wavelengths_nm": [
+                625
+              ],
+              "direction_aggregation": "unspecified",
+              "frequency_unit": "lp/mm",
+              "field_point": null,
+              "frequency_reference_plane": null,
+              "normalization": null,
+              "decibel_convention": null,
+              "curve_style": "solid",
+              "processing_stage": "optical_psf",
+              "data_availability": {
+                "status": "curves_only",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "psf_protocol": {
+              "value": "远场针孔 · 轴扫及固定面强度 PSF",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3，p103 Fig.5.11",
+              "note": "两片分别安装平移台。GT1930 CMOS、ITL200 筒镜及 Mitutoyo M Plan Apo 20×（NA 0.42）继像。轴向步进、采样标定、针孔距离及偏振未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "evaluation_plane_um": 1500,
+              "nominal_lateral_displacement_um": 100,
+              "field_point": null,
+              "object_conjugate": "far_field_pinhole",
+              "object_distance_m": null,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "collection_magnification": 20,
+              "collection_objective_na": 0.42,
+              "illumination_bandwidth_nm": 15
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d100_white_captured",
+          "model": "Colburn 2020 · d=100 μm / 1.5 mm · 白光原拍",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d100",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "白光标靶与彩色目标的 直接采集。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 1500,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p3（C）Fig.1e，pp4–5（D–E）Fig.4a",
+              "note": "设计的名义焦距或固定像面位置。实测轴向峰位读取 Fig.3 和 Fig.4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 100,
+              "reference_kind": "nominal_image_plane"
+            },
+            "illumination": {
+              "value": "非相干宽带白光",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3、p104 Fig.5.12",
+              "note": "商业面板灯照明纸面目标，光谱分布及物距未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ]
+            },
+            "chromatic": {
+              "value": "固定横移下的白光原拍",
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p6（F）Fig.6A–C，d=100 μm 的 Captured 行",
+              "note": "原始彩图保留跨色模糊。未报告数值横向色差、通道对齐或量化 SNR。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "processing_stage": "captured"
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d100_white_deconvolved",
+          "model": "Colburn 2020 · d=100 μm / 1.5 mm · 白光 TV 重建",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d100",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "白光标靶与彩色目标的 反卷积恢复。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 1500,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p3（C）Fig.1e，pp4–5（D–E）Fig.4a",
+              "note": "设计的名义焦距或固定像面位置。实测轴向峰位读取 Fig.3 和 Fig.4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 100,
+              "reference_kind": "nominal_image_plane"
+            },
+            "illumination": {
+              "value": "非相干宽带白光",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3、p104 Fig.5.12",
+              "note": "商业面板灯照明纸面目标，光谱分布及物距未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ]
+            },
+            "chromatic": {
+              "value": "同一横移使用一份 PSF 的 TV 反卷积",
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p6（F）Fig.6A–C，d=100 μm 的 Deconvolved 行",
+              "note": "作者使用 Split Bregman 求解 TV 正则化，μ=2.5×10⁴，每档 PSF 独立。彩图可辨但有噪声放大，未报告定量 SNR 或重建 MTF。",
+              "basis": "reconstruction",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "processing_stage": "deconvolved",
+              "regularization_weight": 25000
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d125_z530",
+          "model": "Colburn 2020 · d=125 μm / 1.2 mm · 530 nm 轴扫",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d125",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "沿 x=0 截面的绿色 LED 轴向扫焦。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 1200,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p3（C）Design 的调焦端点；p4（D）Fig.3",
+              "note": "设计的名义焦距或固定像面位置。实测轴向峰位读取 Fig.3 和 Fig.4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 125,
+              "reference_kind": "nominal_image_plane"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.3，d=125 μm 面板及插图",
+              "note": "实测 LED 通道标注的是名义中心。博士论文 §5.8 给光源带宽 30 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "illumination_bandwidth_nm": 30
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.3，d=125 μm 面板及插图",
+              "note": "插图绘 z 轴强度最大值。逐设定实测值没有独立表，数值留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅轴扫及峰位图",
+              "position_definition": "axial_intensity_maximum"
+            },
+            "depth_of_focus_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.3，d=125 μm 面板及插图",
+              "note": "作者说明焦深随横移改变，未给本设定的定量区间。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅轴向强度剖面"
+            },
+            "psf_protocol": {
+              "value": "远场针孔 · 轴扫及固定面强度 PSF",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3，p103 Fig.5.11",
+              "note": "两片分别安装平移台。GT1930 CMOS、ITL200 筒镜及 Mitutoyo M Plan Apo 20×（NA 0.42）继像。轴向步进、采样标定、针孔距离及偏振未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "evaluation_plane_um": null,
+              "nominal_lateral_displacement_um": 125,
+              "field_point": null,
+              "object_conjugate": "far_field_pinhole",
+              "object_distance_m": null,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "collection_magnification": 20,
+              "collection_objective_na": 0.42
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d125_white_captured",
+          "model": "Colburn 2020 · d=125 μm / 1.2 mm · 白光原拍",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d125",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "白光标靶与彩色目标的 直接采集。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 1200,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p3（C）Design 的调焦端点；p4（D）Fig.3",
+              "note": "设计的名义焦距或固定像面位置。实测轴向峰位读取 Fig.3 和 Fig.4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 125,
+              "reference_kind": "nominal_image_plane"
+            },
+            "illumination": {
+              "value": "非相干宽带白光",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3、p104 Fig.5.12",
+              "note": "商业面板灯照明纸面目标，光谱分布及物距未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ]
+            },
+            "chromatic": {
+              "value": "固定横移下的白光原拍",
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p6（F）Fig.6A–C，d=125 μm 的 Captured 行",
+              "note": "原始彩图保留跨色模糊。未报告数值横向色差、通道对齐或量化 SNR。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "processing_stage": "captured"
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_edof_d125_white_deconvolved",
+          "model": "Colburn 2020 · d=125 μm / 1.2 mm · 白光 TV 重建",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "edof_d125",
+          "module": "",
+          "variant": "可见光 Alvarez 双片扩展焦深",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "白光标靶与彩色目标的 反卷积恢复。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp2–3（B–C）Design／Fig.1，p6（F）Discussion，博士论文 PDF p109 Fig.5.16",
+              "note": "1 mm 物理孔径宽度。两片布局 x、y 均为 −0.5 至 +0.5 mm，有效重叠孔径随横移可能变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "aperture_shape": "square",
+              "width_reference": "individual_metasurface",
+              "effective_overlap_um": null
+            },
+            "design_focal_um": {
+              "value": 1200,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p3（C）Design 的调焦端点；p4（D）Fig.3",
+              "note": "设计的名义焦距或固定像面位置。实测轴向峰位读取 Fig.3 和 Fig.4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "nominal_lateral_displacement_um": 125,
+              "reference_kind": "nominal_image_plane"
+            },
+            "illumination": {
+              "value": "非相干宽带白光",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3、p104 Fig.5.12",
+              "note": "商业面板灯照明纸面目标，光谱分布及物距未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ]
+            },
+            "chromatic": {
+              "value": "同一横移使用一份 PSF 的 TV 反卷积",
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p6（F）Fig.6A–C，d=125 μm 的 Deconvolved 行",
+              "note": "作者使用 Split Bregman 求解 TV 正则化，μ=2.5×10⁴，每档 PSF 独立。彩图可辨但有噪声放大，未报告定量 SNR 或重建 MTF。",
+              "basis": "reconstruction",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "processing_stage": "deconvolved",
+              "regularization_weight": 25000
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_singlet_1500_psf_455",
+          "model": "Colburn 2020 · 1.5 mm 色散单片 · 455 nm",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "singlet_1500",
+          "module": "",
+          "variant": "单片色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "单片对照的固定像面光学 PSF。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.5 对照段",
+              "note": "作者报告 1 mm 孔径尺寸。对照片有效光瞳形状在此段未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_shape": null
+            },
+            "design_focal_um": {
+              "value": 1500,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp4–5（D–E）Fig.5、Eq.8",
+              "note": "单片在 530 nm 设计的焦距，等照明对照在公共固定面采集。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "reference_wavelength_nm": 530,
+              "original_unit": "mm"
+            },
+            "wavelength_nm": {
+              "value": 455,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Fig.5C；博士论文 PDF p101 Fig.5.9A",
+              "note": "实测 LED 通道标注的是名义中心。博士论文 §5.8 给光源带宽 25 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "illumination_bandwidth_nm": 25
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Fig.5C；博士论文 PDF p101 Fig.5.9A",
+              "note": "定色焦面采集。该波长焦斑无独立数量，图的比例尺为 78.3 μm。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅固定面 PSF 图"
+            },
+            "psf_protocol": {
+              "value": "远场针孔 · 轴扫及固定面强度 PSF",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3，p103 Fig.5.11",
+              "note": "两片分别安装平移台。GT1930 CMOS、ITL200 筒镜及 Mitutoyo M Plan Apo 20×（NA 0.42）继像。轴向步进、采样标定、针孔距离及偏振未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "evaluation_plane_um": 1500,
+              "nominal_lateral_displacement_um": null,
+              "field_point": null,
+              "object_conjugate": "far_field_pinhole",
+              "object_distance_m": null,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "collection_magnification": 20,
+              "collection_objective_na": 0.42,
+              "illumination_bandwidth_nm": 25
+            },
+            "mtf_curve": {
+              "value": "作者由实测 PSF 得出的单通道 MTF 曲线",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p101 Fig.5.9A，主文 PDF p4（D）对应正文",
+              "note": "横轴 0–200 lp/mm，纵轴 −50 至 0 dB。双片实线，单片虚线，黑线为 530 nm 理想衍射极限。方向、频率参考面、零频归一与 dB 换算未明。出版物未附逐频数表或原始 PSF 数组。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "from_measured_psf",
+              "sample_wavelengths_nm": [
+                455
+              ],
+              "direction_aggregation": "unspecified",
+              "frequency_unit": "lp/mm",
+              "field_point": null,
+              "frequency_reference_plane": null,
+              "normalization": null,
+              "decibel_convention": null,
+              "curve_style": "dashed",
+              "processing_stage": "optical_psf",
+              "data_availability": {
+                "status": "curves_only",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_singlet_1500_psf_530",
+          "model": "Colburn 2020 · 1.5 mm 色散单片 · 530 nm",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "singlet_1500",
+          "module": "",
+          "variant": "单片色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "单片对照的固定像面光学 PSF。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.5 对照段",
+              "note": "作者报告 1 mm 孔径尺寸。对照片有效光瞳形状在此段未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_shape": null
+            },
+            "design_focal_um": {
+              "value": 1500,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp4–5（D–E）Fig.5、Eq.8",
+              "note": "单片在 530 nm 设计的焦距，等照明对照在公共固定面采集。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "reference_wavelength_nm": 530,
+              "original_unit": "mm"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Fig.5B；博士论文 PDF p101 Fig.5.9A",
+              "note": "实测 LED 通道标注的是名义中心。博士论文 §5.8 给光源带宽 30 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "illumination_bandwidth_nm": 30
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Fig.5B；博士论文 PDF p101 Fig.5.9A",
+              "note": "定色焦面采集。该波长焦斑无独立数量，图的比例尺为 78.3 μm。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅固定面 PSF 图"
+            },
+            "psf_protocol": {
+              "value": "远场针孔 · 轴扫及固定面强度 PSF",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3，p103 Fig.5.11",
+              "note": "两片分别安装平移台。GT1930 CMOS、ITL200 筒镜及 Mitutoyo M Plan Apo 20×（NA 0.42）继像。轴向步进、采样标定、针孔距离及偏振未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "evaluation_plane_um": 1500,
+              "nominal_lateral_displacement_um": null,
+              "field_point": null,
+              "object_conjugate": "far_field_pinhole",
+              "object_distance_m": null,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "collection_magnification": 20,
+              "collection_objective_na": 0.42,
+              "illumination_bandwidth_nm": 30
+            },
+            "mtf_curve": {
+              "value": "作者由实测 PSF 得出的单通道 MTF 曲线",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p101 Fig.5.9A，主文 PDF p4（D）对应正文",
+              "note": "横轴 0–200 lp/mm，纵轴 −50 至 0 dB。双片实线，单片虚线，黑线为 530 nm 理想衍射极限。方向、频率参考面、零频归一与 dB 换算未明。出版物未附逐频数表或原始 PSF 数组。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "from_measured_psf",
+              "sample_wavelengths_nm": [
+                530
+              ],
+              "direction_aggregation": "unspecified",
+              "frequency_unit": "lp/mm",
+              "field_point": null,
+              "frequency_reference_plane": null,
+              "normalization": null,
+              "decibel_convention": null,
+              "curve_style": "dashed",
+              "processing_stage": "optical_psf",
+              "data_availability": {
+                "status": "curves_only",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_singlet_1500_psf_625",
+          "model": "Colburn 2020 · 1.5 mm 色散单片 · 625 nm",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "singlet_1500",
+          "module": "",
+          "variant": "单片色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "单片对照的固定像面光学 PSF。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.5 对照段",
+              "note": "作者报告 1 mm 孔径尺寸。对照片有效光瞳形状在此段未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_shape": null
+            },
+            "design_focal_um": {
+              "value": 1500,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp4–5（D–E）Fig.5、Eq.8",
+              "note": "单片在 530 nm 设计的焦距，等照明对照在公共固定面采集。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "reference_wavelength_nm": 530,
+              "original_unit": "mm"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Fig.5A；博士论文 PDF p101 Fig.5.9A",
+              "note": "实测 LED 通道标注的是名义中心。博士论文 §5.8 给光源带宽 15 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "illumination_bandwidth_nm": 15
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Fig.5A；博士论文 PDF p101 Fig.5.9A",
+              "note": "定色焦面采集。该波长焦斑无独立数量，图的比例尺为 78.3 μm。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅固定面 PSF 图"
+            },
+            "psf_protocol": {
+              "value": "远场针孔 · 轴扫及固定面强度 PSF",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3，p103 Fig.5.11",
+              "note": "两片分别安装平移台。GT1930 CMOS、ITL200 筒镜及 Mitutoyo M Plan Apo 20×（NA 0.42）继像。轴向步进、采样标定、针孔距离及偏振未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "evaluation_plane_um": 1500,
+              "nominal_lateral_displacement_um": null,
+              "field_point": null,
+              "object_conjugate": "far_field_pinhole",
+              "object_distance_m": null,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "collection_magnification": 20,
+              "collection_objective_na": 0.42,
+              "illumination_bandwidth_nm": 15
+            },
+            "mtf_curve": {
+              "value": "作者由实测 PSF 得出的单通道 MTF 曲线",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p101 Fig.5.9A，主文 PDF p4（D）对应正文",
+              "note": "横轴 0–200 lp/mm，纵轴 −50 至 0 dB。双片实线，单片虚线，黑线为 530 nm 理想衍射极限。方向、频率参考面、零频归一与 dB 换算未明。出版物未附逐频数表或原始 PSF 数组。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "from_measured_psf",
+              "sample_wavelengths_nm": [
+                625
+              ],
+              "direction_aggregation": "unspecified",
+              "frequency_unit": "lp/mm",
+              "field_point": null,
+              "frequency_reference_plane": null,
+              "normalization": null,
+              "decibel_convention": null,
+              "curve_style": "dashed",
+              "processing_stage": "optical_psf",
+              "data_availability": {
+                "status": "curves_only",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_singlet_1500_white",
+          "model": "Colburn 2020 · 1.5 mm 色散单片 · 白光对照",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "singlet_1500",
+          "module": "",
+          "variant": "单片色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "未经重建的白光原拍对照。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.5 对照段",
+              "note": "作者报告 1 mm 孔径尺寸。对照片有效光瞳形状在此段未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_shape": null
+            },
+            "design_focal_um": {
+              "value": 1500,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp4–5（D–E）Fig.5、Eq.8",
+              "note": "单片在 530 nm 设计的焦距，等照明对照在公共固定面采集。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "reference_wavelength_nm": 530,
+              "original_unit": "mm"
+            },
+            "illumination": {
+              "value": "非相干宽带白光",
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p6（F）Fig.6A–C Singlet Metalens 列",
+              "note": "图版是单片对照固定面的白光图。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "白光原拍有明显的颜色模糊",
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp4、6（D、F）Imaging，Fig.6",
+              "note": "原图有像差影响，未报告横向 RGB 位移、场点及图像 SNR。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_singlet_3000_psf_455",
+          "model": "Colburn 2020 · 3 mm 色散单片 · 455 nm",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "singlet_3000",
+          "module": "",
+          "variant": "单片色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "单片对照的固定像面光学 PSF。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.5 对照段",
+              "note": "作者报告 1 mm 孔径尺寸。对照片有效光瞳形状在此段未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_shape": null
+            },
+            "design_focal_um": {
+              "value": 3000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp4–5（D–E）Fig.5、Eq.8",
+              "note": "单片在 530 nm 设计的焦距，等照明对照在公共固定面采集。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "reference_wavelength_nm": 530,
+              "original_unit": "mm"
+            },
+            "wavelength_nm": {
+              "value": 455,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Fig.5I；博士论文 PDF p101 Fig.5.9B",
+              "note": "实测 LED 通道标注的是名义中心。博士论文 §5.8 给光源带宽 25 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "illumination_bandwidth_nm": 25
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Fig.5I；博士论文 PDF p101 Fig.5.9B",
+              "note": "定色焦面采集。该波长焦斑无独立数量，图的比例尺为 78.3 μm。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅固定面 PSF 图"
+            },
+            "psf_protocol": {
+              "value": "远场针孔 · 轴扫及固定面强度 PSF",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3，p103 Fig.5.11",
+              "note": "两片分别安装平移台。GT1930 CMOS、ITL200 筒镜及 Mitutoyo M Plan Apo 20×（NA 0.42）继像。轴向步进、采样标定、针孔距离及偏振未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "evaluation_plane_um": 3000,
+              "nominal_lateral_displacement_um": null,
+              "field_point": null,
+              "object_conjugate": "far_field_pinhole",
+              "object_distance_m": null,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "collection_magnification": 20,
+              "collection_objective_na": 0.42,
+              "illumination_bandwidth_nm": 25
+            },
+            "mtf_curve": {
+              "value": "作者由实测 PSF 得出的单通道 MTF 曲线",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p101 Fig.5.9B，主文 PDF p4（D）对应正文",
+              "note": "横轴 0–200 lp/mm，纵轴 −50 至 0 dB。双片实线，单片虚线，黑线为 530 nm 理想衍射极限。方向、频率参考面、零频归一与 dB 换算未明。出版物未附逐频数表或原始 PSF 数组。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "from_measured_psf",
+              "sample_wavelengths_nm": [
+                455
+              ],
+              "direction_aggregation": "unspecified",
+              "frequency_unit": "lp/mm",
+              "field_point": null,
+              "frequency_reference_plane": null,
+              "normalization": null,
+              "decibel_convention": null,
+              "curve_style": "dashed",
+              "processing_stage": "optical_psf",
+              "data_availability": {
+                "status": "curves_only",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_singlet_3000_psf_530",
+          "model": "Colburn 2020 · 3 mm 色散单片 · 530 nm",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "singlet_3000",
+          "module": "",
+          "variant": "单片色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "单片对照的固定像面光学 PSF。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.5 对照段",
+              "note": "作者报告 1 mm 孔径尺寸。对照片有效光瞳形状在此段未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_shape": null
+            },
+            "design_focal_um": {
+              "value": 3000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp4–5（D–E）Fig.5、Eq.8",
+              "note": "单片在 530 nm 设计的焦距，等照明对照在公共固定面采集。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "reference_wavelength_nm": 530,
+              "original_unit": "mm"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Fig.5H；博士论文 PDF p101 Fig.5.9B",
+              "note": "实测 LED 通道标注的是名义中心。博士论文 §5.8 给光源带宽 30 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "illumination_bandwidth_nm": 30
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Fig.5H；博士论文 PDF p101 Fig.5.9B",
+              "note": "定色焦面采集。该波长焦斑无独立数量，图的比例尺为 78.3 μm。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅固定面 PSF 图"
+            },
+            "psf_protocol": {
+              "value": "远场针孔 · 轴扫及固定面强度 PSF",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3，p103 Fig.5.11",
+              "note": "两片分别安装平移台。GT1930 CMOS、ITL200 筒镜及 Mitutoyo M Plan Apo 20×（NA 0.42）继像。轴向步进、采样标定、针孔距离及偏振未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "evaluation_plane_um": 3000,
+              "nominal_lateral_displacement_um": null,
+              "field_point": null,
+              "object_conjugate": "far_field_pinhole",
+              "object_distance_m": null,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "collection_magnification": 20,
+              "collection_objective_na": 0.42,
+              "illumination_bandwidth_nm": 30
+            },
+            "mtf_curve": {
+              "value": "作者由实测 PSF 得出的单通道 MTF 曲线",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p101 Fig.5.9B，主文 PDF p4（D）对应正文",
+              "note": "横轴 0–200 lp/mm，纵轴 −50 至 0 dB。双片实线，单片虚线，黑线为 530 nm 理想衍射极限。方向、频率参考面、零频归一与 dB 换算未明。出版物未附逐频数表或原始 PSF 数组。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "from_measured_psf",
+              "sample_wavelengths_nm": [
+                530
+              ],
+              "direction_aggregation": "unspecified",
+              "frequency_unit": "lp/mm",
+              "field_point": null,
+              "frequency_reference_plane": null,
+              "normalization": null,
+              "decibel_convention": null,
+              "curve_style": "dashed",
+              "processing_stage": "optical_psf",
+              "data_availability": {
+                "status": "curves_only",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_singlet_3000_psf_625",
+          "model": "Colburn 2020 · 3 mm 色散单片 · 625 nm",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "singlet_3000",
+          "module": "",
+          "variant": "单片色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "单片对照的固定像面光学 PSF。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p4（D）Fig.5 对照段",
+              "note": "作者报告 1 mm 孔径尺寸。对照片有效光瞳形状在此段未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_shape": null
+            },
+            "design_focal_um": {
+              "value": 3000,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF pp4–5（D–E）Fig.5、Eq.8",
+              "note": "单片在 530 nm 设计的焦距，等照明对照在公共固定面采集。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "reference_wavelength_nm": 530,
+              "original_unit": "mm"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Fig.5G；博士论文 PDF p101 Fig.5.9B",
+              "note": "实测 LED 通道标注的是名义中心。博士论文 §5.8 给光源带宽 15 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_2020",
+                "colburn_quartic_thesis_2020"
+              ],
+              "illumination_bandwidth_nm": 15
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "colburn_quartic_2020",
+              "location": "主文 PDF p5（E）Fig.5G；博士论文 PDF p101 Fig.5.9B",
+              "note": "定色焦面采集。该波长焦斑无独立数量，图的比例尺为 78.3 μm。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅固定面 PSF 图"
+            },
+            "psf_protocol": {
+              "value": "远场针孔 · 轴扫及固定面强度 PSF",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p97 §5.5.3，p103 Fig.5.11",
+              "note": "两片分别安装平移台。GT1930 CMOS、ITL200 筒镜及 Mitutoyo M Plan Apo 20×（NA 0.42）继像。轴向步进、采样标定、针孔距离及偏振未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "evaluation_plane_um": 3000,
+              "nominal_lateral_displacement_um": null,
+              "field_point": null,
+              "object_conjugate": "far_field_pinhole",
+              "object_distance_m": null,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "collection_magnification": 20,
+              "collection_objective_na": 0.42,
+              "illumination_bandwidth_nm": 15
+            },
+            "mtf_curve": {
+              "value": "作者由实测 PSF 得出的单通道 MTF 曲线",
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p101 Fig.5.9B，主文 PDF p4（D）对应正文",
+              "note": "横轴 0–200 lp/mm，纵轴 −50 至 0 dB。双片实线，单片虚线，黑线为 530 nm 理想衍射极限。方向、频率参考面、零频归一与 dB 换算未明。出版物未附逐频数表或原始 PSF 数组。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "from_measured_psf",
+              "sample_wavelengths_nm": [
+                625
+              ],
+              "direction_aggregation": "unspecified",
+              "frequency_unit": "lp/mm",
+              "field_point": null,
+              "frequency_reference_plane": null,
+              "normalization": null,
+              "decibel_convention": null,
+              "curve_style": "dashed",
+              "processing_stage": "optical_psf",
+              "data_availability": {
+                "status": "curves_only",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "colburn2020quartic_simulated_correlation",
+          "model": "Colburn 2020 · 1 mm 双片 · PSF 相关性模型",
+          "study_id": "colburn2020quartic",
+          "specimen_id": "model_correlation",
+          "module": "",
+          "variant": "扩展焦深双片模拟",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "角谱传播模拟的波长及入射角相关性。",
+          "values": {
+            "aperture_width_um": {
+              "value": 1000,
+              "source": "colburn_quartic_thesis_2020",
+              "location": "博士论文 PDF p105 §5.9",
+              "note": "模型使用完整 1 mm 口径布局。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "aperture_shape": "square"
+            },
+            "simulated_psf_correlation_bandwidth_nm": {
+              "value": null,
+              "source": "colburn_quartic_thesis_2020",
+              "location": "主文 PDF p3（C）Design，博士论文 PDF pp105、107 §5.9／Fig.5.14",
+              "note": "作者给约 440–640 nm 的 PSF 相关窗口，参考波长 530 nm。正文只给近似端点。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "display": "约 440–640 nm（作者窗口）",
+              "approximate": true,
+              "reference_wavelength_nm": 530,
+              "correlation_threshold": 0.5,
+              "comparison": "greater_than",
+              "author_reported_window_nm": [
+                440,
+                640
+              ],
+              "evaluated_range_nm": [
+                400,
+                700
+              ]
+            },
+            "fov_deg": {
+              "value": 36,
+              "source": "colburn_quartic_thesis_2020",
+              "location": "主文 PDF p3（C）Design，博士论文 PDF pp105–106 §5.9／Fig.5.13",
+              "note": "530 nm 下三个设定在约 ±18° 过作者 0.5 阈值，模型估计总视场约 36°。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "colburn_quartic_thesis_2020",
+                "colburn_quartic_2020"
+              ],
+              "reference_wavelength_nm": 530,
+              "correlation_threshold": 0.5,
+              "approximate": true,
+              "display": "约 36°（模拟）"
+            }
+          }
         }
       ],
-      "scope": "42项原始研究、241个器件/测量/系统配置、1525条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
+      "scope": "43项原始研究、250个器件/测量/系统配置、1557条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
