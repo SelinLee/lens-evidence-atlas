@@ -30,7 +30,7 @@
 
 研究格可附可选的 `data_availability` 核查元数据。`status: curves_only` 表示在所列范围内只核到曲线，`author_numeric_mtf`、`raw_psf`、`independently_recomputed_mtf` 为 `null`，不表示作者没有这些数据。实际波长/方向/单位与缺失的场点、归一化及采样尺度分别保留，`search_log` 指向有日期和覆盖边界的核查记录。可展示的结论仍写入该格 `note`/`location`，数据获取声明的主文加入 `sourceIds`；元数据不直接生成数值坐标。作者由实测PSF计算与本库复算不能混称。
 
-`focus_variation_um`保存作者报告的跨波长非负焦距变化幅度，与逐波长`measured_focal_um`分开。须有`focus_variation_protocol`、实际`sample_wavelengths_nm`及`statistic`：`author_reported_band_variation`仅表示作者所称variation，不能自动改称已复核的峰峰值；`maximum_pairwise_difference`表示作者明确的谱点最大互差。当前两种均为`basis: derived_from_measurement`、`calculation_origin: authors`；本库自行重算须另设记录/协议，不能覆盖作者报告。参考、轴向采样和缺失定义写入协议，约值保留`approximate`与`display`。汇总行不同时填写数值型`wavelength_nm`，不由百分数倒推绝对焦距或任意分派到一个波长。
+`focus_variation_um`保存作者报告的跨波长非负焦距变化幅度，与逐波长`measured_focal_um`分开。须有`focus_variation_protocol`、实际`sample_wavelengths_nm`及`statistic`：`author_reported_band_variation`仅表示作者所称variation，不能自动改称已复核的峰峰值；`maximum_pairwise_difference`表示作者明确的谱点最大互差。当前两种均为`basis: derived_from_measurement`、`calculation_origin: authors`；本库从作者正文给出的实测焦距上下限计算宽度时，使用 `calculation_origin: atlas`、`statistic: range_width_from_reported_bounds` 和 `author_reported_focal_bounds_um`。此行保留原印字范围和计算式，逐波长焦距仍留空。其他本库重算须另设记录或协议。参考、轴向采样和缺失定义写入协议，约值保留`approximate`与`display`。汇总行不同时填写数值型`wavelength_nm`，不由百分数倒推绝对焦距或任意分派到一个波长。
 
 可见光用途明确而仅有离散谱点汇总的研究器件可设`visible_light_use: true`，无需捏造连续工作波段或一个数值波长；实际单谱点波长已知时仍优先按其筛选。该规则同时适用于文献器件与旧记录。
 

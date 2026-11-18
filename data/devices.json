@@ -1378,6 +1378,60 @@
       "checked_on": "2026-11-18",
       "scope": "公开对象为正文和发表图，没有补充材料或原始数组。Science正式补充PDF和旧DC1入口403。",
       "publication_source": "li_rgb_vr_2021"
+    },
+    {
+      "id": "aiello_varifocal_2019",
+      "title": "Aiello et al. (2019): Achromatic Varifocal Metalens for the Visible Spectrum",
+      "url": "https://doi.org/10.1021/acsphotonics.9b00523",
+      "kind": "peer_reviewed_paper",
+      "checked_on": "2026-11-18",
+      "scope": "ACS Photonics 6(10), 2432–2440。已核期刊摘要和 Crossref 出版元数据，正式版 PDF 直连 403。",
+      "doi": "10.1021/acsphotonics.9b00523"
+    },
+    {
+      "id": "aiello_varifocal_arxiv_2019",
+      "title": "arXiv · 作者稿 v2（正文及补充）",
+      "url": "https://arxiv.org/pdf/1903.03930v2",
+      "kind": "author_manuscript",
+      "checked_on": "2026-11-18",
+      "scope": "作者稿 v2，21 页，主文 pp1–9、补充 pp10–21。4504445 字节，SHA256 6b37a93e070c4fec985297e6bc5b8504a9152d7f6f157f43ee2f8d8e45c91975。",
+      "publication_source": "aiello_varifocal_2019"
+    },
+    {
+      "id": "aiello_varifocal_source_2019",
+      "title": "arXiv · 作者提交的源码与图版",
+      "url": "https://arxiv.org/e-print/1903.03930v2",
+      "kind": "repository",
+      "checked_on": "2026-11-18",
+      "scope": "17 个条目含 main.tex、两个参考文献文件及 PDF 图版。fig3_cbar1.pdf、fig4_cbar.pdf 是图版，归档未发现原始 PSF、逐点数据或 LabVIEW 源码。3982169 字节，SHA256 816da975f86ff50fb98b2d9a19f9884b5ad086467f3583ad4610e12a2f891239。",
+      "publication_source": "aiello_varifocal_2019"
+    },
+    {
+      "id": "aiello_varifocal_si_meta_2019",
+      "title": "Crossref · ACS 正式补件注册记录",
+      "url": "https://api.crossref.org/works/10.1021/acsphotonics.9b00523.s001",
+      "kind": "repository",
+      "checked_on": "2026-11-18",
+      "scope": "Crossref 组件关系指向同一论文，登记文件 ph9b00523_si_001.pdf。ACS 补件直连 403，证据取自作者稿附带的补充文本。",
+      "publication_source": "aiello_varifocal_2019"
+    },
+    {
+      "id": "aiello_varifocal_registry_2019",
+      "title": "DataCite · 按论文 DOI 检索关联资料",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1021%2Facsphotonics.9b00523%22&page%5Bsize%5D=25",
+      "kind": "repository",
+      "checked_on": "2026-11-18",
+      "scope": "精确关联检索只有 10.48550/arxiv.1903.03930，关系 IsVersionOf。",
+      "publication_source": "aiello_varifocal_2019"
+    },
+    {
+      "id": "aiello_varifocal_crossref_2019",
+      "title": "Crossref · 发表信息及引用查询",
+      "url": "https://api.crossref.org/works/10.1021/acsphotonics.9b00523",
+      "kind": "repository",
+      "checked_on": "2026-11-18",
+      "scope": "2026-11-18 读取 is-referenced-by-count = 86。随索引更新。",
+      "publication_source": "aiello_varifocal_2019"
     }
   ],
   "domains": {
@@ -4312,8 +4366,8 @@
         {
           "id": "focus_variation_um",
           "label": "跨波长焦距变化幅度 (μm；定义见协议)",
-          "definition": "作者从实测焦点报告的跨波长非负变化幅度；可为明确的最大两谱点差或原文未完整定义的带内variation。不是逐波长有符号焦移，也不补作绝对焦距。",
-          "conditions": "同一器件、实际波长集合、作者统计定义/参考、测量与计算归属及轴向采样必须在focus_variation_protocol中查明；定义未明的报告不能当已复核的峰峰值或跨文排名。",
+          "definition": "同一配置跨波长实测焦距的非负变化幅度。保存作者明确给出的变化，或依据正文给出的拟合焦距上下限计算宽度。",
+          "conditions": "同一器件、波长集合或范围、统计定义、计算归属及轴向采样见协议。逐波长有符号焦移与上下限宽度分开。",
           "numeric": true,
           "definition_refs": [
             {
@@ -4323,6 +4377,10 @@
             {
               "source": "li_rgb_vr_2021",
               "location": "Results / Focusing and imaging characterizations第一段；Fig.2B"
+            },
+            {
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p5 §V 右栏及 p6 Fig.4c"
             }
           ],
           "axis_bounds": {
@@ -202541,9 +202599,1830 @@
               "checked_on": "2026-11-18"
             }
           }
+        },
+        {
+          "id": "aiello2019_summary",
+          "model": "Aiello 2019 · 40 μm · 偏振调焦",
+          "study_id": "aiello2019",
+          "specimen_id": "varifocal_scan",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "实制器件与偏振、波长扫描的整体范围。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF pp2–3 §III/Fig.2a、补充 Fig.S4（PDF p15）",
+              "note": "矩形 TiO₂ 纳米柱高度，周期 400 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "period_nm": 400
+            },
+            "material": {
+              "value": "TiO₂ 矩形纳米柱 / 石英",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 Fig.2a/c 及 §III",
+              "note": "单层双折射，以两线偏振方向的不同相位曲率和出射分析实现偏振调焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": null,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV 末段",
+              "note": "NA 随调焦状态变化。保存约 220 μm、NA 0.09 和约 550 μm、NA 0.04 的作者端点。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "约 0.04–0.09",
+              "author_focal_na_pairs": [
+                [
+                  220,
+                  0.09
+                ],
+                [
+                  550,
+                  0.04
+                ]
+              ]
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF pp2–3 §II–III 及补充 §SI B/C",
+              "note": "相位对 H/V 分别设计，581 nm 为设计波长。主实物缺单一设计焦距。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "design_wavelength_nm": 581
+            },
+            "lambda_min_nm": {
+              "value": 483,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV",
+              "note": "偏振调焦三维 PSF 测试跨度，作者称合计 19 个不同谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 648,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV",
+              "note": "同一实验跨度上端，和 Fig.4 的消色差比较范围分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "以轴向二维高斯拟合峰值取焦",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV 及 SIV A/E（PDF pp17–18、20–21）",
+              "note": "样品随电动台扫描，40×/200 mm 继像、45° 出射分析器、单色 Basler。AOTF 约 5 nm；0–900 μm 和 10 μm 步长为作者描述，报告共 90 帧。若两端均取样，按印刷步长为 91 帧，实际末点待核。逐平面减背景并拟合圆对称二维高斯，跳过失败帧；峰值幅度 A(z) 用偏斜正态拟合后取最大值。双峰近似等强时图注取较长焦距。逐点物方像素标定待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_reference_z_um": 0,
+              "axial_scan_step_um": 10,
+              "author_scan_limits_um": [
+                0,
+                900
+              ],
+              "author_reported_frame_count": 90,
+              "object_plane_sampling_um": null,
+              "illumination_bandwidth_nm": 5,
+              "position_definition": "maximum_fitted_transverse_gaussian_amplitude",
+              "output_polarization_angle_deg": 45
+            },
+            "polarization": {
+              "value": "入射线偏振 10°–180°，出射 45° 分析",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV/p4 Fig.3；补充 Fig.S6",
+              "note": "作者报告 18 个不同入射角，取焦可受次峰切换影响。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sample_angle_count": 18,
+              "sample_wavelength_count": 19
+            },
+            "chromatic": {
+              "value": "偏振调焦约 220–550 μm",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV；期刊摘要",
+              "note": "这两个端点跨偏振和波长，正文标注相对调焦范围约 55%，按圆整端点作差除以 550 μm 为 60%。端点未提供对应波长与偏振组合，保留原述。 本文以经典研究例外入选，Crossref 2026-11-18 查得 86 次引用。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "author_focal_range_um": [
+                220,
+                550
+              ],
+              "author_relative_tuning_pct": 55,
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019",
+                "aiello_varifocal_crossref_2019"
+              ]
+            },
+            "mtf_curve": {
+              "value": "原始 PSF 与 MTF 证据待补",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 Figs.3–4；补充 SIV 及 arXiv 源码归档",
+              "note": "作者稿未列频率响应或 MTF，图版有裁切并归一化的截面。未取得原始三维数组、物方横向尺度和可复现处理输入。ACS/SI 访问边界见来源。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_source_2019",
+                "aiello_varifocal_si_meta_2019",
+                "aiello_varifocal_registry_2019"
+              ],
+              "data_availability": {
+                "status": "psf_plots_only",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "aiello2019_width_483",
+          "model": "Aiello 2019 · θ120° · PSF · 483 nm",
+          "study_id": "aiello2019",
+          "specimen_id": "fixed120_psf",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "固定入射偏振 120° 的实测焦面截面。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 483,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p4 Fig.3c 上排第 1 格",
+              "note": "焦面实验图片上标注的激光谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "入射 120° / 出射 45° 分析",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p4 Fig.3c 上排第 1 格及图注",
+              "note": "与 Fig.4c 的 θ140° 和 fA 测量分别保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "angle_deg": 120
+            },
+            "psf_protocol": {
+              "value": "以轴向二维高斯拟合峰值取焦",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV 及 SIV A/E（PDF pp17–18、20–21）",
+              "note": "样品随电动台扫描，40×/200 mm 继像、45° 出射分析器、单色 Basler。AOTF 约 5 nm；0–900 μm 和 10 μm 步长为作者描述，报告共 90 帧。若两端均取样，按印刷步长为 91 帧，实际末点待核。逐平面减背景并拟合圆对称二维高斯，跳过失败帧；峰值幅度 A(z) 用偏斜正态拟合后取最大值。双峰近似等强时图注取较长焦距。逐点物方像素标定待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_reference_z_um": 0,
+              "axial_scan_step_um": 10,
+              "author_scan_limits_um": [
+                0,
+                900
+              ],
+              "author_reported_frame_count": 90,
+              "object_plane_sampling_um": null,
+              "illumination_bandwidth_nm": 5,
+              "position_definition": "maximum_fitted_transverse_gaussian_amplitude",
+              "output_polarization_angle_deg": 45
+            },
+            "fwhm_um": {
+              "value": 3.5,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p4 Fig.3c 上排第 1 格 FWHM 印字",
+              "note": "实测焦面归一 PSF 的圆对称二维高斯拟合宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "direction": "radial_symmetric_gaussian_fit"
+            }
+          }
+        },
+        {
+          "id": "aiello2019_width_533",
+          "model": "Aiello 2019 · θ120° · PSF · 533 nm",
+          "study_id": "aiello2019",
+          "specimen_id": "fixed120_psf",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "固定入射偏振 120° 的实测焦面截面。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 533,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p4 Fig.3c 上排第 2 格",
+              "note": "焦面实验图片上标注的激光谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "入射 120° / 出射 45° 分析",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p4 Fig.3c 上排第 2 格及图注",
+              "note": "与 Fig.4c 的 θ140° 和 fA 测量分别保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "angle_deg": 120
+            },
+            "psf_protocol": {
+              "value": "以轴向二维高斯拟合峰值取焦",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV 及 SIV A/E（PDF pp17–18、20–21）",
+              "note": "样品随电动台扫描，40×/200 mm 继像、45° 出射分析器、单色 Basler。AOTF 约 5 nm；0–900 μm 和 10 μm 步长为作者描述，报告共 90 帧。若两端均取样，按印刷步长为 91 帧，实际末点待核。逐平面减背景并拟合圆对称二维高斯，跳过失败帧；峰值幅度 A(z) 用偏斜正态拟合后取最大值。双峰近似等强时图注取较长焦距。逐点物方像素标定待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_reference_z_um": 0,
+              "axial_scan_step_um": 10,
+              "author_scan_limits_um": [
+                0,
+                900
+              ],
+              "author_reported_frame_count": 90,
+              "object_plane_sampling_um": null,
+              "illumination_bandwidth_nm": 5,
+              "position_definition": "maximum_fitted_transverse_gaussian_amplitude",
+              "output_polarization_angle_deg": 45
+            },
+            "fwhm_um": {
+              "value": 3.3,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p4 Fig.3c 上排第 2 格 FWHM 印字",
+              "note": "实测焦面归一 PSF 的圆对称二维高斯拟合宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "direction": "radial_symmetric_gaussian_fit"
+            }
+          }
+        },
+        {
+          "id": "aiello2019_width_581",
+          "model": "Aiello 2019 · θ120° · PSF · 581 nm",
+          "study_id": "aiello2019",
+          "specimen_id": "fixed120_psf",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "固定入射偏振 120° 的实测焦面截面。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 581,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p4 Fig.3c 上排第 3 格",
+              "note": "焦面实验图片上标注的激光谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "入射 120° / 出射 45° 分析",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p4 Fig.3c 上排第 3 格及图注",
+              "note": "与 Fig.4c 的 θ140° 和 fA 测量分别保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "angle_deg": 120
+            },
+            "psf_protocol": {
+              "value": "以轴向二维高斯拟合峰值取焦",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV 及 SIV A/E（PDF pp17–18、20–21）",
+              "note": "样品随电动台扫描，40×/200 mm 继像、45° 出射分析器、单色 Basler。AOTF 约 5 nm；0–900 μm 和 10 μm 步长为作者描述，报告共 90 帧。若两端均取样，按印刷步长为 91 帧，实际末点待核。逐平面减背景并拟合圆对称二维高斯，跳过失败帧；峰值幅度 A(z) 用偏斜正态拟合后取最大值。双峰近似等强时图注取较长焦距。逐点物方像素标定待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_reference_z_um": 0,
+              "axial_scan_step_um": 10,
+              "author_scan_limits_um": [
+                0,
+                900
+              ],
+              "author_reported_frame_count": 90,
+              "object_plane_sampling_um": null,
+              "illumination_bandwidth_nm": 5,
+              "position_definition": "maximum_fitted_transverse_gaussian_amplitude",
+              "output_polarization_angle_deg": 45
+            },
+            "fwhm_um": {
+              "value": 3.5,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p4 Fig.3c 上排第 3 格 FWHM 印字",
+              "note": "实测焦面归一 PSF 的圆对称二维高斯拟合宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "direction": "radial_symmetric_gaussian_fit"
+            }
+          }
+        },
+        {
+          "id": "aiello2019_width_630",
+          "model": "Aiello 2019 · θ120° · PSF · 630 nm",
+          "study_id": "aiello2019",
+          "specimen_id": "fixed120_psf",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "固定入射偏振 120° 的实测焦面截面。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 630,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p4 Fig.3c 上排第 4 格",
+              "note": "焦面实验图片上标注的激光谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "入射 120° / 出射 45° 分析",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p4 Fig.3c 上排第 4 格及图注",
+              "note": "与 Fig.4c 的 θ140° 和 fA 测量分别保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "angle_deg": 120
+            },
+            "psf_protocol": {
+              "value": "以轴向二维高斯拟合峰值取焦",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV 及 SIV A/E（PDF pp17–18、20–21）",
+              "note": "样品随电动台扫描，40×/200 mm 继像、45° 出射分析器、单色 Basler。AOTF 约 5 nm；0–900 μm 和 10 μm 步长为作者描述，报告共 90 帧。若两端均取样，按印刷步长为 91 帧，实际末点待核。逐平面减背景并拟合圆对称二维高斯，跳过失败帧；峰值幅度 A(z) 用偏斜正态拟合后取最大值。双峰近似等强时图注取较长焦距。逐点物方像素标定待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_reference_z_um": 0,
+              "axial_scan_step_um": 10,
+              "author_scan_limits_um": [
+                0,
+                900
+              ],
+              "author_reported_frame_count": 90,
+              "object_plane_sampling_um": null,
+              "illumination_bandwidth_nm": 5,
+              "position_definition": "maximum_fitted_transverse_gaussian_amplitude",
+              "output_polarization_angle_deg": 45
+            },
+            "fwhm_um": {
+              "value": 4.2,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p4 Fig.3c 上排第 4 格 FWHM 印字",
+              "note": "实测焦面归一 PSF 的圆对称二维高斯拟合宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "direction": "radial_symmetric_gaussian_fit"
+            }
+          }
+        },
+        {
+          "id": "aiello2019_fixed140",
+          "model": "Aiello 2019 · 固定 θ140° · 谱向汇总",
+          "study_id": "aiello2019",
+          "specimen_id": "fixed140",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一只 40 μm 镜的轴向色差比较，保持该光路设置。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 483,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p5 §V 右栏及 p6 Fig.4c",
+              "note": "作者比较的测量范围下限。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 620,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p5 §V 右栏及 p6 Fig.4c",
+              "note": "作者比较的测量范围上限。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "入射各波长固定线偏振 140°，出射 45° 分析",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4a–c",
+              "note": "比较跨波长变化；每张截面以自身最大值归一。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "nominal_focus_setting_um": null
+            },
+            "focus_variation_protocol": {
+              "value": "作者拟合焦距 260–326 μm，差值由本库计算",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p5 §V 右栏及 p6 Fig.4c",
+              "note": "统计量为作者正文所列实测拟合焦距上下限之差。轴向位置以器件口径面为 z=0，逐波长各自找峰，未给极值的明确谱点或逐点数表；Fig.4b 标签仅为代表谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "author_reported_focal_bounds_um": [
+                260,
+                326
+              ],
+              "reference_plane_um": 0,
+              "nominal_focus_setting_um": null,
+              "representative_wavelengths_nm": [
+                483,
+                505,
+                533,
+                562,
+                591,
+                620
+              ]
+            },
+            "focus_variation_um": {
+              "value": 66,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p5 §V 右栏及 p6 Fig.4c",
+              "note": "本库根据作者印字计算 326 − 260 = 66 μm，作者给出两设置约五倍的变化差异。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "atlas",
+              "statistic": "range_width_from_reported_bounds",
+              "sample_wavelengths_nm": null,
+              "spectral_sample_scope": "author_reported_range_only",
+              "author_reported_focal_bounds_um": [
+                260,
+                326
+              ],
+              "approximate": true
+            },
+            "psf_protocol": {
+              "value": "以轴向二维高斯拟合峰值取焦",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV 及 SIV A/E（PDF pp17–18、20–21）",
+              "note": "样品随电动台扫描，40×/200 mm 继像、45° 出射分析器、单色 Basler。AOTF 约 5 nm；0–900 μm 和 10 μm 步长为作者描述，报告共 90 帧。若两端均取样，按印刷步长为 91 帧，实际末点待核。逐平面减背景并拟合圆对称二维高斯，跳过失败帧；峰值幅度 A(z) 用偏斜正态拟合后取最大值。双峰近似等强时图注取较长焦距。逐点物方像素标定待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_reference_z_um": 0,
+              "axial_scan_step_um": 10,
+              "author_scan_limits_um": [
+                0,
+                900
+              ],
+              "author_reported_frame_count": 90,
+              "object_plane_sampling_um": null,
+              "illumination_bandwidth_nm": 5,
+              "position_definition": "maximum_fitted_transverse_gaussian_amplitude",
+              "output_polarization_angle_deg": 45
+            }
+          }
+        },
+        {
+          "id": "aiello2019_fixed140_483",
+          "model": "Aiello 2019 · 固定 θ140° · 483 nm",
+          "study_id": "aiello2019",
+          "specimen_id": "fixed140",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者印有波长的实测轴向截面。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 483,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 左列第 1 行及 Fig.4c",
+              "note": "该面板右侧标签，主文仅展示该谱点的截面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "入射各波长固定线偏振 140°，出射 45° 分析",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 左列第 1 行及 Fig.4c",
+              "note": "以该行所属图列为准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "nominal_focus_setting_um": null
+            },
+            "psf_protocol": {
+              "value": "以轴向二维高斯拟合峰值取焦",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV 及 SIV A/E（PDF pp17–18、20–21）",
+              "note": "样品随电动台扫描，40×/200 mm 继像、45° 出射分析器、单色 Basler。AOTF 约 5 nm；0–900 μm 和 10 μm 步长为作者描述，报告共 90 帧。若两端均取样，按印刷步长为 91 帧，实际末点待核。逐平面减背景并拟合圆对称二维高斯，跳过失败帧；峰值幅度 A(z) 用偏斜正态拟合后取最大值。双峰近似等强时图注取较长焦距。逐点物方像素标定待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_reference_z_um": 0,
+              "axial_scan_step_um": 10,
+              "author_scan_limits_um": [
+                0,
+                900
+              ],
+              "author_reported_frame_count": 90,
+              "object_plane_sampling_um": null,
+              "illumination_bandwidth_nm": 5,
+              "position_definition": "maximum_fitted_transverse_gaussian_amplitude",
+              "output_polarization_angle_deg": 45
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 左列第 1 行及 Fig.4c",
+              "note": "虚线给拟合峰位，未见作者数表或数字标签。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅曲线 / 截面"
+            }
+          }
+        },
+        {
+          "id": "aiello2019_fixed140_505",
+          "model": "Aiello 2019 · 固定 θ140° · 505 nm",
+          "study_id": "aiello2019",
+          "specimen_id": "fixed140",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者印有波长的实测轴向截面。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 505,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 左列第 2 行及 Fig.4c",
+              "note": "该面板右侧标签，主文仅展示该谱点的截面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "入射各波长固定线偏振 140°，出射 45° 分析",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 左列第 2 行及 Fig.4c",
+              "note": "以该行所属图列为准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "nominal_focus_setting_um": null
+            },
+            "psf_protocol": {
+              "value": "以轴向二维高斯拟合峰值取焦",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV 及 SIV A/E（PDF pp17–18、20–21）",
+              "note": "样品随电动台扫描，40×/200 mm 继像、45° 出射分析器、单色 Basler。AOTF 约 5 nm；0–900 μm 和 10 μm 步长为作者描述，报告共 90 帧。若两端均取样，按印刷步长为 91 帧，实际末点待核。逐平面减背景并拟合圆对称二维高斯，跳过失败帧；峰值幅度 A(z) 用偏斜正态拟合后取最大值。双峰近似等强时图注取较长焦距。逐点物方像素标定待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_reference_z_um": 0,
+              "axial_scan_step_um": 10,
+              "author_scan_limits_um": [
+                0,
+                900
+              ],
+              "author_reported_frame_count": 90,
+              "object_plane_sampling_um": null,
+              "illumination_bandwidth_nm": 5,
+              "position_definition": "maximum_fitted_transverse_gaussian_amplitude",
+              "output_polarization_angle_deg": 45
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 左列第 2 行及 Fig.4c",
+              "note": "虚线给拟合峰位，未见作者数表或数字标签。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅曲线 / 截面"
+            }
+          }
+        },
+        {
+          "id": "aiello2019_fixed140_533",
+          "model": "Aiello 2019 · 固定 θ140° · 533 nm",
+          "study_id": "aiello2019",
+          "specimen_id": "fixed140",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者印有波长的实测轴向截面。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 533,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 左列第 3 行及 Fig.4c",
+              "note": "该面板右侧标签，主文仅展示该谱点的截面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "入射各波长固定线偏振 140°，出射 45° 分析",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 左列第 3 行及 Fig.4c",
+              "note": "以该行所属图列为准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "nominal_focus_setting_um": null
+            },
+            "psf_protocol": {
+              "value": "以轴向二维高斯拟合峰值取焦",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV 及 SIV A/E（PDF pp17–18、20–21）",
+              "note": "样品随电动台扫描，40×/200 mm 继像、45° 出射分析器、单色 Basler。AOTF 约 5 nm；0–900 μm 和 10 μm 步长为作者描述，报告共 90 帧。若两端均取样，按印刷步长为 91 帧，实际末点待核。逐平面减背景并拟合圆对称二维高斯，跳过失败帧；峰值幅度 A(z) 用偏斜正态拟合后取最大值。双峰近似等强时图注取较长焦距。逐点物方像素标定待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_reference_z_um": 0,
+              "axial_scan_step_um": 10,
+              "author_scan_limits_um": [
+                0,
+                900
+              ],
+              "author_reported_frame_count": 90,
+              "object_plane_sampling_um": null,
+              "illumination_bandwidth_nm": 5,
+              "position_definition": "maximum_fitted_transverse_gaussian_amplitude",
+              "output_polarization_angle_deg": 45
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 左列第 3 行及 Fig.4c",
+              "note": "虚线给拟合峰位，未见作者数表或数字标签。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅曲线 / 截面"
+            }
+          }
+        },
+        {
+          "id": "aiello2019_fixed140_562",
+          "model": "Aiello 2019 · 固定 θ140° · 562 nm",
+          "study_id": "aiello2019",
+          "specimen_id": "fixed140",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者印有波长的实测轴向截面。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 562,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 左列第 4 行及 Fig.4c",
+              "note": "该面板右侧标签，主文仅展示该谱点的截面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "入射各波长固定线偏振 140°，出射 45° 分析",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 左列第 4 行及 Fig.4c",
+              "note": "以该行所属图列为准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "nominal_focus_setting_um": null
+            },
+            "psf_protocol": {
+              "value": "以轴向二维高斯拟合峰值取焦",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV 及 SIV A/E（PDF pp17–18、20–21）",
+              "note": "样品随电动台扫描，40×/200 mm 继像、45° 出射分析器、单色 Basler。AOTF 约 5 nm；0–900 μm 和 10 μm 步长为作者描述，报告共 90 帧。若两端均取样，按印刷步长为 91 帧，实际末点待核。逐平面减背景并拟合圆对称二维高斯，跳过失败帧；峰值幅度 A(z) 用偏斜正态拟合后取最大值。双峰近似等强时图注取较长焦距。逐点物方像素标定待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_reference_z_um": 0,
+              "axial_scan_step_um": 10,
+              "author_scan_limits_um": [
+                0,
+                900
+              ],
+              "author_reported_frame_count": 90,
+              "object_plane_sampling_um": null,
+              "illumination_bandwidth_nm": 5,
+              "position_definition": "maximum_fitted_transverse_gaussian_amplitude",
+              "output_polarization_angle_deg": 45
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 左列第 4 行及 Fig.4c",
+              "note": "虚线给拟合峰位，未见作者数表或数字标签。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅曲线 / 截面"
+            }
+          }
+        },
+        {
+          "id": "aiello2019_fixed140_591",
+          "model": "Aiello 2019 · 固定 θ140° · 591 nm",
+          "study_id": "aiello2019",
+          "specimen_id": "fixed140",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者印有波长的实测轴向截面。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 591,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 左列第 5 行及 Fig.4c",
+              "note": "该面板右侧标签，主文仅展示该谱点的截面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "入射各波长固定线偏振 140°，出射 45° 分析",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 左列第 5 行及 Fig.4c",
+              "note": "以该行所属图列为准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "nominal_focus_setting_um": null
+            },
+            "psf_protocol": {
+              "value": "以轴向二维高斯拟合峰值取焦",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV 及 SIV A/E（PDF pp17–18、20–21）",
+              "note": "样品随电动台扫描，40×/200 mm 继像、45° 出射分析器、单色 Basler。AOTF 约 5 nm；0–900 μm 和 10 μm 步长为作者描述，报告共 90 帧。若两端均取样，按印刷步长为 91 帧，实际末点待核。逐平面减背景并拟合圆对称二维高斯，跳过失败帧；峰值幅度 A(z) 用偏斜正态拟合后取最大值。双峰近似等强时图注取较长焦距。逐点物方像素标定待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_reference_z_um": 0,
+              "axial_scan_step_um": 10,
+              "author_scan_limits_um": [
+                0,
+                900
+              ],
+              "author_reported_frame_count": 90,
+              "object_plane_sampling_um": null,
+              "illumination_bandwidth_nm": 5,
+              "position_definition": "maximum_fitted_transverse_gaussian_amplitude",
+              "output_polarization_angle_deg": 45
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 左列第 5 行及 Fig.4c",
+              "note": "虚线给拟合峰位，未见作者数表或数字标签。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅曲线 / 截面"
+            }
+          }
+        },
+        {
+          "id": "aiello2019_fixed140_620",
+          "model": "Aiello 2019 · 固定 θ140° · 620 nm",
+          "study_id": "aiello2019",
+          "specimen_id": "fixed140",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者印有波长的实测轴向截面。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 620,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 左列第 6 行及 Fig.4c",
+              "note": "该面板右侧标签，主文仅展示该谱点的截面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "入射各波长固定线偏振 140°，出射 45° 分析",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 左列第 6 行及 Fig.4c",
+              "note": "以该行所属图列为准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "nominal_focus_setting_um": null
+            },
+            "psf_protocol": {
+              "value": "以轴向二维高斯拟合峰值取焦",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV 及 SIV A/E（PDF pp17–18、20–21）",
+              "note": "样品随电动台扫描，40×/200 mm 继像、45° 出射分析器、单色 Basler。AOTF 约 5 nm；0–900 μm 和 10 μm 步长为作者描述，报告共 90 帧。若两端均取样，按印刷步长为 91 帧，实际末点待核。逐平面减背景并拟合圆对称二维高斯，跳过失败帧；峰值幅度 A(z) 用偏斜正态拟合后取最大值。双峰近似等强时图注取较长焦距。逐点物方像素标定待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_reference_z_um": 0,
+              "axial_scan_step_um": 10,
+              "author_scan_limits_um": [
+                0,
+                900
+              ],
+              "author_reported_frame_count": 90,
+              "object_plane_sampling_um": null,
+              "illumination_bandwidth_nm": 5,
+              "position_definition": "maximum_fitted_transverse_gaussian_amplitude",
+              "output_polarization_angle_deg": 45
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 左列第 6 行及 Fig.4c",
+              "note": "虚线给拟合峰位，未见作者数表或数字标签。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅曲线 / 截面"
+            }
+          }
+        },
+        {
+          "id": "aiello2019_corrected_a",
+          "model": "Aiello 2019 · WDPR fA · 谱向汇总",
+          "study_id": "aiello2019",
+          "specimen_id": "corrected_a",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一只 40 μm 镜的轴向色差比较，保持该光路设置。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 483,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p5 §V 右栏及 p6 Fig.4c",
+              "note": "作者比较的测量范围下限。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 620,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p5 §V 右栏及 p6 Fig.4c",
+              "note": "作者比较的测量范围上限。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "光谱相关入射线偏振由 WDPR 产生，测量中旋转器设置保持固定，出射 45° 分析",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4a–c",
+              "note": "比较跨波长变化；每张截面以自身最大值归一。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "nominal_focus_setting_um": 278
+            },
+            "focus_variation_protocol": {
+              "value": "作者拟合焦距 265–278 μm，差值由本库计算",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p5 §V 右栏及 p6 Fig.4c",
+              "note": "统计量为作者正文所列实测拟合焦距上下限之差。轴向位置以器件口径面为 z=0，逐波长各自找峰，未给极值的明确谱点或逐点数表；Fig.4b 标签仅为代表谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "author_reported_focal_bounds_um": [
+                265,
+                278
+              ],
+              "reference_plane_um": 0,
+              "nominal_focus_setting_um": 278,
+              "representative_wavelengths_nm": [
+                483,
+                505,
+                533,
+                562,
+                591,
+                620
+              ]
+            },
+            "focus_variation_um": {
+              "value": 13,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p5 §V 右栏及 p6 Fig.4c",
+              "note": "本库根据作者印字计算 278 − 265 = 13 μm，作者给出两设置约五倍的变化差异。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "atlas",
+              "statistic": "range_width_from_reported_bounds",
+              "sample_wavelengths_nm": null,
+              "spectral_sample_scope": "author_reported_range_only",
+              "author_reported_focal_bounds_um": [
+                265,
+                278
+              ],
+              "approximate": true
+            },
+            "psf_protocol": {
+              "value": "以轴向二维高斯拟合峰值取焦",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV 及 SIV A/E（PDF pp17–18、20–21）",
+              "note": "样品随电动台扫描，40×/200 mm 继像、45° 出射分析器、单色 Basler。AOTF 约 5 nm；0–900 μm 和 10 μm 步长为作者描述，报告共 90 帧。若两端均取样，按印刷步长为 91 帧，实际末点待核。逐平面减背景并拟合圆对称二维高斯，跳过失败帧；峰值幅度 A(z) 用偏斜正态拟合后取最大值。双峰近似等强时图注取较长焦距。逐点物方像素标定待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_reference_z_um": 0,
+              "axial_scan_step_um": 10,
+              "author_scan_limits_um": [
+                0,
+                900
+              ],
+              "author_reported_frame_count": 90,
+              "object_plane_sampling_um": null,
+              "illumination_bandwidth_nm": 5,
+              "position_definition": "maximum_fitted_transverse_gaussian_amplitude",
+              "output_polarization_angle_deg": 45
+            }
+          }
+        },
+        {
+          "id": "aiello2019_corrected_a_483",
+          "model": "Aiello 2019 · WDPR fA · 483 nm",
+          "study_id": "aiello2019",
+          "specimen_id": "corrected_a",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者印有波长的实测轴向截面。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 483,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 右列第 1 行及 Fig.4c",
+              "note": "该面板右侧标签，主文仅展示该谱点的截面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "光谱相关入射线偏振由 WDPR 产生，测量中旋转器设置保持固定，出射 45° 分析",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 右列第 1 行及 Fig.4c",
+              "note": "以该行所属图列为准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "nominal_focus_setting_um": 278
+            },
+            "psf_protocol": {
+              "value": "以轴向二维高斯拟合峰值取焦",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV 及 SIV A/E（PDF pp17–18、20–21）",
+              "note": "样品随电动台扫描，40×/200 mm 继像、45° 出射分析器、单色 Basler。AOTF 约 5 nm；0–900 μm 和 10 μm 步长为作者描述，报告共 90 帧。若两端均取样，按印刷步长为 91 帧，实际末点待核。逐平面减背景并拟合圆对称二维高斯，跳过失败帧；峰值幅度 A(z) 用偏斜正态拟合后取最大值。双峰近似等强时图注取较长焦距。逐点物方像素标定待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_reference_z_um": 0,
+              "axial_scan_step_um": 10,
+              "author_scan_limits_um": [
+                0,
+                900
+              ],
+              "author_reported_frame_count": 90,
+              "object_plane_sampling_um": null,
+              "illumination_bandwidth_nm": 5,
+              "position_definition": "maximum_fitted_transverse_gaussian_amplitude",
+              "output_polarization_angle_deg": 45
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 右列第 1 行及 Fig.4c",
+              "note": "虚线给拟合峰位，未见作者数表或数字标签。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅曲线 / 截面"
+            }
+          }
+        },
+        {
+          "id": "aiello2019_corrected_a_505",
+          "model": "Aiello 2019 · WDPR fA · 505 nm",
+          "study_id": "aiello2019",
+          "specimen_id": "corrected_a",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者印有波长的实测轴向截面。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 505,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 右列第 2 行及 Fig.4c",
+              "note": "该面板右侧标签，主文仅展示该谱点的截面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "光谱相关入射线偏振由 WDPR 产生，测量中旋转器设置保持固定，出射 45° 分析",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 右列第 2 行及 Fig.4c",
+              "note": "以该行所属图列为准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "nominal_focus_setting_um": 278
+            },
+            "psf_protocol": {
+              "value": "以轴向二维高斯拟合峰值取焦",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV 及 SIV A/E（PDF pp17–18、20–21）",
+              "note": "样品随电动台扫描，40×/200 mm 继像、45° 出射分析器、单色 Basler。AOTF 约 5 nm；0–900 μm 和 10 μm 步长为作者描述，报告共 90 帧。若两端均取样，按印刷步长为 91 帧，实际末点待核。逐平面减背景并拟合圆对称二维高斯，跳过失败帧；峰值幅度 A(z) 用偏斜正态拟合后取最大值。双峰近似等强时图注取较长焦距。逐点物方像素标定待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_reference_z_um": 0,
+              "axial_scan_step_um": 10,
+              "author_scan_limits_um": [
+                0,
+                900
+              ],
+              "author_reported_frame_count": 90,
+              "object_plane_sampling_um": null,
+              "illumination_bandwidth_nm": 5,
+              "position_definition": "maximum_fitted_transverse_gaussian_amplitude",
+              "output_polarization_angle_deg": 45
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 右列第 2 行及 Fig.4c",
+              "note": "虚线给拟合峰位，未见作者数表或数字标签。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅曲线 / 截面"
+            }
+          }
+        },
+        {
+          "id": "aiello2019_corrected_a_533",
+          "model": "Aiello 2019 · WDPR fA · 533 nm",
+          "study_id": "aiello2019",
+          "specimen_id": "corrected_a",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者印有波长的实测轴向截面。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 533,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 右列第 3 行及 Fig.4c",
+              "note": "该面板右侧标签，主文仅展示该谱点的截面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "光谱相关入射线偏振由 WDPR 产生，测量中旋转器设置保持固定，出射 45° 分析",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 右列第 3 行及 Fig.4c",
+              "note": "以该行所属图列为准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "nominal_focus_setting_um": 278
+            },
+            "psf_protocol": {
+              "value": "以轴向二维高斯拟合峰值取焦",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV 及 SIV A/E（PDF pp17–18、20–21）",
+              "note": "样品随电动台扫描，40×/200 mm 继像、45° 出射分析器、单色 Basler。AOTF 约 5 nm；0–900 μm 和 10 μm 步长为作者描述，报告共 90 帧。若两端均取样，按印刷步长为 91 帧，实际末点待核。逐平面减背景并拟合圆对称二维高斯，跳过失败帧；峰值幅度 A(z) 用偏斜正态拟合后取最大值。双峰近似等强时图注取较长焦距。逐点物方像素标定待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_reference_z_um": 0,
+              "axial_scan_step_um": 10,
+              "author_scan_limits_um": [
+                0,
+                900
+              ],
+              "author_reported_frame_count": 90,
+              "object_plane_sampling_um": null,
+              "illumination_bandwidth_nm": 5,
+              "position_definition": "maximum_fitted_transverse_gaussian_amplitude",
+              "output_polarization_angle_deg": 45
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 右列第 3 行及 Fig.4c",
+              "note": "虚线给拟合峰位，未见作者数表或数字标签。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅曲线 / 截面"
+            }
+          }
+        },
+        {
+          "id": "aiello2019_corrected_a_562",
+          "model": "Aiello 2019 · WDPR fA · 562 nm",
+          "study_id": "aiello2019",
+          "specimen_id": "corrected_a",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者印有波长的实测轴向截面。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 562,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 右列第 4 行及 Fig.4c",
+              "note": "该面板右侧标签，主文仅展示该谱点的截面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "光谱相关入射线偏振由 WDPR 产生，测量中旋转器设置保持固定，出射 45° 分析",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 右列第 4 行及 Fig.4c",
+              "note": "以该行所属图列为准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "nominal_focus_setting_um": 278
+            },
+            "psf_protocol": {
+              "value": "以轴向二维高斯拟合峰值取焦",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV 及 SIV A/E（PDF pp17–18、20–21）",
+              "note": "样品随电动台扫描，40×/200 mm 继像、45° 出射分析器、单色 Basler。AOTF 约 5 nm；0–900 μm 和 10 μm 步长为作者描述，报告共 90 帧。若两端均取样，按印刷步长为 91 帧，实际末点待核。逐平面减背景并拟合圆对称二维高斯，跳过失败帧；峰值幅度 A(z) 用偏斜正态拟合后取最大值。双峰近似等强时图注取较长焦距。逐点物方像素标定待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_reference_z_um": 0,
+              "axial_scan_step_um": 10,
+              "author_scan_limits_um": [
+                0,
+                900
+              ],
+              "author_reported_frame_count": 90,
+              "object_plane_sampling_um": null,
+              "illumination_bandwidth_nm": 5,
+              "position_definition": "maximum_fitted_transverse_gaussian_amplitude",
+              "output_polarization_angle_deg": 45
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 右列第 4 行及 Fig.4c",
+              "note": "虚线给拟合峰位，未见作者数表或数字标签。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅曲线 / 截面"
+            }
+          }
+        },
+        {
+          "id": "aiello2019_corrected_a_591",
+          "model": "Aiello 2019 · WDPR fA · 591 nm",
+          "study_id": "aiello2019",
+          "specimen_id": "corrected_a",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者印有波长的实测轴向截面。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 591,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 右列第 5 行及 Fig.4c",
+              "note": "该面板右侧标签，主文仅展示该谱点的截面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "光谱相关入射线偏振由 WDPR 产生，测量中旋转器设置保持固定，出射 45° 分析",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 右列第 5 行及 Fig.4c",
+              "note": "以该行所属图列为准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "nominal_focus_setting_um": 278
+            },
+            "psf_protocol": {
+              "value": "以轴向二维高斯拟合峰值取焦",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV 及 SIV A/E（PDF pp17–18、20–21）",
+              "note": "样品随电动台扫描，40×/200 mm 继像、45° 出射分析器、单色 Basler。AOTF 约 5 nm；0–900 μm 和 10 μm 步长为作者描述，报告共 90 帧。若两端均取样，按印刷步长为 91 帧，实际末点待核。逐平面减背景并拟合圆对称二维高斯，跳过失败帧；峰值幅度 A(z) 用偏斜正态拟合后取最大值。双峰近似等强时图注取较长焦距。逐点物方像素标定待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_reference_z_um": 0,
+              "axial_scan_step_um": 10,
+              "author_scan_limits_um": [
+                0,
+                900
+              ],
+              "author_reported_frame_count": 90,
+              "object_plane_sampling_um": null,
+              "illumination_bandwidth_nm": 5,
+              "position_definition": "maximum_fitted_transverse_gaussian_amplitude",
+              "output_polarization_angle_deg": 45
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 右列第 5 行及 Fig.4c",
+              "note": "虚线给拟合峰位，未见作者数表或数字标签。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅曲线 / 截面"
+            }
+          }
+        },
+        {
+          "id": "aiello2019_corrected_a_620",
+          "model": "Aiello 2019 · WDPR fA · 620 nm",
+          "study_id": "aiello2019",
+          "specimen_id": "corrected_a",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者印有波长的实测轴向截面。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 620,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 右列第 6 行及 Fig.4c",
+              "note": "该面板右侧标签，主文仅展示该谱点的截面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "光谱相关入射线偏振由 WDPR 产生，测量中旋转器设置保持固定，出射 45° 分析",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 右列第 6 行及 Fig.4c",
+              "note": "以该行所属图列为准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "nominal_focus_setting_um": 278
+            },
+            "psf_protocol": {
+              "value": "以轴向二维高斯拟合峰值取焦",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p3 §IV 及 SIV A/E（PDF pp17–18、20–21）",
+              "note": "样品随电动台扫描，40×/200 mm 继像、45° 出射分析器、单色 Basler。AOTF 约 5 nm；0–900 μm 和 10 μm 步长为作者描述，报告共 90 帧。若两端均取样，按印刷步长为 91 帧，实际末点待核。逐平面减背景并拟合圆对称二维高斯，跳过失败帧；峰值幅度 A(z) 用偏斜正态拟合后取最大值。双峰近似等强时图注取较长焦距。逐点物方像素标定待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "aperture_reference_z_um": 0,
+              "axial_scan_step_um": 10,
+              "author_scan_limits_um": [
+                0,
+                900
+              ],
+              "author_reported_frame_count": 90,
+              "object_plane_sampling_um": null,
+              "illumination_bandwidth_nm": 5,
+              "position_definition": "maximum_fitted_transverse_gaussian_amplitude",
+              "output_polarization_angle_deg": 45
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p6 Fig.4b 右列第 6 行及 Fig.4c",
+              "note": "虚线给拟合峰位，未见作者数表或数字标签。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅曲线 / 截面"
+            }
+          }
+        },
+        {
+          "id": "aiello2019_eff_45",
+          "model": "Aiello 2019 · 581 nm · 功率 · θ45°",
+          "study_id": "aiello2019",
+          "specimen_id": "op_efficiency",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "581 nm 镜加出射分析器的系统聚焦效率。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 581,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p5 §IV 末段、p4 Fig.3d；SIV D Eq.(S17)（PDF p20）",
+              "note": "作者用于偏振扫的代表性波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_lambda_nm": {
+              "value": 581,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p5 §IV 末段、p4 Fig.3d；SIV D Eq.(S17)（PDF p20）",
+              "note": "效率光路的实测波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "入射 45° / 出射 45° 分析",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p5 §IV 末段、p4 Fig.3d；SIV D Eq.(S17)（PDF p20）；补充 Fig.S2（PDF p14）",
+              "note": "45° 平行，135° 正交。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "angle_deg": 45
+            },
+            "efficiency_protocol": {
+              "value": "出射分析后焦区光阑功率 / 口径入射功率",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p5 §IV 末段、p4 Fig.3d；SIV D Eq.(S17)（PDF p20）；补充 Fig.S10（PDF p21）",
+              "note": "按 Eq.(S17) 以 (M4−MDK)/(M1−MDK) 计算，M4 在继像焦区光阑后，M1 取下器件并保留入射面积限定。焦区光阑尺寸、重复次数和统计类型待核。Supplement Fig.S2 的实测误差条为 ±0.02。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_through_aperture",
+              "integration_radius_um": null,
+              "background_subtracted": true
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 50,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p5 §IV 末段、p4 Fig.3d；SIV D Eq.(S17)（PDF p20）",
+              "note": "正文约 50%，补充 Fig.S2 实测误差条标 ±0.02（±2 个百分点），来自重复测量，n 未给。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "approximate": true,
+              "reported_error": {
+                "type": "not_specified",
+                "value": 2,
+                "sample_size": null
+              }
+            }
+          }
+        },
+        {
+          "id": "aiello2019_eff_135",
+          "model": "Aiello 2019 · 581 nm · 功率 · θ135°",
+          "study_id": "aiello2019",
+          "specimen_id": "op_efficiency",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "581 nm 镜加出射分析器的系统聚焦效率。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 581,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p5 §IV 末段、p4 Fig.3d；SIV D Eq.(S17)（PDF p20）",
+              "note": "作者用于偏振扫的代表性波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_lambda_nm": {
+              "value": 581,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p5 §IV 末段、p4 Fig.3d；SIV D Eq.(S17)（PDF p20）",
+              "note": "效率光路的实测波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "入射 135° / 出射 45° 分析",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p5 §IV 末段、p4 Fig.3d；SIV D Eq.(S17)（PDF p20）；补充 Fig.S2（PDF p14）",
+              "note": "45° 平行，135° 正交。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "angle_deg": 135
+            },
+            "efficiency_protocol": {
+              "value": "出射分析后焦区光阑功率 / 口径入射功率",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p5 §IV 末段、p4 Fig.3d；SIV D Eq.(S17)（PDF p20）；补充 Fig.S10（PDF p21）",
+              "note": "按 Eq.(S17) 以 (M4−MDK)/(M1−MDK) 计算，M4 在继像焦区光阑后，M1 取下器件并保留入射面积限定。焦区光阑尺寸、重复次数和统计类型待核。Supplement Fig.S2 的实测误差条为 ±0.02。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_through_aperture",
+              "integration_radius_um": null,
+              "background_subtracted": true
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p5 §IV 末段、p4 Fig.3d；SIV D Eq.(S17)（PDF p20）",
+              "note": "正文称正交设置约不超过 5%，保留约值上界。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "approximate": true,
+              "display": "≲5%",
+              "bound": {
+                "operator": "≤",
+                "value": 5
+              }
+            }
+          }
+        },
+        {
+          "id": "aiello2019_chart_a",
+          "model": "Aiello 2019 · 白光 USAF · fA",
+          "study_id": "aiello2019",
+          "specimen_id": "chart_a",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "负片标靶成像，两设置为不同物距/继像位置。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "illumination": {
+              "value": "卤素白光经 WDPR",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF pp6–7 §VI/Fig.5a–c；补充 SIV C (PDF pp18–19)",
+              "note": "物靶距约 1 mm，两设置为保持同一倍率调整物靶、镜片、继像距离；12× 继像。波段不直接引用台架 483–620 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "relay_magnification": 12
+            },
+            "chromatic": {
+              "value": "USAF 第 5 组第 4 元素可辨",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p7 Fig.5b 下方剖面；补充 Fig.S8（PDF p19）",
+              "note": "作者图注给 11 μm 半周期，原稿称 fA 对比度与分辨更好。未给统一定量分辨阈值或 MTF。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "target_group": 5,
+              "target_element": 4,
+              "author_reported_half_pitch_um": 11,
+              "nominal_focus_setting_um": 278
+            }
+          }
+        },
+        {
+          "id": "aiello2019_switch_a",
+          "model": "Aiello 2019 · 双层标靶切焦 · fA",
+          "study_id": "aiello2019",
+          "specimen_id": "chart_switch",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "物靶不移动而仅切换 WDPR 设置的 3D 实拍。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "illumination": {
+              "value": "卤素白光经 WDPR",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p7 Fig.5d–e；补充 SIV C（PDF pp19–20）",
+              "note": "两正片靶相隔 10 mm，固定几何，电控液晶设置切换焦点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "target_separation_mm": 10
+            },
+            "chromatic": {
+              "value": "近靶清晰，原相机 RGB",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF pp6–7 Fig.5e；补充 Fig.S9（PDF p20）",
+              "note": "作者报告近靶缩小 1.9×。图像保留原相机 RGB 输出。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "demagnification": 1.9,
+              "nominal_focus_setting_um": 278
+            }
+          }
+        },
+        {
+          "id": "aiello2019_chart_b",
+          "model": "Aiello 2019 · 白光 USAF · fB",
+          "study_id": "aiello2019",
+          "specimen_id": "chart_b",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "负片标靶成像，两设置为不同物距/继像位置。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "illumination": {
+              "value": "卤素白光经 WDPR",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF pp6–7 §VI/Fig.5a–c；补充 SIV C (PDF pp18–19)",
+              "note": "物靶距约 1 mm，两设置为保持同一倍率调整物靶、镜片、继像距离；12× 继像。波段不直接引用台架 483–620 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "relay_magnification": 12
+            },
+            "chromatic": {
+              "value": "USAF 第 5 组第 4 元素可辨",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p7 Fig.5c 下方剖面；补充 Fig.S8（PDF p19）",
+              "note": "作者图注给 11 μm 半周期，原稿称 fA 对比度与分辨更好。未给统一定量分辨阈值或 MTF。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "target_group": 5,
+              "target_element": 4,
+              "author_reported_half_pitch_um": 11,
+              "nominal_focus_setting_um": 375
+            }
+          }
+        },
+        {
+          "id": "aiello2019_switch_b",
+          "model": "Aiello 2019 · 双层标靶切焦 · fB",
+          "study_id": "aiello2019",
+          "specimen_id": "chart_switch",
+          "module": "",
+          "variant": "TiO₂ 双折射单镜与偏振调焦",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "物靶不移动而仅切换 WDPR 设置的 3D 实拍。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p1 摘要、p3 Fig.2c；期刊摘要",
+              "note": "同一只 TiO₂ 实制圆形口径，偏振与成像光路按测量配置分组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "aiello_varifocal_arxiv_2019",
+                "aiello_varifocal_2019"
+              ]
+            },
+            "illumination": {
+              "value": "卤素白光经 WDPR",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF p7 Fig.5d–e；补充 SIV C（PDF pp19–20）",
+              "note": "两正片靶相隔 10 mm，固定几何，电控液晶设置切换焦点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "target_separation_mm": 10
+            },
+            "chromatic": {
+              "value": "远靶清晰，做背景减除",
+              "source": "aiello_varifocal_arxiv_2019",
+              "location": "作者稿 v2 主文 PDF pp6–7 Fig.5e；补充 Fig.S9（PDF p20）",
+              "note": "作者报告远靶缩小 13.2×，图像使用背景减除提高对比度。保留原始和处理后对照出处。",
+              "basis": "reconstruction",
+              "checked_on": "2026-11-18",
+              "demagnification": 13.2,
+              "nominal_focus_setting_um": 375
+            }
+          }
         }
       ],
-      "scope": "38项原始研究、221个器件/测量/系统配置、1442条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
+      "scope": "39项原始研究、229个器件/测量/系统配置、1467条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
