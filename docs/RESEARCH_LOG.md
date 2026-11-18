@@ -853,3 +853,7 @@ Yoon 2026 经 [PR #127](https://github.com/SelinLee/lens-evidence-atlas/pull/127
 本地校验、273 个测试和构建通过。独立无头 Chrome 核对 15 条记录、3 个配置、6 个轴向焦差坐标、两类功率比、可见光筛选、引用往返、CSV 和六种视口。两个作者机构链接返回 200 且哈希一致，两个出版社路径返回 403。
 
 沿 Yoon 2026 参考文献 26 开始 Bayati 的可见光 EDOF 研究。UW 作者网站的期刊提前上线版 PDF 返回 200，1,953,528 字节，SHA256 为 d343835cb10b9c27dd9acc3c3b769acd20b9cdde5074fc7affdbea789e59c0d4。PMC 正式版对象目录返回 200、41 项、目录完整。初核 Fig. 2 MTF 横轴以 560 cycles/mm 归一，§5.2 的焦区半径取最小 FWHM 三倍，分母为入射到超透镜的总功率。Table 1 的 SSIM 属模拟图像恢复，图和数表待复核后入库。[DOI](https://doi.org/10.1515/nanoph-2021-0431) · [UW 作者组 PDF](https://labs.ece.uw.edu/amlab/Papers_Journals/Elyas_Raphael_Inverse_Design_2D.pdf)
+
+Hasegawa 经 [PR #128](https://github.com/SelinLee/lens-evidence-atlas/pull/128) 合入 c8788b4d52978032f18721184995d9a1ae53ed26。PR 检查 44272317518、主线检查 44272449979 和 [Pages 44272450188](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44272450188) 均成功。线上 12 文件与本地逐字节一致，devices-data.js SHA256 为 d7c1c623d86d331bc648bf448e6b92921c3e402b7ea4721054889caa0d93df0d。线上独立无头 Chrome 通过六焦差散点、15 条记录、3 个配置、两功率比、筛选、来源往返、CSV 和六视口。期刊路径 403，机构图与 PDF 200 且哈希一致。
+
+Bayati 的 PMC 正式 PDF 为 Nanophotonics 2022 11(11), 2531–2540，10 页、1,953,628 字节，SHA256 为 49434f3fb1cca424a8635e21e617a39fd6c1d9e81fd72b6c4063bc57f0f961ee，附件是出版 PDF 设置。视觉复核 p2534 Fig. 2A 的两口径 x 单位、Fig. 2C/D 的 RGB 和归一频轴、p2538 Fig. 6 的单位冲突。Fig. 6 的 z 轴印为 μm，刻度 0.8–1.2，图注称 1 mm 器件，绝对轴向单位待核，保留原图。正文 D1mm 两镜的 47% 和 51% 须先确认统计定义及测量面。拟录入 100 μm、1 mm 的逆设计和双曲对照各一组，四器件的焦深与宽度需核测量波长、拟合和评价面。[PMC 正式版](https://pmc-oa-opendata.s3.amazonaws.com/PMC11501592.1/PMC11501592.1.pdf)
