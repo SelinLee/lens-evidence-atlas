@@ -865,3 +865,7 @@ Bayati 的 PMC 正式 PDF 为 Nanophotonics 2022 11(11), 2531–2540，10 页、
 本地校验、275 个测试及构建通过。独立无头 Chrome 确认四个焦深、四个最小宽度、两个效率报告值、引用双向跳转、可见光筛选、CSV 和六个视口。100 μm 两个宽度点相邻，用键盘焦点核记录读数。七个出处含五个可读 PDF 范围请求、一个元数据 200 及一个出版社直连 403。
 
 Bayati 2020 已取 6 页 ACS 正式版，3,295,164 字节，SHA256 为 294f219eab1cbcd893c061b9ef99b9cb070b375f1c54cdfc9d124f88d79a8a32。p877 Table 1 视觉核到三个名义焦距各两类结构、实验/模拟分列的焦距、焦深、FWHM 和效率。ACS SI 直连 403，arXiv 最新作者稿 PDF 200，末尾附 S1/S2，下一批核版本、轴扫协议及补充数据。[UW 正式 PDF](https://labs.ece.uw.edu/amlab/Papers_Journals/Elyas_Inverse_Design_EDOF.pdf) · [作者稿](https://arxiv.org/abs/1910.06542)
+
+Bayati 2022 经 [PR #130](https://github.com/SelinLee/lens-evidence-atlas/pull/130) 合入 ec77ad8813fadaccfb5fd5a2d359b8284256d852。PR 检查 44277792793、主线检查 44277936234 和 [Pages 44277936294](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44277936294) 均成功。线上 12 文件与本地逐字节一致，devices-data.js SHA256 为 bd583912f09bfce058ed757d7e587a0f704db108e7d159b841a7f6d007fc5fa2。独立无头 Chrome 核了44行、12配置、四焦深/四宽度/两效率、可见光筛选、CSV、链接往返和六视口。五个 PDF 支持范围访问，PMC 元数据200，出版社直连403。
+
+Bayati 2020 的 arXiv v2 为 2020-04-02 修订，PDF 21 页、4,984,516 字节，SHA256 为 83867c5b05772c77b42b11144d11abcfd67c06a8a4b475c2806dcd9d1fbf2685。PDF pp18–21 附 S1 备选线焦模拟、S2 的 5°/10°/15° 入射模拟。正式版 Table 1 三个设计焦距 66.66、100、133.33 μm。p876 明确以宽度随 z 的曲线估计焦位，实验轴向分辨率2 μm，模拟轴向采样50 nm；表中各项 ± 保留印字，不能解释成重复实验标准差。100 μm EDOF 的实测焦位104±2 μm、焦深30±2 μm、最小FWHM 1.7 μm、效率20.12%，下一批逐项录入并复核 2020 版 SI 协议。器件实测单波长 625 nm，横向尺寸66.66 μm按柱面镜横宽保存。[arXiv v2](https://arxiv.org/pdf/1910.06542v2)
