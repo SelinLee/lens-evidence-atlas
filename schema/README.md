@@ -100,6 +100,8 @@
 
 `mirror_referenced_efficiency_max_pct` 保存作者报告的光谱扫描最大焦点强度比。用 `basis: derived_from_measurement`、作者计算和 `statistic: spectral_maximum`，在该格及 `efficiency_protocol` 同时记录 `denominator: metallic_mirror_reflected_intensity_same_pixel_size`。单波长留空，另保留峰值对应谱点及检测像素的可用性。普通入射功率归一效率有独立字段。
 
+`simulated_geometric_rms_spot_radius_um` 保存由有效几何射线交点求得的 RMS 半径。标 `basis: model`、`statistic: rms_ray_intercept_radius`、作者输出或本库复算、模拟波长及 `evaluation_plane_um`。`psf_protocol` 保存几何追迹种类和同一评价面，并记录落点参考、采样网格和场点。半能量宽度、实测强度 PSF 和轴向焦距使用各自的字段。
+
 作者只给出带内焦距变化及波长范围时，`focus_variation_um`、`focus_variation_pct` 可用 `spectral_sample_scope: author_reported_range_only`，逐点列表留空，须有同一行的上下波长和协议。不能用抽样曲线推定精确采样点并作为原始数据。
 
 `effective_na_from_psf` 保存作者由焦斑推得的有效NA、公式与谱点，按原文保存汇总值。单波长的作者焦距误差用 `author_reported_single_wavelength_error` 与明确的设计面或设计焦距，波长须和行一致。界限用 `value=null` 保存。
