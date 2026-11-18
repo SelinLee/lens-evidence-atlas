@@ -991,3 +991,9 @@ PR #152 合入 3596147e53c5b112e5593069c6da827c8b27ba60。PR 校验 44339830752�
 ## 2026-11-19-98 · Wang 2017 反射式近红外消色差与金属镜归一
 
 按 Crossref 992 次纳入近红外经典研究。正文和补件核三只实物设计焦距 65、100、150 μm，仅 100 μm 样品有明示口径 55.55 μm。150 μm 样品保留 0.217／0.218／0.216 的 NA 印字差异。Fig.3d 六个实际轴扫波长 1200–1650 nm 与 1200–1680 nm 设计范围分列，实测图和 CST 图各自绑定。正文的最大焦点强度比 8.56%、12.44%、8.4% 采用同像素大小的金属镜反射归一，峰值波长留空。焦位、FWHM 只核到图和正文整体范围，保留误差样式线段的定义及数据待补项。新增 24 条、13 配置，累计 45 篇、268 配置、1591 条。[本批核验](WANG_REFLECTIVE_REVIEW_2026-11-19.md)
+
+## 2026-11-19-99 · Wang 反射式消色差上线与近期可见光折超混合候选
+
+PR #154 合入 bf4f0c4f9080c25840728f586adfcb17c702f84f。PR 校验 44345037749、主线校验 44345325723 和 Pages 44345325752 成功。306 项测试通过。线上 12 文件与本机构建逐字节一致，devices-data.js SHA256 为 7f391b2c40614fd8fec691a76ed3dead0b56baebb0dc3913c4768ec66879ef1d。独立无头 Chrome 核 24 条、13 配置、三个强度比散点、六视口、引用往返与 CSV。作者组主文、Crossref、DataCite 和 PMC 清单为 200，正式补件为 206，PMC 正文页直连为 403，PMC 存档 PDF 的文件头以 206 另行确认。该研究位于近红外，可见光筛选仍为 38 篇、1417 条。[PR #154](https://github.com/SelinLee/lens-evidence-atlas/pull/154) · [Pages 部署](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44345325752) · [PMC 存档 PDF](https://pmc-oa-opendata.s3.amazonaws.com/PMC5543157.1/PMC5543157.1.pdf)
+
+下一篇核验 Zhang 等的可见光折超混合消色差研究，DOI 10.1002/lpor.202500448。Crossref 与期刊显示在线日期 2025-07-26。《Laser & Photonics Reviews》为 2025 年升级版物理与天体物理大类一区。期刊摘要和第一作者页将 8 mm、NA 0.32 描述为折射非球面与超透镜联合优化后的设计，摘要给 420–680 nm 和相对单非球面减少 83% 色差。全文、正式 PDF 及补件入口在无头 Chrome 返回 403，先核作者公开版本中的制备、对焦扫描及 83% 的度量，当前待办未填实测数值。会话目标保持 active。[期刊摘要](https://onlinelibrary.wiley.com/doi/10.1002/lpor.202500448) · [Crossref](https://api.crossref.org/works/10.1002/lpor.202500448) · [第一作者页](https://qiangbo100.github.io/qiangbo-zhang.github.io/) · [武汉大学图书馆分区](https://topj.lib.whu.edu.cn/show.asp?cat=sci&id=13647) · [分区版本](https://www.ais.cn/journal/database/5537)
