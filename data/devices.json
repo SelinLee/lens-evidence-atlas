@@ -1495,6 +1495,51 @@
       "scope": "版本 PMC13223217.1 含主文、补充材料、评审记录、原文图版及 Source Data XLSX，未见独立焦位或 MTF 数组。",
       "checked_on": "2026-11-18",
       "publication_source": "li_mosaic_2026"
+    },
+    {
+      "id": "zhang_folded_2025",
+      "title": "Zhang et al. (2025): Dispersion-engineered spin photonics based on folded-path metasurfaces",
+      "url": "https://www.nature.com/articles/s41377-025-01850-w.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "Light Sci. Appl. 14, 198，2025-05-16。主文 p5–6 Fig.3 和 p9 方法与数据取得条件。",
+      "checked_on": "2026-11-18",
+      "doi": "10.1038/s41377-025-01850-w"
+    },
+    {
+      "id": "zhang_folded_si_2025",
+      "title": "Springer Nature · Zhang 2025 补充材料",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41377-025-01850-w/MediaObjects/41377_2025_1850_MOESM1_ESM.docx",
+      "kind": "supplementary_material",
+      "scope": "核 S3/Figs.S5–S7 和 S6–S7/Figs.S12–S13。DOCX 中 33 个 OLE 对象是公式，S7 曲线为嵌入的 TIFF。",
+      "checked_on": "2026-11-18",
+      "publication_source": "zhang_folded_2025"
+    },
+    {
+      "id": "zhang_folded_pmc_2025",
+      "title": "PMC · Zhang 2025 开放资料清单",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC12084559.1%2F",
+      "kind": "repository_metadata",
+      "scope": "PMC12084559.1 有主文、六个图版与补充 DOCX，未列独立数值数据。",
+      "checked_on": "2026-11-18",
+      "publication_source": "zhang_folded_2025"
+    },
+    {
+      "id": "zhang_folded_datacite_2025",
+      "title": "DataCite · Zhang 2025 关联 DOI 查询",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1038%2Fs41377-025-01850-w%22&page%5Bsize%5D=25",
+      "kind": "repository_metadata",
+      "scope": "2026-11-18 DOI 关系查询结果 0 项，限此入口。",
+      "checked_on": "2026-11-18",
+      "publication_source": "zhang_folded_2025"
+    },
+    {
+      "id": "zhang_folded_cas_2025",
+      "title": "GoingPub · Light: Science & Applications 2025 大类分区",
+      "url": "https://www.goingpub.com/journal_detail/136.html",
+      "kind": "repository_metadata",
+      "scope": "2025 年 3 月升级版分区公开条目为物理与天体物理大类一区。2026-11-18 核对。",
+      "checked_on": "2026-11-18",
+      "publication_source": "zhang_folded_2025"
     }
   ],
   "domains": {
@@ -5226,6 +5271,26 @@
             {
               "source": "li_mosaic_si_2026",
               "location": "补充 PDF p26 Table S2，Sidelobe/Main-lobe ratio 列"
+            }
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
+        },
+        {
+          "id": "frequency_thz",
+          "label": "光频 (THz)",
+          "numeric": true,
+          "definition": "原文标出的照明或计算光频，按实测、模拟配置各自记录。",
+          "conditions": "保留原标频点、偏振、测量孔径和功率分母。波长若由真空光速换算会注明。",
+          "definition_refs": [
+            {
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i"
+            },
+            {
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7"
             }
           ],
           "axis_bounds": {
@@ -206230,9 +206295,1548 @@
               "measurement_site_count": 4
             }
           }
+        },
+        {
+          "id": "zhang2025folded_summary",
+          "model": "Zhang 2025 折叠光路 · 七频点实验汇总",
+          "study_id": "zhang2025folded",
+          "specimen_id": "lens_exp",
+          "module": "",
+          "variant": "近红外反射式消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "单只折叠光路反射式超透镜的焦点表征。",
+          "values": {
+            "height_nm": {
+              "value": 450,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p9 Methods / Fabrications，补充 DOCX S6 Fig.S12",
+              "note": "沉积硅柱层 450 nm，MgF₂ 隔层 250 nm，银反射层大于 150 nm，Cr 黏附在硅衬底。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "mgf2_spacer_nm": 250,
+              "ag_layer_lower_bound_nm": 150,
+              "sourceIds": [
+                "zhang_folded_2025",
+                "zhang_folded_si_2025"
+              ]
+            },
+            "material": {
+              "value": "Si 纳米柱 / MgF₂ / Ag / Cr / Si",
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p5 Experimental demonstrations 与 p9 Methods，补充 DOCX Figs.S4、S12",
+              "note": "相异子单元平面尺寸 A 为 430×150 nm，B 为 450×200 nm。两组的转角分别控制参考相位和折叠光路色散。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "subcell_size_nm": [
+                [
+                  430,
+                  150
+                ],
+                [
+                  450,
+                  200
+                ]
+              ],
+              "sourceIds": [
+                "zhang_folded_2025",
+                "zhang_folded_si_2025"
+              ]
+            },
+            "diameter_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3d–f，补充 DOCX Fig.S5",
+              "note": "主文展示相位图空间轴和实物照片标尺，补件给相位图 r 轴。未写圆孔口径的独立数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p9 Methods/Characterizations，补充 DOCX Fig.S13",
+              "note": "0.7 是回反光收集物镜的 NA。实验超透镜本身的 NA 数值未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–h，补充 DOCX S3 Fig.S7（word/media/image23.tif）a",
+              "note": "实验和建模图各有参考线。图未给参考线的印字焦距，也未交代共同数字设计焦距。SI S5 的 f=100 μm 是另一时空矢量算例。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_2025",
+                "zhang_folded_si_2025"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 1332.41,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i",
+              "note": "225 THz 的真空波长换算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "atlas",
+              "original_value": 225,
+              "original_unit": "THz"
+            },
+            "lambda_max_nm": {
+              "value": 1537.4,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i",
+              "note": "195 THz 的真空波长换算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "atlas",
+              "original_value": 195,
+              "original_unit": "THz"
+            },
+            "psf_protocol": {
+              "value": "LCP 会聚照明，反射后经偏振选择及 100× 继像",
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p5 Experimental demonstrations，p6 Fig.3g–i，p9 Methods/Characterizations，补充 DOCX S7 Fig.S13",
+              "note": "超连续谱经偏振片、QWP、聚光和分束。回反由 100× NA 0.7 显微物镜与 200 mm 筒镜继像，出射有 QWP 和线偏振分析。作者说明入射束已会聚，影响焦斑。未给束腰位置、逐色焦面的轴向采样、物方像素、出射分析角及 S/T 方向。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_2025",
+                "zhang_folded_si_2025"
+              ],
+              "illumination_conjugate": "focused_incident_beam",
+              "collection_objective_na": 0.7,
+              "tube_lens_focal_mm": 200,
+              "collection_magnification": 100,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null
+            },
+            "focus_variation_protocol": {
+              "value": "Fig.3h 红点为轴向半高宽区间中心",
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i 与主文 PDF p5",
+              "note": "蓝竖线是轴向焦深的 FWHM 区间，红点是区间中心。Fig.3i 另在强度最大的 xy 平面取横向 FWHM。各点 z、该范围的端点数值、焦移参考数值和实验误差缺表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "author_focus_position": "axial_fwhm_interval_midpoint",
+              "sample_frequencies_thz": [
+                195,
+                200,
+                205,
+                210,
+                215,
+                220,
+                225
+              ]
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3h",
+              "note": "只公开焦深中心图，未核跨谱残差原始数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "195–225 THz 七频点的反射式消色差",
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF pp5–6 Fig.3，期刊分区条目",
+              "note": "2025 年升级版物理与天体物理大类一区。原文给左旋圆偏振轴扫。Fig.4 光子自旋霍尔偏折是另一实验。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_2025",
+                "zhang_folded_cas_2025"
+              ],
+              "sample_frequencies_thz": [
+                195,
+                200,
+                205,
+                210,
+                215,
+                220,
+                225
+              ]
+            },
+            "mtf_curve": {
+              "value": "公开材料有焦斑图，无 MTF 数表",
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p9 Data availability，官方补件与 PMC 清单，DataCite 关联检索",
+              "note": "期刊说明支持数据可向通讯作者索取。未取得逐点焦位、原始二维或轴向 PSF、像素标定和 MTF。DOI 关联 DataCite 零命中，PMC 清单未列额外文件。DOCX 图为图版，内嵌 OLE 是公式。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_2025",
+                "zhang_folded_si_2025",
+                "zhang_folded_pmc_2025",
+                "zhang_folded_datacite_2025"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i，补充 DOCX S3 Fig.S7（word/media/image23.tif）b",
+              "note": "未核该实物的聚焦效率。补件 Fig.S7b 为模型曲线。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_2025",
+                "zhang_folded_si_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhang2025folded_exp_195",
+          "model": "Zhang 2025 折叠光路 · 实测 195 THz",
+          "study_id": "zhang2025folded",
+          "specimen_id": "lens_exp",
+          "module": "",
+          "variant": "近红外反射式消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "实物 LCP 反射焦斑、焦深中心与横向宽度对应的光频。",
+          "values": {
+            "frequency_thz": {
+              "value": 195,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i，195 THz",
+              "note": "作者图中的 THz 光频，条件按原图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1537.4,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i，195 THz",
+              "note": "本库按真空光速换算 195 THz 为约 1537.4 nm。原始谱点标签用 THz。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "display": "约 1537.4 nm",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "conversion_method": "vacuum_wavelength_from_frequency",
+              "original_value": 195,
+              "original_unit": "THz"
+            },
+            "polarization": {
+              "value": "LCP 入射，反射侧有偏振分析",
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i，195 THz 与补充 DOCX Fig.S13",
+              "note": "原文标 LCP 入射，实测图未分别注明出射分析器方向。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_2025",
+                "zhang_folded_si_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3h",
+              "note": "图上红点是轴向半高宽区间中心，逐点数值未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "焦深中心图",
+              "position_definition": "axial_fwhm_interval_midpoint"
+            },
+            "depth_of_focus_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3h",
+              "note": "图中蓝线段为轴向强度半高宽区间，未列端值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "轴向 FWHM 线段",
+              "dof_criterion": "axial_intensity_fwhm"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3i",
+              "note": "在最大光强对应的 xy 平面测横向 FWHM。图未列逐点数值和宽度方向。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "峰强度面曲线",
+              "evaluation_plane": "maximum_intensity_xy_plane"
+            },
+            "psf_protocol": {
+              "value": "LCP 会聚照明，反射后经偏振选择及 100× 继像",
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p5 Experimental demonstrations，p6 Fig.3g–i，p9 Methods/Characterizations，补充 DOCX S7 Fig.S13",
+              "note": "超连续谱经偏振片、QWP、聚光和分束。回反由 100× NA 0.7 显微物镜与 200 mm 筒镜继像，出射有 QWP 和线偏振分析。作者说明入射束已会聚，影响焦斑。未给束腰位置、逐色焦面的轴向采样、物方像素、出射分析角及 S/T 方向。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_2025",
+                "zhang_folded_si_2025"
+              ],
+              "illumination_conjugate": "focused_incident_beam",
+              "collection_objective_na": 0.7,
+              "tube_lens_focal_mm": 200,
+              "collection_magnification": 100,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null
+            }
+          }
+        },
+        {
+          "id": "zhang2025folded_exp_200",
+          "model": "Zhang 2025 折叠光路 · 实测 200 THz",
+          "study_id": "zhang2025folded",
+          "specimen_id": "lens_exp",
+          "module": "",
+          "variant": "近红外反射式消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "实物 LCP 反射焦斑、焦深中心与横向宽度对应的光频。",
+          "values": {
+            "frequency_thz": {
+              "value": 200,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i，200 THz",
+              "note": "作者图中的 THz 光频，条件按原图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1498.96,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i，200 THz",
+              "note": "本库按真空光速换算 200 THz 为约 1498.96 nm。原始谱点标签用 THz。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "display": "约 1498.96 nm",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "conversion_method": "vacuum_wavelength_from_frequency",
+              "original_value": 200,
+              "original_unit": "THz"
+            },
+            "polarization": {
+              "value": "LCP 入射，反射侧有偏振分析",
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i，200 THz 与补充 DOCX Fig.S13",
+              "note": "原文标 LCP 入射，实测图未分别注明出射分析器方向。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_2025",
+                "zhang_folded_si_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3h",
+              "note": "图上红点是轴向半高宽区间中心，逐点数值未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "焦深中心图",
+              "position_definition": "axial_fwhm_interval_midpoint"
+            },
+            "depth_of_focus_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3h",
+              "note": "图中蓝线段为轴向强度半高宽区间，未列端值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "轴向 FWHM 线段",
+              "dof_criterion": "axial_intensity_fwhm"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3i",
+              "note": "在最大光强对应的 xy 平面测横向 FWHM。图未列逐点数值和宽度方向。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "峰强度面曲线",
+              "evaluation_plane": "maximum_intensity_xy_plane"
+            },
+            "psf_protocol": {
+              "value": "LCP 会聚照明，反射后经偏振选择及 100× 继像",
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p5 Experimental demonstrations，p6 Fig.3g–i，p9 Methods/Characterizations，补充 DOCX S7 Fig.S13",
+              "note": "超连续谱经偏振片、QWP、聚光和分束。回反由 100× NA 0.7 显微物镜与 200 mm 筒镜继像，出射有 QWP 和线偏振分析。作者说明入射束已会聚，影响焦斑。未给束腰位置、逐色焦面的轴向采样、物方像素、出射分析角及 S/T 方向。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_2025",
+                "zhang_folded_si_2025"
+              ],
+              "illumination_conjugate": "focused_incident_beam",
+              "collection_objective_na": 0.7,
+              "tube_lens_focal_mm": 200,
+              "collection_magnification": 100,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null
+            }
+          }
+        },
+        {
+          "id": "zhang2025folded_exp_205",
+          "model": "Zhang 2025 折叠光路 · 实测 205 THz",
+          "study_id": "zhang2025folded",
+          "specimen_id": "lens_exp",
+          "module": "",
+          "variant": "近红外反射式消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "实物 LCP 反射焦斑、焦深中心与横向宽度对应的光频。",
+          "values": {
+            "frequency_thz": {
+              "value": 205,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i，205 THz",
+              "note": "作者图中的 THz 光频，条件按原图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1462.4,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i，205 THz",
+              "note": "本库按真空光速换算 205 THz 为约 1462.4 nm。原始谱点标签用 THz。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "display": "约 1462.4 nm",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "conversion_method": "vacuum_wavelength_from_frequency",
+              "original_value": 205,
+              "original_unit": "THz"
+            },
+            "polarization": {
+              "value": "LCP 入射，反射侧有偏振分析",
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i，205 THz 与补充 DOCX Fig.S13",
+              "note": "原文标 LCP 入射，实测图未分别注明出射分析器方向。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_2025",
+                "zhang_folded_si_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3h",
+              "note": "图上红点是轴向半高宽区间中心，逐点数值未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "焦深中心图",
+              "position_definition": "axial_fwhm_interval_midpoint"
+            },
+            "depth_of_focus_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3h",
+              "note": "图中蓝线段为轴向强度半高宽区间，未列端值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "轴向 FWHM 线段",
+              "dof_criterion": "axial_intensity_fwhm"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3i",
+              "note": "在最大光强对应的 xy 平面测横向 FWHM。图未列逐点数值和宽度方向。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "峰强度面曲线",
+              "evaluation_plane": "maximum_intensity_xy_plane"
+            },
+            "psf_protocol": {
+              "value": "LCP 会聚照明，反射后经偏振选择及 100× 继像",
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p5 Experimental demonstrations，p6 Fig.3g–i，p9 Methods/Characterizations，补充 DOCX S7 Fig.S13",
+              "note": "超连续谱经偏振片、QWP、聚光和分束。回反由 100× NA 0.7 显微物镜与 200 mm 筒镜继像，出射有 QWP 和线偏振分析。作者说明入射束已会聚，影响焦斑。未给束腰位置、逐色焦面的轴向采样、物方像素、出射分析角及 S/T 方向。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_2025",
+                "zhang_folded_si_2025"
+              ],
+              "illumination_conjugate": "focused_incident_beam",
+              "collection_objective_na": 0.7,
+              "tube_lens_focal_mm": 200,
+              "collection_magnification": 100,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null
+            }
+          }
+        },
+        {
+          "id": "zhang2025folded_exp_210",
+          "model": "Zhang 2025 折叠光路 · 实测 210 THz",
+          "study_id": "zhang2025folded",
+          "specimen_id": "lens_exp",
+          "module": "",
+          "variant": "近红外反射式消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "实物 LCP 反射焦斑、焦深中心与横向宽度对应的光频。",
+          "values": {
+            "frequency_thz": {
+              "value": 210,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i，210 THz",
+              "note": "作者图中的 THz 光频，条件按原图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1427.58,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i，210 THz",
+              "note": "本库按真空光速换算 210 THz 为约 1427.58 nm。原始谱点标签用 THz。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "display": "约 1427.58 nm",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "conversion_method": "vacuum_wavelength_from_frequency",
+              "original_value": 210,
+              "original_unit": "THz"
+            },
+            "polarization": {
+              "value": "LCP 入射，反射侧有偏振分析",
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i，210 THz 与补充 DOCX Fig.S13",
+              "note": "原文标 LCP 入射，实测图未分别注明出射分析器方向。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_2025",
+                "zhang_folded_si_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3h",
+              "note": "图上红点是轴向半高宽区间中心，逐点数值未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "焦深中心图",
+              "position_definition": "axial_fwhm_interval_midpoint"
+            },
+            "depth_of_focus_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3h",
+              "note": "图中蓝线段为轴向强度半高宽区间，未列端值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "轴向 FWHM 线段",
+              "dof_criterion": "axial_intensity_fwhm"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3i",
+              "note": "在最大光强对应的 xy 平面测横向 FWHM。图未列逐点数值和宽度方向。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "峰强度面曲线",
+              "evaluation_plane": "maximum_intensity_xy_plane"
+            },
+            "psf_protocol": {
+              "value": "LCP 会聚照明，反射后经偏振选择及 100× 继像",
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p5 Experimental demonstrations，p6 Fig.3g–i，p9 Methods/Characterizations，补充 DOCX S7 Fig.S13",
+              "note": "超连续谱经偏振片、QWP、聚光和分束。回反由 100× NA 0.7 显微物镜与 200 mm 筒镜继像，出射有 QWP 和线偏振分析。作者说明入射束已会聚，影响焦斑。未给束腰位置、逐色焦面的轴向采样、物方像素、出射分析角及 S/T 方向。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_2025",
+                "zhang_folded_si_2025"
+              ],
+              "illumination_conjugate": "focused_incident_beam",
+              "collection_objective_na": 0.7,
+              "tube_lens_focal_mm": 200,
+              "collection_magnification": 100,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null
+            }
+          }
+        },
+        {
+          "id": "zhang2025folded_exp_215",
+          "model": "Zhang 2025 折叠光路 · 实测 215 THz",
+          "study_id": "zhang2025folded",
+          "specimen_id": "lens_exp",
+          "module": "",
+          "variant": "近红外反射式消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "实物 LCP 反射焦斑、焦深中心与横向宽度对应的光频。",
+          "values": {
+            "frequency_thz": {
+              "value": 215,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i，215 THz",
+              "note": "作者图中的 THz 光频，条件按原图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1394.38,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i，215 THz",
+              "note": "本库按真空光速换算 215 THz 为约 1394.38 nm。原始谱点标签用 THz。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "display": "约 1394.38 nm",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "conversion_method": "vacuum_wavelength_from_frequency",
+              "original_value": 215,
+              "original_unit": "THz"
+            },
+            "polarization": {
+              "value": "LCP 入射，反射侧有偏振分析",
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i，215 THz 与补充 DOCX Fig.S13",
+              "note": "原文标 LCP 入射，实测图未分别注明出射分析器方向。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_2025",
+                "zhang_folded_si_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3h",
+              "note": "图上红点是轴向半高宽区间中心，逐点数值未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "焦深中心图",
+              "position_definition": "axial_fwhm_interval_midpoint"
+            },
+            "depth_of_focus_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3h",
+              "note": "图中蓝线段为轴向强度半高宽区间，未列端值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "轴向 FWHM 线段",
+              "dof_criterion": "axial_intensity_fwhm"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3i",
+              "note": "在最大光强对应的 xy 平面测横向 FWHM。图未列逐点数值和宽度方向。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "峰强度面曲线",
+              "evaluation_plane": "maximum_intensity_xy_plane"
+            },
+            "psf_protocol": {
+              "value": "LCP 会聚照明，反射后经偏振选择及 100× 继像",
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p5 Experimental demonstrations，p6 Fig.3g–i，p9 Methods/Characterizations，补充 DOCX S7 Fig.S13",
+              "note": "超连续谱经偏振片、QWP、聚光和分束。回反由 100× NA 0.7 显微物镜与 200 mm 筒镜继像，出射有 QWP 和线偏振分析。作者说明入射束已会聚，影响焦斑。未给束腰位置、逐色焦面的轴向采样、物方像素、出射分析角及 S/T 方向。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_2025",
+                "zhang_folded_si_2025"
+              ],
+              "illumination_conjugate": "focused_incident_beam",
+              "collection_objective_na": 0.7,
+              "tube_lens_focal_mm": 200,
+              "collection_magnification": 100,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null
+            }
+          }
+        },
+        {
+          "id": "zhang2025folded_exp_220",
+          "model": "Zhang 2025 折叠光路 · 实测 220 THz",
+          "study_id": "zhang2025folded",
+          "specimen_id": "lens_exp",
+          "module": "",
+          "variant": "近红外反射式消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "实物 LCP 反射焦斑、焦深中心与横向宽度对应的光频。",
+          "values": {
+            "frequency_thz": {
+              "value": 220,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i，220 THz",
+              "note": "作者图中的 THz 光频，条件按原图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1362.69,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i，220 THz",
+              "note": "本库按真空光速换算 220 THz 为约 1362.69 nm。原始谱点标签用 THz。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "display": "约 1362.69 nm",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "conversion_method": "vacuum_wavelength_from_frequency",
+              "original_value": 220,
+              "original_unit": "THz"
+            },
+            "polarization": {
+              "value": "LCP 入射，反射侧有偏振分析",
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i，220 THz 与补充 DOCX Fig.S13",
+              "note": "原文标 LCP 入射，实测图未分别注明出射分析器方向。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_2025",
+                "zhang_folded_si_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3h",
+              "note": "图上红点是轴向半高宽区间中心，逐点数值未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "焦深中心图",
+              "position_definition": "axial_fwhm_interval_midpoint"
+            },
+            "depth_of_focus_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3h",
+              "note": "图中蓝线段为轴向强度半高宽区间，未列端值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "轴向 FWHM 线段",
+              "dof_criterion": "axial_intensity_fwhm"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3i",
+              "note": "在最大光强对应的 xy 平面测横向 FWHM。图未列逐点数值和宽度方向。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "峰强度面曲线",
+              "evaluation_plane": "maximum_intensity_xy_plane"
+            },
+            "psf_protocol": {
+              "value": "LCP 会聚照明，反射后经偏振选择及 100× 继像",
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p5 Experimental demonstrations，p6 Fig.3g–i，p9 Methods/Characterizations，补充 DOCX S7 Fig.S13",
+              "note": "超连续谱经偏振片、QWP、聚光和分束。回反由 100× NA 0.7 显微物镜与 200 mm 筒镜继像，出射有 QWP 和线偏振分析。作者说明入射束已会聚，影响焦斑。未给束腰位置、逐色焦面的轴向采样、物方像素、出射分析角及 S/T 方向。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_2025",
+                "zhang_folded_si_2025"
+              ],
+              "illumination_conjugate": "focused_incident_beam",
+              "collection_objective_na": 0.7,
+              "tube_lens_focal_mm": 200,
+              "collection_magnification": 100,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null
+            }
+          }
+        },
+        {
+          "id": "zhang2025folded_exp_225",
+          "model": "Zhang 2025 折叠光路 · 实测 225 THz",
+          "study_id": "zhang2025folded",
+          "specimen_id": "lens_exp",
+          "module": "",
+          "variant": "近红外反射式消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "实物 LCP 反射焦斑、焦深中心与横向宽度对应的光频。",
+          "values": {
+            "frequency_thz": {
+              "value": 225,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i，225 THz",
+              "note": "作者图中的 THz 光频，条件按原图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1332.41,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i，225 THz",
+              "note": "本库按真空光速换算 225 THz 为约 1332.41 nm。原始谱点标签用 THz。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "display": "约 1332.41 nm",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "conversion_method": "vacuum_wavelength_from_frequency",
+              "original_value": 225,
+              "original_unit": "THz"
+            },
+            "polarization": {
+              "value": "LCP 入射，反射侧有偏振分析",
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3g–i，225 THz 与补充 DOCX Fig.S13",
+              "note": "原文标 LCP 入射，实测图未分别注明出射分析器方向。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_2025",
+                "zhang_folded_si_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3h",
+              "note": "图上红点是轴向半高宽区间中心，逐点数值未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "焦深中心图",
+              "position_definition": "axial_fwhm_interval_midpoint"
+            },
+            "depth_of_focus_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3h",
+              "note": "图中蓝线段为轴向强度半高宽区间，未列端值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "轴向 FWHM 线段",
+              "dof_criterion": "axial_intensity_fwhm"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p6 Fig.3i",
+              "note": "在最大光强对应的 xy 平面测横向 FWHM。图未列逐点数值和宽度方向。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "峰强度面曲线",
+              "evaluation_plane": "maximum_intensity_xy_plane"
+            },
+            "psf_protocol": {
+              "value": "LCP 会聚照明，反射后经偏振选择及 100× 继像",
+              "source": "zhang_folded_2025",
+              "location": "主文 PDF p5 Experimental demonstrations，p6 Fig.3g–i，p9 Methods/Characterizations，补充 DOCX S7 Fig.S13",
+              "note": "超连续谱经偏振片、QWP、聚光和分束。回反由 100× NA 0.7 显微物镜与 200 mm 筒镜继像，出射有 QWP 和线偏振分析。作者说明入射束已会聚，影响焦斑。未给束腰位置、逐色焦面的轴向采样、物方像素、出射分析角及 S/T 方向。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_2025",
+                "zhang_folded_si_2025"
+              ],
+              "illumination_conjugate": "focused_incident_beam",
+              "collection_objective_na": 0.7,
+              "tube_lens_focal_mm": 200,
+              "collection_magnification": 100,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null
+            }
+          }
+        },
+        {
+          "id": "zhang2025folded_model",
+          "model": "Zhang 2025 折叠光路 · 同器件模拟汇总",
+          "study_id": "zhang2025folded",
+          "specimen_id": "lens_model",
+          "module": "",
+          "variant": "近红外反射式消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "同一设计的七频点矢量角谱模拟。",
+          "values": {
+            "lambda_min_nm": {
+              "value": 1332.41,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif）",
+              "note": "225 THz 波长换算。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "atlas",
+              "original_value": 225,
+              "original_unit": "THz"
+            },
+            "lambda_max_nm": {
+              "value": 1537.4,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif）",
+              "note": "195 THz 波长换算。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "atlas",
+              "original_value": 195,
+              "original_unit": "THz"
+            },
+            "psf_protocol": {
+              "value": "CST 场 + 矢量角谱传播",
+              "source": "zhang_folded_si_2025",
+              "location": "主文 PDF p9 Methods/Simulations，补充 DOCX S3 Fig.S7（word/media/image23.tif）",
+              "note": "CST 取结构上方 1 μm 的电磁场，再用矢量角谱评估焦区；模型光束条件及横向/轴向采样未在 Fig.S7 逐点列出。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_si_2025",
+                "zhang_folded_2025"
+              ],
+              "simulation_field_plane_um": 1,
+              "propagation_method": "vector_angular_spectrum"
+            },
+            "efficiency_protocol": {
+              "value": "模拟焦区功率 / 输入功率",
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif）b 与 S3 正文",
+              "note": "模拟聚焦效率积分圆半径为焦斑 FWHM 的三倍。输入功率基准面和偏振通道分母未细分。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "integration_radius_multiple_of_fwhm": 3,
+              "denominator": "author_input_power_reference_plane_unreported"
+            },
+            "chromatic": {
+              "value": "Fig.S7 给焦距、焦斑和效率曲线",
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif）",
+              "note": "Fig.S7a 左纵轴为焦距 μm，右纵轴为 FWHM。Fig.S7b 纵轴为效率比例，原始数表待核。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sample_frequencies_thz": [
+                195,
+                200,
+                205,
+                210,
+                215,
+                220,
+                225
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhang2025folded_model_195",
+          "model": "Zhang 2025 折叠光路 · 模拟 195 THz",
+          "study_id": "zhang2025folded",
+          "specimen_id": "lens_model",
+          "module": "",
+          "variant": "近红外反射式消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "补件模型的焦距、焦斑和效率对应频点。",
+          "values": {
+            "frequency_thz": {
+              "value": 195,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），195 THz",
+              "note": "作者图中的 THz 光频，条件按原图。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1537.4,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），195 THz",
+              "note": "本库按真空光速换算 195 THz 为约 1537.4 nm。原始谱点标签用 THz。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "约 1537.4 nm",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "conversion_method": "vacuum_wavelength_from_frequency",
+              "original_value": 195,
+              "original_unit": "THz"
+            },
+            "psf_protocol": {
+              "value": "CST 场 + 矢量角谱传播",
+              "source": "zhang_folded_si_2025",
+              "location": "主文 PDF p9 Methods/Simulations，补充 DOCX S3 Fig.S7（word/media/image23.tif）",
+              "note": "CST 取结构上方 1 μm 的电磁场，再用矢量角谱评估焦区；模型光束条件及横向/轴向采样未在 Fig.S7 逐点列出。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_si_2025",
+                "zhang_folded_2025"
+              ],
+              "simulation_field_plane_um": 1,
+              "propagation_method": "vector_angular_spectrum"
+            },
+            "efficiency_protocol": {
+              "value": "模拟焦区功率 / 输入功率",
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif）b 与 S3 正文",
+              "note": "模拟聚焦效率积分圆半径为焦斑 FWHM 的三倍。输入功率基准面和偏振通道分母未细分。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "integration_radius_multiple_of_fwhm": 3,
+              "denominator": "author_input_power_reference_plane_unreported"
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），195 THz，面板 a 左轴",
+              "note": "模拟焦距只画为菱形标记和曲线。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅模拟曲线"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": null,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），195 THz，面板 b",
+              "note": "模拟效率只画方形标记和曲线。坐标用 0 到 1 的比例，逐点数表待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅模拟曲线",
+              "original_unit": "fraction"
+            },
+            "chromatic": {
+              "value": "模拟焦点与焦斑宽度",
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），195 THz，面板 a",
+              "note": "圆点为模拟 FWHM，右轴。宽度方向与逐点数值未列。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "zhang2025folded_model_200",
+          "model": "Zhang 2025 折叠光路 · 模拟 200 THz",
+          "study_id": "zhang2025folded",
+          "specimen_id": "lens_model",
+          "module": "",
+          "variant": "近红外反射式消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "补件模型的焦距、焦斑和效率对应频点。",
+          "values": {
+            "frequency_thz": {
+              "value": 200,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），200 THz",
+              "note": "作者图中的 THz 光频，条件按原图。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1498.96,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），200 THz",
+              "note": "本库按真空光速换算 200 THz 为约 1498.96 nm。原始谱点标签用 THz。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "约 1498.96 nm",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "conversion_method": "vacuum_wavelength_from_frequency",
+              "original_value": 200,
+              "original_unit": "THz"
+            },
+            "psf_protocol": {
+              "value": "CST 场 + 矢量角谱传播",
+              "source": "zhang_folded_si_2025",
+              "location": "主文 PDF p9 Methods/Simulations，补充 DOCX S3 Fig.S7（word/media/image23.tif）",
+              "note": "CST 取结构上方 1 μm 的电磁场，再用矢量角谱评估焦区；模型光束条件及横向/轴向采样未在 Fig.S7 逐点列出。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_si_2025",
+                "zhang_folded_2025"
+              ],
+              "simulation_field_plane_um": 1,
+              "propagation_method": "vector_angular_spectrum"
+            },
+            "efficiency_protocol": {
+              "value": "模拟焦区功率 / 输入功率",
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif）b 与 S3 正文",
+              "note": "模拟聚焦效率积分圆半径为焦斑 FWHM 的三倍。输入功率基准面和偏振通道分母未细分。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "integration_radius_multiple_of_fwhm": 3,
+              "denominator": "author_input_power_reference_plane_unreported"
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），200 THz，面板 a 左轴",
+              "note": "模拟焦距只画为菱形标记和曲线。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅模拟曲线"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": null,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），200 THz，面板 b",
+              "note": "模拟效率只画方形标记和曲线。坐标用 0 到 1 的比例，逐点数表待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅模拟曲线",
+              "original_unit": "fraction"
+            },
+            "chromatic": {
+              "value": "模拟焦点与焦斑宽度",
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），200 THz，面板 a",
+              "note": "圆点为模拟 FWHM，右轴。宽度方向与逐点数值未列。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "zhang2025folded_model_205",
+          "model": "Zhang 2025 折叠光路 · 模拟 205 THz",
+          "study_id": "zhang2025folded",
+          "specimen_id": "lens_model",
+          "module": "",
+          "variant": "近红外反射式消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "补件模型的焦距、焦斑和效率对应频点。",
+          "values": {
+            "frequency_thz": {
+              "value": 205,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），205 THz",
+              "note": "作者图中的 THz 光频，条件按原图。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1462.4,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），205 THz",
+              "note": "本库按真空光速换算 205 THz 为约 1462.4 nm。原始谱点标签用 THz。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "约 1462.4 nm",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "conversion_method": "vacuum_wavelength_from_frequency",
+              "original_value": 205,
+              "original_unit": "THz"
+            },
+            "psf_protocol": {
+              "value": "CST 场 + 矢量角谱传播",
+              "source": "zhang_folded_si_2025",
+              "location": "主文 PDF p9 Methods/Simulations，补充 DOCX S3 Fig.S7（word/media/image23.tif）",
+              "note": "CST 取结构上方 1 μm 的电磁场，再用矢量角谱评估焦区；模型光束条件及横向/轴向采样未在 Fig.S7 逐点列出。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_si_2025",
+                "zhang_folded_2025"
+              ],
+              "simulation_field_plane_um": 1,
+              "propagation_method": "vector_angular_spectrum"
+            },
+            "efficiency_protocol": {
+              "value": "模拟焦区功率 / 输入功率",
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif）b 与 S3 正文",
+              "note": "模拟聚焦效率积分圆半径为焦斑 FWHM 的三倍。输入功率基准面和偏振通道分母未细分。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "integration_radius_multiple_of_fwhm": 3,
+              "denominator": "author_input_power_reference_plane_unreported"
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），205 THz，面板 a 左轴",
+              "note": "模拟焦距只画为菱形标记和曲线。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅模拟曲线"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": null,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），205 THz，面板 b",
+              "note": "模拟效率只画方形标记和曲线。坐标用 0 到 1 的比例，逐点数表待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅模拟曲线",
+              "original_unit": "fraction"
+            },
+            "chromatic": {
+              "value": "模拟焦点与焦斑宽度",
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），205 THz，面板 a",
+              "note": "圆点为模拟 FWHM，右轴。宽度方向与逐点数值未列。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "zhang2025folded_model_210",
+          "model": "Zhang 2025 折叠光路 · 模拟 210 THz",
+          "study_id": "zhang2025folded",
+          "specimen_id": "lens_model",
+          "module": "",
+          "variant": "近红外反射式消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "补件模型的焦距、焦斑和效率对应频点。",
+          "values": {
+            "frequency_thz": {
+              "value": 210,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），210 THz",
+              "note": "作者图中的 THz 光频，条件按原图。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1427.58,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），210 THz",
+              "note": "本库按真空光速换算 210 THz 为约 1427.58 nm。原始谱点标签用 THz。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "约 1427.58 nm",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "conversion_method": "vacuum_wavelength_from_frequency",
+              "original_value": 210,
+              "original_unit": "THz"
+            },
+            "psf_protocol": {
+              "value": "CST 场 + 矢量角谱传播",
+              "source": "zhang_folded_si_2025",
+              "location": "主文 PDF p9 Methods/Simulations，补充 DOCX S3 Fig.S7（word/media/image23.tif）",
+              "note": "CST 取结构上方 1 μm 的电磁场，再用矢量角谱评估焦区；模型光束条件及横向/轴向采样未在 Fig.S7 逐点列出。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_si_2025",
+                "zhang_folded_2025"
+              ],
+              "simulation_field_plane_um": 1,
+              "propagation_method": "vector_angular_spectrum"
+            },
+            "efficiency_protocol": {
+              "value": "模拟焦区功率 / 输入功率",
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif）b 与 S3 正文",
+              "note": "模拟聚焦效率积分圆半径为焦斑 FWHM 的三倍。输入功率基准面和偏振通道分母未细分。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "integration_radius_multiple_of_fwhm": 3,
+              "denominator": "author_input_power_reference_plane_unreported"
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），210 THz，面板 a 左轴",
+              "note": "模拟焦距只画为菱形标记和曲线。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅模拟曲线"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": null,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），210 THz，面板 b",
+              "note": "模拟效率只画方形标记和曲线。坐标用 0 到 1 的比例，逐点数表待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅模拟曲线",
+              "original_unit": "fraction"
+            },
+            "chromatic": {
+              "value": "模拟焦点与焦斑宽度",
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），210 THz，面板 a",
+              "note": "圆点为模拟 FWHM，右轴。宽度方向与逐点数值未列。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "zhang2025folded_model_215",
+          "model": "Zhang 2025 折叠光路 · 模拟 215 THz",
+          "study_id": "zhang2025folded",
+          "specimen_id": "lens_model",
+          "module": "",
+          "variant": "近红外反射式消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "补件模型的焦距、焦斑和效率对应频点。",
+          "values": {
+            "frequency_thz": {
+              "value": 215,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），215 THz",
+              "note": "作者图中的 THz 光频，条件按原图。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1394.38,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），215 THz",
+              "note": "本库按真空光速换算 215 THz 为约 1394.38 nm。原始谱点标签用 THz。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "约 1394.38 nm",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "conversion_method": "vacuum_wavelength_from_frequency",
+              "original_value": 215,
+              "original_unit": "THz"
+            },
+            "psf_protocol": {
+              "value": "CST 场 + 矢量角谱传播",
+              "source": "zhang_folded_si_2025",
+              "location": "主文 PDF p9 Methods/Simulations，补充 DOCX S3 Fig.S7（word/media/image23.tif）",
+              "note": "CST 取结构上方 1 μm 的电磁场，再用矢量角谱评估焦区；模型光束条件及横向/轴向采样未在 Fig.S7 逐点列出。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_si_2025",
+                "zhang_folded_2025"
+              ],
+              "simulation_field_plane_um": 1,
+              "propagation_method": "vector_angular_spectrum"
+            },
+            "efficiency_protocol": {
+              "value": "模拟焦区功率 / 输入功率",
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif）b 与 S3 正文",
+              "note": "模拟聚焦效率积分圆半径为焦斑 FWHM 的三倍。输入功率基准面和偏振通道分母未细分。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "integration_radius_multiple_of_fwhm": 3,
+              "denominator": "author_input_power_reference_plane_unreported"
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），215 THz，面板 a 左轴",
+              "note": "模拟焦距只画为菱形标记和曲线。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅模拟曲线"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": null,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），215 THz，面板 b",
+              "note": "模拟效率只画方形标记和曲线。坐标用 0 到 1 的比例，逐点数表待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅模拟曲线",
+              "original_unit": "fraction"
+            },
+            "chromatic": {
+              "value": "模拟焦点与焦斑宽度",
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），215 THz，面板 a",
+              "note": "圆点为模拟 FWHM，右轴。宽度方向与逐点数值未列。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "zhang2025folded_model_220",
+          "model": "Zhang 2025 折叠光路 · 模拟 220 THz",
+          "study_id": "zhang2025folded",
+          "specimen_id": "lens_model",
+          "module": "",
+          "variant": "近红外反射式消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "补件模型的焦距、焦斑和效率对应频点。",
+          "values": {
+            "frequency_thz": {
+              "value": 220,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），220 THz",
+              "note": "作者图中的 THz 光频，条件按原图。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1362.69,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），220 THz",
+              "note": "本库按真空光速换算 220 THz 为约 1362.69 nm。原始谱点标签用 THz。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "约 1362.69 nm",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "conversion_method": "vacuum_wavelength_from_frequency",
+              "original_value": 220,
+              "original_unit": "THz"
+            },
+            "psf_protocol": {
+              "value": "CST 场 + 矢量角谱传播",
+              "source": "zhang_folded_si_2025",
+              "location": "主文 PDF p9 Methods/Simulations，补充 DOCX S3 Fig.S7（word/media/image23.tif）",
+              "note": "CST 取结构上方 1 μm 的电磁场，再用矢量角谱评估焦区；模型光束条件及横向/轴向采样未在 Fig.S7 逐点列出。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_si_2025",
+                "zhang_folded_2025"
+              ],
+              "simulation_field_plane_um": 1,
+              "propagation_method": "vector_angular_spectrum"
+            },
+            "efficiency_protocol": {
+              "value": "模拟焦区功率 / 输入功率",
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif）b 与 S3 正文",
+              "note": "模拟聚焦效率积分圆半径为焦斑 FWHM 的三倍。输入功率基准面和偏振通道分母未细分。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "integration_radius_multiple_of_fwhm": 3,
+              "denominator": "author_input_power_reference_plane_unreported"
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），220 THz，面板 a 左轴",
+              "note": "模拟焦距只画为菱形标记和曲线。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅模拟曲线"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": null,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），220 THz，面板 b",
+              "note": "模拟效率只画方形标记和曲线。坐标用 0 到 1 的比例，逐点数表待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅模拟曲线",
+              "original_unit": "fraction"
+            },
+            "chromatic": {
+              "value": "模拟焦点与焦斑宽度",
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），220 THz，面板 a",
+              "note": "圆点为模拟 FWHM，右轴。宽度方向与逐点数值未列。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "zhang2025folded_model_225",
+          "model": "Zhang 2025 折叠光路 · 模拟 225 THz",
+          "study_id": "zhang2025folded",
+          "specimen_id": "lens_model",
+          "module": "",
+          "variant": "近红外反射式消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "补件模型的焦距、焦斑和效率对应频点。",
+          "values": {
+            "frequency_thz": {
+              "value": 225,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），225 THz",
+              "note": "作者图中的 THz 光频，条件按原图。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1332.41,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），225 THz",
+              "note": "本库按真空光速换算 225 THz 为约 1332.41 nm。原始谱点标签用 THz。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "约 1332.41 nm",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "conversion_method": "vacuum_wavelength_from_frequency",
+              "original_value": 225,
+              "original_unit": "THz"
+            },
+            "psf_protocol": {
+              "value": "CST 场 + 矢量角谱传播",
+              "source": "zhang_folded_si_2025",
+              "location": "主文 PDF p9 Methods/Simulations，补充 DOCX S3 Fig.S7（word/media/image23.tif）",
+              "note": "CST 取结构上方 1 μm 的电磁场，再用矢量角谱评估焦区；模型光束条件及横向/轴向采样未在 Fig.S7 逐点列出。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "zhang_folded_si_2025",
+                "zhang_folded_2025"
+              ],
+              "simulation_field_plane_um": 1,
+              "propagation_method": "vector_angular_spectrum"
+            },
+            "efficiency_protocol": {
+              "value": "模拟焦区功率 / 输入功率",
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif）b 与 S3 正文",
+              "note": "模拟聚焦效率积分圆半径为焦斑 FWHM 的三倍。输入功率基准面和偏振通道分母未细分。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "integration_radius_multiple_of_fwhm": 3,
+              "denominator": "author_input_power_reference_plane_unreported"
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），225 THz，面板 a 左轴",
+              "note": "模拟焦距只画为菱形标记和曲线。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅模拟曲线"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": null,
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），225 THz，面板 b",
+              "note": "模拟效率只画方形标记和曲线。坐标用 0 到 1 的比例，逐点数表待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅模拟曲线",
+              "original_unit": "fraction"
+            },
+            "chromatic": {
+              "value": "模拟焦点与焦斑宽度",
+              "source": "zhang_folded_si_2025",
+              "location": "补充 DOCX S3 Fig.S7（word/media/image23.tif），225 THz，面板 a",
+              "note": "圆点为模拟 FWHM，右轴。宽度方向与逐点数值未列。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            }
+          }
         }
       ],
-      "scope": "40项原始研究、233个器件/测量/系统配置、1486条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
+      "scope": "41项原始研究、235个器件/测量/系统配置、1502条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
