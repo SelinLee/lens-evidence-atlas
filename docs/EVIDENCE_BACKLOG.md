@@ -46,8 +46,9 @@
 | QUALITY-001aa Hasegawa 2026 毫米级单层离散RGB实测 | done | 0.3.24 经 PR #128/c8788b4、Pages 44272450188 上线。273 个测试、12 文件一致、无头 Chrome 的15条记录、6个焦差坐标、两类功率比、可见光筛选及引用往返通过。SI、原始数表和PSF待补，见[核验](HASEGAWA_2026_REVIEW_2026-11-18.md)。 |
 | QUALITY-001ab Bayati 2022 二维逆设计的可见光对照 | done | 0.3.25 经 PR #130/ec77ad8、Pages 44277936294 上线。275 个测试、12 文件一致、无头 Chrome 复核44行、12配置、10个读数、7个出处及六视口。原始数组与曲线归属仍待补，见[核验](BAYATI_2022_REVIEW_2026-11-18.md)。 |
 | QUALITY-001ac Bayati 2020 柱面线焦逆设计 | done | 0.3.26 经 PR #132/3a88d7f、Pages 44282456672 上线。277 个测试、12 文件一致、无头 Chrome 核25行、15配置、重合点往返和六视口。原始PSF及MTF待补，见[核验](BAYATI_2020_REVIEW_2026-11-18.md)。 |
-| QUALITY-001ad Feng 2022 高NA RGB双层实制镜 | in_progress | 沿 Hasegawa 2026 Table 1 的参考文献46。期刊摘要核D1mm实物、设计NA0.8。ACS 主文与SI直连403，OpenAlex仅DOI/PubMed入口，作者页只有题录。继续查机构全文并核实制主镜、厘米级与TiO₂配置。DOI 10.1021/acs.nanolett.2c00486。 |
+| QUALITY-001ad Feng 2022 高NA RGB双层实制镜 | in_progress | 沿 Hasegawa 2026 Table 1 的参考文献46。已录入作者摘要核实的D1mm实物与设计NA0.8；焦距、焦斑、效率及MTF待补。ACS 主文与SI直连403，OpenAlex仅DOI/PubMed入口，作者页只有题录。继续查机构全文并核实制主镜、厘米级与TiO₂配置。DOI 10.1021/acs.nanolett.2c00486。 |
 | QUALITY-001ae Zhang 2025 RGB高分辨率与重建 | todo | 沿 Feng 2022 对应作者机构的研究列表。期刊摘要核实制410μm及数字成像测量。需分焦斑、光学MTF、标靶分辨率与网络复原。研究 DOI 10.1002/lpor.202500460，封面DOI单列材料。 |
+| QUALITY-001af Li 2024 校正球差的高NA离散RGB | in_progress | 同期高NA对照，见[本批核验](RGB_APLANATIC_REVIEW_2026-11-18.md)。校正及未校正球差实物、正入射波长扫描、成像与模型共40行。逐频MTF、原始PSF、未标逐色焦位和场点待补。 |
 | QUALITY-002 手机SNR/MTF/色差独立测量 | in_progress | 本机Codex，2026-11-14；先核有型号和协议的SNR及MTF原始研究；外接镜组、场景与处理链不得写进原生模组，PSNR不替代SNR |
 | QUALITY-003 VRAR MTF与色差 | in_progress | 本机Codex，2026-11-14；复核开放PR #69数据及原文，优先MTF/截止频率、颜色/场点/眼位、色差和先进设备独立测量，不能从曲线猜统一单值 |
 | QUALITY-001a 文献器件首批 | done | 4项原始研究/8器件配置/21行，几何、波段、逐谱点焦距/FWHM/Strehl、PSNR及冲突；见[首批核验](QUALITY_BATCH_2026-11-14.md)；PR #72/23fdecb与Pages43571286647实页验收，不关闭父目标 |

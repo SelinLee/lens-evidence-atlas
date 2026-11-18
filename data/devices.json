@@ -1171,6 +1171,69 @@
       "scope": "200，精确关联只命中同篇arXiv文稿DOI，无独立数据条目。Crossref未列关系，Figshare检索接口403。",
       "checked_on": "2026-11-18",
       "publication_source": "bayati_cylindrical_2020"
+    },
+    {
+      "id": "li_aplanatic_2024",
+      "title": "Li et al. (2024): An RGB-Achromatic Aplanatic Metalens",
+      "url": "https://doi.org/10.1002/lpor.202300729",
+      "kind": "peer_reviewed_paper",
+      "scope": "Laser & Photonics Reviews 18(4), 2300729。Crossref在线日期2024-03-07。主文与补充材料由南开大学作者组提供。",
+      "checked_on": "2026-11-18",
+      "doi": "10.1002/lpor.202300729"
+    },
+    {
+      "id": "li_aplanatic_pdf_2024",
+      "title": "南开大学作者组 · Wiley 正式主文PDF",
+      "url": "https://chenlab.nankai.edu.cn/_upload/article/files/c5/69/8c299a51483ea5789903f3712615/3ba82c34-8f68-4421-bd79-10665ff89ec1.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "8页，7668957字节，SHA256 f1f89aba8f65bb9ba3ee78f8be3043674710cfa8a740a1c353e373502f9fff3b。核§2.1–2.2、Fig.2–4、实验方法和数据可用性。",
+      "checked_on": "2026-11-18",
+      "publication_source": "li_aplanatic_2024"
+    },
+    {
+      "id": "li_aplanatic_si_2024",
+      "title": "南开大学作者组 · Wiley 补充材料PDF",
+      "url": "https://chenlab.nankai.edu.cn/_upload/article/files/c5/69/8c299a51483ea5789903f3712615/79af856e-d670-4d61-8797-5ad83919c64f.pdf",
+      "kind": "supplementary_information",
+      "scope": "19页，1689833字节，SHA256 fc6f53b3a2b250a275182d5d38f7b9372aecffa55058840be424d7c3b8208032。Wiley文件名lpor202300729-sup-0001-SuppMat.pdf。核Fig.S4–S12、表S1与参考文献。",
+      "checked_on": "2026-11-18",
+      "publication_source": "li_aplanatic_2024"
+    },
+    {
+      "id": "li_aplanatic_datacite_2024",
+      "title": "DataCite · Li 2024 精确关联 DOI",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1002%2Flpor.202300729%22",
+      "kind": "repository",
+      "scope": "精确关联DOI查询返回0项。见主文p7数据可用性声明。",
+      "checked_on": "2026-11-18",
+      "publication_source": "li_aplanatic_2024"
+    },
+    {
+      "id": "feng_doublet_2022",
+      "title": "Feng et al. (2022): RGB Achromatic Metalens Doublet for Digital Imaging",
+      "url": "https://doi.org/10.1021/acs.nanolett.2c00486",
+      "kind": "peer_reviewed_paper",
+      "scope": "Nano Letters 22(10), 3969–3975，2022-05-04在线，PMID 35506587。ACS主文和补充PDF直连403；作者原始摘要已用Europe PMC核验。",
+      "checked_on": "2026-11-18",
+      "doi": "10.1021/acs.nanolett.2c00486"
+    },
+    {
+      "id": "feng_doublet_abstract_2022",
+      "title": "Europe PMC · Feng 2022 作者发表摘要",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1021%2Facs.nanolett.2c00486&resultType=core&format=json",
+      "kind": "repository",
+      "scope": "resultList.result[0] DOI与PMID匹配，见abstractText末句和全文入口字段。仅核摘要、题录与公开全文收录状态。",
+      "checked_on": "2026-11-18",
+      "publication_source": "feng_doublet_2022"
+    },
+    {
+      "id": "feng_doublet_datacite_2022",
+      "title": "DataCite · Feng 2022 精确关联 DOI",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1021%2Facs.nanolett.2c00486%22",
+      "kind": "repository",
+      "scope": "精确关联DOI及精确篇名查询均返回0项。OpenAlex、作者机构入口未找到公开数据。",
+      "checked_on": "2026-11-18",
+      "publication_source": "feng_doublet_2022"
     }
   ],
   "domains": {
@@ -4710,6 +4773,54 @@
             {
               "source": "bayati_cylindrical_v2_2020",
               "location": "PDF p19 S1 cubic替代效率定义"
+            }
+          ]
+        },
+        {
+          "id": "resolved_test_line_width_um",
+          "label": "标靶可辨线宽 (μm)",
+          "definition": "作者从实测标靶照片辨出的标称单条测试线宽。",
+          "conditions": "靶类型、组号/元素、通道、阈值与场点；保留界限。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4a–f及其正文；p7 Measurements"
+            }
+          ]
+        },
+        {
+          "id": "simulated_axial_fwhm_um",
+          "label": "模拟轴向强度FWHM (μm)",
+          "definition": "固定模型中z向强度剖面的半高全宽。",
+          "conditions": "方向z、物距和像距、归一化方式及模型。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "li_aplanatic_si_2024",
+              "location": "PDF p8 Fig.S5a–f"
+            }
+          ]
+        },
+        {
+          "id": "simulated_relative_spherical_aberration_pct",
+          "label": "模拟球差 Δs/s′ (%)",
+          "definition": "作者定义的轴向强度FWHM Δs 相对名义像距s′的百分比。",
+          "conditions": "作者量、有限共轭、像距、谱点和相同模型的模拟轴向宽度。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "li_aplanatic_si_2024",
+              "location": "PDF p8 Fig.S5g–i；主文p4 §2.1"
             }
           ]
         }
@@ -193068,9 +193179,3274 @@
               "azimuth_deg": null
             }
           }
+        },
+        {
+          "id": "li2024aplanatic_summary",
+          "model": "Li 2024 · 主镜 · 光谱汇总",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_focus",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实制主镜；离散设计RGB与原文波长范围分别保留。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 FDTD尺寸说明；p5 Fig.2",
+              "note": "600 μm为主镜名义直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，主镜（校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p3 Fig.1(c)设计段；p7 Fabrication；补充材料 PDF p11 Fig.S8",
+              "note": "SOI起始层经减薄形成600 nm厚c-Si单元，周期400 nm；熔融SiO₂基底。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            },
+            "material": {
+              "value": "c-Si / 熔融SiO₂",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p3 设计段；p7 Fabrication",
+              "note": "粘接与制程细节见补图S8。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_min_nm": {
+              "value": 490,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1；p4 §2.2；p5 Fig.3f–g；p7 Conclusion",
+              "note": "作者报告正入射490–720 nm实测覆盖与近似保焦；RGB以外存在更大偏差。谱扫图没有逐点数表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "spectrum_role": "author_reported_continuous_wavelength_range",
+              "design_wavelengths_nm": [
+                490,
+                570,
+                700
+              ]
+            },
+            "lambda_max_nm": {
+              "value": 720,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1；p4 §2.2；p5 Fig.3f–g；p7 Conclusion",
+              "note": "作者报告正入射490–720 nm实测覆盖与近似保焦；RGB以外存在更大偏差。谱扫图没有逐点数表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "spectrum_role": "author_reported_continuous_wavelength_range",
+              "design_wavelengths_nm": [
+                490,
+                570,
+                700
+              ]
+            },
+            "focus_error_pct": {
+              "value": 1,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.2 实测段",
+              "note": "作者就三RGB焦点报告约1%相对移动；参考波长、归一化分母及精确统计未定义。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "approximate": true,
+              "calculation_origin": "authors",
+              "statistic": "author_reported_focal_error",
+              "sample_wavelengths_nm": [
+                490,
+                570,
+                700
+              ],
+              "reference_wavelength_nm": null
+            },
+            "focus_error_protocol": {
+              "value": "相对移动约1%，仅三RGB",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.2 实测段",
+              "note": "对应原文365、369、365 μm。保留作者近似量及未明确的分母。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "可调光源正入射，z扫描，x剖面",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p7 Experimental Section / Measurements；补充材料 PDF pp12–13 Fig.S9a",
+              "note": "正入射，NKT SuperK EXTREME可调光源；O1 5×/NA0.13。拍摄端O2 50×/NA0.55、ITL200及C13440-20CU一同沿z扫描。未给扫描步长、样面采样尺度、波长线宽和照明偏振。 Fig.3(a–e)采用各子图的虚线轴面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "collection_na": 0.55,
+              "nominal_collection_magnification": 50,
+              "illumination_na": 0.13,
+              "image_plane_pixel_size_um": null,
+              "axial_scan_step_um": null,
+              "incidence_angle_deg": 0,
+              "direction": "x",
+              "polarization": null,
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            },
+            "mtf_curve": {
+              "value": "主文与补充材料仅有焦斑和成像图",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p5 Fig.3；pp6–7 Fig.4、Methods及Data Availability；补充材料PDF pp14–16；DataCite查询",
+              "note": "通讯作者按合理请求提供支撑数据。已核正式PDF、补充PDF（均无附件）、DOI关联登记与作者组入口；未取得逐频MTF、原始PSF和空间采样，Strehl及横向色差未见数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024",
+                "li_aplanatic_datacite_2024",
+                "li_aplanatic_2024"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "raw_psf_available": null,
+                "sampling_scale_um": null,
+                "author_statement": "available_from_corresponding_author_upon_reasonable_request"
+              }
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_aplanatic_focus_490",
+          "model": "Li 2024 · 主镜 · 正入射 490 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_focus",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一主镜的正入射谱点。x向FWHM为各子图所标剖面。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 FDTD尺寸说明；p5 Fig.2",
+              "note": "600 μm为主镜名义直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，主镜（校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 490,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p5 Fig.3a 上/下行；p5 Fig.3f–g",
+              "note": "原文印字的光谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "可调光源正入射，z扫描，x剖面",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p7 Experimental Section / Measurements；补充材料 PDF pp12–13 Fig.S9a",
+              "note": "正入射，NKT SuperK EXTREME可调光源；O1 5×/NA0.13。拍摄端O2 50×/NA0.55、ITL200及C13440-20CU一同沿z扫描。未给扫描步长、样面采样尺度、波长线宽和照明偏振。 Fig.3(a–e)采用各子图的虚线轴面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "collection_na": 0.55,
+              "nominal_collection_magnification": 50,
+              "illumination_na": 0.13,
+              "image_plane_pixel_size_um": null,
+              "axial_scan_step_um": null,
+              "incidence_angle_deg": 0,
+              "direction": "x",
+              "polarization": null,
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            },
+            "fwhm_x_um": {
+              "value": 0.588,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p5 Fig.3a 下行FWHM印字",
+              "note": "x向归一化强度剖面；上行虚线对应剖面。原印字为nm，按1000 nm/μm换算。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "original_value": 588,
+              "original_unit": "nm",
+              "direction": "x"
+            },
+            "measured_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.2 实测段 RGB三值第1项；p5 Fig.3a上行",
+              "note": "作者报告实测焦距；精确轴向原点、峰值拟合和重复误差待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "axial_focus_offset_um": {
+              "value": 0,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.2 实测段 RGB三值第1项；p2 §2.1 设计焦距",
+              "note": "以设计F=365 μm作固定轴向参考，实测焦距减参考值；正值沿z增大。原文未单列该差值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "atlas",
+              "reference_plane_um": 365,
+              "reference_plane_description": "作者设计焦距F=365 μm",
+              "reference_wavelength_nm": null,
+              "formula": "measured_focal_um - reference_plane_um"
+            },
+            "efficiency_lambda_nm": {
+              "value": 490,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.2 实测段；§2.1效率定义",
+              "note": "原文印字的光谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_protocol": {
+              "value": "焦区为作者所称3×FWHM面积，分母为入射光能量",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.2 实测段；§2.1效率定义",
+              "note": "未给光斑区域形状、半径或直径约定、分母功率计量的具体光阑和重复次数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_light_energy",
+              "author_area_multiple_of_fwhm_area": 3,
+              "integration_shape": null,
+              "reference_aperture": null
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 1.52,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.2 实测段；§2.1效率定义 RGB三值第1项",
+              "note": "本实制主镜从实验提取的聚焦效率。焦区和分母按作者定义。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "1.52",
+              "calculation_origin": "authors",
+              "statistic": "single_wavelength",
+              "denominator": "incident_light_energy"
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_aplanatic_focus_530",
+          "model": "Li 2024 · 主镜 · 正入射 530 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_focus",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一主镜的正入射谱点。x向FWHM为各子图所标剖面。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 FDTD尺寸说明；p5 Fig.2",
+              "note": "600 μm为主镜名义直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，主镜（校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p5 Fig.3b 上/下行；p5 Fig.3f–g",
+              "note": "原文印字的光谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "可调光源正入射，z扫描，x剖面",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p7 Experimental Section / Measurements；补充材料 PDF pp12–13 Fig.S9a",
+              "note": "正入射，NKT SuperK EXTREME可调光源；O1 5×/NA0.13。拍摄端O2 50×/NA0.55、ITL200及C13440-20CU一同沿z扫描。未给扫描步长、样面采样尺度、波长线宽和照明偏振。 Fig.3(a–e)采用各子图的虚线轴面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "collection_na": 0.55,
+              "nominal_collection_magnification": 50,
+              "illumination_na": 0.13,
+              "image_plane_pixel_size_um": null,
+              "axial_scan_step_um": null,
+              "incidence_angle_deg": 0,
+              "direction": "x",
+              "polarization": null,
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            },
+            "fwhm_x_um": {
+              "value": 0.942,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p5 Fig.3b 下行FWHM印字",
+              "note": "x向归一化强度剖面；上行虚线对应剖面。原印字为nm，按1000 nm/μm换算。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "original_value": 942,
+              "original_unit": "nm",
+              "direction": "x"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.2 实测段；p5 Fig.3b 上/下行；p5 Fig.3f–g",
+              "note": "作者仅对530及630 nm定性讨论最亮焦点，并给出相对RGB偏差<10.7%的合述界限，未公布本波长焦距数值及具体参考。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "正文只报偏差 <10.7%"
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_aplanatic_focus_570",
+          "model": "Li 2024 · 主镜 · 正入射 570 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_focus",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一主镜的正入射谱点。x向FWHM为各子图所标剖面。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 FDTD尺寸说明；p5 Fig.2",
+              "note": "600 μm为主镜名义直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，主镜（校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 570,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p5 Fig.3c 上/下行；p5 Fig.3f–g",
+              "note": "原文印字的光谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "可调光源正入射，z扫描，x剖面",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p7 Experimental Section / Measurements；补充材料 PDF pp12–13 Fig.S9a",
+              "note": "正入射，NKT SuperK EXTREME可调光源；O1 5×/NA0.13。拍摄端O2 50×/NA0.55、ITL200及C13440-20CU一同沿z扫描。未给扫描步长、样面采样尺度、波长线宽和照明偏振。 Fig.3(a–e)采用各子图的虚线轴面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "collection_na": 0.55,
+              "nominal_collection_magnification": 50,
+              "illumination_na": 0.13,
+              "image_plane_pixel_size_um": null,
+              "axial_scan_step_um": null,
+              "incidence_angle_deg": 0,
+              "direction": "x",
+              "polarization": null,
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            },
+            "fwhm_x_um": {
+              "value": 0.842,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p5 Fig.3c 下行FWHM印字",
+              "note": "x向归一化强度剖面；上行虚线对应剖面。原印字为nm，按1000 nm/μm换算。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "original_value": 842,
+              "original_unit": "nm",
+              "direction": "x"
+            },
+            "measured_focal_um": {
+              "value": 369,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.2 实测段 RGB三值第2项；p5 Fig.3c上行",
+              "note": "作者报告实测焦距；精确轴向原点、峰值拟合和重复误差待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "axial_focus_offset_um": {
+              "value": 4,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.2 实测段 RGB三值第2项；p2 §2.1 设计焦距",
+              "note": "以设计F=365 μm作固定轴向参考，实测焦距减参考值；正值沿z增大。原文未单列该差值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "atlas",
+              "reference_plane_um": 365,
+              "reference_plane_description": "作者设计焦距F=365 μm",
+              "reference_wavelength_nm": null,
+              "formula": "measured_focal_um - reference_plane_um"
+            },
+            "efficiency_lambda_nm": {
+              "value": 570,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.2 实测段；§2.1效率定义",
+              "note": "原文印字的光谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_protocol": {
+              "value": "焦区为作者所称3×FWHM面积，分母为入射光能量",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.2 实测段；§2.1效率定义",
+              "note": "未给光斑区域形状、半径或直径约定、分母功率计量的具体光阑和重复次数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_light_energy",
+              "author_area_multiple_of_fwhm_area": 3,
+              "integration_shape": null,
+              "reference_aperture": null
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 2.7,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.2 实测段；§2.1效率定义 RGB三值第2项",
+              "note": "本实制主镜从实验提取的聚焦效率。焦区和分母按作者定义。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "2.70",
+              "calculation_origin": "authors",
+              "statistic": "single_wavelength",
+              "denominator": "incident_light_energy"
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_aplanatic_focus_630",
+          "model": "Li 2024 · 主镜 · 正入射 630 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_focus",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一主镜的正入射谱点。x向FWHM为各子图所标剖面。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 FDTD尺寸说明；p5 Fig.2",
+              "note": "600 μm为主镜名义直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，主镜（校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 630,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p5 Fig.3d 上/下行；p5 Fig.3f–g",
+              "note": "原文印字的光谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "可调光源正入射，z扫描，x剖面",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p7 Experimental Section / Measurements；补充材料 PDF pp12–13 Fig.S9a",
+              "note": "正入射，NKT SuperK EXTREME可调光源；O1 5×/NA0.13。拍摄端O2 50×/NA0.55、ITL200及C13440-20CU一同沿z扫描。未给扫描步长、样面采样尺度、波长线宽和照明偏振。 Fig.3(a–e)采用各子图的虚线轴面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "collection_na": 0.55,
+              "nominal_collection_magnification": 50,
+              "illumination_na": 0.13,
+              "image_plane_pixel_size_um": null,
+              "axial_scan_step_um": null,
+              "incidence_angle_deg": 0,
+              "direction": "x",
+              "polarization": null,
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            },
+            "fwhm_x_um": {
+              "value": 1.292,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p5 Fig.3d 下行FWHM印字",
+              "note": "x向归一化强度剖面；上行虚线对应剖面。原印字为nm，按1000 nm/μm换算。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "original_value": 1292,
+              "original_unit": "nm",
+              "direction": "x"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.2 实测段；p5 Fig.3d 上/下行；p5 Fig.3f–g",
+              "note": "作者仅对530及630 nm定性讨论最亮焦点，并给出相对RGB偏差<10.7%的合述界限，未公布本波长焦距数值及具体参考。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "正文只报偏差 <10.7%"
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_aplanatic_focus_700",
+          "model": "Li 2024 · 主镜 · 正入射 700 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_focus",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一主镜的正入射谱点。x向FWHM为各子图所标剖面。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 FDTD尺寸说明；p5 Fig.2",
+              "note": "600 μm为主镜名义直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，主镜（校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p5 Fig.3e 上/下行；p5 Fig.3f–g",
+              "note": "原文印字的光谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "可调光源正入射，z扫描，x剖面",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p7 Experimental Section / Measurements；补充材料 PDF pp12–13 Fig.S9a",
+              "note": "正入射，NKT SuperK EXTREME可调光源；O1 5×/NA0.13。拍摄端O2 50×/NA0.55、ITL200及C13440-20CU一同沿z扫描。未给扫描步长、样面采样尺度、波长线宽和照明偏振。 Fig.3(a–e)采用各子图的虚线轴面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "collection_na": 0.55,
+              "nominal_collection_magnification": 50,
+              "illumination_na": 0.13,
+              "image_plane_pixel_size_um": null,
+              "axial_scan_step_um": null,
+              "incidence_angle_deg": 0,
+              "direction": "x",
+              "polarization": null,
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            },
+            "fwhm_x_um": {
+              "value": 0.812,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p5 Fig.3e 下行FWHM印字",
+              "note": "x向归一化强度剖面；上行虚线对应剖面。原印字为nm，按1000 nm/μm换算。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "original_value": 812,
+              "original_unit": "nm",
+              "direction": "x"
+            },
+            "measured_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.2 实测段 RGB三值第3项；p5 Fig.3e上行",
+              "note": "作者报告实测焦距；精确轴向原点、峰值拟合和重复误差待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "axial_focus_offset_um": {
+              "value": 0,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.2 实测段 RGB三值第3项；p2 §2.1 设计焦距",
+              "note": "以设计F=365 μm作固定轴向参考，实测焦距减参考值；正值沿z增大。原文未单列该差值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "atlas",
+              "reference_plane_um": 365,
+              "reference_plane_description": "作者设计焦距F=365 μm",
+              "reference_wavelength_nm": null,
+              "formula": "measured_focal_um - reference_plane_um"
+            },
+            "efficiency_lambda_nm": {
+              "value": 700,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.2 实测段；§2.1效率定义",
+              "note": "原文印字的光谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_protocol": {
+              "value": "焦区为作者所称3×FWHM面积，分母为入射光能量",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.2 实测段；§2.1效率定义",
+              "note": "未给光斑区域形状、半径或直径约定、分母功率计量的具体光阑和重复次数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_light_energy",
+              "author_area_multiple_of_fwhm_area": 3,
+              "integration_shape": null,
+              "reference_aperture": null
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 6.54,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.2 实测段；§2.1效率定义 RGB三值第3项",
+              "note": "本实制主镜从实验提取的聚焦效率。焦区和分母按作者定义。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "6.54",
+              "calculation_origin": "authors",
+              "statistic": "single_wavelength",
+              "denominator": "incident_light_energy"
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_nonaplanatic_focus_490",
+          "model": "Li 2024 · 对照镜 · 正入射 490 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "nonaplanatic_focus",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同研究的RGB消色差对照实物，未校正球差。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 两镜设计；p4 §2.2 对照制备",
+              "note": "作者明确两镜同NA、设计焦距，对照镜独立口径未单列。未用几何关系补数。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "对照口径未单报"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，对照镜（未校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 490,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p14 Fig.S10a/d",
+              "note": "原文印字的光谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "fwhm_x_um": {
+              "value": 0.56,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p14 Fig.S10a/d 剖面印字",
+              "note": "共同黄虚线对应的归一化x向强度剖面。印字nm按1000 nm/μm换算。轴面无单独数字。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "original_value": 560,
+              "original_unit": "nm",
+              "direction": "x"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p14 Fig.S10a/d",
+              "note": "仅图示轴向分布与截面，峰值焦距未逐点直报。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅 x–z 强度图"
+            },
+            "psf_protocol": {
+              "value": "可调光源正入射，z扫描，x剖面",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p7 Experimental Section / Measurements；补充材料 PDF pp12–13 Fig.S9a",
+              "note": "正入射，NKT SuperK EXTREME可调光源；O1 5×/NA0.13。拍摄端O2 50×/NA0.55、ITL200及C13440-20CU一同沿z扫描。未给扫描步长、样面采样尺度、波长线宽和照明偏振。 Fig.S10(a–c)采用同一图示黄色虚线轴面，数值z未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "collection_na": 0.55,
+              "nominal_collection_magnification": 50,
+              "illumination_na": 0.13,
+              "image_plane_pixel_size_um": null,
+              "axial_scan_step_um": null,
+              "incidence_angle_deg": 0,
+              "direction": "x",
+              "polarization": null,
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_nonaplanatic_focus_570",
+          "model": "Li 2024 · 对照镜 · 正入射 570 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "nonaplanatic_focus",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同研究的RGB消色差对照实物，未校正球差。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 两镜设计；p4 §2.2 对照制备",
+              "note": "作者明确两镜同NA、设计焦距，对照镜独立口径未单列。未用几何关系补数。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "对照口径未单报"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，对照镜（未校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 570,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p14 Fig.S10b/e",
+              "note": "原文印字的光谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "fwhm_x_um": {
+              "value": 0.669,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p14 Fig.S10b/e 剖面印字",
+              "note": "共同黄虚线对应的归一化x向强度剖面。印字nm按1000 nm/μm换算。轴面无单独数字。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "original_value": 669,
+              "original_unit": "nm",
+              "direction": "x"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p14 Fig.S10b/e",
+              "note": "仅图示轴向分布与截面，峰值焦距未逐点直报。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅 x–z 强度图"
+            },
+            "psf_protocol": {
+              "value": "可调光源正入射，z扫描，x剖面",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p7 Experimental Section / Measurements；补充材料 PDF pp12–13 Fig.S9a",
+              "note": "正入射，NKT SuperK EXTREME可调光源；O1 5×/NA0.13。拍摄端O2 50×/NA0.55、ITL200及C13440-20CU一同沿z扫描。未给扫描步长、样面采样尺度、波长线宽和照明偏振。 Fig.S10(a–c)采用同一图示黄色虚线轴面，数值z未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "collection_na": 0.55,
+              "nominal_collection_magnification": 50,
+              "illumination_na": 0.13,
+              "image_plane_pixel_size_um": null,
+              "axial_scan_step_um": null,
+              "incidence_angle_deg": 0,
+              "direction": "x",
+              "polarization": null,
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_nonaplanatic_focus_700",
+          "model": "Li 2024 · 对照镜 · 正入射 700 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "nonaplanatic_focus",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同研究的RGB消色差对照实物，未校正球差。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 两镜设计；p4 §2.2 对照制备",
+              "note": "作者明确两镜同NA、设计焦距，对照镜独立口径未单列。未用几何关系补数。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "对照口径未单报"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，对照镜（未校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p14 Fig.S10c/f",
+              "note": "原文印字的光谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "fwhm_x_um": {
+              "value": 0.84,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p14 Fig.S10c/f 剖面印字",
+              "note": "共同黄虚线对应的归一化x向强度剖面。印字nm按1000 nm/μm换算。轴面无单独数字。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "original_value": 840,
+              "original_unit": "nm",
+              "direction": "x"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p14 Fig.S10c/f",
+              "note": "仅图示轴向分布与截面，峰值焦距未逐点直报。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅 x–z 强度图"
+            },
+            "psf_protocol": {
+              "value": "可调光源正入射，z扫描，x剖面",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p7 Experimental Section / Measurements；补充材料 PDF pp12–13 Fig.S9a",
+              "note": "正入射，NKT SuperK EXTREME可调光源；O1 5×/NA0.13。拍摄端O2 50×/NA0.55、ITL200及C13440-20CU一同沿z扫描。未给扫描步长、样面采样尺度、波长线宽和照明偏振。 Fig.S10(a–c)采用同一图示黄色虚线轴面，数值z未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "collection_na": 0.55,
+              "nominal_collection_magnification": 50,
+              "illumination_na": 0.13,
+              "image_plane_pixel_size_um": null,
+              "axial_scan_step_um": null,
+              "incidence_angle_deg": 0,
+              "direction": "x",
+              "polarization": null,
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_aplanatic_usaf_490",
+          "model": "Li 2024 · 主镜（校正球差） · USAF 490 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_usaf",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的标靶成像配置，读取对象侧印字线特征。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 FDTD尺寸说明；p5 Fig.2",
+              "note": "600 μm为主镜名义直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，主镜（校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 490,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4a及右栏分辨率段；p7 Measurements；补充材料 PDF p12 Fig.S9b",
+              "note": "灯源带通中心波长，作者报告约20 nm带宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "灯源加带通滤光片，带宽约20 nm",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p7 Experimental Section / Measurements；补充材料 PDF pp12–13 Fig.S9b",
+              "note": "SLS401，漫射后经O1照1951负片标靶。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "center_wavelength_nm": 490,
+              "bandwidth_nm": 20,
+              "bandwidth_approximate": true,
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            },
+            "resolved_test_line_width_um": {
+              "value": 2.19,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4a及右栏分辨率段；p7 Measurements；补充材料 PDF p12 Fig.S9b",
+              "note": "作者目视辨认最细印字线宽。未给对比度阈值、靶位置的数值场点、色间倍率及位移。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ],
+              "target": "negative_usaf_1951",
+              "target_group": 7,
+              "target_element": 6,
+              "processing_stage": "captured",
+              "field_point": null,
+              "contrast_threshold": null,
+              "approximate": true,
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_aplanatic_bee_490",
+          "model": "Li 2024 · 主镜（校正球差） · 铬膜蜜蜂 490 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_bee",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "单色带通的定性成像；未报告靶标色间位移或空间频率数据。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 FDTD尺寸说明；p5 Fig.2",
+              "note": "600 μm为主镜名义直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，主镜（校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 490,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4g及左栏正文；p7 Measurements；补充材料 PDF pp12–13 Fig.S9c",
+              "note": "相应图注的滤光片中心波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "铬膜蜜蜂，单通道带通",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4g及左栏正文；p7 Measurements；补充材料 PDF pp12–13 Fig.S9c",
+              "note": "靶图像经O3 10×/NA0.3作为透镜所成的物，O2/TL/单色CCD读出。各通道曝光未作为可比功率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_aplanatic_usaf_570",
+          "model": "Li 2024 · 主镜（校正球差） · USAF 570 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_usaf",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的标靶成像配置，读取对象侧印字线特征。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 FDTD尺寸说明；p5 Fig.2",
+              "note": "600 μm为主镜名义直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，主镜（校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 570,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4b及右栏分辨率段；p7 Measurements；补充材料 PDF p12 Fig.S9b",
+              "note": "灯源带通中心波长，作者报告约20 nm带宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "灯源加带通滤光片，带宽约20 nm",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p7 Experimental Section / Measurements；补充材料 PDF pp12–13 Fig.S9b",
+              "note": "SLS401，漫射后经O1照1951负片标靶。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "center_wavelength_nm": 570,
+              "bandwidth_nm": 20,
+              "bandwidth_approximate": true,
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            },
+            "resolved_test_line_width_um": {
+              "value": 2.19,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4b及右栏分辨率段；p7 Measurements；补充材料 PDF p12 Fig.S9b",
+              "note": "作者目视辨认最细印字线宽。未给对比度阈值、靶位置的数值场点、色间倍率及位移。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ],
+              "target": "negative_usaf_1951",
+              "target_group": 7,
+              "target_element": 6,
+              "processing_stage": "captured",
+              "field_point": null,
+              "contrast_threshold": null,
+              "approximate": true,
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_aplanatic_bee_570",
+          "model": "Li 2024 · 主镜（校正球差） · 铬膜蜜蜂 570 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_bee",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "单色带通的定性成像；未报告靶标色间位移或空间频率数据。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 FDTD尺寸说明；p5 Fig.2",
+              "note": "600 μm为主镜名义直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，主镜（校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 570,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4h及左栏正文；p7 Measurements；补充材料 PDF pp12–13 Fig.S9c",
+              "note": "相应图注的滤光片中心波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "铬膜蜜蜂，单通道带通",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4h及左栏正文；p7 Measurements；补充材料 PDF pp12–13 Fig.S9c",
+              "note": "靶图像经O3 10×/NA0.3作为透镜所成的物，O2/TL/单色CCD读出。各通道曝光未作为可比功率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_aplanatic_usaf_700",
+          "model": "Li 2024 · 主镜（校正球差） · USAF 700 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_usaf",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的标靶成像配置，读取对象侧印字线特征。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 FDTD尺寸说明；p5 Fig.2",
+              "note": "600 μm为主镜名义直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，主镜（校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4c及右栏分辨率段；p7 Measurements；补充材料 PDF p12 Fig.S9b",
+              "note": "灯源带通中心波长，作者报告约20 nm带宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "灯源加带通滤光片，带宽约20 nm",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p7 Experimental Section / Measurements；补充材料 PDF pp12–13 Fig.S9b",
+              "note": "SLS401，漫射后经O1照1951负片标靶。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "center_wavelength_nm": 700,
+              "bandwidth_nm": 20,
+              "bandwidth_approximate": true,
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            },
+            "resolved_test_line_width_um": {
+              "value": 2.19,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4c及右栏分辨率段；p7 Measurements；补充材料 PDF p12 Fig.S9b",
+              "note": "作者目视辨认最细印字线宽。未给对比度阈值、靶位置的数值场点、色间倍率及位移。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ],
+              "target": "negative_usaf_1951",
+              "target_group": 7,
+              "target_element": 6,
+              "processing_stage": "captured",
+              "field_point": null,
+              "contrast_threshold": null,
+              "approximate": true,
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_aplanatic_bee_700",
+          "model": "Li 2024 · 主镜（校正球差） · 铬膜蜜蜂 700 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_bee",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "单色带通的定性成像；未报告靶标色间位移或空间频率数据。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 FDTD尺寸说明；p5 Fig.2",
+              "note": "600 μm为主镜名义直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，主镜（校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4i及左栏正文；p7 Measurements；补充材料 PDF pp12–13 Fig.S9c",
+              "note": "相应图注的滤光片中心波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "铬膜蜜蜂，单通道带通",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4i及左栏正文；p7 Measurements；补充材料 PDF pp12–13 Fig.S9c",
+              "note": "靶图像经O3 10×/NA0.3作为透镜所成的物，O2/TL/单色CCD读出。各通道曝光未作为可比功率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_aplanatic_bee_white",
+          "model": "Li 2024 · 主镜（校正球差） · 蜜蜂白光成像",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_bee",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "来自真实成像的白光对照，作者采用RGB混合权重。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 FDTD尺寸说明；p5 Fig.2",
+              "note": "600 μm为主镜名义直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，主镜（校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "白色照明，RGB混合权重25:2:5",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4n及图注；p7 第一段、Methods",
+              "note": "权重按原文RGB顺序；两镜CCD曝光不同。绝对辐亮度、通道标定与横向色差未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "rgb_mixing_ratio": [
+                25,
+                2,
+                5
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_aplanatic_slides",
+          "model": "Li 2024 · 主镜（校正球差） · 无滤光彩片成像",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_slides",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "彩色印刷片拍摄的系统样本，图示无可录横向色差。",
+          "values": {
+            "diameter_um": {
+              "value": 600,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 FDTD尺寸说明；p5 Fig.2",
+              "note": "600 μm为主镜名义直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，主镜（校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "宽谱灯照明，无带通滤光片",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p16 Fig.S12d–f；p12 Fig.S9c；主文 p7 光路",
+              "note": "行标签给出主镜和未校正球差对照。补图图注指向S9c，主文叙述指向S9b；采用哪一实际光路可能有歧义。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "li_aplanatic_si_2024",
+                "li_aplanatic_pdf_2024"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_nonaplanatic_usaf_490",
+          "model": "Li 2024 · 对照镜（未校正球差） · USAF 490 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "nonaplanatic_usaf",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的标靶成像配置，读取对象侧印字线特征。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 两镜设计；p4 §2.2 对照制备",
+              "note": "作者明确两镜同NA、设计焦距，对照镜独立口径未单列。未用几何关系补数。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "对照口径未单报"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，对照镜（未校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 490,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4d及右栏分辨率段；p7 Measurements；补充材料 PDF p12 Fig.S9b",
+              "note": "灯源带通中心波长，作者报告约20 nm带宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "灯源加带通滤光片，带宽约20 nm",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p7 Experimental Section / Measurements；补充材料 PDF pp12–13 Fig.S9b",
+              "note": "SLS401，漫射后经O1照1951负片标靶。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "center_wavelength_nm": 490,
+              "bandwidth_nm": 20,
+              "bandwidth_approximate": true,
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            },
+            "resolved_test_line_width_um": {
+              "value": null,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4d及右栏分辨率段；p7 Measurements；补充材料 PDF p12 Fig.S9b",
+              "note": "正文称对照分辨能力对应线宽超过7.81 μm（G6/E1）。精确阈值和逐通道读数未知。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ],
+              "target": "negative_usaf_1951",
+              "target_group": 6,
+              "target_element": 1,
+              "processing_stage": "captured",
+              "field_point": null,
+              "contrast_threshold": null,
+              "display": "共同对照界限 >7.81",
+              "bound": {
+                "operator": ">",
+                "value": 7.81
+              },
+              "bound_scope": "author_reported_comparison_not_channel_specific"
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_nonaplanatic_bee_490",
+          "model": "Li 2024 · 对照镜（未校正球差） · 铬膜蜜蜂 490 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "nonaplanatic_bee",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "单色带通的定性成像；未报告靶标色间位移或空间频率数据。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 两镜设计；p4 §2.2 对照制备",
+              "note": "作者明确两镜同NA、设计焦距，对照镜独立口径未单列。未用几何关系补数。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "对照口径未单报"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，对照镜（未校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 490,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4j及左栏正文；p7 Measurements；补充材料 PDF pp12–13 Fig.S9c",
+              "note": "相应图注的滤光片中心波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "铬膜蜜蜂，单通道带通",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4j及左栏正文；p7 Measurements；补充材料 PDF pp12–13 Fig.S9c",
+              "note": "靶图像经O3 10×/NA0.3作为透镜所成的物，O2/TL/单色CCD读出。各通道曝光未作为可比功率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_nonaplanatic_usaf_570",
+          "model": "Li 2024 · 对照镜（未校正球差） · USAF 570 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "nonaplanatic_usaf",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的标靶成像配置，读取对象侧印字线特征。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 两镜设计；p4 §2.2 对照制备",
+              "note": "作者明确两镜同NA、设计焦距，对照镜独立口径未单列。未用几何关系补数。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "对照口径未单报"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，对照镜（未校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 570,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4e及右栏分辨率段；p7 Measurements；补充材料 PDF p12 Fig.S9b",
+              "note": "灯源带通中心波长，作者报告约20 nm带宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "灯源加带通滤光片，带宽约20 nm",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p7 Experimental Section / Measurements；补充材料 PDF pp12–13 Fig.S9b",
+              "note": "SLS401，漫射后经O1照1951负片标靶。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "center_wavelength_nm": 570,
+              "bandwidth_nm": 20,
+              "bandwidth_approximate": true,
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            },
+            "resolved_test_line_width_um": {
+              "value": null,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4e及右栏分辨率段；p7 Measurements；补充材料 PDF p12 Fig.S9b",
+              "note": "正文称对照分辨能力对应线宽超过7.81 μm（G6/E1）。精确阈值和逐通道读数未知。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ],
+              "target": "negative_usaf_1951",
+              "target_group": 6,
+              "target_element": 1,
+              "processing_stage": "captured",
+              "field_point": null,
+              "contrast_threshold": null,
+              "display": "共同对照界限 >7.81",
+              "bound": {
+                "operator": ">",
+                "value": 7.81
+              },
+              "bound_scope": "author_reported_comparison_not_channel_specific"
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_nonaplanatic_bee_570",
+          "model": "Li 2024 · 对照镜（未校正球差） · 铬膜蜜蜂 570 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "nonaplanatic_bee",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "单色带通的定性成像；未报告靶标色间位移或空间频率数据。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 两镜设计；p4 §2.2 对照制备",
+              "note": "作者明确两镜同NA、设计焦距，对照镜独立口径未单列。未用几何关系补数。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "对照口径未单报"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，对照镜（未校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 570,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4k及左栏正文；p7 Measurements；补充材料 PDF pp12–13 Fig.S9c",
+              "note": "相应图注的滤光片中心波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "铬膜蜜蜂，单通道带通",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4k及左栏正文；p7 Measurements；补充材料 PDF pp12–13 Fig.S9c",
+              "note": "靶图像经O3 10×/NA0.3作为透镜所成的物，O2/TL/单色CCD读出。各通道曝光未作为可比功率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_nonaplanatic_usaf_700",
+          "model": "Li 2024 · 对照镜（未校正球差） · USAF 700 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "nonaplanatic_usaf",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的标靶成像配置，读取对象侧印字线特征。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 两镜设计；p4 §2.2 对照制备",
+              "note": "作者明确两镜同NA、设计焦距，对照镜独立口径未单列。未用几何关系补数。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "对照口径未单报"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，对照镜（未校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4f及右栏分辨率段；p7 Measurements；补充材料 PDF p12 Fig.S9b",
+              "note": "灯源带通中心波长，作者报告约20 nm带宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "灯源加带通滤光片，带宽约20 nm",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p7 Experimental Section / Measurements；补充材料 PDF pp12–13 Fig.S9b",
+              "note": "SLS401，漫射后经O1照1951负片标靶。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "center_wavelength_nm": 700,
+              "bandwidth_nm": 20,
+              "bandwidth_approximate": true,
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            },
+            "resolved_test_line_width_um": {
+              "value": null,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4f及右栏分辨率段；p7 Measurements；补充材料 PDF p12 Fig.S9b",
+              "note": "正文称对照分辨能力对应线宽超过7.81 μm（G6/E1）。精确阈值和逐通道读数未知。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ],
+              "target": "negative_usaf_1951",
+              "target_group": 6,
+              "target_element": 1,
+              "processing_stage": "captured",
+              "field_point": null,
+              "contrast_threshold": null,
+              "display": "共同对照界限 >7.81",
+              "bound": {
+                "operator": ">",
+                "value": 7.81
+              },
+              "bound_scope": "author_reported_comparison_not_channel_specific"
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_nonaplanatic_bee_700",
+          "model": "Li 2024 · 对照镜（未校正球差） · 铬膜蜜蜂 700 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "nonaplanatic_bee",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "单色带通的定性成像；未报告靶标色间位移或空间频率数据。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 两镜设计；p4 §2.2 对照制备",
+              "note": "作者明确两镜同NA、设计焦距，对照镜独立口径未单列。未用几何关系补数。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "对照口径未单报"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，对照镜（未校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4l及左栏正文；p7 Measurements；补充材料 PDF pp12–13 Fig.S9c",
+              "note": "相应图注的滤光片中心波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "铬膜蜜蜂，单通道带通",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4l及左栏正文；p7 Measurements；补充材料 PDF pp12–13 Fig.S9c",
+              "note": "靶图像经O3 10×/NA0.3作为透镜所成的物，O2/TL/单色CCD读出。各通道曝光未作为可比功率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_nonaplanatic_bee_white",
+          "model": "Li 2024 · 对照镜（未校正球差） · 蜜蜂白光成像",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "nonaplanatic_bee",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "来自真实成像的白光对照，作者采用RGB混合权重。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 两镜设计；p4 §2.2 对照制备",
+              "note": "作者明确两镜同NA、设计焦距，对照镜独立口径未单列。未用几何关系补数。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "对照口径未单报"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，对照镜（未校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "白色照明，RGB混合权重25:2:5",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p6 Fig.4o及图注；p7 第一段、Methods",
+              "note": "权重按原文RGB顺序；两镜CCD曝光不同。绝对辐亮度、通道标定与横向色差未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "rgb_mixing_ratio": [
+                25,
+                2,
+                5
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_nonaplanatic_slides",
+          "model": "Li 2024 · 对照镜（未校正球差） · 无滤光彩片成像",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "nonaplanatic_slides",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "彩色印刷片拍摄的系统样本，图示无可录横向色差。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 两镜设计；p4 §2.2 对照制备",
+              "note": "作者明确两镜同NA、设计焦距，对照镜独立口径未单列。未用几何关系补数。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "对照口径未单报"
+            },
+            "na": {
+              "value": 0.635,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两只实制方案的名义NA，与50×采集物镜NA0.55分开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 365,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "两镜共同设计F。有限共轭优化用s=700 μm、s′=1000 μm、SiO₂厚400 μm、n=1.455。s′与F各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB相位设计，对照镜（未校正球差）",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p2 §2.1 Eq.(1)/(2)后的设计段；p4 §2.1–2.2",
+              "note": "作者在490、570、700 nm设计相位。主镜另有490–720 nm正入射谱扫；对照无该波段逐点实测表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "宽谱灯照明，无带通滤光片",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p16 Fig.S12g–i；p12 Fig.S9c；主文 p7 光路",
+              "note": "行标签给出主镜和未校正球差对照。补图图注指向S9c，主文叙述指向S9b；采用哪一实际光路可能有歧义。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "li_aplanatic_si_2024",
+                "li_aplanatic_pdf_2024"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_aplanatic_fresnel_490",
+          "model": "Li 2024 · 主镜（校正球差） · Fresnel 490 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_fresnel",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "有限物距点源的作者模拟，独立于正入射实测和实拍标靶。",
+          "values": {
+            "wavelength_nm": {
+              "value": 490,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11a下方归一化强度剖面及图注",
+              "note": "原文印字的光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "RGB相位的有限物距Fresnel比较",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11a下方归一化强度剖面及图注",
+              "note": "Fig.S11未单列模拟口径、采样网格和成像面精确位置。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "Fresnel衍射，物距700 μm，200×200 nm方形点源",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11a下方归一化强度剖面及图注",
+              "note": "源电场幅值1 V/m；像面|E|²及归一化x剖面。作者图注标为模拟。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "object_distance_um": 700,
+              "source_square_side_nm": 200,
+              "source_field_amplitude_v_m": 1,
+              "direction": "x"
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": 0.83,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11a下方归一化强度剖面及图注",
+              "note": "图中印出的归一化x剖面半高全宽。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "0.83",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "author_reported_image_plane_profile"
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_aplanatic_fresnel_570",
+          "model": "Li 2024 · 主镜（校正球差） · Fresnel 570 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_fresnel",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "有限物距点源的作者模拟，独立于正入射实测和实拍标靶。",
+          "values": {
+            "wavelength_nm": {
+              "value": 570,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11b下方归一化强度剖面及图注",
+              "note": "原文印字的光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "RGB相位的有限物距Fresnel比较",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11b下方归一化强度剖面及图注",
+              "note": "Fig.S11未单列模拟口径、采样网格和成像面精确位置。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "Fresnel衍射，物距700 μm，200×200 nm方形点源",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11b下方归一化强度剖面及图注",
+              "note": "源电场幅值1 V/m；像面|E|²及归一化x剖面。作者图注标为模拟。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "object_distance_um": 700,
+              "source_square_side_nm": 200,
+              "source_field_amplitude_v_m": 1,
+              "direction": "x"
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": 1.01,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11b下方归一化强度剖面及图注",
+              "note": "图中印出的归一化x剖面半高全宽。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "1.01",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "author_reported_image_plane_profile"
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_aplanatic_fresnel_700",
+          "model": "Li 2024 · 主镜（校正球差） · Fresnel 700 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_fresnel",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "有限物距点源的作者模拟，独立于正入射实测和实拍标靶。",
+          "values": {
+            "wavelength_nm": {
+              "value": 700,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11c下方归一化强度剖面及图注",
+              "note": "原文印字的光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "RGB相位的有限物距Fresnel比较",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11c下方归一化强度剖面及图注",
+              "note": "Fig.S11未单列模拟口径、采样网格和成像面精确位置。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "Fresnel衍射，物距700 μm，200×200 nm方形点源",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11c下方归一化强度剖面及图注",
+              "note": "源电场幅值1 V/m；像面|E|²及归一化x剖面。作者图注标为模拟。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "object_distance_um": 700,
+              "source_square_side_nm": 200,
+              "source_field_amplitude_v_m": 1,
+              "direction": "x"
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": 1.23,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11c下方归一化强度剖面及图注",
+              "note": "图中印出的归一化x剖面半高全宽。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "1.23",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "author_reported_image_plane_profile"
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_nonaplanatic_fresnel_490",
+          "model": "Li 2024 · 对照镜（未校正球差） · Fresnel 490 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "nonaplanatic_fresnel",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "有限物距点源的作者模拟，独立于正入射实测和实拍标靶。",
+          "values": {
+            "wavelength_nm": {
+              "value": 490,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11d下方归一化强度剖面及图注",
+              "note": "原文印字的光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "RGB相位的有限物距Fresnel比较",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11d下方归一化强度剖面及图注",
+              "note": "Fig.S11未单列模拟口径、采样网格和成像面精确位置。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "Fresnel衍射，物距700 μm，200×200 nm方形点源",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11d下方归一化强度剖面及图注",
+              "note": "源电场幅值1 V/m；像面|E|²及归一化x剖面。作者图注标为模拟。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "object_distance_um": 700,
+              "source_square_side_nm": 200,
+              "source_field_amplitude_v_m": 1,
+              "direction": "x"
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": 1.44,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11d下方归一化强度剖面及图注",
+              "note": "图中印出的归一化x剖面半高全宽。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "1.44",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "author_reported_image_plane_profile"
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_nonaplanatic_fresnel_570",
+          "model": "Li 2024 · 对照镜（未校正球差） · Fresnel 570 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "nonaplanatic_fresnel",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "有限物距点源的作者模拟，独立于正入射实测和实拍标靶。",
+          "values": {
+            "wavelength_nm": {
+              "value": 570,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11e下方归一化强度剖面及图注",
+              "note": "原文印字的光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "RGB相位的有限物距Fresnel比较",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11e下方归一化强度剖面及图注",
+              "note": "Fig.S11未单列模拟口径、采样网格和成像面精确位置。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "Fresnel衍射，物距700 μm，200×200 nm方形点源",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11e下方归一化强度剖面及图注",
+              "note": "源电场幅值1 V/m；像面|E|²及归一化x剖面。作者图注标为模拟。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "object_distance_um": 700,
+              "source_square_side_nm": 200,
+              "source_field_amplitude_v_m": 1,
+              "direction": "x"
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": 1.7,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11e下方归一化强度剖面及图注",
+              "note": "图中印出的归一化x剖面半高全宽。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "1.70",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "author_reported_image_plane_profile"
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_nonaplanatic_fresnel_700",
+          "model": "Li 2024 · 对照镜（未校正球差） · Fresnel 700 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "nonaplanatic_fresnel",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "有限物距点源的作者模拟，独立于正入射实测和实拍标靶。",
+          "values": {
+            "wavelength_nm": {
+              "value": 700,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11f下方归一化强度剖面及图注",
+              "note": "原文印字的光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "RGB相位的有限物距Fresnel比较",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11f下方归一化强度剖面及图注",
+              "note": "Fig.S11未单列模拟口径、采样网格和成像面精确位置。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "Fresnel衍射，物距700 μm，200×200 nm方形点源",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11f下方归一化强度剖面及图注",
+              "note": "源电场幅值1 V/m；像面|E|²及归一化x剖面。作者图注标为模拟。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "object_distance_um": 700,
+              "source_square_side_nm": 200,
+              "source_field_amplitude_v_m": 1,
+              "direction": "x"
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": 2.13,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p15 Fig.S11f下方归一化强度剖面及图注",
+              "note": "图中印出的归一化x剖面半高全宽。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "2.13",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "author_reported_image_plane_profile"
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_aplanatic_fdtd_normal_490",
+          "model": "Li 2024 · 主镜 · FDTD正入射 490 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_fdtd_normal",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "较小口径的FDTD正入射模型。",
+          "values": {
+            "diameter_um": {
+              "value": 20.4,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p7 Fig.S4图注",
+              "note": "FDTD模型口径20.4 μm，SiO₂基底厚5 μm；名义共轭s=10 μm、s′=30 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "design_object_distance_um": 10,
+              "design_image_distance_um": 30,
+              "substrate_thickness_um": 5
+            },
+            "wavelength_nm": {
+              "value": 490,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 模拟效率段；补充材料 PDF p7 Fig.S4a",
+              "note": "原文印字的光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "FDTD，x偏振正入射",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p7 Fig.S4图注",
+              "note": "Fig.S4a为归一化|E|²，轴为λ与z。取焦的数值表未单列。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "polarization": "x_linear",
+              "incidence_angle_deg": 0
+            },
+            "efficiency_protocol": {
+              "value": "焦区为作者所称3×FWHM面积，分母为入射光能量",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 效率定义和模拟段",
+              "note": "未给光斑区域形状、半径或直径约定、分母功率计量的具体光阑和重复次数。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_light_energy",
+              "author_area_multiple_of_fwhm_area": 3,
+              "integration_shape": null,
+              "reference_aperture": null
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 1.58,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 模拟效率段；补充材料 PDF p7 Fig.S4a，RGB效率第1项",
+              "note": "作者为20.4 μm模型报告的效率，焦区与入射光分母见§2.1。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "1.58",
+              "calculation_origin": "authors",
+              "denominator": "incident_light_energy",
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_aplanatic_fdtd_normal_570",
+          "model": "Li 2024 · 主镜 · FDTD正入射 570 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_fdtd_normal",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "较小口径的FDTD正入射模型。",
+          "values": {
+            "diameter_um": {
+              "value": 20.4,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p7 Fig.S4图注",
+              "note": "FDTD模型口径20.4 μm，SiO₂基底厚5 μm；名义共轭s=10 μm、s′=30 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "design_object_distance_um": 10,
+              "design_image_distance_um": 30,
+              "substrate_thickness_um": 5
+            },
+            "wavelength_nm": {
+              "value": 570,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 模拟效率段；补充材料 PDF p7 Fig.S4a",
+              "note": "原文印字的光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "FDTD，x偏振正入射",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p7 Fig.S4图注",
+              "note": "Fig.S4a为归一化|E|²，轴为λ与z。取焦的数值表未单列。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "polarization": "x_linear",
+              "incidence_angle_deg": 0
+            },
+            "efficiency_protocol": {
+              "value": "焦区为作者所称3×FWHM面积，分母为入射光能量",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 效率定义和模拟段",
+              "note": "未给光斑区域形状、半径或直径约定、分母功率计量的具体光阑和重复次数。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_light_energy",
+              "author_area_multiple_of_fwhm_area": 3,
+              "integration_shape": null,
+              "reference_aperture": null
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 2.99,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 模拟效率段；补充材料 PDF p7 Fig.S4a，RGB效率第2项",
+              "note": "作者为20.4 μm模型报告的效率，焦区与入射光分母见§2.1。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "2.99",
+              "calculation_origin": "authors",
+              "denominator": "incident_light_energy",
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_aplanatic_fdtd_normal_700",
+          "model": "Li 2024 · 主镜 · FDTD正入射 700 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_fdtd_normal",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "较小口径的FDTD正入射模型。",
+          "values": {
+            "diameter_um": {
+              "value": 20.4,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p7 Fig.S4图注",
+              "note": "FDTD模型口径20.4 μm，SiO₂基底厚5 μm；名义共轭s=10 μm、s′=30 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "design_object_distance_um": 10,
+              "design_image_distance_um": 30,
+              "substrate_thickness_um": 5
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 模拟效率段；补充材料 PDF p7 Fig.S4a",
+              "note": "原文印字的光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "FDTD，x偏振正入射",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p7 Fig.S4图注",
+              "note": "Fig.S4a为归一化|E|²，轴为λ与z。取焦的数值表未单列。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "polarization": "x_linear",
+              "incidence_angle_deg": 0
+            },
+            "efficiency_protocol": {
+              "value": "焦区为作者所称3×FWHM面积，分母为入射光能量",
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 效率定义和模拟段",
+              "note": "未给光斑区域形状、半径或直径约定、分母功率计量的具体光阑和重复次数。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_light_energy",
+              "author_area_multiple_of_fwhm_area": 3,
+              "integration_shape": null,
+              "reference_aperture": null
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 4.66,
+              "source": "li_aplanatic_pdf_2024",
+              "location": "p4 §2.1 模拟效率段；补充材料 PDF p7 Fig.S4a，RGB效率第3项",
+              "note": "作者为20.4 μm模型报告的效率，焦区与入射光分母见§2.1。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "4.66",
+              "calculation_origin": "authors",
+              "denominator": "incident_light_energy",
+              "sourceIds": [
+                "li_aplanatic_pdf_2024",
+                "li_aplanatic_si_2024"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_aplanatic_fdtd_finite_490",
+          "model": "Li 2024 · 主镜（校正球差） · FDTD点源 490 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_fdtd_finite",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "20.4 μm器件模型的有限物距轴向强度与作者球差量。",
+          "values": {
+            "diameter_um": {
+              "value": 20.4,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p7 Fig.S4图注",
+              "note": "FDTD模型口径20.4 μm，SiO₂基底厚5 μm；名义共轭s=10 μm、s′=30 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "design_object_distance_um": 10,
+              "design_image_distance_um": 30,
+              "substrate_thickness_um": 5
+            },
+            "wavelength_nm": {
+              "value": 490,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5a及图注",
+              "note": "原文印字的光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "FDTD点源，物距10 μm、名义像距30 μm",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5a及图注",
+              "note": "强度归一化并沿光轴z取剖面。作者以轴向强度FWHM为Δs，随后除以名义像距s′。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "object_distance_um": 10,
+              "nominal_image_distance_um": 30,
+              "direction": "z"
+            },
+            "simulated_axial_fwhm_um": {
+              "value": 7.67,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5a及图注 下方FWHM印字",
+              "note": "作者轴向强度半高全宽Δs。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "7.67",
+              "calculation_origin": "authors",
+              "direction": "z"
+            },
+            "simulated_relative_spherical_aberration_pct": {
+              "value": 25.57,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5g，aplanatic柱印字；主文 p4 §2.1",
+              "note": "作者印字，分子为轴向强度FWHM、分母为名义像距。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "25.57",
+              "calculation_origin": "authors",
+              "statistic": "axial_fwhm_over_nominal_image_distance",
+              "reference_image_distance_um": 30
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_aplanatic_fdtd_finite_570",
+          "model": "Li 2024 · 主镜（校正球差） · FDTD点源 570 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_fdtd_finite",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "20.4 μm器件模型的有限物距轴向强度与作者球差量。",
+          "values": {
+            "diameter_um": {
+              "value": 20.4,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p7 Fig.S4图注",
+              "note": "FDTD模型口径20.4 μm，SiO₂基底厚5 μm；名义共轭s=10 μm、s′=30 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "design_object_distance_um": 10,
+              "design_image_distance_um": 30,
+              "substrate_thickness_um": 5
+            },
+            "wavelength_nm": {
+              "value": 570,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5b及图注",
+              "note": "原文印字的光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "FDTD点源，物距10 μm、名义像距30 μm",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5b及图注",
+              "note": "强度归一化并沿光轴z取剖面。作者以轴向强度FWHM为Δs，随后除以名义像距s′。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "object_distance_um": 10,
+              "nominal_image_distance_um": 30,
+              "direction": "z"
+            },
+            "simulated_axial_fwhm_um": {
+              "value": 8.42,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5b及图注 下方FWHM印字",
+              "note": "作者轴向强度半高全宽Δs。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "8.42",
+              "calculation_origin": "authors",
+              "direction": "z"
+            },
+            "simulated_relative_spherical_aberration_pct": {
+              "value": 28.07,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5h，aplanatic柱印字；主文 p4 §2.1",
+              "note": "作者印字，分子为轴向强度FWHM、分母为名义像距。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "28.07",
+              "calculation_origin": "authors",
+              "statistic": "axial_fwhm_over_nominal_image_distance",
+              "reference_image_distance_um": 30
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_aplanatic_fdtd_finite_700",
+          "model": "Li 2024 · 主镜（校正球差） · FDTD点源 700 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "aplanatic_fdtd_finite",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "20.4 μm器件模型的有限物距轴向强度与作者球差量。",
+          "values": {
+            "diameter_um": {
+              "value": 20.4,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p7 Fig.S4图注",
+              "note": "FDTD模型口径20.4 μm，SiO₂基底厚5 μm；名义共轭s=10 μm、s′=30 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "design_object_distance_um": 10,
+              "design_image_distance_um": 30,
+              "substrate_thickness_um": 5
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5c及图注",
+              "note": "原文印字的光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "FDTD点源，物距10 μm、名义像距30 μm",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5c及图注",
+              "note": "强度归一化并沿光轴z取剖面。作者以轴向强度FWHM为Δs，随后除以名义像距s′。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "object_distance_um": 10,
+              "nominal_image_distance_um": 30,
+              "direction": "z"
+            },
+            "simulated_axial_fwhm_um": {
+              "value": 11.6,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5c及图注 下方FWHM印字",
+              "note": "作者轴向强度半高全宽Δs。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "11.60",
+              "calculation_origin": "authors",
+              "direction": "z"
+            },
+            "simulated_relative_spherical_aberration_pct": {
+              "value": 38.67,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5i，aplanatic柱印字；主文 p4 §2.1",
+              "note": "作者印字，分子为轴向强度FWHM、分母为名义像距。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "38.67",
+              "calculation_origin": "authors",
+              "statistic": "axial_fwhm_over_nominal_image_distance",
+              "reference_image_distance_um": 30
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_nonaplanatic_fdtd_finite_490",
+          "model": "Li 2024 · 对照镜（未校正球差） · FDTD点源 490 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "nonaplanatic_fdtd_finite",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "20.4 μm器件模型的有限物距轴向强度与作者球差量。",
+          "values": {
+            "diameter_um": {
+              "value": 20.4,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p7 Fig.S4图注",
+              "note": "FDTD模型口径20.4 μm，SiO₂基底厚5 μm；名义共轭s=10 μm、s′=30 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "design_object_distance_um": 10,
+              "design_image_distance_um": 30,
+              "substrate_thickness_um": 5
+            },
+            "wavelength_nm": {
+              "value": 490,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5d及图注",
+              "note": "原文印字的光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "FDTD点源，物距10 μm、名义像距30 μm",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5d及图注",
+              "note": "强度归一化并沿光轴z取剖面。作者以轴向强度FWHM为Δs，随后除以名义像距s′。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "object_distance_um": 10,
+              "nominal_image_distance_um": 30,
+              "direction": "z"
+            },
+            "simulated_axial_fwhm_um": {
+              "value": 13.77,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5d及图注 下方FWHM印字",
+              "note": "作者轴向强度半高全宽Δs。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "13.77",
+              "calculation_origin": "authors",
+              "direction": "z"
+            },
+            "simulated_relative_spherical_aberration_pct": {
+              "value": 44.56,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5g，nonaplanatic柱印字；主文 p4 §2.1",
+              "note": "原图球差Δs/s′印字。490 nm对照的44.56%与13.77/30换算不一致，两个原印字均保存。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "44.56",
+              "calculation_origin": "authors",
+              "statistic": "axial_fwhm_over_nominal_image_distance",
+              "reference_image_distance_um": 30
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_nonaplanatic_fdtd_finite_570",
+          "model": "Li 2024 · 对照镜（未校正球差） · FDTD点源 570 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "nonaplanatic_fdtd_finite",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "20.4 μm器件模型的有限物距轴向强度与作者球差量。",
+          "values": {
+            "diameter_um": {
+              "value": 20.4,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p7 Fig.S4图注",
+              "note": "FDTD模型口径20.4 μm，SiO₂基底厚5 μm；名义共轭s=10 μm、s′=30 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "design_object_distance_um": 10,
+              "design_image_distance_um": 30,
+              "substrate_thickness_um": 5
+            },
+            "wavelength_nm": {
+              "value": 570,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5e及图注",
+              "note": "原文印字的光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "FDTD点源，物距10 μm、名义像距30 μm",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5e及图注",
+              "note": "强度归一化并沿光轴z取剖面。作者以轴向强度FWHM为Δs，随后除以名义像距s′。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "object_distance_um": 10,
+              "nominal_image_distance_um": 30,
+              "direction": "z"
+            },
+            "simulated_axial_fwhm_um": {
+              "value": 20.16,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5e及图注 下方FWHM印字",
+              "note": "作者轴向强度半高全宽Δs。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "20.16",
+              "calculation_origin": "authors",
+              "direction": "z"
+            },
+            "simulated_relative_spherical_aberration_pct": {
+              "value": 67.2,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5h，nonaplanatic柱印字；主文 p4 §2.1",
+              "note": "作者印字，分子为轴向强度FWHM、分母为名义像距。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "67.20",
+              "calculation_origin": "authors",
+              "statistic": "axial_fwhm_over_nominal_image_distance",
+              "reference_image_distance_um": 30
+            }
+          }
+        },
+        {
+          "id": "li2024aplanatic_nonaplanatic_fdtd_finite_700",
+          "model": "Li 2024 · 对照镜（未校正球差） · FDTD点源 700 nm",
+          "study_id": "li2024aplanatic",
+          "specimen_id": "nonaplanatic_fdtd_finite",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "20.4 μm器件模型的有限物距轴向强度与作者球差量。",
+          "values": {
+            "diameter_um": {
+              "value": 20.4,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p7 Fig.S4图注",
+              "note": "FDTD模型口径20.4 μm，SiO₂基底厚5 μm；名义共轭s=10 μm、s′=30 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "design_object_distance_um": 10,
+              "design_image_distance_um": 30,
+              "substrate_thickness_um": 5
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5f及图注",
+              "note": "原文印字的光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "FDTD点源，物距10 μm、名义像距30 μm",
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5f及图注",
+              "note": "强度归一化并沿光轴z取剖面。作者以轴向强度FWHM为Δs，随后除以名义像距s′。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "object_distance_um": 10,
+              "nominal_image_distance_um": 30,
+              "direction": "z"
+            },
+            "simulated_axial_fwhm_um": {
+              "value": 19.95,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5f及图注 下方FWHM印字",
+              "note": "作者轴向强度半高全宽Δs。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "19.95",
+              "calculation_origin": "authors",
+              "direction": "z"
+            },
+            "simulated_relative_spherical_aberration_pct": {
+              "value": 66.5,
+              "source": "li_aplanatic_si_2024",
+              "location": "补充材料 PDF p8 Fig.S5i，nonaplanatic柱印字；主文 p4 §2.1",
+              "note": "作者印字，分子为轴向强度FWHM、分母为名义像距。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "66.50",
+              "calculation_origin": "authors",
+              "statistic": "axial_fwhm_over_nominal_image_distance",
+              "reference_image_distance_um": 30
+            }
+          }
+        },
+        {
+          "id": "feng2022_primary",
+          "model": "Feng 2022 · 1 mm 双层RGB · 摘要证据",
+          "study_id": "feng2022",
+          "specimen_id": "rgb_doublet_d1000",
+          "module": "",
+          "variant": "离散RGB消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "已演示的双层实物；口径与设计NA来自作者摘要。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "feng_doublet_abstract_2022",
+              "location": "Europe PMC CORE resultList.result[0].abstractText，作者摘要末句",
+              "note": "作者明示1 mm直径；入库单位为μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 1,
+              "original_unit": "mm",
+              "sourceIds": [
+                "feng_doublet_abstract_2022",
+                "feng_doublet_2022"
+              ]
+            },
+            "na": {
+              "value": 0.8,
+              "source": "feng_doublet_abstract_2022",
+              "location": "Europe PMC CORE resultList.result[0].abstractText，作者摘要末句",
+              "note": "作者明示 designed numerical aperture 0.8，实验有效NA待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "chromatic": {
+              "value": "双层离散RGB数字成像",
+              "source": "feng_doublet_abstract_2022",
+              "location": "Europe PMC CORE resultList.result[0].abstractText，作者摘要末句",
+              "note": "发表摘要称实物用于RGB消色差成像，未逐色给中心波长、焦距或校正带宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "feng_doublet_abstract_2022",
+              "location": "Europe PMC CORE resultList.result[0].abstractText，作者摘要末句",
+              "note": "当前核实范围为作者摘要。ACS正式主文、补充PDF与公开数据待取得。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "摘要未给"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "feng_doublet_abstract_2022",
+              "location": "Europe PMC CORE resultList.result[0].abstractText，作者摘要末句",
+              "note": "当前核实范围为作者摘要。ACS正式主文、补充PDF与公开数据待取得。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "摘要未给"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "feng_doublet_abstract_2022",
+              "location": "Europe PMC CORE resultList.result[0].abstractText，作者摘要末句",
+              "note": "当前核实范围为作者摘要。ACS正式主文、补充PDF与公开数据待取得。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "摘要未给"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "feng_doublet_abstract_2022",
+              "location": "Europe PMC CORE resultList.result[0].abstractText，作者摘要末句",
+              "note": "当前核实范围为作者摘要。ACS正式主文、补充PDF与公开数据待取得。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "摘要未给"
+            },
+            "strehl": {
+              "value": null,
+              "source": "feng_doublet_abstract_2022",
+              "location": "Europe PMC CORE resultList.result[0].abstractText，作者摘要末句",
+              "note": "当前核实范围为作者摘要。ACS正式主文、补充PDF与公开数据待取得。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "摘要未给"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "feng_doublet_abstract_2022",
+              "location": "Europe PMC CORE resultList.result[0].abstractText，作者摘要末句",
+              "note": "当前核实范围为作者摘要。ACS正式主文、补充PDF与公开数据待取得。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "摘要未给"
+            },
+            "mtf_curve": {
+              "value": "原始方法、MTF及PSF待取得",
+              "source": "feng_doublet_abstract_2022",
+              "location": "Europe PMC CORE resultList.result[0].abstractText，作者摘要末句；ACS DOI补充材料入口；DataCite DOI关联查询",
+              "note": "ACS主文与SI PDF入口403。Europe PMC、OpenAlex无开放全文镜像；作者机构入口为题录，DataCite查询0项。未核公开PSF或逐频表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "feng_doublet_abstract_2022",
+                "feng_doublet_2022",
+                "feng_doublet_datacite_2022"
+              ],
+              "data_availability": {
+                "status": "primary_full_text_pending"
+              }
+            }
+          }
         }
       ],
-      "scope": "33项原始研究、173个器件/测量/系统配置、1327条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
+      "scope": "35项原始研究、187个器件/测量/系统配置、1368条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",

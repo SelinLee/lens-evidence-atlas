@@ -132,11 +132,11 @@ export function validateDevices(d,catalog){
   !modelDof.dof_criterion||!r.values.psf_protocol?.value))errors.push('simulated focal interval context');
  if(Number.isFinite(modelWidth?.value)&&(!(modelWidth.value>0)||modelWidth.basis!=='model'||modelWidth.calculation_origin!=='authors'||
   modelWidth.direction!=='x'||!modelWidth.statistic||!r.values.psf_protocol?.value))errors.push('simulated focal width context');
- for(const [key,denominator] of [['simulated_focusing_efficiency_pct','incident_power_on_metalens'],
-  ['simulated_aperture_power_ratio_pct','aperture_area_integral_at_lens_plane']]){
+ for(const [key,denominators] of [['simulated_focusing_efficiency_pct',['incident_power_on_metalens','incident_light_energy']],
+  ['simulated_aperture_power_ratio_pct',['aperture_area_integral_at_lens_plane']]]){
   const ratio=r.values[key];
   if(Number.isFinite(ratio?.value)&&(ratio.value<0||ratio.value>100||ratio.basis!=='model'||ratio.calculation_origin!=='authors'||
-   ratio.denominator!==denominator||efficiencyProtocol?.denominator!==denominator||!efficiencyProtocol.value))errors.push('simulated power ratio context');
+   !denominators.includes(ratio.denominator)||efficiencyProtocol?.denominator!==ratio.denominator||!efficiencyProtocol.value))errors.push('simulated power ratio context');
  }
  if(designFocal?.calculation_method==='circular_aperture_na_relation'){
   const diameter=r.values.diameter_um?.value,na=r.values.na?.value,inputs=designFocal.inputs;

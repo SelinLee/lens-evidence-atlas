@@ -881,3 +881,9 @@ Feng 2022 的正式元数据核为 Nano Letters 22(10), 3969–3975，2022-05-04
 Bayati 2020 经 [PR #132](https://github.com/SelinLee/lens-evidence-atlas/pull/132) 合入 3a88d7f8be56f6bbba900c3e5ed04cd4971c8995。PR 检查 44282218446、主线检查 44282456212 和 [Pages 44282456672](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44282456672) 均成功。线上 12 文件与本地逐字节一致，devices-data.js SHA256 为 fbc44c6326b943a2de7a4bd9b75d50360c289816e1e37afb535b3ebad3b07fef。独立无头 Chrome 核25行、15配置、实测与模拟焦位、圆孔径列留空、重合点两链接、四个出处、可见光筛选、CSV、分享和六视口。公开库为33篇、1327条记录。
 
 Feng 的 OpenAlex 精确 DOI 返回200、OA 位置空，位置列表只见 DOI/PubMed。中大梁浩文机构页返回200，只有该文题录。USP 作者机构报道用网页索引查到复述 1 mm 和 0.8，无头直取超时。未用比较表或报道填实测数值。并起备选 Zhang 2025，作者机构列表和 Wiley 摘要核到 410 μm 实物及数字成像，先取正刊图文与SI，封面 DOI 10.1002/lpor.70358 属辅助材料。[中大作者页](https://phys.sysu.edu.cn/teacher/LiangHaowen) · [Zhang 研究 DOI](https://doi.org/10.1002/lpor.202500460)
+
+## 2026-11-18-78 · 高 NA RGB 正入射色差与有限共轭对照
+
+从 4a035ed 接续。Li 2024 已对读正式版正文和作者组完整补充材料。600 μm 主镜、设计 NA 0.635、F=365 μm；原文三 RGB 焦点 365/369/365 μm，固定设计面轴差在本库记 0/+4/0 μm。焦斑与效率、场景成像和两种模型逐项绑定图号。保留 S5 的局部印字差异与 S12 的光路指向差异。Feng 2022 仅录作者摘要核实的 1 mm 实物及设计 NA 0.8。两篇加入 41 行。后续原文入口和缺口见[本批核验](RGB_APLANATIC_REVIEW_2026-11-18.md)。
+
+本地校验、280 项测试、构建和独立无头 Chrome 通过。检查 41 条新记录、14 个配置、逐色焦距/焦差/效率、模型与实测分列、两篇引用往返、CSV 与六视口。两个南开大学 PDF 均返回可读文件头，Europe PMC 的作者摘要和两项 DataCite 查询返回 200。出版社 DOI 跳转返回 403。
