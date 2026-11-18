@@ -899,3 +899,9 @@ Zhang 2025 已由期刊索引核到 0.775 μm 系统分辨率的作者报告、�
 从 084710f 接续。作者正式版和期刊补件均取得，按 DOI 归一。分离 5.79 mm 相位校正片、4.13 mm/F2 实制整组、全场/最大场点斜边MTF、多物距实拍和三个独立模拟。四个MTF为正文报告，场点角度仍未知；约50 μm是460–656 nm带内变化，未填逐λ焦位。补件只有一份PDF，DataCite零条。新增18行、8配置，累计36篇、1386行。见[核验](WU_HYBRID_REVIEW_2026-11-18.md)。
 
 本地完成数据校验、283 项测试、构建及独立无头 Chrome。核18行与8配置、四个MTF点和约50 μm焦距变化、逐波长焦位缺失、可见光筛选、引用往返、CSV、分享和六视口。正式版全文XML、出版社PDF、补件ZIP和DataCite均返回200；PDF与ZIP以全部响应字节核散列。
+
+## 2026-11-18-81 · Wu 2025 发布验收与 Jeon 2026 原文取证
+
+PR #136 已合入 cc281ba6b3b2b2b46b65abd54b0edb8390b24a35。PR校验 44297497822、主线校验 44297857402 和 Pages 44297858075 均成功。线上 12 文件与本地逐字节一致，devices-data.js SHA256 为 9bd8e817c805a4465c37d090d4769cfc85f4fc5e096dd409fecf401bd1b9f6ab。独立无头 Chrome 验证四个正文MTF、约50 μm焦变、18行、8配置、四个原始出处、六种视口、可见光与CSV等交互。可见光32篇、1286行。[PR #136](https://github.com/SelinLee/lens-evidence-atlas/pull/136) · [Pages 发布](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44297858075)
+
+Jeon 2026 的灰度纳米模板研究单独沿作者实验室的论文列表和后续Seong 2026原作引用纳入核验。正式 PDF 10页3560014字节，SHA256 4bfb832292f993ca8723d52a593405d5e38abcfbc5ae055765776a41ace80260；补件27页2255864字节，SHA256 991863b3b5be0f430f9e3ee6979965c7a030c8647208ae0364ce8bf97e147a23；两份及透明审稿文件均200。区别于已入库1.89 mm/NA0.21的TPL/NIL论文，本研究为1.2 mm/设计NA0.31、灰度EBL负模板NIL。p6 Fig.4c标0.794/0.956/1.170 μm，p7给同焦面Strehl 0.83/0.86/0.85，p7写三焦点均距名义焦面1800 μm不超过7 μm。Fig.4b中间绿色面板印635nm，正文和图注谱序为450/532/635 nm。补表S3蓝光印值14.8%，用其62.8和9.4 μW的印字重算约14.97%，待保持原值与舍入核对。SI Fig.S16的1D和2D MTF只见频率归一图和FFT式。原始PSF、归一化频率、ROI和逐频表继续核，记录并行的Park 2026来源缺口。会话目标保持active。[Jeon 正式 PDF](https://www.nature.com/articles/s41467-026-73940-1.pdf) · [Jeon 补件](https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-026-73940-1/MediaObjects/41467_2026_73940_MOESM1_ESM.pdf)
