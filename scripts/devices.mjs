@@ -57,6 +57,11 @@ export function validateDevices(d,catalog){
   mtfCurve.basis!=='derived_from_measurement'||mtfCurve.calculation_origin!=='authors'||!(r.values.wavelength_nm?.value>0)||
   mtfCurve.frequency_unit!=='normalized_spatial_frequency'||!(mtfCurve.normalization_frequency_cycles_mm>0)||
   !Number.isFinite(mtfCurve.normalization_frequency_cycles_mm)||!r.values.psf_protocol?.value))errors.push('normalized PSF MTF context');
+ if(mtfCurve?.mtf_kind==='measured_psf_fft_normalized'&&(
+  mtfCurve.basis!=='derived_from_measurement'||mtfCurve.calculation_origin!=='authors'||!(r.values.wavelength_nm?.value>0)||
+  mtfCurve.frequency_unit!=='normalized_spatial_frequency'||mtfCurve.normalization_frequency_cycles_mm!==null||
+  mtfCurve.direction_aggregation!=='unspecified'||!r.values.psf_protocol?.value||
+  mtfCurve.data_availability?.status!=='curves_only'))errors.push('uncalibrated PSF MTF context');
  const {depth_of_focus_um:focusWidth,minimum_psf_fwhm_x_um:minimumWidth,
   reported_axial_scan_focusing_efficiency_pct:axialEfficiency,simulated_psf_correlation_bandwidth_nm:correlationWidth}=r.values;
  for(const metric of [focusWidth,minimumWidth,axialEfficiency]){
@@ -132,11 +137,12 @@ export function validateDevices(d,catalog){
   !modelDof.dof_criterion||!r.values.psf_protocol?.value))errors.push('simulated focal interval context');
  if(Number.isFinite(modelWidth?.value)&&(!(modelWidth.value>0)||modelWidth.basis!=='model'||modelWidth.calculation_origin!=='authors'||
   modelWidth.direction!=='x'||!modelWidth.statistic||!r.values.psf_protocol?.value))errors.push('simulated focal width context');
- for(const [key,denominators] of [['simulated_focusing_efficiency_pct',['incident_power_on_metalens','incident_light_energy']],
+ for(const [key,denominators] of [['simulated_focusing_efficiency_pct',['incident_power_on_metalens','incident_light_energy','author_denominator_unreported']],
   ['simulated_aperture_power_ratio_pct',['aperture_area_integral_at_lens_plane']]]){
   const ratio=r.values[key];
   if(Number.isFinite(ratio?.value)&&(ratio.value<0||ratio.value>100||ratio.basis!=='model'||ratio.calculation_origin!=='authors'||
-   !denominators.includes(ratio.denominator)||efficiencyProtocol?.denominator!==ratio.denominator||!efficiencyProtocol.value))errors.push('simulated power ratio context');
+   !denominators.includes(ratio.denominator)||efficiencyProtocol?.denominator!==ratio.denominator||!efficiencyProtocol.value||
+   (ratio.denominator==='author_denominator_unreported'&&!efficiencyProtocol.denominator_note)))errors.push('simulated power ratio context');
  }
  if(designFocal?.calculation_method==='circular_aperture_na_relation'){
   const diameter=r.values.diameter_um?.value,na=r.values.na?.value,inputs=designFocal.inputs;
@@ -202,11 +208,15 @@ export function validateDevices(d,catalog){
   Number.isFinite(r.values.wavelength_nm?.value)))errors.push('measured slanted-edge MTF context');
  for(const k of ['focus_error_um','focus_error_pct']){
   const v=r.values[k];if(!Number.isFinite(v?.value))continue;
-  const waves=v.sample_wavelengths_nm,ref=v.reference_wavelength_nm;
-  if(v.value<0||!r.values.focus_error_protocol?.value||v.statistic!=='author_reported_focal_error'||v.calculation_origin!=='authors'||
-   v.basis!=='derived_from_measurement'||Number.isFinite(r.values.wavelength_nm?.value)||!Array.isArray(waves)||waves.length<2||
-   new Set(waves).size!==waves.length||waves.some(w=>!(w>0&&Number.isFinite(w)))||
-   (ref!==null&&(!Number.isFinite(ref)||!waves.includes(ref))))errors.push('focal error context');
+  const waves=v.sample_wavelengths_nm,ref=v.reference_wavelength_nm,wave=r.values.wavelength_nm?.value;
+  const validWaves=Array.isArray(waves)&&new Set(waves).size===waves.length&&waves.every(w=>w>0&&Number.isFinite(w));
+  const aggregate=validWaves&&waves.length>=2&&!Number.isFinite(wave)&&v.statistic==='author_reported_focal_error'&&
+   (ref===null||Number.isFinite(ref)&&waves.includes(ref));
+  const single=validWaves&&waves.length===1&&waves[0]===wave&&v.statistic==='author_reported_single_wavelength_error'&&
+   ref===null&&['design_focal_length','design_focus_plane'].includes(v.reference_kind)&&
+   Number.isFinite(v.reference_plane_um)&&v.reference_plane_um>0;
+  if(v.value<0||!r.values.focus_error_protocol?.value||v.calculation_origin!=='authors'||
+   v.basis!=='derived_from_measurement'||!(aggregate||single))errors.push('focal error context');
  }
  for(const k of ['operation_efficiency_at_lambda_pct','operation_efficiency_band_mean_pct']){
   const v=r.values[k];if(!Number.isFinite(v?.value))continue;

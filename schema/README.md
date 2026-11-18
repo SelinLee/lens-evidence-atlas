@@ -93,3 +93,7 @@
 `system_slanted_edge_mtf` 保存作者由多色实拍斜边计算的无量纲MTF，和 `mtf_spatial_frequency_lpmm`、`mtf_curve` 的频率单位、处理阶段、方向及场点共同使用。全场平均和作者最大场点分开；数值角度未报告时写空。保留原始斜边、归一化、物像面频率和逐频表的缺口。
 
 作者只给出带内焦距变化及波长范围时，`focus_variation_um`、`focus_variation_pct` 可用 `spectral_sample_scope: author_reported_range_only`，逐点列表留空，须有同一行的上下波长和协议。不能用抽样曲线推定精确采样点并作为原始数据。
+
+`effective_na_from_psf` 保存作者由焦斑推得的有效NA、公式与谱点，按原文保存汇总值。单波长的作者焦距误差用 `author_reported_single_wavelength_error` 与明确的设计面或设计焦距，波长须和行一致。界限用 `value=null` 保存。
+
+`mtf_curve.mtf_kind: measured_psf_fft_normalized` 保存作者由实测PSF求得的、仅有归一化频率图的MTF。频率分母未核时保留 `normalization_frequency_cycles_mm: null`。未明确1D切线方向则填 `unspecified`，不生成绝对空间频率。模拟效率的分母未给时用 `author_denominator_unreported` 并附 `denominator_note`。
