@@ -21,7 +21,7 @@ test('eight full-pupil experimental wavelengths in both spin channels remain sep
 });
 test('only full-pupil RCP at 633 nm receives the directly reported 19 percent efficiency and its incomplete ROI and polarization protocol',()=>{
  const v=get('rcp_633');assert.equal(v.efficiency_at_lambda_pct.value,19);assert.equal(v.efficiency_at_lambda_pct.basis,'measured');assert.equal(v.efficiency_lambda_nm.value,633);assert.match(v.efficiency_at_lambda_pct.reading_version,/正式PMC主PDF及SI/);assert.match(v.efficiency_at_lambda_pct.display,/正文直报.*谱内最大值/);assert.equal(v.efficiency_protocol.integration_geometry,null);assert.equal(v.efficiency_protocol.denominator_measurement_plane,null);assert.match(v.efficiency_protocol.note,/不假定3×FWHM/);
- assert.equal(rows.filter(r=>Number.isFinite(r.values.efficiency_at_lambda_pct?.value)).length,1);assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,1);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,111);
+ assert.equal(rows.filter(r=>Number.isFinite(r.values.efficiency_at_lambda_pct?.value)).length,1);assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,1);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,114);
  for(const r of rows){assert.equal(r.values.efficiency_band_mean_pct,undefined);assert.equal(r.values.operation_efficiency_at_lambda_pct,undefined);}
  for(const w of waves){const a=get('lcp_'+w);assert.equal(a.efficiency_at_lambda_pct,undefined);assert.equal(a.efficiency_protocol,undefined);assert.equal(a.fwhm_um.value,null);assert.match(a.fwhm_um.note,/不继承RCP/);}
 });
