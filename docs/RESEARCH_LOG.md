@@ -911,3 +911,9 @@ Jeon 2026 的灰度纳米模板研究单独沿作者实验室的论文列表和�
 基线 c4dcf20。主文Fig.4c、p7与SI功率表分别确认三色FWHM、Strehl及聚焦效率。实测三色均距1800 μm设计面7 μm以内，蓝光偏差0.27%。保存有效NA均值0.29与设计NA0.31差异，以及绿色图的635/532 nm、蓝光效率与圆整功率的印字差异。PMC对象清单、Europe PMC、DataCite及作者入口核到曲线和功率表，原始MTF/PSF缺证。新增30行12配置，累计37篇1416行。[本批核验](JEON_GRAYSCALE_REVIEW_2026-11-18.md)
 
 本地数据校验、287项测试、构建和独立无头Chrome通过。核三组实测散点、蓝光0.27%和三色7 μm界限，未发现伪造焦位点。表格30行12配置，五个出处HTTP 200，三个PDF完整字节散列相符。引用往返、可见光筛选、CSV、六种视口与分享恢复通过。
+
+## 2026-11-18-83 · Jeon 2026 灰度器件发布验收及后续取证
+
+PR #138 合入 dacc200720bcf5556f7afd86a984b1c0d460ed8b。PR校验 44302457350、主线校验 44302719194 与 Pages 44302719186 成功。线上12文件与本地逐字节一致，devices-data.js SHA256 为 89d29990e4521aac4b6687296af5b39aec53405368cb1db756942e77bb95acb3。独立无头 Chrome 核30行12配置、三组实测散点、蓝光偏差、五个原始链接、六种视口、可见光和CSV。三个PDF完整下载并比对哈希均通过，出版社一次短暂连接中断后重试成功。可见光33篇、1316条记录。目标保持active。[PR #138](https://github.com/SelinLee/lens-evidence-atlas/pull/138) · [Pages 部署](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44302719186)
+
+后续沿Seong 2026 对两篇Jeon原作的引用定位5 mm UV/可见光色散对照，正式主文7170968字节，SHA256 b240c799e9a58f8b3fc98fcbf7af1e255f1799f3ce98dfaa667a3ec0b97a57d8；23页SI为5161684字节，SHA256 ef6a48d47ee28a33ccf52cec2186ac4d825816a027ba3bd3fe9ffe181faef975。Fig.4图注把320 nm归ZrO₂涂层，三可见谱点归TiO₂涂层。作者列几何相位色散下的有效焦距，待从设计关系与轴扫证据审计是否实测。并取Li 2021的PMC7840120.1正式PDF，1689230字节，SHA256 d3f65dc84d74f4cc39fa01df4a8dae28b6e131681d2d45927aebca4b3f7c1da3。该公开清单无SI，继续查旧出版链接与作者存档。[Seong 2026](https://doi.org/10.1038/s41467-026-74547-2) · [Li 2021 正式PDF](https://pmc-oa-opendata.s3.amazonaws.com/PMC7840120.1/PMC7840120.1.pdf)
