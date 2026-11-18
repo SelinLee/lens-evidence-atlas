@@ -1234,6 +1234,42 @@
       "scope": "精确关联DOI及精确篇名查询均返回0项。OpenAlex、作者机构入口未找到公开数据。",
       "checked_on": "2026-11-18",
       "publication_source": "feng_doublet_2022"
+    },
+    {
+      "id": "wu_hybrid_2025",
+      "title": "Wu et al. (2025): Broadband Achromatic Hybrid Metalens Module with 100° Field of View for Visible Imaging",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12115752/fullTextXML",
+      "kind": "peer_reviewed_paper",
+      "scope": "Sensors 25(10), 3202，2025-05-20。Europe PMC正式全文XML，PMC12115752，PMID 40431994；PDF在材料列表。期刊HTML和PMC当前网页入口访问受限。",
+      "checked_on": "2026-11-18",
+      "doi": "10.3390/s25103202"
+    },
+    {
+      "id": "wu_hybrid_pdf_2025",
+      "title": "MDPI 正式版主文PDF",
+      "url": "https://mdpi-res.com/d_attachment/sensors/sensors-25-03202/article_deploy/sensors-25-03202.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "9页、4106360字节，SHA256 f9087b56ddca05703da7eb1359831d86808c2683b2804269bae92547c1797a8a。核 §2–4、Fig.2–5 与数据可用性，零嵌入附件。",
+      "checked_on": "2026-11-18",
+      "publication_source": "wu_hybrid_2025"
+    },
+    {
+      "id": "wu_hybrid_si_2025",
+      "title": "MDPI 官方补件 ZIP · sensors-3582553-supplementary.pdf",
+      "url": "https://mdpi-res.com/d_attachment/sensors/sensors-25-03202/article_deploy/sensors-25-03202-s001.zip",
+      "kind": "supplementary_information",
+      "scope": "ZIP 759035字节，SHA256 af8ca377596a58763c05e0bbaa19a1d70ccc368fbb568c80340986ecb898ea81。仅一份780724字节PDF，核Note S1、Tables S1–S2和Figs.S1–S5。",
+      "checked_on": "2026-11-18",
+      "publication_source": "wu_hybrid_2025"
+    },
+    {
+      "id": "wu_hybrid_datacite_2025",
+      "title": "DataCite · Wu 2025 精确关联 DOI",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.3390%2Fs25103202%22&page%5Bsize%5D=25",
+      "kind": "repository",
+      "scope": "2026-11-18精确关联查询HTTP 200，零登记项。已核补件目录与原文p8数据声明。",
+      "checked_on": "2026-11-18",
+      "publication_source": "wu_hybrid_2025"
     }
   ],
   "domains": {
@@ -4821,6 +4857,47 @@
             {
               "source": "li_aplanatic_si_2024",
               "location": "PDF p8 Fig.S5g–i；主文p4 §2.1"
+            }
+          ]
+        },
+        {
+          "id": "mtf_spatial_frequency_lpmm",
+          "label": "MTF 评价频率 (lp/mm)",
+          "definition": "相应MTF值的作者空间频率。",
+          "conditions": "方向、频率参考平面、波长/照明聚合、场点与方法。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 §3 多色MTF段；p5 Fig.4d"
+            },
+            {
+              "source": "wu_hybrid_si_2025",
+              "location": "PDF p2 Note S1"
+            }
+          ]
+        },
+        {
+          "id": "system_slanted_edge_mtf",
+          "label": "斜边系统 MTF (1)",
+          "definition": "含镜组和采集链，由作者从实拍斜边计算的MTF值。",
+          "conditions": "相应评价频率、取场点或平均方式、方向、归一化及处理阶段。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0,
+            "max": 1
+          },
+          "definition_refs": [
+            {
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 §3 多色MTF段；p5 Fig.4d"
+            },
+            {
+              "source": "wu_hybrid_si_2025",
+              "location": "PDF p2 Note S1"
             }
           ]
         }
@@ -196444,9 +196521,1496 @@
               }
             }
           }
+        },
+        {
+          "id": "wu2025hybrid_corrector",
+          "model": "Wu 2025 · SiNₓ 相位校正片",
+          "study_id": "wu2025hybrid",
+          "specimen_id": "corrector",
+          "module": "",
+          "variant": "可见光折射与超表面混合镜组",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "实制超表面元件的口径和几何，整组焦距与MTF另有记录。",
+          "values": {
+            "diameter_um": {
+              "value": 5790,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 Phase correction段；pp4–5 Figs.2d、3b",
+              "note": "原文所称相位校正片口径5.79 mm，整组入瞳口径未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 5.79,
+              "original_unit": "mm",
+              "aperture_scope": "metasurface_corrector"
+            },
+            "height_nm": {
+              "value": 700,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 pp3–4 §2 单元尺寸与制程段；Fig.2e",
+              "note": "SiNₓ圆柱高度/膜厚。原文周期340 nm，柱直径设计110–240 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "period_nm": 340
+            },
+            "material": {
+              "value": "SiNₓ 圆柱 / 玻璃基底",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 pp3–4 §2；补充材料 PDF p4 Table S2",
+              "note": "椭偏测得546 nm折射率2.39。相位多项式归一化半径R=1 mm，物理口径5.79 mm。采用EBL和等离子体刻蚀。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "phase_polynomial_normalization_radius_mm": 1,
+              "material_index": 2.39,
+              "material_index_wavelength_nm": 546,
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "宽带径向相位校正片",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p4 Fig.2d–f；补充材料 PDF p7 Fig.S3",
+              "note": "公布设计空间和模拟相位响应。校正片单独成像的轴向焦差、NA、Strehl和聚焦效率未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "单元透射曲线及完整系统表现见原文",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p4 Fig.2f；p8 Data Availability；补充材料 PDF p7 Fig.S3",
+              "note": "Fig.2f的T为结构单元模拟透射率，已核材料未给实制校正片焦圈或整组聚焦功率协议。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "wu2025hybrid_focus_band",
+          "model": "Wu 2025 · 整组 · 色焦扫描汇总",
+          "study_id": "wu2025hybrid",
+          "specimen_id": "focus_scan",
+          "module": "",
+          "variant": "可见光折射与超表面混合镜组",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "整组加商用CMOS，准直点源扫描的原文带内汇总。",
+          "values": {
+            "design_focal_um": {
+              "value": 4130,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义有效焦距4.13 mm，含五个折射镜片、超表面及IR滤镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 4.13,
+              "original_unit": "mm",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "fnumber": {
+              "value": 2,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义F数。超表面所在面口径与入瞳尺寸的关系未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "五片球面折射镜片 + SiNₓ超表面 + IR滤镜",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组设计总光学长度22.29 mm。超表面是末端相位校正元件。折射参数与相位系数分别见S1和S2。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "optical_track_length_mm": 22.29,
+              "refractive_element_count": 5,
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 460,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2；主文 p5 §3 第一段，Fig.4a–b；p7 §4 首段",
+              "note": "整组按460–656 nm设计和进行焦位表征范围描述。摘要的400–700 nm属于整体工作声明，逐谱点数表待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "spectrum_role": "system_design_and_axial_scan_range"
+            },
+            "lambda_max_nm": {
+              "value": 656,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2；主文 p5 §3 第一段，Fig.4a–b；p7 §4 首段",
+              "note": "整组按460–656 nm设计和进行焦位表征范围描述。摘要的400–700 nm属于整体工作声明，逐谱点数表待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "spectrum_role": "system_design_and_axial_scan_range"
+            },
+            "focus_variation_um": {
+              "value": 50,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p5 §3 第一段，Fig.4a–b；p7 §4 首段",
+              "note": "作者报告跨460–656 nm焦距变化约50 μm，正文未给具体极值、逐波长值或计算公式。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "statistic": "author_reported_band_variation",
+              "calculation_origin": "authors",
+              "sample_wavelengths_nm": null,
+              "spectral_sample_scope": "author_reported_range_only",
+              "approximate": true
+            },
+            "focus_variation_pct": {
+              "value": 1.2,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p5 §3 第一段，Fig.4a–b；p7 §4 首段",
+              "note": "作者以4.13 mm名义设计焦距解释约50 μm的比例，未给逐点有符号差值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "denominator": "design_focal_length",
+              "reference_focal_um": 4130,
+              "reference_wavelength_nm": null,
+              "statistic": "author_reported_band_variation",
+              "calculation_origin": "authors",
+              "sample_wavelengths_nm": null,
+              "spectral_sample_scope": "author_reported_range_only",
+              "approximate": true
+            },
+            "focus_variation_protocol": {
+              "value": "单色器波长扫描，名义设计f=4.13 mm",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p5 §3 第一段，Fig.4a–b；p7 §4 首段",
+              "note": "记录作者带内变化及参考分母。Fig.4b横轴λ（nm），纵轴f（mm），蓝点/误差棒叠红色多项式拟合。未见逐点数表、误差棒定义、取焦步长及精确轴向零点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sample_wavelengths_nm": null,
+              "visible_markers_count": 9,
+              "reported_wavelength_range_nm": [
+                460,
+                656
+              ],
+              "reference_focal_um": 4130,
+              "error_bar_definition": null,
+              "axial_scan_step_um": null,
+              "repeat_count": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p5 Fig.4b；p8 Data Availability；补充材料目录及DataCite",
+              "note": "仅图示分波长焦位和拟合；逐点焦距与误差未以数字报告。作者说明证据在正文与补件内。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "Fig.4b 散点与拟合",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025",
+                "wu_hybrid_datacite_2025",
+                "wu_hybrid_2025"
+              ]
+            },
+            "psf_protocol": {
+              "value": "单色器、匀光器、针孔及消色差准直，CMOS评价面",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p5 §3 Fig.4a与对应段",
+              "note": "模组装在精密平移台，CMOS像素间距3 μm。原始PSF、扫描步长、取焦判据与参考面标定待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sensor_pixel_pitch_um": 3,
+              "acquisition": "focus_scan",
+              "object_conjugate": "collimated",
+              "image_plane": "commercial_cmos",
+              "raw_psf_available": null
+            }
+          }
+        },
+        {
+          "id": "wu2025hybrid_mtf_mean_100",
+          "model": "Wu 2025 · 整组 · 全场平均 · 100 lp/mm",
+          "study_id": "wu2025hybrid",
+          "specimen_id": "slanted_edge",
+          "module": "",
+          "variant": "可见光折射与超表面混合镜组",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "整组与CMOS在多色照明下用棋盘斜边派生的系统MTF。",
+          "values": {
+            "design_focal_um": {
+              "value": 4130,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义有效焦距4.13 mm，含五个折射镜片、超表面及IR滤镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 4.13,
+              "original_unit": "mm",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "fnumber": {
+              "value": 2,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义F数。超表面所在面口径与入瞳尺寸的关系未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "五片球面折射镜片 + SiNₓ超表面 + IR滤镜",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组设计总光学长度22.29 mm。超表面是末端相位校正元件。折射参数与相位系数分别见S1和S2。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "optical_track_length_mm": 22.29,
+              "refractive_element_count": 5,
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "mtf_spatial_frequency_lpmm": {
+              "value": 100,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 §3 多色MTF段；p5 Fig.4d",
+              "note": "正文对应图4d图例的名义空间频率，单位lp/mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "system_slanted_edge_mtf": {
+              "value": 0.63,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 §3 多色MTF段；p5 Fig.4d，全场平均，100 lp/mm正文数值",
+              "note": "全文报告全成像视场平均，场点与权重未单列。 实验边缘方向、频率参考平面和归一化细则未单列。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.63",
+              "calculation_origin": "authors",
+              "field_statistic": "whole_field_mean",
+              "field_angle_deg": null,
+              "field_height_mm": null
+            },
+            "mtf_curve": {
+              "value": "棋盘斜边 / 多色 MTF；两固定频率随入射角",
+              "source": "wu_hybrid_si_2025",
+              "location": "补充材料 PDF p2 Note S1；主文 pp5–6 §3 Fig.4d对应段；主文 p8 Data Availability；DataCite精确关联",
+              "note": "作者从棋盘倾斜边缘取ESF，求导得LSF后傅里叶变换。Fig.4d横轴入射角（°），纵轴无量纲MTF，两频率为100及167 lp/mm。原始边缘图、逐频数表、S/T对应、归一化和频率参考平面待核。摘要所称167 lp/mm均超过0.2与最大场点实测0.161有范围差异。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wu_hybrid_si_2025",
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_datacite_2025",
+                "wu_hybrid_2025"
+              ],
+              "mtf_kind": "measured_polychromatic_slanted_edge",
+              "processing_stage": "captured",
+              "frequency_unit": "lp/mm",
+              "frequency_reference_plane": null,
+              "direction_aggregation": "unspecified",
+              "target": "checkerboard",
+              "normalization": null,
+              "polychromatic_weighting": null,
+              "sample_wavelengths_nm": null,
+              "esf_sample_pitch_um": null,
+              "data_availability": {
+                "status": "reported_values_and_field_curves",
+                "author_numeric_mtf": "four_main_text_summary_values",
+                "author_full_mtf_table": null,
+                "raw_slanted_edge_images": null,
+                "raw_psf": null,
+                "normalization_method": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "wu2025hybrid_mtf_maximum_100",
+          "model": "Wu 2025 · 整组 · 作者最大场点 · 100 lp/mm",
+          "study_id": "wu2025hybrid",
+          "specimen_id": "slanted_edge",
+          "module": "",
+          "variant": "可见光折射与超表面混合镜组",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "整组与CMOS在多色照明下用棋盘斜边派生的系统MTF。",
+          "values": {
+            "design_focal_um": {
+              "value": 4130,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义有效焦距4.13 mm，含五个折射镜片、超表面及IR滤镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 4.13,
+              "original_unit": "mm",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "fnumber": {
+              "value": 2,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义F数。超表面所在面口径与入瞳尺寸的关系未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "五片球面折射镜片 + SiNₓ超表面 + IR滤镜",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组设计总光学长度22.29 mm。超表面是末端相位校正元件。折射参数与相位系数分别见S1和S2。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "optical_track_length_mm": 22.29,
+              "refractive_element_count": 5,
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "mtf_spatial_frequency_lpmm": {
+              "value": 100,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 §3 多色MTF段；p5 Fig.4d",
+              "note": "正文对应图4d图例的名义空间频率，单位lp/mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "system_slanted_edge_mtf": {
+              "value": 0.364,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 §3 多色MTF段；p5 Fig.4d，作者最大场点，100 lp/mm正文数值",
+              "note": "正文称最大场点，未给可绑定这两个MTF值的精确角度或像高。 实验边缘方向、频率参考平面和归一化细则未单列。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.364",
+              "calculation_origin": "authors",
+              "field_statistic": "maximum_measured_field",
+              "field_angle_deg": null,
+              "field_height_mm": null
+            },
+            "mtf_curve": {
+              "value": "棋盘斜边 / 多色 MTF；两固定频率随入射角",
+              "source": "wu_hybrid_si_2025",
+              "location": "补充材料 PDF p2 Note S1；主文 pp5–6 §3 Fig.4d对应段；主文 p8 Data Availability；DataCite精确关联",
+              "note": "作者从棋盘倾斜边缘取ESF，求导得LSF后傅里叶变换。Fig.4d横轴入射角（°），纵轴无量纲MTF，两频率为100及167 lp/mm。原始边缘图、逐频数表、S/T对应、归一化和频率参考平面待核。摘要所称167 lp/mm均超过0.2与最大场点实测0.161有范围差异。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wu_hybrid_si_2025",
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_datacite_2025",
+                "wu_hybrid_2025"
+              ],
+              "mtf_kind": "measured_polychromatic_slanted_edge",
+              "processing_stage": "captured",
+              "frequency_unit": "lp/mm",
+              "frequency_reference_plane": null,
+              "direction_aggregation": "unspecified",
+              "target": "checkerboard",
+              "normalization": null,
+              "polychromatic_weighting": null,
+              "sample_wavelengths_nm": null,
+              "esf_sample_pitch_um": null,
+              "data_availability": {
+                "status": "reported_values_and_field_curves",
+                "author_numeric_mtf": "four_main_text_summary_values",
+                "author_full_mtf_table": null,
+                "raw_slanted_edge_images": null,
+                "raw_psf": null,
+                "normalization_method": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "wu2025hybrid_mtf_mean_167",
+          "model": "Wu 2025 · 整组 · 全场平均 · 167 lp/mm",
+          "study_id": "wu2025hybrid",
+          "specimen_id": "slanted_edge",
+          "module": "",
+          "variant": "可见光折射与超表面混合镜组",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "整组与CMOS在多色照明下用棋盘斜边派生的系统MTF。",
+          "values": {
+            "design_focal_um": {
+              "value": 4130,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义有效焦距4.13 mm，含五个折射镜片、超表面及IR滤镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 4.13,
+              "original_unit": "mm",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "fnumber": {
+              "value": 2,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义F数。超表面所在面口径与入瞳尺寸的关系未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "五片球面折射镜片 + SiNₓ超表面 + IR滤镜",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组设计总光学长度22.29 mm。超表面是末端相位校正元件。折射参数与相位系数分别见S1和S2。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "optical_track_length_mm": 22.29,
+              "refractive_element_count": 5,
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "mtf_spatial_frequency_lpmm": {
+              "value": 167,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 §3 多色MTF段；p5 Fig.4d",
+              "note": "正文对应图4d图例的名义空间频率，单位lp/mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "system_slanted_edge_mtf": {
+              "value": 0.24,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 §3 多色MTF段；p5 Fig.4d，全场平均，167 lp/mm正文数值",
+              "note": "全文报告全成像视场平均，场点与权重未单列。 实验边缘方向、频率参考平面和归一化细则未单列。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.24",
+              "calculation_origin": "authors",
+              "field_statistic": "whole_field_mean",
+              "field_angle_deg": null,
+              "field_height_mm": null
+            },
+            "mtf_curve": {
+              "value": "棋盘斜边 / 多色 MTF；两固定频率随入射角",
+              "source": "wu_hybrid_si_2025",
+              "location": "补充材料 PDF p2 Note S1；主文 pp5–6 §3 Fig.4d对应段；主文 p8 Data Availability；DataCite精确关联",
+              "note": "作者从棋盘倾斜边缘取ESF，求导得LSF后傅里叶变换。Fig.4d横轴入射角（°），纵轴无量纲MTF，两频率为100及167 lp/mm。原始边缘图、逐频数表、S/T对应、归一化和频率参考平面待核。摘要所称167 lp/mm均超过0.2与最大场点实测0.161有范围差异。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wu_hybrid_si_2025",
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_datacite_2025",
+                "wu_hybrid_2025"
+              ],
+              "mtf_kind": "measured_polychromatic_slanted_edge",
+              "processing_stage": "captured",
+              "frequency_unit": "lp/mm",
+              "frequency_reference_plane": null,
+              "direction_aggregation": "unspecified",
+              "target": "checkerboard",
+              "normalization": null,
+              "polychromatic_weighting": null,
+              "sample_wavelengths_nm": null,
+              "esf_sample_pitch_um": null,
+              "data_availability": {
+                "status": "reported_values_and_field_curves",
+                "author_numeric_mtf": "four_main_text_summary_values",
+                "author_full_mtf_table": null,
+                "raw_slanted_edge_images": null,
+                "raw_psf": null,
+                "normalization_method": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "wu2025hybrid_mtf_maximum_167",
+          "model": "Wu 2025 · 整组 · 作者最大场点 · 167 lp/mm",
+          "study_id": "wu2025hybrid",
+          "specimen_id": "slanted_edge",
+          "module": "",
+          "variant": "可见光折射与超表面混合镜组",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "整组与CMOS在多色照明下用棋盘斜边派生的系统MTF。",
+          "values": {
+            "design_focal_um": {
+              "value": 4130,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义有效焦距4.13 mm，含五个折射镜片、超表面及IR滤镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 4.13,
+              "original_unit": "mm",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "fnumber": {
+              "value": 2,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义F数。超表面所在面口径与入瞳尺寸的关系未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "五片球面折射镜片 + SiNₓ超表面 + IR滤镜",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组设计总光学长度22.29 mm。超表面是末端相位校正元件。折射参数与相位系数分别见S1和S2。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "optical_track_length_mm": 22.29,
+              "refractive_element_count": 5,
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "mtf_spatial_frequency_lpmm": {
+              "value": 167,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 §3 多色MTF段；p5 Fig.4d",
+              "note": "正文对应图4d图例的名义空间频率，单位lp/mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "system_slanted_edge_mtf": {
+              "value": 0.161,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 §3 多色MTF段；p5 Fig.4d，作者最大场点，167 lp/mm正文数值",
+              "note": "正文称最大场点，未给可绑定这两个MTF值的精确角度或像高。 实验边缘方向、频率参考平面和归一化细则未单列。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.161",
+              "calculation_origin": "authors",
+              "field_statistic": "maximum_measured_field",
+              "field_angle_deg": null,
+              "field_height_mm": null
+            },
+            "mtf_curve": {
+              "value": "棋盘斜边 / 多色 MTF；两固定频率随入射角",
+              "source": "wu_hybrid_si_2025",
+              "location": "补充材料 PDF p2 Note S1；主文 pp5–6 §3 Fig.4d对应段；主文 p8 Data Availability；DataCite精确关联",
+              "note": "作者从棋盘倾斜边缘取ESF，求导得LSF后傅里叶变换。Fig.4d横轴入射角（°），纵轴无量纲MTF，两频率为100及167 lp/mm。原始边缘图、逐频数表、S/T对应、归一化和频率参考平面待核。摘要所称167 lp/mm均超过0.2与最大场点实测0.161有范围差异。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wu_hybrid_si_2025",
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_datacite_2025",
+                "wu_hybrid_2025"
+              ],
+              "mtf_kind": "measured_polychromatic_slanted_edge",
+              "processing_stage": "captured",
+              "frequency_unit": "lp/mm",
+              "frequency_reference_plane": null,
+              "direction_aggregation": "unspecified",
+              "target": "checkerboard",
+              "normalization": null,
+              "polychromatic_weighting": null,
+              "sample_wavelengths_nm": null,
+              "esf_sample_pitch_um": null,
+              "data_availability": {
+                "status": "reported_values_and_field_curves",
+                "author_numeric_mtf": "four_main_text_summary_values",
+                "author_full_mtf_table": null,
+                "raw_slanted_edge_images": null,
+                "raw_psf": null,
+                "normalization_method": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "wu2025hybrid_field",
+          "model": "Wu 2025 · 整组 · 实拍棋盘视场",
+          "study_id": "wu2025hybrid",
+          "specimen_id": "checkerboard",
+          "module": "",
+          "variant": "可见光折射与超表面混合镜组",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "有限物距的棋盘全视场推算，独立于斜边MTF记录的场点。",
+          "values": {
+            "design_focal_um": {
+              "value": 4130,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义有效焦距4.13 mm，含五个折射镜片、超表面及IR滤镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 4.13,
+              "original_unit": "mm",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "fnumber": {
+              "value": 2,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义F数。超表面所在面口径与入瞳尺寸的关系未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "五片球面折射镜片 + SiNₓ超表面 + IR滤镜",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组设计总光学长度22.29 mm。超表面是末端相位校正元件。折射参数与相位系数分别见S1和S2。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "optical_track_length_mm": 22.29,
+              "refractive_element_count": 5,
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "fov_deg": {
+              "value": 100,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 pp5–6 §3 Fig.4c对应段",
+              "note": "作者按90 mm物距与超过218 mm的可辨对角跨度推得全角约100°。该对角全角独立于MTF最大场点的角度。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "approximate": true,
+              "calculation_origin": "authors",
+              "fov_type": "diagonal_full_angle",
+              "object_distance_mm": 90,
+              "visible_diagonal_span_lower_bound_mm": 218
+            },
+            "illumination": {
+              "value": "实拍棋盘，格距21 mm",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 pp5–6 §3 Fig.4c；补充材料 PDF p8 Fig.S4a",
+              "note": "实际靶为8.5×6格，未提供通道几何标定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "wu2025hybrid_camera_a",
+          "model": "Wu 2025 · 整组+CMOS · 0.5 m拍摄",
+          "study_id": "wu2025hybrid",
+          "specimen_id": "camera",
+          "module": "",
+          "variant": "可见光折射与超表面混合镜组",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "装配模组与商业CMOS的多物距成像，原文提供定性图像。",
+          "values": {
+            "design_focal_um": {
+              "value": 4130,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义有效焦距4.13 mm，含五个折射镜片、超表面及IR滤镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 4.13,
+              "original_unit": "mm",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "fnumber": {
+              "value": 2,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义F数。超表面所在面口径与入瞳尺寸的关系未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "五片球面折射镜片 + SiNₓ超表面 + IR滤镜",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组设计总光学长度22.29 mm。超表面是末端相位校正元件。折射参数与相位系数分别见S1和S2。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "optical_track_length_mm": 22.29,
+              "refractive_element_count": 5,
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "实拍色卡和自然物；无定量通道位移",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 Fig.5a及说明；补充材料 PDF pp8–9 Figs.S4–S5",
+              "note": "原文成像场景包括ISO12233、色卡和不同颜色物体。场景图称未做计算校正；展示中的色卡统一缩放至300×200像素。不提供横向色差数量。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 0.5,
+              "processing_stage": "captured",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "illumination": {
+              "value": "实验室可见光场景；精确光谱未报告",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 §3 Fig.5a–h",
+              "note": "对象距离按打印图注。镜组直接耦合CMOS，曝光与相机处理链细节未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 0.5,
+              "spectral_distribution": null
+            }
+          }
+        },
+        {
+          "id": "wu2025hybrid_camera_b",
+          "model": "Wu 2025 · 整组+CMOS · 1 m拍摄",
+          "study_id": "wu2025hybrid",
+          "specimen_id": "camera",
+          "module": "",
+          "variant": "可见光折射与超表面混合镜组",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "装配模组与商业CMOS的多物距成像，原文提供定性图像。",
+          "values": {
+            "design_focal_um": {
+              "value": 4130,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义有效焦距4.13 mm，含五个折射镜片、超表面及IR滤镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 4.13,
+              "original_unit": "mm",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "fnumber": {
+              "value": 2,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义F数。超表面所在面口径与入瞳尺寸的关系未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "五片球面折射镜片 + SiNₓ超表面 + IR滤镜",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组设计总光学长度22.29 mm。超表面是末端相位校正元件。折射参数与相位系数分别见S1和S2。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "optical_track_length_mm": 22.29,
+              "refractive_element_count": 5,
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "实拍色卡和自然物；无定量通道位移",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 Fig.5b及说明；补充材料 PDF pp8–9 Figs.S4–S5",
+              "note": "原文成像场景包括ISO12233、色卡和不同颜色物体。场景图称未做计算校正；展示中的色卡统一缩放至300×200像素。不提供横向色差数量。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 1,
+              "processing_stage": "captured",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "illumination": {
+              "value": "实验室可见光场景；精确光谱未报告",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 §3 Fig.5a–h",
+              "note": "对象距离按打印图注。镜组直接耦合CMOS，曝光与相机处理链细节未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 1,
+              "spectral_distribution": null
+            }
+          }
+        },
+        {
+          "id": "wu2025hybrid_camera_c",
+          "model": "Wu 2025 · 整组+CMOS · 1.5 m拍摄",
+          "study_id": "wu2025hybrid",
+          "specimen_id": "camera",
+          "module": "",
+          "variant": "可见光折射与超表面混合镜组",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "装配模组与商业CMOS的多物距成像，原文提供定性图像。",
+          "values": {
+            "design_focal_um": {
+              "value": 4130,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义有效焦距4.13 mm，含五个折射镜片、超表面及IR滤镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 4.13,
+              "original_unit": "mm",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "fnumber": {
+              "value": 2,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义F数。超表面所在面口径与入瞳尺寸的关系未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "五片球面折射镜片 + SiNₓ超表面 + IR滤镜",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组设计总光学长度22.29 mm。超表面是末端相位校正元件。折射参数与相位系数分别见S1和S2。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "optical_track_length_mm": 22.29,
+              "refractive_element_count": 5,
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "实拍色卡和自然物；无定量通道位移",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 Fig.5c及说明；补充材料 PDF pp8–9 Figs.S4–S5",
+              "note": "原文成像场景包括ISO12233、色卡和不同颜色物体。场景图称未做计算校正；展示中的色卡统一缩放至300×200像素。不提供横向色差数量。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 1.5,
+              "processing_stage": "captured",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "illumination": {
+              "value": "实验室可见光场景；精确光谱未报告",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 §3 Fig.5a–h",
+              "note": "对象距离按打印图注。镜组直接耦合CMOS，曝光与相机处理链细节未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 1.5,
+              "spectral_distribution": null
+            }
+          }
+        },
+        {
+          "id": "wu2025hybrid_camera_d",
+          "model": "Wu 2025 · 整组+CMOS · 2 m拍摄",
+          "study_id": "wu2025hybrid",
+          "specimen_id": "camera",
+          "module": "",
+          "variant": "可见光折射与超表面混合镜组",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "装配模组与商业CMOS的多物距成像，原文提供定性图像。",
+          "values": {
+            "design_focal_um": {
+              "value": 4130,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义有效焦距4.13 mm，含五个折射镜片、超表面及IR滤镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 4.13,
+              "original_unit": "mm",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "fnumber": {
+              "value": 2,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义F数。超表面所在面口径与入瞳尺寸的关系未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "五片球面折射镜片 + SiNₓ超表面 + IR滤镜",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组设计总光学长度22.29 mm。超表面是末端相位校正元件。折射参数与相位系数分别见S1和S2。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "optical_track_length_mm": 22.29,
+              "refractive_element_count": 5,
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "实拍色卡和自然物；无定量通道位移",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 Fig.5d及说明；补充材料 PDF pp8–9 Figs.S4–S5",
+              "note": "原文成像场景包括ISO12233、色卡和不同颜色物体。场景图称未做计算校正；展示中的色卡统一缩放至300×200像素。不提供横向色差数量。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 2,
+              "processing_stage": "captured",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "illumination": {
+              "value": "实验室可见光场景；精确光谱未报告",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 §3 Fig.5a–h",
+              "note": "对象距离按打印图注。镜组直接耦合CMOS，曝光与相机处理链细节未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 2,
+              "spectral_distribution": null
+            }
+          }
+        },
+        {
+          "id": "wu2025hybrid_camera_e",
+          "model": "Wu 2025 · 整组+CMOS · 2.5 m拍摄",
+          "study_id": "wu2025hybrid",
+          "specimen_id": "camera",
+          "module": "",
+          "variant": "可见光折射与超表面混合镜组",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "装配模组与商业CMOS的多物距成像，原文提供定性图像。",
+          "values": {
+            "design_focal_um": {
+              "value": 4130,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义有效焦距4.13 mm，含五个折射镜片、超表面及IR滤镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 4.13,
+              "original_unit": "mm",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "fnumber": {
+              "value": 2,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义F数。超表面所在面口径与入瞳尺寸的关系未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "五片球面折射镜片 + SiNₓ超表面 + IR滤镜",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组设计总光学长度22.29 mm。超表面是末端相位校正元件。折射参数与相位系数分别见S1和S2。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "optical_track_length_mm": 22.29,
+              "refractive_element_count": 5,
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "实拍色卡和自然物；无定量通道位移",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 Fig.5e及说明；补充材料 PDF pp8–9 Figs.S4–S5",
+              "note": "原文成像场景包括ISO12233、色卡和不同颜色物体。场景图称未做计算校正；展示中的色卡统一缩放至300×200像素。不提供横向色差数量。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 2.5,
+              "processing_stage": "captured",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "illumination": {
+              "value": "实验室可见光场景；精确光谱未报告",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 §3 Fig.5a–h",
+              "note": "对象距离按打印图注。镜组直接耦合CMOS，曝光与相机处理链细节未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 2.5,
+              "spectral_distribution": null
+            }
+          }
+        },
+        {
+          "id": "wu2025hybrid_camera_f",
+          "model": "Wu 2025 · 整组+CMOS · 3 m拍摄",
+          "study_id": "wu2025hybrid",
+          "specimen_id": "camera",
+          "module": "",
+          "variant": "可见光折射与超表面混合镜组",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "装配模组与商业CMOS的多物距成像，原文提供定性图像。",
+          "values": {
+            "design_focal_um": {
+              "value": 4130,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义有效焦距4.13 mm，含五个折射镜片、超表面及IR滤镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 4.13,
+              "original_unit": "mm",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "fnumber": {
+              "value": 2,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义F数。超表面所在面口径与入瞳尺寸的关系未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "五片球面折射镜片 + SiNₓ超表面 + IR滤镜",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组设计总光学长度22.29 mm。超表面是末端相位校正元件。折射参数与相位系数分别见S1和S2。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "optical_track_length_mm": 22.29,
+              "refractive_element_count": 5,
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "实拍色卡和自然物；无定量通道位移",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 Fig.5f及说明；补充材料 PDF pp8–9 Figs.S4–S5",
+              "note": "原文成像场景包括ISO12233、色卡和不同颜色物体。场景图称未做计算校正；展示中的色卡统一缩放至300×200像素。不提供横向色差数量。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 3,
+              "processing_stage": "captured",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "illumination": {
+              "value": "实验室可见光场景；精确光谱未报告",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 §3 Fig.5a–h",
+              "note": "对象距离按打印图注。镜组直接耦合CMOS，曝光与相机处理链细节未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 3,
+              "spectral_distribution": null
+            }
+          }
+        },
+        {
+          "id": "wu2025hybrid_camera_g",
+          "model": "Wu 2025 · 整组+CMOS · 3.5 m拍摄",
+          "study_id": "wu2025hybrid",
+          "specimen_id": "camera",
+          "module": "",
+          "variant": "可见光折射与超表面混合镜组",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "装配模组与商业CMOS的多物距成像，原文提供定性图像。",
+          "values": {
+            "design_focal_um": {
+              "value": 4130,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义有效焦距4.13 mm，含五个折射镜片、超表面及IR滤镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 4.13,
+              "original_unit": "mm",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "fnumber": {
+              "value": 2,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义F数。超表面所在面口径与入瞳尺寸的关系未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "五片球面折射镜片 + SiNₓ超表面 + IR滤镜",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组设计总光学长度22.29 mm。超表面是末端相位校正元件。折射参数与相位系数分别见S1和S2。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "optical_track_length_mm": 22.29,
+              "refractive_element_count": 5,
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "实拍色卡和自然物；无定量通道位移",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 Fig.5g及说明；补充材料 PDF pp8–9 Figs.S4–S5",
+              "note": "原文成像场景包括ISO12233、色卡和不同颜色物体。场景图称未做计算校正；展示中的色卡统一缩放至300×200像素。不提供横向色差数量。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 3.5,
+              "processing_stage": "captured",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "illumination": {
+              "value": "实验室可见光场景；精确光谱未报告",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 §3 Fig.5a–h",
+              "note": "对象距离按打印图注。镜组直接耦合CMOS，曝光与相机处理链细节未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 3.5,
+              "spectral_distribution": null
+            }
+          }
+        },
+        {
+          "id": "wu2025hybrid_camera_h",
+          "model": "Wu 2025 · 整组+CMOS · 4 m拍摄",
+          "study_id": "wu2025hybrid",
+          "specimen_id": "camera",
+          "module": "",
+          "variant": "可见光折射与超表面混合镜组",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "装配模组与商业CMOS的多物距成像，原文提供定性图像。",
+          "values": {
+            "design_focal_um": {
+              "value": 4130,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义有效焦距4.13 mm，含五个折射镜片、超表面及IR滤镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 4.13,
+              "original_unit": "mm",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "fnumber": {
+              "value": 2,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义F数。超表面所在面口径与入瞳尺寸的关系未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "五片球面折射镜片 + SiNₓ超表面 + IR滤镜",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组设计总光学长度22.29 mm。超表面是末端相位校正元件。折射参数与相位系数分别见S1和S2。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "optical_track_length_mm": 22.29,
+              "refractive_element_count": 5,
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "实拍色卡和自然物；无定量通道位移",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 Fig.5h及说明；补充材料 PDF pp8–9 Figs.S4–S5",
+              "note": "原文成像场景包括ISO12233、色卡和不同颜色物体。场景图称未做计算校正；展示中的色卡统一缩放至300×200像素。不提供横向色差数量。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 4,
+              "processing_stage": "captured",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "illumination": {
+              "value": "实验室可见光场景；精确光谱未报告",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p6 §3 Fig.5a–h",
+              "note": "对象距离按打印图注。镜组直接耦合CMOS，曝光与相机处理链细节未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 4,
+              "spectral_distribution": null
+            }
+          }
+        },
+        {
+          "id": "wu2025hybrid_model_with_corrector",
+          "model": "Wu 2025 · 有校正片设计",
+          "study_id": "wu2025hybrid",
+          "specimen_id": "model_with_corrector",
+          "module": "",
+          "variant": "可见光折射与超表面混合镜组",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "对应模型及S/T曲线定位。",
+          "values": {
+            "mtf_curve": {
+              "value": "光线追迹 S/T 的空间频率曲线",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p4 Fig.2a及图注；p3 §2",
+              "note": "图注称五种入射波长，图例只列六场角与S/T。五个精确谱点与权重未单列。角度按该图图例保存。 横轴空间频率（lp/mm），纵轴MTF。图例实线T、虚线S，曲线零频起点为1。逐频原表、算法或归一化处理细则未见。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ],
+              "mtf_kind": "ray_traced_field_mtf",
+              "frequency_unit": "lp/mm",
+              "reported_field_angle_labels_deg": [
+                0,
+                28,
+                42,
+                56,
+                73,
+                100
+              ],
+              "angle_convention": "figure_labels_as_printed",
+              "directions": [
+                "tangential",
+                "sagittal"
+              ],
+              "sample_wavelengths_nm": null,
+              "data_availability": {
+                "status": "curves_only",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "design_focal_um": {
+              "value": 4130,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义有效焦距4.13 mm，含五个折射镜片、超表面及IR滤镜。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "original_value": 4.13,
+              "original_unit": "mm",
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "fnumber": {
+              "value": 2,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组名义F数。超表面所在面口径与入瞳尺寸的关系未核。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "五片球面折射镜片 + SiNₓ超表面 + IR滤镜",
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组设计总光学长度22.29 mm。超表面是末端相位校正元件。折射参数与相位系数分别见S1和S2。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "optical_track_length_mm": 22.29,
+              "refractive_element_count": 5,
+              "sourceIds": [
+                "wu_hybrid_pdf_2025",
+                "wu_hybrid_si_2025"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 460,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组按460–656 nm设计和进行焦位表征范围描述。摘要的400–700 nm属于整体工作声明，逐谱点数表待核。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "spectrum_role": "system_design_and_axial_scan_range"
+            },
+            "lambda_max_nm": {
+              "value": 656,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "整组按460–656 nm设计和进行焦位表征范围描述。摘要的400–700 nm属于整体工作声明，逐谱点数表待核。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "spectrum_role": "system_design_and_axial_scan_range"
+            },
+            "fov_deg": {
+              "value": 100,
+              "source": "wu_hybrid_pdf_2025",
+              "location": "主文 p3 §2 光线追迹参数；补充材料 PDF pp3–4 Tables S1–S2",
+              "note": "带校正片的设计全视场。单色或S/T曲线参数按图例另存。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "wu2025hybrid_model_baseline",
+          "model": "Wu 2025 · 原折射组模型",
+          "study_id": "wu2025hybrid",
+          "specimen_id": "model_baseline",
+          "module": "",
+          "variant": "可见光折射与超表面混合镜组",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "对应模型及S/T曲线定位。",
+          "values": {
+            "mtf_curve": {
+              "value": "光线追迹 S/T 的空间频率曲线",
+              "source": "wu_hybrid_si_2025",
+              "location": "补充材料 PDF p5 Fig.S1；主文 p3 §2",
+              "note": "作者设计对照：引入超表面前的折射组。原组和长度缩放的关系照原文保存，模型并非实测模组。 横轴空间频率（lp/mm），纵轴MTF。图例实线T、虚线S，曲线零频起点为1。逐频原表、算法或归一化处理细则未见。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wu_hybrid_si_2025",
+                "wu_hybrid_pdf_2025"
+              ],
+              "mtf_kind": "ray_traced_field_mtf",
+              "frequency_unit": "lp/mm",
+              "reported_field_angle_labels_deg": [
+                0,
+                14,
+                21,
+                28,
+                36,
+                50
+              ],
+              "angle_convention": "figure_labels_as_printed",
+              "directions": [
+                "tangential",
+                "sagittal"
+              ],
+              "sample_wavelengths_nm": null,
+              "data_availability": {
+                "status": "curves_only",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "wu2025hybrid_model_removed_refocus",
+          "model": "Wu 2025 · 移除校正片后再聚焦模型",
+          "study_id": "wu2025hybrid",
+          "specimen_id": "model_removed_refocus",
+          "module": "",
+          "variant": "可见光折射与超表面混合镜组",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "对应模型及S/T曲线定位。",
+          "values": {
+            "mtf_curve": {
+              "value": "光线追迹 S/T 的空间频率曲线",
+              "source": "wu_hybrid_si_2025",
+              "location": "补充材料 PDF p6 Fig.S2；主文 p3 §2",
+              "note": "作者从整组模型移除校正片后重新对焦，模型并非正装实测整组。 横轴空间频率（lp/mm），纵轴MTF。图例实线T、虚线S，曲线零频起点为1。逐频原表、算法或归一化处理细则未见。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wu_hybrid_si_2025",
+                "wu_hybrid_pdf_2025"
+              ],
+              "mtf_kind": "ray_traced_field_mtf",
+              "frequency_unit": "lp/mm",
+              "reported_field_angle_labels_deg": [
+                0,
+                14,
+                21,
+                28,
+                36,
+                50
+              ],
+              "angle_convention": "figure_labels_as_printed",
+              "directions": [
+                "tangential",
+                "sagittal"
+              ],
+              "sample_wavelengths_nm": null,
+              "data_availability": {
+                "status": "curves_only",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
         }
       ],
-      "scope": "35项原始研究、187个器件/测量/系统配置、1368条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
+      "scope": "36项原始研究、195个器件/测量/系统配置、1386条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",

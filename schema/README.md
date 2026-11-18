@@ -89,3 +89,7 @@
 `resolved_test_line_width_um` 保存实拍标靶中作者辨认的对象侧线宽，附靶型、组/元素、采集通道、场点和对比阈值。共同阈值界限保留 `value=null`。
 
 `simulated_axial_fwhm_um` 保存模型 z 向强度半高全宽。`simulated_relative_spherical_aberration_pct` 保存作者以名义像距为分母的比例原印字，附名义像距并与未归一化 z 宽度分列。两处印字换算有差异时保留原值及对读记录。
+
+`system_slanted_edge_mtf` 保存作者由多色实拍斜边计算的无量纲MTF，和 `mtf_spatial_frequency_lpmm`、`mtf_curve` 的频率单位、处理阶段、方向及场点共同使用。全场平均和作者最大场点分开；数值角度未报告时写空。保留原始斜边、归一化、物像面频率和逐频表的缺口。
+
+作者只给出带内焦距变化及波长范围时，`focus_variation_um`、`focus_variation_pct` 可用 `spectral_sample_scope: author_reported_range_only`，逐点列表留空，须有同一行的上下波长和协议。不能用抽样曲线推定精确采样点并作为原始数据。
