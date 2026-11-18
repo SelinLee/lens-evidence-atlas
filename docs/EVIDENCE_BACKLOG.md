@@ -45,7 +45,8 @@
 | QUALITY-001z Yoon 2026 两物深PSF和光学/系统MTF | done | 0.3.23 经 PR #127/a7ce01e、Pages 44267510878 上线。271 个测试、12 文件一致、无头 Chrome 的306条记录、9个配置、6种视口及7个出处验证通过。原始PSF及逐频数表仍待补，见[核验](YOON_2026_REVIEW_2026-11-18.md)。 |
 | QUALITY-001aa Hasegawa 2026 毫米级单层离散RGB实测 | done | 0.3.24 经 PR #128/c8788b4、Pages 44272450188 上线。273 个测试、12 文件一致、无头 Chrome 的15条记录、6个焦差坐标、两类功率比、可见光筛选及引用往返通过。SI、原始数表和PSF待补，见[核验](HASEGAWA_2026_REVIEW_2026-11-18.md)。 |
 | QUALITY-001ab Bayati 2022 二维逆设计的可见光对照 | done | 0.3.25 经 PR #130/ec77ad8、Pages 44277936294 上线。275 个测试、12 文件一致、无头 Chrome 复核44行、12配置、10个读数、7个出处及六视口。原始数组与曲线归属仍待补，见[核验](BAYATI_2022_REVIEW_2026-11-18.md)。 |
-| QUALITY-001ac Bayati 2020 柱面线焦逆设计 | in_progress | 沿 Bayati 2022 参考文献41。已核 UW 正式 ACS PDF p877 Table 1 的四列共48个参数和 v2 补图 S1/S2。继续按柱面横宽、最小FWHM取焦协议、轴向采样和源数值录入。DOI 10.1021/acsphotonics.9b01703。 |
+| QUALITY-001ac Bayati 2020 柱面线焦逆设计 | in_progress | 正式版 Table 1 四列48个数值及 v2 补图 S1/S2 已核。录六只实制镜及模拟对照的焦位、焦深、最小x宽度和效率。原始PSF及MTF待补，见[核验](BAYATI_2020_REVIEW_2026-11-18.md)。 |
+| QUALITY-001ad Feng 2022 高NA RGB双层实制镜 | in_progress | 沿 Hasegawa 2026 Table 1 的参考文献46。核期刊出版信息、D1mm和设计NA0.8。继续取得主文与补充图表，优先分清实制主镜、厘米级与TiO₂设计。DOI 10.1021/acs.nanolett.2c00486。 |
 | QUALITY-002 手机SNR/MTF/色差独立测量 | in_progress | 本机Codex，2026-11-14；先核有型号和协议的SNR及MTF原始研究；外接镜组、场景与处理链不得写进原生模组，PSNR不替代SNR |
 | QUALITY-003 VRAR MTF与色差 | in_progress | 本机Codex，2026-11-14；复核开放PR #69数据及原文，优先MTF/截止频率、颜色/场点/眼位、色差和先进设备独立测量，不能从曲线猜统一单值 |
 | QUALITY-001a 文献器件首批 | done | 4项原始研究/8器件配置/21行，几何、波段、逐谱点焦距/FWHM/Strehl、PSNR及冲突；见[首批核验](QUALITY_BATCH_2026-11-14.md)；PR #72/23fdecb与Pages43571286647实页验收，不关闭父目标 |

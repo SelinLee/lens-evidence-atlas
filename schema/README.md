@@ -58,13 +58,17 @@
 
 `system_contrast_protocol`区分作者称MTF contrast的USAF线对Michelson对比度与PSF-FFT/严格正弦MTF。`metric_kind: usaf_michelson_linepair_contrast`、`direction_aggregation`（horizontal/vertical/mean_of_horizontal_vertical）、`frequency_unit: lp/mm`、`field_point`（未知null）、实际谱点和`processing_stage`必须保留；captured标作者`derived_from_measurement`、deconvolved标`reconstruction`，不能互换或把横纵平均改成独立S/T。多谱点汇总不绑定一个数值波长。MTF低于0.01的阈值不是频率测量值，中心像素/传感器圆域总计数也不混入聚焦功率效率。
 
-`simulated_focal_um`单独保存作者逐波长模拟轴向焦位，正值、`basis: model`、`calculation_origin: authors`、`position_definition: axial_intensity_maximum`，须绑定模型谱点（wavelength_nm也为model）和`psf_protocol`。不混同设计f/实测f/质心公式预测；同一行不能同时有数值型实测焦距。原表列名Measured若所属段明确Simulations，仍按模型处理；未明的取峰步长/插值/偏振保留未知。作者Focal Shift的符号/参考及DoF单位/阈值未明时只保存原述，不从模拟焦位生成实测色差或DOF坐标。
+`simulated_focal_um`保存作者模拟轴向焦位，正值、`basis: model`、`calculation_origin: authors`和`psf_protocol`。轴向峰强度取焦用`position_definition: axial_intensity_maximum`及明确模型谱点（`wavelength_nm`也为`model`）。原表报告模型焦位但取焦细节和实际网格波长待核时，可用`author_reported_unspecified`及`model_wavelength_status: author_nominal_design_only`，`wavelength_nm.value`留空并保留`psf_protocol.nominal_design_wavelength_nm`。同一行的数值型模拟和实测焦位互斥。报告的模型焦位、设计f、实测焦位和本库复算各自溯源。
+
+实测轴向最小横向FWHM取焦用`measured_focal_um`、`position_definition: minimum_transverse_fwhm`、`basis: derived_from_measurement`及作者计算，绑定实测谱点与`psf_protocol`。轴位、区间宽度和示例剖面采集面的来源分开。`cylindrical_aperture_width_um`保存柱面光学器件具有光焦度方向的横向尺度，圆形口径列按器件的原始定义填写。
 
 `author_longest_focal_depth_um`保存作者以指定轴向强度阈值定义的最长焦深/位置，不是最佳焦点或轴向DOF宽度。要求正值、实际λ、`basis: derived_from_measurement`、作者计算、`statistic: author_longest_focal_depth`、`threshold_intensity_fraction`在(0,1]、`reference_origin`（未知null）及`psf_protocol`。不能把阈值位置差当残余焦移。
 
 `depth_of_focus_um`保存作者按实测横向光束形状或其他明确判据给出的轴向区间宽度。记录实测λ、`dof_criterion`、作者实测计算和`psf_protocol`。`minimum_psf_fwhm_x_um`保存作者从近焦实测剖面中得到的最小x向半高全宽，记录`statistic`和`psf_protocol`。未知选面和光源继续留空。两者各自保留统计定义与采样范围。
 
 `reported_axial_scan_focusing_efficiency_pct`保存作者在轴扫效率段报告的功率比，保留`statistic`、`denominator`、作者实测计算和与分母一致的`efficiency_protocol`。作者的轴向单位或参考面存疑时保留原轴和缺口。专项报告值与指定λ的单焦面效率、带均值及整套光路模型使用各自的字段。
+
+`simulated_depth_of_focus_um`和`simulated_psf_fwhm_x_um`用于模型计算，标作者归属与`psf_protocol`，分别保留`dof_criterion`和x向的`statistic`。`simulated_focusing_efficiency_pct`保存作者模拟焦区对入射总功率的比值。`simulated_aperture_power_ratio_pct`保存同孔径面积内焦面与器件面积分之比，允许两种协议各以独立行保存。百分数与`efficiency_protocol`的分母须一致。
 
 `processed_psf_fwhm_um`与裸PSF宽度分列：正值、实际λ、`basis: reconstruction`、作者计算、`processing_stage: linear_intensity_subtraction`和非负系数；`psf_protocol`须绑定同系数与数值固定评价面。该行不能同时填写数值裸PSF FWHM。作者图内印字可录，负旁瓣/零点/归一化和未知拟合条件必须说明；不把处理后变窄当裸镜光学性能。
 

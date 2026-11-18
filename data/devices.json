@@ -1135,6 +1135,42 @@
       "scope": "PMC元数据与XML返回200。is_manuscript=false/is_retracted=false；对象目录未截断共41项，四个主文件、37幅jpg衍生图。XML未列SI文件或Data Availability元素，未定位独立PSF/MTF数组。",
       "checked_on": "2026-11-18",
       "publication_source": "bayati_edof_2022"
+    },
+    {
+      "id": "bayati_cylindrical_2020",
+      "title": "Bayati et al. (2020): Inverse Designed Metalenses with Extended Depth of Focus",
+      "url": "https://doi.org/10.1021/acsphotonics.9b01703",
+      "kind": "peer_reviewed_paper",
+      "scope": "ACS Photonics 7(4), 873–878。Crossref日期2020-03-25。出版社标注补充PDF，作者组提供正式主文，arXiv v2附补图。 独立无头验证 DOI 跳转出版社返回403。",
+      "checked_on": "2026-11-18",
+      "doi": "10.1021/acsphotonics.9b01703"
+    },
+    {
+      "id": "bayati_cylindrical_pdf_2020",
+      "title": "UW 作者组 · ACS 正式卷期PDF",
+      "url": "https://labs.ece.uw.edu/amlab/Papers_Journals/Elyas_Inverse_Design_EDOF.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "6页、3295164字节，SHA256 294f219eab1cbcd893c061b9ef99b9cb070b375f1c54cdfc9d124f88d79a8a32。核视觉Fig.1–4、Table 1和全文实验/设计段。未见嵌入附件。",
+      "checked_on": "2026-11-18",
+      "publication_source": "bayati_cylindrical_2020"
+    },
+    {
+      "id": "bayati_cylindrical_v2_2020",
+      "title": "arXiv:1910.06542v2 · 作者稿与S1/S2",
+      "url": "https://arxiv.org/pdf/1910.06542v2",
+      "kind": "author_manuscript",
+      "scope": "2020-04-02修订，21页4984516字节，SHA256 83867c5b05772c77b42b11144d11abcfd67c06a8a4b475c2806dcd9d1fbf2685。p15 Table 1与正式版对应，pp18–21含S1备选模型及S2斜入射模拟。ACS SI直连403。",
+      "checked_on": "2026-11-18",
+      "publication_source": "bayati_cylindrical_2020"
+    },
+    {
+      "id": "bayati_cylindrical_registry_2020",
+      "title": "DataCite · 精确关联 DOI 检索",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1021%2Facsphotonics.9b01703%22",
+      "kind": "repository",
+      "scope": "200，精确关联只命中同篇arXiv文稿DOI，无独立数据条目。Crossref未列关系，Figshare检索接口403。",
+      "checked_on": "2026-11-18",
+      "publication_source": "bayati_cylindrical_2020"
     }
   ],
   "domains": {
@@ -3690,17 +3726,21 @@
         },
         {
           "id": "simulated_focal_um",
-          "label": "该波长模拟焦位 (μm)",
+          "label": "模拟轴向焦位 (μm；取焦见出处)",
           "numeric": true,
           "axis_bounds": {
             "min": 0
           },
-          "definition": "作者数值模型的逐波长轴向焦位，非设计f、实测f或本库PSF复算；需明确原始数表与模拟取焦规则。",
-          "conditions": "实际模拟λ、basis=model、作者计算归属、取焦定义与psf_protocol；不继承实物口径/偏振/扫描协议，不将模拟Measured列当实测。",
+          "definition": "作者数值模型的轴向焦位，记录原始表值及取焦规则。",
+          "conditions": "模拟的波长和取焦定义见原始材料，未知条件留空。",
           "definition_refs": [
             {
               "source": "javed_twinlever_si_2026",
               "location": "SI p.11 TableS3/FigS7；主PDF p.7定义模拟/实验均以轴向最大强度面为焦面"
+            },
+            {
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 focal length / simulation列"
             }
           ]
         },
@@ -4590,6 +4630,88 @@
           "axis_bounds": {
             "min": 0
           }
+        },
+        {
+          "id": "cylindrical_aperture_width_um",
+          "label": "柱面器件横向尺度 (μm)",
+          "definition": "有线焦光焦度方向上的横向尺度。",
+          "conditions": "方向、几何或实测范围及名义/实物性质。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873摘要、p874 Fig.1"
+            }
+          ]
+        },
+        {
+          "id": "simulated_depth_of_focus_um",
+          "label": "模拟轴向焦深宽度 (μm)",
+          "definition": "作者模拟焦深判据对应的轴向区间宽度。",
+          "conditions": "模型、判据、轴向采样、取焦协议和原表误差。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 simulation列"
+            }
+          ]
+        },
+        {
+          "id": "simulated_psf_fwhm_x_um",
+          "label": "模拟x向焦斑FWHM (μm)",
+          "definition": "模拟横向焦斑剖面的原文FWHM。",
+          "conditions": "方向、模拟评价面、拟合及最小值的语境。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 simulation列"
+            }
+          ]
+        },
+        {
+          "id": "simulated_focusing_efficiency_pct",
+          "label": "模拟焦区聚焦效率 (%)",
+          "definition": "光学模型中焦区内功率与入射功率的比值。",
+          "conditions": "焦区尺寸、分母、模拟条件和评价面。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0,
+            "max": 100
+          },
+          "definition_refs": [
+            {
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p876 Fig.4对应方法；p877 Table 1 simulation列"
+            }
+          ]
+        },
+        {
+          "id": "simulated_aperture_power_ratio_pct",
+          "label": "模拟孔径面积功率比 (%)",
+          "definition": "相同器件孔径面积内，焦面与器件面的积分量之比。",
+          "conditions": "积分面积、参考面、器件分组和模拟条件。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0,
+            "max": 100
+          },
+          "definition_refs": [
+            {
+              "source": "bayati_cylindrical_v2_2020",
+              "location": "PDF p19 S1 cubic替代效率定义"
+            }
+          ]
         }
       ],
       "rows": [
@@ -190241,9 +190363,2714 @@
               "display": "0.5718"
             }
           }
+        },
+        {
+          "id": "bayati2020_ordinary_66p66_simulation",
+          "model": "Bayati 2020 · 普通 · 设计f 66.66μm · 模拟",
+          "study_id": "bayati2020",
+          "specimen_id": "ordinary_66p66_simulation",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同名义设计的模型结果，单独归配置。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p874 Fig.1A–D/设计段",
+              "note": "作者所称横向尺寸为66.66μm。光焦度集中在垂直于条纹的x方向。沿条纹长度及有效NA未单列。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Inverse Design；p875 Fig.2；p877 Table 1表题",
+              "note": "对应三种名义设计焦距，模型和实测轴位由Table 1各列给出。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 设计段；p875 Experimental Demonstration",
+              "note": "600nm SiN结构层，熔融石英基底厚500μm。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "pp874–875 设计和制程段",
+              "note": "设计周期443nm、条纹最窄100nm，150条纳米条。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "普通柱面透镜 · 单波长表征",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p876 Experimental Demonstration",
+              "note": "实测LED中心625nm，本文研究单波长轴向焦深。逐波长焦差和连续消色差范围缺证。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p875 Fig.2A–C；p877 Table 1",
+              "note": "设计工作在约625nm。该模拟列实际采用的精确波长未逐列写出。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "设计约625nm；模型谱点未单列"
+            },
+            "psf_protocol": {
+              "value": "2D FDTD及近焦剖面对比",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Fig.1E；p875 Fig.2；p876 Figs.3–4对应段",
+              "note": "作者2D FDTD沿z采样50nm。模拟的精确照明λ/偏振、网格和取焦细则待核。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "nominal_design_wavelength_nm": 625,
+              "axial_numerical_sample_um": 0.05,
+              "image_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "efficiency_protocol": {
+              "value": "焦面最小FWHM三倍为圆半径，分母为照到透镜的总功率",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p876 Fig.4D–F正文、p877 Table 1",
+              "note": "采用各镜在焦面的最小FWHM定半径，原表未写每个效率数字所取z、选点或汇总方法。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_power_on_metalens",
+              "integration_radius_multiple_of_min_fwhm": 3,
+              "evaluation_plane_um": null
+            },
+            "simulated_focal_um": {
+              "value": 67.0,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 focal length × Ordinary/simulation 列，第1行（设计66.66μm）",
+              "note": "模型表所报focal length。模型取焦细则和轴向参考原点未明确。 ±按原表保留，来源具体统计定义未明。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "67 ± 0.05",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.05,
+                "sample_size": null
+              },
+              "sourceIds": [
+                "bayati_cylindrical_pdf_2020",
+                "bayati_cylindrical_v2_2020"
+              ],
+              "position_definition": "author_reported_unspecified",
+              "model_wavelength_status": "author_nominal_design_only"
+            },
+            "simulated_depth_of_focus_um": {
+              "value": 12.0,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 depth of focus × Ordinary/simulation 列，第1行（设计66.66μm）",
+              "note": "高斯形状持续的轴向范围。原文解释模拟和实测的轴向粒度不同。±按原表保存，重复数及置信水平未知。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "12 ± 0.05",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.05,
+                "sample_size": null
+              },
+              "dof_criterion": "author_gaussian_profile_range"
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": 0.95,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 fwhm × Ordinary/simulation 列，第1行（设计66.66μm）",
+              "note": "表中拟合宽度。该模拟列使用的精确评价面和拟合细节未逐列给出。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "0.95",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "author_table_reported_x_fwhm"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 19.1,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 efficiency × Ordinary/simulation 列，第1行（设计66.66μm）",
+              "note": "完整作者表值，具体选面或聚合方式待核。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "19.1",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_axial_scan_unspecified",
+              "denominator": "incident_power_on_metalens"
+            }
+          }
+        },
+        {
+          "id": "bayati2020_ordinary_66p66_experiment",
+          "model": "Bayati 2020 · 普通 · 设计f 66.66μm · 实测",
+          "study_id": "bayati2020",
+          "specimen_id": "ordinary_66p66_experiment",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "625nm LED轴扫实测及作者拟合/功率比。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p874 Fig.1A–D/设计段",
+              "note": "作者所称横向尺寸为66.66μm。光焦度集中在垂直于条纹的x方向。沿条纹长度及有效NA未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Inverse Design；p875 Fig.2；p877 Table 1表题",
+              "note": "对应三种名义设计焦距，模型和实测轴位由Table 1各列给出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 设计段；p875 Experimental Demonstration",
+              "note": "600nm SiN结构层，熔融石英基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "pp874–875 设计和制程段",
+              "note": "设计周期443nm、条纹最窄100nm，150条纳米条。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "普通柱面透镜 · 单波长表征",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p876 Experimental Demonstration",
+              "note": "实测LED中心625nm，本文研究单波长轴向焦深。逐波长焦差和连续消色差范围缺证。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Fig.1E；p876 实验方法",
+              "note": "实制器件扫描的LED中心波长，谱宽未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "625nm LED轴扫，近焦x剖面高斯拟合",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Fig.1E；p875 Fig.2；p876 Figs.3–4对应段",
+              "note": "Thorlabs M625F2光纤耦合LED，线偏振器、40×物镜、筒镜与相机。位移台轴向分辨率2μm；照明偏振方向、有效像素尺度、具体步长和重复数待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_stage_resolution_um": 2,
+              "nominal_collection_magnification": 40,
+              "image_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "efficiency_protocol": {
+              "value": "焦面最小FWHM三倍为圆半径，分母为照到透镜的总功率",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p876 Fig.4D–F正文、p877 Table 1",
+              "note": "采用各镜在焦面的最小FWHM定半径，原表未写每个效率数字所取z、选点或汇总方法。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_power_on_metalens",
+              "integration_radius_multiple_of_min_fwhm": 3,
+              "evaluation_plane_um": null
+            },
+            "measured_focal_um": {
+              "value": 70.0,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 focal length × Ordinary/experiment 列，第1行（设计66.66μm）",
+              "note": "作者用轴向FWHM曲线估计轴位，EDOF中心剖面见Fig.2H/K/N。轴向零点的实现和拟合细则未给。 ±按原表保留，来源具体统计定义未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "70 ± 2",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 2.0,
+                "sample_size": null
+              },
+              "sourceIds": [
+                "bayati_cylindrical_pdf_2020",
+                "bayati_cylindrical_v2_2020"
+              ],
+              "position_definition": "minimum_transverse_fwhm"
+            },
+            "depth_of_focus_um": {
+              "value": 12.0,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 depth of focus × Ordinary/experiment 列，第1行（设计66.66μm）",
+              "note": "高斯形状持续的轴向范围。原文解释模拟和实测的轴向粒度不同。±按原表保存，重复数及置信水平未知。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "12 ± 2",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 2.0,
+                "sample_size": null
+              },
+              "dof_criterion": "author_gaussian_profile_range"
+            },
+            "minimum_psf_fwhm_x_um": {
+              "value": 0.97,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 fwhm × Ordinary/experiment 列，第1行（设计66.66μm）",
+              "note": "作者拟合近焦x向强度剖面，保留Table 1所列最小FWHM。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.97",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "minimum_near_focus_gaussian_fit"
+            },
+            "reported_axial_scan_focusing_efficiency_pct": {
+              "value": 18.6,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 efficiency × Ordinary/experiment 列，第1行（设计66.66μm）",
+              "note": "完整作者表值，具体选面或聚合方式待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "18.6",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_axial_scan_unspecified",
+              "denominator": "incident_power_on_metalens"
+            },
+            "mtf_curve": {
+              "value": "原文为焦斑及轴向扫描",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p875 Fig.2；p876 Figs.3–4；arXiv v2 PDF pp18–21",
+              "note": "已读正式版与作者补图中没有可录MTF曲线。原始PSF、采样和处理条件仍待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "bayati_cylindrical_pdf_2020",
+                "bayati_cylindrical_v2_2020",
+                "bayati_cylindrical_registry_2020"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material"
+              }
+            }
+          }
+        },
+        {
+          "id": "bayati2020_edof_66p66_simulation",
+          "model": "Bayati 2020 · 逆设计EDOF · 设计f 66.66μm · 模拟",
+          "study_id": "bayati2020",
+          "specimen_id": "edof_66p66_simulation",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同名义设计的模型结果，单独归配置。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p874 Fig.1A–D/设计段",
+              "note": "作者所称横向尺寸为66.66μm。光焦度集中在垂直于条纹的x方向。沿条纹长度及有效NA未单列。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Inverse Design；p875 Fig.2；p877 Table 1表题",
+              "note": "对应三种名义设计焦距，模型和实测轴位由Table 1各列给出。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 设计段；p875 Experimental Demonstration",
+              "note": "600nm SiN结构层，熔融石英基底厚500μm。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "pp874–875 设计和制程段",
+              "note": "设计周期443nm、条纹最窄100nm，150条纳米条。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "逆设计柱面EDOF · 单波长表征",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p876 Experimental Demonstration",
+              "note": "实测LED中心625nm，本文研究单波长轴向焦深。逐波长焦差和连续消色差范围缺证。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p875 Fig.2A–C；p877 Table 1",
+              "note": "设计工作在约625nm。该模拟列实际采用的精确波长未逐列写出。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "设计约625nm；模型谱点未单列"
+            },
+            "psf_protocol": {
+              "value": "2D FDTD及近焦剖面对比",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Fig.1E；p875 Fig.2；p876 Figs.3–4对应段",
+              "note": "作者2D FDTD沿z采样50nm。模拟的精确照明λ/偏振、网格和取焦细则待核。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "nominal_design_wavelength_nm": 625,
+              "axial_numerical_sample_um": 0.05,
+              "image_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "efficiency_protocol": {
+              "value": "焦面最小FWHM三倍为圆半径，分母为照到透镜的总功率",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p876 Fig.4D–F正文、p877 Table 1",
+              "note": "采用各镜在焦面的最小FWHM定半径，原表未写每个效率数字所取z、选点或汇总方法。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_power_on_metalens",
+              "integration_radius_multiple_of_min_fwhm": 3,
+              "evaluation_plane_um": null
+            },
+            "simulated_focal_um": {
+              "value": 64.2,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 focal length × EDOF/simulation 列，第1行（设计66.66μm）",
+              "note": "模型表所报focal length。模型取焦细则和轴向参考原点未明确。 ±按原表保留，来源具体统计定义未明。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "64.2 ± 0.05",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.05,
+                "sample_size": null
+              },
+              "sourceIds": [
+                "bayati_cylindrical_pdf_2020",
+                "bayati_cylindrical_v2_2020"
+              ],
+              "position_definition": "author_reported_unspecified",
+              "model_wavelength_status": "author_nominal_design_only"
+            },
+            "simulated_depth_of_focus_um": {
+              "value": 17.0,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 depth of focus × EDOF/simulation 列，第1行（设计66.66μm）",
+              "note": "高斯形状持续的轴向范围。原文解释模拟和实测的轴向粒度不同。±按原表保存，重复数及置信水平未知。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "17 ± 0.05",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.05,
+                "sample_size": null
+              },
+              "dof_criterion": "author_gaussian_profile_range"
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": 0.96,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 fwhm × EDOF/simulation 列，第1行（设计66.66μm）",
+              "note": "表中拟合宽度。该模拟列使用的精确评价面和拟合细节未逐列给出。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "0.96",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "author_table_reported_x_fwhm"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 16.8,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 efficiency × EDOF/simulation 列，第1行（设计66.66μm）",
+              "note": "完整作者表值，具体选面或聚合方式待核。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "16.8",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_axial_scan_unspecified",
+              "denominator": "incident_power_on_metalens"
+            }
+          }
+        },
+        {
+          "id": "bayati2020_edof_66p66_experiment",
+          "model": "Bayati 2020 · 逆设计EDOF · 设计f 66.66μm · 实测",
+          "study_id": "bayati2020",
+          "specimen_id": "edof_66p66_experiment",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "625nm LED轴扫实测及作者拟合/功率比。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p874 Fig.1A–D/设计段",
+              "note": "作者所称横向尺寸为66.66μm。光焦度集中在垂直于条纹的x方向。沿条纹长度及有效NA未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Inverse Design；p875 Fig.2；p877 Table 1表题",
+              "note": "对应三种名义设计焦距，模型和实测轴位由Table 1各列给出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 设计段；p875 Experimental Demonstration",
+              "note": "600nm SiN结构层，熔融石英基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "pp874–875 设计和制程段",
+              "note": "设计周期443nm、条纹最窄100nm，150条纳米条。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "逆设计柱面EDOF · 单波长表征",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p876 Experimental Demonstration",
+              "note": "实测LED中心625nm，本文研究单波长轴向焦深。逐波长焦差和连续消色差范围缺证。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Fig.1E；p876 实验方法",
+              "note": "实制器件扫描的LED中心波长，谱宽未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "625nm LED轴扫，近焦x剖面高斯拟合",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Fig.1E；p875 Fig.2；p876 Figs.3–4对应段",
+              "note": "Thorlabs M625F2光纤耦合LED，线偏振器、40×物镜、筒镜与相机。位移台轴向分辨率2μm；照明偏振方向、有效像素尺度、具体步长和重复数待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_stage_resolution_um": 2,
+              "nominal_collection_magnification": 40,
+              "evaluation_plane_um": 70,
+              "image_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "efficiency_protocol": {
+              "value": "焦面最小FWHM三倍为圆半径，分母为照到透镜的总功率",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p876 Fig.4D–F正文、p877 Table 1",
+              "note": "采用各镜在焦面的最小FWHM定半径，原表未写每个效率数字所取z、选点或汇总方法。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_power_on_metalens",
+              "integration_radius_multiple_of_min_fwhm": 3,
+              "evaluation_plane_um": null
+            },
+            "measured_focal_um": {
+              "value": 70.0,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 focal length × EDOF/experiment 列，第1行（设计66.66μm）",
+              "note": "作者用轴向FWHM曲线估计轴位，EDOF中心剖面见Fig.2H/K/N。轴向零点的实现和拟合细则未给。 ±按原表保留，来源具体统计定义未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "70 ± 2",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 2.0,
+                "sample_size": null
+              },
+              "sourceIds": [
+                "bayati_cylindrical_pdf_2020",
+                "bayati_cylindrical_v2_2020"
+              ],
+              "position_definition": "minimum_transverse_fwhm"
+            },
+            "depth_of_focus_um": {
+              "value": 16.0,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 depth of focus × EDOF/experiment 列，第1行（设计66.66μm）",
+              "note": "高斯形状持续的轴向范围。原文解释模拟和实测的轴向粒度不同。±按原表保存，重复数及置信水平未知。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "16 ± 2",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 2.0,
+                "sample_size": null
+              },
+              "dof_criterion": "author_gaussian_profile_range"
+            },
+            "minimum_psf_fwhm_x_um": {
+              "value": 1.07,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 fwhm × EDOF/experiment 列，第1行（设计66.66μm）",
+              "note": "作者拟合近焦x向强度剖面，保留Table 1所列最小FWHM。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "1.07",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "minimum_near_focus_gaussian_fit"
+            },
+            "reported_axial_scan_focusing_efficiency_pct": {
+              "value": 16.34,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 efficiency × EDOF/experiment 列，第1行（设计66.66μm）",
+              "note": "完整作者表值，具体选面或聚合方式待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "16.34",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_axial_scan_unspecified",
+              "denominator": "incident_power_on_metalens"
+            },
+            "mtf_curve": {
+              "value": "原文为焦斑及轴向扫描",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p875 Fig.2；p876 Figs.3–4；arXiv v2 PDF pp18–21",
+              "note": "已读正式版与作者补图中没有可录MTF曲线。原始PSF、采样和处理条件仍待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "bayati_cylindrical_pdf_2020",
+                "bayati_cylindrical_v2_2020",
+                "bayati_cylindrical_registry_2020"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material"
+              }
+            }
+          }
+        },
+        {
+          "id": "bayati2020_ordinary_100_simulation",
+          "model": "Bayati 2020 · 普通 · 设计f 100μm · 模拟",
+          "study_id": "bayati2020",
+          "specimen_id": "ordinary_100_simulation",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同名义设计的模型结果，单独归配置。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p874 Fig.1A–D/设计段",
+              "note": "作者所称横向尺寸为66.66μm。光焦度集中在垂直于条纹的x方向。沿条纹长度及有效NA未单列。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Inverse Design；p875 Fig.2；p877 Table 1表题",
+              "note": "对应三种名义设计焦距，模型和实测轴位由Table 1各列给出。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 设计段；p875 Experimental Demonstration",
+              "note": "600nm SiN结构层，熔融石英基底厚500μm。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "pp874–875 设计和制程段",
+              "note": "设计周期443nm、条纹最窄100nm，150条纳米条。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "普通柱面透镜 · 单波长表征",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p876 Experimental Demonstration",
+              "note": "实测LED中心625nm，本文研究单波长轴向焦深。逐波长焦差和连续消色差范围缺证。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p875 Fig.2A–C；p877 Table 1",
+              "note": "设计工作在约625nm。该模拟列实际采用的精确波长未逐列写出。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "设计约625nm；模型谱点未单列"
+            },
+            "psf_protocol": {
+              "value": "2D FDTD及近焦剖面对比",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Fig.1E；p875 Fig.2；p876 Figs.3–4对应段",
+              "note": "作者2D FDTD沿z采样50nm。模拟的精确照明λ/偏振、网格和取焦细则待核。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "nominal_design_wavelength_nm": 625,
+              "axial_numerical_sample_um": 0.05,
+              "image_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "efficiency_protocol": {
+              "value": "焦面最小FWHM三倍为圆半径，分母为照到透镜的总功率",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p876 Fig.4D–F正文、p877 Table 1",
+              "note": "采用各镜在焦面的最小FWHM定半径，原表未写每个效率数字所取z、选点或汇总方法。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_power_on_metalens",
+              "integration_radius_multiple_of_min_fwhm": 3,
+              "evaluation_plane_um": null
+            },
+            "simulated_focal_um": {
+              "value": 102.0,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 focal length × Ordinary/simulation 列，第2行（设计100μm）",
+              "note": "模型表所报focal length。模型取焦细则和轴向参考原点未明确。 ±按原表保留，来源具体统计定义未明。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "102 ± 0.05",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.05,
+                "sample_size": null
+              },
+              "sourceIds": [
+                "bayati_cylindrical_pdf_2020",
+                "bayati_cylindrical_v2_2020"
+              ],
+              "position_definition": "author_reported_unspecified",
+              "model_wavelength_status": "author_nominal_design_only"
+            },
+            "simulated_depth_of_focus_um": {
+              "value": 14.0,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 depth of focus × Ordinary/simulation 列，第2行（设计100μm）",
+              "note": "高斯形状持续的轴向范围。原文解释模拟和实测的轴向粒度不同。±按原表保存，重复数及置信水平未知。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "14 ± 0.05",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.05,
+                "sample_size": null
+              },
+              "dof_criterion": "author_gaussian_profile_range"
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": 1.1,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 fwhm × Ordinary/simulation 列，第2行（设计100μm）",
+              "note": "表中拟合宽度。该模拟列使用的精确评价面和拟合细节未逐列给出。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "1.1",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "author_table_reported_x_fwhm"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 22.26,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 efficiency × Ordinary/simulation 列，第2行（设计100μm）",
+              "note": "完整作者表值，具体选面或聚合方式待核。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "22.26",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_axial_scan_unspecified",
+              "denominator": "incident_power_on_metalens"
+            }
+          }
+        },
+        {
+          "id": "bayati2020_ordinary_100_experiment",
+          "model": "Bayati 2020 · 普通 · 设计f 100μm · 实测",
+          "study_id": "bayati2020",
+          "specimen_id": "ordinary_100_experiment",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "625nm LED轴扫实测及作者拟合/功率比。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p874 Fig.1A–D/设计段",
+              "note": "作者所称横向尺寸为66.66μm。光焦度集中在垂直于条纹的x方向。沿条纹长度及有效NA未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Inverse Design；p875 Fig.2；p877 Table 1表题",
+              "note": "对应三种名义设计焦距，模型和实测轴位由Table 1各列给出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 设计段；p875 Experimental Demonstration",
+              "note": "600nm SiN结构层，熔融石英基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "pp874–875 设计和制程段",
+              "note": "设计周期443nm、条纹最窄100nm，150条纳米条。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "普通柱面透镜 · 单波长表征",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p876 Experimental Demonstration",
+              "note": "实测LED中心625nm，本文研究单波长轴向焦深。逐波长焦差和连续消色差范围缺证。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Fig.1E；p876 实验方法",
+              "note": "实制器件扫描的LED中心波长，谱宽未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "625nm LED轴扫，近焦x剖面高斯拟合",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Fig.1E；p875 Fig.2；p876 Figs.3–4对应段",
+              "note": "Thorlabs M625F2光纤耦合LED，线偏振器、40×物镜、筒镜与相机。位移台轴向分辨率2μm；照明偏振方向、有效像素尺度、具体步长和重复数待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_stage_resolution_um": 2,
+              "nominal_collection_magnification": 40,
+              "image_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "efficiency_protocol": {
+              "value": "焦面最小FWHM三倍为圆半径，分母为照到透镜的总功率",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p876 Fig.4D–F正文、p877 Table 1",
+              "note": "采用各镜在焦面的最小FWHM定半径，原表未写每个效率数字所取z、选点或汇总方法。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_power_on_metalens",
+              "integration_radius_multiple_of_min_fwhm": 3,
+              "evaluation_plane_um": null
+            },
+            "measured_focal_um": {
+              "value": 102.0,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 focal length × Ordinary/experiment 列，第2行（设计100μm）",
+              "note": "作者用轴向FWHM曲线估计轴位，EDOF中心剖面见Fig.2H/K/N。轴向零点的实现和拟合细则未给。 ±按原表保留，来源具体统计定义未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "102 ± 2",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 2.0,
+                "sample_size": null
+              },
+              "sourceIds": [
+                "bayati_cylindrical_pdf_2020",
+                "bayati_cylindrical_v2_2020"
+              ],
+              "position_definition": "minimum_transverse_fwhm"
+            },
+            "depth_of_focus_um": {
+              "value": 16.0,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 depth of focus × Ordinary/experiment 列，第2行（设计100μm）",
+              "note": "高斯形状持续的轴向范围。原文解释模拟和实测的轴向粒度不同。±按原表保存，重复数及置信水平未知。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "16 ± 2",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 2.0,
+                "sample_size": null
+              },
+              "dof_criterion": "author_gaussian_profile_range"
+            },
+            "minimum_psf_fwhm_x_um": {
+              "value": 1.13,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 fwhm × Ordinary/experiment 列，第2行（设计100μm）",
+              "note": "作者拟合近焦x向强度剖面，保留Table 1所列最小FWHM。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "1.13",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "minimum_near_focus_gaussian_fit"
+            },
+            "reported_axial_scan_focusing_efficiency_pct": {
+              "value": 21.0,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 efficiency × Ordinary/experiment 列，第2行（设计100μm）",
+              "note": "完整作者表值，具体选面或聚合方式待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "21",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_axial_scan_unspecified",
+              "denominator": "incident_power_on_metalens"
+            },
+            "mtf_curve": {
+              "value": "原文为焦斑及轴向扫描",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p875 Fig.2；p876 Figs.3–4；arXiv v2 PDF pp18–21",
+              "note": "已读正式版与作者补图中没有可录MTF曲线。原始PSF、采样和处理条件仍待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "bayati_cylindrical_pdf_2020",
+                "bayati_cylindrical_v2_2020",
+                "bayati_cylindrical_registry_2020"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material"
+              }
+            }
+          }
+        },
+        {
+          "id": "bayati2020_edof_100_simulation",
+          "model": "Bayati 2020 · 逆设计EDOF · 设计f 100μm · 模拟",
+          "study_id": "bayati2020",
+          "specimen_id": "edof_100_simulation",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同名义设计的模型结果，单独归配置。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p874 Fig.1A–D/设计段",
+              "note": "作者所称横向尺寸为66.66μm。光焦度集中在垂直于条纹的x方向。沿条纹长度及有效NA未单列。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Inverse Design；p875 Fig.2；p877 Table 1表题",
+              "note": "对应三种名义设计焦距，模型和实测轴位由Table 1各列给出。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 设计段；p875 Experimental Demonstration",
+              "note": "600nm SiN结构层，熔融石英基底厚500μm。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "pp874–875 设计和制程段",
+              "note": "设计周期443nm、条纹最窄100nm，150条纳米条。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "逆设计柱面EDOF · 单波长表征",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p876 Experimental Demonstration",
+              "note": "实测LED中心625nm，本文研究单波长轴向焦深。逐波长焦差和连续消色差范围缺证。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p875 Fig.2A–C；p877 Table 1",
+              "note": "设计工作在约625nm。该模拟列实际采用的精确波长未逐列写出。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "设计约625nm；模型谱点未单列"
+            },
+            "psf_protocol": {
+              "value": "2D FDTD及近焦剖面对比",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Fig.1E；p875 Fig.2；p876 Figs.3–4对应段",
+              "note": "作者2D FDTD沿z采样50nm。模拟的精确照明λ/偏振、网格和取焦细则待核。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "nominal_design_wavelength_nm": 625,
+              "axial_numerical_sample_um": 0.05,
+              "image_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "efficiency_protocol": {
+              "value": "焦面最小FWHM三倍为圆半径，分母为照到透镜的总功率",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p876 Fig.4D–F正文、p877 Table 1",
+              "note": "采用各镜在焦面的最小FWHM定半径，原表未写每个效率数字所取z、选点或汇总方法。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_power_on_metalens",
+              "integration_radius_multiple_of_min_fwhm": 3,
+              "evaluation_plane_um": null
+            },
+            "simulated_focal_um": {
+              "value": 99.7,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 focal length × EDOF/simulation 列，第2行（设计100μm）",
+              "note": "模型表所报focal length。模型取焦细则和轴向参考原点未明确。 ±按原表保留，来源具体统计定义未明。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "99.7 ± 0.05",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.05,
+                "sample_size": null
+              },
+              "sourceIds": [
+                "bayati_cylindrical_pdf_2020",
+                "bayati_cylindrical_v2_2020"
+              ],
+              "position_definition": "author_reported_unspecified",
+              "model_wavelength_status": "author_nominal_design_only"
+            },
+            "simulated_depth_of_focus_um": {
+              "value": 30.0,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 depth of focus × EDOF/simulation 列，第2行（设计100μm）",
+              "note": "高斯形状持续的轴向范围。原文解释模拟和实测的轴向粒度不同。±按原表保存，重复数及置信水平未知。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "30 ± 0.05",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.05,
+                "sample_size": null
+              },
+              "dof_criterion": "author_gaussian_profile_range"
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": 1.3,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 fwhm × EDOF/simulation 列，第2行（设计100μm）",
+              "note": "表中拟合宽度。该模拟列使用的精确评价面和拟合细节未逐列给出。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "1.3",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "author_table_reported_x_fwhm"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 19.3,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 efficiency × EDOF/simulation 列，第2行（设计100μm）",
+              "note": "完整作者表值，具体选面或聚合方式待核。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "19.3",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_axial_scan_unspecified",
+              "denominator": "incident_power_on_metalens"
+            }
+          }
+        },
+        {
+          "id": "bayati2020_edof_100_experiment",
+          "model": "Bayati 2020 · 逆设计EDOF · 设计f 100μm · 实测",
+          "study_id": "bayati2020",
+          "specimen_id": "edof_100_experiment",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "625nm LED轴扫实测及作者拟合/功率比。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p874 Fig.1A–D/设计段",
+              "note": "作者所称横向尺寸为66.66μm。光焦度集中在垂直于条纹的x方向。沿条纹长度及有效NA未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Inverse Design；p875 Fig.2；p877 Table 1表题",
+              "note": "对应三种名义设计焦距，模型和实测轴位由Table 1各列给出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 设计段；p875 Experimental Demonstration",
+              "note": "600nm SiN结构层，熔融石英基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "pp874–875 设计和制程段",
+              "note": "设计周期443nm、条纹最窄100nm，150条纳米条。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "逆设计柱面EDOF · 单波长表征",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p876 Experimental Demonstration",
+              "note": "实测LED中心625nm，本文研究单波长轴向焦深。逐波长焦差和连续消色差范围缺证。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Fig.1E；p876 实验方法",
+              "note": "实制器件扫描的LED中心波长，谱宽未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "625nm LED轴扫，近焦x剖面高斯拟合",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Fig.1E；p875 Fig.2；p876 Figs.3–4对应段",
+              "note": "Thorlabs M625F2光纤耦合LED，线偏振器、40×物镜、筒镜与相机。位移台轴向分辨率2μm；照明偏振方向、有效像素尺度、具体步长和重复数待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_stage_resolution_um": 2,
+              "nominal_collection_magnification": 40,
+              "evaluation_plane_um": 104,
+              "image_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "efficiency_protocol": {
+              "value": "焦面最小FWHM三倍为圆半径，分母为照到透镜的总功率",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p876 Fig.4D–F正文、p877 Table 1",
+              "note": "采用各镜在焦面的最小FWHM定半径，原表未写每个效率数字所取z、选点或汇总方法。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_power_on_metalens",
+              "integration_radius_multiple_of_min_fwhm": 3,
+              "evaluation_plane_um": null
+            },
+            "measured_focal_um": {
+              "value": 104.0,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 focal length × EDOF/experiment 列，第2行（设计100μm）",
+              "note": "作者用轴向FWHM曲线估计轴位，EDOF中心剖面见Fig.2H/K/N。轴向零点的实现和拟合细则未给。 ±按原表保留，来源具体统计定义未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "104 ± 2",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 2.0,
+                "sample_size": null
+              },
+              "sourceIds": [
+                "bayati_cylindrical_pdf_2020",
+                "bayati_cylindrical_v2_2020"
+              ],
+              "position_definition": "minimum_transverse_fwhm"
+            },
+            "depth_of_focus_um": {
+              "value": 30.0,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 depth of focus × EDOF/experiment 列，第2行（设计100μm）",
+              "note": "高斯形状持续的轴向范围。原文解释模拟和实测的轴向粒度不同。±按原表保存，重复数及置信水平未知。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "30 ± 2",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 2.0,
+                "sample_size": null
+              },
+              "dof_criterion": "author_gaussian_profile_range"
+            },
+            "minimum_psf_fwhm_x_um": {
+              "value": 1.7,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 fwhm × EDOF/experiment 列，第2行（设计100μm）",
+              "note": "作者拟合近焦x向强度剖面，保留Table 1所列最小FWHM。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "1.7",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "minimum_near_focus_gaussian_fit"
+            },
+            "reported_axial_scan_focusing_efficiency_pct": {
+              "value": 20.12,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 efficiency × EDOF/experiment 列，第2行（设计100μm）",
+              "note": "完整作者表值，具体选面或聚合方式待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "20.12",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_axial_scan_unspecified",
+              "denominator": "incident_power_on_metalens"
+            },
+            "mtf_curve": {
+              "value": "原文为焦斑及轴向扫描",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p875 Fig.2；p876 Figs.3–4；arXiv v2 PDF pp18–21",
+              "note": "已读正式版与作者补图中没有可录MTF曲线。原始PSF、采样和处理条件仍待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "bayati_cylindrical_pdf_2020",
+                "bayati_cylindrical_v2_2020",
+                "bayati_cylindrical_registry_2020"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material"
+              }
+            }
+          }
+        },
+        {
+          "id": "bayati2020_ordinary_133p33_simulation",
+          "model": "Bayati 2020 · 普通 · 设计f 133.33μm · 模拟",
+          "study_id": "bayati2020",
+          "specimen_id": "ordinary_133p33_simulation",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同名义设计的模型结果，单独归配置。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p874 Fig.1A–D/设计段",
+              "note": "作者所称横向尺寸为66.66μm。光焦度集中在垂直于条纹的x方向。沿条纹长度及有效NA未单列。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 133.33,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Inverse Design；p875 Fig.2；p877 Table 1表题",
+              "note": "对应三种名义设计焦距，模型和实测轴位由Table 1各列给出。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 设计段；p875 Experimental Demonstration",
+              "note": "600nm SiN结构层，熔融石英基底厚500μm。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "pp874–875 设计和制程段",
+              "note": "设计周期443nm、条纹最窄100nm，150条纳米条。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "普通柱面透镜 · 单波长表征",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p876 Experimental Demonstration",
+              "note": "实测LED中心625nm，本文研究单波长轴向焦深。逐波长焦差和连续消色差范围缺证。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p875 Fig.2A–C；p877 Table 1",
+              "note": "设计工作在约625nm。该模拟列实际采用的精确波长未逐列写出。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "设计约625nm；模型谱点未单列"
+            },
+            "psf_protocol": {
+              "value": "2D FDTD及近焦剖面对比",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Fig.1E；p875 Fig.2；p876 Figs.3–4对应段",
+              "note": "作者2D FDTD沿z采样50nm。模拟的精确照明λ/偏振、网格和取焦细则待核。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "nominal_design_wavelength_nm": 625,
+              "axial_numerical_sample_um": 0.05,
+              "image_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "efficiency_protocol": {
+              "value": "焦面最小FWHM三倍为圆半径，分母为照到透镜的总功率",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p876 Fig.4D–F正文、p877 Table 1",
+              "note": "采用各镜在焦面的最小FWHM定半径，原表未写每个效率数字所取z、选点或汇总方法。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_power_on_metalens",
+              "integration_radius_multiple_of_min_fwhm": 3,
+              "evaluation_plane_um": null
+            },
+            "simulated_focal_um": {
+              "value": 136.0,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 focal length × Ordinary/simulation 列，第3行（设计133.33μm）",
+              "note": "模型表所报focal length。模型取焦细则和轴向参考原点未明确。 ±按原表保留，来源具体统计定义未明。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "136 ± 0.05",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.05,
+                "sample_size": null
+              },
+              "sourceIds": [
+                "bayati_cylindrical_pdf_2020",
+                "bayati_cylindrical_v2_2020"
+              ],
+              "position_definition": "author_reported_unspecified",
+              "model_wavelength_status": "author_nominal_design_only"
+            },
+            "simulated_depth_of_focus_um": {
+              "value": 18.0,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 depth of focus × Ordinary/simulation 列，第3行（设计133.33μm）",
+              "note": "高斯形状持续的轴向范围。原文解释模拟和实测的轴向粒度不同。±按原表保存，重复数及置信水平未知。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "18 ± 0.05",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.05,
+                "sample_size": null
+              },
+              "dof_criterion": "author_gaussian_profile_range"
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": 1.2,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 fwhm × Ordinary/simulation 列，第3行（设计133.33μm）",
+              "note": "表中拟合宽度。该模拟列使用的精确评价面和拟合细节未逐列给出。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "1.2",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "author_table_reported_x_fwhm"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 24.18,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 efficiency × Ordinary/simulation 列，第3行（设计133.33μm）",
+              "note": "完整作者表值，具体选面或聚合方式待核。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "24.18",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_axial_scan_unspecified",
+              "denominator": "incident_power_on_metalens"
+            }
+          }
+        },
+        {
+          "id": "bayati2020_ordinary_133p33_experiment",
+          "model": "Bayati 2020 · 普通 · 设计f 133.33μm · 实测",
+          "study_id": "bayati2020",
+          "specimen_id": "ordinary_133p33_experiment",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "625nm LED轴扫实测及作者拟合/功率比。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p874 Fig.1A–D/设计段",
+              "note": "作者所称横向尺寸为66.66μm。光焦度集中在垂直于条纹的x方向。沿条纹长度及有效NA未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 133.33,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Inverse Design；p875 Fig.2；p877 Table 1表题",
+              "note": "对应三种名义设计焦距，模型和实测轴位由Table 1各列给出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 设计段；p875 Experimental Demonstration",
+              "note": "600nm SiN结构层，熔融石英基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "pp874–875 设计和制程段",
+              "note": "设计周期443nm、条纹最窄100nm，150条纳米条。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "普通柱面透镜 · 单波长表征",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p876 Experimental Demonstration",
+              "note": "实测LED中心625nm，本文研究单波长轴向焦深。逐波长焦差和连续消色差范围缺证。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Fig.1E；p876 实验方法",
+              "note": "实制器件扫描的LED中心波长，谱宽未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "625nm LED轴扫，近焦x剖面高斯拟合",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Fig.1E；p875 Fig.2；p876 Figs.3–4对应段",
+              "note": "Thorlabs M625F2光纤耦合LED，线偏振器、40×物镜、筒镜与相机。位移台轴向分辨率2μm；照明偏振方向、有效像素尺度、具体步长和重复数待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_stage_resolution_um": 2,
+              "nominal_collection_magnification": 40,
+              "image_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "efficiency_protocol": {
+              "value": "焦面最小FWHM三倍为圆半径，分母为照到透镜的总功率",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p876 Fig.4D–F正文、p877 Table 1",
+              "note": "采用各镜在焦面的最小FWHM定半径，原表未写每个效率数字所取z、选点或汇总方法。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_power_on_metalens",
+              "integration_radius_multiple_of_min_fwhm": 3,
+              "evaluation_plane_um": null
+            },
+            "measured_focal_um": {
+              "value": 138.0,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 focal length × Ordinary/experiment 列，第3行（设计133.33μm）",
+              "note": "作者用轴向FWHM曲线估计轴位，EDOF中心剖面见Fig.2H/K/N。轴向零点的实现和拟合细则未给。 ±按原表保留，来源具体统计定义未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "138 ± 2",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 2.0,
+                "sample_size": null
+              },
+              "sourceIds": [
+                "bayati_cylindrical_pdf_2020",
+                "bayati_cylindrical_v2_2020"
+              ],
+              "position_definition": "minimum_transverse_fwhm"
+            },
+            "depth_of_focus_um": {
+              "value": 22.0,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 depth of focus × Ordinary/experiment 列，第3行（设计133.33μm）",
+              "note": "高斯形状持续的轴向范围。原文解释模拟和实测的轴向粒度不同。±按原表保存，重复数及置信水平未知。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "22 ± 2",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 2.0,
+                "sample_size": null
+              },
+              "dof_criterion": "author_gaussian_profile_range"
+            },
+            "minimum_psf_fwhm_x_um": {
+              "value": 1.36,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 fwhm × Ordinary/experiment 列，第3行（设计133.33μm）",
+              "note": "作者拟合近焦x向强度剖面，保留Table 1所列最小FWHM。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "1.36",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "minimum_near_focus_gaussian_fit"
+            },
+            "reported_axial_scan_focusing_efficiency_pct": {
+              "value": 24.65,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 efficiency × Ordinary/experiment 列，第3行（设计133.33μm）",
+              "note": "完整作者表值，具体选面或聚合方式待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "24.65",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_axial_scan_unspecified",
+              "denominator": "incident_power_on_metalens"
+            },
+            "mtf_curve": {
+              "value": "原文为焦斑及轴向扫描",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p875 Fig.2；p876 Figs.3–4；arXiv v2 PDF pp18–21",
+              "note": "已读正式版与作者补图中没有可录MTF曲线。原始PSF、采样和处理条件仍待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "bayati_cylindrical_pdf_2020",
+                "bayati_cylindrical_v2_2020",
+                "bayati_cylindrical_registry_2020"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material"
+              }
+            }
+          }
+        },
+        {
+          "id": "bayati2020_edof_133p33_simulation",
+          "model": "Bayati 2020 · 逆设计EDOF · 设计f 133.33μm · 模拟",
+          "study_id": "bayati2020",
+          "specimen_id": "edof_133p33_simulation",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同名义设计的模型结果，单独归配置。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p874 Fig.1A–D/设计段",
+              "note": "作者所称横向尺寸为66.66μm。光焦度集中在垂直于条纹的x方向。沿条纹长度及有效NA未单列。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 133.33,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Inverse Design；p875 Fig.2；p877 Table 1表题",
+              "note": "对应三种名义设计焦距，模型和实测轴位由Table 1各列给出。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 设计段；p875 Experimental Demonstration",
+              "note": "600nm SiN结构层，熔融石英基底厚500μm。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "pp874–875 设计和制程段",
+              "note": "设计周期443nm、条纹最窄100nm，150条纳米条。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "逆设计柱面EDOF · 单波长表征",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p876 Experimental Demonstration",
+              "note": "实测LED中心625nm，本文研究单波长轴向焦深。逐波长焦差和连续消色差范围缺证。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p875 Fig.2A–C；p877 Table 1",
+              "note": "设计工作在约625nm。该模拟列实际采用的精确波长未逐列写出。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "设计约625nm；模型谱点未单列"
+            },
+            "psf_protocol": {
+              "value": "2D FDTD及近焦剖面对比",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Fig.1E；p875 Fig.2；p876 Figs.3–4对应段",
+              "note": "作者2D FDTD沿z采样50nm。模拟的精确照明λ/偏振、网格和取焦细则待核。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "nominal_design_wavelength_nm": 625,
+              "axial_numerical_sample_um": 0.05,
+              "image_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "efficiency_protocol": {
+              "value": "焦面最小FWHM三倍为圆半径，分母为照到透镜的总功率",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p876 Fig.4D–F正文、p877 Table 1",
+              "note": "采用各镜在焦面的最小FWHM定半径，原表未写每个效率数字所取z、选点或汇总方法。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_power_on_metalens",
+              "integration_radius_multiple_of_min_fwhm": 3,
+              "evaluation_plane_um": null
+            },
+            "simulated_focal_um": {
+              "value": 129.8,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 focal length × EDOF/simulation 列，第3行（设计133.33μm）",
+              "note": "模型表所报focal length。模型取焦细则和轴向参考原点未明确。 ±按原表保留，来源具体统计定义未明。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "129.8 ± 0.05",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.05,
+                "sample_size": null
+              },
+              "sourceIds": [
+                "bayati_cylindrical_pdf_2020",
+                "bayati_cylindrical_v2_2020"
+              ],
+              "position_definition": "author_reported_unspecified",
+              "model_wavelength_status": "author_nominal_design_only"
+            },
+            "simulated_depth_of_focus_um": {
+              "value": 44.0,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 depth of focus × EDOF/simulation 列，第3行（设计133.33μm）",
+              "note": "高斯形状持续的轴向范围。原文解释模拟和实测的轴向粒度不同。±按原表保存，重复数及置信水平未知。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "44 ± 0.05",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.05,
+                "sample_size": null
+              },
+              "dof_criterion": "author_gaussian_profile_range"
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": 2.25,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 fwhm × EDOF/simulation 列，第3行（设计133.33μm）",
+              "note": "表中拟合宽度。该模拟列使用的精确评价面和拟合细节未逐列给出。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "2.25",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "author_table_reported_x_fwhm"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 22.21,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 efficiency × EDOF/simulation 列，第3行（设计133.33μm）",
+              "note": "完整作者表值，具体选面或聚合方式待核。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "22.21",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_axial_scan_unspecified",
+              "denominator": "incident_power_on_metalens"
+            }
+          }
+        },
+        {
+          "id": "bayati2020_edof_133p33_experiment",
+          "model": "Bayati 2020 · 逆设计EDOF · 设计f 133.33μm · 实测",
+          "study_id": "bayati2020",
+          "specimen_id": "edof_133p33_experiment",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "625nm LED轴扫实测及作者拟合/功率比。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p874 Fig.1A–D/设计段",
+              "note": "作者所称横向尺寸为66.66μm。光焦度集中在垂直于条纹的x方向。沿条纹长度及有效NA未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 133.33,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Inverse Design；p875 Fig.2；p877 Table 1表题",
+              "note": "对应三种名义设计焦距，模型和实测轴位由Table 1各列给出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 设计段；p875 Experimental Demonstration",
+              "note": "600nm SiN结构层，熔融石英基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "pp874–875 设计和制程段",
+              "note": "设计周期443nm、条纹最窄100nm，150条纳米条。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "逆设计柱面EDOF · 单波长表征",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p876 Experimental Demonstration",
+              "note": "实测LED中心625nm，本文研究单波长轴向焦深。逐波长焦差和连续消色差范围缺证。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Fig.1E；p876 实验方法",
+              "note": "实制器件扫描的LED中心波长，谱宽未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "625nm LED轴扫，近焦x剖面高斯拟合",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Fig.1E；p875 Fig.2；p876 Figs.3–4对应段",
+              "note": "Thorlabs M625F2光纤耦合LED，线偏振器、40×物镜、筒镜与相机。位移台轴向分辨率2μm；照明偏振方向、有效像素尺度、具体步长和重复数待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_stage_resolution_um": 2,
+              "nominal_collection_magnification": 40,
+              "evaluation_plane_um": 134,
+              "image_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "efficiency_protocol": {
+              "value": "焦面最小FWHM三倍为圆半径，分母为照到透镜的总功率",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p876 Fig.4D–F正文、p877 Table 1",
+              "note": "采用各镜在焦面的最小FWHM定半径，原表未写每个效率数字所取z、选点或汇总方法。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_power_on_metalens",
+              "integration_radius_multiple_of_min_fwhm": 3,
+              "evaluation_plane_um": null
+            },
+            "measured_focal_um": {
+              "value": 134.0,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 focal length × EDOF/experiment 列，第3行（设计133.33μm）",
+              "note": "作者用轴向FWHM曲线估计轴位，EDOF中心剖面见Fig.2H/K/N。轴向零点的实现和拟合细则未给。 ±按原表保留，来源具体统计定义未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "134 ± 2",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 2.0,
+                "sample_size": null
+              },
+              "sourceIds": [
+                "bayati_cylindrical_pdf_2020",
+                "bayati_cylindrical_v2_2020"
+              ],
+              "position_definition": "minimum_transverse_fwhm"
+            },
+            "depth_of_focus_um": {
+              "value": 44.0,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 depth of focus × EDOF/experiment 列，第3行（设计133.33μm）",
+              "note": "高斯形状持续的轴向范围。原文解释模拟和实测的轴向粒度不同。±按原表保存，重复数及置信水平未知。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "44 ± 2",
+              "calculation_origin": "authors",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 2.0,
+                "sample_size": null
+              },
+              "dof_criterion": "author_gaussian_profile_range"
+            },
+            "minimum_psf_fwhm_x_um": {
+              "value": 2.32,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 fwhm × EDOF/experiment 列，第3行（设计133.33μm）",
+              "note": "作者拟合近焦x向强度剖面，保留Table 1所列最小FWHM。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "2.32",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "minimum_near_focus_gaussian_fit"
+            },
+            "reported_axial_scan_focusing_efficiency_pct": {
+              "value": 23.48,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p877 Table 1 efficiency × EDOF/experiment 列，第3行（设计133.33μm）",
+              "note": "完整作者表值，具体选面或聚合方式待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "23.48",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_axial_scan_unspecified",
+              "denominator": "incident_power_on_metalens"
+            },
+            "mtf_curve": {
+              "value": "原文为焦斑及轴向扫描",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p875 Fig.2；p876 Figs.3–4；arXiv v2 PDF pp18–21",
+              "note": "已读正式版与作者补图中没有可录MTF曲线。原始PSF、采样和处理条件仍待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "bayati_cylindrical_pdf_2020",
+                "bayati_cylindrical_v2_2020",
+                "bayati_cylindrical_registry_2020"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material"
+              }
+            }
+          }
+        },
+        {
+          "id": "bayati2020_edof_66p66_experiment_profile_G",
+          "model": "Bayati 2020 · 逆设计EDOF · 设计f 66.66μm · z=62μm剖面",
+          "study_id": "bayati2020",
+          "specimen_id": "edof_66p66_experiment",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的边缘轴面实测x剖面位置。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p874 Fig.1A–D/设计段",
+              "note": "作者所称横向尺寸为66.66μm。光焦度集中在垂直于条纹的x方向。沿条纹长度及有效NA未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Inverse Design；p875 Fig.2；p877 Table 1表题",
+              "note": "对应三种名义设计焦距，模型和实测轴位由Table 1各列给出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 设计段；p875 Experimental Demonstration",
+              "note": "600nm SiN结构层，熔融石英基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "pp874–875 设计和制程段",
+              "note": "设计周期443nm、条纹最窄100nm，150条纳米条。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "逆设计柱面EDOF · 单波长表征",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p876 Experimental Demonstration",
+              "note": "实测LED中心625nm，本文研究单波长轴向焦深。逐波长焦差和连续消色差范围缺证。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p876 Experimental Demonstration",
+              "note": "对应Fig.2D–F轴扫的LED中心波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "作者绘制的双高斯边缘剖面",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p875 Fig.2G z=62μm印字；p876 高斯拟合段",
+              "note": "此拍摄面用于显示由单高斯向双高斯转变。拍摄面写入协议；宽度和区间另依原表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "evaluation_plane_um": 62,
+              "direction": "x",
+              "profile_fit": "double_gaussian",
+              "image_plane_pixel_size_um": null
+            }
+          }
+        },
+        {
+          "id": "bayati2020_edof_66p66_experiment_profile_I",
+          "model": "Bayati 2020 · 逆设计EDOF · 设计f 66.66μm · z=78μm剖面",
+          "study_id": "bayati2020",
+          "specimen_id": "edof_66p66_experiment",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的边缘轴面实测x剖面位置。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p874 Fig.1A–D/设计段",
+              "note": "作者所称横向尺寸为66.66μm。光焦度集中在垂直于条纹的x方向。沿条纹长度及有效NA未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Inverse Design；p875 Fig.2；p877 Table 1表题",
+              "note": "对应三种名义设计焦距，模型和实测轴位由Table 1各列给出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 设计段；p875 Experimental Demonstration",
+              "note": "600nm SiN结构层，熔融石英基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "pp874–875 设计和制程段",
+              "note": "设计周期443nm、条纹最窄100nm，150条纳米条。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "逆设计柱面EDOF · 单波长表征",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p876 Experimental Demonstration",
+              "note": "实测LED中心625nm，本文研究单波长轴向焦深。逐波长焦差和连续消色差范围缺证。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p876 Experimental Demonstration",
+              "note": "对应Fig.2D–F轴扫的LED中心波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "作者绘制的双高斯边缘剖面",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p875 Fig.2I z=78μm印字；p876 高斯拟合段",
+              "note": "此拍摄面用于显示由单高斯向双高斯转变。拍摄面写入协议；宽度和区间另依原表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "evaluation_plane_um": 78,
+              "direction": "x",
+              "profile_fit": "double_gaussian",
+              "image_plane_pixel_size_um": null
+            }
+          }
+        },
+        {
+          "id": "bayati2020_edof_100_experiment_profile_J",
+          "model": "Bayati 2020 · 逆设计EDOF · 设计f 100μm · z=92μm剖面",
+          "study_id": "bayati2020",
+          "specimen_id": "edof_100_experiment",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的边缘轴面实测x剖面位置。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p874 Fig.1A–D/设计段",
+              "note": "作者所称横向尺寸为66.66μm。光焦度集中在垂直于条纹的x方向。沿条纹长度及有效NA未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Inverse Design；p875 Fig.2；p877 Table 1表题",
+              "note": "对应三种名义设计焦距，模型和实测轴位由Table 1各列给出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 设计段；p875 Experimental Demonstration",
+              "note": "600nm SiN结构层，熔融石英基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "pp874–875 设计和制程段",
+              "note": "设计周期443nm、条纹最窄100nm，150条纳米条。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "逆设计柱面EDOF · 单波长表征",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p876 Experimental Demonstration",
+              "note": "实测LED中心625nm，本文研究单波长轴向焦深。逐波长焦差和连续消色差范围缺证。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p876 Experimental Demonstration",
+              "note": "对应Fig.2D–F轴扫的LED中心波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "作者绘制的双高斯边缘剖面",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p875 Fig.2J z=92μm印字；p876 高斯拟合段",
+              "note": "此拍摄面用于显示由单高斯向双高斯转变。拍摄面写入协议；宽度和区间另依原表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "evaluation_plane_um": 92,
+              "direction": "x",
+              "profile_fit": "double_gaussian",
+              "image_plane_pixel_size_um": null
+            }
+          }
+        },
+        {
+          "id": "bayati2020_edof_100_experiment_profile_L",
+          "model": "Bayati 2020 · 逆设计EDOF · 设计f 100μm · z=124μm剖面",
+          "study_id": "bayati2020",
+          "specimen_id": "edof_100_experiment",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的边缘轴面实测x剖面位置。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p874 Fig.1A–D/设计段",
+              "note": "作者所称横向尺寸为66.66μm。光焦度集中在垂直于条纹的x方向。沿条纹长度及有效NA未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Inverse Design；p875 Fig.2；p877 Table 1表题",
+              "note": "对应三种名义设计焦距，模型和实测轴位由Table 1各列给出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 设计段；p875 Experimental Demonstration",
+              "note": "600nm SiN结构层，熔融石英基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "pp874–875 设计和制程段",
+              "note": "设计周期443nm、条纹最窄100nm，150条纳米条。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "逆设计柱面EDOF · 单波长表征",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p876 Experimental Demonstration",
+              "note": "实测LED中心625nm，本文研究单波长轴向焦深。逐波长焦差和连续消色差范围缺证。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p876 Experimental Demonstration",
+              "note": "对应Fig.2D–F轴扫的LED中心波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "作者绘制的双高斯边缘剖面",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p875 Fig.2L z=124μm印字；p876 高斯拟合段",
+              "note": "此拍摄面用于显示由单高斯向双高斯转变。拍摄面写入协议；宽度和区间另依原表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "evaluation_plane_um": 124,
+              "direction": "x",
+              "profile_fit": "double_gaussian",
+              "image_plane_pixel_size_um": null
+            }
+          }
+        },
+        {
+          "id": "bayati2020_edof_133p33_experiment_profile_M",
+          "model": "Bayati 2020 · 逆设计EDOF · 设计f 133.33μm · z=118μm剖面",
+          "study_id": "bayati2020",
+          "specimen_id": "edof_133p33_experiment",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的边缘轴面实测x剖面位置。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p874 Fig.1A–D/设计段",
+              "note": "作者所称横向尺寸为66.66μm。光焦度集中在垂直于条纹的x方向。沿条纹长度及有效NA未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 133.33,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Inverse Design；p875 Fig.2；p877 Table 1表题",
+              "note": "对应三种名义设计焦距，模型和实测轴位由Table 1各列给出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 设计段；p875 Experimental Demonstration",
+              "note": "600nm SiN结构层，熔融石英基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "pp874–875 设计和制程段",
+              "note": "设计周期443nm、条纹最窄100nm，150条纳米条。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "逆设计柱面EDOF · 单波长表征",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p876 Experimental Demonstration",
+              "note": "实测LED中心625nm，本文研究单波长轴向焦深。逐波长焦差和连续消色差范围缺证。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p876 Experimental Demonstration",
+              "note": "对应Fig.2D–F轴扫的LED中心波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "作者绘制的双高斯边缘剖面",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p875 Fig.2M z=118μm印字；p876 高斯拟合段",
+              "note": "此拍摄面用于显示由单高斯向双高斯转变。拍摄面写入协议；宽度和区间另依原表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "evaluation_plane_um": 118,
+              "direction": "x",
+              "profile_fit": "double_gaussian",
+              "image_plane_pixel_size_um": null
+            }
+          }
+        },
+        {
+          "id": "bayati2020_edof_133p33_experiment_profile_O",
+          "model": "Bayati 2020 · 逆设计EDOF · 设计f 133.33μm · z=164μm剖面",
+          "study_id": "bayati2020",
+          "specimen_id": "edof_133p33_experiment",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的边缘轴面实测x剖面位置。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p874 Fig.1A–D/设计段",
+              "note": "作者所称横向尺寸为66.66μm。光焦度集中在垂直于条纹的x方向。沿条纹长度及有效NA未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 133.33,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Inverse Design；p875 Fig.2；p877 Table 1表题",
+              "note": "对应三种名义设计焦距，模型和实测轴位由Table 1各列给出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 设计段；p875 Experimental Demonstration",
+              "note": "600nm SiN结构层，熔融石英基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "pp874–875 设计和制程段",
+              "note": "设计周期443nm、条纹最窄100nm，150条纳米条。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "逆设计柱面EDOF · 单波长表征",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p876 Experimental Demonstration",
+              "note": "实测LED中心625nm，本文研究单波长轴向焦深。逐波长焦差和连续消色差范围缺证。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p876 Experimental Demonstration",
+              "note": "对应Fig.2D–F轴扫的LED中心波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "作者绘制的双高斯边缘剖面",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p875 Fig.2O z=164μm印字；p876 高斯拟合段",
+              "note": "此拍摄面用于显示由单高斯向双高斯转变。拍摄面写入协议；宽度和区间另依原表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "evaluation_plane_um": 164,
+              "direction": "x",
+              "profile_fit": "double_gaussian",
+              "image_plane_pixel_size_um": null
+            }
+          }
+        },
+        {
+          "id": "bayati2020_si_log",
+          "model": "Bayati 2020 · 对数非球面 · 模拟",
+          "study_id": "bayati2020",
+          "specimen_id": "si_log",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "附录比较模型，独立于6只实制镜。",
+          "values": {
+            "design_focal_um": {
+              "value": 100,
+              "source": "bayati_cylindrical_v2_2020",
+              "location": "arXiv v2 PDF pp19–20 S1、Fig.S1A/D",
+              "note": "配对比较的设计中心焦点f=100μm、目标焦深30μm。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "2D FDTD，标称焦面上的x剖面高斯拟合",
+              "source": "bayati_cylindrical_v2_2020",
+              "location": "arXiv v2 PDF pp19–20 S1、Fig.S1A/D",
+              "note": "轴向模拟采样50nm。实际光谱、口径和拟合窗口未单列。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "direction": "x",
+              "axial_numerical_sample_um": 0.05,
+              "design_depth_of_focus_um": 30
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆半径3×FWHM，分母照至透镜的总功率",
+              "source": "bayati_cylindrical_v2_2020",
+              "location": "arXiv v2 PDF pp19–20 S1、Fig.S1A/D",
+              "note": "备选线焦模型的同协议比较。立方相位的孔径面积法另有报告值。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_power_on_metalens",
+              "integration_radius_multiple_of_fwhm": 3
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": 1.75,
+              "source": "bayati_cylindrical_v2_2020",
+              "location": "arXiv v2 PDF pp19–20 S1、Fig.S1A/D",
+              "note": "作者直接报告的模型高斯拟合x向宽度。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "1.75",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "fixed_plane_gaussian_fit"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 12.16,
+              "source": "bayati_cylindrical_v2_2020",
+              "location": "arXiv v2 PDF pp19–20 S1、Fig.S1A/D",
+              "note": "模型按作者焦区定义的百分数。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "12.16",
+              "calculation_origin": "authors",
+              "denominator": "incident_power_on_metalens",
+              "statistic": "author_reported_model_focal_plane"
+            }
+          }
+        },
+        {
+          "id": "bayati2020_si_axicon",
+          "model": "Bayati 2020 · 轴锥体 · 模拟",
+          "study_id": "bayati2020",
+          "specimen_id": "si_axicon",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "附录比较模型，独立于6只实制镜。",
+          "values": {
+            "design_focal_um": {
+              "value": 100,
+              "source": "bayati_cylindrical_v2_2020",
+              "location": "arXiv v2 PDF pp19–20 S1、Fig.S1B/E",
+              "note": "配对比较的设计中心焦点f=100μm、目标焦深30μm。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "2D FDTD，标称焦面上的x剖面高斯拟合",
+              "source": "bayati_cylindrical_v2_2020",
+              "location": "arXiv v2 PDF pp19–20 S1、Fig.S1B/E",
+              "note": "轴向模拟采样50nm。实际光谱、口径和拟合窗口未单列。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "direction": "x",
+              "axial_numerical_sample_um": 0.05,
+              "design_depth_of_focus_um": 30
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆半径3×FWHM，分母照至透镜的总功率",
+              "source": "bayati_cylindrical_v2_2020",
+              "location": "arXiv v2 PDF pp19–20 S1、Fig.S1B/E",
+              "note": "备选线焦模型的同协议比较。立方相位的孔径面积法另有报告值。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_power_on_metalens",
+              "integration_radius_multiple_of_fwhm": 3
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": 1.25,
+              "source": "bayati_cylindrical_v2_2020",
+              "location": "arXiv v2 PDF pp19–20 S1、Fig.S1B/E",
+              "note": "作者直接报告的模型高斯拟合x向宽度。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "1.25",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "fixed_plane_gaussian_fit"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 8.6,
+              "source": "bayati_cylindrical_v2_2020",
+              "location": "arXiv v2 PDF pp19–20 S1、Fig.S1B/E",
+              "note": "模型按作者焦区定义的百分数。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "8.6",
+              "calculation_origin": "authors",
+              "denominator": "incident_power_on_metalens",
+              "statistic": "author_reported_model_focal_plane"
+            }
+          }
+        },
+        {
+          "id": "bayati2020_si_cubic",
+          "model": "Bayati 2020 · 立方相位 · 模拟",
+          "study_id": "bayati2020",
+          "specimen_id": "si_cubic",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "附录比较模型，独立于6只实制镜。",
+          "values": {
+            "design_focal_um": {
+              "value": 100,
+              "source": "bayati_cylindrical_v2_2020",
+              "location": "arXiv v2 PDF pp19–20 S1、Fig.S1C/F",
+              "note": "配对比较的设计中心焦点f=100μm、目标焦深30μm。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "2D FDTD，标称焦面上的x剖面高斯拟合",
+              "source": "bayati_cylindrical_v2_2020",
+              "location": "arXiv v2 PDF pp19–20 S1、Fig.S1C/F",
+              "note": "轴向模拟采样50nm。实际光谱、口径和拟合窗口未单列。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "direction": "x",
+              "axial_numerical_sample_um": 0.05,
+              "design_depth_of_focus_um": 30
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆半径3×FWHM，分母照至透镜的总功率",
+              "source": "bayati_cylindrical_v2_2020",
+              "location": "arXiv v2 PDF pp19–20 S1、Fig.S1C/F",
+              "note": "备选线焦模型的同协议比较。立方相位的孔径面积法另有报告值。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_power_on_metalens",
+              "integration_radius_multiple_of_fwhm": 3
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": 1.7,
+              "source": "bayati_cylindrical_v2_2020",
+              "location": "arXiv v2 PDF pp19–20 S1、Fig.S1C/F",
+              "note": "作者直接报告的模型高斯拟合x向宽度。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "1.7",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "fixed_plane_gaussian_fit"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 14.47,
+              "source": "bayati_cylindrical_v2_2020",
+              "location": "arXiv v2 PDF pp19–20 S1、Fig.S1C/F",
+              "note": "模型按作者焦区定义的百分数。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "14.47",
+              "calculation_origin": "authors",
+              "denominator": "incident_power_on_metalens",
+              "statistic": "author_reported_model_focal_plane"
+            }
+          }
+        },
+        {
+          "id": "bayati2020_si_cubic_area",
+          "model": "Bayati 2020 · 立方相位 · 孔径面积法模拟",
+          "study_id": "bayati2020",
+          "specimen_id": "si_cubic",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一立方相位模型的替代积分口径。",
+          "values": {
+            "design_focal_um": {
+              "value": 100,
+              "source": "bayati_cylindrical_v2_2020",
+              "location": "arXiv v2 PDF p19 S1 cubic替代积分段",
+              "note": "S1对照的设计中心距。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_protocol": {
+              "value": "按器件孔径面积分别在焦面和透镜面积分",
+              "source": "bayati_cylindrical_v2_2020",
+              "location": "arXiv v2 PDF p19 S1 cubic替代积分段",
+              "note": "结果依作者对同一面积的强度积分之比；圆半径3×FWHM的值另列。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "aperture_area_integral_at_lens_plane"
+            },
+            "simulated_aperture_power_ratio_pct": {
+              "value": 67.0,
+              "source": "bayati_cylindrical_v2_2020",
+              "location": "arXiv v2 PDF p19 S1 cubic替代积分段",
+              "note": "作者对立方相位模型的替代计算。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "67",
+              "calculation_origin": "authors",
+              "denominator": "aperture_area_integral_at_lens_plane"
+            }
+          }
+        },
+        {
+          "id": "bayati2020_edof_100_model_aoi_5",
+          "model": "Bayati 2020 · 逆设计EDOF · 设计f 100μm · 5°模拟入射",
+          "study_id": "bayati2020",
+          "specimen_id": "edof_100_simulation",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一100μm设计的斜入射场强模拟。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p874 Fig.1A–D/设计段",
+              "note": "作者所称横向尺寸为66.66μm。光焦度集中在垂直于条纹的x方向。沿条纹长度及有效NA未单列。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Inverse Design；p875 Fig.2；p877 Table 1表题",
+              "note": "对应三种名义设计焦距，模型和实测轴位由Table 1各列给出。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 设计段；p875 Experimental Demonstration",
+              "note": "600nm SiN结构层，熔融石英基底厚500μm。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "pp874–875 设计和制程段",
+              "note": "设计周期443nm、条纹最窄100nm，150条纳米条。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "逆设计柱面EDOF · 单波长表征",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p876 Experimental Demonstration",
+              "note": "实测LED中心625nm，本文研究单波长轴向焦深。逐波长焦差和连续消色差范围缺证。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "FDTD入射角5°；图中横轴z、纵轴x均为μm",
+              "source": "bayati_cylindrical_v2_2020",
+              "location": "arXiv v2 PDF p21 Fig.S2A",
+              "note": "作者只有场强分布图。焦深数值、像差量、偏振与方位角细节未逐场点给出。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "simulated_incidence_angle_deg": 5,
+              "azimuth_deg": null
+            }
+          }
+        },
+        {
+          "id": "bayati2020_edof_100_model_aoi_10",
+          "model": "Bayati 2020 · 逆设计EDOF · 设计f 100μm · 10°模拟入射",
+          "study_id": "bayati2020",
+          "specimen_id": "edof_100_simulation",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一100μm设计的斜入射场强模拟。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p874 Fig.1A–D/设计段",
+              "note": "作者所称横向尺寸为66.66μm。光焦度集中在垂直于条纹的x方向。沿条纹长度及有效NA未单列。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Inverse Design；p875 Fig.2；p877 Table 1表题",
+              "note": "对应三种名义设计焦距，模型和实测轴位由Table 1各列给出。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 设计段；p875 Experimental Demonstration",
+              "note": "600nm SiN结构层，熔融石英基底厚500μm。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "pp874–875 设计和制程段",
+              "note": "设计周期443nm、条纹最窄100nm，150条纳米条。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "逆设计柱面EDOF · 单波长表征",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p876 Experimental Demonstration",
+              "note": "实测LED中心625nm，本文研究单波长轴向焦深。逐波长焦差和连续消色差范围缺证。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "FDTD入射角10°；图中横轴z、纵轴x均为μm",
+              "source": "bayati_cylindrical_v2_2020",
+              "location": "arXiv v2 PDF p21 Fig.S2B",
+              "note": "作者只有场强分布图。焦深数值、像差量、偏振与方位角细节未逐场点给出。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "simulated_incidence_angle_deg": 10,
+              "azimuth_deg": null
+            }
+          }
+        },
+        {
+          "id": "bayati2020_edof_100_model_aoi_15",
+          "model": "Bayati 2020 · 逆设计EDOF · 设计f 100μm · 15°模拟入射",
+          "study_id": "bayati2020",
+          "specimen_id": "edof_100_simulation",
+          "module": "",
+          "variant": "SiN 柱面线焦延长焦深与普通对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一100μm设计的斜入射场强模拟。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 66.66,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p874 Fig.1A–D/设计段",
+              "note": "作者所称横向尺寸为66.66μm。光焦度集中在垂直于条纹的x方向。沿条纹长度及有效NA未单列。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 Inverse Design；p875 Fig.2；p877 Table 1表题",
+              "note": "对应三种名义设计焦距，模型和实测轴位由Table 1各列给出。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p874 设计段；p875 Experimental Demonstration",
+              "note": "600nm SiN结构层，熔融石英基底厚500μm。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "pp874–875 设计和制程段",
+              "note": "设计周期443nm、条纹最窄100nm，150条纳米条。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "逆设计柱面EDOF · 单波长表征",
+              "source": "bayati_cylindrical_pdf_2020",
+              "location": "p873 摘要；p876 Experimental Demonstration",
+              "note": "实测LED中心625nm，本文研究单波长轴向焦深。逐波长焦差和连续消色差范围缺证。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "FDTD入射角15°；图中横轴z、纵轴x均为μm",
+              "source": "bayati_cylindrical_v2_2020",
+              "location": "arXiv v2 PDF p21 Fig.S2C",
+              "note": "作者只有场强分布图。焦深数值、像差量、偏振与方位角细节未逐场点给出。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "simulated_incidence_angle_deg": 15,
+              "azimuth_deg": null
+            }
+          }
         }
       ],
-      "scope": "32项原始研究、158个器件/测量/系统配置、1302条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
+      "scope": "33项原始研究、173个器件/测量/系统配置、1327条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
