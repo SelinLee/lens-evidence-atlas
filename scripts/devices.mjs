@@ -128,6 +128,18 @@ export function validateDevices(d,catalog){
   !(r.values.wavelength_nm?.value>0)||['model','modeled'].includes(r.values.wavelength_nm?.basis)||!r.values.psf_protocol?.value||
   !(depth.reference_origin===null||typeof depth.reference_origin==='string'&&depth.reference_origin)))errors.push('author focal depth context');
  const processedWidth=r.values.processed_psf_fwhm_um,psf=r.values.psf_protocol;
+ const designImageDistance=r.values.design_image_distance_um,measuredImageDistance=r.values.measured_image_distance_um;
+ for(const distance of [designImageDistance,measuredImageDistance]){
+  if(Number.isFinite(distance?.value)&&(distance.value<=0||distance.object_conjugate!=='finite'||
+   psf?.object_conjugate!=='finite'||!distance.reference_plane||distance.reference_plane!==psf.reference_plane))errors.push('finite-conjugate image distance context');
+ }
+ if(Number.isFinite(designImageDistance?.value)&&!['reported_configuration','model'].includes(designImageDistance.basis))errors.push('design image distance basis');
+ if(Number.isFinite(measuredImageDistance?.value)&&(measuredImageDistance.basis!=='measured'||
+  !(r.values.wavelength_nm?.value>0)||r.values.wavelength_nm.basis!=='measured'))errors.push('measured image distance wavelength/basis');
+ const idealWidth=r.values.diffraction_limited_reference_fwhm_um;
+ if(Number.isFinite(idealWidth?.value)&&(idealWidth.value<=0||idealWidth.basis!=='model'||
+  idealWidth.calculation_origin!=='authors'||!idealWidth.reference_model||!psf?.value||
+  !(r.values.wavelength_nm?.value>0)||r.values.wavelength_nm.basis!=='model'))errors.push('diffraction-limited reference width context');
  if(Number.isFinite(processedWidth?.value)&&(!(processedWidth.value>0)||processedWidth.basis!=='reconstruction'||
   processedWidth.calculation_origin!=='authors'||processedWidth.processing_stage!=='linear_intensity_subtraction'||
   !(processedWidth.subtraction_coefficient>=0&&Number.isFinite(processedWidth.subtraction_coefficient))||
@@ -200,11 +212,14 @@ export function validateDevices(d,catalog){
  }
  const axialOffset=r.values.axial_focus_offset_um;
  if(Number.isFinite(axialOffset?.value)){
-  const focal=r.values.measured_focal_um,reference=axialOffset.reference_plane_um;
+  const imageOffset=axialOffset.input_metric==='measured_image_distance_um';
+  const focal=imageOffset?measuredImageDistance:r.values.measured_focal_um,reference=axialOffset.reference_plane_um;
+  const formula=imageOffset?'measured_image_distance_um - reference_plane_um':'measured_focal_um - reference_plane_um';
   if(axialOffset.basis!=='derived_from_measurement'||axialOffset.calculation_origin!=='atlas'||
    !(r.values.wavelength_nm?.value>0)||!Number.isFinite(focal?.value)||focal.basis!=='measured'||!Number.isFinite(reference)||
    axialOffset.reference_wavelength_nm!==null||!axialOffset.reference_plane_description||
-   axialOffset.formula!=='measured_focal_um - reference_plane_um'||Math.abs(axialOffset.value-(focal.value-reference))>1e-9||
+   axialOffset.formula!==formula||Math.abs(axialOffset.value-(focal.value-reference))>1e-9||
+   (imageOffset&&designImageDistance?.value!==reference)||
    !r.values.psf_protocol?.value)errors.push('atlas axial offset reference/input');
  }
  if(Number.isFinite(aoi?.value)&&(

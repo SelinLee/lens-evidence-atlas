@@ -50,6 +50,10 @@
 
 `axial_focus_offset_um`是本库由作者实测f减去明确固定像面`reference_plane_um`算出的有符号焦差，`basis: derived_from_measurement`、`calculation_origin: atlas`，`formula: measured_focal_um - reference_plane_um`。要求本行实际波长/实测f、`reference_plane_description`、`psf_protocol`及精确来源位置；该固定面类型的`reference_wavelength_nm`显式null。验证数值与输入差一致，允许正、负和真实零；不默认选择设计f，不称作者原始焦移表或PSF/MTF复算。版本只核到作者稿的输入须在display/note保留版本，原作者量与本库计算分别标明。
 
+有限共轭设计面与实测聚焦位置使用 `design_image_distance_um`、`measured_image_distance_um`。两者均保留 `object_conjugate: finite` 和与 `psf_protocol.reference_plane` 相同的参考面。实测像距绑定实际谱点，近轴焦距各自保留。用这两种像距计算单波长的有符号残差时，在 `axial_focus_offset_um` 指定 `input_metric: measured_image_distance_um`，计算 `measured_image_distance_um - reference_plane_um`。`reference_plane_um` 必须等于该行的设计像距。
+
+`diffraction_limited_reference_fwhm_um` 标记作者理想模型、模拟波长及 `psf_protocol`。引用给出理想参考模型和测量或仿真所用照明，切线方向未知可记录为 `unspecified`。实物与等 NA 缩比模型的宽度使用对应字段。
+
 当同篇有多种制程而定量表征归属未明确时，可用`configuration_role: unassigned_measurement_set`保留该测量配置，`candidate_specimen_ids`列至少两个同study中存在且不同的候选结构配置。样本名和`measurement_scope`须明确待核且非额外独立实物；不能仅据共同几何/定性成像就将整组PSF/效率复制给每个候选。
 
 `incident_power_uw`与`focused_power_uw`保存原表的μW光功率，须有实际波长、`basis: measured`、`quantity: optical_power`、`original_unit: μW`和`efficiency_protocol`，非负且保留原列头/数值精度。原列名写intensity但单位为μW时按功率量纲说明，不当W/m²；未知积分焦圈/功率计/校准继续注明。作者由功率比给出的效率可为`derived_from_measurement`/`calculation_origin: authors`，与模拟百分数分开；本库只做舍入一致性检查时不覆盖作者值或创建新测量。
