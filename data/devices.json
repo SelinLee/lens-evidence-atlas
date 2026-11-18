@@ -1540,6 +1540,81 @@
       "scope": "2025 年 3 月升级版分区公开条目为物理与天体物理大类一区。2026-11-18 核对。",
       "checked_on": "2026-11-18",
       "publication_source": "zhang_folded_2025"
+    },
+    {
+      "id": "wang2021_publication",
+      "catalog_source": "wang_low_na_2021",
+      "title": "Wang et al. (2021): High-efficiency broadband achromatic metalens for near-IR biological imaging window",
+      "url": "https://www.nature.com/articles/s41467-021-25797-9.pdf",
+      "doi": "10.1038/s41467-021-25797-9",
+      "kind": "peer_reviewed_paper",
+      "scope": "Nat. Commun. 12, 5560，2021-09-21。正式 PDF pp2–6，图示轴扫、实拍、效率、模拟与数据取得。与既有显微候选基准同一 DOI。",
+      "checked_on": "2026-11-18"
+    },
+    {
+      "id": "wang2021_si",
+      "catalog_source": "wang_low_na_2021_si",
+      "title": "Springer Nature · Wang 2021 补充材料",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-021-25797-9/MediaObjects/41467_2021_25797_MOESM1_ESM.docx",
+      "doi": "10.1038/s41467-021-25797-9",
+      "kind": "supplementary_material",
+      "scope": "补充 Notes 1、3、5、6、8 及 Figs.S3–S4、S6–S8、S12。DOCX 内为 12 张 PNG，未见独立数组或数据表。",
+      "checked_on": "2026-11-18",
+      "publication_source": "wang2021_publication"
+    },
+    {
+      "id": "wang2021_review",
+      "title": "Springer Nature · Wang 2021 公开同行评审",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-021-25797-9/MediaObjects/41467_2021_25797_MOESM2_ESM.pdf",
+      "kind": "peer_review_file",
+      "scope": "PDF pp23–24，评论 8–11 的样品归属、ITO、测试继像及 Fig.3g 换图。",
+      "checked_on": "2026-11-18",
+      "publication_source": "wang2021_publication"
+    },
+    {
+      "id": "wang2021_crossref",
+      "title": "Crossref · Wang 2021 DOI 与引用计数",
+      "url": "https://api.crossref.org/works/10.1038/s41467-021-25797-9",
+      "kind": "repository_metadata",
+      "scope": "2026-11-18 的 is-referenced-by-count 为 344，正式发表日期 2021-09-21。",
+      "checked_on": "2026-11-18",
+      "publication_source": "wang2021_publication"
+    },
+    {
+      "id": "wang2021_data_share",
+      "title": "Wang 2021 · 作者百度网盘数据入口",
+      "url": "https://pan.baidu.com/s/4lag6i6F",
+      "kind": "author_data",
+      "scope": "主文 p6 Data availability 公开的链接。2026-11-18 独立无头 Chrome 显示「邀请链接已失效」。",
+      "checked_on": "2026-11-18",
+      "publication_source": "wang2021_publication"
+    },
+    {
+      "id": "wang2021_pmc",
+      "title": "PMC · Wang 2021 开放资料清单",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC8455568.1%2F",
+      "kind": "repository_metadata",
+      "scope": "PMC8455568.1 文件清单含文章版本、五张主图、补充 DOCX 和同行评审 PDF。",
+      "checked_on": "2026-11-18",
+      "publication_source": "wang2021_publication"
+    },
+    {
+      "id": "wang2021_datacite",
+      "title": "DataCite · Wang 2021 关联 DOI 查询",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1038%2Fs41467-021-25797-9%22&page%5Bsize%5D=25",
+      "kind": "repository_metadata",
+      "scope": "2026-11-18 文章 DOI 关联查询返回 0 条。",
+      "checked_on": "2026-11-18",
+      "publication_source": "wang2021_publication"
+    },
+    {
+      "id": "wang2021_lab",
+      "title": "哈工大（深圳）微纳光子学实验室 · Wang 2021",
+      "url": "https://micro-nanophotonics.hitsz.edu.cn/info/1040/1417.htm",
+      "kind": "author_publication_page",
+      "scope": "实验室成果页列摘要、出版社链接和一份论文 PDF。",
+      "checked_on": "2026-11-18",
+      "publication_source": "wang2021_publication"
     }
   ],
   "domains": {
@@ -207834,9 +207909,2731 @@
               "checked_on": "2026-11-18"
             }
           }
+        },
+        {
+          "id": "wang2021_exp24_summary",
+          "model": "Wang 2021 · 30 μm / NA 0.24 · 实物汇总",
+          "study_id": "wang2021",
+          "specimen_id": "exp24",
+          "module": "",
+          "variant": "650–1000 nm TiO₂ 宽带消色差实物",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "实物几何与实验汇总。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者明确标注的圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "na": {
+              "value": 0.24,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者对该配置标注的 NA。逐波长有效 NA 未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 1500,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Experiments 制备，p6 Deposition of TiO₂ film",
+              "note": "对应 TiO₂ 纳米柱高度。基底和总堆叠厚度另计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "TiO₂ 纳米柱 / ITO 镀层玻璃",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p4 Fig.3a，p6 Deposition；同行评审 PDF p23 Comment 9",
+              "note": "评审答复列 ITO 13 nm，玻璃厚度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ],
+              "ito_thickness_nm": 13
+            },
+            "chromatic": {
+              "value": "650–1000 nm 宽带设计，五个实测波长",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要、pp4–5 Figs.3–4；Crossref 元数据",
+              "note": "经典原始研究。Crossref 2026-11-18 为 344 次。Fig.4a 给两镜的效率，轴向实验图归属于 NA 0.24。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_crossref"
+              ],
+              "sample_wavelengths_nm": [
+                650,
+                700,
+                800,
+                900,
+                1000
+              ],
+              "spectrum_kind": "broadband_achromatic"
+            },
+            "efficiency_band_mean_pct": {
+              "value": 77.1,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，补充 DOCX Note 1",
+              "note": "主文称全带平均。Fig.4a 标示五测点，未说明是否只用这五点及各点权重。 SI 记作约 77%。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "statistic": "band_mean",
+              "sampling": "not_reported",
+              "plotted_wavelengths_nm": [
+                650,
+                700,
+                800,
+                900,
+                1000
+              ],
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "approximate": true,
+              "display": "约 77.1%",
+              "supplement_reported_pct": 77
+            },
+            "efficiency_protocol": {
+              "value": "以半径 3×FWHM 焦圈积分，除以同孔径区入射功率",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p6 Methods／The optical characterization of metalens，补充 DOCX Note 5／Fig.S6 下段",
+              "note": "按 SI 将镜片横移 1 mm，在原镜片轮廓积分分母。复位后调 CCD 到焦面，扣背景并控制在饱和以下。逐谱点焦面是否重选、CCD 物方采样、重复数和不确定度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "denominator": "incident_through_aperture",
+              "integration_shape": "circle",
+              "integration_radius_multiple_of_fwhm": 3,
+              "background_subtracted": true,
+              "normalization_displacement_mm": 1,
+              "polarization": "unpolarized",
+              "sample_size": null
+            },
+            "mtf_curve": {
+              "value": "公开材料含焦斑图。原始 PSF 与 MTF 待补",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p6 Data availability，补充 DOCX，同行评审，PMC、DataCite 和实验室成果页",
+              "note": "出版附件和作者成果页仅核到图版、文章与补件。DataCite 精确关联无结果。作者给出的网盘显示邀请链接失效。逐波长焦位、焦斑数组、空间采样、MTF 数表与归一化仍缺。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si",
+                "wang2021_review",
+                "wang2021_data_share",
+                "wang2021_pmc",
+                "wang2021_datacite",
+                "wang2021_lab"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null,
+                "author_repository_status": "link_expired"
+              }
+            },
+            "design_focal_um": {
+              "value": 60,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Experiments 焦距段，p4 Fig.3e 参考线，同行评审 PDF p24 Comment 11",
+              "note": "主文绘 60 μm 参考线，作者在标靶继像倍率计算中采用 60 μm。逐波长实测焦距独立留空。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ],
+              "reference_kind": "author_nominal_reference"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Experiments 焦斑段，p4 Fig.3e–f",
+              "note": "作者只描述光斑落在距镜片约 60 μm 附近，有小幅变化。约值为总述，不能代替逐波长焦位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "约 60 μm（作者总述）",
+              "author_reported_typical_um": 60
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Experiments 焦斑段，p4 Fig.3e–f",
+              "note": "主文未印实测峰峰值，60 μm 是图参考线。设计段的 <7% 属于模拟。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "focus_variation_protocol": {
+              "value": "Fig.3e 的 z=60 μm 为共用绘图参考",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Experiments 焦斑段，p4 Fig.3e–f",
+              "note": "作者从传播方向剖面获取焦位，未报告具体寻找算法、起点校准或峰峰值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "reference_focal_um": 60,
+              "reference_wavelength_nm": null,
+              "axis": "z",
+              "sample_wavelengths_nm": [
+                650,
+                700,
+                800,
+                900,
+                1000
+              ]
+            },
+            "strehl": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Experiments 焦斑段，p4 Fig.3e–f",
+              "note": "文章仅给所有拟合焦斑的共同下界。峰值归一、拟合函数和理想参考 PSF 的标定未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "display": ">0.81（作者报告下界）",
+              "bound": {
+                "operator": ">",
+                "value": 0.81
+              },
+              "sample_wavelengths_nm": [
+                650,
+                700,
+                800,
+                900,
+                1000
+              ]
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Experiments 焦斑段，p4 Fig.3e–f",
+              "note": "拟合横向直径剖面。作者只报对理论 FWHM 的相对偏离小于 9%，没有绝对宽度表。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "display": "相对理论偏离 <9%",
+              "relative_deviation_bound_pct": {
+                "operator": "<",
+                "value": 9
+              },
+              "sample_wavelengths_nm": [
+                650,
+                700,
+                800,
+                900,
+                1000
+              ]
+            },
+            "psf_protocol": {
+              "value": "准直超连续谱，横向相机帧叠成轴扫",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p6 Methods／The optical characterization of metalens，补充 DOCX Note 5／Fig.S6",
+              "note": "主文描述经线偏振片，补充列 5 mm 准直光束和窄带滤片。SI 示意以 50× 物镜继像。轴向扫描步长、物方像素、光谱滤片带宽与图示 x-y 取面规则未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "illumination_conjugate": "collimated_incident_beam",
+              "beam_diameter_mm": 5,
+              "collection_magnification": 50,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "field_point": null,
+              "evaluation_plane_um": null
+            }
+          }
+        },
+        {
+          "id": "wang2021_exp24_psf_650",
+          "model": "Wang 2021 · 30 μm / NA 0.24 · 650 nm 轴扫与焦斑",
+          "study_id": "wang2021",
+          "specimen_id": "exp24",
+          "module": "",
+          "variant": "650–1000 nm TiO₂ 宽带消色差实物",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.3e–f 实验单色近焦表征。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者明确标注的圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "na": {
+              "value": 0.24,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者对该配置标注的 NA。逐波长有效 NA 未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p4 Fig.3e 上方印字，同列 Fig.3f",
+              "note": "实物轴扫滤片波长标签。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p4 Fig.3e，650 nm 列",
+              "note": "只核到轴向强度伪彩图。白线是 z=60 μm 参考，逐点定量焦位留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅轴向强度图",
+              "reference_focal_um": 60
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p4 Fig.3f，650 nm 列",
+              "note": "0–1 a.u. 横向强度及拟合图，仅有带内偏差上界，无该波长数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅二维焦斑与横向剖面"
+            },
+            "strehl": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Experiments 末段及 p4 Fig.3f，650 nm 列",
+              "note": "作者只给这组实测推导 Strehl 的共同下界。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "逐点留空"
+            },
+            "psf_protocol": {
+              "value": "准直超连续谱，横向相机帧叠成轴扫",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p6 Methods／The optical characterization of metalens，补充 DOCX Note 5／Fig.S6",
+              "note": "主文描述经线偏振片，补充列 5 mm 准直光束和窄带滤片。SI 示意以 50× 物镜继像。轴向扫描步长、物方像素、光谱滤片带宽与图示 x-y 取面规则未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "illumination_conjugate": "collimated_incident_beam",
+              "beam_diameter_mm": 5,
+              "collection_magnification": 50,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "field_point": null,
+              "evaluation_plane_um": null
+            }
+          }
+        },
+        {
+          "id": "wang2021_exp24_eff_650",
+          "model": "Wang 2021 · 30 μm / NA 0.24 · 650 nm 无偏振效率",
+          "study_id": "wang2021",
+          "specimen_id": "exp24",
+          "module": "",
+          "variant": "650–1000 nm TiO₂ 宽带消色差实物",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.4a 实物聚焦效率。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者明确标注的圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "na": {
+              "value": 0.24,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者对该配置标注的 NA。逐波长有效 NA 未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，650 nm 图点",
+              "note": "Fig.4a 该谱点实测。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_lambda_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，650 nm 图点",
+              "note": "无偏振效率曲线的实测波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "无偏振",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 图注",
+              "note": "Fig.4b 的偏振角扫描和 Fig.S8 偏振对照分属其他输入状态。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 65,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，650 nm 图点",
+              "note": "作者正文给出近似效率。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "denominator": "incident_through_aperture",
+              "approximate": true,
+              "display": "约 65%"
+            },
+            "efficiency_protocol": {
+              "value": "以半径 3×FWHM 焦圈积分，除以同孔径区入射功率",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p6 Methods／The optical characterization of metalens，补充 DOCX Note 5／Fig.S6 下段",
+              "note": "按 SI 将镜片横移 1 mm，在原镜片轮廓积分分母。复位后调 CCD 到焦面，扣背景并控制在饱和以下。逐谱点焦面是否重选、CCD 物方采样、重复数和不确定度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "denominator": "incident_through_aperture",
+              "integration_shape": "circle",
+              "integration_radius_multiple_of_fwhm": 3,
+              "background_subtracted": true,
+              "normalization_displacement_mm": 1,
+              "polarization": "unpolarized",
+              "sample_size": null
+            }
+          }
+        },
+        {
+          "id": "wang2021_exp24_psf_700",
+          "model": "Wang 2021 · 30 μm / NA 0.24 · 700 nm 轴扫与焦斑",
+          "study_id": "wang2021",
+          "specimen_id": "exp24",
+          "module": "",
+          "variant": "650–1000 nm TiO₂ 宽带消色差实物",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.3e–f 实验单色近焦表征。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者明确标注的圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "na": {
+              "value": 0.24,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者对该配置标注的 NA。逐波长有效 NA 未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p4 Fig.3e 上方印字，同列 Fig.3f",
+              "note": "实物轴扫滤片波长标签。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p4 Fig.3e，700 nm 列",
+              "note": "只核到轴向强度伪彩图。白线是 z=60 μm 参考，逐点定量焦位留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅轴向强度图",
+              "reference_focal_um": 60
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p4 Fig.3f，700 nm 列",
+              "note": "0–1 a.u. 横向强度及拟合图，仅有带内偏差上界，无该波长数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅二维焦斑与横向剖面"
+            },
+            "strehl": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Experiments 末段及 p4 Fig.3f，700 nm 列",
+              "note": "作者只给这组实测推导 Strehl 的共同下界。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "逐点留空"
+            },
+            "psf_protocol": {
+              "value": "准直超连续谱，横向相机帧叠成轴扫",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p6 Methods／The optical characterization of metalens，补充 DOCX Note 5／Fig.S6",
+              "note": "主文描述经线偏振片，补充列 5 mm 准直光束和窄带滤片。SI 示意以 50× 物镜继像。轴向扫描步长、物方像素、光谱滤片带宽与图示 x-y 取面规则未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "illumination_conjugate": "collimated_incident_beam",
+              "beam_diameter_mm": 5,
+              "collection_magnification": 50,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "field_point": null,
+              "evaluation_plane_um": null
+            }
+          }
+        },
+        {
+          "id": "wang2021_exp24_eff_700",
+          "model": "Wang 2021 · 30 μm / NA 0.24 · 700 nm 无偏振效率",
+          "study_id": "wang2021",
+          "specimen_id": "exp24",
+          "module": "",
+          "variant": "650–1000 nm TiO₂ 宽带消色差实物",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.4a 实物聚焦效率。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者明确标注的圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "na": {
+              "value": 0.24,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者对该配置标注的 NA。逐波长有效 NA 未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，700 nm 图点",
+              "note": "Fig.4a 该谱点实测。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_lambda_nm": {
+              "value": 700,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，700 nm 图点",
+              "note": "无偏振效率曲线的实测波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "无偏振",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 图注",
+              "note": "Fig.4b 的偏振角扫描和 Fig.S8 偏振对照分属其他输入状态。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，700 nm 图点",
+              "note": "正式材料只核到该无偏振图点。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅曲线"
+            },
+            "efficiency_protocol": {
+              "value": "以半径 3×FWHM 焦圈积分，除以同孔径区入射功率",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p6 Methods／The optical characterization of metalens，补充 DOCX Note 5／Fig.S6 下段",
+              "note": "按 SI 将镜片横移 1 mm，在原镜片轮廓积分分母。复位后调 CCD 到焦面，扣背景并控制在饱和以下。逐谱点焦面是否重选、CCD 物方采样、重复数和不确定度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "denominator": "incident_through_aperture",
+              "integration_shape": "circle",
+              "integration_radius_multiple_of_fwhm": 3,
+              "background_subtracted": true,
+              "normalization_displacement_mm": 1,
+              "polarization": "unpolarized",
+              "sample_size": null
+            }
+          }
+        },
+        {
+          "id": "wang2021_exp24_psf_800",
+          "model": "Wang 2021 · 30 μm / NA 0.24 · 800 nm 轴扫与焦斑",
+          "study_id": "wang2021",
+          "specimen_id": "exp24",
+          "module": "",
+          "variant": "650–1000 nm TiO₂ 宽带消色差实物",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.3e–f 实验单色近焦表征。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者明确标注的圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "na": {
+              "value": 0.24,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者对该配置标注的 NA。逐波长有效 NA 未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 800,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p4 Fig.3e 上方印字，同列 Fig.3f",
+              "note": "实物轴扫滤片波长标签。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p4 Fig.3e，800 nm 列",
+              "note": "只核到轴向强度伪彩图。白线是 z=60 μm 参考，逐点定量焦位留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅轴向强度图",
+              "reference_focal_um": 60
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p4 Fig.3f，800 nm 列",
+              "note": "0–1 a.u. 横向强度及拟合图，仅有带内偏差上界，无该波长数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅二维焦斑与横向剖面"
+            },
+            "strehl": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Experiments 末段及 p4 Fig.3f，800 nm 列",
+              "note": "作者只给这组实测推导 Strehl 的共同下界。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "逐点留空"
+            },
+            "psf_protocol": {
+              "value": "准直超连续谱，横向相机帧叠成轴扫",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p6 Methods／The optical characterization of metalens，补充 DOCX Note 5／Fig.S6",
+              "note": "主文描述经线偏振片，补充列 5 mm 准直光束和窄带滤片。SI 示意以 50× 物镜继像。轴向扫描步长、物方像素、光谱滤片带宽与图示 x-y 取面规则未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "illumination_conjugate": "collimated_incident_beam",
+              "beam_diameter_mm": 5,
+              "collection_magnification": 50,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "field_point": null,
+              "evaluation_plane_um": null
+            }
+          }
+        },
+        {
+          "id": "wang2021_exp24_eff_800",
+          "model": "Wang 2021 · 30 μm / NA 0.24 · 800 nm 无偏振效率",
+          "study_id": "wang2021",
+          "specimen_id": "exp24",
+          "module": "",
+          "variant": "650–1000 nm TiO₂ 宽带消色差实物",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.4a 实物聚焦效率。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者明确标注的圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "na": {
+              "value": 0.24,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者对该配置标注的 NA。逐波长有效 NA 未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 800,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，800 nm 图点",
+              "note": "Fig.4a 该谱点实测。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_lambda_nm": {
+              "value": 800,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，800 nm 图点",
+              "note": "无偏振效率曲线的实测波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "无偏振",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 图注",
+              "note": "Fig.4b 的偏振角扫描和 Fig.S8 偏振对照分属其他输入状态。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 85,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，800 nm 图点",
+              "note": "作者正文给出近似效率。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "denominator": "incident_through_aperture",
+              "approximate": true,
+              "display": "约 85%"
+            },
+            "efficiency_protocol": {
+              "value": "以半径 3×FWHM 焦圈积分，除以同孔径区入射功率",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p6 Methods／The optical characterization of metalens，补充 DOCX Note 5／Fig.S6 下段",
+              "note": "按 SI 将镜片横移 1 mm，在原镜片轮廓积分分母。复位后调 CCD 到焦面，扣背景并控制在饱和以下。逐谱点焦面是否重选、CCD 物方采样、重复数和不确定度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "denominator": "incident_through_aperture",
+              "integration_shape": "circle",
+              "integration_radius_multiple_of_fwhm": 3,
+              "background_subtracted": true,
+              "normalization_displacement_mm": 1,
+              "polarization": "unpolarized",
+              "sample_size": null
+            }
+          }
+        },
+        {
+          "id": "wang2021_exp24_psf_900",
+          "model": "Wang 2021 · 30 μm / NA 0.24 · 900 nm 轴扫与焦斑",
+          "study_id": "wang2021",
+          "specimen_id": "exp24",
+          "module": "",
+          "variant": "650–1000 nm TiO₂ 宽带消色差实物",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.3e–f 实验单色近焦表征。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者明确标注的圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "na": {
+              "value": 0.24,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者对该配置标注的 NA。逐波长有效 NA 未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 900,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p4 Fig.3e 上方印字，同列 Fig.3f",
+              "note": "实物轴扫滤片波长标签。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p4 Fig.3e，900 nm 列",
+              "note": "只核到轴向强度伪彩图。白线是 z=60 μm 参考，逐点定量焦位留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅轴向强度图",
+              "reference_focal_um": 60
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p4 Fig.3f，900 nm 列",
+              "note": "0–1 a.u. 横向强度及拟合图，仅有带内偏差上界，无该波长数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅二维焦斑与横向剖面"
+            },
+            "strehl": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Experiments 末段及 p4 Fig.3f，900 nm 列",
+              "note": "作者只给这组实测推导 Strehl 的共同下界。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "逐点留空"
+            },
+            "psf_protocol": {
+              "value": "准直超连续谱，横向相机帧叠成轴扫",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p6 Methods／The optical characterization of metalens，补充 DOCX Note 5／Fig.S6",
+              "note": "主文描述经线偏振片，补充列 5 mm 准直光束和窄带滤片。SI 示意以 50× 物镜继像。轴向扫描步长、物方像素、光谱滤片带宽与图示 x-y 取面规则未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "illumination_conjugate": "collimated_incident_beam",
+              "beam_diameter_mm": 5,
+              "collection_magnification": 50,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "field_point": null,
+              "evaluation_plane_um": null
+            }
+          }
+        },
+        {
+          "id": "wang2021_exp24_eff_900",
+          "model": "Wang 2021 · 30 μm / NA 0.24 · 900 nm 无偏振效率",
+          "study_id": "wang2021",
+          "specimen_id": "exp24",
+          "module": "",
+          "variant": "650–1000 nm TiO₂ 宽带消色差实物",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.4a 实物聚焦效率。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者明确标注的圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "na": {
+              "value": 0.24,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者对该配置标注的 NA。逐波长有效 NA 未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 900,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，900 nm 图点",
+              "note": "Fig.4a 该谱点实测。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_lambda_nm": {
+              "value": 900,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，900 nm 图点",
+              "note": "无偏振效率曲线的实测波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "无偏振",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 图注",
+              "note": "Fig.4b 的偏振角扫描和 Fig.S8 偏振对照分属其他输入状态。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，900 nm 图点",
+              "note": "正式材料只核到该无偏振图点。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅曲线"
+            },
+            "efficiency_protocol": {
+              "value": "以半径 3×FWHM 焦圈积分，除以同孔径区入射功率",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p6 Methods／The optical characterization of metalens，补充 DOCX Note 5／Fig.S6 下段",
+              "note": "按 SI 将镜片横移 1 mm，在原镜片轮廓积分分母。复位后调 CCD 到焦面，扣背景并控制在饱和以下。逐谱点焦面是否重选、CCD 物方采样、重复数和不确定度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "denominator": "incident_through_aperture",
+              "integration_shape": "circle",
+              "integration_radius_multiple_of_fwhm": 3,
+              "background_subtracted": true,
+              "normalization_displacement_mm": 1,
+              "polarization": "unpolarized",
+              "sample_size": null
+            }
+          }
+        },
+        {
+          "id": "wang2021_exp24_psf_1000",
+          "model": "Wang 2021 · 30 μm / NA 0.24 · 1000 nm 轴扫与焦斑",
+          "study_id": "wang2021",
+          "specimen_id": "exp24",
+          "module": "",
+          "variant": "650–1000 nm TiO₂ 宽带消色差实物",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.3e–f 实验单色近焦表征。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者明确标注的圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "na": {
+              "value": 0.24,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者对该配置标注的 NA。逐波长有效 NA 未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p4 Fig.3e 上方印字，同列 Fig.3f",
+              "note": "实物轴扫滤片波长标签。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p4 Fig.3e，1000 nm 列",
+              "note": "只核到轴向强度伪彩图。白线是 z=60 μm 参考，逐点定量焦位留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅轴向强度图",
+              "reference_focal_um": 60
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p4 Fig.3f，1000 nm 列",
+              "note": "0–1 a.u. 横向强度及拟合图，仅有带内偏差上界，无该波长数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅二维焦斑与横向剖面"
+            },
+            "strehl": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Experiments 末段及 p4 Fig.3f，1000 nm 列",
+              "note": "作者只给这组实测推导 Strehl 的共同下界。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "逐点留空"
+            },
+            "psf_protocol": {
+              "value": "准直超连续谱，横向相机帧叠成轴扫",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p6 Methods／The optical characterization of metalens，补充 DOCX Note 5／Fig.S6",
+              "note": "主文描述经线偏振片，补充列 5 mm 准直光束和窄带滤片。SI 示意以 50× 物镜继像。轴向扫描步长、物方像素、光谱滤片带宽与图示 x-y 取面规则未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "illumination_conjugate": "collimated_incident_beam",
+              "beam_diameter_mm": 5,
+              "collection_magnification": 50,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null,
+              "field_point": null,
+              "evaluation_plane_um": null
+            }
+          }
+        },
+        {
+          "id": "wang2021_exp24_eff_1000",
+          "model": "Wang 2021 · 30 μm / NA 0.24 · 1000 nm 无偏振效率",
+          "study_id": "wang2021",
+          "specimen_id": "exp24",
+          "module": "",
+          "variant": "650–1000 nm TiO₂ 宽带消色差实物",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.4a 实物聚焦效率。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者明确标注的圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "na": {
+              "value": 0.24,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者对该配置标注的 NA。逐波长有效 NA 未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，1000 nm 图点",
+              "note": "Fig.4a 该谱点实测。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_lambda_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，1000 nm 图点",
+              "note": "无偏振效率曲线的实测波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "无偏振",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 图注",
+              "note": "Fig.4b 的偏振角扫描和 Fig.S8 偏振对照分属其他输入状态。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，1000 nm 图点",
+              "note": "正式材料只核到该无偏振图点。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅曲线"
+            },
+            "efficiency_protocol": {
+              "value": "以半径 3×FWHM 焦圈积分，除以同孔径区入射功率",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p6 Methods／The optical characterization of metalens，补充 DOCX Note 5／Fig.S6 下段",
+              "note": "按 SI 将镜片横移 1 mm，在原镜片轮廓积分分母。复位后调 CCD 到焦面，扣背景并控制在饱和以下。逐谱点焦面是否重选、CCD 物方采样、重复数和不确定度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "denominator": "incident_through_aperture",
+              "integration_shape": "circle",
+              "integration_radius_multiple_of_fwhm": 3,
+              "background_subtracted": true,
+              "normalization_displacement_mm": 1,
+              "polarization": "unpolarized",
+              "sample_size": null
+            }
+          }
+        },
+        {
+          "id": "wang2021_exp10_summary",
+          "model": "Wang 2021 · 25 μm / NA 0.10 · 实物汇总",
+          "study_id": "wang2021",
+          "specimen_id": "exp10",
+          "module": "",
+          "variant": "650–1000 nm TiO₂ 宽带消色差实物",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "实物几何与实验汇总。",
+          "values": {
+            "diameter_um": {
+              "value": 25,
+              "source": "wang2021_si",
+              "location": "主文 PDF p3 Fig.2 图注，补充 DOCX Note 3／Figs.S3–S4",
+              "note": "作者明确标注的圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_si",
+                "wang2021_publication"
+              ]
+            },
+            "na": {
+              "value": 0.1,
+              "source": "wang2021_si",
+              "location": "主文 PDF p3 Fig.2 图注，补充 DOCX Note 3／Figs.S3–S4",
+              "note": "作者对该配置标注的 NA。逐波长有效 NA 未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_si",
+                "wang2021_publication"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 1500,
+              "source": "wang2021_si",
+              "location": "补充 DOCX Note 3，Fig.S4",
+              "note": "对应 TiO₂ 纳米柱高度。基底和总堆叠厚度另计。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "TiO₂ 纳米柱 / ITO 镀层玻璃",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p4 Fig.3a，p6 Deposition；同行评审 PDF p23 Comment 9",
+              "note": "评审答复列 ITO 13 nm，玻璃厚度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ],
+              "ito_thickness_nm": 13
+            },
+            "chromatic": {
+              "value": "650–1000 nm 宽带设计，五个实测波长",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要、pp4–5 Figs.3–4；Crossref 元数据",
+              "note": "经典原始研究。Crossref 2026-11-18 为 344 次。Fig.4a 给两镜的效率，轴向实验图归属于 NA 0.24。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_crossref"
+              ],
+              "sample_wavelengths_nm": [
+                650,
+                700,
+                800,
+                900,
+                1000
+              ],
+              "spectrum_kind": "broadband_achromatic"
+            },
+            "efficiency_band_mean_pct": {
+              "value": 88.5,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，补充 DOCX Note 1",
+              "note": "主文称全带平均。Fig.4a 标示五测点，未说明是否只用这五点及各点权重。 SI Note 1 写 88.1%，差异未澄清。图中均值沿用正式正文并保留 SI 原报值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "statistic": "band_mean",
+              "sampling": "not_reported",
+              "plotted_wavelengths_nm": [
+                650,
+                700,
+                800,
+                900,
+                1000
+              ],
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "display": "88.5%（主文）",
+              "supplement_reported_pct": 88.1,
+              "source_conflict": true
+            },
+            "efficiency_protocol": {
+              "value": "以半径 3×FWHM 焦圈积分，除以同孔径区入射功率",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p6 Methods／The optical characterization of metalens，补充 DOCX Note 5／Fig.S6 下段",
+              "note": "按 SI 将镜片横移 1 mm，在原镜片轮廓积分分母。复位后调 CCD 到焦面，扣背景并控制在饱和以下。逐谱点焦面是否重选、CCD 物方采样、重复数和不确定度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "denominator": "incident_through_aperture",
+              "integration_shape": "circle",
+              "integration_radius_multiple_of_fwhm": 3,
+              "background_subtracted": true,
+              "normalization_displacement_mm": 1,
+              "polarization": "unpolarized",
+              "sample_size": null
+            },
+            "mtf_curve": {
+              "value": "公开材料含焦斑图。原始 PSF 与 MTF 待补",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p6 Data availability，补充 DOCX，同行评审，PMC、DataCite 和实验室成果页",
+              "note": "出版附件和作者成果页仅核到图版、文章与补件。DataCite 精确关联无结果。作者给出的网盘显示邀请链接失效。逐波长焦位、焦斑数组、空间采样、MTF 数表与归一化仍缺。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si",
+                "wang2021_review",
+                "wang2021_data_share",
+                "wang2021_pmc",
+                "wang2021_datacite",
+                "wang2021_lab"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null,
+                "author_repository_status": "link_expired"
+              }
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2c 及左栏段，p6 Methods／Numerical simulation，补充 DOCX Note 3",
+              "note": "Fig.2c 提供低 NA 镜的模拟焦距曲线。主文和补件中未找到单独列出的该镜标称设计焦距。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "Fig.4a 无偏振。Fig.4b 与 Fig.S8 另测偏振依赖",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4；补充 DOCX Note 6／Fig.S8",
+              "note": "Fig.4b 为 800 nm，横轴偏振角。Fig.S8 列 X 与 Y 线偏振及图例所称 Insensitive，无逐点原值。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ]
+            }
+          }
+        },
+        {
+          "id": "wang2021_exp10_eff_650",
+          "model": "Wang 2021 · 25 μm / NA 0.10 · 650 nm 无偏振效率",
+          "study_id": "wang2021",
+          "specimen_id": "exp10",
+          "module": "",
+          "variant": "650–1000 nm TiO₂ 宽带消色差实物",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.4a 实物聚焦效率。",
+          "values": {
+            "diameter_um": {
+              "value": 25,
+              "source": "wang2021_si",
+              "location": "主文 PDF p3 Fig.2 图注，补充 DOCX Note 3／Figs.S3–S4",
+              "note": "作者明确标注的圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_si",
+                "wang2021_publication"
+              ]
+            },
+            "na": {
+              "value": 0.1,
+              "source": "wang2021_si",
+              "location": "主文 PDF p3 Fig.2 图注，补充 DOCX Note 3／Figs.S3–S4",
+              "note": "作者对该配置标注的 NA。逐波长有效 NA 未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_si",
+                "wang2021_publication"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，650 nm 图点",
+              "note": "Fig.4a 该谱点实测。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_lambda_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，650 nm 图点",
+              "note": "无偏振效率曲线的实测波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "无偏振",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 图注",
+              "note": "Fig.4b 的偏振角扫描和 Fig.S8 偏振对照分属其他输入状态。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 85,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，650 nm 图点",
+              "note": "作者正文明确给出的无偏振效率。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "denominator": "incident_through_aperture"
+            },
+            "efficiency_protocol": {
+              "value": "以半径 3×FWHM 焦圈积分，除以同孔径区入射功率",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p6 Methods／The optical characterization of metalens，补充 DOCX Note 5／Fig.S6 下段",
+              "note": "按 SI 将镜片横移 1 mm，在原镜片轮廓积分分母。复位后调 CCD 到焦面，扣背景并控制在饱和以下。逐谱点焦面是否重选、CCD 物方采样、重复数和不确定度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "denominator": "incident_through_aperture",
+              "integration_shape": "circle",
+              "integration_radius_multiple_of_fwhm": 3,
+              "background_subtracted": true,
+              "normalization_displacement_mm": 1,
+              "polarization": "unpolarized",
+              "sample_size": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 插图，650 nm",
+              "note": "插图是 NA 0.1 的焦斑照片，未给焦斑 FWHM、物方像素及评价面的轴位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅焦斑照片"
+            }
+          }
+        },
+        {
+          "id": "wang2021_exp10_eff_700",
+          "model": "Wang 2021 · 25 μm / NA 0.10 · 700 nm 无偏振效率",
+          "study_id": "wang2021",
+          "specimen_id": "exp10",
+          "module": "",
+          "variant": "650–1000 nm TiO₂ 宽带消色差实物",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.4a 实物聚焦效率。",
+          "values": {
+            "diameter_um": {
+              "value": 25,
+              "source": "wang2021_si",
+              "location": "主文 PDF p3 Fig.2 图注，补充 DOCX Note 3／Figs.S3–S4",
+              "note": "作者明确标注的圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_si",
+                "wang2021_publication"
+              ]
+            },
+            "na": {
+              "value": 0.1,
+              "source": "wang2021_si",
+              "location": "主文 PDF p3 Fig.2 图注，补充 DOCX Note 3／Figs.S3–S4",
+              "note": "作者对该配置标注的 NA。逐波长有效 NA 未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_si",
+                "wang2021_publication"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，700 nm 图点，补充 DOCX Fig.S8（word/media/image8.png）",
+              "note": "Fig.4a 该谱点实测。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_lambda_nm": {
+              "value": 700,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，700 nm 图点，补充 DOCX Fig.S8（word/media/image8.png）",
+              "note": "无偏振效率曲线的实测波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "无偏振",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 图注",
+              "note": "Fig.4b 的偏振角扫描和 Fig.S8 偏振对照分属其他输入状态。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，700 nm 图点，补充 DOCX Fig.S8（word/media/image8.png）",
+              "note": "主文正文将 90.2% 归为此波长的最大效率。图 a 的无偏振红色曲线在 700 nm 低于自身其他谱点。补充 Fig.S8 的无偏振对照亦如此。未取得原数表，无法核定图文映射。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "display": "90.2%（正文，图文待核）",
+              "author_reported_efficiency_pct": 90.2,
+              "author_reported_wavelength_nm": 700
+            },
+            "efficiency_protocol": {
+              "value": "以半径 3×FWHM 焦圈积分，除以同孔径区入射功率",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p6 Methods／The optical characterization of metalens，补充 DOCX Note 5／Fig.S6 下段",
+              "note": "按 SI 将镜片横移 1 mm，在原镜片轮廓积分分母。复位后调 CCD 到焦面，扣背景并控制在饱和以下。逐谱点焦面是否重选、CCD 物方采样、重复数和不确定度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "denominator": "incident_through_aperture",
+              "integration_shape": "circle",
+              "integration_radius_multiple_of_fwhm": 3,
+              "background_subtracted": true,
+              "normalization_displacement_mm": 1,
+              "polarization": "unpolarized",
+              "sample_size": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 插图，700 nm",
+              "note": "插图是 NA 0.1 的焦斑照片，未给焦斑 FWHM、物方像素及评价面的轴位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅焦斑照片"
+            }
+          }
+        },
+        {
+          "id": "wang2021_exp10_eff_800",
+          "model": "Wang 2021 · 25 μm / NA 0.10 · 800 nm 无偏振效率",
+          "study_id": "wang2021",
+          "specimen_id": "exp10",
+          "module": "",
+          "variant": "650–1000 nm TiO₂ 宽带消色差实物",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.4a 实物聚焦效率。",
+          "values": {
+            "diameter_um": {
+              "value": 25,
+              "source": "wang2021_si",
+              "location": "主文 PDF p3 Fig.2 图注，补充 DOCX Note 3／Figs.S3–S4",
+              "note": "作者明确标注的圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_si",
+                "wang2021_publication"
+              ]
+            },
+            "na": {
+              "value": 0.1,
+              "source": "wang2021_si",
+              "location": "主文 PDF p3 Fig.2 图注，补充 DOCX Note 3／Figs.S3–S4",
+              "note": "作者对该配置标注的 NA。逐波长有效 NA 未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_si",
+                "wang2021_publication"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 800,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，800 nm 图点",
+              "note": "Fig.4a 该谱点实测。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_lambda_nm": {
+              "value": 800,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，800 nm 图点",
+              "note": "无偏振效率曲线的实测波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "无偏振",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 图注",
+              "note": "Fig.4b 的偏振角扫描和 Fig.S8 偏振对照分属其他输入状态。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，800 nm 图点",
+              "note": "正式材料只核到该无偏振图点。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅曲线"
+            },
+            "efficiency_protocol": {
+              "value": "以半径 3×FWHM 焦圈积分，除以同孔径区入射功率",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p6 Methods／The optical characterization of metalens，补充 DOCX Note 5／Fig.S6 下段",
+              "note": "按 SI 将镜片横移 1 mm，在原镜片轮廓积分分母。复位后调 CCD 到焦面，扣背景并控制在饱和以下。逐谱点焦面是否重选、CCD 物方采样、重复数和不确定度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "denominator": "incident_through_aperture",
+              "integration_shape": "circle",
+              "integration_radius_multiple_of_fwhm": 3,
+              "background_subtracted": true,
+              "normalization_displacement_mm": 1,
+              "polarization": "unpolarized",
+              "sample_size": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 插图，800 nm",
+              "note": "插图是 NA 0.1 的焦斑照片，未给焦斑 FWHM、物方像素及评价面的轴位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅焦斑照片"
+            }
+          }
+        },
+        {
+          "id": "wang2021_exp10_eff_900",
+          "model": "Wang 2021 · 25 μm / NA 0.10 · 900 nm 无偏振效率",
+          "study_id": "wang2021",
+          "specimen_id": "exp10",
+          "module": "",
+          "variant": "650–1000 nm TiO₂ 宽带消色差实物",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.4a 实物聚焦效率。",
+          "values": {
+            "diameter_um": {
+              "value": 25,
+              "source": "wang2021_si",
+              "location": "主文 PDF p3 Fig.2 图注，补充 DOCX Note 3／Figs.S3–S4",
+              "note": "作者明确标注的圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_si",
+                "wang2021_publication"
+              ]
+            },
+            "na": {
+              "value": 0.1,
+              "source": "wang2021_si",
+              "location": "主文 PDF p3 Fig.2 图注，补充 DOCX Note 3／Figs.S3–S4",
+              "note": "作者对该配置标注的 NA。逐波长有效 NA 未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_si",
+                "wang2021_publication"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 900,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，900 nm 图点",
+              "note": "Fig.4a 该谱点实测。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_lambda_nm": {
+              "value": 900,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，900 nm 图点",
+              "note": "无偏振效率曲线的实测波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "无偏振",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 图注",
+              "note": "Fig.4b 的偏振角扫描和 Fig.S8 偏振对照分属其他输入状态。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，900 nm 图点",
+              "note": "正式材料只核到该无偏振图点。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅曲线"
+            },
+            "efficiency_protocol": {
+              "value": "以半径 3×FWHM 焦圈积分，除以同孔径区入射功率",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p6 Methods／The optical characterization of metalens，补充 DOCX Note 5／Fig.S6 下段",
+              "note": "按 SI 将镜片横移 1 mm，在原镜片轮廓积分分母。复位后调 CCD 到焦面，扣背景并控制在饱和以下。逐谱点焦面是否重选、CCD 物方采样、重复数和不确定度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "denominator": "incident_through_aperture",
+              "integration_shape": "circle",
+              "integration_radius_multiple_of_fwhm": 3,
+              "background_subtracted": true,
+              "normalization_displacement_mm": 1,
+              "polarization": "unpolarized",
+              "sample_size": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 插图，900 nm",
+              "note": "插图是 NA 0.1 的焦斑照片，未给焦斑 FWHM、物方像素及评价面的轴位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅焦斑照片"
+            }
+          }
+        },
+        {
+          "id": "wang2021_exp10_eff_1000",
+          "model": "Wang 2021 · 25 μm / NA 0.10 · 1000 nm 无偏振效率",
+          "study_id": "wang2021",
+          "specimen_id": "exp10",
+          "module": "",
+          "variant": "650–1000 nm TiO₂ 宽带消色差实物",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.4a 实物聚焦效率。",
+          "values": {
+            "diameter_um": {
+              "value": 25,
+              "source": "wang2021_si",
+              "location": "主文 PDF p3 Fig.2 图注，补充 DOCX Note 3／Figs.S3–S4",
+              "note": "作者明确标注的圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_si",
+                "wang2021_publication"
+              ]
+            },
+            "na": {
+              "value": 0.1,
+              "source": "wang2021_si",
+              "location": "主文 PDF p3 Fig.2 图注，补充 DOCX Note 3／Figs.S3–S4",
+              "note": "作者对该配置标注的 NA。逐波长有效 NA 未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_si",
+                "wang2021_publication"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，1000 nm 图点",
+              "note": "Fig.4a 该谱点实测。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_lambda_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，1000 nm 图点",
+              "note": "无偏振效率曲线的实测波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "无偏振",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 图注",
+              "note": "Fig.4b 的偏振角扫描和 Fig.S8 偏振对照分属其他输入状态。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 及对应两段，1000 nm 图点",
+              "note": "正式材料只核到该无偏振图点。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅曲线"
+            },
+            "efficiency_protocol": {
+              "value": "以半径 3×FWHM 焦圈积分，除以同孔径区入射功率",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p6 Methods／The optical characterization of metalens，补充 DOCX Note 5／Fig.S6 下段",
+              "note": "按 SI 将镜片横移 1 mm，在原镜片轮廓积分分母。复位后调 CCD 到焦面，扣背景并控制在饱和以下。逐谱点焦面是否重选、CCD 物方采样、重复数和不确定度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "denominator": "incident_through_aperture",
+              "integration_shape": "circle",
+              "integration_radius_multiple_of_fwhm": 3,
+              "background_subtracted": true,
+              "normalization_displacement_mm": 1,
+              "polarization": "unpolarized",
+              "sample_size": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p5 Fig.4a 插图，1000 nm",
+              "note": "插图是 NA 0.1 的焦斑照片，未给焦斑 FWHM、物方像素及评价面的轴位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅焦斑照片"
+            }
+          }
+        },
+        {
+          "id": "wang2021_model24_summary",
+          "model": "Wang 2021 · 30 μm / NA 0.24 · 模拟汇总",
+          "study_id": "wang2021",
+          "specimen_id": "model24",
+          "module": "",
+          "variant": "650–1000 nm 全镜数值模型",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "对应两只实物设计的全镜数值模型。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者明确标注的圆孔直径。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "na": {
+              "value": 0.24,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者对该配置标注的 NA。逐波长有效 NA 未给。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2c–d，p6 数值方法",
+              "note": "模型的宽带范围。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2c–d，p6 数值方法",
+              "note": "模型的宽带范围。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_band_mean_pct": {
+              "value": 83,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2d 及左栏段，p6 Methods／Numerical simulation",
+              "note": "作者称全工作带平均。图示八谱点，权重及纳入采样未明。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "statistic": "band_mean",
+              "sampling": "not_reported",
+              "plotted_wavelengths_nm": [
+                650,
+                700,
+                750,
+                800,
+                850,
+                900,
+                950,
+                1000
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "作者全镜模型的聚焦效率",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2d 及左栏段，p6 Methods／Numerical simulation",
+              "note": "模拟曲线和带内指标。模型部分未明示焦圈积分及归一化分母。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "author_denominator_unreported",
+              "denominator_note": "实测 Methods 的半径 3×FWHM 与孔径分母不能确认适用于此模型。",
+              "integration_radius_multiple_of_fwhm": null
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2c 及左栏段，p6 Methods／Numerical simulation",
+              "note": "Fig.2c 只核到数值模型曲线，选焦细则和逐点原值未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅模拟曲线"
+            },
+            "psf_protocol": {
+              "value": "平面波入射的全镜 FDTD",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p6 Numerical simulation",
+              "note": "单元库由 COMSOL 有限元仿真，全镜用 Lumerical FDTD，横纵 PML。轴位提取规则及空间网格未给。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "illumination_conjugate": "plane_wave"
+            },
+            "focus_variation_pct": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2c 及左栏段，p6 Methods／Numerical simulation",
+              "note": "作者称相对设计位置变化低于 7%。具体公式和百分比分母未列。图示跨度不宜解释成该门限。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "display": "<7%（模型，作者原述）",
+              "bound": {
+                "operator": "<",
+                "value": 7
+              },
+              "statistic": "author_reported_bound",
+              "denominator": "author_denominator_unreported",
+              "sample_wavelengths_nm": [
+                650,
+                700,
+                750,
+                800,
+                850,
+                900,
+                950,
+                1000
+              ]
+            }
+          }
+        },
+        {
+          "id": "wang2021_model24_eff_650",
+          "model": "Wang 2021 · 30 μm / NA 0.24 · 650 nm 模拟效率",
+          "study_id": "wang2021",
+          "specimen_id": "model24",
+          "module": "",
+          "variant": "650–1000 nm 全镜数值模型",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.2d 计算效率。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者明确标注的圆孔直径。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "na": {
+              "value": 0.24,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者对该配置标注的 NA。逐波长有效 NA 未给。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2c–d，p6 数值方法",
+              "note": "模型的宽带范围。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2c–d，p6 数值方法",
+              "note": "模型的宽带范围。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2d 及左栏段，p6 Methods／Numerical simulation",
+              "note": "作者正文明确给出的评估谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 72,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2d 及左栏段，p6 Methods／Numerical simulation",
+              "note": "仅引用正文给出的数值。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "denominator": "author_denominator_unreported"
+            },
+            "efficiency_protocol": {
+              "value": "作者全镜模型的聚焦效率",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2d 及左栏段，p6 Methods／Numerical simulation",
+              "note": "模拟曲线和带内指标。模型部分未明示焦圈积分及归一化分母。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "author_denominator_unreported",
+              "denominator_note": "实测 Methods 的半径 3×FWHM 与孔径分母不能确认适用于此模型。",
+              "integration_radius_multiple_of_fwhm": null
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2c 及左栏段，p6 Methods／Numerical simulation",
+              "note": "只核到同波长的模型曲线点。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅模拟曲线"
+            }
+          }
+        },
+        {
+          "id": "wang2021_model24_eff_850",
+          "model": "Wang 2021 · 30 μm / NA 0.24 · 850 nm 模拟效率",
+          "study_id": "wang2021",
+          "specimen_id": "model24",
+          "module": "",
+          "variant": "650–1000 nm 全镜数值模型",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.2d 计算效率。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者明确标注的圆孔直径。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "na": {
+              "value": 0.24,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者对该配置标注的 NA。逐波长有效 NA 未给。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2c–d，p6 数值方法",
+              "note": "模型的宽带范围。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2c–d，p6 数值方法",
+              "note": "模型的宽带范围。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 850,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2d 及左栏段，p6 Methods／Numerical simulation",
+              "note": "作者正文明确给出的评估谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 93,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2d 及左栏段，p6 Methods／Numerical simulation",
+              "note": "仅引用正文给出的数值。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "denominator": "author_denominator_unreported"
+            },
+            "efficiency_protocol": {
+              "value": "作者全镜模型的聚焦效率",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2d 及左栏段，p6 Methods／Numerical simulation",
+              "note": "模拟曲线和带内指标。模型部分未明示焦圈积分及归一化分母。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "author_denominator_unreported",
+              "denominator_note": "实测 Methods 的半径 3×FWHM 与孔径分母不能确认适用于此模型。",
+              "integration_radius_multiple_of_fwhm": null
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2c 及左栏段，p6 Methods／Numerical simulation",
+              "note": "只核到同波长的模型曲线点。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅模拟曲线"
+            }
+          }
+        },
+        {
+          "id": "wang2021_model10_summary",
+          "model": "Wang 2021 · 25 μm / NA 0.10 · 模拟汇总",
+          "study_id": "wang2021",
+          "specimen_id": "model10",
+          "module": "",
+          "variant": "650–1000 nm 全镜数值模型",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "对应两只实物设计的全镜数值模型。",
+          "values": {
+            "diameter_um": {
+              "value": 25,
+              "source": "wang2021_si",
+              "location": "主文 PDF p3 Fig.2 图注，补充 DOCX Note 3／Figs.S3–S4",
+              "note": "作者明确标注的圆孔直径。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_si",
+                "wang2021_publication"
+              ]
+            },
+            "na": {
+              "value": 0.1,
+              "source": "wang2021_si",
+              "location": "主文 PDF p3 Fig.2 图注，补充 DOCX Note 3／Figs.S3–S4",
+              "note": "作者对该配置标注的 NA。逐波长有效 NA 未给。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_si",
+                "wang2021_publication"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2c–d，p6 数值方法",
+              "note": "模型的宽带范围。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2c–d，p6 数值方法",
+              "note": "模型的宽带范围。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_band_mean_pct": {
+              "value": 93,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2d 及左栏段，p6 Methods／Numerical simulation",
+              "note": "作者称全工作带平均。图示八谱点，权重及纳入采样未明。补充 Note 3 另称约 93%。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "statistic": "band_mean",
+              "sampling": "not_reported",
+              "plotted_wavelengths_nm": [
+                650,
+                700,
+                750,
+                800,
+                850,
+                900,
+                950,
+                1000
+              ],
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "supplement_approximate": true
+            },
+            "efficiency_protocol": {
+              "value": "作者全镜模型的聚焦效率",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2d 及左栏段，p6 Methods／Numerical simulation",
+              "note": "模拟曲线和带内指标。模型部分未明示焦圈积分及归一化分母。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "author_denominator_unreported",
+              "denominator_note": "实测 Methods 的半径 3×FWHM 与孔径分母不能确认适用于此模型。",
+              "integration_radius_multiple_of_fwhm": null
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p3 Fig.2c 及左栏段，p6 Methods／Numerical simulation",
+              "note": "Fig.2c 只核到数值模型曲线，选焦细则和逐点原值未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "仅模拟曲线"
+            },
+            "psf_protocol": {
+              "value": "平面波入射的全镜 FDTD",
+              "source": "wang2021_publication",
+              "location": "主文 PDF p6 Numerical simulation",
+              "note": "单元库由 COMSOL 有限元仿真，全镜用 Lumerical FDTD，横纵 PML。轴位提取规则及空间网格未给。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "illumination_conjugate": "plane_wave"
+            }
+          }
+        },
+        {
+          "id": "wang2021_visible_model",
+          "model": "Wang 2021 · 25 μm / NA 0.20 · 可见光模拟",
+          "study_id": "wang2021",
+          "specimen_id": "visible_model",
+          "module": "",
+          "variant": "可见光 TiO₂ 消色差设计",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "补充 Fig.S12 独立尺寸参数，作者只做模型。",
+          "values": {
+            "diameter_um": {
+              "value": 25,
+              "source": "wang2021_si",
+              "location": "补充 DOCX Note 8，Fig.S12（word/media/image12.png）",
+              "note": "可见光设计的圆孔口径。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "wang2021_si",
+              "location": "补充 DOCX Note 8，Fig.S12（word/media/image12.png）",
+              "note": "可见光设计 NA。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 60,
+              "source": "wang2021_si",
+              "location": "补充 DOCX Note 8，Fig.S12（word/media/image12.png）",
+              "note": "作者给定的设计焦距。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 1200,
+              "source": "wang2021_si",
+              "location": "补充 DOCX Note 8，Fig.S12（word/media/image12.png）",
+              "note": "可见光设计 TiO₂ 柱高。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang2021_si",
+              "location": "补充 DOCX Note 8，Fig.S12（word/media/image12.png）",
+              "note": "图内明确标注的模型评估端点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang2021_si",
+              "location": "补充 DOCX Note 8，Fig.S12（word/media/image12.png）",
+              "note": "图内明确标注的模型评估端点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "450–700 nm 六谱点模型",
+              "source": "wang2021_si",
+              "location": "补充 DOCX Note 8，Fig.S12（word/media/image12.png）",
+              "note": "图版上部纵轴为效率%，下部纵轴为相对焦距变化%；下部不是绝对焦距。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "sample_wavelengths_nm": [
+                450,
+                500,
+                550,
+                600,
+                650,
+                700
+              ]
+            },
+            "efficiency_band_mean_pct": {
+              "value": 88.3,
+              "source": "wang2021_si",
+              "location": "补充 DOCX Note 8，Fig.S12（word/media/image12.png）",
+              "note": "作者正文给模拟带内均值。未报告均值计算纳入的样本与权重。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "statistic": "band_mean",
+              "sampling": "not_reported"
+            },
+            "efficiency_protocol": {
+              "value": "作者全镜模型的聚焦效率",
+              "source": "wang2021_si",
+              "location": "补充 DOCX Note 8，Fig.S12（word/media/image12.png）",
+              "note": "模拟曲线和带内指标。模型部分未明示焦圈积分及归一化分母。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "author_denominator_unreported",
+              "denominator_note": "实测 Methods 的半径 3×FWHM 与孔径分母不能确认适用于此模型。",
+              "integration_radius_multiple_of_fwhm": null
+            }
+          }
+        },
+        {
+          "id": "wang2021_usaf_650",
+          "model": "Wang 2021 · 30 μm / NA 0.24 · 650 nm 标靶",
+          "study_id": "wang2021",
+          "specimen_id": "exp24_usaf",
+          "module": "",
+          "variant": "USAF 实拍继像系统",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一 NA 0.24 实物加靶及继像组件。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者明确标注的圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "na": {
+              "value": 0.24,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp2–3 设计、Fig.2 图注，p4 Fig.3，公开同行评审 PDF p23 Comment 8",
+              "note": "作者对该配置标注的 NA。逐波长有效 NA 未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1000,
+              "source": "wang2021_publication",
+              "location": "主文 PDF p1 摘要，pp3–5 Fig.3、Fig.4 与正文",
+              "note": "作者宽带工作范围。实际测量谱点按图内标注保存。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 650,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp3–5 Fig.3g 与正文，同行评审 PDF p24 Comment 11／Fig.R4",
+              "note": "作者报告能辨 Group 8 Element 4 的照明。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "resolved_test_line_width_um": {
+              "value": 1.38,
+              "source": "wang2021_publication",
+              "location": "主文 PDF pp3–5 Fig.3g 与正文，同行评审 PDF p24 Comment 11／Fig.R4",
+              "note": "作者在 650 nm 报 Group 8 Element 4 可辨，正文写分辨能力 1.38 μm。数值与该标准靶标称单线宽一致。Fig.3g 实际展示的是五谱点下较粗的 Group 7 Element 6。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "wang2021_publication",
+                "wang2021_review"
+              ],
+              "target": "usaf_1951",
+              "target_group": 8,
+              "target_element": 4,
+              "processing_stage": "captured",
+              "field_point": null,
+              "contrast_threshold": null,
+              "approximate": true
+            },
+            "psf_protocol": {
+              "value": "固定镜片与靶的多波长实拍，正式 Fig.3g 采用消色差筒镜",
+              "source": "wang2021_review",
+              "location": "主文 PDF pp3–5 Fig.3g 与正文，同行评审 PDF p24 Comment 11／Fig.R4",
+              "note": "公开评审答复确认最终 Fig.3g 换用消色差双合筒镜重拍。早稿单片筒镜算得的 1.38 mm 焦差属于继像元件。未给 1.38 μm 声明对应的原靶图、采样或判读阈值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "wang2021_review",
+                "wang2021_publication",
+                "wang2021_si"
+              ],
+              "sample_wavelengths_nm": [
+                650,
+                700,
+                800,
+                900,
+                1000
+              ]
+            }
+          }
         }
       ],
-      "scope": "41项原始研究、235个器件/测量/系统配置、1502条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
+      "scope": "42项原始研究、241个器件/测量/系统配置、1525条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
