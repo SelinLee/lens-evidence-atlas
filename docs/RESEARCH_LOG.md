@@ -971,3 +971,9 @@ PR #148 合入 0bcdbd002a138493923c3bca0f523c0ea5f15da9。PR 校验 44326737128�
 ## 2026-11-18-94 · Colburn 与 Majumdar 四次相位变焦及作者 MTF10
 
 按 Crossref 56 次纳入可见光经典研究，新增 32 条、9 配置。作者组 ACS 排版正文与博士论文 Ch.5 交叉确认为同一对 1 mm 氮化硅双片及两个单片对照。实测的 455、530、625 nm 分别带入 LED 带宽。Fig.4 的 1.5、3 mm 固定面、显著色移及 Fig.5 正文面板编号错位均留证。两个跨波长 MTF10 约 9.6、11 cycles/mm 各绑固定面，博士论文 Fig.5.9 曲线保留轴、线型及归一化缺口。衍射效率均值 37% 按焦面孔径区域对第二超表面平面区域的强度积分归一。逐点焦位、原始 PSF 与 MTF 数组未获。五档白光原拍与 TV 重建分录，模型 FOV 保留模拟性质。累计 43 篇、250 配置、1557 条。[本批核验](COLBURN_QUARTIC_REVIEW_2026-11-18.md)
+
+## 2026-11-18-95 · 可见光变焦上线验收与双波长物镜取证
+
+PR #150 合入 c8b35324981d3140ab912e7994021eb30a5d5317。PR 校验 44335226607、主线校验 44335431243 和 Pages 44335431223 成功。302 项测试通过。线上 12 文件与本机构建逐字节一致，devices-data.js SHA256 为 6f0bf85ab41d03bab02af841b004240124b78a37563e8ff184bc98d5d7e209b9。独立无头 Chrome 核 32 行、9 配置、两个 MTF10 散点和一个衍射效率散点、引用往返、CSV 及六视口。主文、博士论文和 arXiv 的 PDF 文件头与长度以 206 验证，Crossref 和 DataCite 为 200，ACS 期刊及补件在本机直连为 403。新增 32 行全部通过可见光筛选，筛选后 37 篇、1409 条。[PR #150](https://github.com/SelinLee/lens-evidence-atlas/pull/150) · [Pages 部署](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44335431223)
+
+下一批补证 Arbabi 等 2018 年双波长超透镜物镜。DOI 10.1021/acs.nanolett.8b01737 的 Crossref 正式在线日期为 2018-07-17，2026-11-18 查 109 次。已获取 CaltechAUTHORS 补件 `nl8b01737_si_001.pdf`，1377438 字节，MD5 aa9d2ac65fd918528461d3070669ed55 与馆藏一致。第一作者博士论文 PDF pp90–91（印刷 pp69–70）复载该器件。设计点 605/820 nm，实际实测分别是 y 偏振 600 nm（FWHM 10 nm）和 x 偏振 822 nm，名义设计焦距约 1386 μm。作者印出两实测峰位 1380 与 1376 μm、横向 FWHM 约 0.68 与 0.93 μm，后续以分偏振、焦圈口径及实际带宽对读。主文入口和原始数组继续核查。[Caltech 补件](https://authors.library.caltech.edu/records/3ngwx-46089) · [第一作者博士论文](https://thesis.caltech.edu/11481/8/Ehsan_s_Thesis-2019-05-02.pdf#page=90) · [Crossref](https://api.crossref.org/works/10.1021/acs.nanolett.8b01737)
