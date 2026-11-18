@@ -9,3 +9,5 @@ QUALITY-001z，2026-11-18。入选理由是可见光毫米口径实制镜、两�
 - [公开 Drive](https://drive.google.com/drive/folders/1siNWBBHfKFFi4170p5rpSbTFk9WyrfSp) 独立无头匿名打开 200，正文实际列 Computer_vision_task、Metalens_phase_map、Neural_network_training_data、Neural_network_weights。一级目录不能判定原始 PSF 数组是否公开，子目录、具体文件和测量标尺待核。
 
 正式主文 Fig. 4 对比同口径焦距的三种实制镜，图注分别写出 x–λ 图按总强度归一、二维图按峰值归一。接续时核 Fig. 4 原图、Supplementary Notes 8/9/12 和公开文件清单，分辨滤波通/阻带与实测谱点，记录物距、评价面、归一化/采样以及裸光学、传感器实拍和网络重建各自能支持的参数。当前未录正式数据格。
+
+以上为入选时的检查点。正式 SI 已取得，见[本批核验](YOON_2026_REVIEW_2026-11-18.md)。

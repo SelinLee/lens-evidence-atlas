@@ -36,6 +36,33 @@ export function validateDevices(d,catalog){
     !(r.values.wavelength_nm?.value>0)||!r.values.efficiency_protocol?.value))errors.push('measured optical power context');
  }
  const designFocal=r.values.design_focal_um;
+ const mtfCurve=r.values.mtf_curve;
+ if(mtfCurve?.mtf_kind==='measured_psf_radial_average'){
+  const psf=r.values.psf_protocol;
+  const waves=mtfCurve.sample_wavelengths_nm;
+  const wave=r.values.wavelength_nm?.value;
+  if(mtfCurve.basis!=='derived_from_measurement'||mtfCurve.processing_stage!=='optical_psf'||
+   mtfCurve.direction_aggregation!=='radial_average'||mtfCurve.frequency_unit!=='lp/mm'||
+   !Number.isFinite(psf?.evaluation_plane_um)||
+   !(psf.object_conjugate==='infinity'&&psf.object_distance_m===null||
+     psf.object_conjugate==='finite_simulated_by_concave_lens'&&psf.object_distance_m>0&&Number.isFinite(psf.object_distance_m))||
+   !Array.isArray(waves)||new Set(waves).size!==waves.length||waves.some(w=>!(w>0&&Number.isFinite(w)))||
+   (Number.isFinite(wave)?(mtfCurve.individual_curve_panel===true?waves.length!==1||waves[0]!==wave:
+     mtfCurve.individual_curve_panel!==false||waves.length!==0):waves.length===0))errors.push('radially averaged measured PSF MTF context');
+ }
+ if(mtfCurve?.mtf_kind==='reconstructed_slanted_edge'&&(
+  mtfCurve.basis!=='reconstruction'||mtfCurve.processing_stage!=='reconstructed'||mtfCurve.frequency_unit!=='lp/mm'||
+  !['red','green','blue'].includes(mtfCurve.color_channel)||Number.isFinite(r.values.wavelength_nm?.value)))errors.push('reconstructed color channel edge MTF context');
+ for(const key of ['estimated_system_focal_efficiency_pct','estimated_detected_throughput_pct','spectrally_weighted_mtf_area_lpmm']){
+  const value=r.values[key];
+  if(!Number.isFinite(value?.value))continue;
+  if(value.basis!=='model'||value.calculation_origin!=='authors'||value.value<0||
+   (key!=='spectrally_weighted_mtf_area_lpmm'&&value.value>100)||
+   (key==='spectrally_weighted_mtf_area_lpmm'&&(value.frequency_unit!=='lp/mm'||value.mtf_aggregation!=='frequency_integral'))||
+   r.values.efficiency_protocol?.origin!=='authors_optical_stack_estimate'||
+   Number.isFinite(r.values.wavelength_nm?.value)||Number.isFinite(r.values.efficiency_at_lambda_pct?.value)||
+   Number.isFinite(r.values.efficiency_band_mean_pct?.value))errors.push('optical stack aggregate estimate context');
+ }
  const depth=r.values.author_longest_focal_depth_um;
  if(Number.isFinite(depth?.value)&&(!(depth.value>0)||depth.basis!=='derived_from_measurement'||
   depth.calculation_origin!=='authors'||depth.statistic!=='author_longest_focal_depth'||
