@@ -947,3 +947,7 @@ PR #142 合入 866663feb05adba135b1acd191ff3eb2000225b8。PR 校验 44312004835�
 PR #144 合入 fe587e54227875c840b7f7a6b9aa4e2c18604d4d。PR 校验 44316905833、主线校验 44317215148 与 Pages 44317215389 成功。296 项测试通过，线上 12 文件逐字节一致，devices-data.js SHA256 为 17be74998a5d7f4da227e0ee834f653a0d0690968b4c43594a21e0515537145c。独立无头 Chrome 核 19 条、4 配置、焦斑、Strehl、旁瓣、对照实测焦位与效率散点、七处来源、六视口、引用往返、CSV 和可见光入口。出版 PDF 和 XLSX 链接以 206 响应的文件头和长度核验，并保留完整下载原件。作者仓库、分区明细与 PMC 文件清单响应 200。所有四组均为近红外，筛选后总计仍为 35 篇、1364 条。[PR #144](https://github.com/SelinLee/lens-evidence-atlas/pull/144) · [Pages 部署](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44317215389)
 
 下批已取得 Fei Zhang 等 2025 年折叠光路超透镜的正式主文和 SI，PDF 1738884 字节、SHA256 68d44737be64df1ca313accfcf84fcb4c82a0f46a9f3675c321dd46978b6ba76，DOCX 26782726 字节、SHA256 10221fe527d57e2f22fb0dc651350ffe97fff5942bd9645f2e88ed23208d39f5。Fig.3g–i 的七频点 195–225 THz 是左旋圆偏振实验。纵轴误差样式的线段表示轴向焦深 FWHM，研究会保留这一定义。SI Fig.S7 的聚焦效率属于模拟，焦圈为半径 3× FWHM。PMC 清单只列主文、图版与补充 DOCX。可见光候选 Jiang 2023 与 Cheng 2024 的 Crossref 当前计数分别为 45 和 28，未达到经典例外门槛。[期刊主文](https://www.nature.com/articles/s41377-025-01850-w.pdf) · [补充 DOCX](https://static-content.springer.com/esm/art%3A10.1038%2Fs41377-025-01850-w/MediaObjects/41377_2025_1850_MOESM1_ESM.docx)
+
+## 2026-11-18-90 · Zhang 2025 折叠光路实验与模拟
+
+主文 Fig.3g–i 的 195–225 THz 七频点分录 LCP 实物测量。保存轴向半高宽区间中心、峰强面横向宽度和会聚入射的不同解释。薄层几何、显微物镜 NA 及器件口径的缺口各自保留。校对补充 DOCX 图版及 33 个 MathType 内嵌对象，确认 Fig.S7 的七频点光斑、焦距和半径 3×FWHM 效率为模拟曲线。查 DataCite 精确 DOI 零项、PMC 未附数值表，作者声明向通讯作者索取，逐点参数留空。新增 16 条、2 配置，累计 41 篇、235 配置、1502 条。[本批核验](ZHANG_FOLDED_REVIEW_2026-11-18.md)
