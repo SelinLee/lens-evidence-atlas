@@ -44,7 +44,8 @@
 | QUALITY-001y Balli 2021 纳米孔超宽带实物与中继成像 | done | 0.3.22 经 PR #125/fc38fef、Pages 44259437894 上线，268 测试、12 文件一致与线上无头 Chrome 六视口通过。原图、逐λ数表及42%口径归属仍待补证，见[核验](BALLI_2021_REVIEW_2026-11-18.md)。 |
 | QUALITY-001z Yoon 2026 两物深PSF和光学/系统MTF | done | 0.3.23 经 PR #127/a7ce01e、Pages 44267510878 上线。271 个测试、12 文件一致、无头 Chrome 的306条记录、9个配置、6种视口及7个出处验证通过。原始PSF及逐频数表仍待补，见[核验](YOON_2026_REVIEW_2026-11-18.md)。 |
 | QUALITY-001aa Hasegawa 2026 毫米级单层离散RGB实测 | done | 0.3.24 经 PR #128/c8788b4、Pages 44272450188 上线。273 个测试、12 文件一致、无头 Chrome 的15条记录、6个焦差坐标、两类功率比、可见光筛选及引用往返通过。SI、原始数表和PSF待补，见[核验](HASEGAWA_2026_REVIEW_2026-11-18.md)。 |
-| QUALITY-001ab Bayati 2022 二维逆设计的可见光对照 | in_progress | 沿 Yoon 2026 参考文献26。已核 UW 提前上线版及 PMC 正式版和图2/6。下一步确认图2 MTF 的口径归属、图6轴向单位、47%/51%统计口径及原始数据。DOI 10.1515/nanoph-2021-0431。 |
+| QUALITY-001ab Bayati 2022 二维逆设计的可见光对照 | in_progress | 四只实制镜、两口径焦深/最小x向FWHM、两轴扫效率报告值、两口径候选的RGB MTF、实验与模拟SSIM已核入。原始数组与曲线归属仍待补，见[核验](BAYATI_2022_REVIEW_2026-11-18.md)。 |
+| QUALITY-001ac Bayati 2020 柱面线焦逆设计 | in_progress | 沿 Bayati 2022 参考文献41。已取 UW 的正式 ACS PDF。核实各横向尺寸、名义焦距、实测焦深和方向宽度，再核 SI 及原始数据。DOI 10.1021/acsphotonics.9b01703。 |
 | QUALITY-002 手机SNR/MTF/色差独立测量 | in_progress | 本机Codex，2026-11-14；先核有型号和协议的SNR及MTF原始研究；外接镜组、场景与处理链不得写进原生模组，PSNR不替代SNR |
 | QUALITY-003 VRAR MTF与色差 | in_progress | 本机Codex，2026-11-14；复核开放PR #69数据及原文，优先MTF/截止频率、颜色/场点/眼位、色差和先进设备独立测量，不能从曲线猜统一单值 |
 | QUALITY-001a 文献器件首批 | done | 4项原始研究/8器件配置/21行，几何、波段、逐谱点焦距/FWHM/Strehl、PSNR及冲突；见[首批核验](QUALITY_BATCH_2026-11-14.md)；PR #72/23fdecb与Pages43571286647实页验收，不关闭父目标 |

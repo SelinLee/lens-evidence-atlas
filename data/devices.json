@@ -1072,6 +1072,69 @@
       "checked_on": "2026-11-18",
       "publication_source": "hasegawa_tsf_2026",
       "kind": "institutional_report"
+    },
+    {
+      "id": "bayati_edof_2022",
+      "title": "Bayati et al. (2022): Inverse designed extended depth of focus meta-optics for broadband imaging in the visible",
+      "url": "https://doi.org/10.1515/nanoph-2021-0431",
+      "kind": "peer_reviewed_paper",
+      "scope": "Nanophotonics 11(11), 2531–2540。线上先发2021-09-24。按正式卷期归2022。DOI及Wiley索引核对，独立无头出版社正文403；PMC有正式版。",
+      "checked_on": "2026-11-18",
+      "doi": "10.1515/nanoph-2021-0431"
+    },
+    {
+      "id": "bayati_edof_pdf_2022",
+      "title": "Nanophotonics 正式卷期PDF · pp2531–2540",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11501592.1/PMC11501592.1.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "10页、1953628字节，SHA256 49434f3fb1cca424a8635e21e617a39fd6c1d9e81fd72b6c4063bc57f0f961ee。视觉核Fig.1–7和Table 1；内嵌为出版设置joboptions。",
+      "checked_on": "2026-11-18",
+      "publication_source": "bayati_edof_2022"
+    },
+    {
+      "id": "bayati_edof_aop_2022",
+      "title": "UW 作者组 · 期刊提前上线版",
+      "url": "https://labs.ece.uw.edu/amlab/Papers_Journals/Elyas_Raphael_Inverse_Design_2D.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "Nanophotonics 2021 aop，1953528字节，SHA256 d343835cb10b9c27dd9acc3c3b769acd20b9cdde5074fc7affdbea789e59c0d4。版次页码不同，核对Fig.1/2和效率正文。",
+      "checked_on": "2026-11-18",
+      "publication_source": "bayati_edof_2022"
+    },
+    {
+      "id": "bayati_edof_v1_2022",
+      "title": "arXiv:2105.00160v1 · 首稿及同份补图 S1/S2",
+      "url": "https://arxiv.org/pdf/2105.00160v1",
+      "kind": "author_manuscript",
+      "scope": "2021-05-01首稿，23页、1087800字节，SHA256 f35c96df39396fc9fb8675edb76c875cbf4acf59cb22396b0a7ee97aa4616738。PDF p12 数据和代码按合理请求取得；p18 Fig.2B明确模拟；pp21–23补图同版；无内嵌附件。",
+      "checked_on": "2026-11-18",
+      "publication_source": "bayati_edof_2022"
+    },
+    {
+      "id": "bayati_edof_v2_2022",
+      "title": "arXiv:2105.00160v2 · 修订作者稿",
+      "url": "https://arxiv.org/pdf/2105.00160v2",
+      "kind": "author_manuscript",
+      "scope": "2021-09-30修订作者稿，9页、930317字节，SHA256 7c8f2416d76b15852157a42943f12cf130768327661a1addcaba68fe157b8150。与正式卷期版非同字节；修订稿正文中的焦深、FWHM及效率印字一致。",
+      "checked_on": "2026-11-18",
+      "publication_source": "bayati_edof_2022"
+    },
+    {
+      "id": "bayati_edof_thesis_2022",
+      "title": "Elyas Bayati 学位论文 · Chapter 3",
+      "url": "https://labs.ece.uw.edu/amlab/Thesis/UWPhDThesis_Elyas_Bayati_Final.pdf",
+      "kind": "doctoral_thesis",
+      "scope": "原作者学位论文同实验，11480958字节，SHA256 3200f60610b93c1e3cdae1ccc61655f0f98dfe4012d75c3fbab1daec706f6569。印刷pp37–41、51，Fig.12C/D未明列口径，图18复现效率z单位疑点。",
+      "checked_on": "2026-11-18",
+      "publication_source": "bayati_edof_2022"
+    },
+    {
+      "id": "bayati_edof_pmc_2022",
+      "title": "PMC11501592.1 · 正式材料清单",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11501592.1/PMC11501592.1.json",
+      "kind": "repository",
+      "scope": "PMC元数据与XML返回200。is_manuscript=false/is_retracted=false；对象目录未截断共41项，四个主文件、37幅jpg衍生图。XML未列SI文件或Data Availability元素，未定位独立PSF/MTF数组。",
+      "checked_on": "2026-11-18",
+      "publication_source": "bayati_edof_2022"
     }
   ],
   "domains": {
@@ -4461,6 +4524,71 @@
           "axis_bounds": {
             "min": 0,
             "max": 100
+          }
+        },
+        {
+          "id": "depth_of_focus_um",
+          "label": "实测轴向焦深宽度 (μm)",
+          "definition": "同一波长下满足作者焦深判据的轴向范围宽度。",
+          "conditions": "实际波长、焦深判据、轴向采样、参考和不确定度。",
+          "numeric": true,
+          "definition_refs": [
+            {
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 对应Fig.1C–F"
+            }
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
+        },
+        {
+          "id": "minimum_psf_fwhm_x_um",
+          "label": "轴扫最小x向焦斑FWHM (μm)",
+          "definition": "作者在近焦区域由实测x向强度拟合得到的最小FWHM。",
+          "conditions": "轴向搜索范围、呈现单位、拟合模型、照明、评价面和采样。",
+          "numeric": true,
+          "definition_refs": [
+            {
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 §2、Fig.2A"
+            }
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
+        },
+        {
+          "id": "reported_axial_scan_focusing_efficiency_pct",
+          "label": "轴扫聚焦效率报告值 (%)",
+          "definition": "轴向聚焦效率实验对应的作者报告值，可保留未给出选面或聚合条件的结果。",
+          "conditions": "效率分母、焦圈、测量轴向范围与汇总规则；图轴或选择条件未核时不赋予确定焦面或峰值。",
+          "numeric": true,
+          "definition_refs": [
+            {
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2、pp2537–2538 §5.2及Fig.6"
+            }
+          ],
+          "axis_bounds": {
+            "min": 0,
+            "max": 100
+          }
+        },
+        {
+          "id": "simulated_psf_correlation_bandwidth_nm",
+          "label": "模拟PSF相关带宽 (nm)",
+          "definition": "模拟PSF相关系数达到作者阈限的波长范围宽度。",
+          "conditions": "参考PSF的λ、判据、口径和模型；连续实测带宽独立。",
+          "numeric": true,
+          "definition_refs": [
+            {
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2534–2535 Fig.2B与正文；arXiv v1 PDF p18"
+            }
+          ],
+          "axis_bounds": {
+            "min": 0
           }
         }
       ],
@@ -187178,9 +187306,2944 @@
               "object_distance_m": 0.02
             }
           }
+        },
+        {
+          "id": "bayati2022_edof_100_dof",
+          "model": "Bayati 2022 · D100μm 逆设计EDOF · 625nm焦深",
+          "study_id": "bayati2022",
+          "specimen_id": "edof_100",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "实制器件同一波长的轴向焦深表征。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段；p2534 Fig.1图注",
+              "note": "同一工艺的实制圆形100μm口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 设计段；p2534 Fig.1C–F图注",
+              "note": "作者写明两种结构共享对应名义焦距；实测峰位未逐波长打印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段",
+              "note": "沉积并刻蚀穿透600nm SiN层；基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2533 §2 单元和制备段",
+              "note": "作者按口径列400nm周期的两类元胞设计，100μm为圆柱，1mm为方形纳米柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "二维延长焦深",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2534 §2；Fig.1C–F",
+              "note": "按轴向扫描中的高斯形状界定焦深。逐波长最佳焦点未给印字。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.44,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2531 摘要；p2534 §2 第一段",
+              "note": "原文EDOF约0.44；正文说明两个口径的NA相同。实制NA独立测量待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "display": "约 0.44",
+              "approximate": true
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 焦深段；p2534 Fig.1E；p2537 §5.1",
+              "note": "该焦深测量所用LED中心波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "625nm LED轴向扫描；以光束剖面仍呈高斯界定焦深",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 焦深段；p2534 Fig.1E；p2537 §5.1",
+              "note": "625nm Thorlabs M625F2，Fig.5继像物镜40×，自动位移台标称轴向分辨率1μm；实际步长、像方μm/px和重复数未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_stage_resolution_um": 1,
+              "axial_sample_step_um": null,
+              "image_plane_pixel_size_um": null,
+              "nominal_collection_magnification": 40
+            },
+            "depth_of_focus_um": {
+              "value": 83,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 焦深段；p2534 Fig.1E；p2537 §5.1",
+              "note": "作者由轴向实测数据判断剖面仍呈高斯的范围宽度。高斯判据的数值阈限和重复数未给。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "dof_criterion": "author_gaussian_profile_range",
+              "approximate": true,
+              "display": "约 83"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.1对应正文",
+              "note": "轴向强度图以z/f作坐标，焦深宽度和两拍摄面各有含义；无印字逐波长最佳焦位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_edof_100_width",
+          "model": "Bayati 2022 · D100μm 逆设计EDOF · 最小x向FWHM",
+          "study_id": "bayati2022",
+          "specimen_id": "edof_100",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "近焦实测剖面拟合；照明波长未单列。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段；p2534 Fig.1图注",
+              "note": "同一工艺的实制圆形100μm口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 设计段；p2534 Fig.1C–F图注",
+              "note": "作者写明两种结构共享对应名义焦距；实测峰位未逐波长打印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段",
+              "note": "沉积并刻蚀穿透600nm SiN层；基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2533 §2 单元和制备段",
+              "note": "作者按口径列400nm周期的两类元胞设计，100μm为圆柱，1mm为方形纳米柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "二维延长焦深",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2534 §2；Fig.1C–F",
+              "note": "按轴向扫描中的高斯形状界定焦深。逐波长最佳焦点未给印字。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.44,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2531 摘要；p2534 §2 第一段",
+              "note": "原文EDOF约0.44；正文说明两个口径的NA相同。实制NA独立测量待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "display": "约 0.44",
+              "approximate": true
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.2A对应文字，逆设计EDOF/100μm；Fig.2A子图",
+              "note": "Fig.2A和宽度正文未单列照明波长，不能由上一段625nm焦深或Fig.2C/D颜色补填。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "近焦x向剖面的高斯拟合，保留最小FWHM",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.2A对应文字，逆设计EDOF/100μm；Fig.2A子图",
+              "note": "Fig.2A左口径1mm、x用mm；右口径100μm、x用μm。选中焦面、波长、横向采样和拟合窗口未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "minimum_psf_fwhm_x_um": {
+              "value": 3.35,
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.2A对应文字，逆设计EDOF/100μm；Fig.2A子图",
+              "note": "作者正文印字。原文把近焦实测剖面以高斯函数拟合；对照和EDOF两口径归属由Fig.2A图例及正文交叉核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "statistic": "minimum_near_focus_gaussian_fit",
+              "direction": "x",
+              "evaluation_plane_um": null,
+              "sourceIds": [
+                "bayati_edof_pdf_2022",
+                "bayati_edof_aop_2022",
+                "bayati_edof_v2_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "bayati2022_traditional_100_dof",
+          "model": "Bayati 2022 · D100μm 双曲对照 · 625nm焦深",
+          "study_id": "bayati2022",
+          "specimen_id": "traditional_100",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "实制器件同一波长的轴向焦深表征。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段；p2534 Fig.1图注",
+              "note": "同一工艺的实制圆形100μm口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 设计段；p2534 Fig.1C–F图注",
+              "note": "作者写明两种结构共享对应名义焦距；实测峰位未逐波长打印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段",
+              "note": "沉积并刻蚀穿透600nm SiN层；基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2533 §2 单元和制备段",
+              "note": "作者按口径列400nm周期的两类元胞设计，100μm为圆柱，1mm为方形纳米柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "普通双曲色散对照",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2534 §2；Fig.1C–F",
+              "note": "按轴向扫描中的高斯形状界定焦深。逐波长最佳焦点未给印字。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 两种双曲镜设计；p2534 Fig.1C,D",
+              "note": "对照与同口径EDOF共享D、f。对照有效NA的单独数值待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "同名义D/f；单独NA待核"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 焦深段；p2534 Fig.1C；p2537 §5.1",
+              "note": "该焦深测量所用LED中心波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "625nm LED轴向扫描；以光束剖面仍呈高斯界定焦深",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 焦深段；p2534 Fig.1C；p2537 §5.1",
+              "note": "625nm Thorlabs M625F2，Fig.5继像物镜40×，自动位移台标称轴向分辨率1μm；实际步长、像方μm/px和重复数未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_stage_resolution_um": 1,
+              "axial_sample_step_um": null,
+              "image_plane_pixel_size_um": null,
+              "nominal_collection_magnification": 40
+            },
+            "depth_of_focus_um": {
+              "value": 10,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 焦深段；p2534 Fig.1C；p2537 §5.1",
+              "note": "作者由轴向实测数据判断剖面仍呈高斯的范围宽度。高斯判据的数值阈限和重复数未给。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "dof_criterion": "author_gaussian_profile_range",
+              "approximate": false,
+              "display": "10"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.1对应正文",
+              "note": "轴向强度图以z/f作坐标，焦深宽度和两拍摄面各有含义；无印字逐波长最佳焦位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_traditional_100_width",
+          "model": "Bayati 2022 · D100μm 双曲对照 · 最小x向FWHM",
+          "study_id": "bayati2022",
+          "specimen_id": "traditional_100",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "近焦实测剖面拟合；照明波长未单列。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段；p2534 Fig.1图注",
+              "note": "同一工艺的实制圆形100μm口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 设计段；p2534 Fig.1C–F图注",
+              "note": "作者写明两种结构共享对应名义焦距；实测峰位未逐波长打印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段",
+              "note": "沉积并刻蚀穿透600nm SiN层；基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2533 §2 单元和制备段",
+              "note": "作者按口径列400nm周期的两类元胞设计，100μm为圆柱，1mm为方形纳米柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "普通双曲色散对照",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2534 §2；Fig.1C–F",
+              "note": "按轴向扫描中的高斯形状界定焦深。逐波长最佳焦点未给印字。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 两种双曲镜设计；p2534 Fig.1C,D",
+              "note": "对照与同口径EDOF共享D、f。对照有效NA的单独数值待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "同名义D/f；单独NA待核"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.2A对应文字，双曲对照/100μm；Fig.2A子图",
+              "note": "Fig.2A和宽度正文未单列照明波长，不能由上一段625nm焦深或Fig.2C/D颜色补填。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "近焦x向剖面的高斯拟合，保留最小FWHM",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.2A对应文字，双曲对照/100μm；Fig.2A子图",
+              "note": "Fig.2A左口径1mm、x用mm；右口径100μm、x用μm。选中焦面、波长、横向采样和拟合窗口未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "minimum_psf_fwhm_x_um": {
+              "value": 3,
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.2A对应文字，双曲对照/100μm；Fig.2A子图",
+              "note": "作者正文印字。原文把近焦实测剖面以高斯函数拟合；对照和EDOF两口径归属由Fig.2A图例及正文交叉核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "statistic": "minimum_near_focus_gaussian_fit",
+              "direction": "x",
+              "evaluation_plane_um": null,
+              "sourceIds": [
+                "bayati_edof_pdf_2022",
+                "bayati_edof_aop_2022",
+                "bayati_edof_v2_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "bayati2022_edof_1000_dof",
+          "model": "Bayati 2022 · D1000μm 逆设计EDOF · 625nm焦深",
+          "study_id": "bayati2022",
+          "specimen_id": "edof_1000",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "实制器件同一波长的轴向焦深表征。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段；p2534 Fig.1图注",
+              "note": "同一工艺的实制圆形1000μm口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 设计段；p2534 Fig.1C–F图注",
+              "note": "作者写明两种结构共享对应名义焦距；实测峰位未逐波长打印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段",
+              "note": "沉积并刻蚀穿透600nm SiN层；基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2533 §2 单元和制备段",
+              "note": "作者按口径列400nm周期的两类元胞设计，100μm为圆柱，1mm为方形纳米柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "二维延长焦深",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2534 §2；Fig.1C–F",
+              "note": "按轴向扫描中的高斯形状界定焦深。逐波长最佳焦点未给印字。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.44,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2531 摘要；p2534 §2 第一段",
+              "note": "原文EDOF约0.44；正文说明两个口径的NA相同。实制NA独立测量待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "display": "约 0.44",
+              "approximate": true
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 焦深段；p2534 Fig.1F；p2537 §5.1",
+              "note": "该焦深测量所用LED中心波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "625nm LED轴向扫描；以光束剖面仍呈高斯界定焦深",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 焦深段；p2534 Fig.1F；p2537 §5.1",
+              "note": "625nm Thorlabs M625F2，Fig.5继像物镜40×，自动位移台标称轴向分辨率2μm；实际步长、像方μm/px和重复数未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_stage_resolution_um": 2,
+              "axial_sample_step_um": null,
+              "image_plane_pixel_size_um": null,
+              "nominal_collection_magnification": 40
+            },
+            "depth_of_focus_um": {
+              "value": 400,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 焦深段；p2534 Fig.1F；p2537 §5.1",
+              "note": "作者由轴向实测数据判断剖面仍呈高斯的范围宽度。原文记录0.4mm。高斯判据的数值阈限和重复数未给。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "dof_criterion": "author_gaussian_profile_range",
+              "approximate": true,
+              "display": "约 400"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.1对应正文",
+              "note": "轴向强度图以z/f作坐标，焦深宽度和两拍摄面各有含义；无印字逐波长最佳焦位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_edof_1000_width",
+          "model": "Bayati 2022 · D1000μm 逆设计EDOF · 最小x向FWHM",
+          "study_id": "bayati2022",
+          "specimen_id": "edof_1000",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "近焦实测剖面拟合；照明波长未单列。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段；p2534 Fig.1图注",
+              "note": "同一工艺的实制圆形1000μm口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 设计段；p2534 Fig.1C–F图注",
+              "note": "作者写明两种结构共享对应名义焦距；实测峰位未逐波长打印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段",
+              "note": "沉积并刻蚀穿透600nm SiN层；基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2533 §2 单元和制备段",
+              "note": "作者按口径列400nm周期的两类元胞设计，100μm为圆柱，1mm为方形纳米柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "二维延长焦深",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2534 §2；Fig.1C–F",
+              "note": "按轴向扫描中的高斯形状界定焦深。逐波长最佳焦点未给印字。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.44,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2531 摘要；p2534 §2 第一段",
+              "note": "原文EDOF约0.44；正文说明两个口径的NA相同。实制NA独立测量待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "display": "约 0.44",
+              "approximate": true
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.2A对应文字，逆设计EDOF/1000μm；Fig.2A子图",
+              "note": "Fig.2A和宽度正文未单列照明波长，不能由上一段625nm焦深或Fig.2C/D颜色补填。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "近焦x向剖面的高斯拟合，保留最小FWHM",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.2A对应文字，逆设计EDOF/1000μm；Fig.2A子图",
+              "note": "Fig.2A左口径1mm、x用mm；右口径100μm、x用μm。选中焦面、波长、横向采样和拟合窗口未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "minimum_psf_fwhm_x_um": {
+              "value": 24.9,
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.2A对应文字，逆设计EDOF/1000μm；Fig.2A子图",
+              "note": "作者正文印字。原文把近焦实测剖面以高斯函数拟合；对照和EDOF两口径归属由Fig.2A图例及正文交叉核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "statistic": "minimum_near_focus_gaussian_fit",
+              "direction": "x",
+              "evaluation_plane_um": null,
+              "sourceIds": [
+                "bayati_edof_pdf_2022",
+                "bayati_edof_aop_2022",
+                "bayati_edof_v2_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "bayati2022_traditional_1000_dof",
+          "model": "Bayati 2022 · D1000μm 双曲对照 · 625nm焦深",
+          "study_id": "bayati2022",
+          "specimen_id": "traditional_1000",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "实制器件同一波长的轴向焦深表征。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段；p2534 Fig.1图注",
+              "note": "同一工艺的实制圆形1000μm口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 设计段；p2534 Fig.1C–F图注",
+              "note": "作者写明两种结构共享对应名义焦距；实测峰位未逐波长打印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段",
+              "note": "沉积并刻蚀穿透600nm SiN层；基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2533 §2 单元和制备段",
+              "note": "作者按口径列400nm周期的两类元胞设计，100μm为圆柱，1mm为方形纳米柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "普通双曲色散对照",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2534 §2；Fig.1C–F",
+              "note": "按轴向扫描中的高斯形状界定焦深。逐波长最佳焦点未给印字。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 两种双曲镜设计；p2534 Fig.1C,D",
+              "note": "对照与同口径EDOF共享D、f。对照有效NA的单独数值待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "同名义D/f；单独NA待核"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 焦深段；p2534 Fig.1D；p2537 §5.1",
+              "note": "该焦深测量所用LED中心波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "625nm LED轴向扫描；以光束剖面仍呈高斯界定焦深",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 焦深段；p2534 Fig.1D；p2537 §5.1",
+              "note": "625nm Thorlabs M625F2，Fig.5继像物镜40×，自动位移台标称轴向分辨率2μm；实际步长、像方μm/px和重复数未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_stage_resolution_um": 2,
+              "axial_sample_step_um": null,
+              "image_plane_pixel_size_um": null,
+              "nominal_collection_magnification": 40
+            },
+            "depth_of_focus_um": {
+              "value": 100,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 焦深段；p2534 Fig.1D；p2537 §5.1",
+              "note": "作者由轴向实测数据判断剖面仍呈高斯的范围宽度。原文记录0.1mm。高斯判据的数值阈限和重复数未给。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "dof_criterion": "author_gaussian_profile_range",
+              "approximate": false,
+              "display": "100"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.1对应正文",
+              "note": "轴向强度图以z/f作坐标，焦深宽度和两拍摄面各有含义；无印字逐波长最佳焦位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_traditional_1000_width",
+          "model": "Bayati 2022 · D1000μm 双曲对照 · 最小x向FWHM",
+          "study_id": "bayati2022",
+          "specimen_id": "traditional_1000",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "近焦实测剖面拟合；照明波长未单列。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段；p2534 Fig.1图注",
+              "note": "同一工艺的实制圆形1000μm口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 设计段；p2534 Fig.1C–F图注",
+              "note": "作者写明两种结构共享对应名义焦距；实测峰位未逐波长打印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段",
+              "note": "沉积并刻蚀穿透600nm SiN层；基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2533 §2 单元和制备段",
+              "note": "作者按口径列400nm周期的两类元胞设计，100μm为圆柱，1mm为方形纳米柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "普通双曲色散对照",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2534 §2；Fig.1C–F",
+              "note": "按轴向扫描中的高斯形状界定焦深。逐波长最佳焦点未给印字。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 两种双曲镜设计；p2534 Fig.1C,D",
+              "note": "对照与同口径EDOF共享D、f。对照有效NA的单独数值待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "同名义D/f；单独NA待核"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.2A对应文字，双曲对照/1000μm；Fig.2A子图",
+              "note": "Fig.2A和宽度正文未单列照明波长，不能由上一段625nm焦深或Fig.2C/D颜色补填。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "近焦x向剖面的高斯拟合，保留最小FWHM",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.2A对应文字，双曲对照/1000μm；Fig.2A子图",
+              "note": "Fig.2A左口径1mm、x用mm；右口径100μm、x用μm。选中焦面、波长、横向采样和拟合窗口未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "minimum_psf_fwhm_x_um": {
+              "value": 20.6,
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.2A对应文字，双曲对照/1000μm；Fig.2A子图",
+              "note": "作者正文印字。原文把近焦实测剖面以高斯函数拟合；对照和EDOF两口径归属由Fig.2A图例及正文交叉核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "statistic": "minimum_near_focus_gaussian_fit",
+              "direction": "x",
+              "evaluation_plane_um": null,
+              "sourceIds": [
+                "bayati_edof_pdf_2022",
+                "bayati_edof_aop_2022",
+                "bayati_edof_v2_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "bayati2022_edof_1000_efficiency",
+          "model": "Bayati 2022 · D1000μm 逆设计EDOF · 轴扫聚焦效率",
+          "study_id": "bayati2022",
+          "specimen_id": "edof_1000",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者给出的轴扫效率报告值；绝对轴向单位和选面未核。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段；p2534 Fig.1图注",
+              "note": "同一工艺的实制圆形1000μm口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 设计段；p2534 Fig.1C–F图注",
+              "note": "作者写明两种结构共享对应名义焦距；实测峰位未逐波长打印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段",
+              "note": "沉积并刻蚀穿透600nm SiN层；基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2533 §2 单元和制备段",
+              "note": "作者按口径列400nm周期的两类元胞设计，100μm为圆柱，1mm为方形纳米柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "二维延长焦深",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2534 §2；Fig.1C–F",
+              "note": "按轴向扫描中的高斯形状界定焦深。逐波长最佳焦点未给印字。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.44,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2531 摘要；p2534 §2 第一段",
+              "note": "原文EDOF约0.44；正文说明两个口径的NA相同。实制NA独立测量待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "display": "约 0.44",
+              "approximate": true
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 效率句；pp2537–2538 §5.2/Fig.6；arXiv v1 PDF p23 Fig.S2；学位论文印刷p51 Fig.18",
+              "note": "前文625nm明确用于焦深装置；效率段与Fig.6没有单列该报告值的照明谱点。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_protocol": {
+              "value": "圆形ROI半径为焦面最小FWHM的3倍；分母为照到超透镜的总功率",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2537–2538 §5.2/Fig.6；arXiv v1 PDF p23 Fig.S2；学位论文印刷p51 Fig.18",
+              "note": "原图z轴印μm、刻度0.8–1.2；名义f=1mm。绝对轴向单位、作者印字对应面、汇总算法、照明、重复数及功率校准待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "bayati_edof_pdf_2022",
+                "bayati_edof_v1_2022",
+                "bayati_edof_thesis_2022"
+              ],
+              "denominator": "incident_power_on_metalens",
+              "integration_radius_multiple_of_min_fwhm": 3,
+              "axial_unit_status": "unresolved",
+              "axial_axis_original_unit": "μm",
+              "axial_axis_printed_extent": [
+                0.8,
+                1.2
+              ],
+              "evaluation_plane_um": null
+            },
+            "reported_axial_scan_focusing_efficiency_pct": {
+              "value": 47,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 轴扫效率对应正文；p2538 Fig.6",
+              "note": "作者印字，明确器件类型和口径。对应焦面和轴扫聚合方式未报告，不能从曲线上反推峰值或平均值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_axial_scan_unspecified",
+              "denominator": "incident_power_on_metalens"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_edof_1000_plane_1000",
+          "model": "Bayati 2022 · D1000μm 逆设计EDOF · z=1000μm焦斑",
+          "study_id": "bayati2022",
+          "specimen_id": "edof_1000",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "固定拍摄面焦斑示例，参考轴向剖面Fig.1。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段；p2534 Fig.1图注",
+              "note": "同一工艺的实制圆形1000μm口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 设计段；p2534 Fig.1C–F图注",
+              "note": "作者写明两种结构共享对应名义焦距；实测峰位未逐波长打印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段",
+              "note": "沉积并刻蚀穿透600nm SiN层；基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2533 §2 单元和制备段",
+              "note": "作者按口径列400nm周期的两类元胞设计，100μm为圆柱，1mm为方形纳米柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "二维延长焦深",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2534 §2；Fig.1C–F",
+              "note": "按轴向扫描中的高斯形状界定焦深。逐波长最佳焦点未给印字。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.44,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2531 摘要；p2534 §2 第一段",
+              "note": "原文EDOF约0.44；正文说明两个口径的NA相同。实制NA独立测量待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "display": "约 0.44",
+              "approximate": true
+            },
+            "psf_protocol": {
+              "value": "固定面PSF图",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.1I及正文 z=1mm",
+              "note": "原文用两面焦斑展示延长焦深。图尺50μm；二维原始阵列、有效像素标尺和PSF归一化待补。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "evaluation_plane_um": 1000,
+              "image_plane_pixel_size_um": null,
+              "band_context_nm": 625
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.1I及正文 z=1mm",
+              "note": "与文中625nm轴扫一起讨论；图注未单列二维图的照明波长。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_edof_1000_plane_1090",
+          "model": "Bayati 2022 · D1000μm 逆设计EDOF · z=1090μm焦斑",
+          "study_id": "bayati2022",
+          "specimen_id": "edof_1000",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "固定拍摄面焦斑示例，参考轴向剖面Fig.1。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段；p2534 Fig.1图注",
+              "note": "同一工艺的实制圆形1000μm口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 设计段；p2534 Fig.1C–F图注",
+              "note": "作者写明两种结构共享对应名义焦距；实测峰位未逐波长打印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段",
+              "note": "沉积并刻蚀穿透600nm SiN层；基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2533 §2 单元和制备段",
+              "note": "作者按口径列400nm周期的两类元胞设计，100μm为圆柱，1mm为方形纳米柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "二维延长焦深",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2534 §2；Fig.1C–F",
+              "note": "按轴向扫描中的高斯形状界定焦深。逐波长最佳焦点未给印字。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.44,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2531 摘要；p2534 §2 第一段",
+              "note": "原文EDOF约0.44；正文说明两个口径的NA相同。实制NA独立测量待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "display": "约 0.44",
+              "approximate": true
+            },
+            "psf_protocol": {
+              "value": "固定面PSF图",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.1J及正文 z=1.09mm",
+              "note": "原文用两面焦斑展示延长焦深。图尺50μm；二维原始阵列、有效像素标尺和PSF归一化待补。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "evaluation_plane_um": 1090,
+              "image_plane_pixel_size_um": null,
+              "band_context_nm": 625
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.1J及正文 z=1.09mm",
+              "note": "与文中625nm轴扫一起讨论；图注未单列二维图的照明波长。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_traditional_1000_efficiency",
+          "model": "Bayati 2022 · D1000μm 双曲对照 · 轴扫聚焦效率",
+          "study_id": "bayati2022",
+          "specimen_id": "traditional_1000",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者给出的轴扫效率报告值；绝对轴向单位和选面未核。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段；p2534 Fig.1图注",
+              "note": "同一工艺的实制圆形1000μm口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 设计段；p2534 Fig.1C–F图注",
+              "note": "作者写明两种结构共享对应名义焦距；实测峰位未逐波长打印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段",
+              "note": "沉积并刻蚀穿透600nm SiN层；基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2533 §2 单元和制备段",
+              "note": "作者按口径列400nm周期的两类元胞设计，100μm为圆柱，1mm为方形纳米柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "普通双曲色散对照",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2534 §2；Fig.1C–F",
+              "note": "按轴向扫描中的高斯形状界定焦深。逐波长最佳焦点未给印字。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 两种双曲镜设计；p2534 Fig.1C,D",
+              "note": "对照与同口径EDOF共享D、f。对照有效NA的单独数值待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "同名义D/f；单独NA待核"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 效率句；pp2537–2538 §5.2/Fig.6；arXiv v1 PDF p23 Fig.S2；学位论文印刷p51 Fig.18",
+              "note": "前文625nm明确用于焦深装置；效率段与Fig.6没有单列该报告值的照明谱点。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_protocol": {
+              "value": "圆形ROI半径为焦面最小FWHM的3倍；分母为照到超透镜的总功率",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2537–2538 §5.2/Fig.6；arXiv v1 PDF p23 Fig.S2；学位论文印刷p51 Fig.18",
+              "note": "原图z轴印μm、刻度0.8–1.2；名义f=1mm。绝对轴向单位、作者印字对应面、汇总算法、照明、重复数及功率校准待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "bayati_edof_pdf_2022",
+                "bayati_edof_v1_2022",
+                "bayati_edof_thesis_2022"
+              ],
+              "denominator": "incident_power_on_metalens",
+              "integration_radius_multiple_of_min_fwhm": 3,
+              "axial_unit_status": "unresolved",
+              "axial_axis_original_unit": "μm",
+              "axial_axis_printed_extent": [
+                0.8,
+                1.2
+              ],
+              "evaluation_plane_um": null
+            },
+            "reported_axial_scan_focusing_efficiency_pct": {
+              "value": 51,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 轴扫效率对应正文；p2538 Fig.6",
+              "note": "作者印字，明确器件类型和口径。对应焦面和轴扫聚合方式未报告，不能从曲线上反推峰值或平均值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_axial_scan_unspecified",
+              "denominator": "incident_power_on_metalens"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_traditional_1000_plane_1000",
+          "model": "Bayati 2022 · D1000μm 双曲对照 · z=1000μm焦斑",
+          "study_id": "bayati2022",
+          "specimen_id": "traditional_1000",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "固定拍摄面焦斑示例，参考轴向剖面Fig.1。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段；p2534 Fig.1图注",
+              "note": "同一工艺的实制圆形1000μm口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 设计段；p2534 Fig.1C–F图注",
+              "note": "作者写明两种结构共享对应名义焦距；实测峰位未逐波长打印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段",
+              "note": "沉积并刻蚀穿透600nm SiN层；基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2533 §2 单元和制备段",
+              "note": "作者按口径列400nm周期的两类元胞设计，100μm为圆柱，1mm为方形纳米柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "普通双曲色散对照",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2534 §2；Fig.1C–F",
+              "note": "按轴向扫描中的高斯形状界定焦深。逐波长最佳焦点未给印字。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 两种双曲镜设计；p2534 Fig.1C,D",
+              "note": "对照与同口径EDOF共享D、f。对照有效NA的单独数值待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "同名义D/f；单独NA待核"
+            },
+            "psf_protocol": {
+              "value": "固定面PSF图",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.1G及正文 z=1mm",
+              "note": "原文用两面焦斑展示延长焦深。图尺50μm；二维原始阵列、有效像素标尺和PSF归一化待补。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "evaluation_plane_um": 1000,
+              "image_plane_pixel_size_um": null,
+              "band_context_nm": 625
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.1G及正文 z=1mm",
+              "note": "与文中625nm轴扫一起讨论；图注未单列二维图的照明波长。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_traditional_1000_plane_1090",
+          "model": "Bayati 2022 · D1000μm 双曲对照 · z=1090μm焦斑",
+          "study_id": "bayati2022",
+          "specimen_id": "traditional_1000",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "固定拍摄面焦斑示例，参考轴向剖面Fig.1。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段；p2534 Fig.1图注",
+              "note": "同一工艺的实制圆形1000μm口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 设计段；p2534 Fig.1C–F图注",
+              "note": "作者写明两种结构共享对应名义焦距；实测峰位未逐波长打印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段",
+              "note": "沉积并刻蚀穿透600nm SiN层；基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2533 §2 单元和制备段",
+              "note": "作者按口径列400nm周期的两类元胞设计，100μm为圆柱，1mm为方形纳米柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "普通双曲色散对照",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2534 §2；Fig.1C–F",
+              "note": "按轴向扫描中的高斯形状界定焦深。逐波长最佳焦点未给印字。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 两种双曲镜设计；p2534 Fig.1C,D",
+              "note": "对照与同口径EDOF共享D、f。对照有效NA的单独数值待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "同名义D/f；单独NA待核"
+            },
+            "psf_protocol": {
+              "value": "固定面PSF图",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.1H及正文 z=1.09mm",
+              "note": "原文用两面焦斑展示延长焦深。图尺50μm；二维原始阵列、有效像素标尺和PSF归一化待补。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "evaluation_plane_um": 1090,
+              "image_plane_pixel_size_um": null,
+              "band_context_nm": 625
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2533–2534 Fig.1H及正文 z=1.09mm",
+              "note": "与文中625nm轴扫一起讨论；图注未单列二维图的照明波长。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_edof_mtf_unassigned_455",
+          "model": "Bayati 2022 · 逆设计EDOF · 口径待核MTF · 455nm",
+          "study_id": "bayati2022",
+          "specimen_id": "edof_mtf_unassigned",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "实制器件族的MTF记录，口径待核，非额外实物。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2C与对应正文，455nm曲线；学位论文Fig.12C",
+              "note": "Fig.2C/D及所核各版没有给对应口径；Fig.2A单独标有两个口径。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "100 / 1000 μm 候选"
+            },
+            "na": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2C与对应正文，455nm曲线；学位论文Fig.12C",
+              "note": "口径与有效NA归属待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 455,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2C与对应正文，455nm曲线；学位论文Fig.12C",
+              "note": "图例印字的实验波长，曲线由实测PSF产生。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "Fig.2C · 455nm · 归一频率",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2C与对应正文，455nm曲线；学位论文Fig.12C",
+              "note": "横轴为f/(560 cycles/mm)，图示−1至1；纵轴原印Intensity (a.u.)。作者称横截面，切线方向和S/T关系、FFT及DC归一化算法、物理采样未知。正文讨论固定面PSF，EDOF子图的具体z及参考谱点待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "bayati_edof_pdf_2022",
+                "bayati_edof_v1_2022",
+                "bayati_edof_thesis_2022",
+                "bayati_edof_pmc_2022"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "measured_psf_frequency_cross_section",
+              "frequency_unit": "normalized_spatial_frequency",
+              "normalization_frequency_cycles_mm": 560,
+              "normalized_frequency_axis_extent": [
+                -1,
+                1
+              ],
+              "direction": null,
+              "reference_focus_wavelength_nm": null,
+              "data_availability": "curves_only"
+            },
+            "psf_protocol": {
+              "value": "实测PSF用于MTF",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2C与对应正文，455nm曲线；学位论文Fig.12C",
+              "note": "正文讨论固定面PSF，EDOF子图的具体z及参考谱点待核。场角、有效像素标尺、实际截面方向和原始数组待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          },
+          "configuration_role": "unassigned_measurement_set",
+          "candidate_specimen_ids": [
+            "edof_100",
+            "edof_1000"
+          ]
+        },
+        {
+          "id": "bayati2022_edof_mtf_unassigned_530",
+          "model": "Bayati 2022 · 逆设计EDOF · 口径待核MTF · 530nm",
+          "study_id": "bayati2022",
+          "specimen_id": "edof_mtf_unassigned",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "实制器件族的MTF记录，口径待核，非额外实物。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2C与对应正文，530nm曲线；学位论文Fig.12C",
+              "note": "Fig.2C/D及所核各版没有给对应口径；Fig.2A单独标有两个口径。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "100 / 1000 μm 候选"
+            },
+            "na": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2C与对应正文，530nm曲线；学位论文Fig.12C",
+              "note": "口径与有效NA归属待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2C与对应正文，530nm曲线；学位论文Fig.12C",
+              "note": "图例印字的实验波长，曲线由实测PSF产生。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "Fig.2C · 530nm · 归一频率",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2C与对应正文，530nm曲线；学位论文Fig.12C",
+              "note": "横轴为f/(560 cycles/mm)，图示−1至1；纵轴原印Intensity (a.u.)。作者称横截面，切线方向和S/T关系、FFT及DC归一化算法、物理采样未知。正文讨论固定面PSF，EDOF子图的具体z及参考谱点待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "bayati_edof_pdf_2022",
+                "bayati_edof_v1_2022",
+                "bayati_edof_thesis_2022",
+                "bayati_edof_pmc_2022"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "measured_psf_frequency_cross_section",
+              "frequency_unit": "normalized_spatial_frequency",
+              "normalization_frequency_cycles_mm": 560,
+              "normalized_frequency_axis_extent": [
+                -1,
+                1
+              ],
+              "direction": null,
+              "reference_focus_wavelength_nm": null,
+              "data_availability": "curves_only"
+            },
+            "psf_protocol": {
+              "value": "实测PSF用于MTF",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2C与对应正文，530nm曲线；学位论文Fig.12C",
+              "note": "正文讨论固定面PSF，EDOF子图的具体z及参考谱点待核。场角、有效像素标尺、实际截面方向和原始数组待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          },
+          "configuration_role": "unassigned_measurement_set",
+          "candidate_specimen_ids": [
+            "edof_100",
+            "edof_1000"
+          ]
+        },
+        {
+          "id": "bayati2022_edof_mtf_unassigned_625",
+          "model": "Bayati 2022 · 逆设计EDOF · 口径待核MTF · 625nm",
+          "study_id": "bayati2022",
+          "specimen_id": "edof_mtf_unassigned",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "实制器件族的MTF记录，口径待核，非额外实物。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2C与对应正文，625nm曲线；学位论文Fig.12C",
+              "note": "Fig.2C/D及所核各版没有给对应口径；Fig.2A单独标有两个口径。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "100 / 1000 μm 候选"
+            },
+            "na": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2C与对应正文，625nm曲线；学位论文Fig.12C",
+              "note": "口径与有效NA归属待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2C与对应正文，625nm曲线；学位论文Fig.12C",
+              "note": "图例印字的实验波长，曲线由实测PSF产生。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "Fig.2C · 625nm · 归一频率",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2C与对应正文，625nm曲线；学位论文Fig.12C",
+              "note": "横轴为f/(560 cycles/mm)，图示−1至1；纵轴原印Intensity (a.u.)。作者称横截面，切线方向和S/T关系、FFT及DC归一化算法、物理采样未知。正文讨论固定面PSF，EDOF子图的具体z及参考谱点待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "bayati_edof_pdf_2022",
+                "bayati_edof_v1_2022",
+                "bayati_edof_thesis_2022",
+                "bayati_edof_pmc_2022"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "measured_psf_frequency_cross_section",
+              "frequency_unit": "normalized_spatial_frequency",
+              "normalization_frequency_cycles_mm": 560,
+              "normalized_frequency_axis_extent": [
+                -1,
+                1
+              ],
+              "direction": null,
+              "reference_focus_wavelength_nm": null,
+              "data_availability": "curves_only"
+            },
+            "psf_protocol": {
+              "value": "实测PSF用于MTF",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2C与对应正文，625nm曲线；学位论文Fig.12C",
+              "note": "正文讨论固定面PSF，EDOF子图的具体z及参考谱点待核。场角、有效像素标尺、实际截面方向和原始数组待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          },
+          "configuration_role": "unassigned_measurement_set",
+          "candidate_specimen_ids": [
+            "edof_100",
+            "edof_1000"
+          ]
+        },
+        {
+          "id": "bayati2022_traditional_mtf_unassigned_455",
+          "model": "Bayati 2022 · 双曲对照 · 口径待核MTF · 455nm",
+          "study_id": "bayati2022",
+          "specimen_id": "traditional_mtf_unassigned",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "实制器件族的MTF记录，口径待核，非额外实物。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2D与对应正文，455nm曲线；学位论文Fig.12D",
+              "note": "Fig.2C/D及所核各版没有给对应口径；Fig.2A单独标有两个口径。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "100 / 1000 μm 候选"
+            },
+            "na": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2D与对应正文，455nm曲线；学位论文Fig.12D",
+              "note": "口径与有效NA归属待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 455,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2D与对应正文，455nm曲线；学位论文Fig.12D",
+              "note": "图例印字的实验波长，曲线由实测PSF产生。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "Fig.2D · 455nm · 归一频率",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2D与对应正文，455nm曲线；学位论文Fig.12D",
+              "note": "横轴为f/(560 cycles/mm)，图示−1至1；纵轴原印Intensity (a.u.)。作者称横截面，切线方向和S/T关系、FFT及DC归一化算法、物理采样未知。作者明确对照用530nm焦面。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "bayati_edof_pdf_2022",
+                "bayati_edof_v1_2022",
+                "bayati_edof_thesis_2022",
+                "bayati_edof_pmc_2022"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "measured_psf_frequency_cross_section",
+              "frequency_unit": "normalized_spatial_frequency",
+              "normalization_frequency_cycles_mm": 560,
+              "normalized_frequency_axis_extent": [
+                -1,
+                1
+              ],
+              "direction": null,
+              "reference_focus_wavelength_nm": 530,
+              "data_availability": "curves_only"
+            },
+            "psf_protocol": {
+              "value": "实测PSF用于MTF",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2D与对应正文，455nm曲线；学位论文Fig.12D",
+              "note": "作者明确对照用530nm焦面。场角、有效像素标尺、实际截面方向和原始数组待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          },
+          "configuration_role": "unassigned_measurement_set",
+          "candidate_specimen_ids": [
+            "traditional_100",
+            "traditional_1000"
+          ]
+        },
+        {
+          "id": "bayati2022_traditional_mtf_unassigned_530",
+          "model": "Bayati 2022 · 双曲对照 · 口径待核MTF · 530nm",
+          "study_id": "bayati2022",
+          "specimen_id": "traditional_mtf_unassigned",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "实制器件族的MTF记录，口径待核，非额外实物。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2D与对应正文，530nm曲线；学位论文Fig.12D",
+              "note": "Fig.2C/D及所核各版没有给对应口径；Fig.2A单独标有两个口径。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "100 / 1000 μm 候选"
+            },
+            "na": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2D与对应正文，530nm曲线；学位论文Fig.12D",
+              "note": "口径与有效NA归属待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2D与对应正文，530nm曲线；学位论文Fig.12D",
+              "note": "图例印字的实验波长，曲线由实测PSF产生。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "Fig.2D · 530nm · 归一频率",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2D与对应正文，530nm曲线；学位论文Fig.12D",
+              "note": "横轴为f/(560 cycles/mm)，图示−1至1；纵轴原印Intensity (a.u.)。作者称横截面，切线方向和S/T关系、FFT及DC归一化算法、物理采样未知。作者明确对照用530nm焦面。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "bayati_edof_pdf_2022",
+                "bayati_edof_v1_2022",
+                "bayati_edof_thesis_2022",
+                "bayati_edof_pmc_2022"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "measured_psf_frequency_cross_section",
+              "frequency_unit": "normalized_spatial_frequency",
+              "normalization_frequency_cycles_mm": 560,
+              "normalized_frequency_axis_extent": [
+                -1,
+                1
+              ],
+              "direction": null,
+              "reference_focus_wavelength_nm": 530,
+              "data_availability": "curves_only"
+            },
+            "psf_protocol": {
+              "value": "实测PSF用于MTF",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2D与对应正文，530nm曲线；学位论文Fig.12D",
+              "note": "作者明确对照用530nm焦面。场角、有效像素标尺、实际截面方向和原始数组待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          },
+          "configuration_role": "unassigned_measurement_set",
+          "candidate_specimen_ids": [
+            "traditional_100",
+            "traditional_1000"
+          ]
+        },
+        {
+          "id": "bayati2022_traditional_mtf_unassigned_625",
+          "model": "Bayati 2022 · 双曲对照 · 口径待核MTF · 625nm",
+          "study_id": "bayati2022",
+          "specimen_id": "traditional_mtf_unassigned",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "实制器件族的MTF记录，口径待核，非额外实物。",
+          "values": {
+            "diameter_um": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2D与对应正文，625nm曲线；学位论文Fig.12D",
+              "note": "Fig.2C/D及所核各版没有给对应口径；Fig.2A单独标有两个口径。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "100 / 1000 μm 候选"
+            },
+            "na": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2D与对应正文，625nm曲线；学位论文Fig.12D",
+              "note": "口径与有效NA归属待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2D与对应正文，625nm曲线；学位论文Fig.12D",
+              "note": "图例印字的实验波长，曲线由实测PSF产生。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "Fig.2D · 625nm · 归一频率",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2D与对应正文，625nm曲线；学位论文Fig.12D",
+              "note": "横轴为f/(560 cycles/mm)，图示−1至1；纵轴原印Intensity (a.u.)。作者称横截面，切线方向和S/T关系、FFT及DC归一化算法、物理采样未知。作者明确对照用530nm焦面。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "bayati_edof_pdf_2022",
+                "bayati_edof_v1_2022",
+                "bayati_edof_thesis_2022",
+                "bayati_edof_pmc_2022"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "measured_psf_frequency_cross_section",
+              "frequency_unit": "normalized_spatial_frequency",
+              "normalization_frequency_cycles_mm": 560,
+              "normalized_frequency_axis_extent": [
+                -1,
+                1
+              ],
+              "direction": null,
+              "reference_focus_wavelength_nm": 530,
+              "data_availability": "curves_only"
+            },
+            "psf_protocol": {
+              "value": "实测PSF用于MTF",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2534 Fig.2D与对应正文，625nm曲线；学位论文Fig.12D",
+              "note": "作者明确对照用530nm焦面。场角、有效像素标尺、实际截面方向和原始数组待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          },
+          "configuration_role": "unassigned_measurement_set",
+          "candidate_specimen_ids": [
+            "traditional_100",
+            "traditional_1000"
+          ]
+        },
+        {
+          "id": "bayati2022_edof_imaging_625",
+          "model": "Bayati 2022 · D1000μm 逆设计EDOF · 625nm成像",
+          "study_id": "bayati2022",
+          "specimen_id": "edof_imaging",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "1mm器件的窄带LED标靶实拍及作者图像相似度统计。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段；p2534 Fig.1图注",
+              "note": "同一工艺的实制圆形1000μm口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 设计段；p2534 Fig.1C–F图注",
+              "note": "作者写明两种结构共享对应名义焦距；实测峰位未逐波长打印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段",
+              "note": "沉积并刻蚀穿透600nm SiN层；基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2533 §2 单元和制备段",
+              "note": "作者按口径列400nm周期的两类元胞设计，100μm为圆柱，1mm为方形纳米柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "二维延长焦深",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2534 §2；Fig.1C–F",
+              "note": "按轴向扫描中的高斯形状界定焦深。逐波长最佳焦点未给印字。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.44,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2531 摘要；p2534 §2 第一段",
+              "note": "原文EDOF约0.44；正文说明两个口径的NA相同。实制NA独立测量待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "display": "约 0.44",
+              "approximate": true
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 Fig.3A；p2536 §3 SSIM对应段，逆设计EDOF/红",
+              "note": "单色LED中心，作者报告带宽约20nm，宽度定义未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "625nm LED · 标靶扇形图",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 Fig.3A；p2536 §3 SSIM对应段，逆设计EDOF/红",
+              "note": "相机端以窄带光分别成像；灯带宽约20nm。EDOF的Raw / Wiener / TV各列，作者未把SSIM分配到其中一列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "ssim": {
+              "value": 0.637,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 Fig.3A；p2536 §3 SSIM对应段，逆设计EDOF/红",
+              "note": "作者以裁切原图与实拍链输出计算。EDOF的Raw / Wiener / TV各列，作者未把SSIM分配到其中一列。配准、亮度校准和重复数待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "processing_stage": "not_reported",
+              "reference_type": "cropped_original_pattern",
+              "test_wavelength_nm": 625,
+              "display": "0.637"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_edof_imaging_530",
+          "model": "Bayati 2022 · D1000μm 逆设计EDOF · 530nm成像",
+          "study_id": "bayati2022",
+          "specimen_id": "edof_imaging",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "1mm器件的窄带LED标靶实拍及作者图像相似度统计。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段；p2534 Fig.1图注",
+              "note": "同一工艺的实制圆形1000μm口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 设计段；p2534 Fig.1C–F图注",
+              "note": "作者写明两种结构共享对应名义焦距；实测峰位未逐波长打印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段",
+              "note": "沉积并刻蚀穿透600nm SiN层；基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2533 §2 单元和制备段",
+              "note": "作者按口径列400nm周期的两类元胞设计，100μm为圆柱，1mm为方形纳米柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "二维延长焦深",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2534 §2；Fig.1C–F",
+              "note": "按轴向扫描中的高斯形状界定焦深。逐波长最佳焦点未给印字。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.44,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2531 摘要；p2534 §2 第一段",
+              "note": "原文EDOF约0.44；正文说明两个口径的NA相同。实制NA独立测量待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "display": "约 0.44",
+              "approximate": true
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 Fig.3B；p2536 §3 SSIM对应段，逆设计EDOF/绿",
+              "note": "单色LED中心，作者报告带宽约20nm，宽度定义未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "530nm LED · 标靶扇形图",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 Fig.3B；p2536 §3 SSIM对应段，逆设计EDOF/绿",
+              "note": "相机端以窄带光分别成像；灯带宽约20nm。EDOF的Raw / Wiener / TV各列，作者未把SSIM分配到其中一列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "ssim": {
+              "value": 0.503,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 Fig.3B；p2536 §3 SSIM对应段，逆设计EDOF/绿",
+              "note": "作者以裁切原图与实拍链输出计算。EDOF的Raw / Wiener / TV各列，作者未把SSIM分配到其中一列。配准、亮度校准和重复数待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "processing_stage": "not_reported",
+              "reference_type": "cropped_original_pattern",
+              "test_wavelength_nm": 530,
+              "display": "0.503"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_edof_imaging_455",
+          "model": "Bayati 2022 · D1000μm 逆设计EDOF · 455nm成像",
+          "study_id": "bayati2022",
+          "specimen_id": "edof_imaging",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "1mm器件的窄带LED标靶实拍及作者图像相似度统计。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段；p2534 Fig.1图注",
+              "note": "同一工艺的实制圆形1000μm口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 设计段；p2534 Fig.1C–F图注",
+              "note": "作者写明两种结构共享对应名义焦距；实测峰位未逐波长打印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段",
+              "note": "沉积并刻蚀穿透600nm SiN层；基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2533 §2 单元和制备段",
+              "note": "作者按口径列400nm周期的两类元胞设计，100μm为圆柱，1mm为方形纳米柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "二维延长焦深",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2534 §2；Fig.1C–F",
+              "note": "按轴向扫描中的高斯形状界定焦深。逐波长最佳焦点未给印字。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.44,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2531 摘要；p2534 §2 第一段",
+              "note": "原文EDOF约0.44；正文说明两个口径的NA相同。实制NA独立测量待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "display": "约 0.44",
+              "approximate": true
+            },
+            "wavelength_nm": {
+              "value": 455,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 Fig.3C；p2536 §3 SSIM对应段，逆设计EDOF/蓝",
+              "note": "单色LED中心，作者报告带宽约20nm，宽度定义未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "455nm LED · 标靶扇形图",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 Fig.3C；p2536 §3 SSIM对应段，逆设计EDOF/蓝",
+              "note": "相机端以窄带光分别成像；灯带宽约20nm。EDOF的Raw / Wiener / TV各列，作者未把SSIM分配到其中一列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "ssim": {
+              "value": 0.363,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 Fig.3C；p2536 §3 SSIM对应段，逆设计EDOF/蓝",
+              "note": "作者以裁切原图与实拍链输出计算。EDOF的Raw / Wiener / TV各列，作者未把SSIM分配到其中一列。配准、亮度校准和重复数待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "processing_stage": "not_reported",
+              "reference_type": "cropped_original_pattern",
+              "test_wavelength_nm": 455,
+              "display": "0.363"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_edof_imaging_oled",
+          "model": "Bayati 2022 · D1000μm 逆设计EDOF · OLED白光成像",
+          "study_id": "bayati2022",
+          "specimen_id": "edof_imaging",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.4四种OLED图案物距相同，分别列出原采集与作者处理位置。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段；p2534 Fig.1图注",
+              "note": "同一工艺的实制圆形1000μm口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 设计段；p2534 Fig.1C–F图注",
+              "note": "作者写明两种结构共享对应名义焦距；实测峰位未逐波长打印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段",
+              "note": "沉积并刻蚀穿透600nm SiN层；基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2533 §2 单元和制备段",
+              "note": "作者按口径列400nm周期的两类元胞设计，100μm为圆柱，1mm为方形纳米柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "二维延长焦深",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2534 §2；Fig.1C–F",
+              "note": "按轴向扫描中的高斯形状界定焦深。逐波长最佳焦点未给印字。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.44,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2531 摘要；p2534 §2 第一段",
+              "note": "原文EDOF约0.44；正文说明两个口径的NA相同。实制NA独立测量待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "display": "约 0.44",
+              "approximate": true
+            },
+            "illumination": {
+              "value": "SmallHD 5.5in OLED，物距约130mm",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2536 §3 白光段、Fig.4A–D",
+              "note": "标靶依次为黑白格、彩虹图、彩色字母和气球。EDOF分别显示Raw、Wiener和TV；蓝气球仍有色模糊。横向色差未定量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_traditional_imaging_625",
+          "model": "Bayati 2022 · D1000μm 双曲对照 · 625nm成像",
+          "study_id": "bayati2022",
+          "specimen_id": "traditional_imaging",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "1mm器件的窄带LED标靶实拍及作者图像相似度统计。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段；p2534 Fig.1图注",
+              "note": "同一工艺的实制圆形1000μm口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 设计段；p2534 Fig.1C–F图注",
+              "note": "作者写明两种结构共享对应名义焦距；实测峰位未逐波长打印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段",
+              "note": "沉积并刻蚀穿透600nm SiN层；基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2533 §2 单元和制备段",
+              "note": "作者按口径列400nm周期的两类元胞设计，100μm为圆柱，1mm为方形纳米柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "普通双曲色散对照",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2534 §2；Fig.1C–F",
+              "note": "按轴向扫描中的高斯形状界定焦深。逐波长最佳焦点未给印字。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 两种双曲镜设计；p2534 Fig.1C,D",
+              "note": "对照与同口径EDOF共享D、f。对照有效NA的单独数值待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "同名义D/f；单独NA待核"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 Fig.3A；p2536 §3 SSIM对应段，双曲对照/红",
+              "note": "单色LED中心，作者报告带宽约20nm，宽度定义未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "625nm LED · 标靶扇形图",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 Fig.3A；p2536 §3 SSIM对应段，双曲对照/红",
+              "note": "相机端以窄带光分别成像；灯带宽约20nm。Fig.3只有双曲对照实拍列，作者报告的参考为裁切原始图案。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "ssim": {
+              "value": 0.492,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 Fig.3A；p2536 §3 SSIM对应段，双曲对照/红",
+              "note": "作者以裁切原图与实拍链输出计算。Fig.3只有双曲对照实拍列，作者报告的参考为裁切原始图案。配准、亮度校准和重复数待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "processing_stage": "captured_comparison",
+              "reference_type": "cropped_original_pattern",
+              "test_wavelength_nm": 625,
+              "display": "0.492"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_traditional_imaging_530",
+          "model": "Bayati 2022 · D1000μm 双曲对照 · 530nm成像",
+          "study_id": "bayati2022",
+          "specimen_id": "traditional_imaging",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "1mm器件的窄带LED标靶实拍及作者图像相似度统计。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段；p2534 Fig.1图注",
+              "note": "同一工艺的实制圆形1000μm口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 设计段；p2534 Fig.1C–F图注",
+              "note": "作者写明两种结构共享对应名义焦距；实测峰位未逐波长打印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段",
+              "note": "沉积并刻蚀穿透600nm SiN层；基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2533 §2 单元和制备段",
+              "note": "作者按口径列400nm周期的两类元胞设计，100μm为圆柱，1mm为方形纳米柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "普通双曲色散对照",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2534 §2；Fig.1C–F",
+              "note": "按轴向扫描中的高斯形状界定焦深。逐波长最佳焦点未给印字。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 两种双曲镜设计；p2534 Fig.1C,D",
+              "note": "对照与同口径EDOF共享D、f。对照有效NA的单独数值待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "同名义D/f；单独NA待核"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 Fig.3B；p2536 §3 SSIM对应段，双曲对照/绿",
+              "note": "单色LED中心，作者报告带宽约20nm，宽度定义未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "530nm LED · 标靶扇形图",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 Fig.3B；p2536 §3 SSIM对应段，双曲对照/绿",
+              "note": "相机端以窄带光分别成像；灯带宽约20nm。Fig.3只有双曲对照实拍列，作者报告的参考为裁切原始图案。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "ssim": {
+              "value": 0.239,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 Fig.3B；p2536 §3 SSIM对应段，双曲对照/绿",
+              "note": "作者以裁切原图与实拍链输出计算。Fig.3只有双曲对照实拍列，作者报告的参考为裁切原始图案。配准、亮度校准和重复数待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "processing_stage": "captured_comparison",
+              "reference_type": "cropped_original_pattern",
+              "test_wavelength_nm": 530,
+              "display": "0.239"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_traditional_imaging_455",
+          "model": "Bayati 2022 · D1000μm 双曲对照 · 455nm成像",
+          "study_id": "bayati2022",
+          "specimen_id": "traditional_imaging",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "1mm器件的窄带LED标靶实拍及作者图像相似度统计。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段；p2534 Fig.1图注",
+              "note": "同一工艺的实制圆形1000μm口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 设计段；p2534 Fig.1C–F图注",
+              "note": "作者写明两种结构共享对应名义焦距；实测峰位未逐波长打印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段",
+              "note": "沉积并刻蚀穿透600nm SiN层；基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2533 §2 单元和制备段",
+              "note": "作者按口径列400nm周期的两类元胞设计，100μm为圆柱，1mm为方形纳米柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "普通双曲色散对照",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2534 §2；Fig.1C–F",
+              "note": "按轴向扫描中的高斯形状界定焦深。逐波长最佳焦点未给印字。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 两种双曲镜设计；p2534 Fig.1C,D",
+              "note": "对照与同口径EDOF共享D、f。对照有效NA的单独数值待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "同名义D/f；单独NA待核"
+            },
+            "wavelength_nm": {
+              "value": 455,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 Fig.3C；p2536 §3 SSIM对应段，双曲对照/蓝",
+              "note": "单色LED中心，作者报告带宽约20nm，宽度定义未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "455nm LED · 标靶扇形图",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 Fig.3C；p2536 §3 SSIM对应段，双曲对照/蓝",
+              "note": "相机端以窄带光分别成像；灯带宽约20nm。Fig.3只有双曲对照实拍列，作者报告的参考为裁切原始图案。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "ssim": {
+              "value": 0.149,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 Fig.3C；p2536 §3 SSIM对应段，双曲对照/蓝",
+              "note": "作者以裁切原图与实拍链输出计算。Fig.3只有双曲对照实拍列，作者报告的参考为裁切原始图案。配准、亮度校准和重复数待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "processing_stage": "captured_comparison",
+              "reference_type": "cropped_original_pattern",
+              "test_wavelength_nm": 455,
+              "display": "0.149"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_traditional_imaging_oled",
+          "model": "Bayati 2022 · D1000μm 双曲对照 · OLED白光成像",
+          "study_id": "bayati2022",
+          "specimen_id": "traditional_imaging",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.4四种OLED图案物距相同，分别列出原采集与作者处理位置。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段；p2534 Fig.1图注",
+              "note": "同一工艺的实制圆形1000μm口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 1000,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 设计段；p2534 Fig.1C–F图注",
+              "note": "作者写明两种结构共享对应名义焦距；实测峰位未逐波长打印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 制造段",
+              "note": "沉积并刻蚀穿透600nm SiN层；基底厚500μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 熔融石英",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2533 §2 单元和制备段",
+              "note": "作者按口径列400nm周期的两类元胞设计，100μm为圆柱，1mm为方形纳米柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "普通双曲色散对照",
+              "source": "bayati_edof_pdf_2022",
+              "location": "pp2532–2534 §2；Fig.1C–F",
+              "note": "按轴向扫描中的高斯形状界定焦深。逐波长最佳焦点未给印字。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": null,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2533 §2 两种双曲镜设计；p2534 Fig.1C,D",
+              "note": "对照与同口径EDOF共享D、f。对照有效NA的单独数值待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "同名义D/f；单独NA待核"
+            },
+            "illumination": {
+              "value": "SmallHD 5.5in OLED，物距约130mm",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2536 §3 白光段、Fig.4A–D",
+              "note": "标靶依次为黑白格、彩虹图、彩色字母和气球。双曲对照只列采集图；正文说明反卷积会放大噪声。横向色差未定量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_model_edof_band",
+          "model": "Bayati 2022 · 逆设计EDOF · 模拟相关带宽",
+          "study_id": "bayati2022",
+          "specimen_id": "model_edof",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.2B模拟PSF对照，物理口径归属未指定。",
+          "values": {
+            "chromatic": {
+              "value": "逆设计EDOF · 530nm参考PSF",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 光谱相关段；arXiv v1 PDF p18 Fig.2B图注",
+              "note": "首稿明确称Fig.2B为模拟相关系数；正文定义为相对530nm PSF的内积，阈限>0.5。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "bayati_edof_pdf_2022",
+                "bayati_edof_v1_2022"
+              ]
+            },
+            "simulated_psf_correlation_bandwidth_nm": {
+              "value": 290,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 Fig.2B对应正文；arXiv v1 PDF p18 Fig.2B图注",
+              "note": "作者估计宽度。带边精确值、模拟采样网格和口径未知；不从宽度对称回推两端波长。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "bayati_edof_pdf_2022",
+                "bayati_edof_v1_2022"
+              ],
+              "calculation_origin": "authors",
+              "reference_wavelength_nm": 530,
+              "correlation_threshold": 0.5,
+              "comparison": "greater_than"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_model_edof_ssim_red",
+          "model": "Bayati 2022 · 逆设计EDOF · 模拟复原SSIM · 红",
+          "study_id": "bayati2022",
+          "specimen_id": "model_edof",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者模拟输入与PSF的彩色图案恢复，表1按颜色通道。",
+          "values": {
+            "ssim": {
+              "value": 0.639,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2537 Table 1 Red行 × Inverse designed EDOF列；p2538 §5.3、Fig.7",
+              "note": "参考为ROYGBVWG原始图案。用于SSIM比较的图像和PSF均来自模拟；波长中心、核参数与配准细节未给。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "processing_stage": "simulated_deconvolution",
+              "color_channel": "red",
+              "display": "0.639"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_model_edof_ssim_green",
+          "model": "Bayati 2022 · 逆设计EDOF · 模拟复原SSIM · 绿",
+          "study_id": "bayati2022",
+          "specimen_id": "model_edof",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者模拟输入与PSF的彩色图案恢复，表1按颜色通道。",
+          "values": {
+            "ssim": {
+              "value": 0.7903,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2537 Table 1 Green行 × Inverse designed EDOF列；p2538 §5.3、Fig.7",
+              "note": "参考为ROYGBVWG原始图案。用于SSIM比较的图像和PSF均来自模拟；波长中心、核参数与配准细节未给。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "processing_stage": "simulated_deconvolution",
+              "color_channel": "green",
+              "display": "0.7903"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_model_edof_ssim_blue",
+          "model": "Bayati 2022 · 逆设计EDOF · 模拟复原SSIM · 蓝",
+          "study_id": "bayati2022",
+          "specimen_id": "model_edof",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者模拟输入与PSF的彩色图案恢复，表1按颜色通道。",
+          "values": {
+            "ssim": {
+              "value": 0.4863,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2537 Table 1 Blue行 × Inverse designed EDOF列；p2538 §5.3、Fig.7",
+              "note": "参考为ROYGBVWG原始图案。用于SSIM比较的图像和PSF均来自模拟；波长中心、核参数与配准细节未给。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "processing_stage": "simulated_deconvolution",
+              "color_channel": "blue",
+              "display": "0.4863"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_model_traditional_band",
+          "model": "Bayati 2022 · 普通双曲 · 模拟相关带宽",
+          "study_id": "bayati2022",
+          "specimen_id": "model_traditional",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.2B模拟PSF对照，物理口径归属未指定。",
+          "values": {
+            "chromatic": {
+              "value": "普通双曲 · 530nm参考PSF",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 光谱相关段；arXiv v1 PDF p18 Fig.2B图注",
+              "note": "首稿明确称Fig.2B为模拟相关系数；正文定义为相对530nm PSF的内积，阈限>0.5。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "bayati_edof_pdf_2022",
+                "bayati_edof_v1_2022"
+              ]
+            },
+            "simulated_psf_correlation_bandwidth_nm": {
+              "value": 15,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 Fig.2B对应正文；arXiv v1 PDF p18 Fig.2B图注",
+              "note": "作者估计宽度。带边精确值、模拟采样网格和口径未知；不从宽度对称回推两端波长。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "bayati_edof_pdf_2022",
+                "bayati_edof_v1_2022"
+              ],
+              "calculation_origin": "authors",
+              "reference_wavelength_nm": 530,
+              "correlation_threshold": 0.5,
+              "comparison": "greater_than"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_model_traditional_ssim_red",
+          "model": "Bayati 2022 · 普通双曲 · 模拟复原SSIM · 红",
+          "study_id": "bayati2022",
+          "specimen_id": "model_traditional",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者模拟输入与PSF的彩色图案恢复，表1按颜色通道。",
+          "values": {
+            "ssim": {
+              "value": 0.292,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2537 Table 1 Red行 × Conventional metalens列；p2538 §5.3、Fig.7",
+              "note": "参考为ROYGBVWG原始图案。用于SSIM比较的图像和PSF均来自模拟；波长中心、核参数与配准细节未给。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "processing_stage": "simulated_deconvolution",
+              "color_channel": "red",
+              "display": "0.292"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_model_traditional_ssim_green",
+          "model": "Bayati 2022 · 普通双曲 · 模拟复原SSIM · 绿",
+          "study_id": "bayati2022",
+          "specimen_id": "model_traditional",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者模拟输入与PSF的彩色图案恢复，表1按颜色通道。",
+          "values": {
+            "ssim": {
+              "value": 0.4691,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2537 Table 1 Green行 × Conventional metalens列；p2538 §5.3、Fig.7",
+              "note": "参考为ROYGBVWG原始图案。用于SSIM比较的图像和PSF均来自模拟；波长中心、核参数与配准细节未给。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "processing_stage": "simulated_deconvolution",
+              "color_channel": "green",
+              "display": "0.4691"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_model_traditional_ssim_blue",
+          "model": "Bayati 2022 · 普通双曲 · 模拟复原SSIM · 蓝",
+          "study_id": "bayati2022",
+          "specimen_id": "model_traditional",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者模拟输入与PSF的彩色图案恢复，表1按颜色通道。",
+          "values": {
+            "ssim": {
+              "value": 0.3449,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2537 Table 1 Blue行 × Conventional metalens列；p2538 §5.3、Fig.7",
+              "note": "参考为ROYGBVWG原始图案。用于SSIM比较的图像和PSF均来自模拟；波长中心、核参数与配准细节未给。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "processing_stage": "simulated_deconvolution",
+              "color_channel": "blue",
+              "display": "0.3449"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_model_cubic_band",
+          "model": "Bayati 2022 · 立方相位 · 模拟相关带宽",
+          "study_id": "bayati2022",
+          "specimen_id": "model_cubic",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.2B模拟PSF对照，物理口径归属未指定。",
+          "values": {
+            "chromatic": {
+              "value": "立方相位 · 530nm参考PSF",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 光谱相关段；arXiv v1 PDF p18 Fig.2B图注",
+              "note": "首稿明确称Fig.2B为模拟相关系数；正文定义为相对530nm PSF的内积，阈限>0.5。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "bayati_edof_pdf_2022",
+                "bayati_edof_v1_2022"
+              ]
+            },
+            "simulated_psf_correlation_bandwidth_nm": {
+              "value": 95,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 Fig.2B对应正文；arXiv v1 PDF p18 Fig.2B图注",
+              "note": "作者估计宽度。带边精确值、模拟采样网格和口径未知；不从宽度对称回推两端波长。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "bayati_edof_pdf_2022",
+                "bayati_edof_v1_2022"
+              ],
+              "calculation_origin": "authors",
+              "reference_wavelength_nm": 530,
+              "correlation_threshold": 0.5,
+              "comparison": "greater_than"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_model_cubic_ssim_red",
+          "model": "Bayati 2022 · 立方相位 · 模拟复原SSIM · 红",
+          "study_id": "bayati2022",
+          "specimen_id": "model_cubic",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者模拟输入与PSF的彩色图案恢复，表1按颜色通道。",
+          "values": {
+            "ssim": {
+              "value": 0.3062,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2537 Table 1 Red行 × Cubic metalens列；p2538 §5.3、Fig.7",
+              "note": "参考为ROYGBVWG原始图案。用于SSIM比较的图像和PSF均来自模拟；波长中心、核参数与配准细节未给。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "processing_stage": "simulated_deconvolution",
+              "color_channel": "red",
+              "display": "0.3062"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_model_cubic_ssim_green",
+          "model": "Bayati 2022 · 立方相位 · 模拟复原SSIM · 绿",
+          "study_id": "bayati2022",
+          "specimen_id": "model_cubic",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者模拟输入与PSF的彩色图案恢复，表1按颜色通道。",
+          "values": {
+            "ssim": {
+              "value": 0.6543,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2537 Table 1 Green行 × Cubic metalens列；p2538 §5.3、Fig.7",
+              "note": "参考为ROYGBVWG原始图案。用于SSIM比较的图像和PSF均来自模拟；波长中心、核参数与配准细节未给。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "processing_stage": "simulated_deconvolution",
+              "color_channel": "green",
+              "display": "0.6543"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_model_cubic_ssim_blue",
+          "model": "Bayati 2022 · 立方相位 · 模拟复原SSIM · 蓝",
+          "study_id": "bayati2022",
+          "specimen_id": "model_cubic",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者模拟输入与PSF的彩色图案恢复，表1按颜色通道。",
+          "values": {
+            "ssim": {
+              "value": 0.4776,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2537 Table 1 Blue行 × Cubic metalens列；p2538 §5.3、Fig.7",
+              "note": "参考为ROYGBVWG原始图案。用于SSIM比较的图像和PSF均来自模拟；波长中心、核参数与配准细节未给。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "processing_stage": "simulated_deconvolution",
+              "color_channel": "blue",
+              "display": "0.4776"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_model_log_band",
+          "model": "Bayati 2022 · 对数非球面 · 模拟相关带宽",
+          "study_id": "bayati2022",
+          "specimen_id": "model_log",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig.2B模拟PSF对照，物理口径归属未指定。",
+          "values": {
+            "chromatic": {
+              "value": "对数非球面 · 530nm参考PSF",
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 光谱相关段；arXiv v1 PDF p18 Fig.2B图注",
+              "note": "首稿明确称Fig.2B为模拟相关系数；正文定义为相对530nm PSF的内积，阈限>0.5。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "bayati_edof_pdf_2022",
+                "bayati_edof_v1_2022"
+              ]
+            },
+            "simulated_psf_correlation_bandwidth_nm": {
+              "value": 130,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2535 Fig.2B对应正文；arXiv v1 PDF p18 Fig.2B图注",
+              "note": "作者估计宽度。带边精确值、模拟采样网格和口径未知；不从宽度对称回推两端波长。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "bayati_edof_pdf_2022",
+                "bayati_edof_v1_2022"
+              ],
+              "calculation_origin": "authors",
+              "reference_wavelength_nm": 530,
+              "correlation_threshold": 0.5,
+              "comparison": "greater_than"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_model_log_ssim_red",
+          "model": "Bayati 2022 · 对数非球面 · 模拟复原SSIM · 红",
+          "study_id": "bayati2022",
+          "specimen_id": "model_log",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者模拟输入与PSF的彩色图案恢复，表1按颜色通道。",
+          "values": {
+            "ssim": {
+              "value": 0.4537,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2537 Table 1 Red行 × Log-asphere metalens列；p2538 §5.3、Fig.7",
+              "note": "参考为ROYGBVWG原始图案。用于SSIM比较的图像和PSF均来自模拟；波长中心、核参数与配准细节未给。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "processing_stage": "simulated_deconvolution",
+              "color_channel": "red",
+              "display": "0.4537"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_model_log_ssim_green",
+          "model": "Bayati 2022 · 对数非球面 · 模拟复原SSIM · 绿",
+          "study_id": "bayati2022",
+          "specimen_id": "model_log",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者模拟输入与PSF的彩色图案恢复，表1按颜色通道。",
+          "values": {
+            "ssim": {
+              "value": 0.717,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2537 Table 1 Green行 × Log-asphere metalens列；p2538 §5.3、Fig.7",
+              "note": "参考为ROYGBVWG原始图案。用于SSIM比较的图像和PSF均来自模拟；波长中心、核参数与配准细节未给。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "processing_stage": "simulated_deconvolution",
+              "color_channel": "green",
+              "display": "0.7170"
+            }
+          }
+        },
+        {
+          "id": "bayati2022_model_log_ssim_blue",
+          "model": "Bayati 2022 · 对数非球面 · 模拟复原SSIM · 蓝",
+          "study_id": "bayati2022",
+          "specimen_id": "model_log",
+          "module": "",
+          "variant": "可见光二维延长焦深及双曲对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者模拟输入与PSF的彩色图案恢复，表1按颜色通道。",
+          "values": {
+            "ssim": {
+              "value": 0.5718,
+              "source": "bayati_edof_pdf_2022",
+              "location": "p2537 Table 1 Blue行 × Log-asphere metalens列；p2538 §5.3、Fig.7",
+              "note": "参考为ROYGBVWG原始图案。用于SSIM比较的图像和PSF均来自模拟；波长中心、核参数与配准细节未给。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "processing_stage": "simulated_deconvolution",
+              "color_channel": "blue",
+              "display": "0.5718"
+            }
+          }
         }
       ],
-      "scope": "31项原始研究、146个器件/测量/系统配置、1258条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
+      "scope": "32项原始研究、158个器件/测量/系统配置、1302条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
