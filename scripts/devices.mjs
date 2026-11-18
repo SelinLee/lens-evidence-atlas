@@ -86,6 +86,13 @@ export function validateDevices(d,catalog){
  if(Number.isFinite(focusWidth?.value)&&(!(r.values.wavelength_nm?.value>0)||!focusWidth.dof_criterion||!r.values.psf_protocol?.value))errors.push('focal interval context');
  if(Number.isFinite(minimumWidth?.value)&&(minimumWidth.direction!=='x'||!minimumWidth.statistic||!r.values.psf_protocol?.value))errors.push('minimum focal width context');
  const efficiencyProtocol=r.values.efficiency_protocol;
+ const mirrorReferencedMaximum=r.values.mirror_referenced_efficiency_max_pct;
+ if(Number.isFinite(mirrorReferencedMaximum?.value)&&(
+   mirrorReferencedMaximum.value<0||mirrorReferencedMaximum.basis!=='derived_from_measurement'||
+   mirrorReferencedMaximum.calculation_origin!=='authors'||mirrorReferencedMaximum.statistic!=='spectral_maximum'||
+   mirrorReferencedMaximum.denominator!=='metallic_mirror_reflected_intensity_same_pixel_size'||
+   efficiencyProtocol?.denominator!==mirrorReferencedMaximum.denominator||!efficiencyProtocol.value||
+   Number.isFinite(r.values.wavelength_nm?.value)||Number.isFinite(r.values.efficiency_at_lambda_pct?.value)))errors.push('mirror-referenced efficiency maximum context');
  if(Number.isFinite(axialEfficiency?.value)&&(axialEfficiency.value>100||!axialEfficiency.statistic||
   !efficiencyProtocol?.value||!axialEfficiency.denominator||axialEfficiency.denominator!==efficiencyProtocol.denominator))errors.push('axial efficiency protocol');
  if(Number.isFinite(correlationWidth?.value)&&(!(correlationWidth.value>0)||correlationWidth.basis!=='model'||

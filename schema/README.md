@@ -98,6 +98,8 @@
 
 `diffraction_efficiency_mean_pct` 保存作者对波长与设备设定一并取平均的衍射效率。记录焦面和参照面各自的积分范围、功率分母及统计性质。计算来源为作者实测，统计用 `statistic: mean_across_wavelengths_and_settings`，平均值行的单波长留空。`aperture_width_um` 保存实物或模型孔径宽度，附形状、宽度定义及重叠光瞳的适用边界。圆孔直径继续使用 `diameter_um`。
 
+`mirror_referenced_efficiency_max_pct` 保存作者报告的光谱扫描最大焦点强度比。用 `basis: derived_from_measurement`、作者计算和 `statistic: spectral_maximum`，在该格及 `efficiency_protocol` 同时记录 `denominator: metallic_mirror_reflected_intensity_same_pixel_size`。单波长留空，另保留峰值对应谱点及检测像素的可用性。普通入射功率归一效率有独立字段。
+
 作者只给出带内焦距变化及波长范围时，`focus_variation_um`、`focus_variation_pct` 可用 `spectral_sample_scope: author_reported_range_only`，逐点列表留空，须有同一行的上下波长和协议。不能用抽样曲线推定精确采样点并作为原始数据。
 
 `effective_na_from_psf` 保存作者由焦斑推得的有效NA、公式与谱点，按原文保存汇总值。单波长的作者焦距误差用 `author_reported_single_wavelength_error` 与明确的设计面或设计焦距，波长须和行一致。界限用 `value=null` 保存。
