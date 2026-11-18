@@ -69,3 +69,7 @@
 `efficiency_band_mean_pct`可保存作者明确写出的论文级未分派均值，用`aggregation_scope: publication_unassigned_devices`、作者由实测计算与`sampling`（未报告可写not_reported）。此时行须unassigned_measurement_set及有效器件候选，diameter_um/na/wavelength_nm均显式null，协议device_assignment=unassigned；不可将该均值复制到各口径或各λ。约值保留approximate/display；图示谱点与平均权重未知分别记录，不称已核连续谱积分。
 
 `data_availability.status: no_mtf_in_checked_material`表示所列已读主文/SI只核到PSF/f/效率等图表，未报告MTF；与curves_only（已核MTF曲线）分开。无MTF轴就不填写频率单位/方向/数表；作者合理请求、搜索范围和原始PSF采样缺口继续保留。
+
+`mtf_curve.mtf_kind: measured_psf_radial_average`用于作者由实测PSF计算的径向平均MTF。填写物方共轭、固定评价面、lp/mm及实际有独立MTF面板的谱点。某波长只有PSF面板时，`individual_curve_panel=false`，独立MTF面板列表为空。像方频率参考面、物方采样或零频归一化未知时分别留空。`reconstructed_slanted_edge`带重建性质和相机的RGB颜色通道。单值波长字段留空，通道中心有出处时另存为滤片配置。
+
+`estimated_system_focal_efficiency_pct`、`estimated_detected_throughput_pct`和`spectrally_weighted_mtf_area_lpmm`保存作者完整光路的带内计算估计。须标明`basis: model`、作者计算与光路估算协议。面积保留空间频率积分的量纲 lp/mm。它们与逐λ实测效率、普通作者平均效率及MTF截止频率各用专用字段。图像PSNR、SSIM和LPIPS保留原采集或重建、参考图、配准与光度归一化及统计样本。
