@@ -86,6 +86,12 @@ export function validateDevices(d,catalog){
  if(Number.isFinite(focusWidth?.value)&&(!(r.values.wavelength_nm?.value>0)||!focusWidth.dof_criterion||!r.values.psf_protocol?.value))errors.push('focal interval context');
  if(Number.isFinite(minimumWidth?.value)&&(minimumWidth.direction!=='x'||!minimumWidth.statistic||!r.values.psf_protocol?.value))errors.push('minimum focal width context');
  const efficiencyProtocol=r.values.efficiency_protocol;
+ const geometricRms=r.values.simulated_geometric_rms_spot_radius_um;
+ if(Number.isFinite(geometricRms?.value)&&(
+  geometricRms.value<0||geometricRms.basis!=='model'||!['authors','atlas'].includes(geometricRms.calculation_origin)||
+  geometricRms.statistic!=='rms_ray_intercept_radius'||r.values.wavelength_nm?.basis!=='model'||!(r.values.wavelength_nm.value>0)||
+  !Number.isFinite(geometricRms.evaluation_plane_um)||r.values.psf_protocol?.simulation_kind!=='geometric_ray_trace'||
+  geometricRms.evaluation_plane_um!==r.values.psf_protocol.evaluation_plane_um))errors.push('geometric ray spot RMS context');
  const mirrorReferencedMaximum=r.values.mirror_referenced_efficiency_max_pct;
  if(Number.isFinite(mirrorReferencedMaximum?.value)&&(
    mirrorReferencedMaximum.value<0||mirrorReferencedMaximum.basis!=='derived_from_measurement'||
