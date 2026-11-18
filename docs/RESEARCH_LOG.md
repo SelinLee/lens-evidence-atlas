@@ -887,3 +887,9 @@ Feng 的 OpenAlex 精确 DOI 返回200、OA 位置空，位置列表只见 DOI/P
 从 4a035ed 接续。Li 2024 已对读正式版正文和作者组完整补充材料。600 μm 主镜、设计 NA 0.635、F=365 μm；原文三 RGB 焦点 365/369/365 μm，固定设计面轴差在本库记 0/+4/0 μm。焦斑与效率、场景成像和两种模型逐项绑定图号。保留 S5 的局部印字差异与 S12 的光路指向差异。Feng 2022 仅录作者摘要核实的 1 mm 实物及设计 NA 0.8。两篇加入 41 行。后续原文入口和缺口见[本批核验](RGB_APLANATIC_REVIEW_2026-11-18.md)。
 
 本地校验、280 项测试、构建和独立无头 Chrome 通过。检查 41 条新记录、14 个配置、逐色焦距/焦差/效率、模型与实测分列、两篇引用往返、CSV 与六视口。两个南开大学 PDF 均返回可读文件头，Europe PMC 的作者摘要和两项 DataCite 查询返回 200。出版社 DOI 跳转返回 403。
+
+## 2026-11-18-79 · Li 2024 与 Feng 2022 发布验收
+
+[PR #134](https://github.com/SelinLee/lens-evidence-atlas/pull/134) 合入 c7b54f14e81463397b5c80011d16cef619d16d38。PR 校验、主线校验、Pages 部署分别为 44293726909、44293871256 和 44293871331，均成功。线上 12 文件与本地逐字节一致，devices-data.js SHA256 为 9ea8a6509d21c339e4fa663b9524aa051ee0743ab34b6bdb8d32bfef1b35012f。独立无头 Chrome 复测两篇共41行、14配置、九组指标散点、引用双向跳转、可见光筛选、CSV、分享及六种视口。南开两个PDF返回206且核到PDF签名，Europe PMC 与两项数据登记查询返回200，两个出版社落地页返回403。现为35篇、1368条记录，其中可见光31篇、1268条。[Pages 部署](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44293871331)
+
+Zhang 2025 已由期刊索引核到 0.775 μm 系统分辨率的作者报告、合理请求的数据说明及补件文件名 lpor70101-sup-0001-SuppMat.docx。OpenAlex仅有DOI入口，DataCite精确关联零项，继续查原报告的解析靶、实际波长及重建阶段。另起 Park 2026，出版社目录列超透镜 MTF 与混合透镜焦斑章节，主文/SI直连403，若能取得公开原件将优先核逐频和视场。Feng 2022 的中山大学物理学院课题组报道已用独立无头Chrome读取，明确微投影动态演示，链接仍为ACS摘要。目标保持 active。[Zhang 原作](https://onlinelibrary.wiley.com/doi/full/10.1002/lpor.202500460) · [Park 原作](https://doi.org/10.1021/acs.nanolett.6c02688) · [中山大学报道](https://phys.sysu.edu.cn/article/221)
