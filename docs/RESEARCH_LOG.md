@@ -831,3 +831,9 @@ Methods/Data availability、附件、作者两实验室列表、DataCite精确�
 Hu 2023 已在 2026-11-15 经 [PR #124](https://github.com/SelinLee/lens-evidence-atlas/pull/124) 合并为 861d325bd8a1cac9d1c0196783eb4871ce3e68d1。PR 检查 43676917280、主线检查 43676956565 及 [Pages 43676956543](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/43676956543) 均成功。暂停前的线上无头 Chrome 验收覆盖 48 条记录、9 配置、6 出处、6 视口、4 组口径/NA、2 组设计焦距、CSV 和分享链接。六出处均 200，主文与两处 SI 哈希吻合，12 个网页文件与本地逐字节相同。devices-data.js SHA256 为 e15456c0c6c41edfcf258ba41d40acf34fbaecd50e51dd8f478d8056c1e5940b。验收于 2026-11-18 恢复后复核存档和线上状态并补记。
 
 Balli 2021 的可见至短波红外纳米孔器件原先只在物镜应用页有成像文字记录。本批从主文与 SI 核入超透镜矩阵，沿用同一文献编号。D20/NA0.27 主镜列 13 个焦斑谱点及作者 60% 平均效率。D200/NA0.04 聚焦和三个成像条件共用器件。两版期刊正文均存在 100/200 μm 与 42% 归属冲突。详见[核验](BALLI_2021_REVIEW_2026-11-18.md)。
+
+Balli 2021 经 [PR #125](https://github.com/SelinLee/lens-evidence-atlas/pull/125) 合并为 fc38fef007c4f6d13af8e4b67b6a2215fdff8f5a。PR 检查 44259310352、主线检查 44259437900 和 [Pages 44259437894](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44259437894) 均成功。0.3.22 的 12 个公开文件与本地逐字节一致，devices-data.js SHA256 为 4bad72cce83c9b25f2e5a1312b3bfd011ce7d6eee2bf90d1a1e42858084efad2。线上独立无头 Chrome 确认两组口径/NA、D20 的 60% 唯一效率坐标、D200 的 42% 归属待核、18 条记录及可见光 8 条、引用往返、CSV、分享和六种视口。机构目录 200，Wiley 和 ResearchGate 403，SI 202/零字节，网页正确保留原文链接与限制。验收关闭本批已核字段，原图、数表和归属继续补证。
+
+## 2026-11-18-73 · Yoon 2026 正式发表版与作者公开数据
+
+已取得 Yoon 2026 的正式期刊及 PMC 主文，两份 PDF 一致。Fig. 4 核到三实制对照和 PSF 的两种归一化说明，公开 Drive 已列出四个一级目录。研究参数待原图、SI、谱点与源数据核验。见[检查点](YOON_2026_NEXT_CHECKPOINT_2026-11-18.md)。
