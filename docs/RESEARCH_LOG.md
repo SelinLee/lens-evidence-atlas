@@ -1007,3 +1007,7 @@ Wiley 出版预览公开原刊 Fig. 3–4 图注，证实制作和实测混合�
 PR #156 合入 797fca6636446577493739d119bd3c8fd09f4d4c。PR 校验 44350047253、主线校验 44350394956、Pages 44350394909 均成功。308 项测试通过。线上 12 文件与本机构建逐字节一致，devices-data.js SHA256 为 2f0783b52b36994b8bab550228102164d454905cae3dbcf4924766930d3fa1a5。独立无头 Chrome 核 70 条、4 配置、54 个模型散点、波段两端的四个投影读数、图点进表、引用往返、CSV 与六视口。可见光筛选为 39 篇、1487 条。Wiley 与公共预览的直接响应为 403，源代码 GitHub 展示页为 429，实际代码和 936 字节 MAT 下载均为 200，MAT 校验值一致。DataCite 关联 DOI 查询线上返回 200，零项。[PR #156](https://github.com/SelinLee/lens-evidence-atlas/pull/156) · [Pages 部署](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44350394909)
 
 下一批沿早期反射式消色差方法核 Arbabi 等 2017 的 Optica 原始研究。Crossref 在线日期 2017-06-07，2026-11-19 查 347 次。已从美国能源部公开的正式版定位 pp629–631。Fig. 5 的四只色散实物为 240 μm、名义 f650 μm；500 μm、f850 μm、NA 约 0.28 的宽带样品和常规对照另起配置。论文描述工作带宽约三倍，需先对清带宽阈值、两种设计 σ、轴扫和效率照明。会话目标保持 active。[正式论文](https://www.osti.gov/pages/servlets/purl/1467089) · [Crossref](https://api.crossref.org/works/10.1364/optica.4.000625) · [补件 DOI](https://doi.org/10.1364/OPTICA.4.000625.s001)
+
+## 2026-11-19-102 · Arbabi 2017 两口径近红外反射镜原文与补件
+
+Caltech 馆藏正式 8 页正文与 21 页补件核验通过。Fig. 5、S10–S14 定位七只实物各 15 个 1450–1590 nm 波长、500 μm 配置的固定 850 μm 焦斑与相对焦移曲线。S13c 的 σ=50 nm 为固定面图，轴向误差另见 S14b。S14c–d 是作者积分二维归一化 MTF 的 Strehl 曲线。Fig. 5e 的 50%–60% 是对常规镜 1520 nm 虹膜功率的相对区间，物方虹膜约 40 μm 直径，图例缺两种 σ 的明确归属。逐点焦距、Strehl、MTF 和 PSF 数组留空。仿真与实物分开归组。新增 123 条、18 组（七只实物、10 个模拟和一组待消歧效率），累计 47 篇、290 组、1784 条。[本批核验](ARBABI_DISPERSION_REVIEW_2026-11-19.md)
