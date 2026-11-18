@@ -98,7 +98,7 @@ test('asset versions match the final bytes including transitive module imports a
 
 test('each paper owns its configurations and its supplementary source IDs resolve to the same publication',()=>{
  const lenses=atlas.domains.find(d=>d.id==='metalens'), groups=groupRows(lenses.rows);
- assert.equal(groups.length,28);
+ assert.equal(groups.length,29);
  const balli=groups.find(g=>g.key==='balli2020');
  assert.equal(balli.rows.length,37);
  assert.equal(new Set(balli.rows.map(r=>r.specimen_id)).size,5);
@@ -113,10 +113,10 @@ test('each paper owns its configurations and its supplementary source IDs resolv
 
 test('visible-light filtering prioritizes the actual spectral row and keeps unknown wavelengths separate',()=>{
  const lens=atlas.domains.find(d=>d.id==='metalens'), filtered=filteredRows(lens,{visible:true,models:null});
- assert.equal(filtered.length,829);
+ assert.equal(filtered.length,837);
  assert.deepEqual(filtered.filter(r=>r.study_id==='lin2025').map(r=>r.values.wavelength_nm.value),[650,700,650,700]);
  assert.ok(!filtered.some(r=>['balli2020','shrestha2018','engelberg2020'].includes(r.study_id)));
- assert.equal(groupRows(filtered).length,24);
+ assert.equal(groupRows(filtered).length,25);
  const band={lambda_min_nm:{value:350},lambda_max_nm:{value:920}};
  const passes=values=>hasVisibleLight({id:'metalens'},{values});
  assert.ok(passes(band));assert.ok(!passes({}));assert.ok(!passes({...band,wavelength_nm:{value:1000}}));
@@ -124,6 +124,25 @@ test('visible-light filtering prioritizes the actual spectral row and keeps unkn
  const spectrometer=atlas.domains.find(d=>d.id==='app_27');
  assert.deepEqual(filteredRows(spectrometer,{visible:true,models:null}).map(r=>r.id),['spectro_vis']);
  const headset=atlas.domains.find(d=>d.id==='xr');assert.equal(filteredRows(headset,{visible:true,models:null}).length,headset.rows.length);
+});
+
+test('Balli 2021 shares its imaging paper identity and plots only the assigned efficiency', () => {
+ const lens = atlas.domains.find(domain => domain.id === 'metalens');
+ const rows = lens.rows.filter(row => row.study_id === 'balli2021');
+ assert.equal(groupRows(rows)[0].paper, 'balli_3d_2021');
+ assert.equal(atlas.sources.get('balli_3d_si_2021').publication_source, 'balli_3d_2021');
+ assert.equal(atlas.domains.find(domain => domain.id === 'app_04').rows.find(row => row.id === 'balli_low_na_imaging_2021').paper, 'balli_3d_2021');
+ assert.deepEqual([...new Set(rows.map(row => row.specimen_id))], ['d20', 'd200']);
+
+ const focalRows = rows.filter(row => Number.isFinite(row.values.wavelength_nm?.value));
+ assert.deepEqual(focalRows.map(row => row.values.wavelength_nm.value), [450, 550, 650, 750, 850, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700]);
+ const visible = filteredRows(lens, {visible: true, models: null}).filter(row => row.study_id === 'balli2021');
+ assert.equal(visible.length, 8);
+ assert.ok(!visible.some(row => row.id === 'balli2021_d200_swir'));
+ const efficiency = axisPoints(rows, 'diameter_um', 'efficiency_band_mean_pct');
+ assert.deepEqual(efficiency.map(point => [point.x, point.y]), [[20, 60]]);
+ assert.equal(rows.find(row => row.id === 'balli2021_d200_summary').values.efficiency_band_mean_pct.value, null);
+ assert.equal(axisPoints(rows, 'wavelength_nm', 'measured_focal_um').length, 0);
 });
 
 test('journal labels use the parent publication and disambiguate same-year papers across filters',()=>{

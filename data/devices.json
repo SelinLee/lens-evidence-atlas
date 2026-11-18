@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "as_of": "2026-11-15",
+  "as_of": "2026-11-18",
   "sources": [
     {
       "id": "apple_phone",
@@ -934,6 +934,45 @@
       "scope": "200/1251字节，同DOI/题名，version1、is_manuscript=false/is_retracted=false；目录200/3141字节、IsTruncated=false共9对象，无独立数表/数组对象（不代表全网无数据）。DataCite精确relatedIdentifier查询200/204字节total0；GitHub仓库名/描述精确题名及DOI各0，非代码全文穷尽。Google无头查询被验证页拦截，不当查无；另有精确题名/DOI检索未定位公开原始库。不联系作者。",
       "checked_on": "2026-11-15",
       "publication_source": "hu_asymptotic_2023"
+    },
+    {
+      "id": "balli3d_2021",
+      "catalog_source": "balli_3d_2021",
+      "doi": "10.1515/nanoph-2020-0550",
+      "title": "Balli et al. (2021): An ultrabroadband 3D achromatic metalens",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1515/nanoph-2020-0550",
+      "kind": "peer_reviewed_paper",
+      "scope": "Wiley及De Gruyter正式HTML的可检索正文、§§2–4、Fig1–3图注已读。Crossref核2021-01-25、10(4):1259–1264。同旧app_04来源编号。制备D20/200与效率段D20/100冲突，较大口径的42%不打点。此轮原图未视觉核，详见核验日志。",
+      "checked_on": "2026-11-18"
+    },
+    {
+      "id": "balli3d_si_2021",
+      "catalog_source": "balli_3d_si_2021",
+      "publication_source": "balli3d_2021",
+      "doi": "10.1515/nanoph-2020-0550",
+      "title": "Balli et al. (2021): Supporting Information",
+      "url": "https://www.degruyterbrill.com/document/doi/10.1515/nanoph-2020-0550/downloadAsset/suppl/j_nanoph-2020-0550_suppl.pdf",
+      "kind": "supplementary_material",
+      "scope": "出版方可检索4页文本，读§1模型、§2制备、§3光路及Fig2图注。直接无头获取202/空文件，未视觉核。保留单位、距离符号及扫描单位缺口。",
+      "checked_on": "2026-11-18"
+    },
+    {
+      "id": "balli3d_pdf_2021",
+      "publication_source": "balli3d_2021",
+      "title": "Balli et al. (2021): publisher PDF via ResearchGate",
+      "url": "https://www.researchgate.net/journal/Nanophotonics-2192-8614/publication/349283254_An_ultrabroadband_3D_achromatic_metalens/links/63fc7ce1b1704f343f876246/An-ultrabroadband-3D-achromatic-metalens.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "可检索出版排版文本6页，首面DOI/CC BY、p1262 Fig2a/b十三个谱点的印刷标签与Fig2/3图注已核。独立无头请求403，未取得PDF二进制或视觉核原图。印字波长可用，曲线坐标未估。",
+      "checked_on": "2026-11-18"
+    },
+    {
+      "id": "balli3d_uky_2021",
+      "publication_source": "balli3d_2021",
+      "title": "University of Kentucky: Balli et al. (2021) publication archive",
+      "url": "https://uknowledge.uky.edu/ece_facpub/43/",
+      "kind": "institutional_repository",
+      "scope": "机构目录无头200，主文和SI下载无头403。另核作者同项目学位论文目录及DOI，论文下载403。此处仅存取证入口，参数回期刊版。",
+      "checked_on": "2026-11-18"
     }
   ],
   "domains": {
@@ -145284,9 +145323,2687 @@
               }
             }
           }
+        },
+        {
+          "id": "balli2021_d20_summary",
+          "model": "Balli 2021 · 20μm · 聚焦汇总",
+          "study_id": "balli2021",
+          "specimen_id": "d20",
+          "module": "",
+          "variant": "纳米孔与相位板一体的可见至SWIR超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig2的D20/NA0.27聚焦实验。作者60%均值与逐点焦斑条件各有位置。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli3d_2021",
+              "location": "主文 §3 首段，p1261",
+              "note": "作者称入瞳直径 EPD。两种制成口径为20与200μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli3d_2021",
+              "location": "主文摘要、§3 首段",
+              "note": "作者标称NA。40×收集物镜NA0.55和10×中继NA0.25属于测量光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "IP-Dip纳米孔与相位板一体制成，熔石英基底0.7mm",
+              "source": "balli3d_2021",
+              "location": "主文 §§1–3、Fig1a图注，SI §2",
+              "note": "双光子光刻。Fig1a元胞设孔径0.2μm、周期0.4μm。§2孔深上限0.8μm为设计约束，完整成品厚度随半径变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1700,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "轴上准直照明，40×/NA0.55收集物镜与管镜至NINOX相机，焦点取z向峰值",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3，主文 §3 与Fig2a/b",
+              "note": "Nikon M Plan 40、Mitutoyo MT-1、NINOX-VS-CL-640。作者用650–1750nm针孔扫描及Airy参照评估测试物镜色差，未取得校准表。SI扫描增量原述2和0.5，可检索文字未附单位。物方像素、背景裁剪、统计重复和不确定度待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "field_point": "on_axis",
+              "axial_step_um": null,
+              "reported_scan_increments": {
+                "power_intensity": 2,
+                "focal_error": 0.5,
+                "unit": null
+              },
+              "object_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "illumination": {
+              "value": "超连续谱经AOTF选波，1000/1100nm由滤片取得",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3",
+              "note": "AOTF选波段450–850及1150–1800nm属于光源设置。1000/1100nm用长通与FB1000-10/FB1100-10带通。PSF实际谱点另据Fig2印字。偏振未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "已核主文与SI文本未报告MTF",
+              "source": "balli3d_2021",
+              "location": "主文 §§2–4、Fig2–3及附件说明，SI §§1–3，机构原作目录",
+              "note": "Fig2a/b给焦斑和归一化强度剖面，Fig2c/d/e给效率、FWHM和焦距误差曲线。Fig3是标靶与物体成像。所核入口仅指向SI，未取得原始PSF、采样校准、逐点焦距或MTF。期刊/机构原文件获取受限，DataCite精确关联DOI为0。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021",
+                "balli3d_pdf_2021",
+                "balli3d_uky_2021"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "checked_on": "2026-11-18",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "spatial_frequency_unit": null,
+                "normalization_method": null,
+                "object_plane_pixel_size_um": null,
+                "search_log": "docs/BALLI_2021_REVIEW_2026-11-18.md"
+              }
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "balli3d_si_2021",
+              "location": "SI pp1–2 §1与Fig1b，主文 p1262 Fig2a/e",
+              "note": "SI模型叙述的合成结构平均焦距为36μm。45μm是单独双曲微透镜，208μm是仅递归光线追迹的极限。成品独立标量设计f未确认。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "SI合成结构模型平均36μm",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "reported_model_mean_focal_um": 36
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/e图注",
+              "note": "约36μm为图注所述焦点位置和误差图对应距离。逐谱点绝对f缺数表。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "逐谱点f未报告数表",
+              "reported_focal_plane_distance_um": 36
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "balli3d_2021",
+              "location": "主文 §3 与Fig2b/d",
+              "note": "归一化x向强度与Airy曲线比较。FWHM只见曲线入口，原图和数表未核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "Fig2d只报告曲线"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/b逐列印字",
+              "note": "这13个标签为实测轴扫和焦面剖面图所示波长。Fig2c–e绘图点列表和平均权重仍待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "display": "450–1700nm，13个焦斑谱点",
+              "sample_wavelengths_nm": [
+                450,
+                550,
+                650,
+                750,
+                850,
+                1000,
+                1100,
+                1200,
+                1300,
+                1400,
+                1500,
+                1600,
+                1700
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "轴上焦点周围半径1.5×FWHM圆内功率 / 透镜入射总功率",
+              "source": "balli3d_si_2021",
+              "location": "主文 p1261 §3、Fig2c，SI p3 §3",
+              "note": "明确为半径，直径为3×FWHM。实际入射测量参考面、收集系数、分母读数及重复数仍缺。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "integration_geometry": "circle_radius",
+              "radius_in_fwhm": 1.5,
+              "denominator": "total_optical_power_incident_on_metalens",
+              "denominator_measurement_plane": null
+            },
+            "efficiency_band_mean_pct": {
+              "value": 60,
+              "source": "balli3d_2021",
+              "location": "摘要、p1261 §3效率段与Fig2c",
+              "note": "作者明确分配给20μm/NA0.27的样品。平均用到的谱点、权重和重复数未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "statistic": "band_mean",
+              "calculation_origin": "authors",
+              "sampling": "not_reported",
+              "display": "60%（作者带内平均）"
+            },
+            "focus_error_pct": {
+              "value": null,
+              "source": "balli3d_2021",
+              "location": "主文摘要、§1、p1261 §3及Fig2e图注",
+              "note": "摘要/实验段报告6%，引言写<6%。§3先称实测与标称的归一化差，随后称相对平均f的最大偏离。逐点实测f、计算分母、误差图谱点与符号待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "作者约述6%或<6%，参考定义待核",
+              "reported_values_pct": [
+                6
+              ],
+              "reported_bound": {
+                "relation": "<",
+                "value": 6
+              },
+              "reference_wavelength_nm": null
+            },
+            "focus_error_protocol": {
+              "value": "作者同时用标称焦距与跨波长平均焦距描述参考",
+              "source": "balli3d_2021",
+              "location": "p1261 §3最后一个聚焦表征段，p1262 Fig2e",
+              "note": "需原数表及误差计算定义，才能把百分比转成有符号的逐波长轴向焦差。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "balli2021_d20_450",
+          "model": "Balli 2021 · 20μm · 450nm",
+          "study_id": "balli2021",
+          "specimen_id": "d20",
+          "module": "",
+          "variant": "纳米孔与相位板一体的可见至SWIR超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig2a/b同一配置的轴上PSF条件。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli3d_2021",
+              "location": "主文 §3 首段，p1261",
+              "note": "作者称入瞳直径 EPD。两种制成口径为20与200μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli3d_2021",
+              "location": "主文摘要、§3 首段",
+              "note": "作者标称NA。40×收集物镜NA0.55和10×中继NA0.25属于测量光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "IP-Dip纳米孔与相位板一体制成，熔石英基底0.7mm",
+              "source": "balli3d_2021",
+              "location": "主文 §§1–3、Fig1a图注，SI §2",
+              "note": "双光子光刻。Fig1a元胞设孔径0.2μm、周期0.4μm。§2孔深上限0.8μm为设计约束，完整成品厚度随半径变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1700,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "轴上准直照明，40×/NA0.55收集物镜与管镜至NINOX相机，焦点取z向峰值",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3，主文 §3 与Fig2a/b",
+              "note": "Nikon M Plan 40、Mitutoyo MT-1、NINOX-VS-CL-640。作者用650–1750nm针孔扫描及Airy参照评估测试物镜色差，未取得校准表。SI扫描增量原述2和0.5，可检索文字未附单位。物方像素、背景裁剪、统计重复和不确定度待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "field_point": "on_axis",
+              "axial_step_um": null,
+              "reported_scan_increments": {
+                "power_intensity": 2,
+                "focal_error": 0.5,
+                "unit": null
+              },
+              "object_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "illumination": {
+              "value": "超连续谱经AOTF选波，1000/1100nm由滤片取得",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3",
+              "note": "AOTF选波段450–850及1150–1800nm属于光源设置。1000/1100nm用长通与FB1000-10/FB1100-10带通。PSF实际谱点另据Fig2印字。偏振未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "已核主文与SI文本未报告MTF",
+              "source": "balli3d_2021",
+              "location": "主文 §§2–4、Fig2–3及附件说明，SI §§1–3，机构原作目录",
+              "note": "Fig2a/b给焦斑和归一化强度剖面，Fig2c/d/e给效率、FWHM和焦距误差曲线。Fig3是标靶与物体成像。所核入口仅指向SI，未取得原始PSF、采样校准、逐点焦距或MTF。期刊/机构原文件获取受限，DataCite精确关联DOI为0。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021",
+                "balli3d_pdf_2021",
+                "balli3d_uky_2021"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "checked_on": "2026-11-18",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "spatial_frequency_unit": null,
+                "normalization_method": null,
+                "object_plane_pixel_size_um": null,
+                "search_log": "docs/BALLI_2021_REVIEW_2026-11-18.md"
+              }
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "balli3d_si_2021",
+              "location": "SI pp1–2 §1与Fig1b，主文 p1262 Fig2a/e",
+              "note": "SI模型叙述的合成结构平均焦距为36μm。45μm是单独双曲微透镜，208μm是仅递归光线追迹的极限。成品独立标量设计f未确认。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "SI合成结构模型平均36μm",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "reported_model_mean_focal_um": 36
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/e图注",
+              "note": "约36μm为图注所述焦点位置和误差图对应距离。逐谱点绝对f缺数表。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "逐谱点f未报告数表",
+              "reported_focal_plane_distance_um": 36
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "balli3d_2021",
+              "location": "主文 §3 与Fig2b/d",
+              "note": "归一化x向强度与Airy曲线比较。FWHM只见曲线入口，原图和数表未核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "Fig2d只报告曲线"
+            },
+            "wavelength_nm": {
+              "value": 450,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/b第1列印字",
+              "note": "焦点与轴扫图的明确谱点标签。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "balli2021_d20_550",
+          "model": "Balli 2021 · 20μm · 550nm",
+          "study_id": "balli2021",
+          "specimen_id": "d20",
+          "module": "",
+          "variant": "纳米孔与相位板一体的可见至SWIR超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig2a/b同一配置的轴上PSF条件。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli3d_2021",
+              "location": "主文 §3 首段，p1261",
+              "note": "作者称入瞳直径 EPD。两种制成口径为20与200μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli3d_2021",
+              "location": "主文摘要、§3 首段",
+              "note": "作者标称NA。40×收集物镜NA0.55和10×中继NA0.25属于测量光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "IP-Dip纳米孔与相位板一体制成，熔石英基底0.7mm",
+              "source": "balli3d_2021",
+              "location": "主文 §§1–3、Fig1a图注，SI §2",
+              "note": "双光子光刻。Fig1a元胞设孔径0.2μm、周期0.4μm。§2孔深上限0.8μm为设计约束，完整成品厚度随半径变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1700,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "轴上准直照明，40×/NA0.55收集物镜与管镜至NINOX相机，焦点取z向峰值",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3，主文 §3 与Fig2a/b",
+              "note": "Nikon M Plan 40、Mitutoyo MT-1、NINOX-VS-CL-640。作者用650–1750nm针孔扫描及Airy参照评估测试物镜色差，未取得校准表。SI扫描增量原述2和0.5，可检索文字未附单位。物方像素、背景裁剪、统计重复和不确定度待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "field_point": "on_axis",
+              "axial_step_um": null,
+              "reported_scan_increments": {
+                "power_intensity": 2,
+                "focal_error": 0.5,
+                "unit": null
+              },
+              "object_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "illumination": {
+              "value": "超连续谱经AOTF选波，1000/1100nm由滤片取得",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3",
+              "note": "AOTF选波段450–850及1150–1800nm属于光源设置。1000/1100nm用长通与FB1000-10/FB1100-10带通。PSF实际谱点另据Fig2印字。偏振未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "已核主文与SI文本未报告MTF",
+              "source": "balli3d_2021",
+              "location": "主文 §§2–4、Fig2–3及附件说明，SI §§1–3，机构原作目录",
+              "note": "Fig2a/b给焦斑和归一化强度剖面，Fig2c/d/e给效率、FWHM和焦距误差曲线。Fig3是标靶与物体成像。所核入口仅指向SI，未取得原始PSF、采样校准、逐点焦距或MTF。期刊/机构原文件获取受限，DataCite精确关联DOI为0。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021",
+                "balli3d_pdf_2021",
+                "balli3d_uky_2021"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "checked_on": "2026-11-18",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "spatial_frequency_unit": null,
+                "normalization_method": null,
+                "object_plane_pixel_size_um": null,
+                "search_log": "docs/BALLI_2021_REVIEW_2026-11-18.md"
+              }
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "balli3d_si_2021",
+              "location": "SI pp1–2 §1与Fig1b，主文 p1262 Fig2a/e",
+              "note": "SI模型叙述的合成结构平均焦距为36μm。45μm是单独双曲微透镜，208μm是仅递归光线追迹的极限。成品独立标量设计f未确认。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "SI合成结构模型平均36μm",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "reported_model_mean_focal_um": 36
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/e图注",
+              "note": "约36μm为图注所述焦点位置和误差图对应距离。逐谱点绝对f缺数表。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "逐谱点f未报告数表",
+              "reported_focal_plane_distance_um": 36
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "balli3d_2021",
+              "location": "主文 §3 与Fig2b/d",
+              "note": "归一化x向强度与Airy曲线比较。FWHM只见曲线入口，原图和数表未核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "Fig2d只报告曲线"
+            },
+            "wavelength_nm": {
+              "value": 550,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/b第2列印字",
+              "note": "焦点与轴扫图的明确谱点标签。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "balli2021_d20_650",
+          "model": "Balli 2021 · 20μm · 650nm",
+          "study_id": "balli2021",
+          "specimen_id": "d20",
+          "module": "",
+          "variant": "纳米孔与相位板一体的可见至SWIR超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig2a/b同一配置的轴上PSF条件。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli3d_2021",
+              "location": "主文 §3 首段，p1261",
+              "note": "作者称入瞳直径 EPD。两种制成口径为20与200μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli3d_2021",
+              "location": "主文摘要、§3 首段",
+              "note": "作者标称NA。40×收集物镜NA0.55和10×中继NA0.25属于测量光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "IP-Dip纳米孔与相位板一体制成，熔石英基底0.7mm",
+              "source": "balli3d_2021",
+              "location": "主文 §§1–3、Fig1a图注，SI §2",
+              "note": "双光子光刻。Fig1a元胞设孔径0.2μm、周期0.4μm。§2孔深上限0.8μm为设计约束，完整成品厚度随半径变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1700,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "轴上准直照明，40×/NA0.55收集物镜与管镜至NINOX相机，焦点取z向峰值",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3，主文 §3 与Fig2a/b",
+              "note": "Nikon M Plan 40、Mitutoyo MT-1、NINOX-VS-CL-640。作者用650–1750nm针孔扫描及Airy参照评估测试物镜色差，未取得校准表。SI扫描增量原述2和0.5，可检索文字未附单位。物方像素、背景裁剪、统计重复和不确定度待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "field_point": "on_axis",
+              "axial_step_um": null,
+              "reported_scan_increments": {
+                "power_intensity": 2,
+                "focal_error": 0.5,
+                "unit": null
+              },
+              "object_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "illumination": {
+              "value": "超连续谱经AOTF选波，1000/1100nm由滤片取得",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3",
+              "note": "AOTF选波段450–850及1150–1800nm属于光源设置。1000/1100nm用长通与FB1000-10/FB1100-10带通。PSF实际谱点另据Fig2印字。偏振未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "已核主文与SI文本未报告MTF",
+              "source": "balli3d_2021",
+              "location": "主文 §§2–4、Fig2–3及附件说明，SI §§1–3，机构原作目录",
+              "note": "Fig2a/b给焦斑和归一化强度剖面，Fig2c/d/e给效率、FWHM和焦距误差曲线。Fig3是标靶与物体成像。所核入口仅指向SI，未取得原始PSF、采样校准、逐点焦距或MTF。期刊/机构原文件获取受限，DataCite精确关联DOI为0。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021",
+                "balli3d_pdf_2021",
+                "balli3d_uky_2021"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "checked_on": "2026-11-18",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "spatial_frequency_unit": null,
+                "normalization_method": null,
+                "object_plane_pixel_size_um": null,
+                "search_log": "docs/BALLI_2021_REVIEW_2026-11-18.md"
+              }
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "balli3d_si_2021",
+              "location": "SI pp1–2 §1与Fig1b，主文 p1262 Fig2a/e",
+              "note": "SI模型叙述的合成结构平均焦距为36μm。45μm是单独双曲微透镜，208μm是仅递归光线追迹的极限。成品独立标量设计f未确认。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "SI合成结构模型平均36μm",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "reported_model_mean_focal_um": 36
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/e图注",
+              "note": "约36μm为图注所述焦点位置和误差图对应距离。逐谱点绝对f缺数表。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "逐谱点f未报告数表",
+              "reported_focal_plane_distance_um": 36
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "balli3d_2021",
+              "location": "主文 §3 与Fig2b/d",
+              "note": "归一化x向强度与Airy曲线比较。FWHM只见曲线入口，原图和数表未核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "Fig2d只报告曲线"
+            },
+            "wavelength_nm": {
+              "value": 650,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/b第3列印字",
+              "note": "焦点与轴扫图的明确谱点标签。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "balli2021_d20_750",
+          "model": "Balli 2021 · 20μm · 750nm",
+          "study_id": "balli2021",
+          "specimen_id": "d20",
+          "module": "",
+          "variant": "纳米孔与相位板一体的可见至SWIR超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig2a/b同一配置的轴上PSF条件。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli3d_2021",
+              "location": "主文 §3 首段，p1261",
+              "note": "作者称入瞳直径 EPD。两种制成口径为20与200μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli3d_2021",
+              "location": "主文摘要、§3 首段",
+              "note": "作者标称NA。40×收集物镜NA0.55和10×中继NA0.25属于测量光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "IP-Dip纳米孔与相位板一体制成，熔石英基底0.7mm",
+              "source": "balli3d_2021",
+              "location": "主文 §§1–3、Fig1a图注，SI §2",
+              "note": "双光子光刻。Fig1a元胞设孔径0.2μm、周期0.4μm。§2孔深上限0.8μm为设计约束，完整成品厚度随半径变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1700,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "轴上准直照明，40×/NA0.55收集物镜与管镜至NINOX相机，焦点取z向峰值",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3，主文 §3 与Fig2a/b",
+              "note": "Nikon M Plan 40、Mitutoyo MT-1、NINOX-VS-CL-640。作者用650–1750nm针孔扫描及Airy参照评估测试物镜色差，未取得校准表。SI扫描增量原述2和0.5，可检索文字未附单位。物方像素、背景裁剪、统计重复和不确定度待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "field_point": "on_axis",
+              "axial_step_um": null,
+              "reported_scan_increments": {
+                "power_intensity": 2,
+                "focal_error": 0.5,
+                "unit": null
+              },
+              "object_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "illumination": {
+              "value": "超连续谱经AOTF选波，1000/1100nm由滤片取得",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3",
+              "note": "AOTF选波段450–850及1150–1800nm属于光源设置。1000/1100nm用长通与FB1000-10/FB1100-10带通。PSF实际谱点另据Fig2印字。偏振未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "已核主文与SI文本未报告MTF",
+              "source": "balli3d_2021",
+              "location": "主文 §§2–4、Fig2–3及附件说明，SI §§1–3，机构原作目录",
+              "note": "Fig2a/b给焦斑和归一化强度剖面，Fig2c/d/e给效率、FWHM和焦距误差曲线。Fig3是标靶与物体成像。所核入口仅指向SI，未取得原始PSF、采样校准、逐点焦距或MTF。期刊/机构原文件获取受限，DataCite精确关联DOI为0。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021",
+                "balli3d_pdf_2021",
+                "balli3d_uky_2021"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "checked_on": "2026-11-18",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "spatial_frequency_unit": null,
+                "normalization_method": null,
+                "object_plane_pixel_size_um": null,
+                "search_log": "docs/BALLI_2021_REVIEW_2026-11-18.md"
+              }
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "balli3d_si_2021",
+              "location": "SI pp1–2 §1与Fig1b，主文 p1262 Fig2a/e",
+              "note": "SI模型叙述的合成结构平均焦距为36μm。45μm是单独双曲微透镜，208μm是仅递归光线追迹的极限。成品独立标量设计f未确认。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "SI合成结构模型平均36μm",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "reported_model_mean_focal_um": 36
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/e图注",
+              "note": "约36μm为图注所述焦点位置和误差图对应距离。逐谱点绝对f缺数表。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "逐谱点f未报告数表",
+              "reported_focal_plane_distance_um": 36
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "balli3d_2021",
+              "location": "主文 §3 与Fig2b/d",
+              "note": "归一化x向强度与Airy曲线比较。FWHM只见曲线入口，原图和数表未核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "Fig2d只报告曲线"
+            },
+            "wavelength_nm": {
+              "value": 750,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/b第4列印字",
+              "note": "焦点与轴扫图的明确谱点标签。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "balli2021_d20_850",
+          "model": "Balli 2021 · 20μm · 850nm",
+          "study_id": "balli2021",
+          "specimen_id": "d20",
+          "module": "",
+          "variant": "纳米孔与相位板一体的可见至SWIR超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig2a/b同一配置的轴上PSF条件。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli3d_2021",
+              "location": "主文 §3 首段，p1261",
+              "note": "作者称入瞳直径 EPD。两种制成口径为20与200μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli3d_2021",
+              "location": "主文摘要、§3 首段",
+              "note": "作者标称NA。40×收集物镜NA0.55和10×中继NA0.25属于测量光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "IP-Dip纳米孔与相位板一体制成，熔石英基底0.7mm",
+              "source": "balli3d_2021",
+              "location": "主文 §§1–3、Fig1a图注，SI §2",
+              "note": "双光子光刻。Fig1a元胞设孔径0.2μm、周期0.4μm。§2孔深上限0.8μm为设计约束，完整成品厚度随半径变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1700,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "轴上准直照明，40×/NA0.55收集物镜与管镜至NINOX相机，焦点取z向峰值",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3，主文 §3 与Fig2a/b",
+              "note": "Nikon M Plan 40、Mitutoyo MT-1、NINOX-VS-CL-640。作者用650–1750nm针孔扫描及Airy参照评估测试物镜色差，未取得校准表。SI扫描增量原述2和0.5，可检索文字未附单位。物方像素、背景裁剪、统计重复和不确定度待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "field_point": "on_axis",
+              "axial_step_um": null,
+              "reported_scan_increments": {
+                "power_intensity": 2,
+                "focal_error": 0.5,
+                "unit": null
+              },
+              "object_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "illumination": {
+              "value": "超连续谱经AOTF选波，1000/1100nm由滤片取得",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3",
+              "note": "AOTF选波段450–850及1150–1800nm属于光源设置。1000/1100nm用长通与FB1000-10/FB1100-10带通。PSF实际谱点另据Fig2印字。偏振未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "已核主文与SI文本未报告MTF",
+              "source": "balli3d_2021",
+              "location": "主文 §§2–4、Fig2–3及附件说明，SI §§1–3，机构原作目录",
+              "note": "Fig2a/b给焦斑和归一化强度剖面，Fig2c/d/e给效率、FWHM和焦距误差曲线。Fig3是标靶与物体成像。所核入口仅指向SI，未取得原始PSF、采样校准、逐点焦距或MTF。期刊/机构原文件获取受限，DataCite精确关联DOI为0。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021",
+                "balli3d_pdf_2021",
+                "balli3d_uky_2021"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "checked_on": "2026-11-18",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "spatial_frequency_unit": null,
+                "normalization_method": null,
+                "object_plane_pixel_size_um": null,
+                "search_log": "docs/BALLI_2021_REVIEW_2026-11-18.md"
+              }
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "balli3d_si_2021",
+              "location": "SI pp1–2 §1与Fig1b，主文 p1262 Fig2a/e",
+              "note": "SI模型叙述的合成结构平均焦距为36μm。45μm是单独双曲微透镜，208μm是仅递归光线追迹的极限。成品独立标量设计f未确认。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "SI合成结构模型平均36μm",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "reported_model_mean_focal_um": 36
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/e图注",
+              "note": "约36μm为图注所述焦点位置和误差图对应距离。逐谱点绝对f缺数表。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "逐谱点f未报告数表",
+              "reported_focal_plane_distance_um": 36
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "balli3d_2021",
+              "location": "主文 §3 与Fig2b/d",
+              "note": "归一化x向强度与Airy曲线比较。FWHM只见曲线入口，原图和数表未核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "Fig2d只报告曲线"
+            },
+            "wavelength_nm": {
+              "value": 850,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/b第5列印字",
+              "note": "焦点与轴扫图的明确谱点标签。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "balli2021_d20_1000",
+          "model": "Balli 2021 · 20μm · 1000nm",
+          "study_id": "balli2021",
+          "specimen_id": "d20",
+          "module": "",
+          "variant": "纳米孔与相位板一体的可见至SWIR超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig2a/b同一配置的轴上PSF条件。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli3d_2021",
+              "location": "主文 §3 首段，p1261",
+              "note": "作者称入瞳直径 EPD。两种制成口径为20与200μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli3d_2021",
+              "location": "主文摘要、§3 首段",
+              "note": "作者标称NA。40×收集物镜NA0.55和10×中继NA0.25属于测量光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "IP-Dip纳米孔与相位板一体制成，熔石英基底0.7mm",
+              "source": "balli3d_2021",
+              "location": "主文 §§1–3、Fig1a图注，SI §2",
+              "note": "双光子光刻。Fig1a元胞设孔径0.2μm、周期0.4μm。§2孔深上限0.8μm为设计约束，完整成品厚度随半径变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1700,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "轴上准直照明，40×/NA0.55收集物镜与管镜至NINOX相机，焦点取z向峰值",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3，主文 §3 与Fig2a/b",
+              "note": "Nikon M Plan 40、Mitutoyo MT-1、NINOX-VS-CL-640。作者用650–1750nm针孔扫描及Airy参照评估测试物镜色差，未取得校准表。SI扫描增量原述2和0.5，可检索文字未附单位。物方像素、背景裁剪、统计重复和不确定度待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "field_point": "on_axis",
+              "axial_step_um": null,
+              "reported_scan_increments": {
+                "power_intensity": 2,
+                "focal_error": 0.5,
+                "unit": null
+              },
+              "object_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "illumination": {
+              "value": "超连续谱经AOTF选波，1000/1100nm由滤片取得",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3",
+              "note": "AOTF选波段450–850及1150–1800nm属于光源设置。1000/1100nm用长通与FB1000-10/FB1100-10带通。PSF实际谱点另据Fig2印字。偏振未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "已核主文与SI文本未报告MTF",
+              "source": "balli3d_2021",
+              "location": "主文 §§2–4、Fig2–3及附件说明，SI §§1–3，机构原作目录",
+              "note": "Fig2a/b给焦斑和归一化强度剖面，Fig2c/d/e给效率、FWHM和焦距误差曲线。Fig3是标靶与物体成像。所核入口仅指向SI，未取得原始PSF、采样校准、逐点焦距或MTF。期刊/机构原文件获取受限，DataCite精确关联DOI为0。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021",
+                "balli3d_pdf_2021",
+                "balli3d_uky_2021"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "checked_on": "2026-11-18",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "spatial_frequency_unit": null,
+                "normalization_method": null,
+                "object_plane_pixel_size_um": null,
+                "search_log": "docs/BALLI_2021_REVIEW_2026-11-18.md"
+              }
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "balli3d_si_2021",
+              "location": "SI pp1–2 §1与Fig1b，主文 p1262 Fig2a/e",
+              "note": "SI模型叙述的合成结构平均焦距为36μm。45μm是单独双曲微透镜，208μm是仅递归光线追迹的极限。成品独立标量设计f未确认。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "SI合成结构模型平均36μm",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "reported_model_mean_focal_um": 36
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/e图注",
+              "note": "约36μm为图注所述焦点位置和误差图对应距离。逐谱点绝对f缺数表。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "逐谱点f未报告数表",
+              "reported_focal_plane_distance_um": 36
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "balli3d_2021",
+              "location": "主文 §3 与Fig2b/d",
+              "note": "归一化x向强度与Airy曲线比较。FWHM只见曲线入口，原图和数表未核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "Fig2d只报告曲线"
+            },
+            "wavelength_nm": {
+              "value": 1000,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/b第6列印字",
+              "note": "焦点与轴扫图的明确谱点标签。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "balli2021_d20_1100",
+          "model": "Balli 2021 · 20μm · 1100nm",
+          "study_id": "balli2021",
+          "specimen_id": "d20",
+          "module": "",
+          "variant": "纳米孔与相位板一体的可见至SWIR超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig2a/b同一配置的轴上PSF条件。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli3d_2021",
+              "location": "主文 §3 首段，p1261",
+              "note": "作者称入瞳直径 EPD。两种制成口径为20与200μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli3d_2021",
+              "location": "主文摘要、§3 首段",
+              "note": "作者标称NA。40×收集物镜NA0.55和10×中继NA0.25属于测量光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "IP-Dip纳米孔与相位板一体制成，熔石英基底0.7mm",
+              "source": "balli3d_2021",
+              "location": "主文 §§1–3、Fig1a图注，SI §2",
+              "note": "双光子光刻。Fig1a元胞设孔径0.2μm、周期0.4μm。§2孔深上限0.8μm为设计约束，完整成品厚度随半径变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1700,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "轴上准直照明，40×/NA0.55收集物镜与管镜至NINOX相机，焦点取z向峰值",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3，主文 §3 与Fig2a/b",
+              "note": "Nikon M Plan 40、Mitutoyo MT-1、NINOX-VS-CL-640。作者用650–1750nm针孔扫描及Airy参照评估测试物镜色差，未取得校准表。SI扫描增量原述2和0.5，可检索文字未附单位。物方像素、背景裁剪、统计重复和不确定度待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "field_point": "on_axis",
+              "axial_step_um": null,
+              "reported_scan_increments": {
+                "power_intensity": 2,
+                "focal_error": 0.5,
+                "unit": null
+              },
+              "object_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "illumination": {
+              "value": "超连续谱经AOTF选波，1000/1100nm由滤片取得",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3",
+              "note": "AOTF选波段450–850及1150–1800nm属于光源设置。1000/1100nm用长通与FB1000-10/FB1100-10带通。PSF实际谱点另据Fig2印字。偏振未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "已核主文与SI文本未报告MTF",
+              "source": "balli3d_2021",
+              "location": "主文 §§2–4、Fig2–3及附件说明，SI §§1–3，机构原作目录",
+              "note": "Fig2a/b给焦斑和归一化强度剖面，Fig2c/d/e给效率、FWHM和焦距误差曲线。Fig3是标靶与物体成像。所核入口仅指向SI，未取得原始PSF、采样校准、逐点焦距或MTF。期刊/机构原文件获取受限，DataCite精确关联DOI为0。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021",
+                "balli3d_pdf_2021",
+                "balli3d_uky_2021"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "checked_on": "2026-11-18",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "spatial_frequency_unit": null,
+                "normalization_method": null,
+                "object_plane_pixel_size_um": null,
+                "search_log": "docs/BALLI_2021_REVIEW_2026-11-18.md"
+              }
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "balli3d_si_2021",
+              "location": "SI pp1–2 §1与Fig1b，主文 p1262 Fig2a/e",
+              "note": "SI模型叙述的合成结构平均焦距为36μm。45μm是单独双曲微透镜，208μm是仅递归光线追迹的极限。成品独立标量设计f未确认。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "SI合成结构模型平均36μm",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "reported_model_mean_focal_um": 36
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/e图注",
+              "note": "约36μm为图注所述焦点位置和误差图对应距离。逐谱点绝对f缺数表。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "逐谱点f未报告数表",
+              "reported_focal_plane_distance_um": 36
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "balli3d_2021",
+              "location": "主文 §3 与Fig2b/d",
+              "note": "归一化x向强度与Airy曲线比较。FWHM只见曲线入口，原图和数表未核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "Fig2d只报告曲线"
+            },
+            "wavelength_nm": {
+              "value": 1100,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/b第7列印字",
+              "note": "焦点与轴扫图的明确谱点标签。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "balli2021_d20_1200",
+          "model": "Balli 2021 · 20μm · 1200nm",
+          "study_id": "balli2021",
+          "specimen_id": "d20",
+          "module": "",
+          "variant": "纳米孔与相位板一体的可见至SWIR超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig2a/b同一配置的轴上PSF条件。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli3d_2021",
+              "location": "主文 §3 首段，p1261",
+              "note": "作者称入瞳直径 EPD。两种制成口径为20与200μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli3d_2021",
+              "location": "主文摘要、§3 首段",
+              "note": "作者标称NA。40×收集物镜NA0.55和10×中继NA0.25属于测量光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "IP-Dip纳米孔与相位板一体制成，熔石英基底0.7mm",
+              "source": "balli3d_2021",
+              "location": "主文 §§1–3、Fig1a图注，SI §2",
+              "note": "双光子光刻。Fig1a元胞设孔径0.2μm、周期0.4μm。§2孔深上限0.8μm为设计约束，完整成品厚度随半径变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1700,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "轴上准直照明，40×/NA0.55收集物镜与管镜至NINOX相机，焦点取z向峰值",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3，主文 §3 与Fig2a/b",
+              "note": "Nikon M Plan 40、Mitutoyo MT-1、NINOX-VS-CL-640。作者用650–1750nm针孔扫描及Airy参照评估测试物镜色差，未取得校准表。SI扫描增量原述2和0.5，可检索文字未附单位。物方像素、背景裁剪、统计重复和不确定度待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "field_point": "on_axis",
+              "axial_step_um": null,
+              "reported_scan_increments": {
+                "power_intensity": 2,
+                "focal_error": 0.5,
+                "unit": null
+              },
+              "object_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "illumination": {
+              "value": "超连续谱经AOTF选波，1000/1100nm由滤片取得",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3",
+              "note": "AOTF选波段450–850及1150–1800nm属于光源设置。1000/1100nm用长通与FB1000-10/FB1100-10带通。PSF实际谱点另据Fig2印字。偏振未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "已核主文与SI文本未报告MTF",
+              "source": "balli3d_2021",
+              "location": "主文 §§2–4、Fig2–3及附件说明，SI §§1–3，机构原作目录",
+              "note": "Fig2a/b给焦斑和归一化强度剖面，Fig2c/d/e给效率、FWHM和焦距误差曲线。Fig3是标靶与物体成像。所核入口仅指向SI，未取得原始PSF、采样校准、逐点焦距或MTF。期刊/机构原文件获取受限，DataCite精确关联DOI为0。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021",
+                "balli3d_pdf_2021",
+                "balli3d_uky_2021"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "checked_on": "2026-11-18",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "spatial_frequency_unit": null,
+                "normalization_method": null,
+                "object_plane_pixel_size_um": null,
+                "search_log": "docs/BALLI_2021_REVIEW_2026-11-18.md"
+              }
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "balli3d_si_2021",
+              "location": "SI pp1–2 §1与Fig1b，主文 p1262 Fig2a/e",
+              "note": "SI模型叙述的合成结构平均焦距为36μm。45μm是单独双曲微透镜，208μm是仅递归光线追迹的极限。成品独立标量设计f未确认。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "SI合成结构模型平均36μm",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "reported_model_mean_focal_um": 36
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/e图注",
+              "note": "约36μm为图注所述焦点位置和误差图对应距离。逐谱点绝对f缺数表。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "逐谱点f未报告数表",
+              "reported_focal_plane_distance_um": 36
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "balli3d_2021",
+              "location": "主文 §3 与Fig2b/d",
+              "note": "归一化x向强度与Airy曲线比较。FWHM只见曲线入口，原图和数表未核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "Fig2d只报告曲线"
+            },
+            "wavelength_nm": {
+              "value": 1200,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/b第8列印字",
+              "note": "焦点与轴扫图的明确谱点标签。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "balli2021_d20_1300",
+          "model": "Balli 2021 · 20μm · 1300nm",
+          "study_id": "balli2021",
+          "specimen_id": "d20",
+          "module": "",
+          "variant": "纳米孔与相位板一体的可见至SWIR超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig2a/b同一配置的轴上PSF条件。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli3d_2021",
+              "location": "主文 §3 首段，p1261",
+              "note": "作者称入瞳直径 EPD。两种制成口径为20与200μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli3d_2021",
+              "location": "主文摘要、§3 首段",
+              "note": "作者标称NA。40×收集物镜NA0.55和10×中继NA0.25属于测量光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "IP-Dip纳米孔与相位板一体制成，熔石英基底0.7mm",
+              "source": "balli3d_2021",
+              "location": "主文 §§1–3、Fig1a图注，SI §2",
+              "note": "双光子光刻。Fig1a元胞设孔径0.2μm、周期0.4μm。§2孔深上限0.8μm为设计约束，完整成品厚度随半径变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1700,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "轴上准直照明，40×/NA0.55收集物镜与管镜至NINOX相机，焦点取z向峰值",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3，主文 §3 与Fig2a/b",
+              "note": "Nikon M Plan 40、Mitutoyo MT-1、NINOX-VS-CL-640。作者用650–1750nm针孔扫描及Airy参照评估测试物镜色差，未取得校准表。SI扫描增量原述2和0.5，可检索文字未附单位。物方像素、背景裁剪、统计重复和不确定度待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "field_point": "on_axis",
+              "axial_step_um": null,
+              "reported_scan_increments": {
+                "power_intensity": 2,
+                "focal_error": 0.5,
+                "unit": null
+              },
+              "object_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "illumination": {
+              "value": "超连续谱经AOTF选波，1000/1100nm由滤片取得",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3",
+              "note": "AOTF选波段450–850及1150–1800nm属于光源设置。1000/1100nm用长通与FB1000-10/FB1100-10带通。PSF实际谱点另据Fig2印字。偏振未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "已核主文与SI文本未报告MTF",
+              "source": "balli3d_2021",
+              "location": "主文 §§2–4、Fig2–3及附件说明，SI §§1–3，机构原作目录",
+              "note": "Fig2a/b给焦斑和归一化强度剖面，Fig2c/d/e给效率、FWHM和焦距误差曲线。Fig3是标靶与物体成像。所核入口仅指向SI，未取得原始PSF、采样校准、逐点焦距或MTF。期刊/机构原文件获取受限，DataCite精确关联DOI为0。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021",
+                "balli3d_pdf_2021",
+                "balli3d_uky_2021"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "checked_on": "2026-11-18",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "spatial_frequency_unit": null,
+                "normalization_method": null,
+                "object_plane_pixel_size_um": null,
+                "search_log": "docs/BALLI_2021_REVIEW_2026-11-18.md"
+              }
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "balli3d_si_2021",
+              "location": "SI pp1–2 §1与Fig1b，主文 p1262 Fig2a/e",
+              "note": "SI模型叙述的合成结构平均焦距为36μm。45μm是单独双曲微透镜，208μm是仅递归光线追迹的极限。成品独立标量设计f未确认。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "SI合成结构模型平均36μm",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "reported_model_mean_focal_um": 36
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/e图注",
+              "note": "约36μm为图注所述焦点位置和误差图对应距离。逐谱点绝对f缺数表。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "逐谱点f未报告数表",
+              "reported_focal_plane_distance_um": 36
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "balli3d_2021",
+              "location": "主文 §3 与Fig2b/d",
+              "note": "归一化x向强度与Airy曲线比较。FWHM只见曲线入口，原图和数表未核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "Fig2d只报告曲线"
+            },
+            "wavelength_nm": {
+              "value": 1300,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/b第9列印字",
+              "note": "焦点与轴扫图的明确谱点标签。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "balli2021_d20_1400",
+          "model": "Balli 2021 · 20μm · 1400nm",
+          "study_id": "balli2021",
+          "specimen_id": "d20",
+          "module": "",
+          "variant": "纳米孔与相位板一体的可见至SWIR超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig2a/b同一配置的轴上PSF条件。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli3d_2021",
+              "location": "主文 §3 首段，p1261",
+              "note": "作者称入瞳直径 EPD。两种制成口径为20与200μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli3d_2021",
+              "location": "主文摘要、§3 首段",
+              "note": "作者标称NA。40×收集物镜NA0.55和10×中继NA0.25属于测量光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "IP-Dip纳米孔与相位板一体制成，熔石英基底0.7mm",
+              "source": "balli3d_2021",
+              "location": "主文 §§1–3、Fig1a图注，SI §2",
+              "note": "双光子光刻。Fig1a元胞设孔径0.2μm、周期0.4μm。§2孔深上限0.8μm为设计约束，完整成品厚度随半径变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1700,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "轴上准直照明，40×/NA0.55收集物镜与管镜至NINOX相机，焦点取z向峰值",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3，主文 §3 与Fig2a/b",
+              "note": "Nikon M Plan 40、Mitutoyo MT-1、NINOX-VS-CL-640。作者用650–1750nm针孔扫描及Airy参照评估测试物镜色差，未取得校准表。SI扫描增量原述2和0.5，可检索文字未附单位。物方像素、背景裁剪、统计重复和不确定度待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "field_point": "on_axis",
+              "axial_step_um": null,
+              "reported_scan_increments": {
+                "power_intensity": 2,
+                "focal_error": 0.5,
+                "unit": null
+              },
+              "object_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "illumination": {
+              "value": "超连续谱经AOTF选波，1000/1100nm由滤片取得",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3",
+              "note": "AOTF选波段450–850及1150–1800nm属于光源设置。1000/1100nm用长通与FB1000-10/FB1100-10带通。PSF实际谱点另据Fig2印字。偏振未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "已核主文与SI文本未报告MTF",
+              "source": "balli3d_2021",
+              "location": "主文 §§2–4、Fig2–3及附件说明，SI §§1–3，机构原作目录",
+              "note": "Fig2a/b给焦斑和归一化强度剖面，Fig2c/d/e给效率、FWHM和焦距误差曲线。Fig3是标靶与物体成像。所核入口仅指向SI，未取得原始PSF、采样校准、逐点焦距或MTF。期刊/机构原文件获取受限，DataCite精确关联DOI为0。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021",
+                "balli3d_pdf_2021",
+                "balli3d_uky_2021"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "checked_on": "2026-11-18",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "spatial_frequency_unit": null,
+                "normalization_method": null,
+                "object_plane_pixel_size_um": null,
+                "search_log": "docs/BALLI_2021_REVIEW_2026-11-18.md"
+              }
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "balli3d_si_2021",
+              "location": "SI pp1–2 §1与Fig1b，主文 p1262 Fig2a/e",
+              "note": "SI模型叙述的合成结构平均焦距为36μm。45μm是单独双曲微透镜，208μm是仅递归光线追迹的极限。成品独立标量设计f未确认。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "SI合成结构模型平均36μm",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "reported_model_mean_focal_um": 36
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/e图注",
+              "note": "约36μm为图注所述焦点位置和误差图对应距离。逐谱点绝对f缺数表。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "逐谱点f未报告数表",
+              "reported_focal_plane_distance_um": 36
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "balli3d_2021",
+              "location": "主文 §3 与Fig2b/d",
+              "note": "归一化x向强度与Airy曲线比较。FWHM只见曲线入口，原图和数表未核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "Fig2d只报告曲线"
+            },
+            "wavelength_nm": {
+              "value": 1400,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/b第10列印字",
+              "note": "焦点与轴扫图的明确谱点标签。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "balli2021_d20_1500",
+          "model": "Balli 2021 · 20μm · 1500nm",
+          "study_id": "balli2021",
+          "specimen_id": "d20",
+          "module": "",
+          "variant": "纳米孔与相位板一体的可见至SWIR超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig2a/b同一配置的轴上PSF条件。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli3d_2021",
+              "location": "主文 §3 首段，p1261",
+              "note": "作者称入瞳直径 EPD。两种制成口径为20与200μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli3d_2021",
+              "location": "主文摘要、§3 首段",
+              "note": "作者标称NA。40×收集物镜NA0.55和10×中继NA0.25属于测量光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "IP-Dip纳米孔与相位板一体制成，熔石英基底0.7mm",
+              "source": "balli3d_2021",
+              "location": "主文 §§1–3、Fig1a图注，SI §2",
+              "note": "双光子光刻。Fig1a元胞设孔径0.2μm、周期0.4μm。§2孔深上限0.8μm为设计约束，完整成品厚度随半径变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1700,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "轴上准直照明，40×/NA0.55收集物镜与管镜至NINOX相机，焦点取z向峰值",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3，主文 §3 与Fig2a/b",
+              "note": "Nikon M Plan 40、Mitutoyo MT-1、NINOX-VS-CL-640。作者用650–1750nm针孔扫描及Airy参照评估测试物镜色差，未取得校准表。SI扫描增量原述2和0.5，可检索文字未附单位。物方像素、背景裁剪、统计重复和不确定度待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "field_point": "on_axis",
+              "axial_step_um": null,
+              "reported_scan_increments": {
+                "power_intensity": 2,
+                "focal_error": 0.5,
+                "unit": null
+              },
+              "object_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "illumination": {
+              "value": "超连续谱经AOTF选波，1000/1100nm由滤片取得",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3",
+              "note": "AOTF选波段450–850及1150–1800nm属于光源设置。1000/1100nm用长通与FB1000-10/FB1100-10带通。PSF实际谱点另据Fig2印字。偏振未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "已核主文与SI文本未报告MTF",
+              "source": "balli3d_2021",
+              "location": "主文 §§2–4、Fig2–3及附件说明，SI §§1–3，机构原作目录",
+              "note": "Fig2a/b给焦斑和归一化强度剖面，Fig2c/d/e给效率、FWHM和焦距误差曲线。Fig3是标靶与物体成像。所核入口仅指向SI，未取得原始PSF、采样校准、逐点焦距或MTF。期刊/机构原文件获取受限，DataCite精确关联DOI为0。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021",
+                "balli3d_pdf_2021",
+                "balli3d_uky_2021"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "checked_on": "2026-11-18",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "spatial_frequency_unit": null,
+                "normalization_method": null,
+                "object_plane_pixel_size_um": null,
+                "search_log": "docs/BALLI_2021_REVIEW_2026-11-18.md"
+              }
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "balli3d_si_2021",
+              "location": "SI pp1–2 §1与Fig1b，主文 p1262 Fig2a/e",
+              "note": "SI模型叙述的合成结构平均焦距为36μm。45μm是单独双曲微透镜，208μm是仅递归光线追迹的极限。成品独立标量设计f未确认。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "SI合成结构模型平均36μm",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "reported_model_mean_focal_um": 36
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/e图注",
+              "note": "约36μm为图注所述焦点位置和误差图对应距离。逐谱点绝对f缺数表。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "逐谱点f未报告数表",
+              "reported_focal_plane_distance_um": 36
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "balli3d_2021",
+              "location": "主文 §3 与Fig2b/d",
+              "note": "归一化x向强度与Airy曲线比较。FWHM只见曲线入口，原图和数表未核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "Fig2d只报告曲线"
+            },
+            "wavelength_nm": {
+              "value": 1500,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/b第11列印字",
+              "note": "焦点与轴扫图的明确谱点标签。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "balli2021_d20_1600",
+          "model": "Balli 2021 · 20μm · 1600nm",
+          "study_id": "balli2021",
+          "specimen_id": "d20",
+          "module": "",
+          "variant": "纳米孔与相位板一体的可见至SWIR超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig2a/b同一配置的轴上PSF条件。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli3d_2021",
+              "location": "主文 §3 首段，p1261",
+              "note": "作者称入瞳直径 EPD。两种制成口径为20与200μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli3d_2021",
+              "location": "主文摘要、§3 首段",
+              "note": "作者标称NA。40×收集物镜NA0.55和10×中继NA0.25属于测量光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "IP-Dip纳米孔与相位板一体制成，熔石英基底0.7mm",
+              "source": "balli3d_2021",
+              "location": "主文 §§1–3、Fig1a图注，SI §2",
+              "note": "双光子光刻。Fig1a元胞设孔径0.2μm、周期0.4μm。§2孔深上限0.8μm为设计约束，完整成品厚度随半径变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1700,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "轴上准直照明，40×/NA0.55收集物镜与管镜至NINOX相机，焦点取z向峰值",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3，主文 §3 与Fig2a/b",
+              "note": "Nikon M Plan 40、Mitutoyo MT-1、NINOX-VS-CL-640。作者用650–1750nm针孔扫描及Airy参照评估测试物镜色差，未取得校准表。SI扫描增量原述2和0.5，可检索文字未附单位。物方像素、背景裁剪、统计重复和不确定度待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "field_point": "on_axis",
+              "axial_step_um": null,
+              "reported_scan_increments": {
+                "power_intensity": 2,
+                "focal_error": 0.5,
+                "unit": null
+              },
+              "object_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "illumination": {
+              "value": "超连续谱经AOTF选波，1000/1100nm由滤片取得",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3",
+              "note": "AOTF选波段450–850及1150–1800nm属于光源设置。1000/1100nm用长通与FB1000-10/FB1100-10带通。PSF实际谱点另据Fig2印字。偏振未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "已核主文与SI文本未报告MTF",
+              "source": "balli3d_2021",
+              "location": "主文 §§2–4、Fig2–3及附件说明，SI §§1–3，机构原作目录",
+              "note": "Fig2a/b给焦斑和归一化强度剖面，Fig2c/d/e给效率、FWHM和焦距误差曲线。Fig3是标靶与物体成像。所核入口仅指向SI，未取得原始PSF、采样校准、逐点焦距或MTF。期刊/机构原文件获取受限，DataCite精确关联DOI为0。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021",
+                "balli3d_pdf_2021",
+                "balli3d_uky_2021"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "checked_on": "2026-11-18",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "spatial_frequency_unit": null,
+                "normalization_method": null,
+                "object_plane_pixel_size_um": null,
+                "search_log": "docs/BALLI_2021_REVIEW_2026-11-18.md"
+              }
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "balli3d_si_2021",
+              "location": "SI pp1–2 §1与Fig1b，主文 p1262 Fig2a/e",
+              "note": "SI模型叙述的合成结构平均焦距为36μm。45μm是单独双曲微透镜，208μm是仅递归光线追迹的极限。成品独立标量设计f未确认。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "SI合成结构模型平均36μm",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "reported_model_mean_focal_um": 36
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/e图注",
+              "note": "约36μm为图注所述焦点位置和误差图对应距离。逐谱点绝对f缺数表。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "逐谱点f未报告数表",
+              "reported_focal_plane_distance_um": 36
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "balli3d_2021",
+              "location": "主文 §3 与Fig2b/d",
+              "note": "归一化x向强度与Airy曲线比较。FWHM只见曲线入口，原图和数表未核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "Fig2d只报告曲线"
+            },
+            "wavelength_nm": {
+              "value": 1600,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/b第12列印字",
+              "note": "焦点与轴扫图的明确谱点标签。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "balli2021_d20_1700",
+          "model": "Balli 2021 · 20μm · 1700nm",
+          "study_id": "balli2021",
+          "specimen_id": "d20",
+          "module": "",
+          "variant": "纳米孔与相位板一体的可见至SWIR超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig2a/b同一配置的轴上PSF条件。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli3d_2021",
+              "location": "主文 §3 首段，p1261",
+              "note": "作者称入瞳直径 EPD。两种制成口径为20与200μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli3d_2021",
+              "location": "主文摘要、§3 首段",
+              "note": "作者标称NA。40×收集物镜NA0.55和10×中继NA0.25属于测量光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "IP-Dip纳米孔与相位板一体制成，熔石英基底0.7mm",
+              "source": "balli3d_2021",
+              "location": "主文 §§1–3、Fig1a图注，SI §2",
+              "note": "双光子光刻。Fig1a元胞设孔径0.2μm、周期0.4μm。§2孔深上限0.8μm为设计约束，完整成品厚度随半径变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1700,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "轴上准直照明，40×/NA0.55收集物镜与管镜至NINOX相机，焦点取z向峰值",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3，主文 §3 与Fig2a/b",
+              "note": "Nikon M Plan 40、Mitutoyo MT-1、NINOX-VS-CL-640。作者用650–1750nm针孔扫描及Airy参照评估测试物镜色差，未取得校准表。SI扫描增量原述2和0.5，可检索文字未附单位。物方像素、背景裁剪、统计重复和不确定度待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "field_point": "on_axis",
+              "axial_step_um": null,
+              "reported_scan_increments": {
+                "power_intensity": 2,
+                "focal_error": 0.5,
+                "unit": null
+              },
+              "object_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "illumination": {
+              "value": "超连续谱经AOTF选波，1000/1100nm由滤片取得",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3",
+              "note": "AOTF选波段450–850及1150–1800nm属于光源设置。1000/1100nm用长通与FB1000-10/FB1100-10带通。PSF实际谱点另据Fig2印字。偏振未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "已核主文与SI文本未报告MTF",
+              "source": "balli3d_2021",
+              "location": "主文 §§2–4、Fig2–3及附件说明，SI §§1–3，机构原作目录",
+              "note": "Fig2a/b给焦斑和归一化强度剖面，Fig2c/d/e给效率、FWHM和焦距误差曲线。Fig3是标靶与物体成像。所核入口仅指向SI，未取得原始PSF、采样校准、逐点焦距或MTF。期刊/机构原文件获取受限，DataCite精确关联DOI为0。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021",
+                "balli3d_pdf_2021",
+                "balli3d_uky_2021"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "checked_on": "2026-11-18",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "spatial_frequency_unit": null,
+                "normalization_method": null,
+                "object_plane_pixel_size_um": null,
+                "search_log": "docs/BALLI_2021_REVIEW_2026-11-18.md"
+              }
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "balli3d_si_2021",
+              "location": "SI pp1–2 §1与Fig1b，主文 p1262 Fig2a/e",
+              "note": "SI模型叙述的合成结构平均焦距为36μm。45μm是单独双曲微透镜，208μm是仅递归光线追迹的极限。成品独立标量设计f未确认。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "SI合成结构模型平均36μm",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "reported_model_mean_focal_um": 36
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/e图注",
+              "note": "约36μm为图注所述焦点位置和误差图对应距离。逐谱点绝对f缺数表。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "逐谱点f未报告数表",
+              "reported_focal_plane_distance_um": 36
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "balli3d_2021",
+              "location": "主文 §3 与Fig2b/d",
+              "note": "归一化x向强度与Airy曲线比较。FWHM只见曲线入口，原图和数表未核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "Fig2d只报告曲线"
+            },
+            "wavelength_nm": {
+              "value": 1700,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2a/b第13列印字",
+              "note": "焦点与轴扫图的明确谱点标签。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "balli2021_d200_summary",
+          "model": "Balli 2021 · 200μm · 聚焦汇总",
+          "study_id": "balli2021",
+          "specimen_id": "d200",
+          "module": "",
+          "variant": "纳米孔与相位板一体的可见至SWIR超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "制备与成像段明确200μm。效率段的100μm归属仍待消歧。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "balli3d_2021",
+              "location": "主文 §3 首段，p1261",
+              "note": "作者称入瞳直径 EPD。两种制成口径为20与200μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.04,
+              "source": "balli3d_2021",
+              "location": "主文摘要、§3 首段",
+              "note": "作者标称NA。40×收集物镜NA0.55和10×中继NA0.25属于测量光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "IP-Dip纳米孔与相位板一体制成，熔石英基底0.7mm",
+              "source": "balli3d_2021",
+              "location": "主文 §§1–3、Fig1a图注，SI §2",
+              "note": "双光子光刻。Fig1a元胞设孔径0.2μm、周期0.4μm。§2孔深上限0.8μm为设计约束，完整成品厚度随半径变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021"
+              ]
+            },
+            "mtf_curve": {
+              "value": "已核主文与SI文本未报告MTF",
+              "source": "balli3d_2021",
+              "location": "主文 §§2–4、Fig2–3及附件说明，SI §§1–3，机构原作目录",
+              "note": "Fig2a/b给焦斑和归一化强度剖面，Fig2c/d/e给效率、FWHM和焦距误差曲线。Fig3是标靶与物体成像。所核入口仅指向SI，未取得原始PSF、采样校准、逐点焦距或MTF。期刊/机构原文件获取受限，DataCite精确关联DOI为0。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021",
+                "balli3d_pdf_2021",
+                "balli3d_uky_2021"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "checked_on": "2026-11-18",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "spatial_frequency_unit": null,
+                "normalization_method": null,
+                "object_plane_pixel_size_um": null,
+                "search_log": "docs/BALLI_2021_REVIEW_2026-11-18.md"
+              }
+            },
+            "chromatic": {
+              "value": "轴向误差见Fig2e，横向色差缺定量结果",
+              "source": "balli3d_2021",
+              "location": "p1262 Fig2e与Fig3图注",
+              "note": "存在轴向误差曲线和成像演示。物距、中继与相机随成像配置注明。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1700,
+              "source": "balli3d_2021",
+              "location": "主文 §§1–2及摘要",
+              "note": "连续设计范围。实测焦斑按Fig2a/b印字谱点列出。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "超连续谱经AOTF选波，1000/1100nm由滤片取得",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3",
+              "note": "AOTF选波段450–850及1150–1800nm属于光源设置。1000/1100nm用长通与FB1000-10/FB1100-10带通。PSF实际谱点另据Fig2印字。偏振未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "轴上准直照明，40×/NA0.55收集物镜与管镜至NINOX相机，焦点取z向峰值",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 §3，主文 §3 与Fig2a/b",
+              "note": "Nikon M Plan 40、Mitutoyo MT-1、NINOX-VS-CL-640。作者用650–1750nm针孔扫描及Airy参照评估测试物镜色差，未取得校准表。SI扫描增量原述2和0.5，可检索文字未附单位。物方像素、背景裁剪、统计重复和不确定度待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "field_point": "on_axis",
+              "axial_step_um": null,
+              "reported_scan_increments": {
+                "power_intensity": 2,
+                "focal_error": 0.5,
+                "unit": null
+              },
+              "object_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "balli3d_pdf_2021",
+              "location": "主文 p1262 Fig2e图注",
+              "note": "图注给D200对应焦面距离2600μm，参考面精确定义和逐波长数值待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "图注焦面距离2600μm，逐λf未核",
+              "reported_focal_plane_distance_um": 2600
+            },
+            "efficiency_protocol": {
+              "value": "轴上焦点周围半径1.5×FWHM圆内功率 / 透镜入射总功率",
+              "source": "balli3d_si_2021",
+              "location": "主文 p1261 §3、Fig2c，SI p3 §3",
+              "note": "明确为半径，直径为3×FWHM。实际入射测量参考面、收集系数、分母读数及重复数仍缺。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ],
+              "integration_geometry": "circle_radius",
+              "radius_in_fwhm": 1.5,
+              "denominator": "total_optical_power_incident_on_metalens",
+              "denominator_measurement_plane": null
+            },
+            "efficiency_band_mean_pct": {
+              "value": null,
+              "source": "balli3d_2021",
+              "location": "主文 p1261 §3效率段/制备段，p1262 Fig2c/e图注",
+              "note": "效率段写100μm/42%，实制及误差图注写200μm。两处正式HTML相同，当前无法确定42%对应的器件。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "42%口径归属待核（100/200μm）",
+              "reported_values_pct": [
+                42
+              ],
+              "reported_diameters_um": [
+                100,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "balli2021_d200_broad",
+          "model": "Balli 2021 · 200μm · 宽带成像",
+          "study_id": "balli2021",
+          "specimen_id": "d200",
+          "module": "",
+          "variant": "纳米孔与相位板一体的可见至SWIR超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "D200/NA0.04同一镜片，Fig3中继测量条件。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "balli3d_2021",
+              "location": "主文 §3 首段，p1261",
+              "note": "作者称入瞳直径 EPD。两种制成口径为20与200μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.04,
+              "source": "balli3d_2021",
+              "location": "主文摘要、§3 首段",
+              "note": "作者标称NA。40×收集物镜NA0.55和10×中继NA0.25属于测量光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "IP-Dip纳米孔与相位板一体制成，熔石英基底0.7mm",
+              "source": "balli3d_2021",
+              "location": "主文 §§1–3、Fig1a图注，SI §2",
+              "note": "双光子光刻。Fig1a元胞设孔径0.2μm、周期0.4μm。§2孔深上限0.8μm为设计约束，完整成品厚度随半径变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021"
+              ]
+            },
+            "mtf_curve": {
+              "value": "已核主文与SI文本未报告MTF",
+              "source": "balli3d_2021",
+              "location": "主文 §§2–4、Fig2–3及附件说明，SI §§1–3，机构原作目录",
+              "note": "Fig2a/b给焦斑和归一化强度剖面，Fig2c/d/e给效率、FWHM和焦距误差曲线。Fig3是标靶与物体成像。所核入口仅指向SI，未取得原始PSF、采样校准、逐点焦距或MTF。期刊/机构原文件获取受限，DataCite精确关联DOI为0。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021",
+                "balli3d_pdf_2021",
+                "balli3d_uky_2021"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "checked_on": "2026-11-18",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "spatial_frequency_unit": null,
+                "normalization_method": null,
+                "object_plane_pixel_size_um": null,
+                "search_log": "docs/BALLI_2021_REVIEW_2026-11-18.md"
+              }
+            },
+            "chromatic": {
+              "value": "轴向误差见Fig2e，横向色差缺定量结果",
+              "source": "balli3d_2021",
+              "location": "p1262 Fig2e与Fig3图注",
+              "note": "存在轴向误差曲线和成像演示。物距、中继与相机随成像配置注明。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "balli3d_2021",
+              "location": "主文 Fig3a/b图注",
+              "note": "本行给宽带成像照明范围。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1700,
+              "source": "balli3d_2021",
+              "location": "主文 Fig3a/b图注",
+              "note": "本行给宽带成像照明范围。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "卤钨灯，450–1700nm，NINOX宽带相机",
+              "source": "balli3d_si_2021",
+              "location": "SI pp3–4 §3，主文 p1262 Fig3",
+              "note": "相机响应、目标和滤片条件见原文。完整光谱权重与曝光未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ]
+            },
+            "psf_protocol": {
+              "value": "成像：物距约30mm，Newport M-10X/NA0.25可移动中继",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 Fig2图注与§3、p4",
+              "note": "作者给USAF第5组及5–4标靶标称45.3lp/mm。辨线阈值、实际放大率、物方标尺和定量对比度待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "object_distance_mm": 30,
+              "object_plane_pixel_size_um": null
+            }
+          }
+        },
+        {
+          "id": "balli2021_d200_swir",
+          "model": "Balli 2021 · 200μm · SWIR成像",
+          "study_id": "balli2021",
+          "specimen_id": "d200",
+          "module": "",
+          "variant": "纳米孔与相位板一体的可见至SWIR超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "D200/NA0.04同一镜片，Fig3中继测量条件。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "balli3d_2021",
+              "location": "主文 §3 首段，p1261",
+              "note": "作者称入瞳直径 EPD。两种制成口径为20与200μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.04,
+              "source": "balli3d_2021",
+              "location": "主文摘要、§3 首段",
+              "note": "作者标称NA。40×收集物镜NA0.55和10×中继NA0.25属于测量光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "IP-Dip纳米孔与相位板一体制成，熔石英基底0.7mm",
+              "source": "balli3d_2021",
+              "location": "主文 §§1–3、Fig1a图注，SI §2",
+              "note": "双光子光刻。Fig1a元胞设孔径0.2μm、周期0.4μm。§2孔深上限0.8μm为设计约束，完整成品厚度随半径变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021"
+              ]
+            },
+            "mtf_curve": {
+              "value": "已核主文与SI文本未报告MTF",
+              "source": "balli3d_2021",
+              "location": "主文 §§2–4、Fig2–3及附件说明，SI §§1–3，机构原作目录",
+              "note": "Fig2a/b给焦斑和归一化强度剖面，Fig2c/d/e给效率、FWHM和焦距误差曲线。Fig3是标靶与物体成像。所核入口仅指向SI，未取得原始PSF、采样校准、逐点焦距或MTF。期刊/机构原文件获取受限，DataCite精确关联DOI为0。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021",
+                "balli3d_pdf_2021",
+                "balli3d_uky_2021"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "checked_on": "2026-11-18",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "spatial_frequency_unit": null,
+                "normalization_method": null,
+                "object_plane_pixel_size_um": null,
+                "search_log": "docs/BALLI_2021_REVIEW_2026-11-18.md"
+              }
+            },
+            "chromatic": {
+              "value": "轴向误差见Fig2e，横向色差缺定量结果",
+              "source": "balli3d_2021",
+              "location": "p1262 Fig2e与Fig3图注",
+              "note": "存在轴向误差曲线和成像演示。物距、中继与相机随成像配置注明。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_min_nm": {
+              "value": 1000,
+              "source": "balli3d_2021",
+              "location": "主文 Fig3a/c图注",
+              "note": "本行给SWIR滤光后的成像范围。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1700,
+              "source": "balli3d_2021",
+              "location": "主文 Fig3a/c图注",
+              "note": "本行给SWIR滤光后的成像范围。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "卤钨灯＋FEL1000长通，1000–1700nm，NINOX宽带相机",
+              "source": "balli3d_si_2021",
+              "location": "SI pp3–4 §3，主文 p1262 Fig3",
+              "note": "相机响应、目标和滤片条件见原文。完整光谱权重与曝光未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ]
+            },
+            "psf_protocol": {
+              "value": "成像：物距约30mm，Newport M-10X/NA0.25可移动中继",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 Fig2图注与§3、p4",
+              "note": "作者给USAF第5组及5–4标靶标称45.3lp/mm。辨线阈值、实际放大率、物方标尺和定量对比度待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "object_distance_mm": 30,
+              "object_plane_pixel_size_um": null
+            }
+          }
+        },
+        {
+          "id": "balli2021_d200_rgb",
+          "model": "Balli 2021 · 200μm · 可见RGB成像",
+          "study_id": "balli2021",
+          "specimen_id": "d200",
+          "module": "",
+          "variant": "纳米孔与相位板一体的可见至SWIR超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "D200/NA0.04同一镜片，Fig3中继测量条件。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "balli3d_2021",
+              "location": "主文 §3 首段，p1261",
+              "note": "作者称入瞳直径 EPD。两种制成口径为20与200μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.04,
+              "source": "balli3d_2021",
+              "location": "主文摘要、§3 首段",
+              "note": "作者标称NA。40×收集物镜NA0.55和10×中继NA0.25属于测量光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "IP-Dip纳米孔与相位板一体制成，熔石英基底0.7mm",
+              "source": "balli3d_2021",
+              "location": "主文 §§1–3、Fig1a图注，SI §2",
+              "note": "双光子光刻。Fig1a元胞设孔径0.2μm、周期0.4μm。§2孔深上限0.8μm为设计约束，完整成品厚度随半径变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021"
+              ]
+            },
+            "mtf_curve": {
+              "value": "已核主文与SI文本未报告MTF",
+              "source": "balli3d_2021",
+              "location": "主文 §§2–4、Fig2–3及附件说明，SI §§1–3，机构原作目录",
+              "note": "Fig2a/b给焦斑和归一化强度剖面，Fig2c/d/e给效率、FWHM和焦距误差曲线。Fig3是标靶与物体成像。所核入口仅指向SI，未取得原始PSF、采样校准、逐点焦距或MTF。期刊/机构原文件获取受限，DataCite精确关联DOI为0。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_2021",
+                "balli3d_si_2021",
+                "balli3d_pdf_2021",
+                "balli3d_uky_2021"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "checked_on": "2026-11-18",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "spatial_frequency_unit": null,
+                "normalization_method": null,
+                "object_plane_pixel_size_um": null,
+                "search_log": "docs/BALLI_2021_REVIEW_2026-11-18.md"
+              }
+            },
+            "chromatic": {
+              "value": "轴向误差见Fig2e，横向色差缺定量结果",
+              "source": "balli3d_2021",
+              "location": "p1262 Fig2e与Fig3图注",
+              "note": "存在轴向误差曲线和成像演示。物距、中继与相机随成像配置注明。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "卤钨灯，Amscope MU1000彩色相机",
+              "source": "balli3d_si_2021",
+              "location": "SI pp3–4 §3，主文 p1262 Fig3",
+              "note": "相机响应、目标和滤片条件见原文。完整光谱权重与曝光未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "balli3d_si_2021",
+                "balli3d_2021"
+              ]
+            },
+            "psf_protocol": {
+              "value": "成像：物距约30mm，Newport M-10X/NA0.25可移动中继",
+              "source": "balli3d_si_2021",
+              "location": "SI p3 Fig2图注与§3、p4",
+              "note": "作者给USAF第5组及5–4标靶标称45.3lp/mm。辨线阈值、实际放大率、物方标尺和定量对比度待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "object_distance_mm": 30,
+              "object_plane_pixel_size_um": null
+            }
+          }
         }
       ],
-      "scope": "28项原始研究、132个器件/测量/系统配置、919条记录。实制连续宽带、普通/定制色散对照、未归属图组及模型分开；实际谱点优先可见光筛选，曲线不估值，多条件不增加独立实物。",
+      "scope": "29项原始研究、134个器件/测量/系统配置、937条记录。实制连续宽带、色散对照、测量归属待核及模型分开。仅可见光优先判断实际谱点。曲线缺数值时留空。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
