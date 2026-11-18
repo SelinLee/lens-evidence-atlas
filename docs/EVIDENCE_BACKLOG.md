@@ -54,7 +54,8 @@
 | QUALITY-001ai Jeon 2026 灰度纳米模板与OLED近眼 | done | 0.3.29 经 PR #138/dacc200、Pages 44302719186 上线。287项测试、12文件一致，独立Chrome核30行12配置和五个出处。原始PSF/MTF、焦位及归一化细则仍待补。见[核验](JEON_GRAYSCALE_REVIEW_2026-11-18.md)。 |
 | QUALITY-001aj Seong 2026 UV/可见光分组的实制色散对照 | done | 0.3.30 经 PR #140/8fae312、Pages 44307956209 上线。14行8配置，保留四谱点焦斑、Strehl、实验效率及作者有效焦距。原始PSF、逐频数表和标定待补。见[核验](SEONG_AND_LI_REVIEW_2026-11-18.md)。 |
 | QUALITY-001ak Li 2021 毫米级RGB原文补检 | done | 0.3.30 经 PR #140/8fae312 上线。补12行6配置，正式PDF、两只镜的标靶与VR/AR已核。S3/S5/S14、逐点焦位及原始PSF/MTF留待后续。见[核验](SEONG_AND_LI_REVIEW_2026-11-18.md)。 |
-| QUALITY-001al Aiello 2019 可见光偏振调焦与轴向消色差 | in_progress | 经典例外。Crossref DOI记录于2026-11-18显示86次引用。已取作者稿，核p4 Fig.3与p5–6 Fig.4，同一40 μm镜在483–620 nm固定偏振与色差校正两种设置均有实测，后续对正式SI、焦位和效率定义。DOI 10.1021/acsphotonics.9b00523。 |
+| QUALITY-001al Aiello 2019 可见光偏振调焦与轴向消色差 | done | 0.3.31 经 PR #142/866663f 与 Pages 44312264113 上线。25条8配置，293项测试与线上独立 Chrome 通过。四谱点宽度、单谱点偏振效率和两组拟合焦距范围已录，范围宽度约66、13 μm 标本库计算。逐点焦位、原始 PSF/MTF、焦圈和 ACS 正式补件待补。[核验](AIELLO_VARIFOCAL_REVIEW_2026-11-18.md) |
+| QUALITY-001am Li 2026 随机马赛克近红外消色差 | in_progress | 2026-04-09 Nature Communications，DOI 10.1038/s41467-026-71774-5，2025升级版公开条目列综合性期刊大类一区。已取正式主文、SI 与源 XLSX。Fig.4 的 8.1 mm 器件、三个色散对照峰位及 Table S2 的 11 谱点可逐项核。XLSX `fig4d` 实填 A:F，为横向实验/拟合/理论曲线，须核对应 Fig.4f；作者 GitHub 有 11 个 MAT 文件待分辨归属。仅近红外。[分区条目](https://www.ais.cn/journal/database/8402) · [期刊主文](https://www.nature.com/articles/s41467-026-71774-5.pdf) |
 | QUALITY-002 手机SNR/MTF/色差独立测量 | in_progress | 本机Codex，2026-11-14；先核有型号和协议的SNR及MTF原始研究；外接镜组、场景与处理链不得写进原生模组，PSNR不替代SNR |
 | QUALITY-003 VRAR MTF与色差 | in_progress | 本机Codex，2026-11-14；复核开放PR #69数据及原文，优先MTF/截止频率、颜色/场点/眼位、色差和先进设备独立测量，不能从曲线猜统一单值 |
 | QUALITY-001a 文献器件首批 | done | 4项原始研究/8器件配置/21行，几何、波段、逐谱点焦距/FWHM/Strehl、PSNR及冲突；见[首批核验](QUALITY_BATCH_2026-11-14.md)；PR #72/23fdecb与Pages43571286647实页验收，不关闭父目标 |
