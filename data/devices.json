@@ -1741,6 +1741,60 @@
       "scope": "作者组 2018 成果第 5 条回链期刊 DOI，公开网页索引可见。独立 Chrome 直接请求为 403。",
       "publication_source": "arbabi_dual_2018",
       "checked_on": "2026-11-18"
+    },
+    {
+      "id": "wang_reflect_2017",
+      "title": "Wang et al. (2017): Broadband achromatic optical metasurface devices",
+      "doi": "10.1038/s41467-017-00166-7",
+      "url": "https://dsl.nju.edu.cn/litao/res/paper/Wang_SM-ncomms_8_187%282017%29.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "作者组公开的 Nature Communications 正式 PDF，8,187，2017-08-04。核 pp4–8 Figs.3–5、Methods 及数据可用性。",
+      "checked_on": "2026-11-19"
+    },
+    {
+      "id": "wang_reflect_si_2017",
+      "title": "Springer Nature · Wang 2017 正式补充 PDF",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-017-00166-7/MediaObjects/41467_2017_166_MOESM1_ESM.pdf",
+      "kind": "supplementary_material",
+      "scope": "20 页，核 Notes 3–4、6–7 及 Figs.S4–S7、S9、Tables S3–S8 和 S10。",
+      "publication_source": "wang_reflect_2017",
+      "checked_on": "2026-11-19"
+    },
+    {
+      "id": "wang_reflect_pmc_2017",
+      "title": "PMC · Wang 2017 开放全文",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5543157/",
+      "kind": "publication_archive",
+      "scope": "以 PMC5543157 对读期刊正文，Methods、图注及作者数据获取声明。",
+      "publication_source": "wang_reflect_2017",
+      "checked_on": "2026-11-19"
+    },
+    {
+      "id": "wang_reflect_pmc_inventory_2017",
+      "title": "PMC · Wang 2017 开放资料清单",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC5543157.1%2F",
+      "kind": "repository_metadata",
+      "scope": "PMC5543157.1 公开对象为主文、5 张图版及一份补充 PDF。",
+      "publication_source": "wang_reflect_2017",
+      "checked_on": "2026-11-19"
+    },
+    {
+      "id": "wang_reflect_crossref_2017",
+      "title": "Crossref · Wang 2017 DOI 及引用",
+      "url": "https://api.crossref.org/works/10.1038/s41467-017-00166-7",
+      "kind": "repository_metadata",
+      "scope": "2026-11-18 查询为 992 次，出版日期 2017-08-04。",
+      "publication_source": "wang_reflect_2017",
+      "checked_on": "2026-11-19"
+    },
+    {
+      "id": "wang_reflect_datacite_2017",
+      "title": "DataCite · Wang 2017 关联 DOI 查询",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1038%2Fs41467-017-00166-7%22&page%5Bsize%5D=25",
+      "kind": "repository_metadata",
+      "scope": "2026-11-18 精确 DOI 关系查零项。",
+      "publication_source": "wang_reflect_2017",
+      "checked_on": "2026-11-19"
     }
   ],
   "domains": {
@@ -5548,6 +5602,22 @@
             {
               "source": "colburn_quartic_thesis_2020",
               "location": "PDF p97 §5.5.3，p102 Fig.5.10"
+            }
+          ]
+        },
+        {
+          "id": "mirror_referenced_efficiency_max_pct",
+          "label": "金属镜归一焦点强度最大比值 (%)",
+          "definition": "作者报告的光谱扫描最大比值。各谱点比值为焦点光强除以同像素大小的金属镜反射光强。",
+          "conditions": "按作者的同焦面强度定义。保存金属镜参考、检测偏振、积分区域和峰值波长证据。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4d 图注与左栏"
             }
           ]
         }
@@ -214836,9 +214906,2339 @@
               "checked_on": "2026-11-18"
             }
           }
+        },
+        {
+          "id": "wang2017reflect_f65_summary",
+          "model": "Wang 2017 · f=65 μm ／ NA 0.324 · 实物汇总",
+          "study_id": "wang2017reflect",
+          "specimen_id": "f65",
+          "module": "",
+          "variant": "近红外反射式宽带消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig.4 焦位、焦斑与镜面归一效率的作者报告。",
+          "values": {
+            "na": {
+              "value": 0.324,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF p8 Note 3／Table S3，主文 PDF p6 Fig.4a",
+              "note": "作者对该设计的 NA 标注。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 65,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF p8 Note 3／Table S3",
+              "note": "作者标称设计焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "radial_unit_count": 41,
+              "design_compensation_phase_deg": 334
+            },
+            "lambda_min_nm": {
+              "value": 1200,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段起点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1680,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段上限。Fig.3d 的六个轴扫标签至 1650 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "Au 纳米棒／SiO₂ 间隔／Au 反射层，Si 基底",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p8 Methods／Sample Fabrication",
+              "note": "30 nm Au 纳米棒层、60 nm SiO₂、150 nm Au 镜。各金属层下的 Cr 粘接层均为 3 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "gold_rods_nm": 30,
+              "spacer_sio2_nm": 60,
+              "gold_mirror_nm": 150,
+              "cr_adhesion_each_nm": 3
+            },
+            "diameter_um": {
+              "value": null,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF p8 Note 3／Table S3",
+              "note": "补件列设计 NA、焦距和径向单元数。未核这只实物的明确口径。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 30,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p8 Sample Fabrication",
+              "note": "图案 Au 层厚 30 nm。基底的 Au 镜和 SiO₂ 间隔各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "近红外宽带反射聚焦，设计 1200–1680 nm",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF pp4–6 Figs.3–4，Crossref",
+              "note": "按高被引经典原始研究纳入。2026-11-18 Crossref 992 次。Fig.4a 对照不同 NA。六个明确印字的轴扫标签见 Fig.3d，归 NA 0.268。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_2017",
+                "wang_reflect_crossref_2017"
+              ],
+              "spectrum_kind": "broadband_achromatic"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4a 和图注",
+              "note": "每色峰位与跨色峰峰焦移只见图。作误差棒样式的线段是测量中焦斑强度保持最大值的轴向距离，作者未定义成 SD、置信区间或半高全宽。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅焦位曲线",
+              "error_bar_meaning": "axial_extent_of_maximum_measured_intensity"
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4a",
+              "note": "作者声明聚焦基本不变。已公开材料未给实测跨谱峰峰值或逐波长焦距表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4c 及正文",
+              "note": "作者对焦线归一强度作高斯拟合，报告整体约 1.5λ–2λ。横轴为波长 nm、纵轴为宽度 μm。共同范围保留为作者表述。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "display": "1.5λ–2λ（作者整体范围）",
+              "source_stated_range_over_wavelength": [
+                1.5,
+                2
+              ],
+              "fit_function": "gaussian"
+            },
+            "mirror_referenced_efficiency_max_pct": {
+              "value": 8.56,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4d 图注及左栏效率段",
+              "note": "正文按器件给峰值。峰值对应波长仅可在图上定位，逐点实测数组未公开。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "denominator": "metallic_mirror_reflected_intensity_same_pixel_size",
+              "statistic": "spectral_maximum",
+              "peak_wavelength_nm": null
+            },
+            "efficiency_protocol": {
+              "value": "焦点光强 ÷ 同像素大小金属镜反射光强",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4d 图注及左栏效率段",
+              "note": "原文称 operation efficiency。保留强度分母和作者焦面取点方式，未给采集像素数、焦圈积分或镜面反射率绝对校准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "metallic_mirror_reflected_intensity_same_pixel_size",
+              "numerator": "focal_spot_intensity_at_corresponding_focal_plane",
+              "integration_radius_um": null,
+              "detector_roi_pixels": null
+            },
+            "psf_protocol": {
+              "value": "RCP 入射，LCP 反射分量的轴扫与焦斑",
+              "source": "wang_reflect_si_2017",
+              "location": "主文 PDF pp5–6 Figs.3d、4a，补充 PDF p16 Note 6／Fig.S7",
+              "note": "入射经偏振分束、四分之一波片和 10×／NA 0.28 物镜。先成像器件表面作为 z 参考。收集 50×／NA 0.42 物镜与 IR 相机沿 z 平移，堆叠横向强度切片。物方像素、轴向步长、光束共轭参数和光源带宽未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "illumination_polarization": "RCP",
+              "detected_polarization": "LCP",
+              "axial_reference": "metalens_surface",
+              "incident_objective_magnification": 10,
+              "incident_objective_na": 0.28,
+              "collection_magnification": 50,
+              "collection_objective_na": 0.42,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_f65_model",
+          "model": "Wang 2017 · f=65 μm ／ NA 0.324 · CST 焦位曲线",
+          "study_id": "wang2017reflect",
+          "specimen_id": "f65_cst",
+          "module": "",
+          "variant": "近红外反射式消色差模拟",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig.4a 对应设计的柱面近似。",
+          "values": {
+            "na": {
+              "value": 0.324,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF p8 Note 3／Table S3，主文 PDF p6 Fig.4a",
+              "note": "作者对该设计的 NA 标注。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 65,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF p8 Note 3／Table S3",
+              "note": "作者标称设计焦距。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "radial_unit_count": 41,
+              "design_compensation_phase_deg": 334
+            },
+            "lambda_min_nm": {
+              "value": 1200,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段起点。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1680,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段上限。Fig.3d 的六个轴扫标签至 1650 nm。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p8 Methods／Numerical simulation，pp5–6 Fig.3d 或 Fig.4",
+              "note": "Fig.4a 空心点是模型曲线，逐波长模拟焦位原值未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅模拟曲线"
+            },
+            "psf_protocol": {
+              "value": "CST 模拟焦位的柱面近似",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p8 Methods／Numerical simulation，pp5–6 Fig.3d 或 Fig.4",
+              "note": "设计仿真在 x 用 PML、y 用周期边界。保留模拟与实测孔形差异。模型采样与逐点焦位数组未公开。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "simulation_geometry": "cylindrical",
+              "boundary_x": "PML",
+              "boundary_y": "periodic"
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_f100_summary",
+          "model": "Wang 2017 · f=100 μm ／ NA 0.268 · 实物汇总",
+          "study_id": "wang2017reflect",
+          "specimen_id": "f100",
+          "module": "",
+          "variant": "近红外反射式宽带消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig.4 焦位、焦斑与镜面归一效率的作者报告。",
+          "values": {
+            "na": {
+              "value": 0.268,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4，主文 PDF p6 Fig.4a",
+              "note": "作者对该设计的 NA 标注。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4",
+              "note": "作者标称设计焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "radial_unit_count": 51,
+              "design_compensation_phase_deg": 335
+            },
+            "lambda_min_nm": {
+              "value": 1200,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段起点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1680,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段上限。Fig.3d 的六个轴扫标签至 1650 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "Au 纳米棒／SiO₂ 间隔／Au 反射层，Si 基底",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p8 Methods／Sample Fabrication",
+              "note": "30 nm Au 纳米棒层、60 nm SiO₂、150 nm Au 镜。各金属层下的 Cr 粘接层均为 3 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "gold_rods_nm": 30,
+              "spacer_sio2_nm": 60,
+              "gold_mirror_nm": 150,
+              "cr_adhesion_each_nm": 3
+            },
+            "diameter_um": {
+              "value": 55.55,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF pp4–5 Fig.3a 与设计段",
+              "note": "作者明示实物直径。Fig.3d 约 55 μm 是横向绘图尺度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 30,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p8 Sample Fabrication",
+              "note": "图案 Au 层厚 30 nm。基底的 Au 镜和 SiO₂ 间隔各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "近红外宽带反射聚焦，设计 1200–1680 nm",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF pp4–6 Figs.3–4，Crossref",
+              "note": "按高被引经典原始研究纳入。2026-11-18 Crossref 992 次。Fig.4a 对照不同 NA。六个明确印字的轴扫标签见 Fig.3d，归 NA 0.268。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_2017",
+                "wang_reflect_crossref_2017"
+              ],
+              "spectrum_kind": "broadband_achromatic",
+              "demonstrated_axial_scan_wavelengths_nm": [
+                1200,
+                1300,
+                1400,
+                1500,
+                1600,
+                1650
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4a 和图注",
+              "note": "每色峰位与跨色峰峰焦移只见图。作误差棒样式的线段是测量中焦斑强度保持最大值的轴向距离，作者未定义成 SD、置信区间或半高全宽。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅焦位曲线",
+              "error_bar_meaning": "axial_extent_of_maximum_measured_intensity"
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4a",
+              "note": "作者声明聚焦基本不变。已公开材料未给实测跨谱峰峰值或逐波长焦距表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4c 及正文",
+              "note": "作者对焦线归一强度作高斯拟合，报告整体约 1.5λ–2λ。横轴为波长 nm、纵轴为宽度 μm。共同范围保留为作者表述。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "display": "1.5λ–2λ（作者整体范围）",
+              "source_stated_range_over_wavelength": [
+                1.5,
+                2
+              ],
+              "fit_function": "gaussian"
+            },
+            "mirror_referenced_efficiency_max_pct": {
+              "value": 12.44,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4d 图注及左栏效率段",
+              "note": "正文按器件给峰值。峰值对应波长仅可在图上定位，逐点实测数组未公开。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "denominator": "metallic_mirror_reflected_intensity_same_pixel_size",
+              "statistic": "spectral_maximum",
+              "peak_wavelength_nm": null
+            },
+            "efficiency_protocol": {
+              "value": "焦点光强 ÷ 同像素大小金属镜反射光强",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4d 图注及左栏效率段",
+              "note": "原文称 operation efficiency。保留强度分母和作者焦面取点方式，未给采集像素数、焦圈积分或镜面反射率绝对校准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "metallic_mirror_reflected_intensity_same_pixel_size",
+              "numerator": "focal_spot_intensity_at_corresponding_focal_plane",
+              "integration_radius_um": null,
+              "detector_roi_pixels": null
+            },
+            "psf_protocol": {
+              "value": "RCP 入射，LCP 反射分量的轴扫与焦斑",
+              "source": "wang_reflect_si_2017",
+              "location": "主文 PDF pp5–6 Figs.3d、4a，补充 PDF p16 Note 6／Fig.S7",
+              "note": "入射经偏振分束、四分之一波片和 10×／NA 0.28 物镜。先成像器件表面作为 z 参考。收集 50×／NA 0.42 物镜与 IR 相机沿 z 平移，堆叠横向强度切片。物方像素、轴向步长、光束共轭参数和光源带宽未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "illumination_polarization": "RCP",
+              "detected_polarization": "LCP",
+              "axial_reference": "metalens_surface",
+              "incident_objective_magnification": 10,
+              "incident_objective_na": 0.28,
+              "collection_magnification": 50,
+              "collection_objective_na": 0.42,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null
+            },
+            "mtf_curve": {
+              "value": "已核轴扫和焦斑图。原始 PSF 与 MTF 待补",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF pp5–6 Figs.3–4，p8 Data availability，补件及档案清单",
+              "note": "原文声明数据可向作者合理请求。PMC 公开清单只见文章、图版和补件。关联 DOI 没有 DataCite 项。没有公开轴扫、PSF 或数表，也未找到 MTF 正文与图。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_2017",
+                "wang_reflect_si_2017",
+                "wang_reflect_pmc_2017",
+                "wang_reflect_pmc_inventory_2017",
+                "wang_reflect_datacite_2017"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_f150_summary",
+          "model": "Wang 2017 · f=150 μm ／ NA 0.217／0.218／0.216 · 实物汇总",
+          "study_id": "wang2017reflect",
+          "specimen_id": "f150",
+          "module": "",
+          "variant": "近红外反射式宽带消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig.4 焦位、焦斑与镜面归一效率的作者报告。",
+          "values": {
+            "na": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4；补充 PDF pp9–11 Note 3／Table S5、Fig.S4a–c",
+              "note": "主文 Fig.4 写 0.217，补充 Note 3 的 150 μm 设计写 0.218，SEM 图注写 0.216。三处按原印字保留。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_2017",
+                "wang_reflect_si_2017"
+              ],
+              "display": "0.217（主文）／0.218（设计）／0.216（图注）",
+              "author_reported_values": {
+                "main_figure": 0.217,
+                "supplementary_design": 0.218,
+                "supplementary_image_caption": 0.216
+              }
+            },
+            "design_focal_um": {
+              "value": 150,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp9–11 Note 3／Table S5、Fig.S4a–c",
+              "note": "作者标称设计焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "radial_unit_count": 61,
+              "design_compensation_phase_deg": 332
+            },
+            "lambda_min_nm": {
+              "value": 1200,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段起点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1680,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段上限。Fig.3d 的六个轴扫标签至 1650 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "Au 纳米棒／SiO₂ 间隔／Au 反射层，Si 基底",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p8 Methods／Sample Fabrication",
+              "note": "30 nm Au 纳米棒层、60 nm SiO₂、150 nm Au 镜。各金属层下的 Cr 粘接层均为 3 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "gold_rods_nm": 30,
+              "spacer_sio2_nm": 60,
+              "gold_mirror_nm": 150,
+              "cr_adhesion_each_nm": 3
+            },
+            "diameter_um": {
+              "value": null,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp9–11 Note 3／Table S5、Fig.S4a–c",
+              "note": "补件列设计 NA、焦距和径向单元数。未核这只实物的明确口径。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 30,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p8 Sample Fabrication",
+              "note": "图案 Au 层厚 30 nm。基底的 Au 镜和 SiO₂ 间隔各自保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "近红外宽带反射聚焦，设计 1200–1680 nm",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF pp4–6 Figs.3–4，Crossref",
+              "note": "按高被引经典原始研究纳入。2026-11-18 Crossref 992 次。Fig.4a 对照不同 NA。六个明确印字的轴扫标签见 Fig.3d，归 NA 0.268。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_2017",
+                "wang_reflect_crossref_2017"
+              ],
+              "spectrum_kind": "broadband_achromatic"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4a 和图注",
+              "note": "每色峰位与跨色峰峰焦移只见图。作误差棒样式的线段是测量中焦斑强度保持最大值的轴向距离，作者未定义成 SD、置信区间或半高全宽。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅焦位曲线",
+              "error_bar_meaning": "axial_extent_of_maximum_measured_intensity"
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4a",
+              "note": "作者声明聚焦基本不变。已公开材料未给实测跨谱峰峰值或逐波长焦距表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4c 及正文",
+              "note": "作者对焦线归一强度作高斯拟合，报告整体约 1.5λ–2λ。横轴为波长 nm、纵轴为宽度 μm。共同范围保留为作者表述。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "display": "1.5λ–2λ（作者整体范围）",
+              "source_stated_range_over_wavelength": [
+                1.5,
+                2
+              ],
+              "fit_function": "gaussian"
+            },
+            "mirror_referenced_efficiency_max_pct": {
+              "value": 8.4,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4d 图注及左栏效率段",
+              "note": "正文按器件给峰值。峰值对应波长仅可在图上定位，逐点实测数组未公开。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "denominator": "metallic_mirror_reflected_intensity_same_pixel_size",
+              "statistic": "spectral_maximum",
+              "peak_wavelength_nm": null
+            },
+            "efficiency_protocol": {
+              "value": "焦点光强 ÷ 同像素大小金属镜反射光强",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4d 图注及左栏效率段",
+              "note": "原文称 operation efficiency。保留强度分母和作者焦面取点方式，未给采集像素数、焦圈积分或镜面反射率绝对校准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "metallic_mirror_reflected_intensity_same_pixel_size",
+              "numerator": "focal_spot_intensity_at_corresponding_focal_plane",
+              "integration_radius_um": null,
+              "detector_roi_pixels": null
+            },
+            "psf_protocol": {
+              "value": "RCP 入射，LCP 反射分量的轴扫与焦斑",
+              "source": "wang_reflect_si_2017",
+              "location": "主文 PDF pp5–6 Figs.3d、4a，补充 PDF p16 Note 6／Fig.S7",
+              "note": "入射经偏振分束、四分之一波片和 10×／NA 0.28 物镜。先成像器件表面作为 z 参考。收集 50×／NA 0.42 物镜与 IR 相机沿 z 平移，堆叠横向强度切片。物方像素、轴向步长、光束共轭参数和光源带宽未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "illumination_polarization": "RCP",
+              "detected_polarization": "LCP",
+              "axial_reference": "metalens_surface",
+              "incident_objective_magnification": 10,
+              "incident_objective_na": 0.28,
+              "collection_magnification": 50,
+              "collection_objective_na": 0.42,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_f150_model",
+          "model": "Wang 2017 · f=150 μm ／ NA 0.217／0.218／0.216 · CST 焦位曲线",
+          "study_id": "wang2017reflect",
+          "specimen_id": "f150_cst",
+          "module": "",
+          "variant": "近红外反射式消色差模拟",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig.4a 对应设计的柱面近似。",
+          "values": {
+            "na": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4；补充 PDF pp9–11 Note 3／Table S5、Fig.S4a–c",
+              "note": "主文 Fig.4 写 0.217，补充 Note 3 的 150 μm 设计写 0.218，SEM 图注写 0.216。三处按原印字保留。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_2017",
+                "wang_reflect_si_2017"
+              ],
+              "display": "0.217（主文）／0.218（设计）／0.216（图注）",
+              "author_reported_values": {
+                "main_figure": 0.217,
+                "supplementary_design": 0.218,
+                "supplementary_image_caption": 0.216
+              }
+            },
+            "design_focal_um": {
+              "value": 150,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp9–11 Note 3／Table S5、Fig.S4a–c",
+              "note": "作者标称设计焦距。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "radial_unit_count": 61,
+              "design_compensation_phase_deg": 332
+            },
+            "lambda_min_nm": {
+              "value": 1200,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段起点。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1680,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段上限。Fig.3d 的六个轴扫标签至 1650 nm。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p8 Methods／Numerical simulation，pp5–6 Fig.3d 或 Fig.4",
+              "note": "Fig.4a 空心点是模型曲线，逐波长模拟焦位原值未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅模拟曲线"
+            },
+            "psf_protocol": {
+              "value": "CST 模拟焦位的柱面近似",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p8 Methods／Numerical simulation，pp5–6 Fig.3d 或 Fig.4",
+              "note": "设计仿真在 x 用 PML、y 用周期边界。保留模拟与实测孔形差异。模型采样与逐点焦位数组未公开。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "simulation_geometry": "cylindrical",
+              "boundary_x": "PML",
+              "boundary_y": "periodic"
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_f100_exp_1200",
+          "model": "Wang 2017 · 55.55 μm ／ NA 0.268 · 1200 nm 实测",
+          "study_id": "wang2017reflect",
+          "specimen_id": "f100",
+          "module": "",
+          "variant": "近红外反射式宽带消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig.3d 上排实测轴向强度。",
+          "values": {
+            "na": {
+              "value": 0.268,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4，主文 PDF p6 Fig.4a",
+              "note": "作者对该设计的 NA 标注。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4",
+              "note": "作者标称设计焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "radial_unit_count": 51,
+              "design_compensation_phase_deg": 335
+            },
+            "lambda_min_nm": {
+              "value": 1200,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段起点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1680,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段上限。Fig.3d 的六个轴扫标签至 1650 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "diameter_um": {
+              "value": 55.55,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF pp4–5 Fig.3a 与设计段",
+              "note": "作者给实物圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1200,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1200 nm 列 上排",
+              "note": "原图实际轴扫谱点标签。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1200 nm 列，p6 Fig.4a",
+              "note": "图中为实测轴向强度和焦距曲线，未附该点焦位原值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅轴向强度图"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4c",
+              "note": "仅发表拟合宽度曲线。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅宽度曲线"
+            },
+            "efficiency_protocol": {
+              "value": "焦点光强 ÷ 同像素大小金属镜反射光强",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4d 图注及左栏效率段",
+              "note": "原文称 operation efficiency。保留强度分母和作者焦面取点方式，未给采集像素数、焦圈积分或镜面反射率绝对校准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "metallic_mirror_reflected_intensity_same_pixel_size",
+              "numerator": "focal_spot_intensity_at_corresponding_focal_plane",
+              "integration_radius_um": null,
+              "detector_roi_pixels": null
+            },
+            "psf_protocol": {
+              "value": "RCP 入射，LCP 反射分量的轴扫与焦斑",
+              "source": "wang_reflect_si_2017",
+              "location": "主文 PDF pp5–6 Figs.3d、4a，补充 PDF p16 Note 6／Fig.S7",
+              "note": "入射经偏振分束、四分之一波片和 10×／NA 0.28 物镜。先成像器件表面作为 z 参考。收集 50×／NA 0.42 物镜与 IR 相机沿 z 平移，堆叠横向强度切片。物方像素、轴向步长、光束共轭参数和光源带宽未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "illumination_polarization": "RCP",
+              "detected_polarization": "LCP",
+              "axial_reference": "metalens_surface",
+              "incident_objective_magnification": 10,
+              "incident_objective_na": 0.28,
+              "collection_magnification": 50,
+              "collection_objective_na": 0.42,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_f100_cst_1200",
+          "model": "Wang 2017 · NA 0.268 设计 · 1200 nm 模拟",
+          "study_id": "wang2017reflect",
+          "specimen_id": "f100_cst",
+          "module": "",
+          "variant": "近红外反射式消色差模拟",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig.3d 下排的柱面光学模型。",
+          "values": {
+            "na": {
+              "value": 0.268,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4，主文 PDF p6 Fig.4a",
+              "note": "作者对该设计的 NA 标注。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4",
+              "note": "作者标称设计焦距。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "radial_unit_count": 51,
+              "design_compensation_phase_deg": 335
+            },
+            "lambda_min_nm": {
+              "value": 1200,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段起点。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1680,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段上限。Fig.3d 的六个轴扫标签至 1650 nm。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1200,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1200 nm 列 下排",
+              "note": "模型轴向剖面的标签。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1200 nm 列 下排，p6 Fig.4a",
+              "note": "图为模拟剖面及曲线，逐谱点焦位值未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅模拟图"
+            },
+            "psf_protocol": {
+              "value": "CST 模拟焦位的柱面近似",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p8 Methods／Numerical simulation，pp5–6 Fig.3d 或 Fig.4",
+              "note": "设计仿真在 x 用 PML、y 用周期边界。保留模拟与实测孔形差异。模型采样与逐点焦位数组未公开。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "simulation_geometry": "cylindrical",
+              "boundary_x": "PML",
+              "boundary_y": "periodic"
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_f100_exp_1300",
+          "model": "Wang 2017 · 55.55 μm ／ NA 0.268 · 1300 nm 实测",
+          "study_id": "wang2017reflect",
+          "specimen_id": "f100",
+          "module": "",
+          "variant": "近红外反射式宽带消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig.3d 上排实测轴向强度。",
+          "values": {
+            "na": {
+              "value": 0.268,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4，主文 PDF p6 Fig.4a",
+              "note": "作者对该设计的 NA 标注。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4",
+              "note": "作者标称设计焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "radial_unit_count": 51,
+              "design_compensation_phase_deg": 335
+            },
+            "lambda_min_nm": {
+              "value": 1200,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段起点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1680,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段上限。Fig.3d 的六个轴扫标签至 1650 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "diameter_um": {
+              "value": 55.55,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF pp4–5 Fig.3a 与设计段",
+              "note": "作者给实物圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1300,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1300 nm 列 上排",
+              "note": "原图实际轴扫谱点标签。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1300 nm 列，p6 Fig.4a",
+              "note": "图中为实测轴向强度和焦距曲线，未附该点焦位原值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅轴向强度图"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4c",
+              "note": "仅发表拟合宽度曲线。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅宽度曲线"
+            },
+            "efficiency_protocol": {
+              "value": "焦点光强 ÷ 同像素大小金属镜反射光强",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4d 图注及左栏效率段",
+              "note": "原文称 operation efficiency。保留强度分母和作者焦面取点方式，未给采集像素数、焦圈积分或镜面反射率绝对校准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "metallic_mirror_reflected_intensity_same_pixel_size",
+              "numerator": "focal_spot_intensity_at_corresponding_focal_plane",
+              "integration_radius_um": null,
+              "detector_roi_pixels": null
+            },
+            "psf_protocol": {
+              "value": "RCP 入射，LCP 反射分量的轴扫与焦斑",
+              "source": "wang_reflect_si_2017",
+              "location": "主文 PDF pp5–6 Figs.3d、4a，补充 PDF p16 Note 6／Fig.S7",
+              "note": "入射经偏振分束、四分之一波片和 10×／NA 0.28 物镜。先成像器件表面作为 z 参考。收集 50×／NA 0.42 物镜与 IR 相机沿 z 平移，堆叠横向强度切片。物方像素、轴向步长、光束共轭参数和光源带宽未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "illumination_polarization": "RCP",
+              "detected_polarization": "LCP",
+              "axial_reference": "metalens_surface",
+              "incident_objective_magnification": 10,
+              "incident_objective_na": 0.28,
+              "collection_magnification": 50,
+              "collection_objective_na": 0.42,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_f100_cst_1300",
+          "model": "Wang 2017 · NA 0.268 设计 · 1300 nm 模拟",
+          "study_id": "wang2017reflect",
+          "specimen_id": "f100_cst",
+          "module": "",
+          "variant": "近红外反射式消色差模拟",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig.3d 下排的柱面光学模型。",
+          "values": {
+            "na": {
+              "value": 0.268,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4，主文 PDF p6 Fig.4a",
+              "note": "作者对该设计的 NA 标注。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4",
+              "note": "作者标称设计焦距。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "radial_unit_count": 51,
+              "design_compensation_phase_deg": 335
+            },
+            "lambda_min_nm": {
+              "value": 1200,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段起点。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1680,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段上限。Fig.3d 的六个轴扫标签至 1650 nm。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1300,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1300 nm 列 下排",
+              "note": "模型轴向剖面的标签。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1300 nm 列 下排，p6 Fig.4a",
+              "note": "图为模拟剖面及曲线，逐谱点焦位值未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅模拟图"
+            },
+            "psf_protocol": {
+              "value": "CST 模拟焦位的柱面近似",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p8 Methods／Numerical simulation，pp5–6 Fig.3d 或 Fig.4",
+              "note": "设计仿真在 x 用 PML、y 用周期边界。保留模拟与实测孔形差异。模型采样与逐点焦位数组未公开。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "simulation_geometry": "cylindrical",
+              "boundary_x": "PML",
+              "boundary_y": "periodic"
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_f100_exp_1400",
+          "model": "Wang 2017 · 55.55 μm ／ NA 0.268 · 1400 nm 实测",
+          "study_id": "wang2017reflect",
+          "specimen_id": "f100",
+          "module": "",
+          "variant": "近红外反射式宽带消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig.3d 上排实测轴向强度。",
+          "values": {
+            "na": {
+              "value": 0.268,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4，主文 PDF p6 Fig.4a",
+              "note": "作者对该设计的 NA 标注。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4",
+              "note": "作者标称设计焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "radial_unit_count": 51,
+              "design_compensation_phase_deg": 335
+            },
+            "lambda_min_nm": {
+              "value": 1200,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段起点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1680,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段上限。Fig.3d 的六个轴扫标签至 1650 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "diameter_um": {
+              "value": 55.55,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF pp4–5 Fig.3a 与设计段",
+              "note": "作者给实物圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1400,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1400 nm 列 上排",
+              "note": "原图实际轴扫谱点标签。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1400 nm 列，p6 Fig.4a",
+              "note": "图中为实测轴向强度和焦距曲线，未附该点焦位原值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅轴向强度图"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4c",
+              "note": "仅发表拟合宽度曲线。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅宽度曲线"
+            },
+            "efficiency_protocol": {
+              "value": "焦点光强 ÷ 同像素大小金属镜反射光强",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4d 图注及左栏效率段",
+              "note": "原文称 operation efficiency。保留强度分母和作者焦面取点方式，未给采集像素数、焦圈积分或镜面反射率绝对校准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "metallic_mirror_reflected_intensity_same_pixel_size",
+              "numerator": "focal_spot_intensity_at_corresponding_focal_plane",
+              "integration_radius_um": null,
+              "detector_roi_pixels": null
+            },
+            "psf_protocol": {
+              "value": "RCP 入射，LCP 反射分量的轴扫与焦斑",
+              "source": "wang_reflect_si_2017",
+              "location": "主文 PDF pp5–6 Figs.3d、4a，补充 PDF p16 Note 6／Fig.S7",
+              "note": "入射经偏振分束、四分之一波片和 10×／NA 0.28 物镜。先成像器件表面作为 z 参考。收集 50×／NA 0.42 物镜与 IR 相机沿 z 平移，堆叠横向强度切片。物方像素、轴向步长、光束共轭参数和光源带宽未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "illumination_polarization": "RCP",
+              "detected_polarization": "LCP",
+              "axial_reference": "metalens_surface",
+              "incident_objective_magnification": 10,
+              "incident_objective_na": 0.28,
+              "collection_magnification": 50,
+              "collection_objective_na": 0.42,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_f100_cst_1400",
+          "model": "Wang 2017 · NA 0.268 设计 · 1400 nm 模拟",
+          "study_id": "wang2017reflect",
+          "specimen_id": "f100_cst",
+          "module": "",
+          "variant": "近红外反射式消色差模拟",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig.3d 下排的柱面光学模型。",
+          "values": {
+            "na": {
+              "value": 0.268,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4，主文 PDF p6 Fig.4a",
+              "note": "作者对该设计的 NA 标注。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4",
+              "note": "作者标称设计焦距。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "radial_unit_count": 51,
+              "design_compensation_phase_deg": 335
+            },
+            "lambda_min_nm": {
+              "value": 1200,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段起点。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1680,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段上限。Fig.3d 的六个轴扫标签至 1650 nm。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1400,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1400 nm 列 下排",
+              "note": "模型轴向剖面的标签。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1400 nm 列 下排，p6 Fig.4a",
+              "note": "图为模拟剖面及曲线，逐谱点焦位值未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅模拟图"
+            },
+            "psf_protocol": {
+              "value": "CST 模拟焦位的柱面近似",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p8 Methods／Numerical simulation，pp5–6 Fig.3d 或 Fig.4",
+              "note": "设计仿真在 x 用 PML、y 用周期边界。保留模拟与实测孔形差异。模型采样与逐点焦位数组未公开。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "simulation_geometry": "cylindrical",
+              "boundary_x": "PML",
+              "boundary_y": "periodic"
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_f100_exp_1500",
+          "model": "Wang 2017 · 55.55 μm ／ NA 0.268 · 1500 nm 实测",
+          "study_id": "wang2017reflect",
+          "specimen_id": "f100",
+          "module": "",
+          "variant": "近红外反射式宽带消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig.3d 上排实测轴向强度，Fig.3b 同谱焦斑。",
+          "values": {
+            "na": {
+              "value": 0.268,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4，主文 PDF p6 Fig.4a",
+              "note": "作者对该设计的 NA 标注。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4",
+              "note": "作者标称设计焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "radial_unit_count": 51,
+              "design_compensation_phase_deg": 335
+            },
+            "lambda_min_nm": {
+              "value": 1200,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段起点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1680,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段上限。Fig.3d 的六个轴扫标签至 1650 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "diameter_um": {
+              "value": 55.55,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF pp4–5 Fig.3a 与设计段",
+              "note": "作者给实物圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1500,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1500 nm 列 上排",
+              "note": "原图实际轴扫谱点标签。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1500 nm 列，p6 Fig.4a",
+              "note": "图中为实测轴向强度和焦距曲线，未附该点焦位原值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅轴向强度图"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3b，p6 Fig.4c",
+              "note": "原图给 1500 nm 的焦面彩图和 2 μm 横向标尺，未给宽度印字。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅焦斑图及曲线"
+            },
+            "efficiency_protocol": {
+              "value": "焦点光强 ÷ 同像素大小金属镜反射光强",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4d 图注及左栏效率段",
+              "note": "原文称 operation efficiency。保留强度分母和作者焦面取点方式，未给采集像素数、焦圈积分或镜面反射率绝对校准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "metallic_mirror_reflected_intensity_same_pixel_size",
+              "numerator": "focal_spot_intensity_at_corresponding_focal_plane",
+              "integration_radius_um": null,
+              "detector_roi_pixels": null
+            },
+            "psf_protocol": {
+              "value": "RCP 入射，LCP 反射分量的轴扫与焦斑",
+              "source": "wang_reflect_si_2017",
+              "location": "主文 PDF pp5–6 Figs.3d、4a，补充 PDF p16 Note 6／Fig.S7",
+              "note": "入射经偏振分束、四分之一波片和 10×／NA 0.28 物镜。先成像器件表面作为 z 参考。收集 50×／NA 0.42 物镜与 IR 相机沿 z 平移，堆叠横向强度切片。物方像素、轴向步长、光束共轭参数和光源带宽未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "illumination_polarization": "RCP",
+              "detected_polarization": "LCP",
+              "axial_reference": "metalens_surface",
+              "incident_objective_magnification": 10,
+              "incident_objective_na": 0.28,
+              "collection_magnification": 50,
+              "collection_objective_na": 0.42,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_f100_cst_1500",
+          "model": "Wang 2017 · NA 0.268 设计 · 1500 nm 模拟",
+          "study_id": "wang2017reflect",
+          "specimen_id": "f100_cst",
+          "module": "",
+          "variant": "近红外反射式消色差模拟",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig.3d 下排的柱面光学模型。",
+          "values": {
+            "na": {
+              "value": 0.268,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4，主文 PDF p6 Fig.4a",
+              "note": "作者对该设计的 NA 标注。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4",
+              "note": "作者标称设计焦距。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "radial_unit_count": 51,
+              "design_compensation_phase_deg": 335
+            },
+            "lambda_min_nm": {
+              "value": 1200,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段起点。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1680,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段上限。Fig.3d 的六个轴扫标签至 1650 nm。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1500,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1500 nm 列 下排",
+              "note": "模型轴向剖面的标签。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1500 nm 列 下排，p6 Fig.4a",
+              "note": "图为模拟剖面及曲线，逐谱点焦位值未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅模拟图"
+            },
+            "psf_protocol": {
+              "value": "CST 模拟焦位的柱面近似",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p8 Methods／Numerical simulation，pp5–6 Fig.3d 或 Fig.4",
+              "note": "设计仿真在 x 用 PML、y 用周期边界。保留模拟与实测孔形差异。模型采样与逐点焦位数组未公开。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "simulation_geometry": "cylindrical",
+              "boundary_x": "PML",
+              "boundary_y": "periodic"
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_f100_exp_1600",
+          "model": "Wang 2017 · 55.55 μm ／ NA 0.268 · 1600 nm 实测",
+          "study_id": "wang2017reflect",
+          "specimen_id": "f100",
+          "module": "",
+          "variant": "近红外反射式宽带消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig.3d 上排实测轴向强度。",
+          "values": {
+            "na": {
+              "value": 0.268,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4，主文 PDF p6 Fig.4a",
+              "note": "作者对该设计的 NA 标注。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4",
+              "note": "作者标称设计焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "radial_unit_count": 51,
+              "design_compensation_phase_deg": 335
+            },
+            "lambda_min_nm": {
+              "value": 1200,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段起点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1680,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段上限。Fig.3d 的六个轴扫标签至 1650 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "diameter_um": {
+              "value": 55.55,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF pp4–5 Fig.3a 与设计段",
+              "note": "作者给实物圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1600,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1600 nm 列 上排",
+              "note": "原图实际轴扫谱点标签。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1600 nm 列，p6 Fig.4a",
+              "note": "图中为实测轴向强度和焦距曲线，未附该点焦位原值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅轴向强度图"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4c",
+              "note": "仅发表拟合宽度曲线。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅宽度曲线"
+            },
+            "efficiency_protocol": {
+              "value": "焦点光强 ÷ 同像素大小金属镜反射光强",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4d 图注及左栏效率段",
+              "note": "原文称 operation efficiency。保留强度分母和作者焦面取点方式，未给采集像素数、焦圈积分或镜面反射率绝对校准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "metallic_mirror_reflected_intensity_same_pixel_size",
+              "numerator": "focal_spot_intensity_at_corresponding_focal_plane",
+              "integration_radius_um": null,
+              "detector_roi_pixels": null
+            },
+            "psf_protocol": {
+              "value": "RCP 入射，LCP 反射分量的轴扫与焦斑",
+              "source": "wang_reflect_si_2017",
+              "location": "主文 PDF pp5–6 Figs.3d、4a，补充 PDF p16 Note 6／Fig.S7",
+              "note": "入射经偏振分束、四分之一波片和 10×／NA 0.28 物镜。先成像器件表面作为 z 参考。收集 50×／NA 0.42 物镜与 IR 相机沿 z 平移，堆叠横向强度切片。物方像素、轴向步长、光束共轭参数和光源带宽未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "illumination_polarization": "RCP",
+              "detected_polarization": "LCP",
+              "axial_reference": "metalens_surface",
+              "incident_objective_magnification": 10,
+              "incident_objective_na": 0.28,
+              "collection_magnification": 50,
+              "collection_objective_na": 0.42,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_f100_cst_1600",
+          "model": "Wang 2017 · NA 0.268 设计 · 1600 nm 模拟",
+          "study_id": "wang2017reflect",
+          "specimen_id": "f100_cst",
+          "module": "",
+          "variant": "近红外反射式消色差模拟",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig.3d 下排的柱面光学模型。",
+          "values": {
+            "na": {
+              "value": 0.268,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4，主文 PDF p6 Fig.4a",
+              "note": "作者对该设计的 NA 标注。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4",
+              "note": "作者标称设计焦距。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "radial_unit_count": 51,
+              "design_compensation_phase_deg": 335
+            },
+            "lambda_min_nm": {
+              "value": 1200,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段起点。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1680,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段上限。Fig.3d 的六个轴扫标签至 1650 nm。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1600,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1600 nm 列 下排",
+              "note": "模型轴向剖面的标签。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1600 nm 列 下排，p6 Fig.4a",
+              "note": "图为模拟剖面及曲线，逐谱点焦位值未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅模拟图"
+            },
+            "psf_protocol": {
+              "value": "CST 模拟焦位的柱面近似",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p8 Methods／Numerical simulation，pp5–6 Fig.3d 或 Fig.4",
+              "note": "设计仿真在 x 用 PML、y 用周期边界。保留模拟与实测孔形差异。模型采样与逐点焦位数组未公开。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "simulation_geometry": "cylindrical",
+              "boundary_x": "PML",
+              "boundary_y": "periodic"
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_f100_exp_1650",
+          "model": "Wang 2017 · 55.55 μm ／ NA 0.268 · 1650 nm 实测",
+          "study_id": "wang2017reflect",
+          "specimen_id": "f100",
+          "module": "",
+          "variant": "近红外反射式宽带消色差",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig.3d 上排实测轴向强度。",
+          "values": {
+            "na": {
+              "value": 0.268,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4，主文 PDF p6 Fig.4a",
+              "note": "作者对该设计的 NA 标注。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4",
+              "note": "作者标称设计焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "radial_unit_count": 51,
+              "design_compensation_phase_deg": 335
+            },
+            "lambda_min_nm": {
+              "value": 1200,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段起点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1680,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段上限。Fig.3d 的六个轴扫标签至 1650 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "diameter_um": {
+              "value": 55.55,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF pp4–5 Fig.3a 与设计段",
+              "note": "作者给实物圆孔直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1650,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1650 nm 列 上排",
+              "note": "原图实际轴扫谱点标签。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1650 nm 列，p6 Fig.4a",
+              "note": "图中为实测轴向强度和焦距曲线，未附该点焦位原值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅轴向强度图"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4c",
+              "note": "仅发表拟合宽度曲线。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅宽度曲线"
+            },
+            "efficiency_protocol": {
+              "value": "焦点光强 ÷ 同像素大小金属镜反射光强",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4d 图注及左栏效率段",
+              "note": "原文称 operation efficiency。保留强度分母和作者焦面取点方式，未给采集像素数、焦圈积分或镜面反射率绝对校准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "metallic_mirror_reflected_intensity_same_pixel_size",
+              "numerator": "focal_spot_intensity_at_corresponding_focal_plane",
+              "integration_radius_um": null,
+              "detector_roi_pixels": null
+            },
+            "psf_protocol": {
+              "value": "RCP 入射，LCP 反射分量的轴扫与焦斑",
+              "source": "wang_reflect_si_2017",
+              "location": "主文 PDF pp5–6 Figs.3d、4a，补充 PDF p16 Note 6／Fig.S7",
+              "note": "入射经偏振分束、四分之一波片和 10×／NA 0.28 物镜。先成像器件表面作为 z 参考。收集 50×／NA 0.42 物镜与 IR 相机沿 z 平移，堆叠横向强度切片。物方像素、轴向步长、光束共轭参数和光源带宽未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "illumination_polarization": "RCP",
+              "detected_polarization": "LCP",
+              "axial_reference": "metalens_surface",
+              "incident_objective_magnification": 10,
+              "incident_objective_na": 0.28,
+              "collection_magnification": 50,
+              "collection_objective_na": 0.42,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_f100_cst_1650",
+          "model": "Wang 2017 · NA 0.268 设计 · 1650 nm 模拟",
+          "study_id": "wang2017reflect",
+          "specimen_id": "f100_cst",
+          "module": "",
+          "variant": "近红外反射式消色差模拟",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Fig.3d 下排的柱面光学模型。",
+          "values": {
+            "na": {
+              "value": 0.268,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4，主文 PDF p6 Fig.4a",
+              "note": "作者对该设计的 NA 标注。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ]
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp8–9 Note 3／Table S4",
+              "note": "作者标称设计焦距。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "radial_unit_count": 51,
+              "design_compensation_phase_deg": 335
+            },
+            "lambda_min_nm": {
+              "value": 1200,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段起点。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1680,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段上限。Fig.3d 的六个轴扫标签至 1650 nm。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1650,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1650 nm 列 下排",
+              "note": "模型轴向剖面的标签。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p5 Fig.3d，1650 nm 列 下排，p6 Fig.4a",
+              "note": "图为模拟剖面及曲线，逐谱点焦位值未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅模拟图"
+            },
+            "psf_protocol": {
+              "value": "CST 模拟焦位的柱面近似",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p8 Methods／Numerical simulation，pp5–6 Fig.3d 或 Fig.4",
+              "note": "设计仿真在 x 用 PML、y 用周期边界。保留模拟与实测孔形差异。模型采样与逐点焦位数组未公开。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "simulation_geometry": "cylindrical",
+              "boundary_x": "PML",
+              "boundary_y": "periodic"
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_chromatic_a",
+          "model": "Wang 2017 · 对照 A · 实物",
+          "study_id": "wang2017reflect",
+          "specimen_id": "chromatic_a",
+          "module": "",
+          "variant": "近红外色散对照",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "三只几何相位对照片之一。",
+          "values": {
+            "na": {
+              "value": 0.215,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp12–15 Note 4／Fig.S5–S6、Tables S6–S8，主文 PDF p6 Fig.4b",
+              "note": "仅在对照设计波长 1680 nm 的作者 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "nominal_design_wavelength_nm": 1680
+            },
+            "chromatic": {
+              "value": "面向 1680 nm 优化的色散对照 A",
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp12–15 Note 4／Fig.S5–S6、Tables S6–S8，主文 PDF p6 Fig.4b",
+              "note": "固定单元几何，只旋转实现几何相位。作者对三只对照报告焦距随波长变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "design_wavelength_nm": 1680
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4b",
+              "note": "模型空心点与实物实心点均为曲线。逐谱点绝对焦距和配套原始数据未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅实测曲线"
+            },
+            "psf_protocol": {
+              "value": "RCP 入射，LCP 反射分量的轴扫与焦斑",
+              "source": "wang_reflect_si_2017",
+              "location": "主文 PDF pp5–6 Figs.3d、4a，补充 PDF p16 Note 6／Fig.S7",
+              "note": "入射经偏振分束、四分之一波片和 10×／NA 0.28 物镜。先成像器件表面作为 z 参考。收集 50×／NA 0.42 物镜与 IR 相机沿 z 平移，堆叠横向强度切片。物方像素、轴向步长、光束共轭参数和光源带宽未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "illumination_polarization": "RCP",
+              "detected_polarization": "LCP",
+              "axial_reference": "metalens_surface",
+              "incident_objective_magnification": 10,
+              "incident_objective_na": 0.28,
+              "collection_magnification": 50,
+              "collection_objective_na": 0.42,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_chromatic_a_cst",
+          "model": "Wang 2017 · 对照 A · CST",
+          "study_id": "wang2017reflect",
+          "specimen_id": "chromatic_a_cst",
+          "module": "",
+          "variant": "色散对照模拟",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "三只几何相位对照片之一。",
+          "values": {
+            "na": {
+              "value": 0.215,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp12–15 Note 4／Fig.S5–S6、Tables S6–S8，主文 PDF p6 Fig.4b",
+              "note": "仅在对照设计波长 1680 nm 的作者 NA。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "nominal_design_wavelength_nm": 1680
+            },
+            "chromatic": {
+              "value": "面向 1680 nm 优化的色散对照 A",
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp12–15 Note 4／Fig.S5–S6、Tables S6–S8，主文 PDF p6 Fig.4b",
+              "note": "固定单元几何，只旋转实现几何相位。作者对三只对照报告焦距随波长变化。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "design_wavelength_nm": 1680
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4b",
+              "note": "模型空心点与实物实心点均为曲线。逐谱点绝对焦距和配套原始数据未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅模拟曲线"
+            },
+            "psf_protocol": {
+              "value": "CST 模拟焦位的柱面近似",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p8 Methods／Numerical simulation，pp5–6 Fig.3d 或 Fig.4",
+              "note": "设计仿真在 x 用 PML、y 用周期边界。保留模拟与实测孔形差异。模型采样与逐点焦位数组未公开。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "simulation_geometry": "cylindrical",
+              "boundary_x": "PML",
+              "boundary_y": "periodic"
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_chromatic_b",
+          "model": "Wang 2017 · 对照 B · 实物",
+          "study_id": "wang2017reflect",
+          "specimen_id": "chromatic_b",
+          "module": "",
+          "variant": "近红外色散对照",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "三只几何相位对照片之一。",
+          "values": {
+            "na": {
+              "value": 0.265,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp12–15 Note 4／Fig.S5–S6、Tables S6–S8，主文 PDF p6 Fig.4b",
+              "note": "仅在对照设计波长 1680 nm 的作者 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "nominal_design_wavelength_nm": 1680
+            },
+            "chromatic": {
+              "value": "面向 1680 nm 优化的色散对照 B",
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp12–15 Note 4／Fig.S5–S6、Tables S6–S8，主文 PDF p6 Fig.4b",
+              "note": "固定单元几何，只旋转实现几何相位。作者对三只对照报告焦距随波长变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "design_wavelength_nm": 1680
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4b",
+              "note": "模型空心点与实物实心点均为曲线。逐谱点绝对焦距和配套原始数据未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅实测曲线"
+            },
+            "psf_protocol": {
+              "value": "RCP 入射，LCP 反射分量的轴扫与焦斑",
+              "source": "wang_reflect_si_2017",
+              "location": "主文 PDF pp5–6 Figs.3d、4a，补充 PDF p16 Note 6／Fig.S7",
+              "note": "入射经偏振分束、四分之一波片和 10×／NA 0.28 物镜。先成像器件表面作为 z 参考。收集 50×／NA 0.42 物镜与 IR 相机沿 z 平移，堆叠横向强度切片。物方像素、轴向步长、光束共轭参数和光源带宽未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "illumination_polarization": "RCP",
+              "detected_polarization": "LCP",
+              "axial_reference": "metalens_surface",
+              "incident_objective_magnification": 10,
+              "incident_objective_na": 0.28,
+              "collection_magnification": 50,
+              "collection_objective_na": 0.42,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_chromatic_b_cst",
+          "model": "Wang 2017 · 对照 B · CST",
+          "study_id": "wang2017reflect",
+          "specimen_id": "chromatic_b_cst",
+          "module": "",
+          "variant": "色散对照模拟",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "三只几何相位对照片之一。",
+          "values": {
+            "na": {
+              "value": 0.265,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp12–15 Note 4／Fig.S5–S6、Tables S6–S8，主文 PDF p6 Fig.4b",
+              "note": "仅在对照设计波长 1680 nm 的作者 NA。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "nominal_design_wavelength_nm": 1680
+            },
+            "chromatic": {
+              "value": "面向 1680 nm 优化的色散对照 B",
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp12–15 Note 4／Fig.S5–S6、Tables S6–S8，主文 PDF p6 Fig.4b",
+              "note": "固定单元几何，只旋转实现几何相位。作者对三只对照报告焦距随波长变化。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "design_wavelength_nm": 1680
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4b",
+              "note": "模型空心点与实物实心点均为曲线。逐谱点绝对焦距和配套原始数据未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅模拟曲线"
+            },
+            "psf_protocol": {
+              "value": "CST 模拟焦位的柱面近似",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p8 Methods／Numerical simulation，pp5–6 Fig.3d 或 Fig.4",
+              "note": "设计仿真在 x 用 PML、y 用周期边界。保留模拟与实测孔形差异。模型采样与逐点焦位数组未公开。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "simulation_geometry": "cylindrical",
+              "boundary_x": "PML",
+              "boundary_y": "periodic"
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_chromatic_c",
+          "model": "Wang 2017 · 对照 C · 实物",
+          "study_id": "wang2017reflect",
+          "specimen_id": "chromatic_c",
+          "module": "",
+          "variant": "近红外色散对照",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "三只几何相位对照片之一。",
+          "values": {
+            "na": {
+              "value": 0.321,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp12–15 Note 4／Fig.S5–S6、Tables S6–S8，主文 PDF p6 Fig.4b",
+              "note": "仅在对照设计波长 1680 nm 的作者 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "nominal_design_wavelength_nm": 1680
+            },
+            "chromatic": {
+              "value": "面向 1680 nm 优化的色散对照 C",
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp12–15 Note 4／Fig.S5–S6、Tables S6–S8，主文 PDF p6 Fig.4b",
+              "note": "固定单元几何，只旋转实现几何相位。作者对三只对照报告焦距随波长变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "design_wavelength_nm": 1680
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4b",
+              "note": "模型空心点与实物实心点均为曲线。逐谱点绝对焦距和配套原始数据未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅实测曲线"
+            },
+            "psf_protocol": {
+              "value": "RCP 入射，LCP 反射分量的轴扫与焦斑",
+              "source": "wang_reflect_si_2017",
+              "location": "主文 PDF pp5–6 Figs.3d、4a，补充 PDF p16 Note 6／Fig.S7",
+              "note": "入射经偏振分束、四分之一波片和 10×／NA 0.28 物镜。先成像器件表面作为 z 参考。收集 50×／NA 0.42 物镜与 IR 相机沿 z 平移，堆叠横向强度切片。物方像素、轴向步长、光束共轭参数和光源带宽未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "illumination_polarization": "RCP",
+              "detected_polarization": "LCP",
+              "axial_reference": "metalens_surface",
+              "incident_objective_magnification": 10,
+              "incident_objective_na": 0.28,
+              "collection_magnification": 50,
+              "collection_objective_na": 0.42,
+              "axial_step_um": null,
+              "object_plane_sampling_um": null
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_chromatic_c_cst",
+          "model": "Wang 2017 · 对照 C · CST",
+          "study_id": "wang2017reflect",
+          "specimen_id": "chromatic_c_cst",
+          "module": "",
+          "variant": "色散对照模拟",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "三只几何相位对照片之一。",
+          "values": {
+            "na": {
+              "value": 0.321,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp12–15 Note 4／Fig.S5–S6、Tables S6–S8，主文 PDF p6 Fig.4b",
+              "note": "仅在对照设计波长 1680 nm 的作者 NA。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "nominal_design_wavelength_nm": 1680
+            },
+            "chromatic": {
+              "value": "面向 1680 nm 优化的色散对照 C",
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp12–15 Note 4／Fig.S5–S6、Tables S6–S8，主文 PDF p6 Fig.4b",
+              "note": "固定单元几何，只旋转实现几何相位。作者对三只对照报告焦距随波长变化。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_reflect_si_2017",
+                "wang_reflect_2017"
+              ],
+              "design_wavelength_nm": 1680
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p6 Fig.4b",
+              "note": "模型空心点与实物实心点均为曲线。逐谱点绝对焦距和配套原始数据未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅模拟曲线"
+            },
+            "psf_protocol": {
+              "value": "CST 模拟焦位的柱面近似",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p8 Methods／Numerical simulation，pp5–6 Fig.3d 或 Fig.4",
+              "note": "设计仿真在 x 用 PML、y 用周期边界。保留模拟与实测孔形差异。模型采样与逐点焦位数组未公开。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "simulation_geometry": "cylindrical",
+              "boundary_x": "PML",
+              "boundary_y": "periodic"
+            }
+          }
+        },
+        {
+          "id": "wang2017reflect_high_na_model",
+          "model": "Wang 2017 · NA 0.86 · f=4 μm 模型",
+          "study_id": "wang2017reflect",
+          "specimen_id": "high_na_model",
+          "module": "",
+          "variant": "高 NA 反射式消色差模型",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "补充 Note 7 独立高 NA 算例。",
+          "values": {
+            "lambda_min_nm": {
+              "value": 1200,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段起点。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1680,
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p4 工作波段段",
+              "note": "作者近红外连续设计的波段上限。Fig.3d 的六个轴扫标签至 1650 nm。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.86,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp18–19 Note 7／Fig.S9、Table S10",
+              "note": "作者模拟高 NA 值。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors"
+            },
+            "design_focal_um": {
+              "value": 4,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF pp18–19 Note 7／Fig.S9、Table S10",
+              "note": "设计焦面对应 Fig.S9 白色虚线。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "radial_unit_count": 13,
+              "design_compensation_phase_deg": 345
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "wang_reflect_si_2017",
+              "location": "补充 PDF p18 Fig.S9",
+              "note": "模拟图给六个谱点及 z=4 μm 设计面虚线，逐点焦位数值保持空白。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅模拟剖面",
+              "design_evaluation_plane_um": 4,
+              "simulated_wavelengths_nm": [1200, 1300, 1400, 1500, 1600, 1650]
+            },
+            "psf_protocol": {
+              "value": "CST 模拟焦位的柱面近似",
+              "source": "wang_reflect_2017",
+              "location": "主文 PDF p8 Methods／Numerical simulation，pp5–6 Fig.3d 或 Fig.4",
+              "note": "设计仿真在 x 用 PML、y 用周期边界。保留模拟与实测孔形差异。模型采样与逐点焦位数组未公开。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "simulation_geometry": "cylindrical",
+              "boundary_x": "PML",
+              "boundary_y": "periodic"
+            }
+          }
         }
       ],
-      "scope": "44项原始研究、255个器件/测量/系统配置、1567条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
+      "scope": "45项原始研究、268个器件/测量/系统配置、1591条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
