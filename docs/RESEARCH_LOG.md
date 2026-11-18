@@ -1011,3 +1011,9 @@ PR #156 合入 797fca6636446577493739d119bd3c8fd09f4d4c。PR 校验 44350047253�
 ## 2026-11-19-102 · Arbabi 2017 两口径近红外反射镜原文与补件
 
 Caltech 馆藏正式 8 页正文与 21 页补件核验通过。Fig. 5、S10–S14 定位七只实物各 15 个 1450–1590 nm 波长、500 μm 配置的固定 850 μm 焦斑与相对焦移曲线。S13c 的 σ=50 nm 为固定面图，轴向误差另见 S14b。S14c–d 是作者积分二维归一化 MTF 的 Strehl 曲线。Fig. 5e 的 50%–60% 是对常规镜 1520 nm 虹膜功率的相对区间，物方虹膜约 40 μm 直径，图例缺两种 σ 的明确归属。逐点焦距、Strehl、MTF 和 PSF 数组留空。仿真与实物分开归组。新增 123 条、18 组（七只实物、10 个模拟和一组待消歧效率），累计 47 篇、290 组、1784 条。[本批核验](ARBABI_DISPERSION_REVIEW_2026-11-19.md)
+
+## 2026-11-19-103 · Arbabi 2017 反射镜上线与双波长透射镜接续
+
+PR #158 合入 cae5f5ee05858a3382e1011c673a6b744532cdd9。PR 校验 44356115144、主线 44356328395 与 Pages 44356328355 成功。310 项测试通过。公开文件 12 个与本机构建逐字节一致，devices-data.js SHA256 为 cb86643001ae9ecdba50e3a2e571f8b2bd95032c39f179256a0b61937c11f2f4。独立无头 Chrome 核 123 条、18 组、两种口径/焦距和 30 组波长/口径读数、六视口、引用往返和 CSV。三份校方 PDF 文件头和长度均以 206 验证，Caltech 清单、Crossref 与 DataCite 为 200。Optica Figshare 页面直连 403，补件可经校方取得。可见光仍为 39 篇、1487 条。[PR #158](https://github.com/SelinLee/lens-evidence-atlas/pull/158) · [Pages](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44356328355)
+
+下一批沿本论文 Supplement 1 Ref. 4 核 Arbabi 等 2016 双波长透射式实验（10.1364/OPTICA.3.000628）。Crossref 出版日期 2016-06-10，2026-11-19 查 452 次。校方出版版 1521044 字节、补件 3321335 字节，MD5 分别为 d318348d3c24ffc54c253868e86ff424、d9ad519e716439f639666a09a4ee4be7。初核两只 300 μm 实物、NA 0.46／0.29、915／1550 nm。SI p4 Fig. S2a 印低 NA 器件 915 nm 峰位 980 μm，设计成像面 1000 μm。主文 p631 的实测效率和 S1 的两条功率测量链继续对读，有限共轭像距和近轴焦距分别保留。会话目标保持 active。[校方馆藏](https://authors.library.caltech.edu/records/32je3-2pw19) · [原始补件](https://authors.library.caltech.edu/records/32je3-2pw19/files/optica-3-6-628_si.pdf?download=1#page=4)
