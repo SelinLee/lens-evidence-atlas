@@ -1432,6 +1432,69 @@
       "checked_on": "2026-11-18",
       "scope": "2026-11-18 读取 is-referenced-by-count = 86。随索引更新。",
       "publication_source": "aiello_varifocal_2019"
+    },
+    {
+      "id": "li_mosaic_2026",
+      "title": "Li et al. (2026): Disordered mosaic metasurfaces with scalable functional density",
+      "url": "https://www.nature.com/articles/s41467-026-71774-5.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "Nat. Commun. 17, 4835，2026-04-09 正式发表。主文 Fig.4 与 Methods 已核。",
+      "checked_on": "2026-11-18",
+      "doi": "10.1038/s41467-026-71774-5"
+    },
+    {
+      "id": "li_mosaic_si_2026",
+      "title": "Springer Nature · Li 2026 补充资料",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-026-71774-5/MediaObjects/41467_2026_71774_MOESM1_ESM.pdf",
+      "kind": "supplementary_material",
+      "scope": "28 页。p3 Strehl 定义，pp10–11 PSF 光路，p14 双通道效率，p26 Table S2 及 p27 Table S3。",
+      "checked_on": "2026-11-18",
+      "publication_source": "li_mosaic_2026"
+    },
+    {
+      "id": "li_mosaic_source_2026",
+      "title": "Springer Nature · Li 2026 Source Data",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-026-71774-5/MediaObjects/41467_2026_71774_MOESM3_ESM.xlsx",
+      "kind": "author_dataset",
+      "scope": "882125 字节，SHA256 8aaf553ecc6397ade22fbe3af7131c687e515af2e19afe9c364d02abf6f191af。工作表 fig4d 的 A:F 含 1200 nm 横向归一剖面，对应图版 Fig.4f，实验点 A2:B54。",
+      "checked_on": "2026-11-18",
+      "publication_source": "li_mosaic_2026"
+    },
+    {
+      "id": "li_mosaic_author_2026",
+      "title": "GitHub · Li 2026 作者数据仓库",
+      "url": "https://github.com/Chi0000000001/raw_data_mosaic_work",
+      "kind": "author_dataset",
+      "scope": "作者 Data availability 所列仓库。API 列表的 Git 树 b4862dff2c7625301f1814ed04edf722f82fdbe9 下 11 个 MAT 文件均已核 Git blob 哈希。均包含 A/D/H/L/R/V 偏振阵列与二维图，无可确认的焦斑 z 栈。",
+      "checked_on": "2026-11-18",
+      "publication_source": "li_mosaic_2026"
+    },
+    {
+      "id": "li_mosaic_peer_2026",
+      "title": "Springer Nature · Li 2026 同行评审记录",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-026-71774-5/MediaObjects/41467_2026_71774_MOESM2_ESM.pdf",
+      "kind": "paper_review",
+      "scope": "只提供转投后 Nature Communications 当前轮的评审简短结论，未提供焦位或原始焦斑数组。",
+      "checked_on": "2026-11-18",
+      "publication_source": "li_mosaic_2026"
+    },
+    {
+      "id": "li_mosaic_cas_2025",
+      "title": "艾思科蓝 · Nature Communications 2025 大类分区",
+      "url": "https://www.ais.cn/journal/database/8402",
+      "kind": "repository_metadata",
+      "scope": "公开条目明确列 2025 年 3 月升级版综合性期刊大类一区。2026-11-18 核对。",
+      "checked_on": "2026-11-18",
+      "publication_source": "li_mosaic_2026"
+    },
+    {
+      "id": "li_mosaic_pmc_2026",
+      "title": "PMC · Li 2026 开放资料清单",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC13223217.1%2F",
+      "kind": "repository_metadata",
+      "scope": "版本 PMC13223217.1 含主文、补充材料、评审记录、原文图版及 Source Data XLSX，未见独立焦位或 MTF 数组。",
+      "checked_on": "2026-11-18",
+      "publication_source": "li_mosaic_2026"
     }
   ],
   "domains": {
@@ -5152,6 +5215,22 @@
               "location": "审稿 PDF p27 Response 2.1"
             }
           ]
+        },
+        {
+          "id": "psf_sidelobe_mainlobe_ratio",
+          "label": "作者旁瓣／主瓣比 (1)",
+          "numeric": true,
+          "definition": "作者由焦面 PSF 报告的无量纲旁瓣／主瓣比。",
+          "conditions": "同一谱点及配置，保留剖面、评价面与作者未报告的旁瓣选择及统计定义。",
+          "definition_refs": [
+            {
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，Sidelobe/Main-lobe ratio 列"
+            }
+          ],
+          "axis_bounds": {
+            "min": 0
+          }
         }
       ],
       "rows": [
@@ -204420,9 +204499,1740 @@
               "nominal_focus_setting_um": 375
             }
           }
+        },
+        {
+          "id": "li2026mosaic_main",
+          "model": "Li 2026 马赛克 · 8.1 mm · 11 通道汇总",
+          "study_id": "li2026mosaic",
+          "specimen_id": "main11",
+          "module": "",
+          "variant": "DMM 分通道马赛克超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "同一实制 11 通道镜的 1200–1400 nm 轴向与焦面表征。",
+          "values": {
+            "diameter_um": {
+              "value": 8100,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF pp5–6 Fig.4a 与 DMM 结果段",
+              "note": "作者标称圆形口径 8.1 mm。排布网格为 1000×1000，单个元像素 8.1 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 8.1,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.15,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p27 Table S3，Our work 行 NA 列",
+              "note": "作者给这只 8.1 mm 样片的 NA，未按各谱点重新推算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 100,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p8 Methods / Device fabrication",
+              "note": "超透镜用 100 nm a-Si 薄膜，衬底石英厚 500 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "a-Si / 石英",
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p6 Fig.4a 与 p8 Methods",
+              "note": "T 形各向异性元胞以旋转角编码相位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_min_nm": {
+              "value": 1200,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p5 DMM-based achromatic metalens 段，p6 Fig.4c–d",
+              "note": "11 个实测通道最低谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1400,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p5 DMM-based achromatic metalens 段，p6 Fig.4c–d",
+              "note": "11 个实测通道最高谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "11 通道实测",
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF pp5–6 Fig.4a/d–e，公开分区条目",
+              "note": "同一焦距目标由 11 个谱向份额实现。20 nm 间隔实测，点间未列单独测量。Nature Communications 按 2025 升级版综合性期刊大类一区纳入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "li_mosaic_2026",
+                "li_mosaic_cas_2025"
+              ],
+              "sample_wavelengths_nm": [
+                1200,
+                1220,
+                1240,
+                1260,
+                1280,
+                1300,
+                1320,
+                1340,
+                1360,
+                1380,
+                1400
+              ],
+              "aperture_shape": "circular"
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p5 DMM-based achromatic metalens 段，p6 Fig.4c–d",
+              "note": "相对单份额对照的作者近似比为 1/30，两者测量波段分别为 1200–1400 nm 与 1230–1330 nm。作者未列该镜绝对差值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "约为对照的 1/30",
+              "reference_specimen_id": "control1",
+              "reported_approximate_ratio": 0.03333333333333333
+            },
+            "focus_variation_protocol": {
+              "value": "27.76 mm 公共标示线，逐点绝对焦位待核",
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p5 DMM-based achromatic metalens 段，p6 Fig.4c–d",
+              "note": "Fig.4d 纵向图用一条虚线标 f=27.76 mm。虚线归原图共同参考，一条参考未表示全部谱点轴向峰值、带内平均或另行声明的设计 f。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "reference_plane_um": 27760,
+              "reference_kind": "author_common_figure_plane",
+              "sample_wavelengths_nm": [
+                1200,
+                1220,
+                1240,
+                1260,
+                1280,
+                1300,
+                1320,
+                1340,
+                1360,
+                1380,
+                1400
+              ]
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p6 Fig.4d",
+              "note": "27.76 mm 标作轴向图共同参考。本图未另列独立设计值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "strehl": {
+              "value": 0.78,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p5 DMM 结果段，补充 PDF p26 Table S2",
+              "note": "原文跨谱平均值 0.78 ± 0.07，± 的统计类型未见明示。谱点的作者表内均值和不确定度各自保存。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "display": "0.78 ± 0.07",
+              "statistic": "band_mean",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.07,
+                "sample_size": null
+              },
+              "sample_wavelengths_nm": [
+                1200,
+                1220,
+                1240,
+                1260,
+                1280,
+                1300,
+                1320,
+                1340,
+                1360,
+                1380,
+                1400
+              ],
+              "sourceIds": [
+                "li_mosaic_2026",
+                "li_mosaic_si_2026"
+              ]
+            },
+            "psf_protocol": {
+              "value": "交叉圆偏振透过式 PSF 轴扫",
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF pp10–11 Note 3B/Fig.S8，主文 PDF p6 Fig.4d–e",
+              "note": "偏振片和四分之一波片产生圆偏振，10× NA 0.3 物镜收集，筒镜前选交叉圆偏振。作者写每移动 1 μm 取一帧。未写每个焦斑评价面的轴向取点、物方像素标定、入射与检出手性符号或裁边条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_scan_step_um": 1,
+              "collection_objective_na": 0.3,
+              "collection_magnification": 10,
+              "sourceIds": [
+                "li_mosaic_2026",
+                "li_mosaic_si_2026"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF pp5–6 Fig.4 与补充 PDF p14 Fig.S13",
+              "note": "未找到这只 8.1 mm 镜的定量实测聚焦效率。Fig.S13 两个值属于 800 μm 样片。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "li_mosaic_2026",
+                "li_mosaic_si_2026"
+              ]
+            },
+            "mtf_curve": {
+              "value": "主镜焦斑图与一条公开数值剖面",
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p6 Fig.4d–f，p9 Data availability，Source Data 工作表 fig4d",
+              "note": "出版数据 A2:B54 是 1200 nm 的横向实测归一剖面。未取得可配准二维焦面阵列、双轴物方尺度、处理条件与作者 MTF 数表。 作者仓库 MAT 文件中的六偏振通道与矢量光的偏振表征相符，未证实为这只镜的焦斑。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "li_mosaic_2026",
+                "li_mosaic_source_2026",
+                "li_mosaic_author_2026",
+                "li_mosaic_pmc_2026",
+                "li_mosaic_peer_2026"
+              ],
+              "data_availability": {
+                "status": "published_1d_transverse_profile_only",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "li2026mosaic_1200",
+          "model": "Li 2026 马赛克 · 8.1 mm · 1200 nm",
+          "study_id": "li2026mosaic",
+          "specimen_id": "main11",
+          "module": "",
+          "variant": "DMM 分通道马赛克超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Table S2 单波长焦面光斑，归同一只 11 通道镜。",
+          "values": {
+            "diameter_um": {
+              "value": 8100,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF pp5–6 Fig.4a 与 DMM 结果段",
+              "note": "作者标称圆形口径 8.1 mm。排布网格为 1000×1000，单个元像素 8.1 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 8.1,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.15,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p27 Table S3，Our work 行 NA 列",
+              "note": "作者给这只 8.1 mm 样片的 NA，未按各谱点重新推算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1200,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 1 行，Wavelength 列",
+              "note": "作者实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p6 Fig.4d 对应谱点行",
+              "note": "只核到轴向强度图和公共 27.76 mm 标线。逐点绝对峰位未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "fwhm_um": {
+              "value": 6.82,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 1 行，PSF FWHM 列",
+              "note": "沿用作者表内宽度和 ±。原表未报告表内每一宽度对应的 x/y 方向或 ± 的类型。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "6.82 ± 0.06 μm",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.06,
+                "sample_size": null
+              }
+            },
+            "strehl": {
+              "value": 0.809,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 1 行，Strehl ratio 列，补充 PDF p3 Note 1A",
+              "note": "由实测和理想焦面 PSF 分别积分归一后比较峰值。± 类型、重复次数及积分范围待核。 Fig.4f 图注还标约 0.78，与主文带内均值相同。此处按明确第 1 行留 0.809 ± 0.006。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.809 ± 0.006",
+              "calculation_origin": "authors",
+              "normalization_method": "unit_integrated_intensity_2d_psf_then_peak_ratio",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.006,
+                "sample_size": null
+              }
+            },
+            "psf_sidelobe_mainlobe_ratio": {
+              "value": 0.064,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 1 行，Sidelobe/Main-lobe ratio 列",
+              "note": "作者印值为比值。旁瓣位置、取峰或积分算法未见说明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.064",
+              "calculation_origin": "authors"
+            },
+            "psf_protocol": {
+              "value": "有横向实测归一强度剖面",
+              "source": "li_mosaic_source_2026",
+              "location": "Source Data fig4d!A1:F1001，主文 PDF p6 Fig.4f，补充 PDF Fig.S8",
+              "note": "A2:B54 是 53 个实测横向点，横轴 μm、纵轴归一强度。C2:D1001 为拟合，E2:F1001 为理论。表签 fig4d。按 x 横轴、实验/拟合/理论三组及归一化比对，内容对应 Fig.4f 的 1200 nm 截线。相邻横坐标间隔约 0.7603125 μm 为本库由 A 列核得，未证明它等于相机完整 PSF 的双轴标尺。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "li_mosaic_source_2026",
+                "li_mosaic_2026",
+                "li_mosaic_si_2026"
+              ],
+              "axial_scan_step_um": 1,
+              "published_1d_profile": {
+                "sheet": "fig4d",
+                "measurement": "A2:B54",
+                "fit": "C2:D1001",
+                "theory": "E2:F1001",
+                "measurement_point_count": 53,
+                "x_unit": "μm",
+                "axis_step_um": 0.7603125,
+                "step_calculation_origin": "atlas",
+                "figure": "4f",
+                "wavelength_nm": 1200
+              }
+            }
+          }
+        },
+        {
+          "id": "li2026mosaic_1220",
+          "model": "Li 2026 马赛克 · 8.1 mm · 1220 nm",
+          "study_id": "li2026mosaic",
+          "specimen_id": "main11",
+          "module": "",
+          "variant": "DMM 分通道马赛克超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Table S2 单波长焦面光斑，归同一只 11 通道镜。",
+          "values": {
+            "diameter_um": {
+              "value": 8100,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF pp5–6 Fig.4a 与 DMM 结果段",
+              "note": "作者标称圆形口径 8.1 mm。排布网格为 1000×1000，单个元像素 8.1 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 8.1,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.15,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p27 Table S3，Our work 行 NA 列",
+              "note": "作者给这只 8.1 mm 样片的 NA，未按各谱点重新推算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1220,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 2 行，Wavelength 列",
+              "note": "作者实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p6 Fig.4d 对应谱点行",
+              "note": "只核到轴向强度图和公共 27.76 mm 标线。逐点绝对峰位未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "fwhm_um": {
+              "value": 5.98,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 2 行，PSF FWHM 列",
+              "note": "沿用作者表内宽度和 ±。原表未报告表内每一宽度对应的 x/y 方向或 ± 的类型。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "5.98 ± 0.15 μm",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.15,
+                "sample_size": null
+              }
+            },
+            "strehl": {
+              "value": 0.705,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 2 行，Strehl ratio 列，补充 PDF p3 Note 1A",
+              "note": "由实测和理想焦面 PSF 分别积分归一后比较峰值。± 类型、重复次数及积分范围待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.705 ± 0.015",
+              "calculation_origin": "authors",
+              "normalization_method": "unit_integrated_intensity_2d_psf_then_peak_ratio",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.015,
+                "sample_size": null
+              }
+            },
+            "psf_sidelobe_mainlobe_ratio": {
+              "value": 0.159,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 2 行，Sidelobe/Main-lobe ratio 列",
+              "note": "作者印值为比值。旁瓣位置、取峰或积分算法未见说明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.159",
+              "calculation_origin": "authors"
+            },
+            "psf_protocol": {
+              "value": "交叉圆偏振透过式 PSF 轴扫",
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF pp10–11 Note 3B/Fig.S8，主文 PDF p6 Fig.4d–e",
+              "note": "偏振片和四分之一波片产生圆偏振，10× NA 0.3 物镜收集，筒镜前选交叉圆偏振。作者写每移动 1 μm 取一帧。未写每个焦斑评价面的轴向取点、物方像素标定、入射与检出手性符号或裁边条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_scan_step_um": 1,
+              "collection_objective_na": 0.3,
+              "collection_magnification": 10,
+              "sourceIds": [
+                "li_mosaic_2026",
+                "li_mosaic_si_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2026mosaic_1240",
+          "model": "Li 2026 马赛克 · 8.1 mm · 1240 nm",
+          "study_id": "li2026mosaic",
+          "specimen_id": "main11",
+          "module": "",
+          "variant": "DMM 分通道马赛克超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Table S2 单波长焦面光斑，归同一只 11 通道镜。",
+          "values": {
+            "diameter_um": {
+              "value": 8100,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF pp5–6 Fig.4a 与 DMM 结果段",
+              "note": "作者标称圆形口径 8.1 mm。排布网格为 1000×1000，单个元像素 8.1 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 8.1,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.15,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p27 Table S3，Our work 行 NA 列",
+              "note": "作者给这只 8.1 mm 样片的 NA，未按各谱点重新推算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1240,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 3 行，Wavelength 列",
+              "note": "作者实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p6 Fig.4d 对应谱点行",
+              "note": "只核到轴向强度图和公共 27.76 mm 标线。逐点绝对峰位未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "fwhm_um": {
+              "value": 6.18,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 3 行，PSF FWHM 列",
+              "note": "沿用作者表内宽度和 ±。原表未报告表内每一宽度对应的 x/y 方向或 ± 的类型。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "6.18 ± 0.11 μm",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.11,
+                "sample_size": null
+              }
+            },
+            "strehl": {
+              "value": 0.793,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 3 行，Strehl ratio 列，补充 PDF p3 Note 1A",
+              "note": "由实测和理想焦面 PSF 分别积分归一后比较峰值。± 类型、重复次数及积分范围待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.793 ± 0.012",
+              "calculation_origin": "authors",
+              "normalization_method": "unit_integrated_intensity_2d_psf_then_peak_ratio",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.012,
+                "sample_size": null
+              }
+            },
+            "psf_sidelobe_mainlobe_ratio": {
+              "value": 0.107,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 3 行，Sidelobe/Main-lobe ratio 列",
+              "note": "作者印值为比值。旁瓣位置、取峰或积分算法未见说明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.107",
+              "calculation_origin": "authors"
+            },
+            "psf_protocol": {
+              "value": "交叉圆偏振透过式 PSF 轴扫",
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF pp10–11 Note 3B/Fig.S8，主文 PDF p6 Fig.4d–e",
+              "note": "偏振片和四分之一波片产生圆偏振，10× NA 0.3 物镜收集，筒镜前选交叉圆偏振。作者写每移动 1 μm 取一帧。未写每个焦斑评价面的轴向取点、物方像素标定、入射与检出手性符号或裁边条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_scan_step_um": 1,
+              "collection_objective_na": 0.3,
+              "collection_magnification": 10,
+              "sourceIds": [
+                "li_mosaic_2026",
+                "li_mosaic_si_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2026mosaic_1260",
+          "model": "Li 2026 马赛克 · 8.1 mm · 1260 nm",
+          "study_id": "li2026mosaic",
+          "specimen_id": "main11",
+          "module": "",
+          "variant": "DMM 分通道马赛克超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Table S2 单波长焦面光斑，归同一只 11 通道镜。",
+          "values": {
+            "diameter_um": {
+              "value": 8100,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF pp5–6 Fig.4a 与 DMM 结果段",
+              "note": "作者标称圆形口径 8.1 mm。排布网格为 1000×1000，单个元像素 8.1 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 8.1,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.15,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p27 Table S3，Our work 行 NA 列",
+              "note": "作者给这只 8.1 mm 样片的 NA，未按各谱点重新推算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1260,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 4 行，Wavelength 列",
+              "note": "作者实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p6 Fig.4d 对应谱点行",
+              "note": "只核到轴向强度图和公共 27.76 mm 标线。逐点绝对峰位未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "fwhm_um": {
+              "value": 5.65,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 4 行，PSF FWHM 列",
+              "note": "沿用作者表内宽度和 ±。原表未报告表内每一宽度对应的 x/y 方向或 ± 的类型。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "5.65 ± 0.14 μm",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.14,
+                "sample_size": null
+              }
+            },
+            "strehl": {
+              "value": 0.755,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 4 行，Strehl ratio 列，补充 PDF p3 Note 1A",
+              "note": "由实测和理想焦面 PSF 分别积分归一后比较峰值。± 类型、重复次数及积分范围待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.755 ± 0.016",
+              "calculation_origin": "authors",
+              "normalization_method": "unit_integrated_intensity_2d_psf_then_peak_ratio",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.016,
+                "sample_size": null
+              }
+            },
+            "psf_sidelobe_mainlobe_ratio": {
+              "value": 0.162,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 4 行，Sidelobe/Main-lobe ratio 列",
+              "note": "作者印值为比值。旁瓣位置、取峰或积分算法未见说明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.162",
+              "calculation_origin": "authors"
+            },
+            "psf_protocol": {
+              "value": "交叉圆偏振透过式 PSF 轴扫",
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF pp10–11 Note 3B/Fig.S8，主文 PDF p6 Fig.4d–e",
+              "note": "偏振片和四分之一波片产生圆偏振，10× NA 0.3 物镜收集，筒镜前选交叉圆偏振。作者写每移动 1 μm 取一帧。未写每个焦斑评价面的轴向取点、物方像素标定、入射与检出手性符号或裁边条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_scan_step_um": 1,
+              "collection_objective_na": 0.3,
+              "collection_magnification": 10,
+              "sourceIds": [
+                "li_mosaic_2026",
+                "li_mosaic_si_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2026mosaic_1280",
+          "model": "Li 2026 马赛克 · 8.1 mm · 1280 nm",
+          "study_id": "li2026mosaic",
+          "specimen_id": "main11",
+          "module": "",
+          "variant": "DMM 分通道马赛克超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Table S2 单波长焦面光斑，归同一只 11 通道镜。",
+          "values": {
+            "diameter_um": {
+              "value": 8100,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF pp5–6 Fig.4a 与 DMM 结果段",
+              "note": "作者标称圆形口径 8.1 mm。排布网格为 1000×1000，单个元像素 8.1 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 8.1,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.15,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p27 Table S3，Our work 行 NA 列",
+              "note": "作者给这只 8.1 mm 样片的 NA，未按各谱点重新推算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1280,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 5 行，Wavelength 列",
+              "note": "作者实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p6 Fig.4d 对应谱点行",
+              "note": "只核到轴向强度图和公共 27.76 mm 标线。逐点绝对峰位未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "fwhm_um": {
+              "value": 6.32,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 5 行，PSF FWHM 列",
+              "note": "沿用作者表内宽度和 ±。原表未报告表内每一宽度对应的 x/y 方向或 ± 的类型。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "6.32 ± 0.17 μm",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.17,
+                "sample_size": null
+              }
+            },
+            "strehl": {
+              "value": 0.771,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 5 行，Strehl ratio 列，补充 PDF p3 Note 1A",
+              "note": "由实测和理想焦面 PSF 分别积分归一后比较峰值。± 类型、重复次数及积分范围待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.771 ± 0.017",
+              "calculation_origin": "authors",
+              "normalization_method": "unit_integrated_intensity_2d_psf_then_peak_ratio",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.017,
+                "sample_size": null
+              }
+            },
+            "psf_sidelobe_mainlobe_ratio": {
+              "value": 0.157,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 5 行，Sidelobe/Main-lobe ratio 列",
+              "note": "作者印值为比值。旁瓣位置、取峰或积分算法未见说明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.157",
+              "calculation_origin": "authors"
+            },
+            "psf_protocol": {
+              "value": "交叉圆偏振透过式 PSF 轴扫",
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF pp10–11 Note 3B/Fig.S8，主文 PDF p6 Fig.4d–e",
+              "note": "偏振片和四分之一波片产生圆偏振，10× NA 0.3 物镜收集，筒镜前选交叉圆偏振。作者写每移动 1 μm 取一帧。未写每个焦斑评价面的轴向取点、物方像素标定、入射与检出手性符号或裁边条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_scan_step_um": 1,
+              "collection_objective_na": 0.3,
+              "collection_magnification": 10,
+              "sourceIds": [
+                "li_mosaic_2026",
+                "li_mosaic_si_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2026mosaic_1300",
+          "model": "Li 2026 马赛克 · 8.1 mm · 1300 nm",
+          "study_id": "li2026mosaic",
+          "specimen_id": "main11",
+          "module": "",
+          "variant": "DMM 分通道马赛克超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Table S2 单波长焦面光斑，归同一只 11 通道镜。",
+          "values": {
+            "diameter_um": {
+              "value": 8100,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF pp5–6 Fig.4a 与 DMM 结果段",
+              "note": "作者标称圆形口径 8.1 mm。排布网格为 1000×1000，单个元像素 8.1 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 8.1,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.15,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p27 Table S3，Our work 行 NA 列",
+              "note": "作者给这只 8.1 mm 样片的 NA，未按各谱点重新推算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1300,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 6 行，Wavelength 列",
+              "note": "作者实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p6 Fig.4d 对应谱点行",
+              "note": "只核到轴向强度图和公共 27.76 mm 标线。逐点绝对峰位未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "fwhm_um": {
+              "value": 5.43,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 6 行，PSF FWHM 列",
+              "note": "沿用作者表内宽度和 ±。原表未报告表内每一宽度对应的 x/y 方向或 ± 的类型。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "5.43 ± 0.14 μm",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.14,
+                "sample_size": null
+              }
+            },
+            "strehl": {
+              "value": 0.859,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 6 行，Strehl ratio 列，补充 PDF p3 Note 1A",
+              "note": "由实测和理想焦面 PSF 分别积分归一后比较峰值。± 类型、重复次数及积分范围待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.859 ± 0.019",
+              "calculation_origin": "authors",
+              "normalization_method": "unit_integrated_intensity_2d_psf_then_peak_ratio",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.019,
+                "sample_size": null
+              }
+            },
+            "psf_sidelobe_mainlobe_ratio": {
+              "value": 0.151,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 6 行，Sidelobe/Main-lobe ratio 列",
+              "note": "作者印值为比值。旁瓣位置、取峰或积分算法未见说明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.151",
+              "calculation_origin": "authors"
+            },
+            "psf_protocol": {
+              "value": "交叉圆偏振透过式 PSF 轴扫",
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF pp10–11 Note 3B/Fig.S8，主文 PDF p6 Fig.4d–e",
+              "note": "偏振片和四分之一波片产生圆偏振，10× NA 0.3 物镜收集，筒镜前选交叉圆偏振。作者写每移动 1 μm 取一帧。未写每个焦斑评价面的轴向取点、物方像素标定、入射与检出手性符号或裁边条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_scan_step_um": 1,
+              "collection_objective_na": 0.3,
+              "collection_magnification": 10,
+              "sourceIds": [
+                "li_mosaic_2026",
+                "li_mosaic_si_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2026mosaic_1320",
+          "model": "Li 2026 马赛克 · 8.1 mm · 1320 nm",
+          "study_id": "li2026mosaic",
+          "specimen_id": "main11",
+          "module": "",
+          "variant": "DMM 分通道马赛克超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Table S2 单波长焦面光斑，归同一只 11 通道镜。",
+          "values": {
+            "diameter_um": {
+              "value": 8100,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF pp5–6 Fig.4a 与 DMM 结果段",
+              "note": "作者标称圆形口径 8.1 mm。排布网格为 1000×1000，单个元像素 8.1 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 8.1,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.15,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p27 Table S3，Our work 行 NA 列",
+              "note": "作者给这只 8.1 mm 样片的 NA，未按各谱点重新推算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1320,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 7 行，Wavelength 列",
+              "note": "作者实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p6 Fig.4d 对应谱点行",
+              "note": "只核到轴向强度图和公共 27.76 mm 标线。逐点绝对峰位未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "fwhm_um": {
+              "value": 5.38,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 7 行，PSF FWHM 列",
+              "note": "沿用作者表内宽度和 ±。原表未报告表内每一宽度对应的 x/y 方向或 ± 的类型。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "5.38 ± 0.14 μm",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.14,
+                "sample_size": null
+              }
+            },
+            "strehl": {
+              "value": 0.871,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 7 行，Strehl ratio 列，补充 PDF p3 Note 1A",
+              "note": "由实测和理想焦面 PSF 分别积分归一后比较峰值。± 类型、重复次数及积分范围待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.871 ± 0.019",
+              "calculation_origin": "authors",
+              "normalization_method": "unit_integrated_intensity_2d_psf_then_peak_ratio",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.019,
+                "sample_size": null
+              }
+            },
+            "psf_sidelobe_mainlobe_ratio": {
+              "value": 0.132,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 7 行，Sidelobe/Main-lobe ratio 列",
+              "note": "作者印值为比值。旁瓣位置、取峰或积分算法未见说明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.132",
+              "calculation_origin": "authors"
+            },
+            "psf_protocol": {
+              "value": "交叉圆偏振透过式 PSF 轴扫",
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF pp10–11 Note 3B/Fig.S8，主文 PDF p6 Fig.4d–e",
+              "note": "偏振片和四分之一波片产生圆偏振，10× NA 0.3 物镜收集，筒镜前选交叉圆偏振。作者写每移动 1 μm 取一帧。未写每个焦斑评价面的轴向取点、物方像素标定、入射与检出手性符号或裁边条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_scan_step_um": 1,
+              "collection_objective_na": 0.3,
+              "collection_magnification": 10,
+              "sourceIds": [
+                "li_mosaic_2026",
+                "li_mosaic_si_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2026mosaic_1340",
+          "model": "Li 2026 马赛克 · 8.1 mm · 1340 nm",
+          "study_id": "li2026mosaic",
+          "specimen_id": "main11",
+          "module": "",
+          "variant": "DMM 分通道马赛克超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Table S2 单波长焦面光斑，归同一只 11 通道镜。",
+          "values": {
+            "diameter_um": {
+              "value": 8100,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF pp5–6 Fig.4a 与 DMM 结果段",
+              "note": "作者标称圆形口径 8.1 mm。排布网格为 1000×1000，单个元像素 8.1 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 8.1,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.15,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p27 Table S3，Our work 行 NA 列",
+              "note": "作者给这只 8.1 mm 样片的 NA，未按各谱点重新推算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1340,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 8 行，Wavelength 列",
+              "note": "作者实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p6 Fig.4d 对应谱点行",
+              "note": "只核到轴向强度图和公共 27.76 mm 标线。逐点绝对峰位未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "fwhm_um": {
+              "value": 6.55,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 8 行，PSF FWHM 列",
+              "note": "沿用作者表内宽度和 ±。原表未报告表内每一宽度对应的 x/y 方向或 ± 的类型。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "6.55 ± 0.25 μm",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.25,
+                "sample_size": null
+              }
+            },
+            "strehl": {
+              "value": 0.794,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 8 行，Strehl ratio 列，补充 PDF p3 Note 1A",
+              "note": "由实测和理想焦面 PSF 分别积分归一后比较峰值。± 类型、重复次数及积分范围待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.794 ± 0.025",
+              "calculation_origin": "authors",
+              "normalization_method": "unit_integrated_intensity_2d_psf_then_peak_ratio",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.025,
+                "sample_size": null
+              }
+            },
+            "psf_sidelobe_mainlobe_ratio": {
+              "value": 0.239,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 8 行，Sidelobe/Main-lobe ratio 列",
+              "note": "作者印值为比值。旁瓣位置、取峰或积分算法未见说明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.239",
+              "calculation_origin": "authors"
+            },
+            "psf_protocol": {
+              "value": "交叉圆偏振透过式 PSF 轴扫",
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF pp10–11 Note 3B/Fig.S8，主文 PDF p6 Fig.4d–e",
+              "note": "偏振片和四分之一波片产生圆偏振，10× NA 0.3 物镜收集，筒镜前选交叉圆偏振。作者写每移动 1 μm 取一帧。未写每个焦斑评价面的轴向取点、物方像素标定、入射与检出手性符号或裁边条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_scan_step_um": 1,
+              "collection_objective_na": 0.3,
+              "collection_magnification": 10,
+              "sourceIds": [
+                "li_mosaic_2026",
+                "li_mosaic_si_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2026mosaic_1360",
+          "model": "Li 2026 马赛克 · 8.1 mm · 1360 nm",
+          "study_id": "li2026mosaic",
+          "specimen_id": "main11",
+          "module": "",
+          "variant": "DMM 分通道马赛克超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Table S2 单波长焦面光斑，归同一只 11 通道镜。",
+          "values": {
+            "diameter_um": {
+              "value": 8100,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF pp5–6 Fig.4a 与 DMM 结果段",
+              "note": "作者标称圆形口径 8.1 mm。排布网格为 1000×1000，单个元像素 8.1 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 8.1,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.15,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p27 Table S3，Our work 行 NA 列",
+              "note": "作者给这只 8.1 mm 样片的 NA，未按各谱点重新推算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1360,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 9 行，Wavelength 列",
+              "note": "作者实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p6 Fig.4d 对应谱点行",
+              "note": "只核到轴向强度图和公共 27.76 mm 标线。逐点绝对峰位未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "fwhm_um": {
+              "value": 6.23,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 9 行，PSF FWHM 列",
+              "note": "沿用作者表内宽度和 ±。原表未报告表内每一宽度对应的 x/y 方向或 ± 的类型。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "6.23 ± 0.18 μm",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.18,
+                "sample_size": null
+              }
+            },
+            "strehl": {
+              "value": 0.789,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 9 行，Strehl ratio 列，补充 PDF p3 Note 1A",
+              "note": "由实测和理想焦面 PSF 分别积分归一后比较峰值。± 类型、重复次数及积分范围待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.789 ± 0.019",
+              "calculation_origin": "authors",
+              "normalization_method": "unit_integrated_intensity_2d_psf_then_peak_ratio",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.019,
+                "sample_size": null
+              }
+            },
+            "psf_sidelobe_mainlobe_ratio": {
+              "value": 0.217,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 9 行，Sidelobe/Main-lobe ratio 列",
+              "note": "作者印值为比值。旁瓣位置、取峰或积分算法未见说明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.217",
+              "calculation_origin": "authors"
+            },
+            "psf_protocol": {
+              "value": "交叉圆偏振透过式 PSF 轴扫",
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF pp10–11 Note 3B/Fig.S8，主文 PDF p6 Fig.4d–e",
+              "note": "偏振片和四分之一波片产生圆偏振，10× NA 0.3 物镜收集，筒镜前选交叉圆偏振。作者写每移动 1 μm 取一帧。未写每个焦斑评价面的轴向取点、物方像素标定、入射与检出手性符号或裁边条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_scan_step_um": 1,
+              "collection_objective_na": 0.3,
+              "collection_magnification": 10,
+              "sourceIds": [
+                "li_mosaic_2026",
+                "li_mosaic_si_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2026mosaic_1380",
+          "model": "Li 2026 马赛克 · 8.1 mm · 1380 nm",
+          "study_id": "li2026mosaic",
+          "specimen_id": "main11",
+          "module": "",
+          "variant": "DMM 分通道马赛克超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Table S2 单波长焦面光斑，归同一只 11 通道镜。",
+          "values": {
+            "diameter_um": {
+              "value": 8100,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF pp5–6 Fig.4a 与 DMM 结果段",
+              "note": "作者标称圆形口径 8.1 mm。排布网格为 1000×1000，单个元像素 8.1 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 8.1,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.15,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p27 Table S3，Our work 行 NA 列",
+              "note": "作者给这只 8.1 mm 样片的 NA，未按各谱点重新推算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1380,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 10 行，Wavelength 列",
+              "note": "作者实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p6 Fig.4d 对应谱点行",
+              "note": "只核到轴向强度图和公共 27.76 mm 标线。逐点绝对峰位未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "fwhm_um": {
+              "value": 6.4,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 10 行，PSF FWHM 列",
+              "note": "沿用作者表内宽度和 ±。原表未报告表内每一宽度对应的 x/y 方向或 ± 的类型。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "6.40 ± 0.17 μm",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.17,
+                "sample_size": null
+              }
+            },
+            "strehl": {
+              "value": 0.759,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 10 行，Strehl ratio 列，补充 PDF p3 Note 1A",
+              "note": "由实测和理想焦面 PSF 分别积分归一后比较峰值。± 类型、重复次数及积分范围待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.759 ± 0.017",
+              "calculation_origin": "authors",
+              "normalization_method": "unit_integrated_intensity_2d_psf_then_peak_ratio",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.017,
+                "sample_size": null
+              }
+            },
+            "psf_sidelobe_mainlobe_ratio": {
+              "value": 0.181,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 10 行，Sidelobe/Main-lobe ratio 列",
+              "note": "作者印值为比值。旁瓣位置、取峰或积分算法未见说明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.181",
+              "calculation_origin": "authors"
+            },
+            "psf_protocol": {
+              "value": "交叉圆偏振透过式 PSF 轴扫",
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF pp10–11 Note 3B/Fig.S8，主文 PDF p6 Fig.4d–e",
+              "note": "偏振片和四分之一波片产生圆偏振，10× NA 0.3 物镜收集，筒镜前选交叉圆偏振。作者写每移动 1 μm 取一帧。未写每个焦斑评价面的轴向取点、物方像素标定、入射与检出手性符号或裁边条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_scan_step_um": 1,
+              "collection_objective_na": 0.3,
+              "collection_magnification": 10,
+              "sourceIds": [
+                "li_mosaic_2026",
+                "li_mosaic_si_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2026mosaic_1400",
+          "model": "Li 2026 马赛克 · 8.1 mm · 1400 nm",
+          "study_id": "li2026mosaic",
+          "specimen_id": "main11",
+          "module": "",
+          "variant": "DMM 分通道马赛克超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "Table S2 单波长焦面光斑，归同一只 11 通道镜。",
+          "values": {
+            "diameter_um": {
+              "value": 8100,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF pp5–6 Fig.4a 与 DMM 结果段",
+              "note": "作者标称圆形口径 8.1 mm。排布网格为 1000×1000，单个元像素 8.1 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 8.1,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.15,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p27 Table S3，Our work 行 NA 列",
+              "note": "作者给这只 8.1 mm 样片的 NA，未按各谱点重新推算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1400,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 11 行，Wavelength 列",
+              "note": "作者实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p6 Fig.4d 对应谱点行",
+              "note": "只核到轴向强度图和公共 27.76 mm 标线。逐点绝对峰位未列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "fwhm_um": {
+              "value": 8.82,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 11 行，PSF FWHM 列",
+              "note": "沿用作者表内宽度和 ±。原表未报告表内每一宽度对应的 x/y 方向或 ± 的类型。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "8.82 ± 0.34 μm",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.34,
+                "sample_size": null
+              }
+            },
+            "strehl": {
+              "value": 0.623,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 11 行，Strehl ratio 列，补充 PDF p3 Note 1A",
+              "note": "由实测和理想焦面 PSF 分别积分归一后比较峰值。± 类型、重复次数及积分范围待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.623 ± 0.019",
+              "calculation_origin": "authors",
+              "normalization_method": "unit_integrated_intensity_2d_psf_then_peak_ratio",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.019,
+                "sample_size": null
+              }
+            },
+            "psf_sidelobe_mainlobe_ratio": {
+              "value": 0.298,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p26 Table S2，第 11 行，Sidelobe/Main-lobe ratio 列",
+              "note": "作者印值为比值。旁瓣位置、取峰或积分算法未见说明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.298",
+              "calculation_origin": "authors"
+            },
+            "psf_protocol": {
+              "value": "交叉圆偏振透过式 PSF 轴扫",
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF pp10–11 Note 3B/Fig.S8，主文 PDF p6 Fig.4d–e",
+              "note": "偏振片和四分之一波片产生圆偏振，10× NA 0.3 物镜收集，筒镜前选交叉圆偏振。作者写每移动 1 μm 取一帧。未写每个焦斑评价面的轴向取点、物方像素标定、入射与检出手性符号或裁边条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_scan_step_um": 1,
+              "collection_objective_na": 0.3,
+              "collection_magnification": 10,
+              "sourceIds": [
+                "li_mosaic_2026",
+                "li_mosaic_si_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2026mosaic_control",
+          "model": "Li 2026 马赛克 · 单份额色散对照 · 汇总",
+          "study_id": "li2026mosaic",
+          "specimen_id": "control1",
+          "module": "",
+          "variant": "DMM 分通道马赛克超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "p=1/11 的独立对照实物。",
+          "values": {
+            "lambda_min_nm": {
+              "value": 1230,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p5 DMM-based achromatic metalens 段，p6 Fig.4c–d",
+              "note": "对照光谱范围下限。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 1330,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p5 DMM-based achromatic metalens 段，p6 Fig.4c–d",
+              "note": "对照光谱范围上限。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "diameter_um": {
+              "value": null,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p5 DMM-based achromatic metalens 段，p6 Fig.4c–d",
+              "note": "本文未为这组单份额对照另列实测口径。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "focus_variation_protocol": {
+              "value": "三处焦位，峰位判据待核",
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p5 DMM-based achromatic metalens 段，p6 Fig.4c–d",
+              "note": "Fig.4c 把焦距数字印在三处轴向位置上。按各行主峰从近到远配对，峰位判据和误差未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sample_wavelengths_nm": [
+                1230,
+                1280,
+                1330
+              ]
+            },
+            "focus_variation_um": {
+              "value": 2000,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p5 DMM-based achromatic metalens 段，p6 Fig.4c–d",
+              "note": "正文为约 2 mm。图印的两端为 27.2 与 25.1 mm，按印字相差 2.1 mm，保留作者约数。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "约 2000 μm",
+              "approximate": true,
+              "calculation_origin": "authors",
+              "statistic": "author_reported_band_variation",
+              "sample_wavelengths_nm": [
+                1230,
+                1280,
+                1330
+              ]
+            },
+            "chromatic": {
+              "value": "1280 nm 中心的单份额对照",
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p5 DMM-based achromatic metalens 段，p6 Fig.4c–d",
+              "note": "面积份额 p=1/11。试验只覆盖 1230、1280、1330 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "design_center_nm": 1280,
+              "area_fraction": 0.09090909090909091
+            }
+          }
+        },
+        {
+          "id": "li2026mosaic_control_1230",
+          "model": "Li 2026 马赛克 · 单份额色散对照 · 1230 nm",
+          "study_id": "li2026mosaic",
+          "specimen_id": "control1",
+          "module": "",
+          "variant": "DMM 分通道马赛克超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "单份额对照镜的实测轴向焦位。",
+          "values": {
+            "wavelength_nm": {
+              "value": 1230,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p6 Fig.4c，第 1 行 λ 和上方 f 印字",
+              "note": "作者标注的对照测量波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "measured_focal_um": {
+              "value": 27200,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p6 Fig.4c，第 1 行 λ 和上方 f 印字",
+              "note": "按对应谱点主峰位置与上方文字配对。焦面误差和对照器件口径未列。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "original_value": 27.2,
+              "original_unit": "mm",
+              "calculation_origin": "authors",
+              "position_definition": "author_annotated_longitudinal_psf_peak"
+            },
+            "psf_protocol": {
+              "value": "交叉圆偏振透过式 PSF 轴扫",
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF pp10–11 Note 3B/Fig.S8，主文 PDF p6 Fig.4d–e",
+              "note": "偏振片和四分之一波片产生圆偏振，10× NA 0.3 物镜收集，筒镜前选交叉圆偏振。作者写每移动 1 μm 取一帧。未写每个焦斑评价面的轴向取点、物方像素标定、入射与检出手性符号或裁边条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_scan_step_um": 1,
+              "collection_objective_na": 0.3,
+              "collection_magnification": 10,
+              "sourceIds": [
+                "li_mosaic_2026",
+                "li_mosaic_si_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2026mosaic_control_1280",
+          "model": "Li 2026 马赛克 · 单份额色散对照 · 1280 nm",
+          "study_id": "li2026mosaic",
+          "specimen_id": "control1",
+          "module": "",
+          "variant": "DMM 分通道马赛克超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "单份额对照镜的实测轴向焦位。",
+          "values": {
+            "wavelength_nm": {
+              "value": 1280,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p6 Fig.4c，第 2 行 λ 和上方 f 印字",
+              "note": "作者标注的对照测量波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "measured_focal_um": {
+              "value": 26100,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p6 Fig.4c，第 2 行 λ 和上方 f 印字",
+              "note": "按对应谱点主峰位置与上方文字配对。焦面误差和对照器件口径未列。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "original_value": 26.1,
+              "original_unit": "mm",
+              "calculation_origin": "authors",
+              "position_definition": "author_annotated_longitudinal_psf_peak"
+            },
+            "psf_protocol": {
+              "value": "交叉圆偏振透过式 PSF 轴扫",
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF pp10–11 Note 3B/Fig.S8，主文 PDF p6 Fig.4d–e",
+              "note": "偏振片和四分之一波片产生圆偏振，10× NA 0.3 物镜收集，筒镜前选交叉圆偏振。作者写每移动 1 μm 取一帧。未写每个焦斑评价面的轴向取点、物方像素标定、入射与检出手性符号或裁边条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_scan_step_um": 1,
+              "collection_objective_na": 0.3,
+              "collection_magnification": 10,
+              "sourceIds": [
+                "li_mosaic_2026",
+                "li_mosaic_si_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2026mosaic_control_1330",
+          "model": "Li 2026 马赛克 · 单份额色散对照 · 1330 nm",
+          "study_id": "li2026mosaic",
+          "specimen_id": "control1",
+          "module": "",
+          "variant": "DMM 分通道马赛克超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "单份额对照镜的实测轴向焦位。",
+          "values": {
+            "wavelength_nm": {
+              "value": 1330,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p6 Fig.4c，第 3 行 λ 和上方 f 印字",
+              "note": "作者标注的对照测量波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "measured_focal_um": {
+              "value": 25100,
+              "source": "li_mosaic_2026",
+              "location": "主文 PDF p6 Fig.4c，第 3 行 λ 和上方 f 印字",
+              "note": "按对应谱点主峰位置与上方文字配对。焦面误差和对照器件口径未列。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "original_value": 25.1,
+              "original_unit": "mm",
+              "calculation_origin": "authors",
+              "position_definition": "author_annotated_longitudinal_psf_peak"
+            },
+            "psf_protocol": {
+              "value": "交叉圆偏振透过式 PSF 轴扫",
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF pp10–11 Note 3B/Fig.S8，主文 PDF p6 Fig.4d–e",
+              "note": "偏振片和四分之一波片产生圆偏振，10× NA 0.3 物镜收集，筒镜前选交叉圆偏振。作者写每移动 1 μm 取一帧。未写每个焦斑评价面的轴向取点、物方像素标定、入射与检出手性符号或裁边条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "axial_scan_step_um": 1,
+              "collection_objective_na": 0.3,
+              "collection_magnification": 10,
+              "sourceIds": [
+                "li_mosaic_2026",
+                "li_mosaic_si_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2026mosaic_dual_1",
+          "model": "Li 2026 马赛克 · 800 μm · 双通道效率 · 短波",
+          "study_id": "li2026mosaic",
+          "specimen_id": "dual800",
+          "module": "",
+          "variant": "DMM 分通道马赛克超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "独立的 800 μm 双份额效率样片。",
+          "values": {
+            "diameter_um": {
+              "value": 800,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p14 Fig.S13，Fig.S13b 及上下两段",
+              "note": "用于聚焦效率测试的实制独立样片。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p14 Fig.S13，Fig.S13b 及上下两段",
+              "note": "共振 1001 nm，图 b 印字 1001 nm，图注写激光 1006 nm。其后正文指按两种照明条件求效率，无法择定短波效率光源波长。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "1001 / 1006 nm 待核",
+              "conflicting_values_nm": [
+                1001,
+                1006
+              ]
+            },
+            "efficiency_lambda_nm": {
+              "value": null,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p14 Fig.S13，Fig.S13b 及上下两段",
+              "note": "共振 1001 nm，图 b 印字 1001 nm，图注写激光 1006 nm。其后正文指按两种照明条件求效率，无法择定短波效率光源波长。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_protocol": {
+              "value": "作者按每个通道照明条件给出效率",
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p14 Fig.S13，Fig.S13b 及上下两段",
+              "note": "激光线宽约 2.5 nm。该样片的功率分母、积分口径、能量采集设置和重复次数未列。Note 2B 的焦区圆和归一规则用于另一组研究，这里协议留缺。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "denominator": "author_denominator_unreported",
+              "integration_radius_um": null,
+              "illumination_bandwidth_nm": 2.5
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p14 Fig.S13，Fig.S13b 及上下两段",
+              "note": "作者短波给 25.4%，已留正式数值。激光标签冲突，逐波长散点留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "25.4%（波长待核）",
+              "author_reported_efficiency_pct": 25.4
+            },
+            "chromatic": {
+              "value": "双份额样片的离散通道",
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p14 Fig.S13，Fig.S13b 及上下两段",
+              "note": "正文报每个份额的两通道平均约 32%。这组是离散条件，带内平均字段留空。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "design_wavelength_nm": 1000,
+              "resonance_center_nm": 1001,
+              "author_two_channel_mean_pct": 32
+            }
+          }
+        },
+        {
+          "id": "li2026mosaic_dual_2",
+          "model": "Li 2026 马赛克 · 800 μm · 双通道效率 · 1215 nm",
+          "study_id": "li2026mosaic",
+          "specimen_id": "dual800",
+          "module": "",
+          "variant": "DMM 分通道马赛克超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "独立的 800 μm 双份额效率样片。",
+          "values": {
+            "diameter_um": {
+              "value": 800,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p14 Fig.S13，Fig.S13c 及上下两段",
+              "note": "用于聚焦效率测试的实制独立样片。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 1215,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p14 Fig.S13，Fig.S13c 及上下两段",
+              "note": "长波通道图 c、图注与正文给 1215 nm，设计为 1200 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_lambda_nm": {
+              "value": 1215,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p14 Fig.S13，Fig.S13c 及上下两段",
+              "note": "长波通道图 c、图注与正文给 1215 nm，设计为 1200 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_protocol": {
+              "value": "作者按每个通道照明条件给出效率",
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p14 Fig.S13，Fig.S13c 及上下两段",
+              "note": "激光线宽约 2.5 nm。该样片的功率分母、积分口径、能量采集设置和重复次数未列。Note 2B 的焦区圆和归一规则用于另一组研究，这里协议留缺。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "denominator": "author_denominator_unreported",
+              "integration_radius_um": null,
+              "illumination_bandwidth_nm": 2.5
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 37.5,
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p14 Fig.S13，Fig.S13c 及上下两段",
+              "note": "作者长波给 37.5%，归 1215 nm 及独立 800 μm 样片。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "denominator": "author_denominator_unreported"
+            },
+            "chromatic": {
+              "value": "双份额样片的离散通道",
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p14 Fig.S13，Fig.S13c 及上下两段",
+              "note": "正文报每个份额的两通道平均约 32%。这组是离散条件，带内平均字段留空。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "design_wavelength_nm": 1200,
+              "resonance_center_nm": 1215,
+              "author_two_channel_mean_pct": 32
+            }
+          }
+        },
+        {
+          "id": "li2026mosaic_phase10",
+          "model": "Li 2026 马赛克 · 十份额 · 多位置共振",
+          "study_id": "li2026mosaic",
+          "specimen_id": "phase10",
+          "module": "",
+          "variant": "DMM 分通道马赛克超透镜",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "辅助样片的透过光谱，保留原文布局归属。",
+          "values": {
+            "chromatic": {
+              "value": "十份额，元像素内相位可变",
+              "source": "li_mosaic_si_2026",
+              "location": "补充 PDF p13 Fig.S12 及下方正文",
+              "note": "作者报告四个光斑位置取透过谱，曲线归一后错开，峰数随采样位置变化。总口径、逐点绝对聚焦效率及谱向焦位未列。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "measurement_site_count": 4
+            }
+          }
         }
       ],
-      "scope": "39项原始研究、229个器件/测量/系统配置、1467条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
+      "scope": "40项原始研究、233个器件/测量/系统配置、1486条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
