@@ -37,6 +37,22 @@ export function validateDevices(d,catalog){
  }
  const designFocal=r.values.design_focal_um;
  const mtfCurve=r.values.mtf_curve;
+ const rgbWidth=r.values.rgb_radial_psf_fwhm_um;
+ if(Number.isFinite(rgbWidth?.value)){
+  const protocol=r.values.psf_protocol;
+  if(rgbWidth.value<=0||rgbWidth.basis!=='measured'||r.values.wavelength_nm?.value!==null||
+   rgbWidth.direction!=='radial'||rgbWidth.spectral_sampling!=='rgb_camera_channel'||
+   !['red','green','blue'].includes(rgbWidth.color_channel)||!protocol?.value||protocol.color_channel!==rgbWidth.color_channel||
+   !(rgbWidth.evaluation_plane_um>0)||rgbWidth.evaluation_plane_um!==protocol.evaluation_plane_um)errors.push('RGB radial PSF FWHM context');
+ }
+ const angularResolution=r.values.restored_angular_resolution_lp_mrad;
+ if(Number.isFinite(angularResolution?.value)){
+  const protocol=r.values.psf_protocol;
+  if(angularResolution.value<=0||angularResolution.basis!=='reconstruction'||angularResolution.calculation_origin!=='authors'||
+   angularResolution.frequency_unit!=='lp/mrad'||!angularResolution.target_id||!angularResolution.processing_stage||
+   !protocol?.value||angularResolution.target_id!==protocol.target_id||angularResolution.processing_stage!==protocol.processing_stage||
+   protocol.basis!=='reconstruction')errors.push('restored angular resolution context');
+ }
  const spectralMtf10=r.values.spectral_mean_mtf10_cycles_mm;
  if(Number.isFinite(spectralMtf10?.value)){
   const waves=spectralMtf10.sample_wavelengths_nm;
