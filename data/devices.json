@@ -1984,6 +1984,78 @@
       "scope": "DataCite 关联 DOI 10.6084/m9.figshare.4922441。正文与补件亦在校方馆藏。",
       "checked_on": "2026-11-19",
       "publication_source": "arbabi_metamolecule_2016"
+    },
+    {
+      "id": "sawant_hybrid_pdf_2021",
+      "title": "Sawant et al. (2021): Aberration-corrected large-scale hybrid metalenses",
+      "url": "https://research.chalmers.se/publication/527384/file/527384_Fulltext.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "Chalmers 馆藏正式 Optica 8(11), 1405–1411。PDF 第 1 页为馆藏封面，第 2–8 页为正式正文。已核 §2–4、Figs. 1–4 和 p1410 Data Availability。",
+      "checked_on": "2026-11-19",
+      "doi": "10.1364/optica.434040"
+    },
+    {
+      "id": "sawant_hybrid_chalmers_2021",
+      "title": "Chalmers · 正式正文馆藏",
+      "url": "https://research.chalmers.se/en/publication/527384",
+      "kind": "publication_archive",
+      "scope": "学校正式出版版及 DOI 元数据。",
+      "checked_on": "2026-11-19",
+      "publication_source": "sawant_hybrid_pdf_2021"
+    },
+    {
+      "id": "sawant_hybrid_si_index_2021",
+      "title": "DataCite · Optica Supplement 1（5436264.pdf）",
+      "url": "https://api.datacite.org/dois/10.6084/m9.figshare.16613320",
+      "kind": "repository_metadata",
+      "scope": "正文 pp1408–1410 内链直接指向此 DOI。登记为补充材料。Figshare 条目与下载未返回内容，补件正文及 Fig. S5 图轴未读。",
+      "checked_on": "2026-11-19",
+      "publication_source": "sawant_hybrid_pdf_2021"
+    },
+    {
+      "id": "sawant_hybrid_si_2021",
+      "title": "Optica · Supplement 1 DOI 入口",
+      "url": "https://doi.org/10.6084/m9.figshare.16613320",
+      "kind": "supplementary_material",
+      "scope": "主文内链。Figshare 条目、版本下载和文件清单响应均为 403。此入口仅核身份，未取得 PDF。",
+      "checked_on": "2026-11-19",
+      "publication_source": "sawant_hybrid_pdf_2021"
+    },
+    {
+      "id": "sawant_hybrid_collection_2021",
+      "title": "Optica Figshare · 补件集合",
+      "url": "https://doi.org/10.6084/m9.figshare.c.5476467",
+      "kind": "repository_metadata",
+      "scope": "集合 DOI 由 DataCite 关系检得。集合文章列表 API 未返回清单。",
+      "checked_on": "2026-11-19",
+      "publication_source": "sawant_hybrid_pdf_2021"
+    },
+    {
+      "id": "sawant_hybrid_related_dois_2021",
+      "title": "DataCite · 关联 DOI 查询",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1364%2FOPTICA.434040%22&page%5Bsize%5D=25",
+      "kind": "repository_metadata",
+      "scope": "按主文 DOI 查询到补件集合及其两个版本。补件本身另从正式 PDF 内链发现，关联查询未返回逐点数据。",
+      "checked_on": "2026-11-19",
+      "publication_source": "sawant_hybrid_pdf_2021"
+    },
+    {
+      "id": "sawant_hybrid_hal_index_2021",
+      "title": "HAL · 论文馆藏文件索引",
+      "url": "https://api.archives-ouvertes.fr/search/?q=doiId_s%3A10.1364%2FOPTICA.434040&fl=halId_s,uri_s,fileMain_s,files_s",
+      "kind": "repository_metadata",
+      "scope": "HAL 条目 hal-03582529 的 files_s 仅列主文稿 Lens_aberration_correction_manuscript.pdf。",
+      "checked_on": "2026-11-19",
+      "publication_source": "sawant_hybrid_pdf_2021"
+    },
+    {
+      "id": "sawant_hybrid_crossref_2021",
+      "title": "Crossref · 发表日期与引用量",
+      "url": "https://api.crossref.org/works/10.1364/optica.434040",
+      "kind": "repository_metadata",
+      "scope": "2021-11-03 正式发表。2026-11-19 查询 is-referenced-by-count 为 92 次。",
+      "checked_on": "2026-11-19",
+      "publication_source": "sawant_hybrid_pdf_2021"
     }
   ],
   "domains": {
@@ -238587,9 +238659,3272 @@
               "simulation_kind": "ideal_phase_mask_plus_plane_wave_expansion"
             }
           }
+        },
+        {
+          "id": "sawant2021hybrid_lcam_summary",
+          "model": "Sawant 2021 · 厘米折超混合 · LCAM · 轴向扫描汇总",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "lcam",
+          "module": "",
+          "variant": "LCAM · 轴向色差校正折超混合镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "轴扫范围 550–800 nm，每 25 nm 一个实测谱点。裸镜与带色差校正器的混合镜分别归组。",
+          "values": {
+            "diameter_um": {
+              "value": 10000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "平面侧超表面校正器的标称直径。折射基件为半英寸口径，Zernike 测量另外限瞳。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "diameter_definition": "metacorrector_pattern_diameter",
+              "substrate_lens_aperture_um": 12700
+            },
+            "na": {
+              "value": 0.1,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 §4 右栏结尾",
+              "note": "作者报告厘米级消色差器件在 600–800 nm 约为 0.1，未列逐谱点 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "approximate": true,
+              "display": "约 0.1"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2；p1407 Fig.1 对应正文，指向补件 Fig. S3",
+              "note": "论文指出混合镜焦距相对裸镜改变。正文 50 mm 为裸镜标称值，也用于 §3 针孔判据示例。混合镜绝对焦距待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "绝对设计焦距待补",
+              "sourceIds": [
+                "sawant_hybrid_pdf_2021",
+                "sawant_hybrid_si_index_2021",
+                "sawant_hybrid_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "熔融石英平凸镜与 ma-N 2410 聚合物纳米鳍超表面",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 制备段；p1407 Fig. 1a–d",
+              "note": "超表面为 PB 相位。方格周期 440 nm，纳米鳍设计 350 × 100 × 1700 nm，SEM 显示实制结构。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "lattice_period_nm": 440,
+              "fin_length_nm": 350,
+              "fin_width_nm": 100,
+              "fin_height_nm": 1700,
+              "surface_curvature_radius_mm": 23
+            },
+            "height_nm": {
+              "value": 1700,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 制备段",
+              "note": "PB 纳米鳍几何所列高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": "RCP",
+              "diffraction_order": 1,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "chromatic": {
+              "value": "作者 §3 报告 ≥80% 轴向色差抑制",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "以 600 和 800 nm 的轴向峰位差比较 LCAM 与裸镜。论文摘要和 §3 称至少 80%，引言写最高 80%，结论写 80%。保留措辞差异与缺失的两组源峰位。 根据 2026-11-19 Crossref 92 次及厘米级裸镜对照，作为经典研究纳入。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "sawant_hybrid_pdf_2021",
+                "sawant_hybrid_chalmers_2021",
+                "sawant_hybrid_crossref_2021"
+              ],
+              "formula": "1 - endpoint_focal_difference_hybrid / endpoint_focal_difference_bare_lens",
+              "sample_wavelengths_nm": [
+                600,
+                800
+              ],
+              "control_specimen_id": "bare",
+              "bound": {
+                "operator": "gte",
+                "value": 80,
+                "unit": "%"
+              },
+              "residual_focal_shift_um": null
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 Data Availability；正文补件内链及关联 DOI 查询；p1409 §3 左栏首段，指向 Supplement 1 Fig. S5",
+              "note": "作者材料声明可向作者合理请求。正文提到的 Fig. S5 曲线归 LSAM 与裸镜对照；已核正文未给 LCAM MTF。补件为 5436264.pdf，Figshare 条目与接口返回 403。HAL 清单仅列正文稿。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "LCAM 原始 PSF/MTF 待补",
+              "sourceIds": [
+                "sawant_hybrid_pdf_2021",
+                "sawant_hybrid_si_index_2021",
+                "sawant_hybrid_si_2021",
+                "sawant_hybrid_collection_2021",
+                "sawant_hybrid_related_dois_2021",
+                "sawant_hybrid_hal_index_2021"
+              ],
+              "data_availability": {
+                "status": "mtf_not_reported_in_checked_main_text",
+                "statement": "available_from_authors_upon_reasonable_request",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "作者观察 LCAM 的焦区轴向展宽，并在 p1409 将其归因于引入的球差。无可录横向 FWHM。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "焦区轴向展宽；横向 FWHM 待补"
+            },
+            "efficiency_band_mean_pct": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1409 §3 左栏首段；p1410 右栏效率段",
+              "note": "作者称约 8.5% 覆盖 550–800 nm。未定义统计方式、各点效率、分母、积分焦圈及效率测量偏振。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "约 8.5%（550–800 nm，作者未定义汇总）",
+              "reported_approximate_value_pct": 8.5,
+              "report_range_nm": [
+                550,
+                800
+              ],
+              "aggregation": null
+            },
+            "efficiency_protocol": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1409 §3 左栏首段；p1410 右栏效率段",
+              "note": "正文未给用于效率的焦圈、参考功率、实际采样波长或权重。偏振参照可见 §3 的 PSF 路径，效率光路尚未核实。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "焦圈、功率分母和聚合方式待补",
+              "denominator": null,
+              "numerator": null,
+              "polarization": null,
+              "collection_diameter_um": null
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_lcam_z_550",
+          "model": "Sawant 2021 · 厘米折超混合 · LCAM · 550 nm 轴扫",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "lcam",
+          "module": "",
+          "variant": "LCAM · 轴向色差校正折超混合镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "论文给出实测轴扫谱点及归一强度图。绝对焦位待补。",
+          "values": {
+            "diameter_um": {
+              "value": 10000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "平面侧超表面校正器的标称直径。折射基件为半英寸口径，Zernike 测量另外限瞳。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "diameter_definition": "metacorrector_pattern_diameter",
+              "substrate_lens_aperture_um": 12700
+            },
+            "na": {
+              "value": 0.1,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 §4 右栏结尾",
+              "note": "作者报告厘米级消色差器件在 600–800 nm 约为 0.1，未列逐谱点 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "approximate": true,
+              "display": "约 0.1"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2；p1407 Fig.1 对应正文，指向补件 Fig. S3",
+              "note": "论文指出混合镜焦距相对裸镜改变。正文 50 mm 为裸镜标称值，也用于 §3 针孔判据示例。混合镜绝对焦距待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "绝对设计焦距待补",
+              "sourceIds": [
+                "sawant_hybrid_pdf_2021",
+                "sawant_hybrid_si_index_2021",
+                "sawant_hybrid_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "方法和图注明示 550 至 800 nm、25 nm 间隔，包括两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": "RCP",
+              "diffraction_order": 1,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_lcam_z_575",
+          "model": "Sawant 2021 · 厘米折超混合 · LCAM · 575 nm 轴扫",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "lcam",
+          "module": "",
+          "variant": "LCAM · 轴向色差校正折超混合镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "论文给出实测轴扫谱点及归一强度图。绝对焦位待补。",
+          "values": {
+            "diameter_um": {
+              "value": 10000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "平面侧超表面校正器的标称直径。折射基件为半英寸口径，Zernike 测量另外限瞳。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "diameter_definition": "metacorrector_pattern_diameter",
+              "substrate_lens_aperture_um": 12700
+            },
+            "na": {
+              "value": 0.1,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 §4 右栏结尾",
+              "note": "作者报告厘米级消色差器件在 600–800 nm 约为 0.1，未列逐谱点 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "approximate": true,
+              "display": "约 0.1"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2；p1407 Fig.1 对应正文，指向补件 Fig. S3",
+              "note": "论文指出混合镜焦距相对裸镜改变。正文 50 mm 为裸镜标称值，也用于 §3 针孔判据示例。混合镜绝对焦距待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "绝对设计焦距待补",
+              "sourceIds": [
+                "sawant_hybrid_pdf_2021",
+                "sawant_hybrid_si_index_2021",
+                "sawant_hybrid_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 575,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "方法和图注明示 550 至 800 nm、25 nm 间隔，包括两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": "RCP",
+              "diffraction_order": 1,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_lcam_z_600",
+          "model": "Sawant 2021 · 厘米折超混合 · LCAM · 600 nm 轴扫",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "lcam",
+          "module": "",
+          "variant": "LCAM · 轴向色差校正折超混合镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "论文给出实测轴扫谱点及归一强度图。绝对焦位待补。",
+          "values": {
+            "diameter_um": {
+              "value": 10000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "平面侧超表面校正器的标称直径。折射基件为半英寸口径，Zernike 测量另外限瞳。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "diameter_definition": "metacorrector_pattern_diameter",
+              "substrate_lens_aperture_um": 12700
+            },
+            "na": {
+              "value": 0.1,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 §4 右栏结尾",
+              "note": "作者报告厘米级消色差器件在 600–800 nm 约为 0.1，未列逐谱点 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "approximate": true,
+              "display": "约 0.1"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2；p1407 Fig.1 对应正文，指向补件 Fig. S3",
+              "note": "论文指出混合镜焦距相对裸镜改变。正文 50 mm 为裸镜标称值，也用于 §3 针孔判据示例。混合镜绝对焦距待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "绝对设计焦距待补",
+              "sourceIds": [
+                "sawant_hybrid_pdf_2021",
+                "sawant_hybrid_si_index_2021",
+                "sawant_hybrid_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 600,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "方法和图注明示 550 至 800 nm、25 nm 间隔，包括两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": "RCP",
+              "diffraction_order": 1,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_lcam_z_625",
+          "model": "Sawant 2021 · 厘米折超混合 · LCAM · 625 nm 轴扫",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "lcam",
+          "module": "",
+          "variant": "LCAM · 轴向色差校正折超混合镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "论文给出实测轴扫谱点及归一强度图。绝对焦位待补。",
+          "values": {
+            "diameter_um": {
+              "value": 10000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "平面侧超表面校正器的标称直径。折射基件为半英寸口径，Zernike 测量另外限瞳。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "diameter_definition": "metacorrector_pattern_diameter",
+              "substrate_lens_aperture_um": 12700
+            },
+            "na": {
+              "value": 0.1,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 §4 右栏结尾",
+              "note": "作者报告厘米级消色差器件在 600–800 nm 约为 0.1，未列逐谱点 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "approximate": true,
+              "display": "约 0.1"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2；p1407 Fig.1 对应正文，指向补件 Fig. S3",
+              "note": "论文指出混合镜焦距相对裸镜改变。正文 50 mm 为裸镜标称值，也用于 §3 针孔判据示例。混合镜绝对焦距待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "绝对设计焦距待补",
+              "sourceIds": [
+                "sawant_hybrid_pdf_2021",
+                "sawant_hybrid_si_index_2021",
+                "sawant_hybrid_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "方法和图注明示 550 至 800 nm、25 nm 间隔，包括两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": "RCP",
+              "diffraction_order": 1,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_lcam_z_650",
+          "model": "Sawant 2021 · 厘米折超混合 · LCAM · 650 nm 轴扫",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "lcam",
+          "module": "",
+          "variant": "LCAM · 轴向色差校正折超混合镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "论文给出实测轴扫谱点及归一强度图。绝对焦位待补。",
+          "values": {
+            "diameter_um": {
+              "value": 10000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "平面侧超表面校正器的标称直径。折射基件为半英寸口径，Zernike 测量另外限瞳。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "diameter_definition": "metacorrector_pattern_diameter",
+              "substrate_lens_aperture_um": 12700
+            },
+            "na": {
+              "value": 0.1,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 §4 右栏结尾",
+              "note": "作者报告厘米级消色差器件在 600–800 nm 约为 0.1，未列逐谱点 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "approximate": true,
+              "display": "约 0.1"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2；p1407 Fig.1 对应正文，指向补件 Fig. S3",
+              "note": "论文指出混合镜焦距相对裸镜改变。正文 50 mm 为裸镜标称值，也用于 §3 针孔判据示例。混合镜绝对焦距待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "绝对设计焦距待补",
+              "sourceIds": [
+                "sawant_hybrid_pdf_2021",
+                "sawant_hybrid_si_index_2021",
+                "sawant_hybrid_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 650,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "方法和图注明示 550 至 800 nm、25 nm 间隔，包括两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": "RCP",
+              "diffraction_order": 1,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_lcam_z_675",
+          "model": "Sawant 2021 · 厘米折超混合 · LCAM · 675 nm 轴扫",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "lcam",
+          "module": "",
+          "variant": "LCAM · 轴向色差校正折超混合镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "论文给出实测轴扫谱点及归一强度图。绝对焦位待补。",
+          "values": {
+            "diameter_um": {
+              "value": 10000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "平面侧超表面校正器的标称直径。折射基件为半英寸口径，Zernike 测量另外限瞳。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "diameter_definition": "metacorrector_pattern_diameter",
+              "substrate_lens_aperture_um": 12700
+            },
+            "na": {
+              "value": 0.1,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 §4 右栏结尾",
+              "note": "作者报告厘米级消色差器件在 600–800 nm 约为 0.1，未列逐谱点 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "approximate": true,
+              "display": "约 0.1"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2；p1407 Fig.1 对应正文，指向补件 Fig. S3",
+              "note": "论文指出混合镜焦距相对裸镜改变。正文 50 mm 为裸镜标称值，也用于 §3 针孔判据示例。混合镜绝对焦距待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "绝对设计焦距待补",
+              "sourceIds": [
+                "sawant_hybrid_pdf_2021",
+                "sawant_hybrid_si_index_2021",
+                "sawant_hybrid_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 675,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "方法和图注明示 550 至 800 nm、25 nm 间隔，包括两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": "RCP",
+              "diffraction_order": 1,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_lcam_z_700",
+          "model": "Sawant 2021 · 厘米折超混合 · LCAM · 700 nm 轴扫",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "lcam",
+          "module": "",
+          "variant": "LCAM · 轴向色差校正折超混合镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "论文给出实测轴扫谱点及归一强度图。绝对焦位待补。",
+          "values": {
+            "diameter_um": {
+              "value": 10000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "平面侧超表面校正器的标称直径。折射基件为半英寸口径，Zernike 测量另外限瞳。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "diameter_definition": "metacorrector_pattern_diameter",
+              "substrate_lens_aperture_um": 12700
+            },
+            "na": {
+              "value": 0.1,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 §4 右栏结尾",
+              "note": "作者报告厘米级消色差器件在 600–800 nm 约为 0.1，未列逐谱点 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "approximate": true,
+              "display": "约 0.1"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2；p1407 Fig.1 对应正文，指向补件 Fig. S3",
+              "note": "论文指出混合镜焦距相对裸镜改变。正文 50 mm 为裸镜标称值，也用于 §3 针孔判据示例。混合镜绝对焦距待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "绝对设计焦距待补",
+              "sourceIds": [
+                "sawant_hybrid_pdf_2021",
+                "sawant_hybrid_si_index_2021",
+                "sawant_hybrid_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "方法和图注明示 550 至 800 nm、25 nm 间隔，包括两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": "RCP",
+              "diffraction_order": 1,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_lcam_z_725",
+          "model": "Sawant 2021 · 厘米折超混合 · LCAM · 725 nm 轴扫",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "lcam",
+          "module": "",
+          "variant": "LCAM · 轴向色差校正折超混合镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "论文给出实测轴扫谱点及归一强度图。绝对焦位待补。",
+          "values": {
+            "diameter_um": {
+              "value": 10000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "平面侧超表面校正器的标称直径。折射基件为半英寸口径，Zernike 测量另外限瞳。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "diameter_definition": "metacorrector_pattern_diameter",
+              "substrate_lens_aperture_um": 12700
+            },
+            "na": {
+              "value": 0.1,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 §4 右栏结尾",
+              "note": "作者报告厘米级消色差器件在 600–800 nm 约为 0.1，未列逐谱点 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "approximate": true,
+              "display": "约 0.1"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2；p1407 Fig.1 对应正文，指向补件 Fig. S3",
+              "note": "论文指出混合镜焦距相对裸镜改变。正文 50 mm 为裸镜标称值，也用于 §3 针孔判据示例。混合镜绝对焦距待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "绝对设计焦距待补",
+              "sourceIds": [
+                "sawant_hybrid_pdf_2021",
+                "sawant_hybrid_si_index_2021",
+                "sawant_hybrid_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 725,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "方法和图注明示 550 至 800 nm、25 nm 间隔，包括两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": "RCP",
+              "diffraction_order": 1,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_lcam_z_750",
+          "model": "Sawant 2021 · 厘米折超混合 · LCAM · 750 nm 轴扫",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "lcam",
+          "module": "",
+          "variant": "LCAM · 轴向色差校正折超混合镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "论文给出实测轴扫谱点及归一强度图。绝对焦位待补。",
+          "values": {
+            "diameter_um": {
+              "value": 10000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "平面侧超表面校正器的标称直径。折射基件为半英寸口径，Zernike 测量另外限瞳。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "diameter_definition": "metacorrector_pattern_diameter",
+              "substrate_lens_aperture_um": 12700
+            },
+            "na": {
+              "value": 0.1,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 §4 右栏结尾",
+              "note": "作者报告厘米级消色差器件在 600–800 nm 约为 0.1，未列逐谱点 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "approximate": true,
+              "display": "约 0.1"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2；p1407 Fig.1 对应正文，指向补件 Fig. S3",
+              "note": "论文指出混合镜焦距相对裸镜改变。正文 50 mm 为裸镜标称值，也用于 §3 针孔判据示例。混合镜绝对焦距待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "绝对设计焦距待补",
+              "sourceIds": [
+                "sawant_hybrid_pdf_2021",
+                "sawant_hybrid_si_index_2021",
+                "sawant_hybrid_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 750,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "方法和图注明示 550 至 800 nm、25 nm 间隔，包括两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": "RCP",
+              "diffraction_order": 1,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_lcam_z_775",
+          "model": "Sawant 2021 · 厘米折超混合 · LCAM · 775 nm 轴扫",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "lcam",
+          "module": "",
+          "variant": "LCAM · 轴向色差校正折超混合镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "论文给出实测轴扫谱点及归一强度图。绝对焦位待补。",
+          "values": {
+            "diameter_um": {
+              "value": 10000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "平面侧超表面校正器的标称直径。折射基件为半英寸口径，Zernike 测量另外限瞳。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "diameter_definition": "metacorrector_pattern_diameter",
+              "substrate_lens_aperture_um": 12700
+            },
+            "na": {
+              "value": 0.1,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 §4 右栏结尾",
+              "note": "作者报告厘米级消色差器件在 600–800 nm 约为 0.1，未列逐谱点 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "approximate": true,
+              "display": "约 0.1"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2；p1407 Fig.1 对应正文，指向补件 Fig. S3",
+              "note": "论文指出混合镜焦距相对裸镜改变。正文 50 mm 为裸镜标称值，也用于 §3 针孔判据示例。混合镜绝对焦距待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "绝对设计焦距待补",
+              "sourceIds": [
+                "sawant_hybrid_pdf_2021",
+                "sawant_hybrid_si_index_2021",
+                "sawant_hybrid_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 775,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "方法和图注明示 550 至 800 nm、25 nm 间隔，包括两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": "RCP",
+              "diffraction_order": 1,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_lcam_z_800",
+          "model": "Sawant 2021 · 厘米折超混合 · LCAM · 800 nm 轴扫",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "lcam",
+          "module": "",
+          "variant": "LCAM · 轴向色差校正折超混合镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "论文给出实测轴扫谱点及归一强度图。绝对焦位待补。",
+          "values": {
+            "diameter_um": {
+              "value": 10000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "平面侧超表面校正器的标称直径。折射基件为半英寸口径，Zernike 测量另外限瞳。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "diameter_definition": "metacorrector_pattern_diameter",
+              "substrate_lens_aperture_um": 12700
+            },
+            "na": {
+              "value": 0.1,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 §4 右栏结尾",
+              "note": "作者报告厘米级消色差器件在 600–800 nm 约为 0.1，未列逐谱点 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "approximate": true,
+              "display": "约 0.1"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2；p1407 Fig.1 对应正文，指向补件 Fig. S3",
+              "note": "论文指出混合镜焦距相对裸镜改变。正文 50 mm 为裸镜标称值，也用于 §3 针孔判据示例。混合镜绝对焦距待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "绝对设计焦距待补",
+              "sourceIds": [
+                "sawant_hybrid_pdf_2021",
+                "sawant_hybrid_si_index_2021",
+                "sawant_hybrid_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "方法和图注明示 550 至 800 nm、25 nm 间隔，包括两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2c 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": "RCP",
+              "diffraction_order": 1,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_bare_summary",
+          "model": "Sawant 2021 · 厘米折超混合 · 裸折射镜 · 轴向扫描汇总",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "bare",
+          "module": "",
+          "variant": "平凸折射镜 · 裸镜对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "轴扫范围 550–800 nm，每 25 nm 一个实测谱点。裸镜与带色差校正器的混合镜分别归组。",
+          "values": {
+            "diameter_um": {
+              "value": 12700,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "半英寸平凸裸镜的标称口径，按 1 in = 25.4 mm 换算。轴扫实际有效光瞳未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_value": 0.5,
+              "original_unit": "in"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "600 nm 的裸平凸熔融石英镜标称焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "nominal_wavelength_nm": 600
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "熔融石英平凸折射镜",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "作者计算采用熔融石英。球面曲率半径 23 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "surface_curvature_radius_mm": 23
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": null,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_bare_z_550",
+          "model": "Sawant 2021 · 厘米折超混合 · 裸折射镜 · 550 nm 轴扫",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "bare",
+          "module": "",
+          "variant": "平凸折射镜 · 裸镜对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "论文给出实测轴扫谱点及归一强度图。绝对焦位待补。",
+          "values": {
+            "diameter_um": {
+              "value": 12700,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "半英寸平凸裸镜的标称口径，按 1 in = 25.4 mm 换算。轴扫实际有效光瞳未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_value": 0.5,
+              "original_unit": "in"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "600 nm 的裸平凸熔融石英镜标称焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "nominal_wavelength_nm": 600
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "方法和图注明示 550 至 800 nm、25 nm 间隔，包括两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": null,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_bare_z_575",
+          "model": "Sawant 2021 · 厘米折超混合 · 裸折射镜 · 575 nm 轴扫",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "bare",
+          "module": "",
+          "variant": "平凸折射镜 · 裸镜对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "论文给出实测轴扫谱点及归一强度图。绝对焦位待补。",
+          "values": {
+            "diameter_um": {
+              "value": 12700,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "半英寸平凸裸镜的标称口径，按 1 in = 25.4 mm 换算。轴扫实际有效光瞳未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_value": 0.5,
+              "original_unit": "in"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "600 nm 的裸平凸熔融石英镜标称焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "nominal_wavelength_nm": 600
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 575,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "方法和图注明示 550 至 800 nm、25 nm 间隔，包括两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": null,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_bare_z_600",
+          "model": "Sawant 2021 · 厘米折超混合 · 裸折射镜 · 600 nm 轴扫",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "bare",
+          "module": "",
+          "variant": "平凸折射镜 · 裸镜对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "论文给出实测轴扫谱点及归一强度图。绝对焦位待补。",
+          "values": {
+            "diameter_um": {
+              "value": 12700,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "半英寸平凸裸镜的标称口径，按 1 in = 25.4 mm 换算。轴扫实际有效光瞳未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_value": 0.5,
+              "original_unit": "in"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "600 nm 的裸平凸熔融石英镜标称焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "nominal_wavelength_nm": 600
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 600,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "方法和图注明示 550 至 800 nm、25 nm 间隔，包括两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": null,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_bare_z_625",
+          "model": "Sawant 2021 · 厘米折超混合 · 裸折射镜 · 625 nm 轴扫",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "bare",
+          "module": "",
+          "variant": "平凸折射镜 · 裸镜对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "论文给出实测轴扫谱点及归一强度图。绝对焦位待补。",
+          "values": {
+            "diameter_um": {
+              "value": 12700,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "半英寸平凸裸镜的标称口径，按 1 in = 25.4 mm 换算。轴扫实际有效光瞳未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_value": 0.5,
+              "original_unit": "in"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "600 nm 的裸平凸熔融石英镜标称焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "nominal_wavelength_nm": 600
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 625,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "方法和图注明示 550 至 800 nm、25 nm 间隔，包括两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": null,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_bare_z_650",
+          "model": "Sawant 2021 · 厘米折超混合 · 裸折射镜 · 650 nm 轴扫",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "bare",
+          "module": "",
+          "variant": "平凸折射镜 · 裸镜对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "论文给出实测轴扫谱点及归一强度图。绝对焦位待补。",
+          "values": {
+            "diameter_um": {
+              "value": 12700,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "半英寸平凸裸镜的标称口径，按 1 in = 25.4 mm 换算。轴扫实际有效光瞳未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_value": 0.5,
+              "original_unit": "in"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "600 nm 的裸平凸熔融石英镜标称焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "nominal_wavelength_nm": 600
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 650,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "方法和图注明示 550 至 800 nm、25 nm 间隔，包括两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": null,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_bare_z_675",
+          "model": "Sawant 2021 · 厘米折超混合 · 裸折射镜 · 675 nm 轴扫",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "bare",
+          "module": "",
+          "variant": "平凸折射镜 · 裸镜对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "论文给出实测轴扫谱点及归一强度图。绝对焦位待补。",
+          "values": {
+            "diameter_um": {
+              "value": 12700,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "半英寸平凸裸镜的标称口径，按 1 in = 25.4 mm 换算。轴扫实际有效光瞳未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_value": 0.5,
+              "original_unit": "in"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "600 nm 的裸平凸熔融石英镜标称焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "nominal_wavelength_nm": 600
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 675,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "方法和图注明示 550 至 800 nm、25 nm 间隔，包括两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": null,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_bare_z_700",
+          "model": "Sawant 2021 · 厘米折超混合 · 裸折射镜 · 700 nm 轴扫",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "bare",
+          "module": "",
+          "variant": "平凸折射镜 · 裸镜对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "论文给出实测轴扫谱点及归一强度图。绝对焦位待补。",
+          "values": {
+            "diameter_um": {
+              "value": 12700,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "半英寸平凸裸镜的标称口径，按 1 in = 25.4 mm 换算。轴扫实际有效光瞳未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_value": 0.5,
+              "original_unit": "in"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "600 nm 的裸平凸熔融石英镜标称焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "nominal_wavelength_nm": 600
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "方法和图注明示 550 至 800 nm、25 nm 间隔，包括两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": null,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_bare_z_725",
+          "model": "Sawant 2021 · 厘米折超混合 · 裸折射镜 · 725 nm 轴扫",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "bare",
+          "module": "",
+          "variant": "平凸折射镜 · 裸镜对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "论文给出实测轴扫谱点及归一强度图。绝对焦位待补。",
+          "values": {
+            "diameter_um": {
+              "value": 12700,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "半英寸平凸裸镜的标称口径，按 1 in = 25.4 mm 换算。轴扫实际有效光瞳未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_value": 0.5,
+              "original_unit": "in"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "600 nm 的裸平凸熔融石英镜标称焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "nominal_wavelength_nm": 600
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 725,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "方法和图注明示 550 至 800 nm、25 nm 间隔，包括两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": null,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_bare_z_750",
+          "model": "Sawant 2021 · 厘米折超混合 · 裸折射镜 · 750 nm 轴扫",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "bare",
+          "module": "",
+          "variant": "平凸折射镜 · 裸镜对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "论文给出实测轴扫谱点及归一强度图。绝对焦位待补。",
+          "values": {
+            "diameter_um": {
+              "value": 12700,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "半英寸平凸裸镜的标称口径，按 1 in = 25.4 mm 换算。轴扫实际有效光瞳未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_value": 0.5,
+              "original_unit": "in"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "600 nm 的裸平凸熔融石英镜标称焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "nominal_wavelength_nm": 600
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 750,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "方法和图注明示 550 至 800 nm、25 nm 间隔，包括两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": null,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_bare_z_775",
+          "model": "Sawant 2021 · 厘米折超混合 · 裸折射镜 · 775 nm 轴扫",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "bare",
+          "module": "",
+          "variant": "平凸折射镜 · 裸镜对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "论文给出实测轴扫谱点及归一强度图。绝对焦位待补。",
+          "values": {
+            "diameter_um": {
+              "value": 12700,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "半英寸平凸裸镜的标称口径，按 1 in = 25.4 mm 换算。轴扫实际有效光瞳未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_value": 0.5,
+              "original_unit": "in"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "600 nm 的裸平凸熔融石英镜标称焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "nominal_wavelength_nm": 600
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 775,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "方法和图注明示 550 至 800 nm、25 nm 间隔，包括两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": null,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_bare_z_800",
+          "model": "Sawant 2021 · 厘米折超混合 · 裸折射镜 · 800 nm 轴扫",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "bare",
+          "module": "",
+          "variant": "平凸折射镜 · 裸镜对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "论文给出实测轴扫谱点及归一强度图。绝对焦位待补。",
+          "values": {
+            "diameter_um": {
+              "value": 12700,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "半英寸平凸裸镜的标称口径，按 1 in = 25.4 mm 换算。轴扫实际有效光瞳未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_value": 0.5,
+              "original_unit": "in"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "600 nm 的裸平凸熔融石英镜标称焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "nominal_wavelength_nm": 600
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫起点；色差抑制公式另用 600/800 nm 两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b–c 与左栏 CAC 公式",
+              "note": "轴扫终点，同时是抑制公式的长波端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "方法和图注明示 550 至 800 nm、25 nm 间隔，包括两端。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2b 源图与左栏轴扫段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": null,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_lsam_summary",
+          "model": "Sawant 2021 · 厘米折超混合 · LSAM · 球差校正对照汇总",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "lsam",
+          "module": "",
+          "variant": "LSAM · 单色球差校正折超混合对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同论文的单色球差校正混合镜，用于分辨球差校正的独立配置。",
+          "values": {
+            "diameter_um": {
+              "value": 10000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "平面侧超表面校正器的标称直径。折射基件为半英寸口径，Zernike 测量另外限瞳。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "diameter_definition": "metacorrector_pattern_diameter",
+              "substrate_lens_aperture_um": 12700
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2；p1407 Fig.1 对应正文，指向补件 Fig. S3",
+              "note": "论文指出混合镜焦距相对裸镜改变。正文 50 mm 为裸镜标称值，也用于 §3 针孔判据示例。混合镜绝对焦距待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "绝对设计焦距待补",
+              "sourceIds": [
+                "sawant_hybrid_pdf_2021",
+                "sawant_hybrid_si_index_2021",
+                "sawant_hybrid_si_2021"
+              ]
+            },
+            "material": {
+              "value": "熔融石英平凸镜与 ma-N 2410 聚合物纳米鳍超表面",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 制备段；p1407 Fig. 1a–d",
+              "note": "超表面为 PB 相位。方格周期 440 nm，纳米鳍设计 350 × 100 × 1700 nm，SEM 显示实制结构。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "lattice_period_nm": 440,
+              "fin_length_nm": 350,
+              "fin_width_nm": 100,
+              "fin_height_nm": 1700,
+              "surface_curvature_radius_mm": 23
+            },
+            "height_nm": {
+              "value": 1700,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 制备段",
+              "note": "PB 纳米鳍几何所列高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "650 nm 单色球差校正对照",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2d–e 与右栏；p1410 Fig. 4d–e",
+              "note": "球差配置是 LSAM。Fig. 4e 图注写 LCAM，Fig. 4 图内球差标签、正文和 Fig. 2 共同支持 LSAM。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_lsam_spherical_650",
+          "model": "Sawant 2021 · 厘米折超混合 · LSAM · 650 nm 球差对照",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "lsam",
+          "module": "",
+          "variant": "LSAM · 单色球差校正折超混合对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig. 2d–e 的径向强度轴扫与另述的 PSF 傅里叶 MTF 对照。",
+          "values": {
+            "diameter_um": {
+              "value": 10000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "平面侧超表面校正器的标称直径。折射基件为半英寸口径，Zernike 测量另外限瞳。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "diameter_definition": "metacorrector_pattern_diameter",
+              "substrate_lens_aperture_um": 12700
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2；p1407 Fig.1 对应正文，指向补件 Fig. S3",
+              "note": "论文指出混合镜焦距相对裸镜改变。正文 50 mm 为裸镜标称值，也用于 §3 针孔判据示例。混合镜绝对焦距待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "绝对设计焦距待补",
+              "sourceIds": [
+                "sawant_hybrid_pdf_2021",
+                "sawant_hybrid_si_index_2021",
+                "sawant_hybrid_si_2021"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 650,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2d–e 及右栏球差段",
+              "note": "球差 z-scan 的实际照明波长与设计波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2d–e 及右栏球差段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": "RCP",
+              "diffraction_order": 1,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2d–e 及右栏球差段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2d–e 及右栏球差段",
+              "note": "面板绘制径向距离 [μm] 与 Normalized z [mm] 上的强度，未印 FWHM。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "径向强度图；宽度待补"
+            },
+            "mtf_curve": {
+              "value": "作者以实测 PSF 计算曲线；补件 Fig. S5 待复核",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1409 §3 左栏首段，指向 Supplement 1 Fig. S5",
+              "note": "正文报告对 LSAM 与裸平凸镜的实测 PSF 作傅里叶变换。该图用于球差对照。补件文件未取得，频率单位、方向、归一化、评价面、原始 PSF 数组和物方采样未知。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "sawant_hybrid_pdf_2021",
+                "sawant_hybrid_si_index_2021",
+                "sawant_hybrid_si_2021",
+                "sawant_hybrid_related_dois_2021",
+                "sawant_hybrid_hal_index_2021"
+              ],
+              "mtf_kind": "measured_psf_fourier_reported_in_main_text",
+              "frequency_unit": null,
+              "direction_aggregation": null,
+              "frequency_reference_plane": null,
+              "normalization": null,
+              "data_availability": {
+                "status": "supplement_figure_cited_not_retrieved",
+                "statement": "available_from_authors_upon_reasonable_request",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "efficiency_lambda_nm": {
+              "value": 650,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1409 §3 左栏首段；p1410 右栏效率段",
+              "note": "该效率配对到原文明示的 650 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 20,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1409 §3 左栏首段；p1410 右栏效率段",
+              "note": "原文约 20%，适用 LSAM。作者未说明效率功率分母与焦圈。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "approximate": true,
+              "display": "约 20%"
+            },
+            "efficiency_protocol": {
+              "value": "实测聚焦效率，焦圈和分母待补",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1409 §3 左栏首段；p1410 右栏效率段",
+              "note": "正文给实验百分数和 650 nm，未描述收集半径、归一功率、偏振、误差或重复。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": null,
+              "numerator": null,
+              "collection_diameter_um": null,
+              "polarization": null
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_bare_spherical_650",
+          "model": "Sawant 2021 · 厘米折超混合 · 裸折射镜 · 650 nm 球差对照",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "bare",
+          "module": "",
+          "variant": "平凸折射镜 · 裸镜对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "Fig. 2d–e 的径向强度轴扫与另述的 PSF 傅里叶 MTF 对照。",
+          "values": {
+            "diameter_um": {
+              "value": 12700,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "半英寸平凸裸镜的标称口径，按 1 in = 25.4 mm 换算。轴扫实际有效光瞳未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_value": 0.5,
+              "original_unit": "in"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "600 nm 的裸平凸熔融石英镜标称焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "nominal_wavelength_nm": 600
+            },
+            "wavelength_nm": {
+              "value": 650,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2d–e 及右栏球差段",
+              "note": "球差 z-scan 的实际照明波长与设计波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "相机轴扫与峰值强度取焦",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1407 §3 开头与 p1408 Fig. 2a 下方；p1408 Fig. 2d–e 及右栏球差段",
+              "note": "超连续激光、5 μm 针孔、40×/NA 0.75 收集物镜和 CMOS 轴扫。每个波长的强度单独归一。轴标为 Normalized z [mm]，绝对参考面、步长和物方像素标尺未列。准直 FL 在描述中为 30 cm，在针孔判据代入式为 200 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_polarization": "LCP",
+              "output_polarization": null,
+              "point_pinhole_um": 5,
+              "collection_objective_magnification": 40,
+              "collection_objective_na": 0.75,
+              "axial_coordinate_label": "Normalized z [mm]",
+              "axial_step_um": null,
+              "reference_plane": null,
+              "transverse_object_sampling_um": null,
+              "evaluation_plane_um": null,
+              "intensity_normalization": "per_wavelength",
+              "field_point": "optical_axis",
+              "field_angle_deg": null,
+              "collimation_focal_length_mm": null,
+              "collimation_reported_focal_lengths_mm": [
+                300,
+                200
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2d–e 及右栏球差段",
+              "note": "焦点取轴向强度最大处。已核材料仅有归一 z 图，未见峰位表、绝对轴向原点或标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "轴扫图；绝对焦位待补",
+              "position_definition": "axial_intensity_maximum",
+              "plotted_coordinate": "Normalized z [mm]"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1408 Fig. 2d–e 及右栏球差段",
+              "note": "面板绘制径向距离 [μm] 与 Normalized z [mm] 上的强度，未印 FWHM。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "径向强度图；宽度待补"
+            },
+            "mtf_curve": {
+              "value": "作者以实测 PSF 计算曲线；补件 Fig. S5 待复核",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1409 §3 左栏首段，指向 Supplement 1 Fig. S5",
+              "note": "正文报告对 LSAM 与裸平凸镜的实测 PSF 作傅里叶变换。该图用于球差对照。补件文件未取得，频率单位、方向、归一化、评价面、原始 PSF 数组和物方采样未知。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "sawant_hybrid_pdf_2021",
+                "sawant_hybrid_si_index_2021",
+                "sawant_hybrid_si_2021",
+                "sawant_hybrid_related_dois_2021",
+                "sawant_hybrid_hal_index_2021"
+              ],
+              "mtf_kind": "measured_psf_fourier_reported_in_main_text",
+              "frequency_unit": null,
+              "direction_aggregation": null,
+              "frequency_reference_plane": null,
+              "normalization": null,
+              "data_availability": {
+                "status": "supplement_figure_cited_not_retrieved",
+                "statement": "available_from_authors_upon_reasonable_request",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_lcam_imaging",
+          "model": "Sawant 2021 · 厘米折超混合 · LCAM · 宽带成像",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "lcam",
+          "module": "",
+          "variant": "LCAM · 轴向色差校正折超混合镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的 USAF 靶实拍比较。Fig. 4b–c 采用宽带照明并给出图像。",
+          "values": {
+            "diameter_um": {
+              "value": 10000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "平面侧超表面校正器的标称直径。折射基件为半英寸口径，Zernike 测量另外限瞳。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "diameter_definition": "metacorrector_pattern_diameter",
+              "substrate_lens_aperture_um": 12700
+            },
+            "na": {
+              "value": 0.1,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 §4 右栏结尾",
+              "note": "作者报告厘米级消色差器件在 600–800 nm 约为 0.1，未列逐谱点 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "approximate": true,
+              "display": "约 0.1"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2；p1407 Fig.1 对应正文，指向补件 Fig. S3",
+              "note": "论文指出混合镜焦距相对裸镜改变。正文 50 mm 为裸镜标称值，也用于 §3 针孔判据示例。混合镜绝对焦距待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "绝对设计焦距待补",
+              "sourceIds": [
+                "sawant_hybrid_pdf_2021",
+                "sawant_hybrid_si_index_2021",
+                "sawant_hybrid_si_2021"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 Fig. 4a,c 及左栏",
+              "note": "成像超连续光源的设置下端。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 Fig. 4a,c 及左栏",
+              "note": "成像超连续光源的设置上端。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 Fig. 4a,c 及左栏",
+              "note": "USAF 靶照片为宽带照明。未公布同一场点多通道横移或逐频曲线。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "宽带照明，无单一波长"
+            },
+            "illumination": {
+              "value": "550–800 nm 超连续光；USAF 1951 第 3 组",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 Fig. 4a,c 及左栏",
+              "note": "Thorlabs Zelux 1.6 MP 彩色 CMOS。作者称超过 750 nm 的响应显示为品红；LCAM 照片仍有同偏振漏光背景。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "camera": "Thorlabs Zelux",
+              "sensor_megapixels": 1.6,
+              "test_target": "USAF 1951",
+              "group": 3
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 Fig. 4a,c 及左栏",
+              "note": "图示宽带成像对比，作者未给离轴场点、横向色差通道对应或斜边/正弦频响。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅图像对照，横向色差与成像 MTF 待补"
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_bare_imaging",
+          "model": "Sawant 2021 · 厘米折超混合 · 裸折射镜 · 宽带成像",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "bare",
+          "module": "",
+          "variant": "平凸折射镜 · 裸镜对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的 USAF 靶实拍比较。Fig. 4b–c 采用宽带照明并给出图像。",
+          "values": {
+            "diameter_um": {
+              "value": 12700,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "半英寸平凸裸镜的标称口径，按 1 in = 25.4 mm 换算。轴扫实际有效光瞳未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_value": 0.5,
+              "original_unit": "in"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "600 nm 的裸平凸熔融石英镜标称焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "nominal_wavelength_nm": 600
+            },
+            "lambda_min_nm": {
+              "value": 550,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 Fig. 4a,b 及左栏",
+              "note": "成像超连续光源的设置下端。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 800,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 Fig. 4a,b 及左栏",
+              "note": "成像超连续光源的设置上端。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 Fig. 4a,b 及左栏",
+              "note": "USAF 靶照片为宽带照明。未公布同一场点多通道横移或逐频曲线。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "宽带照明，无单一波长"
+            },
+            "illumination": {
+              "value": "550–800 nm 超连续光；USAF 1951 第 3 组",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 Fig. 4a,b 及左栏",
+              "note": "Thorlabs Zelux 1.6 MP 彩色 CMOS。作者称超过 750 nm 的响应显示为品红；LCAM 照片仍有同偏振漏光背景。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "camera": "Thorlabs Zelux",
+              "sensor_megapixels": 1.6,
+              "test_target": "USAF 1951",
+              "group": 3
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 Fig. 4a,b 及左栏",
+              "note": "图示宽带成像对比，作者未给离轴场点、横向色差通道对应或斜边/正弦频响。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅图像对照，横向色差与成像 MTF 待补"
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_lsam_imaging_650",
+          "model": "Sawant 2021 · 厘米折超混合 · LSAM · 650 nm 成像",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "lsam",
+          "module": "",
+          "variant": "LSAM · 单色球差校正折超混合对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "USAF 靶实拍。与 650 nm 轴向扫描及 PSF 傅里叶 MTF 各自保留协议。",
+          "values": {
+            "diameter_um": {
+              "value": 10000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "平面侧超表面校正器的标称直径。折射基件为半英寸口径，Zernike 测量另外限瞳。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "diameter_definition": "metacorrector_pattern_diameter",
+              "substrate_lens_aperture_um": 12700
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2；p1407 Fig.1 对应正文，指向补件 Fig. S3",
+              "note": "论文指出混合镜焦距相对裸镜改变。正文 50 mm 为裸镜标称值，也用于 §3 针孔判据示例。混合镜绝对焦距待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "绝对设计焦距待补",
+              "sourceIds": [
+                "sawant_hybrid_pdf_2021",
+                "sawant_hybrid_si_index_2021",
+                "sawant_hybrid_si_2021"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 650,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 Fig. 4a,e 及左栏",
+              "note": "用于成像的准单色光中心波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "spectral_bandwidth_nm": 10
+            },
+            "illumination": {
+              "value": "650 nm 准单色，带宽 10 nm；USAF 1951",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 Fig. 4a,e 及左栏",
+              "note": "成像使用 Thorlabs DCC1545M 单色 CMOS。主文 §3 明示 Fig. 4e 为 LSAM，图注写 LCAM。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "camera": "Thorlabs DCC1545M",
+              "test_target": "USAF 1951",
+              "spectral_bandwidth_nm": 10
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_lsam_wavefront_617",
+          "model": "Sawant 2021 · 厘米折超混合 · LSAM · 617 nm 波前",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "lsam",
+          "module": "",
+          "variant": "LSAM · 单色球差校正折超混合对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "四波横向剪切干涉（QLSI）与 Zernike 分解。",
+          "values": {
+            "diameter_um": {
+              "value": 10000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "平面侧超表面校正器的标称直径。折射基件为半英寸口径，Zernike 测量另外限瞳。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "diameter_definition": "metacorrector_pattern_diameter",
+              "substrate_lens_aperture_um": 12700
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2；p1407 Fig.1 对应正文，指向补件 Fig. S3",
+              "note": "论文指出混合镜焦距相对裸镜改变。正文 50 mm 为裸镜标称值，也用于 §3 针孔判据示例。混合镜绝对焦距待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "绝对设计焦距待补",
+              "sourceIds": [
+                "sawant_hybrid_pdf_2021",
+                "sawant_hybrid_si_index_2021",
+                "sawant_hybrid_si_2021"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 617,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1409 Fig. 3b 及左栏 QLSI 段",
+              "note": "波前测量 LED 的标称中心。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "LCP 入射，RCP 交偏振",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1409 Fig. 3b 及左栏 QLSI 段",
+              "note": "裸镜和球差校正配置的 OPD 测量分别使用同偏振与交偏振通道。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "QLSI：作者报告球差约减少 70%",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1409 Fig. 3b 及左栏 QLSI 段",
+              "note": "作者对两组使用约 7.5 mm 圆瞳，并从 Zernike 分解中扣除离焦。图内柱状系数未印数值。保留球差数量级，逐项系数待原表。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "protocol_kind": "quadriwave_lateral_shearing_interferometry",
+              "pupil_diameter_um": 7500,
+              "pupil_diameter_approximate": true,
+              "defocus_removed": true,
+              "reported_spherical_aberration_reduction_pct": 70
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_bare_imaging_650",
+          "model": "Sawant 2021 · 厘米折超混合 · 裸折射镜 · 650 nm 成像",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "bare",
+          "module": "",
+          "variant": "平凸折射镜 · 裸镜对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "USAF 靶实拍。与 650 nm 轴向扫描及 PSF 傅里叶 MTF 各自保留协议。",
+          "values": {
+            "diameter_um": {
+              "value": 12700,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "半英寸平凸裸镜的标称口径，按 1 in = 25.4 mm 换算。轴扫实际有效光瞳未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_value": 0.5,
+              "original_unit": "in"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "600 nm 的裸平凸熔融石英镜标称焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "nominal_wavelength_nm": 600
+            },
+            "wavelength_nm": {
+              "value": 650,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 Fig. 4a,d 及左栏",
+              "note": "用于成像的准单色光中心波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "spectral_bandwidth_nm": 10
+            },
+            "illumination": {
+              "value": "650 nm 准单色，带宽 10 nm；USAF 1951",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1410 Fig. 4a,d 及左栏",
+              "note": "成像使用 Thorlabs DCC1545M 单色 CMOS。主文 §3 明示 Fig. 4e 为 LSAM，图注写 LCAM。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "camera": "Thorlabs DCC1545M",
+              "test_target": "USAF 1951",
+              "spectral_bandwidth_nm": 10
+            }
+          }
+        },
+        {
+          "id": "sawant2021hybrid_bare_wavefront_617",
+          "model": "Sawant 2021 · 厘米折超混合 · 裸折射镜 · 617 nm 波前",
+          "study_id": "sawant2021hybrid",
+          "specimen_id": "bare",
+          "module": "",
+          "variant": "平凸折射镜 · 裸镜对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "四波横向剪切干涉（QLSI）与 Zernike 分解。",
+          "values": {
+            "diameter_um": {
+              "value": 12700,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "半英寸平凸裸镜的标称口径，按 1 in = 25.4 mm 换算。轴扫实际有效光瞳未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_value": 0.5,
+              "original_unit": "in"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1406 §2 右栏半英寸平凸镜与 1 cm 校正器段",
+              "note": "600 nm 的裸平凸熔融石英镜标称焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "nominal_wavelength_nm": 600
+            },
+            "wavelength_nm": {
+              "value": 617,
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1409 Fig. 3a 及左栏 QLSI 段",
+              "note": "波前测量 LED 的标称中心。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "LCP 入射，LCP 同偏振",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1409 Fig. 3a 及左栏 QLSI 段",
+              "note": "裸镜和球差校正配置的 OPD 测量分别使用同偏振与交偏振通道。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "QLSI：裸平凸镜波前基线",
+              "source": "sawant_hybrid_pdf_2021",
+              "location": "p1409 Fig. 3a 及左栏 QLSI 段",
+              "note": "作者对两组使用约 7.5 mm 圆瞳，并从 Zernike 分解中扣除离焦。图内柱状系数未印数值。保留球差数量级，逐项系数待原表。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "protocol_kind": "quadriwave_lateral_shearing_interferometry",
+              "pupil_diameter_um": 7500,
+              "pupil_diameter_approximate": true,
+              "defocus_removed": true
+            }
+          }
         }
       ],
-      "scope": "48项原始研究、295个器件/测量/系统配置、1796条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
+      "scope": "49项原始研究、298个器件/测量/系统配置、1829条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
