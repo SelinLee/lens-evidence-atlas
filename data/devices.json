@@ -2056,6 +2056,69 @@
       "scope": "2021-11-03 正式发表。2026-11-19 查询 is-referenced-by-count 为 92 次。",
       "checked_on": "2026-11-19",
       "publication_source": "sawant_hybrid_pdf_2021"
+    },
+    {
+      "id": "wang_metaaxicon_pdf_2026",
+      "title": "Wang et al. (2026): Minimalist optical system for achromatic imaging within extended field of view based on monolithic integrated meta-axicon cluster",
+      "url": "https://publikationen.bibliothek.kit.edu/1000192715/180059684",
+      "kind": "peer_reviewed_paper",
+      "scope": "KIT 馆藏正式版，Light: Science & Applications 15, 202。全文 12 页，已核 Figs. 1–7、Methods、Data availability。",
+      "checked_on": "2026-11-19",
+      "doi": "10.1038/s41377-026-02272-y"
+    },
+    {
+      "id": "wang_metaaxicon_publisher_2026",
+      "title": "Springer Nature · LSA 正式 HTML",
+      "url": "https://www.nature.com/articles/s41377-026-02272-y",
+      "kind": "publication_archive",
+      "scope": "正式在线日期 2026-04-16。页面列主文、Fig. 1–7 与补件下载。",
+      "checked_on": "2026-11-19",
+      "publication_source": "wang_metaaxicon_pdf_2026"
+    },
+    {
+      "id": "wang_metaaxicon_si_2026",
+      "title": "Springer Nature · 正式 Supplementary Information",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41377-026-02272-y/MediaObjects/41377_2026_2272_MOESM1_ESM.docx",
+      "kind": "supplementary_material",
+      "scope": "41377_2026_2272_MOESM1_ESM.docx；S1–S7、Table S1 与 Figs. S1–S6。容器内仅正文与图像，无嵌入数表或源数组。",
+      "checked_on": "2026-11-19",
+      "publication_source": "wang_metaaxicon_pdf_2026"
+    },
+    {
+      "id": "wang_metaaxicon_kit_2026",
+      "title": "KITopen · 论文馆藏",
+      "url": "https://publikationen.bibliothek.kit.edu/1000192715",
+      "kind": "publication_archive",
+      "scope": "馆藏 DOI 10.5445/IR/1000192715 指向同一正式论文，无另外测量附件。",
+      "checked_on": "2026-11-19",
+      "publication_source": "wang_metaaxicon_pdf_2026"
+    },
+    {
+      "id": "wang_metaaxicon_datacite_2026",
+      "title": "DataCite · 与主文关联的 DOI 查询",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1038%2Fs41377-026-02272-y%22&page%5Bsize%5D=25",
+      "kind": "repository_metadata",
+      "scope": "2026-11-19 精确关联检索为零项。",
+      "checked_on": "2026-11-19",
+      "publication_source": "wang_metaaxicon_pdf_2026"
+    },
+    {
+      "id": "wang_metaaxicon_crossref_2026",
+      "title": "Crossref · 原始论文书目",
+      "url": "https://api.crossref.org/works/10.1038/s41377-026-02272-y",
+      "kind": "repository_metadata",
+      "scope": "核正式发表日 2026-04-16 和文章编号 202。",
+      "checked_on": "2026-11-19",
+      "publication_source": "wang_metaaxicon_pdf_2026"
+    },
+    {
+      "id": "wang_metaaxicon_partition_2026",
+      "title": "2025 年升级版 · LSA 大类分区公开条目",
+      "url": "https://www.iikx.com/sci/technology/20600.html",
+      "kind": "repository_metadata",
+      "scope": "爱科学公开转载页。2025 年 3 月升级版，物理与天体物理 1 区，期刊 E-ISSN 2047-7538。",
+      "checked_on": "2026-11-19",
+      "publication_source": "wang_metaaxicon_pdf_2026"
     }
   ],
   "domains": {
@@ -5943,6 +6006,38 @@
             {
               "source": "arbabi_metamolecule_2016",
               "location": "主文 p631 左栏 perfect phase mask 段"
+            }
+          ]
+        },
+        {
+          "id": "rgb_radial_psf_fwhm_um",
+          "label": "RGB 通道径向 PSF FWHM (μm)",
+          "definition": "按相机颜色通道采集的径向强度半高全宽。",
+          "conditions": "白光与颜色通道、方向、场点、评价面及采样尺度。中心波长待核时保留空值。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "p7 Fig. 5b 对应段；p8 Fig. 5a–b"
+            }
+          ]
+        },
+        {
+          "id": "restored_angular_resolution_lp_mrad",
+          "label": "重建标靶角分辨率 (lp/mrad)",
+          "definition": "作者从重建图像辨出的测试靶角频率。",
+          "conditions": "视场、靶尺寸及物距、目标密度、通道、处理与对比判据。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "wang_metaaxicon_si_2026",
+              "location": "S6 及 Fig. S5；主文 pp9–10 Fig. 7"
             }
           ]
         }
@@ -241922,9 +242017,4077 @@
               "defocus_removed": true
             }
           }
+        },
+        {
+          "id": "wang2026metaaxicon_central_design",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "central",
+          "model": "Wang 2026 · 贝塞尔阵列 · 主镜几何与设计范围",
+          "variant": "4 mm 轴上贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "同一单体芯片上的装置几何。离轴版图旋转复制为八只，已核数据按测量元件类型保存。",
+          "values": {
+            "diameter_um": {
+              "value": 4000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "D1=4 mm，中央带 Cr 光阑。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance"
+            },
+            "na": {
+              "value": 0.067,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S1 Table S1 Our work 行，NA 列；主文 p3 α0",
+              "note": "补件印 NA 0.067，主文 α0=3.81°。按 532 nm 的设计几何与 sin α0 的量级一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "aperture_angle_deg": 3.81,
+              "design_wavelength_nm": 532
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "Si₃N₄ 纳米柱、Cr 光阑与石英基底",
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S5 第 1 段与 Fig. S4；主文 p7 Fig. 4 与 p11 Methods",
+              "note": "400 nm 晶格、120–280 nm 柱边宽、800 nm 结构高。旋转复制同一离轴版图；本批未核分配到八个单元的独立逐片测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "lattice_period_nm": 400,
+              "pillar_width_range_nm": [
+                120,
+                280
+              ],
+              "pattern_height_nm": 800,
+              "chromium_aperture_thickness_nm": 100
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S5 第 1 段",
+              "note": "沉积厚度与纳米柱标称高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "设计锥面 F0=30 mm；固定工作面 FB=21 mm",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "F0 为锥面顶点几何参数。FB 在 450–700 nm 设计的有效贝塞尔区内。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_plane": "metasurface_plane",
+              "evaluation_plane_um": 21000,
+              "cone_aperture_angle_deg": 3.81,
+              "nominal_design_wavelength_nm": 532,
+              "design_incidence_deg": 0
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p11 Data availability；补件 S4 Fig. S3；DataCite",
+              "note": "作者说明研究数据可合理请求。已核主文和补件含 PSF 图、方向剖面和复原标靶；无逐频 MTF、原始 PSF 数组、源采样刻度或数据附件。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "PSF 图和剖面已核；原始数组与 MTF 待补",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_publisher_2026",
+                "wang_metaaxicon_kit_2026",
+                "wang_metaaxicon_datacite_2026",
+                "wang_metaaxicon_crossref_2026",
+                "wang_metaaxicon_partition_2026"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "efficiency_protocol": {
+              "value": null,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "主文 Fig. 1e；补件 S2 末段与 S4 Fig. S3c",
+              "note": "模拟 COMSOL 局部周期模型的一阶衍射效率积分覆盖衍射阶。S4 区分光强对入射与透射的两种归一。已核资料未对实物给出焦圈、积分功率、分母及效率波长表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "一级衍射效率模拟曲线；实物聚焦功率比待补",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "focus_area": null,
+              "denominator": null
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_offaxis_design",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "offaxis",
+          "model": "Wang 2026 · 贝塞尔阵列 · 离轴几何与设计范围",
+          "variant": "3 mm 离轴贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "同一单体芯片上的装置几何。离轴版图旋转复制为八只，已核数据按测量元件类型保存。",
+          "values": {
+            "diameter_um": {
+              "value": 3000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "D2=3 mm；离轴椭圆轮廓以 2F0 tan α0 的约 3 mm 名义口径表示。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "aperture_geometry": "nominal_eccentric_conic_diameter"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "Si₃N₄ 纳米柱、Cr 光阑与石英基底",
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S5 第 1 段与 Fig. S4；主文 p7 Fig. 4 与 p11 Methods",
+              "note": "400 nm 晶格、120–280 nm 柱边宽、800 nm 结构高。旋转复制同一离轴版图；本批未核分配到八个单元的独立逐片测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "lattice_period_nm": 400,
+              "pillar_width_range_nm": [
+                120,
+                280
+              ],
+              "pattern_height_nm": 800,
+              "chromium_aperture_thickness_nm": 100
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S5 第 1 段",
+              "note": "沉积厚度与纳米柱标称高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "设计锥面 F0=30 mm；固定工作面 FB=21 mm",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "F0 为锥面顶点几何参数。FB 在 450–700 nm 设计的有效贝塞尔区内。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_plane": "metasurface_plane",
+              "evaluation_plane_um": 21000,
+              "cone_aperture_angle_deg": 2.86,
+              "nominal_design_wavelength_nm": 532,
+              "design_incidence_deg": 4
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p11 Data availability；补件 S4 Fig. S3；DataCite",
+              "note": "作者说明研究数据可合理请求。已核主文和补件含 PSF 图、方向剖面和复原标靶；无逐频 MTF、原始 PSF 数组、源采样刻度或数据附件。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "PSF 图和剖面已核；原始数组与 MTF 待补",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_publisher_2026",
+                "wang_metaaxicon_kit_2026",
+                "wang_metaaxicon_datacite_2026",
+                "wang_metaaxicon_crossref_2026",
+                "wang_metaaxicon_partition_2026"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "efficiency_protocol": {
+              "value": null,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "主文 Fig. 1e；补件 S2 末段与 S4 Fig. S3c",
+              "note": "模拟 COMSOL 局部周期模型的一阶衍射效率积分覆盖衍射阶。S4 区分光强对入射与透射的两种归一。已核资料未对实物给出焦圈、积分功率、分母及效率波长表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "一级衍射效率模拟曲线；实物聚焦功率比待补",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "focus_area": null,
+              "denominator": null
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_central_psf_red",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "central",
+          "model": "Wang 2026 · 贝塞尔阵列 · 主镜轴上 R 通道",
+          "variant": "4 mm 轴上贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "白光条件下 RGB 相机通道的轴上径向 PSF。",
+          "values": {
+            "diameter_um": {
+              "value": 4000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "D1=4 mm，中央带 Cr 光阑。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance"
+            },
+            "na": {
+              "value": 0.067,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S1 Table S1 Our work 行，NA 列；主文 p3 α0",
+              "note": "补件印 NA 0.067，主文 α0=3.81°。按 532 nm 的设计几何与 sin α0 的量级一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "aperture_angle_deg": 3.81,
+              "design_wavelength_nm": 532
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp7–8 Fig. 5a–b",
+              "note": "白光经滤光、扩束及准直，CMOS 获取颜色通道。论文未给实测通道中心波长及响应积分范围。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "白光相机 R 通道",
+              "spectral_sampling": "rgb_camera_channel",
+              "color_channel": "R"
+            },
+            "aoi_deg": {
+              "value": 0,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p7 实测 FWHM 段；p8 Fig. 5b 径向剖面",
+              "note": "Fig. 5b 正入射。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "FB=21 mm 固定工作面；白光相机 RGB 通道",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 FB 工作面、pp7–8 Fig. 5a；主文 p7 实测 FWHM 段；p8 Fig. 5b 径向剖面",
+              "note": "白光点源经滤光、扩束和准直。40× 继像，Dhyana 401D 相机像元 6.5 μm。有效物方采样校准、频率归一化和逐通道波长表未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 21000,
+              "reference_plane": "metasurface_plane",
+              "object_conjugate": "infinity",
+              "field_theta_x_deg": 0,
+              "field_theta_y_deg": 0,
+              "sampling_direction": "radial",
+              "detector_pixel_pitch_um": 6.5,
+              "relay_magnification": 40,
+              "transverse_object_sampling_um": null,
+              "spectral_sampling": "rgb_camera_channel",
+              "polarization": null,
+              "color_channel": "red",
+              "intensity_normalization": "normalized_intensity_axis"
+            },
+            "rgb_radial_psf_fwhm_um": {
+              "value": 2.89,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p7 实测 FWHM 段；p8 Fig. 5b 径向剖面",
+              "note": "正文按 R/G/B 顺序印出实测宽度。有效通带与误差未列。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "color_channel": "red",
+              "direction": "radial",
+              "spectral_sampling": "rgb_camera_channel",
+              "evaluation_plane_um": 21000
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_central_psf_green",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "central",
+          "model": "Wang 2026 · 贝塞尔阵列 · 主镜轴上 G 通道",
+          "variant": "4 mm 轴上贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "白光条件下 RGB 相机通道的轴上径向 PSF。",
+          "values": {
+            "diameter_um": {
+              "value": 4000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "D1=4 mm，中央带 Cr 光阑。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance"
+            },
+            "na": {
+              "value": 0.067,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S1 Table S1 Our work 行，NA 列；主文 p3 α0",
+              "note": "补件印 NA 0.067，主文 α0=3.81°。按 532 nm 的设计几何与 sin α0 的量级一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "aperture_angle_deg": 3.81,
+              "design_wavelength_nm": 532
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp7–8 Fig. 5a–b",
+              "note": "白光经滤光、扩束及准直，CMOS 获取颜色通道。论文未给实测通道中心波长及响应积分范围。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "白光相机 G 通道",
+              "spectral_sampling": "rgb_camera_channel",
+              "color_channel": "G"
+            },
+            "aoi_deg": {
+              "value": 0,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p7 实测 FWHM 段；p8 Fig. 5b 径向剖面",
+              "note": "Fig. 5b 正入射。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "FB=21 mm 固定工作面；白光相机 RGB 通道",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 FB 工作面、pp7–8 Fig. 5a；主文 p7 实测 FWHM 段；p8 Fig. 5b 径向剖面",
+              "note": "白光点源经滤光、扩束和准直。40× 继像，Dhyana 401D 相机像元 6.5 μm。有效物方采样校准、频率归一化和逐通道波长表未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 21000,
+              "reference_plane": "metasurface_plane",
+              "object_conjugate": "infinity",
+              "field_theta_x_deg": 0,
+              "field_theta_y_deg": 0,
+              "sampling_direction": "radial",
+              "detector_pixel_pitch_um": 6.5,
+              "relay_magnification": 40,
+              "transverse_object_sampling_um": null,
+              "spectral_sampling": "rgb_camera_channel",
+              "polarization": null,
+              "color_channel": "green",
+              "intensity_normalization": "normalized_intensity_axis"
+            },
+            "rgb_radial_psf_fwhm_um": {
+              "value": 2.87,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p7 实测 FWHM 段；p8 Fig. 5b 径向剖面",
+              "note": "正文按 R/G/B 顺序印出实测宽度。有效通带与误差未列。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "color_channel": "green",
+              "direction": "radial",
+              "spectral_sampling": "rgb_camera_channel",
+              "evaluation_plane_um": 21000
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_central_psf_blue",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "central",
+          "model": "Wang 2026 · 贝塞尔阵列 · 主镜轴上 B 通道",
+          "variant": "4 mm 轴上贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "白光条件下 RGB 相机通道的轴上径向 PSF。",
+          "values": {
+            "diameter_um": {
+              "value": 4000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "D1=4 mm，中央带 Cr 光阑。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance"
+            },
+            "na": {
+              "value": 0.067,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S1 Table S1 Our work 行，NA 列；主文 p3 α0",
+              "note": "补件印 NA 0.067，主文 α0=3.81°。按 532 nm 的设计几何与 sin α0 的量级一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "aperture_angle_deg": 3.81,
+              "design_wavelength_nm": 532
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp7–8 Fig. 5a–b",
+              "note": "白光经滤光、扩束及准直，CMOS 获取颜色通道。论文未给实测通道中心波长及响应积分范围。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "白光相机 B 通道",
+              "spectral_sampling": "rgb_camera_channel",
+              "color_channel": "B"
+            },
+            "aoi_deg": {
+              "value": 0,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p7 实测 FWHM 段；p8 Fig. 5b 径向剖面",
+              "note": "Fig. 5b 正入射。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "FB=21 mm 固定工作面；白光相机 RGB 通道",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 FB 工作面、pp7–8 Fig. 5a；主文 p7 实测 FWHM 段；p8 Fig. 5b 径向剖面",
+              "note": "白光点源经滤光、扩束和准直。40× 继像，Dhyana 401D 相机像元 6.5 μm。有效物方采样校准、频率归一化和逐通道波长表未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 21000,
+              "reference_plane": "metasurface_plane",
+              "object_conjugate": "infinity",
+              "field_theta_x_deg": 0,
+              "field_theta_y_deg": 0,
+              "sampling_direction": "radial",
+              "detector_pixel_pitch_um": 6.5,
+              "relay_magnification": 40,
+              "transverse_object_sampling_um": null,
+              "spectral_sampling": "rgb_camera_channel",
+              "polarization": null,
+              "color_channel": "blue",
+              "intensity_normalization": "normalized_intensity_axis"
+            },
+            "rgb_radial_psf_fwhm_um": {
+              "value": 2.85,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p7 实测 FWHM 段；p8 Fig. 5b 径向剖面",
+              "note": "正文按 R/G/B 顺序印出实测宽度。有效通带与误差未列。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "color_channel": "blue",
+              "direction": "radial",
+              "spectral_sampling": "rgb_camera_channel",
+              "evaluation_plane_um": 21000
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_central_global_psf",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "central",
+          "model": "Wang 2026 · 贝塞尔阵列 · 主镜全局 RGB PSF",
+          "variant": "4 mm 轴上贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "S4 远离中心的零级与一级空间分量。",
+          "values": {
+            "diameter_um": {
+              "value": 4000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "D1=4 mm，中央带 Cr 光阑。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance"
+            },
+            "na": {
+              "value": 0.067,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S1 Table S1 Our work 行，NA 列；主文 p3 α0",
+              "note": "补件印 NA 0.067，主文 α0=3.81°。按 532 nm 的设计几何与 sin α0 的量级一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "aperture_angle_deg": 3.81,
+              "design_wavelength_nm": 532
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "FB=21 mm 固定工作面；白光相机 RGB 通道",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 FB 工作面、pp7–8 Fig. 5a；补件 S4 Fig. S3a 及测试段",
+              "note": "白光点源经滤光、扩束和准直。40× 继像，Dhyana 401D 相机像元 6.5 μm。有效物方采样校准、频率归一化和逐通道波长表未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 21000,
+              "reference_plane": "metasurface_plane",
+              "object_conjugate": "infinity",
+              "field_theta_x_deg": 0,
+              "field_theta_y_deg": 0,
+              "sampling_direction": "two_dimensional",
+              "detector_pixel_pitch_um": 6.5,
+              "relay_magnification": 40,
+              "transverse_object_sampling_um": null,
+              "spectral_sampling": "rgb_camera_channel",
+              "polarization": null,
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "acquisition_window_um": [
+                4000,
+                4000
+              ],
+              "linear_sensor_depth_bits": 16,
+              "equal_channel_gains": true,
+              "intensity_normalization": "log10_intensity_map",
+              "first_order_radial_support_description": "r < D1/4",
+              "zeroth_order_radial_support_description": "D1/4 < r < D1/2",
+              "blue_zeroth_order_status": "below_measured_background"
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p11 Data availability；补件 S4 Fig. S3；DataCite",
+              "note": "作者说明研究数据可合理请求。已核主文和补件含 PSF 图、方向剖面和复原标靶；无逐频 MTF、原始 PSF 数组、源采样刻度或数据附件。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "PSF 图和剖面已核；原始数组与 MTF 待补",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_publisher_2026",
+                "wang_metaaxicon_kit_2026",
+                "wang_metaaxicon_datacite_2026",
+                "wang_metaaxicon_crossref_2026",
+                "wang_metaaxicon_partition_2026"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_main_27_perpendicular",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "central",
+          "model": "Wang 2026 · 贝塞尔阵列 · θy 2.7° · 垂直色散",
+          "variant": "4 mm 轴上贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "离轴 RGB 剖面对照含实测虚线及模拟实线。RGB 斑中心沿 y 分离，旁环强度升高。",
+          "values": {
+            "diameter_um": {
+              "value": 4000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "D1=4 mm，中央带 Cr 光阑。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance"
+            },
+            "na": {
+              "value": 0.067,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S1 Table S1 Our work 行，NA 列；主文 p3 α0",
+              "note": "补件印 NA 0.067，主文 α0=3.81°。按 532 nm 的设计几何与 sin α0 的量级一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "aperture_angle_deg": 3.81,
+              "design_wavelength_nm": 532
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "aoi_deg": {
+              "value": 2.7,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5c 左两图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "单轴沿 y 的入射角，采用 Fig. 5 直接印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5c 左两图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "用于方向剖面的三通道为白光相机 RGB。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "RGB 通道，未给单色波长"
+            },
+            "psf_protocol": {
+              "value": "FB=21 mm 固定工作面；白光相机 RGB 通道",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 FB 工作面、pp7–8 Fig. 5a；主文 p8 Fig. 5c 左两图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "白光点源经滤光、扩束和准直。40× 继像，Dhyana 401D 相机像元 6.5 μm。有效物方采样校准、频率归一化和逐通道波长表未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 21000,
+              "reference_plane": "metasurface_plane",
+              "object_conjugate": "infinity",
+              "field_theta_x_deg": null,
+              "field_theta_y_deg": 2.7,
+              "sampling_direction": "perpendicular",
+              "detector_pixel_pitch_um": 6.5,
+              "relay_magnification": 40,
+              "transverse_object_sampling_um": null,
+              "spectral_sampling": "rgb_camera_channel",
+              "polarization": null,
+              "field_label_printed": "main_27",
+              "panel_index_within_group": 1,
+              "intensity_normalization": "normalized_intensity_axis"
+            },
+            "chromatic": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5c 左两图；图注灰箭头为垂直色散方向，彩箭头为色散方向；主文 pp7–8 正文",
+              "note": "RGB 斑中心沿 y 分离，旁环强度升高。 横轴空间坐标 μm、纵轴归一强度。两两通道中心偏移及误差均未印数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "实测 RGB 剖面；横向位移数值待补"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5c 左两图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "实测图未印对应方向和各通道宽度。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "方向曲线；FWHM 数值待补"
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_main_27_dispersion",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "central",
+          "model": "Wang 2026 · 贝塞尔阵列 · θy 2.7° · 沿色散",
+          "variant": "4 mm 轴上贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "离轴 RGB 剖面对照含实测虚线及模拟实线。RGB 斑中心沿 y 分离，旁环强度升高。",
+          "values": {
+            "diameter_um": {
+              "value": 4000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "D1=4 mm，中央带 Cr 光阑。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance"
+            },
+            "na": {
+              "value": 0.067,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S1 Table S1 Our work 行，NA 列；主文 p3 α0",
+              "note": "补件印 NA 0.067，主文 α0=3.81°。按 532 nm 的设计几何与 sin α0 的量级一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "aperture_angle_deg": 3.81,
+              "design_wavelength_nm": 532
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "aoi_deg": {
+              "value": 2.7,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5c 左两图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "单轴沿 y 的入射角，采用 Fig. 5 直接印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5c 左两图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "用于方向剖面的三通道为白光相机 RGB。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "RGB 通道，未给单色波长"
+            },
+            "psf_protocol": {
+              "value": "FB=21 mm 固定工作面；白光相机 RGB 通道",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 FB 工作面、pp7–8 Fig. 5a；主文 p8 Fig. 5c 左两图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "白光点源经滤光、扩束和准直。40× 继像，Dhyana 401D 相机像元 6.5 μm。有效物方采样校准、频率归一化和逐通道波长表未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 21000,
+              "reference_plane": "metasurface_plane",
+              "object_conjugate": "infinity",
+              "field_theta_x_deg": null,
+              "field_theta_y_deg": 2.7,
+              "sampling_direction": "dispersion",
+              "detector_pixel_pitch_um": 6.5,
+              "relay_magnification": 40,
+              "transverse_object_sampling_um": null,
+              "spectral_sampling": "rgb_camera_channel",
+              "polarization": null,
+              "field_label_printed": "main_27",
+              "panel_index_within_group": 2,
+              "intensity_normalization": "normalized_intensity_axis"
+            },
+            "chromatic": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5c 左两图；图注灰箭头为垂直色散方向，彩箭头为色散方向；主文 pp7–8 正文",
+              "note": "RGB 斑中心沿 y 分离，旁环强度升高。 横轴空间坐标 μm、纵轴归一强度。两两通道中心偏移及误差均未印数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "实测 RGB 剖面；横向位移数值待补"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5c 左两图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "实测图未印对应方向和各通道宽度。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "方向曲线；FWHM 数值待补"
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_main_33_perpendicular",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "central",
+          "model": "Wang 2026 · 贝塞尔阵列 · θy 3.3° · 垂直色散",
+          "variant": "4 mm 轴上贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "离轴 RGB 剖面对照含实测虚线及模拟实线。旁环和跨通道中心偏移显著，作者判定不满足全局 PSF 一致性。",
+          "values": {
+            "diameter_um": {
+              "value": 4000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "D1=4 mm，中央带 Cr 光阑。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance"
+            },
+            "na": {
+              "value": 0.067,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S1 Table S1 Our work 行，NA 列；主文 p3 α0",
+              "note": "补件印 NA 0.067，主文 α0=3.81°。按 532 nm 的设计几何与 sin α0 的量级一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "aperture_angle_deg": 3.81,
+              "design_wavelength_nm": 532
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "aoi_deg": {
+              "value": 3.3,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5c 右两图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "单轴沿 y 的入射角，采用 Fig. 5 直接印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5c 右两图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "用于方向剖面的三通道为白光相机 RGB。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "RGB 通道，未给单色波长"
+            },
+            "psf_protocol": {
+              "value": "FB=21 mm 固定工作面；白光相机 RGB 通道",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 FB 工作面、pp7–8 Fig. 5a；主文 p8 Fig. 5c 右两图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "白光点源经滤光、扩束和准直。40× 继像，Dhyana 401D 相机像元 6.5 μm。有效物方采样校准、频率归一化和逐通道波长表未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 21000,
+              "reference_plane": "metasurface_plane",
+              "object_conjugate": "infinity",
+              "field_theta_x_deg": null,
+              "field_theta_y_deg": 3.3,
+              "sampling_direction": "perpendicular",
+              "detector_pixel_pitch_um": 6.5,
+              "relay_magnification": 40,
+              "transverse_object_sampling_um": null,
+              "spectral_sampling": "rgb_camera_channel",
+              "polarization": null,
+              "field_label_printed": "main_33",
+              "panel_index_within_group": 1,
+              "intensity_normalization": "normalized_intensity_axis"
+            },
+            "chromatic": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5c 右两图；图注灰箭头为垂直色散方向，彩箭头为色散方向；主文 pp7–8 正文",
+              "note": "旁环和跨通道中心偏移显著，作者判定不满足全局 PSF 一致性。 横轴空间坐标 μm、纵轴归一强度。两两通道中心偏移及误差均未印数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "实测 RGB 剖面；横向位移数值待补"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5c 右两图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "实测图未印对应方向和各通道宽度。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "方向曲线；FWHM 数值待补"
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_main_33_dispersion",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "central",
+          "model": "Wang 2026 · 贝塞尔阵列 · θy 3.3° · 沿色散",
+          "variant": "4 mm 轴上贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "离轴 RGB 剖面对照含实测虚线及模拟实线。旁环和跨通道中心偏移显著，作者判定不满足全局 PSF 一致性。",
+          "values": {
+            "diameter_um": {
+              "value": 4000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "D1=4 mm，中央带 Cr 光阑。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance"
+            },
+            "na": {
+              "value": 0.067,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S1 Table S1 Our work 行，NA 列；主文 p3 α0",
+              "note": "补件印 NA 0.067，主文 α0=3.81°。按 532 nm 的设计几何与 sin α0 的量级一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "aperture_angle_deg": 3.81,
+              "design_wavelength_nm": 532
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "aoi_deg": {
+              "value": 3.3,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5c 右两图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "单轴沿 y 的入射角，采用 Fig. 5 直接印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5c 右两图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "用于方向剖面的三通道为白光相机 RGB。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "RGB 通道，未给单色波长"
+            },
+            "psf_protocol": {
+              "value": "FB=21 mm 固定工作面；白光相机 RGB 通道",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 FB 工作面、pp7–8 Fig. 5a；主文 p8 Fig. 5c 右两图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "白光点源经滤光、扩束和准直。40× 继像，Dhyana 401D 相机像元 6.5 μm。有效物方采样校准、频率归一化和逐通道波长表未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 21000,
+              "reference_plane": "metasurface_plane",
+              "object_conjugate": "infinity",
+              "field_theta_x_deg": null,
+              "field_theta_y_deg": 3.3,
+              "sampling_direction": "dispersion",
+              "detector_pixel_pitch_um": 6.5,
+              "relay_magnification": 40,
+              "transverse_object_sampling_um": null,
+              "spectral_sampling": "rgb_camera_channel",
+              "polarization": null,
+              "field_label_printed": "main_33",
+              "panel_index_within_group": 2,
+              "intensity_normalization": "normalized_intensity_axis"
+            },
+            "chromatic": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5c 右两图；图注灰箭头为垂直色散方向，彩箭头为色散方向；主文 pp7–8 正文",
+              "note": "旁环和跨通道中心偏移显著，作者判定不满足全局 PSF 一致性。 横轴空间坐标 μm、纵轴归一强度。两两通道中心偏移及误差均未印数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "实测 RGB 剖面；横向位移数值待补"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5c 右两图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "实测图未印对应方向和各通道宽度。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "方向曲线；FWHM 数值待补"
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_k0_perpendicular",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "offaxis",
+          "model": "Wang 2026 · 贝塞尔阵列 · θy 4° · 垂直色散",
+          "variant": "3 mm 离轴贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "离轴 RGB 剖面对照含实测虚线及模拟实线。设计场点的光斑接近标准贝塞尔强度分布。",
+          "values": {
+            "diameter_um": {
+              "value": 3000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "D2=3 mm；离轴椭圆轮廓以 2F0 tan α0 的约 3 mm 名义口径表示。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "aperture_geometry": "nominal_eccentric_conic_diameter"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "aoi_deg": {
+              "value": 4,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 上排第 1–2 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "单轴沿 y 的入射角，采用 Fig. 5 直接印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 上排第 1–2 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "用于方向剖面的三通道为白光相机 RGB。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "RGB 通道，未给单色波长"
+            },
+            "psf_protocol": {
+              "value": "FB=21 mm 固定工作面；白光相机 RGB 通道",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 FB 工作面、pp7–8 Fig. 5a；主文 p8 Fig. 5d 上排第 1–2 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "白光点源经滤光、扩束和准直。40× 继像，Dhyana 401D 相机像元 6.5 μm。有效物方采样校准、频率归一化和逐通道波长表未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 21000,
+              "reference_plane": "metasurface_plane",
+              "object_conjugate": "infinity",
+              "field_theta_x_deg": null,
+              "field_theta_y_deg": 4,
+              "sampling_direction": "perpendicular",
+              "detector_pixel_pitch_um": 6.5,
+              "relay_magnification": 40,
+              "transverse_object_sampling_um": null,
+              "spectral_sampling": "rgb_camera_channel",
+              "polarization": null,
+              "field_label_printed": "k0",
+              "panel_index_within_group": 1,
+              "intensity_normalization": "normalized_intensity_axis"
+            },
+            "chromatic": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 上排第 1–2 图；图注灰箭头为垂直色散方向，彩箭头为色散方向；主文 pp7–8 正文",
+              "note": "设计场点的光斑接近标准贝塞尔强度分布。 横轴空间坐标 μm、纵轴归一强度。两两通道中心偏移及误差均未印数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "实测 RGB 剖面；横向位移数值待补"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 上排第 1–2 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "实测图未印对应方向和各通道宽度。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "方向曲线；FWHM 数值待补"
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_k0_dispersion",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "offaxis",
+          "model": "Wang 2026 · 贝塞尔阵列 · θy 4° · 沿色散",
+          "variant": "3 mm 离轴贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "离轴 RGB 剖面对照含实测虚线及模拟实线。设计场点的光斑接近标准贝塞尔强度分布。",
+          "values": {
+            "diameter_um": {
+              "value": 3000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "D2=3 mm；离轴椭圆轮廓以 2F0 tan α0 的约 3 mm 名义口径表示。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "aperture_geometry": "nominal_eccentric_conic_diameter"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "aoi_deg": {
+              "value": 4,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 上排第 1–2 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "单轴沿 y 的入射角，采用 Fig. 5 直接印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 上排第 1–2 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "用于方向剖面的三通道为白光相机 RGB。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "RGB 通道，未给单色波长"
+            },
+            "psf_protocol": {
+              "value": "FB=21 mm 固定工作面；白光相机 RGB 通道",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 FB 工作面、pp7–8 Fig. 5a；主文 p8 Fig. 5d 上排第 1–2 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "白光点源经滤光、扩束和准直。40× 继像，Dhyana 401D 相机像元 6.5 μm。有效物方采样校准、频率归一化和逐通道波长表未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 21000,
+              "reference_plane": "metasurface_plane",
+              "object_conjugate": "infinity",
+              "field_theta_x_deg": null,
+              "field_theta_y_deg": 4,
+              "sampling_direction": "dispersion",
+              "detector_pixel_pitch_um": 6.5,
+              "relay_magnification": 40,
+              "transverse_object_sampling_um": null,
+              "spectral_sampling": "rgb_camera_channel",
+              "polarization": null,
+              "field_label_printed": "k0",
+              "panel_index_within_group": 2,
+              "intensity_normalization": "normalized_intensity_axis"
+            },
+            "chromatic": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 上排第 1–2 图；图注灰箭头为垂直色散方向，彩箭头为色散方向；主文 pp7–8 正文",
+              "note": "设计场点的光斑接近标准贝塞尔强度分布。 横轴空间坐标 μm、纵轴归一强度。两两通道中心偏移及误差均未印数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "实测 RGB 剖面；横向位移数值待补"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 上排第 1–2 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "实测图未印对应方向和各通道宽度。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "方向曲线；FWHM 数值待补"
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_printed_k1_dispersion",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "offaxis",
+          "model": "Wang 2026 · 贝塞尔阵列 · θy 2.5° · 沿色散",
+          "variant": "3 mm 离轴贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "离轴 RGB 剖面对照含实测虚线及模拟实线。Fig. 5d 标签 K1，θy=2.5°；Fig. 3d 示意将 K1 放于 5°。保留角度及标签冲突。",
+          "values": {
+            "diameter_um": {
+              "value": 3000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "D2=3 mm；离轴椭圆轮廓以 2F0 tan α0 的约 3 mm 名义口径表示。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "aperture_geometry": "nominal_eccentric_conic_diameter"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "aoi_deg": {
+              "value": 2.5,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 上排第 3 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "单轴沿 y 的入射角，采用 Fig. 5 直接印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 上排第 3 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "用于方向剖面的三通道为白光相机 RGB。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "RGB 通道，未给单色波长"
+            },
+            "psf_protocol": {
+              "value": "FB=21 mm 固定工作面；白光相机 RGB 通道",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 FB 工作面、pp7–8 Fig. 5a；主文 p8 Fig. 5d 上排第 3 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "白光点源经滤光、扩束和准直。40× 继像，Dhyana 401D 相机像元 6.5 μm。有效物方采样校准、频率归一化和逐通道波长表未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 21000,
+              "reference_plane": "metasurface_plane",
+              "object_conjugate": "infinity",
+              "field_theta_x_deg": null,
+              "field_theta_y_deg": 2.5,
+              "sampling_direction": "dispersion",
+              "detector_pixel_pitch_um": 6.5,
+              "relay_magnification": 40,
+              "transverse_object_sampling_um": null,
+              "spectral_sampling": "rgb_camera_channel",
+              "polarization": null,
+              "field_label_printed": "K1",
+              "panel_index_within_group": 1,
+              "intensity_normalization": "normalized_intensity_axis"
+            },
+            "chromatic": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 上排第 3 图；图注灰箭头为垂直色散方向，彩箭头为色散方向；主文 pp7–8 正文",
+              "note": "Fig. 5d 标签 K1，θy=2.5°；Fig. 3d 示意将 K1 放于 5°。保留角度及标签冲突。 横轴空间坐标 μm、纵轴归一强度。两两通道中心偏移及误差均未印数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "实测 RGB 剖面；横向位移数值待补"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 上排第 3 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "实测图未印对应方向和各通道宽度。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "方向曲线；FWHM 数值待补"
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_printed_k2_dispersion",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "offaxis",
+          "model": "Wang 2026 · 贝塞尔阵列 · θy 5° · 沿色散",
+          "variant": "3 mm 离轴贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "离轴 RGB 剖面对照含实测虚线及模拟实线。Fig. 5d 标签 K2，θy=5.0°；Fig. 3d 示意将 K2 放于 2.5°。保留角度及标签冲突。",
+          "values": {
+            "diameter_um": {
+              "value": 3000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "D2=3 mm；离轴椭圆轮廓以 2F0 tan α0 的约 3 mm 名义口径表示。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "aperture_geometry": "nominal_eccentric_conic_diameter"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "aoi_deg": {
+              "value": 5,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 上排第 4 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "单轴沿 y 的入射角，采用 Fig. 5 直接印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 上排第 4 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "用于方向剖面的三通道为白光相机 RGB。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "RGB 通道，未给单色波长"
+            },
+            "psf_protocol": {
+              "value": "FB=21 mm 固定工作面；白光相机 RGB 通道",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 FB 工作面、pp7–8 Fig. 5a；主文 p8 Fig. 5d 上排第 4 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "白光点源经滤光、扩束和准直。40× 继像，Dhyana 401D 相机像元 6.5 μm。有效物方采样校准、频率归一化和逐通道波长表未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 21000,
+              "reference_plane": "metasurface_plane",
+              "object_conjugate": "infinity",
+              "field_theta_x_deg": null,
+              "field_theta_y_deg": 5,
+              "sampling_direction": "dispersion",
+              "detector_pixel_pitch_um": 6.5,
+              "relay_magnification": 40,
+              "transverse_object_sampling_um": null,
+              "spectral_sampling": "rgb_camera_channel",
+              "polarization": null,
+              "field_label_printed": "K2",
+              "panel_index_within_group": 1,
+              "intensity_normalization": "normalized_intensity_axis"
+            },
+            "chromatic": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 上排第 4 图；图注灰箭头为垂直色散方向，彩箭头为色散方向；主文 pp7–8 正文",
+              "note": "Fig. 5d 标签 K2，θy=5.0°；Fig. 3d 示意将 K2 放于 2.5°。保留角度及标签冲突。 横轴空间坐标 μm、纵轴归一强度。两两通道中心偏移及误差均未印数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "实测 RGB 剖面；横向位移数值待补"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 上排第 4 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "实测图未印对应方向和各通道宽度。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "方向曲线；FWHM 数值待补"
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_k3_perpendicular",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "offaxis",
+          "model": "Wang 2026 · 贝塞尔阵列 · θx 1.91° / θy 4.62° · 垂直色散",
+          "variant": "3 mm 离轴贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "离轴 RGB 剖面对照含实测虚线及模拟实线。作者称退化接近主镜 2.7°，约为全局一致性容许极限。",
+          "values": {
+            "diameter_um": {
+              "value": 3000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "D2=3 mm；离轴椭圆轮廓以 2F0 tan α0 的约 3 mm 名义口径表示。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "aperture_geometry": "nominal_eccentric_conic_diameter"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 下排第 1–2 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "用于方向剖面的三通道为白光相机 RGB。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "RGB 通道，未给单色波长"
+            },
+            "psf_protocol": {
+              "value": "FB=21 mm 固定工作面；白光相机 RGB 通道",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 FB 工作面、pp7–8 Fig. 5a；主文 p8 Fig. 5d 下排第 1–2 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "白光点源经滤光、扩束和准直。40× 继像，Dhyana 401D 相机像元 6.5 μm。有效物方采样校准、频率归一化和逐通道波长表未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 21000,
+              "reference_plane": "metasurface_plane",
+              "object_conjugate": "infinity",
+              "field_theta_x_deg": 1.91,
+              "field_theta_y_deg": 4.62,
+              "sampling_direction": "perpendicular",
+              "detector_pixel_pitch_um": 6.5,
+              "relay_magnification": 40,
+              "transverse_object_sampling_um": null,
+              "spectral_sampling": "rgb_camera_channel",
+              "polarization": null,
+              "field_label_printed": "k3",
+              "panel_index_within_group": 1,
+              "intensity_normalization": "normalized_intensity_axis"
+            },
+            "chromatic": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 下排第 1–2 图；图注灰箭头为垂直色散方向，彩箭头为色散方向；主文 pp7–8 正文",
+              "note": "作者称退化接近主镜 2.7°，约为全局一致性容许极限。 横轴空间坐标 μm、纵轴归一强度。两两通道中心偏移及误差均未印数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "实测 RGB 剖面；横向位移数值待补"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 下排第 1–2 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "实测图未印对应方向和各通道宽度。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "方向曲线；FWHM 数值待补"
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_k3_dispersion",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "offaxis",
+          "model": "Wang 2026 · 贝塞尔阵列 · θx 1.91° / θy 4.62° · 沿色散",
+          "variant": "3 mm 离轴贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "离轴 RGB 剖面对照含实测虚线及模拟实线。作者称退化接近主镜 2.7°，约为全局一致性容许极限。",
+          "values": {
+            "diameter_um": {
+              "value": 3000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "D2=3 mm；离轴椭圆轮廓以 2F0 tan α0 的约 3 mm 名义口径表示。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "aperture_geometry": "nominal_eccentric_conic_diameter"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 下排第 1–2 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "用于方向剖面的三通道为白光相机 RGB。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "RGB 通道，未给单色波长"
+            },
+            "psf_protocol": {
+              "value": "FB=21 mm 固定工作面；白光相机 RGB 通道",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 FB 工作面、pp7–8 Fig. 5a；主文 p8 Fig. 5d 下排第 1–2 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "白光点源经滤光、扩束和准直。40× 继像，Dhyana 401D 相机像元 6.5 μm。有效物方采样校准、频率归一化和逐通道波长表未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 21000,
+              "reference_plane": "metasurface_plane",
+              "object_conjugate": "infinity",
+              "field_theta_x_deg": 1.91,
+              "field_theta_y_deg": 4.62,
+              "sampling_direction": "dispersion",
+              "detector_pixel_pitch_um": 6.5,
+              "relay_magnification": 40,
+              "transverse_object_sampling_um": null,
+              "spectral_sampling": "rgb_camera_channel",
+              "polarization": null,
+              "field_label_printed": "k3",
+              "panel_index_within_group": 2,
+              "intensity_normalization": "normalized_intensity_axis"
+            },
+            "chromatic": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 下排第 1–2 图；图注灰箭头为垂直色散方向，彩箭头为色散方向；主文 pp7–8 正文",
+              "note": "作者称退化接近主镜 2.7°，约为全局一致性容许极限。 横轴空间坐标 μm、纵轴归一强度。两两通道中心偏移及误差均未印数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "实测 RGB 剖面；横向位移数值待补"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 下排第 1–2 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "实测图未印对应方向和各通道宽度。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "方向曲线；FWHM 数值待补"
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_k4_perpendicular",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "offaxis",
+          "model": "Wang 2026 · 贝塞尔阵列 · θx 1.04° / θy 2.5° · 垂直色散",
+          "variant": "3 mm 离轴贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "离轴 RGB 剖面对照含实测虚线及模拟实线。图给两轴入射角分量。",
+          "values": {
+            "diameter_um": {
+              "value": 3000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "D2=3 mm；离轴椭圆轮廓以 2F0 tan α0 的约 3 mm 名义口径表示。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "aperture_geometry": "nominal_eccentric_conic_diameter"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 下排第 3–4 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "用于方向剖面的三通道为白光相机 RGB。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "RGB 通道，未给单色波长"
+            },
+            "psf_protocol": {
+              "value": "FB=21 mm 固定工作面；白光相机 RGB 通道",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 FB 工作面、pp7–8 Fig. 5a；主文 p8 Fig. 5d 下排第 3–4 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "白光点源经滤光、扩束和准直。40× 继像，Dhyana 401D 相机像元 6.5 μm。有效物方采样校准、频率归一化和逐通道波长表未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 21000,
+              "reference_plane": "metasurface_plane",
+              "object_conjugate": "infinity",
+              "field_theta_x_deg": 1.04,
+              "field_theta_y_deg": 2.5,
+              "sampling_direction": "perpendicular",
+              "detector_pixel_pitch_um": 6.5,
+              "relay_magnification": 40,
+              "transverse_object_sampling_um": null,
+              "spectral_sampling": "rgb_camera_channel",
+              "polarization": null,
+              "field_label_printed": "k4",
+              "panel_index_within_group": 1,
+              "intensity_normalization": "normalized_intensity_axis"
+            },
+            "chromatic": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 下排第 3–4 图；图注灰箭头为垂直色散方向，彩箭头为色散方向；主文 pp7–8 正文",
+              "note": "图给两轴入射角分量。 横轴空间坐标 μm、纵轴归一强度。两两通道中心偏移及误差均未印数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "实测 RGB 剖面；横向位移数值待补"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 下排第 3–4 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "实测图未印对应方向和各通道宽度。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "方向曲线；FWHM 数值待补"
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_k4_dispersion",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "offaxis",
+          "model": "Wang 2026 · 贝塞尔阵列 · θx 1.04° / θy 2.5° · 沿色散",
+          "variant": "3 mm 离轴贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "离轴 RGB 剖面对照含实测虚线及模拟实线。图给两轴入射角分量。",
+          "values": {
+            "diameter_um": {
+              "value": 3000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "D2=3 mm；离轴椭圆轮廓以 2F0 tan α0 的约 3 mm 名义口径表示。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "aperture_geometry": "nominal_eccentric_conic_diameter"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 下排第 3–4 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "用于方向剖面的三通道为白光相机 RGB。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "RGB 通道，未给单色波长"
+            },
+            "psf_protocol": {
+              "value": "FB=21 mm 固定工作面；白光相机 RGB 通道",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 FB 工作面、pp7–8 Fig. 5a；主文 p8 Fig. 5d 下排第 3–4 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "白光点源经滤光、扩束和准直。40× 继像，Dhyana 401D 相机像元 6.5 μm。有效物方采样校准、频率归一化和逐通道波长表未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 21000,
+              "reference_plane": "metasurface_plane",
+              "object_conjugate": "infinity",
+              "field_theta_x_deg": 1.04,
+              "field_theta_y_deg": 2.5,
+              "sampling_direction": "dispersion",
+              "detector_pixel_pitch_um": 6.5,
+              "relay_magnification": 40,
+              "transverse_object_sampling_um": null,
+              "spectral_sampling": "rgb_camera_channel",
+              "polarization": null,
+              "field_label_printed": "k4",
+              "panel_index_within_group": 2,
+              "intensity_normalization": "normalized_intensity_axis"
+            },
+            "chromatic": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 下排第 3–4 图；图注灰箭头为垂直色散方向，彩箭头为色散方向；主文 pp7–8 正文",
+              "note": "图给两轴入射角分量。 横轴空间坐标 μm、纵轴归一强度。两两通道中心偏移及误差均未印数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "实测 RGB 剖面；横向位移数值待补"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p8 Fig. 5d 下排第 3–4 图；图注灰箭头为垂直色散方向，彩箭头为色散方向",
+              "note": "实测图未印对应方向和各通道宽度。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "方向曲线；FWHM 数值待补"
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_original_simulation",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "original",
+          "model": "Wang 2026 · 贝塞尔阵列 · 4° 未校正模型",
+          "variant": "3 mm 无色差校正设计模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "与 Fig. 5 实测剖面对照的相位设计计算。",
+          "values": {
+            "diameter_um": {
+              "value": 3000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "D2=3 mm；离轴椭圆轮廓以 2F0 tan α0 的约 3 mm 名义口径表示。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "aperture_geometry": "nominal_eccentric_conic_diameter"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "θ=4°；设计波段 450–700 nm；FB=21 mm",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp5–6 Fig. 3b–c、Eq. (6)–(7)；补件 S3",
+              "note": "光斑位移图从相位及斜入射角求得。模型参考目标为 532 nm，轴标为 Spot Offset [μm]。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "evaluation_plane_um": 21000,
+              "nominal_design_wavelength_nm": 532,
+              "design_incidence_deg": 4,
+              "design_tilt_adjustment_mrad": 0
+            },
+            "chromatic": {
+              "value": "作者模型位移接近 1 μm",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp5–6 Fig. 3b–c、Eq. (6)–(7)；补件 S3",
+              "note": "主文设计推导、Fig. 3b–c 和 S3 互证。作者报告波段量级，具体端点差/最大绝对差的聚合未明，曲线各谱点坐标未提取。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "calculation_origin": "authors",
+              "reported_approximate_value_um": 1,
+              "band_nm": [
+                450,
+                700
+              ],
+              "reference_wavelength_nm": 532,
+              "direction": "meridional",
+              "design_incidence_deg": 4
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_original_psf_450",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "original",
+          "model": "Wang 2026 · 贝塞尔阵列 · 未校正模型 · 450 nm",
+          "variant": "3 mm 无色差校正设计模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "Fig. 3c 独立模拟谱点，色斑中心的精确数值未列。",
+          "values": {
+            "diameter_um": {
+              "value": 3000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "D2=3 mm；离轴椭圆轮廓以 2F0 tan α0 的约 3 mm 名义口径表示。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "aperture_geometry": "nominal_eccentric_conic_diameter"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3c 印字",
+              "note": "模拟面板所列谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "离轴设计角 4°；FB=21 mm",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 Fig. 3c；补件 S3 参数段",
+              "note": "同图三谱点比较横向位移。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "evaluation_plane_um": 21000,
+              "design_incidence_deg": 4
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_original_psf_532",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "original",
+          "model": "Wang 2026 · 贝塞尔阵列 · 未校正模型 · 532 nm",
+          "variant": "3 mm 无色差校正设计模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "Fig. 3c 独立模拟谱点，色斑中心的精确数值未列。",
+          "values": {
+            "diameter_um": {
+              "value": 3000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "D2=3 mm；离轴椭圆轮廓以 2F0 tan α0 的约 3 mm 名义口径表示。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "aperture_geometry": "nominal_eccentric_conic_diameter"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3c 印字",
+              "note": "模拟面板所列谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "离轴设计角 4°；FB=21 mm",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 Fig. 3c；补件 S3 参数段",
+              "note": "同图三谱点比较横向位移。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "evaluation_plane_um": 21000,
+              "design_incidence_deg": 4
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_original_psf_700",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "original",
+          "model": "Wang 2026 · 贝塞尔阵列 · 未校正模型 · 700 nm",
+          "variant": "3 mm 无色差校正设计模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "Fig. 3c 独立模拟谱点，色斑中心的精确数值未列。",
+          "values": {
+            "diameter_um": {
+              "value": 3000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "D2=3 mm；离轴椭圆轮廓以 2F0 tan α0 的约 3 mm 名义口径表示。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "aperture_geometry": "nominal_eccentric_conic_diameter"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3c 印字",
+              "note": "模拟面板所列谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "离轴设计角 4°；FB=21 mm",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 Fig. 3c；补件 S3 参数段",
+              "note": "同图三谱点比较横向位移。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "evaluation_plane_um": 21000,
+              "design_incidence_deg": 4
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_corrected_simulation",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "corrected",
+          "model": "Wang 2026 · 贝塞尔阵列 · 4° 色差校正模型",
+          "variant": "3 mm 横向色差校正设计模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "与 Fig. 5 实测剖面对照的相位设计计算。",
+          "values": {
+            "diameter_um": {
+              "value": 3000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "D2=3 mm；离轴椭圆轮廓以 2F0 tan α0 的约 3 mm 名义口径表示。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "aperture_geometry": "nominal_eccentric_conic_diameter"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "θ=4°；设计波段 450–700 nm；FB=21 mm",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp5–6 Fig. 3b–c、Eq. (6)–(7)；补件 S3",
+              "note": "光斑位移图从相位及斜入射角求得。模型参考目标为 532 nm，轴标为 Spot Offset [μm]。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "evaluation_plane_um": 21000,
+              "nominal_design_wavelength_nm": 532,
+              "design_incidence_deg": 4,
+              "design_tilt_adjustment_mrad": -0.105
+            },
+            "chromatic": {
+              "value": "作者模型位移低于 0.1 μm",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp5–6 Fig. 3b–c、Eq. (6)–(7)；补件 S3",
+              "note": "主文设计推导、Fig. 3b–c 和 S3 互证。作者报告波段量级，具体端点差/最大绝对差的聚合未明，曲线各谱点坐标未提取。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "calculation_origin": "authors",
+              "bound": {
+                "operator": "lt",
+                "value": 0.1,
+                "unit": "μm"
+              },
+              "band_nm": [
+                450,
+                700
+              ],
+              "reference_wavelength_nm": 532,
+              "direction": "meridional",
+              "design_incidence_deg": 4
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_corrected_psf_450",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "corrected",
+          "model": "Wang 2026 · 贝塞尔阵列 · 校正模型 · 450 nm",
+          "variant": "3 mm 横向色差校正设计模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "Fig. 3c 独立模拟谱点，色斑中心的精确数值未列。",
+          "values": {
+            "diameter_um": {
+              "value": 3000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "D2=3 mm；离轴椭圆轮廓以 2F0 tan α0 的约 3 mm 名义口径表示。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "aperture_geometry": "nominal_eccentric_conic_diameter"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3c 印字",
+              "note": "模拟面板所列谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "离轴设计角 4°；FB=21 mm",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 Fig. 3c；补件 S3 参数段",
+              "note": "同图三谱点比较横向位移。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "evaluation_plane_um": 21000,
+              "design_incidence_deg": 4
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_corrected_psf_532",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "corrected",
+          "model": "Wang 2026 · 贝塞尔阵列 · 校正模型 · 532 nm",
+          "variant": "3 mm 横向色差校正设计模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "Fig. 3c 独立模拟谱点，色斑中心的精确数值未列。",
+          "values": {
+            "diameter_um": {
+              "value": 3000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "D2=3 mm；离轴椭圆轮廓以 2F0 tan α0 的约 3 mm 名义口径表示。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "aperture_geometry": "nominal_eccentric_conic_diameter"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3c 印字",
+              "note": "模拟面板所列谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "离轴设计角 4°；FB=21 mm",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 Fig. 3c；补件 S3 参数段",
+              "note": "同图三谱点比较横向位移。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "evaluation_plane_um": 21000,
+              "design_incidence_deg": 4
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_corrected_psf_700",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "corrected",
+          "model": "Wang 2026 · 贝塞尔阵列 · 校正模型 · 700 nm",
+          "variant": "3 mm 横向色差校正设计模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "Fig. 3c 独立模拟谱点，色斑中心的精确数值未列。",
+          "values": {
+            "diameter_um": {
+              "value": 3000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "D2=3 mm；离轴椭圆轮廓以 2F0 tan α0 的约 3 mm 名义口径表示。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "aperture_geometry": "nominal_eccentric_conic_diameter"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3c 印字",
+              "note": "模拟面板所列谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "离轴设计角 4°；FB=21 mm",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 Fig. 3c；补件 S3 参数段",
+              "note": "同图三谱点比较横向位移。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "evaluation_plane_um": 21000,
+              "design_incidence_deg": 4
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_restored_t5",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "central",
+          "model": "Wang 2026 · 贝塞尔阵列 · 重建标靶 T5 · 0°",
+          "variant": "4 mm 轴上贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "重建的极限角分辨率；区分标靶角宽、入射角与阵列拼接视场。",
+          "values": {
+            "diameter_um": {
+              "value": 4000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "D1=4 mm，中央带 Cr 光阑。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance"
+            },
+            "na": {
+              "value": 0.067,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S1 Table S1 Our work 行，NA 列；主文 p3 α0",
+              "note": "补件印 NA 0.067，主文 α0=3.81°。按 532 nm 的设计几何与 sin α0 的量级一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "aperture_angle_deg": 3.81,
+              "design_wavelength_nm": 532
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "aoi_deg": {
+              "value": 0,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7a–c",
+              "note": "作者明示的标靶成像入射角。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "illumination": {
+              "value": "白光彩色标靶测试",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7a–c",
+              "note": "目标通过 40× 显微继像获取。保留 R/G/B 相对条纹强度和宽度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "40× 继像后非盲 TV 正则反卷积",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7a–c",
+              "note": "作者按目标类型调整有限物距或准直等效无穷远，随后比较重建图像内的标靶条纹。",
+              "basis": "reconstruction",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "object_distance_m": 1.76,
+              "object_conjugate": "finite",
+              "evaluation_plane_um": 21000,
+              "processing_stage": "nonblind_tv_deconvolution",
+              "target_id": "T5",
+              "field_angle_deg": 0,
+              "target_field_extent_deg": null
+            },
+            "restored_angular_resolution_lp_mrad": {
+              "value": 5.13,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7a–c",
+              "note": "作者从经非盲 TV 重建的定制标靶条纹得出。补件并报折合像面频率 244 lp/mm。",
+              "basis": "reconstruction",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "calculation_origin": "authors",
+              "target_id": "T5",
+              "frequency_unit": "lp/mrad",
+              "processing_stage": "nonblind_tv_deconvolution",
+              "reported_minimum_contrast_fraction": 0.2,
+              "reported_image_equivalent_frequency_lpmm": 244,
+              "reported_lens_reference_lp_mrad": 6.16
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_captured_t5",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "central",
+          "model": "Wang 2026 · 贝塞尔阵列 · 直拍标靶 · 0°",
+          "variant": "4 mm 轴上贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "重建前的原始标靶图入口。",
+          "values": {
+            "diameter_um": {
+              "value": 4000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "D1=4 mm，中央带 Cr 光阑。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance"
+            },
+            "na": {
+              "value": 0.067,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S1 Table S1 Our work 行，NA 列；主文 p3 α0",
+              "note": "补件印 NA 0.067，主文 α0=3.81°。按 532 nm 的设计几何与 sin α0 的量级一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "aperture_angle_deg": 3.81,
+              "design_wavelength_nm": 532
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "aoi_deg": {
+              "value": 0,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7a–c",
+              "note": "作者明示的标靶成像入射角。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "物距 1.76 m；直拍",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7a–c",
+              "note": "直拍照片所在面板为 Fig. 7a。作者定量可辨目标取重建图；直拍极限值未给。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "object_distance_m": 1.76,
+              "relay_magnification": 40,
+              "processing_stage": "captured"
+            },
+            "restored_angular_resolution_lp_mrad": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7a–c",
+              "note": "直拍面板未给定量可辨角频率。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "直拍图；未报极限角频率"
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_restored_t1",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "offaxis",
+          "model": "Wang 2026 · 贝塞尔阵列 · 重建标靶 T1 · 4°",
+          "variant": "3 mm 离轴贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "重建的极限角分辨率；区分标靶角宽、入射角与阵列拼接视场。",
+          "values": {
+            "diameter_um": {
+              "value": 3000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "D2=3 mm；离轴椭圆轮廓以 2F0 tan α0 的约 3 mm 名义口径表示。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "aperture_geometry": "nominal_eccentric_conic_diameter"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "aoi_deg": {
+              "value": 4,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7d–f",
+              "note": "作者明示的标靶成像入射角。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "illumination": {
+              "value": "白光彩色标靶测试",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7d–f",
+              "note": "目标通过 40× 显微继像获取。保留 R/G/B 相对条纹强度和宽度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "40× 继像后非盲 TV 正则反卷积",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7d–f",
+              "note": "作者按目标类型调整有限物距或准直等效无穷远，随后比较重建图像内的标靶条纹。",
+              "basis": "reconstruction",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "object_distance_m": 1.76,
+              "object_conjugate": "finite",
+              "evaluation_plane_um": 21000,
+              "processing_stage": "nonblind_tv_deconvolution",
+              "target_id": "T1",
+              "field_angle_deg": 4,
+              "target_field_extent_deg": null
+            },
+            "restored_angular_resolution_lp_mrad": {
+              "value": 3.76,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7d–f",
+              "note": "作者从经非盲 TV 重建的定制标靶条纹得出。正文给近衍射极限参考值 4.62 lp/mrad。",
+              "basis": "reconstruction",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "calculation_origin": "authors",
+              "target_id": "T1",
+              "frequency_unit": "lp/mrad",
+              "processing_stage": "nonblind_tv_deconvolution",
+              "reported_minimum_contrast_fraction": 0.2,
+              "reported_lens_reference_lp_mrad": 4.62
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_captured_t1",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "offaxis",
+          "model": "Wang 2026 · 贝塞尔阵列 · 直拍标靶 · 4°",
+          "variant": "3 mm 离轴贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "重建前的原始标靶图入口。",
+          "values": {
+            "diameter_um": {
+              "value": 3000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "D2=3 mm；离轴椭圆轮廓以 2F0 tan α0 的约 3 mm 名义口径表示。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "aperture_geometry": "nominal_eccentric_conic_diameter"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p5 Fig. 3a 与 Eq. (5)，补件 S3 第 2 段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "aoi_deg": {
+              "value": 4,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7d–f",
+              "note": "作者明示的标靶成像入射角。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "物距 1.76 m；直拍",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7d–f",
+              "note": "直拍照片所在面板为 Fig. 7d。作者定量可辨目标取重建图；直拍极限值未给。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "object_distance_m": 1.76,
+              "relay_magnification": 40,
+              "processing_stage": "captured"
+            },
+            "restored_angular_resolution_lp_mrad": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7d–f",
+              "note": "直拍面板未给定量可辨角频率。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "直拍图；未报极限角频率"
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_restored_t14_on",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "central",
+          "model": "Wang 2026 · 贝塞尔阵列 · 重建标靶 T14 · 0°",
+          "variant": "4 mm 轴上贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "重建的极限角分辨率；区分标靶角宽、入射角与阵列拼接视场。",
+          "values": {
+            "diameter_um": {
+              "value": 4000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "D1=4 mm，中央带 Cr 光阑。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance"
+            },
+            "na": {
+              "value": 0.067,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S1 Table S1 Our work 行，NA 列；主文 p3 α0",
+              "note": "补件印 NA 0.067，主文 α0=3.81°。按 532 nm 的设计几何与 sin α0 的量级一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "aperture_angle_deg": 3.81,
+              "design_wavelength_nm": 532
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "aoi_deg": {
+              "value": 0,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7g,i",
+              "note": "作者明示的标靶成像入射角。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "illumination": {
+              "value": "白光彩色标靶测试",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7g,i",
+              "note": "目标通过 40× 显微继像获取。保留 R/G/B 相对条纹强度和宽度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "40× 继像后非盲 TV 正则反卷积",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7g,i",
+              "note": "作者按目标类型调整有限物距或准直等效无穷远，随后比较重建图像内的标靶条纹。",
+              "basis": "reconstruction",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "object_distance_m": null,
+              "object_conjugate": "infinity",
+              "evaluation_plane_um": 21000,
+              "processing_stage": "nonblind_tv_deconvolution",
+              "target_id": "T14",
+              "field_angle_deg": 0,
+              "target_field_extent_deg": 0.2,
+              "collimator_focal_length_mm": 500
+            },
+            "fov_deg": {
+              "value": 0.2,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7g,i",
+              "note": "孤立目标的约 0.2° 角宽，几何上属于测试目标。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "approximate": true,
+              "display": "约 0.2°（测试目标）"
+            },
+            "restored_angular_resolution_lp_mrad": {
+              "value": 6.61,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7g,i",
+              "note": "作者从经非盲 TV 重建的定制标靶条纹得出。标靶本身频率 13.2 lp/mm。",
+              "basis": "reconstruction",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "calculation_origin": "authors",
+              "target_id": "T14",
+              "frequency_unit": "lp/mrad",
+              "processing_stage": "nonblind_tv_deconvolution",
+              "target_frequency_lpmm": 13.2,
+              "reported_bessel_reference_lp_mrad": 7.29
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_restored_t14_27",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "central",
+          "model": "Wang 2026 · 贝塞尔阵列 · 重建标靶 T14 · 2.7°",
+          "variant": "4 mm 轴上贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "重建的极限角分辨率；区分标靶角宽、入射角与阵列拼接视场。",
+          "values": {
+            "diameter_um": {
+              "value": 4000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "D1=4 mm，中央带 Cr 光阑。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance"
+            },
+            "na": {
+              "value": 0.067,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S1 Table S1 Our work 行，NA 列；主文 p3 α0",
+              "note": "补件印 NA 0.067，主文 α0=3.81°。按 532 nm 的设计几何与 sin α0 的量级一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "aperture_angle_deg": 3.81,
+              "design_wavelength_nm": 532
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "aoi_deg": {
+              "value": 2.7,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7h,j",
+              "note": "作者明示的标靶成像入射角。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "illumination": {
+              "value": "白光彩色标靶测试",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7h,j",
+              "note": "目标通过 40× 显微继像获取。保留 R/G/B 相对条纹强度和宽度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "40× 继像后非盲 TV 正则反卷积",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7h,j",
+              "note": "作者按目标类型调整有限物距或准直等效无穷远，随后比较重建图像内的标靶条纹。",
+              "basis": "reconstruction",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_pdf_2026",
+                "wang_metaaxicon_si_2026"
+              ],
+              "object_distance_m": null,
+              "object_conjugate": "infinity",
+              "evaluation_plane_um": 21000,
+              "processing_stage": "nonblind_tv_deconvolution",
+              "target_id": "T14",
+              "field_angle_deg": 2.7,
+              "target_field_extent_deg": 0.2,
+              "collimator_focal_length_mm": 500
+            },
+            "fov_deg": {
+              "value": 0.2,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7h,j",
+              "note": "孤立目标的约 0.2° 角宽，几何上属于测试目标。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "approximate": true,
+              "display": "约 0.2°（测试目标）"
+            },
+            "restored_angular_resolution_lp_mrad": {
+              "value": null,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp9–10 Fig. 7；补件 S6 Fig. S5；Fig. 7h,j",
+              "note": "比较的角频率与正入射 T14 相同，作者只报告分辨下降。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "2.7° 时分辨下降，极限值待补"
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_array_captured",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "camera",
+          "model": "Wang 2026 · 贝塞尔阵列 · 九元件整机 · 直拍",
+          "variant": "九元件整机与拼接成像",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "一块芯片和探测器封装；目标在约 2 m。",
+          "values": {
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "fov_deg": {
+              "value": 10,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp8–9 Fig. 6a–c 与采集段",
+              "note": "作者装置的全视场直径。Fig. 6 目标约 2 m 远，直径 35 cm。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "target_distance_m": 2,
+              "target_distance_approximate": true,
+              "target_diameter_mm": 350
+            },
+            "material": {
+              "value": "Si₃N₄ 纳米柱、Cr 光阑与石英基底",
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S5 第 1 段与 Fig. S4；主文 p7 Fig. 4 与 p11 Methods",
+              "note": "400 nm 晶格、120–280 nm 柱边宽、800 nm 结构高。旋转复制同一离轴版图；本批未核分配到八个单元的独立逐片测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "lattice_period_nm": 400,
+              "pillar_width_range_nm": [
+                120,
+                280
+              ],
+              "pattern_height_nm": 800,
+              "chromium_aperture_thickness_nm": 100
+            },
+            "psf_protocol": {
+              "value": "九区域直拍；目标约 2 m",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp8–9 Fig. 6a–c 与采集段",
+              "note": "芯片含一个中央 4 mm 元件和八个 3 mm 离轴元件。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "central_aperture_um": 4000,
+              "offaxis_nominal_aperture_um": 3000,
+              "offaxis_elements": 8,
+              "object_distance_m": 2,
+              "object_distance_approximate": true,
+              "processing_stage": "captured"
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_array_restored",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "camera",
+          "model": "Wang 2026 · 贝塞尔阵列 · 九元件整机 · 重建拼接",
+          "variant": "九元件整机与拼接成像",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "九区域独立亮度处理与重建，其后取各有效区域拼接。",
+          "values": {
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "fov_deg": {
+              "value": 10,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp8–9 Fig. 6a–c 与采集段",
+              "note": "作者装置的全视场直径。Fig. 6 目标约 2 m 远，直径 35 cm。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "target_distance_m": 2,
+              "target_distance_approximate": true,
+              "target_diameter_mm": 350
+            },
+            "psf_protocol": {
+              "value": "九有效区域拼接；全视场 10°",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 pp8–9 Fig. 6a–c 与采集段",
+              "note": "使用非盲 TV 正则反卷积。中央与离轴图的亮度及 PSF 模型分别处理，全图统一白平衡。",
+              "basis": "reconstruction",
+              "checked_on": "2026-11-19",
+              "processing_stage": "nonblind_tv_deconvolution_and_stitch",
+              "stitch_patches": 9,
+              "target_distance_m": 2,
+              "target_diameter_mm": 350
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_control",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "reference",
+          "model": "Wang 2026 · 贝塞尔阵列 · 4 mm 单色超透镜 · 成像对照",
+          "variant": "4 mm 单色超透镜对照",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "与整机宽带成像的同口径单色透镜对照。",
+          "values": {
+            "diameter_um": {
+              "value": 4000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p9 Fig. 6d 及左栏对照段",
+              "note": "作者报告对照镜口径 4 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 21000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p9 Fig. 6d 及左栏对照段",
+              "note": "同设计材料库制备的单色透镜，作者标定名义焦距 21 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "白光下色差及复原图",
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p9 Fig. 6d 及左栏对照段",
+              "note": "作者观察色散对照在直拍和复原中残留明显色差。逐波长焦位及频道偏移未列。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_central_dof_800",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "central",
+          "model": "Wang 2026 · 贝塞尔阵列 · 物距 800 mm · 景深靶",
+          "variant": "4 mm 轴上贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "同一主镜的直拍和统一核的复原图。逐物距定量锐度及焦区边界待补。",
+          "values": {
+            "diameter_um": {
+              "value": 4000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "D1=4 mm，中央带 Cr 光阑。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance"
+            },
+            "na": {
+              "value": 0.067,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S1 Table S1 Our work 行，NA 列；主文 p3 α0",
+              "note": "补件印 NA 0.067，主文 α0=3.81°。按 532 nm 的设计几何与 sin α0 的量级一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "aperture_angle_deg": 3.81,
+              "design_wavelength_nm": 532
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "物距 800 mm；靶条宽按角频率缩放",
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S7 Fig. S6a–b 及 Eq. (S8)",
+              "note": "原文从 80 cm 逐次减半至 5 cm。非盲重建均使用无穷远点靶的实测 PSF。50 mm 的最小 OLED 靶条受像素化影响。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "object_distance_m": 0.8,
+              "evaluation_plane_um": 21000,
+              "restoration_kernel": "measured_infinity_point_psf"
+            },
+            "chromatic": {
+              "value": null,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S7 Fig. S6a–b 及 Eq. (S8)",
+              "note": "前 3 个物距的边沿朦胧度变化很小，第 4–5 个逐渐下降。Eq. (S8) 的 ≈116 mm 为作者估算的物方近界。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "景深图与作者近界模型",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "modeled_near_object_distance_mm": 116,
+              "author_reported_observed_scale_mm": 100
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_central_dof_400",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "central",
+          "model": "Wang 2026 · 贝塞尔阵列 · 物距 400 mm · 景深靶",
+          "variant": "4 mm 轴上贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "同一主镜的直拍和统一核的复原图。逐物距定量锐度及焦区边界待补。",
+          "values": {
+            "diameter_um": {
+              "value": 4000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "D1=4 mm，中央带 Cr 光阑。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance"
+            },
+            "na": {
+              "value": 0.067,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S1 Table S1 Our work 行，NA 列；主文 p3 α0",
+              "note": "补件印 NA 0.067，主文 α0=3.81°。按 532 nm 的设计几何与 sin α0 的量级一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "aperture_angle_deg": 3.81,
+              "design_wavelength_nm": 532
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "物距 400 mm；靶条宽按角频率缩放",
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S7 Fig. S6a–b 及 Eq. (S8)",
+              "note": "原文从 80 cm 逐次减半至 5 cm。非盲重建均使用无穷远点靶的实测 PSF。50 mm 的最小 OLED 靶条受像素化影响。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "object_distance_m": 0.4,
+              "evaluation_plane_um": 21000,
+              "restoration_kernel": "measured_infinity_point_psf"
+            },
+            "chromatic": {
+              "value": null,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S7 Fig. S6a–b 及 Eq. (S8)",
+              "note": "前 3 个物距的边沿朦胧度变化很小，第 4–5 个逐渐下降。Eq. (S8) 的 ≈116 mm 为作者估算的物方近界。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "景深图与作者近界模型",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "modeled_near_object_distance_mm": 116,
+              "author_reported_observed_scale_mm": 100
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_central_dof_200",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "central",
+          "model": "Wang 2026 · 贝塞尔阵列 · 物距 200 mm · 景深靶",
+          "variant": "4 mm 轴上贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "同一主镜的直拍和统一核的复原图。逐物距定量锐度及焦区边界待补。",
+          "values": {
+            "diameter_um": {
+              "value": 4000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "D1=4 mm，中央带 Cr 光阑。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance"
+            },
+            "na": {
+              "value": 0.067,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S1 Table S1 Our work 行，NA 列；主文 p3 α0",
+              "note": "补件印 NA 0.067，主文 α0=3.81°。按 532 nm 的设计几何与 sin α0 的量级一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "aperture_angle_deg": 3.81,
+              "design_wavelength_nm": 532
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "物距 200 mm；靶条宽按角频率缩放",
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S7 Fig. S6a–b 及 Eq. (S8)",
+              "note": "原文从 80 cm 逐次减半至 5 cm。非盲重建均使用无穷远点靶的实测 PSF。50 mm 的最小 OLED 靶条受像素化影响。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "object_distance_m": 0.2,
+              "evaluation_plane_um": 21000,
+              "restoration_kernel": "measured_infinity_point_psf"
+            },
+            "chromatic": {
+              "value": null,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S7 Fig. S6a–b 及 Eq. (S8)",
+              "note": "前 3 个物距的边沿朦胧度变化很小，第 4–5 个逐渐下降。Eq. (S8) 的 ≈116 mm 为作者估算的物方近界。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "景深图与作者近界模型",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "modeled_near_object_distance_mm": 116,
+              "author_reported_observed_scale_mm": 100
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_central_dof_100",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "central",
+          "model": "Wang 2026 · 贝塞尔阵列 · 物距 100 mm · 景深靶",
+          "variant": "4 mm 轴上贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "同一主镜的直拍和统一核的复原图。逐物距定量锐度及焦区边界待补。",
+          "values": {
+            "diameter_um": {
+              "value": 4000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "D1=4 mm，中央带 Cr 光阑。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance"
+            },
+            "na": {
+              "value": 0.067,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S1 Table S1 Our work 行，NA 列；主文 p3 α0",
+              "note": "补件印 NA 0.067，主文 α0=3.81°。按 532 nm 的设计几何与 sin α0 的量级一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "aperture_angle_deg": 3.81,
+              "design_wavelength_nm": 532
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "物距 100 mm；靶条宽按角频率缩放",
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S7 Fig. S6a–b 及 Eq. (S8)",
+              "note": "原文从 80 cm 逐次减半至 5 cm。非盲重建均使用无穷远点靶的实测 PSF。50 mm 的最小 OLED 靶条受像素化影响。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "object_distance_m": 0.1,
+              "evaluation_plane_um": 21000,
+              "restoration_kernel": "measured_infinity_point_psf"
+            },
+            "chromatic": {
+              "value": null,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S7 Fig. S6a–b 及 Eq. (S8)",
+              "note": "前 3 个物距的边沿朦胧度变化很小，第 4–5 个逐渐下降。Eq. (S8) 的 ≈116 mm 为作者估算的物方近界。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "景深图与作者近界模型",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "modeled_near_object_distance_mm": 116,
+              "author_reported_observed_scale_mm": 100
+            }
+          }
+        },
+        {
+          "id": "wang2026metaaxicon_central_dof_50",
+          "study_id": "wang2026metaaxicon",
+          "specimen_id": "central",
+          "model": "Wang 2026 · 贝塞尔阵列 · 物距 50 mm · 景深靶",
+          "variant": "4 mm 轴上贝塞尔超表面",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "同一主镜的直拍和统一核的复原图。逐物距定量锐度及焦区边界待补。",
+          "values": {
+            "diameter_um": {
+              "value": 4000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "D1=4 mm，中央带 Cr 光阑。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 30000,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "几何参数 F0=30 mm，规定参考波长锥面几何。PSF 评价固定在 FB=21 mm；未逐波长提取最佳聚焦位置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "design_wavelength_nm": 532,
+              "position_definition": "bessel_cone_reference_distance"
+            },
+            "na": {
+              "value": 0.067,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S1 Table S1 Our work 行，NA 列；主文 p3 α0",
+              "note": "补件印 NA 0.067，主文 α0=3.81°。按 532 nm 的设计几何与 sin α0 的量级一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "aperture_angle_deg": 3.81,
+              "design_wavelength_nm": 532
+            },
+            "lambda_min_nm": {
+              "value": 450,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段下端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "wang_metaaxicon_pdf_2026",
+              "location": "主文 p3 Fig. 1c–e 对应设计段",
+              "note": "作者设置的设计波段上端。实际 PSF 使用白光相机通道。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "物距 50 mm；靶条宽按角频率缩放",
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S7 Fig. S6a–b 及 Eq. (S8)",
+              "note": "原文从 80 cm 逐次减半至 5 cm。非盲重建均使用无穷远点靶的实测 PSF。50 mm 的最小 OLED 靶条受像素化影响。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "object_distance_m": 0.05,
+              "evaluation_plane_um": 21000,
+              "restoration_kernel": "measured_infinity_point_psf"
+            },
+            "chromatic": {
+              "value": null,
+              "source": "wang_metaaxicon_si_2026",
+              "location": "补件 S7 Fig. S6a–b 及 Eq. (S8)",
+              "note": "前 3 个物距的边沿朦胧度变化很小，第 4–5 个逐渐下降。Eq. (S8) 的 ≈116 mm 为作者估算的物方近界。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "景深图与作者近界模型",
+              "sourceIds": [
+                "wang_metaaxicon_si_2026",
+                "wang_metaaxicon_pdf_2026"
+              ],
+              "modeled_near_object_distance_mm": 116,
+              "author_reported_observed_scale_mm": 100
+            }
+          }
         }
       ],
-      "scope": "49项原始研究、298个器件/测量/系统配置、1829条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
+      "scope": "50项原始研究、304个器件/测量/系统配置、1869条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
