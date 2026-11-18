@@ -40,7 +40,9 @@ test('Li RGB measurements preserve printed directional widths and keep aggregate
   assert.equal(v.strehl.basis,'derived_from_measurement');assert.equal(v.strehl.approximate,true);
   for(const k of ['fwhm_y_um','fwhm_um','measured_focal_um','design_focal_um','focus_variation_um','lambda_min_nm','lambda_max_nm'])assert.equal(v[k],undefined);
  }
- assert.ok(rows.filter(r=>r.study_id==='li2021').every(r=>r.values.height_nm.value===600&&r.values.diameter_um.value===2000&&!r.values.efficiency_at_lambda_pct));
+ const li=rows.filter(r=>r.study_id==='li2021');
+ assert.ok(li.filter(r=>['na03','na07'].includes(r.specimen_id)).every(r=>r.values.height_nm.value===600&&r.values.diameter_um.value===2000));
+ assert.ok(li.every(r=>!r.values.efficiency_at_lambda_pct));
 });
 
 test('bandwise focus variation requires wavelengths and a method rather than masquerading as signed focal shift',()=>{

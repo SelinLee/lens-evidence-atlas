@@ -1315,6 +1315,69 @@
       "scope": "精确关联DOI查询，HTTP 200，结果零项。与已入库10.1038/s41467-026-73103-2区分。",
       "checked_on": "2026-11-18",
       "publication_source": "jeon_grayscale_2026"
+    },
+    {
+      "id": "seong_modal_2026",
+      "title": "Seong et al. (2026): Modal contrast engineering in ultraviolet and visible metalenses enabled by material-selective hybridization",
+      "url": "https://www.nature.com/articles/s41467-026-74547-2.pdf",
+      "kind": "peer_reviewed_paper",
+      "checked_on": "2026-11-18",
+      "scope": "Nat Commun 17, 7908。PMC13444320、PMID42321217。7170968字节，SHA256 b240c799e9a58f8b3fc98fcbf7af1e255f1799f3ce98dfaa667a3ec0b97a57d8。",
+      "doi": "10.1038/s41467-026-74547-2"
+    },
+    {
+      "id": "seong_si_2026",
+      "title": "Nature · 正式补充材料及样品对照表",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-026-74547-2/MediaObjects/41467_2026_74547_MOESM1_ESM.pdf",
+      "kind": "supplementary_material",
+      "checked_on": "2026-11-18",
+      "scope": "23页，5161684字节，SHA256 ef6a48d47ee28a33ccf52cec2186ac4d825816a027ba3bd3fe9ffe181faef975。核Fig.S6/S7、S15–S18及Table S1。",
+      "publication_source": "seong_modal_2026"
+    },
+    {
+      "id": "seong_review_2026",
+      "title": "Nature · 透明同行评议及作者回应",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-026-74547-2/MediaObjects/41467_2026_74547_MOESM2_ESM.pdf",
+      "kind": "supplementary_material",
+      "checked_on": "2026-11-18",
+      "scope": "42页，16834034字节，SHA256 8bda53b4f9ff83fd8ddf9c43c4b4ef580baeb678d6792cc816d564152b18bc43。核Responses 1.4a/b、2.1 及设计解释。",
+      "publication_source": "seong_modal_2026"
+    },
+    {
+      "id": "seong_cloud_2026",
+      "title": "PMC · Seong 正式版的公开对象清单",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC13444320.1%2F",
+      "kind": "repository",
+      "checked_on": "2026-11-18",
+      "scope": "官方清单含正式主文、两份补件与发表图。未列数值数组。",
+      "publication_source": "seong_modal_2026"
+    },
+    {
+      "id": "seong_datacite_2026",
+      "title": "DataCite · Seong 2026 关联数据查询",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1038%2Fs41467-026-74547-2%22&page%5Bsize%5D=25",
+      "kind": "repository",
+      "checked_on": "2026-11-18",
+      "scope": "精确 DOI 关联查询HTTP 200/零项。",
+      "publication_source": "seong_modal_2026"
+    },
+    {
+      "id": "li_rgb_vr_pdf_2021",
+      "title": "PMC · Li 2021 正式主文 PDF",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC7840120.1/PMC7840120.1.pdf",
+      "kind": "peer_reviewed_paper",
+      "checked_on": "2026-11-18",
+      "scope": "Science Advances 7, eabe4458 正式PDF，1689230字节，SHA256 d3f65dc84d74f4cc39fa01df4a8dae28b6e131681d2d45927aebca4b3f7c1da3。视觉核p4/5，图5及讨论按原文定位。",
+      "publication_source": "li_rgb_vr_2021"
+    },
+    {
+      "id": "li_rgb_vr_cloud_2021",
+      "title": "PMC · Li 2021 正式版的公开对象清单",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC7840120.1%2F",
+      "kind": "repository",
+      "checked_on": "2026-11-18",
+      "scope": "公开对象为正文和发表图，没有补充材料或原始数组。Science正式补充PDF和旧DC1入口403。",
+      "publication_source": "li_rgb_vr_2021"
     }
   ],
   "domains": {
@@ -4959,6 +5022,76 @@
             {
               "source": "jeon_grayscale_2026",
               "location": "p7 Fig.4性能段，0.514λ/FWHM"
+            }
+          ]
+        },
+        {
+          "id": "reported_effective_focal_um",
+          "label": "作者报告的有效焦距 (μm)",
+          "definition": "作者按谱点列出的有效焦距，性质见协议。",
+          "conditions": "波长、构型和有效焦距的生成方式。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "seong_modal_2026",
+              "location": "主文 p5 Diffraction-limited metalenses及p8 Methods；主文 p6 Fig.4"
+            }
+          ]
+        },
+        {
+          "id": "reported_effective_na",
+          "label": "作者报告的有效 NA",
+          "definition": "作者按谱点列出的有效数值孔径。",
+          "conditions": "波长、材料、设计点与原文计算或测量方式。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0,
+            "max": 1
+          },
+          "definition_refs": [
+            {
+              "source": "seong_modal_2026",
+              "location": "主文 p5 Diffraction-limited metalenses及p8 Methods；主文 p6 Fig.4"
+            }
+          ]
+        },
+        {
+          "id": "author_reported_mtf_cutoff_lpmm",
+          "label": "作者报告的 MTF 截止 (lp/mm)",
+          "definition": "作者报告的MTF截止频率，仅在原文范围内使用。",
+          "conditions": "方法、频率参考、阈值与逐频实测可用性。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "seong_modal_2026",
+              "location": "主文 pp5、8 MTF段及公式7；补充 PDF p20 Fig.S17"
+            }
+          ]
+        },
+        {
+          "id": "simulated_cpt_mean_pct",
+          "label": "模拟单元交叉偏振转换均值 (%)",
+          "definition": "模型的跨带平均交叉偏振转换比例。",
+          "conditions": "单元、涂层、模型、波段、分母与采样。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0,
+            "max": 100
+          },
+          "definition_refs": [
+            {
+              "source": "seong_modal_2026",
+              "location": "主文 p4 CPT 模拟段"
+            },
+            {
+              "source": "seong_review_2026",
+              "location": "审稿 PDF p27 Response 2.1"
             }
           ]
         }
@@ -16047,9 +16180,14 @@
               "value": "NA0.7的Fig.2F–H印有x向FWHM/SR；MTF与原始PSF数组未取得",
               "source": "li_rgb_vr_2021",
               "location": "Fig.2F–H或Fig.3I–K；Data and materials availability",
-              "note": "Science/作者PDF及SI入口403；PMC/Europe PMC全文可读，supplementaryFiles ZIP只有主文图，不能当SI/原始PSF。额外数据可向作者请求。",
+              "note": "Science/作者PDF及SI入口403；PMC/Europe PMC全文可读，supplementaryFiles ZIP只有主文图，不能当SI/原始PSF。额外数据可向作者请求。 PMC公开清单与PDF已核。补充入口仍受限，逐频数表和原始PSF待核。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_rgb_vr_2021",
+                "li_rgb_vr_pdf_2021",
+                "li_rgb_vr_cloud_2021"
+              ]
             },
             "focus_variation_um": {
               "value": 1,
@@ -16387,9 +16525,14 @@
               "value": "Fig.3I–K实测成像；SI S3聚焦细节未取得，MTF/效率数值待补",
               "source": "li_rgb_vr_2021",
               "location": "Fig.2F–H或Fig.3I–K；Data and materials availability",
-              "note": "Science/作者PDF及SI入口403；PMC/Europe PMC全文可读，supplementaryFiles ZIP只有主文图，不能当SI/原始PSF。额外数据可向作者请求。",
+              "note": "Science/作者PDF及SI入口403；PMC/Europe PMC全文可读，supplementaryFiles ZIP只有主文图，不能当SI/原始PSF。额外数据可向作者请求。 PMC公开清单与PDF已核。补充入口仍受限，逐频数表和原始PSF待核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-14",
+              "sourceIds": [
+                "li_rgb_vr_2021",
+                "li_rgb_vr_pdf_2021",
+                "li_rgb_vr_cloud_2021"
+              ]
             }
           }
         },
@@ -200619,9 +200762,1788 @@
               ]
             }
           }
+        },
+        {
+          "id": "seong2026_bench_320",
+          "model": "Seong 2026 · ZrO₂ · 320 nm",
+          "study_id": "seong2026",
+          "specimen_id": "uv_bench",
+          "module": "",
+          "variant": "材料选择性涂层 · 色散对照",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "对应涂层的光学台焦斑、作者Strehl与聚焦效率。",
+          "values": {
+            "diameter_um": {
+              "value": 5000,
+              "source": "seong_modal_2026",
+              "location": "主文 pp5、8 Metalens design；补充 PDF p18 Fig.S15",
+              "note": "两只口径均为5 mm。此行专属ZrO₂ 10 nm制式。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 5,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 12250,
+              "source": "seong_modal_2026",
+              "location": "主文 pp5、8 Metalens design；补充 PDF p18 Fig.S15",
+              "note": "同几何相位图的名义设计焦距，以532 nm为设计锚点。其他波长的绝对焦位实测尚缺。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "design_wavelength_nm": 532,
+              "original_value": 12.25,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "seong_modal_2026",
+              "location": "主文 pp5、8 Metalens design；补充 PDF p18 Fig.S15",
+              "note": "名义设计NA，以532 nm为相位设计锚点。谱点有效NA单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "design_wavelength_nm": 532,
+              "na_definition": "metalens_design"
+            },
+            "height_nm": {
+              "value": 900,
+              "source": "seong_modal_2026",
+              "location": "主文 p3 Fig.2b/c；补充 PDF pp14–17 Figs.S11–S14",
+              "note": "骨架名义高度900 nm，周期250 nm。涂层厚度另记。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "period_nm": 250
+            },
+            "material": {
+              "value": "SiO₂骨架 + ZrO₂ 10 nm",
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4a、p5器件段；补充 PDF p22 Table S1",
+              "note": "论文报告SiO₂骨架刻蚀与NIL扩展，表格汇列ALD、EBL与NIL。Fig.4样本对应的具体批次与工艺路径未逐点标识。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "coating_nm": 10,
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_si_2026"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 320,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第1列（320 nm）a及图注",
+              "note": "同图按涂层归属的实测激光波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "reported_effective_focal_um": {
+              "value": 20400,
+              "source": "seong_modal_2026",
+              "location": "主文 p5 Diffraction-limited metalenses及p8 Methods；主文 p6 Fig.4",
+              "note": "作者在几何相位色散设计段报告此值，未提供该波长换算输入或直接量测z的独立定位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "original_value": 20.4,
+              "position_basis": "author_geometric_phase_design_context"
+            },
+            "reported_effective_na": {
+              "value": 0.12,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第1列（320 nm）a 印字；p5 色散段",
+              "note": "横截面对应的作者有效NA，报道语境为几何相位焦距随谱变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "author_effective_at_wavelength"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "seong_modal_2026",
+              "location": "主文 p5 Diffraction-limited metalenses及p8 Methods；主文 p6 Fig.4",
+              "note": "未找到带计量步骤的逐λ焦位读数。保留文中有效焦距在独立字段。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "逐色实测焦位待核"
+            },
+            "psf_protocol": {
+              "value": "各波长焦面归一化强度及x截线",
+              "source": "seong_modal_2026",
+              "location": "主文 pp7–8 Optical characterization；补充 PDF p19 Fig.S16a",
+              "note": "320 nm用紫外4f准直和UV兼容物镜、筒镜、偏振元件。 作者未逐点给出绝对评价z、物方像素尺、裁剪和背景处理。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "evaluation_plane_um": null,
+              "object_plane_sampling_um": null,
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_si_2026"
+              ]
+            },
+            "fwhm_x_um": {
+              "value": 1.482,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第1列（320 nm）b FWHM印字",
+              "note": "对应实测横向剖面宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "direction": "x"
+            },
+            "strehl": {
+              "value": 0.88,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第1列（320 nm）b Strehl ratio印字；p5正文",
+              "note": "图内作者值。具体理想参考积分域及计算方法未核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.88",
+              "calculation_origin": "authors"
+            },
+            "efficiency_lambda_nm": {
+              "value": 320,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第1列（320 nm）a及补充 Table S1波长列",
+              "note": "作者标注的效率测试波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_protocol": {
+              "value": "焦区收集功率 / 入射光功率",
+              "source": "seong_modal_2026",
+              "location": "主文 p5 聚焦效率段、p6 Fig.4a及Discussion；补充 PDF p22 Table S1 This work；审稿 PDF p27 Response 2.1",
+              "note": "作者区分单元CPT与实制焦区效率。焦圈、功率读取原表、入射面和重复次数未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_optical_power",
+              "integration_radius_um": null,
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_si_2026",
+                "seong_review_2026"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 69.9,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第1列（320 nm）a效率印字；主文 p5 聚焦效率段、p6 Fig.4a及Discussion；补充 PDF p22 Table S1 This work",
+              "note": "焦区与入射功率之比。按图和补充表公布值保存。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "denominator": "incident_optical_power",
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_si_2026"
+              ]
+            },
+            "author_reported_mtf_cutoff_lpmm": {
+              "value": 752,
+              "source": "seong_modal_2026",
+              "location": "主文 pp5、8 MTF段及公式7；补充 PDF p20 Fig.S17",
+              "note": "正文对所列波长给出统一截止。未写独立实测阈值及截止定位方法。其数值与设计2NA/λ量级相符。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "实测PSF派生与理想MTF的归一化曲线",
+              "source": "seong_si_2026",
+              "location": "主文 pp5、8 MTF段及公式7；补充 PDF p20 Fig.S17 第1谱组",
+              "note": "二维FFT取幅值。1D频率轴f/f_c，曲面横纵f_x/f_c、f_y/f_c，竖轴MTF。未确认f_c的归一化步骤、1D方向或样面采样。论文Data availability指向通讯作者。正式论文、补充及审稿、PMC附件清单与DataCite未给原始PSF、逐频表和完整复算条件。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "seong_si_2026",
+                "seong_modal_2026",
+                "seong_cloud_2026",
+                "seong_datacite_2026"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "measured_psf_fft_normalized",
+              "frequency_unit": "normalized_spatial_frequency",
+              "normalization_frequency_cycles_mm": null,
+              "direction_aggregation": "unspecified",
+              "data_availability": {
+                "status": "curves_only",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "seong2026_target_320",
+          "model": "Seong 2026 · UV · USAF · 320 nm",
+          "study_id": "seong2026",
+          "specimen_id": "uv_target",
+          "module": "",
+          "variant": "材料选择性涂层 · 色散对照",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "相应涂层器件的USAF成像，图中两组线条。",
+          "values": {
+            "wavelength_nm": {
+              "value": 320,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第1列（320 nm）c及图注",
+              "note": "与同一列的相应涂层镜关联。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "USAF第6/7组实拍",
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第1列（320 nm）c；主文 p5 标靶段；补充 PDF p19 Fig.S16b",
+              "note": "作者给出2.19 μm图案尺寸，正文称线对，组/元素和实际分辨判据未逐谱明示。图注“scaled down by”归入图像比例。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "author_feature_um": 2.19,
+              "feature_term": "line_pairs",
+              "image_downscale_factor": 15.8,
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_si_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "seong2026_bench_450",
+          "model": "Seong 2026 · TiO₂ · 450 nm",
+          "study_id": "seong2026",
+          "specimen_id": "vis_bench",
+          "module": "",
+          "variant": "材料选择性涂层 · 色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "对应涂层的光学台焦斑、作者Strehl与聚焦效率。",
+          "values": {
+            "diameter_um": {
+              "value": 5000,
+              "source": "seong_modal_2026",
+              "location": "主文 pp5、8 Metalens design；补充 PDF p18 Fig.S15",
+              "note": "两只口径均为5 mm。此行专属TiO₂ 20 nm制式。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 5,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 12250,
+              "source": "seong_modal_2026",
+              "location": "主文 pp5、8 Metalens design；补充 PDF p18 Fig.S15",
+              "note": "同几何相位图的名义设计焦距，以532 nm为设计锚点。其他波长的绝对焦位实测尚缺。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "design_wavelength_nm": 532,
+              "original_value": 12.25,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "seong_modal_2026",
+              "location": "主文 pp5、8 Metalens design；补充 PDF p18 Fig.S15",
+              "note": "名义设计NA，以532 nm为相位设计锚点。谱点有效NA单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "design_wavelength_nm": 532,
+              "na_definition": "metalens_design"
+            },
+            "height_nm": {
+              "value": 900,
+              "source": "seong_modal_2026",
+              "location": "主文 p3 Fig.2b/c；补充 PDF pp14–17 Figs.S11–S14",
+              "note": "骨架名义高度900 nm，周期250 nm。涂层厚度另记。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "period_nm": 250
+            },
+            "material": {
+              "value": "SiO₂骨架 + TiO₂ 20 nm",
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4a、p5器件段；补充 PDF p22 Table S1",
+              "note": "论文报告SiO₂骨架刻蚀与NIL扩展，表格汇列ALD、EBL与NIL。Fig.4样本对应的具体批次与工艺路径未逐点标识。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "coating_nm": 20,
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_si_2026"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 450,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第2列（450 nm）a及图注",
+              "note": "同图按涂层归属的实测激光波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "reported_effective_focal_um": {
+              "value": 14500,
+              "source": "seong_modal_2026",
+              "location": "主文 p5 Diffraction-limited metalenses及p8 Methods；主文 p6 Fig.4",
+              "note": "作者在几何相位色散设计段报告此值，未提供该波长换算输入或直接量测z的独立定位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "original_value": 14.5,
+              "position_basis": "author_geometric_phase_design_context"
+            },
+            "reported_effective_na": {
+              "value": 0.17,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第2列（450 nm）a 印字；p5 色散段",
+              "note": "横截面对应的作者有效NA，报道语境为几何相位焦距随谱变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "author_effective_at_wavelength"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "seong_modal_2026",
+              "location": "主文 p5 Diffraction-limited metalenses及p8 Methods；主文 p6 Fig.4",
+              "note": "未找到带计量步骤的逐λ焦位读数。保留文中有效焦距在独立字段。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "逐色实测焦位待核"
+            },
+            "psf_protocol": {
+              "value": "各波长焦面归一化强度及x截线",
+              "source": "seong_modal_2026",
+              "location": "主文 pp7–8 Optical characterization；补充 PDF p19 Fig.S16a",
+              "note": "可见光激光经光纤准直，LP/QWP产生圆偏振，20×物镜收集后经偏振选择、TTL180-A和sCMOS记录。 作者未逐点给出绝对评价z、物方像素尺、裁剪和背景处理。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "evaluation_plane_um": null,
+              "object_plane_sampling_um": null,
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_si_2026"
+              ]
+            },
+            "fwhm_x_um": {
+              "value": 1.516,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第2列（450 nm）b FWHM印字",
+              "note": "对应实测横向剖面宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "direction": "x"
+            },
+            "strehl": {
+              "value": 0.85,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第2列（450 nm）b Strehl ratio印字；p5正文",
+              "note": "采用图内蓝光0.85，正文把320–532 nm概括为>0.85。算法与归一化域未明确关联。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.85",
+              "calculation_origin": "authors"
+            },
+            "efficiency_lambda_nm": {
+              "value": 450,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第2列（450 nm）a及补充 Table S1波长列",
+              "note": "作者标注的效率测试波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_protocol": {
+              "value": "焦区收集功率 / 入射光功率",
+              "source": "seong_modal_2026",
+              "location": "主文 p5 聚焦效率段、p6 Fig.4a及Discussion；补充 PDF p22 Table S1 This work；审稿 PDF p27 Response 2.1",
+              "note": "作者区分单元CPT与实制焦区效率。焦圈、功率读取原表、入射面和重复次数未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_optical_power",
+              "integration_radius_um": null,
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_si_2026",
+                "seong_review_2026"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 70.9,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第2列（450 nm）a效率印字；主文 p5 聚焦效率段、p6 Fig.4a及Discussion；补充 PDF p22 Table S1 This work",
+              "note": "焦区与入射功率之比。按图和补充表公布值保存。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "denominator": "incident_optical_power",
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_si_2026"
+              ]
+            },
+            "author_reported_mtf_cutoff_lpmm": {
+              "value": 752,
+              "source": "seong_modal_2026",
+              "location": "主文 pp5、8 MTF段及公式7；补充 PDF p20 Fig.S17",
+              "note": "正文对所列波长给出统一截止。未写独立实测阈值及截止定位方法。其数值与设计2NA/λ量级相符。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "实测PSF派生与理想MTF的归一化曲线",
+              "source": "seong_si_2026",
+              "location": "主文 pp5、8 MTF段及公式7；补充 PDF p20 Fig.S17 第2谱组",
+              "note": "二维FFT取幅值。1D频率轴f/f_c，曲面横纵f_x/f_c、f_y/f_c，竖轴MTF。未确认f_c的归一化步骤、1D方向或样面采样。论文Data availability指向通讯作者。正式论文、补充及审稿、PMC附件清单与DataCite未给原始PSF、逐频表和完整复算条件。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "seong_si_2026",
+                "seong_modal_2026",
+                "seong_cloud_2026",
+                "seong_datacite_2026"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "measured_psf_fft_normalized",
+              "frequency_unit": "normalized_spatial_frequency",
+              "normalization_frequency_cycles_mm": null,
+              "direction_aggregation": "unspecified",
+              "data_availability": {
+                "status": "curves_only",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "seong2026_target_450",
+          "model": "Seong 2026 · 可见 · USAF · 450 nm",
+          "study_id": "seong2026",
+          "specimen_id": "vis_target",
+          "module": "",
+          "variant": "材料选择性涂层 · 色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "相应涂层器件的USAF成像，图中两组线条。",
+          "values": {
+            "wavelength_nm": {
+              "value": 450,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第2列（450 nm）c及图注",
+              "note": "与同一列的相应涂层镜关联。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "USAF第6/7组实拍",
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第2列（450 nm）c；主文 p5 标靶段；补充 PDF p19 Fig.S16b",
+              "note": "作者给出2.19 μm图案尺寸，正文称线对，组/元素和实际分辨判据未逐谱明示。图注“scaled down by”归入图像比例。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "author_feature_um": 2.19,
+              "feature_term": "line_pairs",
+              "image_downscale_factor": 17.2,
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_si_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "seong2026_bench_532",
+          "model": "Seong 2026 · TiO₂ · 532 nm",
+          "study_id": "seong2026",
+          "specimen_id": "vis_bench",
+          "module": "",
+          "variant": "材料选择性涂层 · 色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "对应涂层的光学台焦斑、作者Strehl与聚焦效率。",
+          "values": {
+            "diameter_um": {
+              "value": 5000,
+              "source": "seong_modal_2026",
+              "location": "主文 pp5、8 Metalens design；补充 PDF p18 Fig.S15",
+              "note": "两只口径均为5 mm。此行专属TiO₂ 20 nm制式。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 5,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 12250,
+              "source": "seong_modal_2026",
+              "location": "主文 pp5、8 Metalens design；补充 PDF p18 Fig.S15",
+              "note": "同几何相位图的名义设计焦距，以532 nm为设计锚点。其他波长的绝对焦位实测尚缺。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "design_wavelength_nm": 532,
+              "original_value": 12.25,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "seong_modal_2026",
+              "location": "主文 pp5、8 Metalens design；补充 PDF p18 Fig.S15",
+              "note": "名义设计NA，以532 nm为相位设计锚点。谱点有效NA单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "design_wavelength_nm": 532,
+              "na_definition": "metalens_design"
+            },
+            "height_nm": {
+              "value": 900,
+              "source": "seong_modal_2026",
+              "location": "主文 p3 Fig.2b/c；补充 PDF pp14–17 Figs.S11–S14",
+              "note": "骨架名义高度900 nm，周期250 nm。涂层厚度另记。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "period_nm": 250
+            },
+            "material": {
+              "value": "SiO₂骨架 + TiO₂ 20 nm",
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4a、p5器件段；补充 PDF p22 Table S1",
+              "note": "论文报告SiO₂骨架刻蚀与NIL扩展，表格汇列ALD、EBL与NIL。Fig.4样本对应的具体批次与工艺路径未逐点标识。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "coating_nm": 20,
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_si_2026"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第3列（532 nm）a及图注",
+              "note": "同图按涂层归属的实测激光波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "reported_effective_focal_um": {
+              "value": 12250,
+              "source": "seong_modal_2026",
+              "location": "主文 p5 Diffraction-limited metalenses及p8 Methods；主文 p6 Fig.4",
+              "note": "532 nm采用名义设计锚点12.25 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "original_value": 12.25,
+              "position_basis": "author_geometric_phase_design_context"
+            },
+            "reported_effective_na": {
+              "value": 0.2,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第3列（532 nm）a 印字；p5 色散段",
+              "note": "横截面对应的作者有效NA，报道语境为几何相位焦距随谱变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "author_effective_at_wavelength"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "seong_modal_2026",
+              "location": "主文 p5 Diffraction-limited metalenses及p8 Methods；主文 p6 Fig.4",
+              "note": "未找到带计量步骤的逐λ焦位读数。保留文中有效焦距在独立字段。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "逐色实测焦位待核"
+            },
+            "psf_protocol": {
+              "value": "各波长焦面归一化强度及x截线",
+              "source": "seong_modal_2026",
+              "location": "主文 pp7–8 Optical characterization；补充 PDF p19 Fig.S16a",
+              "note": "可见光激光经光纤准直，LP/QWP产生圆偏振，20×物镜收集后经偏振选择、TTL180-A和sCMOS记录。 作者未逐点给出绝对评价z、物方像素尺、裁剪和背景处理。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "evaluation_plane_um": null,
+              "object_plane_sampling_um": null,
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_si_2026"
+              ]
+            },
+            "fwhm_x_um": {
+              "value": 1.455,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第3列（532 nm）b FWHM印字",
+              "note": "对应实测横向剖面宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "direction": "x"
+            },
+            "strehl": {
+              "value": 0.88,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第3列（532 nm）b Strehl ratio印字；p5正文",
+              "note": "图内作者值。具体理想参考积分域及计算方法未核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.88",
+              "calculation_origin": "authors"
+            },
+            "efficiency_lambda_nm": {
+              "value": 532,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第3列（532 nm）a及补充 Table S1波长列",
+              "note": "作者标注的效率测试波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_protocol": {
+              "value": "焦区收集功率 / 入射光功率",
+              "source": "seong_modal_2026",
+              "location": "主文 p5 聚焦效率段、p6 Fig.4a及Discussion；补充 PDF p22 Table S1 This work；审稿 PDF p27 Response 2.1",
+              "note": "作者区分单元CPT与实制焦区效率。焦圈、功率读取原表、入射面和重复次数未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_optical_power",
+              "integration_radius_um": null,
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_si_2026",
+                "seong_review_2026"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 74.9,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第3列（532 nm）a效率印字；主文 p5 聚焦效率段、p6 Fig.4a及Discussion；补充 PDF p22 Table S1 This work",
+              "note": "焦区与入射功率之比。按图和补充表公布值保存。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "denominator": "incident_optical_power",
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_si_2026"
+              ]
+            },
+            "author_reported_mtf_cutoff_lpmm": {
+              "value": 752,
+              "source": "seong_modal_2026",
+              "location": "主文 pp5、8 MTF段及公式7；补充 PDF p20 Fig.S17",
+              "note": "正文对所列波长给出统一截止。未写独立实测阈值及截止定位方法。其数值与设计2NA/λ量级相符。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "实测PSF派生与理想MTF的归一化曲线",
+              "source": "seong_si_2026",
+              "location": "主文 pp5、8 MTF段及公式7；补充 PDF p20 Fig.S17 第3谱组",
+              "note": "二维FFT取幅值。1D频率轴f/f_c，曲面横纵f_x/f_c、f_y/f_c，竖轴MTF。未确认f_c的归一化步骤、1D方向或样面采样。论文Data availability指向通讯作者。正式论文、补充及审稿、PMC附件清单与DataCite未给原始PSF、逐频表和完整复算条件。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "seong_si_2026",
+                "seong_modal_2026",
+                "seong_cloud_2026",
+                "seong_datacite_2026"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "measured_psf_fft_normalized",
+              "frequency_unit": "normalized_spatial_frequency",
+              "normalization_frequency_cycles_mm": null,
+              "direction_aggregation": "unspecified",
+              "data_availability": {
+                "status": "curves_only",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "seong2026_target_532",
+          "model": "Seong 2026 · 可见 · USAF · 532 nm",
+          "study_id": "seong2026",
+          "specimen_id": "vis_target",
+          "module": "",
+          "variant": "材料选择性涂层 · 色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "相应涂层器件的USAF成像，图中两组线条。",
+          "values": {
+            "wavelength_nm": {
+              "value": 532,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第3列（532 nm）c及图注",
+              "note": "与同一列的相应涂层镜关联。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "USAF第6/7组实拍",
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第3列（532 nm）c；主文 p5 标靶段；补充 PDF p19 Fig.S16b",
+              "note": "作者给出2.19 μm图案尺寸，正文称线对，组/元素和实际分辨判据未逐谱明示。图注“scaled down by”归入图像比例。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "author_feature_um": 2.19,
+              "feature_term": "line_pairs",
+              "image_downscale_factor": 17.2,
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_si_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "seong2026_bench_635",
+          "model": "Seong 2026 · TiO₂ · 635 nm",
+          "study_id": "seong2026",
+          "specimen_id": "vis_bench",
+          "module": "",
+          "variant": "材料选择性涂层 · 色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "对应涂层的光学台焦斑、作者Strehl与聚焦效率。",
+          "values": {
+            "diameter_um": {
+              "value": 5000,
+              "source": "seong_modal_2026",
+              "location": "主文 pp5、8 Metalens design；补充 PDF p18 Fig.S15",
+              "note": "两只口径均为5 mm。此行专属TiO₂ 20 nm制式。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 5,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 12250,
+              "source": "seong_modal_2026",
+              "location": "主文 pp5、8 Metalens design；补充 PDF p18 Fig.S15",
+              "note": "同几何相位图的名义设计焦距，以532 nm为设计锚点。其他波长的绝对焦位实测尚缺。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "design_wavelength_nm": 532,
+              "original_value": 12.25,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "seong_modal_2026",
+              "location": "主文 pp5、8 Metalens design；补充 PDF p18 Fig.S15",
+              "note": "名义设计NA，以532 nm为相位设计锚点。谱点有效NA单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "design_wavelength_nm": 532,
+              "na_definition": "metalens_design"
+            },
+            "height_nm": {
+              "value": 900,
+              "source": "seong_modal_2026",
+              "location": "主文 p3 Fig.2b/c；补充 PDF pp14–17 Figs.S11–S14",
+              "note": "骨架名义高度900 nm，周期250 nm。涂层厚度另记。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "period_nm": 250
+            },
+            "material": {
+              "value": "SiO₂骨架 + TiO₂ 20 nm",
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4a、p5器件段；补充 PDF p22 Table S1",
+              "note": "论文报告SiO₂骨架刻蚀与NIL扩展，表格汇列ALD、EBL与NIL。Fig.4样本对应的具体批次与工艺路径未逐点标识。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "coating_nm": 20,
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_si_2026"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 635,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第4列（635 nm）a及图注",
+              "note": "同图按涂层归属的实测激光波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "reported_effective_focal_um": {
+              "value": 10200,
+              "source": "seong_modal_2026",
+              "location": "主文 p5 Diffraction-limited metalenses及p8 Methods；主文 p6 Fig.4",
+              "note": "作者在几何相位色散设计段报告此值，未提供该波长换算输入或直接量测z的独立定位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_unit": "mm",
+              "original_value": 10.2,
+              "position_basis": "author_geometric_phase_design_context"
+            },
+            "reported_effective_na": {
+              "value": 0.24,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第4列（635 nm）a 印字；p5 色散段",
+              "note": "横截面对应的作者有效NA，报道语境为几何相位焦距随谱变化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "author_effective_at_wavelength"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "seong_modal_2026",
+              "location": "主文 p5 Diffraction-limited metalenses及p8 Methods；主文 p6 Fig.4",
+              "note": "未找到带计量步骤的逐λ焦位读数。保留文中有效焦距在独立字段。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "逐色实测焦位待核"
+            },
+            "psf_protocol": {
+              "value": "各波长焦面归一化强度及x截线",
+              "source": "seong_modal_2026",
+              "location": "主文 pp7–8 Optical characterization；补充 PDF p19 Fig.S16a",
+              "note": "可见光激光经光纤准直，LP/QWP产生圆偏振，20×物镜收集后经偏振选择、TTL180-A和sCMOS记录。 作者未逐点给出绝对评价z、物方像素尺、裁剪和背景处理。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "evaluation_plane_um": null,
+              "object_plane_sampling_um": null,
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_si_2026"
+              ]
+            },
+            "fwhm_x_um": {
+              "value": 1.813,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第4列（635 nm）b FWHM印字",
+              "note": "对应实测横向剖面宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "direction": "x"
+            },
+            "strehl": {
+              "value": 0.7,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第4列（635 nm）b Strehl ratio印字；p5正文",
+              "note": "图内作者值。具体理想参考积分域及计算方法未核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.70",
+              "calculation_origin": "authors"
+            },
+            "efficiency_lambda_nm": {
+              "value": 635,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第4列（635 nm）a及补充 Table S1波长列",
+              "note": "作者标注的效率测试波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_protocol": {
+              "value": "焦区收集功率 / 入射光功率",
+              "source": "seong_modal_2026",
+              "location": "主文 p5 聚焦效率段、p6 Fig.4a及Discussion；补充 PDF p22 Table S1 This work；审稿 PDF p27 Response 2.1",
+              "note": "作者区分单元CPT与实制焦区效率。焦圈、功率读取原表、入射面和重复次数未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "denominator": "incident_optical_power",
+              "integration_radius_um": null,
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_si_2026",
+                "seong_review_2026"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 68.8,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第4列（635 nm）a效率印字；主文 p5 聚焦效率段、p6 Fig.4a及Discussion；补充 PDF p22 Table S1 This work",
+              "note": "焦区与入射功率之比。按图和补充表公布值保存。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "denominator": "incident_optical_power",
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_si_2026"
+              ]
+            },
+            "author_reported_mtf_cutoff_lpmm": {
+              "value": 752,
+              "source": "seong_modal_2026",
+              "location": "主文 pp5、8 MTF段及公式7；补充 PDF p20 Fig.S17",
+              "note": "正文对所列波长给出统一截止。未写独立实测阈值及截止定位方法。其数值与设计2NA/λ量级相符。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "mtf_curve": {
+              "value": "实测PSF派生与理想MTF的归一化曲线",
+              "source": "seong_si_2026",
+              "location": "主文 pp5、8 MTF段及公式7；补充 PDF p20 Fig.S17 第4谱组",
+              "note": "二维FFT取幅值。1D频率轴f/f_c，曲面横纵f_x/f_c、f_y/f_c，竖轴MTF。未确认f_c的归一化步骤、1D方向或样面采样。论文Data availability指向通讯作者。正式论文、补充及审稿、PMC附件清单与DataCite未给原始PSF、逐频表和完整复算条件。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "seong_si_2026",
+                "seong_modal_2026",
+                "seong_cloud_2026",
+                "seong_datacite_2026"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "measured_psf_fft_normalized",
+              "frequency_unit": "normalized_spatial_frequency",
+              "normalization_frequency_cycles_mm": null,
+              "direction_aggregation": "unspecified",
+              "data_availability": {
+                "status": "curves_only",
+                "raw_psf": null,
+                "author_numeric_mtf": null,
+                "independently_recomputed_mtf": null
+              }
+            }
+          }
+        },
+        {
+          "id": "seong2026_target_635",
+          "model": "Seong 2026 · 可见 · USAF · 635 nm",
+          "study_id": "seong2026",
+          "specimen_id": "vis_target",
+          "module": "",
+          "variant": "材料选择性涂层 · 色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "相应涂层器件的USAF成像，图中两组线条。",
+          "values": {
+            "wavelength_nm": {
+              "value": 635,
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第4列（635 nm）c及图注",
+              "note": "与同一列的相应涂层镜关联。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "USAF第6/7组实拍",
+              "source": "seong_modal_2026",
+              "location": "主文 p6 Fig.4 第4列（635 nm）c；主文 p5 标靶段；补充 PDF p19 Fig.S16b",
+              "note": "作者给出2.19 μm图案尺寸，正文称线对，组/元素和实际分辨判据未逐谱明示。图注“scaled down by”归入图像比例。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "author_feature_um": 2.19,
+              "feature_term": "line_pairs",
+              "image_downscale_factor": 17.2,
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_si_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "seong2026_cpt_uv",
+          "model": "Seong 2026 · ZrO₂ · 单元模拟CPT均值",
+          "study_id": "seong2026",
+          "specimen_id": "uv_cpt",
+          "module": "",
+          "variant": "材料选择性涂层 · 色散对照",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "跨带计算汇总的单元仿真。",
+          "values": {
+            "lambda_min_nm": {
+              "value": 250,
+              "source": "seong_modal_2026",
+              "location": "主文 p4 Broadband simulations段；补充 PDF p9 Fig.S6；审稿 p27 Response 2.1",
+              "note": "单元模型的汇总波段下限。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 400,
+              "source": "seong_modal_2026",
+              "location": "主文 p4 Broadband simulations段；补充 PDF p9 Fig.S6；审稿 p27 Response 2.1",
+              "note": "单元模型的汇总波段上限。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "simulated_cpt_mean_pct": {
+              "value": 69,
+              "source": "seong_modal_2026",
+              "location": "主文 p4 Broadband simulations段；补充 PDF p9 Fig.S6；审稿 p27 Response 2.1",
+              "note": "作者报告约值。作者回复定义为单元透射光中转至目标交叉偏振的分量。均值采样和权重未知。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "approximate": true,
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_si_2026",
+                "seong_review_2026"
+              ],
+              "denominator": "transmitted_optical_power_per_author_response",
+              "aggregation": "reported_band_mean"
+            },
+            "chromatic": {
+              "value": "ZrO₂ 涂层的宽带单元模拟",
+              "source": "seong_modal_2026",
+              "location": "主文 p4 Broadband simulations段；补充 PDF p9 Fig.S6；审稿 p27 Response 2.1",
+              "note": "保存单元层级与模拟归属。实际聚焦效率见Fig.4a。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "seong2026_cpt_vis",
+          "model": "Seong 2026 · TiO₂ · 单元模拟CPT均值",
+          "study_id": "seong2026",
+          "specimen_id": "vis_cpt",
+          "module": "",
+          "variant": "材料选择性涂层 · 色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "跨带计算汇总的单元仿真。",
+          "values": {
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "seong_modal_2026",
+              "location": "主文 p4 Broadband simulations段；补充 PDF p10 Fig.S7；审稿 p27 Response 2.1",
+              "note": "单元模型的汇总波段下限。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "seong_modal_2026",
+              "location": "主文 p4 Broadband simulations段；补充 PDF p10 Fig.S7；审稿 p27 Response 2.1",
+              "note": "单元模型的汇总波段上限。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "simulated_cpt_mean_pct": {
+              "value": 75,
+              "source": "seong_modal_2026",
+              "location": "主文 p4 Broadband simulations段；补充 PDF p10 Fig.S7；审稿 p27 Response 2.1",
+              "note": "作者报告约值。作者回复定义为单元透射光中转至目标交叉偏振的分量。均值采样和权重未知。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "approximate": true,
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_si_2026",
+                "seong_review_2026"
+              ],
+              "denominator": "transmitted_optical_power_per_author_response",
+              "aggregation": "reported_band_mean"
+            },
+            "chromatic": {
+              "value": "TiO₂ 涂层的宽带单元模拟",
+              "source": "seong_modal_2026",
+              "location": "主文 p4 Broadband simulations段；补充 PDF p10 Fig.S7；审稿 p27 Response 2.1",
+              "note": "保存单元层级与模拟归属。实际聚焦效率见Fig.4a。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "seong2026_camera_uv",
+          "model": "Seong 2026 · ZrO₂ · UV相机",
+          "study_id": "seong2026",
+          "specimen_id": "uv_camera",
+          "module": "",
+          "variant": "材料选择性涂层 · 色散对照",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "measurement_scope": "相机搭建与紫外成像演示。",
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "seong_modal_2026",
+              "location": "主文 pp5–7 Fig.5a/b",
+              "note": "拍摄光谱未明确等于光学台320 nm。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "UV照明，谱点待核"
+            },
+            "chromatic": {
+              "value": "UV实景相机样张",
+              "source": "seong_modal_2026",
+              "location": "主文 pp5–7 Fig.5a/b；审稿 PDF pp15–16 Response 1.4a",
+              "note": "5 mm ZrO₂镜片与CMOS。作者确认紫外带内几何相位焦距色散会引入模糊。实际成像波段、SNR和横色差未单列。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_review_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "seong2026_vr_blue",
+          "model": "Seong 2026 · TiO₂ · OLED · 蓝色",
+          "study_id": "seong2026",
+          "specimen_id": "vis_oled",
+          "module": "",
+          "variant": "材料选择性涂层 · 色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一近眼原型的分色取焦测试。",
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "seong_modal_2026",
+              "location": "主文 p7 Fig.5d；补充 PDF p21 Fig.S18",
+              "note": "OLED通道的有效中心与带宽未写出。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "蓝通道"
+            },
+            "chromatic": {
+              "value": "蓝通道在各自焦距成像",
+              "source": "seong_modal_2026",
+              "location": "主文 pp5、7 Fig.5d；审稿 PDF pp16–17 Response 1.4b",
+              "note": "实拍图案为Rho’s和鸟。各色使用各自焦距，物像面距离、横向色差和SNR未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "capture_plane_selection": "refocused_per_color",
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_review_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "seong2026_vr_green",
+          "model": "Seong 2026 · TiO₂ · OLED · 绿色",
+          "study_id": "seong2026",
+          "specimen_id": "vis_oled",
+          "module": "",
+          "variant": "材料选择性涂层 · 色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一近眼原型的分色取焦测试。",
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "seong_modal_2026",
+              "location": "主文 p7 Fig.5d；补充 PDF p21 Fig.S18",
+              "note": "OLED通道的有效中心与带宽未写出。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "绿通道"
+            },
+            "chromatic": {
+              "value": "绿通道在各自焦距成像",
+              "source": "seong_modal_2026",
+              "location": "主文 pp5、7 Fig.5d；审稿 PDF pp16–17 Response 1.4b",
+              "note": "实拍图案为Research和青蛙。各色使用各自焦距，物像面距离、横向色差和SNR未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "capture_plane_selection": "refocused_per_color",
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_review_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "seong2026_vr_red",
+          "model": "Seong 2026 · TiO₂ · OLED · 红色",
+          "study_id": "seong2026",
+          "specimen_id": "vis_oled",
+          "module": "",
+          "variant": "材料选择性涂层 · 色散对照",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一近眼原型的分色取焦测试。",
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "seong_modal_2026",
+              "location": "主文 p7 Fig.5d；补充 PDF p21 Fig.S18",
+              "note": "OLED通道的有效中心与带宽未写出。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "红通道"
+            },
+            "chromatic": {
+              "value": "红通道在各自焦距成像",
+              "source": "seong_modal_2026",
+              "location": "主文 pp5、7 Fig.5d；审稿 PDF pp16–17 Response 1.4b",
+              "note": "实拍图案为Lab和瓢虫。各色使用各自焦距，物像面距离、横向色差和SNR未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "capture_plane_selection": "refocused_per_color",
+              "sourceIds": [
+                "seong_modal_2026",
+                "seong_review_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2021_target_na07_target_488",
+          "model": "Li 2021 · 高NA · USAF · 488 nm",
+          "study_id": "li2021",
+          "specimen_id": "na07_target",
+          "module": "",
+          "variant": "离散RGB · 标靶或近眼系统",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一研究的标靶成像条件。",
+          "values": {
+            "na": {
+              "value": 0.7,
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，A面板",
+              "note": "Fig.3中的器件名义NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "激光二极管，线宽约1 nm",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，A面板",
+              "note": "照明归属按本文图注与正文。合成白光比例及采样未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sample_wavelengths_nm": [
+                488
+              ]
+            },
+            "chromatic": {
+              "value": "单色USAF靶图",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，A面板",
+              "note": "高NA测第7组5/6元素，低NA覆盖第7组。场点、放大率和可录横色差未知。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "target_group": 7
+            },
+            "wavelength_nm": {
+              "value": 488,
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，A面板",
+              "note": "Fig.3图注明确的照明波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "resolved_test_line_width_um": {
+              "value": 2.2,
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，A面板",
+              "note": "作者报告最小线宽约2.2 μm。来自标靶印字尺寸与可辨线条，成像取向或判据细节见待核补件。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "approximate": true,
+              "calculation_origin": "authors",
+              "target_group": 7,
+              "target_element": 6
+            }
+          }
+        },
+        {
+          "id": "li2021_target_na07_target_532",
+          "model": "Li 2021 · 高NA · USAF · 532 nm",
+          "study_id": "li2021",
+          "specimen_id": "na07_target",
+          "module": "",
+          "variant": "离散RGB · 标靶或近眼系统",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一研究的标靶成像条件。",
+          "values": {
+            "na": {
+              "value": 0.7,
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，B面板",
+              "note": "Fig.3中的器件名义NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "激光二极管，线宽约1 nm",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，B面板",
+              "note": "照明归属按本文图注与正文。合成白光比例及采样未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sample_wavelengths_nm": [
+                532
+              ]
+            },
+            "chromatic": {
+              "value": "单色USAF靶图",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，B面板",
+              "note": "高NA测第7组5/6元素，低NA覆盖第7组。场点、放大率和可录横色差未知。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "target_group": 7
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，B面板",
+              "note": "Fig.3图注明确的照明波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "resolved_test_line_width_um": {
+              "value": 2.2,
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，B面板",
+              "note": "作者报告最小线宽约2.2 μm。来自标靶印字尺寸与可辨线条，成像取向或判据细节见待核补件。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "approximate": true,
+              "calculation_origin": "authors",
+              "target_group": 7,
+              "target_element": 6
+            }
+          }
+        },
+        {
+          "id": "li2021_target_na07_target_658",
+          "model": "Li 2021 · 高NA · USAF · 658 nm",
+          "study_id": "li2021",
+          "specimen_id": "na07_target",
+          "module": "",
+          "variant": "离散RGB · 标靶或近眼系统",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一研究的标靶成像条件。",
+          "values": {
+            "na": {
+              "value": 0.7,
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，C面板",
+              "note": "Fig.3中的器件名义NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "激光二极管，线宽约1 nm",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，C面板",
+              "note": "照明归属按本文图注与正文。合成白光比例及采样未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sample_wavelengths_nm": [
+                658
+              ]
+            },
+            "chromatic": {
+              "value": "单色USAF靶图",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，C面板",
+              "note": "高NA测第7组5/6元素，低NA覆盖第7组。场点、放大率和可录横色差未知。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "target_group": 7
+            },
+            "wavelength_nm": {
+              "value": 658,
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，C面板",
+              "note": "Fig.3图注明确的照明波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "resolved_test_line_width_um": {
+              "value": 2.2,
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，C面板",
+              "note": "作者报告最小线宽约2.2 μm。来自标靶印字尺寸与可辨线条，成像取向或判据细节见待核补件。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "approximate": true,
+              "calculation_origin": "authors",
+              "target_group": 7,
+              "target_element": 6
+            }
+          }
+        },
+        {
+          "id": "li2021_target_na07_target_white",
+          "model": "Li 2021 · 高NA · USAF · 合成白",
+          "study_id": "li2021",
+          "specimen_id": "na07_target",
+          "module": "",
+          "variant": "离散RGB · 标靶或近眼系统",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一研究的标靶成像条件。",
+          "values": {
+            "na": {
+              "value": 0.7,
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，G/H面板",
+              "note": "Fig.3中的器件名义NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "合成白光，RGB组成",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，G/H面板",
+              "note": "照明归属按本文图注与正文。合成白光比例及采样未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sample_wavelengths_nm": [
+                488,
+                532,
+                658
+              ]
+            },
+            "chromatic": {
+              "value": "合成白光靶图",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，G/H面板",
+              "note": "高NA测第7组5/6元素，低NA覆盖第7组。场点、放大率和可录横色差未知。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "target_group": 7
+            }
+          }
+        },
+        {
+          "id": "li2021_target_na03_target_470",
+          "model": "Li 2021 · 低NA · USAF · 470 nm",
+          "study_id": "li2021",
+          "specimen_id": "na03_target",
+          "module": "",
+          "variant": "离散RGB · 标靶或近眼系统",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一研究的标靶成像条件。",
+          "values": {
+            "na": {
+              "value": 0.3,
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，I面板",
+              "note": "Fig.3中的器件名义NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "超连续谱可调光源，线宽>5 nm",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，I面板",
+              "note": "照明归属按本文图注与正文。合成白光比例及采样未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sample_wavelengths_nm": [
+                470
+              ]
+            },
+            "chromatic": {
+              "value": "单色USAF靶图",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，I面板",
+              "note": "高NA测第7组5/6元素，低NA覆盖第7组。场点、放大率和可录横色差未知。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "target_group": 7
+            },
+            "wavelength_nm": {
+              "value": 470,
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，I面板",
+              "note": "Fig.3图注明确的照明波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "li2021_target_na03_target_548",
+          "model": "Li 2021 · 低NA · USAF · 548 nm",
+          "study_id": "li2021",
+          "specimen_id": "na03_target",
+          "module": "",
+          "variant": "离散RGB · 标靶或近眼系统",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一研究的标靶成像条件。",
+          "values": {
+            "na": {
+              "value": 0.3,
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，J面板",
+              "note": "Fig.3中的器件名义NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "超连续谱可调光源，线宽>5 nm",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，J面板",
+              "note": "照明归属按本文图注与正文。合成白光比例及采样未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sample_wavelengths_nm": [
+                548
+              ]
+            },
+            "chromatic": {
+              "value": "单色USAF靶图",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，J面板",
+              "note": "高NA测第7组5/6元素，低NA覆盖第7组。场点、放大率和可录横色差未知。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "target_group": 7
+            },
+            "wavelength_nm": {
+              "value": 548,
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，J面板",
+              "note": "Fig.3图注明确的照明波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "li2021_target_na03_target_647",
+          "model": "Li 2021 · 低NA · USAF · 647 nm",
+          "study_id": "li2021",
+          "specimen_id": "na03_target",
+          "module": "",
+          "variant": "离散RGB · 标靶或近眼系统",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一研究的标靶成像条件。",
+          "values": {
+            "na": {
+              "value": 0.3,
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，K面板",
+              "note": "Fig.3中的器件名义NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "超连续谱可调光源，线宽>5 nm",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，K面板",
+              "note": "照明归属按本文图注与正文。合成白光比例及采样未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sample_wavelengths_nm": [
+                647
+              ]
+            },
+            "chromatic": {
+              "value": "单色USAF靶图",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，K面板",
+              "note": "高NA测第7组5/6元素，低NA覆盖第7组。场点、放大率和可录横色差未知。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "target_group": 7
+            },
+            "wavelength_nm": {
+              "value": 647,
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，K面板",
+              "note": "Fig.3图注明确的照明波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "li2021_target_na03_target_white",
+          "model": "Li 2021 · 低NA · USAF · 合成白",
+          "study_id": "li2021",
+          "specimen_id": "na03_target",
+          "module": "",
+          "variant": "离散RGB · 标靶或近眼系统",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一研究的标靶成像条件。",
+          "values": {
+            "na": {
+              "value": 0.3,
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，L面板",
+              "note": "Fig.3中的器件名义NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "合成白光，RGB组成",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，L面板",
+              "note": "照明归属按本文图注与正文。合成白光比例及采样未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sample_wavelengths_nm": [
+                470,
+                548,
+                647
+              ]
+            },
+            "chromatic": {
+              "value": "合成白光靶图",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p4 Fig.3与Focusing and imaging characterizations，L面板",
+              "note": "高NA测第7组5/6元素，低NA覆盖第7组。场点、放大率和可录横色差未知。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "target_group": 7
+            }
+          }
+        },
+        {
+          "id": "li2021_system_vr_passive",
+          "model": "Li 2021 · 被动掩模VR",
+          "study_id": "li2021",
+          "specimen_id": "system_vr_passive",
+          "module": "",
+          "variant": "离散RGB · 标靶或近眼系统",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "整套近眼系统采集，独立于裸镜PSF。",
+          "values": {
+            "material": {
+              "value": "被动掩模VR",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p5 Fig.4C–D及近眼系统正文",
+              "note": "筒镜/相机评价VR图像，AR使用光学合成器。系统实际横向色差与MTF未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "被动掩模VR实拍图",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p5 Fig.4C–D及近眼系统正文",
+              "note": "Fig.4D报告可辨直径1.3 μm的靶点，Fig.4A标眼距约7 cm。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "resolved_test_dot_diameter_um": 1.3,
+              "nominal_eye_relief_cm": 7
+            },
+            "wavelength_nm": {
+              "value": 548,
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p5 Fig.4C–D及近眼系统正文",
+              "note": "Fig.4C图注明确绿色被动照明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "li2021_system_vr_scan",
+          "model": "Li 2021 · 光纤扫描VR",
+          "study_id": "li2021",
+          "specimen_id": "system_vr_scan",
+          "module": "",
+          "variant": "离散RGB · 标靶或近眼系统",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "整套近眼系统采集，独立于裸镜PSF。",
+          "values": {
+            "material": {
+              "value": "光纤扫描VR",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p5 Fig.4E–P及近眼系统正文",
+              "note": "筒镜/相机评价VR图像，AR使用光学合成器。系统实际横向色差与MTF未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "光纤扫描VR实拍图",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p5 Fig.4E–P及近眼系统正文",
+              "note": "系统演示按相应的原图与文字归属。具体SNR、场点MTF和工作谱采样待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "fov_deg": {
+              "value": null,
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p7 Discussion；p5 Fig.4A–B",
+              "note": "作者在讨论中给VR全局上界<10°，未给方向或扫描几何限定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "<10°（作者上界）",
+              "bound": {
+                "operator": "<",
+                "value": 10
+              }
+            },
+            "illumination": {
+              "value": "光纤扫描的三原色激光",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p5 Fig.4E–P及近眼系统正文",
+              "note": "RGB光源线宽均<5 nm。确切三波长和重混权重未见原文表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "linewidth_upper_bound_nm": 5
+            }
+          }
+        },
+        {
+          "id": "li2021_system_ar_passive",
+          "model": "Li 2021 · 被动显示AR",
+          "study_id": "li2021",
+          "specimen_id": "system_ar_passive",
+          "module": "",
+          "variant": "离散RGB · 标靶或近眼系统",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "整套近眼系统采集，独立于裸镜PSF。",
+          "values": {
+            "material": {
+              "value": "被动显示AR",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p6 Fig.5B及近眼系统正文",
+              "note": "筒镜/相机评价VR图像，AR使用光学合成器。系统实际横向色差与MTF未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "被动显示AR实拍图",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p6 Fig.5B及近眼系统正文",
+              "note": "系统演示按相应的原图与文字归属。具体SNR、场点MTF和工作谱采样待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "li2021_system_ar_scan",
+          "model": "Li 2021 · 光纤扫描AR",
+          "study_id": "li2021",
+          "specimen_id": "system_ar_scan",
+          "module": "",
+          "variant": "离散RGB · 标靶或近眼系统",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "整套近眼系统采集，独立于裸镜PSF。",
+          "values": {
+            "material": {
+              "value": "光纤扫描AR",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p6 Fig.5C–D及近眼系统正文",
+              "note": "筒镜/相机评价VR图像，AR使用光学合成器。系统实际横向色差与MTF未列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "光纤扫描AR实拍图",
+              "source": "li_rgb_vr_pdf_2021",
+              "location": "正式主文 PDF p6 Fig.5C–D及近眼系统正文",
+              "note": "系统演示按相应的原图与文字归属。具体SNR、场点MTF和工作谱采样待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            }
+          }
         }
       ],
-      "scope": "37项原始研究、207个器件/测量/系统配置、1416条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
+      "scope": "38项原始研究、221个器件/测量/系统配置、1442条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",

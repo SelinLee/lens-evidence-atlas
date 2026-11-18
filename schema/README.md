@@ -97,3 +97,7 @@
 `effective_na_from_psf` 保存作者由焦斑推得的有效NA、公式与谱点，按原文保存汇总值。单波长的作者焦距误差用 `author_reported_single_wavelength_error` 与明确的设计面或设计焦距，波长须和行一致。界限用 `value=null` 保存。
 
 `mtf_curve.mtf_kind: measured_psf_fft_normalized` 保存作者由实测PSF求得的、仅有归一化频率图的MTF。频率分母未核时保留 `normalization_frequency_cycles_mm: null`。未明确1D切线方向则填 `unspecified`，不生成绝对空间频率。模拟效率的分母未给时用 `author_denominator_unreported` 并附 `denominator_note`。
+
+`reported_effective_focal_um` 和 `reported_effective_na` 保存作者在色散设计语境中报告的谱点有效值。注明波长、方法和设计参考，逐点实测焦位等待具有计量定位的证据。`author_reported_mtf_cutoff_lpmm` 保存作者直接声明的截止频率，保留阈值与频率标定缺口。由实测 PSF 派生的归一化 MTF 若缺少频率标定，曲线的 `normalization_frequency_cycles_mm` 仍留空。
+
+`simulated_cpt_mean_pct` 保存跨带单元偏振转换模拟的作者均值。注明单元、波段、涂层、采样和分母，持续区分器件实测焦区效率。
