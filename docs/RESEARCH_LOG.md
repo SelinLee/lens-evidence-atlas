@@ -857,3 +857,11 @@ Yoon 2026 经 [PR #127](https://github.com/SelinLee/lens-evidence-atlas/pull/127
 Hasegawa 经 [PR #128](https://github.com/SelinLee/lens-evidence-atlas/pull/128) 合入 c8788b4d52978032f18721184995d9a1ae53ed26。PR 检查 44272317518、主线检查 44272449979 和 [Pages 44272450188](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44272450188) 均成功。线上 12 文件与本地逐字节一致，devices-data.js SHA256 为 d7c1c623d86d331bc648bf448e6b92921c3e402b7ea4721054889caa0d93df0d。线上独立无头 Chrome 通过六焦差散点、15 条记录、3 个配置、两功率比、筛选、来源往返、CSV 和六视口。期刊路径 403，机构图与 PDF 200 且哈希一致。
 
 Bayati 的 PMC 正式 PDF 为 Nanophotonics 2022 11(11), 2531–2540，10 页、1,953,628 字节，SHA256 为 49434f3fb1cca424a8635e21e617a39fd6c1d9e81fd72b6c4063bc57f0f961ee，附件是出版 PDF 设置。视觉复核 p2534 Fig. 2A 的两口径 x 单位、Fig. 2C/D 的 RGB 和归一频轴、p2538 Fig. 6 的单位冲突。Fig. 6 的 z 轴印为 μm，刻度 0.8–1.2，图注称 1 mm 器件，绝对轴向单位待核，保留原图。正文 D1mm 两镜的 47% 和 51% 须先确认统计定义及测量面。拟录入 100 μm、1 mm 的逆设计和双曲对照各一组，四器件的焦深与宽度需核测量波长、拟合和评价面。[PMC 正式版](https://pmc-oa-opendata.s3.amazonaws.com/PMC11501592.1/PMC11501592.1.pdf)
+
+## 2026-11-18-76 · Bayati 2022 可见光延长焦深与双曲镜对照
+
+基线 4cf424f，目标保持 active。正式期刊、提前上线、arXiv v1/v2 及作者学位论文归同一文献。v1 补图 S1/S2 补齐光路和效率协议，Fig. 2B 明示模拟，Data Availability 指向合理请求。记录四只实物、12 个配置和 44 条记录。保留 625 nm 的四个焦深宽度、四个未明照明波长的最小 FWHM、1 mm 两镜的轴扫效率印字、归属待核的六条 MTF 曲线，以及分别来自成像实验与模拟的 SSIM。全库累计 32 篇、1302 条。Bayati 2020 的独立柱面论文已按原文引用链启动。[本批核验](BAYATI_2022_REVIEW_2026-11-18.md)
+
+本地校验、275 个测试及构建通过。独立无头 Chrome 确认四个焦深、四个最小宽度、两个效率报告值、引用双向跳转、可见光筛选、CSV 和六个视口。100 μm 两个宽度点相邻，用键盘焦点核记录读数。七个出处含五个可读 PDF 范围请求、一个元数据 200 及一个出版社直连 403。
+
+Bayati 2020 已取 6 页 ACS 正式版，3,295,164 字节，SHA256 为 294f219eab1cbcd893c061b9ef99b9cb070b375f1c54cdfc9d124f88d79a8a32。p877 Table 1 视觉核到三个名义焦距各两类结构、实验/模拟分列的焦距、焦深、FWHM 和效率。ACS SI 直连 403，arXiv 最新作者稿 PDF 200，末尾附 S1/S2，下一批核版本、轴扫协议及补充数据。[UW 正式 PDF](https://labs.ece.uw.edu/amlab/Papers_Journals/Elyas_Inverse_Design_EDOF.pdf) · [作者稿](https://arxiv.org/abs/1910.06542)

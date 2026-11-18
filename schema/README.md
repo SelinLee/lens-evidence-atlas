@@ -62,6 +62,10 @@
 
 `author_longest_focal_depth_um`保存作者以指定轴向强度阈值定义的最长焦深/位置，不是最佳焦点或轴向DOF宽度。要求正值、实际λ、`basis: derived_from_measurement`、作者计算、`statistic: author_longest_focal_depth`、`threshold_intensity_fraction`在(0,1]、`reference_origin`（未知null）及`psf_protocol`。不能把阈值位置差当残余焦移。
 
+`depth_of_focus_um`保存作者按实测横向光束形状或其他明确判据给出的轴向区间宽度。记录实测λ、`dof_criterion`、作者实测计算和`psf_protocol`。`minimum_psf_fwhm_x_um`保存作者从近焦实测剖面中得到的最小x向半高全宽，记录`statistic`和`psf_protocol`。未知选面和光源继续留空。两者各自保留统计定义与采样范围。
+
+`reported_axial_scan_focusing_efficiency_pct`保存作者在轴扫效率段报告的功率比，保留`statistic`、`denominator`、作者实测计算和与分母一致的`efficiency_protocol`。作者的轴向单位或参考面存疑时保留原轴和缺口。专项报告值与指定λ的单焦面效率、带均值及整套光路模型使用各自的字段。
+
 `processed_psf_fwhm_um`与裸PSF宽度分列：正值、实际λ、`basis: reconstruction`、作者计算、`processing_stage: linear_intensity_subtraction`和非负系数；`psf_protocol`须绑定同系数与数值固定评价面。该行不能同时填写数值裸PSF FWHM。作者图内印字可录，负旁瓣/零点/归一化和未知拟合条件必须说明；不把处理后变窄当裸镜光学性能。
 
 `image_snr_db`是作者图像SNR，和phone的snr、PSNR及ASNR不同字段。须`calculation_origin: authors`、`statistic: author_reported_image_snr`与`image_snr_protocol`的信号/噪声公式、`metric_kind: author_image_signal_background_ratio`、靶、ROI/噪声估计（未知null）。captured行用derived_from_measurement，linear_intensity_subtraction行用reconstruction并保留非负系数；单λ或明确白光照明与null波长必须绑定。作者只称背景fluctuation时不擅自补为SD/方差或把10log改成20log；重复数、曝光/增益、基线/通道配准与误差缺口写入协议。
@@ -71,6 +75,8 @@
 `data_availability.status: no_mtf_in_checked_material`表示所列已读主文/SI只核到PSF/f/效率等图表，未报告MTF；与curves_only（已核MTF曲线）分开。无MTF轴就不填写频率单位/方向/数表；作者合理请求、搜索范围和原始PSF采样缺口继续保留。
 
 `mtf_curve.mtf_kind: measured_psf_radial_average`用于作者由实测PSF计算的径向平均MTF。填写物方共轭、固定评价面、lp/mm及实际有独立MTF面板的谱点。某波长只有PSF面板时，`individual_curve_panel=false`，独立MTF面板列表为空。像方频率参考面、物方采样或零频归一化未知时分别留空。`reconstructed_slanted_edge`带重建性质和相机的RGB颜色通道。单值波长字段留空，通道中心有出处时另存为滤片配置。
+
+`measured_psf_frequency_cross_section`保存作者按物理频率归一的实测PSF MTF横截面，要求实际波长、`frequency_unit: normalized_spatial_frequency`、归一基准`normalization_frequency_cycles_mm`和`psf_protocol`。方向和评价面待核时均留空。`simulated_psf_correlation_bandwidth_nm`单独保存作者以模拟PSF相关性定义的光谱带宽，要求`basis: model`、作者计算、参考波长、相关性阈限与比较条件。带宽或参考波长只在其自身字段呈现，实测谱点与实测工作带宽仍按实测证据保存。
 
 `estimated_system_focal_efficiency_pct`、`estimated_detected_throughput_pct`和`spectrally_weighted_mtf_area_lpmm`保存作者完整光路的带内计算估计。须标明`basis: model`、作者计算与光路估算协议。面积保留空间频率积分的量纲 lp/mm。它们与逐λ实测效率、普通作者平均效率及MTF截止频率各用专用字段。图像PSNR、SSIM和LPIPS保留原采集或重建、参考图、配准与光度归一化及统计样本。
 

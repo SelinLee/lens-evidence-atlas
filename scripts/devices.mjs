@@ -53,6 +53,25 @@ export function validateDevices(d,catalog){
  if(mtfCurve?.mtf_kind==='reconstructed_slanted_edge'&&(
   mtfCurve.basis!=='reconstruction'||mtfCurve.processing_stage!=='reconstructed'||mtfCurve.frequency_unit!=='lp/mm'||
   !['red','green','blue'].includes(mtfCurve.color_channel)||Number.isFinite(r.values.wavelength_nm?.value)))errors.push('reconstructed color channel edge MTF context');
+ if(mtfCurve?.mtf_kind==='measured_psf_frequency_cross_section'&&(
+  mtfCurve.basis!=='derived_from_measurement'||mtfCurve.calculation_origin!=='authors'||!(r.values.wavelength_nm?.value>0)||
+  mtfCurve.frequency_unit!=='normalized_spatial_frequency'||!(mtfCurve.normalization_frequency_cycles_mm>0)||
+  !Number.isFinite(mtfCurve.normalization_frequency_cycles_mm)||!r.values.psf_protocol?.value))errors.push('normalized PSF MTF context');
+ const {depth_of_focus_um:focusWidth,minimum_psf_fwhm_x_um:minimumWidth,
+  reported_axial_scan_focusing_efficiency_pct:axialEfficiency,simulated_psf_correlation_bandwidth_nm:correlationWidth}=r.values;
+ for(const metric of [focusWidth,minimumWidth,axialEfficiency]){
+  if(Number.isFinite(metric?.value)&&
+   (metric.value<0||(metric!==axialEfficiency&&metric.value===0)||metric.basis!=='derived_from_measurement'||metric.calculation_origin!=='authors'))errors.push('author axial scan measurement context');
+ }
+ if(Number.isFinite(focusWidth?.value)&&(!(r.values.wavelength_nm?.value>0)||!focusWidth.dof_criterion||!r.values.psf_protocol?.value))errors.push('focal interval context');
+ if(Number.isFinite(minimumWidth?.value)&&(minimumWidth.direction!=='x'||!minimumWidth.statistic||!r.values.psf_protocol?.value))errors.push('minimum focal width context');
+ const efficiencyProtocol=r.values.efficiency_protocol;
+ if(Number.isFinite(axialEfficiency?.value)&&(axialEfficiency.value>100||!axialEfficiency.statistic||
+  !efficiencyProtocol?.value||!axialEfficiency.denominator||axialEfficiency.denominator!==efficiencyProtocol.denominator))errors.push('axial efficiency protocol');
+ if(Number.isFinite(correlationWidth?.value)&&(!(correlationWidth.value>0)||correlationWidth.basis!=='model'||
+  correlationWidth.calculation_origin!=='authors'||!(correlationWidth.reference_wavelength_nm>0)||
+  !(correlationWidth.correlation_threshold>=0&&correlationWidth.correlation_threshold<=1)||
+  !(correlationWidth.comparison==='greater_than'||correlationWidth.comparison==='greater_than_or_equal')||Number.isFinite(r.values.wavelength_nm?.value)))errors.push('simulated correlation bandwidth context');
  for(const [key,denominator] of [['optical_transmittance_pct','incident_through_aperture'],['focusing_efficiency_transmitted_pct','transmitted_power']]){
   const powerRatio=r.values[key];
   if(Number.isFinite(powerRatio?.value)&&(powerRatio.value<0||powerRatio.value>100||
