@@ -32,6 +32,8 @@
 
 `focus_variation_um`保存作者报告的跨波长非负焦距变化幅度，与逐波长`measured_focal_um`分开。须有`focus_variation_protocol`、实际`sample_wavelengths_nm`及`statistic`：`author_reported_band_variation`仅表示作者所称variation，不能自动改称已复核的峰峰值；`maximum_pairwise_difference`表示作者明确的谱点最大互差。当前两种均为`basis: derived_from_measurement`、`calculation_origin: authors`；本库从作者正文给出的实测焦距上下限计算宽度时，使用 `calculation_origin: atlas`、`statistic: range_width_from_reported_bounds` 和 `author_reported_focal_bounds_um`。此行保留原印字范围和计算式，逐波长焦距仍留空。其他本库重算须另设记录或协议。参考、轴向采样和缺失定义写入协议，约值保留`approximate`与`display`。汇总行不同时填写数值型`wavelength_nm`，不由百分数倒推绝对焦距或任意分派到一个波长。
 
+两谱点差值可以用 `statistic: paired_measured_axial_peak_difference` 保存。使用 `basis: derived_from_measurement`、`calculation_origin: atlas`、`formula: abs(f_2 - f_1)`、实际样本波长和同器件的两条 `measurement_record_ids`。原始行须为实测轴向强度峰位。不同照明带宽、偏振和测量不确定度写入协议。两点差值只描述这两个条件。
+
 可见光用途明确而仅有离散谱点汇总的研究器件可设`visible_light_use: true`，无需捏造连续工作波段或一个数值波长；实际单谱点波长已知时仍优先按其筛选。该规则同时适用于文献器件与旧记录。
 
 `focus_error_um`/`focus_error_pct`保存作者定义未完全明确的focal length error汇总，须有`focus_error_protocol`、实际`sample_wavelengths_nm`、`statistic: author_reported_focal_error`、作者实测计算性质和`reference_wavelength_nm`（未知显式null）。它们不替代最大互差/逐点焦移；有单值波长的行不能混填汇总。`thickness_um`表示完整堆叠厚度，和`height_nm`分开。

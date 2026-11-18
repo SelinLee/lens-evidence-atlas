@@ -274,8 +274,21 @@ export function validateDevices(d,catalog){
    variation.statistic==='range_width_from_reported_bounds'&&boundedSample&&Array.isArray(bounds)&&
    bounds.length===2&&bounds.every(Number.isFinite)&&bounds[0]>0&&bounds[1]>=bounds[0]&&
    variation.value===bounds[1]-bounds[0];
+  let pairedPeakDifference=false;
+  if(metric==='focus_variation_um'&&variation.calculation_origin==='atlas'&&variation.statistic==='paired_measured_axial_peak_difference'){
+   const recordIds=variation.measurement_record_ids;
+   if(listedWaves&&waves.length===2&&Array.isArray(recordIds)&&recordIds.length===2&&r.specimen_id&&variation.formula==='abs(f_2 - f_1)'){
+    const samples=recordIds.map(id=>c.rows.find(sample=>sample.id===id));
+    pairedPeakDifference=samples.every((sample,index)=>{
+     const focal=sample?.values.measured_focal_um;
+     return sample?.study_id===r.study_id&&sample?.specimen_id===r.specimen_id&&
+       sample.values.wavelength_nm?.value===waves[index]&&Number.isFinite(focal?.value)&&focal.value>0&&
+       focal.basis==='measured'&&focal.position_definition==='axial_intensity_maximum';
+    })&&variation.value===Math.abs(samples[1].values.measured_focal_um.value-samples[0].values.measured_focal_um.value);
+   }
+  }
   if(variation.value<0||Number.isFinite(r.values.wavelength_nm?.value)||typeof protocol!=='string'||!protocol.trim()||
-   !(authorCalculation||widthFromPublishedBounds)||variation.basis!=='derived_from_measurement')errors.push('focal variation context');
+   !(authorCalculation||widthFromPublishedBounds||pairedPeakDifference)||variation.basis!=='derived_from_measurement')errors.push('focal variation context');
   if(metric==='focus_variation_pct'&&(!variation.denominator||variation.reference_wavelength_nm!==null&&!(listedWaves&&waves.includes(variation.reference_wavelength_nm))||variation.reference_focal_um!==null&&!(variation.reference_focal_um>0)))errors.push('focal variation percent reference');
  }
  }
