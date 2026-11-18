@@ -951,3 +951,9 @@ PR #144 合入 fe587e54227875c840b7f7a6b9aa4e2c18604d4d。PR 校验 44316905833�
 ## 2026-11-18-90 · Zhang 2025 折叠光路实验与模拟
 
 主文 Fig.3g–i 的 195–225 THz 七频点分录 LCP 实物测量。保存轴向半高宽区间中心、峰强面横向宽度和会聚入射的不同解释。薄层几何、显微物镜 NA 及器件口径的缺口各自保留。校对补充 DOCX 图版及 33 个 MathType 内嵌对象，确认 Fig.S7 的七频点光斑、焦距和半径 3×FWHM 效率为模拟曲线。查 DataCite 精确 DOI 零项、PMC 未附数值表，作者声明向通讯作者索取，逐点参数留空。新增 16 条、2 配置，累计 41 篇、235 配置、1502 条。[本批核验](ZHANG_FOLDED_REVIEW_2026-11-18.md)
+
+## 2026-11-18-91 · Zhang 折叠光路上线验收与 Wang 高效率消色差镜取证
+
+PR #146 合入 e02d1927f56c23fe5a1a6139268c7a71dd7baaa1。PR 校验 44321875202、主线校验 44322387561 与 Pages 44322388309 成功。298 项测试通过，线上 12 文件与本机构建逐字节一致，devices-data.js SHA256 为 dbf708a12d44bcf6c461ef6df667c1665010ae4a1a016089f930b74cf55209d6。独立无头 Chrome 核验 16 行、2 配置、七组频率到波长换算散点、六个视口、引用往返和 CSV。主文及补件文件签名以 206 响应核验，分区、PMC 清单及 DataCite 链接均为 200。可见光筛选保留 35 篇、1364 条。[PR #146](https://github.com/SelinLee/lens-evidence-atlas/pull/146) · [Pages 部署](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44322388309)
+
+下批补证 Wang 等 2021 年 TiO₂ 宽带消色差超透镜。2026-11-18 查 Crossref 344 次，按高被引经典例外纳入。正式主文 PDF 为 3019603 字节，SHA256 daa262e63664bab1de408841f5683a85e6be00d91fc70de1ca0a104aedb43518；补充 DOCX 为 3455401 字节，SHA256 4003d839a9cb8be278d633c35e235af7a4be6ef162ee95fdbe42ab0d04bc01f1。Fig.3e–g 明示 NA 0.24 器件的五谱点为 650、700、800、900、1000 nm，图示轴向参照为 60 μm。Fig.4a 的效率条件和 Fig.2d 的模拟效率分开核录。Data availability 给出的百度网盘页面显示「邀请链接已失效」。现有应用基准按同一 DOI 对齐。[期刊主文](https://www.nature.com/articles/s41467-021-25797-9) · [补充 DOCX](https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-021-25797-9/MediaObjects/41467_2021_25797_MOESM1_ESM.docx) · [Crossref](https://api.crossref.org/works/10.1038/s41467-021-25797-9)
