@@ -905,3 +905,9 @@ Zhang 2025 已由期刊索引核到 0.775 μm 系统分辨率的作者报告、�
 PR #136 已合入 cc281ba6b3b2b2b46b65abd54b0edb8390b24a35。PR校验 44297497822、主线校验 44297857402 和 Pages 44297858075 均成功。线上 12 文件与本地逐字节一致，devices-data.js SHA256 为 9bd8e817c805a4465c37d090d4769cfc85f4fc5e096dd409fecf401bd1b9f6ab。独立无头 Chrome 验证四个正文MTF、约50 μm焦变、18行、8配置、四个原始出处、六种视口、可见光与CSV等交互。可见光32篇、1286行。[PR #136](https://github.com/SelinLee/lens-evidence-atlas/pull/136) · [Pages 发布](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44297858075)
 
 Jeon 2026 的灰度纳米模板研究单独沿作者实验室的论文列表和后续Seong 2026原作引用纳入核验。正式 PDF 10页3560014字节，SHA256 4bfb832292f993ca8723d52a593405d5e38abcfbc5ae055765776a41ace80260；补件27页2255864字节，SHA256 991863b3b5be0f430f9e3ee6979965c7a030c8647208ae0364ce8bf97e147a23；两份及透明审稿文件均200。区别于已入库1.89 mm/NA0.21的TPL/NIL论文，本研究为1.2 mm/设计NA0.31、灰度EBL负模板NIL。p6 Fig.4c标0.794/0.956/1.170 μm，p7给同焦面Strehl 0.83/0.86/0.85，p7写三焦点均距名义焦面1800 μm不超过7 μm。Fig.4b中间绿色面板印635nm，正文和图注谱序为450/532/635 nm。补表S3蓝光印值14.8%，用其62.8和9.4 μW的印字重算约14.97%，待保持原值与舍入核对。SI Fig.S16的1D和2D MTF只见频率归一图和FFT式。原始PSF、归一化频率、ROI和逐频表继续核，记录并行的Park 2026来源缺口。会话目标保持active。[Jeon 正式 PDF](https://www.nature.com/articles/s41467-026-73940-1.pdf) · [Jeon 补件](https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-026-73940-1/MediaObjects/41467_2026_73940_MOESM1_ESM.pdf)
+
+## 2026-11-18-82 · Jeon 2026 灰度复制镜的 RGB 定量证据
+
+基线 c4dcf20。主文Fig.4c、p7与SI功率表分别确认三色FWHM、Strehl及聚焦效率。实测三色均距1800 μm设计面7 μm以内，蓝光偏差0.27%。保存有效NA均值0.29与设计NA0.31差异，以及绿色图的635/532 nm、蓝光效率与圆整功率的印字差异。PMC对象清单、Europe PMC、DataCite及作者入口核到曲线和功率表，原始MTF/PSF缺证。新增30行12配置，累计37篇1416行。[本批核验](JEON_GRAYSCALE_REVIEW_2026-11-18.md)
+
+本地数据校验、287项测试、构建和独立无头Chrome通过。核三组实测散点、蓝光0.27%和三色7 μm界限，未发现伪造焦位点。表格30行12配置，五个出处HTTP 200，三个PDF完整字节散列相符。引用往返、可见光筛选、CSV、六种视口与分享恢复通过。

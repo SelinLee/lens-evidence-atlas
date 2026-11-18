@@ -1270,6 +1270,51 @@
       "scope": "2026-11-18精确关联查询HTTP 200，零登记项。已核补件目录与原文p8数据声明。",
       "checked_on": "2026-11-18",
       "publication_source": "wu_hybrid_2025"
+    },
+    {
+      "id": "jeon_grayscale_2026",
+      "title": "Jeon et al. (2026): Printable grayscale nano-template for full-colour organic light-emitting diode near-eye displays with 3D achromatic metalenses",
+      "url": "https://www.nature.com/articles/s41467-026-73940-1.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "正式版Nat Commun 17,7037，10页3560014字节，SHA256 4bfb832292f993ca8723d52a593405d5e38abcfbc5ae055765776a41ace80260。PMC13392276，PMID42225655。",
+      "checked_on": "2026-11-18",
+      "doi": "10.1038/s41467-026-73940-1"
+    },
+    {
+      "id": "jeon_grayscale_si_2026",
+      "title": "Nature · 正式补充材料 Fig.S10、S14–S19与功率表",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-026-73940-1/MediaObjects/41467_2026_73940_MOESM1_ESM.pdf",
+      "kind": "supplementary_material",
+      "scope": "27页2255864字节，SHA256 991863b3b5be0f430f9e3ee6979965c7a030c8647208ae0364ce8bf97e147a23。文件无嵌入附件。",
+      "checked_on": "2026-11-18",
+      "publication_source": "jeon_grayscale_2026"
+    },
+    {
+      "id": "jeon_grayscale_review_2026",
+      "title": "Nature · 透明审稿及作者补充模拟",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-026-73940-1/MediaObjects/41467_2026_73940_MOESM2_ESM.pdf",
+      "kind": "supplementary_material",
+      "scope": "2236308字节，SHA256 896c4700c439a0c479b455a1c83b5e918a6465a6f1d93555057397489fa7d5eb。核Response 2.5和焦斑/MTF/效率相关段，未见嵌入附件。",
+      "checked_on": "2026-11-18",
+      "publication_source": "jeon_grayscale_2026"
+    },
+    {
+      "id": "jeon_grayscale_cloud_2026",
+      "title": "PMC · 正式版及原始附件清单",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC13392276.1%2F",
+      "kind": "repository",
+      "scope": "PMC13392276.1对象含主文、五张发表图和两份PDF。Europe PMC全文XML同列两份补件，未列数组附件。",
+      "checked_on": "2026-11-18",
+      "publication_source": "jeon_grayscale_2026"
+    },
+    {
+      "id": "jeon_grayscale_datacite_2026",
+      "title": "DataCite · Jeon 2026 灰度纳米模板关联 DOI",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1038%2Fs41467-026-73940-1%22&page%5Bsize%5D=25",
+      "kind": "repository",
+      "scope": "精确关联DOI查询，HTTP 200，结果零项。与已入库10.1038/s41467-026-73103-2区分。",
+      "checked_on": "2026-11-18",
+      "publication_source": "jeon_grayscale_2026"
     }
   ],
   "domains": {
@@ -4898,6 +4943,22 @@
             {
               "source": "wu_hybrid_si_2025",
               "location": "PDF p2 Note S1"
+            }
+          ]
+        },
+        {
+          "id": "effective_na_from_psf",
+          "label": "由焦斑求得的有效NA",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition": "作者以焦斑横宽反推的有效数值孔径。",
+          "conditions": "公式、测量波长、剖面方向、焦面与汇总统计。",
+          "definition_refs": [
+            {
+              "source": "jeon_grayscale_2026",
+              "location": "p7 Fig.4性能段，0.514λ/FWHM"
             }
           ]
         }
@@ -198008,9 +198069,2559 @@
               }
             }
           }
+        },
+        {
+          "id": "jeon2026grayscale_summary",
+          "model": "Jeon 2026 灰度纳米模板 · 光学台 · RGB汇总",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "bench",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同只复制镜的设计值、实测三色界限和作者有效NA估计。",
+          "values": {
+            "diameter_um": {
+              "value": 1200,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "同论文的1.2 mm标称设计口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 1.2,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.31,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "器件设计NA。作者另从实测焦斑报告平均有效NA 0.29。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 1800,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "名义设计焦面距器件1.8 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 1.8,
+              "original_unit": "mm"
+            },
+            "material": {
+              "value": "灰度EBL硅负模板，MINS-311RM树脂复制",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp5–6 Fig.3制程；补充 PDF p10 Fig.S7、p19 Fig.S14",
+              "note": "可变高与横向尺寸的圆/方柱。近眼系统复制于PET膜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "三个离散激光谱点，轴向焦面附近",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4d及z-scan段；补充 PDF p23 Fig.S17",
+              "note": "三色峰均在距名义设计焦面7 μm以内，绝对峰位、符号和全带误差未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sample_wavelengths_nm": [
+                450,
+                532,
+                635
+              ],
+              "reference_plane_um": 1800
+            },
+            "focus_error_um": {
+              "value": null,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4d及z-scan段；补充 PDF p23 Fig.S17",
+              "note": "7 μm是相对名义焦面的界限，保留独立峰位及带内峰峰差未知。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "≤7 μm（距设计面）",
+              "bound": {
+                "operator": "<=",
+                "value": 7
+              },
+              "reference_plane_um": 1800,
+              "sample_wavelengths_nm": [
+                450,
+                532,
+                635
+              ]
+            },
+            "focus_error_protocol": {
+              "value": "名义设计焦面 z=1800 μm",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4d及z-scan段；补充 PDF p23 Fig.S17",
+              "note": "作者给出三个峰的绝对距离上界，还单列蓝光相对设计f的偏差百分数。定量参考取名义设计面，未确定单点峰值与符号。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "reference_plane_um": 1800
+            },
+            "effective_na_from_psf": {
+              "value": 0.29,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p7 Fig.4性能段",
+              "note": "作者使用0.514λ/FWHM反推并跨三色平均，实测焦斑见Fig.4c。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "sample_wavelengths_nm": [
+                450,
+                532,
+                635
+              ],
+              "statistic": "author_reported_three_wavelength_mean",
+              "formula": "0.514 * wavelength / focal_spot_fwhm"
+            },
+            "psf_protocol": {
+              "value": "准直RGB激光；同一焦面拍摄及轴向扫描",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4b–d及正文；p8 Optical measurement",
+              "note": "光纤、二向色镜和匹配镜片口径的光阑。收集端为50×/NA0.5物镜、筒镜与INFINITY2-1RC CCD。三色二维图在同一焦面，作者未写该面的精确z、样面像素尺、步长和重复次数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "collection_na": 0.5,
+              "nominal_collection_magnification": 50,
+              "object_conjugate": "collimated",
+              "evaluation_plane_um": null,
+              "focal_plane_selection": "common_plane",
+              "sampling_um": null,
+              "axial_step_um": null,
+              "illumination_polarization": null
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_bench_450",
+          "model": "Jeon 2026 灰度纳米模板 · 光学台 · 450 nm",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "bench",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同只实制镜的离散测点及焦斑、功率、作者计算MTF和Strehl。",
+          "values": {
+            "diameter_um": {
+              "value": 1200,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "同论文的1.2 mm标称设计口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 1.2,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.31,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "器件设计NA。作者另从实测焦斑报告平均有效NA 0.29。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 1800,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "名义设计焦面距器件1.8 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 1.8,
+              "original_unit": "mm"
+            },
+            "wavelength_nm": {
+              "value": 450,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p6 Fig.4a及图注、正文；补充 PDF p25 Table S3",
+              "note": "Fig.4c显示相应颜色的x截线。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "准直RGB激光；同一焦面拍摄及轴向扫描",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4b–d及正文；p8 Optical measurement",
+              "note": "光纤、二向色镜和匹配镜片口径的光阑。收集端为50×/NA0.5物镜、筒镜与INFINITY2-1RC CCD。三色二维图在同一焦面，作者未写该面的精确z、样面像素尺、步长和重复次数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "collection_na": 0.5,
+              "nominal_collection_magnification": 50,
+              "object_conjugate": "collimated",
+              "evaluation_plane_um": null,
+              "focal_plane_selection": "common_plane",
+              "sampling_um": null,
+              "axial_step_um": null,
+              "illumination_polarization": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4d及z-scan段；补充 PDF p23 Fig.S17",
+              "note": "该波长只有轴向分布图及共同上界，作者未单列峰位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "峰位未直报；距设计面≤7 μm",
+              "bound": {
+                "operator": "<=",
+                "value": 7
+              },
+              "reference_plane_um": 1800
+            },
+            "fwhm_x_um": {
+              "value": 0.794,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p6 Fig.4c左面板与 Demonstration 段",
+              "note": "同一焦面上的实测归一化强度x向FWHM。Fig.4c显示相应颜色的x截线。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "0.794",
+              "direction": "x"
+            },
+            "strehl": {
+              "value": 0.83,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p6 Fig.4c左印字、p7正文；补充 PDF p22 Table S2 本研究列",
+              "note": "作者对实测PSF形成的二维MTF和理想二维MTF积分取比。积分域与绝对频率标尺未单列。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "statistic": "ratio_of_2d_mtf_integrals",
+              "reference": "ideal_diffraction_limited_2d_mtf",
+              "sourceIds": [
+                "jeon_grayscale_2026",
+                "jeon_grayscale_si_2026"
+              ]
+            },
+            "mtf_curve": {
+              "value": "实测PSF派生：归一化1D与2D MTF",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p21 Note15 Fig.S16a–c、式S1–S2；主文 p7，蓝光子组",
+              "note": "Fig.S16a横轴 f/f_c；S16b/c横轴 f_x/f_c、f_y/f_c，纵轴MTF。作者取PSF二维傅里叶变换幅值。f_c物理值、1D截线方向、PSF采样、背景/裁剪与DC归一化细则未报告。 公开附件清单、DOI登记与作者入口未发现原始焦扫、PSF或逐频表。主文p8指向通讯作者按请求提供数据。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_2026",
+                "jeon_grayscale_cloud_2026",
+                "jeon_grayscale_datacite_2026"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "measured_psf_fft_normalized",
+              "frequency_unit": "normalized_spatial_frequency",
+              "frequency_normalization": "f/f_c",
+              "normalization_frequency_cycles_mm": null,
+              "direction_aggregation": "unspecified",
+              "data_availability": {
+                "status": "curves_only",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "normalization_frequency_cycles_mm": null
+              }
+            },
+            "efficiency_lambda_nm": {
+              "value": 450,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p25 Table S3，第1数据行 (450 nm) wavelength列",
+              "note": "功率表明列的测试谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_protocol": {
+              "value": "Table S3的聚焦与入射功率之比",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p25 Note19 Table S3；主文 p7",
+              "note": "两列标题写intensity，量纲为μW。实验的焦圈、有效积分面、测功光阑细则和重复数尚未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "denominator": "author_reported_incident_power",
+              "integration_radius_um": null,
+              "evaluation_plane_um": null,
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_2026"
+              ]
+            },
+            "incident_power_uw": {
+              "value": 62.8,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p25 Table S3，第1数据行 (450 nm) Incident intensity列",
+              "note": "原表单位μW。未把光阑位置视为已完全定义的分母。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "quantity": "optical_power",
+              "original_unit": "μW"
+            },
+            "focused_power_uw": {
+              "value": 9.4,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p25 Table S3，第1数据行 (450 nm) Focused intensity列",
+              "note": "原表单位μW，实验的积分面积未知。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "quantity": "optical_power",
+              "original_unit": "μW"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 14.8,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p25 Table S3，第1数据行 (450 nm) Focusing efficiency列；主文 p7",
+              "note": "直接采用作者印字14.8%；按表列9.4/62.8×100约14.97%，差异保留。积分范围未知。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "denominator": "author_reported_incident_power",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_2026"
+              ],
+              "ratio_from_printed_power_pct": 14.97,
+              "ratio_check_origin": "atlas_displayed_inputs"
+            },
+            "focus_error_pct": {
+              "value": 0.27,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4d及z-scan段；补充 PDF p23 Fig.S17",
+              "note": "作者报告蓝光相对名义设计f的偏离量为0.27%。偏差方向、精确峰位及公差未直接给出。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_single_wavelength_error",
+              "sample_wavelengths_nm": [
+                450
+              ],
+              "reference_wavelength_nm": null,
+              "reference_kind": "design_focal_length",
+              "reference_plane_um": 1800
+            },
+            "focus_error_protocol": {
+              "value": "以1800 μm名义设计焦距为分母",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4d及z-scan段；补充 PDF p23 Fig.S17",
+              "note": "作者用百分数描述蓝光峰与设计f的差。舍入及符号未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "reference_plane_um": 1800
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_bench_532",
+          "model": "Jeon 2026 灰度纳米模板 · 光学台 · 532 nm",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "bench",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同只实制镜的离散测点及焦斑、功率、作者计算MTF和Strehl。",
+          "values": {
+            "diameter_um": {
+              "value": 1200,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "同论文的1.2 mm标称设计口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 1.2,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.31,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "器件设计NA。作者另从实测焦斑报告平均有效NA 0.29。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 1800,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "名义设计焦面距器件1.8 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 1.8,
+              "original_unit": "mm"
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p6 Fig.4a及图注、正文；补充 PDF p25 Table S3",
+              "note": "Fig.4b中间绿色面板印为635 nm，与Fig.4a、图注和正文列出的532 nm冲突。宽度使用Fig.4c及正文，图像标签原样保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "conflicting_label_nm": 635,
+              "conflicting_location": "主文 p6 Fig.4b中间绿色面板"
+            },
+            "psf_protocol": {
+              "value": "准直RGB激光；同一焦面拍摄及轴向扫描",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4b–d及正文；p8 Optical measurement",
+              "note": "光纤、二向色镜和匹配镜片口径的光阑。收集端为50×/NA0.5物镜、筒镜与INFINITY2-1RC CCD。三色二维图在同一焦面，作者未写该面的精确z、样面像素尺、步长和重复次数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "collection_na": 0.5,
+              "nominal_collection_magnification": 50,
+              "object_conjugate": "collimated",
+              "evaluation_plane_um": null,
+              "focal_plane_selection": "common_plane",
+              "sampling_um": null,
+              "axial_step_um": null,
+              "illumination_polarization": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4d及z-scan段；补充 PDF p23 Fig.S17",
+              "note": "该波长只有轴向分布图及共同上界，作者未单列峰位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "峰位未直报；距设计面≤7 μm",
+              "bound": {
+                "operator": "<=",
+                "value": 7
+              },
+              "reference_plane_um": 1800
+            },
+            "fwhm_x_um": {
+              "value": 0.956,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p6 Fig.4c中面板与 Demonstration 段",
+              "note": "同一焦面上的实测归一化强度x向FWHM。Fig.4b中间绿色面板印为635 nm，与Fig.4a、图注和正文列出的532 nm冲突。宽度使用Fig.4c及正文，图像标签原样保留。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "0.956",
+              "direction": "x"
+            },
+            "strehl": {
+              "value": 0.86,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p6 Fig.4c中印字、p7正文；补充 PDF p22 Table S2 本研究列",
+              "note": "作者对实测PSF形成的二维MTF和理想二维MTF积分取比。积分域与绝对频率标尺未单列。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "statistic": "ratio_of_2d_mtf_integrals",
+              "reference": "ideal_diffraction_limited_2d_mtf",
+              "sourceIds": [
+                "jeon_grayscale_2026",
+                "jeon_grayscale_si_2026"
+              ]
+            },
+            "mtf_curve": {
+              "value": "实测PSF派生：归一化1D与2D MTF",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p21 Note15 Fig.S16a–c、式S1–S2；主文 p7，绿光子组",
+              "note": "Fig.S16a横轴 f/f_c；S16b/c横轴 f_x/f_c、f_y/f_c，纵轴MTF。作者取PSF二维傅里叶变换幅值。f_c物理值、1D截线方向、PSF采样、背景/裁剪与DC归一化细则未报告。 公开附件清单、DOI登记与作者入口未发现原始焦扫、PSF或逐频表。主文p8指向通讯作者按请求提供数据。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_2026",
+                "jeon_grayscale_cloud_2026",
+                "jeon_grayscale_datacite_2026"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "measured_psf_fft_normalized",
+              "frequency_unit": "normalized_spatial_frequency",
+              "frequency_normalization": "f/f_c",
+              "normalization_frequency_cycles_mm": null,
+              "direction_aggregation": "unspecified",
+              "data_availability": {
+                "status": "curves_only",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "normalization_frequency_cycles_mm": null
+              }
+            },
+            "efficiency_lambda_nm": {
+              "value": 532,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p25 Table S3，第2数据行 (532 nm) wavelength列",
+              "note": "功率表明列的测试谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_protocol": {
+              "value": "Table S3的聚焦与入射功率之比",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p25 Note19 Table S3；主文 p7",
+              "note": "两列标题写intensity，量纲为μW。实验的焦圈、有效积分面、测功光阑细则和重复数尚未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "denominator": "author_reported_incident_power",
+              "integration_radius_um": null,
+              "evaluation_plane_um": null,
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_2026"
+              ]
+            },
+            "incident_power_uw": {
+              "value": 81.1,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p25 Table S3，第2数据行 (532 nm) Incident intensity列",
+              "note": "原表单位μW。未把光阑位置视为已完全定义的分母。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "quantity": "optical_power",
+              "original_unit": "μW"
+            },
+            "focused_power_uw": {
+              "value": 9.2,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p25 Table S3，第2数据行 (532 nm) Focused intensity列",
+              "note": "原表单位μW，实验的积分面积未知。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "quantity": "optical_power",
+              "original_unit": "μW"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 11.3,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p25 Table S3，第2数据行 (532 nm) Focusing efficiency列；主文 p7",
+              "note": "补表作者值，按该表的实测功率给出。积分范围未知。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "denominator": "author_reported_incident_power",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_bench_635",
+          "model": "Jeon 2026 灰度纳米模板 · 光学台 · 635 nm",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "bench",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同只实制镜的离散测点及焦斑、功率、作者计算MTF和Strehl。",
+          "values": {
+            "diameter_um": {
+              "value": 1200,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "同论文的1.2 mm标称设计口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 1.2,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.31,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "器件设计NA。作者另从实测焦斑报告平均有效NA 0.29。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 1800,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "名义设计焦面距器件1.8 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 1.8,
+              "original_unit": "mm"
+            },
+            "wavelength_nm": {
+              "value": 635,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p6 Fig.4a及图注、正文；补充 PDF p25 Table S3",
+              "note": "Fig.4c显示相应颜色的x截线。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "准直RGB激光；同一焦面拍摄及轴向扫描",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4b–d及正文；p8 Optical measurement",
+              "note": "光纤、二向色镜和匹配镜片口径的光阑。收集端为50×/NA0.5物镜、筒镜与INFINITY2-1RC CCD。三色二维图在同一焦面，作者未写该面的精确z、样面像素尺、步长和重复次数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "collection_na": 0.5,
+              "nominal_collection_magnification": 50,
+              "object_conjugate": "collimated",
+              "evaluation_plane_um": null,
+              "focal_plane_selection": "common_plane",
+              "sampling_um": null,
+              "axial_step_um": null,
+              "illumination_polarization": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4d及z-scan段；补充 PDF p23 Fig.S17",
+              "note": "该波长只有轴向分布图及共同上界，作者未单列峰位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "峰位未直报；距设计面≤7 μm",
+              "bound": {
+                "operator": "<=",
+                "value": 7
+              },
+              "reference_plane_um": 1800
+            },
+            "fwhm_x_um": {
+              "value": 1.17,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p6 Fig.4c右面板与 Demonstration 段",
+              "note": "同一焦面上的实测归一化强度x向FWHM。Fig.4c显示相应颜色的x截线。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "1.170",
+              "direction": "x"
+            },
+            "strehl": {
+              "value": 0.85,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p6 Fig.4c右印字、p7正文；补充 PDF p22 Table S2 本研究列",
+              "note": "作者对实测PSF形成的二维MTF和理想二维MTF积分取比。积分域与绝对频率标尺未单列。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "statistic": "ratio_of_2d_mtf_integrals",
+              "reference": "ideal_diffraction_limited_2d_mtf",
+              "sourceIds": [
+                "jeon_grayscale_2026",
+                "jeon_grayscale_si_2026"
+              ]
+            },
+            "mtf_curve": {
+              "value": "实测PSF派生：归一化1D与2D MTF",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p21 Note15 Fig.S16a–c、式S1–S2；主文 p7，红光子组",
+              "note": "Fig.S16a横轴 f/f_c；S16b/c横轴 f_x/f_c、f_y/f_c，纵轴MTF。作者取PSF二维傅里叶变换幅值。f_c物理值、1D截线方向、PSF采样、背景/裁剪与DC归一化细则未报告。 公开附件清单、DOI登记与作者入口未发现原始焦扫、PSF或逐频表。主文p8指向通讯作者按请求提供数据。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_2026",
+                "jeon_grayscale_cloud_2026",
+                "jeon_grayscale_datacite_2026"
+              ],
+              "calculation_origin": "authors",
+              "mtf_kind": "measured_psf_fft_normalized",
+              "frequency_unit": "normalized_spatial_frequency",
+              "frequency_normalization": "f/f_c",
+              "normalization_frequency_cycles_mm": null,
+              "direction_aggregation": "unspecified",
+              "data_availability": {
+                "status": "curves_only",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "normalization_frequency_cycles_mm": null
+              }
+            },
+            "efficiency_lambda_nm": {
+              "value": 635,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p25 Table S3，第3数据行 (635 nm) wavelength列",
+              "note": "功率表明列的测试谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "efficiency_protocol": {
+              "value": "Table S3的聚焦与入射功率之比",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p25 Note19 Table S3；主文 p7",
+              "note": "两列标题写intensity，量纲为μW。实验的焦圈、有效积分面、测功光阑细则和重复数尚未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "denominator": "author_reported_incident_power",
+              "integration_radius_um": null,
+              "evaluation_plane_um": null,
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_2026"
+              ]
+            },
+            "incident_power_uw": {
+              "value": 78.8,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p25 Table S3，第3数据行 (635 nm) Incident intensity列",
+              "note": "原表单位μW。未把光阑位置视为已完全定义的分母。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "quantity": "optical_power",
+              "original_unit": "μW"
+            },
+            "focused_power_uw": {
+              "value": 9.7,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p25 Table S3，第3数据行 (635 nm) Focused intensity列",
+              "note": "原表单位μW，实验的积分面积未知。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "quantity": "optical_power",
+              "original_unit": "μW"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 12.3,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p25 Table S3，第3数据行 (635 nm) Focusing efficiency列；主文 p7",
+              "note": "补表作者值，按该表的实测功率给出。积分范围未知。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "denominator": "author_reported_incident_power",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_model_nominal_450",
+          "model": "Jeon 2026 灰度纳米模板 · 标称方案模拟 · 450 nm",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "model_nominal",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "设计结果，独立于Fig.4实测及不同NA的扩展模拟。",
+          "values": {
+            "diameter_um": {
+              "value": 1200,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "同论文的1.2 mm标称设计口径。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "original_value": 1.2,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.31,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "器件设计NA。作者另从实测焦斑报告平均有效NA 0.29。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 1800,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "名义设计焦面距器件1.8 mm。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "original_value": 1.8,
+              "original_unit": "mm"
+            },
+            "wavelength_nm": {
+              "value": 450,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p20 Note14 Fig.S15a",
+              "note": "此光谱点用于标称方案模型。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "模拟优化相位的归一化x向剖面",
+              "source": "jeon_grayscale_si_2026",
+              "location": "主文 p6；补充 PDF pp20–21 Figs.S15–S16",
+              "note": "理想横剖面用双曲线相位，实际结构模型用优化相位。波长对应的轴向模拟见S17。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "direction": "x",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_2026"
+              ]
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": 0.75,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p6 Demonstration 段；补充 PDF p20 Fig.S15a",
+              "note": "作者正文对应波长的模拟宽度，独立于理想焦斑。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "0.75",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "author_reported_simulated_profile",
+              "sourceIds": [
+                "jeon_grayscale_2026",
+                "jeon_grayscale_si_2026"
+              ]
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 25.4,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Design 末段；补充 PDF p22 Table S2 Current study列，450 nm",
+              "note": "作者报告的标称模拟效率。原文圆半径3×模拟FWHM，未明示总能量的参考平面和分母定义。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "25.4",
+              "calculation_origin": "authors",
+              "denominator": "author_denominator_unreported",
+              "sourceIds": [
+                "jeon_grayscale_2026",
+                "jeon_grayscale_si_2026"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "圆半径为3×FWHM，能量分母细节待核",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Design 末段；补充 PDF p22 Table S2 Current study列",
+              "note": "这是设计模拟的焦圈，实验Table S3另有协议。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "author_denominator_unreported",
+              "denominator_note": "主文报告圆内能量，无明确分母",
+              "integration_radius_multiple_of_fwhm": 3,
+              "sourceIds": [
+                "jeon_grayscale_2026",
+                "jeon_grayscale_si_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_model_nominal_532",
+          "model": "Jeon 2026 灰度纳米模板 · 标称方案模拟 · 532 nm",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "model_nominal",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "设计结果，独立于Fig.4实测及不同NA的扩展模拟。",
+          "values": {
+            "diameter_um": {
+              "value": 1200,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "同论文的1.2 mm标称设计口径。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "original_value": 1.2,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.31,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "器件设计NA。作者另从实测焦斑报告平均有效NA 0.29。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 1800,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "名义设计焦面距器件1.8 mm。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "original_value": 1.8,
+              "original_unit": "mm"
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p20 Note14 Fig.S15b",
+              "note": "此光谱点用于标称方案模型。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "模拟优化相位的归一化x向剖面",
+              "source": "jeon_grayscale_si_2026",
+              "location": "主文 p6；补充 PDF pp20–21 Figs.S15–S16",
+              "note": "理想横剖面用双曲线相位，实际结构模型用优化相位。波长对应的轴向模拟见S17。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "direction": "x",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_2026"
+              ]
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": 0.88,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p6 Demonstration 段；补充 PDF p20 Fig.S15b",
+              "note": "作者正文对应波长的模拟宽度，独立于理想焦斑。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "0.88",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "author_reported_simulated_profile",
+              "sourceIds": [
+                "jeon_grayscale_2026",
+                "jeon_grayscale_si_2026"
+              ]
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 18.9,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Design 末段；补充 PDF p22 Table S2 Current study列，532 nm",
+              "note": "作者报告的标称模拟效率。原文圆半径3×模拟FWHM，未明示总能量的参考平面和分母定义。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "18.9",
+              "calculation_origin": "authors",
+              "denominator": "author_denominator_unreported",
+              "sourceIds": [
+                "jeon_grayscale_2026",
+                "jeon_grayscale_si_2026"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "圆半径为3×FWHM，能量分母细节待核",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Design 末段；补充 PDF p22 Table S2 Current study列",
+              "note": "这是设计模拟的焦圈，实验Table S3另有协议。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "author_denominator_unreported",
+              "denominator_note": "主文报告圆内能量，无明确分母",
+              "integration_radius_multiple_of_fwhm": 3,
+              "sourceIds": [
+                "jeon_grayscale_2026",
+                "jeon_grayscale_si_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_model_nominal_635",
+          "model": "Jeon 2026 灰度纳米模板 · 标称方案模拟 · 635 nm",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "model_nominal",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "设计结果，独立于Fig.4实测及不同NA的扩展模拟。",
+          "values": {
+            "diameter_um": {
+              "value": 1200,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "同论文的1.2 mm标称设计口径。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "original_value": 1.2,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.31,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "器件设计NA。作者另从实测焦斑报告平均有效NA 0.29。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 1800,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "名义设计焦面距器件1.8 mm。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "original_value": 1.8,
+              "original_unit": "mm"
+            },
+            "wavelength_nm": {
+              "value": 635,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p20 Note14 Fig.S15c",
+              "note": "此光谱点用于标称方案模型。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "模拟优化相位的归一化x向剖面",
+              "source": "jeon_grayscale_si_2026",
+              "location": "主文 p6；补充 PDF pp20–21 Figs.S15–S16",
+              "note": "理想横剖面用双曲线相位，实际结构模型用优化相位。波长对应的轴向模拟见S17。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "direction": "x",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_2026"
+              ]
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": 1.06,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p6 Demonstration 段；补充 PDF p20 Fig.S15c",
+              "note": "作者正文对应波长的模拟宽度，独立于理想焦斑。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "1.06",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "statistic": "author_reported_simulated_profile",
+              "sourceIds": [
+                "jeon_grayscale_2026",
+                "jeon_grayscale_si_2026"
+              ]
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 20.2,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Design 末段；补充 PDF p22 Table S2 Current study列，635 nm",
+              "note": "作者报告的标称模拟效率。原文圆半径3×模拟FWHM，未明示总能量的参考平面和分母定义。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "20.2",
+              "calculation_origin": "authors",
+              "denominator": "author_denominator_unreported",
+              "sourceIds": [
+                "jeon_grayscale_2026",
+                "jeon_grayscale_si_2026"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "圆半径为3×FWHM，能量分母细节待核",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Design 末段；补充 PDF p22 Table S2 Current study列",
+              "note": "这是设计模拟的焦圈，实验Table S3另有协议。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "author_denominator_unreported",
+              "denominator_note": "主文报告圆内能量，无明确分母",
+              "integration_radius_multiple_of_fwhm": 3,
+              "sourceIds": [
+                "jeon_grayscale_2026",
+                "jeon_grayscale_si_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_model_1200_na3_450",
+          "model": "Jeon 2026 灰度纳米模板 · 扩展模拟 · D1200 μm · NA0.3 · 450 nm",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "model_1200_na3",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者扩展模型的焦斑和效率。",
+          "values": {
+            "diameter_um": {
+              "value": 1200,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第1行 第1列；透明审稿 Response 2.5",
+              "note": "S10a三行相同1.2 mm，S10b为2.4 mm，p13图注明确比较。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.3,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第1行 第1列；透明审稿 Response 2.5",
+              "note": "按模型图例保留NA，保留与实制设计0.31的分组差异。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "wavelength_nm": {
+              "value": 450,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第1行 第1列；透明审稿 Response 2.5",
+              "note": "图上印字光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "模拟焦平面二维图，强度标度0–1",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第1行 第1列；透明审稿 Response 2.5",
+              "note": "平面横纵轴μm。只记录作者印字，轴向峰位无数表。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 25.44,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第1行 第1列；透明审稿 Response 2.5",
+              "note": "作者图内印字与审稿Response 2.5相符。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "25.44",
+              "calculation_origin": "authors",
+              "denominator": "author_denominator_unreported",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "扩展模型效率，积分细节待核",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第1行 第1列；透明审稿 Response 2.5",
+              "note": "S10与作者回复未独立给焦圈大小或能量分母，标称模型的3×FWHM口径另有定位。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "author_denominator_unreported",
+              "denominator_note": "本比较未写光功率分母",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_model_1200_na3_532",
+          "model": "Jeon 2026 灰度纳米模板 · 扩展模拟 · D1200 μm · NA0.3 · 532 nm",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "model_1200_na3",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者扩展模型的焦斑和效率。",
+          "values": {
+            "diameter_um": {
+              "value": 1200,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第1行 第2列；透明审稿 Response 2.5",
+              "note": "S10a三行相同1.2 mm，S10b为2.4 mm，p13图注明确比较。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.3,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第1行 第2列；透明审稿 Response 2.5",
+              "note": "按模型图例保留NA，保留与实制设计0.31的分组差异。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第1行 第2列；透明审稿 Response 2.5",
+              "note": "图上印字光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "模拟焦平面二维图，强度标度0–1",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第1行 第2列；透明审稿 Response 2.5",
+              "note": "平面横纵轴μm。只记录作者印字，轴向峰位无数表。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 18.92,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第1行 第2列；透明审稿 Response 2.5",
+              "note": "作者图内印字与审稿Response 2.5相符。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "18.92",
+              "calculation_origin": "authors",
+              "denominator": "author_denominator_unreported",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "扩展模型效率，积分细节待核",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第1行 第2列；透明审稿 Response 2.5",
+              "note": "S10与作者回复未独立给焦圈大小或能量分母，标称模型的3×FWHM口径另有定位。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "author_denominator_unreported",
+              "denominator_note": "本比较未写光功率分母",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_model_1200_na3_635",
+          "model": "Jeon 2026 灰度纳米模板 · 扩展模拟 · D1200 μm · NA0.3 · 635 nm",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "model_1200_na3",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者扩展模型的焦斑和效率。",
+          "values": {
+            "diameter_um": {
+              "value": 1200,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第1行 第3列；透明审稿 Response 2.5",
+              "note": "S10a三行相同1.2 mm，S10b为2.4 mm，p13图注明确比较。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.3,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第1行 第3列；透明审稿 Response 2.5",
+              "note": "按模型图例保留NA，保留与实制设计0.31的分组差异。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "wavelength_nm": {
+              "value": 635,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第1行 第3列；透明审稿 Response 2.5",
+              "note": "图上印字光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "模拟焦平面二维图，强度标度0–1",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第1行 第3列；透明审稿 Response 2.5",
+              "note": "平面横纵轴μm。只记录作者印字，轴向峰位无数表。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 20.19,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第1行 第3列；透明审稿 Response 2.5",
+              "note": "作者图内印字与审稿Response 2.5相符。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "20.19",
+              "calculation_origin": "authors",
+              "denominator": "author_denominator_unreported",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "扩展模型效率，积分细节待核",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第1行 第3列；透明审稿 Response 2.5",
+              "note": "S10与作者回复未独立给焦圈大小或能量分母，标称模型的3×FWHM口径另有定位。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "author_denominator_unreported",
+              "denominator_note": "本比较未写光功率分母",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_model_1200_na5_450",
+          "model": "Jeon 2026 灰度纳米模板 · 扩展模拟 · D1200 μm · NA0.5 · 450 nm",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "model_1200_na5",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者扩展模型的焦斑和效率。",
+          "values": {
+            "diameter_um": {
+              "value": 1200,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第2行 第1列；透明审稿 Response 2.5",
+              "note": "S10a三行相同1.2 mm，S10b为2.4 mm，p13图注明确比较。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.5,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第2行 第1列；透明审稿 Response 2.5",
+              "note": "按模型图例保留NA，保留与实制设计0.31的分组差异。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "wavelength_nm": {
+              "value": 450,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第2行 第1列；透明审稿 Response 2.5",
+              "note": "图上印字光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "模拟焦平面二维图，强度标度0–1",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第2行 第1列；透明审稿 Response 2.5",
+              "note": "平面横纵轴μm。只记录作者印字，轴向峰位无数表。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 20.05,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第2行 第1列；透明审稿 Response 2.5",
+              "note": "作者图内印字与审稿Response 2.5相符。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "20.05",
+              "calculation_origin": "authors",
+              "denominator": "author_denominator_unreported",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "扩展模型效率，积分细节待核",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第2行 第1列；透明审稿 Response 2.5",
+              "note": "S10与作者回复未独立给焦圈大小或能量分母，标称模型的3×FWHM口径另有定位。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "author_denominator_unreported",
+              "denominator_note": "本比较未写光功率分母",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_model_1200_na5_532",
+          "model": "Jeon 2026 灰度纳米模板 · 扩展模拟 · D1200 μm · NA0.5 · 532 nm",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "model_1200_na5",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者扩展模型的焦斑和效率。",
+          "values": {
+            "diameter_um": {
+              "value": 1200,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第2行 第2列；透明审稿 Response 2.5",
+              "note": "S10a三行相同1.2 mm，S10b为2.4 mm，p13图注明确比较。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.5,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第2行 第2列；透明审稿 Response 2.5",
+              "note": "按模型图例保留NA，保留与实制设计0.31的分组差异。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第2行 第2列；透明审稿 Response 2.5",
+              "note": "图上印字光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "模拟焦平面二维图，强度标度0–1",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第2行 第2列；透明审稿 Response 2.5",
+              "note": "平面横纵轴μm。只记录作者印字，轴向峰位无数表。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 16.18,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第2行 第2列；透明审稿 Response 2.5",
+              "note": "作者图内印字与审稿Response 2.5相符。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "16.18",
+              "calculation_origin": "authors",
+              "denominator": "author_denominator_unreported",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "扩展模型效率，积分细节待核",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第2行 第2列；透明审稿 Response 2.5",
+              "note": "S10与作者回复未独立给焦圈大小或能量分母，标称模型的3×FWHM口径另有定位。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "author_denominator_unreported",
+              "denominator_note": "本比较未写光功率分母",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_model_1200_na5_635",
+          "model": "Jeon 2026 灰度纳米模板 · 扩展模拟 · D1200 μm · NA0.5 · 635 nm",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "model_1200_na5",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者扩展模型的焦斑和效率。",
+          "values": {
+            "diameter_um": {
+              "value": 1200,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第2行 第3列；透明审稿 Response 2.5",
+              "note": "S10a三行相同1.2 mm，S10b为2.4 mm，p13图注明确比较。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.5,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第2行 第3列；透明审稿 Response 2.5",
+              "note": "按模型图例保留NA，保留与实制设计0.31的分组差异。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "wavelength_nm": {
+              "value": 635,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第2行 第3列；透明审稿 Response 2.5",
+              "note": "图上印字光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "模拟焦平面二维图，强度标度0–1",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第2行 第3列；透明审稿 Response 2.5",
+              "note": "平面横纵轴μm。只记录作者印字，轴向峰位无数表。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 18.58,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第2行 第3列；透明审稿 Response 2.5",
+              "note": "作者图内印字与审稿Response 2.5相符。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "18.58",
+              "calculation_origin": "authors",
+              "denominator": "author_denominator_unreported",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "扩展模型效率，积分细节待核",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第2行 第3列；透明审稿 Response 2.5",
+              "note": "S10与作者回复未独立给焦圈大小或能量分母，标称模型的3×FWHM口径另有定位。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "author_denominator_unreported",
+              "denominator_note": "本比较未写光功率分母",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_model_1200_na7_450",
+          "model": "Jeon 2026 灰度纳米模板 · 扩展模拟 · D1200 μm · NA0.7 · 450 nm",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "model_1200_na7",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者扩展模型的焦斑和效率。",
+          "values": {
+            "diameter_um": {
+              "value": 1200,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第3行 第1列；透明审稿 Response 2.5",
+              "note": "S10a三行相同1.2 mm，S10b为2.4 mm，p13图注明确比较。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第3行 第1列；透明审稿 Response 2.5",
+              "note": "按模型图例保留NA，保留与实制设计0.31的分组差异。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "wavelength_nm": {
+              "value": 450,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第3行 第1列；透明审稿 Response 2.5",
+              "note": "图上印字光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "模拟焦平面二维图，强度标度0–1",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第3行 第1列；透明审稿 Response 2.5",
+              "note": "平面横纵轴μm。只记录作者印字，轴向峰位无数表。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 8.18,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第3行 第1列；透明审稿 Response 2.5",
+              "note": "作者图内印字与审稿Response 2.5相符。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "8.18",
+              "calculation_origin": "authors",
+              "denominator": "author_denominator_unreported",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "扩展模型效率，积分细节待核",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第3行 第1列；透明审稿 Response 2.5",
+              "note": "S10与作者回复未独立给焦圈大小或能量分母，标称模型的3×FWHM口径另有定位。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "author_denominator_unreported",
+              "denominator_note": "本比较未写光功率分母",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_model_1200_na7_532",
+          "model": "Jeon 2026 灰度纳米模板 · 扩展模拟 · D1200 μm · NA0.7 · 532 nm",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "model_1200_na7",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者扩展模型的焦斑和效率。",
+          "values": {
+            "diameter_um": {
+              "value": 1200,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第3行 第2列；透明审稿 Response 2.5",
+              "note": "S10a三行相同1.2 mm，S10b为2.4 mm，p13图注明确比较。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第3行 第2列；透明审稿 Response 2.5",
+              "note": "按模型图例保留NA，保留与实制设计0.31的分组差异。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第3行 第2列；透明审稿 Response 2.5",
+              "note": "图上印字光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "模拟焦平面二维图，强度标度0–1",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第3行 第2列；透明审稿 Response 2.5",
+              "note": "平面横纵轴μm。只记录作者印字，轴向峰位无数表。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 9.29,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第3行 第2列；透明审稿 Response 2.5",
+              "note": "作者图内印字与审稿Response 2.5相符。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "9.29",
+              "calculation_origin": "authors",
+              "denominator": "author_denominator_unreported",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "扩展模型效率，积分细节待核",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第3行 第2列；透明审稿 Response 2.5",
+              "note": "S10与作者回复未独立给焦圈大小或能量分母，标称模型的3×FWHM口径另有定位。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "author_denominator_unreported",
+              "denominator_note": "本比较未写光功率分母",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_model_1200_na7_635",
+          "model": "Jeon 2026 灰度纳米模板 · 扩展模拟 · D1200 μm · NA0.7 · 635 nm",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "model_1200_na7",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者扩展模型的焦斑和效率。",
+          "values": {
+            "diameter_um": {
+              "value": 1200,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第3行 第3列；透明审稿 Response 2.5",
+              "note": "S10a三行相同1.2 mm，S10b为2.4 mm，p13图注明确比较。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第3行 第3列；透明审稿 Response 2.5",
+              "note": "按模型图例保留NA，保留与实制设计0.31的分组差异。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "wavelength_nm": {
+              "value": 635,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第3行 第3列；透明审稿 Response 2.5",
+              "note": "图上印字光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "模拟焦平面二维图，强度标度0–1",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第3行 第3列；透明审稿 Response 2.5",
+              "note": "平面横纵轴μm。只记录作者印字，轴向峰位无数表。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 14.86,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第3行 第3列；透明审稿 Response 2.5",
+              "note": "作者图内印字与审稿Response 2.5相符。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "14.86",
+              "calculation_origin": "authors",
+              "denominator": "author_denominator_unreported",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "扩展模型效率，积分细节待核",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10a第3行 第3列；透明审稿 Response 2.5",
+              "note": "S10与作者回复未独立给焦圈大小或能量分母，标称模型的3×FWHM口径另有定位。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "author_denominator_unreported",
+              "denominator_note": "本比较未写光功率分母",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_model_2400_na3_450",
+          "model": "Jeon 2026 灰度纳米模板 · 扩展模拟 · D2400 μm · NA0.3 · 450 nm",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "model_2400_na3",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者扩展模型的焦斑和效率。",
+          "values": {
+            "diameter_um": {
+              "value": 2400,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10b 第1列；透明审稿 Response 2.5",
+              "note": "S10a三行相同1.2 mm，S10b为2.4 mm，p13图注明确比较。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.3,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10b 第1列；透明审稿 Response 2.5",
+              "note": "按模型图例保留NA，保留与实制设计0.31的分组差异。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "wavelength_nm": {
+              "value": 450,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10b 第1列；透明审稿 Response 2.5",
+              "note": "图上印字光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "模拟焦平面二维图，强度标度0–1",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10b 第1列；透明审稿 Response 2.5",
+              "note": "平面横纵轴μm。只记录作者印字，轴向峰位无数表。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 23.54,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10b 第1列；透明审稿 Response 2.5",
+              "note": "作者图内印字与审稿Response 2.5相符。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "23.54",
+              "calculation_origin": "authors",
+              "denominator": "author_denominator_unreported",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "扩展模型效率，积分细节待核",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10b 第1列；透明审稿 Response 2.5",
+              "note": "S10与作者回复未独立给焦圈大小或能量分母，标称模型的3×FWHM口径另有定位。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "author_denominator_unreported",
+              "denominator_note": "本比较未写光功率分母",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_model_2400_na3_532",
+          "model": "Jeon 2026 灰度纳米模板 · 扩展模拟 · D2400 μm · NA0.3 · 532 nm",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "model_2400_na3",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者扩展模型的焦斑和效率。",
+          "values": {
+            "diameter_um": {
+              "value": 2400,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10b 第2列；透明审稿 Response 2.5",
+              "note": "S10a三行相同1.2 mm，S10b为2.4 mm，p13图注明确比较。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.3,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10b 第2列；透明审稿 Response 2.5",
+              "note": "按模型图例保留NA，保留与实制设计0.31的分组差异。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10b 第2列；透明审稿 Response 2.5",
+              "note": "图上印字光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "模拟焦平面二维图，强度标度0–1",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10b 第2列；透明审稿 Response 2.5",
+              "note": "平面横纵轴μm。只记录作者印字，轴向峰位无数表。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 18.38,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10b 第2列；透明审稿 Response 2.5",
+              "note": "作者图内印字与审稿Response 2.5相符。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "18.38",
+              "calculation_origin": "authors",
+              "denominator": "author_denominator_unreported",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "扩展模型效率，积分细节待核",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10b 第2列；透明审稿 Response 2.5",
+              "note": "S10与作者回复未独立给焦圈大小或能量分母，标称模型的3×FWHM口径另有定位。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "author_denominator_unreported",
+              "denominator_note": "本比较未写光功率分母",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_model_2400_na3_635",
+          "model": "Jeon 2026 灰度纳米模板 · 扩展模拟 · D2400 μm · NA0.3 · 635 nm",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "model_2400_na3",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者扩展模型的焦斑和效率。",
+          "values": {
+            "diameter_um": {
+              "value": 2400,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10b 第3列；透明审稿 Response 2.5",
+              "note": "S10a三行相同1.2 mm，S10b为2.4 mm，p13图注明确比较。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.3,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10b 第3列；透明审稿 Response 2.5",
+              "note": "按模型图例保留NA，保留与实制设计0.31的分组差异。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "wavelength_nm": {
+              "value": 635,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10b 第3列；透明审稿 Response 2.5",
+              "note": "图上印字光谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "模拟焦平面二维图，强度标度0–1",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10b 第3列；透明审稿 Response 2.5",
+              "note": "平面横纵轴μm。只记录作者印字，轴向峰位无数表。",
+              "basis": "model",
+              "checked_on": "2026-11-18"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 20.29,
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10b 第3列；透明审稿 Response 2.5",
+              "note": "作者图内印字与审稿Response 2.5相符。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "display": "20.29",
+              "calculation_origin": "authors",
+              "denominator": "author_denominator_unreported",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "扩展模型效率，积分细节待核",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF pp12–13 Note8 Fig.S10b 第3列；透明审稿 Response 2.5",
+              "note": "S10与作者回复未独立给焦圈大小或能量分母，标称模型的3×FWHM口径另有定位。",
+              "basis": "model",
+              "checked_on": "2026-11-18",
+              "denominator": "author_denominator_unreported",
+              "denominator_note": "本比较未写光功率分母",
+              "sourceIds": [
+                "jeon_grayscale_si_2026",
+                "jeon_grayscale_review_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_usaf_0",
+          "model": "Jeon 2026 灰度纳米模板 · USAF标靶 · 蓝光",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "usaf",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一器件在标靶成像条件下的实拍照片。",
+          "values": {
+            "diameter_um": {
+              "value": 1200,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "同论文的1.2 mm标称设计口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 1.2,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.31,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "器件设计NA。作者另从实测焦斑报告平均有效NA 0.29。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 1800,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "名义设计焦面距器件1.8 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 1.8,
+              "original_unit": "mm"
+            },
+            "illumination": {
+              "value": "蓝光，负片1951 USAF靶 G6/E6",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4e及标靶段（蓝光）；p8 Optical measurement；补充 PDF p24 Fig.S18",
+              "note": "作者报告三色分开及混合照明，合色亮度权重未单列。图像由镜片成像和相机采集，未给可录的横色差、系统MTF或数值视场。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sample_wavelengths_nm": [
+                450
+              ],
+              "sourceIds": [
+                "jeon_grayscale_2026",
+                "jeon_grayscale_si_2026"
+              ]
+            },
+            "chromatic": {
+              "value": "原文图示可辨G6/E6",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4e及标靶段（蓝光）；p8 Optical measurement；补充 PDF p24 Fig.S18",
+              "note": "记录已实拍的组/元素和光源。条纹定量对比阈值和倍率误差待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "target": "negative_usaf_1951",
+              "target_group": 6,
+              "target_element": 6
+            },
+            "wavelength_nm": {
+              "value": 450,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4e及标靶段（蓝光）；p8 Optical measurement；补充 PDF p24 Fig.S18",
+              "note": "对应单色激光。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_usaf_1",
+          "model": "Jeon 2026 灰度纳米模板 · USAF标靶 · 绿光",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "usaf",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一器件在标靶成像条件下的实拍照片。",
+          "values": {
+            "diameter_um": {
+              "value": 1200,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "同论文的1.2 mm标称设计口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 1.2,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.31,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "器件设计NA。作者另从实测焦斑报告平均有效NA 0.29。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 1800,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "名义设计焦面距器件1.8 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 1.8,
+              "original_unit": "mm"
+            },
+            "illumination": {
+              "value": "绿光，负片1951 USAF靶 G6/E6",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4e及标靶段（绿光）；p8 Optical measurement；补充 PDF p24 Fig.S18",
+              "note": "作者报告三色分开及混合照明，合色亮度权重未单列。图像由镜片成像和相机采集，未给可录的横色差、系统MTF或数值视场。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sample_wavelengths_nm": [
+                532
+              ],
+              "sourceIds": [
+                "jeon_grayscale_2026",
+                "jeon_grayscale_si_2026"
+              ]
+            },
+            "chromatic": {
+              "value": "原文图示可辨G6/E6",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4e及标靶段（绿光）；p8 Optical measurement；补充 PDF p24 Fig.S18",
+              "note": "记录已实拍的组/元素和光源。条纹定量对比阈值和倍率误差待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "target": "negative_usaf_1951",
+              "target_group": 6,
+              "target_element": 6
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4e及标靶段（绿光）；p8 Optical measurement；补充 PDF p24 Fig.S18",
+              "note": "对应单色激光。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_usaf_2",
+          "model": "Jeon 2026 灰度纳米模板 · USAF标靶 · 红光",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "usaf",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一器件在标靶成像条件下的实拍照片。",
+          "values": {
+            "diameter_um": {
+              "value": 1200,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "同论文的1.2 mm标称设计口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 1.2,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.31,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "器件设计NA。作者另从实测焦斑报告平均有效NA 0.29。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 1800,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "名义设计焦面距器件1.8 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 1.8,
+              "original_unit": "mm"
+            },
+            "illumination": {
+              "value": "红光，负片1951 USAF靶 G6/E6",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4e及标靶段（红光）；p8 Optical measurement；补充 PDF p24 Fig.S18",
+              "note": "作者报告三色分开及混合照明，合色亮度权重未单列。图像由镜片成像和相机采集，未给可录的横色差、系统MTF或数值视场。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sample_wavelengths_nm": [
+                635
+              ],
+              "sourceIds": [
+                "jeon_grayscale_2026",
+                "jeon_grayscale_si_2026"
+              ]
+            },
+            "chromatic": {
+              "value": "原文图示可辨G6/E6",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4e及标靶段（红光）；p8 Optical measurement；补充 PDF p24 Fig.S18",
+              "note": "记录已实拍的组/元素和光源。条纹定量对比阈值和倍率误差待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "target": "negative_usaf_1951",
+              "target_group": 6,
+              "target_element": 6
+            },
+            "wavelength_nm": {
+              "value": 635,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4e及标靶段（红光）；p8 Optical measurement；补充 PDF p24 Fig.S18",
+              "note": "对应单色激光。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_usaf_3",
+          "model": "Jeon 2026 灰度纳米模板 · USAF标靶 · 青光",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "usaf",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一器件在标靶成像条件下的实拍照片。",
+          "values": {
+            "diameter_um": {
+              "value": 1200,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "同论文的1.2 mm标称设计口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 1.2,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.31,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "器件设计NA。作者另从实测焦斑报告平均有效NA 0.29。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 1800,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "名义设计焦面距器件1.8 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 1.8,
+              "original_unit": "mm"
+            },
+            "illumination": {
+              "value": "青光，负片1951 USAF靶 G6/E6",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4e及标靶段（青光）；p8 Optical measurement；补充 PDF p24 Fig.S18",
+              "note": "作者报告三色分开及混合照明，合色亮度权重未单列。图像由镜片成像和相机采集，未给可录的横色差、系统MTF或数值视场。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sample_wavelengths_nm": [
+                450,
+                532
+              ],
+              "sourceIds": [
+                "jeon_grayscale_2026",
+                "jeon_grayscale_si_2026"
+              ]
+            },
+            "chromatic": {
+              "value": "原文图示可辨G6/E6",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4e及标靶段（青光）；p8 Optical measurement；补充 PDF p24 Fig.S18",
+              "note": "记录已实拍的组/元素和光源。条纹定量对比阈值和倍率误差待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "target": "negative_usaf_1951",
+              "target_group": 6,
+              "target_element": 6
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_usaf_4",
+          "model": "Jeon 2026 灰度纳米模板 · USAF标靶 · 品红光",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "usaf",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一器件在标靶成像条件下的实拍照片。",
+          "values": {
+            "diameter_um": {
+              "value": 1200,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "同论文的1.2 mm标称设计口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 1.2,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.31,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "器件设计NA。作者另从实测焦斑报告平均有效NA 0.29。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 1800,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "名义设计焦面距器件1.8 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 1.8,
+              "original_unit": "mm"
+            },
+            "illumination": {
+              "value": "品红光，负片1951 USAF靶 G6/E6",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4e及标靶段（品红光）；p8 Optical measurement；补充 PDF p24 Fig.S18",
+              "note": "作者报告三色分开及混合照明，合色亮度权重未单列。图像由镜片成像和相机采集，未给可录的横色差、系统MTF或数值视场。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sample_wavelengths_nm": [
+                450,
+                635
+              ],
+              "sourceIds": [
+                "jeon_grayscale_2026",
+                "jeon_grayscale_si_2026"
+              ]
+            },
+            "chromatic": {
+              "value": "原文图示可辨G6/E6",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4e及标靶段（品红光）；p8 Optical measurement；补充 PDF p24 Fig.S18",
+              "note": "记录已实拍的组/元素和光源。条纹定量对比阈值和倍率误差待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "target": "negative_usaf_1951",
+              "target_group": 6,
+              "target_element": 6
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_usaf_5",
+          "model": "Jeon 2026 灰度纳米模板 · USAF标靶 · 白光",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "usaf",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一器件在标靶成像条件下的实拍照片。",
+          "values": {
+            "diameter_um": {
+              "value": 1200,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "同论文的1.2 mm标称设计口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 1.2,
+              "original_unit": "mm"
+            },
+            "na": {
+              "value": 0.31,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "器件设计NA。作者另从实测焦斑报告平均有效NA 0.29。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "na_definition": "metalens_design"
+            },
+            "design_focal_um": {
+              "value": 1800,
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p4 Fig.2/Design；p6 Fig.4b；p7 z-scan段",
+              "note": "名义设计焦面距器件1.8 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "original_value": 1.8,
+              "original_unit": "mm"
+            },
+            "illumination": {
+              "value": "白光，负片1951 USAF靶 G6/E6",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4e及标靶段（白光）；p8 Optical measurement；补充 PDF p24 Fig.S18",
+              "note": "作者报告三色分开及混合照明，合色亮度权重未单列。图像由镜片成像和相机采集，未给可录的横色差、系统MTF或数值视场。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sample_wavelengths_nm": [
+                450,
+                532,
+                635
+              ],
+              "sourceIds": [
+                "jeon_grayscale_2026",
+                "jeon_grayscale_si_2026"
+              ]
+            },
+            "chromatic": {
+              "value": "原文图示可辨G6/E6",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 pp6–7 Fig.4e及标靶段（白光）；p8 Optical measurement；补充 PDF p24 Fig.S18",
+              "note": "记录已实拍的组/元素和光源。条纹定量对比阈值和倍率误差待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "target": "negative_usaf_1951",
+              "target_group": 6,
+              "target_element": 6
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_imprint_5",
+          "model": "Jeon 2026 灰度纳米模板 · 5次压印 · 复用检查",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "imprint_5",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者重复压印对应的独立定性检查。",
+          "values": {
+            "material": {
+              "value": "复用负模板及复制的树脂镜片",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p19 Note13 Fig.S14a–c，左组",
+              "note": "Fig.S14比较复制镜和负模板SEM，并有近眼文字演示。具体重复测量统计未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "imprint_count": 5
+            },
+            "chromatic": {
+              "value": "重复压印后的OLED文字成像",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p19 Note13 Fig.S14a–c，左组",
+              "note": "左侧实图文字是 Rholab，图注写 POSTECH。原图支持第5次的定性成像，定量MTF及效率未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "imprint_count": 5
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_imprint_10",
+          "model": "Jeon 2026 灰度纳米模板 · 10次压印 · 复用检查",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "imprint_10",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者重复压印对应的独立定性检查。",
+          "values": {
+            "material": {
+              "value": "复用负模板及复制的树脂镜片",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p19 Note13 Fig.S14a–c，中组",
+              "note": "Fig.S14比较复制镜和负模板SEM，并有近眼文字演示。具体重复测量统计未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "imprint_count": 10
+            },
+            "chromatic": {
+              "value": "重复压印后的OLED文字成像",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p19 Note13 Fig.S14a–c，中组",
+              "note": "支持模板复用下的定性成像，未提供本配置像差、光学MTF或效率数表。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "imprint_count": 10
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_imprint_20",
+          "model": "Jeon 2026 灰度纳米模板 · 20次压印 · 复用检查",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "imprint_20",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "作者重复压印对应的独立定性检查。",
+          "values": {
+            "material": {
+              "value": "复用负模板及复制的树脂镜片",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p19 Note13 Fig.S14a–c，右组",
+              "note": "Fig.S14比较复制镜和负模板SEM，并有近眼文字演示。具体重复测量统计未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "imprint_count": 20
+            },
+            "chromatic": {
+              "value": "重复压印后的OLED文字成像",
+              "source": "jeon_grayscale_si_2026",
+              "location": "补充 PDF p19 Note13 Fig.S14a–c，右组",
+              "note": "支持模板复用下的定性成像，未提供本配置像差、光学MTF或效率数表。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "imprint_count": 20
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_oled_achromat",
+          "model": "Jeon 2026 灰度纳米模板 · OLED近眼 · 灰度RGB镜",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "oled_achromat",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "近眼成像原型与另一镜片对照的组图。",
+          "values": {
+            "illumination": {
+              "value": "iPad Pro OLED源，Arducam EK007/MT9N001 CMOS采集",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p7 Fig.5a–c、p8 Optical measurement；补充 PDF p26 Note20 Fig.S19",
+              "note": "来源是面板图像，原文未给可对应激光台的光谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "jeon_grayscale_2026",
+                "jeon_grayscale_si_2026"
+              ]
+            },
+            "chromatic": {
+              "value": "灰度RGB镜的近眼彩色实拍",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p7 Fig.5a–c、p8 Optical measurement；补充 PDF p26 Note20 Fig.S19",
+              "note": "论文报告在固定像面取得彩色图。无数字横向焦差、倍率色差、实际谱峰、全场MTF和SNR。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "jeon_grayscale_2026",
+                "jeon_grayscale_si_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "jeon2026grayscale_oled_chromatic",
+          "model": "Jeon 2026 灰度纳米模板 · OLED近眼 · 普通色散对照",
+          "study_id": "jeon2026grayscale",
+          "specimen_id": "oled_chromatic",
+          "module": "",
+          "variant": "灰度EBL负模板复制 · 离散RGB",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "近眼成像原型与另一镜片对照的组图。",
+          "values": {
+            "illumination": {
+              "value": "iPad Pro OLED源，Arducam EK007/MT9N001 CMOS采集",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p7 Fig.5a–c、p8 Optical measurement；补充 PDF p26 Note20 Fig.S19",
+              "note": "来源是面板图像，原文未给可对应激光台的光谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "jeon_grayscale_2026",
+                "jeon_grayscale_si_2026"
+              ]
+            },
+            "chromatic": {
+              "value": "普通色散对照的近眼彩色实拍",
+              "source": "jeon_grayscale_2026",
+              "location": "主文 p7 Fig.5a–c、p8 Optical measurement；补充 PDF p26 Note20 Fig.S19",
+              "note": "论文报告RGB像面随波长变化。该对照的材料、独立D、NA、各色绝对像面未单列。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "jeon_grayscale_2026",
+                "jeon_grayscale_si_2026"
+              ]
+            }
+          }
         }
       ],
-      "scope": "36项原始研究、195个器件/测量/系统配置、1386条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
+      "scope": "37项原始研究、207个器件/测量/系统配置、1416条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
