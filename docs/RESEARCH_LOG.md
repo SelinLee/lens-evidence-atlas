@@ -931,3 +931,9 @@ PR #140 合入 8fae3123725360cd0a73daef0fc2a6c7f1057e50。PR 校验 44307662195�
 ## 2026-11-18-86 · Aiello 2019 偏振校正的两组实测轴向色差
 
 以经典例外入选，2026-11-18 Crossref 86 次。继续核作者稿 v2 Fig. 3–5 及 SI，补 40 μm 实物的 483–620 nm 两组焦距范围 260–326、265–278 μm，范围宽度约 66、13 μm 标本库计算。保留固定 120° 四个实测焦斑宽度及 581 nm 出射分析后聚焦效率的约值、上限、分母和误差条。正文与补充定位了 10 μm 轴扫及高斯拟合，逐波长焦距与原始 PSF/MTF 缺证。加入 25 条、8 配置，累计 39 篇、229 配置、1467 条。Crossref 正式补件组件已核，ACS 两 PDF 入口 403，arXiv 作者源码归档有图版、无另附测量数组。[核验](AIELLO_VARIFOCAL_REVIEW_2026-11-18.md)
+
+## 2026-11-18-87 · Aiello 0.3.31 发布验收与下一篇取证
+
+PR #142 合入 866663feb05adba135b1acd191ff3eb2000225b8。PR 校验 44312004835、主线校验 44312264169、Pages 44312264113 成功。293 项测试通过，线上 12 文件与本地逐字节一致，devices-data.js SHA256 为 2b621403dfe7ee6b8fb3c578ddc2289c1ac2052f9c4a6289867ce19900cd2844。独立无头 Chrome 核 25 条、8 配置、两组焦差散点、四点焦斑、一点聚焦效率、六视口、引用往返和 CSV。作者稿 PDF 和打包源码均获 206，响应长度、文件头及已保存完整原件核对。ACS DOI 链接核对，正式 PDF 访问限制仍在；Crossref 主文、补件及 DataCite 关联请求获 200。可见光视图 35 篇、1364 条。[PR #142](https://github.com/SelinLee/lens-evidence-atlas/pull/142) · [Pages 部署](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44312264113)
+
+下一篇开始核 Chi Li 等 2026 的 8.1 mm 马赛克近红外消色差镜。正式主文 3932291 字节，SHA256 7ec306355185bb7885e6440bf7c66217cfba895993a59e2cd44372202e256b4a。SI 7054456 字节，SHA256 1b0f67833dfd642071ac1a586030ffb53357e0ce84da38c4bc03f703156b8643，Table S2 有 11 个实测谱点。出版社 XLSX 882125 字节，SHA256 8aaf553ecc6397ade22fbe3af7131c687e515af2e19afe9c364d02abf6f191af。名为 `fig4d` 的表只有 A:F 非空，A2:B54 是以 μm 标横向 x 的实验点，C/D 是拟合、E/F 是理论，待与原图 Fig.4f 确认。作者 GitHub 树列 11 个 MAT 文件，未核数组用途。核验后再判断能否复算 MTF 或逐谱轴向焦差。[原文](https://www.nature.com/articles/s41467-026-71774-5.pdf) · [作者数据仓库](https://github.com/Chi0000000001/raw_data_mosaic_work) · [出版社数表](https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-026-71774-5/MediaObjects/41467_2026_71774_MOESM3_ESM.xlsx)
