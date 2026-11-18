@@ -18,7 +18,7 @@ test('the author average focal length never becomes a design value or eight iden
  const summary=get('single_summary');assert.equal(summary.measured_focal_band_mean_um.value,81.5);assert.equal(summary.measured_focal_band_mean_um.approximate,true);assert.equal(summary.measured_focal_band_mean_um.statistic,'author_reported_spectral_mean');assert.equal(summary.design_focal_um.value,null);
  const spectral=rows.filter(r=>r.specimen_id==='single_14'&&Number.isFinite(r.values.wavelength_nm.value));assert.deepEqual(spectral.map(r=>r.values.wavelength_nm.value),[430,480,530,580,630,680,730,780]);
  for(const r of spectral){const v=r.values;assert.equal(v.measured_focal_um.value,null);assert.equal(v.measured_focal_band_mean_um,undefined);assert.equal(v.fwhm_x_um.value,null);assert.equal(v.fwhm_y_um.value,null);assert.equal(v.na.value,.086);assert.equal(v.na.basis,'derived_from_measurement');}
- assert.equal(axisPoints(rows,'diameter_um','measured_focal_band_mean_um').length,1);assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,31);
+ assert.equal(axisPoints(rows,'diameter_um','measured_focal_band_mean_um').length,1);assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,34);
 });
 
 test('DOF overlap and plotting inconsistencies remain evidence conditions instead of statistical errors or chromatic-shift scalars',()=>{
@@ -30,7 +30,7 @@ test('DOF overlap and plotting inconsistencies remain evidence conditions instea
 test('only the declared efficiency band mean is numeric and the reported peak wavelength does not become an inferred exact efficiency',()=>{
  assert.equal(get('single_summary').efficiency_band_mean_pct.value,47);assert.match(get('single_summary').efficiency_protocol.note,/功率分母/);assert.equal(get('single_730').efficiency_at_lambda_pct.value,null);
  for(const r of rows.filter(r=>r.specimen_id!=='single_14'))assert.equal(r.values.efficiency_band_mean_pct,undefined);
- assert.equal(axisPoints(rows,'na','efficiency_band_mean_pct').length,1);assert.equal(axisPoints(lens.rows,'na','efficiency_band_mean_pct').length,8);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,99);
+ assert.equal(axisPoints(rows,'na','efficiency_band_mean_pct').length,1);assert.equal(axisPoints(lens.rows,'na','efficiency_band_mean_pct').length,8);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,102);
 });
 
 test('optical reconstruction keeps its RGB bandwidths, object depths and unresolved collection magnification',()=>{

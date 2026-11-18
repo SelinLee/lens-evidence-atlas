@@ -22,7 +22,7 @@ test('the fabricated D50 NA0.164 lens has 1000 nm structures, not the removed 23
  for(const spec of ['asymptotic','linear','reference'])for(const tag of ['summary',...waves]){
   const v=get(spec+'_'+tag);assert.equal(v.diameter_um.value,50);assert.equal(v.na.value,.164);assert.equal(v.na.reported_table_na,.1644);assert.equal(v.height_nm.value,1000);assert.match(v.height_nm.note,/230nm.*非成品高度/);assert.equal(v.design_focal_um.value,null);assert.equal(v.measured_focal_um.value,null);assert.equal(v.axial_focus_offset_um,undefined);
  }
- assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,31);
+ assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,34);
 });
 test('a 1 um axial scan and nominal 100x objective do not supply an object-plane pixel size, repeat uncertainty or a PSF spectral bandwidth',()=>{
  const v=get('asymptotic_420'),p=v.psf_protocol;assert.equal(p.axial_step_um,1);assert.equal(p.axial_scan_stop_um,800);assert.equal(p.nominal_collection_magnification,100);assert.match(p.reference_origin,/sample surface/);assert.equal(p.object_plane_pixel_size_um,null);assert.equal(p.measurement_repeat_count,null);assert.match(p.note,/步长充当焦距不确定度/);assert.equal(v.illumination.imaging_bandwidth_nm,20);assert.equal(v.illumination.psf_bandwidth_nm,null);
@@ -30,7 +30,7 @@ test('a 1 um axial scan and nominal 100x objective do not supply an object-plane
 test('only the asymptotic experimental group owns efficiency and Strehl curves; theory threshold is not a measured Strehl bound',()=>{
  for(const tag of ['summary',...waves]){const v=get('asymptotic_'+tag);assert.equal(v.efficiency_at_lambda_pct.value,null);assert.equal(v.strehl.value,null);assert.equal(v.strehl.bound,undefined);assert.equal(v.fwhm_um.value,null);assert.match(v.strehl.note,/不能填全带>0.8/);assert.equal(v.efficiency_protocol.integration_geometry,null);assert.equal(v.efficiency_protocol.denominator,'incident_light_within_metalens_range');assert.match(v.efficiency_protocol.note,/不指定r=3FWHM/);assert.equal(v.efficiency_band_mean_pct,undefined);}
  for(const spec of ['linear','reference']){const v=get(spec+'_420');assert.equal(v.efficiency_at_lambda_pct,undefined);assert.equal(v.strehl,undefined);assert.equal(v.fwhm_um,undefined);}
- assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,99);
+ assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,102);
 });
 test('custom dispersion lenses retain only the author design reference of 320 um at 650 nm and never inherit the achromatic lens NA or measured focus',()=>{
  for(const spec of ['custom_negative','custom_positive','custom_arbitrary']){const v=get(spec+'_summary');assert.equal(v.diameter_um.value,50);assert.equal(v.na.value,null);assert.equal(v.design_focal_um.value,320);assert.equal(v.design_focal_um.reference_wavelength_nm,650);assert.equal(v.design_focal_um.basis,'reported_configuration');assert.equal(v.wavelength_nm.value,null);assert.equal(v.measured_focal_um.value,null);assert.equal(v.efficiency_protocol,undefined);assert.match(v.chromatic.value,/非连续消色差结果/);}

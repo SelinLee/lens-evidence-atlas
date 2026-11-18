@@ -68,7 +68,7 @@
 
 `reported_axial_scan_focusing_efficiency_pct`保存作者在轴扫效率段报告的功率比，保留`statistic`、`denominator`、作者实测计算和与分母一致的`efficiency_protocol`。作者的轴向单位或参考面存疑时保留原轴和缺口。专项报告值与指定λ的单焦面效率、带均值及整套光路模型使用各自的字段。
 
-`simulated_depth_of_focus_um`和`simulated_psf_fwhm_x_um`用于模型计算，标作者归属与`psf_protocol`，分别保留`dof_criterion`和x向的`statistic`。`simulated_focusing_efficiency_pct`保存作者模拟焦区对入射总功率的比值。`simulated_aperture_power_ratio_pct`保存同孔径面积内焦面与器件面积分之比，允许两种协议各以独立行保存。百分数与`efficiency_protocol`的分母须一致。
+`simulated_depth_of_focus_um`和`simulated_psf_fwhm_x_um`用于模型计算，标作者归属与`psf_protocol`，分别保留`dof_criterion`和x向的`statistic`。`simulated_focusing_efficiency_pct`保存作者模拟焦区对入射总功率的比值。`simulated_aperture_power_ratio_pct`保存同孔径面积内焦面与器件面积分之比，允许两种协议各以独立行保存。百分数与`efficiency_protocol`的分母须一致。论文只称入射光能量时，保存 `incident_light_energy` 并记录具体计量光阑的缺口。
 
 `processed_psf_fwhm_um`与裸PSF宽度分列：正值、实际λ、`basis: reconstruction`、作者计算、`processing_stage: linear_intensity_subtraction`和非负系数；`psf_protocol`须绑定同系数与数值固定评价面。该行不能同时填写数值裸PSF FWHM。作者图内印字可录，负旁瓣/零点/归一化和未知拟合条件必须说明；不把处理后变窄当裸镜光学性能。
 
@@ -85,3 +85,7 @@
 `estimated_system_focal_efficiency_pct`、`estimated_detected_throughput_pct`和`spectrally_weighted_mtf_area_lpmm`保存作者完整光路的带内计算估计。须标明`basis: model`、作者计算与光路估算协议。面积保留空间频率积分的量纲 lp/mm。它们与逐λ实测效率、普通作者平均效率及MTF截止频率各用专用字段。图像PSNR、SSIM和LPIPS保留原采集或重建、参考图、配准与光度归一化及统计样本。
 
 `optical_transmittance_pct`保存作者根据总透过功率与口径内入射功率计算的百分比，分母为`incident_through_aperture`。`focusing_efficiency_transmitted_pct`保存焦区积分功率与总透过功率的百分比，分母为`transmitted_power`。两个字段均要求实测谱点、`basis: derived_from_measurement`、`calculation_origin: authors`及`efficiency_protocol`。焦区长度尺度和形状分别记录，半径或直径未明时保留缺口。
+
+`resolved_test_line_width_um` 保存实拍标靶中作者辨认的对象侧线宽，附靶型、组/元素、采集通道、场点和对比阈值。共同阈值界限保留 `value=null`。
+
+`simulated_axial_fwhm_um` 保存模型 z 向强度半高全宽。`simulated_relative_spherical_aberration_pct` 保存作者以名义像距为分母的比例原印字，附名义像距并与未归一化 z 宽度分列。两处印字换算有差异时保留原值及对读记录。

@@ -10,7 +10,7 @@ test('the newer Bessel imaging study remains one publication and five physical/p
 });
 test('the circular 350 micrometre lens keeps design NA and nanofin height while Bessel depth and the chosen 300 micrometre plane never become focal length',()=>{
  for(const r of rows){const v=r.values;assert.equal(v.diameter_um.value,350);assert.equal(v.na.value,.2);assert.equal(v.na.basis,'reported_configuration');assert.equal(v.height_nm.value,1200);assert.equal(v.design_focal_um.value,null);assert.ok(!Number.isFinite(v.measured_focal_um?.value));assert.equal(v.axial_focus_offset_um,undefined);assert.equal(v.focus_variation_um,undefined);assert.equal(v.focus_variation_pct,undefined);}
- assert.match(get('summary').design_focal_um.note,/857.32μm为理论无衍射距离.*不是设计f/);assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,31);
+ assert.match(get('summary').design_focal_um.note,/857.32μm为理论无衍射距离.*不是设计f/);assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,34);
 });
 test('three measured longest-depth reports retain forty-percent threshold and cannot masquerade as focus or half-maximum axial DOF',()=>{
  for(const [w,n]of [[630,781],[530,858],[470,990]]){const v=get('psf0_'+w),x=v.author_longest_focal_depth_um;assert.equal(x.value,n);assert.equal(x.basis,'derived_from_measurement');assert.equal(x.calculation_origin,'authors');assert.equal(x.threshold_intensity_fraction,.4);assert.equal(x.reference_origin,null);assert.match(x.note,/非最佳f.*非轴向50%DOF宽度/);assert.equal(get('psf2_'+w).author_longest_focal_depth_um,undefined);}
