@@ -1001,3 +1001,9 @@ PR #154 合入 bf4f0c4f9080c25840728f586adfcb17c702f84f。PR 校验 44345037749�
 ## 2026-11-19-100 · Zhang 2025 的 8 mm 折超混合实物与固定面模拟
 
 Wiley 出版预览公开原刊 Fig. 3–4 图注，证实制作和实测混合镜与单非球面对照。Fig. 3d 图注给 420–680 nm 实验覆盖，白虚线为设计焦位；Fig. 3e 是设计面焦斑，Fig. 3f–g 保留实测焦距变化和半能量宽度曲线入口，坐标轴与逐点值待原图。Fig. 4 保留 460、500、550、600、640 nm 五种单色照明及白光实拍，与轴扫独立。作者公开 MAT 是设计处方。固定模型 z=16 mm 下按原脚本复算两组各 27 点的几何 RMS 半径，模型、计量值和摘要 83% 原述分列。新增 70 条、4 配置，累计 46 篇、272 配置、1661 条。实验焦距、焦斑、Strehl、效率与 MTF 原始数表均待补。[本批核验](ZHANG_VISIBLE_HYBRID_REVIEW_2026-11-19.md)
+
+## 2026-11-19-101 · Zhang 8 mm 折超混合研究上线验收
+
+PR #156 合入 797fca6636446577493739d119bd3c8fd09f4d4c。PR 校验 44350047253、主线校验 44350394956、Pages 44350394909 均成功。308 项测试通过。线上 12 文件与本机构建逐字节一致，devices-data.js SHA256 为 2f0783b52b36994b8bab550228102164d454905cae3dbcf4924766930d3fa1a5。独立无头 Chrome 核 70 条、4 配置、54 个模型散点、波段两端的四个投影读数、图点进表、引用往返、CSV 与六视口。可见光筛选为 39 篇、1487 条。Wiley 与公共预览的直接响应为 403，源代码 GitHub 展示页为 429，实际代码和 936 字节 MAT 下载均为 200，MAT 校验值一致。DataCite 关联 DOI 查询线上返回 200，零项。[PR #156](https://github.com/SelinLee/lens-evidence-atlas/pull/156) · [Pages 部署](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44350394909)
+
+下一批沿早期反射式消色差方法核 Arbabi 等 2017 的 Optica 原始研究。Crossref 在线日期 2017-06-07，2026-11-19 查 347 次。已从美国能源部公开的正式版定位 pp629–631。Fig. 5 的四只色散实物为 240 μm、名义 f650 μm；500 μm、f850 μm、NA 约 0.28 的宽带样品和常规对照另起配置。论文描述工作带宽约三倍，需先对清带宽阈值、两种设计 σ、轴扫和效率照明。会话目标保持 active。[正式论文](https://www.osti.gov/pages/servlets/purl/1467089) · [Crossref](https://api.crossref.org/works/10.1364/optica.4.000625) · [补件 DOI](https://doi.org/10.1364/OPTICA.4.000625.s001)
