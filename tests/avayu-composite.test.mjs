@@ -24,7 +24,7 @@ test('measured RGB efficiency range and incomplete beam-waist ROI never become a
  const m=get('pfzp_model');assert.equal(m.efficiency_at_lambda_pct.value,null);assert.equal(m.efficiency_at_lambda_pct.basis,'model');assert.match(m.efficiency_at_lambda_pct.note,/40%.*4倍.*模拟/);
 });
 test('plotted focal positions and image acquisition planes do not become exact measured focal distances or zero residual shifts',()=>{
- assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,19);
+ assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,25);
  for(const r of rows){assert.ok(!Number.isFinite(r.values.measured_focal_um?.value));assert.equal(r.values.axial_focus_offset_um,undefined);assert.equal(r.values.focus_variation_um,undefined);}
  assert.match(get('rgb_residual').measured_focal_um.note,/蓝圈|理论曲线/);assert.match(get('rgb_residual').chromatic.note,/<10%.*串扰/);
  for(const f of [300,400,500]){const v=get('anomalous_'+f);assert.equal(v.design_focal_um.value,f);assert.equal(v.wavelength_nm.value,null);assert.match(v.measured_focal_um.note,/实际单色λ也未单列/);}

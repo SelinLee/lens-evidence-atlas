@@ -53,6 +53,12 @@ export function validateDevices(d,catalog){
  if(mtfCurve?.mtf_kind==='reconstructed_slanted_edge'&&(
   mtfCurve.basis!=='reconstruction'||mtfCurve.processing_stage!=='reconstructed'||mtfCurve.frequency_unit!=='lp/mm'||
   !['red','green','blue'].includes(mtfCurve.color_channel)||Number.isFinite(r.values.wavelength_nm?.value)))errors.push('reconstructed color channel edge MTF context');
+ for(const [key,denominator] of [['optical_transmittance_pct','incident_through_aperture'],['focusing_efficiency_transmitted_pct','transmitted_power']]){
+  const powerRatio=r.values[key];
+  if(Number.isFinite(powerRatio?.value)&&(powerRatio.value<0||powerRatio.value>100||
+   powerRatio.basis!=='derived_from_measurement'||powerRatio.calculation_origin!=='authors'||
+   powerRatio.denominator!==denominator||!(r.values.wavelength_nm?.value>0)||!r.values.efficiency_protocol?.value))errors.push('optical power ratio context');
+ }
  for(const key of ['estimated_system_focal_efficiency_pct','estimated_detected_throughput_pct','spectrally_weighted_mtf_area_lpmm']){
   const value=r.values[key];
   if(!Number.isFinite(value?.value))continue;

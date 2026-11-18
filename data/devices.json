@@ -1036,6 +1036,42 @@
       "scope": "API 200，版本v1.0.0，一个127178067字节的代码归档ZIP，登记MD5 101c473d33ba68e0755af2836b98616e。只核归档元数据，未将归档声明当实测数据清单。",
       "checked_on": "2026-11-18",
       "publication_source": "yoon_deoccluding_2026"
+    },
+    {
+      "id": "hasegawa_tsf_2026",
+      "title": "Hasegawa et al. (2026), Millimeter-Scale Single-Layer RGB Achromatic Metalens via Time-Simultaneity-Free Design",
+      "url": "https://doi.org/10.1002/lpor.72174",
+      "scope": "Laser & Photonics Reviews, e72174。正式主文§2.4–2.6、§4.3、Figs.4–6。Data Availability 指向合理请求；已检索的开放索引未列单独公开数表。",
+      "checked_on": "2026-11-18",
+      "doi": "10.1002/lpor.72174",
+      "kind": "peer_reviewed_paper"
+    },
+    {
+      "id": "hasegawa_tsf_pdf_2026",
+      "title": "Wiley 正式主文 PDF · Figs. 4–6 & Experimental Section",
+      "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/lpor.72174",
+      "scope": "通过索引的14页期刊PDF文本核对正文印字及图注。2026-11-18独立无头直取403，未取得PDF字节。机构复刊图核对MTF坐标及方向。",
+      "checked_on": "2026-11-18",
+      "publication_source": "hasegawa_tsf_2026",
+      "kind": "peer_reviewed_paper"
+    },
+    {
+      "id": "hasegawa_tsf_tuat_figure_2026",
+      "title": "TUAT / Samsung 作者机构复刊图 · Fig. 3 焦斑和 MTF",
+      "url": "https://www.tuat.ac.jp/images/tuat/outline/disclosure/pressrelease/2026/20261111_01_03.png",
+      "scope": "下载200、85324字节，SHA256 98c5fbbffc8cb34962a8d1d5f1904607b117fe8c51eec14be107145a7533c2a0。作者机构复刊主文Fig.4c–e的图，e对应g–i，横轴0–200 cycles/mm；图片格式，数表/PSF数组未取得。",
+      "checked_on": "2026-11-18",
+      "publication_source": "hasegawa_tsf_2026",
+      "kind": "institutional_report"
+    },
+    {
+      "id": "hasegawa_tsf_tuat_2026",
+      "title": "TUAT / Samsung 作者机构联合发布 · Figs. 2–4",
+      "url": "https://www.tuat.ac.jp/documents/tuat/outline/disclosure/pressrelease/2026/20261111_01.pdf",
+      "scope": "下载200、1337214字节，SHA256 2f68d326c8ada542b0380d4ce0eefcd4c9872fed5b162a091c13e853d9d05aef。含同一器件照片、焦斑/MTF复刊图、RGB成像图及术语。机构发布时间与DOI索引差一天，维持论文年份。",
+      "checked_on": "2026-11-18",
+      "publication_source": "hasegawa_tsf_2026",
+      "kind": "institutional_report"
     }
   ],
   "domains": {
@@ -4391,6 +4427,40 @@
           ],
           "axis_bounds": {
             "min": 0
+          }
+        },
+        {
+          "id": "optical_transmittance_pct",
+          "label": "器件光功率透过率 (%)",
+          "definition": "作者测得的过镜总功率与口径内入射功率之比。",
+          "conditions": "实际波长、入射光阑、探测器光路、偏振与校准。",
+          "numeric": true,
+          "definition_refs": [
+            {
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "正式主文pp7–8 §2.4 光功率测量段"
+            }
+          ],
+          "axis_bounds": {
+            "min": 0,
+            "max": 100
+          }
+        },
+        {
+          "id": "focusing_efficiency_transmitted_pct",
+          "label": "聚焦效率（透射功率分母，%）",
+          "definition": "焦区积分功率与器件总透射功率之比。",
+          "conditions": "实际波长、焦区大小及形状、分母与探测光路。",
+          "numeric": true,
+          "definition_refs": [
+            {
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "正式主文pp7–8 §2.4 光功率测量段"
+            }
+          ],
+          "axis_bounds": {
+            "min": 0,
+            "max": 100
           }
         }
       ],
@@ -185318,9 +185388,1799 @@
               "frequency_limits_lpmm": null
             }
           }
+        },
+        {
+          "id": "hasegawa2026_laser_450",
+          "model": "Hasegawa 2026 · 准直激光 · 450nm",
+          "study_id": "hasegawa2026",
+          "specimen_id": "laser",
+          "module": "",
+          "variant": "同一实制1mm TSF RGB单层SiN超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的准直激光轴向扫描、焦斑和论文报告光功率比。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制圆形镜口径1mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制器件对应的名义NA；未报告独立测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 5050,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应正文；p8 Fig.5a–g虚线",
+              "note": "原文设计f=5.05mm。各光路的实测轴向位置另列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 1750,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4b对应正文",
+              "note": "十字形SiN柱的结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 玻璃，单层十字形元胞",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 Fig.4a,b及正文；p11 §2.6",
+              "note": "周期340nm。TSF允许波长相关常数相位偏移，三个设计波长可同时照明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB设计（450 / 532 / 633 nm）",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p8 Fig.5及p10 Table 1 This work行",
+              "note": "波长间的非设计波长另测，400/490/580/680nm焦点发生位移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "标称偏振不敏感",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p9 §2.4、Figs. S1–S2/Tables S2–S3引述",
+              "note": "原文在30μm模型讨论四种偏振。这里各1mm器件实测的入射偏振状态未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 450,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4c–e 左列；p12 §4.3",
+              "note": "蓝光设计波长，准直激光实际测点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "轴向准直激光，分波长采集",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p12 §4.3；Fig.S5引述",
+              "note": "三台激光各经ND滤片。谱线带宽和功率校准细节未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "逐波长找最佳焦点；20×物镜、CMOS、手动轴扫",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c–e；p12 §4.3",
+              "note": "Mitutoyo M-Plan Apo 20×和Thorlabs CS165MU/M。实测图先扣背景，再抽取x向线剖面。有效采样、轴向步长、重复数、插值未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "field_point": "on_axis",
+              "object_conjugate": "infinity",
+              "nominal_collection_magnification": 20,
+              "evaluation_plane_um": 5070,
+              "image_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "measured_focal_um": {
+              "value": 5070,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应段，蓝光实测f；同段设计f=5.05mm",
+              "note": "准直激光装置，原文 5.07 mm。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "5070（5.07 mm）"
+            },
+            "axial_focus_offset_um": {
+              "value": 20,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应段，蓝光实测f；同段设计f=5.05mm",
+              "note": "本库按两项原文印字计算f−5050μm=+20μm。精度来自原文0.01mm印字；测量误差未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "+20（本库计算）",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 5050,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "同段明确的固定设计焦面z=5.05mm。"
+            },
+            "fwhm_x_um": {
+              "value": 2.75,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c横虚线、Fig.4d 左列对应正文",
+              "note": "实测焦斑横向x剖面的半高全宽；Y向宽度待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "strehl": {
+              "value": 0.8,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4d 左列对应正文",
+              "note": "作者在50μm窗口内分别对实测与理论线剖面作等积分归一，再比较峰值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.80",
+              "calculation_origin": "authors"
+            },
+            "mtf_curve": {
+              "value": "由实测PSF的x向线剖面傅里叶计算",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 Fig.4d–e 左列；TUAT Fig.3g",
+              "note": "横轴0–200 cycles/mm，纵轴无量纲MTF，零频处为1。图是轴上x向线剖面的结果，未定位S/T两方向数表、原始PSF、有效μm/px或FFT窗细节。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "hasegawa_tsf_pdf_2026",
+                "hasegawa_tsf_tuat_figure_2026"
+              ],
+              "mtf_kind": "measured_psf_line_profile",
+              "direction": "x",
+              "field_point": "on_axis",
+              "calculation_origin": "authors",
+              "frequency_unit": "cycles/mm",
+              "frequency_axis_extent": [
+                0,
+                200
+              ],
+              "normalization": "plot_shows_unity_dc",
+              "data_availability": "curves_only"
+            },
+            "efficiency_protocol": {
+              "value": "透过率为P_out/P_in；聚焦效率为P_focus/P_out",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "pp7–8 §2.4 功率测量段，蓝光",
+              "note": "P_in通过φ1mm口径。P_focus积分范围原文写within 3×FWHM，未指明该尺度是半径还是直径。P_out为器件总透射功率，焦区形状、探测及误差待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "incident_aperture_um": 1000,
+              "focus_integration_scale_fwhm": 3,
+              "focus_region_geometry": null
+            },
+            "optical_transmittance_pct": {
+              "value": 55,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "pp7–8 §2.4 功率测量段，蓝光",
+              "note": "作者印字，器件透出总功率/φ1mm口径内入射功率。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "denominator": "incident_through_aperture"
+            },
+            "focusing_efficiency_transmitted_pct": {
+              "value": 8,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "pp7–8 §2.4 功率测量段，蓝光",
+              "note": "作者印字，3×FWHM焦区功率/器件透出总功率。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "denominator": "transmitted_power"
+            }
+          }
+        },
+        {
+          "id": "hasegawa2026_laser_532",
+          "model": "Hasegawa 2026 · 准直激光 · 532nm",
+          "study_id": "hasegawa2026",
+          "specimen_id": "laser",
+          "module": "",
+          "variant": "同一实制1mm TSF RGB单层SiN超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的准直激光轴向扫描、焦斑和论文报告光功率比。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制圆形镜口径1mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制器件对应的名义NA；未报告独立测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 5050,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应正文；p8 Fig.5a–g虚线",
+              "note": "原文设计f=5.05mm。各光路的实测轴向位置另列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 1750,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4b对应正文",
+              "note": "十字形SiN柱的结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 玻璃，单层十字形元胞",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 Fig.4a,b及正文；p11 §2.6",
+              "note": "周期340nm。TSF允许波长相关常数相位偏移，三个设计波长可同时照明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB设计（450 / 532 / 633 nm）",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p8 Fig.5及p10 Table 1 This work行",
+              "note": "波长间的非设计波长另测，400/490/580/680nm焦点发生位移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "标称偏振不敏感",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p9 §2.4、Figs. S1–S2/Tables S2–S3引述",
+              "note": "原文在30μm模型讨论四种偏振。这里各1mm器件实测的入射偏振状态未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4c–e 中列；p12 §4.3",
+              "note": "绿光设计波长，准直激光实际测点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "轴向准直激光，分波长采集",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p12 §4.3；Fig.S5引述",
+              "note": "三台激光各经ND滤片。谱线带宽和功率校准细节未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "逐波长找最佳焦点；20×物镜、CMOS、手动轴扫",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c–e；p12 §4.3",
+              "note": "Mitutoyo M-Plan Apo 20×和Thorlabs CS165MU/M。实测图先扣背景，再抽取x向线剖面。有效采样、轴向步长、重复数、插值未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "field_point": "on_axis",
+              "object_conjugate": "infinity",
+              "nominal_collection_magnification": 20,
+              "evaluation_plane_um": 5030,
+              "image_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "measured_focal_um": {
+              "value": 5030,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应段，绿光实测f；同段设计f=5.05mm",
+              "note": "准直激光装置，原文 5.03 mm。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "5030（5.03 mm）"
+            },
+            "axial_focus_offset_um": {
+              "value": -20,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应段，绿光实测f；同段设计f=5.05mm",
+              "note": "本库按两项原文印字计算f−5050μm=-20μm。精度来自原文0.01mm印字；测量误差未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "-20（本库计算）",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 5050,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "同段明确的固定设计焦面z=5.05mm。"
+            },
+            "fwhm_x_um": {
+              "value": 2.65,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c横虚线、Fig.4d 中列对应正文",
+              "note": "实测焦斑横向x剖面的半高全宽；Y向宽度待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "strehl": {
+              "value": 0.97,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4d 中列对应正文",
+              "note": "作者在50μm窗口内分别对实测与理论线剖面作等积分归一，再比较峰值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.97",
+              "calculation_origin": "authors"
+            },
+            "mtf_curve": {
+              "value": "由实测PSF的x向线剖面傅里叶计算",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 Fig.4d–e 中列；TUAT Fig.3h",
+              "note": "横轴0–200 cycles/mm，纵轴无量纲MTF，零频处为1。图是轴上x向线剖面的结果，未定位S/T两方向数表、原始PSF、有效μm/px或FFT窗细节。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "hasegawa_tsf_pdf_2026",
+                "hasegawa_tsf_tuat_figure_2026"
+              ],
+              "mtf_kind": "measured_psf_line_profile",
+              "direction": "x",
+              "field_point": "on_axis",
+              "calculation_origin": "authors",
+              "frequency_unit": "cycles/mm",
+              "frequency_axis_extent": [
+                0,
+                200
+              ],
+              "normalization": "plot_shows_unity_dc",
+              "data_availability": "curves_only"
+            },
+            "efficiency_protocol": {
+              "value": "透过率为P_out/P_in；聚焦效率为P_focus/P_out",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "pp7–8 §2.4 功率测量段，绿光",
+              "note": "P_in通过φ1mm口径。P_focus积分范围原文写within 3×FWHM，未指明该尺度是半径还是直径。P_out为器件总透射功率，焦区形状、探测及误差待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "incident_aperture_um": 1000,
+              "focus_integration_scale_fwhm": 3,
+              "focus_region_geometry": null
+            },
+            "optical_transmittance_pct": {
+              "value": 80,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "pp7–8 §2.4 功率测量段，绿光",
+              "note": "作者印字，器件透出总功率/φ1mm口径内入射功率。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "denominator": "incident_through_aperture"
+            },
+            "focusing_efficiency_transmitted_pct": {
+              "value": 26,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "pp7–8 §2.4 功率测量段，绿光",
+              "note": "作者印字，3×FWHM焦区功率/器件透出总功率。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "denominator": "transmitted_power"
+            }
+          }
+        },
+        {
+          "id": "hasegawa2026_laser_633",
+          "model": "Hasegawa 2026 · 准直激光 · 633nm",
+          "study_id": "hasegawa2026",
+          "specimen_id": "laser",
+          "module": "",
+          "variant": "同一实制1mm TSF RGB单层SiN超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的准直激光轴向扫描、焦斑和论文报告光功率比。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制圆形镜口径1mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制器件对应的名义NA；未报告独立测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 5050,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应正文；p8 Fig.5a–g虚线",
+              "note": "原文设计f=5.05mm。各光路的实测轴向位置另列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 1750,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4b对应正文",
+              "note": "十字形SiN柱的结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 玻璃，单层十字形元胞",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 Fig.4a,b及正文；p11 §2.6",
+              "note": "周期340nm。TSF允许波长相关常数相位偏移，三个设计波长可同时照明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB设计（450 / 532 / 633 nm）",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p8 Fig.5及p10 Table 1 This work行",
+              "note": "波长间的非设计波长另测，400/490/580/680nm焦点发生位移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "标称偏振不敏感",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p9 §2.4、Figs. S1–S2/Tables S2–S3引述",
+              "note": "原文在30μm模型讨论四种偏振。这里各1mm器件实测的入射偏振状态未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 633,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4c–e 右列；p12 §4.3",
+              "note": "红光设计波长，准直激光实际测点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "轴向准直激光，分波长采集",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p12 §4.3；Fig.S5引述",
+              "note": "三台激光各经ND滤片。谱线带宽和功率校准细节未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "逐波长找最佳焦点；20×物镜、CMOS、手动轴扫",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c–e；p12 §4.3",
+              "note": "Mitutoyo M-Plan Apo 20×和Thorlabs CS165MU/M。实测图先扣背景，再抽取x向线剖面。有效采样、轴向步长、重复数、插值未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "field_point": "on_axis",
+              "object_conjugate": "infinity",
+              "nominal_collection_magnification": 20,
+              "evaluation_plane_um": 4980,
+              "image_plane_pixel_size_um": null,
+              "measurement_repeat_count": null
+            },
+            "measured_focal_um": {
+              "value": 4980,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应段，红光实测f；同段设计f=5.05mm",
+              "note": "准直激光装置，原文 4.98 mm。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "4980（4.98 mm）"
+            },
+            "axial_focus_offset_um": {
+              "value": -70,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应段，红光实测f；同段设计f=5.05mm",
+              "note": "本库按两项原文印字计算f−5050μm=-70μm。精度来自原文0.01mm印字；测量误差未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "-70（本库计算）",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 5050,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "同段明确的固定设计焦面z=5.05mm。"
+            },
+            "fwhm_x_um": {
+              "value": 3.39,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c横虚线、Fig.4d 右列对应正文",
+              "note": "实测焦斑横向x剖面的半高全宽；Y向宽度待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-18"
+            },
+            "strehl": {
+              "value": 0.95,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4d 右列对应正文",
+              "note": "作者在50μm窗口内分别对实测与理论线剖面作等积分归一，再比较峰值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "0.95",
+              "calculation_origin": "authors"
+            },
+            "mtf_curve": {
+              "value": "由实测PSF的x向线剖面傅里叶计算",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 Fig.4d–e 右列；TUAT Fig.3i",
+              "note": "横轴0–200 cycles/mm，纵轴无量纲MTF，零频处为1。图是轴上x向线剖面的结果，未定位S/T两方向数表、原始PSF、有效μm/px或FFT窗细节。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "hasegawa_tsf_pdf_2026",
+                "hasegawa_tsf_tuat_figure_2026"
+              ],
+              "mtf_kind": "measured_psf_line_profile",
+              "direction": "x",
+              "field_point": "on_axis",
+              "calculation_origin": "authors",
+              "frequency_unit": "cycles/mm",
+              "frequency_axis_extent": [
+                0,
+                200
+              ],
+              "normalization": "plot_shows_unity_dc",
+              "data_availability": "curves_only"
+            },
+            "efficiency_protocol": {
+              "value": "透过率为P_out/P_in；聚焦效率为P_focus/P_out",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "pp7–8 §2.4 功率测量段，红光",
+              "note": "P_in通过φ1mm口径。P_focus积分范围原文写within 3×FWHM，未指明该尺度是半径还是直径。P_out为器件总透射功率，焦区形状、探测及误差待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "incident_aperture_um": 1000,
+              "focus_integration_scale_fwhm": 3,
+              "focus_region_geometry": null
+            },
+            "optical_transmittance_pct": {
+              "value": 82,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "pp7–8 §2.4 功率测量段，红光",
+              "note": "作者印字，器件透出总功率/φ1mm口径内入射功率。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "denominator": "incident_through_aperture"
+            },
+            "focusing_efficiency_transmitted_pct": {
+              "value": 23,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "pp7–8 §2.4 功率测量段，红光",
+              "note": "作者印字，3×FWHM焦区功率/器件透出总功率。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "calculation_origin": "authors",
+              "denominator": "transmitted_power"
+            }
+          }
+        },
+        {
+          "id": "hasegawa2026_halogen_400",
+          "model": "Hasegawa 2026 · 卤素灯 · 400nm",
+          "study_id": "hasegawa2026",
+          "specimen_id": "halogen",
+          "module": "",
+          "variant": "同一实制1mm TSF RGB单层SiN超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的卤素灯/带通滤片有限物距扫描，用于检查设计及设计外谱点。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制圆形镜口径1mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制器件对应的名义NA；未报告独立测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 5050,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应正文；p8 Fig.5a–g虚线",
+              "note": "原文设计f=5.05mm。各光路的实测轴向位置另列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 1750,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4b对应正文",
+              "note": "十字形SiN柱的结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 玻璃，单层十字形元胞",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 Fig.4a,b及正文；p11 §2.6",
+              "note": "周期340nm。TSF允许波长相关常数相位偏移，三个设计波长可同时照明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB设计（450 / 532 / 633 nm）",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p8 Fig.5及p10 Table 1 This work行",
+              "note": "波长间的非设计波长另测，400/490/580/680nm焦点发生位移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "标称偏振不敏感",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p9 §2.4、Figs. S1–S2/Tables S2–S3引述",
+              "note": "原文在30μm模型讨论四种偏振。这里各1mm器件实测的入射偏振状态未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 400,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5a及§2.4对应正文；p12 §4.3",
+              "note": "Fig.5所标实测滤片波长，原滤片半高宽见待取Table S4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "钨卤素灯与不同颜色滤片，1mm针孔@500mm",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p12 §4.3；Fig.S6/Table S4引述",
+              "note": "有限物距照明。此装置的轴向位置独立保存，未做薄透镜物距换算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "有限物距的x–z实测强度切片",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5a及§2.4对应正文；p12 §4.3",
+              "note": "作者用S5同款物镜/CMOS及手动位移台记录轴向堆栈，做x–z强度切片。轴扫步长、有效横向采样、峰拟合、滤片FWHM未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 0.5,
+              "source_pinhole_diameter_um": 1000,
+              "nominal_collection_magnification": 20,
+              "image_plane_pixel_size_um": null,
+              "measurement_repeat_count": null,
+              "field_point": "on_axis"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5a及§2.4对应正文；p12 §4.3",
+              "note": "非设计波长有实测x–z图，未给精确峰位印字。Fig.5i数值为衍射积分模拟。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "只有图像，精确值待核"
+            }
+          }
+        },
+        {
+          "id": "hasegawa2026_halogen_450",
+          "model": "Hasegawa 2026 · 卤素灯 · 450nm",
+          "study_id": "hasegawa2026",
+          "specimen_id": "halogen",
+          "module": "",
+          "variant": "同一实制1mm TSF RGB单层SiN超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的卤素灯/带通滤片有限物距扫描，用于检查设计及设计外谱点。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制圆形镜口径1mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制器件对应的名义NA；未报告独立测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 5050,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应正文；p8 Fig.5a–g虚线",
+              "note": "原文设计f=5.05mm。各光路的实测轴向位置另列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 1750,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4b对应正文",
+              "note": "十字形SiN柱的结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 玻璃，单层十字形元胞",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 Fig.4a,b及正文；p11 §2.6",
+              "note": "周期340nm。TSF允许波长相关常数相位偏移，三个设计波长可同时照明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB设计（450 / 532 / 633 nm）",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p8 Fig.5及p10 Table 1 This work行",
+              "note": "波长间的非设计波长另测，400/490/580/680nm焦点发生位移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "标称偏振不敏感",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p9 §2.4、Figs. S1–S2/Tables S2–S3引述",
+              "note": "原文在30μm模型讨论四种偏振。这里各1mm器件实测的入射偏振状态未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 450,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5b及§2.4对应正文；p12 §4.3",
+              "note": "Fig.5所标实测滤片波长，原滤片半高宽见待取Table S4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "钨卤素灯与不同颜色滤片，1mm针孔@500mm",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p12 §4.3；Fig.S6/Table S4引述",
+              "note": "有限物距照明。此装置的轴向位置独立保存，未做薄透镜物距换算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "有限物距的x–z实测强度切片",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5b及§2.4对应正文；p12 §4.3",
+              "note": "作者用S5同款物镜/CMOS及手动位移台记录轴向堆栈，做x–z强度切片。轴扫步长、有效横向采样、峰拟合、滤片FWHM未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 0.5,
+              "source_pinhole_diameter_um": 1000,
+              "nominal_collection_magnification": 20,
+              "image_plane_pixel_size_um": null,
+              "measurement_repeat_count": null,
+              "field_point": "on_axis"
+            },
+            "measured_focal_um": {
+              "value": 5080,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5b及§2.4对应正文；p12 §4.3",
+              "note": "作者直报轴向强度最大位置z=5.08mm；按有限物距条件保存。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "5080（5.08 mm）"
+            },
+            "axial_focus_offset_um": {
+              "value": 30,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5b及§2.4对应正文；p12 §4.3",
+              "note": "本库按两项原文印字计算f−5050μm=+30μm。精度来自原文0.01mm印字；测量误差未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "+30（本库计算）",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 5050,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "Fig.5a–g标注的固定设计焦面z=5.05mm。"
+            }
+          }
+        },
+        {
+          "id": "hasegawa2026_halogen_490",
+          "model": "Hasegawa 2026 · 卤素灯 · 490nm",
+          "study_id": "hasegawa2026",
+          "specimen_id": "halogen",
+          "module": "",
+          "variant": "同一实制1mm TSF RGB单层SiN超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的卤素灯/带通滤片有限物距扫描，用于检查设计及设计外谱点。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制圆形镜口径1mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制器件对应的名义NA；未报告独立测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 5050,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应正文；p8 Fig.5a–g虚线",
+              "note": "原文设计f=5.05mm。各光路的实测轴向位置另列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 1750,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4b对应正文",
+              "note": "十字形SiN柱的结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 玻璃，单层十字形元胞",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 Fig.4a,b及正文；p11 §2.6",
+              "note": "周期340nm。TSF允许波长相关常数相位偏移，三个设计波长可同时照明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB设计（450 / 532 / 633 nm）",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p8 Fig.5及p10 Table 1 This work行",
+              "note": "波长间的非设计波长另测，400/490/580/680nm焦点发生位移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "标称偏振不敏感",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p9 §2.4、Figs. S1–S2/Tables S2–S3引述",
+              "note": "原文在30μm模型讨论四种偏振。这里各1mm器件实测的入射偏振状态未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 490,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5c及§2.4对应正文；p12 §4.3",
+              "note": "Fig.5所标实测滤片波长，原滤片半高宽见待取Table S4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "钨卤素灯与不同颜色滤片，1mm针孔@500mm",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p12 §4.3；Fig.S6/Table S4引述",
+              "note": "有限物距照明。此装置的轴向位置独立保存，未做薄透镜物距换算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "有限物距的x–z实测强度切片",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5c及§2.4对应正文；p12 §4.3",
+              "note": "作者用S5同款物镜/CMOS及手动位移台记录轴向堆栈，做x–z强度切片。轴扫步长、有效横向采样、峰拟合、滤片FWHM未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 0.5,
+              "source_pinhole_diameter_um": 1000,
+              "nominal_collection_magnification": 20,
+              "image_plane_pixel_size_um": null,
+              "measurement_repeat_count": null,
+              "field_point": "on_axis"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5c及§2.4对应正文；p12 §4.3",
+              "note": "非设计波长有实测x–z图，未给精确峰位印字。Fig.5i数值为衍射积分模拟。 原文另指出此波长有副焦点。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "只有图像，精确值待核"
+            }
+          }
+        },
+        {
+          "id": "hasegawa2026_halogen_532",
+          "model": "Hasegawa 2026 · 卤素灯 · 532nm",
+          "study_id": "hasegawa2026",
+          "specimen_id": "halogen",
+          "module": "",
+          "variant": "同一实制1mm TSF RGB单层SiN超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的卤素灯/带通滤片有限物距扫描，用于检查设计及设计外谱点。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制圆形镜口径1mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制器件对应的名义NA；未报告独立测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 5050,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应正文；p8 Fig.5a–g虚线",
+              "note": "原文设计f=5.05mm。各光路的实测轴向位置另列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 1750,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4b对应正文",
+              "note": "十字形SiN柱的结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 玻璃，单层十字形元胞",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 Fig.4a,b及正文；p11 §2.6",
+              "note": "周期340nm。TSF允许波长相关常数相位偏移，三个设计波长可同时照明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB设计（450 / 532 / 633 nm）",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p8 Fig.5及p10 Table 1 This work行",
+              "note": "波长间的非设计波长另测，400/490/580/680nm焦点发生位移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "标称偏振不敏感",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p9 §2.4、Figs. S1–S2/Tables S2–S3引述",
+              "note": "原文在30μm模型讨论四种偏振。这里各1mm器件实测的入射偏振状态未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5d及§2.4对应正文；p12 §4.3",
+              "note": "Fig.5所标实测滤片波长，原滤片半高宽见待取Table S4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "钨卤素灯与不同颜色滤片，1mm针孔@500mm",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p12 §4.3；Fig.S6/Table S4引述",
+              "note": "有限物距照明。此装置的轴向位置独立保存，未做薄透镜物距换算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "有限物距的x–z实测强度切片",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5d及§2.4对应正文；p12 §4.3",
+              "note": "作者用S5同款物镜/CMOS及手动位移台记录轴向堆栈，做x–z强度切片。轴扫步长、有效横向采样、峰拟合、滤片FWHM未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 0.5,
+              "source_pinhole_diameter_um": 1000,
+              "nominal_collection_magnification": 20,
+              "image_plane_pixel_size_um": null,
+              "measurement_repeat_count": null,
+              "field_point": "on_axis"
+            },
+            "measured_focal_um": {
+              "value": 5100,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5d及§2.4对应正文；p12 §4.3",
+              "note": "作者直报轴向强度最大位置z=5.10mm；按有限物距条件保存。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "5100（5.10 mm）"
+            },
+            "axial_focus_offset_um": {
+              "value": 50,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5d及§2.4对应正文；p12 §4.3",
+              "note": "本库按两项原文印字计算f−5050μm=+50μm。精度来自原文0.01mm印字；测量误差未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "+50（本库计算）",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 5050,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "Fig.5a–g标注的固定设计焦面z=5.05mm。"
+            }
+          }
+        },
+        {
+          "id": "hasegawa2026_halogen_580",
+          "model": "Hasegawa 2026 · 卤素灯 · 580nm",
+          "study_id": "hasegawa2026",
+          "specimen_id": "halogen",
+          "module": "",
+          "variant": "同一实制1mm TSF RGB单层SiN超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的卤素灯/带通滤片有限物距扫描，用于检查设计及设计外谱点。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制圆形镜口径1mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制器件对应的名义NA；未报告独立测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 5050,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应正文；p8 Fig.5a–g虚线",
+              "note": "原文设计f=5.05mm。各光路的实测轴向位置另列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 1750,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4b对应正文",
+              "note": "十字形SiN柱的结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 玻璃，单层十字形元胞",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 Fig.4a,b及正文；p11 §2.6",
+              "note": "周期340nm。TSF允许波长相关常数相位偏移，三个设计波长可同时照明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB设计（450 / 532 / 633 nm）",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p8 Fig.5及p10 Table 1 This work行",
+              "note": "波长间的非设计波长另测，400/490/580/680nm焦点发生位移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "标称偏振不敏感",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p9 §2.4、Figs. S1–S2/Tables S2–S3引述",
+              "note": "原文在30μm模型讨论四种偏振。这里各1mm器件实测的入射偏振状态未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 580,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5e及§2.4对应正文；p12 §4.3",
+              "note": "Fig.5所标实测滤片波长，原滤片半高宽见待取Table S4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "钨卤素灯与不同颜色滤片，1mm针孔@500mm",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p12 §4.3；Fig.S6/Table S4引述",
+              "note": "有限物距照明。此装置的轴向位置独立保存，未做薄透镜物距换算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "有限物距的x–z实测强度切片",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5e及§2.4对应正文；p12 §4.3",
+              "note": "作者用S5同款物镜/CMOS及手动位移台记录轴向堆栈，做x–z强度切片。轴扫步长、有效横向采样、峰拟合、滤片FWHM未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 0.5,
+              "source_pinhole_diameter_um": 1000,
+              "nominal_collection_magnification": 20,
+              "image_plane_pixel_size_um": null,
+              "measurement_repeat_count": null,
+              "field_point": "on_axis"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5e及§2.4对应正文；p12 §4.3",
+              "note": "非设计波长有实测x–z图，未给精确峰位印字。Fig.5i数值为衍射积分模拟。 原文另指出此波长有副焦点。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "只有图像，精确值待核"
+            }
+          }
+        },
+        {
+          "id": "hasegawa2026_halogen_633",
+          "model": "Hasegawa 2026 · 卤素灯 · 633nm",
+          "study_id": "hasegawa2026",
+          "specimen_id": "halogen",
+          "module": "",
+          "variant": "同一实制1mm TSF RGB单层SiN超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的卤素灯/带通滤片有限物距扫描，用于检查设计及设计外谱点。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制圆形镜口径1mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制器件对应的名义NA；未报告独立测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 5050,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应正文；p8 Fig.5a–g虚线",
+              "note": "原文设计f=5.05mm。各光路的实测轴向位置另列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 1750,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4b对应正文",
+              "note": "十字形SiN柱的结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 玻璃，单层十字形元胞",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 Fig.4a,b及正文；p11 §2.6",
+              "note": "周期340nm。TSF允许波长相关常数相位偏移，三个设计波长可同时照明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB设计（450 / 532 / 633 nm）",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p8 Fig.5及p10 Table 1 This work行",
+              "note": "波长间的非设计波长另测，400/490/580/680nm焦点发生位移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "标称偏振不敏感",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p9 §2.4、Figs. S1–S2/Tables S2–S3引述",
+              "note": "原文在30μm模型讨论四种偏振。这里各1mm器件实测的入射偏振状态未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 633,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5f及§2.4对应正文；p12 §4.3",
+              "note": "Fig.5所标实测滤片波长，原滤片半高宽见待取Table S4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "钨卤素灯与不同颜色滤片，1mm针孔@500mm",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p12 §4.3；Fig.S6/Table S4引述",
+              "note": "有限物距照明。此装置的轴向位置独立保存，未做薄透镜物距换算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "有限物距的x–z实测强度切片",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5f及§2.4对应正文；p12 §4.3",
+              "note": "作者用S5同款物镜/CMOS及手动位移台记录轴向堆栈，做x–z强度切片。轴扫步长、有效横向采样、峰拟合、滤片FWHM未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 0.5,
+              "source_pinhole_diameter_um": 1000,
+              "nominal_collection_magnification": 20,
+              "image_plane_pixel_size_um": null,
+              "measurement_repeat_count": null,
+              "field_point": "on_axis"
+            },
+            "measured_focal_um": {
+              "value": 5110,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5f及§2.4对应正文；p12 §4.3",
+              "note": "作者直报轴向强度最大位置z=5.11mm；按有限物距条件保存。",
+              "basis": "measured",
+              "checked_on": "2026-11-18",
+              "display": "5110（5.11 mm）"
+            },
+            "axial_focus_offset_um": {
+              "value": 60,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5f及§2.4对应正文；p12 §4.3",
+              "note": "本库按两项原文印字计算f−5050μm=+60μm。精度来自原文0.01mm印字；测量误差未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-18",
+              "display": "+60（本库计算）",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 5050,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "Fig.5a–g标注的固定设计焦面z=5.05mm。"
+            }
+          }
+        },
+        {
+          "id": "hasegawa2026_halogen_680",
+          "model": "Hasegawa 2026 · 卤素灯 · 680nm",
+          "study_id": "hasegawa2026",
+          "specimen_id": "halogen",
+          "module": "",
+          "variant": "同一实制1mm TSF RGB单层SiN超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一实物的卤素灯/带通滤片有限物距扫描，用于检查设计及设计外谱点。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制圆形镜口径1mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制器件对应的名义NA；未报告独立测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 5050,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应正文；p8 Fig.5a–g虚线",
+              "note": "原文设计f=5.05mm。各光路的实测轴向位置另列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 1750,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4b对应正文",
+              "note": "十字形SiN柱的结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 玻璃，单层十字形元胞",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 Fig.4a,b及正文；p11 §2.6",
+              "note": "周期340nm。TSF允许波长相关常数相位偏移，三个设计波长可同时照明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB设计（450 / 532 / 633 nm）",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p8 Fig.5及p10 Table 1 This work行",
+              "note": "波长间的非设计波长另测，400/490/580/680nm焦点发生位移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "标称偏振不敏感",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p9 §2.4、Figs. S1–S2/Tables S2–S3引述",
+              "note": "原文在30μm模型讨论四种偏振。这里各1mm器件实测的入射偏振状态未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": 680,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5g及§2.4对应正文；p12 §4.3",
+              "note": "Fig.5所标实测滤片波长，原滤片半高宽见待取Table S4。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "钨卤素灯与不同颜色滤片，1mm针孔@500mm",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p12 §4.3；Fig.S6/Table S4引述",
+              "note": "有限物距照明。此装置的轴向位置独立保存，未做薄透镜物距换算。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "psf_protocol": {
+              "value": "有限物距的x–z实测强度切片",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5g及§2.4对应正文；p12 §4.3",
+              "note": "作者用S5同款物镜/CMOS及手动位移台记录轴向堆栈，做x–z强度切片。轴扫步长、有效横向采样、峰拟合、滤片FWHM未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "object_distance_m": 0.5,
+              "source_pinhole_diameter_um": 1000,
+              "nominal_collection_magnification": 20,
+              "image_plane_pixel_size_um": null,
+              "measurement_repeat_count": null,
+              "field_point": "on_axis"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5g及§2.4对应正文；p12 §4.3",
+              "note": "非设计波长有实测x–z图，未给精确峰位印字。Fig.5i数值为衍射积分模拟。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-18",
+              "display": "只有图像，精确值待核"
+            }
+          }
+        },
+        {
+          "id": "hasegawa2026_lcd_usaf",
+          "model": "Hasegawa 2026 · USAF标靶 · LCD背光",
+          "study_id": "hasegawa2026",
+          "specimen_id": "camera",
+          "module": "",
+          "variant": "同一实制1mm TSF RGB单层SiN超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "相机实拍，评价条件与裸镜焦斑表征分别保存。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制圆形镜口径1mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制器件对应的名义NA；未报告独立测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 5050,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应正文；p8 Fig.5a–g虚线",
+              "note": "原文设计f=5.05mm。各光路的实测轴向位置另列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 1750,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4b对应正文",
+              "note": "十字形SiN柱的结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 玻璃，单层十字形元胞",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 Fig.4a,b及正文；p11 §2.6",
+              "note": "周期340nm。TSF允许波长相关常数相位偏移，三个设计波长可同时照明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB设计（450 / 532 / 633 nm）",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p8 Fig.5及p10 Table 1 This work行",
+              "note": "波长间的非设计波长另测，400/490/580/680nm焦点发生位移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "标称偏振不敏感",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p9 §2.4、Figs. S1–S2/Tables S2–S3引述",
+              "note": "原文在30μm模型讨论四种偏振。这里各1mm器件实测的入射偏振状态未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "LCD RGB伪白光",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p9 §2.5；p10 Fig.6c",
+              "note": "20mm物距，直装超透镜和Basler彩色CMOS。同一超透镜与3D打印光阑/支架、Basler ace2 a2A2590-60组成相机。USAF测试放大率为0.38。作者对USAF G3 line 3报告至10 lp/mm的亮暗差高于最大值的15%；频率参考平面和归一化条件待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "hasegawa_tsf_pdf_2026",
+                "hasegawa_tsf_tuat_2026"
+              ],
+              "object_distance_m": 0.02
+            }
+          }
+        },
+        {
+          "id": "hasegawa2026_blue_usaf",
+          "model": "Hasegawa 2026 · USAF标靶 · 蓝光",
+          "study_id": "hasegawa2026",
+          "specimen_id": "camera",
+          "module": "",
+          "variant": "同一实制1mm TSF RGB单层SiN超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "相机实拍，评价条件与裸镜焦斑表征分别保存。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制圆形镜口径1mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制器件对应的名义NA；未报告独立测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 5050,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应正文；p8 Fig.5a–g虚线",
+              "note": "原文设计f=5.05mm。各光路的实测轴向位置另列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 1750,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4b对应正文",
+              "note": "十字形SiN柱的结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 玻璃，单层十字形元胞",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 Fig.4a,b及正文；p11 §2.6",
+              "note": "周期340nm。TSF允许波长相关常数相位偏移，三个设计波长可同时照明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB设计（450 / 532 / 633 nm）",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p8 Fig.5及p10 Table 1 This work行",
+              "note": "波长间的非设计波长另测，400/490/580/680nm焦点发生位移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "标称偏振不敏感",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p9 §2.4、Figs. S1–S2/Tables S2–S3引述",
+              "note": "原文在30μm模型讨论四种偏振。这里各1mm器件实测的入射偏振状态未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "蓝光",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p9 §2.5；p10 Fig.6d",
+              "note": "20mm物距，直装超透镜和Basler彩色CMOS。同一超透镜与3D打印光阑/支架、Basler ace2 a2A2590-60组成相机。USAF测试放大率为0.38。分色照明的系统图。源谱带宽与定量色差、频率数表待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "hasegawa_tsf_pdf_2026",
+                "hasegawa_tsf_tuat_2026"
+              ],
+              "object_distance_m": 0.02
+            }
+          }
+        },
+        {
+          "id": "hasegawa2026_green_usaf",
+          "model": "Hasegawa 2026 · USAF标靶 · 绿光",
+          "study_id": "hasegawa2026",
+          "specimen_id": "camera",
+          "module": "",
+          "variant": "同一实制1mm TSF RGB单层SiN超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "相机实拍，评价条件与裸镜焦斑表征分别保存。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制圆形镜口径1mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制器件对应的名义NA；未报告独立测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 5050,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应正文；p8 Fig.5a–g虚线",
+              "note": "原文设计f=5.05mm。各光路的实测轴向位置另列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 1750,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4b对应正文",
+              "note": "十字形SiN柱的结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 玻璃，单层十字形元胞",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 Fig.4a,b及正文；p11 §2.6",
+              "note": "周期340nm。TSF允许波长相关常数相位偏移，三个设计波长可同时照明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB设计（450 / 532 / 633 nm）",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p8 Fig.5及p10 Table 1 This work行",
+              "note": "波长间的非设计波长另测，400/490/580/680nm焦点发生位移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "标称偏振不敏感",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p9 §2.4、Figs. S1–S2/Tables S2–S3引述",
+              "note": "原文在30μm模型讨论四种偏振。这里各1mm器件实测的入射偏振状态未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "绿光",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p9 §2.5；p10 Fig.6e",
+              "note": "20mm物距，直装超透镜和Basler彩色CMOS。同一超透镜与3D打印光阑/支架、Basler ace2 a2A2590-60组成相机。USAF测试放大率为0.38。分色照明的系统图。源谱带宽与定量色差、频率数表待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "hasegawa_tsf_pdf_2026",
+                "hasegawa_tsf_tuat_2026"
+              ],
+              "object_distance_m": 0.02
+            }
+          }
+        },
+        {
+          "id": "hasegawa2026_red_usaf",
+          "model": "Hasegawa 2026 · USAF标靶 · 红光",
+          "study_id": "hasegawa2026",
+          "specimen_id": "camera",
+          "module": "",
+          "variant": "同一实制1mm TSF RGB单层SiN超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "相机实拍，评价条件与裸镜焦斑表征分别保存。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制圆形镜口径1mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制器件对应的名义NA；未报告独立测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 5050,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应正文；p8 Fig.5a–g虚线",
+              "note": "原文设计f=5.05mm。各光路的实测轴向位置另列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 1750,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4b对应正文",
+              "note": "十字形SiN柱的结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 玻璃，单层十字形元胞",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 Fig.4a,b及正文；p11 §2.6",
+              "note": "周期340nm。TSF允许波长相关常数相位偏移，三个设计波长可同时照明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB设计（450 / 532 / 633 nm）",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p8 Fig.5及p10 Table 1 This work行",
+              "note": "波长间的非设计波长另测，400/490/580/680nm焦点发生位移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "标称偏振不敏感",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p9 §2.4、Figs. S1–S2/Tables S2–S3引述",
+              "note": "原文在30μm模型讨论四种偏振。这里各1mm器件实测的入射偏振状态未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "红光",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p9 §2.5；p10 Fig.6f",
+              "note": "20mm物距，直装超透镜和Basler彩色CMOS。同一超透镜与3D打印光阑/支架、Basler ace2 a2A2590-60组成相机。USAF测试放大率为0.38。分色照明的系统图。源谱带宽与定量色差、频率数表待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "hasegawa_tsf_pdf_2026",
+                "hasegawa_tsf_tuat_2026"
+              ],
+              "object_distance_m": 0.02
+            }
+          }
+        },
+        {
+          "id": "hasegawa2026_lcd_graphic",
+          "model": "Hasegawa 2026 · LCD彩色图案",
+          "study_id": "hasegawa2026",
+          "specimen_id": "camera",
+          "module": "",
+          "variant": "同一实制1mm TSF RGB单层SiN超透镜",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "相机实拍，评价条件与裸镜焦斑表征分别保存。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制圆形镜口径1mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制器件对应的名义NA；未报告独立测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 5050,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应正文；p8 Fig.5a–g虚线",
+              "note": "原文设计f=5.05mm。各光路的实测轴向位置另列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "height_nm": {
+              "value": 1750,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4b对应正文",
+              "note": "十字形SiN柱的结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "material": {
+              "value": "SiN / 玻璃，单层十字形元胞",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 Fig.4a,b及正文；p11 §2.6",
+              "note": "周期340nm。TSF允许波长相关常数相位偏移，三个设计波长可同时照明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "chromatic": {
+              "value": "离散RGB设计（450 / 532 / 633 nm）",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p8 Fig.5及p10 Table 1 This work行",
+              "note": "波长间的非设计波长另测，400/490/580/680nm焦点发生位移。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "polarization": {
+              "value": "标称偏振不敏感",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p9 §2.4、Figs. S1–S2/Tables S2–S3引述",
+              "note": "原文在30μm模型讨论四种偏振。这里各1mm器件实测的入射偏振状态未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "illumination": {
+              "value": "LCD显示",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p9 §2.5；p10 Fig.6g–h",
+              "note": "20mm物距，直装超透镜和Basler彩色CMOS。同一超透镜与3D打印光阑/支架、Basler ace2 a2A2590-60组成相机。USAF测试放大率为0.38。作者展示彩色图与像素。曝光、信号线性、处理细节和通道配准误差待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18",
+              "sourceIds": [
+                "hasegawa_tsf_pdf_2026",
+                "hasegawa_tsf_tuat_2026"
+              ],
+              "object_distance_m": 0.02
+            }
+          }
         }
       ],
-      "scope": "30项原始研究、143个器件/测量/系统配置、1243条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
+      "scope": "31项原始研究、146个器件/测量/系统配置、1258条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",

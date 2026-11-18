@@ -42,7 +42,9 @@
 | QUALITY-001w Ndao 2020经典fishnet宽带原作 | done | 本机Codex，2026-11-15；PR #122/c939fda，CI43674536092/Pages43674536101成功、12公开文件一致；259测试/校验/构建与线上独立无头Chrome两口径/NA坐标、未分派NA/研究级均值、出处往返/CSV/分享/实际可见光/六视口通过。三实制口径及30条件/汇总记录，图3/S8归属、基底说明、逐λ原表/PSF/MTF等仍缺，不估曲线，只关有限批次；见[核验](NDAO_2020_REVIEW_2026-11-15.md)。 |
 | QUALITY-001x Hu 2023渐近色散超宽带原作 | done | 0.3.21 已随 PR #124/861d325 发布。267 项测试、Pages 43676956543、12 文件一致及无头 Chrome 六视口/出处与散点通过。原始数据缺口保留，见[核验](HU_2023_REVIEW_2026-11-15.md)。 |
 | QUALITY-001y Balli 2021 纳米孔超宽带实物与中继成像 | done | 0.3.22 经 PR #125/fc38fef、Pages 44259437894 上线，268 测试、12 文件一致与线上无头 Chrome 六视口通过。原图、逐λ数表及42%口径归属仍待补证，见[核验](BALLI_2021_REVIEW_2026-11-18.md)。 |
-| QUALITY-001z Yoon 2026 两物深PSF和光学/系统MTF | in_progress | 2026-11-18。核正式主文和93页SI，录三只实制镜各44个PSF波长，S28的41个径向曲线面板、重建图像RGB斜边MTF、Tables S7/S15印字。原始PSF及逐频数表未取得，见[核验](YOON_2026_REVIEW_2026-11-18.md)。 |
+| QUALITY-001z Yoon 2026 两物深PSF和光学/系统MTF | done | 0.3.23 经 PR #127/a7ce01e、Pages 44267510878 上线。271 个测试、12 文件一致、无头 Chrome 的306条记录、9个配置、6种视口及7个出处验证通过。原始PSF及逐频数表仍待补，见[核验](YOON_2026_REVIEW_2026-11-18.md)。 |
+| QUALITY-001aa Hasegawa 2026 毫米级单层离散RGB实测 | in_progress | 正式主文文本和作者机构复刊图交叉核验。同一实物的准直激光和有限物距各三笔实测焦距、x向PSF和MTF、Strehl、透过率和以透过功率为分母的效率。SI、原始数表和PSF待补，见[核验](HASEGAWA_2026_REVIEW_2026-11-18.md)。 |
+| QUALITY-001ab Bayati 2022 二维逆设计的可见光对照 | in_progress | 沿 Yoon 2026 参考文献26。已取 UW 作者组的期刊提前上线版，PMC 对象目录已核。下一步核图2/6、各口径实验光路及 SSIM 表的模拟归属。DOI 10.1515/nanoph-2021-0431。 |
 | QUALITY-002 手机SNR/MTF/色差独立测量 | in_progress | 本机Codex，2026-11-14；先核有型号和协议的SNR及MTF原始研究；外接镜组、场景与处理链不得写进原生模组，PSNR不替代SNR |
 | QUALITY-003 VRAR MTF与色差 | in_progress | 本机Codex，2026-11-14；复核开放PR #69数据及原文，优先MTF/截止频率、颜色/场点/眼位、色差和先进设备独立测量，不能从曲线猜统一单值 |
 | QUALITY-001a 文献器件首批 | done | 4项原始研究/8器件配置/21行，几何、波段、逐谱点焦距/FWHM/Strehl、PSNR及冲突；见[首批核验](QUALITY_BATCH_2026-11-14.md)；PR #72/23fdecb与Pages43571286647实页验收，不关闭父目标 |
