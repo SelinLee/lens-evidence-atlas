@@ -921,3 +921,9 @@ PR #138 合入 dacc200720bcf5556f7afd86a984b1c0d460ed8b。PR校验 44302457350�
 ## 2026-11-18-84 · Seong 2026 色散参照与 Li 2021 原文补核
 
 Seong 两只 5 mm 实物按涂层分组，入库四谱点的 x 向焦斑、Strehl 与聚焦效率。作者有效焦距和 NA 独立保留。透明审稿回应明确单元 CPT 模拟的功率分母及 OLED 红绿蓝各自取焦。Fig. S17 归一化 MTF 的原始 PSF、数值表、标定及 1D 方向待补。Li 2021 按正式 PDF 补两只 2 mm 镜的标靶及被动/扫描 VR/AR，新增 12 行。补充 PDF 入口 403，旧缺口保留。两篇合计新增 26 行，累计 38 篇、221 配置、1442 行。[逐项核验](SEONG_AND_LI_REVIEW_2026-11-18.md)
+
+## 2026-11-18-85 · 0.3.30 发布验收与选文范围调整
+
+PR #140 合入 8fae3123725360cd0a73daef0fc2a6c7f1057e50。PR 校验 44307662195、主线校验 44307956134 与 Pages 44307956209 成功。290 项测试及构建通过。线上 12 文件与本地逐字节一致，devices-data.js SHA256 为 6513686568d7abf23dffb74138ad43b7cd39349a50aeddcbdbf955e95106ff94。独立无头 Chrome 通过六视口、26 条新增记录及所在两篇论文的分组、实测散点、可见光、两处引用往返及 CSV。四份 PDF 公共链接以 HTTP 206、文件签名及长度复核，完整原件另留存。DataCite 首次返回 503，重试取得 200 和零项。Li 的 PMC 正式 PDF 公共对象已核。可见光视图共有 34 篇、1339 条记录。[PR #140](https://github.com/SelinLee/lens-evidence-atlas/pull/140) · [Pages 部署](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44307956209)
+
+用户确认常规范围为滚动近三年、中科院期刊分区表大类一区的消色差超透镜和消色差折超混合透镜。引用量超过 50 次的经典消色差超透镜为例外。旧批次数据作为历史证据保留。Aiello 2019 经 Crossref 于 2026-11-18 查询为 86 次引用，作者稿 21 页、4504445 字节，SHA256 为 6b37a93e070c4fec985297e6bc5b8504a9152d7f6f157f43ee2f8d8e45c91975。p5 给两种 483–620 nm 实测焦距范围，固定 140° 偏振为 260–326 μm，保持偏振旋转器设置不变的色差校正为 265–278 μm。续核各谱点、样品与效率协议。中科院文献情报中心停止发布新版后，项目采用 2025 年正式升级版。Park 2026 的公开分区条目标记 Nano Letters 为材料科学大类二区，暂缓常规收录。[Aiello 作者稿](https://arxiv.org/abs/1903.03930) · [Crossref DOI 记录](https://api.crossref.org/works/10.1021/acsphotonics.9b00523) · [中科院公告](https://nssc.ac.cn/library/dtxx/202604/t20260409_8183275.html) · [Nano Letters 分区条目](https://www.ais.cn/journal/database/6024)

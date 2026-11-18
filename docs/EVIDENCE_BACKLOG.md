@@ -49,11 +49,12 @@
 | QUALITY-001ad Feng 2022 高NA RGB双层实制镜 | in_progress | 沿 Hasegawa 2026 Table 1 的参考文献46。已录入作者摘要核实的D1mm实物与设计NA0.8；焦距、焦斑、效率及MTF待补。ACS 主文与SI直连403，OpenAlex仅DOI/PubMed入口。中山大学[课题组报道](https://phys.sysu.edu.cn/article/221)核到微投影动态成像的说明和同一ACS入口。继续查硕士论文、作者存档及补件，核主镜、厘米级与TiO₂配置。DOI 10.1021/acs.nanolett.2c00486。 |
 | QUALITY-001ae Zhang 2025 RGB高分辨率与重建 | in_progress | Wiley 摘要核 410 μm 实物和 0.775 μm 系统分辨率报告。继续核图号、阈值、处理阶段和光学测量。OpenAlex只给DOI，DataCite精确关联零项，期刊补件直连403。研究 DOI 10.1002/lpor.202500460，封面DOI归同一研究。 |
 | QUALITY-001af Li 2024 校正球差的高NA离散RGB | done | 0.3.27 经 PR #134/c7b54f1、Pages 44293871331 上线。280项测试、12文件一致，独立无头Chrome通过40行、13配置、三处实测焦位及两篇材料往返。逐频MTF、原始PSF、未标逐色焦位和场点待补。见[本批核验](RGB_APLANATIC_REVIEW_2026-11-18.md)。 |
-| QUALITY-001ag Park 2026 可见光双层混合消色差 | in_progress | 2026年9月Nano Letters，DOI 10.1021/acs.nanolett.6c02688。作者摘要核实双层超表面与折射元件混合成像，SI目录列超透镜MTF及混合镜焦斑。两份期刊PDF及Figshare公开搜索返回403。OpenAlex只列DOI及PubMed；2022同组合作者报告的样机与2026装配配置尚未对齐。继续查作者存档，按校正片与整组定位样机。 |
+| QUALITY-001ag Park 2026 可见光双层混合消色差 | in_progress | 2026年9月Nano Letters，DOI 10.1021/acs.nanolett.6c02688。作者摘要核实双层超表面与折射元件混合成像，SI目录列超透镜MTF及混合镜焦斑。两份期刊PDF及Figshare公开搜索返回403。OpenAlex只列DOI及PubMed；2022同组合作者报告的样机与2026装配配置尚未对齐。公开分区条目记 2025 年升级版材料科学大类二区，暂缓常规收录，保留待复查线索。[公开分区条目](https://www.ais.cn/journal/database/6024) |
 | QUALITY-001ah Wu 2025 宽带混合镜组实测焦差与斜边MTF | done | 0.3.28 经 PR #136/cc281ba、Pages 44297858075 上线，283项测试、12文件一致，独立Chrome核18行8配置、五个主散点和四材料。逐波长焦位、逐频原表和原始边缘图仍待补。见[本批核验](WU_HYBRID_REVIEW_2026-11-18.md)。 |
 | QUALITY-001ai Jeon 2026 灰度纳米模板与OLED近眼 | done | 0.3.29 经 PR #138/dacc200、Pages 44302719186 上线。287项测试、12文件一致，独立Chrome核30行12配置和五个出处。原始PSF/MTF、焦位及归一化细则仍待补。见[核验](JEON_GRAYSCALE_REVIEW_2026-11-18.md)。 |
-| QUALITY-001aj Seong 2026 UV/可见光分组的实制色散对照 | in_progress | DOI 10.1038/s41467-026-74547-2，正式主文、23页SI及PMC清单已取。两只5 mm器件的涂层、波长和PSF须分开，核设计/焦距的性质、实验效率与转换效率协议，及归一化MTF。 |
-| QUALITY-001ak Li 2021 毫米级RGB原文补检 | in_progress | 接续001g，同时把藏于PMC公有对象中的正式主文PDF与旧正文对齐。已取PMC7840120.1.pdf；公有清单未列SI。继续核Figure 3/4成像信息、S3低NA表征和S14模拟。 |
+| QUALITY-001aj Seong 2026 UV/可见光分组的实制色散对照 | done | 0.3.30 经 PR #140/8fae312、Pages 44307956209 上线。14行8配置，保留四谱点焦斑、Strehl、实验效率及作者有效焦距。原始PSF、逐频数表和标定待补。见[核验](SEONG_AND_LI_REVIEW_2026-11-18.md)。 |
+| QUALITY-001ak Li 2021 毫米级RGB原文补检 | done | 0.3.30 经 PR #140/8fae312 上线。补12行6配置，正式PDF、两只镜的标靶与VR/AR已核。S3/S5/S14、逐点焦位及原始PSF/MTF留待后续。见[核验](SEONG_AND_LI_REVIEW_2026-11-18.md)。 |
+| QUALITY-001al Aiello 2019 可见光偏振调焦与轴向消色差 | in_progress | 经典例外。Crossref DOI记录于2026-11-18显示86次引用。已取作者稿，核p4 Fig.3与p5–6 Fig.4，同一40 μm镜在483–620 nm固定偏振与色差校正两种设置均有实测，后续对正式SI、焦位和效率定义。DOI 10.1021/acsphotonics.9b00523。 |
 | QUALITY-002 手机SNR/MTF/色差独立测量 | in_progress | 本机Codex，2026-11-14；先核有型号和协议的SNR及MTF原始研究；外接镜组、场景与处理链不得写进原生模组，PSNR不替代SNR |
 | QUALITY-003 VRAR MTF与色差 | in_progress | 本机Codex，2026-11-14；复核开放PR #69数据及原文，优先MTF/截止频率、颜色/场点/眼位、色差和先进设备独立测量，不能从曲线猜统一单值 |
 | QUALITY-001a 文献器件首批 | done | 4项原始研究/8器件配置/21行，几何、波段、逐谱点焦距/FWHM/Strehl、PSNR及冲突；见[首批核验](QUALITY_BATCH_2026-11-14.md)；PR #72/23fdecb与Pages43571286647实页验收，不关闭父目标 |
