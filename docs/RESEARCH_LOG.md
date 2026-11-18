@@ -843,3 +843,13 @@ Balli 2021 经 [PR #125](https://github.com/SelinLee/lens-evidence-atlas/pull/12
 基线9edb3ea，维持长期目标active。正式SI从PMC取93页，MD5与官方元数据一致，视觉核主Fig.4、SI S26–S29和表S7/S15。S26每镜/物距44个PSF谱点，S28仅41个面板，同一固定面不生成逐点轴向焦距。Drive四个直接目录和GitHub固定版树已查，示例NPY遮挡掩模已核blob与格式，未取得实测PSF或逐频MTF数表。录入三物理镜及其光学/重建/系统估算共306条，累计30篇、1243条。见[核验](YOON_2026_REVIEW_2026-11-18.md)。
 
 本地数据校验、271 个测试和构建均通过。独立无头 Chrome 核了 306 条记录、9 个配置、6 种视口、3 个系统估算散点、逐波长证据、引用往返、CSV 和分享链接。五个网页或元数据入口返回 200，两份 PDF 支持范围读取且文件头匹配。
+
+Yoon 2026 经 [PR #127](https://github.com/SelinLee/lens-evidence-atlas/pull/127) 合并为 a7ce01e2e8ad1271bb656694d37136a42d91b78c。PR 44267190624、主线 44267510876 和 [Pages 44267510878](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44267510878) 均成功。线上 12 文件与本地逐字节一致，devices-data.js SHA256 为 5aa033edd980acec3689f8b5ef06ddf6bb65bc67992ead262ff09cb82f316a29。线上独立无头 Chrome 复核了上述记录、六视口和七个出处，三组完整光路估算散点为 7.03%、5.00%、6.36%。
+
+## 2026-11-18-75 · Hasegawa 2026 毫米级离散RGB实制镜
+
+根据新近发表的器件与实测结果纳入。对照索引的期刊PDF原文文字及作者机构公开复刊图，录一枚实物的15条记录和3个测量配置。三色激光和卤素灯/滤片的焦位按光路留证，焦差统一与原文5.05mm参考面相减并标本库计算。保留x向FWHM、作者Strehl、MTF图和两类分母明确的功率比。未取得出版社PDF字节、SI及原始可复算数据，网络状态与证据缺口见[核验](HASEGAWA_2026_REVIEW_2026-11-18.md)。
+
+本地校验、273 个测试和构建通过。独立无头 Chrome 核对 15 条记录、3 个配置、6 个轴向焦差坐标、两类功率比、可见光筛选、引用往返、CSV 和六种视口。两个作者机构链接返回 200 且哈希一致，两个出版社路径返回 403。
+
+沿 Yoon 2026 参考文献 26 开始 Bayati 的可见光 EDOF 研究。UW 作者网站的期刊提前上线版 PDF 返回 200，1,953,528 字节，SHA256 为 d343835cb10b9c27dd9acc3c3b769acd20b9cdde5074fc7affdbea789e59c0d4。PMC 正式版对象目录返回 200、41 项、目录完整。初核 Fig. 2 MTF 横轴以 560 cycles/mm 归一，§5.2 的焦区半径取最小 FWHM 三倍，分母为入射到超透镜的总功率。Table 1 的 SSIM 属模拟图像恢复，图和数表待复核后入库。[DOI](https://doi.org/10.1515/nanoph-2021-0431) · [UW 作者组 PDF](https://labs.ece.uw.edu/amlab/Papers_Journals/Elyas_Raphael_Inverse_Design_2D.pdf)

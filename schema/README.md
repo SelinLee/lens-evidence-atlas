@@ -73,3 +73,5 @@
 `mtf_curve.mtf_kind: measured_psf_radial_average`用于作者由实测PSF计算的径向平均MTF。填写物方共轭、固定评价面、lp/mm及实际有独立MTF面板的谱点。某波长只有PSF面板时，`individual_curve_panel=false`，独立MTF面板列表为空。像方频率参考面、物方采样或零频归一化未知时分别留空。`reconstructed_slanted_edge`带重建性质和相机的RGB颜色通道。单值波长字段留空，通道中心有出处时另存为滤片配置。
 
 `estimated_system_focal_efficiency_pct`、`estimated_detected_throughput_pct`和`spectrally_weighted_mtf_area_lpmm`保存作者完整光路的带内计算估计。须标明`basis: model`、作者计算与光路估算协议。面积保留空间频率积分的量纲 lp/mm。它们与逐λ实测效率、普通作者平均效率及MTF截止频率各用专用字段。图像PSNR、SSIM和LPIPS保留原采集或重建、参考图、配准与光度归一化及统计样本。
+
+`optical_transmittance_pct`保存作者根据总透过功率与口径内入射功率计算的百分比，分母为`incident_through_aperture`。`focusing_efficiency_transmitted_pct`保存焦区积分功率与总透过功率的百分比，分母为`transmitted_power`。两个字段均要求实测谱点、`basis: derived_from_measurement`、`calculation_origin: authors`及`efficiency_protocol`。焦区长度尺度和形状分别记录，半径或直径未明时保留缺口。
