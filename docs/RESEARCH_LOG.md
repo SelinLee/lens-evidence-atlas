@@ -1041,3 +1041,9 @@ PR #162 合入 9a79c02fd1738cfba9b04d5504d6ed2cf1cc9b76。PR 校验 44365028956�
 ## 2026-11-19-108 · Wang 2026 贝塞尔阵列的焦斑和重建分辨率
 
 4 mm 主镜 NA 0.067，八只同版图旋转的 3 mm 离轴元件按实测配置类型归组。532 nm 的 F0=30 mm 为锥面设计参数，FB=21 mm 是固定光学工作面。作者印轴上 R/G/B 径向 FWHM 为 2.89／2.87／2.85 μm，三通道中心波长留空。核验 Fig. 5 的 12 个离轴方向条件，K1/K2 角度以实验图内印字为索引并保留 Fig. 3d 的互换。Fig. 3b 的约 1 μm 和低于 0.1 μm 分属未校正及校正模型。Fig. 7 的三项定量可辨标靶属于重建，S4 的全局 PSF 图、S6 的光路条件和 S7 五个物距各自溯源。补件无数表附件，作者声明数据可合理请求。新增 40 条、6 配置，累计 50 篇、304 配置、1869 条。[本批核验](WANG_METAAXICON_REVIEW_2026-11-19.md)
+
+## 2026-11-19-109 · Wang 2026 上线与 Zang 2024 热成像接续
+
+PR #164 合入 263a6e53d1179bef1920e8eff31ae3ee3e437059。PR 校验 44368395177、主线 44368699019、Pages 44368699026 成功。316 项测试通过，线上 12 文件与本机构建逐字节一致，devices-data.js SHA256 为 3c89654ce20f275274c1fc9f75b0b27b1ac68882f59230be87a6ef68044ec62a。独立无头 Chrome 核 6 配置、40 条、4000 μm 口径的三个 RGB 宽度、0°/4° 的三项重建角分辨率、图点进表、引用往返、CSV 和六视口。颜色波长轴无额外数值点，可见光筛选保留本篇 40 条、全库 41 篇 1558 条。七个来源均为 200，正式主文和补件下载哈希与样本一致。[PR #164](https://github.com/SelinLee/lens-evidence-atlas/pull/164) · [Pages 部署](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44368699026)
+
+接续核 Zang 等 2024 年 ACS Nano 原作 10.1021/acsnano.4c12546。Crossref 确认 2024-11-26 正式上线。公开分区条目为 2025 年 3 月升级版材料科学大类一区。原作者摘要报告覆盖 8–14 μm、30° 视场、入口瞳至传感器光路 13.6 mm。补件入口名为 nn4c12546_si_001.pdf，索引列 Fig. S8 倾斜光 MTF、S14 单色实验、S16 过滤光的 USAF 靶。期刊正式正文和补件的无头 Chrome 请求为 403。PolyU 馆藏条目为 200，当前只标主文 DOI；DataCite 精确关联及题名查询均零项，OpenAlex 只给 DOI 和 PubMed。继续追查原始图、实测谱点和 MTF 归属。会话目标保持 active。[期刊原作](https://doi.org/10.1021/acsnano.4c12546) · [补件索引](https://pubs.acs.org/doi/10.1021/acsnano.4c12546?goto=supporting-info) · [PolyU 书目](https://research.polyu.edu.hk/en/publications/inverse-design-of-aberration-corrected-hybrid-metalenses-for-larg/)
