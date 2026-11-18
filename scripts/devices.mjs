@@ -37,6 +37,21 @@ export function validateDevices(d,catalog){
  }
  const designFocal=r.values.design_focal_um;
  const mtfCurve=r.values.mtf_curve;
+ const spectralMtf10=r.values.spectral_mean_mtf10_cycles_mm;
+ if(Number.isFinite(spectralMtf10?.value)){
+  const waves=spectralMtf10.sample_wavelengths_nm;
+  if(spectralMtf10.value<=0||spectralMtf10.basis!=='derived_from_measurement'||spectralMtf10.calculation_origin!=='authors'||
+   spectralMtf10.threshold_fraction!==.1||spectralMtf10.frequency_unit!=='cycles/mm'||
+   !Array.isArray(waves)||waves.length<2||new Set(waves).size!==waves.length||waves.some(w=>!Number.isFinite(w)||w<=0)||
+   Number.isFinite(r.values.wavelength_nm?.value)||mtfCurve?.mtf_kind!=='from_measured_psf_spectral_mean'||
+   !(r.values.psf_protocol?.evaluation_plane_um>0))errors.push('spectral mean PSF MTF10 context');
+ }
+ const diffractionEfficiency=r.values.diffraction_efficiency_mean_pct;
+ if(Number.isFinite(diffractionEfficiency?.value)&&(
+  diffractionEfficiency.value<0||diffractionEfficiency.value>100||diffractionEfficiency.basis!=='derived_from_measurement'||
+  diffractionEfficiency.calculation_origin!=='authors'||diffractionEfficiency.statistic!=='mean_across_wavelengths_and_settings'||
+  Number.isFinite(r.values.wavelength_nm?.value)||!diffractionEfficiency.denominator||
+  diffractionEfficiency.denominator!==r.values.efficiency_protocol?.denominator||!r.values.efficiency_protocol?.value))errors.push('diffraction efficiency mean context');
  if(mtfCurve?.mtf_kind==='measured_psf_radial_average'){
   const psf=r.values.psf_protocol;
   const waves=mtfCurve.sample_wavelengths_nm;
