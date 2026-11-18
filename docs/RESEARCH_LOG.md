@@ -1021,3 +1021,9 @@ PR #158 合入 cae5f5ee05858a3382e1011c673a6b744532cdd9。PR 校验 44356115144�
 ## 2026-11-19-104 · Arbabi 2016 双波长有限共轭像位与焦区效率
 
 校方正式版和补件的 MD5 对读一致。两只 300 μm、NA 0.46／0.29 的设计近轴焦距为 286／495 μm，有限共轭设计像距为 400／1000 μm。SI S2a 的 915 nm 峰位为 980 μm，本库计算相对同一设计像面为 −20 μm。Fig.4 实测高 NA x 向 FWHM 约 1.9／2.9 μm，实测功率比高 NA 为 22%／65%、低 NA 为 25%／72%。915 nm 物理焦面针孔与光纤输出分母，1550 nm 像方虹膜与同光路无虹膜的光纤端面分母分别保存。75 μm 缩比和理想相位掩模数值独立，实轴步长 4 μm 与图示插值 2 μm 区分。新增 12 条、5 配置，累计 48 篇、295 配置、1796 条。成对实测峰位、PSF/MTF 原始数据待补。[本批核验](ARBABI_METAMOLECULE_REVIEW_2026-11-19.md)
+
+## 2026-11-19-105 · Arbabi 2016 上线与 Sawant 2021 折超混合接续
+
+PR #160 合入 c6d96cee22eede4ad20fdf857c0c6b33532f1a56。PR 校验 44360700240、主线校验 44360980744 和 Pages 44360980765 均通过，312 项测试通过。线上 12 文件与本机构建逐字节一致，devices-data.js 的 SHA256 为 8a307a1d6168cbb5aca8a70f065b9014bc6199865b31f89e78f0f7e35a566cf2。独立无头 Chrome 核 12 条、5 配置、915 nm 的 980 μm 和 −20 μm 散点、两组近轴焦距与设计像距、四个实测效率散点、引用往返、CSV 与六视口。仅可见光筛选后本篇零条，全库仍为 39 篇、1487 条。Caltech 正式版与补件的文件头和长度均经 206 核验，馆藏、Crossref、DataCite 均为 200。Figshare 补件展示页线上响应为 202、空正文，等价 PDF 已由 Caltech 取得并核对 MD5。[PR #160](https://github.com/SelinLee/lens-evidence-atlas/pull/160) · [Pages 部署](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44360980765)
+
+接续 Sawant 等 2021 年 Optica（DOI 10.1364/OPTICA.434040），2026-11-19 查 Crossref 92 次。沿 Zhang 2025 的参考文献定位，主文 Fig. 2b–c 已视觉复核。LCAM 的直径 1 cm 超表面配平凸镜，550–800 nm 轴扫每 25 nm 一个测点。正文第 1408 页使用 600 和 800 nm 的焦位差，相对裸折射镜报告至少 80% 抑制。Fig. S5 的 MTF 由 LSAM 实测 PSF 计算，属于独立的球差校正配置。主文内链确认补件 10.6084/m9.figshare.16613320，DataCite 标识文件 5436264.pdf。HAL API 只列正文稿；Figshare 元数据接口及条目页返回 403，继续核补件原件及原始测量入口。会话目标保持 active。[正式主文](https://research.chalmers.se/publication/527384/file/527384_Fulltext.pdf#page=5) · [Crossref](https://api.crossref.org/works/10.1364/optica.434040) · [补件元数据](https://api.datacite.org/dois/10.6084/m9.figshare.16613320)
