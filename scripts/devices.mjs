@@ -250,11 +250,17 @@ export function validateDevices(d,catalog){
   const low=r.values.lambda_min_nm?.value,high=r.values.lambda_max_nm?.value;
   const listedWaves=Array.isArray(waves)&&waves.length>=2&&new Set(waves).size===waves.length&&waves.every(w=>Number.isFinite(w)&&w>0);
   const boundedSample=waves===null&&Number.isFinite(low)&&Number.isFinite(high)&&low>0&&high>low&&
-   variation.spectral_sample_scope==='author_reported_range_only'&&variation.statistic==='author_reported_band_variation';
+   variation.spectral_sample_scope==='author_reported_range_only';
+  const authorCalculation=variation.calculation_origin==='authors'&&(
+   variation.statistic==='author_reported_band_variation'&&(listedWaves||boundedSample)||
+   variation.statistic==='maximum_pairwise_difference'&&listedWaves);
+  const bounds=variation.author_reported_focal_bounds_um;
+  const widthFromPublishedBounds=metric==='focus_variation_um'&&variation.calculation_origin==='atlas'&&
+   variation.statistic==='range_width_from_reported_bounds'&&boundedSample&&Array.isArray(bounds)&&
+   bounds.length===2&&bounds.every(Number.isFinite)&&bounds[0]>0&&bounds[1]>=bounds[0]&&
+   variation.value===bounds[1]-bounds[0];
   if(variation.value<0||Number.isFinite(r.values.wavelength_nm?.value)||typeof protocol!=='string'||!protocol.trim()||
-   !['author_reported_band_variation','maximum_pairwise_difference'].includes(variation.statistic)||
-   !(listedWaves||boundedSample)||
-   variation.calculation_origin!=='authors'||variation.basis!=='derived_from_measurement')errors.push('focal variation context');
+   !(authorCalculation||widthFromPublishedBounds)||variation.basis!=='derived_from_measurement')errors.push('focal variation context');
   if(metric==='focus_variation_pct'&&(!variation.denominator||variation.reference_wavelength_nm!==null&&!(listedWaves&&waves.includes(variation.reference_wavelength_nm))||variation.reference_focal_um!==null&&!(variation.reference_focal_um>0)))errors.push('focal variation percent reference');
  }
  }
