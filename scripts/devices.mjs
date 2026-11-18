@@ -190,6 +190,16 @@ export function validateDevices(d,catalog){
    !((contrast.processing_stage==='captured'&&contrast.basis==='derived_from_measurement')||
      (contrast.processing_stage==='deconvolved'&&contrast.basis==='reconstruction')))errors.push('system line-pair contrast context');
  }
+ const systemMtf=r.values.system_slanted_edge_mtf,mtfFrequency=r.values.mtf_spatial_frequency_lpmm;
+ if(Number.isFinite(systemMtf?.value)&&(
+  systemMtf.value<0||systemMtf.value>1||systemMtf.basis!=='derived_from_measurement'||systemMtf.calculation_origin!=='authors'||
+  mtfCurve?.mtf_kind!=='measured_polychromatic_slanted_edge'||mtfCurve.basis!=='derived_from_measurement'||
+  mtfCurve.processing_stage!=='captured'||mtfCurve.frequency_unit!=='lp/mm'||
+  mtfFrequency?.basis!=='reported_configuration'||!Number.isFinite(mtfFrequency.value)||mtfFrequency.value<=0||
+  !['whole_field_mean','maximum_measured_field'].includes(systemMtf.field_statistic)||
+  (systemMtf.field_angle_deg!==null&&(!Number.isFinite(systemMtf.field_angle_deg)||Math.abs(systemMtf.field_angle_deg)>90))||
+  !['sagittal','tangential','combined','unspecified'].includes(mtfCurve.direction_aggregation)||
+  Number.isFinite(r.values.wavelength_nm?.value)))errors.push('measured slanted-edge MTF context');
  for(const k of ['focus_error_um','focus_error_pct']){
   const v=r.values[k];if(!Number.isFinite(v?.value))continue;
   const waves=v.sample_wavelengths_nm,ref=v.reference_wavelength_nm;
@@ -227,11 +237,15 @@ export function validateDevices(d,catalog){
  const variation=r.values[metric];
  if(Number.isFinite(variation?.value)){
   const waves=variation.sample_wavelengths_nm,protocol=r.values.focus_variation_protocol?.value;
+  const low=r.values.lambda_min_nm?.value,high=r.values.lambda_max_nm?.value;
+  const listedWaves=Array.isArray(waves)&&waves.length>=2&&new Set(waves).size===waves.length&&waves.every(w=>Number.isFinite(w)&&w>0);
+  const boundedSample=waves===null&&Number.isFinite(low)&&Number.isFinite(high)&&low>0&&high>low&&
+   variation.spectral_sample_scope==='author_reported_range_only'&&variation.statistic==='author_reported_band_variation';
   if(variation.value<0||Number.isFinite(r.values.wavelength_nm?.value)||typeof protocol!=='string'||!protocol.trim()||
    !['author_reported_band_variation','maximum_pairwise_difference'].includes(variation.statistic)||
-   !Array.isArray(waves)||waves.length<2||new Set(waves).size!==waves.length||!waves.every(w=>Number.isFinite(w)&&w>0)||
+   !(listedWaves||boundedSample)||
    variation.calculation_origin!=='authors'||variation.basis!=='derived_from_measurement')errors.push('focal variation context');
-  if(metric==='focus_variation_pct'&&(!variation.denominator||variation.reference_wavelength_nm!==null&&(!Number.isFinite(variation.reference_wavelength_nm)||!waves.includes(variation.reference_wavelength_nm))||variation.reference_focal_um!==null&&!(variation.reference_focal_um>0)))errors.push('focal variation percent reference');
+  if(metric==='focus_variation_pct'&&(!variation.denominator||variation.reference_wavelength_nm!==null&&!(listedWaves&&waves.includes(variation.reference_wavelength_nm))||variation.reference_focal_um!==null&&!(variation.reference_focal_um>0)))errors.push('focal variation percent reference');
  }
  }
  }

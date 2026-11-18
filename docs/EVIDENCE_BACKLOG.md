@@ -50,6 +50,7 @@
 | QUALITY-001ae Zhang 2025 RGB高分辨率与重建 | in_progress | Wiley 摘要核 410 μm 实物和 0.775 μm 系统分辨率报告。继续核图号、阈值、处理阶段和光学测量。OpenAlex只给DOI，DataCite精确关联零项，期刊补件直连403。研究 DOI 10.1002/lpor.202500460，封面DOI归同一研究。 |
 | QUALITY-001af Li 2024 校正球差的高NA离散RGB | done | 0.3.27 经 PR #134/c7b54f1、Pages 44293871331 上线。280项测试、12文件一致，独立无头Chrome通过40行、13配置、三处实测焦位及两篇材料往返。逐频MTF、原始PSF、未标逐色焦位和场点待补。见[本批核验](RGB_APLANATIC_REVIEW_2026-11-18.md)。 |
 | QUALITY-001ag Park 2026 可见光双层混合消色差 | in_progress | 2026年9月Nano Letters，DOI 10.1021/acs.nanolett.6c02688。作者摘要核实双层超表面与折射元件混合成像，SI目录列超透镜MTF及混合镜焦斑。两份期刊PDF直连403，继续查作者存档，按裸元件与整组定位样机。 |
+| QUALITY-001ah Wu 2025 宽带混合镜组实测焦差与斜边MTF | in_progress | 2026-11-18，分列5.79 mm校正片和F/2整组，核主文Fig.4与官方补件。460–656 nm约50 μm及两频率四个斜边值，逐点/逐频原表和原始图待补。见[本批核验](WU_HYBRID_REVIEW_2026-11-18.md)。 |
 | QUALITY-002 手机SNR/MTF/色差独立测量 | in_progress | 本机Codex，2026-11-14；先核有型号和协议的SNR及MTF原始研究；外接镜组、场景与处理链不得写进原生模组，PSNR不替代SNR |
 | QUALITY-003 VRAR MTF与色差 | in_progress | 本机Codex，2026-11-14；复核开放PR #69数据及原文，优先MTF/截止频率、颜色/场点/眼位、色差和先进设备独立测量，不能从曲线猜统一单值 |
 | QUALITY-001a 文献器件首批 | done | 4项原始研究/8器件配置/21行，几何、波段、逐谱点焦距/FWHM/Strehl、PSNR及冲突；见[首批核验](QUALITY_BATCH_2026-11-14.md)；PR #72/23fdecb与Pages43571286647实页验收，不关闭父目标 |
