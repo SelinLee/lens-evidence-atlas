@@ -905,8 +905,8 @@
       "id": "hasegawa_tsf_2026",
       "title": "Hasegawa et al. (2026), Millimeter-Scale Single-Layer RGB Achromatic Metalens via Time-Simultaneity-Free Design",
       "url": "https://doi.org/10.1002/lpor.72174",
-      "scope": "Laser & Photonics Reviews, e72174。正式主文§2.4–2.6、§4.3、Figs.4–6。Data Availability 指向合理请求；已检索的开放索引未列单独公开数表。",
-      "checked_on": "2026-11-18",
+      "scope": "Laser & Photonics Reviews, e72174。正式主文 §§2.2–2.6、§4.3、Figs. 2–6。30 μm 缩比模型与 1 mm 柱面模型是同文计算；1 mm 圆形镜片的测量另归实验配置。Data Availability 指向合理请求。补件文件和逐点数据尚未取得。",
+      "checked_on": "2026-11-19",
       "doi": "10.1002/lpor.72174",
       "kind": "peer_reviewed_paper"
     },
@@ -914,8 +914,8 @@
       "id": "hasegawa_tsf_pdf_2026",
       "title": "Wiley 正式主文 PDF · Figs. 4–6 & Experimental Section",
       "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/lpor.72174",
-      "scope": "通过索引的14页期刊PDF文本核对正文印字及图注。2026-11-18独立无头直取403，未取得PDF字节。机构复刊图核对MTF坐标及方向。",
-      "checked_on": "2026-11-18",
+      "scope": "对读期刊正式版索引的 14 页 PDF 正文与图注。复核 pp.3–7 §§2.2–2.4 Figs. 2–4 的 30 μm 缩比模型、1 mm 柱面模拟、PSF 型 Strehl 和圆形实物。p.9、p.14 给补件线索。独立无头 Chrome 直取仍返回 403。",
+      "checked_on": "2026-11-19",
       "publication_source": "hasegawa_tsf_2026",
       "kind": "peer_reviewed_paper"
     },
@@ -4870,6 +4870,40 @@
           "axis_bounds": {
             "min": 0
           }
+        },
+        {
+          "id": "simulated_phase_strehl",
+          "label": "相位误差模拟 Strehl (1)",
+          "definition": "作者从空间相位量化误差估算的单波长峰强相对理想峰强的比值。",
+          "conditions": "模拟口径或横向尺度、NA、波长、相位误差定义、优化状态及参考模型。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0,
+            "max": 1
+          },
+          "definition_refs": [
+            {
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c、e"
+            }
+          ]
+        },
+        {
+          "id": "simulated_psf_strehl",
+          "label": "焦斑剖面模拟 Strehl (1)",
+          "definition": "作者把模拟和理想衍射剖面在指定窗口内等积分归一后比较峰强的无量纲比值。",
+          "conditions": "模拟波长、计算方法、剖面方向、归一化积分窗及理想参考。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0,
+            "max": 1
+          },
+          "definition_refs": [
+            {
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.7 §2.4 模拟 S_PSF 段；p.6 Fig. 3c"
+            }
+          ]
         },
         {
           "id": "strehl",
@@ -81226,9 +81260,11 @@
               "value": 2.75,
               "source": "hasegawa_tsf_pdf_2026",
               "location": "p7 §2.4 Fig.4c横虚线、Fig.4d 左列对应正文",
-              "note": "实测焦斑横向x剖面的半高全宽；Y向宽度待核。",
+              "note": "实测焦斑横向x剖面的半高全宽；Y向宽度待核。 对应正文给同谱点的理论衍射极限宽度 2.25 μm。",
               "basis": "measured",
-              "checked_on": "2026-11-18"
+              "checked_on": "2026-11-19",
+              "theoretical_reference_fwhm_um": 2.25,
+              "theoretical_reference_location": "p.7 §2.4 Fig. 4d 实测与理论宽度段"
             },
             "strehl": {
               "value": 0.8,
@@ -81420,9 +81456,11 @@
               "value": 2.65,
               "source": "hasegawa_tsf_pdf_2026",
               "location": "p7 §2.4 Fig.4c横虚线、Fig.4d 中列对应正文",
-              "note": "实测焦斑横向x剖面的半高全宽；Y向宽度待核。",
+              "note": "实测焦斑横向x剖面的半高全宽；Y向宽度待核。 对应正文给同谱点的理论衍射极限宽度 2.64 μm。",
               "basis": "measured",
-              "checked_on": "2026-11-18"
+              "checked_on": "2026-11-19",
+              "theoretical_reference_fwhm_um": 2.64,
+              "theoretical_reference_location": "p.7 §2.4 Fig. 4d 实测与理论宽度段"
             },
             "strehl": {
               "value": 0.97,
@@ -81614,9 +81652,11 @@
               "value": 3.39,
               "source": "hasegawa_tsf_pdf_2026",
               "location": "p7 §2.4 Fig.4c横虚线、Fig.4d 右列对应正文",
-              "note": "实测焦斑横向x剖面的半高全宽；Y向宽度待核。",
+              "note": "实测焦斑横向x剖面的半高全宽；Y向宽度待核。 对应正文给同谱点的理论衍射极限宽度 3.05 μm。",
               "basis": "measured",
-              "checked_on": "2026-11-18"
+              "checked_on": "2026-11-19",
+              "theoretical_reference_fwhm_um": 3.05,
+              "theoretical_reference_location": "p.7 §2.4 Fig. 4d 实测与理论宽度段"
             },
             "strehl": {
               "value": 0.95,
@@ -82889,6 +82929,492 @@
                 "hasegawa_tsf_tuat_2026"
               ],
               "object_distance_m": 0.02
+            }
+          }
+        },
+        {
+          "id": "hasegawa2026_model30_optimized_summary",
+          "model": "Hasegawa 2026 · 30 μm 优化模型 · RGB 汇总",
+          "module": "",
+          "variant": "论文作者模拟",
+          "evidence_type": "study",
+          "study_id": "hasegawa2026",
+          "specimen_id": "model30_optimized",
+          "measurement_scope": "作者为仿真缩比至 30 μm，展示相位 DC 偏置优化后的三色焦距。模型保持同文研究编号。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "pp.4–5 §2.2 Fig. 2d及对应段",
+              "note": "原文设定的缩比模型口径。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "pp.4–5 §2.2 Fig. 2d及对应段",
+              "note": "作者模拟名义 NA。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "pp.4–5 §2.2 Fig. 2d及对应段",
+              "note": "作者以 150 ± 6 μm 汇总优化后三个设计波长的模拟焦距。未定义 ± 的统计量，也未列逐色焦距。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "display": "150 ± 6 μm（RGB 模拟汇总）",
+              "calculation_origin": "authors",
+              "reported_center_um": 150,
+              "reported_spread_um": 6,
+              "spread_definition": null,
+              "sample_wavelengths_nm": [
+                450,
+                532,
+                633
+              ]
+            },
+            "psf_protocol": {
+              "value": "原文归一化强度模拟，镜片位于 z = 0；三色轴向聚焦",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "pp.4–5 §2.2 Fig. 2d及对应段",
+              "note": "白色虚线代表各模拟焦点。Fig. 2d 给出优化前后照明对比，本文仅录作者印出的优化后三色汇总。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "dc_bias_optimized": true,
+              "sample_wavelengths_nm": [
+                450,
+                532,
+                633
+              ],
+              "reference_plane_description": "model lens plane z = 0"
+            }
+          },
+          "visible_light_use": true
+        },
+        {
+          "id": "hasegawa2026_model30_polarization_summary",
+          "model": "Hasegawa 2026 · 30 μm 模型 · 偏振评估",
+          "module": "",
+          "variant": "论文作者模拟",
+          "evidence_type": "study",
+          "study_id": "hasegawa2026",
+          "specimen_id": "model30_polarization",
+          "measurement_scope": "§2.4 作者的 30 μm RGB 模型偏振评估汇总。口径与 Fig. 2d 相同；有待补表确认两处采用的相位方案、谱点和条件。",
+          "values": {
+            "diameter_um": {
+              "value": 30,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.9 §2.4 Fig. S2/Table S3 对应段",
+              "note": "偏振模拟摘要明确报告的模型口径。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "x、y、LCP、RCP",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.9 §2.4 Fig. S2/Table S3 对应段",
+              "note": "作者进行的四种偏振数值评估。逐偏振谱点、峰位和对应效率待原表核实。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": null,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.9 §2.4 最末两段，Fig. S2/Table S3 索引",
+              "note": "原文概述 30 μm 模型的 x、y、左圆和右圆入射下效率大于 80%，偏振依赖低于 4%。补件与逐谱点分派、分母、焦圈及偏振波动统计式仍待核。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "display": ">80%（作者四偏振模拟概述）",
+              "calculation_origin": "authors",
+              "bound": {
+                "operator": "gt",
+                "value": 80
+              }
+            }
+          },
+          "visible_light_use": true
+        },
+        {
+          "id": "hasegawa2026_cyl1000_before_450",
+          "model": "Hasegawa 2026 · 1 mm 柱面模型 · 优化前 · 450 nm",
+          "module": "",
+          "variant": "论文作者模拟",
+          "evidence_type": "study",
+          "study_id": "hasegawa2026",
+          "specimen_id": "cylindrical1000_before",
+          "measurement_scope": "§2.3 由沿 x 单行元胞近似得到的柱面计算。焦斑剖面、相位均方误差和圆形实物记录分别归属。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c",
+              "note": "模型沿 x 轴取单行元胞；正文将该横向尺度写作 1 mm。以柱面横向尺度记录。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c、e",
+              "note": "1 mm 柱面模型的标称 NA。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 450,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3 Fig. 3c；p.6 Fig. 3c 图注",
+              "note": "同一几何模型对应的作者模拟设计波长。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "柱面单行元胞，Rayleigh–Sommerfeld 焦面剖面，DC 偏置优化前",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c、e",
+              "note": "理想相位的计算剖面作参考。原文给出焦面强度和相位误差推导，绝对模拟评价面 z 与逐点峰值尚未取得源表。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "simulation_kind": "rayleigh_sommerfeld",
+              "direction": "x",
+              "dc_bias_optimized": false,
+              "evaluation_plane_um": null
+            },
+            "simulated_phase_strehl": {
+              "value": 0.74,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c、e；λ_B 优化前",
+              "note": "同波长空间相位量化误差估计的峰强衰减。原文以 Sφ = exp(−MSEλ) 表达，理想相位为基准。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_phase_profile"
+            }
+          }
+        },
+        {
+          "id": "hasegawa2026_cyl1000_before_532",
+          "model": "Hasegawa 2026 · 1 mm 柱面模型 · 优化前 · 532 nm",
+          "module": "",
+          "variant": "论文作者模拟",
+          "evidence_type": "study",
+          "study_id": "hasegawa2026",
+          "specimen_id": "cylindrical1000_before",
+          "measurement_scope": "§2.3 由沿 x 单行元胞近似得到的柱面计算。焦斑剖面、相位均方误差和圆形实物记录分别归属。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c",
+              "note": "模型沿 x 轴取单行元胞；正文将该横向尺度写作 1 mm。以柱面横向尺度记录。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c、e",
+              "note": "1 mm 柱面模型的标称 NA。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3 Fig. 3c；p.6 Fig. 3c 图注",
+              "note": "同一几何模型对应的作者模拟设计波长。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "柱面单行元胞，Rayleigh–Sommerfeld 焦面剖面，DC 偏置优化前",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c、e",
+              "note": "理想相位的计算剖面作参考。原文给出焦面强度和相位误差推导，绝对模拟评价面 z 与逐点峰值尚未取得源表。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "simulation_kind": "rayleigh_sommerfeld",
+              "direction": "x",
+              "dc_bias_optimized": false,
+              "evaluation_plane_um": null
+            },
+            "simulated_phase_strehl": {
+              "value": 0.53,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c、e；λ_G 优化前",
+              "note": "同波长空间相位量化误差估计的峰强衰减。原文以 Sφ = exp(−MSEλ) 表达，理想相位为基准。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_phase_profile"
+            }
+          }
+        },
+        {
+          "id": "hasegawa2026_cyl1000_before_633",
+          "model": "Hasegawa 2026 · 1 mm 柱面模型 · 优化前 · 633 nm",
+          "module": "",
+          "variant": "论文作者模拟",
+          "evidence_type": "study",
+          "study_id": "hasegawa2026",
+          "specimen_id": "cylindrical1000_before",
+          "measurement_scope": "§2.3 由沿 x 单行元胞近似得到的柱面计算。焦斑剖面、相位均方误差和圆形实物记录分别归属。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c",
+              "note": "模型沿 x 轴取单行元胞；正文将该横向尺度写作 1 mm。以柱面横向尺度记录。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c、e",
+              "note": "1 mm 柱面模型的标称 NA。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 633,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3 Fig. 3c；p.6 Fig. 3c 图注",
+              "note": "同一几何模型对应的作者模拟设计波长。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "柱面单行元胞，Rayleigh–Sommerfeld 焦面剖面，DC 偏置优化前",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c、e",
+              "note": "理想相位的计算剖面作参考。原文给出焦面强度和相位误差推导，绝对模拟评价面 z 与逐点峰值尚未取得源表。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "simulation_kind": "rayleigh_sommerfeld",
+              "direction": "x",
+              "dc_bias_optimized": false,
+              "evaluation_plane_um": null
+            },
+            "simulated_phase_strehl": {
+              "value": 0.33,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c、e；λ_R 优化前",
+              "note": "同波长空间相位量化误差估计的峰强衰减。原文以 Sφ = exp(−MSEλ) 表达，理想相位为基准。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_phase_profile"
+            }
+          }
+        },
+        {
+          "id": "hasegawa2026_cyl1000_after_450",
+          "model": "Hasegawa 2026 · 1 mm 柱面模型 · 优化后 · 450 nm",
+          "module": "",
+          "variant": "论文作者模拟",
+          "evidence_type": "study",
+          "study_id": "hasegawa2026",
+          "specimen_id": "cylindrical1000_after",
+          "measurement_scope": "§2.3 由沿 x 单行元胞近似得到的柱面计算。焦斑剖面、相位均方误差和圆形实物记录分别归属。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c",
+              "note": "模型沿 x 轴取单行元胞；正文将该横向尺度写作 1 mm。以柱面横向尺度记录。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c、e",
+              "note": "1 mm 柱面模型的标称 NA。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 450,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3 Fig. 3c；p.6 Fig. 3c 图注",
+              "note": "同一几何模型对应的作者模拟设计波长。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "柱面单行元胞，Rayleigh–Sommerfeld 焦面剖面，DC 偏置优化后",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c、e",
+              "note": "理想相位的计算剖面作参考。原文给出焦面强度和相位误差推导，绝对模拟评价面 z 与逐点峰值尚未取得源表。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "simulation_kind": "rayleigh_sommerfeld",
+              "direction": "x",
+              "dc_bias_optimized": true,
+              "evaluation_plane_um": null
+            },
+            "simulated_phase_strehl": {
+              "value": 0.78,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c、e；λ_B 优化后",
+              "note": "同波长空间相位量化误差估计的峰强衰减。原文以 Sφ = exp(−MSEλ) 表达，理想相位为基准。三色 Sφ 乘积约 0.26，Fig. 3b 同尺寸的 Maréchal 相位效率为 0.23。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_phase_profile"
+            },
+            "simulated_psf_strehl": {
+              "value": 0.98,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.7 §2.4 模拟 S_PSF 段；p.6 Fig. 3c；λ_B",
+              "note": "沿用 §2.4 同一评价，将模拟焦斑和理想剖面各自在 50 μm 窗中等积分归一后比峰强。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_diffraction_limited_profile",
+              "power_normalization_window_um": 50
+            }
+          }
+        },
+        {
+          "id": "hasegawa2026_cyl1000_after_532",
+          "model": "Hasegawa 2026 · 1 mm 柱面模型 · 优化后 · 532 nm",
+          "module": "",
+          "variant": "论文作者模拟",
+          "evidence_type": "study",
+          "study_id": "hasegawa2026",
+          "specimen_id": "cylindrical1000_after",
+          "measurement_scope": "§2.3 由沿 x 单行元胞近似得到的柱面计算。焦斑剖面、相位均方误差和圆形实物记录分别归属。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c",
+              "note": "模型沿 x 轴取单行元胞；正文将该横向尺度写作 1 mm。以柱面横向尺度记录。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c、e",
+              "note": "1 mm 柱面模型的标称 NA。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3 Fig. 3c；p.6 Fig. 3c 图注",
+              "note": "同一几何模型对应的作者模拟设计波长。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "柱面单行元胞，Rayleigh–Sommerfeld 焦面剖面，DC 偏置优化后",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c、e",
+              "note": "理想相位的计算剖面作参考。原文给出焦面强度和相位误差推导，绝对模拟评价面 z 与逐点峰值尚未取得源表。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "simulation_kind": "rayleigh_sommerfeld",
+              "direction": "x",
+              "dc_bias_optimized": true,
+              "evaluation_plane_um": null
+            },
+            "simulated_phase_strehl": {
+              "value": 0.61,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c、e；λ_G 优化后",
+              "note": "同波长空间相位量化误差估计的峰强衰减。原文以 Sφ = exp(−MSEλ) 表达，理想相位为基准。三色 Sφ 乘积约 0.26，Fig. 3b 同尺寸的 Maréchal 相位效率为 0.23。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_phase_profile"
+            },
+            "simulated_psf_strehl": {
+              "value": 0.97,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.7 §2.4 模拟 S_PSF 段；p.6 Fig. 3c；λ_G",
+              "note": "沿用 §2.4 同一评价，将模拟焦斑和理想剖面各自在 50 μm 窗中等积分归一后比峰强。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_diffraction_limited_profile",
+              "power_normalization_window_um": 50
+            }
+          }
+        },
+        {
+          "id": "hasegawa2026_cyl1000_after_633",
+          "model": "Hasegawa 2026 · 1 mm 柱面模型 · 优化后 · 633 nm",
+          "module": "",
+          "variant": "论文作者模拟",
+          "evidence_type": "study",
+          "study_id": "hasegawa2026",
+          "specimen_id": "cylindrical1000_after",
+          "measurement_scope": "§2.3 由沿 x 单行元胞近似得到的柱面计算。焦斑剖面、相位均方误差和圆形实物记录分别归属。",
+          "values": {
+            "cylindrical_aperture_width_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c",
+              "note": "模型沿 x 轴取单行元胞；正文将该横向尺度写作 1 mm。以柱面横向尺度记录。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c、e",
+              "note": "1 mm 柱面模型的标称 NA。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 633,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3 Fig. 3c；p.6 Fig. 3c 图注",
+              "note": "同一几何模型对应的作者模拟设计波长。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "柱面单行元胞，Rayleigh–Sommerfeld 焦面剖面，DC 偏置优化后",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c、e",
+              "note": "理想相位的计算剖面作参考。原文给出焦面强度和相位误差推导，绝对模拟评价面 z 与逐点峰值尚未取得源表。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "simulation_kind": "rayleigh_sommerfeld",
+              "direction": "x",
+              "dc_bias_optimized": true,
+              "evaluation_plane_um": null
+            },
+            "simulated_phase_strehl": {
+              "value": 0.54,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.5 §2.3；p.6 Fig. 3c、e；λ_R 优化后",
+              "note": "同波长空间相位量化误差估计的峰强衰减。原文以 Sφ = exp(−MSEλ) 表达，理想相位为基准。三色 Sφ 乘积约 0.26，Fig. 3b 同尺寸的 Maréchal 相位效率为 0.23。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_phase_profile"
+            },
+            "simulated_psf_strehl": {
+              "value": 0.95,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.7 §2.4 模拟 S_PSF 段；p.6 Fig. 3c；λ_R",
+              "note": "沿用 §2.4 同一评价，将模拟焦斑和理想剖面各自在 50 μm 窗中等积分归一后比峰强。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_diffraction_limited_profile",
+              "power_normalization_window_um": 50
             }
           }
         },

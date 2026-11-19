@@ -78,6 +78,8 @@
 
 `simulated_depth_of_focus_um`和`simulated_psf_fwhm_x_um`用于模型计算，标作者归属与`psf_protocol`，分别保留`dof_criterion`和x向的`statistic`。`simulated_focusing_efficiency_pct`保存作者模拟焦区对入射总功率的比值。`simulated_aperture_power_ratio_pct`保存同孔径面积内焦面与器件面积分之比，允许两种协议各以独立行保存。百分数与`efficiency_protocol`的分母须一致。论文只称入射光能量时，保存 `incident_light_energy` 并记录具体计量光阑的缺口。
 
+`simulated_phase_strehl` 和 `simulated_psf_strehl` 保存作者的模拟 Strehl。前者从相位量化误差估算峰强衰减，后者将模拟与理想衍射剖面等积分归一后比较峰强。两者要求 0–1、`basis: model`、作者计算、模拟波长、理想模型和 `psf_protocol`。剖面的积分窗已知时保留，模型与实验各用对应指标。
+
 `processed_psf_fwhm_um`与裸PSF宽度分列：正值、实际λ、`basis: reconstruction`、作者计算、`processing_stage: linear_intensity_subtraction`和非负系数；`psf_protocol`须绑定同系数与数值固定评价面。该行不能同时填写数值裸PSF FWHM。作者图内印字可录，负旁瓣/零点/归一化和未知拟合条件必须说明；不把处理后变窄当裸镜光学性能。
 
 `image_snr_db`是作者图像SNR，和phone的snr、PSNR及ASNR不同字段。须`calculation_origin: authors`、`statistic: author_reported_image_snr`与`image_snr_protocol`的信号/噪声公式、`metric_kind: author_image_signal_background_ratio`、靶、ROI/噪声估计（未知null）。captured行用derived_from_measurement，linear_intensity_subtraction行用reconstruction并保留非负系数；单λ或明确白光照明与null波长必须绑定。作者只称背景fluctuation时不擅自补为SD/方差或把10log改成20log；重复数、曝光/增益、基线/通道配准与误差缺口写入协议。

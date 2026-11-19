@@ -210,6 +210,14 @@ export function validateDevices(d,catalog){
    !secondaryFocus.reference_plane||secondaryFocus.reference_plane!==measuredFocal.reference_plane||
    secondaryFocus.reference_plane!==r.values.psf_protocol?.reference_plane||
    !(r.values.wavelength_nm?.value>0)||r.values.wavelength_nm.basis!=='measured'||!r.values.polarization?.value))errors.push('secondary axial focus context');
+ for(const key of ['simulated_phase_strehl','simulated_psf_strehl']){
+  const ratio=r.values[key];
+  if(!Number.isFinite(ratio?.value))continue;
+  const wavelength=r.values.wavelength_nm;
+  if(ratio.value<0||ratio.value>1||ratio.basis!=='model'||ratio.calculation_origin!=='authors'||
+   !(wavelength?.value>0)||wavelength.basis!=='model'||!ratio.reference_model||
+   !r.values.psf_protocol?.value)errors.push('simulated Strehl context');
+ }
  const modelDof=r.values.simulated_depth_of_focus_um,modelWidth=r.values.simulated_psf_fwhm_x_um;
  if(Number.isFinite(modelDof?.value)&&(!(modelDof.value>0)||modelDof.basis!=='model'||modelDof.calculation_origin!=='authors'||
   !modelDof.dof_criterion||!r.values.psf_protocol?.value))errors.push('simulated focal interval context');
