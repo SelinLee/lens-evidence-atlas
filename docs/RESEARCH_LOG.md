@@ -1135,3 +1135,7 @@ Cao 2024 先凭正式主文摘要及同 DOI 的原刊图注入库，新增一篇
 PR #183 合入 6efcd897ee83456a29d71898c21d5562745e723b。PR 校验 44461846456、主线校验 44461963735、Pages 44461963726 均成功。306 项测试通过。本机独立无头 Chrome 核实 Cao 的 15 条、全库 48 篇／1113 条、可见光 39 篇／764 条、两套三谱点散点、四项未核数值的空轴、九份同文献来源、返回数据定位及六视口。Crossref 作者摘要返回 200，ResearchGate 外部图注入口本机返回 403，图注已从原刊公开索引复核。231 个公开文件与构建逐字节一致，消色差分域 SHA-256 为 6c17842606ec81e378a05445aeca36d7b220829798950ed1b09739a464069a16。[PR #183](https://github.com/SelinLee/lens-evidence-atlas/pull/183) · [Pages](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44461963726) · [线上 Cao 数据](https://selinlee.github.io/lens-evidence-atlas/?domain=metalens&q=Cao%202024)
 
 继续取证 Tang 2026。ACS 原文摘要区分相干红黄绿表征原型与非相干 RGB 成像原型，主焦点的离散光学校正由三色焦点重合实现。650 nm 是结构周期，小于 1 μm 是作者所述轴向色差界限。实际测量波长、取焦判据和该界限的归属仍需正文或补件。核 ACS 公开补件清单，含 PSF、MTF 和效率。无头 Chrome 核 OpenAlex 仅列 DOI，Europe PMC 精确 DOI、Zenodo 题名及 Dawei Zhang 的 ORCID 公共作品清单均未定位附件。[ACS 原刊摘要](https://pubs.acs.org/doi/abs/10.1021/acsphotonics.6c00399) · [OpenAlex](https://api.openalex.org/works/https://doi.org/10.1021/acsphotonics.6c00399)
+
+## 2026-11-19-125 · Tang 多焦点和 Arbabi 偏振双波长
+
+Tang 2026 的两个可见光原型分别登记，650 nm 结构周期和小于 1 μm 的轴向色差按摘要论文层级登记。Crossref 补件组件 DOI 及文件名得到核实，正文与补件直连 403。Arbabi 2016 的五只 200 μm 实物登记 p18472 名义设计焦距、NA 端点、效率针孔和两组实测条件。Fig. 6c 图注明确 Fig. 6a,b 印字是错配偏振焦距，录入十个实测数值。Fig. 5 保留共同取图面与末行图文冲突，匹配偏振残余焦差留空。新增 2 篇、8 个配置、28 条，累计 50 篇、269 个配置、1141 条。可见光 41 篇和 782 条。[本批核验](TANG_ARBABI_DUAL_FOCUS_REVIEW_2026-11-19.md)
