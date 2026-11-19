@@ -2272,6 +2272,69 @@
       "scope": "按正式 DOI 精确关联检索为零。",
       "checked_on": "2026-11-19",
       "publication_source": "eisenbach_dual_fzp_pdf_2015"
+    },
+    {
+      "id": "zhao_geometric_pdf_2015",
+      "title": "Zhao et al. (2015), Multispectral optical metasurfaces enabled by achromatic phase transition",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4621515.1/PMC4621515.1.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "Scientific Reports 5, 15781。PMC 正式版九页，pp3–8 Figs. 2–6 及 Methods。",
+      "checked_on": "2026-11-19",
+      "doi": "10.1038/srep15781"
+    },
+    {
+      "id": "zhao_geometric_fig3_2015",
+      "title": "Springer Nature · Fig. 3 STED 实物",
+      "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fsrep15781/MediaObjects/41598_2015_Article_BFsrep15781_Fig3_HTML.jpg",
+      "kind": "publication_archive",
+      "scope": "正式原图。b 为 405 nm 轴向截面和固定面插图，c 为 532 nm x–y 环斑，e 为线偏振轴图。",
+      "checked_on": "2026-11-19",
+      "publication_source": "zhao_geometric_pdf_2015"
+    },
+    {
+      "id": "zhao_geometric_fig4_2015",
+      "title": "Springer Nature · Fig. 4 多谱点透镜",
+      "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fsrep15781/MediaObjects/41598_2015_Article_BFsrep15781_Fig4_HTML.jpg",
+      "kind": "publication_archive",
+      "scope": "正式原图。右列为三谱点实测轴图，左列为模拟，白虚线是 9 μm 评价面。",
+      "checked_on": "2026-11-19",
+      "publication_source": "zhao_geometric_pdf_2015"
+    },
+    {
+      "id": "zhao_geometric_pmc_manifest_2015",
+      "title": "PMC Open Access · 版本与材料清单",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4621515.1/PMC4621515.1.json",
+      "kind": "repository_metadata",
+      "scope": "版本 1，正式版。公开清单列 6 图、5 公式图及文章文件，无单独原始数据文件。",
+      "checked_on": "2026-11-19",
+      "publication_source": "zhao_geometric_pdf_2015"
+    },
+    {
+      "id": "zhao_geometric_crossref_2015",
+      "title": "Crossref · 正式 DOI、发表日期与被引量",
+      "url": "https://api.crossref.org/works/10.1038/srep15781",
+      "kind": "repository_metadata",
+      "scope": "2026-11-19 查得被引 114 次，2015-10-27 正式发表。",
+      "checked_on": "2026-11-19",
+      "publication_source": "zhao_geometric_pdf_2015"
+    },
+    {
+      "id": "zhao_geometric_openalex_2015",
+      "title": "OpenAlex · 被引量与公开版本",
+      "url": "https://api.openalex.org/works/W1873395016",
+      "kind": "repository_metadata",
+      "scope": "2026-11-19 查得被引 122 次。",
+      "checked_on": "2026-11-19",
+      "publication_source": "zhao_geometric_pdf_2015"
+    },
+    {
+      "id": "zhao_geometric_datacite_2015",
+      "title": "DataCite · 正式 DOI 精确关联数据检索",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1038%2Fsrep15781%22",
+      "kind": "repository_metadata",
+      "scope": "相同正式 DOI 的精确关联检索为零。",
+      "checked_on": "2026-11-19",
+      "publication_source": "zhao_geometric_pdf_2015"
     }
   ],
   "domains": {
@@ -250963,9 +251026,1688 @@
               "checked_on": "2026-11-19"
             }
           }
+        },
+        {
+          "id": "zhao2015geometricphase_multispectral_overview",
+          "study_id": "zhao2015geometricphase",
+          "specimen_id": "multispectral",
+          "model": "Zhao 2015 · 金膜孔阵列 · 三谱点实物 · 器件与评价面",
+          "variant": "20 μm 三谱点透镜实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "不同波长焦斑测量共用同一 20 μm 实物。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–6 Fig. 4a 及 Phase holography for multi-wavelength focusing",
+              "note": "圆形区域面积所用半径 R=10 μm，直径为两倍原文半径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "author_radius_um": 10
+            },
+            "design_focal_um": {
+              "value": 9,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–6 Fig. 4a 及 Phase holography for multi-wavelength focusing；主文 p8 Methods / Measurement",
+              "note": "作者设定的设计轴向距离，从金膜顶面的坐标原点量起。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_plane": "gold_film_top_surface"
+            },
+            "na": {
+              "value": 0.743,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–6 Fig. 4a 及 Phase holography for multi-wavelength focusing",
+              "note": "按空气中理想圆孔几何估算，自作者公布的 R 与设计 f。本库保留三位小数。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "atlas",
+              "formula": "R / sqrt(R^2 + f^2)",
+              "radius_um": 10,
+              "design_focal_um": 9,
+              "approximate": true,
+              "display": "约 0.743"
+            },
+            "height_nm": {
+              "value": 120,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp4–5 和 p8 Methods / Fabrication",
+              "note": "金膜厚度 120 nm，石英与金膜之间有 3 nm Ge 粘附层。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "石英／Ge 粘附层／金膜椭圆孔阵列",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p8 Methods / Fabrication",
+              "note": "FIB 铣削金膜。STED 样品孔形与排列由 p4–5 单独明示。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "adhesion_layer_ge_nm": 3
+            },
+            "chromatic": {
+              "value": "三谱点实测，采用 9 μm 固定评价面",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–6 Figs. 4–5；p7 关于有限孔径的讨论",
+              "note": "作者指出强度最大值可能与预设焦斑面分离。未给每色最佳焦位、焦移或统计误差。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "zhao_geometric_pdf_2015",
+                "zhao_geometric_fig3_2015",
+                "zhao_geometric_fig4_2015",
+                "zhao_geometric_pmc_manifest_2015",
+                "zhao_geometric_crossref_2015",
+                "zhao_geometric_openalex_2015",
+                "zhao_geometric_datacite_2015"
+              ],
+              "sample_wavelengths_nm": [
+                532,
+                632.8,
+                785
+              ]
+            },
+            "psf_protocol": {
+              "value": "金膜顶面为 z=0，焦斑在 z=9 μm 评价",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p8 Methods / Measurement；主文 p6 Fig. 5a",
+              "note": "100× 物镜与筒镜、DataRay WinCamD-UCD15 CCD。作者由横截面中心剖面堆叠纵向图。物方像素尺度仍缺。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_plane": "gold_film_top_surface",
+              "axial_scan_step_um": 0.5,
+              "relay_objective_magnification": 100,
+              "sensor_shape_pixels": [
+                1600,
+                1200
+              ],
+              "calibrated_object_space_pixel_um": null,
+              "evaluation_plane_um": 9
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–7 Figs. 4–6",
+              "note": "缺三谱点强度峰的位置，本库未估读。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–8 Figs. 4–6 与 Methods；PMC 清单",
+              "note": "正式出版材料无原始二维焦斑、物方采样数组、MTF 曲线或 Strehl 数字。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "zhao_geometric_pdf_2015",
+                "zhao_geometric_pmc_manifest_2015",
+                "zhao_geometric_datacite_2015"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "实物聚焦效率待补",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6 后的效率讨论",
+              "note": "讨论的峰强比和效率推论来自模型。实物焦圈及功率分母缺证。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "zhao2015geometricphase_multispectral_0",
+          "study_id": "zhao2015geometricphase",
+          "specimen_id": "multispectral",
+          "model": "Zhao 2015 · 金膜孔阵列 · 532 nm · 9 μm 固定面与轴扫",
+          "variant": "20 μm 三谱点透镜实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "Fig. 4 右列为实测，Fig. 5a 为固定面横向剖面。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–6 Fig. 4a 及 Phase holography for multi-wavelength focusing",
+              "note": "圆形区域面积所用半径 R=10 μm，直径为两倍原文半径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "author_radius_um": 10
+            },
+            "design_focal_um": {
+              "value": 9,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–6 Fig. 4a 及 Phase holography for multi-wavelength focusing；主文 p8 Methods / Measurement",
+              "note": "作者设定的设计轴向距离，从金膜顶面的坐标原点量起。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_plane": "gold_film_top_surface"
+            },
+            "na": {
+              "value": 0.743,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–6 Fig. 4a 及 Phase holography for multi-wavelength focusing",
+              "note": "按空气中理想圆孔几何估算，自作者公布的 R 与设计 f。本库保留三位小数。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "atlas",
+              "formula": "R / sqrt(R^2 + f^2)",
+              "radius_um": 10,
+              "design_focal_um": 9,
+              "approximate": true,
+              "display": "约 0.743"
+            },
+            "aoi_deg": {
+              "value": 0,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p8 Methods / Measurement",
+              "note": "激光沿器件光轴正入射。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p5 Fig. 4b 右图；p6 Fig. 5a",
+              "note": "离散实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "zhao_geometric_pdf_2015",
+                "zhao_geometric_fig4_2015"
+              ],
+              "spectral_mode": "discrete"
+            },
+            "polarization": {
+              "value": "圆偏振入射，交叉偏振探测",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p8 Methods / Measurement",
+              "note": "作者使用偏振器及四分之一波片，三谱点图未单列入射旋向。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "金膜顶面为 z=0，焦斑在 z=9 μm 评价",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p8 Methods / Measurement；主文 p5 Fig. 4b 右图；p6 Fig. 5a",
+              "note": "100× 物镜与筒镜、DataRay WinCamD-UCD15 CCD。作者由横截面中心剖面堆叠纵向图。物方像素尺度仍缺。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_plane": "gold_film_top_surface",
+              "axial_scan_step_um": 0.5,
+              "relay_objective_magnification": 100,
+              "sensor_shape_pixels": [
+                1600,
+                1200
+              ],
+              "calibrated_object_space_pixel_um": null,
+              "evaluation_plane_um": 9
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p5 Fig. 4b 右图",
+              "note": "z 轴的白虚线标 9 μm 设计面，未列实测轴向强度峰位置。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p6 Fig. 5a 及对应正文",
+              "note": "横轴 x（μm）、纵轴归一化强度。FWHM 由作者比较，但无逐色数表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "direction": "x",
+              "evaluation_plane_um": 9
+            },
+            "chromatic": {
+              "value": "纵向实测与固定面 x 剖面",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p5 Fig. 4b 右图；p6 Fig. 5a",
+              "note": "保持实际谱点、焦斑图位置及轴向参考，数值残余差待补。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "zhao_geometric_pdf_2015",
+                "zhao_geometric_fig4_2015"
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhao2015geometricphase_small_model_0",
+          "study_id": "zhao2015geometricphase",
+          "specimen_id": "small_model",
+          "model": "Zhao 2015 · 金膜孔阵列 · 532 nm · 20 μm 模拟",
+          "variant": "20 μm 三谱点传播模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "同一设计的 20 μm 模型，独立于实物结果。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–6 Fig. 4a 及 Phase holography for multi-wavelength focusing",
+              "note": "圆形区域面积所用半径 R=10 μm，直径为两倍原文半径。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "author_radius_um": 10
+            },
+            "design_focal_um": {
+              "value": 9,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–6 Fig. 4a 及 Phase holography for multi-wavelength focusing",
+              "note": "作者设定的设计轴向距离，以模型的超表面平面为原点。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "reference_plane": "modeled_metasurface_plane"
+            },
+            "na": {
+              "value": 0.743,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–6 Fig. 4a 及 Phase holography for multi-wavelength focusing",
+              "note": "按空气中理想圆孔几何估算，自作者公布的 R 与设计 f。本库保留三位小数。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "atlas",
+              "formula": "R / sqrt(R^2 + f^2)",
+              "radius_um": 10,
+              "design_focal_um": 9,
+              "approximate": true,
+              "display": "约 0.743"
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p5 Fig. 4b 左图；p6 Fig. 5b",
+              "note": "小口径设计模拟谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "小口径轴向传播与 9 μm 横剖面",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p5 Fig. 4b 左图；p6 Fig. 5b",
+              "note": "Fig. 5b 在相同设计面评价。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "reference_plane": "modeled_metasurface_plane",
+              "evaluation_plane_um": 9
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p5 Fig. 4b 左图；p6 Fig. 5b",
+              "note": "模型展示多个局部峰，原文未列本谱点的轴向最大值位置。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": null,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p5 Fig. 4b 左图；p6 Fig. 5b",
+              "note": "只有模拟剖面图。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 9,
+              "direction": "x"
+            }
+          }
+        },
+        {
+          "id": "zhao2015geometricphase_large_model_0",
+          "study_id": "zhao2015geometricphase",
+          "specimen_id": "large_model",
+          "model": "Zhao 2015 · 金膜孔阵列 · 532 nm · 200 μm 模拟",
+          "variant": "200 μm 三谱点放大传播模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "扩大口径的设计模拟。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6 图注及正文",
+              "note": "圆形区域面积所用半径 R=100 μm，直径为两倍原文半径。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "author_radius_um": 100
+            },
+            "design_focal_um": {
+              "value": 90,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6 图注及正文",
+              "note": "作者设定的设计轴向距离，以模型的超表面平面为原点。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "reference_plane": "modeled_metasurface_plane"
+            },
+            "na": {
+              "value": 0.743,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6 图注及正文",
+              "note": "按空气中理想圆孔几何估算，自作者公布的 R 与设计 f。本库保留三位小数。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "atlas",
+              "formula": "R / sqrt(R^2 + f^2)",
+              "radius_um": 100,
+              "design_focal_um": 90,
+              "approximate": true,
+              "display": "约 0.743"
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6a/d 及对应正文",
+              "note": "200 μm 模型的输入波长。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "作者在 x=y=0 计算轴向强度",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6a/d 及对应正文",
+              "note": "R 与 f 均放大十倍，角度不变。右列图内标 (d)–(f)，图注只写 (d)–(e)。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "reference_plane": "modeled_metasurface_plane"
+            },
+            "simulated_focal_um": {
+              "value": 90,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6a/d 及对应正文",
+              "note": "正文报告放大模型的峰强位置与 90 μm 预定焦距重合。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "position_definition": "axial_intensity_maximum",
+              "calculation_origin": "authors",
+              "reference_plane": "modeled_metasurface_plane"
+            },
+            "chromatic": {
+              "value": "放大模型的轴向共焦",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6a/d 及对应正文",
+              "note": "正文称三色峰强均超过入射波的 50000 倍，Fig. 6f 沿用顶端 10⁴ 倍率时高度低于该界线。各图独立倍率及数列待核。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "author_text_claim": "各谱点强度大于入射波 50000 倍",
+              "gain_curve_conflict": true
+            }
+          }
+        },
+        {
+          "id": "zhao2015geometricphase_multispectral_1",
+          "study_id": "zhao2015geometricphase",
+          "specimen_id": "multispectral",
+          "model": "Zhao 2015 · 金膜孔阵列 · 632.8 nm · 9 μm 固定面与轴扫",
+          "variant": "20 μm 三谱点透镜实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "Fig. 4 右列为实测，Fig. 5a 为固定面横向剖面。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–6 Fig. 4a 及 Phase holography for multi-wavelength focusing",
+              "note": "圆形区域面积所用半径 R=10 μm，直径为两倍原文半径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "author_radius_um": 10
+            },
+            "design_focal_um": {
+              "value": 9,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–6 Fig. 4a 及 Phase holography for multi-wavelength focusing；主文 p8 Methods / Measurement",
+              "note": "作者设定的设计轴向距离，从金膜顶面的坐标原点量起。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_plane": "gold_film_top_surface"
+            },
+            "na": {
+              "value": 0.743,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–6 Fig. 4a 及 Phase holography for multi-wavelength focusing",
+              "note": "按空气中理想圆孔几何估算，自作者公布的 R 与设计 f。本库保留三位小数。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "atlas",
+              "formula": "R / sqrt(R^2 + f^2)",
+              "radius_um": 10,
+              "design_focal_um": 9,
+              "approximate": true,
+              "display": "约 0.743"
+            },
+            "aoi_deg": {
+              "value": 0,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p8 Methods / Measurement",
+              "note": "激光沿器件光轴正入射。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "wavelength_nm": {
+              "value": 632.8,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p5 Fig. 4c 右图；p6 Fig. 5a",
+              "note": "离散实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "zhao_geometric_pdf_2015",
+                "zhao_geometric_fig4_2015"
+              ],
+              "spectral_mode": "discrete"
+            },
+            "polarization": {
+              "value": "圆偏振入射，交叉偏振探测",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p8 Methods / Measurement",
+              "note": "作者使用偏振器及四分之一波片，三谱点图未单列入射旋向。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "金膜顶面为 z=0，焦斑在 z=9 μm 评价",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p8 Methods / Measurement；主文 p5 Fig. 4c 右图；p6 Fig. 5a",
+              "note": "100× 物镜与筒镜、DataRay WinCamD-UCD15 CCD。作者由横截面中心剖面堆叠纵向图。物方像素尺度仍缺。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_plane": "gold_film_top_surface",
+              "axial_scan_step_um": 0.5,
+              "relay_objective_magnification": 100,
+              "sensor_shape_pixels": [
+                1600,
+                1200
+              ],
+              "calibrated_object_space_pixel_um": null,
+              "evaluation_plane_um": 9
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p5 Fig. 4c 右图",
+              "note": "z 轴的白虚线标 9 μm 设计面，未列实测轴向强度峰位置。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p6 Fig. 5a 及对应正文",
+              "note": "横轴 x（μm）、纵轴归一化强度。FWHM 由作者比较，但无逐色数表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "direction": "x",
+              "evaluation_plane_um": 9
+            },
+            "chromatic": {
+              "value": "纵向实测与固定面 x 剖面",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p5 Fig. 4c 右图；p6 Fig. 5a",
+              "note": "保持实际谱点、焦斑图位置及轴向参考，数值残余差待补。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "zhao_geometric_pdf_2015",
+                "zhao_geometric_fig4_2015"
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhao2015geometricphase_small_model_1",
+          "study_id": "zhao2015geometricphase",
+          "specimen_id": "small_model",
+          "model": "Zhao 2015 · 金膜孔阵列 · 632.8 nm · 20 μm 模拟",
+          "variant": "20 μm 三谱点传播模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "同一设计的 20 μm 模型，独立于实物结果。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–6 Fig. 4a 及 Phase holography for multi-wavelength focusing",
+              "note": "圆形区域面积所用半径 R=10 μm，直径为两倍原文半径。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "author_radius_um": 10
+            },
+            "design_focal_um": {
+              "value": 9,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–6 Fig. 4a 及 Phase holography for multi-wavelength focusing",
+              "note": "作者设定的设计轴向距离，以模型的超表面平面为原点。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "reference_plane": "modeled_metasurface_plane"
+            },
+            "na": {
+              "value": 0.743,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–6 Fig. 4a 及 Phase holography for multi-wavelength focusing",
+              "note": "按空气中理想圆孔几何估算，自作者公布的 R 与设计 f。本库保留三位小数。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "atlas",
+              "formula": "R / sqrt(R^2 + f^2)",
+              "radius_um": 10,
+              "design_focal_um": 9,
+              "approximate": true,
+              "display": "约 0.743"
+            },
+            "wavelength_nm": {
+              "value": 632.8,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p5 Fig. 4c 左图；p6 Fig. 5b",
+              "note": "小口径设计模拟谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "小口径轴向传播与 9 μm 横剖面",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p5 Fig. 4c 左图；p6 Fig. 5b",
+              "note": "Fig. 5b 在相同设计面评价。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "reference_plane": "modeled_metasurface_plane",
+              "evaluation_plane_um": 9
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p5 Fig. 4c 左图；p6 Fig. 5b",
+              "note": "模型展示多个局部峰，原文未列本谱点的轴向最大值位置。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": null,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p5 Fig. 4c 左图；p6 Fig. 5b",
+              "note": "只有模拟剖面图。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 9,
+              "direction": "x"
+            }
+          }
+        },
+        {
+          "id": "zhao2015geometricphase_large_model_1",
+          "study_id": "zhao2015geometricphase",
+          "specimen_id": "large_model",
+          "model": "Zhao 2015 · 金膜孔阵列 · 632.8 nm · 200 μm 模拟",
+          "variant": "200 μm 三谱点放大传播模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "扩大口径的设计模拟。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6 图注及正文",
+              "note": "圆形区域面积所用半径 R=100 μm，直径为两倍原文半径。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "author_radius_um": 100
+            },
+            "design_focal_um": {
+              "value": 90,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6 图注及正文",
+              "note": "作者设定的设计轴向距离，以模型的超表面平面为原点。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "reference_plane": "modeled_metasurface_plane"
+            },
+            "na": {
+              "value": 0.743,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6 图注及正文",
+              "note": "按空气中理想圆孔几何估算，自作者公布的 R 与设计 f。本库保留三位小数。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "atlas",
+              "formula": "R / sqrt(R^2 + f^2)",
+              "radius_um": 100,
+              "design_focal_um": 90,
+              "approximate": true,
+              "display": "约 0.743"
+            },
+            "wavelength_nm": {
+              "value": 632.8,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6b/e 及对应正文",
+              "note": "200 μm 模型的输入波长。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "作者在 x=y=0 计算轴向强度",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6b/e 及对应正文",
+              "note": "R 与 f 均放大十倍，角度不变。右列图内标 (d)–(f)，图注只写 (d)–(e)。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "reference_plane": "modeled_metasurface_plane"
+            },
+            "simulated_focal_um": {
+              "value": 90,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6b/e 及对应正文",
+              "note": "正文报告放大模型的峰强位置与 90 μm 预定焦距重合。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "position_definition": "axial_intensity_maximum",
+              "calculation_origin": "authors",
+              "reference_plane": "modeled_metasurface_plane"
+            },
+            "chromatic": {
+              "value": "放大模型的轴向共焦",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6b/e 及对应正文",
+              "note": "正文称三色峰强均超过入射波的 50000 倍，Fig. 6f 沿用顶端 10⁴ 倍率时高度低于该界线。各图独立倍率及数列待核。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "author_text_claim": "各谱点强度大于入射波 50000 倍",
+              "gain_curve_conflict": true
+            }
+          }
+        },
+        {
+          "id": "zhao2015geometricphase_multispectral_2",
+          "study_id": "zhao2015geometricphase",
+          "specimen_id": "multispectral",
+          "model": "Zhao 2015 · 金膜孔阵列 · 785 nm · 9 μm 固定面与轴扫",
+          "variant": "20 μm 三谱点透镜实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "Fig. 4 右列为实测，Fig. 5a 为固定面横向剖面。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–6 Fig. 4a 及 Phase holography for multi-wavelength focusing",
+              "note": "圆形区域面积所用半径 R=10 μm，直径为两倍原文半径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "author_radius_um": 10
+            },
+            "design_focal_um": {
+              "value": 9,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–6 Fig. 4a 及 Phase holography for multi-wavelength focusing；主文 p8 Methods / Measurement",
+              "note": "作者设定的设计轴向距离，从金膜顶面的坐标原点量起。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_plane": "gold_film_top_surface"
+            },
+            "na": {
+              "value": 0.743,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–6 Fig. 4a 及 Phase holography for multi-wavelength focusing",
+              "note": "按空气中理想圆孔几何估算，自作者公布的 R 与设计 f。本库保留三位小数。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "atlas",
+              "formula": "R / sqrt(R^2 + f^2)",
+              "radius_um": 10,
+              "design_focal_um": 9,
+              "approximate": true,
+              "display": "约 0.743"
+            },
+            "aoi_deg": {
+              "value": 0,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p8 Methods / Measurement",
+              "note": "激光沿器件光轴正入射。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "wavelength_nm": {
+              "value": 785,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p5 Fig. 4d 右图；p6 Fig. 5a",
+              "note": "离散实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "zhao_geometric_pdf_2015",
+                "zhao_geometric_fig4_2015"
+              ],
+              "spectral_mode": "discrete"
+            },
+            "polarization": {
+              "value": "圆偏振入射，交叉偏振探测",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p8 Methods / Measurement",
+              "note": "作者使用偏振器及四分之一波片，三谱点图未单列入射旋向。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "金膜顶面为 z=0，焦斑在 z=9 μm 评价",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p8 Methods / Measurement；主文 p5 Fig. 4d 右图；p6 Fig. 5a",
+              "note": "100× 物镜与筒镜、DataRay WinCamD-UCD15 CCD。作者由横截面中心剖面堆叠纵向图。物方像素尺度仍缺。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_plane": "gold_film_top_surface",
+              "axial_scan_step_um": 0.5,
+              "relay_objective_magnification": 100,
+              "sensor_shape_pixels": [
+                1600,
+                1200
+              ],
+              "calibrated_object_space_pixel_um": null,
+              "evaluation_plane_um": 9
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p5 Fig. 4d 右图",
+              "note": "z 轴的白虚线标 9 μm 设计面，未列实测轴向强度峰位置。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p6 Fig. 5a 及对应正文",
+              "note": "横轴 x（μm）、纵轴归一化强度。FWHM 由作者比较，但无逐色数表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "direction": "x",
+              "evaluation_plane_um": 9
+            },
+            "chromatic": {
+              "value": "纵向实测与固定面 x 剖面",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p5 Fig. 4d 右图；p6 Fig. 5a",
+              "note": "保持实际谱点、焦斑图位置及轴向参考，数值残余差待补。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "zhao_geometric_pdf_2015",
+                "zhao_geometric_fig4_2015"
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhao2015geometricphase_small_model_2",
+          "study_id": "zhao2015geometricphase",
+          "specimen_id": "small_model",
+          "model": "Zhao 2015 · 金膜孔阵列 · 785 nm · 20 μm 模拟",
+          "variant": "20 μm 三谱点传播模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "同一设计的 20 μm 模型，独立于实物结果。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–6 Fig. 4a 及 Phase holography for multi-wavelength focusing",
+              "note": "圆形区域面积所用半径 R=10 μm，直径为两倍原文半径。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "author_radius_um": 10
+            },
+            "design_focal_um": {
+              "value": 9,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–6 Fig. 4a 及 Phase holography for multi-wavelength focusing",
+              "note": "作者设定的设计轴向距离，以模型的超表面平面为原点。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "reference_plane": "modeled_metasurface_plane"
+            },
+            "na": {
+              "value": 0.743,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp5–6 Fig. 4a 及 Phase holography for multi-wavelength focusing",
+              "note": "按空气中理想圆孔几何估算，自作者公布的 R 与设计 f。本库保留三位小数。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "atlas",
+              "formula": "R / sqrt(R^2 + f^2)",
+              "radius_um": 10,
+              "design_focal_um": 9,
+              "approximate": true,
+              "display": "约 0.743"
+            },
+            "wavelength_nm": {
+              "value": 785,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p5 Fig. 4d 左图；p6 Fig. 5b",
+              "note": "小口径设计模拟谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "小口径轴向传播与 9 μm 横剖面",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p5 Fig. 4d 左图；p6 Fig. 5b",
+              "note": "Fig. 5b 在相同设计面评价。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "reference_plane": "modeled_metasurface_plane",
+              "evaluation_plane_um": 9
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p5 Fig. 4d 左图；p6 Fig. 5b",
+              "note": "模型展示多个局部峰，原文未列本谱点的轴向最大值位置。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_psf_fwhm_x_um": {
+              "value": null,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p5 Fig. 4d 左图；p6 Fig. 5b",
+              "note": "只有模拟剖面图。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 9,
+              "direction": "x"
+            }
+          }
+        },
+        {
+          "id": "zhao2015geometricphase_large_model_2",
+          "study_id": "zhao2015geometricphase",
+          "specimen_id": "large_model",
+          "model": "Zhao 2015 · 金膜孔阵列 · 785 nm · 200 μm 模拟",
+          "variant": "200 μm 三谱点放大传播模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "扩大口径的设计模拟。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6 图注及正文",
+              "note": "圆形区域面积所用半径 R=100 μm，直径为两倍原文半径。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "author_radius_um": 100
+            },
+            "design_focal_um": {
+              "value": 90,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6 图注及正文",
+              "note": "作者设定的设计轴向距离，以模型的超表面平面为原点。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "reference_plane": "modeled_metasurface_plane"
+            },
+            "na": {
+              "value": 0.743,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6 图注及正文",
+              "note": "按空气中理想圆孔几何估算，自作者公布的 R 与设计 f。本库保留三位小数。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "atlas",
+              "formula": "R / sqrt(R^2 + f^2)",
+              "radius_um": 100,
+              "design_focal_um": 90,
+              "approximate": true,
+              "display": "约 0.743"
+            },
+            "wavelength_nm": {
+              "value": 785,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6c/f 及对应正文",
+              "note": "200 μm 模型的输入波长。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "作者在 x=y=0 计算轴向强度",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6c/f 及对应正文",
+              "note": "R 与 f 均放大十倍，角度不变。右列图内标 (d)–(f)，图注只写 (d)–(e)。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "reference_plane": "modeled_metasurface_plane"
+            },
+            "simulated_focal_um": {
+              "value": 90,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6c/f 及对应正文",
+              "note": "正文报告放大模型的峰强位置与 90 μm 预定焦距重合。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "position_definition": "axial_intensity_maximum",
+              "calculation_origin": "authors",
+              "reference_plane": "modeled_metasurface_plane"
+            },
+            "chromatic": {
+              "value": "放大模型的轴向共焦",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6c/f 及对应正文",
+              "note": "正文称三色峰强均超过入射波的 50000 倍，Fig. 6f 沿用顶端 10⁴ 倍率时高度低于该界线。各图独立倍率及数列待核。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "author_text_claim": "各谱点强度大于入射波 50000 倍",
+              "gain_curve_conflict": true
+            }
+          }
+        },
+        {
+          "id": "zhao2015geometricphase_sted_overview",
+          "study_id": "zhao2015geometricphase",
+          "specimen_id": "sted",
+          "model": "Zhao 2015 · 金膜孔阵列 · STED 实物 · 器件与焦斑形状",
+          "variant": "20 μm STED 形状调制实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "与三谱点器件分别制备。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 STED lens 设计和 Fig. 3a 对应制备段",
+              "note": "圆形区域面积所用半径 R=10 μm，直径为两倍原文半径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "author_radius_um": 10
+            },
+            "design_focal_um": {
+              "value": 10,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 STED lens 设计和 Fig. 3a 对应制备段；主文 p8 Methods / Measurement",
+              "note": "作者设定的设计轴向距离，从金膜顶面的坐标原点量起。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_plane": "gold_film_top_surface"
+            },
+            "na": {
+              "value": 0.707,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 STED lens 设计和 Fig. 3a 对应制备段",
+              "note": "按空气中理想圆孔几何估算，自作者公布的 R 与设计 f。本库保留三位小数。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "atlas",
+              "formula": "R / sqrt(R^2 + f^2)",
+              "radius_um": 10,
+              "design_focal_um": 10,
+              "approximate": true,
+              "display": "约 0.707"
+            },
+            "height_nm": {
+              "value": 120,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp4–5 和 p8 Methods / Fabrication",
+              "note": "金膜厚度 120 nm，石英与金膜之间有 3 nm Ge 粘附层。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "石英上 120 nm 金膜的椭圆孔阵列",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp4–5 Fig. 3a 与 p8 Methods / Fabrication",
+              "note": "孔长短轴 180／90 nm，六角晶格，间隔 250 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "adhesion_layer_ge_nm": 3,
+              "major_axis_nm": 180,
+              "minor_axis_nm": 90,
+              "lattice_pitch_nm": 250
+            },
+            "chromatic": {
+              "value": "两色在指定面产生实心斑与环斑",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp4–5 Fig. 3b/c 与 STED 实验段",
+              "note": "原文展示两种焦斑形状。系统成像的分辨率和 MTF 待补。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "zhao_geometric_pdf_2015",
+                "zhao_geometric_fig3_2015"
+              ],
+              "sample_wavelengths_nm": [
+                405,
+                532
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhao2015geometricphase_405_solid",
+          "study_id": "zhao2015geometricphase",
+          "specimen_id": "sted",
+          "model": "Zhao 2015 · 金膜孔阵列 · STED 405 nm · 实心焦斑",
+          "variant": "20 μm STED 形状调制实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "同一 STED 实物的不同照明条件。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 STED lens 设计和 Fig. 3a 对应制备段",
+              "note": "圆形区域面积所用半径 R=10 μm，直径为两倍原文半径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "author_radius_um": 10
+            },
+            "design_focal_um": {
+              "value": 10,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 STED lens 设计和 Fig. 3a 对应制备段；主文 p8 Methods / Measurement",
+              "note": "作者设定的设计轴向距离，从金膜顶面的坐标原点量起。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_plane": "gold_film_top_surface"
+            },
+            "na": {
+              "value": 0.707,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 STED lens 设计和 Fig. 3a 对应制备段",
+              "note": "按空气中理想圆孔几何估算，自作者公布的 R 与设计 f。本库保留三位小数。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "atlas",
+              "formula": "R / sqrt(R^2 + f^2)",
+              "radius_um": 10,
+              "design_focal_um": 10,
+              "approximate": true,
+              "display": "约 0.707"
+            },
+            "aoi_deg": {
+              "value": 0,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p8 Methods / Measurement",
+              "note": "激光沿器件光轴正入射。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "wavelength_nm": {
+              "value": 405,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 Fig. 3b/d；p5 STED 测量段",
+              "note": "面板和正文均明示的测量谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "zhao_geometric_pdf_2015",
+                "zhao_geometric_fig3_2015"
+              ]
+            },
+            "polarization": {
+              "value": "左圆偏振入射",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 Fig. 3b/d；p5 STED 测量段",
+              "note": "圆偏振组按 Methods 记录交叉分量。线偏振图单独录入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "金膜顶面为 z=0，焦斑在 z=10 μm 评价",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p8 Methods / Measurement；主文 p4 Fig. 3b/d；p5 STED 测量段",
+              "note": "100× 物镜与筒镜、DataRay WinCamD-UCD15 CCD。作者由横截面中心剖面堆叠纵向图。物方像素尺度仍缺。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_plane": "gold_film_top_surface",
+              "axial_scan_step_um": 0.5,
+              "relay_objective_magnification": 100,
+              "sensor_shape_pixels": [
+                1600,
+                1200
+              ],
+              "calibrated_object_space_pixel_um": null,
+              "evaluation_plane_um": 10
+            },
+            "chromatic": {
+              "value": "405 nm · 实心焦斑",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 Fig. 3b/d；p5 STED 测量段",
+              "note": "Fig. 3b 轴扫插图为 z=10 μm 横截面。作者报告在该处形成实心焦斑，未给轴向峰值提取。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "zhao_geometric_pdf_2015",
+                "zhao_geometric_fig3_2015"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 Fig. 3b/d；p5 STED 测量段",
+              "note": "作者原文给实心斑或环斑的位置，缺明确定义的最佳焦面及残余焦移。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 Fig. 3d",
+              "note": "固定面 y=0 横剖面，原文未印宽度。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 10,
+              "direction": "x"
+            }
+          }
+        },
+        {
+          "id": "zhao2015geometricphase_532_ring",
+          "study_id": "zhao2015geometricphase",
+          "specimen_id": "sted",
+          "model": "Zhao 2015 · 金膜孔阵列 · STED 532 nm · 圆偏振环斑",
+          "variant": "20 μm STED 形状调制实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "同一 STED 实物的不同照明条件。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 STED lens 设计和 Fig. 3a 对应制备段",
+              "note": "圆形区域面积所用半径 R=10 μm，直径为两倍原文半径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "author_radius_um": 10
+            },
+            "design_focal_um": {
+              "value": 10,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 STED lens 设计和 Fig. 3a 对应制备段；主文 p8 Methods / Measurement",
+              "note": "作者设定的设计轴向距离，从金膜顶面的坐标原点量起。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_plane": "gold_film_top_surface"
+            },
+            "na": {
+              "value": 0.707,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 STED lens 设计和 Fig. 3a 对应制备段",
+              "note": "按空气中理想圆孔几何估算，自作者公布的 R 与设计 f。本库保留三位小数。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "atlas",
+              "formula": "R / sqrt(R^2 + f^2)",
+              "radius_um": 10,
+              "design_focal_um": 10,
+              "approximate": true,
+              "display": "约 0.707"
+            },
+            "aoi_deg": {
+              "value": 0,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p8 Methods / Measurement",
+              "note": "激光沿器件光轴正入射。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 Fig. 3c/d；p5 STED 测量段",
+              "note": "面板和正文均明示的测量谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "zhao_geometric_pdf_2015",
+                "zhao_geometric_fig3_2015"
+              ]
+            },
+            "polarization": {
+              "value": "圆偏振入射，旋向待核",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 Fig. 3c/d；p5 STED 测量段",
+              "note": "圆偏振组按 Methods 记录交叉分量。线偏振图单独录入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "金膜顶面为 z=0，焦斑在 z=10 μm 评价",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p8 Methods / Measurement；主文 p4 Fig. 3c/d；p5 STED 测量段",
+              "note": "100× 物镜与筒镜、DataRay WinCamD-UCD15 CCD。作者由横截面中心剖面堆叠纵向图。物方像素尺度仍缺。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_plane": "gold_film_top_surface",
+              "axial_scan_step_um": 0.5,
+              "relay_objective_magnification": 100,
+              "sensor_shape_pixels": [
+                1600,
+                1200
+              ],
+              "calibrated_object_space_pixel_um": null,
+              "evaluation_plane_um": 10
+            },
+            "chromatic": {
+              "value": "532 nm · 圆偏振环斑",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 Fig. 3c/d；p5 STED 测量段",
+              "note": "Fig. 3c 坐标为 x–y，正文写 x–z。圆偏振试验的面板未标入射旋向。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "zhao_geometric_pdf_2015",
+                "zhao_geometric_fig3_2015"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 Fig. 3c/d；p5 STED 测量段",
+              "note": "作者原文给实心斑或环斑的位置，缺明确定义的最佳焦面及残余焦移。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 Fig. 3d",
+              "note": "固定面 y=0 横剖面，原文未印宽度。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 10,
+              "direction": "x"
+            }
+          }
+        },
+        {
+          "id": "zhao2015geometricphase_532_linear",
+          "study_id": "zhao2015geometricphase",
+          "specimen_id": "sted",
+          "model": "Zhao 2015 · 金膜孔阵列 · STED 532 nm · 线偏振双环斑",
+          "variant": "20 μm STED 形状调制实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "同一 STED 实物的不同照明条件。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 STED lens 设计和 Fig. 3a 对应制备段",
+              "note": "圆形区域面积所用半径 R=10 μm，直径为两倍原文半径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "author_radius_um": 10
+            },
+            "design_focal_um": {
+              "value": 10,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 STED lens 设计和 Fig. 3a 对应制备段；主文 p8 Methods / Measurement",
+              "note": "作者设定的设计轴向距离，从金膜顶面的坐标原点量起。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_plane": "gold_film_top_surface"
+            },
+            "na": {
+              "value": 0.707,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 STED lens 设计和 Fig. 3a 对应制备段",
+              "note": "按空气中理想圆孔几何估算，自作者公布的 R 与设计 f。本库保留三位小数。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "atlas",
+              "formula": "R / sqrt(R^2 + f^2)",
+              "radius_um": 10,
+              "design_focal_um": 10,
+              "approximate": true,
+              "display": "约 0.707"
+            },
+            "aoi_deg": {
+              "value": 0,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p8 Methods / Measurement",
+              "note": "激光沿器件光轴正入射。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 Fig. 3e；p5 STED 测量段",
+              "note": "面板和正文均明示的测量谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "zhao_geometric_pdf_2015",
+                "zhao_geometric_fig3_2015"
+              ]
+            },
+            "polarization": {
+              "value": "线偏振入射",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 Fig. 3e；p5 STED 测量段",
+              "note": "圆偏振组按 Methods 记录交叉分量。线偏振图单独录入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "金膜顶面为 z=0，轴扫步进 0.5 μm",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p8 Methods / Measurement；主文 p4 Fig. 3e；p5 STED 测量段",
+              "note": "100× 物镜与筒镜、DataRay WinCamD-UCD15 CCD。作者由横截面中心剖面堆叠纵向图。物方像素尺度仍缺。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_plane": "gold_film_top_surface",
+              "axial_scan_step_um": 0.5,
+              "relay_objective_magnification": 100,
+              "sensor_shape_pixels": [
+                1600,
+                1200
+              ],
+              "calibrated_object_space_pixel_um": null,
+              "observed_annular_feature_positions_um": [
+                -10,
+                10
+              ]
+            },
+            "chromatic": {
+              "value": "532 nm · 线偏振双环斑",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 Fig. 3e；p5 STED 测量段",
+              "note": "实测 x–z 图显示两侧环斑，作者图注给 z=±10 μm，正文指为 Fig. 3d。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "zhao_geometric_pdf_2015",
+                "zhao_geometric_fig3_2015"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 Fig. 3e；p5 STED 测量段",
+              "note": "作者原文给实心斑或环斑的位置，缺明确定义的最佳焦面及残余焦移。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "zhao2015geometricphase_sted_model_405",
+          "study_id": "zhao2015geometricphase",
+          "specimen_id": "sted_model",
+          "model": "Zhao 2015 · 金膜孔阵列 · STED 模型 · 405 nm 实心斑",
+          "variant": "20 μm STED 矢量衍射模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "作者矢量衍射模型。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 STED lens 设计和 Fig. 3a 对应制备段",
+              "note": "圆形区域面积所用半径 R=10 μm，直径为两倍原文半径。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "author_radius_um": 10
+            },
+            "design_focal_um": {
+              "value": 10,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 STED lens 设计和 Fig. 3a 对应制备段",
+              "note": "作者设定的设计轴向距离，以模型的超表面平面为原点。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "reference_plane": "modeled_metasurface_plane"
+            },
+            "na": {
+              "value": 0.707,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 STED lens 设计和 Fig. 3a 对应制备段",
+              "note": "按空气中理想圆孔几何估算，自作者公布的 R 与设计 f。本库保留三位小数。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "atlas",
+              "formula": "R / sqrt(R^2 + f^2)",
+              "radius_um": 10,
+              "design_focal_um": 10,
+              "approximate": true,
+              "display": "约 0.707"
+            },
+            "wavelength_nm": {
+              "value": 405,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp3–4 Fig. 2c/d 与向量衍射段",
+              "note": "矢量衍射模拟输入谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "作者模型的 10 μm 截面",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp3–4 Fig. 2c/d 与向量衍射段",
+              "note": "原文描述形状为实心。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 10,
+              "reference_plane": "modeled_metasurface_plane"
+            },
+            "chromatic": {
+              "value": "矢量衍射：实心斑",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp3–4 Fig. 2c/d 与向量衍射段",
+              "note": "模型与图 3 的实测配置分别列出。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "zhao2015geometricphase_sted_model_532",
+          "study_id": "zhao2015geometricphase",
+          "specimen_id": "sted_model",
+          "model": "Zhao 2015 · 金膜孔阵列 · STED 模型 · 532 nm 环斑",
+          "variant": "20 μm STED 矢量衍射模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "作者矢量衍射模型。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 STED lens 设计和 Fig. 3a 对应制备段",
+              "note": "圆形区域面积所用半径 R=10 μm，直径为两倍原文半径。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "author_radius_um": 10
+            },
+            "design_focal_um": {
+              "value": 10,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 STED lens 设计和 Fig. 3a 对应制备段",
+              "note": "作者设定的设计轴向距离，以模型的超表面平面为原点。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "reference_plane": "modeled_metasurface_plane"
+            },
+            "na": {
+              "value": 0.707,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 STED lens 设计和 Fig. 3a 对应制备段",
+              "note": "按空气中理想圆孔几何估算，自作者公布的 R 与设计 f。本库保留三位小数。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "atlas",
+              "formula": "R / sqrt(R^2 + f^2)",
+              "radius_um": 10,
+              "design_focal_um": 10,
+              "approximate": true,
+              "display": "约 0.707"
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp3–4 Fig. 2a/b 与向量衍射段",
+              "note": "矢量衍射模拟输入谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "作者模型的 10 μm 截面",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp3–4 Fig. 2a/b 与向量衍射段",
+              "note": "原文描述形状为空心。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 10,
+              "reference_plane": "modeled_metasurface_plane"
+            },
+            "chromatic": {
+              "value": "矢量衍射：空心斑",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp3–4 Fig. 2a/b 与向量衍射段",
+              "note": "模型与图 3 的实测配置分别列出。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "zhao2015geometricphase_sted_model_secondary",
+          "study_id": "zhao2015geometricphase",
+          "specimen_id": "sted_model",
+          "model": "Zhao 2015 · 金膜孔阵列 · STED 模型 · 405 nm 附加环斑",
+          "variant": "20 μm STED 矢量衍射模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "作者矢量衍射模型。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 STED lens 设计和 Fig. 3a 对应制备段",
+              "note": "圆形区域面积所用半径 R=10 μm，直径为两倍原文半径。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "author_radius_um": 10
+            },
+            "design_focal_um": {
+              "value": 10,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 STED lens 设计和 Fig. 3a 对应制备段",
+              "note": "作者设定的设计轴向距离，以模型的超表面平面为原点。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "reference_plane": "modeled_metasurface_plane"
+            },
+            "na": {
+              "value": 0.707,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p4 STED lens 设计和 Fig. 3a 对应制备段",
+              "note": "按空气中理想圆孔几何估算，自作者公布的 R 与设计 f。本库保留三位小数。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "atlas",
+              "formula": "R / sqrt(R^2 + f^2)",
+              "radius_um": 10,
+              "design_focal_um": 10,
+              "approximate": true,
+              "display": "约 0.707"
+            },
+            "wavelength_nm": {
+              "value": 405,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp3–4 Fig. 2c 与 STED 模拟段",
+              "note": "矢量衍射模拟输入谱点。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "作者模型的 14 μm 截面",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp3–4 Fig. 2c 与 STED 模拟段",
+              "note": "原文描述形状为额外空心。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "evaluation_plane_um": 14,
+              "reference_plane": "modeled_metasurface_plane"
+            },
+            "chromatic": {
+              "value": "矢量衍射：额外空心斑",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 pp3–4 Fig. 2c 与 STED 模拟段",
+              "note": "模型与图 3 的实测配置分别列出。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "zhao2015geometricphase_ideal_model",
+          "study_id": "zhao2015geometricphase",
+          "specimen_id": "ideal_model",
+          "model": "Zhao 2015 · 金膜孔阵列 · 632.8 nm · 理想单谱点模型对照",
+          "variant": "632.8 nm 理想单谱点模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "作者理论比较，不形成实物效率散点。",
+          "values": {
+            "wavelength_nm": {
+              "value": 632.8,
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6 后的比较段",
+              "note": "作者选用 632.8 nm 做理论比较。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_protocol": {
+              "value": "理论峰强比较",
+              "source": "zhao_geometric_pdf_2015",
+              "location": "主文 p7 Fig. 6 后的比较段",
+              "note": "作者给理想单色透镜的最大强度为入射平面波的 2.2×10⁵ 倍，随后推论对应衍射效率超过 25%。没有焦圈及积分功率定义。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "ideal_single_wavelength_peak_ratio": 220000,
+              "corresponding_efficiency_claim": {
+                "operator": "gt",
+                "value": 25,
+                "unit": "%"
+              }
+            }
+          }
         }
       ],
-      "scope": "53项原始研究、317个器件/测量/系统配置、1932条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
+      "scope": "54项原始研究、323个器件/测量/系统配置、1950条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
