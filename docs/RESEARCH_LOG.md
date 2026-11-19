@@ -1105,3 +1105,9 @@ PR #173 合入 97135ef5852b56e61ea4a2921d5bf9f6db511f3c。PR 校验 44452472359�
 PR #176 合入 bc72d96c1c69fc7a8cb0f4f3c59d0c087e6b12d6。PR 校验 44454714809 及 Pages 44454854146 成功。323 项测试通过。独立无头 Chrome 核公开的 410 μm 散点、空值轴、单篇单记录、三份材料、出处返回、六视口、可见光和 CSV。Wiley 入口返回 403，Crossref 作者摘要和 DataCite 清单均 200。[PR #176](https://github.com/SelinLee/lens-evidence-atlas/pull/176) · [Pages](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44454854146)
 
 按用户新定的门槛复查全部 55 篇。正式标题或作者摘要须明确声称本研究透镜或镜组做消色差设计或校正，明确表述不同波长同焦也符合。移出 10 篇、77 个配置、887 条记录，包括 Seong 2026 普通色散参照，以及 Li 2022 正文有消色差器件但标题和摘要未明确表述色差校正的研究。清理后 45 篇、247 配置、1064 条，可见光 38 篇、766 条。材料与数据可在移出前快照追溯，手机和 VR/AR 域逐项比对无变化。延续 Cao 研究，作者摘要的题材与新门槛一致，已定位同一作者公开的相近研究原理专利，期刊样品归属仍需原始图表确认。[逐篇复核](ACHROMATIC_ELIGIBILITY_AUDIT_2026-11-19.md) · [Cao 摘要](https://api.crossref.org/works/10.1002/lpor.202401542) · [专利公开文本](https://patents.google.com/patent/CN114967127B/zh)
+
+## 2026-11-19-120 · 以实际光学校正为准，恢复两篇原始研究
+
+PR #177 合入 bdc6ac9074496d15c8f50146953015409ff725e2。PR 校验 44456375945、主线校验 44456496098 及 Pages 44456496091 成功。295 项测试通过。公开 228 文件逐字节一致，消色差分域数据 SHA256 为 62fa5a12a109c0ebbfddc3d6a96ec51e7428bfffaa1ac2eff19120e211e18ea4。独立无头 Chrome 核实首轮清理的完整和可见光计数、出处链接、手机和 VR/AR 数据、六视口及 Seong 正式历史材料。该发布时间点对应标题和摘要初筛规则。[PR #177](https://github.com/SelinLee/lens-evidence-atlas/pull/177) · [Pages](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44456496091)
+
+用户确认正文或补件有实证应当纳入。按原始光学校正重新审查边界。Li 2022 实物的 Fig. 3c、Fig. 4c、Fig. 5c 分别报告约 1.5、0.5、4.5 μm 的离散谱点最大焦差，恢复 19 条。Arbabi 2016（Optica）的校方网页摘要与正式 PDF 有出入，正式版 p.628 明确说明 915／1550 nm 同焦，恢复 12 条。Colburn 2020 的 Fig. 4 后正文报告显著轴向色移，固定面相似 PSF 使去卷积可行，移出 32 条。Seong 等非光学校正研究继续保留原始核验档案。复核后为 46 篇、247 配置、1063 条，可见光 38 篇、753 条。[原文证据和逐篇复核](ACHROMATIC_ELIGIBILITY_AUDIT_2026-11-19.md)

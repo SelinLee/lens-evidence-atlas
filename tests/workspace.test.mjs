@@ -109,7 +109,7 @@ test('asset versions match the final bytes including transitive module imports a
 
 test('each paper owns its configurations and its supplementary source IDs resolve to the same publication',()=>{
  const lenses=atlas.domains.find(d=>d.id==='metalens'), groups=groupRows(lenses.rows);
- assert.equal(groups.length,45);
+ assert.equal(groups.length,46);
  const balli=groups.find(g=>g.key==='balli2020');
  assert.equal(balli.rows.length,37);
  assert.equal(new Set(balli.rows.map(r=>r.specimen_id)).size,5);
@@ -124,7 +124,7 @@ test('each paper owns its configurations and its supplementary source IDs resolv
 
 test('visible-light filtering prioritizes the actual spectral row and keeps unknown wavelengths separate',()=>{
  const lens=atlas.domains.find(d=>d.id==='metalens'), filtered=filteredRows(lens,{visible:true,models:null});
- assert.equal(filtered.length,766);
+ assert.equal(filtered.length,753);
  assert.deepEqual(filtered.filter(r=>r.study_id==='lin2025').map(r=>r.values.wavelength_nm.value),[650,700,650,700]);
  assert.ok(!filtered.some(r=>['balli2020','shrestha2018'].includes(r.study_id)));
  assert.equal(groupRows(filtered).length,38);
@@ -186,7 +186,7 @@ test('each publication group has one traceable bibliographic record for its samp
  const chang=atlas.sources.get('device-chang_dispersion_2024').bibliography;
  assert.deepEqual([chang.authors,chang.short,chang.volume,chang.locator,chang.year],['Chang, S. et al.','Nat. Commun.','15','9627',2024]);
  assert.equal(atlas.sources.get('device-shrestha_achromatic_2018').bibliography.authors,'Shrestha, S., Overvig, A. C., Lu, M., Stein, A. & Yu, N.');
- assert.equal(atlas.sources.get('li').bibliography,catalog.bibliography['10.1038/s41467-022-29973-3']);
+ assert.equal(atlas.sources.get('device-li_inverse_2022').bibliography,atlas.sources.get('li').bibliography);
  assert.equal(atlas.sources.get('rouquette_mla_wfs_v1_2026').bibliography.short,'arXiv');
  assert.equal(atlas.sources.get('device-asnani_native_mtf_thesis_2022').bibliography.volume,undefined);
 });

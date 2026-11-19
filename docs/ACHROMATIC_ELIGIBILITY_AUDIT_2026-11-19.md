@@ -1,23 +1,29 @@
-# 消色差超透镜正式标题与摘要准入复核
+# 消色差超透镜原始校正证据复核
 
-2026-11-19 复查矩阵中全部 55 篇，依据为正式标题或作者摘要对本文器件色差校正、消色差设计或不同波长同焦的明确表述。部分校正保留原作者限定。只在背景出现相关词，以及宽带、全彩、长焦深或计算恢复等单独描述，不能替代这一依据。同一合格论文的对照器件仍用于对应的比较。普通色散参照和独立评估类论文移出矩阵。
+2026-11-19 复查矩阵中全部 55 篇。先核正式标题及摘要，遇有范围不明或版本措辞差异时核实正文、图表和补件。以对本文透镜或镜组实施光学消色差或色差校正的原始证据判定准入。部分校正保留原作者限定，同一合格论文的未校正对照仍随研究保留。
 
-35 篇由正式标题判定，另对 20 篇核作者摘要。独立无头 Google Chrome 从 Crossref、OpenAlex 取得发布摘要或索引，摘要不完整或措辞有歧义的论文再与期刊、作者正式存档和 PubMed 对照。10 篇随同 77 个配置、887 条记录移出，共保留 45 篇、247 个配置、1064 条。可见光筛选为 38 篇、766 条。该轮复核应用新的标题或摘要门槛，三年与分区及经典引用门槛继续按项目目标执行。移出的表格与原始材料绑定可在原数据库快照追溯。[复核前数据库](https://github.com/SelinLee/lens-evidence-atlas/blob/bc72d96c1c69fc7a8cb0f4f3c59d0c087e6b12d6/data/devices.json) · [持续研究目标](LOCAL_RESEARCH_GOAL.md)
+35 篇正式标题已逐条与书目登记对照，其余 20 篇核作者摘要及相关段落。PR #177 的首轮按标题和摘要移出 10 篇。用户随后确认正文有证据同样纳入，追核后恢复 2 篇、9 个配置、31 条记录，并移出一篇标题声明消色差成像但实测仍有明显焦移的研究。最终保留 46 篇、247 个配置、1063 条，可见光为 38 篇、753 条。保留档案可按原数据库快照追溯。三年、分区及经典引用门槛仍按项目目标执行。[复核前数据库](https://github.com/SelinLee/lens-evidence-atlas/blob/bc72d96c1c69fc7a8cb0f4f3c59d0c087e6b12d6/data/devices.json) · [持续研究目标](LOCAL_RESEARCH_GOAL.md)
 
-## 未通过准入的 10 篇
+## 全文复核后恢复的两篇
+
+- **Li 2022** 实制 2 mm、NA 0.7 的离散 RGB 消色差超透镜。主文 Fig. 3c 给 488／532／658 nm 的实测轴向分布，正文报告最大焦差约 1.5 μm。Fig. 5c 对应 1 cm、NA 0.3，正文报告约 4.5 μm。Fig. 4c 的另一只六色、2 mm、NA 0.3 实物报告最大焦差 0.5 μm。恢复 4 个配置、19 条及原证据位置。摘要泛称像差校正和多色聚焦，具体色差校正由正文建立。[正式主文 pp.4–7](https://www.nature.com/articles/s41467-022-29973-3.pdf#page=4) · [原核验](LI_INVERSE_REVIEW_2026-11-14.md)
+- **Arbabi 2016，Optica** 的馆藏网页摘要与所附正式 PDF 不同。独立无头 Chrome 重取校方存档正式版，印刷 p.628 摘要明确报告一只透射镜实现在 915／1550 nm 同焦距。主文 §4 Fig. 4c–d 和补件 Fig. S2 为实测图。成对精确峰位仍缺，补件只在低 NA 器件的 915 nm 印出 980 μm。恢复 5 个配置、12 条，归近红外离散消色差。[正式 PDF p.628](https://authors.library.caltech.edu/records/32je3-2pw19/files/optica-3-6-628.pdf?download=1#page=1) · [原核验](ARBABI_METAMOLECULE_REVIEW_2026-11-19.md)
+
+两篇均符合经典文献例外。2026-11-19 Crossref 查询 Li 267 次、Arbabi 452 次，同日 OpenAlex 分别为 349 次和 492 次。[Li 的 Crossref](https://api.crossref.org/works/10.1038/s41467-022-29973-3) · [Arbabi 的 Crossref](https://api.crossref.org/works/10.1364/optica.3.000628)
+
+## 按原文证据移出的 9 篇
 
 | 正式论文 | 记录数 | 判定依据 |
 | --- | ---: | --- |
-| [Neural nano-optics for high-quality thin lens imaging](https://doi.org/10.1038/s41467-021-26443-0) | 1 | 标题与摘要报告神经纳米光学成像和联合重建。摘要提到像差限制和全彩成像，未明确报告所研究器件的消色差校正。 [作者摘要](https://api.crossref.org/works/10.1038/s41467-021-26443-0) |
+| [Neural nano-optics for high-quality thin lens imaging](https://doi.org/10.1038/s41467-021-26443-0) | 1 | 主文 Figs. 2–3 用固定像面的 PSF 比较联合优化与恢复效果，未确认最佳焦位色散经光学校正。此处保留全彩计算成像的证据边界。 [作者存档正式版](https://light.cs.princeton.edu/wp-content/uploads/2021/11/NeuralNanoOptics.pdf) |
 | [How good is your metalens? Experimental verification of metalens performance criterion](https://doi.org/10.1364/OL.394680) | 1 | 摘要将性能指标用于评估工作谱宽，并将消色差透镜列作未来适用对象。独立的通用评估文献。 [作者摘要](https://api.crossref.org/works/10.1364/OL.394680) |
-| [Inverse design enables large-scale high-performance meta-optics reshaping virtual reality](https://doi.org/10.1038/s41467-022-29973-3) | 19 | 标题为大尺度逆设计，摘要写像差校正和多色聚焦，未明确给出色差校正或多色同焦。正文 Fig. 3 确实报告 RGB 消色差实物。此次按用户指定的标题或摘要门槛移出。 [作者摘要](https://www.nature.com/articles/s41467-022-29973-3) |
-| [Beating spectral bandwidth limits for large aperture broadband nano-optics](https://doi.org/10.1038/s41467-025-58208-4) | 439 | 摘要以色差为研究背景，报告平面光学与计算重建联合设计的可见光宽带成像。缺当前器件明确色差校正或共焦的摘要表述。 [作者摘要](https://api.crossref.org/works/10.1038/s41467-025-58208-4) |
-| [Metasurface optics for full-color computational imaging](https://doi.org/10.1126/sciadv.aar2114) | 26 | 核 PubMed 正式摘要全文。消色差一词指向既有工作的背景，本文报告光谱近不变 PSF 和单滤波器重建。 [作者摘要](https://pubmed.ncbi.nlm.nih.gov/29487913/) |
-| [De-occluding broadband metalens](https://doi.org/10.1038/s41467-026-76606-0) | 306 | 摘要的核心为通阻带分光、去遮挡及图像重建。未在标题或摘要声明色差校正。 [作者摘要](https://api.crossref.org/works/10.1038/s41467-026-76606-0) |
-| [Inverse designed extended depth of focus meta-optics for broadband imaging in the visible](https://doi.org/10.1515/nanoph-2021-0431) | 44 | 摘要报告长焦深、约 290 nm 内 PSF 稳定及计算后处理。缺色差校正或同焦的明确表述。 [作者摘要](https://api.crossref.org/works/10.1515/nanoph-2021-0431) |
-| [Inverse Designed Metalenses with Extended Depth of Focus](https://doi.org/10.1021/acsphotonics.9b01703) | 25 | 摘要是约 625 nm 单谱点的柱面长焦深验证。 [作者摘要](https://api.crossref.org/works/10.1021/acsphotonics.9b01703) |
+| [Beating spectral bandwidth limits for large aperture broadband nano-optics](https://doi.org/10.1038/s41467-025-58208-4) | 439 | 主文 pp.2–3、6 以延长焦区解释共用传感器面。主器件有轴扫 Fig. S12，多色对照 Fig. S9 为固定面图。已核材料没有给多色最佳焦位的校正证据。 [正式主文](https://pmc-oa-opendata.s3.amazonaws.com/PMC11953342.1/PMC11953342.1.pdf) |
+| [Metasurface optics for full-color computational imaging](https://doi.org/10.1126/sciadv.aar2114) | 26 | 正文 Fig. 1D–E 将立方相位产生的长焦深解释为对焦移的容忍，评价固定面的光谱近不变 PSF 和单滤波器恢复。 [作者存档正式版](https://lamarr.ece.uw.edu/research/amlab/Papers_Journals/Shane_Full_color_imaging.pdf) |
+| [De-occluding broadband metalens](https://doi.org/10.1038/s41467-026-76606-0) | 306 | 设计利用波长与焦深的关系去遮挡，Fig. 4 在两个对应物深比较通阻带的实测焦斑。已核证据用于光谱选通、去遮挡和重建。 [正式主文](https://pmc.ncbi.nlm.nih.gov/articles/PMC13575167/) |
+| [Inverse designed extended depth of focus meta-optics for broadband imaging in the visible](https://doi.org/10.1515/nanoph-2021-0431) | 44 | 正文 §§1–2 延长焦区来保持传感面 PSF 相似，约 625 nm 轴扫验证焦深，宽带图经后处理。未确认最佳焦位色散经校正。 [正式主文](https://pmc.ncbi.nlm.nih.gov/articles/PMC11501592/) |
+| [Inverse Designed Metalenses with Extended Depth of Focus](https://doi.org/10.1021/acsphotonics.9b01703) | 25 | 柱面长焦深的器件设计与实验在约 625 nm，正文 Table 1 给同谱点三种设计焦距。 [作者摘要](https://api.crossref.org/works/10.1021/acsphotonics.9b01703) |
 | [Modal contrast engineering in ultraviolet and visible metalenses enabled by material-selective hybridization](https://doi.org/10.1038/s41467-026-74547-2) | 14 | 标题及摘要报告材料选择性涂层、紫外和可见光的宽带效率与焦斑。原文 Fig. 4 前说明几何相位色散使焦距变化，审稿回复记 RGB 各自调焦。 [作者摘要](https://pmc-oa-opendata.s3.amazonaws.com/PMC13444320.1/PMC13444320.1.pdf#page=1) |
-| [Multiwavelength polarization-insensitive lenses based on dielectric metasurfaces with meta-molecules](https://doi.org/10.1364/optica.3.000628) | 12 | 校方存档摘要提到色差背景和 915／1550 nm 同时工作，未明确说校正色差或共焦。此项是 Optica 超分子论文，与另一个 Optics Express 双波长研究分属不同 DOI。 [作者摘要](https://authors.library.caltech.edu/records/32je3-2pw19) |
+| [Simultaneous Achromatic and Varifocal Imaging with Quartic Metasurfaces in the Visible](https://doi.org/10.1021/acsphotonics.9b01216) | 32 | 主文 Fig. 4 与正文明确报告显著的轴向色移。长焦深使固定评价面三色 PSF 近似，原始图各色模糊，经去卷积获得全彩成像结果。 [正式主文](https://labs.ece.uw.edu/amlab/Papers_Journals/Shane_Achromatic_Varifocal.pdf#page=5) |
 
 Seong 的上一版报告以普通色散研究作独立参照。主文 §Diffraction-limited metalenses 给可见光 450 nm 及 635 nm 的作者有效焦距分别为 14.5 和 10.2 mm。这两个值在色散设计段给出。透明评议 Response 1.4b 确认 RGB 在不同焦距采集。宽带效率和逐色焦斑可沿原核验笔记追溯。[正式版 pp.5–6](https://pmc-oa-opendata.s3.amazonaws.com/PMC13444320.1/PMC13444320.1.pdf#page=5) · [评议材料 p.16](https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-026-74547-2/MediaObjects/41467_2026_74547_MOESM2_ESM.pdf#page=16) · [原核验记录](SEONG_AND_LI_REVIEW_2026-11-18.md)
 
@@ -36,7 +42,7 @@ Seong 的上一版报告以普通色散研究作独立参照。主文 §Diffract
 | [Metasurfaces based dual wavelength diffractive lenses](https://doi.org/10.1364/OE.23.003928) | 摘要明确将两个波长聚焦于单个焦点，偏振条件保留。 [作者摘要](https://api.crossref.org/works/10.1364/OE.23.003928) |
 | [Multispectral optical metasurfaces enabled by achromatic phase transition](https://doi.org/10.1038/srep15781) | 摘要明确描述离散多波长的焦斑同位置，并有另一试样的双色同面焦斑。实物逐色峰位仍待补。 [作者摘要](https://api.crossref.org/works/10.1038/srep15781) |
 
-## 由正式标题直接判定的 35 篇
+## 从正式标题定位并保留的 34 篇
 
 - [Broadband achromatic dielectric metalenses](https://doi.org/10.1038/s41377-018-0078-x)
 - [High‐Index, Low‐Loss Optical Material Platforms for Ultra‐Broadband Ultraviolet‐to‐Visible Achromatic Metalenses](https://doi.org/10.1002/adfm.75854)
@@ -67,7 +73,6 @@ Seong 的上一版报告以普通色散研究作独立参照。主文 §Diffract
 - [Printable grayscale nano-template for full-colour organic light-emitting diode near-eye displays with 3D achromatic metalenses](https://doi.org/10.1038/s41467-026-73940-1)
 - [Achromatic Varifocal Metalens for the Visible Spectrum](https://doi.org/10.1021/acsphotonics.9b00523)
 - [High-efficiency broadband achromatic metalens for near-IR biological imaging window](https://doi.org/10.1038/s41467-021-25797-9)
-- [Simultaneous Achromatic and Varifocal Imaging with Quartic Metasurfaces in the Visible](https://doi.org/10.1021/acsphotonics.9b01216)
 - [Broadband achromatic optical metasurface devices](https://doi.org/10.1038/s41467-017-00166-7)
 - [Vectorial Generalized Snell’s Law-Enabled Differentiable Ray Tracing for Large-Aperture Visible Achromatic Hybrid Meta-Optics](https://doi.org/10.1002/lpor.202500448)
 - [Bandpass-filter-integrated multiwavelength achromatic metalens](https://doi.org/10.1364/PRJ.422280)
