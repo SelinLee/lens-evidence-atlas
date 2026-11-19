@@ -1075,3 +1075,9 @@ PR #168 合入 f0d73e0009e9878ad7af2f95b3238a1f495b233c。PR 校验 44449064292�
 ## 2026-11-19-114 · Eisenbach 2015 可见光双波长共焦及蓝光副焦
 
 正式版 Figs. 1–6 核同一振幅型超表面波带片在 460 nm 水平偏振和 650 nm 垂直偏振下均于样品后 1 mm 聚焦。460 nm 另有作者报告约 1.4 mm 的副焦。主焦及副焦分字段，缺峰位误差和两主焦的定量残余差。白光的 50 μm 步长及半最大值光谱图、1 mm 归一曲线按各自协议记录。200×100 μm 仅属实制一维色散对照。Fig. 1b 和 Fig. 2d 均保留 450／460 nm 模拟标注差异。期刊 DOI 浏览得到验证页，NEO Lab 正式版可查，原始 PSF、物方采样、MTF 和光效数值待补。新增 12 条、4 配置，累计 53 篇、317 配置、1932 条。[核验](EISENBACH_DUAL_FZP_REVIEW_2026-11-19.md)
+
+## 2026-11-19-115 · Eisenbach 2015 上线与 Zhao 2015 多谱点设计接续
+
+PR #170 合入 0352c12e0d26e71a4b0f818a44991593407e2def。PR 校验 44450730046、主线校验 44450868892 和 Pages 44450868969 成功。320 项测试通过。线上 12 个文件与本机构建字节一致，devices-data.js SHA256 为 fc7f0961e19f43352988a9dd280cb263159529ba6825635acb08a176924710d2。独立无头 Chrome 核 12 条、4 配置、460／650 nm 的两条 1000 μm 主焦散点及 460 nm 的约 1400 μm 副焦散点，残余轴向差轴留空、来源双向跳转、CSV 与六视口均通过。仅可见光保留本篇全部 12 条，全库 44 篇、1621 条。作者组 PDF 200 且哈希一致。Optica DOI 返回 HTTP 200 验证页，正文以作者组 PDF 为准。[PR #170](https://github.com/SelinLee/lens-evidence-atlas/pull/170) · [Pages](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44450868969)
+
+接续 Zhao 等 2015 年 `10.1038/srep15781`。2026-11-19 查 Crossref 114 次、OpenAlex API 122 次。Scientific Reports 15781 原文将半径 10 μm 的三谱点透镜与另一同口径 STED 样品分开。无头 Chrome 取得 Springer Fig. 3／4 原图，SHA256 分别为 53f2e661882dcb083f74d3a194a02c787fdffb04f4634ee79de8bff381a9e5e8 和 0dd52a208040f5b856ae20786b2497ee7a7c61864146c4e12e1b2e1912ef75ea。Fig. 4 的 532／632.8／785 nm 实测位于右列，9 μm 是 Fig. 5 横向评价面，作者指出强度最大值可移动。方法以金膜顶面为 z=0、0.5 μm 步进。Fig. 3c 的坐标为 x–y，与正文 xz 表述有差异，继续核 STED 图注。期刊 PDF 在本机请求未取得，已从 PMC 索引核正式全文相关段落。持续目标保持开启。[主文馆藏](https://pmc.ncbi.nlm.nih.gov/articles/PMC4621515/) · [Fig. 4 原图](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fsrep15781/MediaObjects/41598_2015_Article_BFsrep15781_Fig4_HTML.jpg) · [Crossref](https://api.crossref.org/works/10.1038/srep15781)
