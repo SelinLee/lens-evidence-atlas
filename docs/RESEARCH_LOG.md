@@ -1149,3 +1149,11 @@ PR #185 合入 b32d0dba033ce6ba561976479ca0baa65b2c32d1。PR 校验 44463774814�
 ## 2026-11-19-127 · Hsu 偏振复用同面 PSF 与未校正对照
 
 JILA 新入口取得 2025 年封面的博士论文 PDF，与 NSF 正式版和两份作者稿对读。录固定针孔面的 0.80／0.82 Airy 拟合 NA 和 ±0.01 标准误。第二通道的 850／852 nm 原文冲突和期刊 42%／45% 对博士论文低于 20% 的效率冲突按出处展示。对照单镜作者报告 780 相对 852 nm 的 +300 μm，正式针孔协议下两通道效率分别为 56% 和 58%；接收端折射 L1 的 780 nm PSF 另作系统记录。新增 1 篇、3 配置、7 条。累计 51 篇、272 配置、1148 条，可见光 42 篇、787 条。[本批核验](HSU_POLARIZED_FOCUS_REVIEW_2026-11-19.md)
+
+## 2026-11-19-128 · Hsu 上线验收与 Zang 补件追查
+
+0.3.53 经 [PR #187](https://github.com/SelinLee/lens-evidence-atlas/pull/187) 合并为 fdc4b63。PR 校验 44466514167、主线校验 44466658844 与 [Pages 44466658830](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44466658830) 成功。310 项测试通过，234 个线上文件与本地构建的 SHA-256 一致。独立无头 Chrome 验收 51 篇、1148 条及可见光筛选后的 42 篇、787 条。Hsu 筛选得到 7 条，其中 5 条可见。复核 4000 μm 对照的 +300 μm、780／852 nm 的 56%／58% 与 500 μm 设计焦距的 0.80／0.82 Airy 拟合 NA，散点读数保留 ±0.01 标准误。核对期刊正式版和作者学位论文的 PDF 文件、数据格与来源往返及六个视口。复用镜逐色最佳焦位、原始 PSF 与效率归属仍待原始证据。[Hsu 核验](HSU_POLARIZED_FOCUS_REVIEW_2026-11-19.md)
+
+Zang 2024 补件组件 DOI 在 Crossref 确认从属于 ACS Nano 主文，同一 PDF 入口在独立 Chrome 环境返回 403。DR-NTU 题名检索和 DataCite 精确关联检索均为零项，Figshare 检索入口返回 403。期刊公开目录只支持定位 Fig. S8、S14、S16，等取得原图和测量方法后判定轴向或横向校正证据与归属。[补件元数据](https://api.crossref.org/works/10.1021/acsnano.4c12546.s001) · [期刊补件目录](https://pubs.acs.org/doi/10.1021/acsnano.4c12546?goto=supporting-info)
+
+接续回查指定参考库里的 Balli 2020。Crossref 2026-11-19 查询被引 221 次。取到出版社 7 页补件与 28046 字节工作簿，后者 SHA-256 与初次入库一致。视觉核对补件 p. 5 Fig. S4a–c，确认为 EPD 100 μm、NA 0.24、间隔 7 μm 的另一个制成样品。工作簿的 Supplementary Figure 4-a!D6:L6、4-b!D7:L7 和 4-c!D6:L6 分别给出 1000–1800 nm 九谱点的 FWHM、聚焦效率和带符号的归一化焦距误差。作者给出约 19% 平均效率。下一批先录这一器件并核焦距归一化参考，绝对焦位待补。2026 年 Park 等的宽带消色差超透镜阵列目前在作者实验室和作者履历均列即将发表，继续关注正式上线及实验数据。会话目标保持开启。[Balli 正式版](https://doi.org/10.1038/s41467-020-17646-y) · [Balli 原始数据](https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-020-17646-y/MediaObjects/41467_2020_17646_MOESM3_ESM.xlsx) · [Park 作者实验室列表](https://photonics.postech.ac.kr/publications)
