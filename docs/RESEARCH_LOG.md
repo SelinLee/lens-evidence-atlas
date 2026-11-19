@@ -1171,3 +1171,9 @@ Zang 2024 补件组件 DOI 在 Crossref 确认从属于 ACS Nano 主文，同一
 ## 2026-11-19-131 · Shrestha 四只消色差实物的实测波长与协议
 
 正式 PDF Figs. 3–5 与 DOCX Table S1 对读，M1A／M1B／M2／M3 各新增 8／10／10／5 条实际波长记录。M1A 1660 nm 实测和 1650 nm 设计上限分列。M2、M3 的 Table S1 和主文图注 NA 各列两处原值，单值留空。明确 Fig. 5c 相对各自平均焦距的 2%–5% 为作者四样品概述，M1B/M2 的 Strehl >0.8 跨带界限，M3 的效率受测量 NA 限制而缺。补焦面圆形积分、裸石英同孔径分母以及 1 μm 典型轴扫步长；逐波长最佳焦位、FWHM、Strehl、效率及原始 PSF/MTF 未取得数表。累计 51 篇、273 配置、1191 条，可见光 42 篇、787 条。[本批核验](SHRESTHA_2018_FABRICATED_REVIEW_2026-11-19.md)
+
+## 2026-11-19-132 · Shrestha 上线验收与 Hasegawa 补件接续
+
+0.3.55 经 [PR #191](https://github.com/SelinLee/lens-evidence-atlas/pull/191) 合并为 dcea0b0。PR 校验 44470829010、主线校验 44470952477 与 [Pages 44470952455](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44470952455) 成功。314 项测试通过，234 个公开文件与本地构建的 SHA-256 一致。独立无头 Chrome 核到 51 篇、1191 条及可见光筛选后的 42 篇、787 条。Shrestha 名下 4 配置、37 条记录。几何轴上 33 条谱点对应 32 组坐标，校验 1660 nm／设计焦距 200 μm、M2 的 1650 nm／800 μm、M3 的 1400 nm／30 μm 与 1300 nm 重合坐标。无原始焦位的轴为空，CSV、补件和正式 PDF 的出处往返与六个视口验收通过。[Shrestha 核验](SHRESTHA_2018_FABRICATED_REVIEW_2026-11-19.md)
+
+接着补查 Hasegawa 2026，原刊 2026-11-11 正式上线，Laser & Photonics Reviews 在 2025 年 3 月中科院升级版为物理与天体物理大类一区。正式稿 p.14 指定 `lpor72174-sup-0001-SuppMat.pdf`，§2.4 列 Fig. S1/Table S2 的 ±5 nm 失谐评估、Fig. S2/Table S3 的偏振评估。正文把这些评估称为数值计算，仍有焦距描述使用实测措辞。对应章节亦提到 30 μm 模型，需对原表确认口径、方法和焦距参考。采用独立无头 Chrome 检查精确补件 URL、出版社下载接口及资产入口均返回 403。继续核正式补件与作者存档，数值等待归属。会话目标保持开启。[期刊正式稿](https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/lpor.72174) · [2025 年分区](https://www.ais.cn/journal/database/5537) · [武汉大学图书馆分区](https://topj.lib.whu.edu.cn/show.asp?cat=sci&id=13647)
