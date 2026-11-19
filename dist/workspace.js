@@ -1,4 +1,4 @@
-import {createWorkspace, groupRows, valueSources, filteredRows, axisPoints, metricAvailability, availableAxes} from './workspace-data.js?v=ed8601939ee4d675';
+import {createWorkspace, groupRows, valueSources, filteredRows, axisPoints, metricAvailability, availableAxes, customSampleAxes} from './workspace-data.js?v=a0cb173b8a73ca82';
 
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -7,7 +7,11 @@ const initial = new URL(location.href), oldRoute = initial.hash.slice(1).split('
 const state = {domain:'phone', module:'main', x:'mp', y:'f', mode:'scatter', sort:'original', visible:false, models:null, columns:null, query:'', evidence:'', evidenceTab:'metrics', compare:[]};
 let viewQuery = location.search, zoom = null;
 let referenceGroups = new Map(), citations = new Map(), activeRows = [], activeColumns = [], activePoints = [], activeSetting = 'models';
+let customData, draftDomain, draftMetrics, chartRows = [];
 const domain = () => atlas.domains.find(d => d.id === state.domain);
+const chartMetrics = () => [...domain().metrics, ...customData.metrics];
+const metricKey = metric => metric.parameterKey ?? metric.id;
+const storageKey = id => `lens-atlas.custom-samples.${id}`;
 const rowAnchor = r => `row-${state.domain}-${r.id}`;
 const cellAnchor = (r, m) => `cell-${state.domain}-${r.id}-${m.id}`;
 const definitionAnchor = m => `definition-${state.domain}-${m.id}`;
@@ -15,6 +19,78 @@ const refAnchor = id => 'ref-' + id;
 const citation = id => citations.has(id) ? `<a class="citation" href="#${esc(refAnchor(id))}" aria-label="参考文献 ${citations.get(id)}">[${citations.get(id)}]</a>` : '';
 const sourceKind = kind => ({manufacturer:'厂商资料',manufacturer_technical:'原厂技术说明',scholarly_book:'学术书章',paper:'原始研究论文',peer_reviewed_paper:'同行评议论文',paper_review:'学术综述',standard:'标准 / 公开预览',supplementary_material:'论文补充材料',research_data:'作者原始数据',research_software:'作者研究代码',author_webpage:'作者课题组网页',author_manuscript:'论文作者稿',doctoral_thesis:'博士论文（原始研究）',conference_paper:'会议论文',metrology_reference:'计量与统计参考',trial_protocol:'原始试验方案',software_documentation:'原厂软件文档'})[kind] || kind || '厂商资料';
 const valueText = value => value?.display ?? (value?.value === null || value?.value === undefined ? '未公开 / 未核验' : String(value.value));
+
+function loadCustomData(id) {
+  try {
+    const data = JSON.parse(localStorage.getItem(storageKey(id)));
+    if (Array.isArray(data?.metrics) && Array.isArray(data.samples)) {
+      return {
+        metrics:data.metrics.filter(m=>typeof m?.id==='string' && m.id.startsWith('custom-') && typeof m.label==='string'),
+        samples:data.samples.filter(s=>typeof s?.id==='string' && typeof s.name==='string' && s.values && s.marker)
+      };
+    }
+  } catch {}
+  return {metrics:[], samples:[]};
+}
+
+function customRow(sample, metrics) {
+  const values = Object.fromEntries(metrics.flatMap(metric=>{
+    const value = sample.values[metricKey(metric)];
+    return Number.isFinite(value) ? [[metric.id,{value}]] : [];
+  }));
+  return {id:sample.id, model:sample.name, marker:sample.marker, values, variant:'自定义 · 用户录入'};
+}
+
+function customError(message = '') {
+  $('custom-error').hidden = !message;
+  $('custom-error').textContent = message;
+}
+
+function fieldMarkup(metric, value) {
+  return `<label>${esc(metric.label)}<input type="number" step="any" data-custom-value="${esc(metricKey(metric))}" value="${esc(value)}"></label>`;
+}
+
+function fillCustomForm() {
+  const sample = customData.samples.find(s=>s.id===$('custom-sample').value);
+  draftMetrics = chartMetrics().filter(m=>m.numeric);
+  draftMetrics.sort((a,b)=>Number([state.x,state.y].includes(b.id))-Number([state.x,state.y].includes(a.id)));
+  $('custom-name').value = sample?.name ?? '';
+  $('custom-shape').value = sample?.marker.shape ?? 'diamond';
+  $('custom-color').value = sample?.marker.color ?? '#a34522';
+  $('custom-values').innerHTML = draftMetrics.map(m=>fieldMarkup(m,sample?.values[metricKey(m)])).join('');
+  $('custom-metric-name').value = $('custom-metric-unit').value = '';
+  $('remove-custom').hidden = !sample;
+  customError();
+}
+
+function openCustom(id = '') {
+  draftDomain = state.domain;
+  $('custom-scope').textContent = `${domain().name} · 数据保存在当前浏览器。`;
+  $('custom-sample').innerHTML = '<option value="">新增样本</option>' + customData.samples.map(sample=>`<option value="${esc(sample.id)}">${esc(sample.name)}</option>`).join('');
+  $('custom-sample').value = id;
+  fillCustomForm();
+  $('custom-dialog').showModal();
+}
+
+function saveCustomData(id, sample = null) {
+  const latest = loadCustomData(draftDomain);
+  const samples = latest.samples.filter(s=>s.id!==id);
+  if (sample) {
+    const index = latest.samples.findIndex(s=>s.id===id);
+    samples.splice(index<0 ? samples.length : index,0,sample);
+  }
+  const metrics = [...new Map([...latest.metrics,...draftMetrics.filter(m=>m.custom)].map(m=>[m.id,m])).values()]
+    .filter(m=>samples.some(s=>Number.isFinite(s.values[m.id])));
+  const next = {metrics,samples};
+  try { localStorage.setItem(storageKey(draftDomain),JSON.stringify(next)); }
+  catch { customError('浏览器无法保存数据，请检查网站存储设置。'); return; }
+  $('custom-dialog').close();
+  if (draftDomain !== state.domain) return;
+  customData = next;
+  if (sample) Object.assign(state,customSampleAxes(customRow(sample,chartMetrics()),state.x,state.y));
+  zoom = null;
+  render();
+}
 
 function citeSources(ids) {
   const targets = new Map();
@@ -28,6 +104,7 @@ function citeSources(ids) {
 function defaults(id) {
   zoom = null;
   state.domain = id; state.models = null; state.columns = null; state.query = ''; state.evidence = ''; state.compare = [];
+  customData = loadCustomData(id);
   const numeric = domain().metrics.filter(m => m.numeric);
   if (domain().app) {
     const mostReported = [...numeric].sort((a,b) => domain().rows.filter(r=>Number.isFinite(r.values[b.id]?.value)).length - domain().rows.filter(r=>Number.isFinite(r.values[a.id]?.value)).length)[0];
@@ -72,7 +149,7 @@ function restore(url) {
   defaults(atlas.domains.some(d => d.id === id) ? id : 'phone');
   const valid = {module:['main','ultrawide','tele','external_macro','native_research'], mode:['scatter'], sort:['original','model','x','y'], evidence:['','manufacturer','research']};
   for (const [key, choices] of Object.entries(valid)) if (choices.includes(p.get(key))) state[key] = p.get(key);
-  for (const key of ['x','y']) { const value = p.get(key); if (domain().metrics.some(m => m.numeric && m.id === value) || (key === 'x' && value === '$model')) state[key] = value; }
+  for (const key of ['x','y']) { const value = p.get(key); if (chartMetrics().some(m => m.numeric && m.id === value) || (key === 'x' && value === '$model')) state[key] = value; }
   // Older device links selected model names. New links use stable row IDs.
   for (const key of ['models','columns','compare']) {
     try { const values = JSON.parse(p.get(key)); if (Array.isArray(values) && values.every(v => typeof v === 'string')) state[key] = key === 'models' ? domain().rows.filter(r => values.includes(r.id) || values.includes(r.model)).map(r => r.id) : values; } catch {}
@@ -103,9 +180,9 @@ function controls() {
   if(d.id==='phone')$('module').innerHTML=[...new Set(d.rows.map(r=>r.module))].map(id=>`<option value="${esc(id)}">${esc(({main:'主摄',ultrawide:'超广角',tele:'长焦',external_macro:'外接微距（研究）',native_research:'原生摄像头（研究）'})[id]||id)}</option>`).join('');
   $('domain').value = d.id; $('module').value = state.module; $('mode').value = state.mode; $('sort').value = state.sort; $('evidence').value = state.evidence;
   $('module-label').hidden = d.id !== 'phone';
-  const numeric = d.metrics.filter(m => m.numeric);
+  const numeric = chartMetrics().filter(m => m.numeric);
   for (const axis of ['x','y']) {
-    $(axis).innerHTML = (axis === 'x' ? '<option value="$model">型号 / 样本（类别轴）</option>' : '') + numeric.map(m => {const count=metricAvailability(activeRows,m.id);return `<option value="${esc(m.id)}"${count?'':' disabled'}>${esc(m.label)} · ${count?count+'项有值':'暂无数据'}</option>`;}).join('') + (!numeric.length && axis === 'y' ? '<option value="">暂无可绘制单值</option>' : '');
+    $(axis).innerHTML = (axis === 'x' ? '<option value="$model">型号 / 样本（类别轴）</option>' : '') + numeric.map(m => {const count=metricAvailability(chartRows,m.id);return `<option value="${esc(m.id)}"${count?'':' disabled'}>${esc(m.label)}${m.custom?'（自定义）':''} · ${count?count+'项有值':'暂无数据'}</option>`;}).join('') + (!numeric.length && axis === 'y' ? '<option value="">暂无可绘制单值</option>' : '');
     $(axis).value = state[axis];
   }
   $('visible-light').checked = state.visible;
@@ -130,20 +207,20 @@ function coordinateText(p, axis) {
   return `${value?.approximate ? '约' : ''}${p[axis]}${error ? ' ± ' + error.value : ''}`;
 }
 function pointDescription(p) {
-  const d = domain(), xm = d.metrics.find(m => m.id === state.x), ym = d.metrics.find(m => m.id === state.y);
+  const ms = chartMetrics(), xm = ms.find(m => m.id === state.x), ym = ms.find(m => m.id === state.y);
   const xv = p.row.values[state.x], yv = p.row.values[state.y];
   return `${p.label}；${xm?.label || '样本序号'}：${valueText(xv) === '未公开 / 未核验' && state.x === '$model' ? p.x : valueText(xv)}；${ym?.label || '纵轴'}：${valueText(yv)}；${p.row.variant}；${[xv,yv].filter(Boolean).map(v=>[v.evidence,v.note,v.location].filter(Boolean).join(' · ')).join('；')}；${[...new Set([...valueSources(xv), ...valueSources(yv)])].map(id => { const s = atlas.sources.get(id); return `[${citations.get(id)}] ${s?.title}；${s?.evidence_scope || s?.scope || ''}；核验 ${s?.checked_on}`; }).join('；')}`;
 }
-const inspectHint = '鼠标拖动框选放大，点击圆点固定读数。';
+const inspectHint = '鼠标拖动框选放大，点击数据点固定读数。';
 let plotWidth = 0, positionReadout;
 function drawChart() {
   plotWidth = Math.min(900, Math.max(280, $('chart').clientWidth - 2));
   positionReadout = null;
 
   $('point-detail').textContent = inspectHint;
-  const d = domain(), ms = d.metrics, categorical = state.x === '$model';
+  const d = domain(), ms = chartMetrics(), categorical = state.x === '$model';
   for (const row of $('table').querySelectorAll('.plot-selected')) row.classList.remove('plot-selected');
-  const allPoints = axisPoints(activeRows, state.x, state.y);
+  const allPoints = axisPoints(chartRows, state.x, state.y);
   const xMetric = ms.find(m=>m.id===state.x), yMetric = ms.find(m=>m.id===state.y);
   if (zoom) {
     const limits = (axis, metric) => window.LensPlot.axisRange(allPoints.map(p=>p[axis]),metric?.axis_bounds);
@@ -151,13 +228,15 @@ function drawChart() {
     if (!allPoints.length || zoom[0]<left || zoom[1]>right || zoom[2]<bottom || zoom[3]>top) zoom = null;
   }
   activePoints = zoom ? allPoints.filter(p=>p.x>=zoom[0] && p.x<=zoom[1] && p.y>=zoom[2] && p.y<=zoom[3]) : allPoints;
+  const customCount = activePoints.filter(p=>p.row.marker).length;
+  const customStatus = customCount ? `（${customCount} 个自定义）` : '';
   $('reset-zoom').disabled = !zoom;
-  $('status').textContent = zoom ? `局部显示 ${activePoints.length} / ${allPoints.length} 条记录` :
-    `${allPoints.length} 个点 · ${activeRows.length-allPoints.length} 项缺少所选单值`;
+  $('status').textContent = zoom ? `局部显示 ${activePoints.length} / ${allPoints.length} 个点${customStatus}` :
+    `${allPoints.length} 个点${customStatus} · ${chartRows.length-allPoints.length} 项缺少所选单值`;
   if (!allPoints.length) {
-    const absent = [state.x,state.y].filter(id=>id!=='$model'&&!metricAvailability(activeRows,id)).map(id=>ms.find(m=>m.id===id)?.label).filter(Boolean);
-    const reason = !activeRows.length ? (state.visible ? '当前范围没有符合可见光条件的记录。可取消可见光或调整样本筛选。' : '当前没有选中的样本，请全选样本或清除筛选条件。') : absent.length ? `当前 ${activeRows.length} 个样本尚无“${absent.join(' / ')}”的已核验数值。` : '所选两个指标没有同时具备数值的样本；各自已有的数据仍保留在表格中。';
-    const recovery=availableAxes(d,activeRows),canRecover=axisPoints(activeRows,recovery.x,recovery.y).length>0;
+    const absent = [state.x,state.y].filter(id=>id!=='$model'&&!metricAvailability(chartRows,id)).map(id=>ms.find(m=>m.id===id)?.label).filter(Boolean);
+    const reason = !chartRows.length ? (state.visible ? '当前范围没有符合可见光条件的记录。可取消可见光或调整样本筛选。' : '当前没有选中的样本，请全选样本或清除筛选条件。') : absent.length ? `当前 ${chartRows.length} 个样本暂无“${absent.join(' / ')}”的数值。` : '所选两个指标没有同时具备数值的样本。';
+    const recovery=availableAxes({metrics:ms},chartRows),canRecover=axisPoints(chartRows,recovery.x,recovery.y).length>0;
     $('chart').innerHTML = `<div class="empty-plot" role="status"><strong>当前指标暂无可绘制数据</strong><p>${esc(reason)}</p><p>未知值不补零，区间或复合参数保留原文。</p>${canRecover?'<button class="recover-chart" data-recover-chart>显示已有数据的散点图</button>':''}<a href="#data-table">查看已收集的数据 ↓</a></div>`;
     return;
   }
@@ -183,7 +262,11 @@ function drawChart() {
     node.querySelector('title').remove(); // The inspector supplies the visible tooltip.
   });
   const pointByRow = new Map(activePoints.map(p=>[p.row,p]));
-  legend.innerHTML = groupedSamples(legend,[...pointByRow.keys()],row=>{
+  const customLegend = activePoints.filter(p=>p.row.marker).map(p=>{
+    const glyph = window.LensPlot.customMarkerMarkup(p.row.marker,7,7,5);
+    return `<li><button type="button" class="custom-legend" data-legend-point="${groupByRow.get(p.row.id)}" data-edit-custom="${esc(p.row.id)}"><svg viewBox="0 0 14 14" aria-hidden="true">${glyph}</svg>${categorical ? p.x+'. ' : ''}${esc(p.row.model)} · (${esc(coordinateText(p,'x'))}, ${esc(coordinateText(p,'y'))}) · 自定义</button></li>`;
+  }).join('');
+  legend.innerHTML = customLegend + groupedSamples(legend,[...pointByRow.keys()].filter(row=>!row.marker),row=>{
     const p = pointByRow.get(row);
     const ids = [...new Set([...valueSources(p.row.values[state.x]), ...valueSources(p.row.values[state.y])])];
     const index = groupByRow.get(p.row.id), color = nodes[index].querySelector('circle').getAttribute('fill');
@@ -280,7 +363,11 @@ function inspectPlot(svg, nodes, groups, xLabel, yLabel) {
     } else {
       nodes[index].setAttribute('aria-pressed','true');
       for (const p of groups[index]) document.getElementById(rowAnchor(p.row))?.classList.add('plot-selected');
-      $('point-detail').innerHTML = groups[index].map(p=>`${esc(p.label)} · (${esc(coordinateText(p,'x'))}, ${esc(coordinateText(p,'y'))}) <a href="#${esc(rowAnchor(p.row))}">查看数据表 ↓</a>${citeSources([...valueSources(p.row.values[state.x]),...valueSources(p.row.values[state.y])])}<span> · ${esc(p.row.variant)}</span>`).join('<br>');
+      $('point-detail').innerHTML = groups[index].map(p=>{
+        const coordinates = `${esc(p.label)} · (${esc(coordinateText(p,'x'))}, ${esc(coordinateText(p,'y'))})`;
+        if (p.row.marker) return `${coordinates} · 自定义 <button type="button" data-edit-custom="${esc(p.row.id)}">编辑指标</button>`;
+        return `${coordinates} <a href="#${esc(rowAnchor(p.row))}">查看数据表 ↓</a>${citeSources([...valueSources(p.row.values[state.x]),...valueSources(p.row.values[state.y])])}<span> · ${esc(p.row.variant)}</span>`;
+      }).join('<br>');
     }
     show();
   }
@@ -481,6 +568,11 @@ function renderDefinitions() {
 }
 function render(updateControls = true) {
   const d=domain(); activeRows=sortRows(filteredRows(d,state)); sourceIndex(); activeColumns=d.metrics.filter(m=>state.columns===null||state.columns.includes(m.id));
+  const axes = chartMetrics();
+  chartRows = [...activeRows, ...customData.samples.map(sample=>customRow(sample,axes))];
+  if ((state.x !== '$model' && !axes.some(m=>m.id===state.x)) || !axes.some(m=>m.id===state.y)) {
+    Object.assign(state,availableAxes({metrics:axes},chartRows));
+  }
   if(updateControls) controls();
   $('view-title').textContent=d.name; $('scope').textContent=d.scope; $('scope').title=d.scope;
   const paperCount = groupRows(activeRows).filter(g=>g.paper || g.rows[0].study_id).length;
@@ -504,6 +596,40 @@ const groups=new Map(); for(const d of atlas.domains){if(!groups.has(d.category)
 $('domain').innerHTML=[...groups].map(([category,ds])=>`<optgroup label="${esc(category)}">${ds.map(d=>`<option value="${d.id}">${esc(d.name)}</option>`).join('')}</optgroup>`).join('');
 restore(initial); render();
 if(oldRoute[1]) { if(oldRoute[1]==='sources')location.hash='references';else if(oldRoute[1]!=='metrics'){$('evidence-notes').open=true;location.hash='evidence-notes';} }
+$('custom-samples').addEventListener('click',()=>openCustom());
+$('close-custom').addEventListener('click',()=>$('custom-dialog').close());
+$('custom-sample').addEventListener('change',fillCustomForm);
+$('custom-form').addEventListener('input',()=>customError());
+$('add-custom-metric').addEventListener('click',()=>{
+  const input = $('custom-metric-name'), name = input.value.trim(), unit = $('custom-metric-unit').value.trim();
+  if (!name) { customError('请输入指标名称。'); input.focus(); return; }
+  const label = unit ? `${name} (${unit})` : name;
+  const existing = draftMetrics.find(m=>m.label===label);
+  const metric = existing ?? {id:'custom-'+crypto.randomUUID(),label,numeric:true,custom:true};
+  const fields = $('custom-values');
+  if (!existing) {
+    draftMetrics.unshift(metric);
+    fields.insertAdjacentHTML('afterbegin',fieldMarkup(metric,''));
+  }
+  fields.querySelector(`[data-custom-value="${CSS.escape(metricKey(metric))}"]`).focus();
+  input.value = $('custom-metric-unit').value = '';
+  customError();
+});
+$('custom-form').addEventListener('submit',event=>{
+  event.preventDefault();
+  const values = Object.fromEntries([...$('custom-values').querySelectorAll('input')]
+    .filter(input=>Number.isFinite(input.valueAsNumber)).map(input=>[input.dataset.customValue,input.valueAsNumber]));
+  if (!Object.keys(values).length) { customError('请至少填写一个指标数值。'); return; }
+  const id = $('custom-sample').value || 'custom-'+crypto.randomUUID();
+  const name = $('custom-name').value.trim() || '自定义样本';
+  saveCustomData(id,{id,name,values,marker:{shape:$('custom-shape').value,color:$('custom-color').value}});
+});
+$('remove-custom').addEventListener('click',()=>saveCustomData($('custom-sample').value));
+window.addEventListener('storage',event=>{
+  if (event.key !== storageKey(state.domain)) return;
+  customData = loadCustomData(state.domain);
+  render();
+});
 for(const key of ['domain','module','x','y','sort','evidence']) $(key).addEventListener('change',()=>{
   zoom=null;
   if(key==='domain')defaults($(key).value);else {state[key]=$(key).value;if(key==='module')state.models=null;}
@@ -529,7 +655,9 @@ document.addEventListener('change',event=>{
 });
 document.addEventListener('click',event=>{
   const setting=event.target.closest('[data-setting]'),tab=event.target.closest('[data-evidence-tab]'),metric=event.target.closest('[data-metric]'),record=event.target.closest('[data-record]'),definition=event.target.closest('[data-definition]');
-  if(event.target.closest('[data-recover-chart]')){zoom=null;Object.assign(state,availableAxes(domain(),activeRows));render();}
+  if(event.target.closest('[data-recover-chart]')){zoom=null;Object.assign(state,availableAxes({metrics:chartMetrics()},chartRows));render();}
+  const custom = event.target.closest('[data-edit-custom]');
+  if(custom) openCustom(custom.dataset.editCustom);
   if(setting){activeSetting=setting.dataset.setting;for(const button of document.querySelectorAll('[data-setting]')){button.setAttribute('aria-selected',String(button===setting));button.tabIndex=button===setting?0:-1;}$('model-controls').hidden=activeSetting!=='models';$('column-controls').hidden=activeSetting!=='columns';}
   if(tab){state.evidenceTab=tab.dataset.evidenceTab;renderDefinitions();document.querySelector(`[data-evidence-tab="${state.evidenceTab}"]`).focus();}
   if(metric)evidence.openMetric(metric.dataset.metric);

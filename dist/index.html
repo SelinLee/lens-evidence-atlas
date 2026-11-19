@@ -15,7 +15,7 @@
     window.addEventListener('error',atlasLoadFailure,true);
     window.addEventListener('unhandledrejection',atlasLoadFailure);
   </script>
-  <link rel="stylesheet" href="style.css?v=454c704d42d3eb95"><link rel="stylesheet" href="workspace.css?v=6e2f74f584a71280">
+  <link rel="stylesheet" href="style.css?v=454c704d42d3eb95"><link rel="stylesheet" href="workspace.css?v=2f43a0f19d292173">
 </head>
 <body class="atlas-workspace">
   <header class="atlas-header">
@@ -25,7 +25,7 @@
   <main class="atlas-main">
     <section class="workspace" id="workspace" aria-label="指标图表工作区">
       <aside class="settings" aria-label="应用、指标与图表设置">
-        <div class="settings-title"><span>图表设置</span><button id="reset-view" class="quiet-button">重置视图</button></div>
+        <div class="settings-title"><span>图表设置</span><div class="settings-title-actions"><button id="custom-samples" class="quiet-button" type="button" aria-haspopup="dialog">自定义指标</button><button id="reset-view" class="quiet-button">重置视图</button></div></div>
         <label class="control-label" for="domain">应用领域</label><select id="domain"></select>
         <div class="control-pair">
           <label id="module-label">摄像头<select id="module"><option value="main">主摄</option><option value="ultrawide">超广角</option><option value="tele">长焦</option></select></label>
@@ -55,7 +55,7 @@
         <div class="chart-heading"><div><div class="eyebrow">EVIDENCE / EXPLORE</div><h1 id="view-title">指标与样本</h1></div><span id="view-count" class="count-pill"></span></div>
         <p id="scope" class="scope-line"></p>
         <div id="chart" class="workspace-chart"><div class="empty-plot"><strong>正在加载数据与散点图…</strong><noscript>请开启浏览器的 JavaScript 后重新加载。</noscript></div></div>
-        <div class="inspection-tools"><div id="point-detail" class="point-detail" aria-live="polite">鼠标拖动框选放大，点击圆点固定读数。</div><button id="reset-zoom" type="button" disabled>重置缩放</button></div>
+        <div class="inspection-tools"><div id="point-detail" class="point-detail" aria-live="polite">鼠标拖动框选放大，点击数据点固定读数。</div><button id="reset-zoom" type="button" disabled>重置缩放</button></div>
         <div class="plot-footer"><p id="plot-note">虚线标出当前点的横、纵坐标。</p><span id="status" role="status" aria-live="polite"></span></div>
       </div>
     </section>
@@ -72,7 +72,30 @@
     <footer class="atlas-footer"><span>Lens Evidence Atlas · 条件先于比较，证据随数据保留</span><a href="catalog.json" download>下载完整结构化资料 JSON ↓</a></footer>
   </main>
   <dialog id="filter-dialog"><div class="dialog-head"><h2>样本与表格列</h2><button id="close-filters" aria-label="关闭筛选">×</button></div><div id="mobile-filter-content"></div></dialog>
+  <dialog id="custom-dialog" aria-labelledby="custom-title">
+    <div class="dialog-head"><h2 id="custom-title">自定义指标</h2><button id="close-custom" type="button" aria-label="关闭自定义指标">×</button></div>
+    <form id="custom-form">
+      <p id="custom-scope"></p>
+      <label>自定义样本<select id="custom-sample" autofocus></select></label>
+      <div class="custom-fields">
+        <label><span>样本名称（选填）</span><input id="custom-name" type="text" maxlength="100" placeholder="例如 测试镜头 A"></label>
+        <div class="custom-marker-fields">
+          <label>点形<select id="custom-shape"><option value="diamond">◆ 菱形</option><option value="circle">● 圆形</option><option value="square">■ 方形</option><option value="triangle">▲ 三角形</option></select></label>
+          <label>颜色<input id="custom-color" type="color" value="#a34522"></label>
+        </div>
+      </div>
+      <p class="custom-hint">只需填写已有数值。使用两个数值轴时，样本需要同时有横轴和纵轴的值。</p>
+      <div id="custom-values" class="custom-fields" role="group" aria-label="按需填写指标数值"></div>
+      <div class="custom-new-metric">
+        <label>指标名称<input id="custom-metric-name" maxlength="80" placeholder="例如 边缘亮度"></label>
+        <label><span>单位（选填）</span><input id="custom-metric-unit" maxlength="30" placeholder="例如 %"></label>
+        <button id="add-custom-metric" type="button">添加指标</button>
+      </div>
+      <p id="custom-error" role="alert" hidden></p>
+    </form>
+    <div class="custom-actions"><button id="remove-custom" type="button" hidden>删除此样本</button><button type="submit" form="custom-form">保存并绘制</button></div>
+  </dialog>
   <dialog id="detail"><div class="dialog-head"><h2 id="detailTitle"></h2><button id="closeDialog" aria-label="关闭">×</button></div><div id="detailBody"></div></dialog>
-  <script>window.UNIFIED_WORKSPACE=true;</script><script src="data.js?v=5b686ffcef060bea"></script><script src="devices-data.js?v=49ba39e229bfeaaa"></script><script src="app.js?v=573d45a5e32bb91d"></script><script src="devices.js?v=d51fd1201e2694fd"></script><script type="module" src="workspace.js?v=17b5c7765890120a"></script>
+  <script>window.UNIFIED_WORKSPACE=true;</script><script src="data.js?v=5b686ffcef060bea"></script><script src="devices-data.js?v=49ba39e229bfeaaa"></script><script src="app.js?v=573d45a5e32bb91d"></script><script src="devices.js?v=8673ece999211d24"></script><script type="module" src="workspace.js?v=0011c959261fab17"></script>
 </body>
 </html>
