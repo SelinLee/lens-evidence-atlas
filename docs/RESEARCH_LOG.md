@@ -1111,3 +1111,11 @@ PR #176 合入 bc72d96c1c69fc7a8cb0f4f3c59d0c087e6b12d6。PR 校验 44454714809 
 PR #177 合入 bdc6ac9074496d15c8f50146953015409ff725e2。PR 校验 44456375945、主线校验 44456496098 及 Pages 44456496091 成功。295 项测试通过。公开 228 文件逐字节一致，消色差分域数据 SHA256 为 62fa5a12a109c0ebbfddc3d6a96ec51e7428bfffaa1ac2eff19120e211e18ea4。独立无头 Chrome 核实首轮清理的完整和可见光计数、出处链接、手机和 VR/AR 数据、六视口及 Seong 正式历史材料。该发布时间点对应标题和摘要初筛规则。[PR #177](https://github.com/SelinLee/lens-evidence-atlas/pull/177) · [Pages](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44456496091)
 
 用户确认正文或补件有实证应当纳入。按原始光学校正重新审查边界。Li 2022 实物的 Fig. 3c、Fig. 4c、Fig. 5c 分别报告约 1.5、0.5、4.5 μm 的离散谱点最大焦差，恢复 19 条。Arbabi 2016（Optica）的校方网页摘要与正式 PDF 有出入，正式版 p.628 明确说明 915／1550 nm 同焦，恢复 12 条。Colburn 2020 的 Fig. 4 后正文报告显著轴向色移，固定面相似 PSF 使去卷积可行，移出 32 条。Seong 等非光学校正研究继续保留原始核验档案。复核后为 46 篇、247 配置、1063 条，可见光 38 篇、753 条。[原文证据和逐篇复核](ACHROMATIC_ELIGIBILITY_AUDIT_2026-11-19.md)
+
+## 2026-11-19-121 · 正文准入规则发布与 Ren 光纤消色差数表
+
+PR #178 合入 8f6ab3a5c4620abb90955824f8a660ee3d3a4ce6。PR 校验 44457809927、主线校验 44457884020、Pages 44457884059 成功。299 项测试通过，独立无头 Chrome 核验 46 篇、247 配置、1063 条及可见光 38 篇、753 条，恢复的 Li 2022 与 Arbabi 2016 散点和引用返回正常。229 个公开文件与构建一致。[PR #178](https://github.com/SelinLee/lens-evidence-atlas/pull/178) · [Pages](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44457884059)
+
+去重后收录 Ren 2022 的五谱点 FWHM 和三种效率，含平面玻璃消色差镜、同尺寸未校正实物、光纤消色差实物及分开的成像系统与模拟配置。新增一篇、10 配置、35 条，合计 47 篇、257 配置、1098 条，可见光仍为 38 篇、753 条。Fig. 3E 的红色曲线与 Fig. 3F 轴扫、正文焦位方向冲突。记录了原文明确支持的消色差玻璃镜 1650 nm 实测 225 μm，并将相对设计面的 −25 μm 标为本库计算。未校正实物冲突焦位和作者未公布的逐点焦移仍留空。[本批核验](REN_METAFIBER_REVIEW_2026-11-19.md)
+
+Cao 2024 的期刊在线摘要与原始附件清单已核，补件常规路径与下载替代入口均返回 403。继续寻找作者公开版本。Rong 2026 的逐波长表留待核对期刊分区。会话目标保持开启。[Cao 正式摘要](https://onlinelibrary.wiley.com/doi/abs/10.1002/lpor.202401542)

@@ -92,7 +92,7 @@
 
 `estimated_system_focal_efficiency_pct`、`estimated_detected_throughput_pct`和`spectrally_weighted_mtf_area_lpmm`保存作者完整光路的带内计算估计。须标明`basis: model`、作者计算与光路估算协议。面积保留空间频率积分的量纲 lp/mm。它们与逐λ实测效率、普通作者平均效率及MTF截止频率各用专用字段。图像PSNR、SSIM和LPIPS保留原采集或重建、参考图、配准与光度归一化及统计样本。
 
-`optical_transmittance_pct`保存作者根据总透过功率与口径内入射功率计算的百分比，分母为`incident_through_aperture`。`focusing_efficiency_transmitted_pct`保存焦区积分功率与总透过功率的百分比，分母为`transmitted_power`。两个字段均要求实测谱点、`basis: derived_from_measurement`、`calculation_origin: authors`及`efficiency_protocol`。焦区长度尺度和形状分别记录，半径或直径未明时保留缺口。
+`optical_transmittance_pct`保存作者报告的总透射与入射参考值的百分比。口径内入射功率用 `incident_through_aperture`，作者明示为总入射光强积分时用 `incident_light_total_intensity` 并在协议中设置同一分母和实际已知的入射范围。`focusing_efficiency_transmitted_pct`保存焦区积分功率与总透过功率的百分比，分母为`transmitted_power`。两个字段均要求实测谱点、`basis: derived_from_measurement`、`calculation_origin: authors`及`efficiency_protocol`。焦区长度尺度和形状分别记录，半径或直径未明时保留缺口。
 
 `resolved_test_line_width_um` 保存实拍标靶中作者辨认的对象侧线宽，附靶型、组/元素、采集通道、场点和对比阈值。共同阈值界限保留 `value=null`。
 

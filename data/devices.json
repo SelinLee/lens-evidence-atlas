@@ -2001,6 +2001,69 @@
       "scope": "精确关联 DOI 查询返回零项。期刊声明可向通讯作者合理请求数据。",
       "checked_on": "2026-11-19",
       "publication_source": "zhang_rgb_imaging_2025"
+    },
+    {
+      "id": "ren_metafiber_pdf_2022",
+      "title": "Ren et al. (2022), An achromatic metafiber for focusing and imaging across the entire telecommunication range",
+      "url": "https://www.nature.com/articles/s41467-022-31902-3.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "正式原文 10 页，2022-07-19 上线。核 Fig. 3–5、Methods 和 Data availability。",
+      "checked_on": "2026-11-19",
+      "doi": "10.1038/s41467-022-31902-3"
+    },
+    {
+      "id": "ren_metafiber_si_2022",
+      "title": "Ren 2022 正式补充材料 · 原始效率与焦斑数表",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-022-31902-3/MediaObjects/41467_2022_31902_MOESM1_ESM.pdf",
+      "kind": "supporting_information",
+      "scope": "核 45 页补件中的 S5、S7、S10–S13 和 Tables 3–6（pp41–44）。",
+      "checked_on": "2026-11-19",
+      "publication_source": "ren_metafiber_pdf_2022"
+    },
+    {
+      "id": "ren_metafiber_review_2022",
+      "title": "Ren 2022 公开评审记录 · 作者答复",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-022-31902-3/MediaObjects/41467_2022_31902_MOESM2_ESM.pdf",
+      "kind": "supporting_information",
+      "scope": "作者 Reply 2.2–2.4 补充采样、效率与焦斑解释。此附件是审稿记录。",
+      "checked_on": "2026-11-19",
+      "publication_source": "ren_metafiber_pdf_2022"
+    },
+    {
+      "id": "ren_metafiber_erratum_2022",
+      "title": "Ren 2022 期刊更正 · 作者单位",
+      "url": "https://www.nature.com/articles/s41467-022-32153-y.pdf",
+      "kind": "publisher_correction",
+      "scope": "更正两位作者单位。",
+      "checked_on": "2026-11-19",
+      "publication_source": "ren_metafiber_pdf_2022"
+    },
+    {
+      "id": "ren_metafiber_crossref_2022",
+      "title": "Crossref · Ren 2022 题录与被引量",
+      "url": "https://api.crossref.org/works/10.1038/s41467-022-31902-3",
+      "kind": "repository_metadata",
+      "scope": "2026-11-19 查询被引 226 次。",
+      "checked_on": "2026-11-19",
+      "publication_source": "ren_metafiber_pdf_2022"
+    },
+    {
+      "id": "ren_metafiber_openalex_2022",
+      "title": "OpenAlex · Ren 2022 被引量与公开版本",
+      "url": "https://api.openalex.org/works/W4221139744",
+      "kind": "repository_metadata",
+      "scope": "2026-11-19 查询被引 258 次。",
+      "checked_on": "2026-11-19",
+      "publication_source": "ren_metafiber_pdf_2022"
+    },
+    {
+      "id": "ren_metafiber_datacite_2022",
+      "title": "DataCite · Ren 2022 精确关联 DOI 检索",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1038%2Fs41467-022-31902-3%22",
+      "kind": "repository_metadata",
+      "scope": "一项关联为 arXiv:2201.07158 预印本。",
+      "checked_on": "2026-11-19",
+      "publication_source": "ren_metafiber_pdf_2022"
     }
   ],
   "domains": {
@@ -5262,13 +5325,17 @@
         {
           "id": "optical_transmittance_pct",
           "label": "器件光功率透过率 (%)",
-          "definition": "作者测得的过镜总功率与口径内入射功率之比。",
-          "conditions": "实际波长、入射光阑、探测器光路、偏振与校准。",
+          "definition": "作者报告的过镜总功率或光强积分与入射参考值之比。",
+          "conditions": "实际波长、入射分母与光阑范围、探测器光路、偏振与校准。",
           "numeric": true,
           "definition_refs": [
             {
               "source": "hasegawa_tsf_pdf_2026",
               "location": "正式主文pp7–8 §2.4 光功率测量段"
+            },
+            {
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 Tables 3 和 5，Note"
             }
           ],
           "axis_bounds": {
@@ -129311,9 +129378,3061 @@
               ]
             }
           }
+        },
+        {
+          "id": "ren2022metafiber_glass_achromat_summary",
+          "model": "Ren 2022 · 玻璃基底消色差镜",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "glass_achromat",
+          "module": "",
+          "variant": "玻璃基底消色差镜",
+          "evidence_type": "study",
+          "measurement_scope": "用纳米柱高度调节群延迟的玻璃基底实物。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p6 同尺寸对照与光纤实物段",
+              "note": "作者给出的名义镜径。两只玻璃基底实物尺寸相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 Fig. 3 对应玻璃试样段；补件 Tables 3–5",
+              "note": "作者报告的平面基底超透镜 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "IP-L 聚合物纳米柱 / 玻璃",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 2A、Fig. 3A/D 或 Fig. 4A–C、Methods",
+              "note": "双光子纳米打印，元胞周期 2.2 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "design_focal_um": {
+              "value": 250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6，两只玻璃基底实物的名义焦距段",
+              "note": "1650 nm 名义设计焦距。SI Note 7 单独的采样模型采用 240 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_wavelength_nm": 1650
+            },
+            "lambda_min_nm": {
+              "value": 1250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "连续近红外消色差设计 · 五谱点实验",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 设计、pp5–7 Fig. 3B–C 与对应正文",
+              "note": "同尺寸对照验证群延迟补偿；五谱点的轴向强度图与焦位曲线近乎共焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022",
+                "ren_metafiber_review_2022",
+                "ren_metafiber_erratum_2022",
+                "ren_metafiber_crossref_2022",
+                "ren_metafiber_openalex_2022",
+                "ren_metafiber_datacite_2022"
+              ]
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 3B–C 与对应正文",
+              "note": "作者只描述多波长近乎同焦，未给出峰峰值、统计范围或逐点误差。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查，数值待核",
+              "sample_wavelengths_nm": [
+                1250,
+                1350,
+                1450,
+                1550,
+                1650
+              ]
+            },
+            "psf_protocol": {
+              "value": "准直入射的横向焦斑与轴向扫描",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p26 Fig. S7；主文 p5 Fig. 3B–C/E–F",
+              "note": "超连续谱加波长选择器，三轴台、物镜、筒镜与红外相机。谱线带宽、横向像素尺度、轴扫步长、精确峰值拟合与误差未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "object_conjugate": "infinity",
+              "axial_step_um": null,
+              "image_plane_pixel_size_um": null,
+              "sourceIds": [
+                "ren_metafiber_si_2022",
+                "ren_metafiber_pdf_2022"
+              ]
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p9 Data availability；出版社附录清单；DataCite 正式 DOI 关联查询",
+              "note": "所核期刊材料公开焦斑图及 FWHM 表。正文数据可向通讯作者请求。原始 PSF 数组、有效采样尺度与 MTF 未取得。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "暂无可核 MTF",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022",
+                "ren_metafiber_datacite_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_glass_achromat_1250",
+          "model": "Ren 2022 · 玻璃基底消色差镜 · 1250 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "glass_achromat",
+          "module": "",
+          "variant": "玻璃基底消色差镜 · 1250 nm",
+          "evidence_type": "study",
+          "measurement_scope": "用纳米柱高度调节群延迟的玻璃基底实物。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p6 同尺寸对照与光纤实物段",
+              "note": "作者给出的名义镜径。两只玻璃基底实物尺寸相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 Fig. 3 对应玻璃试样段；补件 Tables 3–5",
+              "note": "作者报告的平面基底超透镜 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "IP-L 聚合物纳米柱 / 玻璃",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 2A、Fig. 3A/D 或 Fig. 4A–C、Methods",
+              "note": "双光子纳米打印，元胞周期 2.2 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "design_focal_um": {
+              "value": 250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6，两只玻璃基底实物的名义焦距段",
+              "note": "1650 nm 名义设计焦距。SI Note 7 单独的采样模型采用 240 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_wavelength_nm": 1650
+            },
+            "lambda_min_nm": {
+              "value": 1250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 3B–C，1250 nm 谱点",
+              "note": "实际测量波长，原文还以 μm 书写。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直入射的横向焦斑与轴向扫描",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p26 Fig. S7；主文 p5 Fig. 3B–C/E–F",
+              "note": "超连续谱加波长选择器，三轴台、物镜、筒镜与红外相机。谱线带宽、横向像素尺度、轴扫步长、精确峰值拟合与误差未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "object_conjugate": "infinity",
+              "axial_step_um": null,
+              "image_plane_pixel_size_um": null,
+              "sourceIds": [
+                "ren_metafiber_si_2022",
+                "ren_metafiber_pdf_2022"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 3B–C，1250 nm 谱点",
+              "note": "作者只给焦位曲线与焦斑图，当前谱点无印字数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅见焦位曲线",
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": 3.03,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p42 Table 4，1250 nm 行，FWHM (Experiment) 列",
+              "note": "横向实测焦斑；作者同谱点的衍射极限计算参考为 3.05 μm。表中截面方向、拟合、场角公差、逐点误差待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "direction": null,
+              "sourceIds": [
+                "ren_metafiber_si_2022",
+                "ren_metafiber_pdf_2022"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "总效率 = 透过率 × 透射光归一的圆孔聚焦效率",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3 Note 与表头",
+              "note": "表注定义入射总强度、透过总强度及焦区积分。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "focus_integration_scale_fwhm": 3,
+              "focus_region_geometry": "circular_aperture",
+              "focus_region_dimension_kind": null,
+              "polarization_detection": null,
+              "incident_aperture_um": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 1250,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3，1250 nm 行，Wavelength 列",
+              "note": "同一实物及协议的入射谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 14.13,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3，1250 nm 行，Total efficiency 列",
+              "note": "作者印字总效率，分母为入射总强度。沿用印字精度。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "calculation_origin": "authors",
+              "method": "transmission_times_transmitted_normalized_focusing"
+            },
+            "optical_transmittance_pct": {
+              "value": 40.6,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3，1250 nm 行，Transmission efficiency 列",
+              "note": "作者定义器件透出总电场强度 / 入射总电场强度。入射光束与口径的功率校准未交代。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "calculation_origin": "authors"
+            },
+            "focusing_efficiency_transmitted_pct": {
+              "value": 34.8,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3，1250 nm 行，Focusing efficiency 列",
+              "note": "作者印字焦区积分强度 / 总透过强度。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "transmitted_power",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_glass_achromat_1350",
+          "model": "Ren 2022 · 玻璃基底消色差镜 · 1350 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "glass_achromat",
+          "module": "",
+          "variant": "玻璃基底消色差镜 · 1350 nm",
+          "evidence_type": "study",
+          "measurement_scope": "用纳米柱高度调节群延迟的玻璃基底实物。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p6 同尺寸对照与光纤实物段",
+              "note": "作者给出的名义镜径。两只玻璃基底实物尺寸相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 Fig. 3 对应玻璃试样段；补件 Tables 3–5",
+              "note": "作者报告的平面基底超透镜 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "IP-L 聚合物纳米柱 / 玻璃",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 2A、Fig. 3A/D 或 Fig. 4A–C、Methods",
+              "note": "双光子纳米打印，元胞周期 2.2 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "design_focal_um": {
+              "value": 250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6，两只玻璃基底实物的名义焦距段",
+              "note": "1650 nm 名义设计焦距。SI Note 7 单独的采样模型采用 240 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_wavelength_nm": 1650
+            },
+            "lambda_min_nm": {
+              "value": 1250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1350,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 3B–C，1350 nm 谱点",
+              "note": "实际测量波长，原文还以 μm 书写。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直入射的横向焦斑与轴向扫描",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p26 Fig. S7；主文 p5 Fig. 3B–C/E–F",
+              "note": "超连续谱加波长选择器，三轴台、物镜、筒镜与红外相机。谱线带宽、横向像素尺度、轴扫步长、精确峰值拟合与误差未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "object_conjugate": "infinity",
+              "axial_step_um": null,
+              "image_plane_pixel_size_um": null,
+              "sourceIds": [
+                "ren_metafiber_si_2022",
+                "ren_metafiber_pdf_2022"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 3B–C，1350 nm 谱点",
+              "note": "作者只给焦位曲线与焦斑图，当前谱点无印字数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅见焦位曲线",
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": 3.83,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p42 Table 4，1350 nm 行，FWHM (Experiment) 列",
+              "note": "横向实测焦斑；作者同谱点的衍射极限计算参考为 3.52 μm。表中截面方向、拟合、场角公差、逐点误差待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "direction": null,
+              "sourceIds": [
+                "ren_metafiber_si_2022",
+                "ren_metafiber_pdf_2022"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "总效率 = 透过率 × 透射光归一的圆孔聚焦效率",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3 Note 与表头",
+              "note": "表注定义入射总强度、透过总强度及焦区积分。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "focus_integration_scale_fwhm": 3,
+              "focus_region_geometry": "circular_aperture",
+              "focus_region_dimension_kind": null,
+              "polarization_detection": null,
+              "incident_aperture_um": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 1350,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3，1350 nm 行，Wavelength 列",
+              "note": "同一实物及协议的入射谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 18.11,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3，1350 nm 行，Total efficiency 列",
+              "note": "作者印字总效率，分母为入射总强度。沿用印字精度。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "calculation_origin": "authors",
+              "method": "transmission_times_transmitted_normalized_focusing"
+            },
+            "optical_transmittance_pct": {
+              "value": 46.7,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3，1350 nm 行，Transmission efficiency 列",
+              "note": "作者定义器件透出总电场强度 / 入射总电场强度。入射光束与口径的功率校准未交代。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "calculation_origin": "authors"
+            },
+            "focusing_efficiency_transmitted_pct": {
+              "value": 38.7,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3，1350 nm 行，Focusing efficiency 列",
+              "note": "作者印字焦区积分强度 / 总透过强度。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "transmitted_power",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_glass_achromat_1450",
+          "model": "Ren 2022 · 玻璃基底消色差镜 · 1450 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "glass_achromat",
+          "module": "",
+          "variant": "玻璃基底消色差镜 · 1450 nm",
+          "evidence_type": "study",
+          "measurement_scope": "用纳米柱高度调节群延迟的玻璃基底实物。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p6 同尺寸对照与光纤实物段",
+              "note": "作者给出的名义镜径。两只玻璃基底实物尺寸相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 Fig. 3 对应玻璃试样段；补件 Tables 3–5",
+              "note": "作者报告的平面基底超透镜 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "IP-L 聚合物纳米柱 / 玻璃",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 2A、Fig. 3A/D 或 Fig. 4A–C、Methods",
+              "note": "双光子纳米打印，元胞周期 2.2 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "design_focal_um": {
+              "value": 250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6，两只玻璃基底实物的名义焦距段",
+              "note": "1650 nm 名义设计焦距。SI Note 7 单独的采样模型采用 240 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_wavelength_nm": 1650
+            },
+            "lambda_min_nm": {
+              "value": 1250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1450,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 3B–C，1450 nm 谱点",
+              "note": "实际测量波长，原文还以 μm 书写。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直入射的横向焦斑与轴向扫描",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p26 Fig. S7；主文 p5 Fig. 3B–C/E–F",
+              "note": "超连续谱加波长选择器，三轴台、物镜、筒镜与红外相机。谱线带宽、横向像素尺度、轴扫步长、精确峰值拟合与误差未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "object_conjugate": "infinity",
+              "axial_step_um": null,
+              "image_plane_pixel_size_um": null,
+              "sourceIds": [
+                "ren_metafiber_si_2022",
+                "ren_metafiber_pdf_2022"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 3B–C，1450 nm 谱点",
+              "note": "作者只给焦位曲线与焦斑图，当前谱点无印字数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅见焦位曲线",
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": 3.79,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p42 Table 4，1450 nm 行，FWHM (Experiment) 列",
+              "note": "横向实测焦斑；作者同谱点的衍射极限计算参考为 3.82 μm。表中截面方向、拟合、场角公差、逐点误差待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "direction": null,
+              "sourceIds": [
+                "ren_metafiber_si_2022",
+                "ren_metafiber_pdf_2022"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "总效率 = 透过率 × 透射光归一的圆孔聚焦效率",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3 Note 与表头",
+              "note": "表注定义入射总强度、透过总强度及焦区积分。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "focus_integration_scale_fwhm": 3,
+              "focus_region_geometry": "circular_aperture",
+              "focus_region_dimension_kind": null,
+              "polarization_detection": null,
+              "incident_aperture_um": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 1450,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3，1450 nm 行，Wavelength 列",
+              "note": "同一实物及协议的入射谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 24.58,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3，1450 nm 行，Total efficiency 列",
+              "note": "作者印字总效率，分母为入射总强度。沿用印字精度。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "calculation_origin": "authors",
+              "method": "transmission_times_transmitted_normalized_focusing"
+            },
+            "optical_transmittance_pct": {
+              "value": 56.9,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3，1450 nm 行，Transmission efficiency 列",
+              "note": "作者定义器件透出总电场强度 / 入射总电场强度。入射光束与口径的功率校准未交代。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "calculation_origin": "authors"
+            },
+            "focusing_efficiency_transmitted_pct": {
+              "value": 43.2,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3，1450 nm 行，Focusing efficiency 列",
+              "note": "作者印字焦区积分强度 / 总透过强度。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "transmitted_power",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_glass_achromat_1550",
+          "model": "Ren 2022 · 玻璃基底消色差镜 · 1550 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "glass_achromat",
+          "module": "",
+          "variant": "玻璃基底消色差镜 · 1550 nm",
+          "evidence_type": "study",
+          "measurement_scope": "用纳米柱高度调节群延迟的玻璃基底实物。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p6 同尺寸对照与光纤实物段",
+              "note": "作者给出的名义镜径。两只玻璃基底实物尺寸相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 Fig. 3 对应玻璃试样段；补件 Tables 3–5",
+              "note": "作者报告的平面基底超透镜 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "IP-L 聚合物纳米柱 / 玻璃",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 2A、Fig. 3A/D 或 Fig. 4A–C、Methods",
+              "note": "双光子纳米打印，元胞周期 2.2 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "design_focal_um": {
+              "value": 250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6，两只玻璃基底实物的名义焦距段",
+              "note": "1650 nm 名义设计焦距。SI Note 7 单独的采样模型采用 240 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_wavelength_nm": 1650
+            },
+            "lambda_min_nm": {
+              "value": 1250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1550,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 3B–C，1550 nm 谱点",
+              "note": "实际测量波长，原文还以 μm 书写。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直入射的横向焦斑与轴向扫描",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p26 Fig. S7；主文 p5 Fig. 3B–C/E–F",
+              "note": "超连续谱加波长选择器，三轴台、物镜、筒镜与红外相机。谱线带宽、横向像素尺度、轴扫步长、精确峰值拟合与误差未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "object_conjugate": "infinity",
+              "axial_step_um": null,
+              "image_plane_pixel_size_um": null,
+              "sourceIds": [
+                "ren_metafiber_si_2022",
+                "ren_metafiber_pdf_2022"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 3B–C，1550 nm 谱点",
+              "note": "作者只给焦位曲线与焦斑图，当前谱点无印字数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅见焦位曲线",
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": 3.84,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p42 Table 4，1550 nm 行，FWHM (Experiment) 列",
+              "note": "横向实测焦斑；作者同谱点的衍射极限计算参考为 4.01 μm。表中截面方向、拟合、场角公差、逐点误差待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "direction": null,
+              "sourceIds": [
+                "ren_metafiber_si_2022",
+                "ren_metafiber_pdf_2022"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "总效率 = 透过率 × 透射光归一的圆孔聚焦效率",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3 Note 与表头",
+              "note": "表注定义入射总强度、透过总强度及焦区积分。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "focus_integration_scale_fwhm": 3,
+              "focus_region_geometry": "circular_aperture",
+              "focus_region_dimension_kind": null,
+              "polarization_detection": null,
+              "incident_aperture_um": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 1550,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3，1550 nm 行，Wavelength 列",
+              "note": "同一实物及协议的入射谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 30.87,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3，1550 nm 行，Total efficiency 列",
+              "note": "作者印字总效率，分母为入射总强度。沿用印字精度。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "calculation_origin": "authors",
+              "method": "transmission_times_transmitted_normalized_focusing"
+            },
+            "optical_transmittance_pct": {
+              "value": 58.8,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3，1550 nm 行，Transmission efficiency 列",
+              "note": "作者定义器件透出总电场强度 / 入射总电场强度。入射光束与口径的功率校准未交代。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "calculation_origin": "authors"
+            },
+            "focusing_efficiency_transmitted_pct": {
+              "value": 52.5,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3，1550 nm 行，Focusing efficiency 列",
+              "note": "作者印字焦区积分强度 / 总透过强度。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "transmitted_power",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_glass_achromat_1650",
+          "model": "Ren 2022 · 玻璃基底消色差镜 · 1650 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "glass_achromat",
+          "module": "",
+          "variant": "玻璃基底消色差镜 · 1650 nm",
+          "evidence_type": "study",
+          "measurement_scope": "用纳米柱高度调节群延迟的玻璃基底实物。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p6 同尺寸对照与光纤实物段",
+              "note": "作者给出的名义镜径。两只玻璃基底实物尺寸相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 Fig. 3 对应玻璃试样段；补件 Tables 3–5",
+              "note": "作者报告的平面基底超透镜 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "IP-L 聚合物纳米柱 / 玻璃",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 2A、Fig. 3A/D 或 Fig. 4A–C、Methods",
+              "note": "双光子纳米打印，元胞周期 2.2 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "design_focal_um": {
+              "value": 250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6，两只玻璃基底实物的名义焦距段",
+              "note": "1650 nm 名义设计焦距。SI Note 7 单独的采样模型采用 240 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_wavelength_nm": 1650
+            },
+            "lambda_min_nm": {
+              "value": 1250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 3B–C，1650 nm 谱点",
+              "note": "实际测量波长，原文还以 μm 书写。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直入射的横向焦斑与轴向扫描",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p26 Fig. S7；主文 p5 Fig. 3B–C/E–F",
+              "note": "超连续谱加波长选择器，三轴台、物镜、筒镜与红外相机。谱线带宽、横向像素尺度、轴扫步长、精确峰值拟合与误差未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "object_conjugate": "infinity",
+              "axial_step_um": null,
+              "image_plane_pixel_size_um": null,
+              "sourceIds": [
+                "ren_metafiber_si_2022",
+                "ren_metafiber_pdf_2022"
+              ]
+            },
+            "measured_focal_um": {
+              "value": 225,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 同段 1.65 μm 实测 f；p5 Fig. 3B–C",
+              "note": "作者报告消色差玻璃试样在 1650 nm 的实测 f=225 μm。原文未给出精确的 z 零点校准及单点误差。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "reference_plane": null
+            },
+            "axial_focus_offset_um": {
+              "value": -25,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 同句的 225 μm 实测 f 与 250 μm 名义 f",
+              "note": "本库按实测焦位减论文给出的设计距离计算，属于单谱点相对设计面差值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "display": "−25（本库计算）",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 250,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "论文 p6 给出的玻璃基底透镜名义焦面，z=250 μm。"
+            },
+            "fwhm_um": {
+              "value": 4.24,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p42 Table 4，1650 nm 行，FWHM (Experiment) 列",
+              "note": "横向实测焦斑；作者同谱点的衍射极限计算参考为 4.32 μm。表中截面方向、拟合、场角公差、逐点误差待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "direction": null,
+              "sourceIds": [
+                "ren_metafiber_si_2022",
+                "ren_metafiber_pdf_2022"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "总效率 = 透过率 × 透射光归一的圆孔聚焦效率",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3 Note 与表头",
+              "note": "表注定义入射总强度、透过总强度及焦区积分。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "focus_integration_scale_fwhm": 3,
+              "focus_region_geometry": "circular_aperture",
+              "focus_region_dimension_kind": null,
+              "polarization_detection": null,
+              "incident_aperture_um": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3，1650 nm 行，Wavelength 列",
+              "note": "同一实物及协议的入射谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 32.01,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3，1650 nm 行，Total efficiency 列",
+              "note": "作者印字总效率，分母为入射总强度。沿用印字精度。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "calculation_origin": "authors",
+              "method": "transmission_times_transmitted_normalized_focusing"
+            },
+            "optical_transmittance_pct": {
+              "value": 59.5,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3，1650 nm 行，Transmission efficiency 列",
+              "note": "作者定义器件透出总电场强度 / 入射总电场强度。入射光束与口径的功率校准未交代。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "calculation_origin": "authors"
+            },
+            "focusing_efficiency_transmitted_pct": {
+              "value": 53.8,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p41 Table 3，1650 nm 行，Focusing efficiency 列",
+              "note": "作者印字焦区积分强度 / 总透过强度。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "transmitted_power",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_glass_control_summary",
+          "model": "Ren 2022 · 玻璃基底未校正对照",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "glass_control",
+          "module": "",
+          "variant": "玻璃基底未校正对照",
+          "evidence_type": "study",
+          "measurement_scope": "同尺寸且未做群延迟补偿的实物。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p6 同尺寸对照与光纤实物段",
+              "note": "作者给出的名义镜径。两只玻璃基底实物尺寸相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 Fig. 3 对应玻璃试样段；补件 Tables 3–5",
+              "note": "作者报告的平面基底超透镜 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "IP-L 聚合物纳米柱 / 玻璃",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 2A、Fig. 3A/D 或 Fig. 4A–C、Methods",
+              "note": "双光子纳米打印，元胞周期 2.2 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "design_focal_um": {
+              "value": 250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6，两只玻璃基底实物的名义焦距段",
+              "note": "1650 nm 名义设计焦距。SI Note 7 单独的采样模型采用 240 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_wavelength_nm": 1650
+            },
+            "chromatic": {
+              "value": "未校正对照 · 出版图文的焦位方向冲突",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 设计、pp5–7 Fig. 3E–F 与对应正文",
+              "note": "主文 p6 给出 1650 nm 为 225 μm、1250 nm 为 306 μm，Fig. 3F 轴扫支持该方向，Fig. 3E 红色焦位曲线方向相反。 正文两端点相差 81 μm，可作为两点差的计算说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 3E–F 与对应正文",
+              "note": "主文 p6 给出 1650 nm 为 225 μm、1250 nm 为 306 μm，Fig. 3F 轴扫支持该方向，Fig. 3E 红色焦位曲线方向相反。 逐点焦位与带内变化幅度留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "图文冲突，待作者数表",
+              "sample_wavelengths_nm": [
+                1250,
+                1350,
+                1450,
+                1550,
+                1650
+              ]
+            },
+            "psf_protocol": {
+              "value": "准直入射的横向焦斑与轴向扫描",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p26 Fig. S7；主文 p5 Fig. 3B–C/E–F",
+              "note": "超连续谱加波长选择器，三轴台、物镜、筒镜与红外相机。谱线带宽、横向像素尺度、轴扫步长、精确峰值拟合与误差未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "object_conjugate": "infinity",
+              "axial_step_um": null,
+              "image_plane_pixel_size_um": null,
+              "sourceIds": [
+                "ren_metafiber_si_2022",
+                "ren_metafiber_pdf_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_glass_control_1250",
+          "model": "Ren 2022 · 玻璃基底未校正对照 · 1250 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "glass_control",
+          "module": "",
+          "variant": "玻璃基底未校正对照 · 1250 nm",
+          "evidence_type": "study",
+          "measurement_scope": "同尺寸且未做群延迟补偿的实物。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p6 同尺寸对照与光纤实物段",
+              "note": "作者给出的名义镜径。两只玻璃基底实物尺寸相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 Fig. 3 对应玻璃试样段；补件 Tables 3–5",
+              "note": "作者报告的平面基底超透镜 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "IP-L 聚合物纳米柱 / 玻璃",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 2A、Fig. 3A/D 或 Fig. 4A–C、Methods",
+              "note": "双光子纳米打印，元胞周期 2.2 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "design_focal_um": {
+              "value": 250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6，两只玻璃基底实物的名义焦距段",
+              "note": "1650 nm 名义设计焦距。SI Note 7 单独的采样模型采用 240 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_wavelength_nm": 1650
+            },
+            "wavelength_nm": {
+              "value": 1250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 3E–F，1250 nm 谱点",
+              "note": "实际测量波长，原文还以 μm 书写。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直入射的横向焦斑与轴向扫描",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p26 Fig. S7；主文 p5 Fig. 3B–C/E–F",
+              "note": "超连续谱加波长选择器，三轴台、物镜、筒镜与红外相机。谱线带宽、横向像素尺度、轴扫步长、精确峰值拟合与误差未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "object_conjugate": "infinity",
+              "axial_step_um": null,
+              "image_plane_pixel_size_um": null,
+              "sourceIds": [
+                "ren_metafiber_si_2022",
+                "ren_metafiber_pdf_2022"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 对照焦位段；p5 Fig. 3E 红轴与 Fig. 3F 轴扫",
+              "note": "主文 p6 给出 1650 nm 为 225 μm、1250 nm 为 306 μm，Fig. 3F 轴扫支持该方向，Fig. 3E 红色焦位曲线方向相反。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "正文 306 μm；图文冲突",
+              "reference_plane": null,
+              "prose_reported_value_um": 306
+            },
+            "efficiency_protocol": {
+              "value": "总效率 = 透过率 × 透射光归一的圆孔聚焦效率",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5 Note 与表头",
+              "note": "表注定义入射总强度、透过总强度及焦区积分。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "focus_integration_scale_fwhm": 3,
+              "focus_region_geometry": "circular_aperture",
+              "focus_region_dimension_kind": null,
+              "polarization_detection": null,
+              "incident_aperture_um": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 1250,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5，1250 nm 行，Wavelength 列",
+              "note": "同一实物及协议的入射谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 20.11,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5，1250 nm 行，Total efficiency 列",
+              "note": "作者印字总效率，分母为入射总强度。沿用印字精度。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "calculation_origin": "authors",
+              "method": "transmission_times_transmitted_normalized_focusing"
+            },
+            "optical_transmittance_pct": {
+              "value": 56.8,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5，1250 nm 行，Transmission efficiency 列",
+              "note": "作者定义器件透出总电场强度 / 入射总电场强度。入射光束与口径的功率校准未交代。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "calculation_origin": "authors"
+            },
+            "focusing_efficiency_transmitted_pct": {
+              "value": 35.4,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5，1250 nm 行，Focusing efficiency 列",
+              "note": "作者印字焦区积分强度 / 总透过强度。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "transmitted_power",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_glass_control_1350",
+          "model": "Ren 2022 · 玻璃基底未校正对照 · 1350 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "glass_control",
+          "module": "",
+          "variant": "玻璃基底未校正对照 · 1350 nm",
+          "evidence_type": "study",
+          "measurement_scope": "同尺寸且未做群延迟补偿的实物。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p6 同尺寸对照与光纤实物段",
+              "note": "作者给出的名义镜径。两只玻璃基底实物尺寸相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 Fig. 3 对应玻璃试样段；补件 Tables 3–5",
+              "note": "作者报告的平面基底超透镜 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "IP-L 聚合物纳米柱 / 玻璃",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 2A、Fig. 3A/D 或 Fig. 4A–C、Methods",
+              "note": "双光子纳米打印，元胞周期 2.2 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "design_focal_um": {
+              "value": 250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6，两只玻璃基底实物的名义焦距段",
+              "note": "1650 nm 名义设计焦距。SI Note 7 单独的采样模型采用 240 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_wavelength_nm": 1650
+            },
+            "wavelength_nm": {
+              "value": 1350,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 3E–F，1350 nm 谱点",
+              "note": "实际测量波长，原文还以 μm 书写。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直入射的横向焦斑与轴向扫描",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p26 Fig. S7；主文 p5 Fig. 3B–C/E–F",
+              "note": "超连续谱加波长选择器，三轴台、物镜、筒镜与红外相机。谱线带宽、横向像素尺度、轴扫步长、精确峰值拟合与误差未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "object_conjugate": "infinity",
+              "axial_step_um": null,
+              "image_plane_pixel_size_um": null,
+              "sourceIds": [
+                "ren_metafiber_si_2022",
+                "ren_metafiber_pdf_2022"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 对照焦位段；p5 Fig. 3E 红轴与 Fig. 3F 轴扫",
+              "note": "主文 p6 给出 1650 nm 为 225 μm、1250 nm 为 306 μm，Fig. 3F 轴扫支持该方向，Fig. 3E 红色焦位曲线方向相反。 当前谱点无独立印字焦位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查，图文冲突",
+              "reference_plane": null
+            },
+            "efficiency_protocol": {
+              "value": "总效率 = 透过率 × 透射光归一的圆孔聚焦效率",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5 Note 与表头",
+              "note": "表注定义入射总强度、透过总强度及焦区积分。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "focus_integration_scale_fwhm": 3,
+              "focus_region_geometry": "circular_aperture",
+              "focus_region_dimension_kind": null,
+              "polarization_detection": null,
+              "incident_aperture_um": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 1350,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5，1350 nm 行，Wavelength 列",
+              "note": "同一实物及协议的入射谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 24.58,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5，1350 nm 行，Total efficiency 列",
+              "note": "作者印字总效率，分母为入射总强度。沿用印字精度。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "calculation_origin": "authors",
+              "method": "transmission_times_transmitted_normalized_focusing"
+            },
+            "optical_transmittance_pct": {
+              "value": 66.6,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5，1350 nm 行，Transmission efficiency 列",
+              "note": "作者定义器件透出总电场强度 / 入射总电场强度。入射光束与口径的功率校准未交代。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "calculation_origin": "authors"
+            },
+            "focusing_efficiency_transmitted_pct": {
+              "value": 36.9,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5，1350 nm 行，Focusing efficiency 列",
+              "note": "作者印字焦区积分强度 / 总透过强度。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "transmitted_power",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_glass_control_1450",
+          "model": "Ren 2022 · 玻璃基底未校正对照 · 1450 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "glass_control",
+          "module": "",
+          "variant": "玻璃基底未校正对照 · 1450 nm",
+          "evidence_type": "study",
+          "measurement_scope": "同尺寸且未做群延迟补偿的实物。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p6 同尺寸对照与光纤实物段",
+              "note": "作者给出的名义镜径。两只玻璃基底实物尺寸相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 Fig. 3 对应玻璃试样段；补件 Tables 3–5",
+              "note": "作者报告的平面基底超透镜 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "IP-L 聚合物纳米柱 / 玻璃",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 2A、Fig. 3A/D 或 Fig. 4A–C、Methods",
+              "note": "双光子纳米打印，元胞周期 2.2 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "design_focal_um": {
+              "value": 250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6，两只玻璃基底实物的名义焦距段",
+              "note": "1650 nm 名义设计焦距。SI Note 7 单独的采样模型采用 240 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_wavelength_nm": 1650
+            },
+            "wavelength_nm": {
+              "value": 1450,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 3E–F，1450 nm 谱点",
+              "note": "实际测量波长，原文还以 μm 书写。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直入射的横向焦斑与轴向扫描",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p26 Fig. S7；主文 p5 Fig. 3B–C/E–F",
+              "note": "超连续谱加波长选择器，三轴台、物镜、筒镜与红外相机。谱线带宽、横向像素尺度、轴扫步长、精确峰值拟合与误差未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "object_conjugate": "infinity",
+              "axial_step_um": null,
+              "image_plane_pixel_size_um": null,
+              "sourceIds": [
+                "ren_metafiber_si_2022",
+                "ren_metafiber_pdf_2022"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 对照焦位段；p5 Fig. 3E 红轴与 Fig. 3F 轴扫",
+              "note": "主文 p6 给出 1650 nm 为 225 μm、1250 nm 为 306 μm，Fig. 3F 轴扫支持该方向，Fig. 3E 红色焦位曲线方向相反。 当前谱点无独立印字焦位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查，图文冲突",
+              "reference_plane": null
+            },
+            "efficiency_protocol": {
+              "value": "总效率 = 透过率 × 透射光归一的圆孔聚焦效率",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5 Note 与表头",
+              "note": "表注定义入射总强度、透过总强度及焦区积分。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "focus_integration_scale_fwhm": 3,
+              "focus_region_geometry": "circular_aperture",
+              "focus_region_dimension_kind": null,
+              "polarization_detection": null,
+              "incident_aperture_um": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 1450,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5，1450 nm 行，Wavelength 列",
+              "note": "同一实物及协议的入射谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 27,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5，1450 nm 行，Total efficiency 列",
+              "note": "作者印字总效率，分母为入射总强度。沿用印字精度。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "calculation_origin": "authors",
+              "method": "transmission_times_transmitted_normalized_focusing"
+            },
+            "optical_transmittance_pct": {
+              "value": 72,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5，1450 nm 行，Transmission efficiency 列",
+              "note": "作者定义器件透出总电场强度 / 入射总电场强度。入射光束与口径的功率校准未交代。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "calculation_origin": "authors"
+            },
+            "focusing_efficiency_transmitted_pct": {
+              "value": 37.5,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5，1450 nm 行，Focusing efficiency 列",
+              "note": "作者印字焦区积分强度 / 总透过强度。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "transmitted_power",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_glass_control_1550",
+          "model": "Ren 2022 · 玻璃基底未校正对照 · 1550 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "glass_control",
+          "module": "",
+          "variant": "玻璃基底未校正对照 · 1550 nm",
+          "evidence_type": "study",
+          "measurement_scope": "同尺寸且未做群延迟补偿的实物。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p6 同尺寸对照与光纤实物段",
+              "note": "作者给出的名义镜径。两只玻璃基底实物尺寸相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 Fig. 3 对应玻璃试样段；补件 Tables 3–5",
+              "note": "作者报告的平面基底超透镜 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "IP-L 聚合物纳米柱 / 玻璃",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 2A、Fig. 3A/D 或 Fig. 4A–C、Methods",
+              "note": "双光子纳米打印，元胞周期 2.2 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "design_focal_um": {
+              "value": 250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6，两只玻璃基底实物的名义焦距段",
+              "note": "1650 nm 名义设计焦距。SI Note 7 单独的采样模型采用 240 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_wavelength_nm": 1650
+            },
+            "wavelength_nm": {
+              "value": 1550,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 3E–F，1550 nm 谱点",
+              "note": "实际测量波长，原文还以 μm 书写。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直入射的横向焦斑与轴向扫描",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p26 Fig. S7；主文 p5 Fig. 3B–C/E–F",
+              "note": "超连续谱加波长选择器，三轴台、物镜、筒镜与红外相机。谱线带宽、横向像素尺度、轴扫步长、精确峰值拟合与误差未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "object_conjugate": "infinity",
+              "axial_step_um": null,
+              "image_plane_pixel_size_um": null,
+              "sourceIds": [
+                "ren_metafiber_si_2022",
+                "ren_metafiber_pdf_2022"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 对照焦位段；p5 Fig. 3E 红轴与 Fig. 3F 轴扫",
+              "note": "主文 p6 给出 1650 nm 为 225 μm、1250 nm 为 306 μm，Fig. 3F 轴扫支持该方向，Fig. 3E 红色焦位曲线方向相反。 当前谱点无独立印字焦位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查，图文冲突",
+              "reference_plane": null
+            },
+            "efficiency_protocol": {
+              "value": "总效率 = 透过率 × 透射光归一的圆孔聚焦效率",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5 Note 与表头",
+              "note": "表注定义入射总强度、透过总强度及焦区积分。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "focus_integration_scale_fwhm": 3,
+              "focus_region_geometry": "circular_aperture",
+              "focus_region_dimension_kind": null,
+              "polarization_detection": null,
+              "incident_aperture_um": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 1550,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5，1550 nm 行，Wavelength 列",
+              "note": "同一实物及协议的入射谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 30.1,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5，1550 nm 行，Total efficiency 列",
+              "note": "作者印字总效率，分母为入射总强度。沿用印字精度。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "calculation_origin": "authors",
+              "method": "transmission_times_transmitted_normalized_focusing"
+            },
+            "optical_transmittance_pct": {
+              "value": 72.7,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5，1550 nm 行，Transmission efficiency 列",
+              "note": "作者定义器件透出总电场强度 / 入射总电场强度。入射光束与口径的功率校准未交代。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "calculation_origin": "authors"
+            },
+            "focusing_efficiency_transmitted_pct": {
+              "value": 41.4,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5，1550 nm 行，Focusing efficiency 列",
+              "note": "作者印字焦区积分强度 / 总透过强度。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "transmitted_power",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_glass_control_1650",
+          "model": "Ren 2022 · 玻璃基底未校正对照 · 1650 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "glass_control",
+          "module": "",
+          "variant": "玻璃基底未校正对照 · 1650 nm",
+          "evidence_type": "study",
+          "measurement_scope": "同尺寸且未做群延迟补偿的实物。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p6 同尺寸对照与光纤实物段",
+              "note": "作者给出的名义镜径。两只玻璃基底实物尺寸相同。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.2,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 Fig. 3 对应玻璃试样段；补件 Tables 3–5",
+              "note": "作者报告的平面基底超透镜 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "IP-L 聚合物纳米柱 / 玻璃",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 2A、Fig. 3A/D 或 Fig. 4A–C、Methods",
+              "note": "双光子纳米打印，元胞周期 2.2 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "design_focal_um": {
+              "value": 250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6，两只玻璃基底实物的名义焦距段",
+              "note": "1650 nm 名义设计焦距。SI Note 7 单独的采样模型采用 240 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_wavelength_nm": 1650
+            },
+            "wavelength_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 3E–F，1650 nm 谱点",
+              "note": "实际测量波长，原文还以 μm 书写。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直入射的横向焦斑与轴向扫描",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p26 Fig. S7；主文 p5 Fig. 3B–C/E–F",
+              "note": "超连续谱加波长选择器，三轴台、物镜、筒镜与红外相机。谱线带宽、横向像素尺度、轴扫步长、精确峰值拟合与误差未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "object_conjugate": "infinity",
+              "axial_step_um": null,
+              "image_plane_pixel_size_um": null,
+              "sourceIds": [
+                "ren_metafiber_si_2022",
+                "ren_metafiber_pdf_2022"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 对照焦位段；p5 Fig. 3E 红轴与 Fig. 3F 轴扫",
+              "note": "主文 p6 给出 1650 nm 为 225 μm、1250 nm 为 306 μm，Fig. 3F 轴扫支持该方向，Fig. 3E 红色焦位曲线方向相反。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "正文 225 μm；图文冲突",
+              "reference_plane": null,
+              "prose_reported_value_um": 225
+            },
+            "efficiency_protocol": {
+              "value": "总效率 = 透过率 × 透射光归一的圆孔聚焦效率",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5 Note 与表头",
+              "note": "表注定义入射总强度、透过总强度及焦区积分。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "focus_integration_scale_fwhm": 3,
+              "focus_region_geometry": "circular_aperture",
+              "focus_region_dimension_kind": null,
+              "polarization_detection": null,
+              "incident_aperture_um": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5，1650 nm 行，Wavelength 列",
+              "note": "同一实物及协议的入射谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 30.96,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5，1650 nm 行，Total efficiency 列",
+              "note": "作者印字总效率，分母为入射总强度。沿用印字精度。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "calculation_origin": "authors",
+              "method": "transmission_times_transmitted_normalized_focusing"
+            },
+            "optical_transmittance_pct": {
+              "value": 73.2,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5，1650 nm 行，Transmission efficiency 列",
+              "note": "作者定义器件透出总电场强度 / 入射总电场强度。入射光束与口径的功率校准未交代。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_light_total_intensity",
+              "calculation_origin": "authors"
+            },
+            "focusing_efficiency_transmitted_pct": {
+              "value": 42.3,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p43 Table 5，1650 nm 行，Focusing efficiency 列",
+              "note": "作者印字焦区积分强度 / 总透过强度。作者以 3×焦斑 FWHM 描述积分圆孔，半径或直径未明。实验的偏振检出条件、功率计量与误差未明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "denominator": "transmitted_power",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_fiber_achromat_summary",
+          "model": "Ren 2022 · 光纤端面消色差镜",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "fiber_achromat",
+          "module": "",
+          "variant": "光纤端面消色差镜",
+          "evidence_type": "study",
+          "measurement_scope": "补偿轴向色差的单模光纤端面打印镜。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p6 同尺寸对照与光纤实物段",
+              "note": "作者给出的名义透镜直径。光纤构件的空心塔直径为 120 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.12,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 光纤焦斑段、p7 Fig. 4D–E",
+              "note": "由发散光纤出射波前限定的有效 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "IP-L 聚合物纳米柱 / SMF-28 空心支架",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 2A、Fig. 3A/D 或 Fig. 4A–C、Methods",
+              "note": "双光子纳米打印，元胞周期 2.2 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 1250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "连续近红外消色差设计 · 五谱点实验",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 设计、pp5–7 Fig. 4D–E 与对应正文",
+              "note": "作者报告五谱点焦位接近。逐点精确焦位与轴向残余量未提供数表。光纤出射的发散波前在设计中单独补偿。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 4D–E 与对应正文",
+              "note": "作者只描述多波长近乎同焦，未给出峰峰值、统计范围或逐点误差。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查，数值待核",
+              "sample_wavelengths_nm": [
+                1250,
+                1350,
+                1450,
+                1550,
+                1650
+              ]
+            },
+            "psf_protocol": {
+              "value": "光纤出射的横向焦斑与轴向扫描",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 Fabrication and characterization；p7 Fig. 4D–E",
+              "note": "Olympus 100×、NA=0.8，轴扫步长 0.5 μm、行程 300 μm。谱点各采纵向和横向焦斑。横向像素尺度、峰值拟合和不确定度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "axial_step_um": 0.5,
+              "axial_scan_range_um": 300,
+              "image_plane_pixel_size_um": null
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p9 Data availability；出版社附录清单；DataCite 正式 DOI 关联查询",
+              "note": "所核期刊材料公开焦斑图及 FWHM 表。正文数据可向通讯作者请求。原始 PSF 数组、有效采样尺度与 MTF 未取得。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "暂无可核 MTF",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022",
+                "ren_metafiber_datacite_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_fiber_achromat_1250",
+          "model": "Ren 2022 · 光纤端面消色差镜 · 1250 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "fiber_achromat",
+          "module": "",
+          "variant": "光纤端面消色差镜 · 1250 nm",
+          "evidence_type": "study",
+          "measurement_scope": "补偿轴向色差的单模光纤端面打印镜。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p6 同尺寸对照与光纤实物段",
+              "note": "作者给出的名义透镜直径。光纤构件的空心塔直径为 120 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.12,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 光纤焦斑段、p7 Fig. 4D–E",
+              "note": "由发散光纤出射波前限定的有效 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "IP-L 聚合物纳米柱 / SMF-28 空心支架",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 2A、Fig. 3A/D 或 Fig. 4A–C、Methods",
+              "note": "双光子纳米打印，元胞周期 2.2 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 1250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 4D–E，1250 nm 谱点",
+              "note": "实际测量波长，原文还以 μm 书写。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "光纤出射的横向焦斑与轴向扫描",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 Fabrication and characterization；p7 Fig. 4D–E",
+              "note": "Olympus 100×、NA=0.8，轴扫步长 0.5 μm、行程 300 μm。谱点各采纵向和横向焦斑。横向像素尺度、峰值拟合和不确定度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "axial_step_um": 0.5,
+              "axial_scan_range_um": 300,
+              "image_plane_pixel_size_um": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 4D–E，1250 nm 谱点",
+              "note": "作者只给焦位曲线与焦斑图，当前谱点无印字数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅见焦位曲线",
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": 4.97,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p44 Table 6，1250 nm 行，FWHM (Experiment) 列",
+              "note": "横向实测焦斑；作者同谱点的衍射极限计算参考为 5.41 μm。表中截面方向、拟合、场角公差、逐点误差待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "direction": null,
+              "sourceIds": [
+                "ren_metafiber_si_2022",
+                "ren_metafiber_pdf_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_fiber_achromat_1350",
+          "model": "Ren 2022 · 光纤端面消色差镜 · 1350 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "fiber_achromat",
+          "module": "",
+          "variant": "光纤端面消色差镜 · 1350 nm",
+          "evidence_type": "study",
+          "measurement_scope": "补偿轴向色差的单模光纤端面打印镜。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p6 同尺寸对照与光纤实物段",
+              "note": "作者给出的名义透镜直径。光纤构件的空心塔直径为 120 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.12,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 光纤焦斑段、p7 Fig. 4D–E",
+              "note": "由发散光纤出射波前限定的有效 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "IP-L 聚合物纳米柱 / SMF-28 空心支架",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 2A、Fig. 3A/D 或 Fig. 4A–C、Methods",
+              "note": "双光子纳米打印，元胞周期 2.2 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 1250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1350,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 4D–E，1350 nm 谱点",
+              "note": "实际测量波长，原文还以 μm 书写。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "光纤出射的横向焦斑与轴向扫描",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 Fabrication and characterization；p7 Fig. 4D–E",
+              "note": "Olympus 100×、NA=0.8，轴扫步长 0.5 μm、行程 300 μm。谱点各采纵向和横向焦斑。横向像素尺度、峰值拟合和不确定度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "axial_step_um": 0.5,
+              "axial_scan_range_um": 300,
+              "image_plane_pixel_size_um": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 4D–E，1350 nm 谱点",
+              "note": "作者只给焦位曲线与焦斑图，当前谱点无印字数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅见焦位曲线",
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": 5.45,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p44 Table 6，1350 nm 行，FWHM (Experiment) 列",
+              "note": "横向实测焦斑；作者同谱点的衍射极限计算参考为 5.83 μm。表中截面方向、拟合、场角公差、逐点误差待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "direction": null,
+              "sourceIds": [
+                "ren_metafiber_si_2022",
+                "ren_metafiber_pdf_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_fiber_achromat_1450",
+          "model": "Ren 2022 · 光纤端面消色差镜 · 1450 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "fiber_achromat",
+          "module": "",
+          "variant": "光纤端面消色差镜 · 1450 nm",
+          "evidence_type": "study",
+          "measurement_scope": "补偿轴向色差的单模光纤端面打印镜。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p6 同尺寸对照与光纤实物段",
+              "note": "作者给出的名义透镜直径。光纤构件的空心塔直径为 120 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.12,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 光纤焦斑段、p7 Fig. 4D–E",
+              "note": "由发散光纤出射波前限定的有效 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "IP-L 聚合物纳米柱 / SMF-28 空心支架",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 2A、Fig. 3A/D 或 Fig. 4A–C、Methods",
+              "note": "双光子纳米打印，元胞周期 2.2 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 1250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1450,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 4D–E，1450 nm 谱点",
+              "note": "实际测量波长，原文还以 μm 书写。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "光纤出射的横向焦斑与轴向扫描",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 Fabrication and characterization；p7 Fig. 4D–E",
+              "note": "Olympus 100×、NA=0.8，轴扫步长 0.5 μm、行程 300 μm。谱点各采纵向和横向焦斑。横向像素尺度、峰值拟合和不确定度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "axial_step_um": 0.5,
+              "axial_scan_range_um": 300,
+              "image_plane_pixel_size_um": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 4D–E，1450 nm 谱点",
+              "note": "作者只给焦位曲线与焦斑图，当前谱点无印字数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅见焦位曲线",
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": 5.81,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p44 Table 6，1450 nm 行，FWHM (Experiment) 列",
+              "note": "横向实测焦斑；作者同谱点的衍射极限计算参考为 6.23 μm。表中截面方向、拟合、场角公差、逐点误差待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "direction": null,
+              "sourceIds": [
+                "ren_metafiber_si_2022",
+                "ren_metafiber_pdf_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_fiber_achromat_1550",
+          "model": "Ren 2022 · 光纤端面消色差镜 · 1550 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "fiber_achromat",
+          "module": "",
+          "variant": "光纤端面消色差镜 · 1550 nm",
+          "evidence_type": "study",
+          "measurement_scope": "补偿轴向色差的单模光纤端面打印镜。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p6 同尺寸对照与光纤实物段",
+              "note": "作者给出的名义透镜直径。光纤构件的空心塔直径为 120 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.12,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 光纤焦斑段、p7 Fig. 4D–E",
+              "note": "由发散光纤出射波前限定的有效 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "IP-L 聚合物纳米柱 / SMF-28 空心支架",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 2A、Fig. 3A/D 或 Fig. 4A–C、Methods",
+              "note": "双光子纳米打印，元胞周期 2.2 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 1250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1550,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 4D–E，1550 nm 谱点",
+              "note": "实际测量波长，原文还以 μm 书写。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "光纤出射的横向焦斑与轴向扫描",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 Fabrication and characterization；p7 Fig. 4D–E",
+              "note": "Olympus 100×、NA=0.8，轴扫步长 0.5 μm、行程 300 μm。谱点各采纵向和横向焦斑。横向像素尺度、峰值拟合和不确定度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "axial_step_um": 0.5,
+              "axial_scan_range_um": 300,
+              "image_plane_pixel_size_um": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 4D–E，1550 nm 谱点",
+              "note": "作者只给焦位曲线与焦斑图，当前谱点无印字数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅见焦位曲线",
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": 6.27,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p44 Table 6，1550 nm 行，FWHM (Experiment) 列",
+              "note": "横向实测焦斑；作者同谱点的衍射极限计算参考为 6.63 μm。表中截面方向、拟合、场角公差、逐点误差待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "direction": null,
+              "sourceIds": [
+                "ren_metafiber_si_2022",
+                "ren_metafiber_pdf_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_fiber_achromat_1650",
+          "model": "Ren 2022 · 光纤端面消色差镜 · 1650 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "fiber_achromat",
+          "module": "",
+          "variant": "光纤端面消色差镜 · 1650 nm",
+          "evidence_type": "study",
+          "measurement_scope": "补偿轴向色差的单模光纤端面打印镜。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p6 同尺寸对照与光纤实物段",
+              "note": "作者给出的名义透镜直径。光纤构件的空心塔直径为 120 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.12,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 光纤焦斑段、p7 Fig. 4D–E",
+              "note": "由发散光纤出射波前限定的有效 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "IP-L 聚合物纳米柱 / SMF-28 空心支架",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 2A、Fig. 3A/D 或 Fig. 4A–C、Methods",
+              "note": "双光子纳米打印，元胞周期 2.2 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 1250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p3 Design of an achromatic metafiber；p7 Discussion",
+              "note": "作者给出的连续电信波段。正式焦斑数表包含 1250、1350、1450、1550、1650 nm 五个实测谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 4D–E，1650 nm 谱点",
+              "note": "实际测量波长，原文还以 μm 书写。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "光纤出射的横向焦斑与轴向扫描",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p6 Fabrication and characterization；p7 Fig. 4D–E",
+              "note": "Olympus 100×、NA=0.8，轴扫步长 0.5 μm、行程 300 μm。谱点各采纵向和横向焦斑。横向像素尺度、峰值拟合和不确定度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "axial_step_um": 0.5,
+              "axial_scan_range_um": 300,
+              "image_plane_pixel_size_um": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 Fig. 4D–E，1650 nm 谱点",
+              "note": "作者只给焦位曲线与焦斑图，当前谱点无印字数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "仅见焦位曲线",
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": 6.74,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p44 Table 6，1650 nm 行，FWHM (Experiment) 列",
+              "note": "横向实测焦斑；作者同谱点的衍射极限计算参考为 7.13 μm。表中截面方向、拟合、场角公差、逐点误差待核。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "direction": null,
+              "sourceIds": [
+                "ren_metafiber_si_2022",
+                "ren_metafiber_pdf_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_model_s11_control_1250",
+          "model": "Ren 2022 · 未校正球面模型 · 1250 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "model_s11_control",
+          "module": "",
+          "variant": "未校正球面模型 · 1250 nm",
+          "evidence_type": "study",
+          "measurement_scope": "作者补件中的理论对照，NA=0.21。",
+          "values": {
+            "na": {
+              "value": 0.21,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p30 Fig. S11 的相位剖面标记",
+              "note": "该图模型 NA=0.21。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1250,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p30 Fig. S11 的 1250 nm XZ 图内印字",
+              "note": "仅按 1650 nm 设计球面相位的理论色散对照。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "单设计波长的球面相位，XZ 模型强度",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p30 Fig. S11 的 1250 nm XZ 图内印字",
+              "note": "纵轴 X、横轴 Z，均为 μm。沿每幅图的虚线及图内焦位标注。模型强度标尺无绝对功率单位。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_focal_um": {
+              "value": 292,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p30 Fig. S11 的 1250 nm XZ 图内印字",
+              "note": "作者所标的轴向焦斑位置。图示以模型 z=0 为坐标基准。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "position_definition": "axial_intensity_maximum",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_model_s11_control_1350",
+          "model": "Ren 2022 · 未校正球面模型 · 1350 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "model_s11_control",
+          "module": "",
+          "variant": "未校正球面模型 · 1350 nm",
+          "evidence_type": "study",
+          "measurement_scope": "作者补件中的理论对照，NA=0.21。",
+          "values": {
+            "na": {
+              "value": 0.21,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p30 Fig. S11 的相位剖面标记",
+              "note": "该图模型 NA=0.21。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1350,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p30 Fig. S11 的 1350 nm XZ 图内印字",
+              "note": "仅按 1650 nm 设计球面相位的理论色散对照。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "单设计波长的球面相位，XZ 模型强度",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p30 Fig. S11 的 1350 nm XZ 图内印字",
+              "note": "纵轴 X、横轴 Z，均为 μm。沿每幅图的虚线及图内焦位标注。模型强度标尺无绝对功率单位。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_focal_um": {
+              "value": 271,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p30 Fig. S11 的 1350 nm XZ 图内印字",
+              "note": "作者所标的轴向焦斑位置。图示以模型 z=0 为坐标基准。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "position_definition": "axial_intensity_maximum",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_model_s11_control_1450",
+          "model": "Ren 2022 · 未校正球面模型 · 1450 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "model_s11_control",
+          "module": "",
+          "variant": "未校正球面模型 · 1450 nm",
+          "evidence_type": "study",
+          "measurement_scope": "作者补件中的理论对照，NA=0.21。",
+          "values": {
+            "na": {
+              "value": 0.21,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p30 Fig. S11 的相位剖面标记",
+              "note": "该图模型 NA=0.21。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1450,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p30 Fig. S11 的 1450 nm XZ 图内印字",
+              "note": "仅按 1650 nm 设计球面相位的理论色散对照。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "单设计波长的球面相位，XZ 模型强度",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p30 Fig. S11 的 1450 nm XZ 图内印字",
+              "note": "纵轴 X、横轴 Z，均为 μm。沿每幅图的虚线及图内焦位标注。模型强度标尺无绝对功率单位。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_focal_um": {
+              "value": 258,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p30 Fig. S11 的 1450 nm XZ 图内印字",
+              "note": "作者所标的轴向焦斑位置。图示以模型 z=0 为坐标基准。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "position_definition": "axial_intensity_maximum",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_model_s11_control_1550",
+          "model": "Ren 2022 · 未校正球面模型 · 1550 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "model_s11_control",
+          "module": "",
+          "variant": "未校正球面模型 · 1550 nm",
+          "evidence_type": "study",
+          "measurement_scope": "作者补件中的理论对照，NA=0.21。",
+          "values": {
+            "na": {
+              "value": 0.21,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p30 Fig. S11 的相位剖面标记",
+              "note": "该图模型 NA=0.21。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1550,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p30 Fig. S11 的 1550 nm XZ 图内印字",
+              "note": "仅按 1650 nm 设计球面相位的理论色散对照。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "单设计波长的球面相位，XZ 模型强度",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p30 Fig. S11 的 1550 nm XZ 图内印字",
+              "note": "纵轴 X、横轴 Z，均为 μm。沿每幅图的虚线及图内焦位标注。模型强度标尺无绝对功率单位。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_focal_um": {
+              "value": 237,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p30 Fig. S11 的 1550 nm XZ 图内印字",
+              "note": "作者所标的轴向焦斑位置。图示以模型 z=0 为坐标基准。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "position_definition": "axial_intensity_maximum",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_model_s11_control_1650",
+          "model": "Ren 2022 · 未校正球面模型 · 1650 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "model_s11_control",
+          "module": "",
+          "variant": "未校正球面模型 · 1650 nm",
+          "evidence_type": "study",
+          "measurement_scope": "作者补件中的理论对照，NA=0.21。",
+          "values": {
+            "na": {
+              "value": 0.21,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p30 Fig. S11 的相位剖面标记",
+              "note": "该图模型 NA=0.21。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p30 Fig. S11 的 1650 nm XZ 图内印字",
+              "note": "仅按 1650 nm 设计球面相位的理论色散对照。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "单设计波长的球面相位，XZ 模型强度",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p30 Fig. S11 的 1650 nm XZ 图内印字",
+              "note": "纵轴 X、横轴 Z，均为 μm。沿每幅图的虚线及图内焦位标注。模型强度标尺无绝对功率单位。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_focal_um": {
+              "value": 217,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p30 Fig. S11 的 1650 nm XZ 图内印字",
+              "note": "作者所标的轴向焦斑位置。图示以模型 z=0 为坐标基准。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "position_definition": "axial_intensity_maximum",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_model_s12_fiber_22_1650",
+          "model": "Ren 2022 · 光纤端面模型 · 周期 22 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "model_s12_fiber_22",
+          "module": "",
+          "variant": "光纤端面模型 · 周期 22 nm",
+          "evidence_type": "study",
+          "measurement_scope": "作者的采样密度对比模型。",
+          "values": {
+            "wavelength_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p31 Fig. S12A 上图的图内 P、λ 和 Z 印字",
+              "note": "作者采样对比模型的名义波长。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "XZ 模型强度 · 周期 22 nm",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p31 Fig. S12A 上图的图内 P、λ 和 Z 印字",
+              "note": "图中 z=0 标作 Fiber facet。 焦位取自焦斑插图印字及对应虚线。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sampling_pitch_nm": 22
+            },
+            "simulated_focal_um": {
+              "value": 450,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p31 Fig. S12A 上图的图内 P、λ 和 Z 印字",
+              "note": "图中 z=0 标作 Fiber facet。 插图及虚线标注该轴向焦点。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "position_definition": "axial_intensity_maximum",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_model_s12_fiber_2200_1650",
+          "model": "Ren 2022 · 光纤端面模型 · 周期 2200 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "model_s12_fiber_2200",
+          "module": "",
+          "variant": "光纤端面模型 · 周期 2200 nm",
+          "evidence_type": "study",
+          "measurement_scope": "作者的采样密度对比模型。",
+          "values": {
+            "wavelength_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p31 Fig. S12A 下图的图内 P、λ 和 Z 印字",
+              "note": "作者采样对比模型的名义波长。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "XZ 模型强度 · 周期 2200 nm",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p31 Fig. S12A 下图的图内 P、λ 和 Z 印字",
+              "note": "图中 z=0 标作 Fiber facet。 焦位取自焦斑插图印字及对应虚线。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sampling_pitch_nm": 2200
+            },
+            "simulated_focal_um": {
+              "value": 410,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p31 Fig. S12A 下图的图内 P、λ 和 Z 印字",
+              "note": "图中 z=0 标作 Fiber facet。 插图及虚线标注该轴向焦点。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "position_definition": "axial_intensity_maximum",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_model_s12_glass_22_1650",
+          "model": "Ren 2022 · 玻璃基底模型 · 周期 22 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "model_s12_glass_22",
+          "module": "",
+          "variant": "玻璃基底模型 · 周期 22 nm",
+          "evidence_type": "study",
+          "measurement_scope": "作者的采样密度对比模型。",
+          "values": {
+            "wavelength_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p31 Fig. S12B 上图的图内 P、λ 和 Z 印字",
+              "note": "作者采样对比模型的名义波长。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "XZ 模型强度 · 周期 22 nm",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p31 Fig. S12B 上图的图内 P、λ 和 Z 印字",
+              "note": "使用 Fig. S12B 所示的模型 Z 坐标。 焦位取自焦斑插图印字及对应虚线。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sampling_pitch_nm": 22
+            },
+            "simulated_focal_um": {
+              "value": 250,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p31 Fig. S12B 上图的图内 P、λ 和 Z 印字",
+              "note": "使用 Fig. S12B 所示的模型 Z 坐标。 插图及虚线标注该轴向焦点。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "position_definition": "axial_intensity_maximum",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_model_s12_glass_2200_1650",
+          "model": "Ren 2022 · 玻璃基底模型 · 周期 2200 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "model_s12_glass_2200",
+          "module": "",
+          "variant": "玻璃基底模型 · 周期 2200 nm",
+          "evidence_type": "study",
+          "measurement_scope": "作者的采样密度对比模型。",
+          "values": {
+            "wavelength_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p31 Fig. S12B 下图的图内 P、λ 和 Z 印字",
+              "note": "作者采样对比模型的名义波长。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "XZ 模型强度 · 周期 2200 nm",
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p31 Fig. S12B 下图的图内 P、λ 和 Z 印字",
+              "note": "使用 Fig. S12B 所示的模型 Z 坐标。 焦位取自焦斑插图印字及对应虚线。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sampling_pitch_nm": 2200
+            },
+            "simulated_focal_um": {
+              "value": 225,
+              "source": "ren_metafiber_si_2022",
+              "location": "补件 p31 Fig. S12B 下图的图内 P、λ 和 Z 印字",
+              "note": "使用 Fig. S12B 所示的模型 Z 坐标。 插图及虚线标注该轴向焦点。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "position_definition": "axial_intensity_maximum",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_confocal_achromat_1250",
+          "model": "Ren 2022 · 消色差光纤共焦系统 · 1250 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "confocal_achromat",
+          "module": "",
+          "variant": "消色差光纤共焦系统 · 1250 nm",
+          "evidence_type": "study",
+          "measurement_scope": "单模光纤作共焦针孔，扫描成像配置。",
+          "values": {
+            "wavelength_nm": {
+              "value": 1250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p8 Fig. 5E，1250 nm 列；补件 p32 Fig. S13",
+              "note": "标靶图中明确标注的实际实拍谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "透射照明与压电扫描 · 1951 USAF 标靶",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p8 Fig. 5E，1250 nm 列；补件 p32 Fig. S13",
+              "note": "同一靶区扫描，在单模光纤另一端由 Ge 放大光电探测器记录。主文未给分辨阈值或每帧数值场点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "resolved_test_line_width_um": {
+              "value": 8.77,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p8 Fig. 5E，1250 nm 列；补件 p32 Fig. S13；p6 成像段列出 Group 5 Element 6 线宽",
+              "note": "图中 G5E6 可辨，正文给该元素 8.77 μm。此数为已展示目标线宽，最细极限未核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "target": "usaf_1951",
+              "target_group": 5,
+              "target_element": 6,
+              "field_point": null,
+              "contrast_threshold": null,
+              "processing_stage": "captured"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_confocal_achromat_1450",
+          "model": "Ren 2022 · 消色差光纤共焦系统 · 1450 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "confocal_achromat",
+          "module": "",
+          "variant": "消色差光纤共焦系统 · 1450 nm",
+          "evidence_type": "study",
+          "measurement_scope": "单模光纤作共焦针孔，扫描成像配置。",
+          "values": {
+            "wavelength_nm": {
+              "value": 1450,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p8 Fig. 5E，1450 nm 列；补件 p32 Fig. S13",
+              "note": "标靶图中明确标注的实际实拍谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "透射照明与压电扫描 · 1951 USAF 标靶",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p8 Fig. 5E，1450 nm 列；补件 p32 Fig. S13",
+              "note": "同一靶区扫描，在单模光纤另一端由 Ge 放大光电探测器记录。主文未给分辨阈值或每帧数值场点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "resolved_test_line_width_um": {
+              "value": 8.77,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p8 Fig. 5E，1450 nm 列；补件 p32 Fig. S13；p6 成像段列出 Group 5 Element 6 线宽",
+              "note": "图中 G5E6 可辨，正文给该元素 8.77 μm。此数为已展示目标线宽，最细极限未核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "target": "usaf_1951",
+              "target_group": 5,
+              "target_element": 6,
+              "field_point": null,
+              "contrast_threshold": null,
+              "processing_stage": "captured"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_confocal_achromat_1650",
+          "model": "Ren 2022 · 消色差光纤共焦系统 · 1650 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "confocal_achromat",
+          "module": "",
+          "variant": "消色差光纤共焦系统 · 1650 nm",
+          "evidence_type": "study",
+          "measurement_scope": "单模光纤作共焦针孔，扫描成像配置。",
+          "values": {
+            "wavelength_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p8 Fig. 5E，1650 nm 列；补件 p32 Fig. S13",
+              "note": "标靶图中明确标注的实际实拍谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "透射照明与压电扫描 · 1951 USAF 标靶",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p8 Fig. 5E，1650 nm 列；补件 p32 Fig. S13",
+              "note": "同一靶区扫描，在单模光纤另一端由 Ge 放大光电探测器记录。主文未给分辨阈值或每帧数值场点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "resolved_test_line_width_um": {
+              "value": 8.77,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p8 Fig. 5E，1650 nm 列；补件 p32 Fig. S13；p6 成像段列出 Group 5 Element 6 线宽",
+              "note": "图中 G5E6 可辨，正文给该元素 8.77 μm。此数为已展示目标线宽，最细极限未核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "target": "usaf_1951",
+              "target_group": 5,
+              "target_element": 6,
+              "field_point": null,
+              "contrast_threshold": null,
+              "processing_stage": "captured"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_confocal_achromat_broadband",
+          "model": "Ren 2022 · 消色差光纤共焦系统 · 八通道照明",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "confocal_achromat",
+          "module": "",
+          "variant": "消色差光纤共焦系统 · 八通道照明",
+          "evidence_type": "study",
+          "measurement_scope": "单模光纤作共焦针孔，扫描成像配置。",
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p8 Fig. 5H 图注及 p7 左栏；补件 p32 Fig. S13",
+              "note": "实拍照明由 1250–1650 nm 范围内 8 个等间隔通道组成。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "display": "1250–1650 nm 内 8 个照明通道",
+              "spectral_channel_count": 8
+            },
+            "illumination": {
+              "value": "透射照明与压电扫描 · 1951 USAF 标靶",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p8 Fig. 5H 图注及 p7 左栏；补件 p32 Fig. S13",
+              "note": "同一靶区扫描，在单模光纤另一端由 Ge 放大光电探测器记录。主文未给分辨阈值或每帧数值场点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            },
+            "resolved_test_line_width_um": {
+              "value": 4.92,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p8 Fig. 5H 图注及 p7 左栏；补件 p32 Fig. S13",
+              "note": "作者以 G6E5 标称线宽标记系统空间分辨率，未给出对比阈值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "target": "usaf_1951",
+              "target_group": 6,
+              "target_element": 5,
+              "field_point": null,
+              "contrast_threshold": null,
+              "processing_stage": "captured"
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_confocal_control_1250",
+          "model": "Ren 2022 · 未校正光纤共焦对照系统 · 1250 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "confocal_control",
+          "module": "",
+          "variant": "未校正光纤共焦对照系统 · 1250 nm",
+          "evidence_type": "study",
+          "measurement_scope": "单模光纤作共焦针孔，扫描成像配置。",
+          "values": {
+            "wavelength_nm": {
+              "value": 1250,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p8 Fig. 5F，1250 nm 列；补件 p32 Fig. S13",
+              "note": "标靶图中明确标注的实际实拍谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "透射照明与压电扫描 · 1951 USAF 标靶",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p8 Fig. 5F，1250 nm 列；补件 p32 Fig. S13",
+              "note": "同一靶区扫描，在单模光纤另一端由 Ge 放大光电探测器记录。主文未给分辨阈值或每帧数值场点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_confocal_control_1450",
+          "model": "Ren 2022 · 未校正光纤共焦对照系统 · 1450 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "confocal_control",
+          "module": "",
+          "variant": "未校正光纤共焦对照系统 · 1450 nm",
+          "evidence_type": "study",
+          "measurement_scope": "单模光纤作共焦针孔，扫描成像配置。",
+          "values": {
+            "wavelength_nm": {
+              "value": 1450,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p8 Fig. 5F，1450 nm 列；补件 p32 Fig. S13",
+              "note": "标靶图中明确标注的实际实拍谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "透射照明与压电扫描 · 1951 USAF 标靶",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p8 Fig. 5F，1450 nm 列；补件 p32 Fig. S13",
+              "note": "同一靶区扫描，在单模光纤另一端由 Ge 放大光电探测器记录。主文未给分辨阈值或每帧数值场点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_confocal_control_1650",
+          "model": "Ren 2022 · 未校正光纤共焦对照系统 · 1650 nm",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "confocal_control",
+          "module": "",
+          "variant": "未校正光纤共焦对照系统 · 1650 nm",
+          "evidence_type": "study",
+          "measurement_scope": "单模光纤作共焦针孔，扫描成像配置。",
+          "values": {
+            "wavelength_nm": {
+              "value": 1650,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p8 Fig. 5F，1650 nm 列；补件 p32 Fig. S13",
+              "note": "标靶图中明确标注的实际实拍谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "透射照明与压电扫描 · 1951 USAF 标靶",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p8 Fig. 5F，1650 nm 列；补件 p32 Fig. S13",
+              "note": "同一靶区扫描，在单模光纤另一端由 Ge 放大光电探测器记录。主文未给分辨阈值或每帧数值场点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "ren2022metafiber_confocal_control_broadband",
+          "model": "Ren 2022 · 未校正光纤共焦对照系统 · 八通道照明",
+          "study_id": "ren2022metafiber",
+          "specimen_id": "confocal_control",
+          "module": "",
+          "variant": "未校正光纤共焦对照系统 · 八通道照明",
+          "evidence_type": "study",
+          "measurement_scope": "单模光纤作共焦针孔，扫描成像配置。",
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p8 Fig. 5H 图注及 p7 左栏；补件 p32 Fig. S13",
+              "note": "实拍照明由 1250–1650 nm 范围内 8 个等间隔通道组成。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "display": "1250–1650 nm 内 8 个照明通道",
+              "spectral_channel_count": 8
+            },
+            "illumination": {
+              "value": "透射照明与压电扫描 · 1951 USAF 标靶",
+              "source": "ren_metafiber_pdf_2022",
+              "location": "主文 p8 Fig. 5H 图注及 p7 左栏；补件 p32 Fig. S13",
+              "note": "同一靶区扫描，在单模光纤另一端由 Ge 放大光电探测器记录。主文未给分辨阈值或每帧数值场点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "ren_metafiber_pdf_2022",
+                "ren_metafiber_si_2022"
+              ]
+            }
+          }
         }
       ],
-      "scope": "46项原始研究、247个器件/测量/系统配置、1063条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
+      "scope": "47项原始研究、257个器件/测量/系统配置、1098条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
