@@ -18,7 +18,7 @@ test('Hasegawa axial findings keep two conjugates and the unprinted peaks distin
  assert.deepEqual(laser.map(v => v.axial_focus_offset_um.value), [20, -20, -70]);
  assert.deepEqual(halogen.map(v => v.axial_focus_offset_um?.value ?? null), [null, 30, null, 50, null, 60, null]);
  assert.ok(halogen.every(v => v.psf_protocol.object_distance_m === 0.5 && !v.mtf_curve));
- assert.ok(rows.every(({values: v}) => v.diameter_um.value === 1000 && v.na.value === 0.1 && !v.lambda_min_nm && !v.lambda_max_nm));
+ assert.ok([...laser, ...halogen, ...camera].every(v => v.diameter_um.value === 1000 && v.na.value === 0.1 && !v.lambda_min_nm && !v.lambda_max_nm));
  assert.equal(camera.length, 5);
  assert.ok(camera.every(v => !v.wavelength_nm && !v.psf_protocol && !v.mtf_curve));
 });
@@ -42,4 +42,38 @@ test('Hasegawa power ratios use distinct denominators and the x-direction MTF re
  invalidRow.values.focusing_efficiency_transmitted_pct.denominator = 'incident_through_aperture';
  const {metrics} = data.domains.metalens;
  assert.throws(() => validateDevices({...data, domains: {metalens: {metrics, rows: [invalidRow]}}}), /optical power ratio context/);
+});
+
+test('Hasegawa records optimization and PSF metrics only on their original models', () => {
+ const before = configuration('cylindrical1000_before');
+ const after = configuration('cylindrical1000_after');
+ const [small] = configuration('model30_optimized');
+ assert.equal(rows.length, 23);
+ assert.ok(small && small.diameter_um.value === 30 && small.diameter_um.basis === 'model');
+ assert.equal(small.simulated_focal_um.value, null);
+ assert.deepEqual([small.simulated_focal_um.reported_center_um, small.simulated_focal_um.reported_spread_um], [150, 6]);
+ assert.equal(small.simulated_focal_um.spread_definition, null);
+ assert.equal(small.wavelength_nm, undefined);
+ assert.equal(small.simulated_focusing_efficiency_pct, undefined);
+ const [polarizationModel] = configuration('model30_polarization');
+ assert.equal(polarizationModel.simulated_focal_um, undefined);
+ assert.equal(polarizationModel.simulated_focusing_efficiency_pct.value, null);
+ assert.deepEqual(polarizationModel.simulated_focusing_efficiency_pct.bound, {operator:'gt', value:80});
+ assert.deepEqual(before.map(v => v.simulated_phase_strehl.value), [.74, .53, .33]);
+ assert.deepEqual(after.map(v => v.simulated_phase_strehl.value), [.78, .61, .54]);
+ assert.deepEqual(after.map(v => v.simulated_psf_strehl.value), [.98, .97, .95]);
+ assert.ok(before.every(v => !v.simulated_psf_strehl && !v.psf_protocol.dc_bias_optimized));
+ assert.ok(after.every(v => v.simulated_psf_strehl.power_normalization_window_um === 50 && v.psf_protocol.dc_bias_optimized));
+ for (const stage of [before, after]) {
+  assert.deepEqual(stage.map(v => v.wavelength_nm.value), [450, 532, 633]);
+  assert.ok(stage.every(v => v.cylindrical_aperture_width_um.value === 1000 && v.wavelength_nm.basis === 'model'));
+  assert.ok(stage.every(v => !v.diameter_um && !v.strehl && !v.measured_focal_um));
+ }
+ const laser = configuration('laser');
+ assert.deepEqual(laser.map(v => v.fwhm_x_um.theoretical_reference_fwhm_um), [2.25, 2.64, 3.05]);
+ assert.ok(laser.every(v => !v.simulated_psf_strehl && !v.simulated_phase_strehl));
+ const bad = structuredClone(rows.find(row => row.id === 'hasegawa2026_cyl1000_after_450'));
+ bad.values.wavelength_nm.basis = 'measured';
+ const {metrics} = data.domains.metalens;
+ assert.throws(() => validateDevices({...data, domains:{metalens:{metrics,rows:[bad]}}}), /simulated Strehl context/);
 });

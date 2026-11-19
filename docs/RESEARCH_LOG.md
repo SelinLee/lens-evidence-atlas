@@ -1177,3 +1177,7 @@ Zang 2024 补件组件 DOI 在 Crossref 确认从属于 ACS Nano 主文，同一
 0.3.55 经 [PR #191](https://github.com/SelinLee/lens-evidence-atlas/pull/191) 合并为 dcea0b0。PR 校验 44470829010、主线校验 44470952477 与 [Pages 44470952455](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44470952455) 成功。314 项测试通过，234 个公开文件与本地构建的 SHA-256 一致。独立无头 Chrome 核到 51 篇、1191 条及可见光筛选后的 42 篇、787 条。Shrestha 名下 4 配置、37 条记录。几何轴上 33 条谱点对应 32 组坐标，校验 1660 nm／设计焦距 200 μm、M2 的 1650 nm／800 μm、M3 的 1400 nm／30 μm 与 1300 nm 重合坐标。无原始焦位的轴为空，CSV、补件和正式 PDF 的出处往返与六个视口验收通过。[Shrestha 核验](SHRESTHA_2018_FABRICATED_REVIEW_2026-11-19.md)
 
 接着补查 Hasegawa 2026，原刊 2026-11-11 正式上线，Laser & Photonics Reviews 在 2025 年 3 月中科院升级版为物理与天体物理大类一区。正式稿 p.14 指定 `lpor72174-sup-0001-SuppMat.pdf`，§2.4 列 Fig. S1/Table S2 的 ±5 nm 失谐评估、Fig. S2/Table S3 的偏振评估。正文把这些评估称为数值计算，仍有焦距描述使用实测措辞。对应章节亦提到 30 μm 模型，需对原表确认口径、方法和焦距参考。采用独立无头 Chrome 检查精确补件 URL、出版社下载接口及资产入口均返回 403。继续核正式补件与作者存档，数值等待归属。会话目标保持开启。[期刊正式稿](https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/lpor.72174) · [2025 年分区](https://www.ais.cn/journal/database/5537) · [武汉大学图书馆分区](https://topj.lib.whu.edu.cn/show.asp?cat=sci&id=13647)
+
+## 2026-11-19-133 · Hasegawa 缩比模型与柱面 Strehl 对读
+
+按主文 pp.4–7 §§2.2–2.4 补入四种模拟配置、八条记录。30 μm 优化模型的 150 ± 6 μm 保留为作者原印三色汇总，± 统计含义未知。另一条保留 p.9 同口径四偏振模拟效率 >80% 和原表归属待核。1 mm 柱面模型光焦度方向尺度单列，450／532／633 nm 相位 Strehl 优化前 0.74／0.53／0.33，优化后 0.78／0.61／0.54。作者归一化模拟 PSF Strehl 0.98／0.97／0.95 另列。给圆形实物三个实测 FWHM 补同谱点理论参考 2.25／2.64／3.05 μm。补件和原始 MTF 未取得，±5 nm 失谐评估的精确归属留待原表。全库 51 篇、1199 条，可见光 42 篇、795 条。[本批核验](HASEGAWA_2026_MODEL_EVIDENCE_2026-11-19.md)
