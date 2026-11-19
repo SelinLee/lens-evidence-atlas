@@ -169,7 +169,7 @@ export function validateDevices(d,catalog){
  const idealWidth=r.values.diffraction_limited_reference_fwhm_um;
  if(Number.isFinite(idealWidth?.value)&&(idealWidth.value<=0||idealWidth.basis!=='model'||
   idealWidth.calculation_origin!=='authors'||!idealWidth.reference_model||!psf?.value||
-  !(r.values.wavelength_nm?.value>0)||r.values.wavelength_nm.basis!=='model'))errors.push('diffraction-limited reference width context');
+  !(r.values.wavelength_nm?.value>0)||!['model','measured'].includes(r.values.wavelength_nm.basis)))errors.push('diffraction-limited reference width context');
  if(Number.isFinite(processedWidth?.value)&&(!(processedWidth.value>0)||processedWidth.basis!=='reconstruction'||
   processedWidth.calculation_origin!=='authors'||processedWidth.processing_stage!=='linear_intensity_subtraction'||
   !(processedWidth.subtraction_coefficient>=0&&Number.isFinite(processedWidth.subtraction_coefficient))||
