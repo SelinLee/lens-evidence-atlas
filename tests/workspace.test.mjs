@@ -111,8 +111,8 @@ test('each paper owns its configurations and its supplementary source IDs resolv
  const lenses=atlas.domains.find(d=>d.id==='metalens'), groups=groupRows(lenses.rows);
  assert.equal(groups.length,51);
  const balli=groups.find(g=>g.key==='balli2020');
- assert.equal(balli.rows.length,37);
- assert.equal(new Set(balli.rows.map(r=>r.specimen_id)).size,5);
+ assert.equal(balli.rows.length,47);
+ assert.equal(new Set(balli.rows.map(r=>r.specimen_id)).size,6);
  assert.equal(balli.paper,'device-balli_haml_2020');
  assert.equal(atlas.sources.get('device-balli_haml_source_2020').publication_source,balli.paper);
  const mla=groupRows(atlas.domains.find(d=>d.id==='app_14').rows);

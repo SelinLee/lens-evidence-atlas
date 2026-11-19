@@ -299,6 +299,15 @@ export function validateDevices(d,catalog){
   if(v.value<0||!r.values.focus_error_protocol?.value||v.calculation_origin!=='authors'||
    v.basis!=='derived_from_measurement'||!(aggregate||single))errors.push('focal error context');
  }
+ const signedError=r.values.signed_normalized_focal_error_pct;
+ if(Number.isFinite(signedError?.value)){
+  const wave=r.values.wavelength_nm,protocol=r.values.focus_error_protocol,ref=signedError.reference_wavelength_nm;
+  if(!(Number.isFinite(wave?.value)&&wave.value>0)||['model','modeled'].includes(wave?.basis)||
+   signedError.basis!=='derived_from_measurement'||signedError.calculation_origin!=='authors'||
+   signedError.statistic!=='author_reported_signed_normalized_focal_error'||!signedError.original_quantity||
+   !psf?.value||!protocol?.value||ref!==protocol.reference_wavelength_nm||
+   !(ref===null||Number.isFinite(ref)&&ref>0))errors.push('signed normalized focal error context');
+ }
  for(const k of ['operation_efficiency_at_lambda_pct','operation_efficiency_band_mean_pct']){
   const v=r.values[k];if(!Number.isFinite(v?.value))continue;
   const protocol=r.values.operation_efficiency_protocol?.value;

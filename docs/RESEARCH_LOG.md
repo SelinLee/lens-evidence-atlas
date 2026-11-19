@@ -1157,3 +1157,7 @@ JILA 新入口取得 2025 年封面的博士论文 PDF，与 NSF 正式版和两
 Zang 2024 补件组件 DOI 在 Crossref 确认从属于 ACS Nano 主文，同一 PDF 入口在独立 Chrome 环境返回 403。DR-NTU 题名检索和 DataCite 精确关联检索均为零项，Figshare 检索入口返回 403。期刊公开目录只支持定位 Fig. S8、S14、S16，等取得原图和测量方法后判定轴向或横向校正证据与归属。[补件元数据](https://api.crossref.org/works/10.1021/acsnano.4c12546.s001) · [期刊补件目录](https://pubs.acs.org/doi/10.1021/acsnano.4c12546?goto=supporting-info)
 
 接续回查指定参考库里的 Balli 2020。Crossref 2026-11-19 查询被引 221 次。取到出版社 7 页补件与 28046 字节工作簿，后者 SHA-256 与初次入库一致。视觉核对补件 p. 5 Fig. S4a–c，确认为 EPD 100 μm、NA 0.24、间隔 7 μm 的另一个制成样品。工作簿的 Supplementary Figure 4-a!D6:L6、4-b!D7:L7 和 4-c!D6:L6 分别给出 1000–1800 nm 九谱点的 FWHM、聚焦效率和带符号的归一化焦距误差。作者给出约 19% 平均效率。下一批先录这一器件并核焦距归一化参考，绝对焦位待补。2026 年 Park 等的宽带消色差超透镜阵列目前在作者实验室和作者履历均列即将发表，继续关注正式上线及实验数据。会话目标保持开启。[Balli 正式版](https://doi.org/10.1038/s41467-020-17646-y) · [Balli 原始数据](https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-020-17646-y/MediaObjects/41467_2020_17646_MOESM3_ESM.xlsx) · [Park 作者实验室列表](https://photonics.postech.ac.kr/publications)
+
+## 2026-11-19-129 · Balli 100 μm 空气间隔实物与焦距误差原表
+
+从补件 Fig. S4 和出版社 XLSX 工作簿录 EPD 100 μm、名义 NA 0.24、分离距离 7 μm 的独立实物。九个 1000–1800 nm 谱点及一条汇总纳入 Balli 2020。FWHM 3.03–4.48 μm，实测聚焦效率 12.90%–21.55%，焦距误差从 1000 nm 的 +4.79% 至 1800 nm 的 −4.77%，1400 nm 保留表中零。作者报告 4.8% 焦距误差和 19% 平均效率。九点算术平均约 18.25%，作者平均权重未知。另补 Fig. 4e 已有四实物的 36 个有符号百分数及测量协议。累计 51 篇、1158 条，可见光 42 篇、787 条。绝对焦位与原始 PSF/MTF 待补。[本批核验](BALLI_2020_AIR_SPACED_REVIEW_2026-11-19.md)
