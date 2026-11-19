@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {writeWorkspaceBundles} from './workspace-bundles.mjs';
 import {validateDevices} from './devices.mjs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -92,7 +93,7 @@ export function versionAssets(directory){
  const index=fs.readFileSync(indexPath,'utf8').replace(/\b(src|href)="([a-zA-Z0-9_-]+\.(?:js|css))"/g,(_,attribute,name)=>`${attribute}="${name}?v=${digest(name)}"`);
  fs.writeFileSync(indexPath,index);
 }
-export function build(){const d=load();validateDevices(read('data/devices.json'),d);const stats=validate(d);fs.mkdirSync(path.join(root,'dist'),{recursive:true});for(const f of ['index.html','app.js','style.css','devices.html','devices.js','workspace.js','workspace-data.js','workspace.css'])fs.copyFileSync(path.join(root,'web',f),path.join(root,'dist',f));fs.writeFileSync(path.join(root,'dist/devices-data.js'),'window.DEVICE_DATA='+JSON.stringify(read('data/devices.json')).replaceAll('<','\\u003c')+';\n');const data=JSON.stringify(d);fs.writeFileSync(path.join(root,'dist/data.js'),'window.LENS_DATA='+data.replaceAll('<','\\u003c')+';\n');fs.writeFileSync(path.join(root,'dist/catalog.json'),JSON.stringify(d,null,2)+'\n');fs.writeFileSync(path.join(root,'dist/build.json'),JSON.stringify({version:d.meta.version,data_sha256:crypto.createHash('sha256').update(data).digest('hex'),...stats},null,2)+'\n');versionAssets(path.join(root,'dist'));return stats}
+export function build(){const d=load();validateDevices(read('data/devices.json'),d);const stats=validate(d);fs.mkdirSync(path.join(root,'dist'),{recursive:true});for(const f of ['index.html','app.js','style.css','devices.html','devices.js','workspace.js','workspace-data.js','workspace.css'])fs.copyFileSync(path.join(root,'web',f),path.join(root,'dist',f));fs.writeFileSync(path.join(root,'dist/devices-data.js'),'window.DEVICE_DATA='+JSON.stringify(read('data/devices.json')).replaceAll('<','\\u003c')+';\n');const data=JSON.stringify(d);fs.writeFileSync(path.join(root,'dist/data.js'),'window.LENS_DATA='+data.replaceAll('<','\\u003c')+';\n');fs.writeFileSync(path.join(root,'dist/catalog.json'),JSON.stringify(d,null,2)+'\n');fs.writeFileSync(path.join(root,'dist/build.json'),JSON.stringify({version:d.meta.version,data_sha256:crypto.createHash('sha256').update(data).digest('hex'),...stats},null,2)+'\n');writeWorkspaceBundles(path.join(root,'dist'),d,read('data/devices.json'));versionAssets(path.join(root,'dist'));return stats}
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
  let stats;
  if(process.argv[2]==='build')stats=build();

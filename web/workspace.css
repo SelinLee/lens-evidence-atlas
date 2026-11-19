@@ -120,3 +120,16 @@
   .custom-new-metric { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .custom-new-metric button { grid-column:1/-1; justify-self:start; }
 }
+
+#reference-pages { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:14px; margin:16px 0; }
+#reference-pages[hidden] { display:none; }
+#reference-range { font-size:12px; color:var(--muted); }
+#reference-pages button { padding:7px 12px; border:1px solid var(--line); border-radius:5px; color:var(--green); background:#fff; }
+#reference-pages button:disabled { color:var(--muted); opacity:.5; cursor:default; }
+
+.workspace[aria-busy=true] .workspace-chart { position:relative; }
+.workspace[aria-busy=true] .workspace-chart > * { visibility:hidden; }
+.workspace[aria-busy=true] .workspace-chart::after { content:'正在加载所选领域…'; position:absolute; inset:0; display:grid; place-items:center; color:var(--muted); font-size:13px; }
+@media(max-width:759px) {
+  .atlas-header .header-tools a[href="#references"] { display:inline; }
+}

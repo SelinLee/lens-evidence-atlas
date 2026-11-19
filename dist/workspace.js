@@ -1,14 +1,55 @@
-import {createWorkspace, groupRows, valueSources, filteredRows, axisPoints, metricAvailability, availableAxes, customSampleAxes} from './workspace-data.js?v=a0cb173b8a73ca82';
+import {groupRows, valueSources, filteredRows, axisPoints, metricAvailability, availableAxes, customSampleAxes} from './workspace-data.js?v=a0cb173b8a73ca82';
 
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const atlas = createWorkspace(window.LENS_DATA, window.DEVICE_DATA), evidence = window.LensEvidence;
+const atlas = {domains:window.WORKSPACE_INDEX.domains, sources:new Map()}, evidence = window.LensEvidence;
+let currentDomain, pendingDomain;
+function requestedDomain(url) {
+  const id = url.searchParams.get('domain') || url.hash.slice(1).split('/')[0];
+  return atlas.domains.some(d=>d.id===id) ? id : 'phone';
+}
+function setDomainLoading(busy) {
+  $('workspace').setAttribute('aria-busy',String(busy));
+  for (const el of document.querySelectorAll('.settings > :not(#domain):not([for="domain"]), .chart-panel, .data-section')) el.inert = busy;
+}
+async function activateDomain(id) {
+  pendingDomain?.abort();
+  const request = new AbortController();
+  pendingDomain = request;
+  if (currentDomain?.id === id) { setDomainLoading(false); return true; }
+  const entry = atlas.domains.find(d=>d.id===id);
+  setDomainLoading(true);
+  $('domain').value = id;
+  $('status').textContent = '正在加载'+entry.name+'…';
+  try {
+    const response = await fetch(entry.url,{signal:request.signal});
+    if (!response.ok) throw new Error('HTTP '+response.status);
+    const bundle = await response.json();
+    if (request.signal.aborted) return false;
+    for (const row of bundle.domain.rows) {
+      for (const key of Object.keys(row.values)) row.values[key] = bundle.values[row.values[key]];
+    }
+    currentDomain = bundle.domain;
+    atlas.sources = new Map(bundle.sources.map(s=>[s.id,s]));
+    evidence.setEvidenceCatalog({sources:[],...bundle.evidence,meta:window.WORKSPACE_INDEX.meta,
+      coverage:window.WORKSPACE_INDEX.coverage,applications:currentDomain.app ? [currentDomain.app] : []});
+    return true;
+  } catch (error) {
+    if (request.signal.aborted) return false;
+    if (!currentDomain) throw error;
+    $('domain').value = currentDomain.id;
+    $('status').textContent = entry.name+'加载失败，请重新选择该领域重试。';
+    return false;
+  } finally {
+    if (!request.signal.aborted) setDomainLoading(false);
+  }
+}
 const initial = new URL(location.href), oldRoute = initial.hash.slice(1).split('/');
 const state = {domain:'phone', module:'main', x:'mp', y:'f', mode:'scatter', sort:'original', visible:false, models:null, columns:null, query:'', evidence:'', evidenceTab:'metrics', compare:[]};
 let viewQuery = location.search, zoom = null;
 let referenceGroups = new Map(), citations = new Map(), activeRows = [], activeColumns = [], activePoints = [], activeSetting = 'models';
 let customData, draftDomain, draftMetrics, chartRows = [];
-const domain = () => atlas.domains.find(d => d.id === state.domain);
+const domain = () => currentDomain;
 const chartMetrics = () => [...domain().metrics, ...customData.metrics];
 const metricKey = metric => metric.parameterKey ?? metric.id;
 const storageKey = id => `lens-atlas.custom-samples.${id}`;
@@ -103,6 +144,7 @@ function citeSources(ids) {
 
 function defaults(id) {
   zoom = null;
+  refPage = 0;
   state.domain = id; state.models = null; state.columns = null; state.query = ''; state.evidence = ''; state.compare = [];
   customData = loadCustomData(id);
   const numeric = domain().metrics.filter(m => m.numeric);
@@ -140,12 +182,12 @@ function saveView() {
   if (state.query) url.searchParams.set('q', state.query);
   for (const key of ['models','columns']) if (state[key] !== null) url.searchParams.set(key, JSON.stringify(state[key]));
   if (state.compare.length) url.searchParams.set('compare', JSON.stringify(state.compare));
-  if (/^#app_\d+/.test(url.hash) || (/^#(?:row|cell|ref|paper|specimen)-/.test(url.hash) && !document.getElementById(url.hash.slice(1)))) url.hash = '';
+  if (/^#app_\d+/.test(url.hash) || (/^#(?:row|cell|ref|paper|specimen)-/.test(url.hash) && !knownAnchor(decodeAnchor(url.hash)))) url.hash = '';
   history.replaceState(null, '', url);
   viewQuery = url.search;
 }
 function restore(url) {
-  const p = url.searchParams, id = p.get('domain') || (atlas.domains.some(d => d.id === oldRoute[0]) ? oldRoute[0] : 'phone');
+  const oldRoute = url.hash.slice(1).split('/'), p = url.searchParams, id = requestedDomain(url);
   defaults(atlas.domains.some(d => d.id === id) ? id : 'phone');
   const valid = {module:['main','ultrawide','tele','external_macro','native_research'], mode:['scatter'], sort:['original','model','x','y'], evidence:['','manufacturer','research']};
   for (const [key, choices] of Object.entries(valid)) if (choices.includes(p.get(key))) state[key] = p.get(key);
@@ -164,17 +206,30 @@ function restore(url) {
   if (oldRoute[1] === 'compare' && evidence.comparisonFor(state.domain)) { state.evidenceTab = 'compare'; state.compare = oldRoute.slice(2); }
   else if (['metrics','priority','best'].includes(oldRoute[1])) state.evidenceTab = oldRoute[1];
 }
+const sampleLists = new WeakMap();
 function groupedSamples(container, rows, item, list=false) {
   const opened = new Set([...container.querySelectorAll('details[open]')].map(el=>el.dataset.paper));
   const wrap = html => list ? '<li>'+html+'</li>' : html;
+  const bodies = new Map();
+  sampleLists.set(container,bodies);
   return groupRows(rows).map(group=>{
-    const items = group.rows.map(row=>wrap(item(row))).join('');
-    if (!group.paper || group.rows.length===1) return items;
+    const entries = () => group.rows.map(row=>wrap(item(row))).join('');
+    if (!group.paper || group.rows.length===1) return entries();
     const paper = atlas.sources.get(group.paper);
     const title = (list && paper.paperLabel) || paper.title.split(/[:：]/)[0];
-    return wrap(`<details data-paper="${esc(group.paper)}" ${opened.has(group.paper)?'open':''}><summary>${esc(title)} · ${group.rows.length} 条记录</summary>${list?'<ul>'+items+'</ul>':items}</details>`);
+    const body = () => list ? '<ul>'+entries()+'</ul>' : entries();
+    const open = opened.has(group.key);
+    if (!open) bodies.set(group.key,body);
+    return wrap(`<details data-paper="${esc(group.key)}" ${open?'open':''}><summary>${esc(title)} · ${group.rows.length} 条记录</summary>${open?body():''}</details>`);
   }).join('');
 }
+document.addEventListener('toggle',event=>{
+  const node = event.target;
+  if (!node.open || !node.hasAttribute('data-paper')) return;
+  const bodies = sampleLists.get(node.closest('#models,.chart-legend'));
+  const body = bodies?.get(node.dataset.paper);
+  if (body) { bodies.delete(node.dataset.paper); node.insertAdjacentHTML('beforeend',body()); }
+},true);
 function controls() {
   const d = domain();
   if(d.id==='phone')$('module').innerHTML=[...new Set(d.rows.map(r=>r.module))].map(id=>`<option value="${esc(id)}">${esc(({main:'主摄',ultrawide:'超广角',tele:'长焦',external_macro:'外接微距（研究）',native_research:'原生摄像头（研究）'})[id]||id)}</option>`).join('');
@@ -213,7 +268,9 @@ function pointDescription(p) {
 }
 const inspectHint = '鼠标拖动框选放大，点击数据点固定读数。';
 let plotWidth = 0, positionReadout;
+const pinnedRows = new Set();
 function drawChart() {
+  pinnedRows.clear();
   plotWidth = Math.min(900, Math.max(280, $('chart').clientWidth - 2));
   positionReadout = null;
 
@@ -357,6 +414,8 @@ function inspectPlot(svg, nodes, groups, xLabel, yLabel) {
     for (const p of groups[pinned] || []) document.getElementById(rowAnchor(p.row))?.classList.remove('plot-selected');
     if (pinned !== null) nodes[pinned].setAttribute('aria-pressed','false');
     pinned = index;
+    pinnedRows.clear();
+    for (const p of groups[index] || []) pinnedRows.add(p.row.id);
     if (index === null) {
       hover = focus = null;
       $('point-detail').textContent = inspectHint;
@@ -467,21 +526,41 @@ function enableBoxZoom(svg) {
   },true);
 }
 
+// Closed groups keep only their summaries. Deep links can open their owners synchronously.
+const tableBodies = new Map(), rowOwners = new Map(), specimenOwners = new Map();
+function fillTableGroup(id) {
+  const renderBody = tableBodies.get(id);
+  if (!renderBody) return;
+  const element = document.getElementById(id);
+  if (!element) return;
+  tableBodies.delete(id);
+  element.insertAdjacentHTML('beforeend',renderBody());
+}
+function openTableGroup(id) {
+  const element = document.getElementById(id);
+  if (element) { element.open = true; fillTableGroup(id); }
+}
+function tableOwner(id) {
+  if (rowOwners.has(id)) return rowOwners.get(id);
+  if (id.startsWith('cell-'+state.domain+'-')) {
+    for (const metric of activeColumns) {
+      const suffix = '-'+metric.id;
+      if (id.endsWith(suffix)) {
+        const owner = rowOwners.get('row-'+id.slice(5,-suffix.length));
+        if (owner) return owner;
+      }
+    }
+  }
+}
 function table() {
-  const backlinks = new Map([...citations.keys()].map(id => [id, new Map()]));
-  const linkBack = (id, row, metric) => {
-    const byRow = backlinks.get(id);
-    if (!byRow) return;
-    if (!byRow.has(row.id)) byRow.set(row.id,{row,metrics:[]});
-    if (metric) byRow.get(row.id).metrics.push(metric);
-  };
+  tableBodies.clear(); rowOwners.clear(); specimenOwners.clear();
   const columns = `<thead><tr><th scope="col">型号 / 样本与配置</th>${activeColumns.map(m=>`<th scope="col"><a href="#${esc(definitionAnchor(m))}" data-definition="${esc(m.id)}">${esc(m.label)}</a></th>`).join('')}</tr></thead>`;
   function dataRow(r) {
     const rowSources = r.sourceIds || [...new Set(Object.values(r.values).flatMap(valueSources))];
-    rowSources.forEach(id => linkBack(id, r));
-    return `<tr id="${esc(rowAnchor(r))}"><th scope="row">${esc(r.model)}<small>${esc(r.variant)}</small><small>${esc(r.evidence || '厂商标称；非独立实测')} ${citeSources(rowSources)}</small>${r.missing ? `<small>记录缺口：${esc(r.missing)}</small>` : ''}</th>${activeColumns.map(m => {
+
+    return `<tr id="${esc(rowAnchor(r))}"${pinnedRows.has(r.id)?' class="plot-selected"':''}><th scope="row">${esc(r.model)}<small>${esc(r.variant)}</small><small>${esc(r.evidence || '厂商标称；非独立实测')} ${citeSources(rowSources)}</small>${r.missing ? `<small>记录缺口：${esc(r.missing)}</small>` : ''}</th>${activeColumns.map(m => {
       const v = r.values[m.id], ids = valueSources(v), anchor = cellAnchor(r,m), valid = v?.display !== undefined || (v?.value !== undefined && v?.value !== null);
-      ids.forEach(id => linkBack(id, r, m));
+
       return `<td id="${esc(anchor)}"><span class="value${valid ? '' : ' missing'}">${esc(valueText(v))}</span>${citeSources(ids)}${v ? `<small>${esc(v.note || '')}</small><small>${esc(v.evidence || r.evidence || '厂商标称')} · ${esc(v.checked_on || atlas.sources.get(ids[0])?.checked_on || r.checked_on || '')}</small><small>${v.location ? '原文位置：' + esc(v.location) : ids.length ? '仅记录级来源；未核逐参数定位。' : '逐参数来源待补。'}</small>` : '<small>本库未取得该配置可核验的参数；不表示原来源完全未涉及。</small>'}</td>`;
     }).join('')}</tr>`;
   }
@@ -497,7 +576,8 @@ function table() {
       const row = group[0], id = 'specimen-'+state.domain+'-'+row.study_id+'-'+(row.specimen_id || row.id);
       const parts = row.model.split(' · ').filter((part,i)=>group.every(r=>r.model.split(' · ')[i]===part));
       const name = parts.join(' · ') || row.model;
-      return `<details class="specimen-table" id="${esc(id)}" ${open.has(id)?'open':''}><summary><span>${esc(name)}</span><small>${group.length} 条记录</small></summary>${dataTable(group)}</details>`;
+      tableBodies.set(id,()=>dataTable(group));
+      return `<details class="specimen-table" id="${esc(id)}" ${open.has(id)?'open':''}><summary><span>${esc(name)}</span><small>${group.length} 条记录</small></summary></details>`;
     }).join('');
   }
   const dataTable = rows => `<div class="table-scroll" role="region" aria-label="样本指标" tabindex="0"><table>${columns}<tbody>${rows.map(dataRow).join('')}</tbody></table></div>`;
@@ -516,11 +596,18 @@ function table() {
     const heading = source?.bibliography ? citation(paper) + ' ' + paperCitation(source) : esc(source?.title || group.key);
     const samples = new Set(rows.map(r=>r.specimen_id || r.id));
     const count = (rows.some(r=>r.specimen_id) ? samples.size+' 个配置 · ' : '')+rows.length+' 条记录';
-    output+=`<details class="paper-table" id="${esc(id)}" ${open.has(id)?'open':''}><summary><span class="paper-citation">${heading}</span><small>${count}</small></summary>${specimenTables(rows)}</details>`;
+    const nested = samples.size < rows.length;
+    for (const row of rows) {
+      const specimen = nested ? 'specimen-'+state.domain+'-'+row.study_id+'-'+(row.specimen_id || row.id) : '';
+      rowOwners.set(rowAnchor(row),{paper:id,specimen});
+      if (specimen) specimenOwners.set(specimen,id);
+    }
+    tableBodies.set(id,()=>specimenTables(rows));
+    output+=`<details class="paper-table" id="${esc(id)}" ${open.has(id)?'open':''}><summary><span class="paper-citation">${heading}</span><small>${count}</small></summary></details>`;
   }
   flushOther();
   $('table').innerHTML = output || '<p class="empty-table">当前筛选范围没有记录。</p>';
-  return backlinks;
+  for (const id of open) fillTableGroup(id);
 }
 function paperCitation(source) {
   const b = source.bibliography;
@@ -534,18 +621,71 @@ function paperCitation(source) {
   return `${esc(b.authors)} ${esc(b.title)}${endTitle} ${venue}${volume}${locator} (${b.year}). ${link}`;
 }
 
-function referenceList(backlinks) {
-  function material(id,main) {
-    const s = atlas.sources.get(id), rows = [...(backlinks.get(id)?.values() || [])];
+const refsPerPage = 12;
+let refPage = 0;
+function referenceUses(id) {
+  const rows = [];
+  for (const row of activeRows) {
+    const metrics = activeColumns.filter(m=>valueSources(row.values[m.id]).includes(id));
+    const rowSources = row.sourceIds || Object.values(row.values).flatMap(valueSources);
+    if (rowSources.includes(id) || metrics.length) rows.push({row,metrics});
+  }
+  return rows;
+}
+const referenceRequests = new Map();
+function loadPublication(url) {
+  if (!referenceRequests.has(url)) {
+    const request = fetch(url).then(response=>{
+      if (!response.ok) throw new Error('HTTP '+response.status);
+      return response.json();
+    }).catch(error=>{referenceRequests.delete(url); throw error;});
+    referenceRequests.set(url,request);
+  }
+  return referenceRequests.get(url);
+}
+async function fillReference(details) {
+  if (!details || details.dataset.filled) return;
+  const main = details.dataset.main, group = referenceGroups.get(main);
+  if (!group) return;
+  details.dataset.filled = '1';
+  let body = details.querySelector('.reference-body');
+  if (!body) {
+    details.insertAdjacentHTML('beforeend','<div class="reference-body"></div>');
+    body = details.lastElementChild;
+  }
+  body.innerHTML = '<p role="status">正在加载来源详情…</p>';
+  function material(s) {
+    const id = s.id;
     const url = `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)} ↗</a>`;
-    const back = rows.length ? `<details class="source-uses"><summary>表中引用 · ${rows.length} 条记录</summary>${rows.map(({row,metrics})=>
-      `<div class="backlinks"><a href="#${esc(rowAnchor(row))}">${esc(row.model)} ↑</a>${metrics.map(m=>`<a href="#${esc(cellAnchor(row,m))}">${esc(m.label)}</a>`).join('')}</div>`).join('')}</details>` : '<a class="source-definition" href="#evidence-notes">指标定义 / 任务依据 ↑</a>';
+    const back = `<details class="source-uses" data-uses="${esc(id)}"><summary>查看表中引用</summary></details>`;
     return `<div class="reference-material"${id===main?'':` id="${esc(refAnchor(id))}"`}>${id===main&&!s.bibliography?'':`<div class="reference-title">${url}</div>`}${s.doi?`<p>DOI：${esc(s.doi)}</p>`:''}<p>${esc(sourceKind(s.kind))} · 核验 ${esc(s.checked_on)}${s.verification==='inherited_v2'?'（沿用原核验记录）':''}</p>${s.location?`<p>原文位置：${esc(s.location)}</p>`:''}<p>读取范围：${esc(s.evidence_scope || s.scope || '以记录所列范围为准')}</p>${back}</div>`;
   }
-  $('sources').innerHTML = [...referenceGroups].map(([main,group])=>{
+  try {
+    const sources = await loadPublication(atlas.sources.get(main).detailsUrl);
+    if (!details.isConnected) return;
+    const byId = new Map(sources.map(s=>[s.id,s]));
+    body.innerHTML = [...group.materials].map(id=>material(byId.get(id))).join('');
+    const target = document.getElementById(decodeAnchor(location.hash));
+    if (target && body.contains(target)) target.scrollIntoView({block:'start'});
+  } catch {
+    if (!details.isConnected) return;
+    delete details.dataset.filled;
+    body.innerHTML = '<p role="status">来源详情加载失败。 <button type="button" data-retry-reference>重试</button></p>';
+  }
+}
+function referenceList() {
+  const total = referenceGroups.size;
+  const pages = Math.max(1,Math.ceil(total/refsPerPage));
+  refPage = Math.min(refPage,pages-1);
+  const start = refPage*refsPerPage;
+  $('reference-pages').hidden = pages===1;
+  $('reference-range').textContent = `第 ${start+1}–${Math.min(start+refsPerPage,total)} 条，共 ${total} 条`;
+  $('previous-refs').disabled = refPage===0;
+  $('next-refs').disabled = refPage===pages-1;
+  $('sources').innerHTML = [...referenceGroups].slice(start,start+refsPerPage).map(([main,group])=>{
     const s = atlas.sources.get(main);
     const heading = s.bibliography ? paperCitation(s) : `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)} ↗</a>${s.source_year?' ('+esc(s.source_year)+')':''}`;
-    return `<li id="${esc(refAnchor(main))}" value="${group.number}"><div class="reference-title">${heading}</div><details class="source-materials"><summary>来源详情${group.materials.size>1?' · '+group.materials.size+' 份材料':''}</summary>${[...group.materials].map(id=>material(id,main)).join('')}</details></li>`;
+    return `<li id="${esc(refAnchor(main))}" value="${group.number}"><div class="reference-title">${heading}</div><details class="source-materials" data-main="${esc(main)}"><summary>来源详情${group.materials.size>1?' · '+group.materials.size+' 份材料':''}</summary></details></li>`;
   }).join('');
 }
 
@@ -580,7 +720,8 @@ function render(updateControls = true) {
   document.title=d.name+' · 透镜评价证据库';
   drawChart();
   $('plot-note').textContent=(state.visible?'可见光 380–780 nm。保留波段交叠及明确可见光用途的记录，波段未知时隐藏。 ':'')+'虚线标出当前点的横、纵坐标。'+(d.app?' 同名同单位仍需核对条件。':d.id==='metalens'?' 同器件多个谱点不计作独立镜片。':' 厂商标称与独立实测分别理解。');
-  referenceList(table()); renderDefinitions();
+  table(); referenceList();
+  if ($('evidence-notes').open) renderDefinitions();
   $('date').textContent=`本页样本维护日期 ${d.asOf}；逐条保留原核验日期与读取范围。样本不代表完整市场覆盖。`;
   saveView();
 }
@@ -592,9 +733,37 @@ function exportCSV(){
   download('lens-'+state.domain+'-table.csv','text/csv;charset=utf-8','\ufeff'+rows.map(row=>row.map(quote).join(',')).join('\r\n'));
 }
 
+$('table').addEventListener('toggle',event=>{
+  if (event.target.open) fillTableGroup(event.target.id);
+},true);
+$('sources').addEventListener('toggle',event=>{
+  const details = event.target;
+  if (!details.open) return;
+  if (details.matches('.source-materials')) fillReference(details);
+  if (details.matches('.source-uses') && !details.dataset.filled) {
+    details.dataset.filled = '1';
+    const rows = referenceUses(details.dataset.uses);
+    details.querySelector('summary').textContent = '表中引用 · '+rows.length+' 条记录';
+    details.insertAdjacentHTML('beforeend',rows.length ? rows.map(({row,metrics})=>
+      `<div class="backlinks"><a href="#${esc(rowAnchor(row))}">${esc(row.model)} ↑</a>${metrics.map(m=>`<a href="#${esc(cellAnchor(row,m))}">${esc(m.label)}</a>`).join('')}</div>`).join('') : '<a class="source-definition" href="#evidence-notes">指标定义 / 任务依据 ↑</a>');
+  }
+},true);
+$('sources').addEventListener('click',event=>{
+  if (event.target.closest('[data-retry-reference]')) fillReference(event.target.closest('.source-materials'));
+});
+$('evidence-notes').addEventListener('toggle',()=>{if ($('evidence-notes').open) renderDefinitions();});
+for (const [button,step] of [['previous-refs',-1],['next-refs',1]]) {
+  $(button).addEventListener('click',()=>{
+    refPage += step; referenceList();
+    $('references').scrollIntoView({block:'start'});
+  });
+}
 const groups=new Map(); for(const d of atlas.domains){if(!groups.has(d.category))groups.set(d.category,[]);groups.get(d.category).push(d);}
 $('domain').innerHTML=[...groups].map(([category,ds])=>`<optgroup label="${esc(category)}">${ds.map(d=>`<option value="${d.id}">${esc(d.name)}</option>`).join('')}</optgroup>`).join('');
+$('domain').disabled = true;
+await activateDomain(requestedDomain(initial));
 restore(initial); render();
+$('domain').disabled = false;
 if(oldRoute[1]) { if(oldRoute[1]==='sources')location.hash='references';else if(oldRoute[1]!=='metrics'){$('evidence-notes').open=true;location.hash='evidence-notes';} }
 $('custom-samples').addEventListener('click',()=>openCustom());
 $('close-custom').addEventListener('click',()=>$('custom-dialog').close());
@@ -630,10 +799,15 @@ window.addEventListener('storage',event=>{
   customData = loadCustomData(state.domain);
   render();
 });
-for(const key of ['domain','module','x','y','sort','evidence']) $(key).addEventListener('change',()=>{
+$('domain').addEventListener('change',async()=>{
+  const id = $('domain').value;
+  if (await activateDomain(id)) { defaults(id); render(); }
+});
+for(const key of ['module','x','y','sort','evidence']) $(key).addEventListener('change',()=>{
   zoom=null;
-  if(key==='domain')defaults($(key).value);else {state[key]=$(key).value;if(key==='module')state.models=null;}
-  render();
+  state[key]=$(key).value;if(key==='module')state.models=null;
+  if (['x','y'].includes(key) && !['x','y'].includes(state.sort)) { drawChart(); saveView(); }
+  else render();
 });
 $('model-search').addEventListener('input',()=>{zoom=null;state.query=$('model-search').value;render();$('model-search').focus();});
 for(const [id,key,value] of [['all-models','models',null],['no-models','models',[]],['all-columns','columns',null],['no-columns','columns',[]]]) $(id).addEventListener('click',()=>{if(key==='models')zoom=null;state[key]=value;render();});
@@ -661,7 +835,7 @@ document.addEventListener('click',event=>{
   if(setting){activeSetting=setting.dataset.setting;for(const button of document.querySelectorAll('[data-setting]')){button.setAttribute('aria-selected',String(button===setting));button.tabIndex=button===setting?0:-1;}$('model-controls').hidden=activeSetting!=='models';$('column-controls').hidden=activeSetting!=='columns';}
   if(tab){state.evidenceTab=tab.dataset.evidenceTab;renderDefinitions();document.querySelector(`[data-evidence-tab="${state.evidenceTab}"]`).focus();}
   if(metric)evidence.openMetric(metric.dataset.metric);
-  if(record){const r=window.LENS_DATA.benchmarks.find(r=>r.id===record.dataset.record);evidence.openDialog(r.name,evidence.recordCard(r,true));}
+  if(record){evidence.openRecord(record.dataset.record);}
   if(definition){$('evidence-notes').open=true;state.evidenceTab='metrics';renderDefinitions();}
 });
 document.addEventListener('keydown',event=>{
@@ -689,15 +863,38 @@ $('export-svg').addEventListener('click',()=>{
 });
 $('share').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(location.href);$('status').textContent='已复制当前视图链接';}catch{$('status').textContent='当前选择已保存，可复制地址栏分享。';}});
 // Following a citation only changes the fragment. Keep the pinned chart and table rows.
-window.addEventListener('popstate',()=>{
-  if (location.search !== viewQuery) { restore(new URL(location.href)); render(); }
+window.addEventListener('popstate',async()=>{
+  const url = new URL(location.href);
+  if (url.search !== viewQuery && await activateDomain(requestedDomain(url))) { restore(url); render(); revealAnchor(); }
 });
+function decodeAnchor(hash) {
+  try { return decodeURIComponent(hash.slice(1)); } catch { return ''; }
+}
+function knownAnchor(id) {
+  return document.getElementById(id) || tableOwner(id) || specimenOwners.has(id) || (id.startsWith('ref-') && citations.has(id.slice(4)));
+}
+function prepareReference(id) {
+  const sourceId = id.slice(4), main = atlas.sources.get(sourceId)?.publication_source || sourceId;
+  const group = referenceGroups.get(main);
+  if (!group) return;
+  const page = Math.floor((group.number-1)/refsPerPage);
+  if (page !== refPage) { refPage = page; referenceList(); }
+  const details = document.getElementById(refAnchor(main))?.querySelector('.source-materials');
+  if (details) { details.open=true; fillReference(details); }
+}
 function revealAnchor() {
-  let id;
-  try { id=decodeURIComponent(location.hash.slice(1)); } catch { return; }
+  const id = decodeAnchor(location.hash);
+  if (id.startsWith('ref-')) prepareReference(id);
+  const owner = tableOwner(id);
+  if (owner) {
+    openTableGroup(owner.paper);
+    if (owner.specimen) openTableGroup(owner.specimen);
+  } else if (specimenOwners.has(id)) {
+    openTableGroup(specimenOwners.get(id)); openTableGroup(id);
+  } else if (id.startsWith('paper-')) openTableGroup(id);
   if (id.startsWith('definition-')) {
     $('evidence-notes').open=true;
-    if (state.evidenceTab!=='metrics') { state.evidenceTab='metrics'; renderDefinitions(); }
+    state.evidenceTab='metrics'; renderDefinitions();
   }
   const target = document.getElementById(id);
   if (!target) return;
@@ -709,7 +906,9 @@ document.addEventListener('click',event=>{
   const link=event.target.closest('a[href^="#"]');
   const cell = link?.classList.contains('citation') && link.closest('td[id],tr[id]');
   if (cell) {
-    const material = document.getElementById(link.hash.slice(1));
+    prepareReference(decodeAnchor(link.hash));
+    const sourceId = decodeAnchor(link.hash).slice(4);
+    const material = document.getElementById(refAnchor(atlas.sources.get(sourceId)?.publication_source || sourceId));
     if (material) {
       document.querySelector('.source-return')?.remove();
       const back = document.createElement('a');
