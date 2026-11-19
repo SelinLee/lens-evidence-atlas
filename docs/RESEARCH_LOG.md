@@ -1065,3 +1065,9 @@ PR #166 合入 5a3b9d9b79f4692377b9798ed88d11a62a08a1d1。PR 校验 44374703693�
 ## 2026-11-19-112 · Chen 2018 折超混合镜的原始补件与效率口径
 
 取得同一作者组在 NUS 存档的 14 页补件。核七个波长的双组 5 μm 轴扫、六个波长的 460 nm 固定面焦斑及两种效率方法。校正后实测残余焦移由作者述为数十微米。模型约 15 μm 与 300 μm 各归有无校正片。主文约 35% 为交叉偏振采集、移除校正片且改平行偏振参考的光谱峰值。500 nm 偏振扫描使用 Airy 第一暗环光阑和裸球面镜全部透过功率。FWHM／Strehl 曲线找不到逐点数表，458／460 nm 成像对焦差异保留。新增 43 条、7 组，累计 52 篇、313 组、1920 条。[本批核验](CHEN_METACORRECTOR_REVIEW_2026-11-19.md)
+
+## 2026-11-19-113 · Chen 2018 上线与 Eisenbach 2015 接续
+
+PR #168 合入 f0d73e0009e9878ad7af2f95b3238a1f495b233c。PR 校验 44449064292、主线校验 44449203831 和 Pages 44449203787 成功。319 项测试通过。Chrome 核实际发布的 12 个文件与本机构建哈希一致，devices-data.js SHA256 为 49ba39e229bfeaaa204bf330765ef99a2102b427906fe8758b57dfef0c5c66ee。独立无头 Chrome 核 43 条、7 配置、NA 0.075 对约 35% 的参考归一散点、实测焦位与单波长效率轴空值、图点进表、引用往返、CSV 和六视口。仅可见光保留该篇全部 43 条，全库 43 篇、1609 条。NUS 正文与补件均为 200，哈希与审核原件一致。ACS 两个入口均为 403，Crossref 和 DataCite 均 200。[PR #168](https://github.com/SelinLee/lens-evidence-atlas/pull/168) · [Pages](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44449203787)
+
+沿 Arbabi 等 2016 引文接续 Eisenbach 等 2015 振幅型超表面波带片。2026-11-19 查 Crossref 56 次引用、OpenAlex API 61 次。Crossref 和正式版写在线日 2015-02-09，印刷卷期为 2015-02-23。作者所在 NEO Lab 的 9 页正式版经独立无头 Chrome 取得，1811111 字节，SHA256 为 08f7a38ce861eb7fd501c27ccb281786ea9a7eceeec66f2b858409c7ae37838a。Fig. 6 视觉核实 460 nm 水平偏振和 650 nm 垂直偏振激光的共焦，p3935 报 1 mm 和约 1.4 mm 的蓝光副峰。Fig. 4 白光轴扫步长为 0.05 mm，Fig. 2d 模拟图内 460 nm，图注写 450 nm。精确 DataCite 关联零项。继续核口径、成像光谱与补充数据。持续目标保持开启。[作者正式版](https://www.neolab.sites.tau.ac.il/_files/ugd/2286ac_3360ce476ce24f498453966d86e5cd56.pdf#page=8) · [Crossref](https://api.crossref.org/works/10.1364/OE.23.003928) · [OpenAlex](https://api.openalex.org/works/W2075536759)
