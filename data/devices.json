@@ -231,18 +231,27 @@
       "title": "Balli et al. (2020): A hybrid achromatic metalens",
       "url": "https://www.nature.com/articles/s41467-020-17646-y",
       "kind": "peer_reviewed_paper",
-      "scope": "用户提供8页出版社正式版，读pp.1–2概述、pp.4–7设计/实验/讨论/Methods，视觉核p.5 Fig.4。2019 arXiv v1只核版本封面；不与正式版算两研究，正式版另有air-spaced结果。结果与讨论的20μm器件均值61%/67%不一致，保留冲突；图中曲线不估读成精确数值。",
-      "checked_on": "2026-11-14",
+      "scope": "用户提供8页出版社正式版，读pp.1–2概述、pp.4–7设计/实验/讨论/Methods，视觉核p.5 Fig.4。2019 arXiv v1只核版本封面；不与正式版算两研究，正式版另有air-spaced结果。结果与讨论的20μm器件均值61%/67%不一致，保留冲突；图中曲线不估读成精确数值。 本轮对读 Discussion 与 Optical testing、Data availability，定位 EPD 100 μm／NA 0.24 实物和圆形积分区，并与补充图及工作簿逐格核对。",
+      "checked_on": "2026-11-19",
       "doi": "10.1038/s41467-020-17646-y"
     },
     {
       "id": "balli_haml_source_2020",
       "publication_source": "balli_haml_2020",
-      "title": "Balli et al. (2020): Source Data for Figure 4c–f",
+      "title": "Balli et al. (2020): Source Data for Figure 4 and Supplementary Figures",
       "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-020-17646-y/MediaObjects/41467_2020_17646_MOESM3_ESM.xlsx",
       "kind": "research_data",
-      "scope": "从出版社正式页面取得原始XLSX。读取工作表/单元格及缓存值，只采用Figure 4c–f的四器件×九波长FWHM、效率、Strehl和作者有符号焦移刻度；每值绑定具体单元格。其他补图表头/数值已查看但不纳入，未取得原始相机图像或执行公式。Figure 4与Supplementary Figure 2的序列不互换，工作簿不是独立研究。",
-      "checked_on": "2026-11-14"
+      "scope": "正式 XLSX 41467_2020_17646_MOESM3_ESM.xlsx。Figure 4c–f 对应主文四器件九谱点；本轮重核 Figure 4e 及 Supplementary Figure 4-a、4-b、4-c 的轴标签、完整数列和样品行。Supplementary Figure 2 的同口径实验与模拟各有数列，样品与数字未迁移。文件含工作簿数表，未见二维原始 PSF 或逐频 MTF。",
+      "checked_on": "2026-11-19"
+    },
+    {
+      "id": "balli_haml_si_2020",
+      "publication_source": "balli_haml_2020",
+      "title": "Balli et al. (2020): Supplementary Information",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-020-17646-y/MediaObjects/41467_2020_17646_MOESM1_ESM.pdf#page=5",
+      "kind": "supplementary_material",
+      "scope": "出版社 7 页补件。逐读 Notes 2–3 和 5、视觉核 p.5 Fig. S4a–c，确认另制 EPD 100 μm、名义 NA 0.24、间隙 7 μm 的独立空气间隔器件。工作簿与三子图逐格对齐。保留焦长参考/归一化分母、偏振、FWHM 方向及原始 PSF 缺口。",
+      "checked_on": "2026-11-19"
     },
     {
       "id": "lin_spdc_2025",
@@ -5240,9 +5249,30 @@
           }
         },
         {
+          "id": "signed_normalized_focal_error_pct",
+          "label": "逐波长有符号归一化焦距误差 (作者实测计算，%)",
+          "definition": "作者由同一实物的波长扫描给出的单谱点有符号焦距百分差，保留原表的符号和真实零。",
+          "conditions": "驱动波长、光轴和参考通过实测与焦距误差协议追溯。未知分母或参考焦位保留为缺口，百分数不转换为绝对轴向焦位。",
+          "numeric": true,
+          "definition_refs": [
+            {
+              "source": "balli_haml_2020",
+              "location": "PDF p.5 Fig. 4e；PDF p.7 Optical testing"
+            },
+            {
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Fig. S4c"
+            },
+            {
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!C5:L10；Supplementary Figure 4-c!C4:L6"
+            }
+          ]
+        },
+        {
           "id": "focus_error_protocol",
           "label": "焦距误差参考 / 统计协议",
-          "definition": "绑定作者误差汇总的参考波长、波长集合、样品统计及未报告定义。",
+          "definition": "绑定作者焦距误差的参考波长、归一化、波长采样及统计定义；记录未知项。",
           "conditions": "与逐点绝对焦距、带内variation和最大互差分列。",
           "numeric": false,
           "definition_refs": [
@@ -8910,6 +8940,56 @@
                 "balli_haml_2020",
                 "balli_haml_source_2020"
               ]
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 3.42,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!D7；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -9059,6 +9139,56 @@
               "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 2.86,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!E7；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -9208,6 +9338,56 @@
               "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 2.57,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!F7；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -9357,6 +9537,56 @@
               "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 1.99,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!G7；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -9506,6 +9736,56 @@
               "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 0.0,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!H7；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -9655,6 +9935,56 @@
               "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -2.28,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!I7；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -9804,6 +10134,56 @@
               "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -4.86,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!J7；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -9953,6 +10333,56 @@
               "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -6.0,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!K7；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -10102,6 +10532,56 @@
               "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -6.78,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!L7；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -10260,6 +10740,56 @@
               "basis": "measured",
               "checked_on": "2026-11-14",
               "statistic": "band_mean"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 3.76,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!D8；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -10409,6 +10939,56 @@
               "note": "同一Balli2020研究，merged D40μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 3.76,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!E8；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -10558,6 +11138,56 @@
               "note": "同一Balli2020研究，merged D40μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 3.21,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!F8；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -10707,6 +11337,56 @@
               "note": "同一Balli2020研究，merged D40μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 2.59,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!G8；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -10856,6 +11536,56 @@
               "note": "同一Balli2020研究，merged D40μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 0.0,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!H8；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -11005,6 +11735,56 @@
               "note": "同一Balli2020研究，merged D40μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -1.85,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!I8；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -11154,6 +11934,56 @@
               "note": "同一Balli2020研究，merged D40μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -3.21,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!J8；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -11303,6 +12133,56 @@
               "note": "同一Balli2020研究，merged D40μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -4.51,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!K8；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -11452,6 +12332,56 @@
               "note": "同一Balli2020研究，merged D40μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -4.51,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!L8；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -11610,6 +12540,56 @@
               "basis": "measured",
               "checked_on": "2026-11-14",
               "statistic": "band_mean"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 3.37,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!D9；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -11759,6 +12739,56 @@
               "note": "同一Balli2020研究，merged D80μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 3.16,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!E9；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -11908,6 +12938,56 @@
               "note": "同一Balli2020研究，merged D80μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 2.44,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!F9；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -12057,6 +13137,56 @@
               "note": "同一Balli2020研究，merged D80μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 0.5,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!G9；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -12206,6 +13336,56 @@
               "note": "同一Balli2020研究，merged D80μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 0.0,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!H9；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -12355,6 +13535,56 @@
               "note": "同一Balli2020研究，merged D80μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -1.23,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!I9；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -12504,6 +13734,56 @@
               "note": "同一Balli2020研究，merged D80μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -1.32,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!J9；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -12653,6 +13933,56 @@
               "note": "同一Balli2020研究，merged D80μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -1.92,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!K9；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -12802,6 +14132,56 @@
               "note": "同一Balli2020研究，merged D80μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -2.06,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!L9；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -12960,6 +14340,56 @@
               "basis": "measured",
               "checked_on": "2026-11-14",
               "statistic": "band_mean"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 5.41,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!D10；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -13109,6 +14539,56 @@
               "note": "同一Balli2020研究，air-spaced D40μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 4.85,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!E10；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -13258,6 +14738,56 @@
               "note": "同一Balli2020研究，air-spaced D40μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 4.08,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!F10；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -13407,6 +14937,56 @@
               "note": "同一Balli2020研究，air-spaced D40μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 2.26,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!G10；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -13556,6 +15136,56 @@
               "note": "同一Balli2020研究，air-spaced D40μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 0.0,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!H10；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -13705,6 +15335,56 @@
               "note": "同一Balli2020研究，air-spaced D40μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -1.08,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!I10；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -13854,6 +15534,56 @@
               "note": "同一Balli2020研究，air-spaced D40μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -1.82,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!J10；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -14003,6 +15733,56 @@
               "note": "同一Balli2020研究，air-spaced D40μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -1.82,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!K10；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -14152,6 +15932,56 @@
               "note": "同一Balli2020研究，air-spaced D40μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -2.78,
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!L10；Fig. 4e",
+              "note": "工作簿列项 Focal Length Shift (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Shift (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Fig. 4e / Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
             }
           }
         },
@@ -14221,6 +16051,1704 @@
               "note": "Balli2020另制300μm成像配置；1000–1700nm有效照明/相机响应，blind deconvolution处理；不与高NA微口径聚焦样品合并。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            }
+          }
+        },
+        {
+          "id": "balli2020_air100_summary",
+          "model": "Balli 2020 · 空气间隔 D100 μm · 器件汇总",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "air100",
+          "measurement_scope": "Balli 2020 补件 Fig. S4 的同一空气间隔 HAML 实物，EPD 100 μm、名义 NA 0.24、两薄元件间隔 7 μm。1000–1800 nm 以 100 nm 步进测九个离散谱点。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；Fig. S4",
+              "note": "原作者定义为入瞳直径 EPD。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "diameter_definition": "entrance_pupil_diameter"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；Fig. S4",
+              "note": "作者标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ]
+            },
+            "material": {
+              "value": "IP-Dip 相位板与纳米柱超表面／熔融石英，空气间隔 7 μm",
+              "source": "balli_haml_si_2020",
+              "location": "PDF pp.4–5 Supplementary Note 3；主文 PDF pp.4,6",
+              "note": "两薄元件的 separation 定义为第一元件最高点至第二元件底层的间距；记录的是间隙。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "inter_element_separation_um": 7
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；Fig. S4",
+              "note": "器件汇总；九个实际波长在单谱点行。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_min_nm": {
+              "value": 1000,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-a!D5；Fig. S4a–c",
+              "note": "同一器件实测扫带的短波端。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "lambda_max_nm": {
+              "value": 1800,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-a!L5；Fig. S4a–c",
+              "note": "同一器件实测扫带的长波端；只测了九个离散波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；Fig. S4",
+              "note": "同一实物的绝对设计焦距未在已核材料取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-c!D6:L6",
+              "note": "源表提供百分数；绝对轴向焦位与换算分母未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "focus_error_pct": {
+              "value": 4.8,
+              "source": "balli_haml_2020",
+              "location": "PDF p.6 Discussion",
+              "note": "作者对 EPD 100 μm 空气间隔实物报告的焦距误差。同组原表的最大绝对印字为 4.79%；该对照只检查数字量级，作者未明述汇总公式或分母。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_focal_error",
+              "sample_wavelengths_nm": [
+                1000,
+                1100,
+                1200,
+                1300,
+                1400,
+                1500,
+                1600,
+                1700,
+                1800
+              ],
+              "reference_wavelength_nm": null,
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020",
+                "balli_haml_source_2020"
+              ]
+            },
+            "focus_error_protocol": {
+              "value": "作者焦距误差汇总；参考焦位和归一化分母待核",
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Fig. S4c；主文 PDF p.7 Optical testing",
+              "note": "作者给出 4.8% focal length error；只核到论文所述汇总。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            },
+            "efficiency_band_mean_pct": {
+              "value": 19,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；主文 PDF p.6 Discussion",
+              "note": "作者均值按原报道保留。平均谱点、权重与聚合规则未报告。九个工作簿值的本库简单算术平均约 18.25%，最大 21.55%；主文报告最大 22%。两种平均各有归属。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "statistic": "band_mean",
+              "calculation_origin": "authors",
+              "sampling": "not_reported",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆半径 1.5×FWHM；分母为石英入射面的同孔径面积内入射功率",
+              "source": "balli_haml_2020",
+              "location": "PDF p.7 Optical testing；补件 PDF p.5 Fig. S4b",
+              "note": "与落在同一焦面圆内的全强度积分比较；源表未分偏振、方向或给误差条。作者给出 19% 平均和 22% 最大；未报告平均时使用的谱点/权重。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "denominator": "total_incident_power_in_same_aperture_on_fused_silica",
+              "integration_radius_fwhm_factor": 1.5,
+              "integration_shape": "circle"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
+            },
+            "mtf_curve": {
+              "value": "已核材料给出焦斑宽度、效率和焦距误差；未取得逐频 MTF 或二维原始 PSF",
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Fig. S4；主文 PDF p.7 Data availability",
+              "note": "正文说明补充材料与合理请求途径。已核补图和工作簿数表，未取得空间采样、原始轴扫/PSF、方向及归一化数据。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "search_log": "BALLI_2020_AIR_SPACED_REVIEW_2026-11-19.md"
+              }
+            }
+          }
+        },
+        {
+          "id": "balli2020_air100_1000",
+          "model": "Balli 2020 · 空气间隔 D100 μm · 1000 nm",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "air100",
+          "measurement_scope": "Balli 2020 补件 Fig. S4 的同一空气间隔 HAML 实物，EPD 100 μm、名义 NA 0.24、两薄元件间隔 7 μm。1000–1800 nm 以 100 nm 步进测九个离散谱点。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；Fig. S4",
+              "note": "原作者定义为入瞳直径 EPD。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "diameter_definition": "entrance_pupil_diameter"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；Fig. S4",
+              "note": "作者标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ]
+            },
+            "material": {
+              "value": "IP-Dip 相位板与纳米柱超表面／熔融石英，空气间隔 7 μm",
+              "source": "balli_haml_si_2020",
+              "location": "PDF pp.4–5 Supplementary Note 3；主文 PDF pp.4,6",
+              "note": "两薄元件的 separation 定义为第一元件最高点至第二元件底层的间距；记录的是间隙。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "inter_element_separation_um": 7
+            },
+            "wavelength_nm": {
+              "value": 1000,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-a!D5；Supplementary Figure 4-b!D6；Supplementary Figure 4-c!D5",
+              "note": "三个工作表共同的实际扫描波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "轴上准直超连续光源，波段滤光",
+              "source": "balli_haml_2020",
+              "location": "PDF p.7 Optical testing",
+              "note": "1000 和 1100 nm 由长通加相应带通滤片选取，1150–1800 nm 使用声光滤波器。本行实际通带与偏振未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "fwhm_um": {
+              "value": 3.09,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-a!D6；Fig. S4a",
+              "note": "作者报告的焦面 FWHM，取 100 µm 实验数据行。原文未给剖面方向、选面细则或误差。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
+            },
+            "efficiency_lambda_nm": {
+              "value": 1000,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-b!D6",
+              "note": "与本行源表聚焦效率配对的扫描波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 15.12,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-b!D7；Fig. S4b",
+              "note": "作者原表焦面圆积分效率。实验协议按同孔径石英入射面功率归一。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆半径 1.5×FWHM；分母为石英入射面的同孔径面积内入射功率",
+              "source": "balli_haml_2020",
+              "location": "PDF p.7 Optical testing；补件 PDF p.5 Fig. S4b",
+              "note": "与落在同一焦面圆内的全强度积分比较；源表未分偏振、方向或给误差条。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "denominator": "total_incident_power_in_same_aperture_on_fused_silica",
+              "integration_radius_fwhm_factor": 1.5,
+              "integration_shape": "circle"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 4.79,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-c!D6；Fig. S4c",
+              "note": "工作簿列项 Focal Length Error (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Error (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Fig. S4c；主文 PDF p.7 Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            }
+          }
+        },
+        {
+          "id": "balli2020_air100_1100",
+          "model": "Balli 2020 · 空气间隔 D100 μm · 1100 nm",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "air100",
+          "measurement_scope": "Balli 2020 补件 Fig. S4 的同一空气间隔 HAML 实物，EPD 100 μm、名义 NA 0.24、两薄元件间隔 7 μm。1000–1800 nm 以 100 nm 步进测九个离散谱点。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；Fig. S4",
+              "note": "原作者定义为入瞳直径 EPD。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "diameter_definition": "entrance_pupil_diameter"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；Fig. S4",
+              "note": "作者标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ]
+            },
+            "material": {
+              "value": "IP-Dip 相位板与纳米柱超表面／熔融石英，空气间隔 7 μm",
+              "source": "balli_haml_si_2020",
+              "location": "PDF pp.4–5 Supplementary Note 3；主文 PDF pp.4,6",
+              "note": "两薄元件的 separation 定义为第一元件最高点至第二元件底层的间距；记录的是间隙。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "inter_element_separation_um": 7
+            },
+            "wavelength_nm": {
+              "value": 1100,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-a!E5；Supplementary Figure 4-b!E6；Supplementary Figure 4-c!E5",
+              "note": "三个工作表共同的实际扫描波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "轴上准直超连续光源，波段滤光",
+              "source": "balli_haml_2020",
+              "location": "PDF p.7 Optical testing",
+              "note": "1000 和 1100 nm 由长通加相应带通滤片选取，1150–1800 nm 使用声光滤波器。本行实际通带与偏振未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "fwhm_um": {
+              "value": 3.18,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-a!E6；Fig. S4a",
+              "note": "作者报告的焦面 FWHM，取 100 µm 实验数据行。原文未给剖面方向、选面细则或误差。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
+            },
+            "efficiency_lambda_nm": {
+              "value": 1100,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-b!E6",
+              "note": "与本行源表聚焦效率配对的扫描波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 12.9,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-b!E7；Fig. S4b",
+              "note": "作者原表焦面圆积分效率。实验协议按同孔径石英入射面功率归一。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆半径 1.5×FWHM；分母为石英入射面的同孔径面积内入射功率",
+              "source": "balli_haml_2020",
+              "location": "PDF p.7 Optical testing；补件 PDF p.5 Fig. S4b",
+              "note": "与落在同一焦面圆内的全强度积分比较；源表未分偏振、方向或给误差条。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "denominator": "total_incident_power_in_same_aperture_on_fused_silica",
+              "integration_radius_fwhm_factor": 1.5,
+              "integration_shape": "circle"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 2.89,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-c!E6；Fig. S4c",
+              "note": "工作簿列项 Focal Length Error (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Error (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Fig. S4c；主文 PDF p.7 Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            }
+          }
+        },
+        {
+          "id": "balli2020_air100_1200",
+          "model": "Balli 2020 · 空气间隔 D100 μm · 1200 nm",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "air100",
+          "measurement_scope": "Balli 2020 补件 Fig. S4 的同一空气间隔 HAML 实物，EPD 100 μm、名义 NA 0.24、两薄元件间隔 7 μm。1000–1800 nm 以 100 nm 步进测九个离散谱点。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；Fig. S4",
+              "note": "原作者定义为入瞳直径 EPD。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "diameter_definition": "entrance_pupil_diameter"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；Fig. S4",
+              "note": "作者标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ]
+            },
+            "material": {
+              "value": "IP-Dip 相位板与纳米柱超表面／熔融石英，空气间隔 7 μm",
+              "source": "balli_haml_si_2020",
+              "location": "PDF pp.4–5 Supplementary Note 3；主文 PDF pp.4,6",
+              "note": "两薄元件的 separation 定义为第一元件最高点至第二元件底层的间距；记录的是间隙。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "inter_element_separation_um": 7
+            },
+            "wavelength_nm": {
+              "value": 1200,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-a!F5；Supplementary Figure 4-b!F6；Supplementary Figure 4-c!F5",
+              "note": "三个工作表共同的实际扫描波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "轴上准直超连续光源，波段滤光",
+              "source": "balli_haml_2020",
+              "location": "PDF p.7 Optical testing",
+              "note": "1000 和 1100 nm 由长通加相应带通滤片选取，1150–1800 nm 使用声光滤波器。本行实际通带与偏振未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "fwhm_um": {
+              "value": 3.15,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-a!F6；Fig. S4a",
+              "note": "作者报告的焦面 FWHM，取 100 µm 实验数据行。原文未给剖面方向、选面细则或误差。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
+            },
+            "efficiency_lambda_nm": {
+              "value": 1200,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-b!F6",
+              "note": "与本行源表聚焦效率配对的扫描波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 18.25,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-b!F7；Fig. S4b",
+              "note": "作者原表焦面圆积分效率。实验协议按同孔径石英入射面功率归一。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆半径 1.5×FWHM；分母为石英入射面的同孔径面积内入射功率",
+              "source": "balli_haml_2020",
+              "location": "PDF p.7 Optical testing；补件 PDF p.5 Fig. S4b",
+              "note": "与落在同一焦面圆内的全强度积分比较；源表未分偏振、方向或给误差条。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "denominator": "total_incident_power_in_same_aperture_on_fused_silica",
+              "integration_radius_fwhm_factor": 1.5,
+              "integration_shape": "circle"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 0.9,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-c!F6；Fig. S4c",
+              "note": "工作簿列项 Focal Length Error (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Error (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Fig. S4c；主文 PDF p.7 Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            }
+          }
+        },
+        {
+          "id": "balli2020_air100_1300",
+          "model": "Balli 2020 · 空气间隔 D100 μm · 1300 nm",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "air100",
+          "measurement_scope": "Balli 2020 补件 Fig. S4 的同一空气间隔 HAML 实物，EPD 100 μm、名义 NA 0.24、两薄元件间隔 7 μm。1000–1800 nm 以 100 nm 步进测九个离散谱点。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；Fig. S4",
+              "note": "原作者定义为入瞳直径 EPD。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "diameter_definition": "entrance_pupil_diameter"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；Fig. S4",
+              "note": "作者标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ]
+            },
+            "material": {
+              "value": "IP-Dip 相位板与纳米柱超表面／熔融石英，空气间隔 7 μm",
+              "source": "balli_haml_si_2020",
+              "location": "PDF pp.4–5 Supplementary Note 3；主文 PDF pp.4,6",
+              "note": "两薄元件的 separation 定义为第一元件最高点至第二元件底层的间距；记录的是间隙。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "inter_element_separation_um": 7
+            },
+            "wavelength_nm": {
+              "value": 1300,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-a!G5；Supplementary Figure 4-b!G6；Supplementary Figure 4-c!G5",
+              "note": "三个工作表共同的实际扫描波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "轴上准直超连续光源，波段滤光",
+              "source": "balli_haml_2020",
+              "location": "PDF p.7 Optical testing",
+              "note": "1000 和 1100 nm 由长通加相应带通滤片选取，1150–1800 nm 使用声光滤波器。本行实际通带与偏振未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "fwhm_um": {
+              "value": 3.03,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-a!G6；Fig. S4a",
+              "note": "作者报告的焦面 FWHM，取 100 µm 实验数据行。原文未给剖面方向、选面细则或误差。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
+            },
+            "efficiency_lambda_nm": {
+              "value": 1300,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-b!G6",
+              "note": "与本行源表聚焦效率配对的扫描波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 17.49,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-b!G7；Fig. S4b",
+              "note": "作者原表焦面圆积分效率。实验协议按同孔径石英入射面功率归一。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆半径 1.5×FWHM；分母为石英入射面的同孔径面积内入射功率",
+              "source": "balli_haml_2020",
+              "location": "PDF p.7 Optical testing；补件 PDF p.5 Fig. S4b",
+              "note": "与落在同一焦面圆内的全强度积分比较；源表未分偏振、方向或给误差条。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "denominator": "total_incident_power_in_same_aperture_on_fused_silica",
+              "integration_radius_fwhm_factor": 1.5,
+              "integration_shape": "circle"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -0.29,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-c!G6；Fig. S4c",
+              "note": "工作簿列项 Focal Length Error (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Error (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Fig. S4c；主文 PDF p.7 Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            }
+          }
+        },
+        {
+          "id": "balli2020_air100_1400",
+          "model": "Balli 2020 · 空气间隔 D100 μm · 1400 nm",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "air100",
+          "measurement_scope": "Balli 2020 补件 Fig. S4 的同一空气间隔 HAML 实物，EPD 100 μm、名义 NA 0.24、两薄元件间隔 7 μm。1000–1800 nm 以 100 nm 步进测九个离散谱点。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；Fig. S4",
+              "note": "原作者定义为入瞳直径 EPD。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "diameter_definition": "entrance_pupil_diameter"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；Fig. S4",
+              "note": "作者标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ]
+            },
+            "material": {
+              "value": "IP-Dip 相位板与纳米柱超表面／熔融石英，空气间隔 7 μm",
+              "source": "balli_haml_si_2020",
+              "location": "PDF pp.4–5 Supplementary Note 3；主文 PDF pp.4,6",
+              "note": "两薄元件的 separation 定义为第一元件最高点至第二元件底层的间距；记录的是间隙。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "inter_element_separation_um": 7
+            },
+            "wavelength_nm": {
+              "value": 1400,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-a!H5；Supplementary Figure 4-b!H6；Supplementary Figure 4-c!H5",
+              "note": "三个工作表共同的实际扫描波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "轴上准直超连续光源，波段滤光",
+              "source": "balli_haml_2020",
+              "location": "PDF p.7 Optical testing",
+              "note": "1000 和 1100 nm 由长通加相应带通滤片选取，1150–1800 nm 使用声光滤波器。本行实际通带与偏振未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "fwhm_um": {
+              "value": 3.27,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-a!H6；Fig. S4a",
+              "note": "作者报告的焦面 FWHM，取 100 µm 实验数据行。原文未给剖面方向、选面细则或误差。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
+            },
+            "efficiency_lambda_nm": {
+              "value": 1400,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-b!H6",
+              "note": "与本行源表聚焦效率配对的扫描波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 19.26,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-b!H7；Fig. S4b",
+              "note": "作者原表焦面圆积分效率。实验协议按同孔径石英入射面功率归一。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆半径 1.5×FWHM；分母为石英入射面的同孔径面积内入射功率",
+              "source": "balli_haml_2020",
+              "location": "PDF p.7 Optical testing；补件 PDF p.5 Fig. S4b",
+              "note": "与落在同一焦面圆内的全强度积分比较；源表未分偏振、方向或给误差条。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "denominator": "total_incident_power_in_same_aperture_on_fused_silica",
+              "integration_radius_fwhm_factor": 1.5,
+              "integration_shape": "circle"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 0.0,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-c!H6；Fig. S4c",
+              "note": "工作簿列项 Focal Length Error (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Error (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Fig. S4c；主文 PDF p.7 Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            }
+          }
+        },
+        {
+          "id": "balli2020_air100_1500",
+          "model": "Balli 2020 · 空气间隔 D100 μm · 1500 nm",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "air100",
+          "measurement_scope": "Balli 2020 补件 Fig. S4 的同一空气间隔 HAML 实物，EPD 100 μm、名义 NA 0.24、两薄元件间隔 7 μm。1000–1800 nm 以 100 nm 步进测九个离散谱点。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；Fig. S4",
+              "note": "原作者定义为入瞳直径 EPD。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "diameter_definition": "entrance_pupil_diameter"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；Fig. S4",
+              "note": "作者标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ]
+            },
+            "material": {
+              "value": "IP-Dip 相位板与纳米柱超表面／熔融石英，空气间隔 7 μm",
+              "source": "balli_haml_si_2020",
+              "location": "PDF pp.4–5 Supplementary Note 3；主文 PDF pp.4,6",
+              "note": "两薄元件的 separation 定义为第一元件最高点至第二元件底层的间距；记录的是间隙。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "inter_element_separation_um": 7
+            },
+            "wavelength_nm": {
+              "value": 1500,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-a!I5；Supplementary Figure 4-b!I6；Supplementary Figure 4-c!I5",
+              "note": "三个工作表共同的实际扫描波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "轴上准直超连续光源，波段滤光",
+              "source": "balli_haml_2020",
+              "location": "PDF p.7 Optical testing",
+              "note": "1000 和 1100 nm 由长通加相应带通滤片选取，1150–1800 nm 使用声光滤波器。本行实际通带与偏振未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "fwhm_um": {
+              "value": 3.51,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-a!I6；Fig. S4a",
+              "note": "作者报告的焦面 FWHM，取 100 µm 实验数据行。原文未给剖面方向、选面细则或误差。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
+            },
+            "efficiency_lambda_nm": {
+              "value": 1500,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-b!I6",
+              "note": "与本行源表聚焦效率配对的扫描波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 20.0,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-b!I7；Fig. S4b",
+              "note": "作者原表焦面圆积分效率。实验协议按同孔径石英入射面功率归一。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆半径 1.5×FWHM；分母为石英入射面的同孔径面积内入射功率",
+              "source": "balli_haml_2020",
+              "location": "PDF p.7 Optical testing；补件 PDF p.5 Fig. S4b",
+              "note": "与落在同一焦面圆内的全强度积分比较；源表未分偏振、方向或给误差条。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "denominator": "total_incident_power_in_same_aperture_on_fused_silica",
+              "integration_radius_fwhm_factor": 1.5,
+              "integration_shape": "circle"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -1.15,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-c!I6；Fig. S4c",
+              "note": "工作簿列项 Focal Length Error (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Error (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Fig. S4c；主文 PDF p.7 Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            }
+          }
+        },
+        {
+          "id": "balli2020_air100_1600",
+          "model": "Balli 2020 · 空气间隔 D100 μm · 1600 nm",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "air100",
+          "measurement_scope": "Balli 2020 补件 Fig. S4 的同一空气间隔 HAML 实物，EPD 100 μm、名义 NA 0.24、两薄元件间隔 7 μm。1000–1800 nm 以 100 nm 步进测九个离散谱点。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；Fig. S4",
+              "note": "原作者定义为入瞳直径 EPD。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "diameter_definition": "entrance_pupil_diameter"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；Fig. S4",
+              "note": "作者标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ]
+            },
+            "material": {
+              "value": "IP-Dip 相位板与纳米柱超表面／熔融石英，空气间隔 7 μm",
+              "source": "balli_haml_si_2020",
+              "location": "PDF pp.4–5 Supplementary Note 3；主文 PDF pp.4,6",
+              "note": "两薄元件的 separation 定义为第一元件最高点至第二元件底层的间距；记录的是间隙。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "inter_element_separation_um": 7
+            },
+            "wavelength_nm": {
+              "value": 1600,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-a!J5；Supplementary Figure 4-b!J6；Supplementary Figure 4-c!J5",
+              "note": "三个工作表共同的实际扫描波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "轴上准直超连续光源，波段滤光",
+              "source": "balli_haml_2020",
+              "location": "PDF p.7 Optical testing",
+              "note": "1000 和 1100 nm 由长通加相应带通滤片选取，1150–1800 nm 使用声光滤波器。本行实际通带与偏振未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "fwhm_um": {
+              "value": 3.63,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-a!J6；Fig. S4a",
+              "note": "作者报告的焦面 FWHM，取 100 µm 实验数据行。原文未给剖面方向、选面细则或误差。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
+            },
+            "efficiency_lambda_nm": {
+              "value": 1600,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-b!J6",
+              "note": "与本行源表聚焦效率配对的扫描波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 20.54,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-b!J7；Fig. S4b",
+              "note": "作者原表焦面圆积分效率。实验协议按同孔径石英入射面功率归一。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆半径 1.5×FWHM；分母为石英入射面的同孔径面积内入射功率",
+              "source": "balli_haml_2020",
+              "location": "PDF p.7 Optical testing；补件 PDF p.5 Fig. S4b",
+              "note": "与落在同一焦面圆内的全强度积分比较；源表未分偏振、方向或给误差条。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "denominator": "total_incident_power_in_same_aperture_on_fused_silica",
+              "integration_radius_fwhm_factor": 1.5,
+              "integration_shape": "circle"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -3.49,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-c!J6；Fig. S4c",
+              "note": "工作簿列项 Focal Length Error (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Error (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Fig. S4c；主文 PDF p.7 Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            }
+          }
+        },
+        {
+          "id": "balli2020_air100_1700",
+          "model": "Balli 2020 · 空气间隔 D100 μm · 1700 nm",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "air100",
+          "measurement_scope": "Balli 2020 补件 Fig. S4 的同一空气间隔 HAML 实物，EPD 100 μm、名义 NA 0.24、两薄元件间隔 7 μm。1000–1800 nm 以 100 nm 步进测九个离散谱点。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；Fig. S4",
+              "note": "原作者定义为入瞳直径 EPD。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "diameter_definition": "entrance_pupil_diameter"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；Fig. S4",
+              "note": "作者标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ]
+            },
+            "material": {
+              "value": "IP-Dip 相位板与纳米柱超表面／熔融石英，空气间隔 7 μm",
+              "source": "balli_haml_si_2020",
+              "location": "PDF pp.4–5 Supplementary Note 3；主文 PDF pp.4,6",
+              "note": "两薄元件的 separation 定义为第一元件最高点至第二元件底层的间距；记录的是间隙。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "inter_element_separation_um": 7
+            },
+            "wavelength_nm": {
+              "value": 1700,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-a!K5；Supplementary Figure 4-b!K6；Supplementary Figure 4-c!K5",
+              "note": "三个工作表共同的实际扫描波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "轴上准直超连续光源，波段滤光",
+              "source": "balli_haml_2020",
+              "location": "PDF p.7 Optical testing",
+              "note": "1000 和 1100 nm 由长通加相应带通滤片选取，1150–1800 nm 使用声光滤波器。本行实际通带与偏振未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "fwhm_um": {
+              "value": 4.0,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-a!K6；Fig. S4a",
+              "note": "作者报告的焦面 FWHM，取 100 µm 实验数据行。原文未给剖面方向、选面细则或误差。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
+            },
+            "efficiency_lambda_nm": {
+              "value": 1700,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-b!K6",
+              "note": "与本行源表聚焦效率配对的扫描波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 19.18,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-b!K7；Fig. S4b",
+              "note": "作者原表焦面圆积分效率。实验协议按同孔径石英入射面功率归一。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆半径 1.5×FWHM；分母为石英入射面的同孔径面积内入射功率",
+              "source": "balli_haml_2020",
+              "location": "PDF p.7 Optical testing；补件 PDF p.5 Fig. S4b",
+              "note": "与落在同一焦面圆内的全强度积分比较；源表未分偏振、方向或给误差条。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "denominator": "total_incident_power_in_same_aperture_on_fused_silica",
+              "integration_radius_fwhm_factor": 1.5,
+              "integration_shape": "circle"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -4.14,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-c!K6；Fig. S4c",
+              "note": "工作簿列项 Focal Length Error (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Error (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Fig. S4c；主文 PDF p.7 Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            }
+          }
+        },
+        {
+          "id": "balli2020_air100_1800",
+          "model": "Balli 2020 · 空气间隔 D100 μm · 1800 nm",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "air100",
+          "measurement_scope": "Balli 2020 补件 Fig. S4 的同一空气间隔 HAML 实物，EPD 100 μm、名义 NA 0.24、两薄元件间隔 7 μm。1000–1800 nm 以 100 nm 步进测九个离散谱点。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；Fig. S4",
+              "note": "原作者定义为入瞳直径 EPD。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "diameter_definition": "entrance_pupil_diameter"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Supplementary Note 3；Fig. S4",
+              "note": "作者标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ]
+            },
+            "material": {
+              "value": "IP-Dip 相位板与纳米柱超表面／熔融石英，空气间隔 7 μm",
+              "source": "balli_haml_si_2020",
+              "location": "PDF pp.4–5 Supplementary Note 3；主文 PDF pp.4,6",
+              "note": "两薄元件的 separation 定义为第一元件最高点至第二元件底层的间距；记录的是间隙。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "inter_element_separation_um": 7
+            },
+            "wavelength_nm": {
+              "value": 1800,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-a!L5；Supplementary Figure 4-b!L6；Supplementary Figure 4-c!L5",
+              "note": "三个工作表共同的实际扫描波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "轴上准直超连续光源，波段滤光",
+              "source": "balli_haml_2020",
+              "location": "PDF p.7 Optical testing",
+              "note": "1000 和 1100 nm 由长通加相应带通滤片选取，1150–1800 nm 使用声光滤波器。本行实际通带与偏振未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "fwhm_um": {
+              "value": 4.48,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-a!L6；Fig. S4a",
+              "note": "作者报告的焦面 FWHM，取 100 µm 实验数据行。原文未给剖面方向、选面细则或误差。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射；焦面横向 FWHM；镜片沿光轴移动采集",
+              "source": "balli_haml_2020",
+              "location": "PDF pp.5,7 Experimental results / Optical testing",
+              "note": "通用装置为 40×／NA 0.55 物镜、Mitutoyo MT-1 筒镜与 NINOX-VS-CL-640。轴向扫描通常 2 μm，焦距误差用 0.5 μm 步进。继像光路色差由针孔逐波长标定并补偿。实际 FWHM 方向、相机物方采样、单谱点选面细则与原始强度数组未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "raw_psf_available": null,
+              "evaluation_plane_um": null,
+              "reference_plane": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
+            },
+            "efficiency_lambda_nm": {
+              "value": 1800,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-b!L6",
+              "note": "与本行源表聚焦效率配对的扫描波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 21.55,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-b!L7；Fig. S4b",
+              "note": "作者原表焦面圆积分效率。实验协议按同孔径石英入射面功率归一。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆半径 1.5×FWHM；分母为石英入射面的同孔径面积内入射功率",
+              "source": "balli_haml_2020",
+              "location": "PDF p.7 Optical testing；补件 PDF p.5 Fig. S4b",
+              "note": "与落在同一焦面圆内的全强度积分比较；源表未分偏振、方向或给误差条。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "denominator": "total_incident_power_in_same_aperture_on_fused_silica",
+              "integration_radius_fwhm_factor": 1.5,
+              "integration_shape": "circle"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -4.77,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-c!L6；Fig. S4c",
+              "note": "工作簿列项 Focal Length Error (%)。数值、符号和零逐格录自作者原表。1400 nm 表中为零；归一化公式与绝对参考焦面未报告。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "reference_wavelength_nm": null,
+              "original_quantity": "Focal Length Error (%)"
+            },
+            "focus_error_protocol": {
+              "value": "作者有符号焦距百分数；参考焦位和归一化分母待核",
+              "source": "balli_haml_si_2020",
+              "location": "PDF p.5 Fig. S4c；主文 PDF p.7 Optical testing",
+              "note": "工作簿逐点给出正负百分数；1400 nm 为印表零点。 原文未指定 1400 nm 的绝对焦位、是否用该焦位为分母或归一化公式。扫描步进 0.5 μm，针孔逐波长标定补偿继像色差。作者汇总、单谱点比例和微米焦移分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
             }
           }
         },
