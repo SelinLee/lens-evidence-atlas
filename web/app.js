@@ -1,6 +1,13 @@
 'use strict';
-const D=window.LENS_DATA,$=id=>document.getElementById(id),esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const sources=new Map(D.sources.map(x=>[x.id,x])),metrics=new Map(D.metrics.map(x=>[x.id,x])),records=new Map(D.benchmarks.map(x=>[x.id,x]));
+let D, sources, metrics, records;
+const $=id=>document.getElementById(id),esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function setEvidenceCatalog(catalog) {
+ D=catalog;
+ sources=new Map(D.sources.map(x=>[x.id,x]));
+ metrics=new Map(D.metrics.map(x=>[x.id,x]));
+ records=new Map(D.benchmarks.map(x=>[x.id,x]));
+}
+if (window.LENS_DATA) setEvidenceCatalog(window.LENS_DATA);
 const directions={higher:'较高通常更有利',lower:'较低通常更有利',lower_abs:'绝对偏差越小越好',target:'需匹配目标值',tradeoff:'存在权衡，不单向排序'};
 const kinds={research_software:'作者研究代码（固定版本）',metrology_reference:'计量与统计参考',trial_protocol:'原始试验方案',paper:'原始研究论文',author_manuscript:'论文作者稿（版本见来源）',peer_reviewed_paper:'同行评议研究论文',conference_paper:'会议论文',workshop_paper:'研讨会论文',supplementary_material:'论文补充材料（同一研究）',paper_review:'学术综述',scholarly_book:'学术书章',standard:'标准 / 公开预览',manufacturer:'厂商资料',manufacturer_technical:'原厂技术文档',software_documentation:'原厂软件文档'};
 const kindOrder={research_software:0,metrology_reference:3,trial_protocol:3,paper:0,author_manuscript:0,peer_reviewed_paper:0,conference_paper:0,workshop_paper:0,supplementary_material:0,paper_review:1,scholarly_book:2,standard:3,manufacturer_technical:4,software_documentation:4,manufacturer:5};
@@ -34,7 +41,7 @@ function comparisonPanel(c,left,right){
 function priorityLabel(basis){return basis==='author_explicit'?'作者限定比较':'编辑解读'}
 function renderList(){const query=$('search').value.trim().toLowerCase(),category=$('category').value,ranked=$('rankedOnly').checked;
  const list=D.applications.filter(a=>(!category||a.category===category)&&(!ranked||a.priorities.length)&&(!query||[a.name,a.summary,a.category,...a.metric_ids.map(id=>metrics.get(id).name+' '+metrics.get(id).english_name),...a.record_ids.map(id=>records.get(id).name)].join(' ').toLowerCase().includes(query)));
- $('resultCount').textContent=`${list.length} / ${D.applications.length} 类应用`;
+ $('resultCount').textContent=`${list.length} / ${D.coverage?.applications ?? D.applications.length} 类应用`;
  $('appList').innerHTML=list.length?list.map(a=>`<button data-app="${a.id}"${a.id===selected?' aria-current="page"':''}>${esc(a.name)}<small>${a.priorities.length?priorityLabel(a.ranking_status):a.ranking_gap_refs?.length?'有出处的任务权衡':'重要性排序待补证'}</small></button>`).join(''):'<p class="muted">没有匹配项。可清除筛选或搜索具体指标。</p>';
 }
 function panelMarkup(a,tab){
@@ -53,11 +60,12 @@ function render(){const a=current();$('crumb').textContent=a.category+' / APPLIC
  renderList();$('live').textContent=a.name+'，'+document.querySelector(`[data-tab="${tab}"]`).textContent;document.title=a.name+' · 透镜评价证据库';
 }
 function route(){const focusId=document.activeElement?.id;const [id,t]=location.hash.slice(1).split('/');selected=D.applications.some(a=>a.id===id)?id:'app_25';tab=tabNames().includes(t)?t:'metrics';render();if(tab==='compare'&&['compare-0','compare-1'].includes(focusId))$(focusId).focus()}
-function method(){openDialog('证据、排名与维护规则',`<h3>如何使用</h3><p>先选择应用，再查定义与必须统一的条件。优先级页明确标记原文排名、编辑性解读或缺证状态；最佳页区分标准限值、论文内最佳、理论界限与代表样本。</p><h3>来源政策</h3><p>${esc(D.meta.source_policy)}。本版不使用维基百科作为关键结论来源。</p><h3>更新流程</h3><ol><li>在 GitHub 新建证据 Issue，提供 DOI/链接、原文位置与适用条件。</li><li>修改 data 下对应应用、指标、来源或记录 JSON。</li><li>运行 npm test 与 npm run build，随 PR 提交生成的 dist。</li><li>核验来源与条件，合并到主分支后通过 GitHub Pages 发布；本项目的源码与查询资料公开。</li></ol><h3>当前覆盖</h3><p>${D.applications.length} 类应用，${D.metrics.length} 个定义，${D.benchmarks.length} 条样本，${D.applications.filter(a=>a.ranking_status==='editorial_synthesis').length} 类应用有带出处的编辑性优先级；${D.applications.filter(a=>a.ranking_status==='author_explicit').length} 类应用包含作者原文明示的限定任务比较。它们不代表跨应用统一名次，世界纪录尚未建立。</p><h3>维护日期</h3><p>旧记录保留 ${esc(D.meta.legacy_checked_on)} 核验日期；本批新增或复核条目单独标记日期与读取范围。目录更新于 ${esc(D.meta.updated_on)}，不代表全库重新核验。</p><p><a href="https://github.com/SelinLee/lens-evidence-atlas" target="_blank" rel="noopener">GitHub 项目 ↗</a></p>`)}
-window.LensEvidence={panelMarkup,openDialog,openMetric,openSource,recordCard,method,comparisonPair,comparisonFor,comparisonPanel};
+function method(){openDialog('证据、排名与维护规则',`<h3>如何使用</h3><p>先选择应用，再查定义与必须统一的条件。优先级页明确标记原文排名、编辑性解读或缺证状态；最佳页区分标准限值、论文内最佳、理论界限与代表样本。</p><h3>来源政策</h3><p>${esc(D.meta.source_policy)}。本版不使用维基百科作为关键结论来源。</p><h3>更新流程</h3><ol><li>在 GitHub 新建证据 Issue，提供 DOI/链接、原文位置与适用条件。</li><li>修改 data 下对应应用、指标、来源或记录 JSON。</li><li>运行 npm test 与 npm run build，随 PR 提交生成的 dist。</li><li>核验来源与条件，合并到主分支后通过 GitHub Pages 发布；本项目的源码与查询资料公开。</li></ol><h3>当前覆盖</h3><p>${D.coverage?.applications ?? D.applications.length} 类应用，${D.coverage?.metrics ?? D.metrics.length} 个定义，${D.coverage?.benchmarks ?? D.benchmarks.length} 条样本，${D.coverage?.editorial ?? D.applications.filter(a=>a.ranking_status==='editorial_synthesis').length} 类应用有带出处的编辑性优先级；${D.coverage?.explicit ?? D.applications.filter(a=>a.ranking_status==='author_explicit').length} 类应用包含作者原文明示的限定任务比较。它们不代表跨应用统一名次，世界纪录尚未建立。</p><h3>维护日期</h3><p>旧记录保留 ${esc(D.meta.legacy_checked_on)} 核验日期；本批新增或复核条目单独标记日期与读取范围。目录更新于 ${esc(D.meta.updated_on)}，不代表全库重新核验。</p><p><a href="https://github.com/SelinLee/lens-evidence-atlas" target="_blank" rel="noopener">GitHub 项目 ↗</a></p>`)}
+function openRecord(id){const record=records.get(id);if(record)openDialog(record.name,recordCard(record,true));}
+window.LensEvidence={openRecord,setEvidenceCatalog,panelMarkup,openDialog,openMetric,openSource,recordCard,method,comparisonPair,comparisonFor,comparisonPanel};
 if(!window.UNIFIED_WORKSPACE){
 $('provenance').textContent=`目录更新：${D.meta.updated_on}；逐条保留原核验日期`;
-$('version').textContent=`v${D.meta.version} · ${D.applications.length} 类应用`;
+$('version').textContent=`v${D.meta.version} · ${D.coverage?.applications ?? D.applications.length} 类应用`;
 $('category').insertAdjacentHTML('beforeend',[...new Set(D.applications.map(a=>a.category))].map(x=>`<option>${esc(x)}</option>`).join(''));
 ['search','category','rankedOnly'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',renderList));
 document.addEventListener('click',e=>{const a=e.target.closest('[data-app]'),t=e.target.closest('[data-tab]'),m=e.target.closest('[data-metric]'),s=e.target.closest('[data-source]'),r=e.target.closest('[data-record]');if(a)location.hash=a.dataset.app+'/'+tab;if(t)location.hash=selected+'/'+t.dataset.tab;if(m)openMetric(m.dataset.metric);if(s)openSource(s.dataset.source);if(r)openDialog(records.get(r.dataset.record).name,recordCard(records.get(r.dataset.record),true))});

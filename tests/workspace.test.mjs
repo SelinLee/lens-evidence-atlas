@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import {writeWorkspaceBundles} from '../scripts/workspace-bundles.mjs';
 import {load,versionAssets} from '../scripts/catalog.mjs';
 import {scalar,createWorkspace,groupRows,hasVisibleLight,valueSources,filteredRows,axisPoints,metricAvailability,availableAxes,customSampleAxes} from '../web/workspace-data.js';
 const catalog=load(),devices=JSON.parse(fs.readFileSync(new URL('../data/devices.json',import.meta.url))),atlas=createWorkspace(catalog,devices);
@@ -64,7 +65,8 @@ test('a sparse custom sample falls back to a category axis while keeping complet
 });
 test('unified entry loads both data sets and old device links retain selection parameters',()=>{
  const html=fs.readFileSync(new URL('../web/index.html',import.meta.url),'utf8'),redirect=fs.readFileSync(new URL('../web/devices.html',import.meta.url),'utf8');
- for(const script of ['data.js','devices-data.js','workspace.js'])assert.ok(html.includes(script));
+ for(const script of ['workspace-index.js','workspace.js'])assert.ok(html.includes(script));
+ assert.doesNotMatch(html, /src="(?:devices-)?data\.js/);
  assert.ok(html.indexOf('id="workspace"')<html.indexOf('id="data-table"'));assert.ok(html.indexOf('id="data-table"')<html.indexOf('id="references"'));
  assert.match(redirect,/target.search=location.search/);assert.match(redirect,/target.hash=location.hash/);assert.match(redirect,/location.replace/);
 });
@@ -194,4 +196,29 @@ test('legacy aperture and efficiency fields carry limits while axial mismatch st
  assert.deepEqual(field('单元口径 (μm)').axis_bounds,{min:0});
  assert.deepEqual(field('实测平均聚焦效率 (%)').axis_bounds,{min:0,max:100});
  assert.equal(field('轴向失配 (mm)').axis_bounds,undefined);
+});
+
+test('lazy domain files preserve every row and resolve each citation to its original materials',()=>{
+ const directory=fs.mkdtempSync(path.join(os.tmpdir(),'lens-domains-'));
+ try {
+   writeWorkspaceBundles(directory,catalog,devices);
+   const index=JSON.parse(fs.readFileSync(path.join(directory,'workspace-index.js'),'utf8').slice('window.WORKSPACE_INDEX='.length,-2));
+   const readVersion=url=>{
+     const [file,hash]=url.split('?v='), json=fs.readFileSync(path.join(directory,file),'utf8');
+     assert.equal(crypto.createHash('sha256').update(json).digest('hex').slice(0,16),hash);
+     return JSON.parse(json);
+   };
+   assert.deepEqual(index.domains.map(d=>d.id),atlas.domains.map(d=>d.id));
+   for(const [i,entry] of index.domains.entries()){
+     const {domain,sources,values}=readVersion(entry.url);
+     for(const row of domain.rows)for(const [key,index] of Object.entries(row.values))row.values[key]=values[index];
+     assert.deepEqual(domain,JSON.parse(JSON.stringify(atlas.domains[i])));
+     const headers=new Map(sources.map(s=>[s.id,s]));
+     for(const source of sources){
+       const paper=headers.get(source.publication_source || source.id);
+       const material=readVersion(paper.detailsUrl).find(m=>m.id===source.id);
+       assert.deepEqual(material,JSON.parse(JSON.stringify(atlas.sources.get(source.id))));
+     }
+   }
+ } finally {fs.rmSync(directory,{recursive:true,force:true});}
 });

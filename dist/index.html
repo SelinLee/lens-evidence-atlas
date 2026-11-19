@@ -15,7 +15,7 @@
     window.addEventListener('error',atlasLoadFailure,true);
     window.addEventListener('unhandledrejection',atlasLoadFailure);
   </script>
-  <link rel="stylesheet" href="style.css?v=454c704d42d3eb95"><link rel="stylesheet" href="workspace.css?v=2f43a0f19d292173">
+  <link rel="stylesheet" href="style.css?v=454c704d42d3eb95"><link rel="stylesheet" href="workspace.css?v=6ded2055073d5128">
 </head>
 <body class="atlas-workspace">
   <header class="atlas-header">
@@ -67,6 +67,7 @@
     <section class="data-section reference-section" id="references" aria-labelledby="references-title">
       <div class="section-heading"><div><div class="eyebrow">02 / REFERENCES</div><h2 id="references-title">数据来源与参考文献</h2><p>每篇论文使用一个编号。展开可查正文、补充材料及使用这些材料的记录。</p></div><a href="#data-table">返回数据表 ↑</a></div>
       <ol id="sources" class="reference-list"></ol>
+      <nav id="reference-pages" aria-label="参考文献分页" hidden><button id="previous-refs" type="button">上一页</button><span id="reference-range" aria-live="polite"></span><button id="next-refs" type="button">下一页</button></nav>
       <p id="date" class="data-date"></p>
     </section>
     <footer class="atlas-footer"><span>Lens Evidence Atlas · 条件先于比较，证据随数据保留</span><a href="catalog.json" download>下载完整结构化资料 JSON ↓</a></footer>
@@ -96,6 +97,6 @@
     <div class="custom-actions"><button id="remove-custom" type="button" hidden>删除此样本</button><button type="submit" form="custom-form">保存并绘制</button></div>
   </dialog>
   <dialog id="detail"><div class="dialog-head"><h2 id="detailTitle"></h2><button id="closeDialog" aria-label="关闭">×</button></div><div id="detailBody"></div></dialog>
-  <script>window.UNIFIED_WORKSPACE=true;</script><script src="data.js?v=843491d1ed79fdd5"></script><script src="devices-data.js?v=235f85e6ee00416f"></script><script src="app.js?v=573d45a5e32bb91d"></script><script src="devices.js?v=8673ece999211d24"></script><script type="module" src="workspace.js?v=0011c959261fab17"></script>
+  <script>window.UNIFIED_WORKSPACE=true;</script><script src="workspace-index.js?v=a3faac558a6c2cb5"></script><script src="app.js?v=0572af034fddc76f"></script><script src="devices.js?v=8673ece999211d24"></script><script type="module" src="workspace.js?v=73b85145d97f4109"></script>
 </body>
 </html>
