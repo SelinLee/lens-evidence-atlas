@@ -15,7 +15,7 @@
     window.addEventListener('error',atlasLoadFailure,true);
     window.addEventListener('unhandledrejection',atlasLoadFailure);
   </script>
-  <link rel="stylesheet" href="style.css?v=454c704d42d3eb95"><link rel="stylesheet" href="workspace.css?v=6ded2055073d5128">
+  <link rel="stylesheet" href="style.css?v=454c704d42d3eb95"><link rel="stylesheet" href="workspace.css?v=b1a3988bffea0ace">
 </head>
 <body class="atlas-workspace">
   <header class="atlas-header">
@@ -77,6 +77,13 @@
     <div class="dialog-head"><h2 id="custom-title">自定义指标</h2><button id="close-custom" type="button" aria-label="关闭自定义指标">×</button></div>
     <form id="custom-form">
       <p id="custom-scope"></p>
+      <div class="custom-file-tools">
+        <button id="custom-template" type="button">下载 JSON 模板</button>
+        <button id="custom-import" type="button">导入 JSON 文件</button>
+        <input id="custom-import-file" type="file" accept=".json,application/json" hidden>
+      </div>
+      <p class="custom-hint">模板已列出当前领域的指标名称。按需填写后导入，样本会追加到当前浏览器。</p>
+      <p id="custom-import-result" role="status" hidden></p>
       <label>自定义样本<select id="custom-sample" autofocus></select></label>
       <div class="custom-fields">
         <label><span>样本名称（选填）</span><input id="custom-name" type="text" maxlength="100" placeholder="例如 测试镜头 A"></label>
@@ -97,6 +104,6 @@
     <div class="custom-actions"><button id="remove-custom" type="button" hidden>删除此样本</button><button type="submit" form="custom-form">保存并绘制</button></div>
   </dialog>
   <dialog id="detail"><div class="dialog-head"><h2 id="detailTitle"></h2><button id="closeDialog" aria-label="关闭">×</button></div><div id="detailBody"></div></dialog>
-  <script>window.UNIFIED_WORKSPACE=true;</script><script src="workspace-index.js?v=619e613f32f8ef41"></script><script src="app.js?v=0572af034fddc76f"></script><script src="devices.js?v=8673ece999211d24"></script><script type="module" src="workspace.js?v=73b85145d97f4109"></script>
+  <script>window.UNIFIED_WORKSPACE=true;</script><script src="workspace-index.js?v=619e613f32f8ef41"></script><script src="app.js?v=0572af034fddc76f"></script><script src="devices.js?v=8673ece999211d24"></script><script type="module" src="workspace.js?v=46fec728cc9a850e"></script>
 </body>
 </html>
