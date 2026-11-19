@@ -1161,3 +1161,9 @@ Zang 2024 补件组件 DOI 在 Crossref 确认从属于 ACS Nano 主文，同一
 ## 2026-11-19-129 · Balli 100 μm 空气间隔实物与焦距误差原表
 
 从补件 Fig. S4 和出版社 XLSX 工作簿录 EPD 100 μm、名义 NA 0.24、分离距离 7 μm 的独立实物。九个 1000–1800 nm 谱点及一条汇总纳入 Balli 2020。FWHM 3.03–4.48 μm，实测聚焦效率 12.90%–21.55%，焦距误差从 1000 nm 的 +4.79% 至 1800 nm 的 −4.77%，1400 nm 保留表中零。作者报告 4.8% 焦距误差和 19% 平均效率。九点算术平均约 18.25%，作者平均权重未知。另补 Fig. 4e 已有四实物的 36 个有符号百分数及测量协议。累计 51 篇、1158 条，可见光 42 篇、787 条。绝对焦位与原始 PSF/MTF 待补。[本批核验](BALLI_2020_AIR_SPACED_REVIEW_2026-11-19.md)
+
+## 2026-11-19-130 · Balli 上线验收与 Shrestha 原件接续
+
+0.3.54 经 [PR #189](https://github.com/SelinLee/lens-evidence-atlas/pull/189) 合并为 60df1f3。PR 校验 44468984578、主线校验 44469078150 与 [Pages 44469078194](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44469078194) 成功。313 项测试通过，234 个公开文件与本地构建逐一匹配。独立无头 Chrome 核当前 51 篇、273 个配置、1158 条记录，可见光 42 篇、787 条。Balli 同文 6 配置、47 条记录，100 μm 实物 10 条。验证 45 个有符号数值的坐标归并，1400 nm 的真实零保留 5 条同坐标记录。逐项读出 D100 的九个焦距误差、FWHM、聚焦效率与一条作者均值。可见光过滤和分享重载、精确数据格返回锚点、原始 PDF／XLSX 字节及六个视口验收通过。[Balli 核验](BALLI_2020_AIR_SPACED_REVIEW_2026-11-19.md)
+
+顺查 Balli 所引 Shrestha 2018。取得正式主文 6603273 字节和原刊补件 `41377_2018_78_MOESM1_ESM.docx` 8764573 字节。Table S1 给 M1A、M1B、M2、M3 的设计焦距 200／200／800／30 μm 和名义 NA 0.24／0.24／0.13／0.88。Fig. 4b、c 图注为 M2 的 0.12 和 M3 的 0.85。读合著者 Overvig 学位论文第 2 章，同样保留该图文差异。已视觉核 Fig. 5a–f，M1B 的五个横向焦面图为 1200、1300、1400、1500、1600 nm，逐谱点焦距、效率、FWHM 与 Strehl 仅核到图曲线。接着核参考、各样品实测谱点、原表来源，以及 M3 无实验效率的装置限制。会话目标保持开启。[Shrestha 主文 Fig. 5](https://www.nature.com/articles/s41377-018-0078-x.pdf#page=8) · [补件](https://static-content.springer.com/esm/art%3A10.1038%2Fs41377-018-0078-x/MediaObjects/41377_2018_78_MOESM1_ESM.docx) · [合著者学位论文](https://files.core.ac.uk/download/267804737.pdf)
