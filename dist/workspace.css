@@ -133,3 +133,7 @@
 @media(max-width:759px) {
   .atlas-header .header-tools a[href="#references"] { display:inline; }
 }
+
+.custom-file-tools { display:flex; gap:8px; flex-wrap:wrap; }
+#custom-form #custom-import-result { color:var(--green); }
+#custom-form #custom-import-result[data-error] { color:#9b3624; }

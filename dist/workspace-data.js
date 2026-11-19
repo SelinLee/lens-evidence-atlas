@@ -201,3 +201,62 @@ export function availableAxes(domain, rows) {
   const y = ranked.filter(m=>m.id!==x).map(m=>({...m, pairs:axisPoints(rows,x,m.id).length})).sort((a,b)=>b.pairs-a.pairs)[0];
   return y?.pairs ? {x, y:y.id} : {x:'$model', y:x};
 }
+
+export const metricKey = metric => metric.parameterKey ?? metric.id;
+
+export function customImportTemplate(domain, customMetrics, definitions = []) {
+  const names = domain.metrics.filter(m=>m.numeric).map(m=>m.label);
+  if (!names.length) names.push(...definitions.map(m=>m.unit ? `${m.name} (${m.unit})` : m.name));
+  names.push(...customMetrics.map(m=>m.label));
+  if (!names.length) names.push('自定义指标名称 (单位)');
+  return {
+    domain:domain.id, domainName:domain.name,
+    说明:'在 values 中按指标名称填数值，缺项可删除或保留 null。添加新指标时可将单位写在名称中。多个样本放在 samples 数组内。点形可选 diamond、circle、square、triangle。',
+    samples:[{name:'样本 A', marker:{shape:'diamond',color:'#a34522'}, values:Object.fromEntries(names.map(name=>[name,null]))}]
+  };
+}
+
+// Validate the entire file and prepare one local-storage update.
+export function mergeCustomImport(file, domain, existing, draftMetrics = []) {
+  const object = v => v !== null && typeof v==='object' && !Array.isArray(v);
+  if (!object(file) || !Array.isArray(file.samples)) throw new Error('JSON 需要包含 samples 数组，请参考本领域的模板。');
+  if (file.domain !== undefined && file.domain!==domain.id) throw new Error('文件的 domain 与当前应用领域不一致，请选择对应领域或下载当前模板。');
+  const metrics = [...existing.metrics];
+  const byName = new Map([...draftMetrics,...metrics,...domain.metrics.filter(m=>m.numeric)].map(m=>[m.label,m]));
+  const signature = s => JSON.stringify([s.name,s.marker.shape,s.marker.color.toLowerCase(),Object.entries(s.values).sort(([a],[b])=>a<b?-1:a>b?1:0)]);
+  const known = new Set(existing.samples.map(signature)), added = [];
+  let duplicates = 0;
+  for (const [index, entry] of file.samples.entries()) {
+    const fail = message => { throw new Error(`第 ${index+1} 个样本：${message}`); };
+    if (!object(entry) || !object(entry.values)) fail('values 应为以指标名称为键的对象。');
+    if (entry.name != null && typeof entry.name!=='string') fail('name 应为样本名称。');
+    if (entry.marker !== undefined && !object(entry.marker)) fail('marker 应包含点形或颜色。');
+    const shape = entry.marker?.shape ?? 'diamond', color = entry.marker?.color ?? '#a34522';
+    if (!['diamond','circle','square','triangle'].includes(shape)) fail('点形须为 diamond、circle、square 或 triangle。');
+    if (typeof color!=='string' || !/^#[0-9a-f]{6}$/i.test(color)) fail('颜色须为六位十六进制颜色，例如 #a34522。');
+    const values = {};
+    for (const [rawLabel,value] of Object.entries(entry.values)) {
+      if (value === null || value === '') continue;
+      const label = rawLabel.trim();
+      if (!label) fail('请填写指标名称。');
+      if (!Number.isFinite(value)) fail(`“${label}”须填写 JSON 数字或 null。`);
+      let metric = byName.get(label);
+      if (!metric) {
+        metric = {id:'custom-'+crypto.randomUUID(),label,numeric:true,custom:true};
+        byName.set(label,metric);
+      }
+      if (metric.custom && !metrics.includes(metric)) metrics.push(metric);
+      const key = metricKey(metric);
+      if (Object.hasOwn(values,key)) fail(`“${label}”重复出现。`);
+      values[key] = value;
+    }
+    if (!Object.keys(values).length) continue;
+    const sample = {name:entry.name?.trim() || '自定义样本',marker:{shape,color:color.toLowerCase()},values};
+    const key = signature(sample);
+    if (known.has(key)) { duplicates++; continue; }
+    known.add(key);
+    added.push({...sample,id:'custom-'+crypto.randomUUID()});
+  }
+  if (!added.length && !duplicates) throw new Error('文件中还没有指标数值，请至少填写一个数字。');
+  return {data:{metrics,samples:[...existing.samples,...added]},added,duplicates};
+}

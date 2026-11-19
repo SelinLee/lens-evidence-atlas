@@ -1,9 +1,9 @@
-import {groupRows, valueSources, filteredRows, axisPoints, metricAvailability, availableAxes, customSampleAxes} from './workspace-data.js?v=a0cb173b8a73ca82';
+import {groupRows, valueSources, filteredRows, axisPoints, metricAvailability, availableAxes, customSampleAxes, metricKey, customImportTemplate, mergeCustomImport} from './workspace-data.js?v=6896d22a6c4f1788';
 
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const atlas = {domains:window.WORKSPACE_INDEX.domains, sources:new Map()}, evidence = window.LensEvidence;
-let currentDomain, pendingDomain;
+let currentDomain, pendingDomain, domainDefinitions;
 function requestedDomain(url) {
   const id = url.searchParams.get('domain') || url.hash.slice(1).split('/')[0];
   return atlas.domains.some(d=>d.id===id) ? id : 'phone';
@@ -30,6 +30,7 @@ async function activateDomain(id) {
       for (const key of Object.keys(row.values)) row.values[key] = bundle.values[row.values[key]];
     }
     currentDomain = bundle.domain;
+    domainDefinitions = bundle.evidence.metrics;
     atlas.sources = new Map(bundle.sources.map(s=>[s.id,s]));
     evidence.setEvidenceCatalog({sources:[],...bundle.evidence,meta:window.WORKSPACE_INDEX.meta,
       coverage:window.WORKSPACE_INDEX.coverage,applications:currentDomain.app ? [currentDomain.app] : []});
@@ -51,7 +52,6 @@ let referenceGroups = new Map(), citations = new Map(), activeRows = [], activeC
 let customData, draftDomain, draftMetrics, chartRows = [];
 const domain = () => currentDomain;
 const chartMetrics = () => [...domain().metrics, ...customData.metrics];
-const metricKey = metric => metric.parameterKey ?? metric.id;
 const storageKey = id => `lens-atlas.custom-samples.${id}`;
 const rowAnchor = r => `row-${state.domain}-${r.id}`;
 const cellAnchor = (r, m) => `cell-${state.domain}-${r.id}-${m.id}`;
@@ -92,6 +92,7 @@ function fieldMarkup(metric, value) {
 }
 
 function fillCustomForm() {
+  delete $('custom-form').dataset.edited;
   const sample = customData.samples.find(s=>s.id===$('custom-sample').value);
   draftMetrics = chartMetrics().filter(m=>m.numeric);
   draftMetrics.sort((a,b)=>Number([state.x,state.y].includes(b.id))-Number([state.x,state.y].includes(a.id)));
@@ -104,10 +105,15 @@ function fillCustomForm() {
   customError();
 }
 
+function sampleOptions() {
+  return '<option value="">新增样本</option>' + customData.samples.map(sample=>`<option value="${esc(sample.id)}">${esc(sample.name)}</option>`).join('');
+}
 function openCustom(id = '') {
+  $('custom-import-file').value = '';
+  $('custom-import-result').hidden = true;
   draftDomain = state.domain;
   $('custom-scope').textContent = `${domain().name} · 数据保存在当前浏览器。`;
-  $('custom-sample').innerHTML = '<option value="">新增样本</option>' + customData.samples.map(sample=>`<option value="${esc(sample.id)}">${esc(sample.name)}</option>`).join('');
+  $('custom-sample').innerHTML = sampleOptions();
   $('custom-sample').value = id;
   fillCustomForm();
   $('custom-dialog').showModal();
@@ -123,14 +129,66 @@ function saveCustomData(id, sample = null) {
   const metrics = [...new Map([...latest.metrics,...draftMetrics.filter(m=>m.custom)].map(m=>[m.id,m])).values()]
     .filter(m=>samples.some(s=>Number.isFinite(s.values[m.id])));
   const next = {metrics,samples};
-  try { localStorage.setItem(storageKey(draftDomain),JSON.stringify(next)); }
-  catch { customError('浏览器无法保存数据，请检查网站存储设置。'); return; }
+  try { writeCustomData(next); }
+  catch (error) { customError(error.message); return; }
   $('custom-dialog').close();
   if (draftDomain !== state.domain) return;
   customData = next;
   if (sample) Object.assign(state,customSampleAxes(customRow(sample,chartMetrics()),state.x,state.y));
   zoom = null;
   render();
+}
+
+function writeCustomData(data) {
+  try { localStorage.setItem(storageKey(draftDomain),JSON.stringify(data)); }
+  catch { throw new Error('浏览器无法保存数据，请检查网站存储空间和权限。'); }
+}
+
+async function importCustomFile() {
+  const input = $('custom-import-file'), file = input.files[0];
+  if (!file) return;
+  const result = $('custom-import-result');
+  const active = () => input.files[0]===file && $('custom-dialog').open && draftDomain===state.domain;
+  try {
+    const contents = await file.text();
+    if (!active()) return;
+    let parsed;
+    try { parsed = JSON.parse(contents.replace(/^\uFEFF/,'')); }
+    catch { throw new Error('JSON 格式有误，请检查引号、括号和逗号。'); }
+    const {data,added,duplicates} = mergeCustomImport(parsed,domain(),loadCustomData(draftDomain),draftMetrics);
+    const message = added.length ? `已导入 ${added.length} 个样本`+(duplicates ? `，跳过 ${duplicates} 个重复样本` : '')+'。' : '这些样本已在当前浏览器中。';
+    if (added.length) {
+      writeCustomData(data);
+      customData = data;
+      const metrics = chartMetrics(), rows = added.map(sample=>customRow(sample,metrics));
+      const row = rows.find(row=>axisPoints([row],state.x,state.y).length) ?? rows[0];
+      Object.assign(state,customSampleAxes(row,state.x,state.y));
+      zoom = null;
+      render();
+      if (!$('custom-form').dataset.edited) {
+        $('custom-dialog').close();
+        $('status').textContent = message+' '+$('status').textContent;
+        return;
+      }
+      const selected = $('custom-sample').value;
+      $('custom-sample').innerHTML = sampleOptions();
+      $('custom-sample').value = selected;
+      // Keep unsaved manual inputs available alongside the imported metrics.
+      for (const metric of data.metrics.filter(m=>!draftMetrics.some(d=>d.id===m.id))) {
+        draftMetrics.push(metric);
+        $('custom-values').insertAdjacentHTML('beforeend',fieldMarkup(metric,''));
+      }
+    }
+    result.removeAttribute('data-error');
+    result.textContent = message;
+  } catch (error) {
+    if (!active()) return;
+    result.setAttribute('data-error','');
+    result.textContent = error.message || '无法读取该 JSON 文件。';
+  } finally {
+    if (input.files[0]===file) input.value='';
+  }
+  result.hidden = false;
 }
 
 function citeSources(ids) {
@@ -768,7 +826,17 @@ if(oldRoute[1]) { if(oldRoute[1]==='sources')location.hash='references';else if(
 $('custom-samples').addEventListener('click',()=>openCustom());
 $('close-custom').addEventListener('click',()=>$('custom-dialog').close());
 $('custom-sample').addEventListener('change',fillCustomForm);
-$('custom-form').addEventListener('input',()=>customError());
+$('custom-template').addEventListener('click',()=>{
+  const template = customImportTemplate(domain(),draftMetrics.filter(m=>m.custom),domainDefinitions);
+  download('lens-'+draftDomain+'-template.json','application/json;charset=utf-8',JSON.stringify(template,null,2)+'\n');
+});
+$('custom-import').addEventListener('click',()=>$('custom-import-file').click());
+$('custom-import-file').addEventListener('change',importCustomFile);
+$('custom-form').addEventListener('input',event=>{
+  if (event.target.matches('#custom-import-file,#custom-sample')) return;
+  $('custom-form').dataset.edited='true';
+  customError();
+});
 $('add-custom-metric').addEventListener('click',()=>{
   const input = $('custom-metric-name'), name = input.value.trim(), unit = $('custom-metric-unit').value.trim();
   if (!name) { customError('请输入指标名称。'); input.focus(); return; }

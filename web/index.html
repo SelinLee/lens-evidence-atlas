@@ -77,6 +77,13 @@
     <div class="dialog-head"><h2 id="custom-title">自定义指标</h2><button id="close-custom" type="button" aria-label="关闭自定义指标">×</button></div>
     <form id="custom-form">
       <p id="custom-scope"></p>
+      <div class="custom-file-tools">
+        <button id="custom-template" type="button">下载 JSON 模板</button>
+        <button id="custom-import" type="button">导入 JSON 文件</button>
+        <input id="custom-import-file" type="file" accept=".json,application/json" hidden>
+      </div>
+      <p class="custom-hint">模板已列出当前领域的指标名称。按需填写后导入，样本会追加到当前浏览器。</p>
+      <p id="custom-import-result" role="status" hidden></p>
       <label>自定义样本<select id="custom-sample" autofocus></select></label>
       <div class="custom-fields">
         <label><span>样本名称（选填）</span><input id="custom-name" type="text" maxlength="100" placeholder="例如 测试镜头 A"></label>
