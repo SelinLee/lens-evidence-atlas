@@ -2164,6 +2164,60 @@
       "scope": "2026-11-19 按正式 DOI 精确关联检索为零。",
       "checked_on": "2026-11-19",
       "publication_source": "li_bandpass_pdf_2021"
+    },
+    {
+      "id": "chen_metacorrector_pdf_2018",
+      "title": "Chen et al. (2018), Broadband Achromatic Metasurface-Refractive Optics",
+      "url": "https://www.ece.nus.edu.sg/stfpage/eleqc/Weiting-NL2018.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "NUS 作者组存放的 8 页 Nano Letters 正式正文。pp7802–7806 Figs. 1、3–5。",
+      "checked_on": "2026-11-19",
+      "doi": "10.1021/acs.nanolett.8b03567"
+    },
+    {
+      "id": "chen_metacorrector_si_2018",
+      "title": "Chen et al. · 作者补件",
+      "url": "https://www.ece.nus.edu.sg/stfpage/eleqc/Weiting-NL2018-SI.pdf",
+      "kind": "supplementary_material",
+      "scope": "NUS 作者组存放的 14 页补件。pp3–4 方法、S4–S10 图和图注。",
+      "checked_on": "2026-11-19",
+      "publication_source": "chen_metacorrector_pdf_2018"
+    },
+    {
+      "id": "chen_metacorrector_publisher_2018",
+      "title": "ACS · 正式期刊入口",
+      "url": "https://doi.org/10.1021/acs.nanolett.8b03567",
+      "kind": "publication_archive",
+      "scope": "Nano Letters 18(12), 7801–7808，正式发表 2018-11-13。",
+      "checked_on": "2026-11-19",
+      "publication_source": "chen_metacorrector_pdf_2018"
+    },
+    {
+      "id": "chen_metacorrector_acs_si_2018",
+      "title": "ACS · 正式补件入口",
+      "url": "https://pubs.acs.org/doi/suppl/10.1021/acs.nanolett.8b03567/suppl_file/nl8b03567_si_001.pdf",
+      "kind": "publication_archive",
+      "scope": "期刊命名文件 nl8b03567_si_001.pdf。直接下载返回 403，完整补件可由 NUS 作者组取得。",
+      "checked_on": "2026-11-19",
+      "publication_source": "chen_metacorrector_pdf_2018"
+    },
+    {
+      "id": "chen_metacorrector_crossref_2018",
+      "title": "Crossref · DOI、发表日期与引用次数",
+      "url": "https://api.crossref.org/works/10.1021/acs.nanolett.8b03567",
+      "kind": "repository_metadata",
+      "scope": "2026-11-19 查得 is-referenced-by-count 237。",
+      "checked_on": "2026-11-19",
+      "publication_source": "chen_metacorrector_pdf_2018"
+    },
+    {
+      "id": "chen_metacorrector_data_lookup_2018",
+      "title": "DataCite · 正式 DOI 的精确关联数据检索",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1021%2Facs.nanolett.8b03567%22",
+      "kind": "repository_metadata",
+      "scope": "精确关联 DOI 及补充题名检索均零项。",
+      "checked_on": "2026-11-19",
+      "publication_source": "chen_metacorrector_pdf_2018"
     }
   ],
   "domains": {
@@ -6083,6 +6137,26 @@
             {
               "source": "wang_metaaxicon_si_2026",
               "location": "S6 及 Fig. S5；主文 pp9–10 Fig. 7"
+            }
+          ]
+        },
+        {
+          "id": "reference_lens_efficiency_peak_pct",
+          "label": "参考折射镜归一聚焦效率峰值 (%)",
+          "definition": "作者光谱扫描报告的最大焦区功率比，以移除超表面后的折射镜参考光路功率归一。",
+          "conditions": "注明参考光路、偏振器／检偏器状态、焦区、口径、光谱采样和峰值谱点是否有作者数表。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "chen_metacorrector_si_2018",
+              "location": "p4 Focusing efficiency measurement"
+            },
+            {
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "pp7804–7805 Fig. 3a 及对应正文"
             }
           ]
         }
@@ -246969,9 +247043,3020 @@
               "checked_on": "2026-11-19"
             }
           }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_overview",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 器件与残余焦移",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "作者报告及数字证据缺口。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "TiO₂ 纳米鳍／石英基底／空气间隙／LA4249",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "晶格 400 nm、校正片基底 0.5 mm、空气间隙 5 mm、球面镜中心厚 2.23 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "lattice_nm": 400,
+              "substrate_um": 500,
+              "air_gap_um": 5000,
+              "refractive_lens_center_thickness_um": 2230
+            },
+            "chromatic": {
+              "value": "作者报告实测残余轴向焦移为数十微米",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3c；p7805 对应段",
+              "note": "作者将轴向实测焦移描述为数十微米，未给确切幅值、逐谱点焦位和 z′ 绝对起点。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sample_wavelengths_nm": [
+                460,
+                490,
+                530,
+                570,
+                590,
+                640,
+                700
+              ],
+              "sourceIds": [
+                "chen_metacorrector_pdf_2018",
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_publisher_2018",
+                "chen_metacorrector_acs_si_2018",
+                "chen_metacorrector_crossref_2018",
+                "chen_metacorrector_data_lookup_2018"
+              ]
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 pp7804–7805 Fig. 3c 及讨论",
+              "note": "作者将轴向实测焦移描述为数十微米，未给确切幅值、逐谱点焦位和 z′ 绝对起点。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "strehl": {
+              "value": null,
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 p10 Fig. S6b 红圆点",
+              "note": "作者由实测计算的均值曲线，误差条跨度为 2 SD，样本量及逐点数表缺。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "error_bar_span_sd": 2,
+              "author_statistic": "mean",
+              "chart_x_unit": "nm"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 p10 Fig. S6a 红圆点",
+              "note": "实测宽度，单位 μm。误差条跨度为 2 SD，逐点数据及方向归属待补。蓝圆点为 0.514λ／NA 理论。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "error_bar_span_sd": 2
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 Figs. 3–4；补件 S4–S9；DataCite 精确关联检索",
+              "note": "正文及补件给截面图与强度曲线。原始二维 PSF、相机物方标定、频轴及原始 MTF 待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_pdf_2018",
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_data_lookup_2018"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_axial_460",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 460 nm · 轴扫",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "实际测量波长的纵向 PSF 图。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 460,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3c 自上而下第 1 行，460 nm",
+              "note": "实测轴向强度图内印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "50× 物镜沿 z′ 移动，每步 5 μm",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 及 Fig. S4a；主文 p7804 Fig. 3c 自上而下第 1 行，460 nm",
+              "note": "Nikon 50× NA 0.55，180 mm 筒镜，DCC1545M 单色相机。图横轴标 −200 至 400 μm，虚线为横向焦斑评价面，其 z′ 原点绝对位置未印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "axial_scan_step_um": 5,
+              "relay_objective_magnification": 50,
+              "relay_objective_na": 0.55,
+              "focal_plane_reference_wavelength_nm": 460,
+              "axis_origin": null,
+              "polarization_route": "crossed_linear_polarizers"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3c 自上而下第 1 行，460 nm",
+              "note": "轴向强度截面有图，逐波长峰位和绝对焦距数值待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_axial_490",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 490 nm · 轴扫",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "实际测量波长的纵向 PSF 图。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 490,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3c 自上而下第 2 行，490 nm",
+              "note": "实测轴向强度图内印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "50× 物镜沿 z′ 移动，每步 5 μm",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 及 Fig. S4a；主文 p7804 Fig. 3c 自上而下第 2 行，490 nm",
+              "note": "Nikon 50× NA 0.55，180 mm 筒镜，DCC1545M 单色相机。图横轴标 −200 至 400 μm，虚线为横向焦斑评价面，其 z′ 原点绝对位置未印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "axial_scan_step_um": 5,
+              "relay_objective_magnification": 50,
+              "relay_objective_na": 0.55,
+              "focal_plane_reference_wavelength_nm": 460,
+              "axis_origin": null,
+              "polarization_route": "crossed_linear_polarizers"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3c 自上而下第 2 行，490 nm",
+              "note": "轴向强度截面有图，逐波长峰位和绝对焦距数值待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_axial_530",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 530 nm · 轴扫",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "实际测量波长的纵向 PSF 图。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3c 自上而下第 3 行，530 nm",
+              "note": "实测轴向强度图内印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "50× 物镜沿 z′ 移动，每步 5 μm",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 及 Fig. S4a；主文 p7804 Fig. 3c 自上而下第 3 行，530 nm",
+              "note": "Nikon 50× NA 0.55，180 mm 筒镜，DCC1545M 单色相机。图横轴标 −200 至 400 μm，虚线为横向焦斑评价面，其 z′ 原点绝对位置未印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "axial_scan_step_um": 5,
+              "relay_objective_magnification": 50,
+              "relay_objective_na": 0.55,
+              "focal_plane_reference_wavelength_nm": 460,
+              "axis_origin": null,
+              "polarization_route": "crossed_linear_polarizers"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3c 自上而下第 3 行，530 nm",
+              "note": "轴向强度截面有图，逐波长峰位和绝对焦距数值待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_axial_570",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 570 nm · 轴扫",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "实际测量波长的纵向 PSF 图。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 570,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3c 自上而下第 4 行，570 nm",
+              "note": "实测轴向强度图内印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "50× 物镜沿 z′ 移动，每步 5 μm",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 及 Fig. S4a；主文 p7804 Fig. 3c 自上而下第 4 行，570 nm",
+              "note": "Nikon 50× NA 0.55，180 mm 筒镜，DCC1545M 单色相机。图横轴标 −200 至 400 μm，虚线为横向焦斑评价面，其 z′ 原点绝对位置未印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "axial_scan_step_um": 5,
+              "relay_objective_magnification": 50,
+              "relay_objective_na": 0.55,
+              "focal_plane_reference_wavelength_nm": 460,
+              "axis_origin": null,
+              "polarization_route": "crossed_linear_polarizers"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3c 自上而下第 4 行，570 nm",
+              "note": "轴向强度截面有图，逐波长峰位和绝对焦距数值待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_axial_590",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 590 nm · 轴扫",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "实际测量波长的纵向 PSF 图。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 590,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3c 自上而下第 5 行，590 nm",
+              "note": "实测轴向强度图内印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "50× 物镜沿 z′ 移动，每步 5 μm",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 及 Fig. S4a；主文 p7804 Fig. 3c 自上而下第 5 行，590 nm",
+              "note": "Nikon 50× NA 0.55，180 mm 筒镜，DCC1545M 单色相机。图横轴标 −200 至 400 μm，虚线为横向焦斑评价面，其 z′ 原点绝对位置未印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "axial_scan_step_um": 5,
+              "relay_objective_magnification": 50,
+              "relay_objective_na": 0.55,
+              "focal_plane_reference_wavelength_nm": 460,
+              "axis_origin": null,
+              "polarization_route": "crossed_linear_polarizers"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3c 自上而下第 5 行，590 nm",
+              "note": "轴向强度截面有图，逐波长峰位和绝对焦距数值待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_axial_640",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 640 nm · 轴扫",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "实际测量波长的纵向 PSF 图。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 640,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3c 自上而下第 6 行，640 nm",
+              "note": "实测轴向强度图内印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "50× 物镜沿 z′ 移动，每步 5 μm",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 及 Fig. S4a；主文 p7804 Fig. 3c 自上而下第 6 行，640 nm",
+              "note": "Nikon 50× NA 0.55，180 mm 筒镜，DCC1545M 单色相机。图横轴标 −200 至 400 μm，虚线为横向焦斑评价面，其 z′ 原点绝对位置未印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "axial_scan_step_um": 5,
+              "relay_objective_magnification": 50,
+              "relay_objective_na": 0.55,
+              "focal_plane_reference_wavelength_nm": 460,
+              "axis_origin": null,
+              "polarization_route": "crossed_linear_polarizers"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3c 自上而下第 6 行，640 nm",
+              "note": "轴向强度截面有图，逐波长峰位和绝对焦距数值待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_axial_700",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 700 nm · 轴扫",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "实际测量波长的纵向 PSF 图。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3c 自上而下第 7 行，700 nm",
+              "note": "实测轴向强度图内印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "50× 物镜沿 z′ 移动，每步 5 μm",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 及 Fig. S4a；主文 p7804 Fig. 3c 自上而下第 7 行，700 nm",
+              "note": "Nikon 50× NA 0.55，180 mm 筒镜，DCC1545M 单色相机。图横轴标 −200 至 400 μm，虚线为横向焦斑评价面，其 z′ 原点绝对位置未印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "axial_scan_step_um": 5,
+              "relay_objective_magnification": 50,
+              "relay_objective_na": 0.55,
+              "focal_plane_reference_wavelength_nm": 460,
+              "axis_origin": null,
+              "polarization_route": "crossed_linear_polarizers"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3c 自上而下第 7 行，700 nm",
+              "note": "轴向强度截面有图，逐波长峰位和绝对焦距数值待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_spot_460",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 460 nm · 固定面焦斑",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "在 460 nm 焦面取固定平面焦斑。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 460,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3e 自左向右第 1 列，460 nm",
+              "note": "横向焦斑图内谱点印字，630 nm 是此协议的谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "取 460 nm 焦面，测其余波长 PSF",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 Focal spot and imaging measurement；p8 Fig. S4a；主文 p7804 Fig. 3e 自左向右第 1 列，460 nm",
+              "note": "Olympus 10× NA 0.3，200 mm 筒镜。1.5 mm 虹膜限束，焦斑剖面横轴约 −17 至 17 μm，纵轴为归一化强度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "focal_plane_reference_wavelength_nm": 460,
+              "relay_objective_magnification": 10,
+              "relay_objective_na": 0.3,
+              "illumination_iris_um": 1500
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3e 自左向右第 1 列，460 nm",
+              "note": "图给归一化剖面，逐色 FWHM 与剖面物方像素标定待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_spot_490",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 490 nm · 固定面焦斑",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "在 460 nm 焦面取固定平面焦斑。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 490,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3e 自左向右第 2 列，490 nm",
+              "note": "横向焦斑图内谱点印字，630 nm 是此协议的谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "取 460 nm 焦面，测其余波长 PSF",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 Focal spot and imaging measurement；p8 Fig. S4a；主文 p7804 Fig. 3e 自左向右第 2 列，490 nm",
+              "note": "Olympus 10× NA 0.3，200 mm 筒镜。1.5 mm 虹膜限束，焦斑剖面横轴约 −17 至 17 μm，纵轴为归一化强度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "focal_plane_reference_wavelength_nm": 460,
+              "relay_objective_magnification": 10,
+              "relay_objective_na": 0.3,
+              "illumination_iris_um": 1500
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3e 自左向右第 2 列，490 nm",
+              "note": "图给归一化剖面，逐色 FWHM 与剖面物方像素标定待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_spot_530",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 530 nm · 固定面焦斑",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "在 460 nm 焦面取固定平面焦斑。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3e 自左向右第 3 列，530 nm",
+              "note": "横向焦斑图内谱点印字，630 nm 是此协议的谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "取 460 nm 焦面，测其余波长 PSF",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 Focal spot and imaging measurement；p8 Fig. S4a；主文 p7804 Fig. 3e 自左向右第 3 列，530 nm",
+              "note": "Olympus 10× NA 0.3，200 mm 筒镜。1.5 mm 虹膜限束，焦斑剖面横轴约 −17 至 17 μm，纵轴为归一化强度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "focal_plane_reference_wavelength_nm": 460,
+              "relay_objective_magnification": 10,
+              "relay_objective_na": 0.3,
+              "illumination_iris_um": 1500
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3e 自左向右第 3 列，530 nm",
+              "note": "图给归一化剖面，逐色 FWHM 与剖面物方像素标定待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_spot_570",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 570 nm · 固定面焦斑",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "在 460 nm 焦面取固定平面焦斑。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 570,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3e 自左向右第 4 列，570 nm",
+              "note": "横向焦斑图内谱点印字，630 nm 是此协议的谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "取 460 nm 焦面，测其余波长 PSF",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 Focal spot and imaging measurement；p8 Fig. S4a；主文 p7804 Fig. 3e 自左向右第 4 列，570 nm",
+              "note": "Olympus 10× NA 0.3，200 mm 筒镜。1.5 mm 虹膜限束，焦斑剖面横轴约 −17 至 17 μm，纵轴为归一化强度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "focal_plane_reference_wavelength_nm": 460,
+              "relay_objective_magnification": 10,
+              "relay_objective_na": 0.3,
+              "illumination_iris_um": 1500
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3e 自左向右第 4 列，570 nm",
+              "note": "图给归一化剖面，逐色 FWHM 与剖面物方像素标定待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_spot_630",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 630 nm · 固定面焦斑",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "在 460 nm 焦面取固定平面焦斑。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 630,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3e 自左向右第 5 列，630 nm",
+              "note": "横向焦斑图内谱点印字，630 nm 是此协议的谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "取 460 nm 焦面，测其余波长 PSF",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 Focal spot and imaging measurement；p8 Fig. S4a；主文 p7804 Fig. 3e 自左向右第 5 列，630 nm",
+              "note": "Olympus 10× NA 0.3，200 mm 筒镜。1.5 mm 虹膜限束，焦斑剖面横轴约 −17 至 17 μm，纵轴为归一化强度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "focal_plane_reference_wavelength_nm": 460,
+              "relay_objective_magnification": 10,
+              "relay_objective_na": 0.3,
+              "illumination_iris_um": 1500
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3e 自左向右第 5 列，630 nm",
+              "note": "图给归一化剖面，逐色 FWHM 与剖面物方像素标定待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_spot_700",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 700 nm · 固定面焦斑",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "在 460 nm 焦面取固定平面焦斑。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3e 自左向右第 6 列，700 nm",
+              "note": "横向焦斑图内谱点印字，630 nm 是此协议的谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "取 460 nm 焦面，测其余波长 PSF",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 Focal spot and imaging measurement；p8 Fig. S4a；主文 p7804 Fig. 3e 自左向右第 6 列，700 nm",
+              "note": "Olympus 10× NA 0.3，200 mm 筒镜。1.5 mm 虹膜限束，焦斑剖面横轴约 −17 至 17 μm，纵轴为归一化强度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "focal_plane_reference_wavelength_nm": 460,
+              "relay_objective_magnification": 10,
+              "relay_objective_na": 0.3,
+              "illumination_iris_um": 1500
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3e 自左向右第 6 列，700 nm",
+              "note": "图给归一化剖面，逐色 FWHM 与剖面物方像素标定待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_bare_overview",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "bare",
+          "model": "Chen 2018 · 折超混合 · 裸折射镜 · 器件与残余焦移",
+          "variant": "球面折射镜实测对照",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "作者报告及数字证据缺口。",
+          "values": {
+            "material": {
+              "value": "LA4249 球面平凸熔融石英镜",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；pp7804–7805 Fig. 3d/f",
+              "note": "同一折射镜，移除超表面校正片。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "裸折射镜的轴向对照",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3d；p7805 对应段",
+              "note": "作者报告 530 nm 以上出现明显失焦，逐色轴向峰位和 z′ 绝对起点未印。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sample_wavelengths_nm": [
+                460,
+                490,
+                530,
+                570,
+                590,
+                640,
+                700
+              ],
+              "sourceIds": [
+                "chen_metacorrector_pdf_2018",
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_publisher_2018",
+                "chen_metacorrector_acs_si_2018",
+                "chen_metacorrector_crossref_2018",
+                "chen_metacorrector_data_lookup_2018"
+              ]
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 pp7804–7805 Fig. 3d 及讨论",
+              "note": "作者报告 530 nm 以上出现明显失焦，逐色轴向峰位和 z′ 绝对起点未印。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "strehl": {
+              "value": null,
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 p10 Fig. S6b 蓝圆点",
+              "note": "作者由实测计算的均值曲线，误差条跨度为 2 SD，样本量及逐点数表缺。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "error_bar_span_sd": 2,
+              "author_statistic": "mean",
+              "chart_x_unit": "nm"
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 Figs. 3–4；补件 S4–S9；DataCite 精确关联检索",
+              "note": "正文及补件给截面图与强度曲线。原始二维 PSF、相机物方标定、频轴及原始 MTF 待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_pdf_2018",
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_data_lookup_2018"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_bare_axial_460",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "bare",
+          "model": "Chen 2018 · 折超混合 · 裸折射镜 · 460 nm · 轴扫",
+          "variant": "球面折射镜实测对照",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "实际测量波长的纵向 PSF 图。",
+          "values": {
+            "material": {
+              "value": "LA4249 球面平凸熔融石英镜",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；pp7804–7805 Fig. 3d/f",
+              "note": "同一折射镜，移除超表面校正片。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 460,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3d 自上而下第 1 行，460 nm",
+              "note": "实测轴向强度图内印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "50× 物镜沿 z′ 移动，每步 5 μm",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 及 Fig. S4a；主文 p7804 Fig. 3d 自上而下第 1 行，460 nm",
+              "note": "Nikon 50× NA 0.55，180 mm 筒镜，DCC1545M 单色相机。图横轴标 −200 至 400 μm，虚线为横向焦斑评价面，其 z′ 原点绝对位置未印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "axial_scan_step_um": 5,
+              "relay_objective_magnification": 50,
+              "relay_objective_na": 0.55,
+              "focal_plane_reference_wavelength_nm": 460,
+              "axis_origin": null,
+              "polarization_route": "not_specified_for_this_panel"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3d 自上而下第 1 行，460 nm",
+              "note": "轴向强度截面有图，逐波长峰位和绝对焦距数值待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_bare_axial_490",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "bare",
+          "model": "Chen 2018 · 折超混合 · 裸折射镜 · 490 nm · 轴扫",
+          "variant": "球面折射镜实测对照",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "实际测量波长的纵向 PSF 图。",
+          "values": {
+            "material": {
+              "value": "LA4249 球面平凸熔融石英镜",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；pp7804–7805 Fig. 3d/f",
+              "note": "同一折射镜，移除超表面校正片。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 490,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3d 自上而下第 2 行，490 nm",
+              "note": "实测轴向强度图内印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "50× 物镜沿 z′ 移动，每步 5 μm",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 及 Fig. S4a；主文 p7804 Fig. 3d 自上而下第 2 行，490 nm",
+              "note": "Nikon 50× NA 0.55，180 mm 筒镜，DCC1545M 单色相机。图横轴标 −200 至 400 μm，虚线为横向焦斑评价面，其 z′ 原点绝对位置未印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "axial_scan_step_um": 5,
+              "relay_objective_magnification": 50,
+              "relay_objective_na": 0.55,
+              "focal_plane_reference_wavelength_nm": 460,
+              "axis_origin": null,
+              "polarization_route": "not_specified_for_this_panel"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3d 自上而下第 2 行，490 nm",
+              "note": "轴向强度截面有图，逐波长峰位和绝对焦距数值待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_bare_axial_530",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "bare",
+          "model": "Chen 2018 · 折超混合 · 裸折射镜 · 530 nm · 轴扫",
+          "variant": "球面折射镜实测对照",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "实际测量波长的纵向 PSF 图。",
+          "values": {
+            "material": {
+              "value": "LA4249 球面平凸熔融石英镜",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；pp7804–7805 Fig. 3d/f",
+              "note": "同一折射镜，移除超表面校正片。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3d 自上而下第 3 行，530 nm",
+              "note": "实测轴向强度图内印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "50× 物镜沿 z′ 移动，每步 5 μm",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 及 Fig. S4a；主文 p7804 Fig. 3d 自上而下第 3 行，530 nm",
+              "note": "Nikon 50× NA 0.55，180 mm 筒镜，DCC1545M 单色相机。图横轴标 −200 至 400 μm，虚线为横向焦斑评价面，其 z′ 原点绝对位置未印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "axial_scan_step_um": 5,
+              "relay_objective_magnification": 50,
+              "relay_objective_na": 0.55,
+              "focal_plane_reference_wavelength_nm": 460,
+              "axis_origin": null,
+              "polarization_route": "not_specified_for_this_panel"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3d 自上而下第 3 行，530 nm",
+              "note": "轴向强度截面有图，逐波长峰位和绝对焦距数值待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_bare_axial_570",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "bare",
+          "model": "Chen 2018 · 折超混合 · 裸折射镜 · 570 nm · 轴扫",
+          "variant": "球面折射镜实测对照",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "实际测量波长的纵向 PSF 图。",
+          "values": {
+            "material": {
+              "value": "LA4249 球面平凸熔融石英镜",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；pp7804–7805 Fig. 3d/f",
+              "note": "同一折射镜，移除超表面校正片。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 570,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3d 自上而下第 4 行，570 nm",
+              "note": "实测轴向强度图内印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "50× 物镜沿 z′ 移动，每步 5 μm",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 及 Fig. S4a；主文 p7804 Fig. 3d 自上而下第 4 行，570 nm",
+              "note": "Nikon 50× NA 0.55，180 mm 筒镜，DCC1545M 单色相机。图横轴标 −200 至 400 μm，虚线为横向焦斑评价面，其 z′ 原点绝对位置未印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "axial_scan_step_um": 5,
+              "relay_objective_magnification": 50,
+              "relay_objective_na": 0.55,
+              "focal_plane_reference_wavelength_nm": 460,
+              "axis_origin": null,
+              "polarization_route": "not_specified_for_this_panel"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3d 自上而下第 4 行，570 nm",
+              "note": "轴向强度截面有图，逐波长峰位和绝对焦距数值待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_bare_axial_590",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "bare",
+          "model": "Chen 2018 · 折超混合 · 裸折射镜 · 590 nm · 轴扫",
+          "variant": "球面折射镜实测对照",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "实际测量波长的纵向 PSF 图。",
+          "values": {
+            "material": {
+              "value": "LA4249 球面平凸熔融石英镜",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；pp7804–7805 Fig. 3d/f",
+              "note": "同一折射镜，移除超表面校正片。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 590,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3d 自上而下第 5 行，590 nm",
+              "note": "实测轴向强度图内印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "50× 物镜沿 z′ 移动，每步 5 μm",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 及 Fig. S4a；主文 p7804 Fig. 3d 自上而下第 5 行，590 nm",
+              "note": "Nikon 50× NA 0.55，180 mm 筒镜，DCC1545M 单色相机。图横轴标 −200 至 400 μm，虚线为横向焦斑评价面，其 z′ 原点绝对位置未印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "axial_scan_step_um": 5,
+              "relay_objective_magnification": 50,
+              "relay_objective_na": 0.55,
+              "focal_plane_reference_wavelength_nm": 460,
+              "axis_origin": null,
+              "polarization_route": "not_specified_for_this_panel"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3d 自上而下第 5 行，590 nm",
+              "note": "轴向强度截面有图，逐波长峰位和绝对焦距数值待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_bare_axial_640",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "bare",
+          "model": "Chen 2018 · 折超混合 · 裸折射镜 · 640 nm · 轴扫",
+          "variant": "球面折射镜实测对照",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "实际测量波长的纵向 PSF 图。",
+          "values": {
+            "material": {
+              "value": "LA4249 球面平凸熔融石英镜",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；pp7804–7805 Fig. 3d/f",
+              "note": "同一折射镜，移除超表面校正片。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 640,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3d 自上而下第 6 行，640 nm",
+              "note": "实测轴向强度图内印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "50× 物镜沿 z′ 移动，每步 5 μm",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 及 Fig. S4a；主文 p7804 Fig. 3d 自上而下第 6 行，640 nm",
+              "note": "Nikon 50× NA 0.55，180 mm 筒镜，DCC1545M 单色相机。图横轴标 −200 至 400 μm，虚线为横向焦斑评价面，其 z′ 原点绝对位置未印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "axial_scan_step_um": 5,
+              "relay_objective_magnification": 50,
+              "relay_objective_na": 0.55,
+              "focal_plane_reference_wavelength_nm": 460,
+              "axis_origin": null,
+              "polarization_route": "not_specified_for_this_panel"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3d 自上而下第 6 行，640 nm",
+              "note": "轴向强度截面有图，逐波长峰位和绝对焦距数值待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_bare_axial_700",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "bare",
+          "model": "Chen 2018 · 折超混合 · 裸折射镜 · 700 nm · 轴扫",
+          "variant": "球面折射镜实测对照",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "实际测量波长的纵向 PSF 图。",
+          "values": {
+            "material": {
+              "value": "LA4249 球面平凸熔融石英镜",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；pp7804–7805 Fig. 3d/f",
+              "note": "同一折射镜，移除超表面校正片。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3d 自上而下第 7 行，700 nm",
+              "note": "实测轴向强度图内印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "50× 物镜沿 z′ 移动，每步 5 μm",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 及 Fig. S4a；主文 p7804 Fig. 3d 自上而下第 7 行，700 nm",
+              "note": "Nikon 50× NA 0.55，180 mm 筒镜，DCC1545M 单色相机。图横轴标 −200 至 400 μm，虚线为横向焦斑评价面，其 z′ 原点绝对位置未印。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "axial_scan_step_um": 5,
+              "relay_objective_magnification": 50,
+              "relay_objective_na": 0.55,
+              "focal_plane_reference_wavelength_nm": 460,
+              "axis_origin": null,
+              "polarization_route": "not_specified_for_this_panel"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3d 自上而下第 7 行，700 nm",
+              "note": "轴向强度截面有图，逐波长峰位和绝对焦距数值待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_bare_spot_460",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "bare",
+          "model": "Chen 2018 · 折超混合 · 裸折射镜 · 460 nm · 固定面焦斑",
+          "variant": "球面折射镜实测对照",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "在 460 nm 焦面取固定平面焦斑。",
+          "values": {
+            "material": {
+              "value": "LA4249 球面平凸熔融石英镜",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；pp7804–7805 Fig. 3d/f",
+              "note": "同一折射镜，移除超表面校正片。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805；补件 p3 Focal spot and imaging measurement",
+              "note": "限束光阑直径，裸球面镜本体口径待补。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "aperture_role": "illumination_iris_diameter",
+              "sourceIds": [
+                "chen_metacorrector_pdf_2018",
+                "chen_metacorrector_si_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 460,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3f 自左向右第 1 列，460 nm",
+              "note": "横向焦斑图内谱点印字，630 nm 是此协议的谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "取 460 nm 焦面，测其余波长 PSF",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 Focal spot and imaging measurement；p8 Fig. S4a；主文 p7804 Fig. 3f 自左向右第 1 列，460 nm",
+              "note": "Olympus 10× NA 0.3，200 mm 筒镜。1.5 mm 虹膜限束，焦斑剖面横轴约 −17 至 17 μm，纵轴为归一化强度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "focal_plane_reference_wavelength_nm": 460,
+              "relay_objective_magnification": 10,
+              "relay_objective_na": 0.3,
+              "illumination_iris_um": 1500
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3f 自左向右第 1 列，460 nm",
+              "note": "图给归一化剖面，逐色 FWHM 与剖面物方像素标定待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_bare_spot_490",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "bare",
+          "model": "Chen 2018 · 折超混合 · 裸折射镜 · 490 nm · 固定面焦斑",
+          "variant": "球面折射镜实测对照",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "在 460 nm 焦面取固定平面焦斑。",
+          "values": {
+            "material": {
+              "value": "LA4249 球面平凸熔融石英镜",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；pp7804–7805 Fig. 3d/f",
+              "note": "同一折射镜，移除超表面校正片。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805；补件 p3 Focal spot and imaging measurement",
+              "note": "限束光阑直径，裸球面镜本体口径待补。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "aperture_role": "illumination_iris_diameter",
+              "sourceIds": [
+                "chen_metacorrector_pdf_2018",
+                "chen_metacorrector_si_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 490,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3f 自左向右第 2 列，490 nm",
+              "note": "横向焦斑图内谱点印字，630 nm 是此协议的谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "取 460 nm 焦面，测其余波长 PSF",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 Focal spot and imaging measurement；p8 Fig. S4a；主文 p7804 Fig. 3f 自左向右第 2 列，490 nm",
+              "note": "Olympus 10× NA 0.3，200 mm 筒镜。1.5 mm 虹膜限束，焦斑剖面横轴约 −17 至 17 μm，纵轴为归一化强度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "focal_plane_reference_wavelength_nm": 460,
+              "relay_objective_magnification": 10,
+              "relay_objective_na": 0.3,
+              "illumination_iris_um": 1500
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3f 自左向右第 2 列，490 nm",
+              "note": "图给归一化剖面，逐色 FWHM 与剖面物方像素标定待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_bare_spot_530",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "bare",
+          "model": "Chen 2018 · 折超混合 · 裸折射镜 · 530 nm · 固定面焦斑",
+          "variant": "球面折射镜实测对照",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "在 460 nm 焦面取固定平面焦斑。",
+          "values": {
+            "material": {
+              "value": "LA4249 球面平凸熔融石英镜",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；pp7804–7805 Fig. 3d/f",
+              "note": "同一折射镜，移除超表面校正片。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805；补件 p3 Focal spot and imaging measurement",
+              "note": "限束光阑直径，裸球面镜本体口径待补。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "aperture_role": "illumination_iris_diameter",
+              "sourceIds": [
+                "chen_metacorrector_pdf_2018",
+                "chen_metacorrector_si_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3f 自左向右第 3 列，530 nm",
+              "note": "横向焦斑图内谱点印字，630 nm 是此协议的谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "取 460 nm 焦面，测其余波长 PSF",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 Focal spot and imaging measurement；p8 Fig. S4a；主文 p7804 Fig. 3f 自左向右第 3 列，530 nm",
+              "note": "Olympus 10× NA 0.3，200 mm 筒镜。1.5 mm 虹膜限束，焦斑剖面横轴约 −17 至 17 μm，纵轴为归一化强度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "focal_plane_reference_wavelength_nm": 460,
+              "relay_objective_magnification": 10,
+              "relay_objective_na": 0.3,
+              "illumination_iris_um": 1500
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3f 自左向右第 3 列，530 nm",
+              "note": "图给归一化剖面，逐色 FWHM 与剖面物方像素标定待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_bare_spot_570",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "bare",
+          "model": "Chen 2018 · 折超混合 · 裸折射镜 · 570 nm · 固定面焦斑",
+          "variant": "球面折射镜实测对照",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "在 460 nm 焦面取固定平面焦斑。",
+          "values": {
+            "material": {
+              "value": "LA4249 球面平凸熔融石英镜",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；pp7804–7805 Fig. 3d/f",
+              "note": "同一折射镜，移除超表面校正片。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805；补件 p3 Focal spot and imaging measurement",
+              "note": "限束光阑直径，裸球面镜本体口径待补。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "aperture_role": "illumination_iris_diameter",
+              "sourceIds": [
+                "chen_metacorrector_pdf_2018",
+                "chen_metacorrector_si_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 570,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3f 自左向右第 4 列，570 nm",
+              "note": "横向焦斑图内谱点印字，630 nm 是此协议的谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "取 460 nm 焦面，测其余波长 PSF",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 Focal spot and imaging measurement；p8 Fig. S4a；主文 p7804 Fig. 3f 自左向右第 4 列，570 nm",
+              "note": "Olympus 10× NA 0.3，200 mm 筒镜。1.5 mm 虹膜限束，焦斑剖面横轴约 −17 至 17 μm，纵轴为归一化强度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "focal_plane_reference_wavelength_nm": 460,
+              "relay_objective_magnification": 10,
+              "relay_objective_na": 0.3,
+              "illumination_iris_um": 1500
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3f 自左向右第 4 列，570 nm",
+              "note": "图给归一化剖面，逐色 FWHM 与剖面物方像素标定待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_bare_spot_630",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "bare",
+          "model": "Chen 2018 · 折超混合 · 裸折射镜 · 630 nm · 固定面焦斑",
+          "variant": "球面折射镜实测对照",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "在 460 nm 焦面取固定平面焦斑。",
+          "values": {
+            "material": {
+              "value": "LA4249 球面平凸熔融石英镜",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；pp7804–7805 Fig. 3d/f",
+              "note": "同一折射镜，移除超表面校正片。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805；补件 p3 Focal spot and imaging measurement",
+              "note": "限束光阑直径，裸球面镜本体口径待补。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "aperture_role": "illumination_iris_diameter",
+              "sourceIds": [
+                "chen_metacorrector_pdf_2018",
+                "chen_metacorrector_si_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 630,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3f 自左向右第 5 列，630 nm",
+              "note": "横向焦斑图内谱点印字，630 nm 是此协议的谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "取 460 nm 焦面，测其余波长 PSF",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 Focal spot and imaging measurement；p8 Fig. S4a；主文 p7804 Fig. 3f 自左向右第 5 列，630 nm",
+              "note": "Olympus 10× NA 0.3，200 mm 筒镜。1.5 mm 虹膜限束，焦斑剖面横轴约 −17 至 17 μm，纵轴为归一化强度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "focal_plane_reference_wavelength_nm": 460,
+              "relay_objective_magnification": 10,
+              "relay_objective_na": 0.3,
+              "illumination_iris_um": 1500
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3f 自左向右第 5 列，630 nm",
+              "note": "图给归一化剖面，逐色 FWHM 与剖面物方像素标定待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_bare_spot_700",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "bare",
+          "model": "Chen 2018 · 折超混合 · 裸折射镜 · 700 nm · 固定面焦斑",
+          "variant": "球面折射镜实测对照",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "在 460 nm 焦面取固定平面焦斑。",
+          "values": {
+            "material": {
+              "value": "LA4249 球面平凸熔融石英镜",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；pp7804–7805 Fig. 3d/f",
+              "note": "同一折射镜，移除超表面校正片。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805；补件 p3 Focal spot and imaging measurement",
+              "note": "限束光阑直径，裸球面镜本体口径待补。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "aperture_role": "illumination_iris_diameter",
+              "sourceIds": [
+                "chen_metacorrector_pdf_2018",
+                "chen_metacorrector_si_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3f 自左向右第 6 列，700 nm",
+              "note": "横向焦斑图内谱点印字，630 nm 是此协议的谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "取 460 nm 焦面，测其余波长 PSF",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 pp3–4 Focal spot and imaging measurement；p8 Fig. S4a；主文 p7804 Fig. 3f 自左向右第 6 列，700 nm",
+              "note": "Olympus 10× NA 0.3，200 mm 筒镜。1.5 mm 虹膜限束，焦斑剖面横轴约 −17 至 17 μm，纵轴为归一化强度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "focal_plane_reference_wavelength_nm": 460,
+              "relay_objective_magnification": 10,
+              "relay_objective_na": 0.3,
+              "illumination_iris_um": 1500
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3f 自左向右第 6 列，700 nm",
+              "note": "图给归一化剖面，逐色 FWHM 与剖面物方像素标定待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_efficiency_peak",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 参考归一效率峰值",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "实测光谱峰值的作者近似值，独立于普通入射功率归一聚焦效率。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reference_lens_efficiency_peak_pct": {
+              "value": 35,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 pp7804–7805 Fig. 3a 图注与峰值正文；补件 p4 Focusing efficiency measurement",
+              "note": "作者正文报告约 35%。峰值所在的精确波长没有独立数表，保留曲线入口。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "approximate": true,
+              "display": "约 35",
+              "sourceIds": [
+                "chen_metacorrector_pdf_2018",
+                "chen_metacorrector_si_2018"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "spectral_maximum",
+              "denominator": "uncorrected_refractive_lens_parallel_polarizers_power",
+              "peak_wavelength_nm": null
+            },
+            "efficiency_protocol": {
+              "value": "焦区功率／移除校正片后参考光路功率",
+              "source": "chen_metacorrector_si_2018",
+              "location": "主文 pp7804–7805 Fig. 3a 图注与峰值正文；补件 p4 Focusing efficiency measurement",
+              "note": "10 nm 可调激光。样品以交叉线偏振器抑制背景，参考光路移除校正片并改用平行偏振器。图注简称入射束功率。§方法未说明 Fig. 3a 焦区口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "denominator": "uncorrected_refractive_lens_parallel_polarizers_power",
+              "integration_aperture_diameter_um": null,
+              "illumination_bandwidth_nm": 10,
+              "incident_beam_um": 1500,
+              "test_polarizers": "crossed",
+              "reference_polarizers": "parallel"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_efficiency_pol",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 500 nm 偏振效率",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "500 nm 偏振效率曲线，与 Fig. 3a 光谱协议分开。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 500,
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 p9 Fig. S5 图注",
+              "note": "扫描入射线偏振角，光源波长固定。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 p9 Fig. S5",
+              "note": "纵轴聚焦效率百分数，横轴入射线偏振角度数。45° 附近为文中说明的凹陷。逐角数值只有曲线。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_protocol": {
+              "value": "Airy 第一暗环直径光阑／裸折射镜全部透过功率",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 p4 偏振测量段；p9 Fig. S5",
+              "note": "去检偏器。在显微镜像面放光阑，仅让焦斑进入功率计。移除校正片并在参考光路去除焦区光阑。图注简称入射功率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "uncorrected_refractive_lens_transmitted_power_no_aperture",
+              "integration_aperture": "first_airy_dark_ring_diameter",
+              "analyzer": false,
+              "angle_reference": "x_axis"
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_imaging_458",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 458 nm · USAF 实拍",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "分波段目标成像条件。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 458,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 Fig. 4a 第 1 行左列，458 nm",
+              "note": "滤片中心按面板印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "非相干光源、带通滤片、固定靶镜距",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 p4 成像段、S4b、S7；主文 p7805 Fig. 4a 第 1 行左列，458 nm",
+              "note": "保持图像参考面。SI 写 458 nm，正文段写 460 nm。作者将图像颜色处理为与照明色一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "reported_reference_wavelengths_nm": [
+                458,
+                460
+              ],
+              "processing_stage": "color_adjusted"
+            },
+            "chromatic": {
+              "value": "固定靶距的 USAF 图像",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 Fig. 4a 第 1 行左列，458 nm",
+              "note": "图注称 Group 7 第一条线宽 3.91 μm。此数为靶标几何，未逐点声明限分辨率或色差。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "target_line_width_um": 3.91
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_imaging_488",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 488 nm · USAF 实拍",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "分波段目标成像条件。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 488,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 Fig. 4a 第 2 行左列，488 nm",
+              "note": "滤片中心按面板印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "非相干光源、带通滤片、固定靶镜距",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 p4 成像段、S4b、S7；主文 p7805 Fig. 4a 第 2 行左列，488 nm",
+              "note": "保持图像参考面。SI 写 458 nm，正文段写 460 nm。作者将图像颜色处理为与照明色一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "reported_reference_wavelengths_nm": [
+                458,
+                460
+              ],
+              "processing_stage": "color_adjusted"
+            },
+            "chromatic": {
+              "value": "固定靶距的 USAF 图像",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 Fig. 4a 第 2 行左列，488 nm",
+              "note": "图注称 Group 7 第一条线宽 3.91 μm。此数为靶标几何，未逐点声明限分辨率或色差。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "target_line_width_um": 3.91
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_imaging_530",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 530 nm · USAF 实拍",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "分波段目标成像条件。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 530,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 Fig. 4a 第 3 行左列，530 nm",
+              "note": "滤片中心按面板印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "非相干光源、带通滤片、固定靶镜距",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 p4 成像段、S4b、S7；主文 p7805 Fig. 4a 第 3 行左列，530 nm",
+              "note": "保持图像参考面。SI 写 458 nm，正文段写 460 nm。作者将图像颜色处理为与照明色一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "reported_reference_wavelengths_nm": [
+                458,
+                460
+              ],
+              "processing_stage": "color_adjusted"
+            },
+            "chromatic": {
+              "value": "固定靶距的 USAF 图像",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 Fig. 4a 第 3 行左列，530 nm",
+              "note": "图注称 Group 7 第一条线宽 3.91 μm。此数为靶标几何，未逐点声明限分辨率或色差。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "target_line_width_um": 3.91
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_imaging_580",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 580 nm · USAF 实拍",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "分波段目标成像条件。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 580,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 Fig. 4a 第 1 行右列，580 nm",
+              "note": "滤片中心按面板印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "非相干光源、带通滤片、固定靶镜距",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 p4 成像段、S4b、S7；主文 p7805 Fig. 4a 第 1 行右列，580 nm",
+              "note": "保持图像参考面。SI 写 458 nm，正文段写 460 nm。作者将图像颜色处理为与照明色一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "reported_reference_wavelengths_nm": [
+                458,
+                460
+              ],
+              "processing_stage": "color_adjusted"
+            },
+            "chromatic": {
+              "value": "固定靶距的 USAF 图像",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 Fig. 4a 第 1 行右列，580 nm",
+              "note": "图注称 Group 7 第一条线宽 3.91 μm。此数为靶标几何，未逐点声明限分辨率或色差。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "target_line_width_um": 3.91
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_imaging_620",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 620 nm · USAF 实拍",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "分波段目标成像条件。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 620,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 Fig. 4a 第 2 行右列，620 nm",
+              "note": "滤片中心按面板印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "非相干光源、带通滤片、固定靶镜距",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 p4 成像段、S4b、S7；主文 p7805 Fig. 4a 第 2 行右列，620 nm",
+              "note": "保持图像参考面。SI 写 458 nm，正文段写 460 nm。作者将图像颜色处理为与照明色一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "reported_reference_wavelengths_nm": [
+                458,
+                460
+              ],
+              "processing_stage": "color_adjusted"
+            },
+            "chromatic": {
+              "value": "固定靶距的 USAF 图像",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 Fig. 4a 第 2 行右列，620 nm",
+              "note": "图注称 Group 7 第一条线宽 3.91 μm。此数为靶标几何，未逐点声明限分辨率或色差。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "target_line_width_um": 3.91
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_imaging_660",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 660 nm · USAF 实拍",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "分波段目标成像条件。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 660,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 Fig. 4a 第 3 行右列，660 nm",
+              "note": "滤片中心按面板印字。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "非相干光源、带通滤片、固定靶镜距",
+              "source": "chen_metacorrector_si_2018",
+              "location": "补件 p4 成像段、S4b、S7；主文 p7805 Fig. 4a 第 3 行右列，660 nm",
+              "note": "保持图像参考面。SI 写 458 nm，正文段写 460 nm。作者将图像颜色处理为与照明色一致。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "reported_reference_wavelengths_nm": [
+                458,
+                460
+              ],
+              "processing_stage": "color_adjusted"
+            },
+            "chromatic": {
+              "value": "固定靶距的 USAF 图像",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 Fig. 4a 第 3 行右列，660 nm",
+              "note": "图注称 Group 7 第一条线宽 3.91 μm。此数为靶标几何，未逐点声明限分辨率或色差。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "target_line_width_um": 3.91
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_hybrid_white",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 白光实拍",
+          "variant": "1.5 mm 超表面校正片＋球面折射镜",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "同论文对照白光成像，不与窄带聚焦混用。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "超表面校正片直径，对应实验入射束。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "aperture_role": "metacorrector_diameter"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "完整混合镜组的名义 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "reported_effective_focal_um": {
+              "value": 9960,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7805 “final hybrid lens” 段",
+              "note": "组装后有效焦距，原文未说明测量法或参考波长。Fig. 1a 的 8.406 mm 是从折射镜后表面量起的设计参数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_back_vertex_focal_distance_um": 8406
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a 图注",
+              "note": "校正片 TiO₂ 纳米鳍高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "宽谱非相干光，彩色相机原图",
+              "source": "chen_metacorrector_si_2018",
+              "location": "主文 p7805 Fig. 4b；补件 pp4、11、13",
+              "note": "作者报告彩色相机 UI-1540SE，S9 给未裁图。采用交叉线偏振器。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "processing_stage": "captured"
+            },
+            "chromatic": {
+              "value": "白光 USAF 对照",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 pp7805–7806 Fig. 4b；补件 S9",
+              "note": "定性展示白光边缘和模糊。缺定量横向通道坐标、MTF 与场角。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_pdf_2018",
+                "chen_metacorrector_si_2018"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_bare_white",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "bare",
+          "model": "Chen 2018 · 折超混合 · 裸折射镜 · 白光实拍",
+          "variant": "球面折射镜实测对照",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "同论文对照白光成像，不与窄带聚焦混用。",
+          "values": {
+            "material": {
+              "value": "LA4249 球面平凸熔融石英镜",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；pp7804–7805 Fig. 3d/f",
+              "note": "同一折射镜，移除超表面校正片。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "宽谱非相干光，彩色相机原图",
+              "source": "chen_metacorrector_si_2018",
+              "location": "主文 p7805 Fig. 4c；补件 pp4、11、13",
+              "note": "作者报告彩色相机 UI-1540SE，S9 给未裁图。在裸镜后焦面放 1.5 mm 虹膜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_si_2018",
+                "chen_metacorrector_pdf_2018"
+              ],
+              "processing_stage": "captured"
+            },
+            "chromatic": {
+              "value": "白光 USAF 对照",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 pp7805–7806 Fig. 4c；补件 S9",
+              "note": "定性展示白光边缘和模糊。缺定量横向通道坐标、MTF 与场角。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_pdf_2018",
+                "chen_metacorrector_si_2018"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_paraxial_hybrid",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "paraxial_hybrid",
+          "model": "Chen 2018 · 折超混合 · 有校正片 · 轴向色差模型",
+          "variant": "折超混合镜的色差模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "作者的整组模拟汇总。",
+          "values": {
+            "diameter_um": {
+              "value": 1500,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "模型采用 1.5 mm 校正片。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.075,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7802 Fig. 1a；p7805 实物规格段",
+              "note": "混合镜组的设计 NA。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "模拟带内焦移约 15 μm",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3b、p7805 对应正文；补件 p5 Fig. S1",
+              "note": "Fig. 3b 对应两条不同的纵轴。作者汇总带内差幅。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_pdf_2018",
+                "chen_metacorrector_si_2018"
+              ],
+              "modeled_focal_shift_span_um": 15,
+              "approximate": true
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_paraxial_bare",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "paraxial_bare",
+          "model": "Chen 2018 · 折超混合 · 裸折射镜 · 轴向色差模型",
+          "variant": "裸球面折射镜的色差模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "作者的整组模拟汇总。",
+          "values": {
+            "chromatic": {
+              "value": "模拟带内焦移 300 μm",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7804 Fig. 3b、p7805 对应正文；补件 p5 Fig. S1",
+              "note": "Fig. 3b 对应两条不同的纵轴。作者汇总带内差幅。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_pdf_2018",
+                "chen_metacorrector_si_2018"
+              ],
+              "modeled_focal_shift_span_um": 300,
+              "approximate": false
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_zeiss",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "zeiss",
+          "model": "Chen 2018 · 折超混合 · 原 Zeiss 油浸物镜 · 模拟",
+          "variant": "Zeiss NA 1.45 油浸物镜模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "仿真模型，与 LA4249 实物独立。",
+          "values": {
+            "na": {
+              "value": 1.45,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7806 Fig. 5 图注及正文",
+              "note": "该 Zeiss 物镜的设计 NA。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "Zeiss Fluor 高 NA 物镜模拟",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7806 Fig. 5；补件 pp2–3、S10",
+              "note": "14 片、7 种玻璃。Fig. 5b/5e 给原组模型曲线。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_pdf_2018",
+                "chen_metacorrector_si_2018"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_zeiss_gdd",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "zeiss_gdd",
+          "model": "Chen 2018 · 折超混合 · Zeiss 二阶校正 · 模拟",
+          "variant": "Zeiss＋二阶色散校正片模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "仿真模型，与 LA4249 实物独立。",
+          "values": {
+            "na": {
+              "value": 1.45,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7806 Fig. 5 图注及正文",
+              "note": "该 Zeiss 物镜的设计 NA。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "diameter_um": {
+              "value": 4000,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7806 Fig. 5a",
+              "note": "入瞳校正片模型直径。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "aperture_role": "modeled_metacorrector_diameter"
+            },
+            "chromatic": {
+              "value": "Zeiss Fluor 高 NA 物镜模拟",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7806 Fig. 5；补件 pp2–3、S10",
+              "note": "Fig. 5a 的入瞳校正片口径 4 mm。Fig. 5b/c 二阶校正按 475、560、700 nm 模拟。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_pdf_2018",
+                "chen_metacorrector_si_2018"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2018metacorrector_zeiss_third_order",
+          "study_id": "chen2018metacorrector",
+          "specimen_id": "zeiss_third_order",
+          "model": "Chen 2018 · 折超混合 · Zeiss 三阶校正 · 模拟",
+          "variant": "Zeiss＋三阶色散校正片模型",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "仿真模型，与 LA4249 实物独立。",
+          "values": {
+            "na": {
+              "value": 1.45,
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7806 Fig. 5 图注及正文",
+              "note": "该 Zeiss 物镜的设计 NA。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "Zeiss Fluor 高 NA 物镜模拟",
+              "source": "chen_metacorrector_pdf_2018",
+              "location": "主文 p7806 Fig. 5；补件 pp2–3、S10",
+              "note": "Fig. 5e 计算更高阶校正的 RMS 波前误差。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "chen_metacorrector_pdf_2018",
+                "chen_metacorrector_si_2018"
+              ]
+            }
+          }
         }
       ],
-      "scope": "51项原始研究、306个器件/测量/系统配置、1877条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
+      "scope": "52项原始研究、313个器件/测量/系统配置、1920条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",

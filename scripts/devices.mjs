@@ -115,6 +115,14 @@ export function validateDevices(d,catalog){
    mirrorReferencedMaximum.denominator!=='metallic_mirror_reflected_intensity_same_pixel_size'||
    efficiencyProtocol?.denominator!==mirrorReferencedMaximum.denominator||!efficiencyProtocol.value||
    Number.isFinite(r.values.wavelength_nm?.value)||Number.isFinite(r.values.efficiency_at_lambda_pct?.value)))errors.push('mirror-referenced efficiency maximum context');
+ const referenceLensPeak=r.values.reference_lens_efficiency_peak_pct;
+ if(Number.isFinite(referenceLensPeak?.value)&&(
+   referenceLensPeak.value<0||referenceLensPeak.basis!=='derived_from_measurement'||
+   referenceLensPeak.calculation_origin!=='authors'||referenceLensPeak.statistic!=='spectral_maximum'||
+   referenceLensPeak.denominator!=='uncorrected_refractive_lens_parallel_polarizers_power'||
+   efficiencyProtocol?.denominator!==referenceLensPeak.denominator||!efficiencyProtocol.value||
+   efficiencyProtocol.test_polarizers!=='crossed'||efficiencyProtocol.reference_polarizers!=='parallel'||
+   Number.isFinite(r.values.wavelength_nm?.value)||Number.isFinite(r.values.efficiency_at_lambda_pct?.value)))errors.push('reference-lens efficiency peak context');
  if(Number.isFinite(axialEfficiency?.value)&&(axialEfficiency.value>100||!axialEfficiency.statistic||
   !efficiencyProtocol?.value||!axialEfficiency.denominator||axialEfficiency.denominator!==efficiencyProtocol.denominator))errors.push('axial efficiency protocol');
  if(Number.isFinite(correlationWidth?.value)&&(!(correlationWidth.value>0)||correlationWidth.basis!=='model'||

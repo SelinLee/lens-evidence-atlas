@@ -1061,3 +1061,7 @@ PR #164 合入 263a6e53d1179bef1920e8eff31ae3ee3e437059。PR 校验 44368395177�
 PR #166 合入 5a3b9d9b79f4692377b9798ed88d11a62a08a1d1。PR 校验 44374703693、主线校验 44374888629、Pages 44374888724 成功。317 项测试通过，线上 12 文件与本机构建字节一致，devices-data.js SHA256 为 513d9e636a565e19a37da7d345107e9cdef3b6abb8214c6c2446ba724c8fd692。独立无头 Chrome 核 8 条、2 配置、三色 FWHM 和效率散点、实测焦位轴空值、来源往返、CSV 及六视口。五个参考链接返回 200，原文 PDF 哈希与存档审核一致。仅可见光模式保留本篇 8 条，全库为 42 篇、1566 条。[PR #166](https://github.com/SelinLee/lens-evidence-atlas/pull/166) · [Pages](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44374888724)
 
 接续 Chen 等 2018 年 *Nano Letters* 折超混合镜，DOI 10.1021/acs.nanolett.8b03567。2026-11-19 查 Crossref 被引 237 次。无头 Chrome 已取新加坡国立大学作者组正式版，3638839 字节，SHA256 为 355745544c71ba2c10dd2dabb4b5f38870f43da587c9374185ec2d0e9a4cbf96。Fig. 3c/d 视觉核实 460／490／530／570／590／640／700 nm 有无校正片的实测轴扫，步长 5 μm。Fig. 3e/f 的剖面图另标 630 nm。正文以数十微米描述校正后实测焦移，Fig. 3b 的 300 与约 15 μm 为模拟结果。ACS 正式补件下载返回 403，继续查 S4–S6 的效率、焦斑和 Strehl。会话持续目标保持开启。[正式版](https://www.ece.nus.edu.sg/stfpage/eleqc/Weiting-NL2018.pdf#page=4) · [Crossref](https://api.crossref.org/works/10.1021/acs.nanolett.8b03567)
+
+## 2026-11-19-112 · Chen 2018 折超混合镜的原始补件与效率口径
+
+取得同一作者组在 NUS 存档的 14 页补件。核七个波长的双组 5 μm 轴扫、六个波长的 460 nm 固定面焦斑及两种效率方法。校正后实测残余焦移由作者述为数十微米。模型约 15 μm 与 300 μm 各归有无校正片。主文约 35% 为交叉偏振采集、移除校正片且改平行偏振参考的光谱峰值。500 nm 偏振扫描使用 Airy 第一暗环光阑和裸球面镜全部透过功率。FWHM／Strehl 曲线找不到逐点数表，458／460 nm 成像对焦差异保留。新增 43 条、7 组，累计 52 篇、313 组、1920 条。[本批核验](CHEN_METACORRECTOR_REVIEW_2026-11-19.md)
