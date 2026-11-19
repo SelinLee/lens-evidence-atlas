@@ -93,7 +93,7 @@
 #custom-samples { padding:5px 8px; border:1px solid #b9cfc6; border-radius:5px; background:#f4f8f5; }
 #custom-dialog { width:min(680px,94vw); }
 #custom-dialog[open] { display:flex; flex-direction:column; overflow:hidden; }
-#custom-form { display:grid; gap:12px; padding:16px 28px; overflow:auto; }
+#custom-form { display:grid; grid-auto-rows:max-content; align-content:start; gap:12px; padding:16px 28px; overflow:auto; }
 #custom-form p { margin:0; font-size:13px; color:var(--muted); }
 #custom-form label { display:grid; align-content:start; gap:4px; min-width:0; color:var(--ink); font-size:12px; overflow-wrap:anywhere; }
 #custom-form label span { display:inline; color:var(--muted); }
