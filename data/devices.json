@@ -2218,6 +2218,60 @@
       "scope": "精确关联 DOI 及补充题名检索均零项。",
       "checked_on": "2026-11-19",
       "publication_source": "chen_metacorrector_pdf_2018"
+    },
+    {
+      "id": "eisenbach_dual_fzp_pdf_2015",
+      "title": "Eisenbach et al. (2015), Metasurfaces based dual wavelength diffractive lenses",
+      "url": "https://www.neolab.sites.tau.ac.il/_files/ugd/2286ac_3360ce476ce24f498453966d86e5cd56.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "作者组存放的 Optics Express 正式版，9 页。pp3930–3935 Figs. 1–6。",
+      "checked_on": "2026-11-19",
+      "doi": "10.1364/OE.23.003928"
+    },
+    {
+      "id": "eisenbach_dual_fzp_lab_2015",
+      "title": "Tel Aviv University NEO Lab · 作者发表清单",
+      "url": "https://www.neolab.sites.tau.ac.il/publications",
+      "kind": "publication_archive",
+      "scope": "2015 年段列论文和作者 PDF。",
+      "checked_on": "2026-11-19",
+      "publication_source": "eisenbach_dual_fzp_pdf_2015"
+    },
+    {
+      "id": "eisenbach_dual_fzp_publisher_2015",
+      "title": "Optica · 期刊 DOI 入口",
+      "url": "https://doi.org/10.1364/OE.23.003928",
+      "kind": "publication_archive",
+      "scope": "期刊 DOI 跳转的独立 Chrome 响应为验证页，正文从 NEO Lab 取得。",
+      "checked_on": "2026-11-19",
+      "publication_source": "eisenbach_dual_fzp_pdf_2015"
+    },
+    {
+      "id": "eisenbach_dual_fzp_crossref_2015",
+      "title": "Crossref · 正式发表日期与被引量",
+      "url": "https://api.crossref.org/works/10.1364/OE.23.003928",
+      "kind": "repository_metadata",
+      "scope": "正式在线 2015-02-09，印刷 2015-02-23。2026-11-19 查得被引 56 次。",
+      "checked_on": "2026-11-19",
+      "publication_source": "eisenbach_dual_fzp_pdf_2015"
+    },
+    {
+      "id": "eisenbach_dual_fzp_openalex_2015",
+      "title": "OpenAlex · 被引量与公开版本",
+      "url": "https://api.openalex.org/works/W2075536759",
+      "kind": "repository_metadata",
+      "scope": "2026-11-19 查得 cited_by_count 61，公开版本列表指向 DOI。",
+      "checked_on": "2026-11-19",
+      "publication_source": "eisenbach_dual_fzp_pdf_2015"
+    },
+    {
+      "id": "eisenbach_dual_fzp_data_lookup_2015",
+      "title": "DataCite · 精确 DOI 关联数据查询",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1364%2FOE.23.003928%22",
+      "kind": "repository_metadata",
+      "scope": "按正式 DOI 精确关联检索为零。",
+      "checked_on": "2026-11-19",
+      "publication_source": "eisenbach_dual_fzp_pdf_2015"
     }
   ],
   "domains": {
@@ -6157,6 +6211,22 @@
             {
               "source": "chen_metacorrector_pdf_2018",
               "location": "pp7804–7805 Fig. 3a 及对应正文"
+            }
+          ]
+        },
+        {
+          "id": "secondary_axial_peak_um",
+          "label": "实测轴向副焦点位置 (μm)",
+          "definition": "同一实物、同一光谱和偏振条件下，作者报告的额外轴向聚焦峰位置。",
+          "conditions": "记录波长、偏振、与主焦点共用的坐标零面、峰位定义及原始精度。",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "p3935 Fig. 6b 及正文首段"
             }
           ]
         }
@@ -250054,9 +250124,848 @@
               ]
             }
           }
+        },
+        {
+          "id": "eisenbach2015dualfzp_specimen",
+          "study_id": "eisenbach2015dualfzp",
+          "specimen_id": "lens",
+          "model": "Eisenbach 2015 · 双波长波带片 · 实物与证据范围",
+          "variant": "铝纳米天线双波长 mFZP 实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "双通道共用一片实物。",
+          "values": {
+            "design_focal_um": {
+              "value": 1000,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 pp3931–3932 双通道设计、Fig. 2c",
+              "note": "两个正交线偏振的波带片设计共享距离器件 1 mm 的焦平面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_wavelengths_nm": [
+                460,
+                650
+              ],
+              "spectral_mode": "discrete_dual_wavelength"
+            },
+            "height_nm": {
+              "value": 40,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3932 实物制备段",
+              "note": "铝纳米天线金属膜厚。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "diameter_um": {
+              "value": null,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3932 制备段；p3933 Fig. 4a",
+              "note": "图中 50 μm 为显微图标尺。作者未直接给双波长器件口径。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": null,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 pp3929–3933",
+              "note": "原文未给该实物 NA，实物口径未核，数值留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "玻璃上的铝纳米棒与十字天线",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3932 制备段；Fig. 4a",
+              "note": "垂直棒 180×40 nm，节距 200 nm。水平棒 100×40 nm，节距 280 nm。两种阻挡区重叠处用各向异性十字天线。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "vertical_rod_length_nm": 180,
+              "horizontal_rod_length_nm": 100,
+              "rod_width_nm": 40,
+              "metal_thickness_nm": 40,
+              "vertical_pitch_nm": 200,
+              "horizontal_pitch_nm": 280
+            },
+            "chromatic": {
+              "value": "正交线偏振下的双波长轴上共焦",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3935 Fig. 6及正文首段",
+              "note": "原文报告两色在 1 mm 聚焦。光谱近似值及蓝光附加焦点见各测量行。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "eisenbach_dual_fzp_pdf_2015",
+                "eisenbach_dual_fzp_lab_2015",
+                "eisenbach_dual_fzp_publisher_2015",
+                "eisenbach_dual_fzp_crossref_2015",
+                "eisenbach_dual_fzp_openalex_2015",
+                "eisenbach_dual_fzp_data_lookup_2015"
+              ]
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3935 Fig. 6b/c",
+              "note": "未给两色主焦位置之差的精确估计或误差。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 pp3933–3935 Figs. 4–6；作者清单与 DataCite",
+              "note": "光强图与光谱曲线可见。原始二维 PSF、物方采样、Strehl、FWHM 和 MTF 数表待补。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "eisenbach_dual_fzp_pdf_2015",
+                "eisenbach_dual_fzp_lab_2015",
+                "eisenbach_dual_fzp_data_lookup_2015"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "聚焦效率量测待补",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3934 Fig. 5c；pp3935–3936 Conclusion",
+              "note": "Fig. 5c 为固定面归一化光强。积分焦区和用于聚焦效率的功率分母未报告。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "eisenbach2015dualfzp_laser_blue",
+          "study_id": "eisenbach2015dualfzp",
+          "specimen_id": "lens",
+          "model": "Eisenbach 2015 · 双波长波带片 · 460 nm · 水平偏振激光",
+          "variant": "铝纳米天线双波长 mFZP 实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "单色相干照明的直接实验。",
+          "values": {
+            "design_focal_um": {
+              "value": 1000,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 pp3931–3932 双通道设计、Fig. 2c",
+              "note": "两个正交线偏振的波带片设计共享距离器件 1 mm 的焦平面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_wavelengths_nm": [
+                460,
+                650
+              ],
+              "spectral_mode": "discrete_dual_wavelength"
+            },
+            "height_nm": {
+              "value": 40,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3932 实物制备段",
+              "note": "铝纳米天线金属膜厚。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 460,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3935 Fig. 6b 及正文首段",
+              "note": "实测使用 Chameleon OPO VIS 固定波长激光。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "水平线偏振",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3935 Fig. 6b 及正文首段",
+              "note": "与另一谱点的测试线偏振正交。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "linear_axis": "horizontal"
+            },
+            "illumination": {
+              "value": "Chameleon OPO VIS 相干光",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3935 Fig. 6b 及正文首段",
+              "note": "固定波长实验。两偏振条件分别拍摄。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "从样品面量起的纵向光强图",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 pp3933、3935 Figs. 3、6b",
+              "note": "纵向 Z（mm）、横向 Y（μm），正文没有给相干光轴扫步长或峰位不确定度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_plane": "axial_distance_from_sample_plane",
+              "axial_scan_step_um": null,
+              "transverse_axis": "y",
+              "evaluation_plane_um": 1000
+            },
+            "measured_focal_um": {
+              "value": 1000,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3935 Fig. 6b 及正文首段",
+              "note": "作者明文报告距样品 1 mm 有焦斑。峰强判据、实测误差与有效位数未另说明。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "reference_plane": "axial_distance_from_sample_plane",
+              "original_unit": "mm",
+              "approximate": true,
+              "display": "约 1000",
+              "position_definition": "author_reported_primary_focus"
+            },
+            "secondary_axial_peak_um": {
+              "value": 1400,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3935 Fig. 6b 及正文首段",
+              "note": "作者报告约 1.4 mm 蓝光额外焦点，归因于同取向棒与十字天线透射响应不匹配。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "reference_plane": "axial_distance_from_sample_plane",
+              "original_unit": "mm",
+              "approximate": true,
+              "display": "约 1400",
+              "position_definition": "author_reported_secondary_focus"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3935 Fig. 6b 及正文首段",
+              "note": "给焦斑及传播图，无宽度原值、数值误差或原始横向数组。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "eisenbach2015dualfzp_white_axial_blue",
+          "study_id": "eisenbach2015dualfzp",
+          "specimen_id": "lens",
+          "model": "Eisenbach 2015 · 双波长波带片 · 水平偏振白光 · 轴扫",
+          "variant": "铝纳米天线双波长 mFZP 实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "白光轴扫的步进仅用于这组测量。",
+          "values": {
+            "design_focal_um": {
+              "value": 1000,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 pp3931–3932 双通道设计、Fig. 2c",
+              "note": "两个正交线偏振的波带片设计共享距离器件 1 mm 的焦平面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_wavelengths_nm": [
+                460,
+                650
+              ],
+              "spectral_mode": "discrete_dual_wavelength"
+            },
+            "height_nm": {
+              "value": 40,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3932 实物制备段",
+              "note": "铝纳米天线金属膜厚。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "水平线偏振",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3933 Fig. 4c；p3934 首段",
+              "note": "氙弧灯白光入射。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "氙弧灯非相干白光",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3933 Fig. 4c；p3934 首段",
+              "note": "光强随色彩显示，图内标示近似焦色。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "nominal_focused_color_nm": 460
+            },
+            "psf_protocol": {
+              "value": "白光轴扫，步进 50 μm",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3933 Fig. 4c；p3934 首段",
+              "note": "轴向范围 0–2 mm，图横轴为 Z（mm）、纵轴为 Y（μm）。Fig. 4b 示 1 mm 处焦斑。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_plane": "axial_distance_from_sample_plane",
+              "axial_scan_step_um": 50,
+              "axial_scan_bounds_um": [
+                0,
+                2000
+              ]
+            }
+          }
+        },
+        {
+          "id": "eisenbach2015dualfzp_white_spectrum_blue",
+          "study_id": "eisenbach2015dualfzp",
+          "specimen_id": "lens",
+          "model": "Eisenbach 2015 · 双波长波带片 · 水平偏振白光 · 轴上光谱",
+          "variant": "铝纳米天线双波长 mFZP 实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "光谱测量，实际相干激光谱点另有独立测量。",
+          "values": {
+            "design_focal_um": {
+              "value": 1000,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 pp3931–3932 双通道设计、Fig. 2c",
+              "note": "两个正交线偏振的波带片设计共享距离器件 1 mm 的焦平面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_wavelengths_nm": [
+                460,
+                650
+              ],
+              "spectral_mode": "discrete_dual_wavelength"
+            },
+            "height_nm": {
+              "value": 40,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3932 实物制备段",
+              "note": "铝纳米天线金属膜厚。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "水平线偏振",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3934 Fig. 5a、5c 及对应正文",
+              "note": "独立的两条白光光谱路线。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "氙弧灯白光，轴上光谱",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3934 Fig. 5a、5c 及对应正文",
+              "note": "Andor Shamrock 303i。作者在 1 mm 处报告约 460 nm 附近聚焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reported_approximate_center_nm": 460,
+              "detector": "Andor Shamrock 303i",
+              "evaluation_plane_um": 1000
+            },
+            "chromatic": {
+              "value": "1 mm 处的归一化光谱曲线",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3934 Fig. 5a、5c 及对应正文",
+              "note": "轴向光谱图仅显示高于半最大值的区域。Fig. 5c 波长（nm）对归一化光强（a.u.），可见其他波长仍有响应。各通道串扰、光谱带宽数值和归一化尺度未印。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "color_map_shown_above_fraction": 0.5,
+              "evaluation_plane_um": 1000
+            }
+          }
+        },
+        {
+          "id": "eisenbach2015dualfzp_laser_red",
+          "study_id": "eisenbach2015dualfzp",
+          "specimen_id": "lens",
+          "model": "Eisenbach 2015 · 双波长波带片 · 650 nm · 垂直偏振激光",
+          "variant": "铝纳米天线双波长 mFZP 实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "单色相干照明的直接实验。",
+          "values": {
+            "design_focal_um": {
+              "value": 1000,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 pp3931–3932 双通道设计、Fig. 2c",
+              "note": "两个正交线偏振的波带片设计共享距离器件 1 mm 的焦平面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_wavelengths_nm": [
+                460,
+                650
+              ],
+              "spectral_mode": "discrete_dual_wavelength"
+            },
+            "height_nm": {
+              "value": 40,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3932 实物制备段",
+              "note": "铝纳米天线金属膜厚。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 650,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3935 Fig. 6c 及正文首段",
+              "note": "实测使用 Chameleon OPO VIS 固定波长激光。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "垂直线偏振",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3935 Fig. 6c 及正文首段",
+              "note": "与另一谱点的测试线偏振正交。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "linear_axis": "vertical"
+            },
+            "illumination": {
+              "value": "Chameleon OPO VIS 相干光",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3935 Fig. 6c 及正文首段",
+              "note": "固定波长实验。两偏振条件分别拍摄。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "从样品面量起的纵向光强图",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 pp3933、3935 Figs. 3、6c",
+              "note": "纵向 Z（mm）、横向 Y（μm），正文没有给相干光轴扫步长或峰位不确定度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_plane": "axial_distance_from_sample_plane",
+              "axial_scan_step_um": null,
+              "transverse_axis": "y",
+              "evaluation_plane_um": 1000
+            },
+            "measured_focal_um": {
+              "value": 1000,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3935 Fig. 6c 及正文首段",
+              "note": "作者明文报告距样品 1 mm 有焦斑。峰强判据、实测误差与有效位数未另说明。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "reference_plane": "axial_distance_from_sample_plane",
+              "original_unit": "mm",
+              "approximate": true,
+              "display": "约 1000",
+              "position_definition": "author_reported_primary_focus"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3935 Fig. 6c 及正文首段",
+              "note": "给焦斑及传播图，无宽度原值、数值误差或原始横向数组。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "eisenbach2015dualfzp_white_axial_red",
+          "study_id": "eisenbach2015dualfzp",
+          "specimen_id": "lens",
+          "model": "Eisenbach 2015 · 双波长波带片 · 垂直偏振白光 · 轴扫",
+          "variant": "铝纳米天线双波长 mFZP 实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "白光轴扫的步进仅用于这组测量。",
+          "values": {
+            "design_focal_um": {
+              "value": 1000,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 pp3931–3932 双通道设计、Fig. 2c",
+              "note": "两个正交线偏振的波带片设计共享距离器件 1 mm 的焦平面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_wavelengths_nm": [
+                460,
+                650
+              ],
+              "spectral_mode": "discrete_dual_wavelength"
+            },
+            "height_nm": {
+              "value": 40,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3932 实物制备段",
+              "note": "铝纳米天线金属膜厚。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "垂直线偏振",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3933 Fig. 4d；p3934 首段",
+              "note": "氙弧灯白光入射。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "氙弧灯非相干白光",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3933 Fig. 4d；p3934 首段",
+              "note": "光强随色彩显示，图内标示近似焦色。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "nominal_focused_color_nm": 650
+            },
+            "psf_protocol": {
+              "value": "白光轴扫，步进 50 μm",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3933 Fig. 4d；p3934 首段",
+              "note": "轴向范围 0–2 mm，图横轴为 Z（mm）、纵轴为 Y（μm）。Fig. 4b 示 1 mm 处焦斑。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_plane": "axial_distance_from_sample_plane",
+              "axial_scan_step_um": 50,
+              "axial_scan_bounds_um": [
+                0,
+                2000
+              ]
+            }
+          }
+        },
+        {
+          "id": "eisenbach2015dualfzp_white_spectrum_red",
+          "study_id": "eisenbach2015dualfzp",
+          "specimen_id": "lens",
+          "model": "Eisenbach 2015 · 双波长波带片 · 垂直偏振白光 · 轴上光谱",
+          "variant": "铝纳米天线双波长 mFZP 实物",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "光谱测量，实际相干激光谱点另有独立测量。",
+          "values": {
+            "design_focal_um": {
+              "value": 1000,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 pp3931–3932 双通道设计、Fig. 2c",
+              "note": "两个正交线偏振的波带片设计共享距离器件 1 mm 的焦平面。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm",
+              "design_wavelengths_nm": [
+                460,
+                650
+              ],
+              "spectral_mode": "discrete_dual_wavelength"
+            },
+            "height_nm": {
+              "value": 40,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3932 实物制备段",
+              "note": "铝纳米天线金属膜厚。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "垂直线偏振",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3934 Fig. 5b、5c 及对应正文",
+              "note": "独立的两条白光光谱路线。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "illumination": {
+              "value": "氙弧灯白光，轴上光谱",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3934 Fig. 5b、5c 及对应正文",
+              "note": "Andor Shamrock 303i。作者在 1 mm 处报告约 650 nm 附近聚焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reported_approximate_center_nm": 650,
+              "detector": "Andor Shamrock 303i",
+              "evaluation_plane_um": 1000
+            },
+            "chromatic": {
+              "value": "1 mm 处的归一化光谱曲线",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3934 Fig. 5b、5c 及对应正文",
+              "note": "轴向光谱图仅显示高于半最大值的区域。Fig. 5c 波长（nm）对归一化光强（a.u.），可见其他波长仍有响应。各通道串扰、光谱带宽数值和归一化尺度未印。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "color_map_shown_above_fraction": 0.5,
+              "evaluation_plane_um": 1000
+            }
+          }
+        },
+        {
+          "id": "eisenbach2015dualfzp_linear_control",
+          "study_id": "eisenbach2015dualfzp",
+          "specimen_id": "linear",
+          "model": "Eisenbach 2015 · 双波长波带片 · 一维对照 · 白光轴扫",
+          "variant": "矩形一维常规波带片实测对照",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "一维矩形实物尺寸仅属于此组对照。",
+          "values": {
+            "aperture_width_um": {
+              "value": 200,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3930 Fig. 1c 横向尺寸箭头",
+              "note": "对照图中铝条纹样区的较长边，短边 100 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "aperture_shape": "rectangular_pattern",
+              "width_direction": "across_stripes",
+              "other_side_um": 100
+            },
+            "material": {
+              "value": "玻璃上的铝条纹二元振幅波带片",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3930 Fig. 1c/d",
+              "note": "实验制成的一维聚焦对照。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "实测一维色散对照",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3930 Fig. 1d/e",
+              "note": "白光传播图在不同轴向位置显不同颜色。x 轴为距器件的传播距离（mm），y 为 Y（μm）。逐波长峰位与照明带宽未给。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "eisenbach2015dualfzp_plain_red",
+          "study_id": "eisenbach2015dualfzp",
+          "specimen_id": "round_model",
+          "model": "Eisenbach 2015 · 双波长波带片 · 常规模拟 · 620 nm",
+          "variant": "常规二维波带片模拟",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "作者模拟，实物行独立保存。",
+          "values": {
+            "design_focal_um": {
+              "value": 1000,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3930 Fig. 1a/b 及正文",
+              "note": "作者给此模型设计焦距。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm"
+            },
+            "wavelength_nm": {
+              "value": 620,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3930 Fig. 1a/b 及正文",
+              "note": "作者用 f≈R₁²／λ 和传播模型，620 nm 对应常规二维波带片的设计焦距 1 mm。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "轴向传播模拟",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3930 Fig. 1a/b 及正文",
+              "note": "图以 Z（mm）、Y（μm）显示模型强度。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_focal_um": {
+              "value": 1000,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3930 Fig. 1a/b 及正文",
+              "note": "作者用 f≈R₁²／λ 和传播模型，620 nm 对应常规二维波带片的设计焦距 1 mm。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "position_definition": "axial_intensity_maximum",
+              "original_unit": "mm"
+            },
+            "chromatic": {
+              "value": "模型焦点距样品 1 mm",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3930 Fig. 1a/b 及正文",
+              "note": "作者用 f≈R₁²／λ 和传播模型，620 nm 对应常规二维波带片的设计焦距 1 mm。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "eisenbach2015dualfzp_plain_blue",
+          "study_id": "eisenbach2015dualfzp",
+          "specimen_id": "round_model",
+          "model": "Eisenbach 2015 · 双波长波带片 · 常规模拟 · 蓝光标注冲突",
+          "variant": "常规二维波带片模拟",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "作者模拟，实物行独立保存。",
+          "values": {
+            "design_focal_um": {
+              "value": 1000,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3930 Fig. 1b 下图及正文",
+              "note": "作者给此模型设计焦距。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3930 Fig. 1b 下图及正文",
+              "note": "蓝光正文写 460 nm，图内写 450 nm。正文模拟焦点约 1.4 mm。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "reported_wavelengths_nm": [
+                450,
+                460
+              ]
+            },
+            "psf_protocol": {
+              "value": "轴向传播模拟",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3930 Fig. 1b 下图及正文",
+              "note": "图以 Z（mm）、Y（μm）显示模型强度。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3930 Fig. 1b 下图及正文",
+              "note": "蓝光正文写 460 nm，图内写 450 nm。正文模拟焦点约 1.4 mm。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "模拟蓝光标注冲突",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3930 Fig. 1b 下图及正文",
+              "note": "蓝光正文写 460 nm，图内写 450 nm。正文模拟焦点约 1.4 mm。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "eisenbach2015dualfzp_dual_red",
+          "study_id": "eisenbach2015dualfzp",
+          "specimen_id": "metalens_model",
+          "model": "Eisenbach 2015 · 双波长波带片 · 双波长模拟 · 650 nm",
+          "variant": "双波长 mFZP 传播模拟",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "作者模拟，实物行独立保存。",
+          "values": {
+            "design_focal_um": {
+              "value": 1000,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 pp3931–3932 Fig. 2c/d 及正文",
+              "note": "作者给此模型设计焦距。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm"
+            },
+            "wavelength_nm": {
+              "value": 650,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 pp3931–3932 Fig. 2c/d 及正文",
+              "note": "垂直线偏振。作者给双波长波带片红光传播模拟焦点在 1 mm。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "轴向传播模拟",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 pp3931–3932 Fig. 2c/d 及正文",
+              "note": "图以 Z（mm）、Y（μm）显示模型强度。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_focal_um": {
+              "value": 1000,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 pp3931–3932 Fig. 2c/d 及正文",
+              "note": "垂直线偏振。作者给双波长波带片红光传播模拟焦点在 1 mm。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "position_definition": "axial_intensity_maximum",
+              "original_unit": "mm"
+            },
+            "chromatic": {
+              "value": "模型焦点距样品 1 mm",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 pp3931–3932 Fig. 2c/d 及正文",
+              "note": "垂直线偏振。作者给双波长波带片红光传播模拟焦点在 1 mm。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "eisenbach2015dualfzp_dual_blue",
+          "study_id": "eisenbach2015dualfzp",
+          "specimen_id": "metalens_model",
+          "model": "Eisenbach 2015 · 双波长波带片 · 双波长模拟 · 蓝光标注冲突",
+          "variant": "双波长 mFZP 传播模拟",
+          "module": "",
+          "visible_light_use": true,
+          "evidence_type": "study",
+          "measurement_scope": "作者模拟，实物行独立保存。",
+          "values": {
+            "design_focal_um": {
+              "value": 1000,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3932 Fig. 2d 下图、图注及正文",
+              "note": "作者给此模型设计焦距。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "original_unit": "mm"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3932 Fig. 2d 下图、图注及正文",
+              "note": "蓝光传播模型的图内和正文为 460 nm，图注为 450 nm。作者报告共焦在 1 mm。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "reported_wavelengths_nm": [
+                450,
+                460
+              ]
+            },
+            "psf_protocol": {
+              "value": "轴向传播模拟",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3932 Fig. 2d 下图、图注及正文",
+              "note": "图以 Z（mm）、Y（μm）显示模型强度。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "simulated_focal_um": {
+              "value": null,
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3932 Fig. 2d 下图、图注及正文",
+              "note": "蓝光传播模型的图内和正文为 460 nm，图注为 450 nm。作者报告共焦在 1 mm。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "模拟蓝光标注冲突",
+              "source": "eisenbach_dual_fzp_pdf_2015",
+              "location": "主文 p3932 Fig. 2d 下图、图注及正文",
+              "note": "蓝光传播模型的图内和正文为 460 nm，图注为 450 nm。作者报告共焦在 1 mm。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            }
+          }
         }
       ],
-      "scope": "52项原始研究、313个器件/测量/系统配置、1920条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
+      "scope": "53项原始研究、317个器件/测量/系统配置、1932条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",

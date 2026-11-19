@@ -196,6 +196,14 @@ export function validateDevices(d,catalog){
  if(measuredFocal?.position_definition==='minimum_transverse_fwhm'&&
   (!(measuredFocal.value>0)||measuredFocal.basis!=='derived_from_measurement'||measuredFocal.calculation_origin!=='authors'||
    !(r.values.wavelength_nm?.value>0)||!r.values.psf_protocol?.value))errors.push('minimum width focus context');
+ const secondaryFocus=r.values.secondary_axial_peak_um;
+ if(Number.isFinite(secondaryFocus?.value)&&(
+   secondaryFocus.value<=0||secondaryFocus.basis!=='measured'||
+   secondaryFocus.position_definition!=='author_reported_secondary_focus'||
+   !(measuredFocal?.value>0)||measuredFocal.basis!=='measured'||secondaryFocus.value===measuredFocal.value||
+   !secondaryFocus.reference_plane||secondaryFocus.reference_plane!==measuredFocal.reference_plane||
+   secondaryFocus.reference_plane!==r.values.psf_protocol?.reference_plane||
+   !(r.values.wavelength_nm?.value>0)||r.values.wavelength_nm.basis!=='measured'||!r.values.polarization?.value))errors.push('secondary axial focus context');
  const modelDof=r.values.simulated_depth_of_focus_um,modelWidth=r.values.simulated_psf_fwhm_x_um;
  if(Number.isFinite(modelDof?.value)&&(!(modelDof.value>0)||modelDof.basis!=='model'||modelDof.calculation_origin!=='authors'||
   !modelDof.dof_criterion||!r.values.psf_protocol?.value))errors.push('simulated focal interval context');
