@@ -1119,3 +1119,9 @@ PR #178 合入 8f6ab3a5c4620abb90955824f8a660ee3d3a4ce6。PR 校验 44457809927�
 去重后收录 Ren 2022 的五谱点 FWHM 和三种效率，含平面玻璃消色差镜、同尺寸未校正实物、光纤消色差实物及分开的成像系统与模拟配置。新增一篇、10 配置、35 条，合计 47 篇、257 配置、1098 条，可见光仍为 38 篇、753 条。Fig. 3E 的红色曲线与 Fig. 3F 轴扫、正文焦位方向冲突。记录了原文明确支持的消色差玻璃镜 1650 nm 实测 225 μm，并将相对设计面的 −25 μm 标为本库计算。未校正实物冲突焦位和作者未公布的逐点焦移仍留空。[本批核验](REN_METAFIBER_REVIEW_2026-11-19.md)
 
 Cao 2024 的期刊在线摘要与原始附件清单已核，补件常规路径与下载替代入口均返回 403。继续寻找作者公开版本。Rong 2026 的逐波长表留待核对期刊分区。会话目标保持开启。[Cao 正式摘要](https://onlinelibrary.wiley.com/doi/abs/10.1002/lpor.202401542)
+
+## 2026-11-19-122 · Ren 2022 实页验收与可见光续查
+
+PR #181 合入 e39cde0f4c3113e2b2a36f60292b44c88320f614。PR 校验 44460200903、主线校验 44460310742、Pages 44460309895 成功。304 项测试通过。独立无头 Chrome 核验全库 47 篇、1098 条，可见光 38 篇、753 条。Ren 的单文献 35 条、10 个 FWHM 散点、10 个总效率散点、1650 nm 的 225 μm 焦位及 −25 μm 读数、七份归组来源、原始 PDF、引用往返及六视口通过。Chrome 取得的 230 个公开文件与构建逐字节一致。消色差分域 JSON 的 SHA-256 为 674687a569a2df989ac99ea80a5f023bf5ef0bc6e46de799c196e1c86253841e。[PR #181](https://github.com/SelinLee/lens-evidence-atlas/pull/181) · [Pages](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44460309895) · [在线 Ren 数据](https://selinlee.github.io/lens-evidence-atlas/?domain=metalens&q=Ren%202022)
+
+续查 Cao 2024 出版方公开图注。Fig. 2f1–h2、j、k 有可见光 450／550／650 nm 的横向及轴向实测。Fig. 4a1–c2、d、e 的近红外测点为 850／1310／1550 nm，其中第二点以原刊图注为准。Fig. 3 图注核实 GO 薄膜和激光还原纳米打印，Fig. 5 图注核实字符 E 的三色实拍和合成位置。原刊全文与补件、ResearchGate 图像直连在本机返回 403。下一批按离散三色核图中印字和几何，未取得的数值留空。新增可见光候选 Tang 2026。作者摘要报告两个实验原型，分区按 2025 年 3 月升级版核查。[Cao Fig. 2](https://www.researchgate.net/figure/Simulated-and-measured-intensity-distributions-around-the-focal-spots-of-the_fig2_385648612) · [Cao Fig. 4](https://www.researchgate.net/figure/Measured-intensity-distributions-of-the-three-wavelength-achromatic-GML-operating-at_fig4_385648612) · [Tang 原刊摘要](https://pubs.acs.org/doi/abs/10.1021/acsphotonics.6c00399) · [分区记录](https://topj.lib.whu.edu.cn/show.asp?cat=sci&id=13654)
