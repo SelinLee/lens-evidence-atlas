@@ -54,7 +54,7 @@
 
 有限共轭设计面与实测聚焦位置使用 `design_image_distance_um`、`measured_image_distance_um`。两者均保留 `object_conjugate: finite` 和与 `psf_protocol.reference_plane` 相同的参考面。实测像距绑定实际谱点，近轴焦距各自保留。用这两种像距计算单波长的有符号残差时，在 `axial_focus_offset_um` 指定 `input_metric: measured_image_distance_um`，计算 `measured_image_distance_um - reference_plane_um`。`reference_plane_um` 必须等于该行的设计像距。
 
-`diffraction_limited_reference_fwhm_um` 标记作者理想模型、模拟波长及 `psf_protocol`。引用给出理想参考模型和测量或仿真所用照明，切线方向未知可记录为 `unspecified`。实物与等 NA 缩比模型的宽度使用对应字段。
+`diffraction_limited_reference_fwhm_um` 标记作者理想模型、相应实测或模拟波长及 `psf_protocol`。理想模型可为 Airy 参考或理想相位掩模传播，切线方向未知可记录为 `unspecified`。实物与等 NA 缩比模型的宽度使用对应字段。
 
 当同篇有多种制程而定量表征归属未明确时，可用`configuration_role: unassigned_measurement_set`保留该测量配置，`candidate_specimen_ids`列至少两个同study中存在且不同的候选结构配置。样本名和`measurement_scope`须明确待核且非额外独立实物；不能仅据共同几何/定性成像就将整组PSF/效率复制给每个候选。
 

@@ -2299,6 +2299,25 @@
       "checked_on": "2026-11-19",
       "publication_source": "hsu_polar_nsf_2022"
     }
+,
+    {
+      "id": "baek_sim_rgb_2022",
+      "title": "Baek et al. (2022), High numerical aperture RGB achromatic metalens in the visible",
+      "url": "https://doi.org/10.1364/prj.470004",
+      "scope": "Photonics Research 10(12), B30–B39，2022-11-30 正式上线。Hasegawa 2026 的 Table 1／参考文献 47。2026-11-19 查 Crossref 64 次、OpenAlex 69 次。450 μm 实物以空间交错校正 450／532／700 nm 的轴向色差。",
+      "checked_on": "2026-11-19",
+      "doi": "10.1364/prj.470004",
+      "kind": "peer_reviewed_paper"
+    },
+    {
+      "id": "baek_sim_rgb_pdf_2022",
+      "title": "Chinese Laser Press 正式主文 PDF · Baek 2022",
+      "url": "https://www.researching.cn/ArticlePdf/m00072/2022/10/12/B30.pdf",
+      "scope": "10 页正式主文。视觉核对 B32–B34 Figs. 2–6，B36 Fig. 9、B37 Table 1；Appendices A–F 与 Data Availability 对读。逐色轴扫、PSF／MTF 数表与采样尺度待补。",
+      "checked_on": "2026-11-19",
+      "publication_source": "baek_sim_rgb_2022",
+      "kind": "peer_reviewed_paper"
+    }
   ],
   "domains": {
     "phone": {
@@ -6054,7 +6073,7 @@
         {
           "id": "diffraction_limited_reference_fwhm_um",
           "label": "衍射极限参考 FWHM (μm)",
-          "definition": "作者理想相位掩模传播的衍射极限焦斑半高全宽。",
+          "definition": "作者用理想衍射模型计算的参考焦斑半高全宽。",
           "conditions": "理想参考模型、波长、照明、评价面与方向。",
           "numeric": true,
           "axis_bounds": {
@@ -145131,9 +145150,1021 @@
               "checked_on": "2026-11-19"
             }
           }
+        },
+        {
+          "id": "baek2022_d450_450",
+          "model": "Baek 2022 · 450 μm 实物 · 450 nm",
+          "module": "",
+          "variant": "论文作者实测",
+          "evidence_type": "study",
+          "study_id": "baek2022",
+          "specimen_id": "sim_d450",
+          "measurement_scope": "单层空间交错 RGB 实物，三色轴扫验证共同标称面。离散谱点，精确残余焦移待原始轴扫。",
+          "values": {
+            "diameter_um": {
+              "value": 450,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d",
+              "note": "该节直接给出制造器件直径，与同文 20 μm FDTD 模型分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.87,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d",
+              "note": "作者报告的标称数值孔径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 125,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d",
+              "note": "作者设计的 f_d。图示共用参考面并未提供逐色精确的实测峰位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B35 Appendix B",
+              "note": "实物沉积的 a-Si:H 薄膜厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "a-Si:H 纳米柱 / 玻璃；三色子阵列空间交错",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 Fig. 2a；p.B35 Appendix B",
+              "note": "单层 a-Si:H 高度为 600 nm。蓝色子阵列周期 230 nm，绿/红色为 460 nm，交错结构未使用单一公共周期填写。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 450,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d；印刷 pp.B35–B36 Appendix C",
+              "note": "实物离散测量波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "spectral_sampling": "discrete_rgb"
+            },
+            "illumination": {
+              "value": "450 nm CW 二极管激光 CPS450",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 pp.B35–B36 Appendix C",
+              "note": "主聚焦实验光源。主文未进一步指定本次 PSF 取像的偏振和入射角标定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "450／532／700 nm 在 125 μm 标称面附近同焦",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d",
+              "note": "归一化轴向实测图和正文给出三色同一设计焦距附近的聚焦。缺少逐色峰位表、校准及残余焦移的不确定度。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "correction": "longitudinal_chromatic_aberration",
+              "design_reference_plane_um": 125,
+              "sample_wavelengths_nm": [
+                450,
+                532,
+                700
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d",
+              "note": "作者定性报告 f = f_d，Fig. 3d 以共同设计面为参考。实际峰位逐色数值、拟合和轴向零点标定未给。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "axial_focus_offset_um": {
+              "value": null,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d",
+              "note": "设计参考焦距 125 μm。没有逐色残差数值或原始轴扫数组。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "reference_plane_um": 125
+            },
+            "psf_protocol": {
+              "value": "各波长焦斑处实测横向 PSF；50× 继像，轴扫步长 0.5 μm",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d；印刷 p.B33 Fig. 4a–Fig. 4d；印刷 pp.B35–B36 Appendix C",
+              "note": "电动台按 0.5 μm 采集 x–y 强度图，50× Olympus LMPLFLN 和 Lumenera INFINITY2-2 继像。图 4 用各波长焦斑，未给焦面精确 z、横向有效采样、截线方向或去背景条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "axial_step_um": 0.5,
+              "evaluation_plane_um": null,
+              "transverse_profile_direction": null,
+              "object_plane_pixel_size_um": null,
+              "field_angle_deg": null,
+              "focal_plane_selection": "author_reported_per_wavelength_focus"
+            },
+            "fwhm_um": {
+              "value": 0.2985,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B33 §2 FWHM 段；Fig. 4d，450 nm",
+              "note": "原文实测 298.5 nm。剖面方位未指明。Table 1 的 This work 0.265 μm 对应正文 Airy 参考的舍入值。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "display": "0.2985",
+              "original_value": 298.5,
+              "original_unit": "nm",
+              "direction": "unspecified"
+            },
+            "diffraction_limited_reference_fwhm_um": {
+              "value": 0.2646,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B33 §2 Airy 参考宽度段；Fig. 4d；p.B37 Table 1, This work",
+              "note": "正文 Airy 理论参考 264.6 nm，Table 1 对应舍入值 0.265 μm。保留作者印字和公式，精确计算所用的未舍入 NA 未给。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "display": "0.2646",
+              "original_value": 264.6,
+              "original_unit": "nm",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_airy_function",
+              "formula": "0.514 * wavelength / NA",
+              "direction": "unspecified"
+            },
+            "strehl": {
+              "value": 0.89,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B34 §2 首段；p.B33 Fig. 4d；p.B37 Table 1, This work",
+              "note": "作者将实测剖面和理想 Airy 剖面等积分归一，再比较中心强度。原始强度、积分窗和背景处理未知。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_airy_function",
+              "normalization": "equal_integrated_profile_power"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 5.9,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实测效率段；印刷 pp.B35–B36 Appendix C",
+              "note": "作者由该波长焦区实测功率对总入射功率求比。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "denominator": "total_incident_power"
+            },
+            "efficiency_lambda_nm": {
+              "value": 450,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实测效率段",
+              "note": "主文逐色效率对应的实验波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_protocol": {
+              "value": "半径 4×FWHM 的焦面圆内透射功率 / 总入射功率",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 pp.B35–B36 Appendix C",
+              "note": "功率计为 Thorlabs PM120VA。主文基线入射偏振和光阑计量的详细归一范围未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "aperture_shape": "circle",
+              "radius_fwhm_multiple": 4,
+              "denominator": "total_incident_power"
+            },
+            "mtf_curve": {
+              "value": "归一化 MTF 曲线，频率 0–10 cycles/μm",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B33 Fig. 4g；p.B34 Eq. (3)；p.B37 Data Availability",
+              "note": "作者对二维实测焦斑强度作傅里叶变换并除以其总积分，令零频为 1。纵轴 0–1，未说明绘图所用的一维方向、场角标定、重采样、积分窗和有效像素尺寸。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "mtf_kind": "measured_psf_fourier",
+              "frequency_unit": "cycles/μm",
+              "frequency_axis_extent": [
+                0,
+                10
+              ],
+              "mtf_axis_extent": [
+                0,
+                1
+              ],
+              "normalization": "dc_by_integrated_psf",
+              "direction_aggregation": "unspecified",
+              "frequency_reference_plane": null,
+              "field_angle_deg": null,
+              "sample_wavelengths_nm": [
+                450
+              ],
+              "data_availability": {
+                "status": "curves_only",
+                "statement": "available_from_authors_upon_reasonable_request",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "object_plane_pixel_size_um": null
+              }
+            }
+          }
+        },
+        {
+          "id": "baek2022_d450_532",
+          "model": "Baek 2022 · 450 μm 实物 · 532 nm",
+          "module": "",
+          "variant": "论文作者实测",
+          "evidence_type": "study",
+          "study_id": "baek2022",
+          "specimen_id": "sim_d450",
+          "measurement_scope": "单层空间交错 RGB 实物，三色轴扫验证共同标称面。离散谱点，精确残余焦移待原始轴扫。",
+          "values": {
+            "diameter_um": {
+              "value": 450,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d",
+              "note": "该节直接给出制造器件直径，与同文 20 μm FDTD 模型分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.87,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d",
+              "note": "作者报告的标称数值孔径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 125,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d",
+              "note": "作者设计的 f_d。图示共用参考面并未提供逐色精确的实测峰位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B35 Appendix B",
+              "note": "实物沉积的 a-Si:H 薄膜厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "a-Si:H 纳米柱 / 玻璃；三色子阵列空间交错",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 Fig. 2a；p.B35 Appendix B",
+              "note": "单层 a-Si:H 高度为 600 nm。蓝色子阵列周期 230 nm，绿/红色为 460 nm，交错结构未使用单一公共周期填写。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d；印刷 pp.B35–B36 Appendix C",
+              "note": "实物离散测量波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "spectral_sampling": "discrete_rgb"
+            },
+            "illumination": {
+              "value": "532 nm CW 二极管激光 CPS532",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 pp.B35–B36 Appendix C",
+              "note": "主聚焦实验光源。主文未进一步指定本次 PSF 取像的偏振和入射角标定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "450／532／700 nm 在 125 μm 标称面附近同焦",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d",
+              "note": "归一化轴向实测图和正文给出三色同一设计焦距附近的聚焦。缺少逐色峰位表、校准及残余焦移的不确定度。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "correction": "longitudinal_chromatic_aberration",
+              "design_reference_plane_um": 125,
+              "sample_wavelengths_nm": [
+                450,
+                532,
+                700
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d",
+              "note": "作者定性报告 f = f_d，Fig. 3d 以共同设计面为参考。实际峰位逐色数值、拟合和轴向零点标定未给。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "axial_focus_offset_um": {
+              "value": null,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d",
+              "note": "设计参考焦距 125 μm。没有逐色残差数值或原始轴扫数组。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "reference_plane_um": 125
+            },
+            "psf_protocol": {
+              "value": "各波长焦斑处实测横向 PSF；50× 继像，轴扫步长 0.5 μm",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d；印刷 p.B33 Fig. 4b–Fig. 4e；印刷 pp.B35–B36 Appendix C",
+              "note": "电动台按 0.5 μm 采集 x–y 强度图，50× Olympus LMPLFLN 和 Lumenera INFINITY2-2 继像。图 4 用各波长焦斑，未给焦面精确 z、横向有效采样、截线方向或去背景条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "axial_step_um": 0.5,
+              "evaluation_plane_um": null,
+              "transverse_profile_direction": null,
+              "object_plane_pixel_size_um": null,
+              "field_angle_deg": null,
+              "focal_plane_selection": "author_reported_per_wavelength_focus"
+            },
+            "fwhm_um": {
+              "value": 0.3234,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B33 §2 FWHM 段；Fig. 4e，532 nm",
+              "note": "原文实测 323.4 nm。剖面方位未指明。Table 1 的 This work 0.313 μm 对应正文 Airy 参考的舍入值。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "display": "0.3234",
+              "original_value": 323.4,
+              "original_unit": "nm",
+              "direction": "unspecified"
+            },
+            "diffraction_limited_reference_fwhm_um": {
+              "value": 0.3128,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B33 §2 Airy 参考宽度段；Fig. 4e；p.B37 Table 1, This work",
+              "note": "正文 Airy 理论参考 312.8 nm，Table 1 对应舍入值 0.313 μm。保留作者印字和公式，精确计算所用的未舍入 NA 未给。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "display": "0.3128",
+              "original_value": 312.8,
+              "original_unit": "nm",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_airy_function",
+              "formula": "0.514 * wavelength / NA",
+              "direction": "unspecified"
+            },
+            "strehl": {
+              "value": 0.88,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B34 §2 首段；p.B33 Fig. 4e；p.B37 Table 1, This work",
+              "note": "作者将实测剖面和理想 Airy 剖面等积分归一，再比较中心强度。原始强度、积分窗和背景处理未知。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_airy_function",
+              "normalization": "equal_integrated_profile_power"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 11.3,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实测效率段；印刷 pp.B35–B36 Appendix C",
+              "note": "作者由该波长焦区实测功率对总入射功率求比。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "denominator": "total_incident_power"
+            },
+            "efficiency_lambda_nm": {
+              "value": 532,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实测效率段",
+              "note": "主文逐色效率对应的实验波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_protocol": {
+              "value": "半径 4×FWHM 的焦面圆内透射功率 / 总入射功率",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 pp.B35–B36 Appendix C",
+              "note": "功率计为 Thorlabs PM120VA。主文基线入射偏振和光阑计量的详细归一范围未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "aperture_shape": "circle",
+              "radius_fwhm_multiple": 4,
+              "denominator": "total_incident_power"
+            },
+            "mtf_curve": {
+              "value": "归一化 MTF 曲线，频率 0–10 cycles/μm",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B33 Fig. 4h；p.B34 Eq. (3)；p.B37 Data Availability",
+              "note": "作者对二维实测焦斑强度作傅里叶变换并除以其总积分，令零频为 1。纵轴 0–1，未说明绘图所用的一维方向、场角标定、重采样、积分窗和有效像素尺寸。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "mtf_kind": "measured_psf_fourier",
+              "frequency_unit": "cycles/μm",
+              "frequency_axis_extent": [
+                0,
+                10
+              ],
+              "mtf_axis_extent": [
+                0,
+                1
+              ],
+              "normalization": "dc_by_integrated_psf",
+              "direction_aggregation": "unspecified",
+              "frequency_reference_plane": null,
+              "field_angle_deg": null,
+              "sample_wavelengths_nm": [
+                532
+              ],
+              "data_availability": {
+                "status": "curves_only",
+                "statement": "available_from_authors_upon_reasonable_request",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "object_plane_pixel_size_um": null
+              }
+            }
+          }
+        },
+        {
+          "id": "baek2022_d450_700",
+          "model": "Baek 2022 · 450 μm 实物 · 700 nm",
+          "module": "",
+          "variant": "论文作者实测",
+          "evidence_type": "study",
+          "study_id": "baek2022",
+          "specimen_id": "sim_d450",
+          "measurement_scope": "单层空间交错 RGB 实物，三色轴扫验证共同标称面。离散谱点，精确残余焦移待原始轴扫。",
+          "values": {
+            "diameter_um": {
+              "value": 450,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d",
+              "note": "该节直接给出制造器件直径，与同文 20 μm FDTD 模型分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.87,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d",
+              "note": "作者报告的标称数值孔径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 125,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d",
+              "note": "作者设计的 f_d。图示共用参考面并未提供逐色精确的实测峰位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B35 Appendix B",
+              "note": "实物沉积的 a-Si:H 薄膜厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "a-Si:H 纳米柱 / 玻璃；三色子阵列空间交错",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 Fig. 2a；p.B35 Appendix B",
+              "note": "单层 a-Si:H 高度为 600 nm。蓝色子阵列周期 230 nm，绿/红色为 460 nm，交错结构未使用单一公共周期填写。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d；印刷 pp.B35–B36 Appendix C",
+              "note": "实物离散测量波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "spectral_sampling": "discrete_rgb"
+            },
+            "illumination": {
+              "value": "700 nm 超连续谱光源 SC-Pro-7",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 pp.B35–B36 Appendix C",
+              "note": "主聚焦实验光源。主文未进一步指定本次 PSF 取像的偏振和入射角标定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "450／532／700 nm 在 125 μm 标称面附近同焦",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d",
+              "note": "归一化轴向实测图和正文给出三色同一设计焦距附近的聚焦。缺少逐色峰位表、校准及残余焦移的不确定度。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "correction": "longitudinal_chromatic_aberration",
+              "design_reference_plane_um": 125,
+              "sample_wavelengths_nm": [
+                450,
+                532,
+                700
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d",
+              "note": "作者定性报告 f = f_d，Fig. 3d 以共同设计面为参考。实际峰位逐色数值、拟合和轴向零点标定未给。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "axial_focus_offset_um": {
+              "value": null,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d",
+              "note": "设计参考焦距 125 μm。没有逐色残差数值或原始轴扫数组。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "reference_plane_um": 125
+            },
+            "psf_protocol": {
+              "value": "各波长焦斑处实测横向 PSF；50× 继像，轴扫步长 0.5 μm",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d；印刷 p.B33 Fig. 4c–Fig. 4f；印刷 pp.B35–B36 Appendix C",
+              "note": "电动台按 0.5 μm 采集 x–y 强度图，50× Olympus LMPLFLN 和 Lumenera INFINITY2-2 继像。图 4 用各波长焦斑，未给焦面精确 z、横向有效采样、截线方向或去背景条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "axial_step_um": 0.5,
+              "evaluation_plane_um": null,
+              "transverse_profile_direction": null,
+              "object_plane_pixel_size_um": null,
+              "field_angle_deg": null,
+              "focal_plane_selection": "author_reported_per_wavelength_focus"
+            },
+            "fwhm_um": {
+              "value": 0.4571,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B33 §2 FWHM 段；Fig. 4f，700 nm",
+              "note": "原文实测 457.1 nm。剖面方位未指明。Table 1 的 This work 0.412 μm 对应正文 Airy 参考的舍入值。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "display": "0.4571",
+              "original_value": 457.1,
+              "original_unit": "nm",
+              "direction": "unspecified"
+            },
+            "diffraction_limited_reference_fwhm_um": {
+              "value": 0.4116,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B33 §2 Airy 参考宽度段；Fig. 4f；p.B37 Table 1, This work",
+              "note": "正文 Airy 理论参考 411.6 nm，Table 1 对应舍入值 0.412 μm。保留作者印字和公式，精确计算所用的未舍入 NA 未给。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "display": "0.4116",
+              "original_value": 411.6,
+              "original_unit": "nm",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_airy_function",
+              "formula": "0.514 * wavelength / NA",
+              "direction": "unspecified"
+            },
+            "strehl": {
+              "value": 0.82,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B34 §2 首段；p.B33 Fig. 4f；p.B37 Table 1, This work",
+              "note": "作者将实测剖面和理想 Airy 剖面等积分归一，再比较中心强度。原始强度、积分窗和背景处理未知。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_airy_function",
+              "normalization": "equal_integrated_profile_power"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 13.6,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实测效率段；印刷 pp.B35–B36 Appendix C",
+              "note": "作者由该波长焦区实测功率对总入射功率求比。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "denominator": "total_incident_power"
+            },
+            "efficiency_lambda_nm": {
+              "value": 700,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实测效率段",
+              "note": "主文逐色效率对应的实验波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_protocol": {
+              "value": "半径 4×FWHM 的焦面圆内透射功率 / 总入射功率",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 pp.B35–B36 Appendix C",
+              "note": "功率计为 Thorlabs PM120VA。主文基线入射偏振和光阑计量的详细归一范围未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "aperture_shape": "circle",
+              "radius_fwhm_multiple": 4,
+              "denominator": "total_incident_power"
+            },
+            "mtf_curve": {
+              "value": "归一化 MTF 曲线，频率 0–10 cycles/μm",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B33 Fig. 4i；p.B34 Eq. (3)；p.B37 Data Availability",
+              "note": "作者对二维实测焦斑强度作傅里叶变换并除以其总积分，令零频为 1。纵轴 0–1，未说明绘图所用的一维方向、场角标定、重采样、积分窗和有效像素尺寸。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "mtf_kind": "measured_psf_fourier",
+              "frequency_unit": "cycles/μm",
+              "frequency_axis_extent": [
+                0,
+                10
+              ],
+              "mtf_axis_extent": [
+                0,
+                1
+              ],
+              "normalization": "dc_by_integrated_psf",
+              "direction_aggregation": "unspecified",
+              "frequency_reference_plane": null,
+              "field_angle_deg": null,
+              "sample_wavelengths_nm": [
+                700
+              ],
+              "data_availability": {
+                "status": "curves_only",
+                "statement": "available_from_authors_upon_reasonable_request",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "object_plane_pixel_size_um": null
+              }
+            }
+          }
+        },
+        {
+          "id": "baek2022_d450_polarization_450",
+          "model": "Baek 2022 · 450 μm 实物 · 450 nm 偏振扫描",
+          "module": "",
+          "variant": "论文作者实测",
+          "evidence_type": "study",
+          "study_id": "baek2022",
+          "specimen_id": "sim_d450",
+          "measurement_scope": "同一实物的蓝色偏振扫描，五种线偏振及一种圆偏振。记录原文跨状态汇总。",
+          "values": {
+            "diameter_um": {
+              "value": 450,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d",
+              "note": "该节直接给出制造器件直径，与同文 20 μm FDTD 模型分别记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.87,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d",
+              "note": "作者报告的标称数值孔径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 125,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 实物表征段；p.B33 Fig. 3c–d",
+              "note": "作者设计的 f_d。图示共用参考面并未提供逐色精确的实测峰位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B35 Appendix B",
+              "note": "实物沉积的 a-Si:H 薄膜厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "a-Si:H 纳米柱 / 玻璃；三色子阵列空间交错",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 Fig. 2a；p.B35 Appendix B",
+              "note": "单层 a-Si:H 高度为 600 nm。蓝色子阵列周期 230 nm，绿/红色为 460 nm，交错结构未使用单一公共周期填写。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 450,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B36 Appendix D；Fig. 9a–b",
+              "note": "450 nm 蓝激光用于独立偏振扫描。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_lambda_nm": {
+              "value": 450,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B36 Appendix D；Fig. 9a–b",
+              "note": "偏振曲线的共同入射谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "线偏振 0°／20°／40°／60°／80°，圆偏振手性未说明",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B36 Appendix D；Fig. 9a–b",
+              "note": "线偏振用半波片调角，圆偏振用快轴相对线偏振器 45° 的四分之一波片。各状态重复次数未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "linear_angles_deg": [
+                0,
+                20,
+                40,
+                60,
+                80
+              ],
+              "circular_handedness": null
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 5.94,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B36 Appendix D；Fig. 9a–b",
+              "note": "作者报告跨偏振状态的平均效率约 5.94%，标准差约 0.07 个百分点。原文不给各柱数值、重复数或 SD 的归一方式。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "statistic": "mean_across_input_polarization_states",
+              "approximate": true,
+              "display": "约 5.94%（SD 约 0.07 个百分点）",
+              "reported_error": {
+                "type": "SD",
+                "value": 0.07,
+                "sample_size": null
+              }
+            },
+            "efficiency_protocol": {
+              "value": "蓝激光偏振扫描的六种状态均值；独立光路，焦圈与分母细节待核",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B36 Appendix D；Fig. 9a–b",
+              "note": "Appendix D 未重述该装置的焦圈与入射参照。主测量协议见 Appendix C，不直接套用。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "baek2022_d20_450",
+          "model": "Baek 2022 · 20 μm FDTD 模型 · 450 nm",
+          "module": "",
+          "variant": "论文作者模拟",
+          "evidence_type": "study",
+          "study_id": "baek2022",
+          "specimen_id": "fdtd_d20",
+          "measurement_scope": "同文三维 FDTD 模型，光强剖面和效率均归 20 μm 模型。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2, Fig. 2b–e；p.B35 §3",
+              "note": "论文明确指定模型口径。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 5.5,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2, Fig. 2b–e；p.B35 §3",
+              "note": "设计 f_d。正文另称 Fig. 2c–e 计算横向分布的 f = 5 μm，二者各保留其用途。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.87,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2, Fig. 2b–e；p.B35 §3",
+              "note": "作者给该缩小模型的标称 NA。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2；p.B35 Appendix A",
+              "note": "模型中的 a-Si:H 厚度；模拟用玻璃 1 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 450,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2, Fig. 2b–e；p.B35 §3",
+              "note": "FDTD 模型的离散入射波长。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "spectral_sampling": "discrete_rgb"
+            },
+            "psf_protocol": {
+              "value": "三维 FDTD；横向剖面正文指 f = 5 μm",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 Fig. 2b–e；p.B35 Appendix A",
+              "note": "聚焦计算网格 20 nm、PML 边界和 DFT 取场。Fig. 2b 的横轴没有量名，虚线刻度与名义设计焦距的换算未明。逐色数值峰位待核。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "simulation_kind": "fdtd_3d",
+              "grid_spacing_nm": 20,
+              "reported_transverse_section_f_um": 5,
+              "evaluation_plane_um": null
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 25.2,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2, Fig. 2b–e；p.B35 §3；p.B36 Appendix E",
+              "note": "模拟焦点光功率与到达超透镜的总入射功率之比。模拟焦圈大小未明。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "denominator": "incident_power_on_metalens"
+            },
+            "efficiency_protocol": {
+              "value": "模拟焦点光功率 / 入射到超透镜的总功率",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2, Fig. 2b–e；p.B35 §3",
+              "note": "该段没有指定焦圈积分半径。实物 Appendix C 的 4×FWHM 属于实测协议。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_power_on_metalens",
+              "radius_fwhm_multiple": null
+            }
+          }
+        },
+        {
+          "id": "baek2022_d20_532",
+          "model": "Baek 2022 · 20 μm FDTD 模型 · 532 nm",
+          "module": "",
+          "variant": "论文作者模拟",
+          "evidence_type": "study",
+          "study_id": "baek2022",
+          "specimen_id": "fdtd_d20",
+          "measurement_scope": "同文三维 FDTD 模型，光强剖面和效率均归 20 μm 模型。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2, Fig. 2b–e；p.B35 §3",
+              "note": "论文明确指定模型口径。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 5.5,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2, Fig. 2b–e；p.B35 §3",
+              "note": "设计 f_d。正文另称 Fig. 2c–e 计算横向分布的 f = 5 μm，二者各保留其用途。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.87,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2, Fig. 2b–e；p.B35 §3",
+              "note": "作者给该缩小模型的标称 NA。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2；p.B35 Appendix A",
+              "note": "模型中的 a-Si:H 厚度；模拟用玻璃 1 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2, Fig. 2b–e；p.B35 §3",
+              "note": "FDTD 模型的离散入射波长。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "spectral_sampling": "discrete_rgb"
+            },
+            "psf_protocol": {
+              "value": "三维 FDTD；横向剖面正文指 f = 5 μm",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 Fig. 2b–e；p.B35 Appendix A",
+              "note": "聚焦计算网格 20 nm、PML 边界和 DFT 取场。Fig. 2b 的横轴没有量名，虚线刻度与名义设计焦距的换算未明。逐色数值峰位待核。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "simulation_kind": "fdtd_3d",
+              "grid_spacing_nm": 20,
+              "reported_transverse_section_f_um": 5,
+              "evaluation_plane_um": null
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 58.7,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2, Fig. 2b–e；p.B35 §3；p.B36 Appendix E",
+              "note": "模拟焦点光功率与到达超透镜的总入射功率之比。模拟焦圈大小未明。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "denominator": "incident_power_on_metalens"
+            },
+            "efficiency_protocol": {
+              "value": "模拟焦点光功率 / 入射到超透镜的总功率",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2, Fig. 2b–e；p.B35 §3",
+              "note": "该段没有指定焦圈积分半径。实物 Appendix C 的 4×FWHM 属于实测协议。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_power_on_metalens",
+              "radius_fwhm_multiple": null
+            }
+          }
+        },
+        {
+          "id": "baek2022_d20_700",
+          "model": "Baek 2022 · 20 μm FDTD 模型 · 700 nm",
+          "module": "",
+          "variant": "论文作者模拟",
+          "evidence_type": "study",
+          "study_id": "baek2022",
+          "specimen_id": "fdtd_d20",
+          "measurement_scope": "同文三维 FDTD 模型，光强剖面和效率均归 20 μm 模型。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2, Fig. 2b–e；p.B35 §3",
+              "note": "论文明确指定模型口径。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 5.5,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2, Fig. 2b–e；p.B35 §3",
+              "note": "设计 f_d。正文另称 Fig. 2c–e 计算横向分布的 f = 5 μm，二者各保留其用途。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.87,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2, Fig. 2b–e；p.B35 §3",
+              "note": "作者给该缩小模型的标称 NA。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2；p.B35 Appendix A",
+              "note": "模型中的 a-Si:H 厚度；模拟用玻璃 1 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2, Fig. 2b–e；p.B35 §3",
+              "note": "FDTD 模型的离散入射波长。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "spectral_sampling": "discrete_rgb"
+            },
+            "psf_protocol": {
+              "value": "三维 FDTD；横向剖面正文指 f = 5 μm",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2 Fig. 2b–e；p.B35 Appendix A",
+              "note": "聚焦计算网格 20 nm、PML 边界和 DFT 取场。Fig. 2b 的横轴没有量名，虚线刻度与名义设计焦距的换算未明。逐色数值峰位待核。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "simulation_kind": "fdtd_3d",
+              "grid_spacing_nm": 20,
+              "reported_transverse_section_f_um": 5,
+              "evaluation_plane_um": null
+            },
+            "simulated_focusing_efficiency_pct": {
+              "value": 66.4,
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2, Fig. 2b–e；p.B35 §3；p.B36 Appendix E",
+              "note": "模拟焦点光功率与到达超透镜的总入射功率之比。模拟焦圈大小未明。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "denominator": "incident_power_on_metalens"
+            },
+            "efficiency_protocol": {
+              "value": "模拟焦点光功率 / 入射到超透镜的总功率",
+              "source": "baek_sim_rgb_pdf_2022",
+              "location": "印刷 p.B32 §2, Fig. 2b–e；p.B35 §3",
+              "note": "该段没有指定焦圈积分半径。实物 Appendix C 的 4×FWHM 属于实测协议。",
+              "basis": "model",
+              "checked_on": "2026-11-19",
+              "denominator": "incident_power_on_metalens",
+              "radius_fwhm_multiple": null
+            }
+          }
         }
       ],
-      "scope": "51项原始研究、272个器件/测量/系统配置、1148条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
+      "scope": "52项原始研究、279个器件/测量/系统配置、1206条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
