@@ -2145,6 +2145,78 @@
       "scope": "正式 DOI 精确关联检索返回 0 项。期刊说明支持数据可向通讯作者合理请求。",
       "checked_on": "2026-11-19",
       "publication_source": "cao_graphene_2024"
+    },
+    {
+      "id": "tang_multifocal_2026",
+      "title": "Tang et al. (2026), Nanoprinted Geometric Phase Metalenses for Longitudinal Multifocusing with Achromatism, Polarization, and Intensity Manipulation",
+      "url": "https://pubs.acs.org/doi/abs/10.1021/acsphotonics.6c00399",
+      "kind": "peer_reviewed_paper",
+      "scope": "核刊方摘要、题录和补件目录。2026-04-15 正式上线，13(9):2738–2749。全文和补件 PDF 本机直连返回 403。",
+      "checked_on": "2026-11-19",
+      "doi": "10.1021/acsphotonics.6c00399"
+    },
+    {
+      "id": "tang_multifocal_crossref_2026",
+      "title": "Crossref · Tang 2026 主文题录",
+      "url": "https://api.crossref.org/works/10.1021/acsphotonics.6c00399",
+      "kind": "repository_metadata",
+      "scope": "核作者、审定题目、2026-04-15 正式上线与页码。该登记未提供作者摘要正文。",
+      "checked_on": "2026-11-19",
+      "publication_source": "tang_multifocal_2026"
+    },
+    {
+      "id": "tang_multifocal_si_2026",
+      "title": "ACS 官方补件 · ph6c00399_si_001.pdf",
+      "url": "https://doi.org/10.1021/acsphotonics.6c00399.s001",
+      "kind": "supporting_information",
+      "scope": "官方组件 DOI 跳转到已登记的 PDF。目录列实测及模拟光场、MTF、聚焦效率等。PDF 直连 403，图表与协议待核。",
+      "checked_on": "2026-11-19",
+      "publication_source": "tang_multifocal_2026"
+    },
+    {
+      "id": "tang_multifocal_si_registry_2026",
+      "title": "Crossref · Tang 2026 补件 DOI 登记",
+      "url": "https://api.crossref.org/works/10.1021/acsphotonics.6c00399.s001",
+      "kind": "repository_metadata",
+      "scope": "官方 component 关系为 is-component-of 主文 10.1021/acsphotonics.6c00399，resource.primary.URL 对应 ph6c00399_si_001.pdf。",
+      "checked_on": "2026-11-19",
+      "publication_source": "tang_multifocal_2026"
+    },
+    {
+      "id": "arbabi_dichroic_pdf_2016",
+      "title": "Arbabi et al. (2016), High efficiency double-wavelength dielectric metasurface lenses with dichroic birefringent meta-atoms",
+      "url": "https://authors.library.caltech.edu/records/zsmjf-ng522/files/oe-24-16-18468.pdf?download=1",
+      "kind": "peer_reviewed_paper",
+      "scope": "Caltech 存档的正式版 oe-24-16-18468.pdf。核 pp18472–18475、Figs. 4–6 与两种入射偏振组合。",
+      "checked_on": "2026-11-19",
+      "doi": "10.1364/oe.24.018468"
+    },
+    {
+      "id": "arbabi_dichroic_caltech_2016",
+      "title": "CaltechAUTHORS · Arbabi 2016 正式版馆藏记录",
+      "url": "https://authors.library.caltech.edu/records/zsmjf-ng522",
+      "kind": "repository_metadata",
+      "scope": "目录标 Published，并给正式 PDF 文件和发布日期说明。",
+      "checked_on": "2026-11-19",
+      "publication_source": "arbabi_dichroic_pdf_2016"
+    },
+    {
+      "id": "arbabi_dichroic_crossref_2016",
+      "title": "Crossref · Arbabi 2016 出版日与被引量",
+      "url": "https://api.crossref.org/works/10.1364/oe.24.018468",
+      "kind": "repository_metadata",
+      "scope": "2026-11-19 查询被引 100 次，正式上线 2016-08-03。",
+      "checked_on": "2026-11-19",
+      "publication_source": "arbabi_dichroic_pdf_2016"
+    },
+    {
+      "id": "arbabi_dichroic_datacite_2016",
+      "title": "DataCite · Arbabi 2016 DOI 关联检索",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1364%2FOE.24.018468%22",
+      "kind": "repository_metadata",
+      "scope": "已检查正式 DOI 关联，无可用数据条目。",
+      "checked_on": "2026-11-19",
+      "publication_source": "arbabi_dichroic_pdf_2016"
     }
   ],
   "domains": {
@@ -133399,9 +133471,3129 @@
             }
           },
           "visible_light_use": true
+        },
+        {
+          "id": "tang2026multifocal_coherent_ryg_summary",
+          "model": "Tang 2026 · 相干红黄绿表征原型",
+          "study_id": "tang2026multifocal",
+          "specimen_id": "coherent_ryg",
+          "module": "",
+          "variant": "相干红黄绿表征原型",
+          "evidence_type": "study",
+          "measurement_scope": "摘要明确报告的一只可见光实制原型。",
+          "visible_light_use": true,
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "tang_multifocal_2026",
+              "location": "正式期刊摘要末段，两种实物原型",
+              "note": "摘要仅列通道颜色。中心波长、谱宽和照明标定待正文及补件。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "红／黄／绿",
+              "spectral_sampling": "discrete_color_channels",
+              "color_channels": [
+                "red",
+                "yellow",
+                "green"
+              ]
+            },
+            "chromatic": {
+              "value": "三离散谱点的主焦点共焦",
+              "source": "tang_multifocal_2026",
+              "location": "正式摘要中三色焦点叠加设计句及原型句",
+              "note": "单层几何相位设计把每色的一个焦点重合成主焦点，并保留沿轴伴随焦点。逐色实际焦位和辅助焦点归属待全文核准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "axial_foci_per_design_wavelength": 3,
+              "focus_class": "main_achromatic_focus"
+            },
+            "illumination": {
+              "value": "相干红、黄、绿表征",
+              "source": "tang_multifocal_2026",
+              "location": "正式期刊摘要末段，两种实物原型",
+              "note": "摘要明确区分表征与成像所用原型。精确波长和偏振条件待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "coherence": "coherent"
+            },
+            "diameter_um": {
+              "value": null,
+              "source": "tang_multifocal_2026",
+              "location": "正式摘要；Supporting Information 目录",
+              "note": "实物口径与定义待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "tang_multifocal_2026",
+                "tang_multifocal_si_2026",
+                "tang_multifocal_si_registry_2026"
+              ]
+            },
+            "na": {
+              "value": null,
+              "source": "tang_multifocal_2026",
+              "location": "正式摘要；Supporting Information 目录",
+              "note": "数值孔径及参考通道待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "tang_multifocal_2026",
+                "tang_multifocal_si_2026",
+                "tang_multifocal_si_registry_2026"
+              ]
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "tang_multifocal_2026",
+              "location": "正式摘要；Supporting Information 目录",
+              "note": "主焦点与辅助焦点的设计位置待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "tang_multifocal_2026",
+                "tang_multifocal_si_2026",
+                "tang_multifocal_si_registry_2026"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "tang_multifocal_2026",
+              "location": "正式摘要；Supporting Information 目录",
+              "note": "逐色实测峰位和参考面待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "tang_multifocal_2026",
+                "tang_multifocal_si_2026",
+                "tang_multifocal_si_registry_2026"
+              ]
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "tang_multifocal_2026",
+              "location": "正式摘要；Supporting Information 目录",
+              "note": "截面、谱点和近衍射极限的定量值待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "tang_multifocal_2026",
+                "tang_multifocal_si_2026",
+                "tang_multifocal_si_registry_2026"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "tang_multifocal_2026",
+              "location": "正式摘要；Supporting Information 目录",
+              "note": "补件目录列聚焦效率。积分焦面、焦区定义和功率分母待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "tang_multifocal_2026",
+                "tang_multifocal_si_2026",
+                "tang_multifocal_si_registry_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "tang2026multifocal_incoherent_rgb_summary",
+          "model": "Tang 2026 · 非相干 RGB 成像原型",
+          "study_id": "tang2026multifocal",
+          "specimen_id": "incoherent_rgb",
+          "module": "",
+          "variant": "非相干 RGB 成像原型",
+          "evidence_type": "study",
+          "measurement_scope": "摘要明确报告的一只可见光实制原型。",
+          "visible_light_use": true,
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "tang_multifocal_2026",
+              "location": "正式期刊摘要末段，两种实物原型",
+              "note": "摘要仅列通道颜色。中心波长、谱宽和照明标定待正文及补件。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "红／绿／蓝",
+              "spectral_sampling": "discrete_color_channels",
+              "color_channels": [
+                "red",
+                "green",
+                "blue"
+              ]
+            },
+            "chromatic": {
+              "value": "三离散谱点的主焦点共焦",
+              "source": "tang_multifocal_2026",
+              "location": "正式摘要中三色焦点叠加设计句及原型句",
+              "note": "单层几何相位设计把每色的一个焦点重合成主焦点，并保留沿轴伴随焦点。逐色实际焦位和辅助焦点归属待全文核准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "axial_foci_per_design_wavelength": 3,
+              "focus_class": "main_achromatic_focus"
+            },
+            "illumination": {
+              "value": "非相干红、绿、蓝成像",
+              "source": "tang_multifocal_2026",
+              "location": "正式期刊摘要末段，两种实物原型",
+              "note": "摘要明确区分表征与成像所用原型。精确波长和偏振条件待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "coherence": "incoherent"
+            },
+            "diameter_um": {
+              "value": null,
+              "source": "tang_multifocal_2026",
+              "location": "正式摘要；Supporting Information 目录",
+              "note": "实物口径与定义待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "tang_multifocal_2026",
+                "tang_multifocal_si_2026",
+                "tang_multifocal_si_registry_2026"
+              ]
+            },
+            "na": {
+              "value": null,
+              "source": "tang_multifocal_2026",
+              "location": "正式摘要；Supporting Information 目录",
+              "note": "数值孔径及参考通道待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "tang_multifocal_2026",
+                "tang_multifocal_si_2026",
+                "tang_multifocal_si_registry_2026"
+              ]
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "tang_multifocal_2026",
+              "location": "正式摘要；Supporting Information 目录",
+              "note": "主焦点与辅助焦点的设计位置待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "tang_multifocal_2026",
+                "tang_multifocal_si_2026",
+                "tang_multifocal_si_registry_2026"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "tang_multifocal_2026",
+              "location": "正式摘要；Supporting Information 目录",
+              "note": "逐色实测峰位和参考面待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "tang_multifocal_2026",
+                "tang_multifocal_si_2026",
+                "tang_multifocal_si_registry_2026"
+              ]
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "tang_multifocal_2026",
+              "location": "正式摘要；Supporting Information 目录",
+              "note": "截面、谱点和近衍射极限的定量值待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "tang_multifocal_2026",
+                "tang_multifocal_si_2026",
+                "tang_multifocal_si_registry_2026"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "tang_multifocal_2026",
+              "location": "正式摘要；Supporting Information 目录",
+              "note": "补件目录列聚焦效率。积分焦面、焦区定义和功率分母待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "tang_multifocal_2026",
+                "tang_multifocal_si_2026",
+                "tang_multifocal_si_registry_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "tang2026multifocal_reported_summary_summary",
+          "model": "Tang 2026 · 论文报告 · 器件归属待核",
+          "study_id": "tang2026multifocal",
+          "specimen_id": "reported_summary",
+          "module": "",
+          "variant": "论文报告 · 器件归属待核",
+          "evidence_type": "study",
+          "measurement_scope": "加工参数与轴向色差界限只在论文层级公开，逐样品范围待核。",
+          "configuration_role": "unassigned_measurement_set",
+          "candidate_specimen_ids": [
+            "coherent_ryg",
+            "incoherent_rgb"
+          ],
+          "visible_light_use": true,
+          "values": {
+            "material": {
+              "value": "单层几何相位 · 双光子纳米打印",
+              "source": "tang_multifocal_2026",
+              "location": "正式摘要的 two-photon polymerization lithography 段",
+              "note": "作者原述晶格周期 650 nm、结构纵横比约 16。摘要未细列两只样品各自的结构尺寸及纵横比定义。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "lattice_period_nm": 650,
+              "reported_aspect_ratio": {
+                "value": 16,
+                "approximate": true
+              },
+              "reporting_scope": "publication"
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "tang_multifocal_2026",
+              "location": "正式摘要的 axial chromatic aberration 表述",
+              "note": "作者报告实制超透镜的轴向色差小于 1 μm。精确波长、参考面、焦位判据、同文两只原型中对应归属及统计定义待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "论文摘要 <1 μm · 归属待核",
+              "reported_bound_um": {
+                "operator": "<",
+                "value": 1,
+                "scope": "publication"
+              }
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "tang_multifocal_si_2026",
+              "location": "ACS Supporting Information 目录；补件 DOI 元数据",
+              "note": "目录包含 MTF 曲线、实测及模拟光场和聚焦效率。未核得曲线数值、频率单位、场点、方向和归一化。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "tang_multifocal_si_2026",
+                "tang_multifocal_si_registry_2026",
+                "tang_multifocal_2026",
+                "tang_multifocal_crossref_2026"
+              ]
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f100_summary",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=100 μm 设计组",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f100",
+          "module": "",
+          "variant": "f=100 μm 设计组",
+          "evidence_type": "study",
+          "measurement_scope": "一只同口径实制超透镜。按匹配及错配偏振分别给出两谱点。",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 的实物 NA 端点；Fig. 5c–e",
+              "note": "按相同口径与设计焦距的排序，对应作者报告的 NA 端点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "780 nm y 偏振、915 nm x 偏振的离散同焦",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 焦点实验；p18474 Fig. 5a,b；p18473 反向偏振段",
+              "note": "相应两种入射偏振组合的单一焦点靠近设计面。错配偏振有独立轴向焦点，作者说明各单一偏振仍有衍射色散。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_dichroic_pdf_2016",
+                "arbabi_dichroic_caltech_2016",
+                "arbabi_dichroic_crossref_2016",
+                "arbabi_dichroic_datacite_2016"
+              ],
+              "sample_wavelengths_nm": [
+                780,
+                915
+              ],
+              "spectral_sampling": "wavelength_paired_with_linear_polarization"
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18472 正文及 p18474 Fig. 5a,b 同行",
+              "note": "两幅横向强度图打印相同的 z 评价面。作者未给出独立的匹配偏振峰位误差或残余色差数表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sample_wavelengths_nm": [
+                780,
+                915
+              ]
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f100_780_matched",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=100 μm 设计组 · 780 nm 匹配偏振",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f100",
+          "module": "",
+          "variant": "f=100 μm 设计组 · 780 nm 匹配偏振",
+          "evidence_type": "study",
+          "measurement_scope": "轴上实测。波长和入射偏振与设计相符。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 的实物 NA 端点；Fig. 5c–e",
+              "note": "按相同口径与设计焦距的排序，对应作者报告的 NA 端点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 780,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5a，从上往下第 1 行图内光源印字",
+              "note": "原刊该图明确标示的实测入射波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "y 线偏振 · 与设计匹配",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5a，从上往下第 1 行上方偏振印字",
+              "note": "标签依据入射偏振。780 nm 的设计通道为 y，915 nm 的设计通道为 x。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_linear_polarization": "y"
+            },
+            "psf_protocol": {
+              "value": "横向强度图 z=100 μm",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5a，从上往下第 1 行；p18473 Fig. 4a",
+              "note": "轴向图横轴 z（μm）、纵轴 y；横向图给 μm 比例尺。光纤激光经偏振控制和准直。峰值拟合、采样步长、z 原点标定和原始数组未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "evaluation_plane_um": 100,
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5c 与对应正文",
+              "note": "横向半高全宽可查曲线。作者报告整组实测宽度比衍射极限增量小于 7%。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5a，从上往下第 1 行，左轴扫和右横截面；p18472 正文",
+              "note": "横向焦斑图 z 为作者标示的取图平面。两个通道各自峰位的独立数值和取峰规则未报告。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "图示评价面 z=100 μm"
+            },
+            "efficiency_protocol": {
+              "value": "直径 6 μm 针孔内焦区功率／入射到镜面的功率",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "pp18472–18473 Fig. 4b 与针孔段，第 1 个递减 NA 条目",
+              "note": "原文定义为焦区实测功率除以入射到镜面的总功率。约 134 μm 入射束径为 1/e²，约 99% 功率穿过口径。针孔尺寸按作者排列对应。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "total_power_incident_on_lens",
+              "focus_region_geometry": "pinhole",
+              "pinhole_diameter_um": 6,
+              "incident_beam_diameter_um": 134,
+              "incident_beam_diameter_definition": "1/e2"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5e；p18472 正文效率段",
+              "note": "作者正文给匹配偏振五只镜、两个波长的统一下限。逐点效率只给图。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": ">65%（整组下限）",
+              "reported_bound_pct": {
+                "operator": ">",
+                "value": 65,
+                "scope": "matched_conditions"
+              }
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f100_915_matched",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=100 μm 设计组 · 915 nm 匹配偏振",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f100",
+          "module": "",
+          "variant": "f=100 μm 设计组 · 915 nm 匹配偏振",
+          "evidence_type": "study",
+          "measurement_scope": "轴上实测。波长和入射偏振与设计相符。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 的实物 NA 端点；Fig. 5c–e",
+              "note": "按相同口径与设计焦距的排序，对应作者报告的 NA 端点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 915,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5b，从上往下第 1 行图内光源印字",
+              "note": "原刊该图明确标示的实测入射波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "x 线偏振 · 与设计匹配",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5b，从上往下第 1 行上方偏振印字",
+              "note": "标签依据入射偏振。780 nm 的设计通道为 y，915 nm 的设计通道为 x。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_linear_polarization": "x"
+            },
+            "psf_protocol": {
+              "value": "横向强度图 z=100 μm",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5b，从上往下第 1 行；p18473 Fig. 4a",
+              "note": "轴向图横轴 z（μm）、纵轴 y；横向图给 μm 比例尺。光纤激光经偏振控制和准直。峰值拟合、采样步长、z 原点标定和原始数组未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "evaluation_plane_um": 100,
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5c 与对应正文",
+              "note": "横向半高全宽可查曲线。作者报告整组实测宽度比衍射极限增量小于 7%。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5b，从上往下第 1 行，左轴扫和右横截面；p18472 正文",
+              "note": "横向焦斑图 z 为作者标示的取图平面。两个通道各自峰位的独立数值和取峰规则未报告。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "图示评价面 z=100 μm"
+            },
+            "efficiency_protocol": {
+              "value": "直径 6 μm 针孔内焦区功率／入射到镜面的功率",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "pp18472–18473 Fig. 4b 与针孔段，第 1 个递减 NA 条目",
+              "note": "原文定义为焦区实测功率除以入射到镜面的总功率。约 134 μm 入射束径为 1/e²，约 99% 功率穿过口径。针孔尺寸按作者排列对应。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "total_power_incident_on_lens",
+              "focus_region_geometry": "pinhole",
+              "pinhole_diameter_um": 6,
+              "incident_beam_diameter_um": 134,
+              "incident_beam_diameter_definition": "1/e2"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5e；p18472 正文效率段",
+              "note": "作者正文给匹配偏振五只镜、两个波长的统一下限。逐点效率只给图。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": ">65%（整组下限）",
+              "reported_bound_pct": {
+                "operator": ">",
+                "value": 65,
+                "scope": "matched_conditions"
+              }
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f100_780_opposite",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=100 μm 设计组 · 780 nm 错配偏振",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f100",
+          "module": "",
+          "variant": "f=100 μm 设计组 · 780 nm 错配偏振",
+          "evidence_type": "study",
+          "measurement_scope": "轴上实测。同一实物的另一个入射偏振对照。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 780,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6a，从上往下第 1 行图内光源印字",
+              "note": "原刊该图明确标示的实测入射波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "x 线偏振 · 与设计错配",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6a，从上往下第 1 行上方偏振印字",
+              "note": "标签依据入射偏振。780 nm 的设计通道为 y，915 nm 的设计通道为 x。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_linear_polarization": "x"
+            },
+            "psf_protocol": {
+              "value": "横向强度图 z=122 μm",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6a，从上往下第 1 行；p18473 Fig. 4a",
+              "note": "轴向图横轴 z（μm）、纵轴 y；横向图给 μm 比例尺。光纤激光经偏振控制和准直。峰值拟合、采样步长、z 原点标定和原始数组未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "evaluation_plane_um": 122,
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6c 与对应正文",
+              "note": "横向半高全宽可查曲线。错配偏振曲线不同于设计通道。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            },
+            "measured_focal_um": {
+              "value": 122,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6a，从上往下第 1 行右侧 z 印字；p18475 Fig. 6c 图注明确为 focal distances",
+              "note": "作者图注明确把该 z 标注称为焦距。此为入射偏振错配的焦点；参考原点标定、取峰方法和误差未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "position_definition": "author_reported_unspecified",
+              "reference_plane": null
+            },
+            "efficiency_protocol": {
+              "value": "直径 6 μm 针孔内焦区功率／入射到镜面的功率",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "pp18472–18473 Fig. 4b 与针孔段，第 1 个递减 NA 条目",
+              "note": "原文定义为焦区实测功率除以入射到镜面的总功率。约 134 μm 入射束径为 1/e²，约 99% 功率穿过口径。针孔尺寸按作者排列对应。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "total_power_incident_on_lens",
+              "focus_region_geometry": "pinhole",
+              "pinhole_diameter_um": 6,
+              "incident_beam_diameter_um": 134,
+              "incident_beam_diameter_definition": "1/e2"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6d；p18473 错配偏振段",
+              "note": "作者给出错配偏振效率曲线，逐点值及横轴中点待数据表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f100_915_opposite",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=100 μm 设计组 · 915 nm 错配偏振",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f100",
+          "module": "",
+          "variant": "f=100 μm 设计组 · 915 nm 错配偏振",
+          "evidence_type": "study",
+          "measurement_scope": "轴上实测。同一实物的另一个入射偏振对照。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 100,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 915,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6b，从上往下第 1 行图内光源印字",
+              "note": "原刊该图明确标示的实测入射波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "y 线偏振 · 与设计错配",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6b，从上往下第 1 行上方偏振印字",
+              "note": "标签依据入射偏振。780 nm 的设计通道为 y，915 nm 的设计通道为 x。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_linear_polarization": "y"
+            },
+            "psf_protocol": {
+              "value": "横向强度图 z=79 μm",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6b，从上往下第 1 行；p18473 Fig. 4a",
+              "note": "轴向图横轴 z（μm）、纵轴 y；横向图给 μm 比例尺。光纤激光经偏振控制和准直。峰值拟合、采样步长、z 原点标定和原始数组未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "evaluation_plane_um": 79,
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6c 与对应正文",
+              "note": "横向半高全宽可查曲线。错配偏振曲线不同于设计通道。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            },
+            "measured_focal_um": {
+              "value": 79,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6b，从上往下第 1 行右侧 z 印字；p18475 Fig. 6c 图注明确为 focal distances",
+              "note": "作者图注明确把该 z 标注称为焦距。此为入射偏振错配的焦点；参考原点标定、取峰方法和误差未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "position_definition": "author_reported_unspecified",
+              "reference_plane": null
+            },
+            "efficiency_protocol": {
+              "value": "直径 6 μm 针孔内焦区功率／入射到镜面的功率",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "pp18472–18473 Fig. 4b 与针孔段，第 1 个递减 NA 条目",
+              "note": "原文定义为焦区实测功率除以入射到镜面的总功率。约 134 μm 入射束径为 1/e²，约 99% 功率穿过口径。针孔尺寸按作者排列对应。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "total_power_incident_on_lens",
+              "focus_region_geometry": "pinhole",
+              "pinhole_diameter_um": 6,
+              "incident_beam_diameter_um": 134,
+              "incident_beam_diameter_definition": "1/e2"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6d；p18473 错配偏振段",
+              "note": "作者给出错配偏振效率曲线，逐点值及横轴中点待数据表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f200_summary",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=200 μm 设计组",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f200",
+          "module": "",
+          "variant": "f=200 μm 设计组",
+          "evidence_type": "study",
+          "measurement_scope": "一只同口径实制超透镜。按匹配及错配偏振分别给出两谱点。",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 的实物 NA 端点；Fig. 5c–e",
+              "note": "中间器件的 NA 在散点横轴上，未发现单项印字表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "780 nm y 偏振、915 nm x 偏振的离散同焦",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 焦点实验；p18474 Fig. 5a,b；p18473 反向偏振段",
+              "note": "相应两种入射偏振组合的单一焦点靠近设计面。错配偏振有独立轴向焦点，作者说明各单一偏振仍有衍射色散。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_dichroic_pdf_2016",
+                "arbabi_dichroic_caltech_2016",
+                "arbabi_dichroic_crossref_2016",
+                "arbabi_dichroic_datacite_2016"
+              ],
+              "sample_wavelengths_nm": [
+                780,
+                915
+              ],
+              "spectral_sampling": "wavelength_paired_with_linear_polarization"
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18472 正文及 p18474 Fig. 5a,b 同行",
+              "note": "两幅横向强度图打印相同的 z 评价面。作者未给出独立的匹配偏振峰位误差或残余色差数表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sample_wavelengths_nm": [
+                780,
+                915
+              ]
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f200_780_matched",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=200 μm 设计组 · 780 nm 匹配偏振",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f200",
+          "module": "",
+          "variant": "f=200 μm 设计组 · 780 nm 匹配偏振",
+          "evidence_type": "study",
+          "measurement_scope": "轴上实测。波长和入射偏振与设计相符。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 的实物 NA 端点；Fig. 5c–e",
+              "note": "中间器件的 NA 在散点横轴上，未发现单项印字表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 780,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5a，从上往下第 2 行图内光源印字",
+              "note": "原刊该图明确标示的实测入射波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "y 线偏振 · 与设计匹配",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5a，从上往下第 2 行上方偏振印字",
+              "note": "标签依据入射偏振。780 nm 的设计通道为 y，915 nm 的设计通道为 x。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_linear_polarization": "y"
+            },
+            "psf_protocol": {
+              "value": "横向强度图 z=200 μm",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5a，从上往下第 2 行；p18473 Fig. 4a",
+              "note": "轴向图横轴 z（μm）、纵轴 y；横向图给 μm 比例尺。光纤激光经偏振控制和准直。峰值拟合、采样步长、z 原点标定和原始数组未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "evaluation_plane_um": 200,
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5c 与对应正文",
+              "note": "横向半高全宽可查曲线。作者报告整组实测宽度比衍射极限增量小于 7%。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5a，从上往下第 2 行，左轴扫和右横截面；p18472 正文",
+              "note": "横向焦斑图 z 为作者标示的取图平面。两个通道各自峰位的独立数值和取峰规则未报告。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "图示评价面 z=200 μm"
+            },
+            "efficiency_protocol": {
+              "value": "直径 6 μm 针孔内焦区功率／入射到镜面的功率",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "pp18472–18473 Fig. 4b 与针孔段，第 2 个递减 NA 条目",
+              "note": "原文定义为焦区实测功率除以入射到镜面的总功率。约 134 μm 入射束径为 1/e²，约 99% 功率穿过口径。针孔尺寸按作者排列对应。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "total_power_incident_on_lens",
+              "focus_region_geometry": "pinhole",
+              "pinhole_diameter_um": 6,
+              "incident_beam_diameter_um": 134,
+              "incident_beam_diameter_definition": "1/e2"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5e；p18472 正文效率段",
+              "note": "作者正文给匹配偏振五只镜、两个波长的统一下限。逐点效率只给图。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": ">65%（整组下限）",
+              "reported_bound_pct": {
+                "operator": ">",
+                "value": 65,
+                "scope": "matched_conditions"
+              }
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f200_915_matched",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=200 μm 设计组 · 915 nm 匹配偏振",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f200",
+          "module": "",
+          "variant": "f=200 μm 设计组 · 915 nm 匹配偏振",
+          "evidence_type": "study",
+          "measurement_scope": "轴上实测。波长和入射偏振与设计相符。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 的实物 NA 端点；Fig. 5c–e",
+              "note": "中间器件的 NA 在散点横轴上，未发现单项印字表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 915,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5b，从上往下第 2 行图内光源印字",
+              "note": "原刊该图明确标示的实测入射波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "x 线偏振 · 与设计匹配",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5b，从上往下第 2 行上方偏振印字",
+              "note": "标签依据入射偏振。780 nm 的设计通道为 y，915 nm 的设计通道为 x。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_linear_polarization": "x"
+            },
+            "psf_protocol": {
+              "value": "横向强度图 z=200 μm",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5b，从上往下第 2 行；p18473 Fig. 4a",
+              "note": "轴向图横轴 z（μm）、纵轴 y；横向图给 μm 比例尺。光纤激光经偏振控制和准直。峰值拟合、采样步长、z 原点标定和原始数组未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "evaluation_plane_um": 200,
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5c 与对应正文",
+              "note": "横向半高全宽可查曲线。作者报告整组实测宽度比衍射极限增量小于 7%。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5b，从上往下第 2 行，左轴扫和右横截面；p18472 正文",
+              "note": "横向焦斑图 z 为作者标示的取图平面。两个通道各自峰位的独立数值和取峰规则未报告。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "图示评价面 z=200 μm"
+            },
+            "efficiency_protocol": {
+              "value": "直径 6 μm 针孔内焦区功率／入射到镜面的功率",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "pp18472–18473 Fig. 4b 与针孔段，第 2 个递减 NA 条目",
+              "note": "原文定义为焦区实测功率除以入射到镜面的总功率。约 134 μm 入射束径为 1/e²，约 99% 功率穿过口径。针孔尺寸按作者排列对应。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "total_power_incident_on_lens",
+              "focus_region_geometry": "pinhole",
+              "pinhole_diameter_um": 6,
+              "incident_beam_diameter_um": 134,
+              "incident_beam_diameter_definition": "1/e2"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5e；p18472 正文效率段",
+              "note": "作者正文给匹配偏振五只镜、两个波长的统一下限。逐点效率只给图。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": ">65%（整组下限）",
+              "reported_bound_pct": {
+                "operator": ">",
+                "value": 65,
+                "scope": "matched_conditions"
+              }
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f200_780_opposite",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=200 μm 设计组 · 780 nm 错配偏振",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f200",
+          "module": "",
+          "variant": "f=200 μm 设计组 · 780 nm 错配偏振",
+          "evidence_type": "study",
+          "measurement_scope": "轴上实测。同一实物的另一个入射偏振对照。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 780,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6a，从上往下第 2 行图内光源印字",
+              "note": "原刊该图明确标示的实测入射波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "x 线偏振 · 与设计错配",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6a，从上往下第 2 行上方偏振印字",
+              "note": "标签依据入射偏振。780 nm 的设计通道为 y，915 nm 的设计通道为 x。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_linear_polarization": "x"
+            },
+            "psf_protocol": {
+              "value": "横向强度图 z=236 μm",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6a，从上往下第 2 行；p18473 Fig. 4a",
+              "note": "轴向图横轴 z（μm）、纵轴 y；横向图给 μm 比例尺。光纤激光经偏振控制和准直。峰值拟合、采样步长、z 原点标定和原始数组未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "evaluation_plane_um": 236,
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6c 与对应正文",
+              "note": "横向半高全宽可查曲线。错配偏振曲线不同于设计通道。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            },
+            "measured_focal_um": {
+              "value": 236,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6a，从上往下第 2 行右侧 z 印字；p18475 Fig. 6c 图注明确为 focal distances",
+              "note": "作者图注明确把该 z 标注称为焦距。此为入射偏振错配的焦点；参考原点标定、取峰方法和误差未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "position_definition": "author_reported_unspecified",
+              "reference_plane": null
+            },
+            "efficiency_protocol": {
+              "value": "直径 6 μm 针孔内焦区功率／入射到镜面的功率",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "pp18472–18473 Fig. 4b 与针孔段，第 2 个递减 NA 条目",
+              "note": "原文定义为焦区实测功率除以入射到镜面的总功率。约 134 μm 入射束径为 1/e²，约 99% 功率穿过口径。针孔尺寸按作者排列对应。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "total_power_incident_on_lens",
+              "focus_region_geometry": "pinhole",
+              "pinhole_diameter_um": 6,
+              "incident_beam_diameter_um": 134,
+              "incident_beam_diameter_definition": "1/e2"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6d；p18473 错配偏振段",
+              "note": "作者给出错配偏振效率曲线，逐点值及横轴中点待数据表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f200_915_opposite",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=200 μm 设计组 · 915 nm 错配偏振",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f200",
+          "module": "",
+          "variant": "f=200 μm 设计组 · 915 nm 错配偏振",
+          "evidence_type": "study",
+          "measurement_scope": "轴上实测。同一实物的另一个入射偏振对照。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 915,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6b，从上往下第 2 行图内光源印字",
+              "note": "原刊该图明确标示的实测入射波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "y 线偏振 · 与设计错配",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6b，从上往下第 2 行上方偏振印字",
+              "note": "标签依据入射偏振。780 nm 的设计通道为 y，915 nm 的设计通道为 x。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_linear_polarization": "y"
+            },
+            "psf_protocol": {
+              "value": "横向强度图 z=167 μm",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6b，从上往下第 2 行；p18473 Fig. 4a",
+              "note": "轴向图横轴 z（μm）、纵轴 y；横向图给 μm 比例尺。光纤激光经偏振控制和准直。峰值拟合、采样步长、z 原点标定和原始数组未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "evaluation_plane_um": 167,
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6c 与对应正文",
+              "note": "横向半高全宽可查曲线。错配偏振曲线不同于设计通道。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            },
+            "measured_focal_um": {
+              "value": 167,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6b，从上往下第 2 行右侧 z 印字；p18475 Fig. 6c 图注明确为 focal distances",
+              "note": "作者图注明确把该 z 标注称为焦距。此为入射偏振错配的焦点；参考原点标定、取峰方法和误差未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "position_definition": "author_reported_unspecified",
+              "reference_plane": null
+            },
+            "efficiency_protocol": {
+              "value": "直径 6 μm 针孔内焦区功率／入射到镜面的功率",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "pp18472–18473 Fig. 4b 与针孔段，第 2 个递减 NA 条目",
+              "note": "原文定义为焦区实测功率除以入射到镜面的总功率。约 134 μm 入射束径为 1/e²，约 99% 功率穿过口径。针孔尺寸按作者排列对应。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "total_power_incident_on_lens",
+              "focus_region_geometry": "pinhole",
+              "pinhole_diameter_um": 6,
+              "incident_beam_diameter_um": 134,
+              "incident_beam_diameter_definition": "1/e2"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6d；p18473 错配偏振段",
+              "note": "作者给出错配偏振效率曲线，逐点值及横轴中点待数据表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f400_summary",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=400 μm 设计组",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f400",
+          "module": "",
+          "variant": "f=400 μm 设计组",
+          "evidence_type": "study",
+          "measurement_scope": "一只同口径实制超透镜。按匹配及错配偏振分别给出两谱点。",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 400,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 的实物 NA 端点；Fig. 5c–e",
+              "note": "中间器件的 NA 在散点横轴上，未发现单项印字表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "780 nm y 偏振、915 nm x 偏振的离散同焦",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 焦点实验；p18474 Fig. 5a,b；p18473 反向偏振段",
+              "note": "相应两种入射偏振组合的单一焦点靠近设计面。错配偏振有独立轴向焦点，作者说明各单一偏振仍有衍射色散。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_dichroic_pdf_2016",
+                "arbabi_dichroic_caltech_2016",
+                "arbabi_dichroic_crossref_2016",
+                "arbabi_dichroic_datacite_2016"
+              ],
+              "sample_wavelengths_nm": [
+                780,
+                915
+              ],
+              "spectral_sampling": "wavelength_paired_with_linear_polarization"
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18472 正文及 p18474 Fig. 5a,b 同行",
+              "note": "两幅横向强度图打印相同的 z 评价面。作者未给出独立的匹配偏振峰位误差或残余色差数表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sample_wavelengths_nm": [
+                780,
+                915
+              ]
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f400_780_matched",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=400 μm 设计组 · 780 nm 匹配偏振",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f400",
+          "module": "",
+          "variant": "f=400 μm 设计组 · 780 nm 匹配偏振",
+          "evidence_type": "study",
+          "measurement_scope": "轴上实测。波长和入射偏振与设计相符。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 400,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 的实物 NA 端点；Fig. 5c–e",
+              "note": "中间器件的 NA 在散点横轴上，未发现单项印字表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 780,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5a，从上往下第 3 行图内光源印字",
+              "note": "原刊该图明确标示的实测入射波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "y 线偏振 · 与设计匹配",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5a，从上往下第 3 行上方偏振印字",
+              "note": "标签依据入射偏振。780 nm 的设计通道为 y，915 nm 的设计通道为 x。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_linear_polarization": "y"
+            },
+            "psf_protocol": {
+              "value": "横向强度图 z=400 μm",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5a，从上往下第 3 行；p18473 Fig. 4a",
+              "note": "轴向图横轴 z（μm）、纵轴 y；横向图给 μm 比例尺。光纤激光经偏振控制和准直。峰值拟合、采样步长、z 原点标定和原始数组未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "evaluation_plane_um": 400,
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5c 与对应正文",
+              "note": "横向半高全宽可查曲线。作者报告整组实测宽度比衍射极限增量小于 7%。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5a，从上往下第 3 行，左轴扫和右横截面；p18472 正文",
+              "note": "横向焦斑图 z 为作者标示的取图平面。两个通道各自峰位的独立数值和取峰规则未报告。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "图示评价面 z=400 μm"
+            },
+            "efficiency_protocol": {
+              "value": "直径 10 μm 针孔内焦区功率／入射到镜面的功率",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "pp18472–18473 Fig. 4b 与针孔段，第 3 个递减 NA 条目",
+              "note": "原文定义为焦区实测功率除以入射到镜面的总功率。约 134 μm 入射束径为 1/e²，约 99% 功率穿过口径。针孔尺寸按作者排列对应。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "total_power_incident_on_lens",
+              "focus_region_geometry": "pinhole",
+              "pinhole_diameter_um": 10,
+              "incident_beam_diameter_um": 134,
+              "incident_beam_diameter_definition": "1/e2"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5e；p18472 正文效率段",
+              "note": "作者正文给匹配偏振五只镜、两个波长的统一下限。逐点效率只给图。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": ">65%（整组下限）",
+              "reported_bound_pct": {
+                "operator": ">",
+                "value": 65,
+                "scope": "matched_conditions"
+              }
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f400_915_matched",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=400 μm 设计组 · 915 nm 匹配偏振",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f400",
+          "module": "",
+          "variant": "f=400 μm 设计组 · 915 nm 匹配偏振",
+          "evidence_type": "study",
+          "measurement_scope": "轴上实测。波长和入射偏振与设计相符。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 400,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 的实物 NA 端点；Fig. 5c–e",
+              "note": "中间器件的 NA 在散点横轴上，未发现单项印字表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 915,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5b，从上往下第 3 行图内光源印字",
+              "note": "原刊该图明确标示的实测入射波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "x 线偏振 · 与设计匹配",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5b，从上往下第 3 行上方偏振印字",
+              "note": "标签依据入射偏振。780 nm 的设计通道为 y，915 nm 的设计通道为 x。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_linear_polarization": "x"
+            },
+            "psf_protocol": {
+              "value": "横向强度图 z=400 μm",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5b，从上往下第 3 行；p18473 Fig. 4a",
+              "note": "轴向图横轴 z（μm）、纵轴 y；横向图给 μm 比例尺。光纤激光经偏振控制和准直。峰值拟合、采样步长、z 原点标定和原始数组未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "evaluation_plane_um": 400,
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5c 与对应正文",
+              "note": "横向半高全宽可查曲线。作者报告整组实测宽度比衍射极限增量小于 7%。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5b，从上往下第 3 行，左轴扫和右横截面；p18472 正文",
+              "note": "横向焦斑图 z 为作者标示的取图平面。两个通道各自峰位的独立数值和取峰规则未报告。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "图示评价面 z=400 μm"
+            },
+            "efficiency_protocol": {
+              "value": "直径 10 μm 针孔内焦区功率／入射到镜面的功率",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "pp18472–18473 Fig. 4b 与针孔段，第 3 个递减 NA 条目",
+              "note": "原文定义为焦区实测功率除以入射到镜面的总功率。约 134 μm 入射束径为 1/e²，约 99% 功率穿过口径。针孔尺寸按作者排列对应。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "total_power_incident_on_lens",
+              "focus_region_geometry": "pinhole",
+              "pinhole_diameter_um": 10,
+              "incident_beam_diameter_um": 134,
+              "incident_beam_diameter_definition": "1/e2"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5e；p18472 正文效率段",
+              "note": "作者正文给匹配偏振五只镜、两个波长的统一下限。逐点效率只给图。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": ">65%（整组下限）",
+              "reported_bound_pct": {
+                "operator": ">",
+                "value": 65,
+                "scope": "matched_conditions"
+              }
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f400_780_opposite",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=400 μm 设计组 · 780 nm 错配偏振",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f400",
+          "module": "",
+          "variant": "f=400 μm 设计组 · 780 nm 错配偏振",
+          "evidence_type": "study",
+          "measurement_scope": "轴上实测。同一实物的另一个入射偏振对照。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 400,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 780,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6a，从上往下第 3 行图内光源印字",
+              "note": "原刊该图明确标示的实测入射波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "x 线偏振 · 与设计错配",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6a，从上往下第 3 行上方偏振印字",
+              "note": "标签依据入射偏振。780 nm 的设计通道为 y，915 nm 的设计通道为 x。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_linear_polarization": "x"
+            },
+            "psf_protocol": {
+              "value": "横向强度图 z=460 μm",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6a，从上往下第 3 行；p18473 Fig. 4a",
+              "note": "轴向图横轴 z（μm）、纵轴 y；横向图给 μm 比例尺。光纤激光经偏振控制和准直。峰值拟合、采样步长、z 原点标定和原始数组未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "evaluation_plane_um": 460,
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6c 与对应正文",
+              "note": "横向半高全宽可查曲线。错配偏振曲线不同于设计通道。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            },
+            "measured_focal_um": {
+              "value": 460,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6a，从上往下第 3 行右侧 z 印字；p18475 Fig. 6c 图注明确为 focal distances",
+              "note": "作者图注明确把该 z 标注称为焦距。此为入射偏振错配的焦点；参考原点标定、取峰方法和误差未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "position_definition": "author_reported_unspecified",
+              "reference_plane": null
+            },
+            "efficiency_protocol": {
+              "value": "直径 10 μm 针孔内焦区功率／入射到镜面的功率",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "pp18472–18473 Fig. 4b 与针孔段，第 3 个递减 NA 条目",
+              "note": "原文定义为焦区实测功率除以入射到镜面的总功率。约 134 μm 入射束径为 1/e²，约 99% 功率穿过口径。针孔尺寸按作者排列对应。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "total_power_incident_on_lens",
+              "focus_region_geometry": "pinhole",
+              "pinhole_diameter_um": 10,
+              "incident_beam_diameter_um": 134,
+              "incident_beam_diameter_definition": "1/e2"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6d；p18473 错配偏振段",
+              "note": "作者给出错配偏振效率曲线，逐点值及横轴中点待数据表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f400_915_opposite",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=400 μm 设计组 · 915 nm 错配偏振",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f400",
+          "module": "",
+          "variant": "f=400 μm 设计组 · 915 nm 错配偏振",
+          "evidence_type": "study",
+          "measurement_scope": "轴上实测。同一实物的另一个入射偏振对照。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 400,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 915,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6b，从上往下第 3 行图内光源印字",
+              "note": "原刊该图明确标示的实测入射波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "y 线偏振 · 与设计错配",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6b，从上往下第 3 行上方偏振印字",
+              "note": "标签依据入射偏振。780 nm 的设计通道为 y，915 nm 的设计通道为 x。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_linear_polarization": "y"
+            },
+            "psf_protocol": {
+              "value": "横向强度图 z=338 μm",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6b，从上往下第 3 行；p18473 Fig. 4a",
+              "note": "轴向图横轴 z（μm）、纵轴 y；横向图给 μm 比例尺。光纤激光经偏振控制和准直。峰值拟合、采样步长、z 原点标定和原始数组未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "evaluation_plane_um": 338,
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6c 与对应正文",
+              "note": "横向半高全宽可查曲线。错配偏振曲线不同于设计通道。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            },
+            "measured_focal_um": {
+              "value": 338,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6b，从上往下第 3 行右侧 z 印字；p18475 Fig. 6c 图注明确为 focal distances",
+              "note": "作者图注明确把该 z 标注称为焦距。此为入射偏振错配的焦点；参考原点标定、取峰方法和误差未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "position_definition": "author_reported_unspecified",
+              "reference_plane": null
+            },
+            "efficiency_protocol": {
+              "value": "直径 10 μm 针孔内焦区功率／入射到镜面的功率",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "pp18472–18473 Fig. 4b 与针孔段，第 3 个递减 NA 条目",
+              "note": "原文定义为焦区实测功率除以入射到镜面的总功率。约 134 μm 入射束径为 1/e²，约 99% 功率穿过口径。针孔尺寸按作者排列对应。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "total_power_incident_on_lens",
+              "focus_region_geometry": "pinhole",
+              "pinhole_diameter_um": 10,
+              "incident_beam_diameter_um": 134,
+              "incident_beam_diameter_definition": "1/e2"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6d；p18473 错配偏振段",
+              "note": "作者给出错配偏振效率曲线，逐点值及横轴中点待数据表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f600_summary",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=600 μm 设计组",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f600",
+          "module": "",
+          "variant": "f=600 μm 设计组",
+          "evidence_type": "study",
+          "measurement_scope": "一只同口径实制超透镜。按匹配及错配偏振分别给出两谱点。",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 600,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 的实物 NA 端点；Fig. 5c–e",
+              "note": "中间器件的 NA 在散点横轴上，未发现单项印字表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "780 nm y 偏振、915 nm x 偏振的离散同焦",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 焦点实验；p18474 Fig. 5a,b；p18473 反向偏振段",
+              "note": "相应两种入射偏振组合的单一焦点靠近设计面。错配偏振有独立轴向焦点，作者说明各单一偏振仍有衍射色散。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_dichroic_pdf_2016",
+                "arbabi_dichroic_caltech_2016",
+                "arbabi_dichroic_crossref_2016",
+                "arbabi_dichroic_datacite_2016"
+              ],
+              "sample_wavelengths_nm": [
+                780,
+                915
+              ],
+              "spectral_sampling": "wavelength_paired_with_linear_polarization"
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18472 正文及 p18474 Fig. 5a,b 同行",
+              "note": "两幅横向强度图打印相同的 z 评价面。作者未给出独立的匹配偏振峰位误差或残余色差数表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sample_wavelengths_nm": [
+                780,
+                915
+              ]
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f600_780_matched",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=600 μm 设计组 · 780 nm 匹配偏振",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f600",
+          "module": "",
+          "variant": "f=600 μm 设计组 · 780 nm 匹配偏振",
+          "evidence_type": "study",
+          "measurement_scope": "轴上实测。波长和入射偏振与设计相符。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 600,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 的实物 NA 端点；Fig. 5c–e",
+              "note": "中间器件的 NA 在散点横轴上，未发现单项印字表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 780,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5a，从上往下第 4 行图内光源印字",
+              "note": "原刊该图明确标示的实测入射波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "y 线偏振 · 与设计匹配",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5a，从上往下第 4 行上方偏振印字",
+              "note": "标签依据入射偏振。780 nm 的设计通道为 y，915 nm 的设计通道为 x。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_linear_polarization": "y"
+            },
+            "psf_protocol": {
+              "value": "横向强度图 z=600 μm",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5a，从上往下第 4 行；p18473 Fig. 4a",
+              "note": "轴向图横轴 z（μm）、纵轴 y；横向图给 μm 比例尺。光纤激光经偏振控制和准直。峰值拟合、采样步长、z 原点标定和原始数组未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "evaluation_plane_um": 600,
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5c 与对应正文",
+              "note": "横向半高全宽可查曲线。作者报告整组实测宽度比衍射极限增量小于 7%。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5a，从上往下第 4 行，左轴扫和右横截面；p18472 正文",
+              "note": "横向焦斑图 z 为作者标示的取图平面。两个通道各自峰位的独立数值和取峰规则未报告。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "图示评价面 z=600 μm"
+            },
+            "efficiency_protocol": {
+              "value": "直径 15 μm 针孔内焦区功率／入射到镜面的功率",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "pp18472–18473 Fig. 4b 与针孔段，第 4 个递减 NA 条目",
+              "note": "原文定义为焦区实测功率除以入射到镜面的总功率。约 134 μm 入射束径为 1/e²，约 99% 功率穿过口径。针孔尺寸按作者排列对应。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "total_power_incident_on_lens",
+              "focus_region_geometry": "pinhole",
+              "pinhole_diameter_um": 15,
+              "incident_beam_diameter_um": 134,
+              "incident_beam_diameter_definition": "1/e2"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5e；p18472 正文效率段",
+              "note": "作者正文给匹配偏振五只镜、两个波长的统一下限。逐点效率只给图。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": ">65%（整组下限）",
+              "reported_bound_pct": {
+                "operator": ">",
+                "value": 65,
+                "scope": "matched_conditions"
+              }
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f600_915_matched",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=600 μm 设计组 · 915 nm 匹配偏振",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f600",
+          "module": "",
+          "variant": "f=600 μm 设计组 · 915 nm 匹配偏振",
+          "evidence_type": "study",
+          "measurement_scope": "轴上实测。波长和入射偏振与设计相符。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 600,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 的实物 NA 端点；Fig. 5c–e",
+              "note": "中间器件的 NA 在散点横轴上，未发现单项印字表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 915,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5b，从上往下第 4 行图内光源印字",
+              "note": "原刊该图明确标示的实测入射波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "x 线偏振 · 与设计匹配",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5b，从上往下第 4 行上方偏振印字",
+              "note": "标签依据入射偏振。780 nm 的设计通道为 y，915 nm 的设计通道为 x。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_linear_polarization": "x"
+            },
+            "psf_protocol": {
+              "value": "横向强度图 z=600 μm",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5b，从上往下第 4 行；p18473 Fig. 4a",
+              "note": "轴向图横轴 z（μm）、纵轴 y；横向图给 μm 比例尺。光纤激光经偏振控制和准直。峰值拟合、采样步长、z 原点标定和原始数组未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "evaluation_plane_um": 600,
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5c 与对应正文",
+              "note": "横向半高全宽可查曲线。作者报告整组实测宽度比衍射极限增量小于 7%。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5b，从上往下第 4 行，左轴扫和右横截面；p18472 正文",
+              "note": "横向焦斑图 z 为作者标示的取图平面。两个通道各自峰位的独立数值和取峰规则未报告。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "图示评价面 z=600 μm"
+            },
+            "efficiency_protocol": {
+              "value": "直径 15 μm 针孔内焦区功率／入射到镜面的功率",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "pp18472–18473 Fig. 4b 与针孔段，第 4 个递减 NA 条目",
+              "note": "原文定义为焦区实测功率除以入射到镜面的总功率。约 134 μm 入射束径为 1/e²，约 99% 功率穿过口径。针孔尺寸按作者排列对应。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "total_power_incident_on_lens",
+              "focus_region_geometry": "pinhole",
+              "pinhole_diameter_um": 15,
+              "incident_beam_diameter_um": 134,
+              "incident_beam_diameter_definition": "1/e2"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5e；p18472 正文效率段",
+              "note": "作者正文给匹配偏振五只镜、两个波长的统一下限。逐点效率只给图。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": ">65%（整组下限）",
+              "reported_bound_pct": {
+                "operator": ">",
+                "value": 65,
+                "scope": "matched_conditions"
+              }
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f600_780_opposite",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=600 μm 设计组 · 780 nm 错配偏振",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f600",
+          "module": "",
+          "variant": "f=600 μm 设计组 · 780 nm 错配偏振",
+          "evidence_type": "study",
+          "measurement_scope": "轴上实测。同一实物的另一个入射偏振对照。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 600,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 780,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6a，从上往下第 4 行图内光源印字",
+              "note": "原刊该图明确标示的实测入射波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "x 线偏振 · 与设计错配",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6a，从上往下第 4 行上方偏振印字",
+              "note": "标签依据入射偏振。780 nm 的设计通道为 y，915 nm 的设计通道为 x。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_linear_polarization": "x"
+            },
+            "psf_protocol": {
+              "value": "横向强度图 z=702 μm",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6a，从上往下第 4 行；p18473 Fig. 4a",
+              "note": "轴向图横轴 z（μm）、纵轴 y；横向图给 μm 比例尺。光纤激光经偏振控制和准直。峰值拟合、采样步长、z 原点标定和原始数组未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "evaluation_plane_um": 702,
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6c 与对应正文",
+              "note": "横向半高全宽可查曲线。错配偏振曲线不同于设计通道。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            },
+            "measured_focal_um": {
+              "value": 702,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6a，从上往下第 4 行右侧 z 印字；p18475 Fig. 6c 图注明确为 focal distances",
+              "note": "作者图注明确把该 z 标注称为焦距。此为入射偏振错配的焦点；参考原点标定、取峰方法和误差未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "position_definition": "author_reported_unspecified",
+              "reference_plane": null
+            },
+            "efficiency_protocol": {
+              "value": "直径 15 μm 针孔内焦区功率／入射到镜面的功率",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "pp18472–18473 Fig. 4b 与针孔段，第 4 个递减 NA 条目",
+              "note": "原文定义为焦区实测功率除以入射到镜面的总功率。约 134 μm 入射束径为 1/e²，约 99% 功率穿过口径。针孔尺寸按作者排列对应。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "total_power_incident_on_lens",
+              "focus_region_geometry": "pinhole",
+              "pinhole_diameter_um": 15,
+              "incident_beam_diameter_um": 134,
+              "incident_beam_diameter_definition": "1/e2"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6d；p18473 错配偏振段",
+              "note": "作者给出错配偏振效率曲线，逐点值及横轴中点待数据表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f600_915_opposite",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=600 μm 设计组 · 915 nm 错配偏振",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f600",
+          "module": "",
+          "variant": "f=600 μm 设计组 · 915 nm 错配偏振",
+          "evidence_type": "study",
+          "measurement_scope": "轴上实测。同一实物的另一个入射偏振对照。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 600,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 915,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6b，从上往下第 4 行图内光源印字",
+              "note": "原刊该图明确标示的实测入射波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "y 线偏振 · 与设计错配",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6b，从上往下第 4 行上方偏振印字",
+              "note": "标签依据入射偏振。780 nm 的设计通道为 y，915 nm 的设计通道为 x。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_linear_polarization": "y"
+            },
+            "psf_protocol": {
+              "value": "横向强度图 z=510 μm",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6b，从上往下第 4 行；p18473 Fig. 4a",
+              "note": "轴向图横轴 z（μm）、纵轴 y；横向图给 μm 比例尺。光纤激光经偏振控制和准直。峰值拟合、采样步长、z 原点标定和原始数组未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "evaluation_plane_um": 510,
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6c 与对应正文",
+              "note": "横向半高全宽可查曲线。错配偏振曲线不同于设计通道。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            },
+            "measured_focal_um": {
+              "value": 510,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6b，从上往下第 4 行右侧 z 印字；p18475 Fig. 6c 图注明确为 focal distances",
+              "note": "作者图注明确把该 z 标注称为焦距。此为入射偏振错配的焦点；参考原点标定、取峰方法和误差未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "position_definition": "author_reported_unspecified",
+              "reference_plane": null
+            },
+            "efficiency_protocol": {
+              "value": "直径 15 μm 针孔内焦区功率／入射到镜面的功率",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "pp18472–18473 Fig. 4b 与针孔段，第 4 个递减 NA 条目",
+              "note": "原文定义为焦区实测功率除以入射到镜面的总功率。约 134 μm 入射束径为 1/e²，约 99% 功率穿过口径。针孔尺寸按作者排列对应。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "total_power_incident_on_lens",
+              "focus_region_geometry": "pinhole",
+              "pinhole_diameter_um": 15,
+              "incident_beam_diameter_um": 134,
+              "incident_beam_diameter_definition": "1/e2"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6d；p18473 错配偏振段",
+              "note": "作者给出错配偏振效率曲线，逐点值及横轴中点待数据表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f800_summary",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=800 μm 设计组",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f800",
+          "module": "",
+          "variant": "f=800 μm 设计组",
+          "evidence_type": "study",
+          "measurement_scope": "一只同口径实制超透镜。按匹配及错配偏振分别给出两谱点。",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 800,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。正文与 Fig. 5a 标本组 f=800 μm，Fig. 5b 的 915 nm 左栏印 f=780 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.12,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 的实物 NA 端点；Fig. 5c–e",
+              "note": "按相同口径与设计焦距的排序，对应作者报告的 NA 端点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "780 nm y 偏振、915 nm x 偏振的离散同焦",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 焦点实验；p18474 Fig. 5a,b；p18473 反向偏振段",
+              "note": "相应两种入射偏振组合的单一焦点靠近设计面。错配偏振有独立轴向焦点，作者说明各单一偏振仍有衍射色散。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "arbabi_dichroic_pdf_2016",
+                "arbabi_dichroic_caltech_2016",
+                "arbabi_dichroic_crossref_2016",
+                "arbabi_dichroic_datacite_2016"
+              ],
+              "sample_wavelengths_nm": [
+                780,
+                915
+              ],
+              "spectral_sampling": "wavelength_paired_with_linear_polarization"
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18472 正文及 p18474 Fig. 5a,b 同行",
+              "note": "两幅横向强度图打印相同的 z 评价面。作者未给出独立的匹配偏振峰位误差或残余色差数表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sample_wavelengths_nm": [
+                780,
+                915
+              ]
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f800_780_matched",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=800 μm 设计组 · 780 nm 匹配偏振",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f800",
+          "module": "",
+          "variant": "f=800 μm 设计组 · 780 nm 匹配偏振",
+          "evidence_type": "study",
+          "measurement_scope": "轴上实测。波长和入射偏振与设计相符。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 800,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。正文与 Fig. 5a 标本组 f=800 μm，Fig. 5b 的 915 nm 左栏印 f=780 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.12,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 的实物 NA 端点；Fig. 5c–e",
+              "note": "按相同口径与设计焦距的排序，对应作者报告的 NA 端点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 780,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5a，从上往下第 5 行图内光源印字",
+              "note": "原刊该图明确标示的实测入射波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "y 线偏振 · 与设计匹配",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5a，从上往下第 5 行上方偏振印字",
+              "note": "标签依据入射偏振。780 nm 的设计通道为 y，915 nm 的设计通道为 x。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_linear_polarization": "y"
+            },
+            "psf_protocol": {
+              "value": "横向强度图 z=784 μm",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5a，从上往下第 5 行；p18473 Fig. 4a",
+              "note": "轴向图横轴 z（μm）、纵轴 y；横向图给 μm 比例尺。光纤激光经偏振控制和准直。峰值拟合、采样步长、z 原点标定和原始数组未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "evaluation_plane_um": 784,
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5c 与对应正文",
+              "note": "横向半高全宽可查曲线。作者报告整组实测宽度比衍射极限增量小于 7%。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5a，从上往下第 5 行，左轴扫和右横截面；p18472 正文",
+              "note": "横向焦斑图 z 为作者标示的取图平面。两个通道各自峰位的独立数值和取峰规则未报告。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "图示评价面 z=784 μm"
+            },
+            "efficiency_protocol": {
+              "value": "直径 20 μm 针孔内焦区功率／入射到镜面的功率",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "pp18472–18473 Fig. 4b 与针孔段，第 5 个递减 NA 条目",
+              "note": "原文定义为焦区实测功率除以入射到镜面的总功率。约 134 μm 入射束径为 1/e²，约 99% 功率穿过口径。针孔尺寸按作者排列对应。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "total_power_incident_on_lens",
+              "focus_region_geometry": "pinhole",
+              "pinhole_diameter_um": 20,
+              "incident_beam_diameter_um": 134,
+              "incident_beam_diameter_definition": "1/e2"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5e；p18472 正文效率段",
+              "note": "作者正文给匹配偏振五只镜、两个波长的统一下限。逐点效率只给图。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": ">65%（整组下限）",
+              "reported_bound_pct": {
+                "operator": ">",
+                "value": 65,
+                "scope": "matched_conditions"
+              }
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f800_915_matched",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=800 μm 设计组 · 915 nm 匹配偏振",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f800",
+          "module": "",
+          "variant": "f=800 μm 设计组 · 915 nm 匹配偏振",
+          "evidence_type": "study",
+          "measurement_scope": "轴上实测。波长和入射偏振与设计相符。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a；Fig. 5b 最后一行",
+              "note": "正文与 Fig. 5a 标本组 f=800 μm，Fig. 5b 的 915 nm 左栏印 f=780 μm。 本配置仍按正文五只实物的排序追踪，两处印字均保留。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "正文 800 μm／Fig. 5b 780 μm",
+              "reported_design_focal_um": {
+                "prose": 800,
+                "fig5b_label": 780
+              }
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "na": {
+              "value": 0.12,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 的实物 NA 端点；Fig. 5c–e",
+              "note": "按相同口径与设计焦距的排序，对应作者报告的 NA 端点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 915,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5b，从上往下第 5 行图内光源印字",
+              "note": "原刊该图明确标示的实测入射波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "x 线偏振 · 与设计匹配",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5b，从上往下第 5 行上方偏振印字",
+              "note": "标签依据入射偏振。780 nm 的设计通道为 y，915 nm 的设计通道为 x。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_linear_polarization": "x"
+            },
+            "psf_protocol": {
+              "value": "横向强度图 z=784 μm",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5b，从上往下第 5 行；p18473 Fig. 4a",
+              "note": "轴向图横轴 z（μm）、纵轴 y；横向图给 μm 比例尺。光纤激光经偏振控制和准直。峰值拟合、采样步长、z 原点标定和原始数组未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "evaluation_plane_um": 784,
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5c 与对应正文",
+              "note": "横向半高全宽可查曲线。作者报告整组实测宽度比衍射极限增量小于 7%。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5b，从上往下第 5 行，左轴扫和右横截面；p18472 正文",
+              "note": "横向焦斑图 z 为作者标示的取图平面。两个通道各自峰位的独立数值和取峰规则未报告。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "图示评价面 z=784 μm"
+            },
+            "efficiency_protocol": {
+              "value": "直径 20 μm 针孔内焦区功率／入射到镜面的功率",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "pp18472–18473 Fig. 4b 与针孔段，第 5 个递减 NA 条目",
+              "note": "原文定义为焦区实测功率除以入射到镜面的总功率。约 134 μm 入射束径为 1/e²，约 99% 功率穿过口径。针孔尺寸按作者排列对应。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "total_power_incident_on_lens",
+              "focus_region_geometry": "pinhole",
+              "pinhole_diameter_um": 20,
+              "incident_beam_diameter_um": 134,
+              "incident_beam_diameter_definition": "1/e2"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18474 Fig. 5e；p18472 正文效率段",
+              "note": "作者正文给匹配偏振五只镜、两个波长的统一下限。逐点效率只给图。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": ">65%（整组下限）",
+              "reported_bound_pct": {
+                "operator": ">",
+                "value": 65,
+                "scope": "matched_conditions"
+              }
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f800_780_opposite",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=800 μm 设计组 · 780 nm 错配偏振",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f800",
+          "module": "",
+          "variant": "f=800 μm 设计组 · 780 nm 错配偏振",
+          "evidence_type": "study",
+          "measurement_scope": "轴上实测。同一实物的另一个入射偏振对照。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 800,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a",
+              "note": "作者列出实物系列的名义设计距离。正文与 Fig. 5a 标本组 f=800 μm，Fig. 5b 的 915 nm 左栏印 f=780 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 780,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6a，从上往下第 5 行图内光源印字",
+              "note": "原刊该图明确标示的实测入射波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "x 线偏振 · 与设计错配",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6a，从上往下第 5 行上方偏振印字",
+              "note": "标签依据入射偏振。780 nm 的设计通道为 y，915 nm 的设计通道为 x。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_linear_polarization": "x"
+            },
+            "psf_protocol": {
+              "value": "横向强度图 z=920 μm",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6a，从上往下第 5 行；p18473 Fig. 4a",
+              "note": "轴向图横轴 z（μm）、纵轴 y；横向图给 μm 比例尺。光纤激光经偏振控制和准直。峰值拟合、采样步长、z 原点标定和原始数组未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "evaluation_plane_um": 920,
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6c 与对应正文",
+              "note": "横向半高全宽可查曲线。错配偏振曲线不同于设计通道。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            },
+            "measured_focal_um": {
+              "value": 920,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6a，从上往下第 5 行右侧 z 印字；p18475 Fig. 6c 图注明确为 focal distances",
+              "note": "作者图注明确把该 z 标注称为焦距。此为入射偏振错配的焦点；参考原点标定、取峰方法和误差未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "position_definition": "author_reported_unspecified",
+              "reference_plane": null
+            },
+            "efficiency_protocol": {
+              "value": "直径 20 μm 针孔内焦区功率／入射到镜面的功率",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "pp18472–18473 Fig. 4b 与针孔段，第 5 个递减 NA 条目",
+              "note": "原文定义为焦区实测功率除以入射到镜面的总功率。约 134 μm 入射束径为 1/e²，约 99% 功率穿过口径。针孔尺寸按作者排列对应。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "total_power_incident_on_lens",
+              "focus_region_geometry": "pinhole",
+              "pinhole_diameter_um": 20,
+              "incident_beam_diameter_um": 134,
+              "incident_beam_diameter_definition": "1/e2"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6d；p18473 错配偏振段",
+              "note": "作者给出错配偏振效率曲线，逐点值及横轴中点待数据表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            }
+          }
+        },
+        {
+          "id": "arbabi2016dichroic_f800_915_opposite",
+          "model": "Arbabi 2016 · 双偏振双波长 · f=800 μm 设计组 · 915 nm 错配偏振",
+          "study_id": "arbabi2016dichroic",
+          "specimen_id": "f800",
+          "module": "",
+          "variant": "f=800 μm 设计组 · 915 nm 错配偏振",
+          "evidence_type": "study",
+          "measurement_scope": "轴上实测。同一实物的另一个入射偏振对照。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "该系列五只实物采用同一口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 设计焦距段；p18474 Fig. 5a；Fig. 5b 最后一行",
+              "note": "正文与 Fig. 5a 标本组 f=800 μm，Fig. 5b 的 915 nm 左栏印 f=780 μm。 本配置仍按正文五只实物的排序追踪，两处印字均保留。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "正文 800 μm／Fig. 5b 780 μm",
+              "reported_design_focal_um": {
+                "prose": 800,
+                "fig5b_label": 780
+              }
+            },
+            "height_nm": {
+              "value": 553,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18472 五只实物制备段",
+              "note": "α-Si 纳米柱的沉积层厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "α-Si 椭圆纳米柱 / 熔石英",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "正文 p18471 Fig. 1c；p18472 制备段",
+              "note": "椭圆的两个径向尺寸共同提供两正交线偏振所需的相位组合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 915,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6b，从上往下第 5 行图内光源印字",
+              "note": "原刊该图明确标示的实测入射波长。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "y 线偏振 · 与设计错配",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6b，从上往下第 5 行上方偏振印字",
+              "note": "标签依据入射偏振。780 nm 的设计通道为 y，915 nm 的设计通道为 x。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_linear_polarization": "y"
+            },
+            "psf_protocol": {
+              "value": "横向强度图 z=685 μm",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6b，从上往下第 5 行；p18473 Fig. 4a",
+              "note": "轴向图横轴 z（μm）、纵轴 y；横向图给 μm 比例尺。光纤激光经偏振控制和准直。峰值拟合、采样步长、z 原点标定和原始数组未公布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "field_point": "on_axis",
+              "evaluation_plane_um": 685,
+              "reference_plane": null
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6c 与对应正文",
+              "note": "横向半高全宽可查曲线。错配偏振曲线不同于设计通道。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            },
+            "measured_focal_um": {
+              "value": 685,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6b，从上往下第 5 行右侧 z 印字；p18475 Fig. 6c 图注明确为 focal distances",
+              "note": "作者图注明确把该 z 标注称为焦距。此为入射偏振错配的焦点；参考原点标定、取峰方法和误差未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "position_definition": "author_reported_unspecified",
+              "reference_plane": null
+            },
+            "efficiency_protocol": {
+              "value": "直径 20 μm 针孔内焦区功率／入射到镜面的功率",
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "pp18472–18473 Fig. 4b 与针孔段，第 5 个递减 NA 条目",
+              "note": "原文定义为焦区实测功率除以入射到镜面的总功率。约 134 μm 入射束径为 1/e²，约 99% 功率穿过口径。针孔尺寸按作者排列对应。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "total_power_incident_on_lens",
+              "focus_region_geometry": "pinhole",
+              "pinhole_diameter_um": 20,
+              "incident_beam_diameter_um": 134,
+              "incident_beam_diameter_definition": "1/e2"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "arbabi_dichroic_pdf_2016",
+              "location": "p18475 Fig. 6d；p18473 错配偏振段",
+              "note": "作者给出错配偏振效率曲线，逐点值及横轴中点待数据表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "曲线可查"
+            }
+          }
         }
       ],
-      "scope": "48项原始研究、261个器件/测量/系统配置、1113条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
+      "scope": "50项原始研究、269个器件/测量/系统配置、1141条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
