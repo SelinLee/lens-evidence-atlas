@@ -2335,6 +2335,33 @@
       "scope": "相同正式 DOI 的精确关联检索为零。",
       "checked_on": "2026-11-19",
       "publication_source": "zhao_geometric_pdf_2015"
+    },
+    {
+      "id": "zhang_rgb_imaging_2025",
+      "title": "Zhang et al. (2025), RGB Achromatic Metalens for Neural Network-Enhanced High Resolution Digital Imaging",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/lpor.202500460",
+      "kind": "peer_reviewed_paper",
+      "scope": "正式上线 2025-06-13。核作者摘要、期刊目录和补件清单。期刊全文、PDF 与补件直连返回 403，正文中的测量协议待核。",
+      "checked_on": "2026-11-19",
+      "doi": "10.1002/lpor.202500460"
+    },
+    {
+      "id": "zhang_rgb_imaging_abstract_2025",
+      "title": "Crossref · Zhang 2025 出版者提交的作者摘要",
+      "url": "https://api.crossref.org/works/10.1002/lpor.202500460",
+      "kind": "repository_metadata",
+      "scope": "message.abstract、message.published-online 和同 DOI 题录。作者摘要报告实物口径及系统分辨率，并描述进一步的神经网络恢复。",
+      "checked_on": "2026-11-19",
+      "publication_source": "zhang_rgb_imaging_2025"
+    },
+    {
+      "id": "zhang_rgb_imaging_datacite_2025",
+      "title": "DataCite · Zhang 2025 精确关联 DOI 数据查询",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1002%2Flpor.202500460%22",
+      "kind": "repository_metadata",
+      "scope": "精确关联 DOI 查询返回零项。期刊声明可向通讯作者合理请求数据。",
+      "checked_on": "2026-11-19",
+      "publication_source": "zhang_rgb_imaging_2025"
     }
   ],
   "domains": {
@@ -252705,9 +252732,60 @@
               }
             }
           }
+        },
+        {
+          "id": "zhang2025rgbimaging_aperture",
+          "study_id": "zhang2025rgbimaging",
+          "specimen_id": "rgb_d410",
+          "model": "Zhang 2025 · 410 μm RGB 超透镜 · 作者摘要",
+          "module": "",
+          "variant": "离散 RGB 消色差设计",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "原刊作者摘要中的实物口径。逐色焦位与光学成像协议待核。",
+          "values": {
+            "diameter_um": {
+              "value": 410,
+              "source": "zhang_rgb_imaging_abstract_2025",
+              "location": "Crossref message.abstract，作者摘要第 4 句",
+              "note": "作者明示实制 RGB 超透镜的口径为 410 μm。摘要未给口径测量方法或误差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "RGB 消色差设计与数字成像演示",
+              "source": "zhang_rgb_imaging_abstract_2025",
+              "location": "Crossref message.abstract，作者摘要第 3–5 句",
+              "note": "作者在数字成像系统中报告 0.775 μm 分辨率，随后描述进一步的神经网络图像恢复。测量靶、分辨率判据、像方尺度和产生该数值的处理阶段均待正文确认。逐色最佳焦位、轴向与横向残余色差待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_rgb_imaging_abstract_2025",
+              "location": "Crossref message.abstract，作者摘要第 4–5 句",
+              "note": "已取得作者摘要。定量 NA、设计焦距、逐色实测波长与最佳焦位均待正文和补件。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "摘要未给"
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "zhang_rgb_imaging_2025",
+              "location": "Wiley 公开条目，摘要、Data Availability Statement 及 Supporting Information",
+              "note": "作者接受合理数据请求。补件 lpor70101-sup-0001-SuppMat.docx 直连返回 403。PSF/FWHM、原始 MTF、Strehl、聚焦效率及其协议待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "正文与补件待取得",
+              "sourceIds": [
+                "zhang_rgb_imaging_2025",
+                "zhang_rgb_imaging_datacite_2025"
+              ]
+            }
+          }
         }
       ],
-      "scope": "54项原始研究、323个器件/测量/系统配置、1950条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
+      "scope": "55项原始研究、324个器件/测量/系统配置、1951条记录。真实谱点优先匹配可见光筛选。固定面光学、图像重建、系统估算及未归属图组各有来源。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
