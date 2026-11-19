@@ -14,7 +14,7 @@ test('research entries require study identity, scope, per-cell provenance and ev
  }
 });
 test('Shrestha nominal geometry and reported NA conflicts remain distinct from measured curves',()=>{
- const rows=lens.rows.filter(r=>r.study_id==='shrestha2018');assert.equal(rows.length,4);
+ const rows=lens.rows.filter(r=>r.study_id==='shrestha2018'&&!r.values.wavelength_nm);assert.equal(rows.length,4);
  const byId=new Map(rows.map(r=>[r.id,r]));
  for(const [id,diameter,focal,lo,hi] of [['m1a',100,200,1300,1650],['m1b',100,200,1200,1650],['m2',200,800,1200,1650],['m3',100,30,1200,1400]]){
   const values=byId.get('shrestha2018_'+id).values;
@@ -66,8 +66,44 @@ test('XR cutoff frequency is not MTF50, a dimensionless MTF value, display PPD o
 });
 test('literature domain and accessory selector use the shared data model and traceable unit-consistent points',()=>{
  const workspace=createWorkspace(load(),d),domain=workspace.domains.find(v=>v.id==='metalens');
- assert.equal(domain.name,'消色差超透镜与折超混合透镜（文献）');assert.equal(domain.category,'文献器件与计算成像');assert.equal(domain.rows.length,1158);
- const rows=filteredRows(domain,{module:'main',query:'',models:null,evidence:'research'});assert.equal(rows.length,1158);
+ assert.equal(domain.name,'消色差超透镜与折超混合透镜（文献）');assert.equal(domain.category,'文献器件与计算成像');assert.equal(domain.rows.length,1191);
+ const rows=filteredRows(domain,{module:'main',query:'',models:null,evidence:'research'});assert.equal(rows.length,1191);
  const ps=axisPoints(rows,'wavelength_nm','measured_focal_um');assert.equal(ps.length,46);
  for(const row of domain.rows)for(const value of Object.values(row.values)){assert.ok(workspace.sources.has(value.source));assert.ok(value.location);assert.ok(value.note);}
+});
+
+test('Shrestha retains the exact 33 measured wavelength labels without treating figures as raw focal data', () => {
+ const workspace = createWorkspace(load(), d);
+ const domain = workspace.domains.find(candidate => candidate.id === 'metalens');
+ const rows = domain.rows.filter(row => row.study_id === 'shrestha2018');
+ assert.equal(rows.length, 37);
+ assert.equal(new Set(rows.map(row => row.specimen_id)).size, 4);
+ assert.equal(workspace.sources.get('device-shrestha_achromatic_si_2018').publication_source, 'device-shrestha_achromatic_2018');
+ const common = [1200, 1250, 1300, 1350, 1400, 1450, 1500, 1550, 1600, 1650];
+ const printed = {
+  m1a: [1300, 1360, 1420, 1480, 1510, 1570, 1630, 1660],
+  m1b: common, m2: common, m3: common.slice(0, 5),
+ };
+ const measured = rows.filter(row => row.values.wavelength_nm);
+ for (const [specimen, wavelengths] of Object.entries(printed)) {
+  const specimenRows = measured.filter(row => row.specimen_id === specimen);
+  assert.deepEqual(specimenRows.map(row => row.values.wavelength_nm.value), wavelengths);
+  assert.ok(specimenRows.every(row => row.values.wavelength_nm.basis === 'measured'));
+  assert.ok(specimenRows.every(row => row.values.measured_focal_um.value === null && row.values.fwhm_um === undefined));
+ }
+ const m1a = rows.find(row => row.id === 'shrestha2018_m1a').values;
+ assert.equal(m1a.lambda_max_nm.value, 1650);
+ const m1b = measured.filter(row => row.specimen_id === 'm1b' && row.values.psf_protocol.xy_profile_directions.length);
+ assert.deepEqual(m1b.map(row => row.values.wavelength_nm.value), [1200, 1300, 1400, 1500, 1600]);
+ assert.ok(m1b.every(row => row.values.psf_protocol.target_evaluation_plane_um === 200));
+ const m2 = rows.find(row => row.id === 'shrestha2018_m2').values;
+ const m3 = rows.find(row => row.id === 'shrestha2018_m3').values;
+ assert.deepEqual([m2.na.value, m2.na.table_s1_na, m2.na.figure_caption_na], [null, .13, .12]);
+ assert.deepEqual([m3.na.value, m3.na.table_s1_na, m3.na.figure_caption_na], [null, .88, .85]);
+ assert.equal(m3.efficiency_at_lambda_pct.value, null);
+ assert.match(m3.efficiency_at_lambda_pct.note, /大于测量装置/);
+ assert.equal(axisPoints(rows, 'wavelength_nm', 'design_focal_um').length, 33);
+ assert.equal(axisPoints(rows, 'wavelength_nm', 'measured_focal_um').length, 0);
+ assert.equal(axisPoints(rows, 'wavelength_nm', 'efficiency_at_lambda_pct').length, 0);
+ assert.equal(filteredRows(domain, { visible:true, models:null }).filter(row => row.study_id === 'shrestha2018').length, 0);
 });
