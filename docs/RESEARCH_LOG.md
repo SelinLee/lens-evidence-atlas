@@ -1085,3 +1085,11 @@ PR #170 合入 0352c12e0d26e71a4b0f818a44991593407e2def。PR 校验 44450730046�
 ## 2026-11-19-116 · Zhao 2015 两只 20 μm 实物及三谱点固定焦面
 
 取得 PMC 正式版和材料清单，MD5 对读一致。20 μm 三谱点实物在 532／632.8／785 nm 轴扫和 9 μm 截面评价，0.5 μm 步进以金膜顶面为原点。实测峰位和 FWHM 数表待补。独立 STED 实物在 10 μm 处给出 405 nm 实心斑及 532 nm 环斑，线偏振实验的 ±10 μm 光环和 14 μm 模拟附加环分别留证。图 3c/3e 及图 6f 的正文或图注差异保留。模拟放大镜的 90 μm 峰位与作者强度比／光效推论独立。新增 18 条、6 配置，累计 54 篇、323 配置、1950 条。[本批核验](ZHAO_GEOMETRIC_PHASE_REVIEW_2026-11-19.md)
+
+## 2026-11-19-117 · Zhao 2015 上线与消色差证据复核
+
+PR #173 合入 97135ef5852b56e61ea4a2921d5bf9f6db511f3c。PR 校验 44452472359、主线校验 44452570861 和 Pages 44452570837 成功。322 项测试通过，公开构建的 12 个文件与本地逐字节一致。devices-data.js SHA256 为 235f85e6ee00416fa8f9c52368c3adb9a043db8c625bf7bcd4d81c1afc9c97d6。独立无头 Chrome 核 18 条、6 配置、532／632.8／785 nm 的三个 90 μm 模拟点、实测焦位与效率轴空值、原文引用往返、六视口和 CSV。可见光筛选保留本篇 15 条，全库 45 篇、1636 条。七个来源均为 200，PDF 和两张期刊图哈希与存档一致。[PR #173](https://github.com/SelinLee/lens-evidence-atlas/pull/173) · [Pages](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44452570837)
+
+用户追问是否消色差。Zhao 2015 pp5–6 的同一实物按 532／632.8／785 nm 设计共焦，Fig. 4 有逐色实测轴扫，Fig. 5 有 9 μm 固定面的三色焦斑。原文指出最强点可能偏离设计位置，逐色最佳焦位与残余焦移待补。Fig. 3 的 STED 实物有同截面的双色异形焦斑证据，Fig. 6 的三色 90 μm 峰位属于放大模型。Arbabi 2016 DOI 10.1364/OE.24.018468 的同焦距结论限于 780 nm y 偏振和 915 nm x 偏振。五只口径 200 μm 的实物按 NA 由大到小用了直径 6／6／10／15／20 μm 针孔测效率。校方提供正式版，MD5 为 b1e3b1f9a67ec89cfba97081c4ad385f，Crossref 查被引 100 次，查询日 2026-11-19。[Zhao 原文 pp5–6](https://pmc-oa-opendata.s3.amazonaws.com/PMC4621515.1/PMC4621515.1.pdf#page=5) · [Arbabi 校方正式版](https://authors.library.caltech.edu/records/zsmjf-ng522) · [Arbabi Crossref](https://api.crossref.org/works/10.1364/OE.24.018468)
+
+近期可见光实物优先接 Zhang 等 2025（10.1002/lpor.202500460）。期刊确认正式上线日 2025-06-13，2025 年 3 月中科院升级版存档为物理与天体物理大类一区。原刊摘要确认 410 μm 器件与系统分辨率报告，期刊索引列补件 `lpor70101-sup-0001-SuppMat.docx`，数据声明为合理请求。公开索引未核到光学残差或分辨率的处理阶段，继续追查主文图、补件和可归属的作者材料。偏振双波长经典例外保留在待办。会话目标保持开启。[Zhang 原刊](https://onlinelibrary.wiley.com/doi/10.1002/lpor.202500460) · [2025 年分区存档](https://www.ifabiao.com/sci/18638880/93.html)
