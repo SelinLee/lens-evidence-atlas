@@ -25,11 +25,16 @@ test('Shrestha nominal geometry and reported NA conflicts remain distinct from m
  for(const id of ['m2','m3'])assert.equal(byId.get('shrestha2018_'+id).values.na.value,null);
  for(const id of ['m1b','m2']){const bound=byId.get('shrestha2018_'+id).values.strehl;assert.equal(bound.value,null);assert.match(bound.display,/>0.8/);}
 });
-test('neural experimental PSNR never becomes optical SNR, physical achromatic focus, or measured MTF',()=>{
- const v=lens.rows.find(r=>r.id==='tseng2021_neural').values;
- assert.equal(v.diameter_um.value,500);assert.equal(v.fnumber.value,2);assert.equal(v.fov_deg.value,40);
- assert.equal(v.psnr_db.value,22.1);assert.equal(v.ssim.value,.807);assert.equal(v.psnr_db.basis,'reconstruction');
- assert.equal(v.snr,undefined);assert.equal(v.measured_focal_um,undefined);assert.equal(v.design_focal_um.value,1000);assert.equal(v.design_focal_um.basis,'reported_configuration');assert.equal(v.design_focal_um.value/v.diameter_um.value,v.fnumber.value);assert.equal(v.mtf_curve.basis,'model');
+test('papers excluded by the title and abstract audit are absent from the achromatic matrix',()=>{
+ const active = new Set(lens.rows.map(row=>row.study_id));
+ const excluded = [
+  'tseng2021','engelberg2020','li2022','froch2025','colburn2018','yoon2026',
+  'bayati2022','bayati2020','seong2026','arbabi2016metamolecule',
+ ];
+ for(const id of excluded) assert.ok(!active.has(id),id);
+ for(const id of ['zhang2025rgbimaging','sawant2021hybrid','eisenbach2015dualfzp','zhao2015geometricphase']){
+  assert.ok(active.has(id),id);
+ }
 });
 test('Kang spectral rows retain the two physical specimens and original measured sequences',()=>{
  const rows=lens.rows.filter(r=>r.study_id==='kang2026');assert.equal(rows.length,15);assert.equal(new Set(rows.map(r=>r.specimen_id)).size,2);
@@ -61,8 +66,8 @@ test('XR cutoff frequency is not MTF50, a dimensionless MTF value, display PPD o
 });
 test('literature domain and accessory selector use the shared data model and traceable unit-consistent points',()=>{
  const workspace=createWorkspace(load(),d),domain=workspace.domains.find(v=>v.id==='metalens');
- assert.equal(domain.name,'消色差超透镜与对照（文献）');assert.equal(domain.category,'文献器件与计算成像');assert.equal(domain.rows.length,1951);
- const rows=filteredRows(domain,{module:'main',query:'',models:null,evidence:'research'});assert.equal(rows.length,1951);
- const ps=axisPoints(rows,'wavelength_nm','measured_focal_um');assert.equal(ps.length,41);
+ assert.equal(domain.name,'消色差超透镜与折超混合透镜（文献）');assert.equal(domain.category,'文献器件与计算成像');assert.equal(domain.rows.length,1064);
+ const rows=filteredRows(domain,{module:'main',query:'',models:null,evidence:'research'});assert.equal(rows.length,1064);
+ const ps=axisPoints(rows,'wavelength_nm','measured_focal_um');assert.equal(ps.length,35);
  for(const row of domain.rows)for(const value of Object.values(row.values)){assert.ok(workspace.sources.has(value.source));assert.ok(value.location);assert.ok(value.note);}
 });

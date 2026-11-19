@@ -15,7 +15,7 @@ test('a continuous design band never becomes continuous experimental sampling or
   for(const r of spectral){const v=r.values;assert.equal(v.diameter_um.value,20);assert.equal(v.na.value,na);assert.equal(v.lambda_min_nm.value,400);assert.equal(v.lambda_max_nm.value,800);assert.equal(v.lambda_min_nm.basis,'model');assert.equal(v.measured_focal_um.value,null);assert.equal(v.fwhm_x_um.value,null);assert.equal(v.efficiency_at_lambda_pct.value,null);assert.equal(v.strehl,undefined);assert.equal(v.axial_focus_offset_um,undefined);assert.match(v.psf_protocol.value,/20nm（0.02μm）/);assert.match(v.psf_protocol.note,/不是横向像素/);}
   const v=get(spec+'_summary');assert.equal(v.focus_variation_um.value,null);assert.deepEqual(v.focus_variation_um.bound,{operator:'<',value:3,unit:'μm'});assert.deepEqual(v.focus_variation_um.sample_wavelengths_nm,waves);assert.match(v.measured_focal_um.note,/正式版增加Fig.3C.*v1没有/);assert.equal(v.height_nm.value,null);
  }
- assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(rows,'$model','focus_variation_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,41);
+ assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(rows,'$model','focus_variation_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,35);
 });
 
 test('geometric design focal lengths are explicitly atlas model calculations with dimensional inputs and rounded outputs',()=>{
@@ -26,7 +26,7 @@ test('geometric design focal lengths are explicitly atlas model calculations wit
 
 test('experimental efficiency ranges remain ranges while contradictory aggregate claims never become measured band means',()=>{
  for(const [spec,min,max]of [['na05',22.5,42.7],['na07',13.3,22.1]]){const v=get(spec+'_summary');assert.deepEqual(v.mtf_curve.efficiency_range_pct,{min,max});assert.equal(v.efficiency_band_mean_pct.value,null);assert.equal(v.efficiency_band_mean_pct.basis,'unresolved');assert.match(v.efficiency_protocol.value,/直径3×FWHM/);assert.match(v.efficiency_protocol.note,/移除MAM.*aperture匹配MAM像面积/);assert.match(v.efficiency_protocol.note,/不改成半径/);}
- assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,0);assert.equal(axisPoints(rows,'na','efficiency_band_mean_pct').length,0);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,124);
+ assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,0);assert.equal(axisPoints(rows,'na','efficiency_band_mean_pct').length,0);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,107);
 });
 
 test('the 560 nm original and rounded simulation MTFs preserve manuscript axes without becoming experimental S/T or a cutoff',()=>{

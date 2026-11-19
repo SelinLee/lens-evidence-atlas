@@ -1099,3 +1099,9 @@ PR #173 合入 97135ef5852b56e61ea4a2921d5bf9f6db511f3c。PR 校验 44452472359�
 独立无头 Chrome 取得发表方通过 Crossref 登记的作者摘要，原刊索引和卷期目录交叉核对。410 μm 已录为实物口径，0.775 μm 仅随同作者系统报告展示。可见光筛选依据明确的 RGB 用途。PDF、ePDF、同站全文和补件直连 403。OpenAlex 只有 DOI 位置，DataCite 精确关联为零，作者 ORCID 与学校列表未提供正文替代。逐色光学焦位、成像协议和原始测量继续待补。新增一篇、一配置、一条，累计 55 篇、324 配置、1951 条。[本批核验](ZHANG_RGB_IMAGING_REVIEW_2026-11-19.md)
 
 接续 Cao 等的石墨烯多波长消色差透镜，DOI 10.1002/lpor.202401542，正式上线 2024-11-07，2025 年卷期为 19(4)。原作作者摘要报告可见光和通信波段两只样品、部分强度共振（PIR），以及相对期望焦距小于 0.15% 的实测偏差。独立无头 Chrome 取得 Innofocus 所载原理图，可见氧化石墨烯与还原氧化石墨烯同心环，图中谱点按符号示意。正式 PDF 与全文 XML 返回 403。逐波长数值与两只样品各自的误差统计待核。Rong 2026 的 20 μm 纳米压印实物有 480–640 nm 轴扫和重复测量表入口。其期刊的 2025 年大类一区暂未核实，暂存待办。会话目标保持开启。[Cao 正式条目](https://onlinelibrary.wiley.com/doi/10.1002/lpor.202401542) · [Cao 作者摘要](https://api.crossref.org/works/10.1002/lpor.202401542) · [原理图入口](https://innofocus.com.au/multi-wavelength-achromatic-graphene-metalenses-for-visible-nir-and-beyond/) · [Rong 原文](https://www.light-am.com/article/doi/10.37188/lam.2026.105)
+
+## 2026-11-19-119 · Zhang 2025 上线与标题／摘要准入复查
+
+PR #176 合入 bc72d96c1c69fc7a8cb0f4f3c59d0c087e6b12d6。PR 校验 44454714809 及 Pages 44454854146 成功。323 项测试通过。独立无头 Chrome 核公开的 410 μm 散点、空值轴、单篇单记录、三份材料、出处返回、六视口、可见光和 CSV。Wiley 入口返回 403，Crossref 作者摘要和 DataCite 清单均 200。[PR #176](https://github.com/SelinLee/lens-evidence-atlas/pull/176) · [Pages](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44454854146)
+
+按用户新定的门槛复查全部 55 篇。正式标题或作者摘要须明确声称本研究透镜或镜组做消色差设计或校正，明确表述不同波长同焦也符合。移出 10 篇、77 个配置、887 条记录，包括 Seong 2026 普通色散参照，以及 Li 2022 正文有消色差器件但标题和摘要未明确表述色差校正的研究。清理后 45 篇、247 配置、1064 条，可见光 38 篇、766 条。材料与数据可在移出前快照追溯，手机和 VR/AR 域逐项比对无变化。延续 Cao 研究，作者摘要的题材与新门槛一致，已定位同一作者公开的相近研究原理专利，期刊样品归属仍需原始图表确认。[逐篇复核](ACHROMATIC_ELIGIBILITY_AUDIT_2026-11-19.md) · [Cao 摘要](https://api.crossref.org/works/10.1002/lpor.202401542) · [专利公开文本](https://patents.google.com/patent/CN114967127B/zh)
