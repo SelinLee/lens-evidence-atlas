@@ -138,11 +138,20 @@
     {
       "id": "shrestha_achromatic_2018",
       "title": "Shrestha et al. (2018): Broadband achromatic dielectric metalenses",
-      "url": "https://www.nature.com/articles/s41377-018-0078-x",
+      "url": "https://www.nature.com/articles/s41377-018-0078-x.pdf",
       "doi": "10.1038/s41377-018-0078-x",
       "kind": "peer_reviewed_paper",
-      "scope": "期刊正式11页PDF，由Light: Science & Applications期刊站取得；读设计/Results/Methods相关正文并视觉核PDF pp.5、7、8的参数、Fig.4/5。只转录正文明确参数；M2/M3的NA正文与Fig.4图注不同，保留冲突；焦移2–5%为跨样品概述，不分派单样品值；效率/PSF/Strehl曲线未估读。SI未取得，不称全文及补充材料均已核。",
-      "checked_on": "2026-11-14"
+      "scope": "出版社正式 11 页 PDF，复核 pp.2–5 相位与色散设计、pp.5–8 四只器件及 Fig. 3–5、pp.9–10 Methods。视觉核 33 个实测波长标记、轴扫与原图。作者 2–5% 描述四只器件的最大相对均值焦差范围，逐点原始焦距、FWHM、效率、Strehl、MTF 及二维光强阵列未取得。",
+      "checked_on": "2026-11-19"
+    },
+    {
+      "id": "shrestha_achromatic_si_2018",
+      "publication_source": "shrestha_achromatic_2018",
+      "title": "Shrestha et al. (2018): Supplementary Materials, Table S1",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41377-018-0078-x/MediaObjects/41377_2018_78_MOESM1_ESM.docx",
+      "kind": "supplementary_material",
+      "scope": "出版社原始 DOCX，核 Table S1 的四器件、口径、设计焦距、NA、结构代型和设计工作带；M2/M3 表值 0.13/0.88，主文 Fig. 4b/c 图注为 0.12/0.85。另读 §§VII–VIII，核模型与实验的示例及模拟双镜。附件为正文和图，无独立数值表支撑 Fig. 5c–f。",
+      "checked_on": "2026-11-19"
     },
     {
       "id": "kang_uv_visible_2026",
@@ -6102,39 +6111,55 @@
           "evidence_type": "study",
           "study_id": "shrestha2018",
           "specimen_id": "m1a",
-          "measurement_scope": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M1A 汇总配置，请展开查看 8 个图中明示的实测波长。",
           "values": {
             "diameter_um": {
               "value": 100,
-              "source": "shrestha_achromatic_2018",
-              "location": "PDF p.5 Results / M1A",
-              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
             },
             "design_focal_um": {
               "value": 200,
-              "source": "shrestha_achromatic_2018",
-              "location": "PDF p.5 Results / M1A",
-              "note": "设计/名义焦距，不是Fig.5c实测各谱点均值。",
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
             },
             "lambda_min_nm": {
               "value": 1300,
-              "source": "shrestha_achromatic_2018",
-              "location": "PDF p.5 Results / M1A",
-              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Operating Bandwidth, nm，短波端列",
+              "note": "连续设计消色差带短波端，实际公开测量谱点详见图示记录。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
             },
             "lambda_max_nm": {
               "value": 1650,
-              "source": "shrestha_achromatic_2018",
-              "location": "PDF p.5 Results / M1A",
-              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Operating Bandwidth, nm，长波端列",
+              "note": "连续设计消色差带长波端。M1A 的 1660 nm 图示实测超过 1650 nm 设计端点。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
             },
             "height_nm": {
               "value": 800,
@@ -6153,29 +6178,43 @@
               "checked_on": "2026-11-14"
             },
             "chromatic": {
-              "value": "跨四器件概述最大偏离均值约2–5%；未给逐器件标量",
+              "value": "作者报告四只实物的最大偏离均值为 2%–5%",
               "source": "shrestha_achromatic_2018",
-              "location": "PDF p.6 Fig.5c对应正文",
-              "note": "不把2–5%分派给某一枚镜片或取中点。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "PDF p.6 Fig. 5c 对应正文，p.8 Fig. 5c",
+              "note": "四只器件的作者概述，以各器件均值为焦距参考。原文没有给出按器件分派的精确最大值、均值与逐波长焦位数表。仅转录原文范围。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19"
             },
             "mtf_curve": {
-              "value": "Fig.5d效率、5e FWHM、5f Strehl；未估读MTF数值",
+              "value": "已核原文提供轴扫与 PSF/FWHM；未取得 MTF 或二维原始强度阵列",
               "source": "shrestha_achromatic_2018",
-              "location": "PDF pp.7–8 Fig.5及Methods p.10",
-              "note": "效率焦圈约3–5×FWHM，基准为同口径未图案化石英区；M3未测效率且Strehl高NA不适用。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "PDF p.6 Fig. 3c；PDF p.8 Fig. 5；补件 §§VII–VIII",
+              "note": "正式主文和原刊 DOCX 未列 MTF 的坐标轴或逐频数据。保留检索范围、原始阵列和物方尺度缺口。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_2018",
+                "shrestha_achromatic_si_2018"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "search_log": "SHRESTHA_2018_FABRICATED_REVIEW_2026-11-19.md"
+              }
             },
             "na": {
               "value": 0.24,
-              "source": "shrestha_achromatic_2018",
-              "location": "PDF p.5 Results；Fig.3图注",
-              "note": "作者名义NA约值，非独立实测。",
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Numerical Aperture列",
+              "note": "作者在 Table S1 和主文给出的标称 NA。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
-              "approximate": true
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
             },
             "polarization": {
               "value": "透射、偏振无关（作者报告）",
@@ -6184,6 +6223,831 @@
               "note": "复用已核的原作声明；不刷新旧效率/焦距曲线为已提取。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "focus_error_protocol": {
+              "value": "相对各镜片平均焦距；作者跨四样品概述 2%–5%",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 5c 对应正文，pp.9–10 Optical characterization",
+              "note": "轴位由器件平面初始化，轴扫典型步长 1 μm。均值原数值、取峰规则及按器件的逐点残余未报告为可核验原始数表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null
+            },
+            "psf_protocol": {
+              "value": "轴上准直照明，实测轴向 x–z 与横向 x–y 强度图",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c；PDF pp.9–10 Optical characterization",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "raw_psf_available": null
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.8 Fig. 5d",
+              "note": "图有实验效率曲线。逐点数值和采样清单未获得源表。本汇总行保留图位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "Fig. 5d 效率曲线"
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆内积分；无图案石英同孔径入射功率为分母",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.6–7 Fig. 5d 对应正文，p.10 Optical characterization",
+              "note": "入射功率用无图案石英区，在与器件同口径的光阑下测。结果段定义焦面圆积分，称半径为数倍焦斑 FWHM。Methods 的光阑尺度为 3–5 倍 FWHM，未明确该组数字对应半径或直径、各样品与谱点的具体值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "bare_quartz_incident_power_same_aperture",
+              "integration_shape": "circle",
+              "iris_fwhm_scale_range": [
+                3,
+                5
+              ],
+              "iris_scale_kind": null
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m1a_1300",
+          "model": "Shrestha 2018 · M1A · 1300 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m1a",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M1A 的 1300 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1A；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1A",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Numerical Aperture列",
+              "note": "作者在 Table S1 和主文给出的标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 1300,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c，第 1 个波长面板，印字 λ = 1300 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图为设计目标焦面",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c，第 1 个波长面板，印字 λ = 1300 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图为设计目标焦面。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": 200,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m1a_1360",
+          "model": "Shrestha 2018 · M1A · 1360 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m1a",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M1A 的 1360 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1A；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1A",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Numerical Aperture列",
+              "note": "作者在 Table S1 和主文给出的标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 1360,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c，第 2 个波长面板，印字 λ = 1360 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图为设计目标焦面",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c，第 2 个波长面板，印字 λ = 1360 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图为设计目标焦面。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": 200,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m1a_1420",
+          "model": "Shrestha 2018 · M1A · 1420 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m1a",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M1A 的 1420 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1A；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1A",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Numerical Aperture列",
+              "note": "作者在 Table S1 和主文给出的标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 1420,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c，第 3 个波长面板，印字 λ = 1420 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图为设计目标焦面",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c，第 3 个波长面板，印字 λ = 1420 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图为设计目标焦面。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": 200,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m1a_1480",
+          "model": "Shrestha 2018 · M1A · 1480 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m1a",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M1A 的 1480 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1A；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1A",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Numerical Aperture列",
+              "note": "作者在 Table S1 和主文给出的标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 1480,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c，第 4 个波长面板，印字 λ = 1480 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图为设计目标焦面",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c，第 4 个波长面板，印字 λ = 1480 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图为设计目标焦面。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": 200,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m1a_1510",
+          "model": "Shrestha 2018 · M1A · 1510 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m1a",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M1A 的 1510 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1A；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1A",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Numerical Aperture列",
+              "note": "作者在 Table S1 和主文给出的标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 1510,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c，第 5 个波长面板，印字 λ = 1510 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图为设计目标焦面",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c，第 5 个波长面板，印字 λ = 1510 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图为设计目标焦面。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": 200,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m1a_1570",
+          "model": "Shrestha 2018 · M1A · 1570 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m1a",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M1A 的 1570 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1A；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1A",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Numerical Aperture列",
+              "note": "作者在 Table S1 和主文给出的标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 1570,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c，第 6 个波长面板，印字 λ = 1570 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图为设计目标焦面",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c，第 6 个波长面板，印字 λ = 1570 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图为设计目标焦面。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": 200,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m1a_1630",
+          "model": "Shrestha 2018 · M1A · 1630 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m1a",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M1A 的 1630 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1A；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1A",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Numerical Aperture列",
+              "note": "作者在 Table S1 和主文给出的标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 1630,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c，第 7 个波长面板，印字 λ = 1630 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图为设计目标焦面",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c，第 7 个波长面板，印字 λ = 1630 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图为设计目标焦面。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": 200,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m1a_1660",
+          "model": "Shrestha 2018 · M1A · 1660 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m1a",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M1A 的 1660 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 800,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1A；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1A",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1A 行，Numerical Aperture列",
+              "note": "作者在 Table S1 和主文给出的标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 1660,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c，第 8 个波长面板，印字 λ = 1660 nm",
+              "note": "图内标记的实际实测波长。1660 nm 超过 M1A 的 1650 nm 设计上限。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图为设计目标焦面",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c，第 8 个波长面板，印字 λ = 1660 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图为设计目标焦面。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": 200,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3c；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
             }
           }
         },
@@ -6195,39 +7059,55 @@
           "evidence_type": "study",
           "study_id": "shrestha2018",
           "specimen_id": "m1b",
-          "measurement_scope": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M1B 汇总配置，请展开查看 10 个图中明示的实测波长。",
           "values": {
             "diameter_um": {
               "value": 100,
-              "source": "shrestha_achromatic_2018",
-              "location": "PDF p.5 Results / M1B",
-              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
             },
             "design_focal_um": {
               "value": 200,
-              "source": "shrestha_achromatic_2018",
-              "location": "PDF p.5 Results / M1B",
-              "note": "设计/名义焦距，不是Fig.5c实测各谱点均值。",
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
             },
             "lambda_min_nm": {
               "value": 1200,
-              "source": "shrestha_achromatic_2018",
-              "location": "PDF p.5 Results / M1B",
-              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Operating Bandwidth, nm，短波端列",
+              "note": "连续设计消色差带短波端，实际公开测量谱点详见图示记录。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
             },
             "lambda_max_nm": {
               "value": 1650,
-              "source": "shrestha_achromatic_2018",
-              "location": "PDF p.5 Results / M1B",
-              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Operating Bandwidth, nm，长波端列",
+              "note": "连续设计消色差带长波端，实际公开测量谱点详见图示记录。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
             },
             "height_nm": {
               "value": 1400,
@@ -6246,38 +7126,53 @@
               "checked_on": "2026-11-14"
             },
             "chromatic": {
-              "value": "跨四器件概述最大偏离均值约2–5%；未给逐器件标量",
+              "value": "作者报告四只实物的最大偏离均值为 2%–5%",
               "source": "shrestha_achromatic_2018",
-              "location": "PDF p.6 Fig.5c对应正文",
-              "note": "不把2–5%分派给某一枚镜片或取中点。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "PDF p.6 Fig. 5c 对应正文，p.8 Fig. 5c",
+              "note": "四只器件的作者概述，以各器件均值为焦距参考。原文没有给出按器件分派的精确最大值、均值与逐波长焦位数表。仅转录原文范围。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19"
             },
             "mtf_curve": {
-              "value": "Fig.5d效率、5e FWHM、5f Strehl；未估读MTF数值",
+              "value": "已核原文提供轴扫与 PSF/FWHM；未取得 MTF 或二维原始强度阵列",
               "source": "shrestha_achromatic_2018",
-              "location": "PDF pp.7–8 Fig.5及Methods p.10",
-              "note": "效率焦圈约3–5×FWHM，基准为同口径未图案化石英区；M3未测效率且Strehl高NA不适用。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "PDF p.6 Fig. 3d；PDF p.8 Fig. 5；补件 §§VII–VIII",
+              "note": "正式主文和原刊 DOCX 未列 MTF 的坐标轴或逐频数据。保留检索范围、原始阵列和物方尺度缺口。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_2018",
+                "shrestha_achromatic_si_2018"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "search_log": "SHRESTHA_2018_FABRICATED_REVIEW_2026-11-19.md"
+              }
             },
             "na": {
               "value": 0.24,
-              "source": "shrestha_achromatic_2018",
-              "location": "PDF p.5 Results；Fig.3图注",
-              "note": "作者名义NA约值，非独立实测。",
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Numerical Aperture列",
+              "note": "作者在 Table S1 和主文给出的标称 NA。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
-              "approximate": true
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
             },
             "strehl": {
               "value": null,
               "source": "shrestha_achromatic_2018",
-              "location": "PDF p.8 Fig.5f对应正文",
-              "note": "作者报告工作波段内大于0.8；非精确0.8点值。",
+              "location": "PDF p.8 Fig. 5f 正文与图注",
+              "note": "作者概述此器件带内 Strehl 大于 0.8，来源是实测焦斑分析。逐点数值、理想基准的等功率归一细节待补。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14",
-              "display": ">0.8（作者报告界限）"
+              "checked_on": "2026-11-19",
+              "display": ">0.8（作者报告界限）",
+              "calculation_origin": "authors"
             },
             "polarization": {
               "value": "透射、偏振无关（作者报告）",
@@ -6286,6 +7181,1040 @@
               "note": "复用已核的原作声明；不刷新旧效率/焦距曲线为已提取。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "focus_error_protocol": {
+              "value": "相对各镜片平均焦距；作者跨四样品概述 2%–5%",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 5c 对应正文，pp.9–10 Optical characterization",
+              "note": "轴位由器件平面初始化，轴扫典型步长 1 μm。均值原数值、取峰规则及按器件的逐点残余未报告为可核验原始数表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null
+            },
+            "psf_protocol": {
+              "value": "轴上准直照明，实测轴向 x–z 与横向 x–y 强度图",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d；PDF pp.9–10 Optical characterization",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "raw_psf_available": null
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.8 Fig. 5d",
+              "note": "图有实验效率曲线。逐点数值和采样清单未获得源表。本汇总行保留图位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "Fig. 5d 效率曲线"
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆内积分；无图案石英同孔径入射功率为分母",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.6–7 Fig. 5d 对应正文，p.10 Optical characterization",
+              "note": "入射功率用无图案石英区，在与器件同口径的光阑下测。结果段定义焦面圆积分，称半径为数倍焦斑 FWHM。Methods 的光阑尺度为 3–5 倍 FWHM，未明确该组数字对应半径或直径、各样品与谱点的具体值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "bare_quartz_incident_power_same_aperture",
+              "integration_shape": "circle",
+              "iris_fwhm_scale_range": [
+                3,
+                5
+              ],
+              "iris_scale_kind": null
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m1b_1200",
+          "model": "Shrestha 2018 · M1B · 1200 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m1b",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M1B 的 1200 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1B；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1B",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Numerical Aperture列",
+              "note": "作者在 Table S1 和主文给出的标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 1200,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d，第 1 个波长面板，印字 λ = 1200 nm；PDF p.8 Fig. 5a,b 同一波长",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图为设计目标焦面",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d，第 1 个波长面板，印字 λ = 1200 nm；PDF p.8 Fig. 5a,b 同一波长；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图为设计目标焦面。数字型最佳轴向焦位和焦斑宽度未取得。 Fig. 5b 同波长含实测水平、垂直截线和理论 Airy 对照，横轴 μm、纵轴归一化强度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": 200,
+              "xy_profile_directions": [
+                "x",
+                "y"
+              ],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m1b_1250",
+          "model": "Shrestha 2018 · M1B · 1250 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m1b",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M1B 的 1250 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1B；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1B",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Numerical Aperture列",
+              "note": "作者在 Table S1 和主文给出的标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 1250,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d，第 2 个波长面板，印字 λ = 1250 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图为设计目标焦面",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d，第 2 个波长面板，印字 λ = 1250 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图为设计目标焦面。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": 200,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m1b_1300",
+          "model": "Shrestha 2018 · M1B · 1300 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m1b",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M1B 的 1300 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1B；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1B",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Numerical Aperture列",
+              "note": "作者在 Table S1 和主文给出的标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 1300,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d，第 3 个波长面板，印字 λ = 1300 nm；PDF p.8 Fig. 5a,b 同一波长",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图为设计目标焦面",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d，第 3 个波长面板，印字 λ = 1300 nm；PDF p.8 Fig. 5a,b 同一波长；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图为设计目标焦面。数字型最佳轴向焦位和焦斑宽度未取得。 Fig. 5b 同波长含实测水平、垂直截线和理论 Airy 对照，横轴 μm、纵轴归一化强度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": 200,
+              "xy_profile_directions": [
+                "x",
+                "y"
+              ],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m1b_1350",
+          "model": "Shrestha 2018 · M1B · 1350 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m1b",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M1B 的 1350 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1B；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1B",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Numerical Aperture列",
+              "note": "作者在 Table S1 和主文给出的标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 1350,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d，第 4 个波长面板，印字 λ = 1350 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图为设计目标焦面",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d，第 4 个波长面板，印字 λ = 1350 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图为设计目标焦面。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": 200,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m1b_1400",
+          "model": "Shrestha 2018 · M1B · 1400 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m1b",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M1B 的 1400 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1B；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1B",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Numerical Aperture列",
+              "note": "作者在 Table S1 和主文给出的标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d，第 5 个波长面板，印字 λ = 1400 nm；PDF p.8 Fig. 5a,b 同一波长",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图为设计目标焦面",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d，第 5 个波长面板，印字 λ = 1400 nm；PDF p.8 Fig. 5a,b 同一波长；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图为设计目标焦面。数字型最佳轴向焦位和焦斑宽度未取得。 Fig. 5b 同波长含实测水平、垂直截线和理论 Airy 对照，横轴 μm、纵轴归一化强度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": 200,
+              "xy_profile_directions": [
+                "x",
+                "y"
+              ],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m1b_1450",
+          "model": "Shrestha 2018 · M1B · 1450 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m1b",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M1B 的 1450 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1B；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1B",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Numerical Aperture列",
+              "note": "作者在 Table S1 和主文给出的标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 1450,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d，第 6 个波长面板，印字 λ = 1450 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图为设计目标焦面",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d，第 6 个波长面板，印字 λ = 1450 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图为设计目标焦面。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": 200,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m1b_1500",
+          "model": "Shrestha 2018 · M1B · 1500 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m1b",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M1B 的 1500 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1B；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1B",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Numerical Aperture列",
+              "note": "作者在 Table S1 和主文给出的标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 1500,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d，第 7 个波长面板，印字 λ = 1500 nm；PDF p.8 Fig. 5a,b 同一波长",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图为设计目标焦面",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d，第 7 个波长面板，印字 λ = 1500 nm；PDF p.8 Fig. 5a,b 同一波长；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图为设计目标焦面。数字型最佳轴向焦位和焦斑宽度未取得。 Fig. 5b 同波长含实测水平、垂直截线和理论 Airy 对照，横轴 μm、纵轴归一化强度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": 200,
+              "xy_profile_directions": [
+                "x",
+                "y"
+              ],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m1b_1550",
+          "model": "Shrestha 2018 · M1B · 1550 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m1b",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M1B 的 1550 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1B；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1B",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Numerical Aperture列",
+              "note": "作者在 Table S1 和主文给出的标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 1550,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d，第 8 个波长面板，印字 λ = 1550 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图为设计目标焦面",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d，第 8 个波长面板，印字 λ = 1550 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图为设计目标焦面。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": 200,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m1b_1600",
+          "model": "Shrestha 2018 · M1B · 1600 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m1b",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M1B 的 1600 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1B；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1B",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Numerical Aperture列",
+              "note": "作者在 Table S1 和主文给出的标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 1600,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d，第 9 个波长面板，印字 λ = 1600 nm；PDF p.8 Fig. 5a,b 同一波长",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图为设计目标焦面",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d，第 9 个波长面板，印字 λ = 1600 nm；PDF p.8 Fig. 5a,b 同一波长；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图为设计目标焦面。数字型最佳轴向焦位和焦斑宽度未取得。 Fig. 5b 同波长含实测水平、垂直截线和理论 Airy 对照，横轴 μm、纵轴归一化强度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": 200,
+              "xy_profile_directions": [
+                "x",
+                "y"
+              ],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m1b_1650",
+          "model": "Shrestha 2018 · M1B · 1650 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m1b",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M1B 的 1650 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1B；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1B",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.24,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M1B 行，Numerical Aperture列",
+              "note": "作者在 Table S1 和主文给出的标称 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 1650,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d，第 10 个波长面板，印字 λ = 1650 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图为设计目标焦面",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d，第 10 个波长面板，印字 λ = 1650 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图为设计目标焦面。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": 200,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 3d；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
             }
           }
         },
@@ -6297,39 +8226,55 @@
           "evidence_type": "study",
           "study_id": "shrestha2018",
           "specimen_id": "m2",
-          "measurement_scope": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M2 汇总配置，请展开查看 10 个图中明示的实测波长。",
           "values": {
             "diameter_um": {
               "value": 200,
-              "source": "shrestha_achromatic_2018",
-              "location": "PDF p.5 Results / M2",
-              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
             },
             "design_focal_um": {
               "value": 800,
-              "source": "shrestha_achromatic_2018",
-              "location": "PDF p.5 Results / M2",
-              "note": "设计/名义焦距，不是Fig.5c实测各谱点均值。",
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
             },
             "lambda_min_nm": {
               "value": 1200,
-              "source": "shrestha_achromatic_2018",
-              "location": "PDF p.5 Results / M2",
-              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Operating Bandwidth, nm，短波端列",
+              "note": "连续设计消色差带短波端，实际公开测量谱点详见图示记录。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
             },
             "lambda_max_nm": {
               "value": 1650,
-              "source": "shrestha_achromatic_2018",
-              "location": "PDF p.5 Results / M2",
-              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Operating Bandwidth, nm，长波端列",
+              "note": "连续设计消色差带长波端，实际公开测量谱点详见图示记录。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
             },
             "height_nm": {
               "value": 1400,
@@ -6348,38 +8293,56 @@
               "checked_on": "2026-11-14"
             },
             "chromatic": {
-              "value": "跨四器件概述最大偏离均值约2–5%；未给逐器件标量",
+              "value": "作者报告四只实物的最大偏离均值为 2%–5%",
               "source": "shrestha_achromatic_2018",
-              "location": "PDF p.6 Fig.5c对应正文",
-              "note": "不把2–5%分派给某一枚镜片或取中点。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "PDF p.6 Fig. 5c 对应正文，p.8 Fig. 5c",
+              "note": "四只器件的作者概述，以各器件均值为焦距参考。原文没有给出按器件分派的精确最大值、均值与逐波长焦位数表。仅转录原文范围。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19"
             },
             "mtf_curve": {
-              "value": "Fig.5d效率、5e FWHM、5f Strehl；未估读MTF数值",
+              "value": "已核原文提供轴扫与 PSF/FWHM；未取得 MTF 或二维原始强度阵列",
               "source": "shrestha_achromatic_2018",
-              "location": "PDF pp.7–8 Fig.5及Methods p.10",
-              "note": "效率焦圈约3–5×FWHM，基准为同口径未图案化石英区；M3未测效率且Strehl高NA不适用。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "PDF p.7 Fig. 4b；PDF p.8 Fig. 5；补件 §§VII–VIII",
+              "note": "正式主文和原刊 DOCX 未列 MTF 的坐标轴或逐频数据。保留检索范围、原始阵列和物方尺度缺口。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_2018",
+                "shrestha_achromatic_si_2018"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "search_log": "SHRESTHA_2018_FABRICATED_REVIEW_2026-11-19.md"
+              }
             },
             "na": {
               "value": null,
-              "source": "shrestha_achromatic_2018",
-              "location": "PDF p.5 Results与p.7 Fig.4图注",
-              "note": "原文不一致，不选择一值打点。",
-              "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
-              "display": "正文≈0.13；Fig.4b=0.12"
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Numerical Aperture列；主文 PDF p.7 Fig. 4b 图注",
+              "note": "名义 NA 的 Table S1 表值与主文图注分别为 0.13 和 0.12，作者未说明不同取值口径。两值保留，单值坐标留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "Table S1 / 正文 0.13；图注 0.12",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ],
+              "table_s1_na": 0.13,
+              "figure_caption_na": 0.12
             },
             "strehl": {
               "value": null,
               "source": "shrestha_achromatic_2018",
-              "location": "PDF p.8 Fig.5f对应正文",
-              "note": "作者报告工作波段内大于0.8；非精确0.8点值。",
+              "location": "PDF p.8 Fig. 5f 正文与图注",
+              "note": "作者概述此器件带内 Strehl 大于 0.8，来源是实测焦斑分析。逐点数值、理想基准的等功率归一细节待补。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14",
-              "display": ">0.8（作者报告界限）"
+              "checked_on": "2026-11-19",
+              "display": ">0.8（作者报告界限）",
+              "calculation_origin": "authors"
             },
             "polarization": {
               "value": "透射、偏振无关（作者报告）",
@@ -6388,6 +8351,1055 @@
               "note": "复用已核的原作声明；不刷新旧效率/焦距曲线为已提取。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "focus_error_protocol": {
+              "value": "相对各镜片平均焦距；作者跨四样品概述 2%–5%",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 5c 对应正文，pp.9–10 Optical characterization",
+              "note": "轴位由器件平面初始化，轴扫典型步长 1 μm。均值原数值、取峰规则及按器件的逐点残余未报告为可核验原始数表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null
+            },
+            "psf_protocol": {
+              "value": "轴上准直照明，实测轴向 x–z 与横向 x–y 强度图",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b；PDF pp.9–10 Optical characterization",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "raw_psf_available": null
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.8 Fig. 5d",
+              "note": "图有实验效率曲线。逐点数值和采样清单未获得源表。本汇总行保留图位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "Fig. 5d 效率曲线"
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆内积分；无图案石英同孔径入射功率为分母",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.6–7 Fig. 5d 对应正文，p.10 Optical characterization",
+              "note": "入射功率用无图案石英区，在与器件同口径的光阑下测。结果段定义焦面圆积分，称半径为数倍焦斑 FWHM。Methods 的光阑尺度为 3–5 倍 FWHM，未明确该组数字对应半径或直径、各样品与谱点的具体值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "bare_quartz_incident_power_same_aperture",
+              "integration_shape": "circle",
+              "iris_fwhm_scale_range": [
+                3,
+                5
+              ],
+              "iris_scale_kind": null
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m2_1200",
+          "model": "Shrestha 2018 · M2 · 1200 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m2",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M2 的 1200 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 800,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1B；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1B",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": null,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Numerical Aperture列；主文 PDF p.7 Fig. 4b 图注",
+              "note": "名义 NA 的 Table S1 表值与主文图注分别为 0.13 和 0.12，作者未说明不同取值口径。两值保留，单值坐标留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "Table S1 / 正文 0.13；图注 0.12",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ],
+              "table_s1_na": 0.13,
+              "figure_caption_na": 0.12
+            },
+            "wavelength_nm": {
+              "value": 1200,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b，第 1 个波长面板，印字 λ = 1200 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图的固定面／逐点最佳面选择未明确",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b，第 1 个波长面板，印字 λ = 1200 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图的固定面／逐点最佳面选择未明确。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": null,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m2_1250",
+          "model": "Shrestha 2018 · M2 · 1250 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m2",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M2 的 1250 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 800,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1B；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1B",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": null,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Numerical Aperture列；主文 PDF p.7 Fig. 4b 图注",
+              "note": "名义 NA 的 Table S1 表值与主文图注分别为 0.13 和 0.12，作者未说明不同取值口径。两值保留，单值坐标留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "Table S1 / 正文 0.13；图注 0.12",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ],
+              "table_s1_na": 0.13,
+              "figure_caption_na": 0.12
+            },
+            "wavelength_nm": {
+              "value": 1250,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b，第 2 个波长面板，印字 λ = 1250 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图的固定面／逐点最佳面选择未明确",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b，第 2 个波长面板，印字 λ = 1250 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图的固定面／逐点最佳面选择未明确。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": null,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m2_1300",
+          "model": "Shrestha 2018 · M2 · 1300 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m2",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M2 的 1300 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 800,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1B；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1B",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": null,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Numerical Aperture列；主文 PDF p.7 Fig. 4b 图注",
+              "note": "名义 NA 的 Table S1 表值与主文图注分别为 0.13 和 0.12，作者未说明不同取值口径。两值保留，单值坐标留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "Table S1 / 正文 0.13；图注 0.12",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ],
+              "table_s1_na": 0.13,
+              "figure_caption_na": 0.12
+            },
+            "wavelength_nm": {
+              "value": 1300,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b，第 3 个波长面板，印字 λ = 1300 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图的固定面／逐点最佳面选择未明确",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b，第 3 个波长面板，印字 λ = 1300 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图的固定面／逐点最佳面选择未明确。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": null,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m2_1350",
+          "model": "Shrestha 2018 · M2 · 1350 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m2",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M2 的 1350 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 800,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1B；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1B",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": null,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Numerical Aperture列；主文 PDF p.7 Fig. 4b 图注",
+              "note": "名义 NA 的 Table S1 表值与主文图注分别为 0.13 和 0.12，作者未说明不同取值口径。两值保留，单值坐标留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "Table S1 / 正文 0.13；图注 0.12",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ],
+              "table_s1_na": 0.13,
+              "figure_caption_na": 0.12
+            },
+            "wavelength_nm": {
+              "value": 1350,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b，第 4 个波长面板，印字 λ = 1350 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图的固定面／逐点最佳面选择未明确",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b，第 4 个波长面板，印字 λ = 1350 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图的固定面／逐点最佳面选择未明确。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": null,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m2_1400",
+          "model": "Shrestha 2018 · M2 · 1400 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m2",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M2 的 1400 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 800,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1B；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1B",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": null,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Numerical Aperture列；主文 PDF p.7 Fig. 4b 图注",
+              "note": "名义 NA 的 Table S1 表值与主文图注分别为 0.13 和 0.12，作者未说明不同取值口径。两值保留，单值坐标留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "Table S1 / 正文 0.13；图注 0.12",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ],
+              "table_s1_na": 0.13,
+              "figure_caption_na": 0.12
+            },
+            "wavelength_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b，第 5 个波长面板，印字 λ = 1400 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图的固定面／逐点最佳面选择未明确",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b，第 5 个波长面板，印字 λ = 1400 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图的固定面／逐点最佳面选择未明确。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": null,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m2_1450",
+          "model": "Shrestha 2018 · M2 · 1450 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m2",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M2 的 1450 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 800,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1B；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1B",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": null,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Numerical Aperture列；主文 PDF p.7 Fig. 4b 图注",
+              "note": "名义 NA 的 Table S1 表值与主文图注分别为 0.13 和 0.12，作者未说明不同取值口径。两值保留，单值坐标留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "Table S1 / 正文 0.13；图注 0.12",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ],
+              "table_s1_na": 0.13,
+              "figure_caption_na": 0.12
+            },
+            "wavelength_nm": {
+              "value": 1450,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b，第 6 个波长面板，印字 λ = 1450 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图的固定面／逐点最佳面选择未明确",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b，第 6 个波长面板，印字 λ = 1450 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图的固定面／逐点最佳面选择未明确。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": null,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m2_1500",
+          "model": "Shrestha 2018 · M2 · 1500 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m2",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M2 的 1500 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 800,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1B；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1B",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": null,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Numerical Aperture列；主文 PDF p.7 Fig. 4b 图注",
+              "note": "名义 NA 的 Table S1 表值与主文图注分别为 0.13 和 0.12，作者未说明不同取值口径。两值保留，单值坐标留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "Table S1 / 正文 0.13；图注 0.12",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ],
+              "table_s1_na": 0.13,
+              "figure_caption_na": 0.12
+            },
+            "wavelength_nm": {
+              "value": 1500,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b，第 7 个波长面板，印字 λ = 1500 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图的固定面／逐点最佳面选择未明确",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b，第 7 个波长面板，印字 λ = 1500 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图的固定面／逐点最佳面选择未明确。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": null,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m2_1550",
+          "model": "Shrestha 2018 · M2 · 1550 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m2",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M2 的 1550 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 800,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1B；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1B",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": null,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Numerical Aperture列；主文 PDF p.7 Fig. 4b 图注",
+              "note": "名义 NA 的 Table S1 表值与主文图注分别为 0.13 和 0.12，作者未说明不同取值口径。两值保留，单值坐标留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "Table S1 / 正文 0.13；图注 0.12",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ],
+              "table_s1_na": 0.13,
+              "figure_caption_na": 0.12
+            },
+            "wavelength_nm": {
+              "value": 1550,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b，第 8 个波长面板，印字 λ = 1550 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图的固定面／逐点最佳面选择未明确",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b，第 8 个波长面板，印字 λ = 1550 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图的固定面／逐点最佳面选择未明确。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": null,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m2_1600",
+          "model": "Shrestha 2018 · M2 · 1600 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m2",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M2 的 1600 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 800,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1B；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1B",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": null,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Numerical Aperture列；主文 PDF p.7 Fig. 4b 图注",
+              "note": "名义 NA 的 Table S1 表值与主文图注分别为 0.13 和 0.12，作者未说明不同取值口径。两值保留，单值坐标留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "Table S1 / 正文 0.13；图注 0.12",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ],
+              "table_s1_na": 0.13,
+              "figure_caption_na": 0.12
+            },
+            "wavelength_nm": {
+              "value": 1600,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b，第 9 个波长面板，印字 λ = 1600 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图的固定面／逐点最佳面选择未明确",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b，第 9 个波长面板，印字 λ = 1600 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图的固定面／逐点最佳面选择未明确。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": null,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m2_1650",
+          "model": "Shrestha 2018 · M2 · 1650 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m2",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M2 的 1650 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 200,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 800,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 1B；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 1B",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": null,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M2 行，Numerical Aperture列；主文 PDF p.7 Fig. 4b 图注",
+              "note": "名义 NA 的 Table S1 表值与主文图注分别为 0.13 和 0.12，作者未说明不同取值口径。两值保留，单值坐标留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "Table S1 / 正文 0.13；图注 0.12",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ],
+              "table_s1_na": 0.13,
+              "figure_caption_na": 0.12
+            },
+            "wavelength_nm": {
+              "value": 1650,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b，第 10 个波长面板，印字 λ = 1650 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图的固定面／逐点最佳面选择未明确",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b，第 10 个波长面板，印字 λ = 1650 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图的固定面／逐点最佳面选择未明确。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": null,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4b；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
             }
           }
         },
@@ -6399,39 +9411,55 @@
           "evidence_type": "study",
           "study_id": "shrestha2018",
           "specimen_id": "m3",
-          "measurement_scope": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M3 汇总配置，请展开查看 5 个图中明示的实测波长。",
           "values": {
             "diameter_um": {
               "value": 100,
-              "source": "shrestha_achromatic_2018",
-              "location": "PDF p.5 Results / M3",
-              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M3 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
             },
             "design_focal_um": {
               "value": 30,
-              "source": "shrestha_achromatic_2018",
-              "location": "PDF p.5 Results / M3",
-              "note": "设计/名义焦距，不是Fig.5c实测各谱点均值。",
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M3 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
             },
             "lambda_min_nm": {
               "value": 1200,
-              "source": "shrestha_achromatic_2018",
-              "location": "PDF p.5 Results / M3",
-              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M3 行，Operating Bandwidth, nm，短波端列",
+              "note": "连续设计消色差带短波端，实际公开测量谱点详见图示记录。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
             },
             "lambda_max_nm": {
               "value": 1400,
-              "source": "shrestha_achromatic_2018",
-              "location": "PDF p.5 Results / M3",
-              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M3 行，Operating Bandwidth, nm，长波端列",
+              "note": "连续设计消色差带长波端，实际公开测量谱点详见图示记录。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
             },
             "height_nm": {
               "value": 1400,
@@ -6450,29 +9478,46 @@
               "checked_on": "2026-11-14"
             },
             "chromatic": {
-              "value": "跨四器件概述最大偏离均值约2–5%；未给逐器件标量",
+              "value": "作者报告四只实物的最大偏离均值为 2%–5%",
               "source": "shrestha_achromatic_2018",
-              "location": "PDF p.6 Fig.5c对应正文",
-              "note": "不把2–5%分派给某一枚镜片或取中点。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "PDF p.6 Fig. 5c 对应正文，p.8 Fig. 5c",
+              "note": "四只器件的作者概述，以各器件均值为焦距参考。原文没有给出按器件分派的精确最大值、均值与逐波长焦位数表。仅转录原文范围。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19"
             },
             "mtf_curve": {
-              "value": "Fig.5d效率、5e FWHM、5f Strehl；未估读MTF数值",
+              "value": "已核原文提供轴扫与 PSF/FWHM；未取得 MTF 或二维原始强度阵列",
               "source": "shrestha_achromatic_2018",
-              "location": "PDF pp.7–8 Fig.5及Methods p.10",
-              "note": "效率焦圈约3–5×FWHM，基准为同口径未图案化石英区；M3未测效率且Strehl高NA不适用。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "PDF p.7 Fig. 4c；PDF p.8 Fig. 5；补件 §§VII–VIII",
+              "note": "正式主文和原刊 DOCX 未列 MTF 的坐标轴或逐频数据。保留检索范围、原始阵列和物方尺度缺口。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_2018",
+                "shrestha_achromatic_si_2018"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "search_log": "SHRESTHA_2018_FABRICATED_REVIEW_2026-11-19.md"
+              }
             },
             "na": {
               "value": null,
-              "source": "shrestha_achromatic_2018",
-              "location": "PDF p.5 Results与p.7 Fig.4图注",
-              "note": "原文不一致，不选择一值打点。",
-              "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
-              "display": "正文≈0.88；Fig.4c=0.85"
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M3 行，Numerical Aperture列；主文 PDF p.7 Fig. 4c 图注",
+              "note": "名义 NA 的 Table S1 表值与主文图注分别为 0.88 和 0.85，作者未说明不同取值口径。两值保留，单值坐标留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "Table S1 / 正文 0.88；图注 0.85",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ],
+              "table_s1_na": 0.88,
+              "figure_caption_na": 0.85
             },
             "polarization": {
               "value": "透射、偏振无关（作者报告）",
@@ -6481,6 +9526,549 @@
               "note": "复用已核的原作声明；不刷新旧效率/焦距曲线为已提取。",
               "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "focus_error_protocol": {
+              "value": "相对各镜片平均焦距；作者跨四样品概述 2%–5%",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.6 Fig. 5c 对应正文，pp.9–10 Optical characterization",
+              "note": "轴位由器件平面初始化，轴扫典型步长 1 μm。均值原数值、取峰规则及按器件的逐点残余未报告为可核验原始数表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null
+            },
+            "psf_protocol": {
+              "value": "轴上准直照明，实测轴向 x–z 与横向 x–y 强度图",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4c；PDF pp.9–10 Optical characterization",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "raw_psf_available": null
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.8 Fig. 5d 图注",
+              "note": "作者明确说明 M3 的 NA 大于测量装置的 NA，未报告该器件的实验聚焦效率。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "Fig. 5d 未测，受装置 NA 限制"
+            },
+            "strehl": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.8 Fig. 5f 图注",
+              "note": "作者没有给 M3 的 Strehl 曲线或数值，理由是本实验的高 NA 测量条件。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "Fig. 5f 未报告 M3"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m3_1200",
+          "model": "Shrestha 2018 · M3 · 1200 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m3",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M3 的 1200 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M3 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 30,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M3 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 2；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 2",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": null,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M3 行，Numerical Aperture列；主文 PDF p.7 Fig. 4c 图注",
+              "note": "名义 NA 的 Table S1 表值与主文图注分别为 0.88 和 0.85，作者未说明不同取值口径。两值保留，单值坐标留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "Table S1 / 正文 0.88；图注 0.85",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ],
+              "table_s1_na": 0.88,
+              "figure_caption_na": 0.85
+            },
+            "wavelength_nm": {
+              "value": 1200,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4c，第 1 个波长面板，印字 λ = 1200 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图的固定面／逐点最佳面选择未明确",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4c，第 1 个波长面板，印字 λ = 1200 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图的固定面／逐点最佳面选择未明确。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": null,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4c；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m3_1250",
+          "model": "Shrestha 2018 · M3 · 1250 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m3",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M3 的 1250 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M3 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 30,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M3 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 2；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 2",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": null,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M3 行，Numerical Aperture列；主文 PDF p.7 Fig. 4c 图注",
+              "note": "名义 NA 的 Table S1 表值与主文图注分别为 0.88 和 0.85，作者未说明不同取值口径。两值保留，单值坐标留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "Table S1 / 正文 0.88；图注 0.85",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ],
+              "table_s1_na": 0.88,
+              "figure_caption_na": 0.85
+            },
+            "wavelength_nm": {
+              "value": 1250,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4c，第 2 个波长面板，印字 λ = 1250 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图的固定面／逐点最佳面选择未明确",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4c，第 2 个波长面板，印字 λ = 1250 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图的固定面／逐点最佳面选择未明确。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": null,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4c；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m3_1300",
+          "model": "Shrestha 2018 · M3 · 1300 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m3",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M3 的 1300 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M3 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 30,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M3 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 2；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 2",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": null,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M3 行，Numerical Aperture列；主文 PDF p.7 Fig. 4c 图注",
+              "note": "名义 NA 的 Table S1 表值与主文图注分别为 0.88 和 0.85，作者未说明不同取值口径。两值保留，单值坐标留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "Table S1 / 正文 0.88；图注 0.85",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ],
+              "table_s1_na": 0.88,
+              "figure_caption_na": 0.85
+            },
+            "wavelength_nm": {
+              "value": 1300,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4c，第 3 个波长面板，印字 λ = 1300 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图的固定面／逐点最佳面选择未明确",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4c，第 3 个波长面板，印字 λ = 1300 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图的固定面／逐点最佳面选择未明确。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": null,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4c；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m3_1350",
+          "model": "Shrestha 2018 · M3 · 1350 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m3",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M3 的 1350 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M3 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 30,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M3 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 2；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 2",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": null,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M3 行，Numerical Aperture列；主文 PDF p.7 Fig. 4c 图注",
+              "note": "名义 NA 的 Table S1 表值与主文图注分别为 0.88 和 0.85，作者未说明不同取值口径。两值保留，单值坐标留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "Table S1 / 正文 0.88；图注 0.85",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ],
+              "table_s1_na": 0.88,
+              "figure_caption_na": 0.85
+            },
+            "wavelength_nm": {
+              "value": 1350,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4c，第 4 个波长面板，印字 λ = 1350 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图的固定面／逐点最佳面选择未明确",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4c，第 4 个波长面板，印字 λ = 1350 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图的固定面／逐点最佳面选择未明确。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": null,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4c；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
+        },
+        {
+          "id": "shrestha2018_m3_1400",
+          "model": "Shrestha 2018 · M3 · 1400 nm",
+          "module": "",
+          "variant": "实测聚焦表征 / 波长面板",
+          "evidence_type": "study",
+          "study_id": "shrestha2018",
+          "specimen_id": "m3",
+          "measurement_scope": "同一 Shrestha 2018 研究的透射式非晶硅／石英器件。M3 的 1400 nm 实测强度图。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M3 行，Diameter D, μm列",
+              "note": "作者给出的实制镜片直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": 30,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M3 行，Focal length f, μm列",
+              "note": "作者给出的标称设计焦距；逐波长最佳焦位未以原始数值获得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ]
+            },
+            "height_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5 / meta-unit libraries",
+              "note": "结构库厚度，Generation 2；不等于含基底总厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "Si / quartz；Generation 2",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF pp.4–5、Methods p.9",
+              "note": "同一Shrestha2018研究；硅结构/石英基底、透射、偏振无关；器件聚焦表征，未验证手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": null,
+              "source": "shrestha_achromatic_si_2018",
+              "location": "Table S1，M3 行，Numerical Aperture列；主文 PDF p.7 Fig. 4c 图注",
+              "note": "名义 NA 的 Table S1 表值与主文图注分别为 0.88 和 0.85，作者未说明不同取值口径。两值保留，单值坐标留空。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "Table S1 / 正文 0.88；图注 0.85",
+              "sourceIds": [
+                "shrestha_achromatic_si_2018",
+                "shrestha_achromatic_2018"
+              ],
+              "table_s1_na": 0.88,
+              "figure_caption_na": 0.85
+            },
+            "wavelength_nm": {
+              "value": 1400,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4c，第 5 个波长面板，印字 λ = 1400 nm",
+              "note": "图内明示的实测波长；连续设计工作带另见同器件汇总。",
+              "basis": "measured",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "准直轴上入射，实测 x–z 与 x–y；横向图的固定面／逐点最佳面选择未明确",
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4c，第 5 个波长面板，印字 λ = 1400 nm；Methods pp.9–10",
+              "note": "准直超连续光源经单色仪。100× 物镜和 200 mm 筒镜成像至 InGaAs 相机，从器件面沿 z 轴移动，典型轴扫步长 1 μm。以金纳米结构逐色定位校准继像光路色差。图示归一化强度，原始相机阵列和强度归一化分母未给。 x–z 剖面来自实测强度栈。横向图的固定面／逐点最佳面选择未明确。数字型最佳轴向焦位和焦斑宽度未取得。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "measurement_axes": [
+                "x-z",
+                "x-y"
+              ],
+              "axial_scan_step_um": 1,
+              "reference_plane": "device plane",
+              "target_evaluation_plane_um": null,
+              "xy_profile_directions": [],
+              "raw_psf_available": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shrestha_achromatic_2018",
+              "location": "PDF p.7 Fig. 4c；PDF p.8 Fig. 5c",
+              "note": "已核实测强度图和轴位曲线。未取得与此谱点绑定的原始峰位数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
             }
           }
         },
