@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import {load,versionAssets} from '../scripts/catalog.mjs';
-import {scalar,createWorkspace,groupRows,hasVisibleLight,valueSources,filteredRows,axisPoints,metricAvailability,availableAxes} from '../web/workspace-data.js';
+import {scalar,createWorkspace,groupRows,hasVisibleLight,valueSources,filteredRows,axisPoints,metricAvailability,availableAxes,customSampleAxes} from '../web/workspace-data.js';
 const catalog=load(),devices=JSON.parse(fs.readFileSync(new URL('../data/devices.json',import.meta.url))),atlas=createWorkspace(catalog,devices);
 
 test('legacy scalars preserve unit and zero without guessing ranges, errors or composite measurements',()=>{
@@ -52,6 +52,15 @@ test('empty selections, zero values and camera modules stay consistent between r
  const rows=[{id:'a',values:{x:{value:0},y:{value:2}}},{id:'b',values:{x:{value:null},y:{value:4}}}];
  assert.equal(axisPoints(rows,'x','y').length,1);assert.equal(axisPoints(rows,'x','y')[0].x,0);
  assert.deepEqual(axisPoints(rows,'$model','y').map(p=>p.x),[1,2]);
+});
+test('a sparse custom sample falls back to a category axis while keeping complete coordinate pairs',()=>{
+ const sparse={model:'Custom',values:{x:{value:0},y:{value:null},extra:{value:-0.25}}};
+ assert.deepEqual(axisPoints([sparse],'x','y'),[]);
+ const axes=customSampleAxes(sparse,'x','y');
+ assert.deepEqual(axes,{x:'$model',y:'x'});
+ assert.deepEqual(axisPoints([sparse],axes.x,axes.y).map(p=>[p.x,p.y]),[[1,0]]);
+ assert.deepEqual(customSampleAxes(sparse,'x','extra'),{x:'x',y:'extra'});
+ assert.deepEqual(customSampleAxes(sparse,'$model','extra'),{x:'$model',y:'extra'});
 });
 test('unified entry loads both data sets and old device links retain selection parameters',()=>{
  const html=fs.readFileSync(new URL('../web/index.html',import.meta.url),'utf8'),redirect=fs.readFileSync(new URL('../web/devices.html',import.meta.url),'utf8');

@@ -41,6 +41,18 @@ function axisRange(values, bounds = {}) {
  ];
 }
 
+function customMarkerMarkup(marker, x, y, r, hollow = false) {
+ const paths = {
+  circle:`M${x-r} ${y}a${r} ${r} 0 1 0 ${2*r} 0a${r} ${r} 0 1 0 ${-2*r} 0Z`,
+  square:`M${x-r} ${y-r}h${2*r}v${2*r}h${-2*r}Z`,
+  triangle:`M${x} ${y-r}L${x+r} ${y+r}H${x-r}Z`,
+  diamond:`M${x} ${y-r}L${x+r} ${y} ${x} ${y+r} ${x-r} ${y}Z`
+ };
+ const path = Object.hasOwn(paths,marker.shape) ? paths[marker.shape] : paths.diamond;
+ const color = /^#[0-9a-f]{6}$/i.test(marker.color) ? marker.color : '#a34522';
+ return `<path class="custom-marker" d="${path}" fill="${hollow?'none':color}" stroke="${hollow?color:'#243d36'}" stroke-width="${hollow?2:1}"/>`;
+}
+
 function scatterMarkup(groups, xLabel, yLabel, {width = 900, categorical = false, scrollable = false, mode = 'scatter', xBounds, yBounds, zoom} = {}) {
  const compact = width < 600;
  const height = compact ? 242 : 450;
@@ -73,13 +85,18 @@ function scatterMarkup(groups, xLabel, yLabel, {width = 900, categorical = false
  }
  groups.forEach((group,i) => {
   const p = group[0], {x,y} = marks[i], names = group.map(p=>p.label ?? p.row?.model);
-  const series = [...new Set(group.map(p=>p.row?.study_id || p.row?.id || p.id))];
-  const hash = Array.from(series[0]).reduce((n,c)=>(n*31+c.codePointAt(0))>>>0,0);
+  const custom = group.filter(p=>p.row?.marker);
+  const series = [...new Set(group.filter(p=>!p.row?.marker).map(p=>p.row?.study_id || p.row?.id || p.id))];
+  const hash = Array.from(series[0] || '').reduce((n,c)=>(n*31+c.codePointAt(0))>>>0,0);
   const color = series.length === 1 ? palette[hash%palette.length] : '#53636d';
   const identities = groupLabels(group);
   const name = group.length === 1 ? (p.row?.pointLabel || names[0]) :
    identities[0] + (identities.length > 1 ? ' +' + (identities.length - 1) : '');
-  markers.push(`<g data-point="${i}"><rect x="${x-9}" y="${y-9}" width="18" height="18" fill="transparent"/><circle cx="${x}" cy="${y}" r="5" fill="${color}" stroke="white" stroke-width="1"><title>${E(names.join('、'))} (${p.x}, ${p.y})</title></circle></g>`);
+  const hit = custom.length ? 13 : 9;
+  const center = series.length ? `<circle cx="${x}" cy="${y}" class="catalog-marker" r="5" fill="${color}" stroke="white" stroke-width="1"/>` :
+   `<circle cx="${x}" cy="${y}" r="0" visibility="hidden"/>`;
+  const shapes = custom.map((point,j)=>customMarkerMarkup(point.row.marker,x,y,series.length ? Math.min(8+j*2,11) : Math.min(6+j*2,11),!!series.length || j>0));
+  markers.push(`<g data-point="${i}"><title>${E(names.join('、'))} (${p.x}, ${p.y})</title><rect x="${x-hit}" y="${y-hit}" width="${2*hit}" height="${2*hit}" fill="transparent"/>${center}${shapes.join('')}</g>`);
   // Only place a complete name immediately beside its point. Dense views use inspection.
   if ((group.some(point=>point.row?.pointLabel || point.row?.paperLabel) || groups.length <= (compact ? 5 : 12)) && name.length <= 42) {
    const w = Array.from(name).reduce((sum,c)=>sum+(c.charCodeAt(0)<128 ? 6.4 : 10.5),0)+3;
@@ -108,7 +125,7 @@ function chart(rows,x,y,metrics,mode='scatter') {
  const xm = metrics.find(m=>m.id===x), ym = metrics.find(m=>m.id===y);
  return scatterMarkup(groups, xm.label, ym.label, {mode, scrollable:true, xBounds:xm.axis_bounds, yBounds:ym.axis_bounds});
 }
-window.LensPlot = {points,tickLabels,groupPoints,groupLabels,axisRange,scatterMarkup,chart};
+window.LensPlot = {points,tickLabels,groupPoints,groupLabels,axisRange,scatterMarkup,customMarkerMarkup,chart};
 if(!window.UNIFIED_WORKSPACE){
 let chosenModels=null,chosenColumns=null;
 function viewRows(){const c=D.domains[$('domain').value];return c.rows.filter(r=>($('domain').value==='xr'||r.module===$('module').value)&&(chosenModels===null||chosenModels.includes(r.model)));}

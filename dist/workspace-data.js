@@ -66,7 +66,7 @@ export function createWorkspace(catalog, devices) {
         const number = scalar(p.value), unit = number?.unit || '原文';
         const key = JSON.stringify([p.name, unit]);
         if (!byKey.has(key)) {
-          const field = {id: 'field-' + metrics.length, label: p.name + (number ? ` (${unit})` : ''), numeric: !!number,
+          const field = {id: 'field-' + metrics.length, parameterKey:key, label: p.name + (number ? ` (${unit})` : ''), numeric: !!number,
             definition: '保留该样本的原始参数名称与口径。名称不同不自动合并；复合值、区间及误差不压成单值。',
             conditions: '须核对各记录的波段、样品、测量方法与参考面；同名同单位不代表同条件可比。', definition_refs: []};
           metrics.push(field); byKey.set(key, field);
@@ -185,6 +185,12 @@ export function axisPoints(rows, x, y) {
 
 export function metricAvailability(rows, metric) {
   return rows.filter(row => Number.isFinite(row.values[metric]?.value)).length;
+}
+
+export function customSampleAxes(row, x, y) {
+  if (axisPoints([row],x,y).length) return {x,y};
+  const populated = axis => Number.isFinite(row.values[axis]?.value);
+  return {x:'$model', y:populated(y) ? y : populated(x) ? x : Object.keys(row.values).find(populated)};
 }
 
 export function availableAxes(domain, rows) {
