@@ -108,6 +108,8 @@
 
 `reference_lens_efficiency_peak_pct` 保存作者报告的光谱最大焦区功率比。按实验方法记录样品交叉偏振、参考光路移除校正片并改用平行偏振器。聚焦效率格与 `efficiency_protocol` 使用同一分母 `uncorrected_refractive_lens_parallel_polarizers_power`。峰值归属单谱点待核时留空。偏振扫描的焦圈与分母随各自测量条件记录。
 
+`secondary_axial_peak_um` 保存实测附加焦点的位置，和同一行的主焦位共用轴向参考面、实测波长和偏振条件。保留作者的约值、单位和峰位定义。两色各自落在同一标称面时，只有精确主焦测量才能量化残余焦移。
+
 `simulated_geometric_rms_spot_radius_um` 保存由有效几何射线交点求得的 RMS 半径。标 `basis: model`、`statistic: rms_ray_intercept_radius`、作者输出或本库复算、模拟波长及 `evaluation_plane_um`。`psf_protocol` 保存几何追迹种类和同一评价面，并记录落点参考、采样网格和场点。半能量宽度、实测强度 PSF 和轴向焦距使用各自的字段。
 
 作者只给出带内焦距变化及波长范围时，`focus_variation_um`、`focus_variation_pct` 可用 `spectral_sample_scope: author_reported_range_only`，逐点列表留空，须有同一行的上下波长和协议。不能用抽样曲线推定精确采样点并作为原始数据。
