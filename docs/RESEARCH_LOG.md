@@ -1145,3 +1145,7 @@ Tang 2026 的两个可见光原型分别登记，650 nm 结构周期和小于 1 
 PR #185 合入 b32d0dba033ce6ba561976479ca0baa65b2c32d1。PR 校验 44463774814、主线校验 44463849964、Pages 44463849963 成功，308 项测试通过。独立无头 Chrome 核全库 50 篇、1141 条，可见光 41 篇、782 条，Arbabi 五实物 25 条及十个焦距散点，Tang 两个原型及仅显示的论文级界限、两篇引用往返、六视口。Arbabi 正式 PDF 本机整文件验 SHA-256，通过线上出处下载的分段也相符，Tang Crossref 补件登记返回 200。233 个公开文件逐字节与构建一致，消色差分域 SHA-256 为 a41efffacd4e0d5718006c50552fa3472563bf9680a324a99b09ff33ca9da4b0。[PR #185](https://github.com/SelinLee/lens-evidence-atlas/pull/185) · [Pages](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44463849963)
 
 下一篇取到 Hsu 2022 的 NSF 正式版和 NIST 存档 PDF。正式版 1102790 字节，SHA-256 为 838d5769725ffaea54c0898e05b5f2c9f4baa428cd66d979b7cd446efd22c308。引用量在 2026-11-19 查得 Crossref 64 次、OpenAlex 75 次。视觉核对 Fig. 6 的 780 nm／x 与 850 nm／y 图内印字，图注第二谱点写 852 nm。附录第 12 节报告 0.5 mm 设计焦距、Airy 拟合的 NA 及实测效率。下一批对公开版本和装置条件，核效率分母与同面残余色差。会话目标仍开启。[NSF 正式版](https://par.nsf.gov/servlets/purl/10382306#page=9) · [NIST 存档](https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=933071) · [Crossref](https://api.crossref.org/works/10.1103/prxquantum.3.030316)
+
+## 2026-11-19-127 · Hsu 偏振复用同面 PSF 与未校正对照
+
+JILA 新入口取得 2025 年封面的博士论文 PDF，与 NSF 正式版和两份作者稿对读。录固定针孔面的 0.80／0.82 Airy 拟合 NA 和 ±0.01 标准误。第二通道的 850／852 nm 原文冲突和期刊 42%／45% 对博士论文低于 20% 的效率冲突按出处展示。对照单镜作者报告 780 相对 852 nm 的 +300 μm，正式针孔协议下两通道效率分别为 56% 和 58%；接收端折射 L1 的 780 nm PSF 另作系统记录。新增 1 篇、3 配置、7 条。累计 51 篇、272 配置、1148 条，可见光 42 篇、787 条。[本批核验](HSU_POLARIZED_FOCUS_REVIEW_2026-11-19.md)

@@ -2217,6 +2217,69 @@
       "scope": "已检查正式 DOI 关联，无可用数据条目。",
       "checked_on": "2026-11-19",
       "publication_source": "arbabi_dichroic_pdf_2016"
+    },
+    {
+      "id": "hsu_polar_nsf_2022",
+      "title": "Hsu et al. (2022), Single-Atom Trapping in a Metasurface-Lens Optical Tweezer",
+      "url": "https://par.nsf.gov/servlets/purl/10382306",
+      "kind": "peer_reviewed_paper",
+      "scope": "NSF PAR 的 APS 正式版。核主文 §§III–IV、Fig. 6、Appendix §§5、9、12 与对应平台。",
+      "checked_on": "2026-11-19",
+      "doi": "10.1103/prxquantum.3.030316"
+    },
+    {
+      "id": "hsu_polar_thesis_2025",
+      "title": "Hsu (2025) 博士论文 · §5.7.1 偏振复用实物",
+      "url": "https://www.colorado.edu/jila/media/854",
+      "kind": "author_thesis",
+      "scope": "JILA 发布的 2025 年封面版本。核 pp.154–158 的测量协议和 pp.175–177 的样片、PSF 和效率界限。",
+      "checked_on": "2026-11-19",
+      "publication_source": "hsu_polar_nsf_2022"
+    },
+    {
+      "id": "hsu_polar_author_2022",
+      "title": "NIST · Hsu 2022 作者稿，2022-08-15",
+      "url": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=933071",
+      "kind": "author_manuscript",
+      "scope": "p10 附录第 12 节。部分设计与效率偏振标签和正式正文不同；图内与图注 850／852 nm 的差异在该版也存在。",
+      "checked_on": "2026-11-19",
+      "publication_source": "hsu_polar_nsf_2022"
+    },
+    {
+      "id": "hsu_polar_arxiv_2022",
+      "title": "Hsu et al. · arXiv:2110.11559v2 作者稿，2022-12-27",
+      "url": "https://arxiv.org/pdf/2110.11559v2",
+      "kind": "preprint",
+      "scope": "p9–10 §12 依次给 780 nm x 与 850 nm y 的拟合 NA 和效率；图注的 852 nm 原字仍保留。",
+      "checked_on": "2026-11-19",
+      "publication_source": "hsu_polar_nsf_2022"
+    },
+    {
+      "id": "hsu_polar_crossref_2022",
+      "title": "Crossref · Hsu 2022 题录和引用次数",
+      "url": "https://api.crossref.org/works/10.1103/prxquantum.3.030316",
+      "kind": "repository_metadata",
+      "scope": "2026-11-19 查被引 64 次。",
+      "checked_on": "2026-11-19",
+      "publication_source": "hsu_polar_nsf_2022"
+    },
+    {
+      "id": "hsu_polar_openalex_2022",
+      "title": "OpenAlex · Hsu 2022 引用次数",
+      "url": "https://api.openalex.org/works/https://doi.org/10.1103/prxquantum.3.030316",
+      "kind": "repository_metadata",
+      "scope": "2026-11-19 查被引 75 次。",
+      "checked_on": "2026-11-19",
+      "publication_source": "hsu_polar_nsf_2022"
+    },
+    {
+      "id": "hsu_polar_datacite_2022",
+      "title": "DataCite · Hsu 2022 正式 DOI 关联检索",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1103%2FPRXQuantum.3.030316%22",
+      "kind": "repository_metadata",
+      "scope": "一条关联为 arXiv 作者稿，原始 PSF 数组尚未定位。",
+      "checked_on": "2026-11-19",
+      "publication_source": "hsu_polar_nsf_2022"
     }
   ],
   "domains": {
@@ -136591,9 +136654,844 @@
               "display": "曲线可查"
             }
           }
+        },
+        {
+          "id": "hsu2022polar_multiplexed_summary",
+          "model": "Hsu 2022 · 偏振复用实物",
+          "study_id": "hsu2022polar",
+          "specimen_id": "multiplexed",
+          "module": "",
+          "variant": "偏振复用实物",
+          "evidence_type": "study",
+          "measurement_scope": "780 nm／x 与 850 nm／y 的两离散设计谱点。",
+          "values": {
+            "design_focal_um": {
+              "value": 500,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p10 附录 §12；学位论文 pp175–176 Fig. 5.27",
+              "note": "原文设计值 0.5 mm，指定两种正交线偏振。取图平面绝对位置和各自轴峰位置未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_thesis_2025"
+              ]
+            },
+            "na": {
+              "value": 0.8,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p10 附录 §12；学位论文 pp175–176 Fig. 5.27",
+              "note": "共同的设计 NA；作者的固定面 PSF 拟合 NA 独立记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_thesis_2025"
+              ]
+            },
+            "diameter_um": {
+              "value": null,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p10 §12；学位论文 §5.7.1",
+              "note": "未定位该偏振复用实物的有效镜径。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "矩形非晶硅纳米柱 / 熔石英",
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p9 Fig. 6a；p10 §12",
+              "note": "矩形截面沿两正交方向提供不同相位延迟，样片为单层透射式结构。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "正交线偏振双谱点光学消色差",
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p10 附录 §12；学位论文 pp175–176 Fig. 5.27；APS 正式版 p9 Fig. 6c,d 图注；学位论文 pp176–177 Fig. 5.28",
+              "note": "同一个偏振复用超透镜依靠两套正交偏振相位获得共同目标面。固定针孔几何的 PSF 图证支持共同平面聚焦。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_thesis_2025",
+                "hsu_polar_author_2022",
+                "hsu_polar_arxiv_2022",
+                "hsu_polar_crossref_2022",
+                "hsu_polar_openalex_2022",
+                "hsu_polar_datacite_2022"
+              ],
+              "spectral_sampling": "two_discrete_design_channels",
+              "design_wavelengths_nm": [
+                780,
+                850
+              ]
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p9 Fig. 6c,d 图注；学位论文 pp176–177 Fig. 5.28",
+              "note": "论文展示固定针孔距离的两通道 PSF，未给出逐色轴向峰位、取焦方法及残余差数值。正式版 §12、Fig. 6d 图内、后期 arXiv §12 与学位论文性能段写 850 nm／y。正式版 Fig. 6 图注及学位论文 Fig. 5.28 图注写 852 nm／y。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_thesis_2025"
+              ],
+              "display": "固定面 PSF 可核；残余焦差待数据"
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p9 Fig. 6；DataCite 关联检索",
+              "note": "图给归一化横向 PSF 和 Airy 拟合，尚无逐点像素、相机物方采样尺度、频率定标和 MTF 表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_datacite_2022"
+              ]
+            }
+          },
+          "visible_light_use": true
+        },
+        {
+          "id": "hsu2022polar_multiplexed_780_x",
+          "model": "Hsu 2022 · 偏振复用实物 · 780 nm／x",
+          "study_id": "hsu2022polar",
+          "specimen_id": "multiplexed",
+          "module": "",
+          "variant": "偏振复用实物 · 780 nm／x",
+          "evidence_type": "study",
+          "measurement_scope": "同一透镜的固定面针孔 PSF 与已报告的有效 NA。",
+          "values": {
+            "design_focal_um": {
+              "value": 500,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p10 附录 §12；学位论文 pp175–176 Fig. 5.27",
+              "note": "原文设计值 0.5 mm，指定两种正交线偏振。取图平面绝对位置和各自轴峰位置未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_thesis_2025"
+              ]
+            },
+            "na": {
+              "value": 0.8,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p10 附录 §12；学位论文 pp175–176 Fig. 5.27",
+              "note": "共同的设计 NA；作者的固定面 PSF 拟合 NA 独立记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_thesis_2025"
+              ]
+            },
+            "diameter_um": {
+              "value": null,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p10 §12；学位论文 §5.7.1",
+              "note": "未定位该偏振复用实物的有效镜径。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "矩形非晶硅纳米柱 / 熔石英",
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p9 Fig. 6a；p10 §12",
+              "note": "矩形截面沿两正交方向提供不同相位延迟，样片为单层透射式结构。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 780,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p9 Fig. 6c 图内及图注；p10 §12",
+              "note": "原刊实测 PSF 横向 x 线偏振通道。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "polarization": {
+              "value": "x 线偏振",
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p9 Fig. 6c 图内及图注；p10 §12",
+              "note": "按正式版本输入偏振，后期 arXiv 稿和学位论文正文一致。NIST 2022-08-15 作者稿的设计／效率部分标签有对调。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_linear_polarization": "x",
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_arxiv_2022",
+                "hsu_polar_thesis_2025",
+                "hsu_polar_author_2022"
+              ]
+            },
+            "psf_protocol": {
+              "value": "固定针孔距离的横向归一化 PSF",
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p9 Fig. 6c,d 图注；学位论文 pp176–177 Fig. 5.28",
+              "note": "0.95 NA 显微物镜接收；学位论文说明用 PBS 抑制另一偏振。图中横轴为径向距离 μm，纵轴为归一化强度，轴向间隔与物方像素尺度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "objective_na": 0.95,
+              "distance_setting": "common_fixed_pinhole_distance",
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_thesis_2025"
+              ]
+            },
+            "effective_na_from_psf": {
+              "value": 0.8,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p10 附录 §12，Airy 拟合段；APS 正式版 p9 Fig. 6c 图内及图注；p10 §12",
+              "note": "作者拟合 Airy 函数得到的有效 NA，±0.01 是拟合标准误。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "fit_method": "Airy",
+              "reported_error": {
+                "type": "SE",
+                "value": 0.01,
+                "sample_size": null
+              },
+              "display": "0.80 ± 0.01",
+              "reported_fit_wavelength_nm": 780,
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_thesis_2025",
+                "hsu_polar_arxiv_2022"
+              ],
+              "sample_wavelengths_nm": [
+                780
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p9 Fig. 6c,d 图注；学位论文 pp176–177 Fig. 5.28",
+              "note": "共同平面下的 PSF 可核。实际最佳焦位和参考面标定未给。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p9 Fig. 6c 图内及图注；p10 §12",
+              "note": "作者展示剖面，并报告 Airy 拟合有效 NA。逐色 FWHM 原值未报告。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_protocol": {
+              "value": "学位论文引用空间针孔测法；原刊复用实物的具体参数待核",
+              "source": "hsu_polar_thesis_2025",
+              "location": "学位论文 pp154–158 §5.5.3、Fig. 5.16；p176 §5.7.1",
+              "note": "学位论文说明样片沿用焦区功率／基片总入射功率的方法。Fig. 5.16 有两种接收光路，应用于复用实物的针孔直径、入射束和条件未核。原刊 §12 未说明本组协议。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "hsu_polar_thesis_2025",
+                "hsu_polar_nsf_2022"
+              ],
+              "sample_matching_status": "unverified_between_publications",
+              "denominator_for_thesis": "total_input_power_to_substrate"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p10 附录 §12 尾句；学位论文 p176 §5.7.1",
+              "note": "正式版及后期 arXiv 按 780 nm／x 印 42%。学位论文对同设计的样片报告小于 20%，且给相同 PSF 拟合 NA。样片编号和与正式版数值对应的测量条件待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "原刊 42%／学位论文 <20%（样片与协议待核）",
+              "reported_article_pct": 42,
+              "reported_article_wavelength_nm": 780,
+              "thesis_reported_bound_pct": {
+                "operator": "<",
+                "value": 20,
+                "scope": "same_design_sample_unassigned"
+              },
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_arxiv_2022",
+                "hsu_polar_thesis_2025",
+                "hsu_polar_author_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "hsu2022polar_multiplexed_850_852_y",
+          "model": "Hsu 2022 · 偏振复用实物 · 850／852 nm／y",
+          "study_id": "hsu2022polar",
+          "specimen_id": "multiplexed",
+          "module": "",
+          "variant": "偏振复用实物 · 850／852 nm／y",
+          "evidence_type": "study",
+          "measurement_scope": "同一透镜的固定面针孔 PSF 与已报告的有效 NA。",
+          "values": {
+            "design_focal_um": {
+              "value": 500,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p10 附录 §12；学位论文 pp175–176 Fig. 5.27",
+              "note": "原文设计值 0.5 mm，指定两种正交线偏振。取图平面绝对位置和各自轴峰位置未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_thesis_2025"
+              ]
+            },
+            "na": {
+              "value": 0.8,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p10 附录 §12；学位论文 pp175–176 Fig. 5.27",
+              "note": "共同的设计 NA；作者的固定面 PSF 拟合 NA 独立记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_thesis_2025"
+              ]
+            },
+            "diameter_um": {
+              "value": null,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p10 §12；学位论文 §5.7.1",
+              "note": "未定位该偏振复用实物的有效镜径。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "矩形非晶硅纳米柱 / 熔石英",
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p9 Fig. 6a；p10 §12",
+              "note": "矩形截面沿两正交方向提供不同相位延迟，样片为单层透射式结构。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p9 Fig. 6d 图内及图注；p10 §12",
+              "note": "正式版 §12、Fig. 6d 图内、后期 arXiv §12 与学位论文性能段写 850 nm／y。正式版 Fig. 6 图注及学位论文 Fig. 5.28 图注写 852 nm／y。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "850／852 nm（原文冲突）",
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_thesis_2025",
+                "hsu_polar_arxiv_2022"
+              ],
+              "reported_wavelength_nm": 850,
+              "figure_caption_wavelength_nm": 852
+            },
+            "polarization": {
+              "value": "y 线偏振",
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p9 Fig. 6d 图内及图注；p10 §12",
+              "note": "按正式版本输入偏振，后期 arXiv 稿和学位论文正文一致。NIST 2022-08-15 作者稿的设计／效率部分标签有对调。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "input_linear_polarization": "y",
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_arxiv_2022",
+                "hsu_polar_thesis_2025",
+                "hsu_polar_author_2022"
+              ]
+            },
+            "psf_protocol": {
+              "value": "固定针孔距离的横向归一化 PSF",
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p9 Fig. 6c,d 图注；学位论文 pp176–177 Fig. 5.28",
+              "note": "0.95 NA 显微物镜接收；学位论文说明用 PBS 抑制另一偏振。图中横轴为径向距离 μm，纵轴为归一化强度，轴向间隔与物方像素尺度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "objective_na": 0.95,
+              "distance_setting": "common_fixed_pinhole_distance",
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_thesis_2025"
+              ]
+            },
+            "effective_na_from_psf": {
+              "value": 0.82,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p10 附录 §12，Airy 拟合段；APS 正式版 p9 Fig. 6d 图内及图注；p10 §12",
+              "note": "作者拟合 Airy 函数得到的有效 NA，±0.01 是拟合标准误。NA 值在各版本一致，波长见相邻原文冲突。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "fit_method": "Airy",
+              "reported_error": {
+                "type": "SE",
+                "value": 0.01,
+                "sample_size": null
+              },
+              "display": "0.82 ± 0.01",
+              "reported_fit_wavelength_nm": 850,
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_thesis_2025",
+                "hsu_polar_arxiv_2022"
+              ],
+              "sample_wavelengths_nm": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p9 Fig. 6c,d 图注；学位论文 pp176–177 Fig. 5.28",
+              "note": "共同平面下的 PSF 可核。实际最佳焦位和参考面标定未给。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p9 Fig. 6d 图内及图注；p10 §12",
+              "note": "作者展示剖面，并报告 Airy 拟合有效 NA。逐色 FWHM 原值未报告。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_protocol": {
+              "value": "学位论文引用空间针孔测法；原刊复用实物的具体参数待核",
+              "source": "hsu_polar_thesis_2025",
+              "location": "学位论文 pp154–158 §5.5.3、Fig. 5.16；p176 §5.7.1",
+              "note": "学位论文说明样片沿用焦区功率／基片总入射功率的方法。Fig. 5.16 有两种接收光路，应用于复用实物的针孔直径、入射束和条件未核。原刊 §12 未说明本组协议。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "hsu_polar_thesis_2025",
+                "hsu_polar_nsf_2022"
+              ],
+              "sample_matching_status": "unverified_between_publications",
+              "denominator_for_thesis": "total_input_power_to_substrate"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p10 附录 §12 尾句；学位论文 p176 §5.7.1",
+              "note": "正式版及后期 arXiv 按 850 nm／y 印 45%。学位论文对同设计的样片报告小于 20%，且给相同 PSF 拟合 NA。样片编号和与正式版数值对应的测量条件待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19",
+              "display": "原刊 45%／学位论文 <20%（样片与协议待核）",
+              "reported_article_pct": 45,
+              "reported_article_wavelength_nm": 850,
+              "thesis_reported_bound_pct": {
+                "operator": "<",
+                "value": 20,
+                "scope": "same_design_sample_unassigned"
+              },
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_arxiv_2022",
+                "hsu_polar_thesis_2025",
+                "hsu_polar_author_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "hsu2022polar_singlet_control_summary",
+          "model": "Hsu 2022 · 未校正单镜 · 两色轴向焦差",
+          "study_id": "hsu2022polar",
+          "specimen_id": "singlet_control",
+          "module": "",
+          "variant": "未校正单镜 · 两色轴向焦差",
+          "evidence_type": "study",
+          "measurement_scope": "同文真实未校正对照；方形单元。",
+          "values": {
+            "diameter_um": {
+              "value": 4000,
+              "source": "hsu_polar_thesis_2025",
+              "location": "学位论文 §5.5.1 p151；Fig. 5.14a，圆形设计口径",
+              "note": "作者明确把约束 NA 的设计镜径设为 4 mm。原刊的 4 mm 入射光束和样片外形另属不同量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 3000,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p3 §III；学位论文 Fig. 5.14",
+              "note": "主文的方形柱单镜名义设计焦距与工作距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_thesis_2025"
+              ]
+            },
+            "na": {
+              "value": 0.55,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p3 §III",
+              "note": "未校正单镜的设计 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 660,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p7 附录 §4",
+              "note": "单镜的非晶硅层名义厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "方截面非晶硅纳米柱 / 熔石英",
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p3 §§III–IV；p7 §4",
+              "note": "主文单镜采用单一波长相位设计，比较其实际轴向色差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "chromatic": {
+              "value": "未校正单镜 · 780 相对 852 nm 的轴向差",
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p3 §IV；p9 附录 §9",
+              "note": "通过调整显微焦面定位两个波长的焦点，作者报告为 +300 μm。正号按原文从 852 nm 到 780 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "focus_variation_protocol": {
+              "value": "显微镜调焦比较 780 与 852 nm 轴向峰位置",
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 pp3、9，§IV 与附录 §9",
+              "note": "准直可调谐激光与 0.90 NA 复消色差显微物镜。轴零点和重复误差未报告。参考为 852 nm 的实测焦点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reference_wavelength_nm": 852,
+              "target_wavelength_nm": 780
+            },
+            "focus_variation_um": {
+              "value": 300,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p3 §IV；p9 附录 §9，+300 μm",
+              "note": "作者给出的两个实测谱点间有符号差为 +300 μm。两点互差绝对值为 300 μm；单个通道的绝对焦距未记录。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "statistic": "maximum_pairwise_difference",
+              "sample_wavelengths_nm": [
+                780,
+                852
+              ],
+              "reference_wavelength_nm": 852,
+              "target_wavelength_nm": 780,
+              "author_reported_signed_difference_um": 300,
+              "display": "300（780 nm 焦位减 852 nm 焦位）"
+            }
+          },
+          "visible_light_use": true
+        },
+        {
+          "id": "hsu2022polar_singlet_control_780",
+          "model": "Hsu 2022 · 未校正单镜 · 780 nm",
+          "study_id": "hsu2022polar",
+          "specimen_id": "singlet_control",
+          "module": "",
+          "variant": "未校正单镜 · 780 nm",
+          "evidence_type": "study",
+          "measurement_scope": "单镜的焦斑与效率测量工况。",
+          "values": {
+            "diameter_um": {
+              "value": 4000,
+              "source": "hsu_polar_thesis_2025",
+              "location": "学位论文 §5.5.1 p151；Fig. 5.14a，圆形设计口径",
+              "note": "作者明确把约束 NA 的设计镜径设为 4 mm。原刊的 4 mm 入射光束和样片外形另属不同量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 3000,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p3 §III；学位论文 Fig. 5.14",
+              "note": "主文的方形柱单镜名义设计焦距与工作距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_thesis_2025"
+              ]
+            },
+            "na": {
+              "value": 0.55,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p3 §III",
+              "note": "未校正单镜的设计 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 660,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p7 附录 §4",
+              "note": "单镜的非晶硅层名义厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "方截面非晶硅纳米柱 / 熔石英",
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p3 §§III–IV；p7 §4",
+              "note": "主文单镜采用单一波长相位设计，比较其实际轴向色差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 780,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 pp3–4 §IV；p7 附录 §5",
+              "note": "原刊未校正单镜实际测量通道。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "作者报告 Gaussian 1/e² 半径 1.1 μm",
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 pp3–4 §IV；p7 附录 §5",
+              "note": "两孔阵列用于定位，两孔直径各 300 nm、间距 6.86 μm。由于作者报告的是 Gaussian 半径，实际 FWHM 字段留空。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reported_gaussian_waist_1e2_um": 1.1
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p3 §IV；p9 附录 §9",
+              "note": "作者报告同一对照镜两个焦点的轴向相差，不给本通道的独立绝对值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_lambda_nm": {
+              "value": 780,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 pp3–4 §IV；p7 附录 §5",
+              "note": "正式版效率测量光源。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_protocol": {
+              "value": "300 μm 焦平面针孔 / 入射到基片总功率",
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 pp3–4 §IV；p7 附录 §5",
+              "note": "针孔厚 300 μm，沿 x/y/z 优化透过；光功率计位于镜后 7 mm。该值由各波长自己的焦面采集。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "total_input_power_to_substrate",
+              "focus_region_geometry": "pinhole",
+              "pinhole_diameter_um": 300,
+              "pinhole_thickness_um": 300
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 56,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 pp3–4 §IV；p7 附录 §5",
+              "note": "正式版给出明确针孔和分母。学位论文 Table 5.1 的无后置透镜结果同值，同一学位论文的测试段写 54%。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_thesis_2025"
+              ],
+              "thesis_table_pct": 56
+            }
+          }
+        },
+        {
+          "id": "hsu2022polar_singlet_control_852",
+          "model": "Hsu 2022 · 未校正单镜 · 852 nm",
+          "study_id": "hsu2022polar",
+          "specimen_id": "singlet_control",
+          "module": "",
+          "variant": "未校正单镜 · 852 nm",
+          "evidence_type": "study",
+          "measurement_scope": "单镜的焦斑与效率测量工况。",
+          "values": {
+            "diameter_um": {
+              "value": 4000,
+              "source": "hsu_polar_thesis_2025",
+              "location": "学位论文 §5.5.1 p151；Fig. 5.14a，圆形设计口径",
+              "note": "作者明确把约束 NA 的设计镜径设为 4 mm。原刊的 4 mm 入射光束和样片外形另属不同量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "design_focal_um": {
+              "value": 3000,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p3 §III；学位论文 Fig. 5.14",
+              "note": "主文的方形柱单镜名义设计焦距与工作距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_thesis_2025"
+              ]
+            },
+            "na": {
+              "value": 0.55,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p3 §III",
+              "note": "未校正单镜的设计 NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "height_nm": {
+              "value": 660,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p7 附录 §4",
+              "note": "单镜的非晶硅层名义厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "方截面非晶硅纳米柱 / 熔石英",
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p3 §§III–IV；p7 §4",
+              "note": "主文单镜采用单一波长相位设计，比较其实际轴向色差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "wavelength_nm": {
+              "value": 852,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 pp3–4 §IV；p7 附录 §5",
+              "note": "原刊未校正单镜实际测量通道。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "psf_protocol": {
+              "value": "作者报告 Gaussian 1/e² 半径 0.72 μm",
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 pp3–4 §IV；p7 附录 §5；p4 Fig. 2f",
+              "note": "两孔阵列用于定位，两孔直径各 300 nm、间距 6.86 μm。由于作者报告的是 Gaussian 半径，实际 FWHM 字段留空。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reported_gaussian_waist_1e2_um": 0.72,
+              "reported_gaussian_waist_error_um": 0.02
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p3 §IV；p9 附录 §9",
+              "note": "作者报告同一对照镜两个焦点的轴向相差，不给本通道的独立绝对值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_lambda_nm": {
+              "value": 852,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 pp3–4 §IV；p7 附录 §5",
+              "note": "正式版效率测量光源。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "efficiency_protocol": {
+              "value": "300 μm 焦平面针孔 / 入射到基片总功率",
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 pp3–4 §IV；p7 附录 §5",
+              "note": "针孔厚 300 μm，沿 x/y/z 优化透过；光功率计位于镜后 7 mm。该值由各波长自己的焦面采集。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "denominator": "total_input_power_to_substrate",
+              "focus_region_geometry": "pinhole",
+              "pinhole_diameter_um": 300,
+              "pinhole_thickness_um": 300
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 58,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 pp3–4 §IV；p7 附录 §5",
+              "note": "正式版给出明确针孔和分母，原刊测量光源 852 nm。学位论文 Table 5.1 用 850 nm 标签作同透镜的数字对照。",
+              "basis": "measured",
+              "checked_on": "2026-11-19",
+              "sourceIds": [
+                "hsu_polar_nsf_2022",
+                "hsu_polar_thesis_2025"
+              ],
+              "thesis_table_pct": 58
+            },
+            "effective_na_from_psf": {
+              "value": 0.55,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p7 附录 §5、p4 Fig. 2f",
+              "note": "作者报告由 Airy 拟合得到在 852 nm 的有效 NA。图注未指明 NA 的 ± 统计类型。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-19",
+              "calculation_origin": "authors",
+              "sample_wavelengths_nm": [
+                852
+              ],
+              "display": "0.55 ± 0.01",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.01,
+                "sample_size": null
+              }
+            }
+          }
+        },
+        {
+          "id": "hsu2022polar_compensated_detection_780",
+          "model": "Hsu 2022 · 折射补偿成像 · 780 nm",
+          "study_id": "hsu2022polar",
+          "specimen_id": "compensated_detection",
+          "module": "",
+          "variant": "折射补偿成像 · 780 nm",
+          "evidence_type": "study",
+          "measurement_scope": "同一对照单镜外加 L1 的 780 nm 继像系统。",
+          "values": {
+            "wavelength_nm": {
+              "value": 780,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p9 附录 §9；p8 Fig. 5d",
+              "note": "固定于 852 nm 原焦面的针孔由 780 nm 照明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "material": {
+              "value": "方形柱单镜 + 折射 L1 成像补偿",
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 pp8–9 Fig. 5d 及附录 §9",
+              "note": "L1 的 EFL 150 mm，放在距超透镜 111 mm。L2 是继像筒镜。按系统配置记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "refractive_compensator_efl_mm": 150,
+              "compensator_distance_mm": 111
+            },
+            "psf_protocol": {
+              "value": "补偿成像系统 · 作者报告焦斑半径 1.1 ± 0.07 μm",
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p9 附录 §9 末段；p8 Fig. 5d",
+              "note": "同一双针孔固定在裸超透镜的 852 nm 焦面，以 780 nm 重拍。作者报告的是 PSF waist，拟合误差类型未注明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19",
+              "reported_psf_waist_um": 1.1,
+              "reported_psf_waist_error_um": 0.07,
+              "reference_wavelength_nm": 852
+            },
+            "chromatic": {
+              "value": "接收端补偿 780 nm 离焦",
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p9 附录 §9，L1 补偿段",
+              "note": "镜组为同文单镜的荧光成像配置。未给系统每波长的轴向残差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-19"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "hsu_polar_nsf_2022",
+              "location": "APS 正式版 p9 附录 §9 末段",
+              "note": "作者给焦斑半径和误差，未给本系统 FWHM。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-19"
+            }
+          }
         }
       ],
-      "scope": "50项原始研究、269个器件/测量/系统配置、1141条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
+      "scope": "51项原始研究、272个器件/测量/系统配置、1148条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
