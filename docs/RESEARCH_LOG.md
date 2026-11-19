@@ -1139,3 +1139,9 @@ PR #183 合入 6efcd897ee83456a29d71898c21d5562745e723b。PR 校验 44461846456�
 ## 2026-11-19-125 · Tang 多焦点和 Arbabi 偏振双波长
 
 Tang 2026 的两个可见光原型分别登记，650 nm 结构周期和小于 1 μm 的轴向色差按摘要论文层级登记。Crossref 补件组件 DOI 及文件名得到核实，正文与补件直连 403。Arbabi 2016 的五只 200 μm 实物登记 p18472 名义设计焦距、NA 端点、效率针孔和两组实测条件。Fig. 6c 图注明确 Fig. 6a,b 印字是错配偏振焦距，录入十个实测数值。Fig. 5 保留共同取图面与末行图文冲突，匹配偏振残余焦差留空。新增 2 篇、8 个配置、28 条，累计 50 篇、269 个配置、1141 条。可见光 41 篇和 782 条。[本批核验](TANG_ARBABI_DUAL_FOCUS_REVIEW_2026-11-19.md)
+
+## 2026-11-19-126 · Tang 与 Arbabi 上线验收，Hsu 原件对读
+
+PR #185 合入 b32d0dba033ce6ba561976479ca0baa65b2c32d1。PR 校验 44463774814、主线校验 44463849964、Pages 44463849963 成功，308 项测试通过。独立无头 Chrome 核全库 50 篇、1141 条，可见光 41 篇、782 条，Arbabi 五实物 25 条及十个焦距散点，Tang 两个原型及仅显示的论文级界限、两篇引用往返、六视口。Arbabi 正式 PDF 本机整文件验 SHA-256，通过线上出处下载的分段也相符，Tang Crossref 补件登记返回 200。233 个公开文件逐字节与构建一致，消色差分域 SHA-256 为 a41efffacd4e0d5718006c50552fa3472563bf9680a324a99b09ff33ca9da4b0。[PR #185](https://github.com/SelinLee/lens-evidence-atlas/pull/185) · [Pages](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44463849963)
+
+下一篇取到 Hsu 2022 的 NSF 正式版和 NIST 存档 PDF。正式版 1102790 字节，SHA-256 为 838d5769725ffaea54c0898e05b5f2c9f4baa428cd66d979b7cd446efd22c308。引用量在 2026-11-19 查得 Crossref 64 次、OpenAlex 75 次。视觉核对 Fig. 6 的 780 nm／x 与 850 nm／y 图内印字，图注第二谱点写 852 nm。附录第 12 节报告 0.5 mm 设计焦距、Airy 拟合的 NA 及实测效率。下一批对公开版本和装置条件，核效率分母与同面残余色差。会话目标仍开启。[NSF 正式版](https://par.nsf.gov/servlets/purl/10382306#page=9) · [NIST 存档](https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=933071) · [Crossref](https://api.crossref.org/works/10.1103/prxquantum.3.030316)
