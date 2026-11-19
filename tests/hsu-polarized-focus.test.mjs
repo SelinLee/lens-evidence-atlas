@@ -25,7 +25,7 @@ test('Hsu preserves fitted NA, a shared measurement plane and unresolved multipl
   assert.equal(values.design_focal_um.value,500);
   assert.equal(values.na.value,.8);
   assert.equal(values.effective_na_from_psf.value,na);
-  assert.equal(values.effective_na_from_psf.fit_standard_error,.01);
+  assert.deepEqual(values.effective_na_from_psf.reported_error,{type:'SE',value:.01,sample_size:null});
   assert.equal(values.psf_protocol.distance_setting,'common_fixed_pinhole_distance');
   assert.equal(values.efficiency_at_lambda_pct.value,null);
   assert.equal(values.efficiency_at_lambda_pct.reported_article_pct,articleEfficiency);

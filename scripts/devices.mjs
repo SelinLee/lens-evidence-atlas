@@ -27,7 +27,7 @@ export function validateDevices(d,catalog){
   if(m?.numeric&&v.basis==='unresolved'&&v.value!==null)errors.push('unresolved value');
   if(m?.numeric&&v.frequency_status==='author_scale_unverified'&&!['mtf50_app_reported','mtf50_imatest_reported'].includes(k))errors.push('unverified frequency axis');
   if(r.evidence_type==='study'&&(!['reported_configuration','measured','model','modeled','derived_from_measurement','reconstruction','unresolved'].includes(v.basis)||!v.note))errors.push('study cell evidence');
-  if(v.reported_error&&(!['SD','not_specified'].includes(v.reported_error.type)||!Number.isFinite(v.reported_error.value)||v.reported_error.value<0||
+  if(v.reported_error&&(!['SD','SE','not_specified'].includes(v.reported_error.type)||!Number.isFinite(v.reported_error.value)||v.reported_error.value<0||
    (v.reported_error.sample_size!==null&&(!Number.isInteger(v.reported_error.sample_size)||v.reported_error.sample_size<2))))errors.push('reported error context');
   if(v.uncertainty&&(!['SD','SEM'].includes(v.uncertainty.type)||!Number.isFinite(v.uncertainty.value)||v.uncertainty.value<0||!Number.isInteger(v.uncertainty.n)||v.uncertainty.n<2||v.statistic!=='mean'))errors.push('reported uncertainty');
   if(['fwhm_um','fwhm_x_um','fwhm_y_um'].includes(k)&&Number.isFinite(v.value)&&!(v.value>0&&r.values.wavelength_nm?.value>0&&v.basis==='measured'))errors.push('measured PSF FWHM context');
