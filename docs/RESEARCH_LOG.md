@@ -1189,3 +1189,11 @@ Zang 2024 补件组件 DOI 在 Crossref 确认从属于 ACS Nano 主文，同一
 ## 2026-11-19-135 · Baek 450 μm 实物三色轴扫与像质
 
 沿 Hasegawa Table 1／参考文献 47 取得 Baek 2022 正式 PDF。2026-11-19 查 Crossref 64 次、OpenAlex 69 次。实物在 450／532／700 nm 的轴向分布均近 125 μm 标称面，主文没有印出逐色峰位。录入三色 298.5／323.4／457.1 nm 实测 FWHM、理想 Airy 参考宽度、Strehl 0.89／0.88／0.82、焦面半径 4×FWHM 下 5.9%／11.3%／13.6% 聚焦效率，另录蓝光偏振效率的作者均值和 SD。三条 MTF 按原曲线及 Eq. (3) 登记。20 μm 模型的三条效率独立归属。共 1 篇、2 配置、7 条。全库 52 篇、279 配置、1206 条，可见光 43 篇、802 条。原始 MTF、PSF、峰位和残余色差等待进一步证据。[Baek 本批核验](BAEK_2022_RGB_REVIEW_2026-11-19.md)
+
+## 2026-11-19-136 · Baek 上线验收与 Kang 补件接续
+
+0.3.57 经 PR #194 合并为 b9ba8a6。PR 校验 44474871258、主线校验 44474976810、Pages 44474976713 成功。318 项测试通过，235 个公开文件与本地构建逐一核 SHA-256。独立无头 Chrome 验收全库 52 篇、1206 条及可见光 43 篇、802 条。Baek 的 7 条记录含 2 配置，散点复核三色实测与理论 FWHM、实测 PSF Strehl、两套实测效率与三次 FDTD 效率共 16 个点。逐色峰位、残余焦差无数值点。CSV、六个视口、来源返回原单元格和正式 PDF 字节逐一复核。[PR #194](https://github.com/SelinLee/lens-evidence-atlas/pull/194) · [Pages 44474976713](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44474976713) · [证据核验](BAEK_2022_RGB_REVIEW_2026-11-19.md)
+
+接着核 Kang 2026 的两只实物。第一只 SiNₓ 的 Fig. 4a/c 有色散对照与五谱点轴扫，§2.3 的 8 μm 轴扫步长与最大峰强选面适用于该实验。第二只 ZrO₂ PER 在 Fig. 5f/g 和 §2.4 有十谱点轴扫和 30 μm 步长。正文给设计焦距 626／1400 μm，并分别使用最大相对偏差与平均偏差。补件目录确认文件 adfm75854-sup-0001-SuppMat.pdf，Table S1 指向效率条件，Figs. S21–S23 指向 PER 的焦距、宽度和 Strehl。独立无头 Chrome 复核直链和下载入口返回 403，OpenAlex 仅 DOI 入口，DataCite 精确关联检索无匹配。继续按参考焦面核符号残差、对照归属、实际焦圈与曲线条件。[正式稿](https://advanced.onlinelibrary.wiley.com/doi/epdf/10.1002/adfm.75854) · [2025 年材料科学大类一区](https://www.fabiao.com.cn/sci/1616301x/) · [DataCite 关联检索](https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1002%2Fadfm.75854%22)
+
+同课题组的 Lee 2026 Ta₂O₅ PER 研究作为候选复查。主文 Fig. 4 的实物超透镜以 320 nm 表征，320–635 nm 的宽带结果归属另一元件的全息重建。缺多波长透镜色差校正证据，留在检索记录。会话目标保持开启。[Lee 2026 正式主文](https://pmc.ncbi.nlm.nih.gov/articles/PMC13197409/)
