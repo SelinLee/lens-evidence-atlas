@@ -129,11 +129,17 @@ export function validateDevices(d,catalog){
   correlationWidth.calculation_origin!=='authors'||!(correlationWidth.reference_wavelength_nm>0)||
   !(correlationWidth.correlation_threshold>=0&&correlationWidth.correlation_threshold<=1)||
   !(correlationWidth.comparison==='greater_than'||correlationWidth.comparison==='greater_than_or_equal')||Number.isFinite(r.values.wavelength_nm?.value)))errors.push('simulated correlation bandwidth context');
- for(const [key,denominator] of [['optical_transmittance_pct','incident_through_aperture'],['focusing_efficiency_transmitted_pct','transmitted_power']]){
+ const powerRatioDenominators={
+  optical_transmittance_pct:['incident_through_aperture','incident_light_total_intensity'],
+  focusing_efficiency_transmitted_pct:['transmitted_power']
+ };
+ for(const [key,denominators] of Object.entries(powerRatioDenominators)){
   const powerRatio=r.values[key];
   if(Number.isFinite(powerRatio?.value)&&(powerRatio.value<0||powerRatio.value>100||
    powerRatio.basis!=='derived_from_measurement'||powerRatio.calculation_origin!=='authors'||
-   powerRatio.denominator!==denominator||!(r.values.wavelength_nm?.value>0)||!r.values.efficiency_protocol?.value))errors.push('optical power ratio context');
+   !denominators.includes(powerRatio.denominator)||
+   (powerRatio.denominator==='incident_light_total_intensity'&&r.values.efficiency_protocol?.denominator!==powerRatio.denominator)||
+   !(r.values.wavelength_nm?.value>0)||!r.values.efficiency_protocol?.value))errors.push('optical power ratio context');
  }
  for(const key of ['estimated_system_focal_efficiency_pct','estimated_detected_throughput_pct','spectrally_weighted_mtf_area_lpmm']){
   const value=r.values[key];
