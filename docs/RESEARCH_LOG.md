@@ -1255,3 +1255,11 @@ Feng 2022 新增课题组发布的双层器件表面实拍、纳米柱结构说�
 ## 2026-11-20-147 · Barulin 双波长轴扫与公开原值冲突
 
 新增 Barulin 2024 一篇，500 μm、几何 NA 0.6 单层超透镜和独立 FCS 配置共 4 条。裸镜以 1 μm 轴向步长在 635／670 nm 实测两谱点，作者给共有约 330 μm 的实测报告，按原精度写入，逐色精确峰位与残余焦移仍缺。实测水平焦斑 FWHM 为 0.77／1.03 μm。635 nm 聚焦效率在正文 14.2%、补表及评议 14.1%，数值格留空。670 nm 录 37.1%，积分半径与功率标定未获。FCS 配置保留 655–700 nm 名义收集谱段、80 μm 针孔和作者光路计算。区分 500 nm 设计柱高和 600 nm 沉积膜厚。全库 56 篇、289 个配置、1235 条记录，可见光 47 篇、829 条。[本批核验](BARULIN_DUAL_WAVELENGTH_REVIEW_2026-11-20.md)
+
+## 2026-11-20-148 · Barulin 上线验收与下一批原始证据筛选
+
+0.3.63 经 PR #206 合并到 `7f2623a1a1016bf7a248524828ec1918db2c9786`。333 项测试、校验和构建通过，主线 CI 44733011243 与 Pages 44733011208 成功。公开页独立无头 Google Chrome 复验 56 篇、1235 条，可见光筛选 47 篇、829 条。核 Barulin 2 个配置、4 条、两点约 330 μm、FWHM 散点 0.77／1.03 μm、670 nm 的 37.1% 和 635 nm 两个原值的引用往返。残差轴无点，CSV 保留约数与原值冲突，六种屏宽和三份原文 SHA-256 通过。全站 239 个发布文件逐项一致，`domains/metalens.json` SHA-256 `d1480eee481f3afe4be0190da138b741eb2054b0a3879fc759bdfa59e86f8e15`。[合并 PR](https://github.com/SelinLee/lens-evidence-atlas/pull/206) · [Pages](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44733011208) · [公开器件表](https://selinlee.github.io/lens-evidence-atlas/?domain=metalens&q=Barulin%202024)
+
+Barulin 补表沿引文核到 Jiang 2023 的四离散可见谱点实制器件，2026-11-20 查 Crossref 45 次、OpenAlex 47 次，正式上线超三年，留检索记录。Ji 参考文献中的 Lin 2021 近红外折超混合镜以 800／1040 nm 验证焦差从 30 μm 降至 1 μm，2026-11-20 查 Crossref 32 次、OpenAlex 35 次，留检索记录。新近的 Park 2026 可见光双层折超混合镜在 2025 年 3 月升级版为材料科学大类二区，2026-11-20 查 Crossref 与 OpenAlex 均为 0 次，保留既有检索任务。[Jiang 正式原文](https://doi.org/10.1002/adom.202300077) · [Jiang 引用](https://api.openalex.org/works/https://doi.org/10.1002/adom.202300077) · [Lin 正式主文](https://pmc.ncbi.nlm.nih.gov/articles/PMC8442248/) · [Lin 引用](https://api.crossref.org/works/10.1063/5.0059874) · [Park 期刊分区](https://topj.lib.whu.edu.cn/show.asp?cat=sci&id=13648) · [Park 引用](https://api.crossref.org/works/10.1021/acs.nanolett.6c02688)
+
+后续优先补 Tang 2026 两只实物的谱点、主焦与伴焦和 MTF 测法。原刊开放摘要及补件目录列场图、MTF 与聚焦效率。Crossref 核补件 DOI 可登记。独立无头 Chrome 的 ACS 直链、DOI 跳转与 Figshare 的两种 DOI 检索返回 403，DataCite 组件查询返回 404。还需经作者或机构档案取补件和主文实验段。会话目标保持开启。[正式文章](https://doi.org/10.1021/acsphotonics.6c00399) · [补件 DOI 元数据](https://api.crossref.org/works/10.1021/acsphotonics.6c00399.s001)

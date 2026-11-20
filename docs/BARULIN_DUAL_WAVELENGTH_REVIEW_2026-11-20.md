@@ -4,7 +4,7 @@ Aleksandr Barulin、Yeseul Kim、Dong Kyo Oh 等，*Dual-wavelength metalens ena
 
 ## 一只实物的两条焦场测量
 
-正文 p.2 给圆形口径 500 μm、设计焦距 330 μm、NA 0.6。以同偏振的传播相位匹配 635 和 670 nm 的两套目标相位，实物采用玻璃基底和氢化非晶硅（aSi:H）纳米柱，设计周期、高度分别为 300、500 nm。正式 p.6 Methods 另给 600 nm 起始沉积膜厚，刻蚀后柱高缺原数。Fig. 2a–c 给光学与 SEM 图。按空气中几何口径与焦距计算，NA 约 0.604。同行评议文件 pp.10–11 的作者答复明确 NA 0.6 取几何口径与焦距。正文按 635 nm 激发和 670 nm 收集设计，这两个谱点为离散光学测量点。[正式 PDF pp.2–5](https://pmc-oa-opendata.s3.amazonaws.com/PMC10761847.1/PMC10761847.1.pdf#page=2) · [作者答复](https://pmc-oa-opendata.s3.amazonaws.com/PMC10761847.1/41467_2023_44407_MOESM2_ESM.pdf#page=10)
+正文 p.2 给圆形口径 500 μm、设计焦距 330 μm、NA 0.6。以同偏振的传播相位匹配 635 和 670 nm 的两套目标相位，实物采用玻璃基底和氢化非晶硅（aSi:H）纳米柱，设计周期、高度分别为 300、500 nm。正式 p.6 Methods 另给 600 nm 起始沉积膜厚。SI p.20 Table S4 的比较表把结构高度列为 0.5×10⁻³ mm（500 nm），未注明刻蚀后独立测高方法。Fig. 2a–c 给光学与 SEM 图。按空气中几何口径与焦距计算，NA 约 0.604。同行评议文件 pp.10–11 的作者答复明确 NA 0.6 取几何口径与焦距。正文按 635 nm 激发和 670 nm 收集设计，这两个谱点为离散光学测量点。[正式 PDF pp.2–5](https://pmc-oa-opendata.s3.amazonaws.com/PMC10761847.1/PMC10761847.1.pdf#page=2) · [作者答复](https://pmc-oa-opendata.s3.amazonaws.com/PMC10761847.1/41467_2023_44407_MOESM2_ESM.pdf#page=10) · [结构高度表](https://pmc-oa-opendata.s3.amazonaws.com/PMC10761847.1/41467_2023_44407_MOESM1_ESM.pdf#page=20)
 
 | 波长 | 水平截线的 FWHM | 作者所报实测焦位 | 实测聚焦效率报告 |
 | --- | ---: | --- | --- |
