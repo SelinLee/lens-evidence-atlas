@@ -1213,3 +1213,11 @@ Zang 2024 补件组件 DOI 在 Crossref 确认从属于 ACS Nano 主文，同一
 ## 2026-11-20-139 · Feng 与 Pan 原件补核
 
 Feng 2022 新增课题组发布的双层器件表面实拍、纳米柱结构说明和三基色成像图，保持 1 mm 口径与设计 NA 0.8 的作者摘要来源。ACS 主文和 `nl2c00486_si_003.pdf` 直连均返回 403，主镜逐色数据及厘米级和 TiO₂ 配置待核。Pan 2023 从 PMC 开放存档取得正式主文和补件。更新两只 20 μm 器件的六点焦位和测量条件引用，新增四条 Fig. S9B 条纹成像记录，沿用同一 NA 0.5 配置。保留 `<3 μm` 焦移界限、Fig. S7 的 560 nm 模拟 MTF 和两处蓝光标签分歧。全库 52 篇、280 个配置、1213 条，可见光 43 篇、808 条。[本批原件、定位及证据缺口](FENG_PAN_ORIGINAL_EVIDENCE_2026-11-20.md)
+
+## 2026-11-20-140 · Feng 与 Pan 上线验收，接续 Chen 双波长光镊
+
+0.3.59 经 PR #198 合并为 `bd9bee3`。PR 校验 44717459018、主线校验 44717638075、Pages 44717638073 均成功。321 项测试通过，公开 235 个文件逐一核对 SHA-256。线上独立无头 Chrome 核 52 篇、1213 条与可见光 43 篇、808 条。Pan 26 条、7 个配置，两组设计焦距散点可读。Feng 1 条，口径与 NA 散点为 1000 μm／0.8。无已证实的逐波长实测焦位数时，坐标保持空缺。CSV、两处出处往返、三份原始文件哈希与六个视口通过。[PR #198](https://github.com/SelinLee/lens-evidence-atlas/pull/198) · [Pages 44717638073](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44717638073)
+
+沿 Hsu 2022 后续引用筛得 Chen 等。正式在线日期 2024-12-24，卷期为 2025 年 *Laser & Photonics Reviews*，按 2025 年 3 月中科院升级版属物理与天体物理大类一区。作者稿 1256868 字节，SHA-256 `852d3ed3b0d30c1c6fc02fcc23ab9bdaea7c2ac6f90afd408baa6463295b6aaa`。视觉核作者稿 p.3 Fig.2a、d，圆形实物口径 2 mm，780／852 nm 均有径向归一化实测焦斑。p.5 Fig.3 图注明确 780 nm 探测束相对芯片表面 2.6 mm，3 mm 对应冷原子云的制备位置。几何口径、设计 NA 0.46 与 780 nm 芯片参考焦距的定义待对齐，先核 852 nm 的同参考实测峰位与效率分母。Wiley 数据声明为合理请求，SI `lpor202401595-sup-0001-SuppMat.pdf` 直连返回 403，DataCite 精确 DOI 关联 0 项。研究目标保持开启。[正式论文](https://doi.org/10.1002/lpor.202401595) · [作者稿 Fig. 2](https://arxiv.org/pdf/2411.05501#page=3) · [2025 年分区](https://www.ais.cn/journal/database/5537)
+
+沿早期色散工程参考文献核 Dou 2020。正文 Fig.4 的三色焦位和光斑为数值计算，Fig.5 标为模拟成像，补件 S3 为 TM 模拟。2026-11-20 的 Crossref 为 106 次、OpenAlex 为 108 次。按实际光学校正证据要求，该论文留在检索记录。[原作 Fig. 4–5](https://www.researching.cn/ArticlePdf/m00091/2020/3/4/04190005.pdf#page=5) · [作者补件](https://pdfs.semanticscholar.org/5537/6447df209492bfc840cc26bd5a1969fc5f8d.pdf)
