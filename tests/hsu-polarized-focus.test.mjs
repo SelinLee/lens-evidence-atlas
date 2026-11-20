@@ -15,6 +15,8 @@ test('Hsu preserves fitted NA, a shared measurement plane and unresolved multipl
  assert.equal(hsu.length,7);
  assert.equal(new Set(hsu.map(row => row.specimen_id)).size,3);
  assert.equal(hsu.filter(row => hasVisibleLight(lens,row)).length,5);
+ assert.ok(hsu.filter(row => row.specimen_id === 'multiplexed').every(row => row.model.includes('附录')));
+ assert.ok(hsu.filter(row => row.specimen_id === 'singlet_control').every(row => row.model.includes('主文光镊')));
  assert.equal(workspace.sources.get('device-hsu_polar_thesis_2025').publication_source,groupRows(hsu)[0].paper);
  const x = byId('multiplexed_780_x');
  const y = byId('multiplexed_850_852_y');
