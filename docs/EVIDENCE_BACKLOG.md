@@ -103,7 +103,7 @@
 | QUALITY-001cd He 2026 双螺旋 PSF 消色差 | in_progress | 入库 1200–1400 nm 实物汇总，原刊摘要支持光学相位补偿，补件预览给 500 nm 元胞周期。保留 14.39 倍能量利用效率提升说法，原始归一与参照待核。完整补件 ph5c02219_si_001.pdf 返回 403，逐色旋角、深度、几何及原始二维 PSF 留待补证。0.3.74 经 PR #226 与 Pages 44759868429 发布，355 项测试、249 个文件比对及独立无头 Chrome 验收通过。[本批核验](HE_LIU_CHROMATIC_EVIDENCE_2026-11-20.md) |
 | QUALITY-001ce Tang 2026 折超双片热成像 | todo | 核到作者图注的 8.0／10.1／12.6 μm 单色实测 MTF 和三场点的宽带 MTF。核定 2026-06-13 上线及两类实测 MTF 图注。主文 PDF 与补件 DOCX 返回 403，继续核色散校正式、固定像面、原始数据及频率归一。[原刊](https://onlinelibrary.wiley.com/doi/10.1002/lpor.71431) |
 | QUALITY-001cf Liu 2024 长波红外消色差折超双片 | in_progress | 2026-11-20 查 Crossref 56、OpenAlex 60。已录实物 8–12 μm、全视场角 >20° 及被动成像。补件目录列三类配置比较和双片实测 MTF，处方、逐色焦差、焦斑、MTF 协议及数表继续追踪。0.3.74 经 PR #226 与 Pages 44759868429 发布，355 项测试、249 个文件比对及独立无头 Chrome 验收通过。[本批核验](HE_LIU_CHROMATIC_EVIDENCE_2026-11-20.md) |
-| QUALITY-001cg Choi 2025 厘米级 RGB 三色焦位补证 | in_progress | 用户参考目录原文已有三色焦斑、Strehl 和效率。正式补件由两个 CDN 取到且哈希一致，原刊数据声明为通讯作者合理请求，DataCite 和 Zenodo 查询为 0。复核逐色最佳焦位、635 nm 设计误差参考和实测效率窗，裸镜 PSF 与近眼条纹对比按各自条件保存。[原刊](https://www.nature.com/articles/s41563-025-02121-0) |
+| QUALITY-001cg Choi 2025 厘米级 RGB 三色焦位补证 | in_progress | 2025 年 3 月中科院材料科学大类一区。已结构化录入 635 nm 对名义设计焦距的 5.77 μm、0.11% 幅值，同一器件三谱点平均有效 NA 约 0.55，以及 0.5 μm 轴扫步进和各色 PSF 采集面。待补三色绝对峰位、RGB 互差、零点和横向标尺、原始 PSF 与效率积分范围及分母。[本批核验](CHOI_RGB_AXIAL_EVIDENCE_2026-11-20.md) |
 | QUALITY-002 手机SNR/MTF/色差独立测量 | in_progress | 本机Codex，2026-11-14；先核有型号和协议的SNR及MTF原始研究；外接镜组、场景与处理链不得写进原生模组，PSNR不替代SNR |
 | QUALITY-003 VRAR MTF与色差 | in_progress | 本机Codex，2026-11-14；复核开放PR #69数据及原文，优先MTF/截止频率、颜色/场点/眼位、色差和先进设备独立测量，不能从曲线猜统一单值 |
 | QUALITY-001a 文献器件首批 | done | 4项原始研究/8器件配置/21行，几何、波段、逐谱点焦距/FWHM/Strehl、PSNR及冲突；见[首批核验](QUALITY_BATCH_2026-11-14.md)；PR #72/23fdecb与Pages43571286647实页验收，不关闭父目标 |

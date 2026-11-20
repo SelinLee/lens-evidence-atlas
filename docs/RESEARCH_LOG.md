@@ -1385,3 +1385,7 @@ Jiang 的 Figs. 5–6 各报告 0.80–1.20 THz、间隔 0.05 THz 的九点。�
 Tang 2026 正式上线为 2026-06-13。正文预览所见为实物宽带成像、三色轴上 MTF 和三个视场宽谱 MTF，另有三波长的设计场曲和畸变图。正式 PDF 及 `lpor71431-sup-0001-SuppMat.docx` 直连均返回 403。光学色差校正式和单色测试共用像面仍待主文核实，保留候选。沿同领域查 Hu 2024，虽明示用两块超表面的负色散补折射镜，但期刊在 2025 年表为大类二区，Crossref 37 次、OpenAlex 40 次。Cheng 的自聚焦艾里束文章有制样和三个 FWHM，但 2026-11-20 查 Crossref 45 次、OpenAlex 49 次，亦未达到经典门槛。[Tang 原刊](https://onlinelibrary.wiley.com/doi/10.1002/lpor.71431) · [Hu 原文](https://doi.org/10.1515/nanoph-2023-0918) · [Cheng 作者组正式版](https://dsl.nju.edu.cn/litao/papers/Cheng_QQ_nanoph-2020-0536%282021%29.pdf)
 
 下一批回到用户参考目录的 Choi 2025 厘米级 RGB 实物。现有三色焦斑、Strehl 与效率记录的最佳焦位待补，635 nm 的 5.77 μm 误差有自己的设计参考。独立无头 Chrome 取到正式补件两个 CDN 副本，均 2235231 字节，SHA-256 为 `ca52ff345b1f36686f9279d300132af639573a9e98cc6d8a7f48bf20ffd2c262`。出版社返回 HTML，数据声明指向通讯作者合理请求。DataCite 关联 DOI 与 Zenodo 精确 DOI 查询为 0，POSTECH 作者发表目录可开。继续核三色最佳焦位及效率窗，沿同一来源复核裸镜 PSF 和全息近眼系统的条纹对比。会话目标保持开启。[Choi 正式原文](https://www.nature.com/articles/s41563-025-02121-0) · [正式补件](https://static-content.springer.com/esm/art%3A10.1038%2Fs41563-025-02121-0/MediaObjects/41563_2025_2121_MOESM1_ESM.pdf) · [POSTECH 作者目录](https://photonicscenter.postech.ac.kr/publications)
+
+## 2026-11-20-169 · Choi 2025 三色焦位证据与有效 NA
+
+复核用户排版稿 Fig. 3b–d 与正式补件 Note 10。635 nm 相对设计焦距的作者测量计算幅值 5.77 μm、0.11% 已入库，名义设计焦距约 5.1 mm。三谱点焦斑均值新增一行，有效 NA 约 0.55。补三个谱点共用的全口径轴扫光路、0.5 μm 步进、各色焦面及 x 向 FWHM。实测效率的积分窗口、功率分母和偏振条件仍待原始证据。保留 Fig. 3b 相对强度图定位，绝对峰位、方向和 RGB 最大互差不估填。当前目录为 66 篇、310 配置、1366 条，可见光 50 篇、860 条。[本批核验](CHOI_RGB_AXIAL_EVIDENCE_2026-11-20.md)
