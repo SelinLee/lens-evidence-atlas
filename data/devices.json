@@ -2623,6 +2623,65 @@
       "scope": "2026-11-20，cited_by_count 为 237。",
       "checked_on": "2026-11-20",
       "publication_source": "arbabi_spatial_2016"
+    },
+    {
+      "id": "wang_holographic_2024",
+      "kind": "paper",
+      "title": "A Holographic Broadband Achromatic Metalens",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/lpor.202300880",
+      "scope": "Wiley 题录、摘要、补件目录、Data Availability。2023-12-12 正式上线，2024 年第 18 卷第 3 期，文章号 2300880。",
+      "checked_on": "2026-11-20",
+      "doi": "10.1002/lpor.202300880"
+    },
+    {
+      "id": "wang_holographic_ustc_2024",
+      "publication_source": "wang_holographic_2024",
+      "title": "Wang 2024 · 中国科大组内存档正式排版 PDF",
+      "url": "https://mane.ustc.edu.cn/_upload/article/files/8c/03/317ceaf8400a895dd6b99fdce40b/3e2f5ffd-fe6d-46d3-bc09-35c9d31cd31a.pdf",
+      "scope": "已读 pp.2–8 §§2.2–2.4、§4 与数据声明，视觉核 pp.5–7 Figs. 3–5。版本为 Online First，共九页。",
+      "checked_on": "2026-11-20",
+      "kind": "publisher_pdf"
+    },
+    {
+      "id": "wang_holographic_si_2024",
+      "publication_source": "wang_holographic_2024",
+      "title": "Wang 2024 · lpor202300880-sup-0001-SuppMat.pdf",
+      "url": "https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1002%2Flpor.202300880&file=lpor202300880-sup-0001-SuppMat.pdf",
+      "scope": "Wiley 补件目录登记 1.5 MB。目录入口与直连返回 HTTP 403，图内容仍待取得。",
+      "checked_on": "2026-11-20",
+      "kind": "supplementary_material"
+    },
+    {
+      "id": "wang_holographic_cas_2025",
+      "publication_source": "wang_holographic_2024",
+      "title": "Laser & Photonics Reviews · 2025 年 3 月中科院分区",
+      "url": "https://www.ais.cn/journal/database/5537",
+      "scope": "物理与天体物理大类一区，2025 年 3 月升级版。由武汉大学图书馆期刊条目交叉核对。",
+      "checked_on": "2026-11-20"
+    },
+    {
+      "id": "wang_holographic_crossref_2024",
+      "publication_source": "wang_holographic_2024",
+      "title": "Wang 2024 · Crossref 发表日期与引文",
+      "url": "https://api.crossref.org/works/10.1002/lpor.202300880",
+      "scope": "在线日期 2023-12-12；卷期日期 2024-03。2026-11-20 查询 57 次。",
+      "checked_on": "2026-11-20"
+    },
+    {
+      "id": "wang_holographic_openalex_2024",
+      "publication_source": "wang_holographic_2024",
+      "title": "Wang 2024 · OpenAlex 引文与版本索引",
+      "url": "https://api.openalex.org/works/https://doi.org/10.1002/lpor.202300880",
+      "scope": "2026-11-20 查询 58 次。索引中只有期刊版本的位置记录。",
+      "checked_on": "2026-11-20"
+    },
+    {
+      "id": "wang_holographic_datacite_2024",
+      "publication_source": "wang_holographic_2024",
+      "title": "Wang 2024 · DataCite 关联数据查询",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1002%2Flpor.202300880%22&page%5Bsize%5D=25",
+      "scope": "精确关联原论文 DOI，HTTP 200，返回零项。",
+      "checked_on": "2026-11-20"
     }
   ],
   "domains": {
@@ -152395,7 +152454,1330 @@
               "source_print_resolution_um": 10
             }
           }
-        }
+        },
+          {
+            "id": "wang2024holographic_ril_summary",
+            "model": "Wang 2024 · 32 μm 随机交织实物",
+            "study_id": "wang2024holographic",
+            "specimen_id": "ril",
+            "module": "",
+            "variant": "32 μm 随机交织实物",
+            "evidence_type": "study",
+            "measurement_scope": "轴向消色差单镜；470–690 nm 内七个离散滤光测点。",
+            "values": {
+              "diameter_um": {
+                "value": 32,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 实物制备；p.5 Fig. 3a；p.6 §3",
+                "note": "作者报告的是随机交织全息衍射单镜的直径。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "design_focal_um": {
+                "value": 60,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.3 §2.2，Fig. 2d–f 前设计段",
+                "note": "三套双曲相位编码在同一名义焦距，实际波长组与设计波长分列。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "na": {
+                "value": 0.258,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.3 §2.2；p.4 §2.3；p.6 §3",
+                "note": "本库以直径 32 μm、设计焦距 60 μm 及空气侧理想圆孔估算，保留三位小数。p.7 的 1.35 是写入光刻物镜 NA。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "atlas",
+                "formula": "R / sqrt(R^2 + f^2)",
+                "radius_um": 16,
+                "design_focal_um": 60,
+                "approximate": true,
+                "display": "约 0.258（几何设计，本库计算）"
+              },
+              "wavelength_nm": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 pp.4–6 §2.3；Figs. 3d、4a",
+                "note": "本行为同一实物的七谱点汇总。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "470／510／550／590／632／660／690 nm（离散）"
+              },
+              "material": {
+                "value": "锆硅混合溶胶凝胶 SZ2080／二氧化硅基底；三波长相位像素交织",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.3 §2.2；p.4 §2.3；pp.6–7 §4 实验段",
+                "note": "400 nm 是设计相位像素的宽度，横向写点间距为 200 nm；三通道设计高度范围分别为 0–800、0–1200、0–1500 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "chromatic": {
+                "value": "三套双曲相位在共享孔径中随机交织，减小轴向色差",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 pp.2–5 §§2.2–2.3；p.6 Fig. 4d；期刊题录",
+                "note": "设计波长 400／590／750 nm，三通道采样概率比例 1:1.5:1。作者概述约 210 nm 带宽，实物本批只登记图文明确的七个测点。2023-12-12 上线，2024 年卷期，2025 年 3 月中科院物理与天体物理大类一区；2026-11-20 Crossref 57、OpenAlex 58。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "discrete_filter_measurements",
+                "design_wavelengths_nm": [
+                  400,
+                  590,
+                  750
+                ],
+                "sample_wavelengths_nm": [
+                  470,
+                  510,
+                  550,
+                  590,
+                  632,
+                  660,
+                  690
+                ],
+                "sourceIds": [
+                  "wang_holographic_ustc_2024",
+                  "wang_holographic_2024",
+                  "wang_holographic_cas_2025",
+                  "wang_holographic_crossref_2024",
+                  "wang_holographic_openalex_2024"
+                ]
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 末段；p.5 Fig. 3d；p.6 Fig. 4a 图注；p.7 §4",
+                "note": "作者用 CCD 轴向图像栈确定功率强度峰，实物面为 z=0。实测轴峰在 z≈57 μm 附近，各波长的轴向最佳位置没有印字数值或数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "共同焦区约 57 μm；逐点峰位待核"
+              },
+              "psf_protocol": {
+                "value": "CCD 轴扫，1 μm 步长；样片面 z=0",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.7 §4 光学表征；主文 p.4 §2.3；Figs. 3d、4a–c",
+                "note": "不同波长用滤片取得，焦面取轴向功率强度峰。Fig. 4a–b 有焦面强度图及归一化 x 截线，横向物方采样、偏振和误差条统计未报告。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 1,
+                "reference_plane": "样片面 z=0",
+                "position_definition": "axial_intensity_maximum",
+                "reported_common_focal_region_um": 57,
+                "evaluation_plane": "各谱点焦斑及作者描述的共同焦区",
+                "field_point": "on_axis",
+                "direction": "x",
+                "polarization": null,
+                "lateral_sampling_um": null
+              },
+              "focus_error_pct": {
+                "value": 5.26,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.5 §2.3 焦距比较段；p.6 Fig. 4d",
+                "note": "原文结果句报告相对于平均焦距的最大偏差 5.26%。同段前一句用名义与实测焦距描述指标，平均值、归一化公式和轴扫原表均未印。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "statistic": "author_reported_focal_error",
+                "calculation_origin": "authors",
+                "sample_wavelengths_nm": [
+                  470,
+                  510,
+                  550,
+                  590,
+                  632,
+                  660,
+                  690
+                ],
+                "reference_wavelength_nm": null,
+                "reference_focal_um": null
+              },
+              "focus_error_protocol": {
+                "value": "作者结果句参照 RIL 的实测平均焦距；最大百分偏差",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.5 §2.3；p.6 Fig. 4d；p.7 §4",
+                "note": "Fig. 4d 横轴波长 nm，纵轴有符号聚焦误差 %。作者先描述名义与实测之差，随后以相对平均焦距叙述 5.26%。精确分母与各色峰位待原始表。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "reference_wavelength_nm": null,
+                "reference_focal_um": null,
+                "scan_step_um": 1
+              },
+              "efficiency_band_mean_pct": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.1 摘要；p.4 §2.3；p.6 §3",
+                "note": "作者摘要、结论报告约 55%。本库对 p.4 的七个印字效率等权计算为 52.69%；作者均值的权重与采样范围未给，带内平均数值格留空。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "作者约 55%；七点等权 52.69%（本库计算）",
+                "reported_approximate_pct": 55,
+                "atlas_equal_weight_mean_pct": 52.69,
+                "sample_wavelengths_nm": [
+                  470,
+                  510,
+                  550,
+                  590,
+                  632,
+                  660,
+                  690
+                ]
+              },
+              "efficiency_protocol": {
+                "value": "焦面圆形区域半径 1.5×FWHM／入射到器件的功率",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 效率列表；p.5 Fig. 3e 与内插图",
+                "note": "分母由器件面积乘 z=0 面器件外的单位面积入射光强获得。标准的焦斑区域积分，未印探测器采样尺度、各点实际积分半径、偏振或 Fig. 3e 阴影统计定义。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "numerator": "power_inside_focal_disk",
+                "denominator": "incident_through_aperture",
+                "integration_shape": "circle",
+                "aperture_radius_fwhm_multiple": 1.5,
+                "evaluation_plane": "各波长轴向功率强度峰面",
+                "reference_plane": "样片面 z=0",
+                "polarization": null
+              },
+              "mtf_curve": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 Figs. 3d、4a–c；p.7 §4；p.8 Data Availability；期刊补件目录和 DataCite 检索",
+                "note": "主文有 CCD 焦场与归一化截线，未找到 MTF 图、数表或原始 PSF 像素。作者说明相关数据可合理请求，补件直连未能访问。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "原始 PSF 与 MTF 待补",
+                "sourceIds": [
+                  "wang_holographic_ustc_2024",
+                  "wang_holographic_2024",
+                  "wang_holographic_si_2024",
+                  "wang_holographic_datacite_2024"
+                ],
+                "data_availability": {
+                  "status": "no_mtf_in_checked_material",
+                  "author_numeric_mtf": null,
+                  "raw_psf": null,
+                  "independently_recomputed_mtf": null,
+                  "search_log": "WANG_2024_HOLOGRAPHIC_RIL_REVIEW_2026-11-20.md"
+                }
+              },
+              "strehl": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.6 Fig. 4b,c",
+                "note": "作者给出归一化强度截线与 FWHM 的 Airy 对照。Strehl 原始数值及所需强度归一化条件未核。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "待原始数值"
+              }
+            },
+            "visible_light_use": true
+          },
+          {
+            "id": "wang2024holographic_ril_470",
+            "model": "Wang 2024 · 随机交织实物 · 470 nm",
+            "study_id": "wang2024holographic",
+            "specimen_id": "ril",
+            "module": "",
+            "variant": "随机交织实物 · 470 nm",
+            "evidence_type": "study",
+            "measurement_scope": "同一只 RIL 的滤光轴扫、焦斑和效率。",
+            "values": {
+              "diameter_um": {
+                "value": 32,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 实物制备；p.5 Fig. 3a；p.6 §3",
+                "note": "作者报告的是随机交织全息衍射单镜的直径。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "design_focal_um": {
+                "value": 60,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.3 §2.2，Fig. 2d–f 前设计段",
+                "note": "三套双曲相位编码在同一名义焦距，实际波长组与设计波长分列。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "na": {
+                "value": 0.258,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.3 §2.2；p.4 §2.3；p.6 §3",
+                "note": "本库以直径 32 μm、设计焦距 60 μm 及空气侧理想圆孔估算，保留三位小数。p.7 的 1.35 是写入光刻物镜 NA。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "atlas",
+                "formula": "R / sqrt(R^2 + f^2)",
+                "radius_um": 16,
+                "design_focal_um": 60,
+                "approximate": true,
+                "display": "约 0.258（几何设计，本库计算）"
+              },
+              "wavelength_nm": {
+                "value": 470,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3；p.5 Fig. 3d；p.6 Fig. 4a，470 nm 面板",
+                "note": "作者实测所用滤光条件的中心波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 末段；p.5 Fig. 3d；p.6 Fig. 4a 图注；p.7 §4，470 nm",
+                "note": "作者用 CCD 轴向图像栈确定功率强度峰，实物面为 z=0。实测轴峰在 z≈57 μm 附近，各波长的轴向最佳位置没有印字数值或数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "共同焦区约 57 μm；逐点峰位待核"
+              },
+              "signed_normalized_focal_error_pct": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.6 Fig. 4d，RIL 红色序列 470 nm",
+                "note": "原图提供有符号百分误差曲线，当前原材料未给该点数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "曲线可查"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.6 Fig. 4b,c，470 nm 截线与红空心点",
+                "note": "图中有归一化 x 截线、实测 FWHM 与 Airy 参考，未给该点的数值及宽度拟合协议。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "曲线可查"
+              },
+              "psf_protocol": {
+                "value": "CCD 轴扫，1 μm 步长；样片面 z=0",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.7 §4 光学表征；主文 p.4 §2.3；Figs. 3d、4a–c",
+                "note": "不同波长用滤片取得，焦面取轴向功率强度峰。Fig. 4a–b 有焦面强度图及归一化 x 截线，横向物方采样、偏振和误差条统计未报告。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 1,
+                "reference_plane": "样片面 z=0",
+                "position_definition": "axial_intensity_maximum",
+                "reported_common_focal_region_um": 57,
+                "evaluation_plane": "各谱点焦斑及作者描述的共同焦区",
+                "field_point": "on_axis",
+                "direction": "x",
+                "polarization": null,
+                "lateral_sampling_um": null
+              },
+              "efficiency_lambda_nm": {
+                "value": 470,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 效率列表；p.5 Fig. 3e 与内插图，第 1 个谱点",
+                "note": "对应作者同段列出的测试波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": 54.7,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 效率列表；p.5 Fig. 3e 与内插图，第 1 个谱点",
+                "note": "光学表征实测 CCD 图中的焦点积分与入射功率之比，作者按正文印字报告。阴影误差定义待核。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "denominator": "incident_through_aperture"
+              },
+              "efficiency_protocol": {
+                "value": "焦面圆形区域半径 1.5×FWHM／入射到器件的功率",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 效率列表；p.5 Fig. 3e 与内插图",
+                "note": "分母由器件面积乘 z=0 面器件外的单位面积入射光强获得。标准的焦斑区域积分，未印探测器采样尺度、各点实际积分半径、偏振或 Fig. 3e 阴影统计定义。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "numerator": "power_inside_focal_disk",
+                "denominator": "incident_through_aperture",
+                "integration_shape": "circle",
+                "aperture_radius_fwhm_multiple": 1.5,
+                "evaluation_plane": "各波长轴向功率强度峰面",
+                "reference_plane": "样片面 z=0",
+                "polarization": null
+              }
+            }
+          },
+          {
+            "id": "wang2024holographic_ril_510",
+            "model": "Wang 2024 · 随机交织实物 · 510 nm",
+            "study_id": "wang2024holographic",
+            "specimen_id": "ril",
+            "module": "",
+            "variant": "随机交织实物 · 510 nm",
+            "evidence_type": "study",
+            "measurement_scope": "同一只 RIL 的滤光轴扫、焦斑和效率。",
+            "values": {
+              "diameter_um": {
+                "value": 32,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 实物制备；p.5 Fig. 3a；p.6 §3",
+                "note": "作者报告的是随机交织全息衍射单镜的直径。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "design_focal_um": {
+                "value": 60,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.3 §2.2，Fig. 2d–f 前设计段",
+                "note": "三套双曲相位编码在同一名义焦距，实际波长组与设计波长分列。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "na": {
+                "value": 0.258,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.3 §2.2；p.4 §2.3；p.6 §3",
+                "note": "本库以直径 32 μm、设计焦距 60 μm 及空气侧理想圆孔估算，保留三位小数。p.7 的 1.35 是写入光刻物镜 NA。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "atlas",
+                "formula": "R / sqrt(R^2 + f^2)",
+                "radius_um": 16,
+                "design_focal_um": 60,
+                "approximate": true,
+                "display": "约 0.258（几何设计，本库计算）"
+              },
+              "wavelength_nm": {
+                "value": 510,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3；p.5 Fig. 3d；p.6 Fig. 4a，510 nm 面板",
+                "note": "作者实测所用滤光条件的中心波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 末段；p.5 Fig. 3d；p.6 Fig. 4a 图注；p.7 §4，510 nm",
+                "note": "作者用 CCD 轴向图像栈确定功率强度峰，实物面为 z=0。实测轴峰在 z≈57 μm 附近，各波长的轴向最佳位置没有印字数值或数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "共同焦区约 57 μm；逐点峰位待核"
+              },
+              "signed_normalized_focal_error_pct": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.6 Fig. 4d，RIL 红色序列 510 nm",
+                "note": "原图提供有符号百分误差曲线，当前原材料未给该点数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "曲线可查"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.6 Fig. 4b,c，510 nm 截线与红空心点",
+                "note": "图中有归一化 x 截线、实测 FWHM 与 Airy 参考，未给该点的数值及宽度拟合协议。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "曲线可查"
+              },
+              "psf_protocol": {
+                "value": "CCD 轴扫，1 μm 步长；样片面 z=0",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.7 §4 光学表征；主文 p.4 §2.3；Figs. 3d、4a–c",
+                "note": "不同波长用滤片取得，焦面取轴向功率强度峰。Fig. 4a–b 有焦面强度图及归一化 x 截线，横向物方采样、偏振和误差条统计未报告。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 1,
+                "reference_plane": "样片面 z=0",
+                "position_definition": "axial_intensity_maximum",
+                "reported_common_focal_region_um": 57,
+                "evaluation_plane": "各谱点焦斑及作者描述的共同焦区",
+                "field_point": "on_axis",
+                "direction": "x",
+                "polarization": null,
+                "lateral_sampling_um": null
+              },
+              "efficiency_lambda_nm": {
+                "value": 510,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 效率列表；p.5 Fig. 3e 与内插图，第 2 个谱点",
+                "note": "对应作者同段列出的测试波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": 46.9,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 效率列表；p.5 Fig. 3e 与内插图，第 2 个谱点",
+                "note": "光学表征实测 CCD 图中的焦点积分与入射功率之比，作者按正文印字报告。阴影误差定义待核。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "denominator": "incident_through_aperture"
+              },
+              "efficiency_protocol": {
+                "value": "焦面圆形区域半径 1.5×FWHM／入射到器件的功率",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 效率列表；p.5 Fig. 3e 与内插图",
+                "note": "分母由器件面积乘 z=0 面器件外的单位面积入射光强获得。标准的焦斑区域积分，未印探测器采样尺度、各点实际积分半径、偏振或 Fig. 3e 阴影统计定义。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "numerator": "power_inside_focal_disk",
+                "denominator": "incident_through_aperture",
+                "integration_shape": "circle",
+                "aperture_radius_fwhm_multiple": 1.5,
+                "evaluation_plane": "各波长轴向功率强度峰面",
+                "reference_plane": "样片面 z=0",
+                "polarization": null
+              }
+            }
+          },
+          {
+            "id": "wang2024holographic_ril_550",
+            "model": "Wang 2024 · 随机交织实物 · 550 nm",
+            "study_id": "wang2024holographic",
+            "specimen_id": "ril",
+            "module": "",
+            "variant": "随机交织实物 · 550 nm",
+            "evidence_type": "study",
+            "measurement_scope": "同一只 RIL 的滤光轴扫、焦斑和效率。",
+            "values": {
+              "diameter_um": {
+                "value": 32,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 实物制备；p.5 Fig. 3a；p.6 §3",
+                "note": "作者报告的是随机交织全息衍射单镜的直径。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "design_focal_um": {
+                "value": 60,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.3 §2.2，Fig. 2d–f 前设计段",
+                "note": "三套双曲相位编码在同一名义焦距，实际波长组与设计波长分列。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "na": {
+                "value": 0.258,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.3 §2.2；p.4 §2.3；p.6 §3",
+                "note": "本库以直径 32 μm、设计焦距 60 μm 及空气侧理想圆孔估算，保留三位小数。p.7 的 1.35 是写入光刻物镜 NA。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "atlas",
+                "formula": "R / sqrt(R^2 + f^2)",
+                "radius_um": 16,
+                "design_focal_um": 60,
+                "approximate": true,
+                "display": "约 0.258（几何设计，本库计算）"
+              },
+              "wavelength_nm": {
+                "value": 550,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3；p.5 Fig. 3d；p.6 Fig. 4a，550 nm 面板",
+                "note": "作者实测所用滤光条件的中心波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 末段；p.5 Fig. 3d；p.6 Fig. 4a 图注；p.7 §4，550 nm",
+                "note": "作者用 CCD 轴向图像栈确定功率强度峰，实物面为 z=0。实测轴峰在 z≈57 μm 附近，各波长的轴向最佳位置没有印字数值或数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "共同焦区约 57 μm；逐点峰位待核"
+              },
+              "signed_normalized_focal_error_pct": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.6 Fig. 4d，RIL 红色序列 550 nm",
+                "note": "原图提供有符号百分误差曲线，当前原材料未给该点数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "曲线可查"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.6 Fig. 4b,c，550 nm 截线与红空心点",
+                "note": "图中有归一化 x 截线、实测 FWHM 与 Airy 参考，未给该点的数值及宽度拟合协议。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "曲线可查"
+              },
+              "psf_protocol": {
+                "value": "CCD 轴扫，1 μm 步长；样片面 z=0",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.7 §4 光学表征；主文 p.4 §2.3；Figs. 3d、4a–c",
+                "note": "不同波长用滤片取得，焦面取轴向功率强度峰。Fig. 4a–b 有焦面强度图及归一化 x 截线，横向物方采样、偏振和误差条统计未报告。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 1,
+                "reference_plane": "样片面 z=0",
+                "position_definition": "axial_intensity_maximum",
+                "reported_common_focal_region_um": 57,
+                "evaluation_plane": "各谱点焦斑及作者描述的共同焦区",
+                "field_point": "on_axis",
+                "direction": "x",
+                "polarization": null,
+                "lateral_sampling_um": null
+              },
+              "efficiency_lambda_nm": {
+                "value": 550,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 效率列表；p.5 Fig. 3e 与内插图，第 3 个谱点",
+                "note": "对应作者同段列出的测试波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": 52.9,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 效率列表；p.5 Fig. 3e 与内插图，第 3 个谱点",
+                "note": "光学表征实测 CCD 图中的焦点积分与入射功率之比，作者按正文印字报告。阴影误差定义待核。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "denominator": "incident_through_aperture"
+              },
+              "efficiency_protocol": {
+                "value": "焦面圆形区域半径 1.5×FWHM／入射到器件的功率",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 效率列表；p.5 Fig. 3e 与内插图",
+                "note": "分母由器件面积乘 z=0 面器件外的单位面积入射光强获得。标准的焦斑区域积分，未印探测器采样尺度、各点实际积分半径、偏振或 Fig. 3e 阴影统计定义。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "numerator": "power_inside_focal_disk",
+                "denominator": "incident_through_aperture",
+                "integration_shape": "circle",
+                "aperture_radius_fwhm_multiple": 1.5,
+                "evaluation_plane": "各波长轴向功率强度峰面",
+                "reference_plane": "样片面 z=0",
+                "polarization": null
+              }
+            }
+          },
+          {
+            "id": "wang2024holographic_ril_590",
+            "model": "Wang 2024 · 随机交织实物 · 590 nm",
+            "study_id": "wang2024holographic",
+            "specimen_id": "ril",
+            "module": "",
+            "variant": "随机交织实物 · 590 nm",
+            "evidence_type": "study",
+            "measurement_scope": "同一只 RIL 的滤光轴扫、焦斑和效率。",
+            "values": {
+              "diameter_um": {
+                "value": 32,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 实物制备；p.5 Fig. 3a；p.6 §3",
+                "note": "作者报告的是随机交织全息衍射单镜的直径。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "design_focal_um": {
+                "value": 60,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.3 §2.2，Fig. 2d–f 前设计段",
+                "note": "三套双曲相位编码在同一名义焦距，实际波长组与设计波长分列。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "na": {
+                "value": 0.258,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.3 §2.2；p.4 §2.3；p.6 §3",
+                "note": "本库以直径 32 μm、设计焦距 60 μm 及空气侧理想圆孔估算，保留三位小数。p.7 的 1.35 是写入光刻物镜 NA。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "atlas",
+                "formula": "R / sqrt(R^2 + f^2)",
+                "radius_um": 16,
+                "design_focal_um": 60,
+                "approximate": true,
+                "display": "约 0.258（几何设计，本库计算）"
+              },
+              "wavelength_nm": {
+                "value": 590,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3；p.5 Fig. 3d；p.6 Fig. 4a，590 nm 面板",
+                "note": "作者实测所用滤光条件的中心波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 末段；p.5 Fig. 3d；p.6 Fig. 4a 图注；p.7 §4，590 nm",
+                "note": "作者用 CCD 轴向图像栈确定功率强度峰，实物面为 z=0。实测轴峰在 z≈57 μm 附近，各波长的轴向最佳位置没有印字数值或数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "共同焦区约 57 μm；逐点峰位待核"
+              },
+              "signed_normalized_focal_error_pct": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.6 Fig. 4d，RIL 红色序列 590 nm",
+                "note": "原图提供有符号百分误差曲线，当前原材料未给该点数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "曲线可查"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.6 Fig. 4b,c，590 nm 截线与红空心点",
+                "note": "图中有归一化 x 截线、实测 FWHM 与 Airy 参考，未给该点的数值及宽度拟合协议。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "曲线可查"
+              },
+              "psf_protocol": {
+                "value": "CCD 轴扫，1 μm 步长；样片面 z=0",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.7 §4 光学表征；主文 p.4 §2.3；Figs. 3d、4a–c",
+                "note": "不同波长用滤片取得，焦面取轴向功率强度峰。Fig. 4a–b 有焦面强度图及归一化 x 截线，横向物方采样、偏振和误差条统计未报告。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 1,
+                "reference_plane": "样片面 z=0",
+                "position_definition": "axial_intensity_maximum",
+                "reported_common_focal_region_um": 57,
+                "evaluation_plane": "各谱点焦斑及作者描述的共同焦区",
+                "field_point": "on_axis",
+                "direction": "x",
+                "polarization": null,
+                "lateral_sampling_um": null
+              },
+              "efficiency_lambda_nm": {
+                "value": 590,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 效率列表；p.5 Fig. 3e 与内插图，第 4 个谱点",
+                "note": "对应作者同段列出的测试波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": 63.7,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 效率列表；p.5 Fig. 3e 与内插图，第 4 个谱点",
+                "note": "光学表征实测 CCD 图中的焦点积分与入射功率之比，作者按正文印字报告。阴影误差定义待核。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "denominator": "incident_through_aperture"
+              },
+              "efficiency_protocol": {
+                "value": "焦面圆形区域半径 1.5×FWHM／入射到器件的功率",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 效率列表；p.5 Fig. 3e 与内插图",
+                "note": "分母由器件面积乘 z=0 面器件外的单位面积入射光强获得。标准的焦斑区域积分，未印探测器采样尺度、各点实际积分半径、偏振或 Fig. 3e 阴影统计定义。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "numerator": "power_inside_focal_disk",
+                "denominator": "incident_through_aperture",
+                "integration_shape": "circle",
+                "aperture_radius_fwhm_multiple": 1.5,
+                "evaluation_plane": "各波长轴向功率强度峰面",
+                "reference_plane": "样片面 z=0",
+                "polarization": null
+              }
+            }
+          },
+          {
+            "id": "wang2024holographic_ril_632",
+            "model": "Wang 2024 · 随机交织实物 · 632 nm",
+            "study_id": "wang2024holographic",
+            "specimen_id": "ril",
+            "module": "",
+            "variant": "随机交织实物 · 632 nm",
+            "evidence_type": "study",
+            "measurement_scope": "同一只 RIL 的滤光轴扫、焦斑和效率。",
+            "values": {
+              "diameter_um": {
+                "value": 32,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 实物制备；p.5 Fig. 3a；p.6 §3",
+                "note": "作者报告的是随机交织全息衍射单镜的直径。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "design_focal_um": {
+                "value": 60,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.3 §2.2，Fig. 2d–f 前设计段",
+                "note": "三套双曲相位编码在同一名义焦距，实际波长组与设计波长分列。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "na": {
+                "value": 0.258,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.3 §2.2；p.4 §2.3；p.6 §3",
+                "note": "本库以直径 32 μm、设计焦距 60 μm 及空气侧理想圆孔估算，保留三位小数。p.7 的 1.35 是写入光刻物镜 NA。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "atlas",
+                "formula": "R / sqrt(R^2 + f^2)",
+                "radius_um": 16,
+                "design_focal_um": 60,
+                "approximate": true,
+                "display": "约 0.258（几何设计，本库计算）"
+              },
+              "wavelength_nm": {
+                "value": 632,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3；p.5 Fig. 3d；p.6 Fig. 4a，632 nm 面板",
+                "note": "作者实测所用滤光条件的中心波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 末段；p.5 Fig. 3d；p.6 Fig. 4a 图注；p.7 §4，632 nm",
+                "note": "作者用 CCD 轴向图像栈确定功率强度峰，实物面为 z=0。实测轴峰在 z≈57 μm 附近，各波长的轴向最佳位置没有印字数值或数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "共同焦区约 57 μm；逐点峰位待核"
+              },
+              "signed_normalized_focal_error_pct": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.6 Fig. 4d，RIL 红色序列 632 nm",
+                "note": "原图提供有符号百分误差曲线，当前原材料未给该点数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "曲线可查"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.6 Fig. 4b,c，632 nm 截线与红空心点",
+                "note": "图中有归一化 x 截线、实测 FWHM 与 Airy 参考，未给该点的数值及宽度拟合协议。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "曲线可查"
+              },
+              "psf_protocol": {
+                "value": "CCD 轴扫，1 μm 步长；样片面 z=0",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.7 §4 光学表征；主文 p.4 §2.3；Figs. 3d、4a–c",
+                "note": "不同波长用滤片取得，焦面取轴向功率强度峰。Fig. 4a–b 有焦面强度图及归一化 x 截线，横向物方采样、偏振和误差条统计未报告。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 1,
+                "reference_plane": "样片面 z=0",
+                "position_definition": "axial_intensity_maximum",
+                "reported_common_focal_region_um": 57,
+                "evaluation_plane": "各谱点焦斑及作者描述的共同焦区",
+                "field_point": "on_axis",
+                "direction": "x",
+                "polarization": null,
+                "lateral_sampling_um": null
+              },
+              "efficiency_lambda_nm": {
+                "value": 632,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 效率列表；p.5 Fig. 3e 与内插图，第 5 个谱点",
+                "note": "对应作者同段列出的测试波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": 52.6,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 效率列表；p.5 Fig. 3e 与内插图，第 5 个谱点",
+                "note": "光学表征实测 CCD 图中的焦点积分与入射功率之比，作者按正文印字报告。阴影误差定义待核。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "denominator": "incident_through_aperture"
+              },
+              "efficiency_protocol": {
+                "value": "焦面圆形区域半径 1.5×FWHM／入射到器件的功率",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 效率列表；p.5 Fig. 3e 与内插图",
+                "note": "分母由器件面积乘 z=0 面器件外的单位面积入射光强获得。标准的焦斑区域积分，未印探测器采样尺度、各点实际积分半径、偏振或 Fig. 3e 阴影统计定义。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "numerator": "power_inside_focal_disk",
+                "denominator": "incident_through_aperture",
+                "integration_shape": "circle",
+                "aperture_radius_fwhm_multiple": 1.5,
+                "evaluation_plane": "各波长轴向功率强度峰面",
+                "reference_plane": "样片面 z=0",
+                "polarization": null
+              }
+            }
+          },
+          {
+            "id": "wang2024holographic_ril_660",
+            "model": "Wang 2024 · 随机交织实物 · 660 nm",
+            "study_id": "wang2024holographic",
+            "specimen_id": "ril",
+            "module": "",
+            "variant": "随机交织实物 · 660 nm",
+            "evidence_type": "study",
+            "measurement_scope": "同一只 RIL 的滤光轴扫、焦斑和效率。",
+            "values": {
+              "diameter_um": {
+                "value": 32,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 实物制备；p.5 Fig. 3a；p.6 §3",
+                "note": "作者报告的是随机交织全息衍射单镜的直径。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "design_focal_um": {
+                "value": 60,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.3 §2.2，Fig. 2d–f 前设计段",
+                "note": "三套双曲相位编码在同一名义焦距，实际波长组与设计波长分列。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "na": {
+                "value": 0.258,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.3 §2.2；p.4 §2.3；p.6 §3",
+                "note": "本库以直径 32 μm、设计焦距 60 μm 及空气侧理想圆孔估算，保留三位小数。p.7 的 1.35 是写入光刻物镜 NA。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "atlas",
+                "formula": "R / sqrt(R^2 + f^2)",
+                "radius_um": 16,
+                "design_focal_um": 60,
+                "approximate": true,
+                "display": "约 0.258（几何设计，本库计算）"
+              },
+              "wavelength_nm": {
+                "value": 660,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3；p.5 Fig. 3d；p.6 Fig. 4a，660 nm 面板",
+                "note": "作者实测所用滤光条件的中心波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 末段；p.5 Fig. 3d；p.6 Fig. 4a 图注；p.7 §4，660 nm",
+                "note": "作者用 CCD 轴向图像栈确定功率强度峰，实物面为 z=0。实测轴峰在 z≈57 μm 附近，各波长的轴向最佳位置没有印字数值或数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "共同焦区约 57 μm；逐点峰位待核"
+              },
+              "signed_normalized_focal_error_pct": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.6 Fig. 4d，RIL 红色序列 660 nm",
+                "note": "原图提供有符号百分误差曲线，当前原材料未给该点数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "曲线可查"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.6 Fig. 4b,c，660 nm 截线与红空心点",
+                "note": "图中有归一化 x 截线、实测 FWHM 与 Airy 参考，未给该点的数值及宽度拟合协议。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "曲线可查"
+              },
+              "psf_protocol": {
+                "value": "CCD 轴扫，1 μm 步长；样片面 z=0",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.7 §4 光学表征；主文 p.4 §2.3；Figs. 3d、4a–c",
+                "note": "不同波长用滤片取得，焦面取轴向功率强度峰。Fig. 4a–b 有焦面强度图及归一化 x 截线，横向物方采样、偏振和误差条统计未报告。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 1,
+                "reference_plane": "样片面 z=0",
+                "position_definition": "axial_intensity_maximum",
+                "reported_common_focal_region_um": 57,
+                "evaluation_plane": "各谱点焦斑及作者描述的共同焦区",
+                "field_point": "on_axis",
+                "direction": "x",
+                "polarization": null,
+                "lateral_sampling_um": null
+              },
+              "efficiency_lambda_nm": {
+                "value": 660,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 效率列表；p.5 Fig. 3e 与内插图，第 6 个谱点",
+                "note": "对应作者同段列出的测试波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": 50,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 效率列表；p.5 Fig. 3e 与内插图，第 6 个谱点",
+                "note": "光学表征实测 CCD 图中的焦点积分与入射功率之比，作者按正文印字报告。阴影误差定义待核。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "denominator": "incident_through_aperture"
+              },
+              "efficiency_protocol": {
+                "value": "焦面圆形区域半径 1.5×FWHM／入射到器件的功率",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 效率列表；p.5 Fig. 3e 与内插图",
+                "note": "分母由器件面积乘 z=0 面器件外的单位面积入射光强获得。标准的焦斑区域积分，未印探测器采样尺度、各点实际积分半径、偏振或 Fig. 3e 阴影统计定义。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "numerator": "power_inside_focal_disk",
+                "denominator": "incident_through_aperture",
+                "integration_shape": "circle",
+                "aperture_radius_fwhm_multiple": 1.5,
+                "evaluation_plane": "各波长轴向功率强度峰面",
+                "reference_plane": "样片面 z=0",
+                "polarization": null
+              }
+            }
+          },
+          {
+            "id": "wang2024holographic_ril_690",
+            "model": "Wang 2024 · 随机交织实物 · 690 nm",
+            "study_id": "wang2024holographic",
+            "specimen_id": "ril",
+            "module": "",
+            "variant": "随机交织实物 · 690 nm",
+            "evidence_type": "study",
+            "measurement_scope": "同一只 RIL 的滤光轴扫、焦斑和效率。",
+            "values": {
+              "diameter_um": {
+                "value": 32,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 实物制备；p.5 Fig. 3a；p.6 §3",
+                "note": "作者报告的是随机交织全息衍射单镜的直径。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "design_focal_um": {
+                "value": 60,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.3 §2.2，Fig. 2d–f 前设计段",
+                "note": "三套双曲相位编码在同一名义焦距，实际波长组与设计波长分列。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "na": {
+                "value": 0.258,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.3 §2.2；p.4 §2.3；p.6 §3",
+                "note": "本库以直径 32 μm、设计焦距 60 μm 及空气侧理想圆孔估算，保留三位小数。p.7 的 1.35 是写入光刻物镜 NA。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "atlas",
+                "formula": "R / sqrt(R^2 + f^2)",
+                "radius_um": 16,
+                "design_focal_um": 60,
+                "approximate": true,
+                "display": "约 0.258（几何设计，本库计算）"
+              },
+              "wavelength_nm": {
+                "value": 690,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3；p.5 Fig. 3d；p.6 Fig. 4a，690 nm 面板",
+                "note": "作者实测所用滤光条件的中心波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 末段；p.5 Fig. 3d；p.6 Fig. 4a 图注；p.7 §4，690 nm",
+                "note": "作者用 CCD 轴向图像栈确定功率强度峰，实物面为 z=0。实测轴峰在 z≈57 μm 附近，各波长的轴向最佳位置没有印字数值或数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "共同焦区约 57 μm；逐点峰位待核"
+              },
+              "signed_normalized_focal_error_pct": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.6 Fig. 4d，RIL 红色序列 690 nm",
+                "note": "原图提供有符号百分误差曲线，当前原材料未给该点数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "曲线可查"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.6 Fig. 4b,c，690 nm 截线与红空心点",
+                "note": "图中有归一化 x 截线、实测 FWHM 与 Airy 参考，未给该点的数值及宽度拟合协议。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "曲线可查"
+              },
+              "psf_protocol": {
+                "value": "CCD 轴扫，1 μm 步长；样片面 z=0",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.7 §4 光学表征；主文 p.4 §2.3；Figs. 3d、4a–c",
+                "note": "不同波长用滤片取得，焦面取轴向功率强度峰。Fig. 4a–b 有焦面强度图及归一化 x 截线，横向物方采样、偏振和误差条统计未报告。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 1,
+                "reference_plane": "样片面 z=0",
+                "position_definition": "axial_intensity_maximum",
+                "reported_common_focal_region_um": 57,
+                "evaluation_plane": "各谱点焦斑及作者描述的共同焦区",
+                "field_point": "on_axis",
+                "direction": "x",
+                "polarization": null,
+                "lateral_sampling_um": null
+              },
+              "efficiency_lambda_nm": {
+                "value": 690,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 效率列表；p.5 Fig. 3e 与内插图，第 7 个谱点",
+                "note": "对应作者同段列出的测试波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": 48,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 效率列表；p.5 Fig. 3e 与内插图，第 7 个谱点",
+                "note": "光学表征实测 CCD 图中的焦点积分与入射功率之比，作者按正文印字报告。阴影误差定义待核。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "denominator": "incident_through_aperture"
+              },
+              "efficiency_protocol": {
+                "value": "焦面圆形区域半径 1.5×FWHM／入射到器件的功率",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 效率列表；p.5 Fig. 3e 与内插图",
+                "note": "分母由器件面积乘 z=0 面器件外的单位面积入射光强获得。标准的焦斑区域积分，未印探测器采样尺度、各点实际积分半径、偏振或 Fig. 3e 阴影统计定义。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "numerator": "power_inside_focal_disk",
+                "denominator": "incident_through_aperture",
+                "integration_shape": "circle",
+                "aperture_radius_fwhm_multiple": 1.5,
+                "evaluation_plane": "各波长轴向功率强度峰面",
+                "reference_plane": "样片面 z=0",
+                "polarization": null
+              }
+            }
+          },
+          {
+            "id": "wang2024holographic_fresnel_summary",
+            "model": "Wang 2024 · 同口径未校正 Fresnel 对照",
+            "study_id": "wang2024holographic",
+            "specimen_id": "fresnel_control",
+            "module": "",
+            "variant": "同口径未校正 Fresnel 对照",
+            "evidence_type": "study",
+            "measurement_scope": "已制同口径单波长 Fresnel 实物；作者比较七个可见光测点的轴向误差。",
+            "values": {
+              "diameter_um": {
+                "value": 32,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 同口径对照段；p.5 §2.4；p.6 Fig. 4d",
+                "note": "作者明示对照与 32 μm RIL 的口径相同。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.6 Fig. 4d，Fresnel 蓝色序列",
+                "note": "同图的七个波长，本行为汇总。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "470／510／550／590／632／660／690 nm（离散）"
+              },
+              "chromatic": {
+                "value": "单波长设计的 Fresnel 双曲相位对照",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3；p.5 §2.3–2.4；p.6 Fig. 4d；主文指向补件 Fig. S9、S11",
+                "note": "作者测同口径对照的轴向光场及白光成像。具体设计波长、焦距与 NA 待原始补件。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sample_wavelengths_nm": [
+                  470,
+                  510,
+                  550,
+                  590,
+                  632,
+                  660,
+                  690
+                ],
+                "sourceIds": [
+                  "wang_holographic_ustc_2024",
+                  "wang_holographic_si_2024"
+                ]
+              },
+              "design_focal_um": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 §2.3；补件 Fig. S9 入口",
+                "note": "对照镜设计焦距未在已核主文给出。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "待原始数值"
+              },
+              "na": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 §2.3；补件 Fig. S9 入口",
+                "note": "对照仅明示同口径，设计焦距及 NA 待补。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "待原始数值"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3；p.6 Fig. 4d；主文指向 Fig. S9",
+                "note": "逐波长实测轴峰及轴扫原始数据待补。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "待原始数值"
+              },
+              "focus_error_pct": {
+                "value": 15,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.5 §2.3 焦距比较段；p.6 Fig. 4d",
+                "note": "原文同口径未校正单波长 Fresnel 镜的最大百分差。该镜具体参考焦距、逐波长焦位和分母数值未印。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "statistic": "author_reported_focal_error",
+                "calculation_origin": "authors",
+                "sample_wavelengths_nm": [
+                  470,
+                  510,
+                  550,
+                  590,
+                  632,
+                  660,
+                  690
+                ],
+                "reference_wavelength_nm": null,
+                "reference_focal_um": null
+              },
+              "focus_error_protocol": {
+                "value": "作者同页比较中的最大相对焦距误差",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.5 §2.3；p.6 Fig. 4d",
+                "note": "图的蓝色序列有符号；正文只给 15% 汇总值，对照的具体参照值及归一化分母未印。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "reference_wavelength_nm": null,
+                "reference_focal_um": null
+              }
+            },
+            "visible_light_use": true
+          },
+          {
+            "id": "wang2024holographic_ril_imaging",
+            "model": "Wang 2024 · 32 μm RIL · 固定成像系统",
+            "study_id": "wang2024holographic",
+            "specimen_id": "ril_imaging",
+            "module": "",
+            "variant": "32 μm RIL · 固定成像系统",
+            "evidence_type": "study",
+            "measurement_scope": "切换滤片记录三色字样；暖白 LED 下记录 USAF 1951 靶。",
+            "values": {
+              "diameter_um": {
+                "value": 32,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.4 §2.3 实物制备；p.5 Fig. 3a；p.6 §3",
+                "note": "作者报告的是随机交织全息衍射单镜的直径。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.7 Fig. 5b–d；p.5 §2.4",
+                "note": "三滤光图与宽带白光靶图；白光光谱和滤片半宽未报告。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "470／550／660 nm；暖白 LED"
+              },
+              "chromatic": {
+                "value": "物像几何固定，依次更换 470／550／660 nm 滤片",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.5 §2.4；p.7 Fig. 5a,b",
+                "note": "只换滤片或移除滤片，未给各通道靶标横向位移。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sample_wavelengths_nm": [
+                  470,
+                  550,
+                  660
+                ]
+              },
+              "resolved_test_line_width_um": {
+                "value": 0.92,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.5 §2.4 分辨率段；p.7 Fig. 5d(ii) 最右印字",
+                "note": "作者在白光 USAF 1951 靶的横向截线上标出 0.92 μm 并称分辨率；靶组、元素、判据及场点未给出。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "target": "usaf_1951",
+                "target_group": null,
+                "target_element": null,
+                "field_point": null,
+                "contrast_threshold": null,
+                "processing_stage": "captured"
+              },
+              "psf_protocol": {
+                "value": "白光 LED／窄带滤片，目标经 RIL 与显微采集系统成像",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.5 §2.4；p.7 Fig. 5a–d",
+                "note": "5×物镜是成像系统的读取配置；物距及横向色差定标未给出。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              }
+            },
+            "visible_light_use": true
+          },
+          {
+            "id": "wang2024holographic_ril_array",
+            "model": "Wang 2024 · 2×4 随机交织微透镜阵列",
+            "study_id": "wang2024holographic",
+            "specimen_id": "ril_array",
+            "module": "",
+            "variant": "2×4 随机交织微透镜阵列",
+            "evidence_type": "study",
+            "measurement_scope": "独立实物阵列，用于宽带成像演示。",
+            "values": {
+              "material": {
+                "value": "2 × 4 随机交织全息宽带微透镜阵列",
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.6 §2.4 末段；主文指向补件 Fig. S12",
+                "note": "作者报告制作阵列并展示宽带成像，阵列单元的口径、NA、焦位及效率未从已核正式主文取到。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "array_rows": 2,
+                "array_columns": 4,
+                "sourceIds": [
+                  "wang_holographic_ustc_2024",
+                  "wang_holographic_si_2024"
+                ]
+              },
+              "diameter_um": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.6 §2.4 末段；补件 Fig. S12 入口",
+                "note": "本行是阵列，单元直径待核。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "待原始数值"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "wang_holographic_ustc_2024",
+                "location": "主文 p.6 §2.4 末段；补件 Fig. S12 入口",
+                "note": "作者主文未印阵列单元逐波长轴峰。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "待原始数值"
+              }
+            },
+            "visible_light_use": true
+          }
       ],
       "scope": "58项原始研究、293个器件/测量/系统配置、1248条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
