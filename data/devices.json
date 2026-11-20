@@ -2569,6 +2569,60 @@
       "scope": "2026-11-20，cited_by_count 为 294，并索引同一 OSTI PDF。",
       "checked_on": "2026-11-20",
       "publication_source": "zhou_nir_doublet_2018"
+    },
+    {
+      "id": "arbabi_spatial_2016",
+      "title": "Arbabi et al. (2016) · Multiwavelength metasurfaces through spatial multiplexing",
+      "url": "https://doi.org/10.1038/srep32803",
+      "kind": "peer_reviewed_paper",
+      "scope": "Scientific Reports 6, 32803。2016-09-06 正式发表。两只不同结构、同一有限共轭的双波长实验。经典原始研究，2026-11-20 查 Crossref 221 次、OpenAlex 237 次。",
+      "checked_on": "2026-11-20",
+      "doi": "10.1038/srep32803"
+    },
+    {
+      "id": "arbabi_spatial_pmc_2016",
+      "title": "Arbabi et al. · 正式 PDF（PMC 开放存档）",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC5011735.1/PMC5011735.1.pdf#page=6",
+      "kind": "peer_reviewed_paper",
+      "scope": "正式 pp.2–3 设计和实物结构，pp.4–6 测量光路、Fig. 6、Tables 1–2，p.7 Discussion。953337 字节，SHA-256 ff3fddbd471bc44ee68c592ba0e9ffe6ead8043992774e0d5a00fdd282ad99f1。",
+      "checked_on": "2026-11-20",
+      "publication_source": "arbabi_spatial_2016"
+    },
+    {
+      "id": "arbabi_spatial_caltech_2016",
+      "title": "CaltechAUTHORS · Arbabi 2016 正式版档案",
+      "url": "https://authors.library.caltech.edu/records/2n3j9-sm734",
+      "kind": "repository_metadata",
+      "scope": "附件 srep32803.pdf 与 PMC 开放存档字节相同；目录未列独立原始强度或功率文件。",
+      "checked_on": "2026-11-20",
+      "publication_source": "arbabi_spatial_2016"
+    },
+    {
+      "id": "arbabi_spatial_manifest_2016",
+      "title": "PMC Open Access · Arbabi 2016 同版清单",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/?prefix=PMC5011735.1",
+      "kind": "repository_metadata",
+      "scope": "16 个对象为四个主文与元数据文件、六幅主图及六个公式 JPG。未列相机 PSF、MTF 或光功率原始数组。",
+      "checked_on": "2026-11-20",
+      "publication_source": "arbabi_spatial_2016"
+    },
+    {
+      "id": "arbabi_spatial_crossref_2016",
+      "title": "Crossref · Arbabi 2016 正式 DOI 题录和引用",
+      "url": "https://api.crossref.org/works/10.1038/srep32803",
+      "kind": "repository_metadata",
+      "scope": "2026-11-20，is-referenced-by-count 为 221。",
+      "checked_on": "2026-11-20",
+      "publication_source": "arbabi_spatial_2016"
+    },
+    {
+      "id": "arbabi_spatial_openalex_2016",
+      "title": "OpenAlex · Arbabi 2016 引用",
+      "url": "https://api.openalex.org/works/https://doi.org/10.1038/srep32803",
+      "kind": "repository_metadata",
+      "scope": "2026-11-20，cited_by_count 为 237。",
+      "checked_on": "2026-11-20",
+      "publication_source": "arbabi_spatial_2016"
     }
   ],
   "domains": {
@@ -151370,9 +151424,768 @@
               ]
             }
           }
+        },
+        {
+          "id": "arbabi2016spatial_sector_summary",
+          "model": "Arbabi 2016 · 分区式实物汇总",
+          "study_id": "arbabi2016spatial",
+          "specimen_id": "sector",
+          "module": "",
+          "variant": "分区式空间复用 · 近红外双波长",
+          "evidence_type": "study",
+          "measurement_scope": "915／1550 nm 两个实测点，光纤端面有限共轭同目标像面。",
+          "values": {
+            "diameter_um": {
+              "value": 300,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.2 Experimental Results 首段；pp.2–3 Figs. 2–4",
+              "note": "两只不同结构的实物均为 300 μm 口径；FDTD 比较仿真使用全部几何距离缩小 4 倍的透镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "na": {
+              "value": 0.46,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.2 Experimental Results 首段；pp.2–3 Figs. 2–4",
+              "note": "作者报告的两只实物设计 NA。空气中按半径 150 μm 和焦距 286 μm 核算约 0.465。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "height_nm": {
+              "value": 718,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.2 Experimental Results 首段；pp.2–3 Figs. 2–4",
+              "note": "两只实物都以 718 nm 厚的 a-Si 沉积层制备，见 Fig. 2 图注及制备段。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "design_focal_um": {
+              "value": 286,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.2 Experimental Results 首段；pp.2–3 Figs. 2–4；p.5 近轴讨论",
+              "note": "作者报告镜焦距为 286 μm。单模光纤的有限共轭目标像距 400 μm 独立记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "design_image_distance_um": {
+              "value": 400,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.2 Experimental Results 首段；pp.2–3 Figs. 2–4；p.5 近轴讨论",
+              "note": "单模光纤端面距约 500 μm 厚基底的背面 600 μm。400 μm 是镜表面到设计焦点的像距。作者用近轴模型给有效物距 1003 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "object_conjugate": "finite",
+              "reference_plane": "超透镜表面（有限共轭像距 z）"
+            },
+            "material": {
+              "value": "熔石英上的圆柱 a-Si 纳米柱，分区式空间复用",
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.2 Experimental Results 首段；pp.2–3 Figs. 2–4；p.7 Discussion",
+              "note": "八个径向扇区交错布置分别为 915、1550 nm 设计的纳米柱，单色母晶格周期 360、720 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "parent_lattice_pitches_nm": [
+                360,
+                720
+              ]
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Fig. 6a,b、c,d；pp.4–5 实验结果",
+              "note": "两个离散实测谱点 915 和 1550 nm，有限共轭配置固定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "915／1550 nm 两个实测谱点",
+              "sample_wavelengths_nm": [
+                915,
+                1550
+              ]
+            },
+            "psf_protocol": {
+              "value": "有限共轭，单模光纤端面距衬底背面 600 μm。目标像距 400 μm。",
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.2 Experimental Results 首段；pp.2–3 Figs. 2–4；pp.4–5 Fig. 5a,c 和近轴讨论",
+              "note": "作者以超透镜表面作像距参照，熔石英衬底厚度约 500 μm；由 286 μm 镜焦距和 400 μm 像距推得有效物距 1003 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "object_conjugate": "finite",
+              "reference_plane": "超透镜表面（有限共轭像距 z）",
+              "fiber_to_substrate_backside_um": 600,
+              "approximate_substrate_thickness_um": 500,
+              "author_effective_object_distance_um": 1003
+            },
+            "chromatic": {
+              "value": "两离散波长的设计级次近共同像面",
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Fig. 6a,b、c,d；pp.4–5 实验结果",
+              "note": "两色各有一处明显设计级次亮焦，在设计像距附近；偏轴或横向色差未量化。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Fig. 6a,b、c,d；pp.4–5 实验结果",
+              "note": "正文未报告两色设计级次的独立轴峰数值或其差值。参考为 400 μm 目标像面处的设计级次。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "两色设计级次近共面，残差未量化",
+              "reference_plane_um": 400,
+              "reference_wavelength_nm": 915,
+              "sample_wavelengths_nm": [
+                915,
+                1550
+              ]
+            },
+            "mtf_curve": {
+              "value": "Fig. 6 为实测焦场图",
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Fig. 6a,b、c,d；pp.4–5 实验结果；Caltech 和 PMC 存档清单",
+              "note": "已查原文及存档未定位 MTF、Strehl、原始 PSF、轴向采样步长和标定的相机物方采样。图中的 20 μm 与 4 μm 是标尺。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "arbabi_spatial_pmc_2016",
+                "arbabi_spatial_caltech_2016",
+                "arbabi_spatial_manifest_2016"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "independently_recomputed_mtf": null,
+              "data_availability": {
+                "status": "no_mtf_in_checked_material"
+              }
+            }
+          }
+        },
+        {
+          "id": "arbabi2016spatial_sector_915",
+          "model": "Arbabi 2016 · 分区式实物 · 915 nm",
+          "study_id": "arbabi2016spatial",
+          "specimen_id": "sector",
+          "module": "",
+          "variant": "分区式空间复用 · 近红外双波长",
+          "evidence_type": "study",
+          "measurement_scope": "分区式超透镜，915 nm 离散入射；有限共轭焦场及效率。",
+          "values": {
+            "wavelength_nm": {
+              "value": 915,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Fig. 6a,b；pp.4–5 实验结果",
+              "note": "报告的实测离散谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "measured_image_distance_um": {
+              "value": null,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Fig. 6a,b；pp.4–5 实验结果",
+              "note": "设计级次在 400 μm 目标像面附近可见，作者未单报该级次实测轴向峰值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "设计级次峰位仅见焦场图",
+              "object_conjugate": "finite",
+              "reference_plane": "超透镜表面（有限共轭像距 z）"
+            },
+            "fwhm_um": {
+              "value": 1.85,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Table 2，Multi-sector 行，915 nm → Measured 列",
+              "note": "作者表列实测焦斑半高全宽，未交代拟合方向、± 的统计类型或样本数。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "display": "1.85 ± 0.05",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.05,
+                "sample_size": null
+              }
+            },
+            "diffraction_limited_reference_fwhm_um": {
+              "value": 1.6,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Table 2，Multi-sector 行，915 nm → Limit 列；pp.4–5 理想相位掩模段",
+              "note": "作者在相同种类的光纤照明下用理想相位掩模模拟的衍射极限比较值。",
+              "basis": "model",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "reference_model": "perfect_phase_mask_same_fiber_illumination"
+            },
+            "psf_protocol": {
+              "value": "915 nm；单模光纤有限共轭；实测焦面与 y–z 轴向图。",
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Fig. 6a,b；pp.4–5 实验结果",
+              "note": "约 100× 自建显微镜在焦面及邻近平面采集光强。原文未给物方像素尺度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "object_conjugate": "finite",
+              "reference_plane": "超透镜表面（有限共轭像距 z）",
+              "scan_planes": [
+                "xy",
+                "yz"
+              ],
+              "transverse_sample_pitch_um": null,
+              "axial_step_um": null,
+              "raw_psf": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 915,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Table 1，Multi-sector 行，915 nm → Measured 列；p.4 末段，p.5 Fig. 5",
+              "note": "功率比所对应的实测波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "efficiency_protocol": {
+              "value": "20 μm 直径针孔 内的聚焦功率／光纤输出功率。",
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Table 1，Multi-sector 行，915 nm → Measured 列；p.4 末段，p.5 Fig. 5",
+              "note": "Fig. 5b 在焦点直接放置针孔，功率分母为光纤输出总功率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "numerator": "focus_aperture_power",
+              "denominator": "single_mode_fiber_output_power",
+              "aperture_plane": "direct_focal_plane_pinhole",
+              "focal_aperture_diameter_um": 20
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 37,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Table 1，Multi-sector 行，915 nm → Measured 列；p.4 末段，p.5 Fig. 5",
+              "note": "作者对同一波长测得的功率比。± 类型及样本数未注明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "display": "37 ± 1",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 1,
+                "sample_size": null
+              },
+              "denominator": "single_mode_fiber_output_power",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "arbabi2016spatial_sector_1550",
+          "model": "Arbabi 2016 · 分区式实物 · 1550 nm",
+          "study_id": "arbabi2016spatial",
+          "specimen_id": "sector",
+          "module": "",
+          "variant": "分区式空间复用 · 近红外双波长",
+          "evidence_type": "study",
+          "measurement_scope": "分区式超透镜，1550 nm 离散入射；有限共轭焦场及效率。",
+          "values": {
+            "wavelength_nm": {
+              "value": 1550,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Fig. 6c,d；pp.4–5 实验结果",
+              "note": "报告的实测离散谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "measured_image_distance_um": {
+              "value": null,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Fig. 6c,d；pp.4–5 实验结果",
+              "note": "设计级次在 400 μm 目标像面附近可见，作者未单报该级次实测轴向峰值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "设计级次峰位仅见焦场图",
+              "object_conjugate": "finite",
+              "reference_plane": "超透镜表面（有限共轭像距 z）"
+            },
+            "fwhm_um": {
+              "value": 3.3,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Table 2，Multi-sector 行，1550 nm → Measured 列",
+              "note": "作者表列实测焦斑半高全宽，未交代拟合方向、± 的统计类型或样本数。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "display": "3.3 ± 0.2",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.2,
+                "sample_size": null
+              }
+            },
+            "diffraction_limited_reference_fwhm_um": {
+              "value": 2.75,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Table 2，Multi-sector 行，1550 nm → Limit 列；pp.4–5 理想相位掩模段",
+              "note": "作者在相同种类的光纤照明下用理想相位掩模模拟的衍射极限比较值。",
+              "basis": "model",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "reference_model": "perfect_phase_mask_same_fiber_illumination"
+            },
+            "psf_protocol": {
+              "value": "1550 nm；单模光纤有限共轭；实测焦面与 y–z 轴向图。",
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Fig. 6c,d；pp.4–5 实验结果",
+              "note": "约 100× 自建显微镜采集。1550 nm CCD 响应不均；作者仅明确轴向图滤除了高于自由空间传播常数的空间频率。原文未给物方像素尺度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "object_conjugate": "finite",
+              "reference_plane": "超透镜表面（有限共轭像距 z）",
+              "scan_planes": [
+                "xy",
+                "yz"
+              ],
+              "transverse_sample_pitch_um": null,
+              "axial_step_um": null,
+              "raw_psf": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 1550,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Table 1，Multi-sector 行，1550 nm → Measured 列；p.4 末段，p.5 Fig. 5",
+              "note": "功率比所对应的实测波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "efficiency_protocol": {
+              "value": "2 mm 虹膜（折合原焦面约 20 μm） 内的聚焦功率／光纤输出功率。",
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Table 1，Multi-sector 行，1550 nm → Measured 列；p.4 末段，p.5 Fig. 5",
+              "note": "Fig. 5c 经显微光路放大后在共轭面放虹膜，物方等效直径约 20 μm。功率分母为光纤输出总功率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "numerator": "focus_aperture_power",
+              "denominator": "single_mode_fiber_output_power",
+              "aperture_plane": "relayed_conjugate_iris",
+              "iris_diameter_um": 2000,
+              "approximate_focal_aperture_diameter_um": 20
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 30,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Table 1，Multi-sector 行，1550 nm → Measured 列；p.4 末段，p.5 Fig. 5",
+              "note": "作者对同一波长测得的功率比。± 类型及样本数未注明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "display": "30 ± 1",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 1,
+                "sample_size": null
+              },
+              "denominator": "single_mode_fiber_output_power",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "arbabi2016spatial_interleaved_summary",
+          "model": "Arbabi 2016 · 交织式实物汇总",
+          "study_id": "arbabi2016spatial",
+          "specimen_id": "interleaved",
+          "module": "",
+          "variant": "交织式空间复用 · 近红外双波长",
+          "evidence_type": "study",
+          "measurement_scope": "915／1550 nm 两个实测点，光纤端面有限共轭同目标像面。",
+          "values": {
+            "diameter_um": {
+              "value": 300,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.2 Experimental Results 首段；pp.2–3 Figs. 2–4",
+              "note": "两只不同结构的实物均为 300 μm 口径；FDTD 比较仿真使用全部几何距离缩小 4 倍的透镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "na": {
+              "value": 0.46,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.2 Experimental Results 首段；pp.2–3 Figs. 2–4",
+              "note": "作者报告的两只实物设计 NA。空气中按半径 150 μm 和焦距 286 μm 核算约 0.465。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "height_nm": {
+              "value": 718,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.2 Experimental Results 首段；pp.2–3 Figs. 2–4",
+              "note": "两只实物都以 718 nm 厚的 a-Si 沉积层制备，见 Fig. 2 图注及制备段。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "design_focal_um": {
+              "value": 286,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.2 Experimental Results 首段；pp.2–3 Figs. 2–4；p.5 近轴讨论",
+              "note": "作者报告镜焦距为 286 μm。单模光纤的有限共轭目标像距 400 μm 独立记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "design_image_distance_um": {
+              "value": 400,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.2 Experimental Results 首段；pp.2–3 Figs. 2–4；p.5 近轴讨论",
+              "note": "单模光纤端面距约 500 μm 厚基底的背面 600 μm。400 μm 是镜表面到设计焦点的像距。作者用近轴模型给有效物距 1003 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "object_conjugate": "finite",
+              "reference_plane": "超透镜表面（有限共轭像距 z）"
+            },
+            "material": {
+              "value": "熔石英上的圆柱 a-Si 纳米柱，交织式空间复用",
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.2 Experimental Results 首段；pp.2–3 Figs. 2–4；p.7 Discussion",
+              "note": "将 915 nm 母晶格每四个位置之一换为 1550 nm 柱。两母晶格周期 360、720 nm，交织结构有效晶格常数 720 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "parent_lattice_pitches_nm": [
+                360,
+                720
+              ]
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Fig. 6i,j、k,l；pp.4–5 实验结果",
+              "note": "两个离散实测谱点 915 和 1550 nm，有限共轭配置固定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "915／1550 nm 两个实测谱点",
+              "sample_wavelengths_nm": [
+                915,
+                1550
+              ]
+            },
+            "psf_protocol": {
+              "value": "有限共轭，单模光纤端面距衬底背面 600 μm。目标像距 400 μm。",
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.2 Experimental Results 首段；pp.2–3 Figs. 2–4；pp.4–5 Fig. 5a,c 和近轴讨论",
+              "note": "作者以超透镜表面作像距参照，熔石英衬底厚度约 500 μm；由 286 μm 镜焦距和 400 μm 像距推得有效物距 1003 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "object_conjugate": "finite",
+              "reference_plane": "超透镜表面（有限共轭像距 z）",
+              "fiber_to_substrate_backside_um": 600,
+              "approximate_substrate_thickness_um": 500,
+              "author_effective_object_distance_um": 1003
+            },
+            "chromatic": {
+              "value": "两离散波长的设计级次近共同像面",
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Fig. 6i,j、k,l；pp.4–5 实验结果",
+              "note": "两色在目标像距附近均观察到设计级次焦斑。915 nm 另有约 220 μm 的高阶焦，峰强约为设计级次的 1.8 倍，功率为 1.2 倍。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Fig. 6i,j、k,l；pp.4–5 实验结果",
+              "note": "正文未报告两色设计级次的独立轴峰数值或其差值。参考为 400 μm 目标像面处的设计级次。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "两色设计级次近共面，残差未量化",
+              "reference_plane_um": 400,
+              "reference_wavelength_nm": 915,
+              "sample_wavelengths_nm": [
+                915,
+                1550
+              ]
+            },
+            "mtf_curve": {
+              "value": "Fig. 6 为实测焦场图",
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Fig. 6i,j、k,l；pp.4–5 实验结果；Caltech 和 PMC 存档清单",
+              "note": "已查原文及存档未定位 MTF、Strehl、原始 PSF、轴向采样步长和标定的相机物方采样。图中的 20 μm 与 4 μm 是标尺。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "arbabi_spatial_pmc_2016",
+                "arbabi_spatial_caltech_2016",
+                "arbabi_spatial_manifest_2016"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "independently_recomputed_mtf": null,
+              "data_availability": {
+                "status": "no_mtf_in_checked_material"
+              }
+            }
+          }
+        },
+        {
+          "id": "arbabi2016spatial_interleaved_915",
+          "model": "Arbabi 2016 · 交织式实物 · 915 nm",
+          "study_id": "arbabi2016spatial",
+          "specimen_id": "interleaved",
+          "module": "",
+          "variant": "交织式空间复用 · 近红外双波长",
+          "evidence_type": "study",
+          "measurement_scope": "交织式超透镜，915 nm 离散入射；有限共轭焦场及效率。",
+          "values": {
+            "wavelength_nm": {
+              "value": 915,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Fig. 6i,j；pp.4–5 实验结果",
+              "note": "报告的实测离散谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "measured_image_distance_um": {
+              "value": null,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Fig. 6i,j；pp.4–5 实验结果",
+              "note": "设计级次在 400 μm 目标像面附近可见，作者未单报该级次实测轴向峰值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "设计级次峰位仅见焦场图",
+              "object_conjugate": "finite",
+              "reference_plane": "超透镜表面（有限共轭像距 z）"
+            },
+            "fwhm_um": {
+              "value": 1.85,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Table 2，Interleaved 行，915 nm → Measured 列",
+              "note": "作者表列实测焦斑半高全宽，未交代拟合方向、± 的统计类型或样本数。按该样片该波长的表项记录，作者未为两个级次各给一项 FWHM；Fig. 6j 为论文给出的焦面图。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "display": "1.85 ± 0.05",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.05,
+                "sample_size": null
+              }
+            },
+            "diffraction_limited_reference_fwhm_um": {
+              "value": 1.6,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Table 2，Interleaved 行，915 nm → Limit 列；pp.4–5 理想相位掩模段",
+              "note": "作者在相同种类的光纤照明下用理想相位掩模模拟的衍射极限比较值。",
+              "basis": "model",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "reference_model": "perfect_phase_mask_same_fiber_illumination"
+            },
+            "psf_protocol": {
+              "value": "915 nm；单模光纤有限共轭；实测焦面与 y–z 轴向图。",
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Fig. 6i,j；pp.4–5 实验结果",
+              "note": "约 100× 自建显微镜在焦面及邻近平面采集光强。原文未给物方像素尺度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "object_conjugate": "finite",
+              "reference_plane": "超透镜表面（有限共轭像距 z）",
+              "scan_planes": [
+                "xy",
+                "yz"
+              ],
+              "transverse_sample_pitch_um": null,
+              "axial_step_um": null,
+              "raw_psf": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 915,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Table 1，Interleaved 行，915 nm → Measured 列；p.4 末段，p.5 Fig. 5",
+              "note": "功率比所对应的实测波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "efficiency_protocol": {
+              "value": "20 μm 直径针孔 内的聚焦功率／光纤输出功率。",
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Table 1，Interleaved 行，915 nm → Measured 列；p.4 末段，p.5 Fig. 5",
+              "note": "Fig. 5b 在焦点直接放置针孔，功率分母为光纤输出总功率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "numerator": "focus_aperture_power",
+              "denominator": "single_mode_fiber_output_power",
+              "aperture_plane": "direct_focal_plane_pinhole",
+              "focal_aperture_diameter_um": 20
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 10,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Table 1，Interleaved 行，915 nm → Measured 列；p.4 末段，p.5 Fig. 5",
+              "note": "作者对同一波长测得的功率比。± 类型及样本数未注明。p.7 Discussion 明确把 10% 作为向约 220 μm 高阶焦泄漏后偏低的聚焦效率；高阶焦的功率比另列。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "display": "10 ± 0.5",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.5,
+                "sample_size": null
+              },
+              "denominator": "single_mode_fiber_output_power",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "arbabi2016spatial_interleaved_1550",
+          "model": "Arbabi 2016 · 交织式实物 · 1550 nm",
+          "study_id": "arbabi2016spatial",
+          "specimen_id": "interleaved",
+          "module": "",
+          "variant": "交织式空间复用 · 近红外双波长",
+          "evidence_type": "study",
+          "measurement_scope": "交织式超透镜，1550 nm 离散入射；有限共轭焦场及效率。",
+          "values": {
+            "wavelength_nm": {
+              "value": 1550,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Fig. 6k,l；pp.4–5 实验结果",
+              "note": "报告的实测离散谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "measured_image_distance_um": {
+              "value": null,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Fig. 6k,l；pp.4–5 实验结果",
+              "note": "设计级次在 400 μm 目标像面附近可见，作者未单报该级次实测轴向峰值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "设计级次峰位仅见焦场图",
+              "object_conjugate": "finite",
+              "reference_plane": "超透镜表面（有限共轭像距 z）"
+            },
+            "fwhm_um": {
+              "value": 3.3,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Table 2，Interleaved 行，1550 nm → Measured 列",
+              "note": "作者表列实测焦斑半高全宽，未交代拟合方向、± 的统计类型或样本数。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "display": "3.3 ± 0.2",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 0.2,
+                "sample_size": null
+              }
+            },
+            "diffraction_limited_reference_fwhm_um": {
+              "value": 2.75,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Table 2，Interleaved 行，1550 nm → Limit 列；pp.4–5 理想相位掩模段",
+              "note": "作者在相同种类的光纤照明下用理想相位掩模模拟的衍射极限比较值。",
+              "basis": "model",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "reference_model": "perfect_phase_mask_same_fiber_illumination"
+            },
+            "psf_protocol": {
+              "value": "1550 nm；单模光纤有限共轭；实测焦面与 y–z 轴向图。",
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Fig. 6k,l；pp.4–5 实验结果",
+              "note": "约 100× 自建显微镜采集。1550 nm CCD 响应不均；作者仅明确轴向图滤除了高于自由空间传播常数的空间频率。原文未给物方像素尺度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "object_conjugate": "finite",
+              "reference_plane": "超透镜表面（有限共轭像距 z）",
+              "scan_planes": [
+                "xy",
+                "yz"
+              ],
+              "transverse_sample_pitch_um": null,
+              "axial_step_um": null,
+              "raw_psf": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 1550,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Table 1，Interleaved 行，1550 nm → Measured 列；p.4 末段，p.5 Fig. 5",
+              "note": "功率比所对应的实测波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "efficiency_protocol": {
+              "value": "2 mm 虹膜（折合原焦面约 20 μm） 内的聚焦功率／光纤输出功率。",
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Table 1，Interleaved 行，1550 nm → Measured 列；p.4 末段，p.5 Fig. 5",
+              "note": "Fig. 5c 经显微光路放大后在共轭面放虹膜，物方等效直径约 20 μm。功率分母为光纤输出总功率。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "numerator": "focus_aperture_power",
+              "denominator": "single_mode_fiber_output_power",
+              "aperture_plane": "relayed_conjugate_iris",
+              "iris_diameter_um": 2000,
+              "approximate_focal_aperture_diameter_um": 20
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 58,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.6 Table 1，Interleaved 行，1550 nm → Measured 列；p.4 末段，p.5 Fig. 5",
+              "note": "作者对同一波长测得的功率比。± 类型及样本数未注明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "display": "58 ± 1",
+              "reported_error": {
+                "type": "not_specified",
+                "value": 1,
+                "sample_size": null
+              },
+              "denominator": "single_mode_fiber_output_power",
+              "calculation_origin": "authors"
+            }
+          }
+        },
+        {
+          "id": "arbabi2016spatial_interleaved_915_higher_order",
+          "model": "Arbabi 2016 · 交织式实物 · 915 nm 高阶焦",
+          "study_id": "arbabi2016spatial",
+          "specimen_id": "interleaved",
+          "module": "",
+          "variant": "交织式空间复用 · 915 nm 高阶焦",
+          "evidence_type": "study",
+          "measurement_scope": "交织式同一实物的独立轴向高阶，不属于计算两色设计级次残差的焦点。",
+          "values": {
+            "wavelength_nm": {
+              "value": 915,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.5 Fig. 6i–l 测量讨论；p.6 Fig. 6i；p.7 Discussion 第一段",
+              "note": "同一交织实物的 915 nm 实测。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "measured_image_distance_um": {
+              "value": 220,
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.5 Fig. 6i–l 测量讨论；p.6 Fig. 6i；p.7 Discussion 第一段",
+              "note": "作者直接报告 z≈220 μm 的高阶焦位置，镜表面为 z 参考。对应设计级次目标像距 400 μm。此处是有限共轭像距。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "approximate": true,
+              "display": "约220（高阶焦）",
+              "object_conjugate": "finite",
+              "reference_plane": "超透镜表面（有限共轭像距 z）",
+              "focus_order": "higher_order",
+              "target_design_image_distance_um": 400
+            },
+            "psf_protocol": {
+              "value": "Fig. 6i 的 915 nm y–z 强度分布，标出高阶焦与设计级次。",
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.5 Fig. 6i–l 测量讨论；p.6 Fig. 6i；p.7 Discussion 第一段",
+              "note": "作者直接给出高阶焦相对同一波长设计焦的强度和功率倍数。未给高阶焦的独立 FWHM、功率光阑或原始像素。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "object_conjugate": "finite",
+              "reference_plane": "超透镜表面（有限共轭像距 z）",
+              "focus_order": "higher_order",
+              "raw_psf": null
+            },
+            "chromatic": {
+              "value": "915 nm 高阶焦峰强约 1.8×，功率 1.2×（相对同波长设计级次）",
+              "source": "arbabi_spatial_pmc_2016",
+              "location": "正式 PDF p.5 Fig. 6i–l 测量讨论；p.6 Fig. 6i；p.7 Discussion 第一段",
+              "note": "作者把强高阶焦与两组纳米柱耦合及加工偏差联系。分母为同波长设计级次的峰强或聚焦功率。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "peak_intensity_ratio_to_design_order": 1.8,
+              "power_ratio_to_design_order": 1.2
+            }
+          }
         }
       ],
-      "scope": "57项原始研究、291个器件/测量/系统配置、1239条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
+      "scope": "58项原始研究、293个器件/测量/系统配置、1246条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
