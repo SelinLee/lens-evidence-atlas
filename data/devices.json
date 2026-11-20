@@ -2470,6 +2470,60 @@
       "scope": "正式 DOI 精确 relatedIdentifier 检索 0 项。",
       "checked_on": "2026-11-20",
       "publication_source": "ji_sted_2025"
+    },
+    {
+      "id": "barulin_fcs_2024",
+      "title": "Barulin et al. · Dual-wavelength metalens enables Epi-fluorescence detection from single molecules",
+      "url": "https://doi.org/10.1038/s41467-023-44407-4",
+      "kind": "peer_reviewed_paper",
+      "scope": "Nature Communications 15(1), 26，正式发表 2024-01-02。2025 年 3 月中科院综合性期刊大类一区。正文描述两色相位匹配，Fig. 3 实测两谱点焦场。",
+      "checked_on": "2026-11-20",
+      "doi": "10.1038/s41467-023-44407-4"
+    },
+    {
+      "id": "barulin_fcs_vor_2024",
+      "title": "Barulin et al. · PMC 托管 Nature Communications 正式 PDF",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC10761847.1/PMC10761847.1.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "正式 pp.2–5 设计、焦场及效率，pp.7–9 方法与数据声明。公开文件 2358845 字节，SHA-256 6487fdb0dfafbf585dc9139960fba67abd03b621d09bc0f3efd30b2bdca6a59a。",
+      "checked_on": "2026-11-20",
+      "publication_source": "barulin_fcs_2024"
+    },
+    {
+      "id": "barulin_fcs_si_2024",
+      "title": "Barulin et al. · 41467_2023_44407_MOESM1_ESM.pdf",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC10761847.1/41467_2023_44407_MOESM1_ESM.pdf",
+      "kind": "supplement",
+      "scope": "核 Fig. S8 裸镜测量链、Fig. S9 相位差、Fig. S11 理想相位模型及 p.14 Table S1 效率行。5921944 字节，SHA-256 76d480a8fa8fe7ff8b784938396bda1aba1a46111631635a9e41751ee1c08b17。",
+      "checked_on": "2026-11-20",
+      "publication_source": "barulin_fcs_2024"
+    },
+    {
+      "id": "barulin_fcs_peer_review_2024",
+      "title": "Barulin et al. · 公开同行评议与作者答复",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC10761847.1/41467_2023_44407_MOESM2_ESM.pdf",
+      "kind": "supplement",
+      "scope": "核 pp.10–13 几何 NA 及收集波段残余色差，p.22 效率，pp.23–25、30–31 试片与尺寸单位冲突。7810828 字节，SHA-256 c46b58d6a15a0316a0e270a760020cc05fb64746896e175c6206efc3018c216a。",
+      "checked_on": "2026-11-20",
+      "publication_source": "barulin_fcs_2024"
+    },
+    {
+      "id": "barulin_fcs_pmc_manifest_2024",
+      "title": "PMC Open Access · Barulin 2024 同版存档清单",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/?prefix=PMC10761847.1",
+      "kind": "repository_metadata",
+      "scope": "12 对象为四个主文与元数据文件、六幅图版、补件 PDF 和评议 PDF。未列相机 PSF、轴向扫描或光功率原始数组。",
+      "checked_on": "2026-11-20",
+      "publication_source": "barulin_fcs_2024"
+    },
+    {
+      "id": "barulin_fcs_datacite_2024",
+      "title": "DataCite · Barulin 2024 原作 DOI 关联检索",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1038%2Fs41467-023-44407-4%22",
+      "kind": "repository_metadata",
+      "scope": "正式 DOI 精确 relatedIdentifier 返回 0 项。",
+      "checked_on": "2026-11-20",
+      "publication_source": "barulin_fcs_2024"
     }
   ],
   "domains": {
@@ -150439,9 +150493,509 @@
               "sample_kind": "filament"
             }
           }
+        },
+        {
+          "id": "barulin2024fcs_lens_summary",
+          "model": "Barulin 2024 · 双波长实物汇总",
+          "study_id": "barulin2024fcs",
+          "specimen_id": "lens",
+          "module": "",
+          "variant": "单层双波长消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "一只圆形 aSi:H 超透镜在 635 与 670 nm 上进行焦斑和轴向测量。",
+          "values": {
+            "diameter_um": {
+              "value": 500,
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.2 Metalens design、p.4 Fig. 2a–c；评议 PDF pp.10–11 作者答复",
+              "note": "正文圆形 aSi:H 超透镜的口径。评议中其他拼接试片有尺寸单位冲突，独立保留在核验记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "barulin_fcs_vor_2024",
+                "barulin_fcs_peer_review_2024"
+              ]
+            },
+            "na": {
+              "value": 0.6,
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.2 Metalens design、p.4 Fig. 2a–c；评议 PDF pp.10–11 作者答复",
+              "note": "作者以物理口径与焦距确定几何 NA。用半径 250 μm、设计 f 330 μm 作空气几何核对约 0.604；测量光路接收物镜 NA 0.8。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "barulin_fcs_vor_2024",
+                "barulin_fcs_peer_review_2024"
+              ]
+            },
+            "design_focal_um": {
+              "value": 330,
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.2 Metalens design、p.4 Fig. 2a–c；评议 PDF pp.10–11 作者答复",
+              "note": "两套目标相位均采用 330 μm 设计焦距。正文另从两波长焦场定位到约 330 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "height_nm": {
+              "value": 500,
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.2 Metalens design、pp.6–7 Methods",
+              "note": "500 nm 为参与相位库设计的柱高。Methods 另列 600 nm 起始 aSi:H 沉积膜厚，未明确给刻蚀后柱高原数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "500（设计）",
+              "initial_film_thickness_nm": 600,
+              "measured_final_height_nm": null
+            },
+            "material": {
+              "value": "玻璃基底上的矩形 aSi:H 纳米柱",
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.2 Metalens design、p.4 Fig. 2b,c",
+              "note": "两色目标相位通过同偏振传播相位匹配实现；周期 300 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "lattice_pitch_nm": 300
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.3 Evaluation of focusing performance；p.5 Fig. 3d；p.7 Methods",
+              "note": "两离散实测波长为 635 nm 和 670 nm。显微系统探测带宽另列安装光路。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "635／670 nm 两个实测谱点",
+              "sample_wavelengths_nm": [
+                635,
+                670
+              ]
+            },
+            "chromatic": {
+              "value": "635／670 nm 焦点近共焦；两条水平强度截线与轴扫已测",
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.3 Evaluation of focusing performance；p.5 Fig. 3d；p.7 Methods",
+              "note": "主文在两色实物轴扫后给出焦点距离约 330 μm，报告接近匹配。缺各色峰位的独立原数与误差。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.3 Evaluation of focusing performance；p.5 Fig. 3d；p.7 Methods",
+              "note": "两色以 1 μm 步长扫描，作者汇报共有的约值，未直接报两峰之差或配准误差。收集谱带内部残余色差的作者讨论见审稿答复 pp.12–13。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "sample_wavelengths_nm": [
+                635,
+                670
+              ],
+              "reference_wavelength_nm": 635,
+              "display": "两色近共焦；残差未量化",
+              "sourceIds": [
+                "barulin_fcs_vor_2024",
+                "barulin_fcs_peer_review_2024"
+              ]
+            },
+            "mtf_curve": {
+              "value": "Fig. 3 实测焦场；MTF、Strehl、原始数组待核",
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.5 Fig. 3、p.7 Methods、p.9 Data availability；SI p.9 Fig. S8",
+              "note": "PMC 同版文件无标定强度数组。DataCite 精确关联 0 项；数据可向通讯作者申请。给出轴向步长，未给相机物方横向采样标定。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "barulin_fcs_vor_2024",
+                "barulin_fcs_si_2024",
+                "barulin_fcs_pmc_manifest_2024",
+                "barulin_fcs_datacite_2024"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "independently_recomputed_mtf": null,
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "statement": "raw_data_from_corresponding_authors_on_request"
+              }
+            }
+          }
+        },
+        {
+          "id": "barulin2024fcs_lens_635",
+          "model": "Barulin 2024 · 635 nm · 裸镜焦场",
+          "study_id": "barulin2024fcs",
+          "specimen_id": "lens",
+          "module": "",
+          "variant": "单层双波长消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一只 500 μm 实物的 635 nm 透射焦斑、轴扫和效率报告。",
+          "values": {
+            "diameter_um": {
+              "value": 500,
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.2 Metalens design、p.4 Fig. 2a–c；评议 PDF pp.10–11 作者答复",
+              "note": "正文圆形 aSi:H 超透镜的口径。评议中其他拼接试片有尺寸单位冲突，独立保留在核验记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "barulin_fcs_vor_2024",
+                "barulin_fcs_peer_review_2024"
+              ]
+            },
+            "na": {
+              "value": 0.6,
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.2 Metalens design、p.4 Fig. 2a–c；评议 PDF pp.10–11 作者答复",
+              "note": "作者以物理口径与焦距确定几何 NA。用半径 250 μm、设计 f 330 μm 作空气几何核对约 0.604；测量光路接收物镜 NA 0.8。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "barulin_fcs_vor_2024",
+                "barulin_fcs_peer_review_2024"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 635,
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.3 Evaluation of focusing performance；p.5 Fig. 3a,c,d",
+              "note": "635 nm 激光的横截面和轴向强度实测。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "measured_focal_um": {
+              "value": 330,
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.3 Evaluation of focusing performance；p.5 Fig. 3d；p.7 Methods",
+              "note": "正文用约 330 μm 描述两个波长的实测焦位。保留共有的报告精度，逐色精确轴峰、坐标零点标定与误差未给。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "approximate": true,
+              "display": "约330",
+              "reference_plane": "作者焦场的镜后距离",
+              "position_definition": "author_reported_approximate_focus",
+              "sample_wavelengths_nm": [
+                635,
+                670
+              ]
+            },
+            "fwhm_x_um": {
+              "value": 0.77,
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.3 Evaluation of focusing performance；p.5 Fig. 3a,c,d",
+              "note": "出版正文直接给 0.77 μm。Fig. 3c 为焦面中心的水平截线。作者相对于 Fig. S11 理想相位模型报告该谱点宽度放大 1.35 倍。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "direction": "x",
+              "sourceIds": [
+                "barulin_fcs_vor_2024",
+                "barulin_fcs_si_2024"
+              ],
+              "width_ratio_to_author_ideal": 1.35
+            },
+            "psf_protocol": {
+              "value": "635 nm；电动台以 1 μm 步长轴扫，图示 x–y 和 x–z 强度及水平 x 截线。",
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.3 Evaluation of focusing performance；p.5 Fig. 3a,c,d；正式 PDF p.7 Methods；SI p.9 Fig. S8",
+              "note": "归一化强度色标 0–1；Fig. 3d 横轴为镜后 z，纵轴 x，单位均 μm。100×、NA 0.8 接收物镜经筒镜耦合 sCMOS。实验入射偏振和横向物方像素标定未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "barulin_fcs_vor_2024",
+                "barulin_fcs_si_2024"
+              ],
+              "direction": "x",
+              "axial_step_um": 1,
+              "transverse_sample_pitch_um": null,
+              "reference_plane_calibration": null,
+              "collection_objective_na": 0.8,
+              "collection_objective_magnification": 100,
+              "scan_planes": [
+                "xy",
+                "xz"
+              ],
+              "raw_psf": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 635,
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.3 Evaluation of focusing performance 右栏；SI p.14 Table S1 本作行",
+              "note": "作者将该入射波长与本器件聚焦效率配对。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "barulin_fcs_vor_2024",
+                "barulin_fcs_si_2024"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "焦斑捕获光量／进入超透镜的入射光量；积分区域与功率标定未给。",
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.3 Evaluation of focusing performance 右栏；SI p.14 Table S1 本作行",
+              "note": "原文用 light intensity captured at the focal spot 和 incident light entering the metalens 表述。80 μm 针孔属于荧光系统，测法未指认为此处效率的积分光阑。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "numerator": "author_reported_captured_focal_spot_light",
+              "denominator": "incoming_light_into_metalens",
+              "focal_integration_radius_um": null,
+              "incident_power_calibration": null,
+              "sourceIds": [
+                "barulin_fcs_vor_2024",
+                "barulin_fcs_si_2024"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.3 Evaluation of focusing performance 右栏；SI p.14 Table S1 本作行；评议 PDF p.22 Table S1 本作行",
+              "note": "同一只 500 μm、NA 0.6 实物，635 nm 效率正文为 14.2%，补表和评议文件为 14.1%。未见更正或不同测试定义解释两值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "14.2%（正文）／14.1%（补表、作者答复）",
+              "sourceIds": [
+                "barulin_fcs_vor_2024",
+                "barulin_fcs_si_2024",
+                "barulin_fcs_peer_review_2024"
+              ],
+              "alternative_reports": [
+                {
+                  "value": 14.2,
+                  "source": "barulin_fcs_vor_2024",
+                  "location": "正式 PDF p.3 右栏",
+                  "basis": "derived_from_measurement",
+                  "note": "末段直接报告 635 nm 的 14.2%。"
+                },
+                {
+                  "value": 14.1,
+                  "source": "barulin_fcs_si_2024",
+                  "location": "SI p.14 Table S1，This work 行，Focusing efficiency (%) 列",
+                  "basis": "derived_from_measurement",
+                  "note": "500 μm、NA 0.6 本作列给 635 nm 的 14.1%。"
+                },
+                {
+                  "value": 14.1,
+                  "source": "barulin_fcs_peer_review_2024",
+                  "location": "评议 PDF p.22 Table S1 本作行",
+                  "basis": "derived_from_measurement",
+                  "note": "作者答复重列相同补表值 14.1%。"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "barulin2024fcs_lens_670",
+          "model": "Barulin 2024 · 670 nm · 裸镜焦场",
+          "study_id": "barulin2024fcs",
+          "specimen_id": "lens",
+          "module": "",
+          "variant": "单层双波长消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一只 500 μm 实物的 670 nm 透射焦斑、轴扫和效率报告。",
+          "values": {
+            "diameter_um": {
+              "value": 500,
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.2 Metalens design、p.4 Fig. 2a–c；评议 PDF pp.10–11 作者答复",
+              "note": "正文圆形 aSi:H 超透镜的口径。评议中其他拼接试片有尺寸单位冲突，独立保留在核验记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "barulin_fcs_vor_2024",
+                "barulin_fcs_peer_review_2024"
+              ]
+            },
+            "na": {
+              "value": 0.6,
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.2 Metalens design、p.4 Fig. 2a–c；评议 PDF pp.10–11 作者答复",
+              "note": "作者以物理口径与焦距确定几何 NA。用半径 250 μm、设计 f 330 μm 作空气几何核对约 0.604；测量光路接收物镜 NA 0.8。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "barulin_fcs_vor_2024",
+                "barulin_fcs_peer_review_2024"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 670,
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.3 Evaluation of focusing performance；p.5 Fig. 3b,c,d",
+              "note": "670 nm 激光的横截面和轴向强度实测。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "measured_focal_um": {
+              "value": 330,
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.3 Evaluation of focusing performance；p.5 Fig. 3d；p.7 Methods",
+              "note": "正文用约 330 μm 描述两个波长的实测焦位。保留共有的报告精度，逐色精确轴峰、坐标零点标定与误差未给。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "approximate": true,
+              "display": "约330",
+              "reference_plane": "作者焦场的镜后距离",
+              "position_definition": "author_reported_approximate_focus",
+              "sample_wavelengths_nm": [
+                635,
+                670
+              ]
+            },
+            "fwhm_x_um": {
+              "value": 1.03,
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.3 Evaluation of focusing performance；p.5 Fig. 3b,c,d",
+              "note": "出版正文直接给 1.03 μm。Fig. 3c 为焦面中心的水平截线。作者相对于 Fig. S11 理想相位模型报告该谱点宽度放大 1.89 倍。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "direction": "x",
+              "sourceIds": [
+                "barulin_fcs_vor_2024",
+                "barulin_fcs_si_2024"
+              ],
+              "width_ratio_to_author_ideal": 1.89
+            },
+            "psf_protocol": {
+              "value": "670 nm；电动台以 1 μm 步长轴扫，图示 x–y 和 x–z 强度及水平 x 截线。",
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.3 Evaluation of focusing performance；p.5 Fig. 3b,c,d；正式 PDF p.7 Methods；SI p.9 Fig. S8",
+              "note": "归一化强度色标 0–1；Fig. 3d 横轴为镜后 z，纵轴 x，单位均 μm。100×、NA 0.8 接收物镜经筒镜耦合 sCMOS。实验入射偏振和横向物方像素标定未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "barulin_fcs_vor_2024",
+                "barulin_fcs_si_2024"
+              ],
+              "direction": "x",
+              "axial_step_um": 1,
+              "transverse_sample_pitch_um": null,
+              "reference_plane_calibration": null,
+              "collection_objective_na": 0.8,
+              "collection_objective_magnification": 100,
+              "scan_planes": [
+                "xy",
+                "xz"
+              ],
+              "raw_psf": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 670,
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.3 Evaluation of focusing performance 右栏；SI p.14 Table S1 本作行",
+              "note": "作者将该入射波长与本器件聚焦效率配对。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "barulin_fcs_vor_2024",
+                "barulin_fcs_si_2024"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "焦斑捕获光量／进入超透镜的入射光量；积分区域与功率标定未给。",
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.3 Evaluation of focusing performance 右栏；SI p.14 Table S1 本作行",
+              "note": "原文用 light intensity captured at the focal spot 和 incident light entering the metalens 表述。80 μm 针孔属于荧光系统，测法未指认为此处效率的积分光阑。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "numerator": "author_reported_captured_focal_spot_light",
+              "denominator": "incoming_light_into_metalens",
+              "focal_integration_radius_um": null,
+              "incident_power_calibration": null,
+              "sourceIds": [
+                "barulin_fcs_vor_2024",
+                "barulin_fcs_si_2024"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 37.1,
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.3 Evaluation of focusing performance 右栏；SI p.14 Table S1 本作行",
+              "note": "670 nm 的 37.1% 在正文及补表一致；积分区域与标定待补。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "barulin_fcs_vor_2024",
+                "barulin_fcs_si_2024",
+                "barulin_fcs_peer_review_2024"
+              ],
+              "denominator": "incoming_light_into_metalens"
+            }
+          }
+        },
+        {
+          "id": "barulin2024fcs_fcs_system",
+          "model": "Barulin 2024 · FCS 共焦显微系统",
+          "study_id": "barulin2024fcs",
+          "specimen_id": "fcs_system",
+          "module": "",
+          "variant": "同镜加双合透镜的荧光测量系统",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "装有同一超透镜的荧光相关光谱（FCS）系统。该配置包括扩缩束与探测光路。",
+          "values": {
+            "diameter_um": {
+              "value": 500,
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.2 Metalens design、p.4 Fig. 2a–c；评议 PDF pp.10–11 作者答复",
+              "note": "正文圆形 aSi:H 超透镜的口径。评议中其他拼接试片有尺寸单位冲突，独立保留在核验记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "barulin_fcs_vor_2024",
+                "barulin_fcs_peer_review_2024"
+              ]
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.2 系统谱段、p.3 Fig. 1c、p.5 FCS 段与 pp.7–8 Methods",
+              "note": "该行保留系统照明与收集条件。635 nm 是激发激光，670 nm 为设计收集点，荧光名义接收带为 655–700 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "635 nm 激发；655–700 nm 荧光",
+              "excitation_wavelength_nm": 635,
+              "collection_design_wavelength_nm": 670,
+              "fluorescence_collection_band_nm": [
+                655,
+                700
+              ]
+            },
+            "psf_protocol": {
+              "value": "635 nm 激发；655–700 nm 荧光；80 μm 共焦针孔；系统倍率 31×。",
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.2 系统谱段、p.3 Fig. 1c、p.5 FCS 段与 pp.7–8 Methods",
+              "note": "消色差双合透镜改变光束尺寸。透镜焦距 200 mm，距超透镜 190 mm，筒镜焦距 200 mm。作者用薄透镜公式给组合有效焦距 6.45 mm。裸镜焦斑在 Fig. 3 独立测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "excitation_wavelength_nm": 635,
+              "collection_filter_nm": [
+                655,
+                700
+              ],
+              "confocal_pinhole_um": 80,
+              "input_doublet_focal_length_mm": 200,
+              "distance_metalens_to_doublet_mm": 190,
+              "tube_lens_focal_length_mm": 200,
+              "author_calculated_system_effective_focal_length_mm": 6.45,
+              "author_calculated_magnification": 31
+            },
+            "chromatic": {
+              "value": "双波长实物用于宽谱荧光收集",
+              "source": "barulin_fcs_vor_2024",
+              "location": "正式 PDF p.3 Fig. 1c；评议 PDF pp.12–13",
+              "note": "作者答复指出荧光收集带内仍有残余色差，FCS 体积还取决于针孔与两路焦场卷积；未报告该系统的逐色残差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "barulin_fcs_vor_2024",
+                "barulin_fcs_peer_review_2024"
+              ]
+            }
+          }
         }
       ],
-      "scope": "55项原始研究、287个器件/测量/系统配置、1231条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
+      "scope": "56项原始研究、289个器件/测量/系统配置、1235条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",

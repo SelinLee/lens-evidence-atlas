@@ -12,7 +12,7 @@ test('2026 original text belongs to one publication and separates the fabricated
 test('distributed design limits, axial centroid and maximum-intensity plane never become an ordinary scalar focal length, measured focus or zero chromatic shift',()=>{
  const v=get('full_summary');assert.equal(v.diameter_um.value,1000);assert.equal(v.height_nm.value,400);assert.equal(v.na.value,null);assert.equal(v.design_focal_um.value,null);assert.equal(v.design_focal_um.reported_focal_min_um,250);assert.equal(v.design_focal_um.reported_focal_span_um,1100);assert.match(v.design_focal_um.note,/轴向质心也不等于.*最大强度焦面/);assert.match(v.height_nm.note,/Cr40nm.*移除/);
  for(const r of rows){assert.ok(!Number.isFinite(r.values.measured_focal_um?.value));assert.equal(r.values.axial_focus_offset_um,undefined);assert.equal(r.values.focus_variation_um,undefined);assert.equal(r.values.measured_focal_band_mean_um,undefined);}
- assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,49);
+ assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,51);
 });
 test('eight full-pupil experimental wavelengths in both spin channels remain separate from simulated samples and an unresolved truncated-pupil wavelength',()=>{
  for(const pol of ['rcp','lcp'])assert.deepEqual(rows.filter(r=>r.id.startsWith('javed2026_'+pol+'_')).map(r=>r.values.wavelength_nm.value),waves.map(w=>w===576?null:w));
@@ -21,7 +21,7 @@ test('eight full-pupil experimental wavelengths in both spin channels remain sep
 });
 test('only full-pupil RCP at 633 nm receives the directly reported 19 percent efficiency and its incomplete ROI and polarization protocol',()=>{
  const v=get('rcp_633');assert.equal(v.efficiency_at_lambda_pct.value,19);assert.equal(v.efficiency_at_lambda_pct.basis,'measured');assert.equal(v.efficiency_lambda_nm.value,633);assert.match(v.efficiency_at_lambda_pct.reading_version,/正式PMC主PDF及SI/);assert.match(v.efficiency_at_lambda_pct.display,/正文直报.*谱内最大值/);assert.equal(v.efficiency_protocol.integration_geometry,null);assert.equal(v.efficiency_protocol.denominator_measurement_plane,null);assert.match(v.efficiency_protocol.note,/不假定3×FWHM/);
- assert.equal(rows.filter(r=>Number.isFinite(r.values.efficiency_at_lambda_pct?.value)).length,1);assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,1);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,147);
+ assert.equal(rows.filter(r=>Number.isFinite(r.values.efficiency_at_lambda_pct?.value)).length,1);assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,1);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,148);
  for(const r of rows){assert.equal(r.values.efficiency_band_mean_pct,undefined);assert.equal(r.values.operation_efficiency_at_lambda_pct,undefined);}
  for(const w of waves){const a=get('lcp_'+w);assert.equal(a.efficiency_at_lambda_pct,undefined);assert.equal(a.efficiency_protocol,undefined);assert.equal(a.fwhm_um.value,null);assert.match(a.fwhm_um.note,/不继承RCP/);}
 });
