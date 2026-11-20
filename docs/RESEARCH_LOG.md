@@ -1421,3 +1421,7 @@ Tang 2026 正式上线为 2026-06-13。正文预览所见为实物宽带成像�
 Hu 2016 的作者发表页可达，列 DOI 与原刊图文摘要。ACS 全文、Figshare 公开资源及标题检索、Northwestern 机构目录入口仍未返回可核的正文或补件，保留经典候选，继续追两色与三色分别有没有同一器件的实测。[作者发表页](https://www.odomgroup.northwestern.edu/nanophotonics-nano-optics-publications/) · [原刊](https://pubs.acs.org/doi/10.1021/acsnano.6b05855)
 
 Chen 2025 的正式 PDF 与 CityU 机构副本已取得。Fig. 3b 给八个频点的实测轴向场，(f) 对照同频点的宽度和效率。已从 PMC 开放归档取得正式 DOCX（26428744 字节，SHA-256 `c0b618b9fa91873aa1887413d2dc42346f966197410f8220eacdde5ce87553ec`）。补件 Note 3 和 Fig. S11 提供同一透镜的测量条件和横向场入口。正式数据声明指向正文及补件，DataCite 精确关联 DOI 为零。继续核峰位参考面、各谱点焦位与效率积分口径后录入。会话目标保持开启。[正式主文](https://www.nature.com/articles/s41467-024-55624-w.pdf) · [正式补件](https://pmc-oa-opendata.s3.amazonaws.com/PMC11699036.1/41467_2024_55624_MOESM1_ESM.docx)
+
+## 2026-11-21-175 · Chen 2025 梯度折射率太赫兹消色差实物
+
+新增一篇一区原始研究、三个器件与系统配置、22 条记录。用主文与作者审稿答复确认单镜口径 6 mm、设计焦距 4.5 mm、厚 1.5 mm、几何 NA 0.555，以及从入射基面起算的 z=6 mm 参考位置。录入八个 0.2–0.9 THz 实测频点与九个补件图内斜入射 FWHMᵤ 原数及波长换算。区分正入射双透镜标靶约 0.2 mm 和离轴成像的 SNR 界限。Fig. 3f 与正文关于 0.8 和 0.9 THz 的效率顺序冲突，精确效率、逐频轴峰和残余色差留空。累计 70 篇、323 个器件及测量配置、1399 条，可见光筛选 51 篇、861 条。[本批核验](CHEN_2025_GRIN_THZ_EVIDENCE_2026-11-21.md)

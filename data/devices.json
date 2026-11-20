@@ -3152,6 +3152,51 @@
       "scope": "核到作者、数据标题、CC BY 4.0 和 ePrints 506133 入口。注册元数据未列数据文件或点表。",
       "checked_on": "2026-11-21",
       "publication_source": "sun_duv_vor_2025"
+    },
+    {
+      "id": "chen_grinthz_vor_2025",
+      "title": "Chen et al. (2025) · 3D-printed aberration-free terahertz metalens for ultra-broadband achromatic super-resolution wide-angle imaging with high numerical aperture",
+      "url": "https://www.nature.com/articles/s41467-024-55624-w.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "Nature Communications 16, 363，2025-01-03。核正式主文 p3 的设计与效率口径、pp5–6 Fig. 3、pp7–8 成像、Methods 与数据声明。",
+      "checked_on": "2026-11-21",
+      "doi": "10.1038/s41467-024-55624-w"
+    },
+    {
+      "id": "chen_grinthz_fig3_2025",
+      "title": "Chen et al. · 正式 Fig. 3 实测轴扫、离轴横向场和焦斑／效率曲线",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11699036.1/41467_2024_55624_Fig3_HTML.jpg",
+      "kind": "publisher_figure",
+      "scope": "图 (b) 的八频点 x–z 场、(c,e) 的三谱点及三入射角、(d) 的固定面横切和 (f) 实测与模型散点。没有原始数表。",
+      "checked_on": "2026-11-21",
+      "publication_source": "chen_grinthz_vor_2025"
+    },
+    {
+      "id": "chen_grinthz_si_2025",
+      "title": "Chen et al. · 研发器件与正式补件 DOCX",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11699036.1/41467_2024_55624_MOESM1_ESM.docx",
+      "kind": "supplementary_material",
+      "scope": "Note 2 Table S1 为打印结构参数。Note 3 Figs. S9–S13 为光路与实测场，其中 S12 印有离轴局部 u 向宽度的九个精确无量纲系数。",
+      "checked_on": "2026-11-21",
+      "publication_source": "chen_grinthz_vor_2025"
+    },
+    {
+      "id": "chen_grinthz_review_2025",
+      "title": "Chen et al. · 正式透明审稿答复",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11699036.1/41467_2024_55624_MOESM2_ESM.pdf",
+      "kind": "peer_review_record",
+      "scope": "核 Version 0 Reviewer 2 问题 5 与 7 的答复，以及后续答复中的几何 NA、波束局部 u–v 坐标、逐频不同最佳焦点和标靶可辨线宽。",
+      "checked_on": "2026-11-21",
+      "publication_source": "chen_grinthz_vor_2025"
+    },
+    {
+      "id": "chen_grinthz_cityu_2025",
+      "title": "City University of Hong Kong · Chen et al. 正式出版版存档",
+      "url": "https://scholars.cityu.edu.hk/ws/portalfiles/portal/271052816/265907429.pdf",
+      "kind": "institutional_repository",
+      "scope": "同一正式论文 DOI 的机构副本。可检索主文及数据可得性声明。",
+      "checked_on": "2026-11-21",
+      "publication_source": "chen_grinthz_vor_2025"
     }
   ],
   "domains": {
@@ -166053,9 +166098,2100 @@
               ]
             }
           }
+        },
+        {
+          "id": "chen2025grinthz_summary",
+          "model": "Chen 2025 · 6 mm 3D 打印 GRIN 超透镜 · 汇总",
+          "study_id": "chen2025grinthz",
+          "specimen_id": "grin_single",
+          "module": "",
+          "variant": "单镜｜线偏振实物",
+          "evidence_type": "study",
+          "measurement_scope": "同一实制圆形透镜。0.2–0.9 THz 为光学设计区间，按八个实测谱点检验。",
+          "values": {
+            "diameter_um": {
+              "value": 6000,
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p3 Fig. 2b 设计参数；p5 Fig. 3a；审稿答复 Version 0 Reviewer 2 问题 5；后续 Reviewer 2 式 0.5λ/NA 段",
+              "note": "作者名义半径 3 mm，直径 6 mm。打印实物见 Fig. 3a，实际光阑直径没有独立量测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "original_value": 6,
+              "original_unit": "mm",
+              "sourceIds": [
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "design_focal_um": {
+              "value": 4500,
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p3 Fig. 2b 设计段与 Eq. 4；审稿答复 Version 0 Reviewer 2 问题 5；后续 Reviewer 2 式 0.5λ/NA 段",
+              "note": "名义焦距自出射侧面起算。z 从器件入射侧基面计零，1.5 mm 厚度后为出射面，图中 z=6 mm 虚线与出射面相距 4.5 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "original_value": 4.5,
+              "original_unit": "mm",
+              "reference_plane": "metalens_exit_surface",
+              "sourceIds": [
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "na": {
+              "value": 0.555,
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p1 摘要；审稿答复 Version 0 Reviewer 2 问题 5；后续 Reviewer 2 式 0.5λ/NA 段",
+              "note": "作者采用半径 3 mm、离出射面焦距 4.5 mm 的名义几何量，空气中 sin(arctan(3/4.5))≈0.555。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "thickness_um": {
+              "value": 1500,
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p3 Fig. 2b 设计段；审稿答复 Version 0 Reviewer 2 问题 5；后续 Reviewer 2 式 0.5λ/NA 段",
+              "note": "十层同一块径向梯度结构的名义总厚。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "original_value": 1.5,
+              "original_unit": "mm",
+              "sourceIds": [
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "material": {
+              "value": "光敏树脂梯度折射率结构",
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Note 2 Table S1 及 3D printing 段；主文 p6",
+              "note": "十个径向分区由 0.3 mm 周期的圆孔与倒 Y 形元胞实现有效折射率分布。光敏树脂投影微立体光刻并 UV 后固化。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_vor_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "径向梯度折射率补偿；连续目标波段、离散实测",
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 pp2–3 Eq. 2–4；pp5–6 Fig. 3；补件 Figs. S11–S13",
+              "note": "利用有效折射率实现相位轮廓，并修正有限厚度对光路的影响。在 0.2–0.9 THz 的八个实测点，焦斑集中在参考面附近。三频点斜入射另外表征。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_si_2025"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 333103,
+              "source": "chen_grinthz_vor_2025",
+              "location": "摘要；主文 p5 Fig. 3b 频点标记",
+              "note": "连续设计带的高频端 0.9 THz 对应真空波长短端。两端实测在内，共八点。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "original_frequency_thz": 0.9,
+              "formula": "299792.458 / frequency_thz",
+              "spectral_sampling": "design_band_with_discrete_measurements",
+              "sourceIds": [
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_fig3_2025"
+              ]
+            },
+            "lambda_max_nm": {
+              "value": 1498962,
+              "source": "chen_grinthz_vor_2025",
+              "location": "摘要；主文 p5 Fig. 3b 频点标记",
+              "note": "连续设计带的低频端 0.2 THz 对应真空波长长端。两端实测在内，共八点。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "original_frequency_thz": 0.2,
+              "formula": "299792.458 / frequency_thz",
+              "spectral_sampling": "design_band_with_discrete_measurements",
+              "sourceIds": [
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_fig3_2025"
+              ]
+            },
+            "focus_variation_protocol": {
+              "value": "同镜分频 x–z 场测量，统一坐标参考",
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p5 Fig. 3b,d；补件 Note 3 Figs. S9、S11；主文 Methods pp7–8，The detail of the experimental setup for THz focusing",
+              "note": "z 从器件入射侧基面计零，1.5 mm 厚度后为出射面，图中 z=6 mm 虚线与出射面相距 4.5 mm。接收台移动步进 0.1 mm。入射波为线偏振。各波长最佳焦位与误差条尚未取到。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "stage_step_um": 100,
+              "reference_plane_um": 6000,
+              "reference_plane": "z_from_metalens_base",
+              "sourceIds": [
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_si_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "chen_grinthz_review_2025",
+              "location": "主文 Fig. 3b；后续 Reviewer 2 最佳焦点评价",
+              "note": "作者在答复确认不同频点最佳焦位存在小差别。需要原始功率矩阵或实测峰位表才能计算跨频点峰峰差。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "八频点近同一参考面，残余焦移缺原数",
+              "sourceIds": [
+                "chen_grinthz_review_2025",
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_vor_2025"
+              ]
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "chen_grinthz_vor_2025",
+              "location": "摘要与 Discussion；主文 Fig. 3f 下图",
+              "note": "作者概述宽度约 0.8λ，Fig. 3f 的实测量为各频点宽度除以各自波长。未给可复核的轴上逐点原数及均值定义。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "作者概述约 0.8λ，逐频点宽度待补",
+              "original_relative_fwhm": 0.8
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 Fig. 3b–d、数据声明；补件 Fig. S11",
+              "note": "正文及补件有归一化功率场图，未核到原始数组、方向指定的 MTF 或 Strehl。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "原始场数组、MTF 与 Strehl 未核到",
+              "sourceIds": [
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_si_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2025grinthz_normal_200",
+          "model": "Chen 2025 · 单镜 · 正入射 · 0.2 THz",
+          "study_id": "chen2025grinthz",
+          "specimen_id": "grin_single",
+          "module": "",
+          "variant": "八频点轴扫｜单透镜",
+          "evidence_type": "study",
+          "measurement_scope": "同一只 6 mm 实物的正入射场测量。相对同一名义参考面考察各频点焦位。",
+          "values": {
+            "frequency_thz": {
+              "value": 0.2,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，1 行 1 列，0.2 THz",
+              "note": "原图标注 200 GHz，对应 0.2 THz。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "original_value": 200,
+              "original_unit": "GHz"
+            },
+            "wavelength_nm": {
+              "value": 1498962,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，1 行 1 列，0.2 THz",
+              "note": "同一实测频点 0.2 THz，由真空光速换算 λ₀=c/ν，四舍五入至 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz",
+              "original_frequency_thz": 0.2
+            },
+            "aoi_deg": {
+              "value": 0,
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 Fig. 3b,f 与补件 Fig. S9",
+              "note": "正入射光束。原文未给轴上方位角。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "正入射 x–z 轴向场及 x–y 横向场",
+              "source": "chen_grinthz_si_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，1 行 1 列，0.2 THz；主文 Methods pp7–8，The detail of the experimental setup for THz focusing",
+              "note": "z 从器件入射侧基面计零，1.5 mm 厚度后为出射面，图中 z=6 mm 虚线与出射面相距 4.5 mm。Fig. 3d 为参考面上的 x 横切。Fig. S11 的横轴 x、纵轴 y 用 mm，色条为归一化功率。接收台步进 100 μm。单图的精确横向焦面和绝对功率归一方式未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "stage_step_um": 100,
+              "reference_plane_um": 6000,
+              "reference_plane": "z_from_metalens_base",
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，1 行 1 列，0.2 THz",
+              "note": "共同虚线是设计参考。该频点轴向最佳焦点的原始数值、取峰插值和不确定度未核到。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "实测轴向功率图可查，峰位未给数表",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_vor_2025"
+              ]
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 p5 Fig. 3f 下图与 p6 正入射段，0.2 THz 实测绿星",
+              "note": "原图以真空波长单位标示半高全宽。逐点原数、取宽方向和同一焦面协议待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "归一化实测宽度曲线可查"
+            },
+            "efficiency_protocol": {
+              "value": "Fig. 3f 实测积分范围和功率分母待核",
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p5 Fig. 3f 上图与 p6 正入射段；理论效率 p3 Fig. 2e",
+              "note": "p3 的理论效率以焦面直径 3×FWHM 的区域积分。实测曲线是否使用这一直径、功率分母、参照面或相同归一方式尚不明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "model_integration_diameter_fwhm": 3,
+              "integration_window": null,
+              "denominator": null,
+              "sourceIds": [
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_fig3_2025"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 p5 Fig. 3f 上图与 p6 正入射段，0.2 THz 实测红圆",
+              "note": "有实测曲线，未核到报告该频点的精确效率值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "实测效率曲线可查",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_vor_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2025grinthz_normal_300",
+          "model": "Chen 2025 · 单镜 · 正入射 · 0.3 THz",
+          "study_id": "chen2025grinthz",
+          "specimen_id": "grin_single",
+          "module": "",
+          "variant": "八频点轴扫｜单透镜",
+          "evidence_type": "study",
+          "measurement_scope": "同一只 6 mm 实物的正入射场测量。相对同一名义参考面考察各频点焦位。",
+          "values": {
+            "frequency_thz": {
+              "value": 0.3,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，1 行 2 列，0.3 THz",
+              "note": "原图标注 300 GHz，对应 0.3 THz。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "original_value": 300,
+              "original_unit": "GHz"
+            },
+            "wavelength_nm": {
+              "value": 999308,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，1 行 2 列，0.3 THz",
+              "note": "同一实测频点 0.3 THz，由真空光速换算 λ₀=c/ν，四舍五入至 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz",
+              "original_frequency_thz": 0.3
+            },
+            "aoi_deg": {
+              "value": 0,
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 Fig. 3b,f 与补件 Fig. S9",
+              "note": "正入射光束。原文未给轴上方位角。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "正入射 x–z 轴向场及 x–y 横向场",
+              "source": "chen_grinthz_si_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，1 行 2 列，0.3 THz；主文 Methods pp7–8，The detail of the experimental setup for THz focusing",
+              "note": "z 从器件入射侧基面计零，1.5 mm 厚度后为出射面，图中 z=6 mm 虚线与出射面相距 4.5 mm。Fig. 3d 为参考面上的 x 横切。Fig. S11 的横轴 x、纵轴 y 用 mm，色条为归一化功率。接收台步进 100 μm。单图的精确横向焦面和绝对功率归一方式未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "stage_step_um": 100,
+              "reference_plane_um": 6000,
+              "reference_plane": "z_from_metalens_base",
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，1 行 2 列，0.3 THz",
+              "note": "共同虚线是设计参考。该频点轴向最佳焦点的原始数值、取峰插值和不确定度未核到。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "实测轴向功率图可查，峰位未给数表",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_vor_2025"
+              ]
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 p5 Fig. 3f 下图与 p6 正入射段，0.3 THz 实测绿星",
+              "note": "原图以真空波长单位标示半高全宽。逐点原数、取宽方向和同一焦面协议待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "归一化实测宽度曲线可查"
+            },
+            "efficiency_protocol": {
+              "value": "Fig. 3f 实测积分范围和功率分母待核",
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p5 Fig. 3f 上图与 p6 正入射段；理论效率 p3 Fig. 2e",
+              "note": "p3 的理论效率以焦面直径 3×FWHM 的区域积分。实测曲线是否使用这一直径、功率分母、参照面或相同归一方式尚不明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "model_integration_diameter_fwhm": 3,
+              "integration_window": null,
+              "denominator": null,
+              "sourceIds": [
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_fig3_2025"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 p5 Fig. 3f 上图与 p6 正入射段，0.3 THz 实测红圆",
+              "note": "有实测曲线，未核到报告该频点的精确效率值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "实测效率曲线可查",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_vor_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2025grinthz_normal_400",
+          "model": "Chen 2025 · 单镜 · 正入射 · 0.4 THz",
+          "study_id": "chen2025grinthz",
+          "specimen_id": "grin_single",
+          "module": "",
+          "variant": "八频点轴扫｜单透镜",
+          "evidence_type": "study",
+          "measurement_scope": "同一只 6 mm 实物的正入射场测量。相对同一名义参考面考察各频点焦位。",
+          "values": {
+            "frequency_thz": {
+              "value": 0.4,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，1 行 3 列，0.4 THz",
+              "note": "原图标注 400 GHz，对应 0.4 THz。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "original_value": 400,
+              "original_unit": "GHz"
+            },
+            "wavelength_nm": {
+              "value": 749481,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，1 行 3 列，0.4 THz",
+              "note": "同一实测频点 0.4 THz，由真空光速换算 λ₀=c/ν，四舍五入至 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz",
+              "original_frequency_thz": 0.4
+            },
+            "aoi_deg": {
+              "value": 0,
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 Fig. 3b,f 与补件 Fig. S9",
+              "note": "正入射光束。原文未给轴上方位角。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "正入射 x–z 轴向场及 x–y 横向场",
+              "source": "chen_grinthz_si_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，1 行 3 列，0.4 THz；主文 Methods pp7–8，The detail of the experimental setup for THz focusing",
+              "note": "z 从器件入射侧基面计零，1.5 mm 厚度后为出射面，图中 z=6 mm 虚线与出射面相距 4.5 mm。Fig. 3d 为参考面上的 x 横切。Fig. S11 的横轴 x、纵轴 y 用 mm，色条为归一化功率。接收台步进 100 μm。单图的精确横向焦面和绝对功率归一方式未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "stage_step_um": 100,
+              "reference_plane_um": 6000,
+              "reference_plane": "z_from_metalens_base",
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，1 行 3 列，0.4 THz",
+              "note": "共同虚线是设计参考。该频点轴向最佳焦点的原始数值、取峰插值和不确定度未核到。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "实测轴向功率图可查，峰位未给数表",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_vor_2025"
+              ]
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 p5 Fig. 3f 下图与 p6 正入射段，0.4 THz 实测绿星",
+              "note": "原图以真空波长单位标示半高全宽。逐点原数、取宽方向和同一焦面协议待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "归一化实测宽度曲线可查"
+            },
+            "efficiency_protocol": {
+              "value": "Fig. 3f 实测积分范围和功率分母待核",
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p5 Fig. 3f 上图与 p6 正入射段；理论效率 p3 Fig. 2e",
+              "note": "p3 的理论效率以焦面直径 3×FWHM 的区域积分。实测曲线是否使用这一直径、功率分母、参照面或相同归一方式尚不明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "model_integration_diameter_fwhm": 3,
+              "integration_window": null,
+              "denominator": null,
+              "sourceIds": [
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_fig3_2025"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 p5 Fig. 3f 上图与 p6 正入射段，0.4 THz 实测红圆",
+              "note": "有实测曲线，未核到报告该频点的精确效率值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "实测效率曲线可查",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_vor_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2025grinthz_normal_500",
+          "model": "Chen 2025 · 单镜 · 正入射 · 0.5 THz",
+          "study_id": "chen2025grinthz",
+          "specimen_id": "grin_single",
+          "module": "",
+          "variant": "八频点轴扫｜单透镜",
+          "evidence_type": "study",
+          "measurement_scope": "同一只 6 mm 实物的正入射场测量。相对同一名义参考面考察各频点焦位。",
+          "values": {
+            "frequency_thz": {
+              "value": 0.5,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，1 行 4 列，0.5 THz",
+              "note": "原图标注 500 GHz，对应 0.5 THz。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "original_value": 500,
+              "original_unit": "GHz"
+            },
+            "wavelength_nm": {
+              "value": 599585,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，1 行 4 列，0.5 THz",
+              "note": "同一实测频点 0.5 THz，由真空光速换算 λ₀=c/ν，四舍五入至 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz",
+              "original_frequency_thz": 0.5
+            },
+            "aoi_deg": {
+              "value": 0,
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 Fig. 3b,f 与补件 Fig. S9",
+              "note": "正入射光束。原文未给轴上方位角。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "正入射 x–z 轴向场及 x–y 横向场",
+              "source": "chen_grinthz_si_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，1 行 4 列，0.5 THz；主文 Methods pp7–8，The detail of the experimental setup for THz focusing",
+              "note": "z 从器件入射侧基面计零，1.5 mm 厚度后为出射面，图中 z=6 mm 虚线与出射面相距 4.5 mm。Fig. 3d 为参考面上的 x 横切。Fig. S11 的横轴 x、纵轴 y 用 mm，色条为归一化功率。接收台步进 100 μm。单图的精确横向焦面和绝对功率归一方式未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "stage_step_um": 100,
+              "reference_plane_um": 6000,
+              "reference_plane": "z_from_metalens_base",
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，1 行 4 列，0.5 THz",
+              "note": "共同虚线是设计参考。该频点轴向最佳焦点的原始数值、取峰插值和不确定度未核到。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "实测轴向功率图可查，峰位未给数表",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_vor_2025"
+              ]
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 p5 Fig. 3f 下图与 p6 正入射段，0.5 THz 实测绿星",
+              "note": "原图以真空波长单位标示半高全宽。逐点原数、取宽方向和同一焦面协议待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "归一化实测宽度曲线可查"
+            },
+            "efficiency_protocol": {
+              "value": "Fig. 3f 实测积分范围和功率分母待核",
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p5 Fig. 3f 上图与 p6 正入射段；理论效率 p3 Fig. 2e",
+              "note": "p3 的理论效率以焦面直径 3×FWHM 的区域积分。实测曲线是否使用这一直径、功率分母、参照面或相同归一方式尚不明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "model_integration_diameter_fwhm": 3,
+              "integration_window": null,
+              "denominator": null,
+              "sourceIds": [
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_fig3_2025"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 p5 Fig. 3f 上图与 p6 正入射段，0.5 THz 实测红圆",
+              "note": "有实测曲线，未核到报告该频点的精确效率值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "实测效率曲线可查",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_vor_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2025grinthz_normal_600",
+          "model": "Chen 2025 · 单镜 · 正入射 · 0.6 THz",
+          "study_id": "chen2025grinthz",
+          "specimen_id": "grin_single",
+          "module": "",
+          "variant": "八频点轴扫｜单透镜",
+          "evidence_type": "study",
+          "measurement_scope": "同一只 6 mm 实物的正入射场测量。相对同一名义参考面考察各频点焦位。",
+          "values": {
+            "frequency_thz": {
+              "value": 0.6,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，2 行 1 列，0.6 THz",
+              "note": "原图标注 600 GHz，对应 0.6 THz。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "original_value": 600,
+              "original_unit": "GHz"
+            },
+            "wavelength_nm": {
+              "value": 499654,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，2 行 1 列，0.6 THz",
+              "note": "同一实测频点 0.6 THz，由真空光速换算 λ₀=c/ν，四舍五入至 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz",
+              "original_frequency_thz": 0.6
+            },
+            "aoi_deg": {
+              "value": 0,
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 Fig. 3b,f 与补件 Fig. S9",
+              "note": "正入射光束。原文未给轴上方位角。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "正入射 x–z 轴向场及 x–y 横向场",
+              "source": "chen_grinthz_si_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，2 行 1 列，0.6 THz；主文 Methods pp7–8，The detail of the experimental setup for THz focusing",
+              "note": "z 从器件入射侧基面计零，1.5 mm 厚度后为出射面，图中 z=6 mm 虚线与出射面相距 4.5 mm。Fig. 3d 为参考面上的 x 横切。Fig. S11 的横轴 x、纵轴 y 用 mm，色条为归一化功率。接收台步进 100 μm。单图的精确横向焦面和绝对功率归一方式未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "stage_step_um": 100,
+              "reference_plane_um": 6000,
+              "reference_plane": "z_from_metalens_base",
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，2 行 1 列，0.6 THz",
+              "note": "共同虚线是设计参考。该频点轴向最佳焦点的原始数值、取峰插值和不确定度未核到。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "实测轴向功率图可查，峰位未给数表",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_vor_2025"
+              ]
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 p5 Fig. 3f 下图与 p6 正入射段，0.6 THz 实测绿星",
+              "note": "原图以真空波长单位标示半高全宽。逐点原数、取宽方向和同一焦面协议待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "归一化实测宽度曲线可查"
+            },
+            "efficiency_protocol": {
+              "value": "Fig. 3f 实测积分范围和功率分母待核",
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p5 Fig. 3f 上图与 p6 正入射段；理论效率 p3 Fig. 2e",
+              "note": "p3 的理论效率以焦面直径 3×FWHM 的区域积分。实测曲线是否使用这一直径、功率分母、参照面或相同归一方式尚不明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "model_integration_diameter_fwhm": 3,
+              "integration_window": null,
+              "denominator": null,
+              "sourceIds": [
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_fig3_2025"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 p5 Fig. 3f 上图与 p6 正入射段，0.6 THz 实测红圆",
+              "note": "有实测曲线，未核到报告该频点的精确效率值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "实测效率曲线可查",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_vor_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2025grinthz_normal_700",
+          "model": "Chen 2025 · 单镜 · 正入射 · 0.7 THz",
+          "study_id": "chen2025grinthz",
+          "specimen_id": "grin_single",
+          "module": "",
+          "variant": "八频点轴扫｜单透镜",
+          "evidence_type": "study",
+          "measurement_scope": "同一只 6 mm 实物的正入射场测量。相对同一名义参考面考察各频点焦位。",
+          "values": {
+            "frequency_thz": {
+              "value": 0.7,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，2 行 2 列，0.7 THz",
+              "note": "原图标注 700 GHz，对应 0.7 THz。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "original_value": 700,
+              "original_unit": "GHz"
+            },
+            "wavelength_nm": {
+              "value": 428275,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，2 行 2 列，0.7 THz",
+              "note": "同一实测频点 0.7 THz，由真空光速换算 λ₀=c/ν，四舍五入至 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz",
+              "original_frequency_thz": 0.7
+            },
+            "aoi_deg": {
+              "value": 0,
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 Fig. 3b,f 与补件 Fig. S9",
+              "note": "正入射光束。原文未给轴上方位角。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "正入射 x–z 轴向场及 x–y 横向场",
+              "source": "chen_grinthz_si_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，2 行 2 列，0.7 THz；主文 Methods pp7–8，The detail of the experimental setup for THz focusing",
+              "note": "z 从器件入射侧基面计零，1.5 mm 厚度后为出射面，图中 z=6 mm 虚线与出射面相距 4.5 mm。Fig. 3d 为参考面上的 x 横切。Fig. S11 的横轴 x、纵轴 y 用 mm，色条为归一化功率。接收台步进 100 μm。单图的精确横向焦面和绝对功率归一方式未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "stage_step_um": 100,
+              "reference_plane_um": 6000,
+              "reference_plane": "z_from_metalens_base",
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，2 行 2 列，0.7 THz",
+              "note": "共同虚线是设计参考。该频点轴向最佳焦点的原始数值、取峰插值和不确定度未核到。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "实测轴向功率图可查，峰位未给数表",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_vor_2025"
+              ]
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 p5 Fig. 3f 下图与 p6 正入射段，0.7 THz 实测绿星",
+              "note": "原图以真空波长单位标示半高全宽。逐点原数、取宽方向和同一焦面协议待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "归一化实测宽度曲线可查"
+            },
+            "efficiency_protocol": {
+              "value": "Fig. 3f 实测积分范围和功率分母待核",
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p5 Fig. 3f 上图与 p6 正入射段；理论效率 p3 Fig. 2e",
+              "note": "p3 的理论效率以焦面直径 3×FWHM 的区域积分。实测曲线是否使用这一直径、功率分母、参照面或相同归一方式尚不明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "model_integration_diameter_fwhm": 3,
+              "integration_window": null,
+              "denominator": null,
+              "sourceIds": [
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_fig3_2025"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 p5 Fig. 3f 上图与 p6 正入射段，0.7 THz 实测红圆",
+              "note": "有实测曲线，未核到报告该频点的精确效率值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "实测效率曲线可查",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_vor_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2025grinthz_normal_800",
+          "model": "Chen 2025 · 单镜 · 正入射 · 0.8 THz",
+          "study_id": "chen2025grinthz",
+          "specimen_id": "grin_single",
+          "module": "",
+          "variant": "八频点轴扫｜单透镜",
+          "evidence_type": "study",
+          "measurement_scope": "同一只 6 mm 实物的正入射场测量。相对同一名义参考面考察各频点焦位。",
+          "values": {
+            "frequency_thz": {
+              "value": 0.8,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，2 行 3 列，0.8 THz",
+              "note": "原图标注 800 GHz，对应 0.8 THz。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "original_value": 800,
+              "original_unit": "GHz"
+            },
+            "wavelength_nm": {
+              "value": 374741,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，2 行 3 列，0.8 THz",
+              "note": "同一实测频点 0.8 THz，由真空光速换算 λ₀=c/ν，四舍五入至 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz",
+              "original_frequency_thz": 0.8
+            },
+            "aoi_deg": {
+              "value": 0,
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 Fig. 3b,f 与补件 Fig. S9",
+              "note": "正入射光束。原文未给轴上方位角。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "正入射 x–z 轴向场及 x–y 横向场",
+              "source": "chen_grinthz_si_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，2 行 3 列，0.8 THz；主文 Methods pp7–8，The detail of the experimental setup for THz focusing",
+              "note": "z 从器件入射侧基面计零，1.5 mm 厚度后为出射面，图中 z=6 mm 虚线与出射面相距 4.5 mm。Fig. 3d 为参考面上的 x 横切。Fig. S11 的横轴 x、纵轴 y 用 mm，色条为归一化功率。接收台步进 100 μm。单图的精确横向焦面和绝对功率归一方式未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "stage_step_um": 100,
+              "reference_plane_um": 6000,
+              "reference_plane": "z_from_metalens_base",
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，2 行 3 列，0.8 THz",
+              "note": "共同虚线是设计参考。该频点轴向最佳焦点的原始数值、取峰插值和不确定度未核到。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "实测轴向功率图可查，峰位未给数表",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_vor_2025"
+              ]
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 p5 Fig. 3f 下图与 p6 正入射段，0.8 THz 实测绿星",
+              "note": "原图以真空波长单位标示半高全宽。逐点原数、取宽方向和同一焦面协议待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "归一化实测宽度曲线可查"
+            },
+            "efficiency_protocol": {
+              "value": "Fig. 3f 实测积分范围和功率分母待核",
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p5 Fig. 3f 上图与 p6 正入射段；理论效率 p3 Fig. 2e",
+              "note": "p3 的理论效率以焦面直径 3×FWHM 的区域积分。实测曲线是否使用这一直径、功率分母、参照面或相同归一方式尚不明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "model_integration_diameter_fwhm": 3,
+              "integration_window": null,
+              "denominator": null,
+              "sourceIds": [
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_fig3_2025"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 p5 Fig. 3f 上图与 p6 正入射段，0.8 THz 实测红圆",
+              "note": "有实测曲线，未核到报告该频点的精确效率值。 该频点正文称实测低于理论，Fig. 3f 红色实测标记在蓝色理论标记上方，保留此冲突。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "实测效率，图例与正文次序冲突",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_vor_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2025grinthz_normal_900",
+          "model": "Chen 2025 · 单镜 · 正入射 · 0.9 THz",
+          "study_id": "chen2025grinthz",
+          "specimen_id": "grin_single",
+          "module": "",
+          "variant": "八频点轴扫｜单透镜",
+          "evidence_type": "study",
+          "measurement_scope": "同一只 6 mm 实物的正入射场测量。相对同一名义参考面考察各频点焦位。",
+          "values": {
+            "frequency_thz": {
+              "value": 0.9,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，2 行 4 列，0.9 THz",
+              "note": "原图标注 900 GHz，对应 0.9 THz。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "original_value": 900,
+              "original_unit": "GHz"
+            },
+            "wavelength_nm": {
+              "value": 333103,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，2 行 4 列，0.9 THz",
+              "note": "同一实测频点 0.9 THz，由真空光速换算 λ₀=c/ν，四舍五入至 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz",
+              "original_frequency_thz": 0.9
+            },
+            "aoi_deg": {
+              "value": 0,
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 Fig. 3b,f 与补件 Fig. S9",
+              "note": "正入射光束。原文未给轴上方位角。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "正入射 x–z 轴向场及 x–y 横向场",
+              "source": "chen_grinthz_si_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，2 行 4 列，0.9 THz；主文 Methods pp7–8，The detail of the experimental setup for THz focusing",
+              "note": "z 从器件入射侧基面计零，1.5 mm 厚度后为出射面，图中 z=6 mm 虚线与出射面相距 4.5 mm。Fig. 3d 为参考面上的 x 横切。Fig. S11 的横轴 x、纵轴 y 用 mm，色条为归一化功率。接收台步进 100 μm。单图的精确横向焦面和绝对功率归一方式未单列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "stage_step_um": 100,
+              "reference_plane_um": 6000,
+              "reference_plane": "z_from_metalens_base",
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "Fig. 3b 与补件 Fig. S11，2 行 4 列，0.9 THz",
+              "note": "共同虚线是设计参考。该频点轴向最佳焦点的原始数值、取峰插值和不确定度未核到。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "实测轴向功率图可查，峰位未给数表",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_vor_2025"
+              ]
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 p5 Fig. 3f 下图与 p6 正入射段，0.9 THz 实测绿星",
+              "note": "原图以真空波长单位标示半高全宽。逐点原数、取宽方向和同一焦面协议待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "归一化实测宽度曲线可查"
+            },
+            "efficiency_protocol": {
+              "value": "Fig. 3f 实测积分范围和功率分母待核",
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p5 Fig. 3f 上图与 p6 正入射段；理论效率 p3 Fig. 2e",
+              "note": "p3 的理论效率以焦面直径 3×FWHM 的区域积分。实测曲线是否使用这一直径、功率分母、参照面或相同归一方式尚不明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "model_integration_diameter_fwhm": 3,
+              "integration_window": null,
+              "denominator": null,
+              "sourceIds": [
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_fig3_2025"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 p5 Fig. 3f 上图与 p6 正入射段，0.9 THz 实测红圆",
+              "note": "有实测曲线，未核到报告该频点的精确效率值。 该频点正文称实测低于理论，Fig. 3f 红色实测标记在蓝色理论标记上方，保留此冲突。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "实测效率，图例与正文次序冲突",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_vor_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2025grinthz_offaxis_500_15",
+          "model": "Chen 2025 · 单镜 · 离轴 15° · 0.5 THz",
+          "study_id": "chen2025grinthz",
+          "specimen_id": "grin_single",
+          "module": "",
+          "variant": "离轴局部 u 向 FWHM",
+          "evidence_type": "study",
+          "measurement_scope": "同一只 6 mm 实物的斜入射分频场扫描。方向取局部 u，与光传播方向正交。",
+          "values": {
+            "frequency_thz": {
+              "value": 0.5,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 1 行第 1 列，500 GHz／15°",
+              "note": "原图标注 500 GHz，对应 0.5 THz。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "original_value": 500,
+              "original_unit": "GHz"
+            },
+            "wavelength_nm": {
+              "value": 599585,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 1 行第 1 列，500 GHz／15°",
+              "note": "同一实测频点 0.5 THz，由真空光速换算 λ₀=c/ν，四舍五入至 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz",
+              "original_frequency_thz": 0.5
+            },
+            "aoi_deg": {
+              "value": 15,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 1 行第 1 列，500 GHz／15°",
+              "note": "原文列标题为相对器件光轴的入射角。方位未数字标注。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "斜入射实测 x–z 场，沿局部 u 轴取宽",
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 1 行第 1 列，500 GHz／15°；主文 Methods；审稿答复 Reviewer 2 的 u–v 段",
+              "note": "图中 v 沿局部传播轴，u 与 v 在 x–z 平面内相交且垂直。接收台实验步进为 100 μm，u 轴后处理方法与重采样间距未报。Fig. 3c 的 x–y 图与 Fig. S13 的 x/y 宽度另有方向定义。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "direction": "u",
+              "stage_step_um": 100,
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "fwhm_um": {
+              "value": 479,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 1 行第 1 列，500 GHz／15°，图内 FWHMᵤ 印字",
+              "note": "作者印字 0.799λ₀。乘同频真空波长 λ₀=c/ν 得微米值，并四舍五入至 1 μm。取宽沿局部 u 轴。重复和宽度误差未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "display": "约 479（0.799λ，u 向）",
+              "approximate": true,
+              "direction": "u",
+              "calculation_origin": "authors",
+              "unit_conversion_origin": "atlas",
+              "original_value": 0.799,
+              "original_unit": "lambda_0",
+              "conversion_formula": "original_value * 299.792458 / frequency_thz",
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "同一入射角下的三频点横向位移比较",
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 Fig. 3c,e，15°／0.5 THz；补件 Fig. S12",
+              "note": "Fig. 3e 比较相对光轴 x=0 的焦斑横向位移。不同角度的横向位移包含场角效应，同一角度逐频点的残余横向色差未有原数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_si_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2025grinthz_offaxis_500_30",
+          "model": "Chen 2025 · 单镜 · 离轴 30° · 0.5 THz",
+          "study_id": "chen2025grinthz",
+          "specimen_id": "grin_single",
+          "module": "",
+          "variant": "离轴局部 u 向 FWHM",
+          "evidence_type": "study",
+          "measurement_scope": "同一只 6 mm 实物的斜入射分频场扫描。方向取局部 u，与光传播方向正交。",
+          "values": {
+            "frequency_thz": {
+              "value": 0.5,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 1 行第 2 列，500 GHz／30°",
+              "note": "原图标注 500 GHz，对应 0.5 THz。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "original_value": 500,
+              "original_unit": "GHz"
+            },
+            "wavelength_nm": {
+              "value": 599585,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 1 行第 2 列，500 GHz／30°",
+              "note": "同一实测频点 0.5 THz，由真空光速换算 λ₀=c/ν，四舍五入至 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz",
+              "original_frequency_thz": 0.5
+            },
+            "aoi_deg": {
+              "value": 30,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 1 行第 2 列，500 GHz／30°",
+              "note": "原文列标题为相对器件光轴的入射角。方位未数字标注。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "斜入射实测 x–z 场，沿局部 u 轴取宽",
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 1 行第 2 列，500 GHz／30°；主文 Methods；审稿答复 Reviewer 2 的 u–v 段",
+              "note": "图中 v 沿局部传播轴，u 与 v 在 x–z 平面内相交且垂直。接收台实验步进为 100 μm，u 轴后处理方法与重采样间距未报。Fig. 3c 的 x–y 图与 Fig. S13 的 x/y 宽度另有方向定义。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "direction": "u",
+              "stage_step_um": 100,
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "fwhm_um": {
+              "value": 477,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 1 行第 2 列，500 GHz／30°，图内 FWHMᵤ 印字",
+              "note": "作者印字 0.796λ₀。乘同频真空波长 λ₀=c/ν 得微米值，并四舍五入至 1 μm。取宽沿局部 u 轴。重复和宽度误差未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "display": "约 477（0.796λ，u 向）",
+              "approximate": true,
+              "direction": "u",
+              "calculation_origin": "authors",
+              "unit_conversion_origin": "atlas",
+              "original_value": 0.796,
+              "original_unit": "lambda_0",
+              "conversion_formula": "original_value * 299.792458 / frequency_thz",
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "同一入射角下的三频点横向位移比较",
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 Fig. 3c,e，30°／0.5 THz；补件 Fig. S12",
+              "note": "Fig. 3e 比较相对光轴 x=0 的焦斑横向位移。不同角度的横向位移包含场角效应，同一角度逐频点的残余横向色差未有原数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_si_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2025grinthz_offaxis_500_45",
+          "model": "Chen 2025 · 单镜 · 离轴 45° · 0.5 THz",
+          "study_id": "chen2025grinthz",
+          "specimen_id": "grin_single",
+          "module": "",
+          "variant": "离轴局部 u 向 FWHM",
+          "evidence_type": "study",
+          "measurement_scope": "同一只 6 mm 实物的斜入射分频场扫描。方向取局部 u，与光传播方向正交。",
+          "values": {
+            "frequency_thz": {
+              "value": 0.5,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 1 行第 3 列，500 GHz／45°",
+              "note": "原图标注 500 GHz，对应 0.5 THz。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "original_value": 500,
+              "original_unit": "GHz"
+            },
+            "wavelength_nm": {
+              "value": 599585,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 1 行第 3 列，500 GHz／45°",
+              "note": "同一实测频点 0.5 THz，由真空光速换算 λ₀=c/ν，四舍五入至 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz",
+              "original_frequency_thz": 0.5
+            },
+            "aoi_deg": {
+              "value": 45,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 1 行第 3 列，500 GHz／45°",
+              "note": "原文列标题为相对器件光轴的入射角。方位未数字标注。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "斜入射实测 x–z 场，沿局部 u 轴取宽",
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 1 行第 3 列，500 GHz／45°；主文 Methods；审稿答复 Reviewer 2 的 u–v 段",
+              "note": "图中 v 沿局部传播轴，u 与 v 在 x–z 平面内相交且垂直。接收台实验步进为 100 μm，u 轴后处理方法与重采样间距未报。Fig. 3c 的 x–y 图与 Fig. S13 的 x/y 宽度另有方向定义。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "direction": "u",
+              "stage_step_um": 100,
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "fwhm_um": {
+              "value": 429,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 1 行第 3 列，500 GHz／45°，图内 FWHMᵤ 印字",
+              "note": "作者印字 0.715λ₀。乘同频真空波长 λ₀=c/ν 得微米值，并四舍五入至 1 μm。取宽沿局部 u 轴。重复和宽度误差未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "display": "约 429（0.715λ，u 向）",
+              "approximate": true,
+              "direction": "u",
+              "calculation_origin": "authors",
+              "unit_conversion_origin": "atlas",
+              "original_value": 0.715,
+              "original_unit": "lambda_0",
+              "conversion_formula": "original_value * 299.792458 / frequency_thz",
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "同一入射角下的三频点横向位移比较",
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 Fig. 3c,e，45°／0.5 THz；补件 Fig. S12",
+              "note": "Fig. 3e 比较相对光轴 x=0 的焦斑横向位移。不同角度的横向位移包含场角效应，同一角度逐频点的残余横向色差未有原数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_si_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2025grinthz_offaxis_600_15",
+          "model": "Chen 2025 · 单镜 · 离轴 15° · 0.6 THz",
+          "study_id": "chen2025grinthz",
+          "specimen_id": "grin_single",
+          "module": "",
+          "variant": "离轴局部 u 向 FWHM",
+          "evidence_type": "study",
+          "measurement_scope": "同一只 6 mm 实物的斜入射分频场扫描。方向取局部 u，与光传播方向正交。",
+          "values": {
+            "frequency_thz": {
+              "value": 0.6,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 2 行第 1 列，600 GHz／15°",
+              "note": "原图标注 600 GHz，对应 0.6 THz。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "original_value": 600,
+              "original_unit": "GHz"
+            },
+            "wavelength_nm": {
+              "value": 499654,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 2 行第 1 列，600 GHz／15°",
+              "note": "同一实测频点 0.6 THz，由真空光速换算 λ₀=c/ν，四舍五入至 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz",
+              "original_frequency_thz": 0.6
+            },
+            "aoi_deg": {
+              "value": 15,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 2 行第 1 列，600 GHz／15°",
+              "note": "原文列标题为相对器件光轴的入射角。方位未数字标注。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "斜入射实测 x–z 场，沿局部 u 轴取宽",
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 2 行第 1 列，600 GHz／15°；主文 Methods；审稿答复 Reviewer 2 的 u–v 段",
+              "note": "图中 v 沿局部传播轴，u 与 v 在 x–z 平面内相交且垂直。接收台实验步进为 100 μm，u 轴后处理方法与重采样间距未报。Fig. 3c 的 x–y 图与 Fig. S13 的 x/y 宽度另有方向定义。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "direction": "u",
+              "stage_step_um": 100,
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "fwhm_um": {
+              "value": 372,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 2 行第 1 列，600 GHz／15°，图内 FWHMᵤ 印字",
+              "note": "作者印字 0.745λ₀。乘同频真空波长 λ₀=c/ν 得微米值，并四舍五入至 1 μm。取宽沿局部 u 轴。重复和宽度误差未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "display": "约 372（0.745λ，u 向）",
+              "approximate": true,
+              "direction": "u",
+              "calculation_origin": "authors",
+              "unit_conversion_origin": "atlas",
+              "original_value": 0.745,
+              "original_unit": "lambda_0",
+              "conversion_formula": "original_value * 299.792458 / frequency_thz",
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "同一入射角下的三频点横向位移比较",
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 Fig. 3c,e，15°／0.6 THz；补件 Fig. S12",
+              "note": "Fig. 3e 比较相对光轴 x=0 的焦斑横向位移。不同角度的横向位移包含场角效应，同一角度逐频点的残余横向色差未有原数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_si_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2025grinthz_offaxis_600_30",
+          "model": "Chen 2025 · 单镜 · 离轴 30° · 0.6 THz",
+          "study_id": "chen2025grinthz",
+          "specimen_id": "grin_single",
+          "module": "",
+          "variant": "离轴局部 u 向 FWHM",
+          "evidence_type": "study",
+          "measurement_scope": "同一只 6 mm 实物的斜入射分频场扫描。方向取局部 u，与光传播方向正交。",
+          "values": {
+            "frequency_thz": {
+              "value": 0.6,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 2 行第 2 列，600 GHz／30°",
+              "note": "原图标注 600 GHz，对应 0.6 THz。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "original_value": 600,
+              "original_unit": "GHz"
+            },
+            "wavelength_nm": {
+              "value": 499654,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 2 行第 2 列，600 GHz／30°",
+              "note": "同一实测频点 0.6 THz，由真空光速换算 λ₀=c/ν，四舍五入至 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz",
+              "original_frequency_thz": 0.6
+            },
+            "aoi_deg": {
+              "value": 30,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 2 行第 2 列，600 GHz／30°",
+              "note": "原文列标题为相对器件光轴的入射角。方位未数字标注。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "斜入射实测 x–z 场，沿局部 u 轴取宽",
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 2 行第 2 列，600 GHz／30°；主文 Methods；审稿答复 Reviewer 2 的 u–v 段",
+              "note": "图中 v 沿局部传播轴，u 与 v 在 x–z 平面内相交且垂直。接收台实验步进为 100 μm，u 轴后处理方法与重采样间距未报。Fig. 3c 的 x–y 图与 Fig. S13 的 x/y 宽度另有方向定义。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "direction": "u",
+              "stage_step_um": 100,
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "fwhm_um": {
+              "value": 477,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 2 行第 2 列，600 GHz／30°，图内 FWHMᵤ 印字",
+              "note": "作者印字 0.955λ₀。乘同频真空波长 λ₀=c/ν 得微米值，并四舍五入至 1 μm。取宽沿局部 u 轴。重复和宽度误差未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "display": "约 477（0.955λ，u 向）",
+              "approximate": true,
+              "direction": "u",
+              "calculation_origin": "authors",
+              "unit_conversion_origin": "atlas",
+              "original_value": 0.955,
+              "original_unit": "lambda_0",
+              "conversion_formula": "original_value * 299.792458 / frequency_thz",
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "同一入射角下的三频点横向位移比较",
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 Fig. 3c,e，30°／0.6 THz；补件 Fig. S12",
+              "note": "Fig. 3e 比较相对光轴 x=0 的焦斑横向位移。不同角度的横向位移包含场角效应，同一角度逐频点的残余横向色差未有原数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_si_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2025grinthz_offaxis_600_45",
+          "model": "Chen 2025 · 单镜 · 离轴 45° · 0.6 THz",
+          "study_id": "chen2025grinthz",
+          "specimen_id": "grin_single",
+          "module": "",
+          "variant": "离轴局部 u 向 FWHM",
+          "evidence_type": "study",
+          "measurement_scope": "同一只 6 mm 实物的斜入射分频场扫描。方向取局部 u，与光传播方向正交。",
+          "values": {
+            "frequency_thz": {
+              "value": 0.6,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 2 行第 3 列，600 GHz／45°",
+              "note": "原图标注 600 GHz，对应 0.6 THz。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "original_value": 600,
+              "original_unit": "GHz"
+            },
+            "wavelength_nm": {
+              "value": 499654,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 2 行第 3 列，600 GHz／45°",
+              "note": "同一实测频点 0.6 THz，由真空光速换算 λ₀=c/ν，四舍五入至 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz",
+              "original_frequency_thz": 0.6
+            },
+            "aoi_deg": {
+              "value": 45,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 2 行第 3 列，600 GHz／45°",
+              "note": "原文列标题为相对器件光轴的入射角。方位未数字标注。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "斜入射实测 x–z 场，沿局部 u 轴取宽",
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 2 行第 3 列，600 GHz／45°；主文 Methods；审稿答复 Reviewer 2 的 u–v 段",
+              "note": "图中 v 沿局部传播轴，u 与 v 在 x–z 平面内相交且垂直。接收台实验步进为 100 μm，u 轴后处理方法与重采样间距未报。Fig. 3c 的 x–y 图与 Fig. S13 的 x/y 宽度另有方向定义。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "direction": "u",
+              "stage_step_um": 100,
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "fwhm_um": {
+              "value": 467,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 2 行第 3 列，600 GHz／45°，图内 FWHMᵤ 印字",
+              "note": "作者印字 0.935λ₀。乘同频真空波长 λ₀=c/ν 得微米值，并四舍五入至 1 μm。取宽沿局部 u 轴。重复和宽度误差未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "display": "约 467（0.935λ，u 向）",
+              "approximate": true,
+              "direction": "u",
+              "calculation_origin": "authors",
+              "unit_conversion_origin": "atlas",
+              "original_value": 0.935,
+              "original_unit": "lambda_0",
+              "conversion_formula": "original_value * 299.792458 / frequency_thz",
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "同一入射角下的三频点横向位移比较",
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 Fig. 3c,e，45°／0.6 THz；补件 Fig. S12",
+              "note": "Fig. 3e 比较相对光轴 x=0 的焦斑横向位移。不同角度的横向位移包含场角效应，同一角度逐频点的残余横向色差未有原数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_si_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2025grinthz_offaxis_700_15",
+          "model": "Chen 2025 · 单镜 · 离轴 15° · 0.7 THz",
+          "study_id": "chen2025grinthz",
+          "specimen_id": "grin_single",
+          "module": "",
+          "variant": "离轴局部 u 向 FWHM",
+          "evidence_type": "study",
+          "measurement_scope": "同一只 6 mm 实物的斜入射分频场扫描。方向取局部 u，与光传播方向正交。",
+          "values": {
+            "frequency_thz": {
+              "value": 0.7,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 3 行第 1 列，700 GHz／15°",
+              "note": "原图标注 700 GHz，对应 0.7 THz。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "original_value": 700,
+              "original_unit": "GHz"
+            },
+            "wavelength_nm": {
+              "value": 428275,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 3 行第 1 列，700 GHz／15°",
+              "note": "同一实测频点 0.7 THz，由真空光速换算 λ₀=c/ν，四舍五入至 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz",
+              "original_frequency_thz": 0.7
+            },
+            "aoi_deg": {
+              "value": 15,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 3 行第 1 列，700 GHz／15°",
+              "note": "原文列标题为相对器件光轴的入射角。方位未数字标注。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "斜入射实测 x–z 场，沿局部 u 轴取宽",
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 3 行第 1 列，700 GHz／15°；主文 Methods；审稿答复 Reviewer 2 的 u–v 段",
+              "note": "图中 v 沿局部传播轴，u 与 v 在 x–z 平面内相交且垂直。接收台实验步进为 100 μm，u 轴后处理方法与重采样间距未报。Fig. 3c 的 x–y 图与 Fig. S13 的 x/y 宽度另有方向定义。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "direction": "u",
+              "stage_step_um": 100,
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "fwhm_um": {
+              "value": 426,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 3 行第 1 列，700 GHz／15°，图内 FWHMᵤ 印字",
+              "note": "作者印字 0.994λ₀。乘同频真空波长 λ₀=c/ν 得微米值，并四舍五入至 1 μm。取宽沿局部 u 轴。重复和宽度误差未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "display": "约 426（0.994λ，u 向）",
+              "approximate": true,
+              "direction": "u",
+              "calculation_origin": "authors",
+              "unit_conversion_origin": "atlas",
+              "original_value": 0.994,
+              "original_unit": "lambda_0",
+              "conversion_formula": "original_value * 299.792458 / frequency_thz",
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "同一入射角下的三频点横向位移比较",
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 Fig. 3c,e，15°／0.7 THz；补件 Fig. S12",
+              "note": "Fig. 3e 比较相对光轴 x=0 的焦斑横向位移。不同角度的横向位移包含场角效应，同一角度逐频点的残余横向色差未有原数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_si_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2025grinthz_offaxis_700_30",
+          "model": "Chen 2025 · 单镜 · 离轴 30° · 0.7 THz",
+          "study_id": "chen2025grinthz",
+          "specimen_id": "grin_single",
+          "module": "",
+          "variant": "离轴局部 u 向 FWHM",
+          "evidence_type": "study",
+          "measurement_scope": "同一只 6 mm 实物的斜入射分频场扫描。方向取局部 u，与光传播方向正交。",
+          "values": {
+            "frequency_thz": {
+              "value": 0.7,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 3 行第 2 列，700 GHz／30°",
+              "note": "原图标注 700 GHz，对应 0.7 THz。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "original_value": 700,
+              "original_unit": "GHz"
+            },
+            "wavelength_nm": {
+              "value": 428275,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 3 行第 2 列，700 GHz／30°",
+              "note": "同一实测频点 0.7 THz，由真空光速换算 λ₀=c/ν，四舍五入至 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz",
+              "original_frequency_thz": 0.7
+            },
+            "aoi_deg": {
+              "value": 30,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 3 行第 2 列，700 GHz／30°",
+              "note": "原文列标题为相对器件光轴的入射角。方位未数字标注。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "斜入射实测 x–z 场，沿局部 u 轴取宽",
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 3 行第 2 列，700 GHz／30°；主文 Methods；审稿答复 Reviewer 2 的 u–v 段",
+              "note": "图中 v 沿局部传播轴，u 与 v 在 x–z 平面内相交且垂直。接收台实验步进为 100 μm，u 轴后处理方法与重采样间距未报。Fig. 3c 的 x–y 图与 Fig. S13 的 x/y 宽度另有方向定义。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "direction": "u",
+              "stage_step_um": 100,
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "fwhm_um": {
+              "value": 429,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 3 行第 2 列，700 GHz／30°，图内 FWHMᵤ 印字",
+              "note": "作者印字 1.002λ₀。乘同频真空波长 λ₀=c/ν 得微米值，并四舍五入至 1 μm。取宽沿局部 u 轴。重复和宽度误差未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "display": "约 429（1.002λ，u 向）",
+              "approximate": true,
+              "direction": "u",
+              "calculation_origin": "authors",
+              "unit_conversion_origin": "atlas",
+              "original_value": 1.002,
+              "original_unit": "lambda_0",
+              "conversion_formula": "original_value * 299.792458 / frequency_thz",
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "同一入射角下的三频点横向位移比较",
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 Fig. 3c,e，30°／0.7 THz；补件 Fig. S12",
+              "note": "Fig. 3e 比较相对光轴 x=0 的焦斑横向位移。不同角度的横向位移包含场角效应，同一角度逐频点的残余横向色差未有原数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_si_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2025grinthz_offaxis_700_45",
+          "model": "Chen 2025 · 单镜 · 离轴 45° · 0.7 THz",
+          "study_id": "chen2025grinthz",
+          "specimen_id": "grin_single",
+          "module": "",
+          "variant": "离轴局部 u 向 FWHM",
+          "evidence_type": "study",
+          "measurement_scope": "同一只 6 mm 实物的斜入射分频场扫描。方向取局部 u，与光传播方向正交。",
+          "values": {
+            "frequency_thz": {
+              "value": 0.7,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 3 行第 3 列，700 GHz／45°",
+              "note": "原图标注 700 GHz，对应 0.7 THz。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "original_value": 700,
+              "original_unit": "GHz"
+            },
+            "wavelength_nm": {
+              "value": 428275,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 3 行第 3 列，700 GHz／45°",
+              "note": "同一实测频点 0.7 THz，由真空光速换算 λ₀=c/ν，四舍五入至 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz",
+              "original_frequency_thz": 0.7
+            },
+            "aoi_deg": {
+              "value": 45,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 3 行第 3 列，700 GHz／45°",
+              "note": "原文列标题为相对器件光轴的入射角。方位未数字标注。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "斜入射实测 x–z 场，沿局部 u 轴取宽",
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 3 行第 3 列，700 GHz／45°；主文 Methods；审稿答复 Reviewer 2 的 u–v 段",
+              "note": "图中 v 沿局部传播轴，u 与 v 在 x–z 平面内相交且垂直。接收台实验步进为 100 μm，u 轴后处理方法与重采样间距未报。Fig. 3c 的 x–y 图与 Fig. S13 的 x/y 宽度另有方向定义。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "direction": "u",
+              "stage_step_um": 100,
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "fwhm_um": {
+              "value": 273,
+              "source": "chen_grinthz_si_2025",
+              "location": "补件 Fig. S12，第 3 行第 3 列，700 GHz／45°，图内 FWHMᵤ 印字",
+              "note": "作者印字 0.637λ₀。乘同频真空波长 λ₀=c/ν 得微米值，并四舍五入至 1 μm。取宽沿局部 u 轴。重复和宽度误差未报告。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "display": "约 273（0.637λ，u 向）",
+              "approximate": true,
+              "direction": "u",
+              "calculation_origin": "authors",
+              "unit_conversion_origin": "atlas",
+              "original_value": 0.637,
+              "original_unit": "lambda_0",
+              "conversion_formula": "original_value * 299.792458 / frequency_thz",
+              "sourceIds": [
+                "chen_grinthz_si_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "同一入射角下的三频点横向位移比较",
+              "source": "chen_grinthz_fig3_2025",
+              "location": "主文 Fig. 3c,e，45°／0.7 THz；补件 Fig. S12",
+              "note": "Fig. 3e 比较相对光轴 x=0 的焦斑横向位移。不同角度的横向位移包含场角效应，同一角度逐频点的残余横向色差未有原数。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "chen_grinthz_fig3_2025",
+                "chen_grinthz_si_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2025grinthz_confocal_700",
+          "model": "Chen 2025 · 双透镜共焦成像 · 0.7 THz",
+          "study_id": "chen2025grinthz",
+          "specimen_id": "confocal_normal",
+          "module": "",
+          "variant": "正入射共焦系统",
+          "evidence_type": "study",
+          "measurement_scope": "M1 在样品上聚焦，M2 收集并准直至接收喇叭。样品置于共同焦面并作二维栅格扫描。",
+          "values": {
+            "frequency_thz": {
+              "value": 0.7,
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 pp7–8 Fig. 4 与 Methods；审稿答复 Version 0 Reviewer 2 问题 7",
+              "note": "原图标注 700 GHz，对应 0.7 THz。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "original_value": 700,
+              "original_unit": "GHz"
+            },
+            "wavelength_nm": {
+              "value": 428275,
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 pp7–8 Fig. 4 与 Methods；审稿答复 Version 0 Reviewer 2 问题 7",
+              "note": "同一实测频点 0.7 THz，由真空光速换算 λ₀=c/ν，四舍五入至 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz",
+              "original_frequency_thz": 0.7
+            },
+            "psf_protocol": {
+              "value": "正入射共焦成像，样品二维栅扫",
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 pp7–8 Fig. 4 与 Methods；审稿答复 Version 0 Reviewer 2 问题 7",
+              "note": "0.7 THz y 偏振，样品在共焦面。作者答复报告在正负分辨率靶实验使用 100 μm 扫描步进，另有 200 μm 步进旋转对照。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "scan_step_um": 100,
+              "sourceIds": [
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_review_2025"
+              ]
+            },
+            "resolved_test_line_width_um": {
+              "value": 200,
+              "source": "chen_grinthz_review_2025",
+              "location": "主文 pp7–8 Fig. 4 与 Methods；审稿答复 Version 0 Reviewer 2 问题 7",
+              "note": "作者报告可分辨约 0.2 mm 特征。竖条较横条清晰，原文讨论偏振影响。对线条的对比阈值和图组编号未以可核文本给出。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "display": "约 200",
+              "approximate": true,
+              "calculation_origin": "authors",
+              "original_value": 0.2,
+              "original_unit": "mm",
+              "sourceIds": [
+                "chen_grinthz_review_2025",
+                "chen_grinthz_vor_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "chen2025grinthz_confocal_offaxis_15",
+          "model": "Chen 2025 · 离轴成像 · 15°",
+          "study_id": "chen2025grinthz",
+          "specimen_id": "confocal_offaxis",
+          "module": "",
+          "variant": "离轴共焦系统",
+          "evidence_type": "study",
+          "measurement_scope": "同一论文的侧向照明成像系统，配置和单镜 PSF、正入射分辨率靶各自记录。",
+          "values": {
+            "aoi_deg": {
+              "value": 15,
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p6 Imaging 段与 p8 Fig. 5，15°；补件 Fig. S15",
+              "note": "作者用三个正向角度作比较。图注未给绝对方位角。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "固定入射角的双透镜成像对照",
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p6 Imaging 段与 p8 Fig. 5，15°；补件 Fig. S15",
+              "note": "观察 Fig. 4d 的 #2 FR4 样品中 10 mm×10 mm 区域。Fig. 5 专属精确照明频点、入射偏振复核和检测数值窗未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_si_2025"
+              ]
+            },
+            "image_snr_db": {
+              "value": null,
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p6 Imaging 段与 p8 Fig. 5，15°；补件 Fig. S15",
+              "note": "正文只报告 SNR >10 dB 的界限，未说明信号和噪声区域、是否使用统一图像归一尺度、重复数及不确定度。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "作者报告 >10 dB，精确值未给"
+            }
+          }
+        },
+        {
+          "id": "chen2025grinthz_confocal_offaxis_30",
+          "model": "Chen 2025 · 离轴成像 · 30°",
+          "study_id": "chen2025grinthz",
+          "specimen_id": "confocal_offaxis",
+          "module": "",
+          "variant": "离轴共焦系统",
+          "evidence_type": "study",
+          "measurement_scope": "同一论文的侧向照明成像系统，配置和单镜 PSF、正入射分辨率靶各自记录。",
+          "values": {
+            "aoi_deg": {
+              "value": 30,
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p6 Imaging 段与 p8 Fig. 5，30°；补件 Fig. S15",
+              "note": "作者用三个正向角度作比较。图注未给绝对方位角。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "固定入射角的双透镜成像对照",
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p6 Imaging 段与 p8 Fig. 5，30°；补件 Fig. S15",
+              "note": "观察 Fig. 4d 的 #2 FR4 样品中 10 mm×10 mm 区域。Fig. 5 专属精确照明频点、入射偏振复核和检测数值窗未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_si_2025"
+              ]
+            },
+            "image_snr_db": {
+              "value": null,
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p6 Imaging 段与 p8 Fig. 5，30°；补件 Fig. S15",
+              "note": "正文只报告 SNR >10 dB 的界限，未说明信号和噪声区域、是否使用统一图像归一尺度、重复数及不确定度。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "作者报告 >10 dB，精确值未给"
+            }
+          }
+        },
+        {
+          "id": "chen2025grinthz_confocal_offaxis_45",
+          "model": "Chen 2025 · 离轴成像 · 45°",
+          "study_id": "chen2025grinthz",
+          "specimen_id": "confocal_offaxis",
+          "module": "",
+          "variant": "离轴共焦系统",
+          "evidence_type": "study",
+          "measurement_scope": "同一论文的侧向照明成像系统，配置和单镜 PSF、正入射分辨率靶各自记录。",
+          "values": {
+            "aoi_deg": {
+              "value": 45,
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p6 Imaging 段与 p8 Fig. 5，45°；补件 Fig. S15",
+              "note": "作者用三个正向角度作比较。图注未给绝对方位角。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "angle_reference": "incident_beam_to_optical_axis",
+              "azimuth_deg": null
+            },
+            "psf_protocol": {
+              "value": "固定入射角的双透镜成像对照",
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p6 Imaging 段与 p8 Fig. 5，45°；补件 Fig. S15",
+              "note": "观察 Fig. 4d 的 #2 FR4 样品中 10 mm×10 mm 区域。Fig. 5 专属精确照明频点、入射偏振复核和检测数值窗未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "chen_grinthz_vor_2025",
+                "chen_grinthz_si_2025"
+              ]
+            },
+            "image_snr_db": {
+              "value": null,
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p6 Imaging 段与 p8 Fig. 5，45°；补件 Fig. S15",
+              "note": "正文只报告 SNR <10 dB 的界限，未说明信号和噪声区域、是否使用统一图像归一尺度、重复数及不确定度。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "作者报告 <10 dB，精确值未给"
+            },
+            "fov_deg": {
+              "value": 90,
+              "source": "chen_grinthz_vor_2025",
+              "location": "主文 p6 Fig. 5 讨论；p7 Discussion",
+              "note": "作者把 ±45° 称为全角 90° 的范围界限。Fig. 5 在正向 45° 仍给图像，SNR 低于 10 dB。是作者范围概述，未给两侧扫描及按统一成像阈值的带宽。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "field_kind": "full_angle",
+              "coverage_endpoint_deg": 45
+            }
+          }
         }
       ],
-      "scope": "69项原始研究、320个器件/测量/系统配置、1377条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
+      "scope": "70项原始研究、323个器件/测量/系统配置、1399条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
