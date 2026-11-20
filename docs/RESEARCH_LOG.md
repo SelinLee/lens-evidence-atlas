@@ -1437,3 +1437,9 @@ Cai 2019 的可见光原稿已由 OSTI 取得，Crossref 20、OpenAlex 21 次（
 ## 2026-11-21-177 · Ou 与 Wang 液晶可切换消色差
 
 两项原始研究、十个器件与测量配置、30 条记录。Ou 2022 的 40 μm 可见光器件在 0／5 V 两状态各有六实测谱点。录入设计焦距 50／100 μm、NA 0.371／0.196、焦面全部光强的效率分母及两类同文色散对照。Wang 2025 的同一太赫兹器件在 1.0–1.6 THz 有两状态实测平均焦位 10.20／13.76 mm 与平均效率 23.9%／26.1%，效率用入射光强作分母。带端 FWHM 与图内全部宽度系数及作者 MTF 曲线定位入库。两篇逐频峰位、残余色差、原始场数组待补。累计 72 篇、333 个配置和 1429 条，可见光 52 篇、883 条。[本批核验](OU_WANG_LC_ACHROMATIC_EVIDENCE_2026-11-21.md)
+
+## 2026-11-21-178 · Ou 和 Wang 上线验收及 Shen 2020 正式资料
+
+0.3.79 经 [PR #236](https://github.com/SelinLee/lens-evidence-atlas/pull/236) 合并为 `d8cdba312221a13963753c93279e7e1ead952c6c`。PR 校验 44777262524、主线校验 44777485147 与 [Pages 44777485987](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44777485987) 成功。363 项测试、255 个公开文件哈希通过，`devices-data.js` SHA-256 为 `ceb3a5fdf0c511d0daf87a3a559a52d797250ec973a162a41621c30f532e9252`。独立无头 Chrome 复核 72 篇、1429 条，可见光筛选 52 篇、883 条。Ou 六组 22 条全保留，两状态设计散点正确，逐色焦距轴无散点。Wang 四组八条在可见光筛选被排除，两个跨频平均焦位与效率、四个带端宽度散点、CSV、出处往返与六视口验证通过。Ou 作者稿和王文正式 PDF 可达且哈希匹配。[本批核验](OU_WANG_LC_ACHROMATIC_EVIDENCE_2026-11-21.md)
+
+下一篇继续 Shen 2020。2026-11-21 查 Crossref 138、OpenAlex 149 次。原作 2020-05-12 正式上线。南京大学现行链接取得 3529391 字节正式 PDF，SHA-256 为 `f8f1d5e60dd7451084a6064c4596221ff0e4c0b1a3c76c62014775a1598c6a44`。Fig. 3 有 0.9–1.4 THz 六频点及无偏压、75 Vrms／1 kHz 两状态。主文写无偏压实测约 12 mm，与 15 mm 设计目标有偏差。解读需把测量面 z=12／13 mm 与逐频轴峰分开。约 26.1%／33.9% 的平均效率分母为入射 LCP 太赫兹功率，焦面积分与逐频值待补。DataCite 关联 DOI 零项，继续追原刊所列补充材料。会话目标保持开启。[原刊](https://doi.org/10.1117/1.AP.2.3.036002) · [校方正式 PDF](https://light.nju.edu.cn/upload/file/20250515/152_202505151551357801.pdf) · [Crossref](https://api.crossref.org/works/10.1117/1.ap.2.3.036002) · [OpenAlex](https://api.openalex.org/works/W3025422990)
