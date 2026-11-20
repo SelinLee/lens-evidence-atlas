@@ -1377,3 +1377,11 @@ Jiang 的 Figs. 5–6 各报告 0.80–1.20 THz、间隔 0.05 THz 的九点。�
 ## 2026-11-20-167 · He 2026 双螺旋 PSF 与 Liu 2024 消色差折超双片
 
 新增 2 篇、2 个实物配置、2 条证据摘要。He 在 1200–1400 nm 以传播相位、线性相位补偿和几何相位减小同一深度下的双螺旋 PSF 旋角色差。补件预览 Table S1 下给 500 nm 元胞周期，补件目录区分模拟和实测旋角与 SD。14.39 倍保留为作者能量利用效率提升说法，功率比定义留待原文。Liu 按 2026-11-20 Crossref 56、OpenAlex 60 次纳入，原刊明报 8–12 μm 折超双片的消色差和彗差校正、全视场角 >20°、室内外被动热成像。保留全视场角下界。补件目录指向双片实测 MTF 和三个配置的比较。两篇的几何、残余焦差、逐色实测焦位和焦斑、原始 PSF 与 MTF 数表待后续补证。本库 66 篇、310 配置、1365 条，可见光筛选 50 篇、859 条。[本批核验](HE_LIU_CHROMATIC_EVIDENCE_2026-11-20.md)
+
+## 2026-11-20-168 · He 和 Liu 上线验收及 Choi 2025 原始数据入口
+
+0.3.74 经 [PR #226](https://github.com/SelinLee/lens-evidence-atlas/pull/226) 合并为 `446c199b046a41776ed927753c91fbb62b7830c7`。PR 校验 44759713126、主线校验 44759868562 和 [Pages 44759868429](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44759868429) 成功。355 项测试、249 个发布文件逐项哈希通过，`devices-data.js` SHA-256 为 `2c483026f8c6b6e669d3b26ee4d67cf90ea7caade62e03367a3633ab1044d9c9`。本机独立无头 Chrome 核对全表 66 篇、1365 条，可见光 50 篇、859 条。两篇各一配置一条，核过波段上下端散点、Liu 全视场下界、He 空焦位、CSV、两篇原始引用往返和六视口。两篇的 Crossref 补件组件均可开并指向正确文件，ACS 正文在本次浏览器返回 403。
+
+Tang 2026 正式上线为 2026-06-13。正文预览所见为实物宽带成像、三色轴上 MTF 和三个视场宽谱 MTF，另有三波长的设计场曲和畸变图。正式 PDF 及 `lpor71431-sup-0001-SuppMat.docx` 直连均返回 403。光学色差校正式和单色测试共用像面仍待主文核实，保留候选。沿同领域查 Hu 2024，虽明示用两块超表面的负色散补折射镜，但期刊在 2025 年表为大类二区，Crossref 37 次、OpenAlex 40 次。Cheng 的自聚焦艾里束文章有制样和三个 FWHM，但 2026-11-20 查 Crossref 45 次、OpenAlex 49 次，亦未达到经典门槛。[Tang 原刊](https://onlinelibrary.wiley.com/doi/10.1002/lpor.71431) · [Hu 原文](https://doi.org/10.1515/nanoph-2023-0918) · [Cheng 作者组正式版](https://dsl.nju.edu.cn/litao/papers/Cheng_QQ_nanoph-2020-0536%282021%29.pdf)
+
+下一批回到用户参考目录的 Choi 2025 厘米级 RGB 实物。现有三色焦斑、Strehl 与效率记录的最佳焦位待补，635 nm 的 5.77 μm 误差有自己的设计参考。独立无头 Chrome 取到正式补件两个 CDN 副本，均 2235231 字节，SHA-256 为 `ca52ff345b1f36686f9279d300132af639573a9e98cc6d8a7f48bf20ffd2c262`。出版社返回 HTML，数据声明指向通讯作者合理请求。DataCite 关联 DOI 与 Zenodo 精确 DOI 查询为 0，POSTECH 作者发表目录可开。继续核三色最佳焦位及效率窗，沿同一来源复核裸镜 PSF 和全息近眼系统的条纹对比。会话目标保持开启。[Choi 正式原文](https://www.nature.com/articles/s41563-025-02121-0) · [正式补件](https://static-content.springer.com/esm/art%3A10.1038%2Fs41563-025-02121-0/MediaObjects/41563_2025_2121_MOESM1_ESM.pdf) · [POSTECH 作者目录](https://photonicscenter.postech.ac.kr/publications)
