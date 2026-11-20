@@ -1279,3 +1279,11 @@ Arbabi 2016 已取得 Caltech 与 PMC 开放存档的正式版 PDF，均为 9533
 ## 2026-11-20-151 · Arbabi 2016 两只空间复用实物及高阶焦
 
 正式版 pp.2–7、Fig. 5、Fig. 6 和 Tables 1–2 证实两只 300 μm、NA 0.46 的 915／1550 nm 空间复用实物。区分作者 f=286 μm 与有限共轭设计像距 400 μm。分区镜的聚焦效率为 37±1%／30±1%，交织镜为 10±0.5%／58±1%。两镜的宽度均为 1.85±0.05／3.3±0.2 μm，± 类型未注明。915 nm 的光阑为 20 μm 针孔，1550 nm 为继像面 2 mm 虹膜（折算约 20 μm），分母统一为各自实验的光纤输出功率。交织实物的 915 nm 高阶焦 z≈220 μm 单列，峰强和功率约为设计级次 1.8 倍、1.2 倍。新增 1 篇、2 实物、7 条，累计 58 篇、293 配置、1246 条。设计级次逐点轴峰及残差留空。原始 PSF 和 MTF 仍待补。[核验](ARBABI_2016_SPATIAL_MULTIPLEX_REVIEW_2026-11-20.md) · [正式 Fig. 6 与两表](https://pmc-oa-opendata.s3.amazonaws.com/PMC5011735.1/PMC5011735.1.pdf#page=6)
+
+## 2026-11-20-152 · Arbabi 上线验收与 Chang 专利公开件初查
+
+0.3.65 经 PR #210 合并为 `fb86b3e9c5f727cf2eceb05cc83eddb6abd8a325`。PR 校验 44737702695、主线校验 44737851627 与 Pages 44737851635 成功，337 项测试通过，241 个公开文件与本地构建 SHA-256 一致。独立无头 Google Chrome 核线上 58 篇、1246 条与可见光 47 篇、829 条，Arbabi 两配置七条、四个效率、两只器件重叠的宽度和几何散点、约 220 μm 高阶焦、空的设计级次实测焦位、可见光排除、原文引用往返和六种视口。证据 PDF 的 PMC 与 Caltech 版本哈希一致。[PR #210](https://github.com/SelinLee/lens-evidence-atlas/pull/210) · [Pages 44737851635](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44737851635)
+
+接续核查 Chang 2024 的 400 μm 器件。Penn State 专利申请公开件 Figs. 46–50 的器件参数与论文相应图表吻合，新增一个核查入口。图版及附件检查仍未定位 MTF 数表或原始 PSF。同族 WO2023235186A2 的 PDF pp.98–102 与美国公开件为相应图版，0 个嵌入文件。两版专利正文给 12.35 mm，图示设计线与正式论文为 12.5 mm，保留出处差异。查 Zhang 2021 随机形状预印本，正文有实物扫描，OpenAlex 以 arXiv DOI 查询为 7 次，引文门槛暂未达到。保持会话目标开启。[Chang 核查记录](CHANG_MTF_DATA_AUDIT_2026-11-14.md#2026-11-20-补查-penn-state-专利申请公开件) · [Zhang 预印本](https://arxiv.org/abs/2103.10845) · [OpenAlex](https://api.openalex.org/works/https://doi.org/10.48550/arXiv.2103.10845)
+
+接续回到 Hasegawa 2026 的近期可见光 RGB 实物。已由本机无头 Chrome 取得东京农工大 6 页公开说明，图 3 转载实物聚焦图。DataCite 精确关联检索返回 0。下一批继续寻找作者关联的原始补件与焦点数据，核三色轴向残差及 Table S2–3 的适用条件。[东京农工大](https://www.tuat.ac.jp/documents/tuat/outline/disclosure/pressrelease/2026/20261111_01.pdf) · [期刊正式 PDF](https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/lpor.72174)

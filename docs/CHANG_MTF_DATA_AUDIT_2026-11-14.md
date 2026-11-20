@@ -38,6 +38,14 @@
 
 Europe PMC DOI索引确认同一研究为PMC11544246，只用于核对版本入口，未以索引字段代替原文数据。未从审稿人估读值或其它研究制造MTF数表。
 
+## 2026-11-20 补查 Penn State 专利申请公开件
+
+专利申请公开件 US20250224542A1 的发明人包括 Xingjie Ni、Lidan Zhang 和 Shengyuan Chang。公开文本的多层补偿器件部分描述 400 μm 口径、名义 NA 0.02、六级 SiN 底层及 400–700 nm 七谱点。独立无头 Google Chrome 取得 70 页 PDF，5906213 字节，SHA-256 为 `fe179b208c940362d1fa1e50c4fe7bfaf713faaf82f998885f341cbc6c483b6b`，PDF 附件清单为 0。[专利公开文本](https://patents.google.com/patent/US20250224542A1/en) · [公开 PDF](https://patentimages.storage.googleapis.com/95/26/c3/5ac3ebf5a04dc7/US20250224542A1.pdf)
+
+视觉核对 PDF pp.47–51 的 Figs. 46–50 以及论文 Fig. 3D–G 和 SI Fig. S6。Fig. 46 的波长、图版布局、设计焦面标注和两组比例尺对应论文 Fig. 3D。图版为压缩排版的轴向及横向强度图，缺相机原始像素、背景、裁剪和物方像素标定。Figs. 47–49 分别为焦距、FWHM 与 Strehl 曲线，Fig. 50 是靶图和全彩图。文本搜索了 sagittal、tangential、spatial frequency 及 MTF，结合图表目录和上述图页，未定位 Fig. S6 的数值表或可复算的 PSF 文件。美国公开件 PDF p.66 段落 [0182] 报告 12.35 mm，Fig. 46 的设计参考线与正式论文标示 12.5 mm。该差异留作版本核查，数据库中的论文数据沿用正式原文。[专利 Fig. 46](https://patentimages.storage.googleapis.com/95/26/c3/5ac3ebf5a04dc7/US20250224542A1.pdf#page=47) · [论文 Fig. 3](https://www.nature.com/articles/s41467-024-53701-8.pdf#page=6) · [正式 SI Fig. S6](https://pmc-oa-opendata.s3.amazonaws.com/PMC11544246.1/41467_2024_53701_MOESM1_ESM.pdf#page=17)
+
+同族 PCT 公开件 WO2023235186A2 的 107 页 PDF 共 6255536 字节，SHA-256 为 `0711d3131c362581f7e3ce0724096a1aa0f5c9770414a6a9ab7242c6afa17573`，0 个嵌入附件。PDF pp.98–102 是对应 Figs. 46–50。检查图版、目录及正文中 MTF 与 sagittal 的检索结果，未见追加数表或相机原始文件。其文字同样报告 12.35 mm。[PCT 公开文本](https://patents.google.com/patent/WO2023235186A2/en) · [PCT 图页](https://patentimages.storage.googleapis.com/e9/d9/ed/8ca01f71c296e2/WO2023235186A2.pdf#page=98)
+
 ## 仍需的原始材料与复算边界
 
 最小补证包：七波长的S/T频率–MTF表，或对应原始二维PSF；各文件的器件、波长、偏振、场点、方向、评价焦面；物方像素尺度及轴向采样；背景/裁剪/窗函数/补零/归一化与截线程序。若将来取得PSF并复算，另立`derived_from_measurement`测量记录，注明本库计算、输入文件与校验值，不覆盖作者曲线数据。
