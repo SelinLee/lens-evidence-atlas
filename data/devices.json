@@ -2828,6 +2828,60 @@
       "scope": "2026-11-20 查询 cited_by_count 为 149。",
       "checked_on": "2026-11-20",
       "publication_source": "cheng_thz_2019_nju"
+    },
+    {
+      "id": "jiang_lapiam_pdf_2026",
+      "title": "Jiang et al. (2026), Large-Aperture Polarization-Independent Broadband Achromatic All-Dielectric Metalens for Terahertz Focusing",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13137821.1/PMC13137821.1.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "PMC 开放存档正式版，核 §§2.1–2.3、4.2–4.3，Figs. 4–7，Eqs. (3)–(4) 与数据声明。",
+      "checked_on": "2026-11-20",
+      "doi": "10.1002/advs.74515"
+    },
+    {
+      "id": "jiang_lapiam_si_2026",
+      "title": "Advanced Science · Jiang 2026 正式补件",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13137821.1/ADVS-13-e74515-s001.docx",
+      "kind": "publisher_supplement",
+      "scope": "作者发布的正式 DOCX。核 Figs. S2–S5 的设计、S7 的实验、S8–S9 的模拟以及 S10 的成像。一个 OLE 是 Eq. S1。",
+      "checked_on": "2026-11-20",
+      "publication_source": "jiang_lapiam_pdf_2026"
+    },
+    {
+      "id": "jiang_lapiam_wiley_2026",
+      "title": "Wiley · Jiang 2026 正式题录与数据声明",
+      "url": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.74515",
+      "kind": "publisher",
+      "scope": "2026-02-17 正式在线，2026-03-27 追加通讯作者勘误。数据声明为向通讯作者合理请求。",
+      "checked_on": "2026-11-20",
+      "publication_source": "jiang_lapiam_pdf_2026"
+    },
+    {
+      "id": "jiang_lapiam_cas_2025",
+      "title": "Advanced Science · 2025 年 3 月中科院大类分区",
+      "url": "https://www.ifabiao.com/sci/21983844/",
+      "kind": "journal_classification",
+      "scope": "按页面的 2025 年 3 月升级版，综合性期刊大类一区。",
+      "checked_on": "2026-11-20",
+      "publication_source": "jiang_lapiam_pdf_2026"
+    },
+    {
+      "id": "jiang_lapiam_datacite_2026",
+      "title": "DataCite · Jiang 2026 DOI 关联检索",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1002%2Fadvs.74515%22",
+      "kind": "data_registry",
+      "scope": "对正式 DOI 查询精确关联共 0 条。",
+      "checked_on": "2026-11-20",
+      "publication_source": "jiang_lapiam_pdf_2026"
+    },
+    {
+      "id": "jiang_lapiam_zenodo_2026",
+      "title": "Zenodo · Jiang 2026 DOI 检索",
+      "url": "https://zenodo.org/api/records?q=%2210.1002%2Fadvs.74515%22",
+      "kind": "data_registry",
+      "scope": "以 DOI 作为完整字面查询，结果共 0 条。",
+      "checked_on": "2026-11-20",
+      "publication_source": "jiang_lapiam_pdf_2026"
     }
   ],
   "domains": {
@@ -159257,9 +159311,4269 @@
                 "display": "仅模型，无实测焦差"
               }
             }
+          },
+          {
+            "id": "jiang2026lapiam_device",
+            "model": "Jiang 2026 · LAPIAM · 制成器件与设计",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "LAPIAM · 制成器件与设计",
+            "evidence_type": "study",
+            "measurement_scope": "一枚实制高阻硅镜；正交偏振与成像见子记录。",
+            "visible_light_use": false,
+            "values": {
+              "diameter_um": {
+                "value": 22100,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.5 §2.2 开头；p.6 Fig. 4a",
+                "note": "制成实物直径 2.21 cm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 2.21,
+                "original_unit": "cm"
+              },
+              "design_focal_um": {
+                "value": 80000,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.4 §2.1 设计段；补件 Fig. S4 对应正文",
+                "note": "作者设定的焦长 8 cm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 8,
+                "original_unit": "cm",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ]
+              },
+              "lambda_min_nm": {
+                "value": 249827,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.3–4 §2.1 与 Fig. 3",
+                "note": "原标注 1.20 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 249,827 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1.2,
+                "original_unit": "THz"
+              },
+              "lambda_max_nm": {
+                "value": 374741,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.3–4 §2.1 与 Fig. 3",
+                "note": "原标注 0.80 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 374,741 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 0.8,
+                "original_unit": "THz"
+              },
+              "material": {
+                "value": "高阻硅；六种旋转对称单元",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.2–5 §§2.1–2.2；Figs. 1c、4a",
+                "note": "作者讨论四重旋转对称性与高阻硅单层制程。设计柱高 240 μm，SEM 所示制造柱高约 230 μm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "minimum_designed_line_width_um": 12,
+                "maximum_designed_unit_width_um": 84,
+                "design_height_um": 240,
+                "fabricated_height_um": 230,
+                "fabricated_height_approximate": true,
+                "unit_types": 6
+              },
+              "chromatic": {
+                "value": "九频点离散相位匹配；0.80–1.20 THz 工作频带",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.3–4 §2.1 Eqs. (1)–(2)，p.10 §3；补件 Figs. S2–S5",
+                "note": "用 PSO 与频率依赖的全孔径常量相位 C(f)，在九个设计频率匹配以共同焦点为目标的双曲相位。实验选同九个频率，两种偏振用同一镜。按 2025 年 3 月中科院综合性期刊大类一区纳入。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026",
+                  "jiang_lapiam_wiley_2026",
+                  "jiang_lapiam_cas_2025",
+                  "jiang_lapiam_datacite_2026",
+                  "jiang_lapiam_zenodo_2026"
+                ],
+                "spectral_sampling": "nine_discrete_design_and_measurement_frequencies",
+                "frequencies_thz": [
+                  0.8,
+                  0.85,
+                  0.9,
+                  0.95,
+                  1,
+                  1.05,
+                  1.1,
+                  1.15,
+                  1.2
+                ],
+                "frequency_interval_thz": 0.05
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_x_summary",
+            "model": "Jiang 2026 · x 偏振实测 · 九频点统计",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "x 偏振实测 · 九频点统计",
+            "evidence_type": "study",
+            "measurement_scope": "同一实物；跨谱点作者统计。",
+            "visible_light_use": false,
+            "values": {
+              "diameter_um": {
+                "value": 22100,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.5 §2.2 开头；p.6 Fig. 4a",
+                "note": "制成实物直径 2.21 cm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 2.21,
+                "original_unit": "cm"
+              },
+              "design_focal_um": {
+                "value": 80000,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.4 §2.1 设计段；补件 Fig. S4 对应正文",
+                "note": "作者设定的焦长 8 cm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 8,
+                "original_unit": "cm",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ]
+              },
+              "lambda_min_nm": {
+                "value": 249827,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.3–4 §2.1 与 Fig. 3",
+                "note": "原标注 1.20 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 249,827 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1.2,
+                "original_unit": "THz"
+              },
+              "lambda_max_nm": {
+                "value": 374741,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.3–4 §2.1 与 Fig. 3",
+                "note": "原标注 0.80 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 374,741 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 0.8,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "x 线偏振",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.5–7 §2.2；Fig. 5",
+                "note": "实验按作者两次测量的 x/y 命名。同一枚实物相差 90° 转角完成两种入射偏振的表征。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "x"
+              },
+              "psf_protocol": {
+                "value": "线偏振正入射；近场探针采集，取 x–z 强度最大点",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.5–7 §2.2；Fig. 5",
+                "note": "正文 §2.2 分开报告本实验 0.1 mm 探针空间分辨率与 §4.3／补件 Fig. S7 的系统最小 20 μm。实际横纵扫描步距与绝对轴向零位校准待核。Fig. 5f 图内 x 轴与图注一致。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ],
+                "method": "terahertz_near_field_scanning_microscopy",
+                "field_point": "on_axis",
+                "incident_angle_deg": 0,
+                "incident_polarization": "x",
+                "polarization_switch_method": "same_metalens_rotated_90_degrees",
+                "position_definition": "axial_intensity_maximum",
+                "axial_plane": "xz",
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "transverse_section_direction": "x",
+                "plotted_section_direction": "x",
+                "caption_section_direction": "x",
+                "test_probe_resolution_um": 100,
+                "instrument_minimum_resolution_um": 20,
+                "scan_step_um": null,
+                "normalization": "Min–Max maps and normalized transverse curves"
+              },
+              "reported_effective_na": {
+                "value": 0.13,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.5–6 Fig. 5c 对应正文",
+                "note": "作者在实测平均焦距段给 0.13；这里登记报告值。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors"
+              },
+              "measured_focal_band_mean_um": {
+                "value": 81700,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.5–6 Fig. 5c 对应正文",
+                "note": "作者报告同偏振九频点的实测平均焦长为 8.17 cm。相对设计 8.00 cm 的平均焦长偏离 2.13% 另存。坐标零位校准、独立重复数及均值不确定度待核。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "statistic": "author_reported_spectral_mean",
+                "calculation_origin": "authors",
+                "sample_wavelengths_nm": [
+                  374741,
+                  352697,
+                  333103,
+                  315571,
+                  299792,
+                  285517,
+                  272539,
+                  260689,
+                  249827
+                ],
+                "sample_frequencies_thz": [
+                  0.8,
+                  0.85,
+                  0.9,
+                  0.95,
+                  1,
+                  1.05,
+                  1.1,
+                  1.15,
+                  1.2
+                ],
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "aggregation_note": "用九个等频率间隔实验点；原始轴峰数组待核",
+                "original_value": 8.17,
+                "original_unit": "cm",
+                "reported_mean_design_deviation_pct": 2.13
+              },
+              "focus_variation_protocol": {
+                "value": "ACV = 光谱总体标准差 ÷ 同组平均焦距",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 Eq. (4) 与 p.6 Fig. 5 对应段",
+                "note": "Eq. (4) 用九个等频率间隔实验峰位，分母为同组均值 8.17 cm。逐点峰位、重复数和独立误差未报。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "definition": "100*sqrt(sum((f_i-mean_f)^2)/n)/mean_f",
+                "spectral_sample_count": 9,
+                "ddof": 0,
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "sample_frequencies_thz": [
+                  0.8,
+                  0.85,
+                  0.9,
+                  0.95,
+                  1,
+                  1.05,
+                  1.1,
+                  1.15,
+                  1.2
+                ]
+              },
+              "focus_variation_pct": {
+                "value": 2.86,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 Eq. (4) 与 p.6 Fig. 5 对应段",
+                "note": "作者的 ACV 是光谱焦距变异系数。逐点峰位和最大互差另待核。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "statistic": "author_reported_band_variation",
+                "calculation_origin": "authors",
+                "display": "2.86%（ACV）",
+                "sample_wavelengths_nm": [
+                  374741,
+                  352697,
+                  333103,
+                  315571,
+                  299792,
+                  285517,
+                  272539,
+                  260689,
+                  249827
+                ],
+                "sample_frequencies_thz": [
+                  0.8,
+                  0.85,
+                  0.9,
+                  0.95,
+                  1,
+                  1.05,
+                  1.1,
+                  1.15,
+                  1.2
+                ],
+                "reference_wavelength_nm": null,
+                "reference_focal_um": 81700,
+                "denominator": "same_polarization_spectral_mean_focal_length",
+                "statistic_definition": "population_spectral_coefficient_of_variation",
+                "ddof": 0
+              },
+              "focus_variation_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.5–7 §2.2；Fig. 5",
+                "note": "逐点轴峰坐标只给图。暂无最大互差和端点有符号焦移。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "轴向跨度待核"
+              },
+              "efficiency_protocol": {
+                "value": "焦区圆功率／镜面总入射功率",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 §2.2 效率定义；p.7 Fig. 5h",
+                "note": "作者取当频该焦斑 FWHM 的三倍为积分圆直径。探针或功率定标、逐点 FWHM 数表及确切积分网格待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "denominator": "incident_power_on_metalens",
+                "numerator": "focal_plane_power_in_circle",
+                "integration_diameter_fwhm_factor": 3,
+                "integration_radius_fwhm_factor": 1.5,
+                "field_point": "on_axis",
+                "incident_polarization": "x"
+              },
+              "efficiency_band_mean_pct": {
+                "value": 46.97,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 §2.2 效率定义；p.7 Fig. 5h",
+                "note": "作者用九个等频率间隔实测点报告谱点平均，非连续全谱积分。逐频率效率只给曲线。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "statistic": "band_mean",
+                "calculation_origin": "authors",
+                "display": "46.97%（九频点平均）",
+                "sampling": "measured_wavelength_subset",
+                "sample_unit": "wavelength",
+                "sample_wavelengths_nm": [
+                  374741,
+                  352697,
+                  333103,
+                  315571,
+                  299792,
+                  285517,
+                  272539,
+                  260689,
+                  249827
+                ],
+                "sample_frequencies_thz": [
+                  0.8,
+                  0.85,
+                  0.9,
+                  0.95,
+                  1,
+                  1.05,
+                  1.1,
+                  1.15,
+                  1.2
+                ]
+              },
+              "mtf_curve": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.5–7 §2.2；Fig. 5；p.11 Data Availability Statement",
+                "note": "原文与补件有焦斑和成像图；PSF 数组、归一化及 MTF 的频率定标仍待核。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "原始 PSF／MTF 待核"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_x_080thz",
+            "model": "Jiang 2026 · x 偏振实测 · 0.80 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "x 偏振实测 · 0.80 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一实物；该频率的实测焦位、宽度与效率图。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 0.8,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.80 THz；Fig. 5b,e,f 的相应图列",
+                "note": "由图内频点及 §2.1 的 0.05 THz 间隔确定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 374741,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.80 THz；Fig. 5b,e,f 的相应图列",
+                "note": "原标注 0.80 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 374,741 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 0.8,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "x 线偏振",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.80 THz；Fig. 5b,e,f 的相应图列",
+                "note": "实验按作者两次测量的 x/y 命名。同一枚实物相差 90° 转角完成两种入射偏振的表征。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "x"
+              },
+              "psf_protocol": {
+                "value": "线偏振正入射；近场探针采集，取 x–z 强度最大点",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.80 THz；Fig. 5b,e,f 的相应图列",
+                "note": "正文 §2.2 分开报告本实验 0.1 mm 探针空间分辨率与 §4.3／补件 Fig. S7 的系统最小 20 μm。实际横纵扫描步距与绝对轴向零位校准待核。Fig. 5f 图内 x 轴与图注一致。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ],
+                "method": "terahertz_near_field_scanning_microscopy",
+                "field_point": "on_axis",
+                "incident_angle_deg": 0,
+                "incident_polarization": "x",
+                "polarization_switch_method": "same_metalens_rotated_90_degrees",
+                "position_definition": "axial_intensity_maximum",
+                "axial_plane": "xz",
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "transverse_section_direction": "x",
+                "plotted_section_direction": "x",
+                "caption_section_direction": "x",
+                "test_probe_resolution_um": 100,
+                "instrument_minimum_resolution_um": 20,
+                "scan_step_um": null,
+                "normalization": "Min–Max maps and normalized transverse curves"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.80 THz；Fig. 5b,e,f 的相应图列",
+                "note": "实测主焦位只以 Fig. 5c 曲线发布，暂无对应数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.80 THz；Fig. 5b,e,f 的相应图列",
+                "note": "作者实测 FWHM 在 Fig. 5g。x 截线有公开图。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "efficiency_protocol": {
+                "value": "焦区圆功率／镜面总入射功率",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 §2.2 效率定义；p.7 Fig. 5h",
+                "note": "作者取当频该焦斑 FWHM 的三倍为积分圆直径。探针或功率定标、逐点 FWHM 数表及确切积分网格待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "denominator": "incident_power_on_metalens",
+                "numerator": "focal_plane_power_in_circle",
+                "integration_diameter_fwhm_factor": 3,
+                "integration_radius_fwhm_factor": 1.5,
+                "field_point": "on_axis",
+                "incident_polarization": "x"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.80 THz；Fig. 5b,e,f 的相应图列",
+                "note": "实测效率 Fig. 5h 仅曲线，暂无原始数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_x_085thz",
+            "model": "Jiang 2026 · x 偏振实测 · 0.85 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "x 偏振实测 · 0.85 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一实物；该频率的实测焦位、宽度与效率图。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 0.85,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.85 THz",
+                "note": "由图内频点及 §2.1 的 0.05 THz 间隔确定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 352697,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.85 THz",
+                "note": "原标注 0.85 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 352,697 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 0.85,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "x 线偏振",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.85 THz",
+                "note": "实验按作者两次测量的 x/y 命名。同一枚实物相差 90° 转角完成两种入射偏振的表征。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "x"
+              },
+              "psf_protocol": {
+                "value": "线偏振正入射；近场探针采集，取 x–z 强度最大点",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.85 THz",
+                "note": "正文 §2.2 分开报告本实验 0.1 mm 探针空间分辨率与 §4.3／补件 Fig. S7 的系统最小 20 μm。实际横纵扫描步距与绝对轴向零位校准待核。Fig. 5f 图内 x 轴与图注一致。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ],
+                "method": "terahertz_near_field_scanning_microscopy",
+                "field_point": "on_axis",
+                "incident_angle_deg": 0,
+                "incident_polarization": "x",
+                "polarization_switch_method": "same_metalens_rotated_90_degrees",
+                "position_definition": "axial_intensity_maximum",
+                "axial_plane": "xz",
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "transverse_section_direction": "x",
+                "plotted_section_direction": "x",
+                "caption_section_direction": "x",
+                "test_probe_resolution_um": 100,
+                "instrument_minimum_resolution_um": 20,
+                "scan_step_um": null,
+                "normalization": "Min–Max maps and normalized transverse curves"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.85 THz",
+                "note": "实测主焦位只以 Fig. 5c 曲线发布，暂无对应数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.85 THz",
+                "note": "作者实测 FWHM 在 Fig. 5g。x 截线有公开图。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "efficiency_protocol": {
+                "value": "焦区圆功率／镜面总入射功率",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 §2.2 效率定义；p.7 Fig. 5h",
+                "note": "作者取当频该焦斑 FWHM 的三倍为积分圆直径。探针或功率定标、逐点 FWHM 数表及确切积分网格待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "denominator": "incident_power_on_metalens",
+                "numerator": "focal_plane_power_in_circle",
+                "integration_diameter_fwhm_factor": 3,
+                "integration_radius_fwhm_factor": 1.5,
+                "field_point": "on_axis",
+                "incident_polarization": "x"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.85 THz",
+                "note": "实测效率 Fig. 5h 仅曲线，暂无原始数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_x_090thz",
+            "model": "Jiang 2026 · x 偏振实测 · 0.90 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "x 偏振实测 · 0.90 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一实物；该频率的实测焦位、宽度与效率图。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 0.9,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.90 THz；Fig. 5b,e,f 的相应图列",
+                "note": "由图内频点及 §2.1 的 0.05 THz 间隔确定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 333103,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.90 THz；Fig. 5b,e,f 的相应图列",
+                "note": "原标注 0.90 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 333,103 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 0.9,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "x 线偏振",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.90 THz；Fig. 5b,e,f 的相应图列",
+                "note": "实验按作者两次测量的 x/y 命名。同一枚实物相差 90° 转角完成两种入射偏振的表征。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "x"
+              },
+              "psf_protocol": {
+                "value": "线偏振正入射；近场探针采集，取 x–z 强度最大点",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.90 THz；Fig. 5b,e,f 的相应图列",
+                "note": "正文 §2.2 分开报告本实验 0.1 mm 探针空间分辨率与 §4.3／补件 Fig. S7 的系统最小 20 μm。实际横纵扫描步距与绝对轴向零位校准待核。Fig. 5f 图内 x 轴与图注一致。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ],
+                "method": "terahertz_near_field_scanning_microscopy",
+                "field_point": "on_axis",
+                "incident_angle_deg": 0,
+                "incident_polarization": "x",
+                "polarization_switch_method": "same_metalens_rotated_90_degrees",
+                "position_definition": "axial_intensity_maximum",
+                "axial_plane": "xz",
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "transverse_section_direction": "x",
+                "plotted_section_direction": "x",
+                "caption_section_direction": "x",
+                "test_probe_resolution_um": 100,
+                "instrument_minimum_resolution_um": 20,
+                "scan_step_um": null,
+                "normalization": "Min–Max maps and normalized transverse curves"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.90 THz；Fig. 5b,e,f 的相应图列",
+                "note": "实测主焦位只以 Fig. 5c 曲线发布，暂无对应数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.90 THz；Fig. 5b,e,f 的相应图列",
+                "note": "作者实测 FWHM 在 Fig. 5g。x 截线有公开图。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "efficiency_protocol": {
+                "value": "焦区圆功率／镜面总入射功率",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 §2.2 效率定义；p.7 Fig. 5h",
+                "note": "作者取当频该焦斑 FWHM 的三倍为积分圆直径。探针或功率定标、逐点 FWHM 数表及确切积分网格待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "denominator": "incident_power_on_metalens",
+                "numerator": "focal_plane_power_in_circle",
+                "integration_diameter_fwhm_factor": 3,
+                "integration_radius_fwhm_factor": 1.5,
+                "field_point": "on_axis",
+                "incident_polarization": "x"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.90 THz；Fig. 5b,e,f 的相应图列",
+                "note": "实测效率 Fig. 5h 仅曲线，暂无原始数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_x_095thz",
+            "model": "Jiang 2026 · x 偏振实测 · 0.95 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "x 偏振实测 · 0.95 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一实物；该频率的实测焦位、宽度与效率图。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 0.95,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.95 THz",
+                "note": "由图内频点及 §2.1 的 0.05 THz 间隔确定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 315571,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.95 THz",
+                "note": "原标注 0.95 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 315,571 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 0.95,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "x 线偏振",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.95 THz",
+                "note": "实验按作者两次测量的 x/y 命名。同一枚实物相差 90° 转角完成两种入射偏振的表征。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "x"
+              },
+              "psf_protocol": {
+                "value": "线偏振正入射；近场探针采集，取 x–z 强度最大点",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.95 THz",
+                "note": "正文 §2.2 分开报告本实验 0.1 mm 探针空间分辨率与 §4.3／补件 Fig. S7 的系统最小 20 μm。实际横纵扫描步距与绝对轴向零位校准待核。Fig. 5f 图内 x 轴与图注一致。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ],
+                "method": "terahertz_near_field_scanning_microscopy",
+                "field_point": "on_axis",
+                "incident_angle_deg": 0,
+                "incident_polarization": "x",
+                "polarization_switch_method": "same_metalens_rotated_90_degrees",
+                "position_definition": "axial_intensity_maximum",
+                "axial_plane": "xz",
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "transverse_section_direction": "x",
+                "plotted_section_direction": "x",
+                "caption_section_direction": "x",
+                "test_probe_resolution_um": 100,
+                "instrument_minimum_resolution_um": 20,
+                "scan_step_um": null,
+                "normalization": "Min–Max maps and normalized transverse curves"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.95 THz",
+                "note": "实测主焦位只以 Fig. 5c 曲线发布，暂无对应数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.95 THz",
+                "note": "作者实测 FWHM 在 Fig. 5g。x 截线有公开图。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "efficiency_protocol": {
+                "value": "焦区圆功率／镜面总入射功率",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 §2.2 效率定义；p.7 Fig. 5h",
+                "note": "作者取当频该焦斑 FWHM 的三倍为积分圆直径。探针或功率定标、逐点 FWHM 数表及确切积分网格待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "denominator": "incident_power_on_metalens",
+                "numerator": "focal_plane_power_in_circle",
+                "integration_diameter_fwhm_factor": 3,
+                "integration_radius_fwhm_factor": 1.5,
+                "field_point": "on_axis",
+                "incident_polarization": "x"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，0.95 THz",
+                "note": "实测效率 Fig. 5h 仅曲线，暂无原始数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_x_100thz",
+            "model": "Jiang 2026 · x 偏振实测 · 1.00 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "x 偏振实测 · 1.00 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一实物；该频率的实测焦位、宽度与效率图。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 1,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.00 THz；Fig. 5b,e,f 的相应图列",
+                "note": "由图内频点及 §2.1 的 0.05 THz 间隔确定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 299792,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.00 THz；Fig. 5b,e,f 的相应图列",
+                "note": "原标注 1.00 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 299,792 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "x 线偏振",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.00 THz；Fig. 5b,e,f 的相应图列",
+                "note": "实验按作者两次测量的 x/y 命名。同一枚实物相差 90° 转角完成两种入射偏振的表征。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "x"
+              },
+              "psf_protocol": {
+                "value": "线偏振正入射；近场探针采集，取 x–z 强度最大点",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.00 THz；Fig. 5b,e,f 的相应图列",
+                "note": "正文 §2.2 分开报告本实验 0.1 mm 探针空间分辨率与 §4.3／补件 Fig. S7 的系统最小 20 μm。实际横纵扫描步距与绝对轴向零位校准待核。Fig. 5f 图内 x 轴与图注一致。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ],
+                "method": "terahertz_near_field_scanning_microscopy",
+                "field_point": "on_axis",
+                "incident_angle_deg": 0,
+                "incident_polarization": "x",
+                "polarization_switch_method": "same_metalens_rotated_90_degrees",
+                "position_definition": "axial_intensity_maximum",
+                "axial_plane": "xz",
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "transverse_section_direction": "x",
+                "plotted_section_direction": "x",
+                "caption_section_direction": "x",
+                "test_probe_resolution_um": 100,
+                "instrument_minimum_resolution_um": 20,
+                "scan_step_um": null,
+                "normalization": "Min–Max maps and normalized transverse curves"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.00 THz；Fig. 5b,e,f 的相应图列",
+                "note": "实测主焦位只以 Fig. 5c 曲线发布，暂无对应数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.00 THz；Fig. 5b,e,f 的相应图列",
+                "note": "作者实测 FWHM 在 Fig. 5g。x 截线有公开图。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "efficiency_protocol": {
+                "value": "焦区圆功率／镜面总入射功率",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 §2.2 效率定义；p.7 Fig. 5h",
+                "note": "作者取当频该焦斑 FWHM 的三倍为积分圆直径。探针或功率定标、逐点 FWHM 数表及确切积分网格待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "denominator": "incident_power_on_metalens",
+                "numerator": "focal_plane_power_in_circle",
+                "integration_diameter_fwhm_factor": 3,
+                "integration_radius_fwhm_factor": 1.5,
+                "field_point": "on_axis",
+                "incident_polarization": "x"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.00 THz；Fig. 5b,e,f 的相应图列",
+                "note": "实测效率 Fig. 5h 仅曲线，暂无原始数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_x_105thz",
+            "model": "Jiang 2026 · x 偏振实测 · 1.05 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "x 偏振实测 · 1.05 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一实物；该频率的实测焦位、宽度与效率图。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 1.05,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.05 THz",
+                "note": "由图内频点及 §2.1 的 0.05 THz 间隔确定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 285517,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.05 THz",
+                "note": "原标注 1.05 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 285,517 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1.05,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "x 线偏振",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.05 THz",
+                "note": "实验按作者两次测量的 x/y 命名。同一枚实物相差 90° 转角完成两种入射偏振的表征。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "x"
+              },
+              "psf_protocol": {
+                "value": "线偏振正入射；近场探针采集，取 x–z 强度最大点",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.05 THz",
+                "note": "正文 §2.2 分开报告本实验 0.1 mm 探针空间分辨率与 §4.3／补件 Fig. S7 的系统最小 20 μm。实际横纵扫描步距与绝对轴向零位校准待核。Fig. 5f 图内 x 轴与图注一致。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ],
+                "method": "terahertz_near_field_scanning_microscopy",
+                "field_point": "on_axis",
+                "incident_angle_deg": 0,
+                "incident_polarization": "x",
+                "polarization_switch_method": "same_metalens_rotated_90_degrees",
+                "position_definition": "axial_intensity_maximum",
+                "axial_plane": "xz",
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "transverse_section_direction": "x",
+                "plotted_section_direction": "x",
+                "caption_section_direction": "x",
+                "test_probe_resolution_um": 100,
+                "instrument_minimum_resolution_um": 20,
+                "scan_step_um": null,
+                "normalization": "Min–Max maps and normalized transverse curves"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.05 THz",
+                "note": "实测主焦位只以 Fig. 5c 曲线发布，暂无对应数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.05 THz",
+                "note": "作者实测 FWHM 在 Fig. 5g。x 截线有公开图。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "efficiency_protocol": {
+                "value": "焦区圆功率／镜面总入射功率",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 §2.2 效率定义；p.7 Fig. 5h",
+                "note": "作者取当频该焦斑 FWHM 的三倍为积分圆直径。探针或功率定标、逐点 FWHM 数表及确切积分网格待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "denominator": "incident_power_on_metalens",
+                "numerator": "focal_plane_power_in_circle",
+                "integration_diameter_fwhm_factor": 3,
+                "integration_radius_fwhm_factor": 1.5,
+                "field_point": "on_axis",
+                "incident_polarization": "x"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.05 THz",
+                "note": "实测效率 Fig. 5h 仅曲线，暂无原始数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_x_110thz",
+            "model": "Jiang 2026 · x 偏振实测 · 1.10 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "x 偏振实测 · 1.10 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一实物；该频率的实测焦位、宽度与效率图。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 1.1,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.10 THz；Fig. 5b,e,f 的相应图列",
+                "note": "由图内频点及 §2.1 的 0.05 THz 间隔确定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 272539,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.10 THz；Fig. 5b,e,f 的相应图列",
+                "note": "原标注 1.10 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 272,539 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1.1,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "x 线偏振",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.10 THz；Fig. 5b,e,f 的相应图列",
+                "note": "实验按作者两次测量的 x/y 命名。同一枚实物相差 90° 转角完成两种入射偏振的表征。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "x"
+              },
+              "psf_protocol": {
+                "value": "线偏振正入射；近场探针采集，取 x–z 强度最大点",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.10 THz；Fig. 5b,e,f 的相应图列",
+                "note": "正文 §2.2 分开报告本实验 0.1 mm 探针空间分辨率与 §4.3／补件 Fig. S7 的系统最小 20 μm。实际横纵扫描步距与绝对轴向零位校准待核。Fig. 5f 图内 x 轴与图注一致。 作者在正文指认主焦前另有弱焦点；两峰位置与相对强度的原始数值待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ],
+                "method": "terahertz_near_field_scanning_microscopy",
+                "field_point": "on_axis",
+                "incident_angle_deg": 0,
+                "incident_polarization": "x",
+                "polarization_switch_method": "same_metalens_rotated_90_degrees",
+                "position_definition": "axial_intensity_maximum",
+                "axial_plane": "xz",
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "transverse_section_direction": "x",
+                "plotted_section_direction": "x",
+                "caption_section_direction": "x",
+                "test_probe_resolution_um": 100,
+                "instrument_minimum_resolution_um": 20,
+                "scan_step_um": null,
+                "normalization": "Min–Max maps and normalized transverse curves",
+                "secondary_focus_reported": true
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.10 THz；Fig. 5b,e,f 的相应图列",
+                "note": "实测主焦位只以 Fig. 5c 曲线发布，暂无对应数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.10 THz；Fig. 5b,e,f 的相应图列",
+                "note": "作者实测 FWHM 在 Fig. 5g。x 截线有公开图。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "efficiency_protocol": {
+                "value": "焦区圆功率／镜面总入射功率",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 §2.2 效率定义；p.7 Fig. 5h",
+                "note": "作者取当频该焦斑 FWHM 的三倍为积分圆直径。探针或功率定标、逐点 FWHM 数表及确切积分网格待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "denominator": "incident_power_on_metalens",
+                "numerator": "focal_plane_power_in_circle",
+                "integration_diameter_fwhm_factor": 3,
+                "integration_radius_fwhm_factor": 1.5,
+                "field_point": "on_axis",
+                "incident_polarization": "x"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.10 THz；Fig. 5b,e,f 的相应图列",
+                "note": "实测效率 Fig. 5h 仅曲线，暂无原始数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_x_115thz",
+            "model": "Jiang 2026 · x 偏振实测 · 1.15 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "x 偏振实测 · 1.15 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一实物；该频率的实测焦位、宽度与效率图。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 1.15,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.15 THz",
+                "note": "由图内频点及 §2.1 的 0.05 THz 间隔确定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 260689,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.15 THz",
+                "note": "原标注 1.15 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 260,689 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1.15,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "x 线偏振",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.15 THz",
+                "note": "实验按作者两次测量的 x/y 命名。同一枚实物相差 90° 转角完成两种入射偏振的表征。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "x"
+              },
+              "psf_protocol": {
+                "value": "线偏振正入射；近场探针采集，取 x–z 强度最大点",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.15 THz",
+                "note": "正文 §2.2 分开报告本实验 0.1 mm 探针空间分辨率与 §4.3／补件 Fig. S7 的系统最小 20 μm。实际横纵扫描步距与绝对轴向零位校准待核。Fig. 5f 图内 x 轴与图注一致。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ],
+                "method": "terahertz_near_field_scanning_microscopy",
+                "field_point": "on_axis",
+                "incident_angle_deg": 0,
+                "incident_polarization": "x",
+                "polarization_switch_method": "same_metalens_rotated_90_degrees",
+                "position_definition": "axial_intensity_maximum",
+                "axial_plane": "xz",
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "transverse_section_direction": "x",
+                "plotted_section_direction": "x",
+                "caption_section_direction": "x",
+                "test_probe_resolution_um": 100,
+                "instrument_minimum_resolution_um": 20,
+                "scan_step_um": null,
+                "normalization": "Min–Max maps and normalized transverse curves"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.15 THz",
+                "note": "实测主焦位只以 Fig. 5c 曲线发布，暂无对应数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.15 THz",
+                "note": "作者实测 FWHM 在 Fig. 5g。x 截线有公开图。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "efficiency_protocol": {
+                "value": "焦区圆功率／镜面总入射功率",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 §2.2 效率定义；p.7 Fig. 5h",
+                "note": "作者取当频该焦斑 FWHM 的三倍为积分圆直径。探针或功率定标、逐点 FWHM 数表及确切积分网格待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "denominator": "incident_power_on_metalens",
+                "numerator": "focal_plane_power_in_circle",
+                "integration_diameter_fwhm_factor": 3,
+                "integration_radius_fwhm_factor": 1.5,
+                "field_point": "on_axis",
+                "incident_polarization": "x"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.15 THz",
+                "note": "实测效率 Fig. 5h 仅曲线，暂无原始数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_x_120thz",
+            "model": "Jiang 2026 · x 偏振实测 · 1.20 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "x 偏振实测 · 1.20 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一实物；该频率的实测焦位、宽度与效率图。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 1.2,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.20 THz；Fig. 5b,e,f 的相应图列",
+                "note": "由图内频点及 §2.1 的 0.05 THz 间隔确定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 249827,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.20 THz；Fig. 5b,e,f 的相应图列",
+                "note": "原标注 1.20 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 249,827 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1.2,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "x 线偏振",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.20 THz；Fig. 5b,e,f 的相应图列",
+                "note": "实验按作者两次测量的 x/y 命名。同一枚实物相差 90° 转角完成两种入射偏振的表征。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "x"
+              },
+              "psf_protocol": {
+                "value": "线偏振正入射；近场探针采集，取 x–z 强度最大点",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.20 THz；Fig. 5b,e,f 的相应图列",
+                "note": "正文 §2.2 分开报告本实验 0.1 mm 探针空间分辨率与 §4.3／补件 Fig. S7 的系统最小 20 μm。实际横纵扫描步距与绝对轴向零位校准待核。Fig. 5f 图内 x 轴与图注一致。 作者在正文指认主焦前另有弱焦点；两峰位置与相对强度的原始数值待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ],
+                "method": "terahertz_near_field_scanning_microscopy",
+                "field_point": "on_axis",
+                "incident_angle_deg": 0,
+                "incident_polarization": "x",
+                "polarization_switch_method": "same_metalens_rotated_90_degrees",
+                "position_definition": "axial_intensity_maximum",
+                "axial_plane": "xz",
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "transverse_section_direction": "x",
+                "plotted_section_direction": "x",
+                "caption_section_direction": "x",
+                "test_probe_resolution_um": 100,
+                "instrument_minimum_resolution_um": 20,
+                "scan_step_um": null,
+                "normalization": "Min–Max maps and normalized transverse curves",
+                "secondary_focus_reported": true
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.20 THz；Fig. 5b,e,f 的相应图列",
+                "note": "实测主焦位只以 Fig. 5c 曲线发布，暂无对应数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.20 THz；Fig. 5b,e,f 的相应图列",
+                "note": "作者实测 FWHM 在 Fig. 5g。x 截线有公开图。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "efficiency_protocol": {
+                "value": "焦区圆功率／镜面总入射功率",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 §2.2 效率定义；p.7 Fig. 5h",
+                "note": "作者取当频该焦斑 FWHM 的三倍为积分圆直径。探针或功率定标、逐点 FWHM 数表及确切积分网格待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "denominator": "incident_power_on_metalens",
+                "numerator": "focal_plane_power_in_circle",
+                "integration_diameter_fwhm_factor": 3,
+                "integration_radius_fwhm_factor": 1.5,
+                "field_point": "on_axis",
+                "incident_polarization": "x"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.7 Fig. 5c,g,h，1.20 THz；Fig. 5b,e,f 的相应图列",
+                "note": "实测效率 Fig. 5h 仅曲线，暂无原始数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_y_summary",
+            "model": "Jiang 2026 · y 偏振实测 · 九频点统计",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "y 偏振实测 · 九频点统计",
+            "evidence_type": "study",
+            "measurement_scope": "同一实物；跨谱点作者统计。",
+            "visible_light_use": false,
+            "values": {
+              "diameter_um": {
+                "value": 22100,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.5 §2.2 开头；p.6 Fig. 4a",
+                "note": "制成实物直径 2.21 cm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 2.21,
+                "original_unit": "cm"
+              },
+              "design_focal_um": {
+                "value": 80000,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.4 §2.1 设计段；补件 Fig. S4 对应正文",
+                "note": "作者设定的焦长 8 cm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 8,
+                "original_unit": "cm",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ]
+              },
+              "lambda_min_nm": {
+                "value": 249827,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.3–4 §2.1 与 Fig. 3",
+                "note": "原标注 1.20 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 249,827 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1.2,
+                "original_unit": "THz"
+              },
+              "lambda_max_nm": {
+                "value": 374741,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.3–4 §2.1 与 Fig. 3",
+                "note": "原标注 0.80 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 374,741 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 0.8,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "y 线偏振",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.8–9 §2.2；Fig. 6",
+                "note": "实验按作者两次测量的 x/y 命名。同一枚实物相差 90° 转角完成两种入射偏振的表征。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "y"
+              },
+              "psf_protocol": {
+                "value": "线偏振正入射；近场探针采集，取 x–z 强度最大点",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.8–9 §2.2；Fig. 6",
+                "note": "正文 §2.2 分开报告本实验 0.1 mm 探针空间分辨率与 §4.3／补件 Fig. S7 的系统最小 20 μm。实际横纵扫描步距与绝对轴向零位校准待核。Fig. 6f 图内标 x，正文称 x，图注写 y。沿线的坐标方向待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ],
+                "method": "terahertz_near_field_scanning_microscopy",
+                "field_point": "on_axis",
+                "incident_angle_deg": 0,
+                "incident_polarization": "y",
+                "polarization_switch_method": "same_metalens_rotated_90_degrees",
+                "position_definition": "axial_intensity_maximum",
+                "axial_plane": "xz",
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "transverse_section_direction": "unresolved",
+                "plotted_section_direction": "x",
+                "caption_section_direction": "y",
+                "test_probe_resolution_um": 100,
+                "instrument_minimum_resolution_um": 20,
+                "scan_step_um": null,
+                "normalization": "Min–Max maps and normalized transverse curves"
+              },
+              "reported_effective_na": {
+                "value": 0.13,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.9 Fig. 6c 对应正文",
+                "note": "作者在实测平均焦距段给 0.13；这里登记报告值。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors"
+              },
+              "measured_focal_band_mean_um": {
+                "value": 81700,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.9 Fig. 6c 对应正文",
+                "note": "作者报告同偏振九频点的实测平均焦长为 8.17 cm。相对设计 8.00 cm 的平均焦长偏离 2.13% 另存。坐标零位校准、独立重复数及均值不确定度待核。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "statistic": "author_reported_spectral_mean",
+                "calculation_origin": "authors",
+                "sample_wavelengths_nm": [
+                  374741,
+                  352697,
+                  333103,
+                  315571,
+                  299792,
+                  285517,
+                  272539,
+                  260689,
+                  249827
+                ],
+                "sample_frequencies_thz": [
+                  0.8,
+                  0.85,
+                  0.9,
+                  0.95,
+                  1,
+                  1.05,
+                  1.1,
+                  1.15,
+                  1.2
+                ],
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "aggregation_note": "用九个等频率间隔实验点；原始轴峰数组待核",
+                "original_value": 8.17,
+                "original_unit": "cm",
+                "reported_mean_design_deviation_pct": 2.13
+              },
+              "focus_variation_protocol": {
+                "value": "ACV = 光谱总体标准差 ÷ 同组平均焦距",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 Eq. (4) 与 p.9 Fig. 6 对应段",
+                "note": "Eq. (4) 用九个等频率间隔实验峰位，分母为同组均值 8.17 cm。逐点峰位、重复数和独立误差未报。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "definition": "100*sqrt(sum((f_i-mean_f)^2)/n)/mean_f",
+                "spectral_sample_count": 9,
+                "ddof": 0,
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "sample_frequencies_thz": [
+                  0.8,
+                  0.85,
+                  0.9,
+                  0.95,
+                  1,
+                  1.05,
+                  1.1,
+                  1.15,
+                  1.2
+                ]
+              },
+              "focus_variation_pct": {
+                "value": 2.84,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 Eq. (4) 与 p.9 Fig. 6 对应段",
+                "note": "作者的 ACV 是光谱焦距变异系数。逐点峰位和最大互差另待核。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "statistic": "author_reported_band_variation",
+                "calculation_origin": "authors",
+                "display": "2.84%（ACV）",
+                "sample_wavelengths_nm": [
+                  374741,
+                  352697,
+                  333103,
+                  315571,
+                  299792,
+                  285517,
+                  272539,
+                  260689,
+                  249827
+                ],
+                "sample_frequencies_thz": [
+                  0.8,
+                  0.85,
+                  0.9,
+                  0.95,
+                  1,
+                  1.05,
+                  1.1,
+                  1.15,
+                  1.2
+                ],
+                "reference_wavelength_nm": null,
+                "reference_focal_um": 81700,
+                "denominator": "same_polarization_spectral_mean_focal_length",
+                "statistic_definition": "population_spectral_coefficient_of_variation",
+                "ddof": 0
+              },
+              "focus_variation_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.8–9 §2.2；Fig. 6",
+                "note": "逐点轴峰坐标只给图。暂无最大互差和端点有符号焦移。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "轴向跨度待核"
+              },
+              "efficiency_protocol": {
+                "value": "焦区圆功率／镜面总入射功率",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 §2.2 效率定义；pp.8–9 Fig. 6h 与平均值正文",
+                "note": "作者取当频该焦斑 FWHM 的三倍为积分圆直径。探针或功率定标、逐点 FWHM 数表及确切积分网格待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "denominator": "incident_power_on_metalens",
+                "numerator": "focal_plane_power_in_circle",
+                "integration_diameter_fwhm_factor": 3,
+                "integration_radius_fwhm_factor": 1.5,
+                "field_point": "on_axis",
+                "incident_polarization": "y"
+              },
+              "efficiency_band_mean_pct": {
+                "value": 46.14,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 §2.2 效率定义；pp.8–9 Fig. 6h 与平均值正文",
+                "note": "作者用九个等频率间隔实测点报告谱点平均，非连续全谱积分。逐频率效率只给曲线。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "statistic": "band_mean",
+                "calculation_origin": "authors",
+                "display": "46.14%（九频点平均）",
+                "sampling": "measured_wavelength_subset",
+                "sample_unit": "wavelength",
+                "sample_wavelengths_nm": [
+                  374741,
+                  352697,
+                  333103,
+                  315571,
+                  299792,
+                  285517,
+                  272539,
+                  260689,
+                  249827
+                ],
+                "sample_frequencies_thz": [
+                  0.8,
+                  0.85,
+                  0.9,
+                  0.95,
+                  1,
+                  1.05,
+                  1.1,
+                  1.15,
+                  1.2
+                ]
+              },
+              "mtf_curve": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.8–9 §2.2；Fig. 6；p.11 Data Availability Statement",
+                "note": "原文与补件有焦斑和成像图；PSF 数组、归一化及 MTF 的频率定标仍待核。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "原始 PSF／MTF 待核"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_y_080thz",
+            "model": "Jiang 2026 · y 偏振实测 · 0.80 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "y 偏振实测 · 0.80 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一实物；该频率的实测焦位、宽度与效率图。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 0.8,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.80 THz；Fig. 6b,e,f 的相应图列",
+                "note": "由图内频点及 §2.1 的 0.05 THz 间隔确定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 374741,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.80 THz；Fig. 6b,e,f 的相应图列",
+                "note": "原标注 0.80 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 374,741 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 0.8,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "y 线偏振",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.80 THz；Fig. 6b,e,f 的相应图列",
+                "note": "实验按作者两次测量的 x/y 命名。同一枚实物相差 90° 转角完成两种入射偏振的表征。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "y"
+              },
+              "psf_protocol": {
+                "value": "线偏振正入射；近场探针采集，取 x–z 强度最大点",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.80 THz；Fig. 6b,e,f 的相应图列",
+                "note": "正文 §2.2 分开报告本实验 0.1 mm 探针空间分辨率与 §4.3／补件 Fig. S7 的系统最小 20 μm。实际横纵扫描步距与绝对轴向零位校准待核。Fig. 6f 图内标 x，正文称 x，图注写 y。沿线的坐标方向待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ],
+                "method": "terahertz_near_field_scanning_microscopy",
+                "field_point": "on_axis",
+                "incident_angle_deg": 0,
+                "incident_polarization": "y",
+                "polarization_switch_method": "same_metalens_rotated_90_degrees",
+                "position_definition": "axial_intensity_maximum",
+                "axial_plane": "xz",
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "transverse_section_direction": "unresolved",
+                "plotted_section_direction": "x",
+                "caption_section_direction": "y",
+                "test_probe_resolution_um": 100,
+                "instrument_minimum_resolution_um": 20,
+                "scan_step_um": null,
+                "normalization": "Min–Max maps and normalized transverse curves"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.80 THz；Fig. 6b,e,f 的相应图列",
+                "note": "实测主焦位只以 Fig. 6c 曲线发布，暂无对应数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.80 THz；Fig. 6b,e,f 的相应图列",
+                "note": "作者实测 FWHM 在 Fig. 6g。截线方向图文冲突。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "efficiency_protocol": {
+                "value": "焦区圆功率／镜面总入射功率",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 §2.2 效率定义；pp.8–9 Fig. 6h 与平均值正文",
+                "note": "作者取当频该焦斑 FWHM 的三倍为积分圆直径。探针或功率定标、逐点 FWHM 数表及确切积分网格待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "denominator": "incident_power_on_metalens",
+                "numerator": "focal_plane_power_in_circle",
+                "integration_diameter_fwhm_factor": 3,
+                "integration_radius_fwhm_factor": 1.5,
+                "field_point": "on_axis",
+                "incident_polarization": "y"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.80 THz；Fig. 6b,e,f 的相应图列",
+                "note": "实测效率 Fig. 6h 仅曲线，暂无原始数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_y_085thz",
+            "model": "Jiang 2026 · y 偏振实测 · 0.85 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "y 偏振实测 · 0.85 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一实物；该频率的实测焦位、宽度与效率图。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 0.85,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.85 THz",
+                "note": "由图内频点及 §2.1 的 0.05 THz 间隔确定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 352697,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.85 THz",
+                "note": "原标注 0.85 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 352,697 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 0.85,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "y 线偏振",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.85 THz",
+                "note": "实验按作者两次测量的 x/y 命名。同一枚实物相差 90° 转角完成两种入射偏振的表征。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "y"
+              },
+              "psf_protocol": {
+                "value": "线偏振正入射；近场探针采集，取 x–z 强度最大点",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.85 THz",
+                "note": "正文 §2.2 分开报告本实验 0.1 mm 探针空间分辨率与 §4.3／补件 Fig. S7 的系统最小 20 μm。实际横纵扫描步距与绝对轴向零位校准待核。Fig. 6f 图内标 x，正文称 x，图注写 y。沿线的坐标方向待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ],
+                "method": "terahertz_near_field_scanning_microscopy",
+                "field_point": "on_axis",
+                "incident_angle_deg": 0,
+                "incident_polarization": "y",
+                "polarization_switch_method": "same_metalens_rotated_90_degrees",
+                "position_definition": "axial_intensity_maximum",
+                "axial_plane": "xz",
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "transverse_section_direction": "unresolved",
+                "plotted_section_direction": "x",
+                "caption_section_direction": "y",
+                "test_probe_resolution_um": 100,
+                "instrument_minimum_resolution_um": 20,
+                "scan_step_um": null,
+                "normalization": "Min–Max maps and normalized transverse curves"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.85 THz",
+                "note": "实测主焦位只以 Fig. 6c 曲线发布，暂无对应数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.85 THz",
+                "note": "作者实测 FWHM 在 Fig. 6g。截线方向图文冲突。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "efficiency_protocol": {
+                "value": "焦区圆功率／镜面总入射功率",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 §2.2 效率定义；pp.8–9 Fig. 6h 与平均值正文",
+                "note": "作者取当频该焦斑 FWHM 的三倍为积分圆直径。探针或功率定标、逐点 FWHM 数表及确切积分网格待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "denominator": "incident_power_on_metalens",
+                "numerator": "focal_plane_power_in_circle",
+                "integration_diameter_fwhm_factor": 3,
+                "integration_radius_fwhm_factor": 1.5,
+                "field_point": "on_axis",
+                "incident_polarization": "y"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.85 THz",
+                "note": "实测效率 Fig. 6h 仅曲线，暂无原始数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_y_090thz",
+            "model": "Jiang 2026 · y 偏振实测 · 0.90 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "y 偏振实测 · 0.90 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一实物；该频率的实测焦位、宽度与效率图。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 0.9,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.90 THz；Fig. 6b,e,f 的相应图列",
+                "note": "由图内频点及 §2.1 的 0.05 THz 间隔确定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 333103,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.90 THz；Fig. 6b,e,f 的相应图列",
+                "note": "原标注 0.90 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 333,103 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 0.9,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "y 线偏振",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.90 THz；Fig. 6b,e,f 的相应图列",
+                "note": "实验按作者两次测量的 x/y 命名。同一枚实物相差 90° 转角完成两种入射偏振的表征。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "y"
+              },
+              "psf_protocol": {
+                "value": "线偏振正入射；近场探针采集，取 x–z 强度最大点",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.90 THz；Fig. 6b,e,f 的相应图列",
+                "note": "正文 §2.2 分开报告本实验 0.1 mm 探针空间分辨率与 §4.3／补件 Fig. S7 的系统最小 20 μm。实际横纵扫描步距与绝对轴向零位校准待核。Fig. 6f 图内标 x，正文称 x，图注写 y。沿线的坐标方向待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ],
+                "method": "terahertz_near_field_scanning_microscopy",
+                "field_point": "on_axis",
+                "incident_angle_deg": 0,
+                "incident_polarization": "y",
+                "polarization_switch_method": "same_metalens_rotated_90_degrees",
+                "position_definition": "axial_intensity_maximum",
+                "axial_plane": "xz",
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "transverse_section_direction": "unresolved",
+                "plotted_section_direction": "x",
+                "caption_section_direction": "y",
+                "test_probe_resolution_um": 100,
+                "instrument_minimum_resolution_um": 20,
+                "scan_step_um": null,
+                "normalization": "Min–Max maps and normalized transverse curves"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.90 THz；Fig. 6b,e,f 的相应图列",
+                "note": "实测主焦位只以 Fig. 6c 曲线发布，暂无对应数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.90 THz；Fig. 6b,e,f 的相应图列",
+                "note": "作者实测 FWHM 在 Fig. 6g。截线方向图文冲突。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "efficiency_protocol": {
+                "value": "焦区圆功率／镜面总入射功率",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 §2.2 效率定义；pp.8–9 Fig. 6h 与平均值正文",
+                "note": "作者取当频该焦斑 FWHM 的三倍为积分圆直径。探针或功率定标、逐点 FWHM 数表及确切积分网格待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "denominator": "incident_power_on_metalens",
+                "numerator": "focal_plane_power_in_circle",
+                "integration_diameter_fwhm_factor": 3,
+                "integration_radius_fwhm_factor": 1.5,
+                "field_point": "on_axis",
+                "incident_polarization": "y"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.90 THz；Fig. 6b,e,f 的相应图列",
+                "note": "实测效率 Fig. 6h 仅曲线，暂无原始数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_y_095thz",
+            "model": "Jiang 2026 · y 偏振实测 · 0.95 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "y 偏振实测 · 0.95 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一实物；该频率的实测焦位、宽度与效率图。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 0.95,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.95 THz",
+                "note": "由图内频点及 §2.1 的 0.05 THz 间隔确定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 315571,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.95 THz",
+                "note": "原标注 0.95 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 315,571 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 0.95,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "y 线偏振",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.95 THz",
+                "note": "实验按作者两次测量的 x/y 命名。同一枚实物相差 90° 转角完成两种入射偏振的表征。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "y"
+              },
+              "psf_protocol": {
+                "value": "线偏振正入射；近场探针采集，取 x–z 强度最大点",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.95 THz",
+                "note": "正文 §2.2 分开报告本实验 0.1 mm 探针空间分辨率与 §4.3／补件 Fig. S7 的系统最小 20 μm。实际横纵扫描步距与绝对轴向零位校准待核。Fig. 6f 图内标 x，正文称 x，图注写 y。沿线的坐标方向待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ],
+                "method": "terahertz_near_field_scanning_microscopy",
+                "field_point": "on_axis",
+                "incident_angle_deg": 0,
+                "incident_polarization": "y",
+                "polarization_switch_method": "same_metalens_rotated_90_degrees",
+                "position_definition": "axial_intensity_maximum",
+                "axial_plane": "xz",
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "transverse_section_direction": "unresolved",
+                "plotted_section_direction": "x",
+                "caption_section_direction": "y",
+                "test_probe_resolution_um": 100,
+                "instrument_minimum_resolution_um": 20,
+                "scan_step_um": null,
+                "normalization": "Min–Max maps and normalized transverse curves"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.95 THz",
+                "note": "实测主焦位只以 Fig. 6c 曲线发布，暂无对应数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.95 THz",
+                "note": "作者实测 FWHM 在 Fig. 6g。截线方向图文冲突。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "efficiency_protocol": {
+                "value": "焦区圆功率／镜面总入射功率",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 §2.2 效率定义；pp.8–9 Fig. 6h 与平均值正文",
+                "note": "作者取当频该焦斑 FWHM 的三倍为积分圆直径。探针或功率定标、逐点 FWHM 数表及确切积分网格待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "denominator": "incident_power_on_metalens",
+                "numerator": "focal_plane_power_in_circle",
+                "integration_diameter_fwhm_factor": 3,
+                "integration_radius_fwhm_factor": 1.5,
+                "field_point": "on_axis",
+                "incident_polarization": "y"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，0.95 THz",
+                "note": "实测效率 Fig. 6h 仅曲线，暂无原始数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_y_100thz",
+            "model": "Jiang 2026 · y 偏振实测 · 1.00 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "y 偏振实测 · 1.00 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一实物；该频率的实测焦位、宽度与效率图。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 1,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.00 THz；Fig. 6b,e,f 的相应图列",
+                "note": "由图内频点及 §2.1 的 0.05 THz 间隔确定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 299792,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.00 THz；Fig. 6b,e,f 的相应图列",
+                "note": "原标注 1.00 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 299,792 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "y 线偏振",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.00 THz；Fig. 6b,e,f 的相应图列",
+                "note": "实验按作者两次测量的 x/y 命名。同一枚实物相差 90° 转角完成两种入射偏振的表征。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "y"
+              },
+              "psf_protocol": {
+                "value": "线偏振正入射；近场探针采集，取 x–z 强度最大点",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.00 THz；Fig. 6b,e,f 的相应图列",
+                "note": "正文 §2.2 分开报告本实验 0.1 mm 探针空间分辨率与 §4.3／补件 Fig. S7 的系统最小 20 μm。实际横纵扫描步距与绝对轴向零位校准待核。Fig. 6f 图内标 x，正文称 x，图注写 y。沿线的坐标方向待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ],
+                "method": "terahertz_near_field_scanning_microscopy",
+                "field_point": "on_axis",
+                "incident_angle_deg": 0,
+                "incident_polarization": "y",
+                "polarization_switch_method": "same_metalens_rotated_90_degrees",
+                "position_definition": "axial_intensity_maximum",
+                "axial_plane": "xz",
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "transverse_section_direction": "unresolved",
+                "plotted_section_direction": "x",
+                "caption_section_direction": "y",
+                "test_probe_resolution_um": 100,
+                "instrument_minimum_resolution_um": 20,
+                "scan_step_um": null,
+                "normalization": "Min–Max maps and normalized transverse curves"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.00 THz；Fig. 6b,e,f 的相应图列",
+                "note": "实测主焦位只以 Fig. 6c 曲线发布，暂无对应数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.00 THz；Fig. 6b,e,f 的相应图列",
+                "note": "作者实测 FWHM 在 Fig. 6g。截线方向图文冲突。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "efficiency_protocol": {
+                "value": "焦区圆功率／镜面总入射功率",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 §2.2 效率定义；pp.8–9 Fig. 6h 与平均值正文",
+                "note": "作者取当频该焦斑 FWHM 的三倍为积分圆直径。探针或功率定标、逐点 FWHM 数表及确切积分网格待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "denominator": "incident_power_on_metalens",
+                "numerator": "focal_plane_power_in_circle",
+                "integration_diameter_fwhm_factor": 3,
+                "integration_radius_fwhm_factor": 1.5,
+                "field_point": "on_axis",
+                "incident_polarization": "y"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.00 THz；Fig. 6b,e,f 的相应图列",
+                "note": "实测效率 Fig. 6h 仅曲线，暂无原始数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_y_105thz",
+            "model": "Jiang 2026 · y 偏振实测 · 1.05 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "y 偏振实测 · 1.05 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一实物；该频率的实测焦位、宽度与效率图。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 1.05,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.05 THz",
+                "note": "由图内频点及 §2.1 的 0.05 THz 间隔确定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 285517,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.05 THz",
+                "note": "原标注 1.05 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 285,517 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1.05,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "y 线偏振",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.05 THz",
+                "note": "实验按作者两次测量的 x/y 命名。同一枚实物相差 90° 转角完成两种入射偏振的表征。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "y"
+              },
+              "psf_protocol": {
+                "value": "线偏振正入射；近场探针采集，取 x–z 强度最大点",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.05 THz",
+                "note": "正文 §2.2 分开报告本实验 0.1 mm 探针空间分辨率与 §4.3／补件 Fig. S7 的系统最小 20 μm。实际横纵扫描步距与绝对轴向零位校准待核。Fig. 6f 图内标 x，正文称 x，图注写 y。沿线的坐标方向待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ],
+                "method": "terahertz_near_field_scanning_microscopy",
+                "field_point": "on_axis",
+                "incident_angle_deg": 0,
+                "incident_polarization": "y",
+                "polarization_switch_method": "same_metalens_rotated_90_degrees",
+                "position_definition": "axial_intensity_maximum",
+                "axial_plane": "xz",
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "transverse_section_direction": "unresolved",
+                "plotted_section_direction": "x",
+                "caption_section_direction": "y",
+                "test_probe_resolution_um": 100,
+                "instrument_minimum_resolution_um": 20,
+                "scan_step_um": null,
+                "normalization": "Min–Max maps and normalized transverse curves"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.05 THz",
+                "note": "实测主焦位只以 Fig. 6c 曲线发布，暂无对应数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.05 THz",
+                "note": "作者实测 FWHM 在 Fig. 6g。截线方向图文冲突。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "efficiency_protocol": {
+                "value": "焦区圆功率／镜面总入射功率",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 §2.2 效率定义；pp.8–9 Fig. 6h 与平均值正文",
+                "note": "作者取当频该焦斑 FWHM 的三倍为积分圆直径。探针或功率定标、逐点 FWHM 数表及确切积分网格待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "denominator": "incident_power_on_metalens",
+                "numerator": "focal_plane_power_in_circle",
+                "integration_diameter_fwhm_factor": 3,
+                "integration_radius_fwhm_factor": 1.5,
+                "field_point": "on_axis",
+                "incident_polarization": "y"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.05 THz",
+                "note": "实测效率 Fig. 6h 仅曲线，暂无原始数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_y_110thz",
+            "model": "Jiang 2026 · y 偏振实测 · 1.10 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "y 偏振实测 · 1.10 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一实物；该频率的实测焦位、宽度与效率图。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 1.1,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.10 THz；Fig. 6b,e,f 的相应图列",
+                "note": "由图内频点及 §2.1 的 0.05 THz 间隔确定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 272539,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.10 THz；Fig. 6b,e,f 的相应图列",
+                "note": "原标注 1.10 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 272,539 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1.1,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "y 线偏振",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.10 THz；Fig. 6b,e,f 的相应图列",
+                "note": "实验按作者两次测量的 x/y 命名。同一枚实物相差 90° 转角完成两种入射偏振的表征。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "y"
+              },
+              "psf_protocol": {
+                "value": "线偏振正入射；近场探针采集，取 x–z 强度最大点",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.10 THz；Fig. 6b,e,f 的相应图列",
+                "note": "正文 §2.2 分开报告本实验 0.1 mm 探针空间分辨率与 §4.3／补件 Fig. S7 的系统最小 20 μm。实际横纵扫描步距与绝对轴向零位校准待核。Fig. 6f 图内标 x，正文称 x，图注写 y。沿线的坐标方向待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ],
+                "method": "terahertz_near_field_scanning_microscopy",
+                "field_point": "on_axis",
+                "incident_angle_deg": 0,
+                "incident_polarization": "y",
+                "polarization_switch_method": "same_metalens_rotated_90_degrees",
+                "position_definition": "axial_intensity_maximum",
+                "axial_plane": "xz",
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "transverse_section_direction": "unresolved",
+                "plotted_section_direction": "x",
+                "caption_section_direction": "y",
+                "test_probe_resolution_um": 100,
+                "instrument_minimum_resolution_um": 20,
+                "scan_step_um": null,
+                "normalization": "Min–Max maps and normalized transverse curves"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.10 THz；Fig. 6b,e,f 的相应图列",
+                "note": "实测主焦位只以 Fig. 6c 曲线发布，暂无对应数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.10 THz；Fig. 6b,e,f 的相应图列",
+                "note": "作者实测 FWHM 在 Fig. 6g。截线方向图文冲突。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "efficiency_protocol": {
+                "value": "焦区圆功率／镜面总入射功率",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 §2.2 效率定义；pp.8–9 Fig. 6h 与平均值正文",
+                "note": "作者取当频该焦斑 FWHM 的三倍为积分圆直径。探针或功率定标、逐点 FWHM 数表及确切积分网格待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "denominator": "incident_power_on_metalens",
+                "numerator": "focal_plane_power_in_circle",
+                "integration_diameter_fwhm_factor": 3,
+                "integration_radius_fwhm_factor": 1.5,
+                "field_point": "on_axis",
+                "incident_polarization": "y"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.10 THz；Fig. 6b,e,f 的相应图列",
+                "note": "实测效率 Fig. 6h 仅曲线，暂无原始数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_y_115thz",
+            "model": "Jiang 2026 · y 偏振实测 · 1.15 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "y 偏振实测 · 1.15 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一实物；该频率的实测焦位、宽度与效率图。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 1.15,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.15 THz",
+                "note": "由图内频点及 §2.1 的 0.05 THz 间隔确定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 260689,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.15 THz",
+                "note": "原标注 1.15 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 260,689 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1.15,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "y 线偏振",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.15 THz",
+                "note": "实验按作者两次测量的 x/y 命名。同一枚实物相差 90° 转角完成两种入射偏振的表征。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "y"
+              },
+              "psf_protocol": {
+                "value": "线偏振正入射；近场探针采集，取 x–z 强度最大点",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.15 THz",
+                "note": "正文 §2.2 分开报告本实验 0.1 mm 探针空间分辨率与 §4.3／补件 Fig. S7 的系统最小 20 μm。实际横纵扫描步距与绝对轴向零位校准待核。Fig. 6f 图内标 x，正文称 x，图注写 y。沿线的坐标方向待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ],
+                "method": "terahertz_near_field_scanning_microscopy",
+                "field_point": "on_axis",
+                "incident_angle_deg": 0,
+                "incident_polarization": "y",
+                "polarization_switch_method": "same_metalens_rotated_90_degrees",
+                "position_definition": "axial_intensity_maximum",
+                "axial_plane": "xz",
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "transverse_section_direction": "unresolved",
+                "plotted_section_direction": "x",
+                "caption_section_direction": "y",
+                "test_probe_resolution_um": 100,
+                "instrument_minimum_resolution_um": 20,
+                "scan_step_um": null,
+                "normalization": "Min–Max maps and normalized transverse curves"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.15 THz",
+                "note": "实测主焦位只以 Fig. 6c 曲线发布，暂无对应数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.15 THz",
+                "note": "作者实测 FWHM 在 Fig. 6g。截线方向图文冲突。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "efficiency_protocol": {
+                "value": "焦区圆功率／镜面总入射功率",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 §2.2 效率定义；pp.8–9 Fig. 6h 与平均值正文",
+                "note": "作者取当频该焦斑 FWHM 的三倍为积分圆直径。探针或功率定标、逐点 FWHM 数表及确切积分网格待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "denominator": "incident_power_on_metalens",
+                "numerator": "focal_plane_power_in_circle",
+                "integration_diameter_fwhm_factor": 3,
+                "integration_radius_fwhm_factor": 1.5,
+                "field_point": "on_axis",
+                "incident_polarization": "y"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.15 THz",
+                "note": "实测效率 Fig. 6h 仅曲线，暂无原始数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_y_120thz",
+            "model": "Jiang 2026 · y 偏振实测 · 1.20 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "y 偏振实测 · 1.20 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一实物；该频率的实测焦位、宽度与效率图。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 1.2,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.20 THz；Fig. 6b,e,f 的相应图列",
+                "note": "由图内频点及 §2.1 的 0.05 THz 间隔确定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 249827,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.20 THz；Fig. 6b,e,f 的相应图列",
+                "note": "原标注 1.20 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 249,827 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1.2,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "y 线偏振",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.20 THz；Fig. 6b,e,f 的相应图列",
+                "note": "实验按作者两次测量的 x/y 命名。同一枚实物相差 90° 转角完成两种入射偏振的表征。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "y"
+              },
+              "psf_protocol": {
+                "value": "线偏振正入射；近场探针采集，取 x–z 强度最大点",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.20 THz；Fig. 6b,e,f 的相应图列",
+                "note": "正文 §2.2 分开报告本实验 0.1 mm 探针空间分辨率与 §4.3／补件 Fig. S7 的系统最小 20 μm。实际横纵扫描步距与绝对轴向零位校准待核。Fig. 6f 图内标 x，正文称 x，图注写 y。沿线的坐标方向待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026",
+                  "jiang_lapiam_si_2026"
+                ],
+                "method": "terahertz_near_field_scanning_microscopy",
+                "field_point": "on_axis",
+                "incident_angle_deg": 0,
+                "incident_polarization": "y",
+                "polarization_switch_method": "same_metalens_rotated_90_degrees",
+                "position_definition": "axial_intensity_maximum",
+                "axial_plane": "xz",
+                "reference_plane": "device_to_author_reported_axial_coordinate",
+                "transverse_section_direction": "unresolved",
+                "plotted_section_direction": "x",
+                "caption_section_direction": "y",
+                "test_probe_resolution_um": 100,
+                "instrument_minimum_resolution_um": 20,
+                "scan_step_um": null,
+                "normalization": "Min–Max maps and normalized transverse curves"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.20 THz；Fig. 6b,e,f 的相应图列",
+                "note": "实测主焦位只以 Fig. 6c 曲线发布，暂无对应数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.20 THz；Fig. 6b,e,f 的相应图列",
+                "note": "作者实测 FWHM 在 Fig. 6g。截线方向图文冲突。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              },
+              "efficiency_protocol": {
+                "value": "焦区圆功率／镜面总入射功率",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.6 §2.2 效率定义；pp.8–9 Fig. 6h 与平均值正文",
+                "note": "作者取当频该焦斑 FWHM 的三倍为积分圆直径。探针或功率定标、逐点 FWHM 数表及确切积分网格待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "denominator": "incident_power_on_metalens",
+                "numerator": "focal_plane_power_in_circle",
+                "integration_diameter_fwhm_factor": 3,
+                "integration_radius_fwhm_factor": 1.5,
+                "field_point": "on_axis",
+                "incident_polarization": "y"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF p.8 Fig. 6c,g,h，1.20 THz；Fig. 6b,e,f 的相应图列",
+                "note": "实测效率 Fig. 6h 仅曲线，暂无原始数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；数值待核"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_x_model_summary",
+            "model": "Jiang 2026 · x 偏振模型 · 九频点统计",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "x 偏振模型 · 九频点统计",
+            "evidence_type": "study",
+            "measurement_scope": "一致的单镜设计，模型统计独立于实测。",
+            "visible_light_use": false,
+            "values": {
+              "polarization": {
+                "value": "x 线偏振",
+                "source": "jiang_lapiam_si_2026",
+                "location": "正式 PDF §2.2 Fig. 5c 对应正文；补件 Fig. S8 正文",
+                "note": "补件标出的仿真入射偏振。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "x"
+              },
+              "chromatic": {
+                "value": "模型平均焦长 78.9 mm；ACV 2.32%；平均效率 53.97%",
+                "source": "jiang_lapiam_si_2026",
+                "location": "正式 PDF §2.2 Fig. 5c 对应正文；补件 Fig. S8 正文",
+                "note": "均为作者模拟统计。效率按作者原称保存；模拟效率的功率归一化未单独展开。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_si_2026",
+                  "jiang_lapiam_pdf_2026"
+                ],
+                "calculation_origin": "authors",
+                "modeled_mean_focal_um": 78900,
+                "modeled_acv_pct": 2.32,
+                "modeled_mean_focusing_efficiency_pct": 53.97,
+                "sample_frequencies_thz": [
+                  0.8,
+                  0.85,
+                  0.9,
+                  0.95,
+                  1,
+                  1.05,
+                  1.1,
+                  1.15,
+                  1.2
+                ]
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_x_model_080thz",
+            "model": "Jiang 2026 · x 偏振模型 · 0.80 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "x 偏振模型 · 0.80 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一设计；作者数值模拟。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 0.8,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，0.80 THz",
+                "note": "频谱次序依据 0.80–1.20 THz，每 0.05 THz 一点。",
+                "basis": "model",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 374741,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，0.80 THz",
+                "note": "原标注 0.80 THz，本库按真空光速换算到 nm。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "display": "约 374,741 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 0.8,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "x 线偏振",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，0.80 THz",
+                "note": "补件标出的仿真入射偏振。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "x"
+              },
+              "psf_protocol": {
+                "value": "FDTD 近场与 Fresnel–Kirchhoff 传播模型",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.10–11 §4.2",
+                "note": "原文为设计仿真，镜面 z=0。FWHM 模型截线方向和积分参数在补件未单独指明。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "reference_plane": "simulation_lens_plane_z0"
+              },
+              "simulated_fwhm_um": {
+                "value": 1130,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，0.80 THz",
+                "note": "补件正文在 Fig. S8a 之前按九个频率顺序明报模拟 FWHM。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "direction": "unspecified",
+                "original_value": 1.13,
+                "original_unit": "mm",
+                "display": "1,130 μm（模拟）"
+              },
+              "efficiency_protocol": {
+                "value": "作者模拟聚焦效率",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，0.80 THz",
+                "note": "补件原称 focusing efficiency。模型积分区域、功率分母与实验协议是否相同待核。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "denominator": "author_denominator_unreported",
+                "denominator_note": "补件模型段未单列分母"
+              },
+              "simulated_focusing_efficiency_pct": {
+                "value": 46.95,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，0.80 THz",
+                "note": "正文直接给出模型该频率的最小或最大值。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "denominator": "author_denominator_unreported"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_x_model_085thz",
+            "model": "Jiang 2026 · x 偏振模型 · 0.85 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "x 偏振模型 · 0.85 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一设计；作者数值模拟。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 0.85,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，0.85 THz",
+                "note": "频谱次序依据 0.80–1.20 THz，每 0.05 THz 一点。",
+                "basis": "model",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 352697,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，0.85 THz",
+                "note": "原标注 0.85 THz，本库按真空光速换算到 nm。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "display": "约 352,697 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 0.85,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "x 线偏振",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，0.85 THz",
+                "note": "补件标出的仿真入射偏振。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "x"
+              },
+              "psf_protocol": {
+                "value": "FDTD 近场与 Fresnel–Kirchhoff 传播模型",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.10–11 §4.2",
+                "note": "原文为设计仿真，镜面 z=0。FWHM 模型截线方向和积分参数在补件未单独指明。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "reference_plane": "simulation_lens_plane_z0"
+              },
+              "simulated_fwhm_um": {
+                "value": 1070,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，0.85 THz",
+                "note": "补件正文在 Fig. S8a 之前按九个频率顺序明报模拟 FWHM。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "direction": "unspecified",
+                "original_value": 1.07,
+                "original_unit": "mm",
+                "display": "1,070 μm（模拟）"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_x_model_090thz",
+            "model": "Jiang 2026 · x 偏振模型 · 0.90 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "x 偏振模型 · 0.90 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一设计；作者数值模拟。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 0.9,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，0.90 THz",
+                "note": "频谱次序依据 0.80–1.20 THz，每 0.05 THz 一点。",
+                "basis": "model",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 333103,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，0.90 THz",
+                "note": "原标注 0.90 THz，本库按真空光速换算到 nm。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "display": "约 333,103 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 0.9,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "x 线偏振",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，0.90 THz",
+                "note": "补件标出的仿真入射偏振。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "x"
+              },
+              "psf_protocol": {
+                "value": "FDTD 近场与 Fresnel–Kirchhoff 传播模型",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.10–11 §4.2",
+                "note": "原文为设计仿真，镜面 z=0。FWHM 模型截线方向和积分参数在补件未单独指明。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "reference_plane": "simulation_lens_plane_z0"
+              },
+              "simulated_fwhm_um": {
+                "value": 1040,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，0.90 THz",
+                "note": "补件正文在 Fig. S8a 之前按九个频率顺序明报模拟 FWHM。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "direction": "unspecified",
+                "original_value": 1.04,
+                "original_unit": "mm",
+                "display": "1,040 μm（模拟）"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_x_model_095thz",
+            "model": "Jiang 2026 · x 偏振模型 · 0.95 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "x 偏振模型 · 0.95 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一设计；作者数值模拟。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 0.95,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，0.95 THz",
+                "note": "频谱次序依据 0.80–1.20 THz，每 0.05 THz 一点。",
+                "basis": "model",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 315571,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，0.95 THz",
+                "note": "原标注 0.95 THz，本库按真空光速换算到 nm。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "display": "约 315,571 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 0.95,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "x 线偏振",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，0.95 THz",
+                "note": "补件标出的仿真入射偏振。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "x"
+              },
+              "psf_protocol": {
+                "value": "FDTD 近场与 Fresnel–Kirchhoff 传播模型",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.10–11 §4.2",
+                "note": "原文为设计仿真，镜面 z=0。FWHM 模型截线方向和积分参数在补件未单独指明。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "reference_plane": "simulation_lens_plane_z0"
+              },
+              "simulated_fwhm_um": {
+                "value": 1000,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，0.95 THz",
+                "note": "补件正文在 Fig. S8a 之前按九个频率顺序明报模拟 FWHM。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "direction": "unspecified",
+                "original_value": 1.0,
+                "original_unit": "mm",
+                "display": "1,000 μm（模拟）"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_x_model_100thz",
+            "model": "Jiang 2026 · x 偏振模型 · 1.00 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "x 偏振模型 · 1.00 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一设计；作者数值模拟。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 1,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，1.00 THz",
+                "note": "频谱次序依据 0.80–1.20 THz，每 0.05 THz 一点。",
+                "basis": "model",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 299792,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，1.00 THz",
+                "note": "原标注 1.00 THz，本库按真空光速换算到 nm。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "display": "约 299,792 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "x 线偏振",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，1.00 THz",
+                "note": "补件标出的仿真入射偏振。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "x"
+              },
+              "psf_protocol": {
+                "value": "FDTD 近场与 Fresnel–Kirchhoff 传播模型",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.10–11 §4.2",
+                "note": "原文为设计仿真，镜面 z=0。FWHM 模型截线方向和积分参数在补件未单独指明。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "reference_plane": "simulation_lens_plane_z0"
+              },
+              "simulated_fwhm_um": {
+                "value": 960,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，1.00 THz",
+                "note": "补件正文在 Fig. S8a 之前按九个频率顺序明报模拟 FWHM。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "direction": "unspecified",
+                "original_value": 0.96,
+                "original_unit": "mm",
+                "display": "960 μm（模拟）"
+              },
+              "efficiency_protocol": {
+                "value": "作者模拟聚焦效率",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，1.00 THz",
+                "note": "补件原称 focusing efficiency。模型积分区域、功率分母与实验协议是否相同待核。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "denominator": "author_denominator_unreported",
+                "denominator_note": "补件模型段未单列分母"
+              },
+              "simulated_focusing_efficiency_pct": {
+                "value": 58.73,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，1.00 THz",
+                "note": "正文直接给出模型该频率的最小或最大值。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "denominator": "author_denominator_unreported"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_x_model_105thz",
+            "model": "Jiang 2026 · x 偏振模型 · 1.05 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "x 偏振模型 · 1.05 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一设计；作者数值模拟。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 1.05,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，1.05 THz",
+                "note": "频谱次序依据 0.80–1.20 THz，每 0.05 THz 一点。",
+                "basis": "model",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 285517,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，1.05 THz",
+                "note": "原标注 1.05 THz，本库按真空光速换算到 nm。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "display": "约 285,517 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1.05,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "x 线偏振",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，1.05 THz",
+                "note": "补件标出的仿真入射偏振。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "x"
+              },
+              "psf_protocol": {
+                "value": "FDTD 近场与 Fresnel–Kirchhoff 传播模型",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.10–11 §4.2",
+                "note": "原文为设计仿真，镜面 z=0。FWHM 模型截线方向和积分参数在补件未单独指明。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "reference_plane": "simulation_lens_plane_z0"
+              },
+              "simulated_fwhm_um": {
+                "value": 930,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，1.05 THz",
+                "note": "补件正文在 Fig. S8a 之前按九个频率顺序明报模拟 FWHM。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "direction": "unspecified",
+                "original_value": 0.93,
+                "original_unit": "mm",
+                "display": "930 μm（模拟）"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_x_model_110thz",
+            "model": "Jiang 2026 · x 偏振模型 · 1.10 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "x 偏振模型 · 1.10 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一设计；作者数值模拟。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 1.1,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，1.10 THz",
+                "note": "频谱次序依据 0.80–1.20 THz，每 0.05 THz 一点。",
+                "basis": "model",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 272539,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，1.10 THz",
+                "note": "原标注 1.10 THz，本库按真空光速换算到 nm。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "display": "约 272,539 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1.1,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "x 线偏振",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，1.10 THz",
+                "note": "补件标出的仿真入射偏振。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "x"
+              },
+              "psf_protocol": {
+                "value": "FDTD 近场与 Fresnel–Kirchhoff 传播模型",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.10–11 §4.2",
+                "note": "原文为设计仿真，镜面 z=0。FWHM 模型截线方向和积分参数在补件未单独指明。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "reference_plane": "simulation_lens_plane_z0"
+              },
+              "simulated_fwhm_um": {
+                "value": 900,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，1.10 THz",
+                "note": "补件正文在 Fig. S8a 之前按九个频率顺序明报模拟 FWHM。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "direction": "unspecified",
+                "original_value": 0.9,
+                "original_unit": "mm",
+                "display": "900 μm（模拟）"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_x_model_115thz",
+            "model": "Jiang 2026 · x 偏振模型 · 1.15 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "x 偏振模型 · 1.15 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一设计；作者数值模拟。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 1.15,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，1.15 THz",
+                "note": "频谱次序依据 0.80–1.20 THz，每 0.05 THz 一点。",
+                "basis": "model",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 260689,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，1.15 THz",
+                "note": "原标注 1.15 THz，本库按真空光速换算到 nm。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "display": "约 260,689 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1.15,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "x 线偏振",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，1.15 THz",
+                "note": "补件标出的仿真入射偏振。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "x"
+              },
+              "psf_protocol": {
+                "value": "FDTD 近场与 Fresnel–Kirchhoff 传播模型",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.10–11 §4.2",
+                "note": "原文为设计仿真，镜面 z=0。FWHM 模型截线方向和积分参数在补件未单独指明。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "reference_plane": "simulation_lens_plane_z0"
+              },
+              "simulated_fwhm_um": {
+                "value": 860,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，1.15 THz",
+                "note": "补件正文在 Fig. S8a 之前按九个频率顺序明报模拟 FWHM。 图内倒数第二个刻度印作 1.05，按正文指定等频率间隔的第八项登记。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "direction": "unspecified",
+                "original_value": 0.86,
+                "original_unit": "mm",
+                "display": "860 μm（模拟）"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_x_model_120thz",
+            "model": "Jiang 2026 · x 偏振模型 · 1.20 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "x 偏振模型 · 1.20 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一设计；作者数值模拟。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 1.2,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，1.20 THz",
+                "note": "频谱次序依据 0.80–1.20 THz，每 0.05 THz 一点。",
+                "basis": "model",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 249827,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，1.20 THz",
+                "note": "原标注 1.20 THz，本库按真空光速换算到 nm。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "display": "约 249,827 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1.2,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "x 线偏振",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，1.20 THz",
+                "note": "补件标出的仿真入射偏振。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "x"
+              },
+              "psf_protocol": {
+                "value": "FDTD 近场与 Fresnel–Kirchhoff 传播模型",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.10–11 §4.2",
+                "note": "原文为设计仿真，镜面 z=0。FWHM 模型截线方向和积分参数在补件未单独指明。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "reference_plane": "simulation_lens_plane_z0"
+              },
+              "simulated_fwhm_um": {
+                "value": 810,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S8 对应正文，1.20 THz",
+                "note": "补件正文在 Fig. S8a 之前按九个频率顺序明报模拟 FWHM。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "direction": "unspecified",
+                "original_value": 0.81,
+                "original_unit": "mm",
+                "display": "810 μm（模拟）"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_y_model_summary",
+            "model": "Jiang 2026 · y 偏振模型 · 九频点统计",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "y 偏振模型 · 九频点统计",
+            "evidence_type": "study",
+            "measurement_scope": "一致的单镜设计，模型统计独立于实测。",
+            "visible_light_use": false,
+            "values": {
+              "polarization": {
+                "value": "y 线偏振",
+                "source": "jiang_lapiam_si_2026",
+                "location": "正式 PDF §2.2 Fig. 6c 对应正文；补件 Fig. S9 正文",
+                "note": "补件标出的仿真入射偏振。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "y"
+              },
+              "chromatic": {
+                "value": "模型平均焦长 78.9 mm；ACV 2.24%；平均效率 52.88%",
+                "source": "jiang_lapiam_si_2026",
+                "location": "正式 PDF §2.2 Fig. 6c 对应正文；补件 Fig. S9 正文",
+                "note": "均为作者模拟统计。效率按作者原称保存；模拟效率的功率归一化未单独展开。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_si_2026",
+                  "jiang_lapiam_pdf_2026"
+                ],
+                "calculation_origin": "authors",
+                "modeled_mean_focal_um": 78900,
+                "modeled_acv_pct": 2.24,
+                "modeled_mean_focusing_efficiency_pct": 52.88,
+                "sample_frequencies_thz": [
+                  0.8,
+                  0.85,
+                  0.9,
+                  0.95,
+                  1,
+                  1.05,
+                  1.1,
+                  1.15,
+                  1.2
+                ]
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_y_model_080thz",
+            "model": "Jiang 2026 · y 偏振模型 · 0.80 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "y 偏振模型 · 0.80 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一设计；作者数值模拟。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 0.8,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S9 对应正文，0.80 THz",
+                "note": "频谱次序依据 0.80–1.20 THz，每 0.05 THz 一点。",
+                "basis": "model",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 374741,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S9 对应正文，0.80 THz",
+                "note": "原标注 0.80 THz，本库按真空光速换算到 nm。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "display": "约 374,741 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 0.8,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "y 线偏振",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S9 对应正文，0.80 THz",
+                "note": "补件标出的仿真入射偏振。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "y"
+              },
+              "psf_protocol": {
+                "value": "FDTD 近场与 Fresnel–Kirchhoff 传播模型",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.10–11 §4.2",
+                "note": "原文为设计仿真，镜面 z=0。FWHM 模型截线方向和积分参数在补件未单独指明。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "reference_plane": "simulation_lens_plane_z0"
+              },
+              "efficiency_protocol": {
+                "value": "作者模拟聚焦效率",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S9 对应正文，0.80 THz",
+                "note": "补件原称 focusing efficiency。模型积分区域、功率分母与实验协议是否相同待核。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "denominator": "author_denominator_unreported",
+                "denominator_note": "补件模型段未单列分母"
+              },
+              "simulated_focusing_efficiency_pct": {
+                "value": 46.02,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S9 对应正文，0.80 THz",
+                "note": "正文直接给出模型该频率的最小或最大值。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "denominator": "author_denominator_unreported"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_y_model_100thz",
+            "model": "Jiang 2026 · y 偏振模型 · 1.00 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "lapiam",
+            "module": "",
+            "variant": "y 偏振模型 · 1.00 THz",
+            "evidence_type": "study",
+            "measurement_scope": "同一设计；作者数值模拟。",
+            "visible_light_use": false,
+            "values": {
+              "frequency_thz": {
+                "value": 1,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S9 对应正文，1.00 THz",
+                "note": "频谱次序依据 0.80–1.20 THz，每 0.05 THz 一点。",
+                "basis": "model",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 299792,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S9 对应正文，1.00 THz",
+                "note": "原标注 1.00 THz，本库按真空光速换算到 nm。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "display": "约 299,792 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1,
+                "original_unit": "THz"
+              },
+              "polarization": {
+                "value": "y 线偏振",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S9 对应正文，1.00 THz",
+                "note": "补件标出的仿真入射偏振。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "incident_polarization": "y"
+              },
+              "psf_protocol": {
+                "value": "FDTD 近场与 Fresnel–Kirchhoff 传播模型",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.10–11 §4.2",
+                "note": "原文为设计仿真，镜面 z=0。FWHM 模型截线方向和积分参数在补件未单独指明。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "reference_plane": "simulation_lens_plane_z0"
+              },
+              "efficiency_protocol": {
+                "value": "作者模拟聚焦效率",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S9 对应正文，1.00 THz",
+                "note": "补件原称 focusing efficiency。模型积分区域、功率分母与实验协议是否相同待核。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "denominator": "author_denominator_unreported",
+                "denominator_note": "补件模型段未单列分母"
+              },
+              "simulated_focusing_efficiency_pct": {
+                "value": 57.57,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S9 对应正文，1.00 THz",
+                "note": "正文直接给出模型该频率的最小或最大值。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "denominator": "author_denominator_unreported"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_imaging_3000_broadband",
+            "model": "Jiang 2026 · 同镜等倍成像 · 3 mm 靶隙 · 宽带",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "imaging",
+            "module": "",
+            "variant": "同镜等倍成像 · 3 mm 靶隙 · 宽带",
+            "evidence_type": "study",
+            "measurement_scope": "固定镜与靶的实测成像。",
+            "visible_light_use": false,
+            "values": {
+              "illumination": {
+                "value": "宽带",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.9–10 §2.3 与 Fig. 7b",
+                "note": "宽带记录保留原文条件；频点由原图印字。积分权重与偏振未单列。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "psf_protocol": {
+                "value": "U 形靶，3 mm 间隙；作者称 U 形可辨",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.9–10 §2.3 与 Fig. 7b",
+                "note": "作者在固定物与镜位置的等倍成像光路测试。以 8.17 cm 实测平均值布置物距和像距各 16.34 cm。图中靶间隙是样品尺寸；探针测量区域、客观识别阈值和频谱合成细则待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026"
+                ],
+                "configuration": "unit_magnification_imaging",
+                "object_distance_um": 163400,
+                "image_distance_um": 163400,
+                "target_gap_um": 3000,
+                "target_thickness_um": 3000,
+                "target_kind": "U_shaped_metal_sheet",
+                "target_identifiable": true,
+                "object_and_lens_fixed": true
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_imaging_3000_80",
+            "model": "Jiang 2026 · 同镜等倍成像 · 3 mm 靶隙 · 0.80 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "imaging",
+            "module": "",
+            "variant": "同镜等倍成像 · 3 mm 靶隙 · 0.80 THz",
+            "evidence_type": "study",
+            "measurement_scope": "固定镜与靶的实测成像。",
+            "visible_light_use": false,
+            "values": {
+              "illumination": {
+                "value": "0.80 THz",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.9–10 §2.3 与 Fig. 7c",
+                "note": "宽带记录保留原文条件；频点由原图印字。积分权重与偏振未单列。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "psf_protocol": {
+                "value": "U 形靶，3 mm 间隙；作者称 U 形可辨",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.9–10 §2.3 与 Fig. 7c",
+                "note": "作者在固定物与镜位置的等倍成像光路测试。以 8.17 cm 实测平均值布置物距和像距各 16.34 cm。图中靶间隙是样品尺寸；探针测量区域、客观识别阈值和频谱合成细则待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026"
+                ],
+                "configuration": "unit_magnification_imaging",
+                "object_distance_um": 163400,
+                "image_distance_um": 163400,
+                "target_gap_um": 3000,
+                "target_thickness_um": 3000,
+                "target_kind": "U_shaped_metal_sheet",
+                "target_identifiable": true,
+                "object_and_lens_fixed": true
+              },
+              "frequency_thz": {
+                "value": 0.8,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.9–10 §2.3 与 Fig. 7c",
+                "note": "图内标注的成像频率。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 374741,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.9–10 §2.3 与 Fig. 7c",
+                "note": "原标注 0.80 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 374,741 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 0.8,
+                "original_unit": "THz"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_imaging_3000_90",
+            "model": "Jiang 2026 · 同镜等倍成像 · 3 mm 靶隙 · 0.90 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "imaging",
+            "module": "",
+            "variant": "同镜等倍成像 · 3 mm 靶隙 · 0.90 THz",
+            "evidence_type": "study",
+            "measurement_scope": "固定镜与靶的实测成像。",
+            "visible_light_use": false,
+            "values": {
+              "illumination": {
+                "value": "0.90 THz",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.9–10 §2.3 与 Fig. 7d",
+                "note": "宽带记录保留原文条件；频点由原图印字。积分权重与偏振未单列。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "psf_protocol": {
+                "value": "U 形靶，3 mm 间隙；作者称 U 形可辨",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.9–10 §2.3 与 Fig. 7d",
+                "note": "作者在固定物与镜位置的等倍成像光路测试。以 8.17 cm 实测平均值布置物距和像距各 16.34 cm。图中靶间隙是样品尺寸；探针测量区域、客观识别阈值和频谱合成细则待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026"
+                ],
+                "configuration": "unit_magnification_imaging",
+                "object_distance_um": 163400,
+                "image_distance_um": 163400,
+                "target_gap_um": 3000,
+                "target_thickness_um": 3000,
+                "target_kind": "U_shaped_metal_sheet",
+                "target_identifiable": true,
+                "object_and_lens_fixed": true
+              },
+              "frequency_thz": {
+                "value": 0.9,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.9–10 §2.3 与 Fig. 7d",
+                "note": "图内标注的成像频率。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 333103,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.9–10 §2.3 与 Fig. 7d",
+                "note": "原标注 0.90 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 333,103 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 0.9,
+                "original_unit": "THz"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_imaging_3000_100",
+            "model": "Jiang 2026 · 同镜等倍成像 · 3 mm 靶隙 · 1.00 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "imaging",
+            "module": "",
+            "variant": "同镜等倍成像 · 3 mm 靶隙 · 1.00 THz",
+            "evidence_type": "study",
+            "measurement_scope": "固定镜与靶的实测成像。",
+            "visible_light_use": false,
+            "values": {
+              "illumination": {
+                "value": "1.00 THz",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.9–10 §2.3 与 Fig. 7e",
+                "note": "宽带记录保留原文条件；频点由原图印字。积分权重与偏振未单列。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "psf_protocol": {
+                "value": "U 形靶，3 mm 间隙；作者称 U 形可辨",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.9–10 §2.3 与 Fig. 7e",
+                "note": "作者在固定物与镜位置的等倍成像光路测试。以 8.17 cm 实测平均值布置物距和像距各 16.34 cm。图中靶间隙是样品尺寸；探针测量区域、客观识别阈值和频谱合成细则待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026"
+                ],
+                "configuration": "unit_magnification_imaging",
+                "object_distance_um": 163400,
+                "image_distance_um": 163400,
+                "target_gap_um": 3000,
+                "target_thickness_um": 3000,
+                "target_kind": "U_shaped_metal_sheet",
+                "target_identifiable": true,
+                "object_and_lens_fixed": true
+              },
+              "frequency_thz": {
+                "value": 1,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.9–10 §2.3 与 Fig. 7e",
+                "note": "图内标注的成像频率。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 299792,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.9–10 §2.3 与 Fig. 7e",
+                "note": "原标注 1.00 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 299,792 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1,
+                "original_unit": "THz"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_imaging_3000_110",
+            "model": "Jiang 2026 · 同镜等倍成像 · 3 mm 靶隙 · 1.10 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "imaging",
+            "module": "",
+            "variant": "同镜等倍成像 · 3 mm 靶隙 · 1.10 THz",
+            "evidence_type": "study",
+            "measurement_scope": "固定镜与靶的实测成像。",
+            "visible_light_use": false,
+            "values": {
+              "illumination": {
+                "value": "1.10 THz",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.9–10 §2.3 与 Fig. 7f",
+                "note": "宽带记录保留原文条件；频点由原图印字。积分权重与偏振未单列。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "psf_protocol": {
+                "value": "U 形靶，3 mm 间隙；作者称 U 形可辨",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.9–10 §2.3 与 Fig. 7f",
+                "note": "作者在固定物与镜位置的等倍成像光路测试。以 8.17 cm 实测平均值布置物距和像距各 16.34 cm。图中靶间隙是样品尺寸；探针测量区域、客观识别阈值和频谱合成细则待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026"
+                ],
+                "configuration": "unit_magnification_imaging",
+                "object_distance_um": 163400,
+                "image_distance_um": 163400,
+                "target_gap_um": 3000,
+                "target_thickness_um": 3000,
+                "target_kind": "U_shaped_metal_sheet",
+                "target_identifiable": true,
+                "object_and_lens_fixed": true
+              },
+              "frequency_thz": {
+                "value": 1.1,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.9–10 §2.3 与 Fig. 7f",
+                "note": "图内标注的成像频率。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 272539,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.9–10 §2.3 与 Fig. 7f",
+                "note": "原标注 1.10 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 272,539 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1.1,
+                "original_unit": "THz"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_imaging_3000_120",
+            "model": "Jiang 2026 · 同镜等倍成像 · 3 mm 靶隙 · 1.20 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "imaging",
+            "module": "",
+            "variant": "同镜等倍成像 · 3 mm 靶隙 · 1.20 THz",
+            "evidence_type": "study",
+            "measurement_scope": "固定镜与靶的实测成像。",
+            "visible_light_use": false,
+            "values": {
+              "illumination": {
+                "value": "1.20 THz",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.9–10 §2.3 与 Fig. 7g",
+                "note": "宽带记录保留原文条件；频点由原图印字。积分权重与偏振未单列。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "psf_protocol": {
+                "value": "U 形靶，3 mm 间隙；作者称 U 形可辨",
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.9–10 §2.3 与 Fig. 7g",
+                "note": "作者在固定物与镜位置的等倍成像光路测试。以 8.17 cm 实测平均值布置物距和像距各 16.34 cm。图中靶间隙是样品尺寸；探针测量区域、客观识别阈值和频谱合成细则待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_pdf_2026"
+                ],
+                "configuration": "unit_magnification_imaging",
+                "object_distance_um": 163400,
+                "image_distance_um": 163400,
+                "target_gap_um": 3000,
+                "target_thickness_um": 3000,
+                "target_kind": "U_shaped_metal_sheet",
+                "target_identifiable": true,
+                "object_and_lens_fixed": true
+              },
+              "frequency_thz": {
+                "value": 1.2,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.9–10 §2.3 与 Fig. 7g",
+                "note": "图内标注的成像频率。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 249827,
+                "source": "jiang_lapiam_pdf_2026",
+                "location": "正式 PDF pp.9–10 §2.3 与 Fig. 7g",
+                "note": "原标注 1.20 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 249,827 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1.2,
+                "original_unit": "THz"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_imaging_1800_broadband",
+            "model": "Jiang 2026 · 同镜等倍成像 · 1.8 mm 靶隙 · 宽带",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "imaging",
+            "module": "",
+            "variant": "同镜等倍成像 · 1.8 mm 靶隙 · 宽带",
+            "evidence_type": "study",
+            "measurement_scope": "固定镜与靶的实测成像。",
+            "visible_light_use": false,
+            "values": {
+              "illumination": {
+                "value": "宽带",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S10b 第 1 幅；正式 PDF p.10 §2.3",
+                "note": "宽带记录保留原文条件；频点由原图印字。积分权重与偏振未单列。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "psf_protocol": {
+                "value": "U 形靶，1.8 mm 间隙；作者称 U 形可辨",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S10b 第 1 幅；正式 PDF p.10 §2.3",
+                "note": "作者在固定物与镜位置的等倍成像光路测试。以 8.17 cm 实测平均值布置物距和像距各 16.34 cm。图中靶间隙是样品尺寸；探针测量区域、客观识别阈值和频谱合成细则待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_si_2026",
+                  "jiang_lapiam_pdf_2026"
+                ],
+                "configuration": "unit_magnification_imaging",
+                "object_distance_um": 163400,
+                "image_distance_um": 163400,
+                "target_gap_um": 1800,
+                "target_thickness_um": 3000,
+                "target_kind": "U_shaped_metal_sheet",
+                "target_identifiable": true,
+                "object_and_lens_fixed": true
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_imaging_1800_80",
+            "model": "Jiang 2026 · 同镜等倍成像 · 1.8 mm 靶隙 · 0.80 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "imaging",
+            "module": "",
+            "variant": "同镜等倍成像 · 1.8 mm 靶隙 · 0.80 THz",
+            "evidence_type": "study",
+            "measurement_scope": "固定镜与靶的实测成像。",
+            "visible_light_use": false,
+            "values": {
+              "illumination": {
+                "value": "0.80 THz",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S10b 第 2 幅；正式 PDF p.10 §2.3",
+                "note": "宽带记录保留原文条件；频点由原图印字。积分权重与偏振未单列。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "psf_protocol": {
+                "value": "U 形靶，1.8 mm 间隙；作者称 U 形可辨",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S10b 第 2 幅；正式 PDF p.10 §2.3",
+                "note": "作者在固定物与镜位置的等倍成像光路测试。以 8.17 cm 实测平均值布置物距和像距各 16.34 cm。图中靶间隙是样品尺寸；探针测量区域、客观识别阈值和频谱合成细则待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_si_2026",
+                  "jiang_lapiam_pdf_2026"
+                ],
+                "configuration": "unit_magnification_imaging",
+                "object_distance_um": 163400,
+                "image_distance_um": 163400,
+                "target_gap_um": 1800,
+                "target_thickness_um": 3000,
+                "target_kind": "U_shaped_metal_sheet",
+                "target_identifiable": true,
+                "object_and_lens_fixed": true
+              },
+              "frequency_thz": {
+                "value": 0.8,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S10b 第 2 幅；正式 PDF p.10 §2.3",
+                "note": "图内标注的成像频率。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 374741,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S10b 第 2 幅；正式 PDF p.10 §2.3",
+                "note": "原标注 0.80 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 374,741 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 0.8,
+                "original_unit": "THz"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_imaging_1800_90",
+            "model": "Jiang 2026 · 同镜等倍成像 · 1.8 mm 靶隙 · 0.90 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "imaging",
+            "module": "",
+            "variant": "同镜等倍成像 · 1.8 mm 靶隙 · 0.90 THz",
+            "evidence_type": "study",
+            "measurement_scope": "固定镜与靶的实测成像。",
+            "visible_light_use": false,
+            "values": {
+              "illumination": {
+                "value": "0.90 THz",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S10b 第 3 幅；正式 PDF p.10 §2.3",
+                "note": "宽带记录保留原文条件；频点由原图印字。积分权重与偏振未单列。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "psf_protocol": {
+                "value": "U 形靶，1.8 mm 间隙；作者称 U 形可辨",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S10b 第 3 幅；正式 PDF p.10 §2.3",
+                "note": "作者在固定物与镜位置的等倍成像光路测试。以 8.17 cm 实测平均值布置物距和像距各 16.34 cm。图中靶间隙是样品尺寸；探针测量区域、客观识别阈值和频谱合成细则待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_si_2026",
+                  "jiang_lapiam_pdf_2026"
+                ],
+                "configuration": "unit_magnification_imaging",
+                "object_distance_um": 163400,
+                "image_distance_um": 163400,
+                "target_gap_um": 1800,
+                "target_thickness_um": 3000,
+                "target_kind": "U_shaped_metal_sheet",
+                "target_identifiable": true,
+                "object_and_lens_fixed": true
+              },
+              "frequency_thz": {
+                "value": 0.9,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S10b 第 3 幅；正式 PDF p.10 §2.3",
+                "note": "图内标注的成像频率。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 333103,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S10b 第 3 幅；正式 PDF p.10 §2.3",
+                "note": "原标注 0.90 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 333,103 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 0.9,
+                "original_unit": "THz"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_imaging_1800_100",
+            "model": "Jiang 2026 · 同镜等倍成像 · 1.8 mm 靶隙 · 1.00 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "imaging",
+            "module": "",
+            "variant": "同镜等倍成像 · 1.8 mm 靶隙 · 1.00 THz",
+            "evidence_type": "study",
+            "measurement_scope": "固定镜与靶的实测成像。",
+            "visible_light_use": false,
+            "values": {
+              "illumination": {
+                "value": "1.00 THz",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S10b 第 4 幅；正式 PDF p.10 §2.3",
+                "note": "宽带记录保留原文条件；频点由原图印字。积分权重与偏振未单列。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "psf_protocol": {
+                "value": "U 形靶，1.8 mm 间隙；作者称 U 形可辨",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S10b 第 4 幅；正式 PDF p.10 §2.3",
+                "note": "作者在固定物与镜位置的等倍成像光路测试。以 8.17 cm 实测平均值布置物距和像距各 16.34 cm。图中靶间隙是样品尺寸；探针测量区域、客观识别阈值和频谱合成细则待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_si_2026",
+                  "jiang_lapiam_pdf_2026"
+                ],
+                "configuration": "unit_magnification_imaging",
+                "object_distance_um": 163400,
+                "image_distance_um": 163400,
+                "target_gap_um": 1800,
+                "target_thickness_um": 3000,
+                "target_kind": "U_shaped_metal_sheet",
+                "target_identifiable": true,
+                "object_and_lens_fixed": true
+              },
+              "frequency_thz": {
+                "value": 1,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S10b 第 4 幅；正式 PDF p.10 §2.3",
+                "note": "图内标注的成像频率。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 299792,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S10b 第 4 幅；正式 PDF p.10 §2.3",
+                "note": "原标注 1.00 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 299,792 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1,
+                "original_unit": "THz"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_imaging_1800_110",
+            "model": "Jiang 2026 · 同镜等倍成像 · 1.8 mm 靶隙 · 1.10 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "imaging",
+            "module": "",
+            "variant": "同镜等倍成像 · 1.8 mm 靶隙 · 1.10 THz",
+            "evidence_type": "study",
+            "measurement_scope": "固定镜与靶的实测成像。",
+            "visible_light_use": false,
+            "values": {
+              "illumination": {
+                "value": "1.10 THz",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S10b 第 5 幅；正式 PDF p.10 §2.3",
+                "note": "宽带记录保留原文条件；频点由原图印字。积分权重与偏振未单列。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "psf_protocol": {
+                "value": "U 形靶，1.8 mm 间隙；作者称靶纹未能识别",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S10b 第 5 幅；正式 PDF p.10 §2.3",
+                "note": "作者在固定物与镜位置的等倍成像光路测试。以 8.17 cm 实测平均值布置物距和像距各 16.34 cm。图中靶间隙是样品尺寸；探针测量区域、客观识别阈值和频谱合成细则待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_si_2026",
+                  "jiang_lapiam_pdf_2026"
+                ],
+                "configuration": "unit_magnification_imaging",
+                "object_distance_um": 163400,
+                "image_distance_um": 163400,
+                "target_gap_um": 1800,
+                "target_thickness_um": 3000,
+                "target_kind": "U_shaped_metal_sheet",
+                "target_identifiable": false,
+                "object_and_lens_fixed": true
+              },
+              "frequency_thz": {
+                "value": 1.1,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S10b 第 5 幅；正式 PDF p.10 §2.3",
+                "note": "图内标注的成像频率。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 272539,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S10b 第 5 幅；正式 PDF p.10 §2.3",
+                "note": "原标注 1.10 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 272,539 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1.1,
+                "original_unit": "THz"
+              }
+            }
+          },
+          {
+            "id": "jiang2026lapiam_imaging_1800_120",
+            "model": "Jiang 2026 · 同镜等倍成像 · 1.8 mm 靶隙 · 1.20 THz",
+            "study_id": "jiang2026lapiam",
+            "specimen_id": "imaging",
+            "module": "",
+            "variant": "同镜等倍成像 · 1.8 mm 靶隙 · 1.20 THz",
+            "evidence_type": "study",
+            "measurement_scope": "固定镜与靶的实测成像。",
+            "visible_light_use": false,
+            "values": {
+              "illumination": {
+                "value": "1.20 THz",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S10b 第 6 幅；正式 PDF p.10 §2.3",
+                "note": "宽带记录保留原文条件；频点由原图印字。积分权重与偏振未单列。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "psf_protocol": {
+                "value": "U 形靶，1.8 mm 间隙；作者称靶纹未能识别",
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S10b 第 6 幅；正式 PDF p.10 §2.3",
+                "note": "作者在固定物与镜位置的等倍成像光路测试。以 8.17 cm 实测平均值布置物距和像距各 16.34 cm。图中靶间隙是样品尺寸；探针测量区域、客观识别阈值和频谱合成细则待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "jiang_lapiam_si_2026",
+                  "jiang_lapiam_pdf_2026"
+                ],
+                "configuration": "unit_magnification_imaging",
+                "object_distance_um": 163400,
+                "image_distance_um": 163400,
+                "target_gap_um": 1800,
+                "target_thickness_um": 3000,
+                "target_kind": "U_shaped_metal_sheet",
+                "target_identifiable": false,
+                "object_and_lens_fixed": true
+              },
+              "frequency_thz": {
+                "value": 1.2,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S10b 第 6 幅；正式 PDF p.10 §2.3",
+                "note": "图内标注的成像频率。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 249827,
+                "source": "jiang_lapiam_si_2026",
+                "location": "补件 DOCX Fig. S10b 第 6 幅；正式 PDF p.10 §2.3",
+                "note": "原标注 1.20 THz，本库按真空光速换算到 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 249,827 nm",
+                "approximate": true,
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "calculation_origin": "atlas",
+                "original_value": 1.2,
+                "original_unit": "THz"
+              }
+            }
           }
       ],
-      "scope": "62项原始研究、305个器件/测量/系统配置、1313条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
+      "scope": "63项原始研究、307个器件/测量/系统配置、1359条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
