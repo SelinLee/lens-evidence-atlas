@@ -1221,3 +1221,7 @@ Feng 2022 新增课题组发布的双层器件表面实拍、纳米柱结构说�
 沿 Hsu 2022 后续引用筛得 Chen 等。正式在线日期 2024-12-24，卷期为 2025 年 *Laser & Photonics Reviews*，按 2025 年 3 月中科院升级版属物理与天体物理大类一区。作者稿 1256868 字节，SHA-256 `852d3ed3b0d30c1c6fc02fcc23ab9bdaea7c2ac6f90afd408baa6463295b6aaa`。视觉核作者稿 p.3 Fig.2a、d，圆形实物口径 2 mm，780／852 nm 均有径向归一化实测焦斑。p.5 Fig.3 图注明确 780 nm 探测束相对芯片表面 2.6 mm，3 mm 对应冷原子云的制备位置。几何口径、设计 NA 0.46 与 780 nm 芯片参考焦距的定义待对齐，先核 852 nm 的同参考实测峰位与效率分母。Wiley 数据声明为合理请求，SI `lpor202401595-sup-0001-SuppMat.pdf` 直连返回 403，DataCite 精确 DOI 关联 0 项。研究目标保持开启。[正式论文](https://doi.org/10.1002/lpor.202401595) · [作者稿 Fig. 2](https://arxiv.org/pdf/2411.05501#page=3) · [2025 年分区](https://www.ais.cn/journal/database/5537)
 
 沿早期色散工程参考文献核 Dou 2020。正文 Fig.4 的三色焦位和光斑为数值计算，Fig.5 标为模拟成像，补件 S3 为 TM 模拟。2026-11-20 的 Crossref 为 106 次、OpenAlex 为 108 次。按实际光学校正证据要求，该论文留在检索记录。[原作 Fig. 4–5](https://www.researching.cn/ArticlePdf/m00091/2020/3/4/04190005.pdf#page=5) · [作者补件](https://pdfs.semanticscholar.org/5537/6447df209492bfc840cc26bd5a1969fc5f8d.pdf)
+
+## 2026-11-20-141 · Chen 双波长实物与芯片参考焦位
+
+同一文献记录 1 个实物、3 条记录。2 mm 口径、设计 NA 0.46、600 nm 单晶硅。780 nm 与 852 nm 的径向实测剖面绑定 Fig. 2d。780 nm 的约 2600 μm 来自 Fig. 3 插图和 §B，记录芯片表面参考面。中科大作者库正式 PDF pp.3–4 把光阑测法及实测 YZ 分布指向补件。作者共同报告约 22% 与 5 μm 光阑，逐色百分比数值、光阑定义、功率分母和 MTF 数组待核。arXiv 源包已取，图件与文本之外未列独立数据。全库 53 篇、281 个配置、1216 条，可见光 44 篇、810 条。[本批核验](CHEN_ATOM_TWEEZER_REVIEW_2026-11-20.md)

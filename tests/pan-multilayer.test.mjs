@@ -15,7 +15,7 @@ test('a continuous design band never becomes continuous experimental sampling or
   for(const r of spectral){const v=r.values;assert.equal(v.diameter_um.value,20);assert.equal(v.na.value,na);assert.equal(v.lambda_min_nm.value,400);assert.equal(v.lambda_max_nm.value,800);assert.equal(v.lambda_min_nm.basis,'model');assert.equal(v.measured_focal_um.value,null);assert.equal(v.fwhm_x_um.value,null);assert.equal(v.efficiency_at_lambda_pct.value,null);assert.equal(v.strehl,undefined);assert.equal(v.axial_focus_offset_um,undefined);assert.match(v.psf_protocol.value,/20nm（0.02μm）/);assert.match(v.psf_protocol.note,/不是横向像素/);}
   const v=get(spec+'_summary');assert.equal(v.focus_variation_um.value,null);assert.deepEqual(v.focus_variation_um.bound,{operator:'<',value:3,unit:'μm'});assert.deepEqual(v.focus_variation_um.sample_wavelengths_nm,waves);assert.match(v.measured_focal_um.note,/正式版增加Fig.3C.*v1没有.*从样品顶部计z/);assert.equal(v.height_nm.value,null);
  }
- assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(rows,'$model','focus_variation_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,46);
+ assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(rows,'$model','focus_variation_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,47);
 });
 
 test('geometric design focal lengths are explicitly atlas model calculations with dimensional inputs and rounded outputs',()=>{
