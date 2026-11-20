@@ -1235,3 +1235,9 @@ Feng 2022 新增课题组发布的双层器件表面实拍、纳米柱结构说�
 ## 2026-11-20-143 · Zang 与 Xia 的两款实物和宽谱系统 PSF
 
 已录两款 1 mm、内圆 474 μm 的分区超透镜，并保留一项 Metalens-1 单镜 NV 荧光成像配置，共 7 条记录。700 nm 的 242 μm 为设计参考，Fig.3 的扫描坐标与各波长最佳焦位仍分开。Metalens-1／2 的收集谱宽约 30／50 nm，荧光收集量相对商用 NA 0.70 物镜为约 16%／34%。系统 X／Z 宽度为 0.405／1.8 μm，原始点响应、逐色残差及效率积分条件仍待补件。全库 54 篇、284 个配置、1223 条记录，可见光 45 篇、817 条。[本批核验](ZANG_XIA_NV_METALENS_REVIEW_2026-11-20.md)
+
+## 2026-11-20-144 · Zang 与 Xia 上线验收，接续 Ji 的 STED 共焦
+
+0.3.61 经 PR #202 合并到 `41c435c25d0b82ee56c03b514c30a7a45dff8d7a`。327 项测试与构建通过，主线 CI 44722619064 及 Pages 44722618852 成功。独立无头 Google Chrome 在公开页核实 54 篇、1223 条，可见光筛选为 45 篇、817 条。新增同篇 3 个配置、7 条，复核荧光谱宽与相对收集量的两点 `(30 nm, 16%)` 和 `(50 nm, 34%)`、成像系统横纵 PSF 宽度 `(0.405 μm, 1.8 μm)`、口径与设计焦位 `(1000 μm, 242 μm)`。复核 6 种视口、CSV 和出处返回，证据 PDF 的首末区间与完整公开作者档一致。237 个线上发布文件逐一通过 SHA-256 比对，`domains/metalens.json` 为 `65727a3b91f6c7b1b9694f07835ff51b72bd9861af1a50f9163f8bba4fc442ca`。逐色轴向峰位和原始数据任务继续开放。[合并 PR](https://github.com/SelinLee/lens-evidence-atlas/pull/202) · [Pages](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44722618852) · [公开器件表](https://selinlee.github.io/lens-evidence-atlas/?domain=metalens&q=Zang%202026%20%C2%B7%20Metalens)
+
+沿原文参考文献 44 转向 Ji 2025。取得 PMC 存档正式版与补件，视觉复核 Fig. 3D–I 与 Fig. S4,S5。100 μm、设计 NA 0.8 的同一实物在 635 nm RCP 和 780 nm LCP 两个离散通道共焦，两实测焦位印为 37.5 μm。实心焦斑、环形暗心宽度、反向荧光收集与成像系统宽度各有独立实验条件。焦区效率的功率比已明报，积分窗口及原始序列待核。参考文献 24 的 Barulin 2024 实物也有两波长轴扫，同步加入待办。会话目标保持开启。[Ji 核验](JI_STED_METALENS_REVIEW_2026-11-20.md) · [Barulin 原文](https://pmc.ncbi.nlm.nih.gov/articles/PMC10761847/)
