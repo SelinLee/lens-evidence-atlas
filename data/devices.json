@@ -159,8 +159,8 @@
       "url": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/adfm.75854",
       "doi": "10.1002/adfm.75854",
       "kind": "peer_reviewed_paper",
-      "scope": "期刊HTML及epdf出版版§2.3/2.4（PDF pp.6–8）相关正文逐项列举的几何、焦距、FWHM及Strehl。图像与曲线未视觉核验，MTF/效率不估读；补充材料未取得。仅用正文明确数字，保留NA几何一致性问题；ZrO2平均偏差复算约6.93%与原文6.9%一致；15个谱点来自同文两枚器件，非15个独立样品。首次在线2026-05-18。",
-      "checked_on": "2026-11-14"
+      "scope": "正式主文 §§2.2–2.4、§4.8 的出版正文与图注。核 15 个实物焦位、焦斑、Strehl 与模拟宽度。Fig. 4a/c 有色散对照。图像、补件 Table S1、坐标轴与原始数据未取得。2026-05-18 正式上线，2025 年中科院材料科学大类一区。",
+      "checked_on": "2026-11-20"
     },
     {
       "id": "vennela_phone_snr_2026",
@@ -4889,6 +4889,22 @@
           "axis_bounds": {
             "min": 0
           }
+        },
+        {
+          "id": "simulated_fwhm_um",
+          "label": "该波长模拟 PSF FWHM (μm)",
+          "definition": "作者模拟横向焦斑强度的半高全宽。",
+          "conditions": "模型、波长、评价面及截线方向",
+          "numeric": true,
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "kang_uv_visible_2026",
+              "location": "§§2.3–2.4，正文模拟 FWHM 序列"
+            }
+          ]
         },
         {
           "id": "simulated_phase_strehl",
@@ -10141,7 +10157,7 @@
               "location": "§2.3 / PDF pp.6–7 器件参数段",
               "note": "作者器件名义口径。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "design_focal_um": {
               "value": 626,
@@ -10149,16 +10165,18 @@
               "location": "§2.3 / PDF pp.6–7 器件参数段",
               "note": "原文为0.626mm，×1000换算μm；设计值，不是实测。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "na": {
               "value": null,
               "source": "kang_uv_visible_2026",
               "location": "§2.3 / PDF pp.6–7 器件参数段",
-              "note": "作者NA与简单空气几何D/(2√(f²+(D/2)²))不一致；未解释有效孔径/介质，不选一值打点。",
+              "note": "作者标称约 0.056。以名义口径、设计焦距及空气中的圆孔几何计算约 0.04787。有效口径和定义待核。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
-              "display": "原文≈0.056；几何一致性待核"
+              "checked_on": "2026-11-20",
+              "display": "原文≈0.056；几何一致性待核",
+              "reported_nominal_na": 0.056,
+              "geometric_air_na": 0.04787
             },
             "lambda_min_nm": {
               "value": 320,
@@ -10166,7 +10184,7 @@
               "location": "§2.3 / PDF pp.6–7",
               "note": "作者声明工作波段，不是整个可见光保证。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "lambda_max_nm": {
               "value": 450,
@@ -10174,39 +10192,44 @@
               "location": "§2.3 / PDF pp.6–7",
               "note": "与下限同口径，不外推全场。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "wavelength_nm": {
               "value": 320,
               "source": "kang_uv_visible_2026",
               "location": "§2.3 / PDF pp.6–7 逐谱点测量段",
-              "note": "同一SiNx器件的谱点，非独立新样品；z扫描步长8μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
-              "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "note": "作者声明连续工作范围，本行波长为 SiNₓ 实物的一个实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "spectral_sampling": "sampled_wavelength"
             },
             "measured_focal_um": {
               "value": 656,
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7 逐谱点焦距段",
-              "note": "原文mm×1000换算μm；同一SiNx器件的谱点，非独立新样品；z扫描步长8μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c，正文测量焦距序列，320 nm",
+              "note": "原文焦距由 mm 换成 μm。在焦深范围内取轴向强度最大的位置。扫描步长 8 μm，附加插值、重复次数和位置不确定度未报告。 §4.8 给线偏振准直入射。320 nm 用 15× 紫外物镜，其余用 20×/0.4 物镜和 sCMOS。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "position_definition": "axial_intensity_maximum"
             },
             "fwhm_um": {
               "value": 4.0297,
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7 逐谱点measured FWHM段",
-              "note": "同一SiNx器件的谱点，非独立新样品；z扫描步长8μm，以峰强度位置选焦面；完整误差/重复统计未报告。明确采用measured序列，非simulated序列。",
+              "location": "§2.3 / PDF pp.6–7，正文实测 FWHM 序列与 Fig. 4b/e，320 nm",
+              "note": "该波长自身最佳焦面上的实测横向焦斑宽度。截线方向、横向采样和误差未核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "direction": "unspecified"
             },
             "strehl": {
               "value": 0.67,
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7 逐谱点Strehl段",
-              "note": "由实测PSF与理想PSF计算，不等于直接独立MTF测量；同一SiNx器件的谱点，非独立新样品；z扫描步长8μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.3 / PDF pp.6–7，正文 Strehl 序列，320 nm，Fig. 4f 与补件 Note S19",
+              "note": "作者按实测 PSF 峰强度与理想衍射极限峰强度的比值计算。各波长使用自身焦面，归一化细节待核。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_diffraction_limited_system"
             },
             "material": {
               "value": "SiNx",
@@ -10214,23 +10237,38 @@
               "location": "§2.3 / PDF pp.6–7",
               "note": "640nm高结构，偏振无关C4设计；不声称实际整机已验证。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "chromatic": {
-              "value": "作者最大设计焦距偏差约6.7%；不是峰峰焦移",
+              "value": "实测光谱峰峰焦差及作者偏差统计见本器件汇总",
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7 焦距段",
-              "note": "保留原文与复算口径；NA几何一致性问题不自行修正。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c，正文测量焦距序列",
+              "note": "作者报告最大相对设计焦距偏差 6.7%。五点最大绝对差 42 μm，42/626 ≈ 6.71%。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20"
             },
             "mtf_curve": {
-              "value": "Fig.4g：由实测PSF计算的MTF，未提取单值",
+              "value": "Fig. 4g：作者由实测 PSF 计算的 MTF",
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7",
-              "note": "未视觉核图像、未估读MTF/效率；SI未取得，不以模拟/重建代替实测。",
+              "location": "§2.3 / PDF p.7，Fig. 4g 与补件 Fig. S17、Note S19",
+              "note": "作者以实测 PSF 的傅里叶变换幅值计算。正文给出取焦条件，原图坐标轴、频率单位、方向、视场角、窗函数、归一化和有效采样尚未核。作者数据可合理请求。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "mtf_kind": "measured_psf_fourier_reported_in_main_text",
+              "calculation_origin": "authors",
+              "frequency_unit": null,
+              "direction_aggregation": null,
+              "frequency_reference_plane": null,
+              "normalization": null,
+              "field_angle_deg": null,
+              "data_availability": {
+                "status": "curves_cited_coordinates_unverified",
+                "statement": "available_from_authors_upon_reasonable_request",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "object_plane_pixel_size_um": null,
+                "independently_recomputed_mtf": null
+              }
             },
             "height_nm": {
               "value": 640,
@@ -10238,7 +10276,65 @@
               "location": "§2.2 / PDF p.5 meta-atom library",
               "note": "纳米结构高度，不是基底或总厚度。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
+            },
+            "psf_protocol": {
+              "value": "沿 z 每 8 μm 采样，横向 PSF 取各波长轴向强度峰所在面",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c；§4.8",
+              "note": "在焦深范围内取轴向强度最大的位置。扫描步长 8 μm，附加插值、重复次数和位置不确定度未报告。 §4.8 给线偏振准直入射。320 nm 用 15× 紫外物镜，其余用 20×/0.4 物镜和 sCMOS。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "axial_step_um": 8,
+              "evaluation_plane_um": 656,
+              "focus_selection": "axial_intensity_maximum",
+              "field_angle_deg": null,
+              "transverse_profile_direction": null,
+              "object_plane_pixel_size_um": null
+            },
+            "illumination": {
+              "value": "CNI UV-FN-320，测量使用 Thorlabs LMU-15X-UVB 物镜",
+              "source": "kang_uv_visible_2026",
+              "location": "§4.8 Optical Measurement",
+              "note": "准直入射经过线偏振器，偏振方位未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "axial_focus_offset_um": {
+              "value": 30,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c，正文测量焦距序列，320 nm 与同节器件设计参数",
+              "note": "本库以作者公开的 656 μm 实测焦距减去同一器件的 626 μm 设计焦距。带正号表示峰位 f 较大。轴扫步长 8 μm，逐点误差未知。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 626,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "原作 SiNₓ 设计焦面 f = 626 μm",
+              "display": "+30 μm（相对设计焦面）"
+            },
+            "simulated_fwhm_um": {
+              "value": 2.7269,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，正文模拟 FWHM 序列，320 nm，Fig. 4e 与补件 Fig. S16",
+              "note": "同一设计的作者模拟宽度。具体评价面与横向截线方向待核。",
+              "basis": "model",
+              "checked_on": "2026-11-20",
+              "direction": "unspecified",
+              "calculation_origin": "authors",
+              "evaluation_plane_um": null
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆形光阑内的透射功率 / 照到超透镜的总入射功率",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF p.7，Fig. 4d，补件 Table S1 与 Fig. S10",
+              "note": "正文给定义，图中同时比较实测和模拟。光阑尺寸、功率计配置和逐波长原始效率在目前已读正文未给数值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "denominator": "incident_power_on_metalens",
+              "aperture_shape": "circle",
+              "radius_um": null
             }
           }
         },
@@ -10258,7 +10354,7 @@
               "location": "§2.3 / PDF pp.6–7 器件参数段",
               "note": "作者器件名义口径。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "design_focal_um": {
               "value": 626,
@@ -10266,16 +10362,18 @@
               "location": "§2.3 / PDF pp.6–7 器件参数段",
               "note": "原文为0.626mm，×1000换算μm；设计值，不是实测。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "na": {
               "value": null,
               "source": "kang_uv_visible_2026",
               "location": "§2.3 / PDF pp.6–7 器件参数段",
-              "note": "作者NA与简单空气几何D/(2√(f²+(D/2)²))不一致；未解释有效孔径/介质，不选一值打点。",
+              "note": "作者标称约 0.056。以名义口径、设计焦距及空气中的圆孔几何计算约 0.04787。有效口径和定义待核。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
-              "display": "原文≈0.056；几何一致性待核"
+              "checked_on": "2026-11-20",
+              "display": "原文≈0.056；几何一致性待核",
+              "reported_nominal_na": 0.056,
+              "geometric_air_na": 0.04787
             },
             "lambda_min_nm": {
               "value": 320,
@@ -10283,7 +10381,7 @@
               "location": "§2.3 / PDF pp.6–7",
               "note": "作者声明工作波段，不是整个可见光保证。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "lambda_max_nm": {
               "value": 450,
@@ -10291,39 +10389,44 @@
               "location": "§2.3 / PDF pp.6–7",
               "note": "与下限同口径，不外推全场。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "wavelength_nm": {
               "value": 375,
               "source": "kang_uv_visible_2026",
               "location": "§2.3 / PDF pp.6–7 逐谱点测量段",
-              "note": "同一SiNx器件的谱点，非独立新样品；z扫描步长8μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
-              "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "note": "作者声明连续工作范围，本行波长为 SiNₓ 实物的一个实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "spectral_sampling": "sampled_wavelength"
             },
             "measured_focal_um": {
               "value": 584,
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7 逐谱点焦距段",
-              "note": "原文mm×1000换算μm；同一SiNx器件的谱点，非独立新样品；z扫描步长8μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c，正文测量焦距序列，375 nm",
+              "note": "原文焦距由 mm 换成 μm。在焦深范围内取轴向强度最大的位置。扫描步长 8 μm，附加插值、重复次数和位置不确定度未报告。 §4.8 给线偏振准直入射。320 nm 用 15× 紫外物镜，其余用 20×/0.4 物镜和 sCMOS。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "position_definition": "axial_intensity_maximum"
             },
             "fwhm_um": {
               "value": 3.7392,
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7 逐谱点measured FWHM段",
-              "note": "同一SiNx器件的谱点，非独立新样品；z扫描步长8μm，以峰强度位置选焦面；完整误差/重复统计未报告。明确采用measured序列，非simulated序列。",
+              "location": "§2.3 / PDF pp.6–7，正文实测 FWHM 序列与 Fig. 4b/e，375 nm",
+              "note": "该波长自身最佳焦面上的实测横向焦斑宽度。截线方向、横向采样和误差未核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "direction": "unspecified"
             },
             "strehl": {
               "value": 0.8,
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7 逐谱点Strehl段",
-              "note": "由实测PSF与理想PSF计算，不等于直接独立MTF测量；同一SiNx器件的谱点，非独立新样品；z扫描步长8μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.3 / PDF pp.6–7，正文 Strehl 序列，375 nm，Fig. 4f 与补件 Note S19",
+              "note": "作者按实测 PSF 峰强度与理想衍射极限峰强度的比值计算。各波长使用自身焦面，归一化细节待核。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_diffraction_limited_system"
             },
             "material": {
               "value": "SiNx",
@@ -10331,23 +10434,38 @@
               "location": "§2.3 / PDF pp.6–7",
               "note": "640nm高结构，偏振无关C4设计；不声称实际整机已验证。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "chromatic": {
-              "value": "作者最大设计焦距偏差约6.7%；不是峰峰焦移",
+              "value": "实测光谱峰峰焦差及作者偏差统计见本器件汇总",
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7 焦距段",
-              "note": "保留原文与复算口径；NA几何一致性问题不自行修正。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c，正文测量焦距序列",
+              "note": "作者报告最大相对设计焦距偏差 6.7%。五点最大绝对差 42 μm，42/626 ≈ 6.71%。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20"
             },
             "mtf_curve": {
-              "value": "Fig.4g：由实测PSF计算的MTF，未提取单值",
+              "value": "Fig. 4g：作者由实测 PSF 计算的 MTF",
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7",
-              "note": "未视觉核图像、未估读MTF/效率；SI未取得，不以模拟/重建代替实测。",
+              "location": "§2.3 / PDF p.7，Fig. 4g 与补件 Fig. S17、Note S19",
+              "note": "作者以实测 PSF 的傅里叶变换幅值计算。正文给出取焦条件，原图坐标轴、频率单位、方向、视场角、窗函数、归一化和有效采样尚未核。作者数据可合理请求。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "mtf_kind": "measured_psf_fourier_reported_in_main_text",
+              "calculation_origin": "authors",
+              "frequency_unit": null,
+              "direction_aggregation": null,
+              "frequency_reference_plane": null,
+              "normalization": null,
+              "field_angle_deg": null,
+              "data_availability": {
+                "status": "curves_cited_coordinates_unverified",
+                "statement": "available_from_authors_upon_reasonable_request",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "object_plane_pixel_size_um": null,
+                "independently_recomputed_mtf": null
+              }
             },
             "height_nm": {
               "value": 640,
@@ -10355,7 +10473,65 @@
               "location": "§2.2 / PDF p.5 meta-atom library",
               "note": "纳米结构高度，不是基底或总厚度。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
+            },
+            "psf_protocol": {
+              "value": "沿 z 每 8 μm 采样，横向 PSF 取各波长轴向强度峰所在面",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c；§4.8",
+              "note": "在焦深范围内取轴向强度最大的位置。扫描步长 8 μm，附加插值、重复次数和位置不确定度未报告。 §4.8 给线偏振准直入射。320 nm 用 15× 紫外物镜，其余用 20×/0.4 物镜和 sCMOS。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "axial_step_um": 8,
+              "evaluation_plane_um": 584,
+              "focus_selection": "axial_intensity_maximum",
+              "field_angle_deg": null,
+              "transverse_profile_direction": null,
+              "object_plane_pixel_size_um": null
+            },
+            "illumination": {
+              "value": "Thorlabs L375P70MLD 二极管激光",
+              "source": "kang_uv_visible_2026",
+              "location": "§4.8 Optical Measurement",
+              "note": "准直入射经过线偏振器，偏振方位未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "axial_focus_offset_um": {
+              "value": -42,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c，正文测量焦距序列，375 nm 与同节器件设计参数",
+              "note": "本库以作者公开的 584 μm 实测焦距减去同一器件的 626 μm 设计焦距。带正号表示峰位 f 较大。轴扫步长 8 μm，逐点误差未知。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 626,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "原作 SiNₓ 设计焦面 f = 626 μm",
+              "display": "-42 μm（相对设计焦面）"
+            },
+            "simulated_fwhm_um": {
+              "value": 3.3295,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，正文模拟 FWHM 序列，375 nm，Fig. 4e 与补件 Fig. S16",
+              "note": "同一设计的作者模拟宽度。具体评价面与横向截线方向待核。",
+              "basis": "model",
+              "checked_on": "2026-11-20",
+              "direction": "unspecified",
+              "calculation_origin": "authors",
+              "evaluation_plane_um": null
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆形光阑内的透射功率 / 照到超透镜的总入射功率",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF p.7，Fig. 4d，补件 Table S1 与 Fig. S10",
+              "note": "正文给定义，图中同时比较实测和模拟。光阑尺寸、功率计配置和逐波长原始效率在目前已读正文未给数值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "denominator": "incident_power_on_metalens",
+              "aperture_shape": "circle",
+              "radius_um": null
             }
           }
         },
@@ -10375,7 +10551,7 @@
               "location": "§2.3 / PDF pp.6–7 器件参数段",
               "note": "作者器件名义口径。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "design_focal_um": {
               "value": 626,
@@ -10383,16 +10559,18 @@
               "location": "§2.3 / PDF pp.6–7 器件参数段",
               "note": "原文为0.626mm，×1000换算μm；设计值，不是实测。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "na": {
               "value": null,
               "source": "kang_uv_visible_2026",
               "location": "§2.3 / PDF pp.6–7 器件参数段",
-              "note": "作者NA与简单空气几何D/(2√(f²+(D/2)²))不一致；未解释有效孔径/介质，不选一值打点。",
+              "note": "作者标称约 0.056。以名义口径、设计焦距及空气中的圆孔几何计算约 0.04787。有效口径和定义待核。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
-              "display": "原文≈0.056；几何一致性待核"
+              "checked_on": "2026-11-20",
+              "display": "原文≈0.056；几何一致性待核",
+              "reported_nominal_na": 0.056,
+              "geometric_air_na": 0.04787
             },
             "lambda_min_nm": {
               "value": 320,
@@ -10400,7 +10578,7 @@
               "location": "§2.3 / PDF pp.6–7",
               "note": "作者声明工作波段，不是整个可见光保证。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "lambda_max_nm": {
               "value": 450,
@@ -10408,39 +10586,44 @@
               "location": "§2.3 / PDF pp.6–7",
               "note": "与下限同口径，不外推全场。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "wavelength_nm": {
               "value": 405,
               "source": "kang_uv_visible_2026",
               "location": "§2.3 / PDF pp.6–7 逐谱点测量段",
-              "note": "同一SiNx器件的谱点，非独立新样品；z扫描步长8μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
-              "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "note": "作者声明连续工作范围，本行波长为 SiNₓ 实物的一个实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "spectral_sampling": "sampled_wavelength"
             },
             "measured_focal_um": {
               "value": 656,
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7 逐谱点焦距段",
-              "note": "原文mm×1000换算μm；同一SiNx器件的谱点，非独立新样品；z扫描步长8μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c，正文测量焦距序列，405 nm",
+              "note": "原文焦距由 mm 换成 μm。在焦深范围内取轴向强度最大的位置。扫描步长 8 μm，附加插值、重复次数和位置不确定度未报告。 §4.8 给线偏振准直入射。320 nm 用 15× 紫外物镜，其余用 20×/0.4 物镜和 sCMOS。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "position_definition": "axial_intensity_maximum"
             },
             "fwhm_um": {
               "value": 3.6911,
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7 逐谱点measured FWHM段",
-              "note": "同一SiNx器件的谱点，非独立新样品；z扫描步长8μm，以峰强度位置选焦面；完整误差/重复统计未报告。明确采用measured序列，非simulated序列。",
+              "location": "§2.3 / PDF pp.6–7，正文实测 FWHM 序列与 Fig. 4b/e，405 nm",
+              "note": "该波长自身最佳焦面上的实测横向焦斑宽度。截线方向、横向采样和误差未核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "direction": "unspecified"
             },
             "strehl": {
               "value": 0.94,
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7 逐谱点Strehl段",
-              "note": "由实测PSF与理想PSF计算，不等于直接独立MTF测量；同一SiNx器件的谱点，非独立新样品；z扫描步长8μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.3 / PDF pp.6–7，正文 Strehl 序列，405 nm，Fig. 4f 与补件 Note S19",
+              "note": "作者按实测 PSF 峰强度与理想衍射极限峰强度的比值计算。各波长使用自身焦面，归一化细节待核。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_diffraction_limited_system"
             },
             "material": {
               "value": "SiNx",
@@ -10448,23 +10631,38 @@
               "location": "§2.3 / PDF pp.6–7",
               "note": "640nm高结构，偏振无关C4设计；不声称实际整机已验证。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "chromatic": {
-              "value": "作者最大设计焦距偏差约6.7%；不是峰峰焦移",
+              "value": "实测光谱峰峰焦差及作者偏差统计见本器件汇总",
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7 焦距段",
-              "note": "保留原文与复算口径；NA几何一致性问题不自行修正。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c，正文测量焦距序列",
+              "note": "作者报告最大相对设计焦距偏差 6.7%。五点最大绝对差 42 μm，42/626 ≈ 6.71%。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20"
             },
             "mtf_curve": {
-              "value": "Fig.4g：由实测PSF计算的MTF，未提取单值",
+              "value": "Fig. 4g：作者由实测 PSF 计算的 MTF",
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7",
-              "note": "未视觉核图像、未估读MTF/效率；SI未取得，不以模拟/重建代替实测。",
+              "location": "§2.3 / PDF p.7，Fig. 4g 与补件 Fig. S17、Note S19",
+              "note": "作者以实测 PSF 的傅里叶变换幅值计算。正文给出取焦条件，原图坐标轴、频率单位、方向、视场角、窗函数、归一化和有效采样尚未核。作者数据可合理请求。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "mtf_kind": "measured_psf_fourier_reported_in_main_text",
+              "calculation_origin": "authors",
+              "frequency_unit": null,
+              "direction_aggregation": null,
+              "frequency_reference_plane": null,
+              "normalization": null,
+              "field_angle_deg": null,
+              "data_availability": {
+                "status": "curves_cited_coordinates_unverified",
+                "statement": "available_from_authors_upon_reasonable_request",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "object_plane_pixel_size_um": null,
+                "independently_recomputed_mtf": null
+              }
             },
             "height_nm": {
               "value": 640,
@@ -10472,7 +10670,65 @@
               "location": "§2.2 / PDF p.5 meta-atom library",
               "note": "纳米结构高度，不是基底或总厚度。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
+            },
+            "psf_protocol": {
+              "value": "沿 z 每 8 μm 采样，横向 PSF 取各波长轴向强度峰所在面",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c；§4.8",
+              "note": "在焦深范围内取轴向强度最大的位置。扫描步长 8 μm，附加插值、重复次数和位置不确定度未报告。 §4.8 给线偏振准直入射。320 nm 用 15× 紫外物镜，其余用 20×/0.4 物镜和 sCMOS。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "axial_step_um": 8,
+              "evaluation_plane_um": 656,
+              "focus_selection": "axial_intensity_maximum",
+              "field_angle_deg": null,
+              "transverse_profile_direction": null,
+              "object_plane_pixel_size_um": null
+            },
+            "illumination": {
+              "value": "CrystaLaser DL 405-040-SO 连续波二极管激光",
+              "source": "kang_uv_visible_2026",
+              "location": "§4.8 Optical Measurement",
+              "note": "准直入射经过线偏振器，偏振方位未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "axial_focus_offset_um": {
+              "value": 30,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c，正文测量焦距序列，405 nm 与同节器件设计参数",
+              "note": "本库以作者公开的 656 μm 实测焦距减去同一器件的 626 μm 设计焦距。带正号表示峰位 f 较大。轴扫步长 8 μm，逐点误差未知。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 626,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "原作 SiNₓ 设计焦面 f = 626 μm",
+              "display": "+30 μm（相对设计焦面）"
+            },
+            "simulated_fwhm_um": {
+              "value": 3.5653,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，正文模拟 FWHM 序列，405 nm，Fig. 4e 与补件 Fig. S16",
+              "note": "同一设计的作者模拟宽度。具体评价面与横向截线方向待核。",
+              "basis": "model",
+              "checked_on": "2026-11-20",
+              "direction": "unspecified",
+              "calculation_origin": "authors",
+              "evaluation_plane_um": null
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆形光阑内的透射功率 / 照到超透镜的总入射功率",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF p.7，Fig. 4d，补件 Table S1 与 Fig. S10",
+              "note": "正文给定义，图中同时比较实测和模拟。光阑尺寸、功率计配置和逐波长原始效率在目前已读正文未给数值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "denominator": "incident_power_on_metalens",
+              "aperture_shape": "circle",
+              "radius_um": null
             }
           }
         },
@@ -10492,7 +10748,7 @@
               "location": "§2.3 / PDF pp.6–7 器件参数段",
               "note": "作者器件名义口径。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "design_focal_um": {
               "value": 626,
@@ -10500,16 +10756,18 @@
               "location": "§2.3 / PDF pp.6–7 器件参数段",
               "note": "原文为0.626mm，×1000换算μm；设计值，不是实测。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "na": {
               "value": null,
               "source": "kang_uv_visible_2026",
               "location": "§2.3 / PDF pp.6–7 器件参数段",
-              "note": "作者NA与简单空气几何D/(2√(f²+(D/2)²))不一致；未解释有效孔径/介质，不选一值打点。",
+              "note": "作者标称约 0.056。以名义口径、设计焦距及空气中的圆孔几何计算约 0.04787。有效口径和定义待核。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
-              "display": "原文≈0.056；几何一致性待核"
+              "checked_on": "2026-11-20",
+              "display": "原文≈0.056；几何一致性待核",
+              "reported_nominal_na": 0.056,
+              "geometric_air_na": 0.04787
             },
             "lambda_min_nm": {
               "value": 320,
@@ -10517,7 +10775,7 @@
               "location": "§2.3 / PDF pp.6–7",
               "note": "作者声明工作波段，不是整个可见光保证。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "lambda_max_nm": {
               "value": 450,
@@ -10525,39 +10783,44 @@
               "location": "§2.3 / PDF pp.6–7",
               "note": "与下限同口径，不外推全场。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "wavelength_nm": {
               "value": 430,
               "source": "kang_uv_visible_2026",
               "location": "§2.3 / PDF pp.6–7 逐谱点测量段",
-              "note": "同一SiNx器件的谱点，非独立新样品；z扫描步长8μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
-              "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "note": "作者声明连续工作范围，本行波长为 SiNₓ 实物的一个实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "spectral_sampling": "sampled_wavelength"
             },
             "measured_focal_um": {
               "value": 592,
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7 逐谱点焦距段",
-              "note": "原文mm×1000换算μm；同一SiNx器件的谱点，非独立新样品；z扫描步长8μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c，正文测量焦距序列，430 nm",
+              "note": "原文焦距由 mm 换成 μm。在焦深范围内取轴向强度最大的位置。扫描步长 8 μm，附加插值、重复次数和位置不确定度未报告。 §4.8 给线偏振准直入射。320 nm 用 15× 紫外物镜，其余用 20×/0.4 物镜和 sCMOS。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "position_definition": "axial_intensity_maximum"
             },
             "fwhm_um": {
               "value": 4.922,
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7 逐谱点measured FWHM段",
-              "note": "同一SiNx器件的谱点，非独立新样品；z扫描步长8μm，以峰强度位置选焦面；完整误差/重复统计未报告。明确采用measured序列，非simulated序列。",
+              "location": "§2.3 / PDF pp.6–7，正文实测 FWHM 序列与 Fig. 4b/e，430 nm",
+              "note": "该波长自身最佳焦面上的实测横向焦斑宽度。截线方向、横向采样和误差未核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "direction": "unspecified"
             },
             "strehl": {
               "value": 0.76,
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7 逐谱点Strehl段",
-              "note": "由实测PSF与理想PSF计算，不等于直接独立MTF测量；同一SiNx器件的谱点，非独立新样品；z扫描步长8μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.3 / PDF pp.6–7，正文 Strehl 序列，430 nm，Fig. 4f 与补件 Note S19",
+              "note": "作者按实测 PSF 峰强度与理想衍射极限峰强度的比值计算。各波长使用自身焦面，归一化细节待核。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_diffraction_limited_system"
             },
             "material": {
               "value": "SiNx",
@@ -10565,23 +10828,38 @@
               "location": "§2.3 / PDF pp.6–7",
               "note": "640nm高结构，偏振无关C4设计；不声称实际整机已验证。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "chromatic": {
-              "value": "作者最大设计焦距偏差约6.7%；不是峰峰焦移",
+              "value": "实测光谱峰峰焦差及作者偏差统计见本器件汇总",
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7 焦距段",
-              "note": "保留原文与复算口径；NA几何一致性问题不自行修正。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c，正文测量焦距序列",
+              "note": "作者报告最大相对设计焦距偏差 6.7%。五点最大绝对差 42 μm，42/626 ≈ 6.71%。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20"
             },
             "mtf_curve": {
-              "value": "Fig.4g：由实测PSF计算的MTF，未提取单值",
+              "value": "Fig. 4g：作者由实测 PSF 计算的 MTF",
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7",
-              "note": "未视觉核图像、未估读MTF/效率；SI未取得，不以模拟/重建代替实测。",
+              "location": "§2.3 / PDF p.7，Fig. 4g 与补件 Fig. S17、Note S19",
+              "note": "作者以实测 PSF 的傅里叶变换幅值计算。正文给出取焦条件，原图坐标轴、频率单位、方向、视场角、窗函数、归一化和有效采样尚未核。作者数据可合理请求。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "mtf_kind": "measured_psf_fourier_reported_in_main_text",
+              "calculation_origin": "authors",
+              "frequency_unit": null,
+              "direction_aggregation": null,
+              "frequency_reference_plane": null,
+              "normalization": null,
+              "field_angle_deg": null,
+              "data_availability": {
+                "status": "curves_cited_coordinates_unverified",
+                "statement": "available_from_authors_upon_reasonable_request",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "object_plane_pixel_size_um": null,
+                "independently_recomputed_mtf": null
+              }
             },
             "height_nm": {
               "value": 640,
@@ -10589,7 +10867,65 @@
               "location": "§2.2 / PDF p.5 meta-atom library",
               "note": "纳米结构高度，不是基底或总厚度。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
+            },
+            "psf_protocol": {
+              "value": "沿 z 每 8 μm 采样，横向 PSF 取各波长轴向强度峰所在面",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c；§4.8",
+              "note": "在焦深范围内取轴向强度最大的位置。扫描步长 8 μm，附加插值、重复次数和位置不确定度未报告。 §4.8 给线偏振准直入射。320 nm 用 15× 紫外物镜，其余用 20×/0.4 物镜和 sCMOS。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "axial_step_um": 8,
+              "evaluation_plane_um": 592,
+              "focus_selection": "axial_intensity_maximum",
+              "field_angle_deg": null,
+              "transverse_profile_direction": null,
+              "object_plane_pixel_size_um": null
+            },
+            "illumination": {
+              "value": "NKT Photonics SuperK FIANIUM 可调超连续谱",
+              "source": "kang_uv_visible_2026",
+              "location": "§4.8 Optical Measurement",
+              "note": "准直入射经过线偏振器，偏振方位未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "axial_focus_offset_um": {
+              "value": -34,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c，正文测量焦距序列，430 nm 与同节器件设计参数",
+              "note": "本库以作者公开的 592 μm 实测焦距减去同一器件的 626 μm 设计焦距。带正号表示峰位 f 较大。轴扫步长 8 μm，逐点误差未知。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 626,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "原作 SiNₓ 设计焦面 f = 626 μm",
+              "display": "-34 μm（相对设计焦面）"
+            },
+            "simulated_fwhm_um": {
+              "value": 3.7483,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，正文模拟 FWHM 序列，430 nm，Fig. 4e 与补件 Fig. S16",
+              "note": "同一设计的作者模拟宽度。具体评价面与横向截线方向待核。",
+              "basis": "model",
+              "checked_on": "2026-11-20",
+              "direction": "unspecified",
+              "calculation_origin": "authors",
+              "evaluation_plane_um": null
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆形光阑内的透射功率 / 照到超透镜的总入射功率",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF p.7，Fig. 4d，补件 Table S1 与 Fig. S10",
+              "note": "正文给定义，图中同时比较实测和模拟。光阑尺寸、功率计配置和逐波长原始效率在目前已读正文未给数值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "denominator": "incident_power_on_metalens",
+              "aperture_shape": "circle",
+              "radius_um": null
             }
           }
         },
@@ -10609,7 +10945,7 @@
               "location": "§2.3 / PDF pp.6–7 器件参数段",
               "note": "作者器件名义口径。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "design_focal_um": {
               "value": 626,
@@ -10617,16 +10953,18 @@
               "location": "§2.3 / PDF pp.6–7 器件参数段",
               "note": "原文为0.626mm，×1000换算μm；设计值，不是实测。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "na": {
               "value": null,
               "source": "kang_uv_visible_2026",
               "location": "§2.3 / PDF pp.6–7 器件参数段",
-              "note": "作者NA与简单空气几何D/(2√(f²+(D/2)²))不一致；未解释有效孔径/介质，不选一值打点。",
+              "note": "作者标称约 0.056。以名义口径、设计焦距及空气中的圆孔几何计算约 0.04787。有效口径和定义待核。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
-              "display": "原文≈0.056；几何一致性待核"
+              "checked_on": "2026-11-20",
+              "display": "原文≈0.056；几何一致性待核",
+              "reported_nominal_na": 0.056,
+              "geometric_air_na": 0.04787
             },
             "lambda_min_nm": {
               "value": 320,
@@ -10634,7 +10972,7 @@
               "location": "§2.3 / PDF pp.6–7",
               "note": "作者声明工作波段，不是整个可见光保证。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "lambda_max_nm": {
               "value": 450,
@@ -10642,39 +10980,44 @@
               "location": "§2.3 / PDF pp.6–7",
               "note": "与下限同口径，不外推全场。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "wavelength_nm": {
               "value": 450,
               "source": "kang_uv_visible_2026",
               "location": "§2.3 / PDF pp.6–7 逐谱点测量段",
-              "note": "同一SiNx器件的谱点，非独立新样品；z扫描步长8μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
-              "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "note": "作者声明连续工作范围，本行波长为 SiNₓ 实物的一个实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "spectral_sampling": "sampled_wavelength"
             },
             "measured_focal_um": {
               "value": 624,
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7 逐谱点焦距段",
-              "note": "原文mm×1000换算μm；同一SiNx器件的谱点，非独立新样品；z扫描步长8μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c，正文测量焦距序列，450 nm",
+              "note": "原文焦距由 mm 换成 μm。在焦深范围内取轴向强度最大的位置。扫描步长 8 μm，附加插值、重复次数和位置不确定度未报告。 §4.8 给线偏振准直入射。320 nm 用 15× 紫外物镜，其余用 20×/0.4 物镜和 sCMOS。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "position_definition": "axial_intensity_maximum"
             },
             "fwhm_um": {
               "value": 4.9556,
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7 逐谱点measured FWHM段",
-              "note": "同一SiNx器件的谱点，非独立新样品；z扫描步长8μm，以峰强度位置选焦面；完整误差/重复统计未报告。明确采用measured序列，非simulated序列。",
+              "location": "§2.3 / PDF pp.6–7，正文实测 FWHM 序列与 Fig. 4b/e，450 nm",
+              "note": "该波长自身最佳焦面上的实测横向焦斑宽度。截线方向、横向采样和误差未核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "direction": "unspecified"
             },
             "strehl": {
               "value": 0.79,
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7 逐谱点Strehl段",
-              "note": "由实测PSF与理想PSF计算，不等于直接独立MTF测量；同一SiNx器件的谱点，非独立新样品；z扫描步长8μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.3 / PDF pp.6–7，正文 Strehl 序列，450 nm，Fig. 4f 与补件 Note S19",
+              "note": "作者按实测 PSF 峰强度与理想衍射极限峰强度的比值计算。各波长使用自身焦面，归一化细节待核。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_diffraction_limited_system"
             },
             "material": {
               "value": "SiNx",
@@ -10682,23 +11025,38 @@
               "location": "§2.3 / PDF pp.6–7",
               "note": "640nm高结构，偏振无关C4设计；不声称实际整机已验证。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "chromatic": {
-              "value": "作者最大设计焦距偏差约6.7%；不是峰峰焦移",
+              "value": "实测光谱峰峰焦差及作者偏差统计见本器件汇总",
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7 焦距段",
-              "note": "保留原文与复算口径；NA几何一致性问题不自行修正。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c，正文测量焦距序列",
+              "note": "作者报告最大相对设计焦距偏差 6.7%。五点最大绝对差 42 μm，42/626 ≈ 6.71%。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20"
             },
             "mtf_curve": {
-              "value": "Fig.4g：由实测PSF计算的MTF，未提取单值",
+              "value": "Fig. 4g：作者由实测 PSF 计算的 MTF",
               "source": "kang_uv_visible_2026",
-              "location": "§2.3 / PDF pp.6–7",
-              "note": "未视觉核图像、未估读MTF/效率；SI未取得，不以模拟/重建代替实测。",
+              "location": "§2.3 / PDF p.7，Fig. 4g 与补件 Fig. S17、Note S19",
+              "note": "作者以实测 PSF 的傅里叶变换幅值计算。正文给出取焦条件，原图坐标轴、频率单位、方向、视场角、窗函数、归一化和有效采样尚未核。作者数据可合理请求。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "mtf_kind": "measured_psf_fourier_reported_in_main_text",
+              "calculation_origin": "authors",
+              "frequency_unit": null,
+              "direction_aggregation": null,
+              "frequency_reference_plane": null,
+              "normalization": null,
+              "field_angle_deg": null,
+              "data_availability": {
+                "status": "curves_cited_coordinates_unverified",
+                "statement": "available_from_authors_upon_reasonable_request",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "object_plane_pixel_size_um": null,
+                "independently_recomputed_mtf": null
+              }
             },
             "height_nm": {
               "value": 640,
@@ -10706,7 +11064,65 @@
               "location": "§2.2 / PDF p.5 meta-atom library",
               "note": "纳米结构高度，不是基底或总厚度。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
+            },
+            "psf_protocol": {
+              "value": "沿 z 每 8 μm 采样，横向 PSF 取各波长轴向强度峰所在面",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c；§4.8",
+              "note": "在焦深范围内取轴向强度最大的位置。扫描步长 8 μm，附加插值、重复次数和位置不确定度未报告。 §4.8 给线偏振准直入射。320 nm 用 15× 紫外物镜，其余用 20×/0.4 物镜和 sCMOS。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "axial_step_um": 8,
+              "evaluation_plane_um": 624,
+              "focus_selection": "axial_intensity_maximum",
+              "field_angle_deg": null,
+              "transverse_profile_direction": null,
+              "object_plane_pixel_size_um": null
+            },
+            "illumination": {
+              "value": "NKT Photonics SuperK FIANIUM 可调超连续谱",
+              "source": "kang_uv_visible_2026",
+              "location": "§4.8 Optical Measurement",
+              "note": "准直入射经过线偏振器，偏振方位未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "axial_focus_offset_um": {
+              "value": -2,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c，正文测量焦距序列，450 nm 与同节器件设计参数",
+              "note": "本库以作者公开的 624 μm 实测焦距减去同一器件的 626 μm 设计焦距。带正号表示峰位 f 较大。轴扫步长 8 μm，逐点误差未知。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 626,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "原作 SiNₓ 设计焦面 f = 626 μm",
+              "display": "-2 μm（相对设计焦面）"
+            },
+            "simulated_fwhm_um": {
+              "value": 3.8913,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，正文模拟 FWHM 序列，450 nm，Fig. 4e 与补件 Fig. S16",
+              "note": "同一设计的作者模拟宽度。具体评价面与横向截线方向待核。",
+              "basis": "model",
+              "checked_on": "2026-11-20",
+              "direction": "unspecified",
+              "calculation_origin": "authors",
+              "evaluation_plane_um": null
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆形光阑内的透射功率 / 照到超透镜的总入射功率",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF p.7，Fig. 4d，补件 Table S1 与 Fig. S10",
+              "note": "正文给定义，图中同时比较实测和模拟。光阑尺寸、功率计配置和逐波长原始效率在目前已读正文未给数值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "denominator": "incident_power_on_metalens",
+              "aperture_shape": "circle",
+              "radius_um": null
             }
           }
         },
@@ -10726,7 +11142,7 @@
               "location": "§2.4 / PDF p.8 器件参数段",
               "note": "作者器件名义口径。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "design_focal_um": {
               "value": 1400,
@@ -10734,16 +11150,18 @@
               "location": "§2.4 / PDF p.8 器件参数段",
               "note": "原文为1.4mm，×1000换算μm；设计值，不是实测。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "na": {
               "value": null,
               "source": "kang_uv_visible_2026",
               "location": "§2.4 / PDF p.8 器件参数段",
-              "note": "作者NA与简单空气几何D/(2√(f²+(D/2)²))不一致；未解释有效孔径/介质，不选一值打点。",
+              "note": "作者标称约 0.025。以名义口径、设计焦距及空气中的圆孔几何计算约 0.03569。有效口径和定义待核。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
-              "display": "原文≈0.025；几何一致性待核"
+              "checked_on": "2026-11-20",
+              "display": "原文≈0.025；几何一致性待核",
+              "reported_nominal_na": 0.025,
+              "geometric_air_na": 0.03569
             },
             "lambda_min_nm": {
               "value": 375,
@@ -10751,7 +11169,7 @@
               "location": "§2.4 / PDF p.8",
               "note": "作者声明工作波段，不是整个可见光保证。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "lambda_max_nm": {
               "value": 645,
@@ -10759,39 +11177,44 @@
               "location": "§2.4 / PDF p.8",
               "note": "与下限同口径，不外推全场。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "wavelength_nm": {
               "value": 375,
               "source": "kang_uv_visible_2026",
               "location": "§2.4 / PDF p.8 逐谱点测量段",
-              "note": "同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
-              "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "note": "作者声明连续工作范围，本行波长为 ZrO₂ PER 实物的一个实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "spectral_sampling": "sampled_wavelength"
             },
             "measured_focal_um": {
               "value": 1320,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点焦距段",
-              "note": "原文mm×1000换算μm；同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列，375 nm",
+              "note": "原文焦距由 mm 换成 μm。在焦深范围内取轴向强度最大的位置。扫描步长 30 μm，附加插值、重复次数和位置不确定度未报告。 设备几何见 Fig. S10，继像倍率、实测偏振与横向采样待核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "position_definition": "axial_intensity_maximum"
             },
             "fwhm_um": {
               "value": 9.2,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点measured FWHM段",
-              "note": "同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。明确采用measured序列，非simulated序列。",
+              "location": "§2.4 / PDF p.8，正文实测 FWHM 序列与 Fig. 5g，375 nm",
+              "note": "该波长自身最佳焦面上的实测横向焦斑宽度。截线方向、横向采样和误差未核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "direction": "unspecified"
             },
             "strehl": {
               "value": 0.78,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点Strehl段",
-              "note": "由实测PSF与理想PSF计算，不等于直接独立MTF测量；同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.4 / PDF p.8，正文 Strehl 序列，375 nm，§2.4 Strehl 段与补件 Fig. S23",
+              "note": "作者按实测 PSF 峰强度与理想衍射极限峰强度的比值计算。各波长使用自身焦面，归一化细节待核。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_diffraction_limited_system"
             },
             "material": {
               "value": "ZrO2 PER",
@@ -10799,23 +11222,69 @@
               "location": "§2.4 / PDF p.8",
               "note": "纳米压印ZrO2颗粒树脂；不是SiNx器件。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "chromatic": {
-              "value": "作者称平均偏差6.9%；正文10点按平均绝对相对偏差复算约6.93%，与约值一致",
+              "value": "实测光谱峰峰焦差及作者偏差统计见本器件汇总",
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 焦距段",
-              "note": "保留原文与复算口径；NA几何一致性问题不自行修正。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列",
+              "note": "作者报告相对 1400 μm 设计焦距的平均偏差 6.9%。十点等权平均绝对相对偏差约 6.93%，与作者值一致。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20"
             },
             "mtf_curve": {
-              "value": "正文未给可核MTF单值；不得移用SiNx曲线",
+              "value": "已核正文的该器件段未报告 MTF",
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8",
-              "note": "未视觉核图像、未估读MTF/效率；SI未取得，不以模拟/重建代替实测。",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与逐波长像质段",
+              "note": "已核正文给该实物 PSF/FWHM 和 Strehl。补件与原始 PSF 数组未取得。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "statement": "available_from_authors_upon_reasonable_request",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "psf_protocol": {
+              "value": "沿 z 每 30 μm 采样，横向 PSF 取各波长轴向强度峰所在面",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21",
+              "note": "在焦深范围内取轴向强度最大的位置。扫描步长 30 μm，附加插值、重复次数和位置不确定度未报告。 设备几何见 Fig. S10，继像倍率、实测偏振与横向采样待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "axial_step_um": 30,
+              "evaluation_plane_um": 1320,
+              "focus_selection": "axial_intensity_maximum",
+              "field_angle_deg": null,
+              "transverse_profile_direction": null,
+              "object_plane_pixel_size_um": null
+            },
+            "axial_focus_offset_um": {
+              "value": -80,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列，375 nm 与同节器件设计参数",
+              "note": "本库以作者公开的 1320 μm 实测焦距减去同一器件的 1400 μm 设计焦距。带正号表示峰位 f 较大。轴扫步长 30 μm，逐点误差未知。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 1400,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "原作 ZrO₂ PER 设计焦面 f = 1400 μm",
+              "display": "-80 μm（相对设计焦面）"
+            },
+            "simulated_fwhm_um": {
+              "value": 6.5,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，正文模拟 FWHM 序列，375 nm，§2.4 FWHM 段与补件 Fig. S22",
+              "note": "同一设计的作者模拟宽度。具体评价面与横向截线方向待核。",
+              "basis": "model",
+              "checked_on": "2026-11-20",
+              "direction": "unspecified",
+              "calculation_origin": "authors",
+              "evaluation_plane_um": null
             }
           }
         },
@@ -10835,7 +11304,7 @@
               "location": "§2.4 / PDF p.8 器件参数段",
               "note": "作者器件名义口径。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "design_focal_um": {
               "value": 1400,
@@ -10843,16 +11312,18 @@
               "location": "§2.4 / PDF p.8 器件参数段",
               "note": "原文为1.4mm，×1000换算μm；设计值，不是实测。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "na": {
               "value": null,
               "source": "kang_uv_visible_2026",
               "location": "§2.4 / PDF p.8 器件参数段",
-              "note": "作者NA与简单空气几何D/(2√(f²+(D/2)²))不一致；未解释有效孔径/介质，不选一值打点。",
+              "note": "作者标称约 0.025。以名义口径、设计焦距及空气中的圆孔几何计算约 0.03569。有效口径和定义待核。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
-              "display": "原文≈0.025；几何一致性待核"
+              "checked_on": "2026-11-20",
+              "display": "原文≈0.025；几何一致性待核",
+              "reported_nominal_na": 0.025,
+              "geometric_air_na": 0.03569
             },
             "lambda_min_nm": {
               "value": 375,
@@ -10860,7 +11331,7 @@
               "location": "§2.4 / PDF p.8",
               "note": "作者声明工作波段，不是整个可见光保证。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "lambda_max_nm": {
               "value": 645,
@@ -10868,39 +11339,44 @@
               "location": "§2.4 / PDF p.8",
               "note": "与下限同口径，不外推全场。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "wavelength_nm": {
               "value": 405,
               "source": "kang_uv_visible_2026",
               "location": "§2.4 / PDF p.8 逐谱点测量段",
-              "note": "同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
-              "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "note": "作者声明连续工作范围，本行波长为 ZrO₂ PER 实物的一个实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "spectral_sampling": "sampled_wavelength"
             },
             "measured_focal_um": {
               "value": 1100,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点焦距段",
-              "note": "原文mm×1000换算μm；同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列，405 nm",
+              "note": "原文焦距由 mm 换成 μm。在焦深范围内取轴向强度最大的位置。扫描步长 30 μm，附加插值、重复次数和位置不确定度未报告。 设备几何见 Fig. S10，继像倍率、实测偏振与横向采样待核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "position_definition": "axial_intensity_maximum"
             },
             "fwhm_um": {
               "value": 10.3,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点measured FWHM段",
-              "note": "同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。明确采用measured序列，非simulated序列。",
+              "location": "§2.4 / PDF p.8，正文实测 FWHM 序列与 Fig. 5g，405 nm",
+              "note": "该波长自身最佳焦面上的实测横向焦斑宽度。截线方向、横向采样和误差未核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "direction": "unspecified"
             },
             "strehl": {
               "value": 0.77,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点Strehl段",
-              "note": "由实测PSF与理想PSF计算，不等于直接独立MTF测量；同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.4 / PDF p.8，正文 Strehl 序列，405 nm，§2.4 Strehl 段与补件 Fig. S23",
+              "note": "作者按实测 PSF 峰强度与理想衍射极限峰强度的比值计算。各波长使用自身焦面，归一化细节待核。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_diffraction_limited_system"
             },
             "material": {
               "value": "ZrO2 PER",
@@ -10908,23 +11384,69 @@
               "location": "§2.4 / PDF p.8",
               "note": "纳米压印ZrO2颗粒树脂；不是SiNx器件。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "chromatic": {
-              "value": "作者称平均偏差6.9%；正文10点按平均绝对相对偏差复算约6.93%，与约值一致",
+              "value": "实测光谱峰峰焦差及作者偏差统计见本器件汇总",
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 焦距段",
-              "note": "保留原文与复算口径；NA几何一致性问题不自行修正。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列",
+              "note": "作者报告相对 1400 μm 设计焦距的平均偏差 6.9%。十点等权平均绝对相对偏差约 6.93%，与作者值一致。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20"
             },
             "mtf_curve": {
-              "value": "正文未给可核MTF单值；不得移用SiNx曲线",
+              "value": "已核正文的该器件段未报告 MTF",
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8",
-              "note": "未视觉核图像、未估读MTF/效率；SI未取得，不以模拟/重建代替实测。",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与逐波长像质段",
+              "note": "已核正文给该实物 PSF/FWHM 和 Strehl。补件与原始 PSF 数组未取得。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "statement": "available_from_authors_upon_reasonable_request",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "psf_protocol": {
+              "value": "沿 z 每 30 μm 采样，横向 PSF 取各波长轴向强度峰所在面",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21",
+              "note": "在焦深范围内取轴向强度最大的位置。扫描步长 30 μm，附加插值、重复次数和位置不确定度未报告。 设备几何见 Fig. S10，继像倍率、实测偏振与横向采样待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "axial_step_um": 30,
+              "evaluation_plane_um": 1100,
+              "focus_selection": "axial_intensity_maximum",
+              "field_angle_deg": null,
+              "transverse_profile_direction": null,
+              "object_plane_pixel_size_um": null
+            },
+            "axial_focus_offset_um": {
+              "value": -300,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列，405 nm 与同节器件设计参数",
+              "note": "本库以作者公开的 1100 μm 实测焦距减去同一器件的 1400 μm 设计焦距。带正号表示峰位 f 较大。轴扫步长 30 μm，逐点误差未知。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 1400,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "原作 ZrO₂ PER 设计焦面 f = 1400 μm",
+              "display": "-300 μm（相对设计焦面）"
+            },
+            "simulated_fwhm_um": {
+              "value": 7.1,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，正文模拟 FWHM 序列，405 nm，§2.4 FWHM 段与补件 Fig. S22",
+              "note": "同一设计的作者模拟宽度。具体评价面与横向截线方向待核。",
+              "basis": "model",
+              "checked_on": "2026-11-20",
+              "direction": "unspecified",
+              "calculation_origin": "authors",
+              "evaluation_plane_um": null
             }
           }
         },
@@ -10944,7 +11466,7 @@
               "location": "§2.4 / PDF p.8 器件参数段",
               "note": "作者器件名义口径。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "design_focal_um": {
               "value": 1400,
@@ -10952,16 +11474,18 @@
               "location": "§2.4 / PDF p.8 器件参数段",
               "note": "原文为1.4mm，×1000换算μm；设计值，不是实测。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "na": {
               "value": null,
               "source": "kang_uv_visible_2026",
               "location": "§2.4 / PDF p.8 器件参数段",
-              "note": "作者NA与简单空气几何D/(2√(f²+(D/2)²))不一致；未解释有效孔径/介质，不选一值打点。",
+              "note": "作者标称约 0.025。以名义口径、设计焦距及空气中的圆孔几何计算约 0.03569。有效口径和定义待核。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
-              "display": "原文≈0.025；几何一致性待核"
+              "checked_on": "2026-11-20",
+              "display": "原文≈0.025；几何一致性待核",
+              "reported_nominal_na": 0.025,
+              "geometric_air_na": 0.03569
             },
             "lambda_min_nm": {
               "value": 375,
@@ -10969,7 +11493,7 @@
               "location": "§2.4 / PDF p.8",
               "note": "作者声明工作波段，不是整个可见光保证。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "lambda_max_nm": {
               "value": 645,
@@ -10977,39 +11501,44 @@
               "location": "§2.4 / PDF p.8",
               "note": "与下限同口径，不外推全场。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "wavelength_nm": {
               "value": 435,
               "source": "kang_uv_visible_2026",
               "location": "§2.4 / PDF p.8 逐谱点测量段",
-              "note": "同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
-              "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "note": "作者声明连续工作范围，本行波长为 ZrO₂ PER 实物的一个实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "spectral_sampling": "sampled_wavelength"
             },
             "measured_focal_um": {
               "value": 1100,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点焦距段",
-              "note": "原文mm×1000换算μm；同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列，435 nm",
+              "note": "原文焦距由 mm 换成 μm。在焦深范围内取轴向强度最大的位置。扫描步长 30 μm，附加插值、重复次数和位置不确定度未报告。 设备几何见 Fig. S10，继像倍率、实测偏振与横向采样待核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "position_definition": "axial_intensity_maximum"
             },
             "fwhm_um": {
               "value": 10.1,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点measured FWHM段",
-              "note": "同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。明确采用measured序列，非simulated序列。",
+              "location": "§2.4 / PDF p.8，正文实测 FWHM 序列与 Fig. 5g，435 nm",
+              "note": "该波长自身最佳焦面上的实测横向焦斑宽度。截线方向、横向采样和误差未核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "direction": "unspecified"
             },
             "strehl": {
               "value": 0.82,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点Strehl段",
-              "note": "由实测PSF与理想PSF计算，不等于直接独立MTF测量；同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.4 / PDF p.8，正文 Strehl 序列，435 nm，§2.4 Strehl 段与补件 Fig. S23",
+              "note": "作者按实测 PSF 峰强度与理想衍射极限峰强度的比值计算。各波长使用自身焦面，归一化细节待核。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_diffraction_limited_system"
             },
             "material": {
               "value": "ZrO2 PER",
@@ -11017,23 +11546,69 @@
               "location": "§2.4 / PDF p.8",
               "note": "纳米压印ZrO2颗粒树脂；不是SiNx器件。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "chromatic": {
-              "value": "作者称平均偏差6.9%；正文10点按平均绝对相对偏差复算约6.93%，与约值一致",
+              "value": "实测光谱峰峰焦差及作者偏差统计见本器件汇总",
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 焦距段",
-              "note": "保留原文与复算口径；NA几何一致性问题不自行修正。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列",
+              "note": "作者报告相对 1400 μm 设计焦距的平均偏差 6.9%。十点等权平均绝对相对偏差约 6.93%，与作者值一致。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20"
             },
             "mtf_curve": {
-              "value": "正文未给可核MTF单值；不得移用SiNx曲线",
+              "value": "已核正文的该器件段未报告 MTF",
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8",
-              "note": "未视觉核图像、未估读MTF/效率；SI未取得，不以模拟/重建代替实测。",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与逐波长像质段",
+              "note": "已核正文给该实物 PSF/FWHM 和 Strehl。补件与原始 PSF 数组未取得。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "statement": "available_from_authors_upon_reasonable_request",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "psf_protocol": {
+              "value": "沿 z 每 30 μm 采样，横向 PSF 取各波长轴向强度峰所在面",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21",
+              "note": "在焦深范围内取轴向强度最大的位置。扫描步长 30 μm，附加插值、重复次数和位置不确定度未报告。 设备几何见 Fig. S10，继像倍率、实测偏振与横向采样待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "axial_step_um": 30,
+              "evaluation_plane_um": 1100,
+              "focus_selection": "axial_intensity_maximum",
+              "field_angle_deg": null,
+              "transverse_profile_direction": null,
+              "object_plane_pixel_size_um": null
+            },
+            "axial_focus_offset_um": {
+              "value": -300,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列，435 nm 与同节器件设计参数",
+              "note": "本库以作者公开的 1100 μm 实测焦距减去同一器件的 1400 μm 设计焦距。带正号表示峰位 f 较大。轴扫步长 30 μm，逐点误差未知。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 1400,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "原作 ZrO₂ PER 设计焦面 f = 1400 μm",
+              "display": "-300 μm（相对设计焦面）"
+            },
+            "simulated_fwhm_um": {
+              "value": 7.5,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，正文模拟 FWHM 序列，435 nm，§2.4 FWHM 段与补件 Fig. S22",
+              "note": "同一设计的作者模拟宽度。具体评价面与横向截线方向待核。",
+              "basis": "model",
+              "checked_on": "2026-11-20",
+              "direction": "unspecified",
+              "calculation_origin": "authors",
+              "evaluation_plane_um": null
             }
           }
         },
@@ -11053,7 +11628,7 @@
               "location": "§2.4 / PDF p.8 器件参数段",
               "note": "作者器件名义口径。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "design_focal_um": {
               "value": 1400,
@@ -11061,16 +11636,18 @@
               "location": "§2.4 / PDF p.8 器件参数段",
               "note": "原文为1.4mm，×1000换算μm；设计值，不是实测。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "na": {
               "value": null,
               "source": "kang_uv_visible_2026",
               "location": "§2.4 / PDF p.8 器件参数段",
-              "note": "作者NA与简单空气几何D/(2√(f²+(D/2)²))不一致；未解释有效孔径/介质，不选一值打点。",
+              "note": "作者标称约 0.025。以名义口径、设计焦距及空气中的圆孔几何计算约 0.03569。有效口径和定义待核。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
-              "display": "原文≈0.025；几何一致性待核"
+              "checked_on": "2026-11-20",
+              "display": "原文≈0.025；几何一致性待核",
+              "reported_nominal_na": 0.025,
+              "geometric_air_na": 0.03569
             },
             "lambda_min_nm": {
               "value": 375,
@@ -11078,7 +11655,7 @@
               "location": "§2.4 / PDF p.8",
               "note": "作者声明工作波段，不是整个可见光保证。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "lambda_max_nm": {
               "value": 645,
@@ -11086,39 +11663,44 @@
               "location": "§2.4 / PDF p.8",
               "note": "与下限同口径，不外推全场。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "wavelength_nm": {
               "value": 465,
               "source": "kang_uv_visible_2026",
               "location": "§2.4 / PDF p.8 逐谱点测量段",
-              "note": "同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
-              "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "note": "作者声明连续工作范围，本行波长为 ZrO₂ PER 实物的一个实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "spectral_sampling": "sampled_wavelength"
             },
             "measured_focal_um": {
               "value": 1380,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点焦距段",
-              "note": "原文mm×1000换算μm；同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列，465 nm",
+              "note": "原文焦距由 mm 换成 μm。在焦深范围内取轴向强度最大的位置。扫描步长 30 μm，附加插值、重复次数和位置不确定度未报告。 设备几何见 Fig. S10，继像倍率、实测偏振与横向采样待核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "position_definition": "axial_intensity_maximum"
             },
             "fwhm_um": {
               "value": 10.3,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点measured FWHM段",
-              "note": "同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。明确采用measured序列，非simulated序列。",
+              "location": "§2.4 / PDF p.8，正文实测 FWHM 序列与 Fig. 5g，465 nm",
+              "note": "该波长自身最佳焦面上的实测横向焦斑宽度。截线方向、横向采样和误差未核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "direction": "unspecified"
             },
             "strehl": {
               "value": 0.79,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点Strehl段",
-              "note": "由实测PSF与理想PSF计算，不等于直接独立MTF测量；同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.4 / PDF p.8，正文 Strehl 序列，465 nm，§2.4 Strehl 段与补件 Fig. S23",
+              "note": "作者按实测 PSF 峰强度与理想衍射极限峰强度的比值计算。各波长使用自身焦面，归一化细节待核。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_diffraction_limited_system"
             },
             "material": {
               "value": "ZrO2 PER",
@@ -11126,23 +11708,69 @@
               "location": "§2.4 / PDF p.8",
               "note": "纳米压印ZrO2颗粒树脂；不是SiNx器件。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "chromatic": {
-              "value": "作者称平均偏差6.9%；正文10点按平均绝对相对偏差复算约6.93%，与约值一致",
+              "value": "实测光谱峰峰焦差及作者偏差统计见本器件汇总",
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 焦距段",
-              "note": "保留原文与复算口径；NA几何一致性问题不自行修正。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列",
+              "note": "作者报告相对 1400 μm 设计焦距的平均偏差 6.9%。十点等权平均绝对相对偏差约 6.93%，与作者值一致。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20"
             },
             "mtf_curve": {
-              "value": "正文未给可核MTF单值；不得移用SiNx曲线",
+              "value": "已核正文的该器件段未报告 MTF",
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8",
-              "note": "未视觉核图像、未估读MTF/效率；SI未取得，不以模拟/重建代替实测。",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与逐波长像质段",
+              "note": "已核正文给该实物 PSF/FWHM 和 Strehl。补件与原始 PSF 数组未取得。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "statement": "available_from_authors_upon_reasonable_request",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "psf_protocol": {
+              "value": "沿 z 每 30 μm 采样，横向 PSF 取各波长轴向强度峰所在面",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21",
+              "note": "在焦深范围内取轴向强度最大的位置。扫描步长 30 μm，附加插值、重复次数和位置不确定度未报告。 设备几何见 Fig. S10，继像倍率、实测偏振与横向采样待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "axial_step_um": 30,
+              "evaluation_plane_um": 1380,
+              "focus_selection": "axial_intensity_maximum",
+              "field_angle_deg": null,
+              "transverse_profile_direction": null,
+              "object_plane_pixel_size_um": null
+            },
+            "axial_focus_offset_um": {
+              "value": -20,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列，465 nm 与同节器件设计参数",
+              "note": "本库以作者公开的 1380 μm 实测焦距减去同一器件的 1400 μm 设计焦距。带正号表示峰位 f 较大。轴扫步长 30 μm，逐点误差未知。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 1400,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "原作 ZrO₂ PER 设计焦面 f = 1400 μm",
+              "display": "-20 μm（相对设计焦面）"
+            },
+            "simulated_fwhm_um": {
+              "value": 8.1,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，正文模拟 FWHM 序列，465 nm，§2.4 FWHM 段与补件 Fig. S22",
+              "note": "同一设计的作者模拟宽度。具体评价面与横向截线方向待核。",
+              "basis": "model",
+              "checked_on": "2026-11-20",
+              "direction": "unspecified",
+              "calculation_origin": "authors",
+              "evaluation_plane_um": null
             }
           }
         },
@@ -11162,7 +11790,7 @@
               "location": "§2.4 / PDF p.8 器件参数段",
               "note": "作者器件名义口径。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "design_focal_um": {
               "value": 1400,
@@ -11170,16 +11798,18 @@
               "location": "§2.4 / PDF p.8 器件参数段",
               "note": "原文为1.4mm，×1000换算μm；设计值，不是实测。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "na": {
               "value": null,
               "source": "kang_uv_visible_2026",
               "location": "§2.4 / PDF p.8 器件参数段",
-              "note": "作者NA与简单空气几何D/(2√(f²+(D/2)²))不一致；未解释有效孔径/介质，不选一值打点。",
+              "note": "作者标称约 0.025。以名义口径、设计焦距及空气中的圆孔几何计算约 0.03569。有效口径和定义待核。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
-              "display": "原文≈0.025；几何一致性待核"
+              "checked_on": "2026-11-20",
+              "display": "原文≈0.025；几何一致性待核",
+              "reported_nominal_na": 0.025,
+              "geometric_air_na": 0.03569
             },
             "lambda_min_nm": {
               "value": 375,
@@ -11187,7 +11817,7 @@
               "location": "§2.4 / PDF p.8",
               "note": "作者声明工作波段，不是整个可见光保证。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "lambda_max_nm": {
               "value": 645,
@@ -11195,39 +11825,44 @@
               "location": "§2.4 / PDF p.8",
               "note": "与下限同口径，不外推全场。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "wavelength_nm": {
               "value": 495,
               "source": "kang_uv_visible_2026",
               "location": "§2.4 / PDF p.8 逐谱点测量段",
-              "note": "同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
-              "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "note": "作者声明连续工作范围，本行波长为 ZrO₂ PER 实物的一个实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "spectral_sampling": "sampled_wavelength"
             },
             "measured_focal_um": {
               "value": 1440,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点焦距段",
-              "note": "原文mm×1000换算μm；同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列，495 nm",
+              "note": "原文焦距由 mm 换成 μm。在焦深范围内取轴向强度最大的位置。扫描步长 30 μm，附加插值、重复次数和位置不确定度未报告。 设备几何见 Fig. S10，继像倍率、实测偏振与横向采样待核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "position_definition": "axial_intensity_maximum"
             },
             "fwhm_um": {
               "value": 12.4,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点measured FWHM段",
-              "note": "同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。明确采用measured序列，非simulated序列。",
+              "location": "§2.4 / PDF p.8，正文实测 FWHM 序列与 Fig. 5g，495 nm",
+              "note": "该波长自身最佳焦面上的实测横向焦斑宽度。截线方向、横向采样和误差未核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "direction": "unspecified"
             },
             "strehl": {
               "value": 0.69,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点Strehl段",
-              "note": "由实测PSF与理想PSF计算，不等于直接独立MTF测量；同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.4 / PDF p.8，正文 Strehl 序列，495 nm，§2.4 Strehl 段与补件 Fig. S23",
+              "note": "作者按实测 PSF 峰强度与理想衍射极限峰强度的比值计算。各波长使用自身焦面，归一化细节待核。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_diffraction_limited_system"
             },
             "material": {
               "value": "ZrO2 PER",
@@ -11235,23 +11870,69 @@
               "location": "§2.4 / PDF p.8",
               "note": "纳米压印ZrO2颗粒树脂；不是SiNx器件。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "chromatic": {
-              "value": "作者称平均偏差6.9%；正文10点按平均绝对相对偏差复算约6.93%，与约值一致",
+              "value": "实测光谱峰峰焦差及作者偏差统计见本器件汇总",
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 焦距段",
-              "note": "保留原文与复算口径；NA几何一致性问题不自行修正。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列",
+              "note": "作者报告相对 1400 μm 设计焦距的平均偏差 6.9%。十点等权平均绝对相对偏差约 6.93%，与作者值一致。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20"
             },
             "mtf_curve": {
-              "value": "正文未给可核MTF单值；不得移用SiNx曲线",
+              "value": "已核正文的该器件段未报告 MTF",
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8",
-              "note": "未视觉核图像、未估读MTF/效率；SI未取得，不以模拟/重建代替实测。",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与逐波长像质段",
+              "note": "已核正文给该实物 PSF/FWHM 和 Strehl。补件与原始 PSF 数组未取得。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "statement": "available_from_authors_upon_reasonable_request",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "psf_protocol": {
+              "value": "沿 z 每 30 μm 采样，横向 PSF 取各波长轴向强度峰所在面",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21",
+              "note": "在焦深范围内取轴向强度最大的位置。扫描步长 30 μm，附加插值、重复次数和位置不确定度未报告。 设备几何见 Fig. S10，继像倍率、实测偏振与横向采样待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "axial_step_um": 30,
+              "evaluation_plane_um": 1440,
+              "focus_selection": "axial_intensity_maximum",
+              "field_angle_deg": null,
+              "transverse_profile_direction": null,
+              "object_plane_pixel_size_um": null
+            },
+            "axial_focus_offset_um": {
+              "value": 40,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列，495 nm 与同节器件设计参数",
+              "note": "本库以作者公开的 1440 μm 实测焦距减去同一器件的 1400 μm 设计焦距。带正号表示峰位 f 较大。轴扫步长 30 μm，逐点误差未知。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 1400,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "原作 ZrO₂ PER 设计焦面 f = 1400 μm",
+              "display": "+40 μm（相对设计焦面）"
+            },
+            "simulated_fwhm_um": {
+              "value": 8.6,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，正文模拟 FWHM 序列，495 nm，§2.4 FWHM 段与补件 Fig. S22",
+              "note": "同一设计的作者模拟宽度。具体评价面与横向截线方向待核。",
+              "basis": "model",
+              "checked_on": "2026-11-20",
+              "direction": "unspecified",
+              "calculation_origin": "authors",
+              "evaluation_plane_um": null
             }
           }
         },
@@ -11271,7 +11952,7 @@
               "location": "§2.4 / PDF p.8 器件参数段",
               "note": "作者器件名义口径。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "design_focal_um": {
               "value": 1400,
@@ -11279,16 +11960,18 @@
               "location": "§2.4 / PDF p.8 器件参数段",
               "note": "原文为1.4mm，×1000换算μm；设计值，不是实测。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "na": {
               "value": null,
               "source": "kang_uv_visible_2026",
               "location": "§2.4 / PDF p.8 器件参数段",
-              "note": "作者NA与简单空气几何D/(2√(f²+(D/2)²))不一致；未解释有效孔径/介质，不选一值打点。",
+              "note": "作者标称约 0.025。以名义口径、设计焦距及空气中的圆孔几何计算约 0.03569。有效口径和定义待核。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
-              "display": "原文≈0.025；几何一致性待核"
+              "checked_on": "2026-11-20",
+              "display": "原文≈0.025；几何一致性待核",
+              "reported_nominal_na": 0.025,
+              "geometric_air_na": 0.03569
             },
             "lambda_min_nm": {
               "value": 375,
@@ -11296,7 +11979,7 @@
               "location": "§2.4 / PDF p.8",
               "note": "作者声明工作波段，不是整个可见光保证。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "lambda_max_nm": {
               "value": 645,
@@ -11304,39 +11987,44 @@
               "location": "§2.4 / PDF p.8",
               "note": "与下限同口径，不外推全场。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "wavelength_nm": {
               "value": 525,
               "source": "kang_uv_visible_2026",
               "location": "§2.4 / PDF p.8 逐谱点测量段",
-              "note": "同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
-              "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "note": "作者声明连续工作范围，本行波长为 ZrO₂ PER 实物的一个实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "spectral_sampling": "sampled_wavelength"
             },
             "measured_focal_um": {
               "value": 1530,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点焦距段",
-              "note": "原文mm×1000换算μm；同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列，525 nm",
+              "note": "原文焦距由 mm 换成 μm。在焦深范围内取轴向强度最大的位置。扫描步长 30 μm，附加插值、重复次数和位置不确定度未报告。 设备几何见 Fig. S10，继像倍率、实测偏振与横向采样待核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "position_definition": "axial_intensity_maximum"
             },
             "fwhm_um": {
               "value": 11.8,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点measured FWHM段",
-              "note": "同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。明确采用measured序列，非simulated序列。",
+              "location": "§2.4 / PDF p.8，正文实测 FWHM 序列与 Fig. 5g，525 nm",
+              "note": "该波长自身最佳焦面上的实测横向焦斑宽度。截线方向、横向采样和误差未核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "direction": "unspecified"
             },
             "strehl": {
               "value": 0.81,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点Strehl段",
-              "note": "由实测PSF与理想PSF计算，不等于直接独立MTF测量；同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.4 / PDF p.8，正文 Strehl 序列，525 nm，§2.4 Strehl 段与补件 Fig. S23",
+              "note": "作者按实测 PSF 峰强度与理想衍射极限峰强度的比值计算。各波长使用自身焦面，归一化细节待核。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_diffraction_limited_system"
             },
             "material": {
               "value": "ZrO2 PER",
@@ -11344,23 +12032,69 @@
               "location": "§2.4 / PDF p.8",
               "note": "纳米压印ZrO2颗粒树脂；不是SiNx器件。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "chromatic": {
-              "value": "作者称平均偏差6.9%；正文10点按平均绝对相对偏差复算约6.93%，与约值一致",
+              "value": "实测光谱峰峰焦差及作者偏差统计见本器件汇总",
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 焦距段",
-              "note": "保留原文与复算口径；NA几何一致性问题不自行修正。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列",
+              "note": "作者报告相对 1400 μm 设计焦距的平均偏差 6.9%。十点等权平均绝对相对偏差约 6.93%，与作者值一致。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20"
             },
             "mtf_curve": {
-              "value": "正文未给可核MTF单值；不得移用SiNx曲线",
+              "value": "已核正文的该器件段未报告 MTF",
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8",
-              "note": "未视觉核图像、未估读MTF/效率；SI未取得，不以模拟/重建代替实测。",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与逐波长像质段",
+              "note": "已核正文给该实物 PSF/FWHM 和 Strehl。补件与原始 PSF 数组未取得。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "statement": "available_from_authors_upon_reasonable_request",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "psf_protocol": {
+              "value": "沿 z 每 30 μm 采样，横向 PSF 取各波长轴向强度峰所在面",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21",
+              "note": "在焦深范围内取轴向强度最大的位置。扫描步长 30 μm，附加插值、重复次数和位置不确定度未报告。 设备几何见 Fig. S10，继像倍率、实测偏振与横向采样待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "axial_step_um": 30,
+              "evaluation_plane_um": 1530,
+              "focus_selection": "axial_intensity_maximum",
+              "field_angle_deg": null,
+              "transverse_profile_direction": null,
+              "object_plane_pixel_size_um": null
+            },
+            "axial_focus_offset_um": {
+              "value": 130,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列，525 nm 与同节器件设计参数",
+              "note": "本库以作者公开的 1530 μm 实测焦距减去同一器件的 1400 μm 设计焦距。带正号表示峰位 f 较大。轴扫步长 30 μm，逐点误差未知。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 1400,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "原作 ZrO₂ PER 设计焦面 f = 1400 μm",
+              "display": "+130 μm（相对设计焦面）"
+            },
+            "simulated_fwhm_um": {
+              "value": 9.1,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，正文模拟 FWHM 序列，525 nm，§2.4 FWHM 段与补件 Fig. S22",
+              "note": "同一设计的作者模拟宽度。具体评价面与横向截线方向待核。",
+              "basis": "model",
+              "checked_on": "2026-11-20",
+              "direction": "unspecified",
+              "calculation_origin": "authors",
+              "evaluation_plane_um": null
             }
           }
         },
@@ -11380,7 +12114,7 @@
               "location": "§2.4 / PDF p.8 器件参数段",
               "note": "作者器件名义口径。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "design_focal_um": {
               "value": 1400,
@@ -11388,16 +12122,18 @@
               "location": "§2.4 / PDF p.8 器件参数段",
               "note": "原文为1.4mm，×1000换算μm；设计值，不是实测。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "na": {
               "value": null,
               "source": "kang_uv_visible_2026",
               "location": "§2.4 / PDF p.8 器件参数段",
-              "note": "作者NA与简单空气几何D/(2√(f²+(D/2)²))不一致；未解释有效孔径/介质，不选一值打点。",
+              "note": "作者标称约 0.025。以名义口径、设计焦距及空气中的圆孔几何计算约 0.03569。有效口径和定义待核。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
-              "display": "原文≈0.025；几何一致性待核"
+              "checked_on": "2026-11-20",
+              "display": "原文≈0.025；几何一致性待核",
+              "reported_nominal_na": 0.025,
+              "geometric_air_na": 0.03569
             },
             "lambda_min_nm": {
               "value": 375,
@@ -11405,7 +12141,7 @@
               "location": "§2.4 / PDF p.8",
               "note": "作者声明工作波段，不是整个可见光保证。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "lambda_max_nm": {
               "value": 645,
@@ -11413,39 +12149,44 @@
               "location": "§2.4 / PDF p.8",
               "note": "与下限同口径，不外推全场。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "wavelength_nm": {
               "value": 555,
               "source": "kang_uv_visible_2026",
               "location": "§2.4 / PDF p.8 逐谱点测量段",
-              "note": "同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
-              "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "note": "作者声明连续工作范围，本行波长为 ZrO₂ PER 实物的一个实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "spectral_sampling": "sampled_wavelength"
             },
             "measured_focal_um": {
               "value": 1380,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点焦距段",
-              "note": "原文mm×1000换算μm；同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列，555 nm",
+              "note": "原文焦距由 mm 换成 μm。在焦深范围内取轴向强度最大的位置。扫描步长 30 μm，附加插值、重复次数和位置不确定度未报告。 设备几何见 Fig. S10，继像倍率、实测偏振与横向采样待核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "position_definition": "axial_intensity_maximum"
             },
             "fwhm_um": {
               "value": 11.3,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点measured FWHM段",
-              "note": "同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。明确采用measured序列，非simulated序列。",
+              "location": "§2.4 / PDF p.8，正文实测 FWHM 序列与 Fig. 5g，555 nm",
+              "note": "该波长自身最佳焦面上的实测横向焦斑宽度。截线方向、横向采样和误差未核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "direction": "unspecified"
             },
             "strehl": {
               "value": 0.82,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点Strehl段",
-              "note": "由实测PSF与理想PSF计算，不等于直接独立MTF测量；同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.4 / PDF p.8，正文 Strehl 序列，555 nm，§2.4 Strehl 段与补件 Fig. S23",
+              "note": "作者按实测 PSF 峰强度与理想衍射极限峰强度的比值计算。各波长使用自身焦面，归一化细节待核。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_diffraction_limited_system"
             },
             "material": {
               "value": "ZrO2 PER",
@@ -11453,23 +12194,69 @@
               "location": "§2.4 / PDF p.8",
               "note": "纳米压印ZrO2颗粒树脂；不是SiNx器件。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "chromatic": {
-              "value": "作者称平均偏差6.9%；正文10点按平均绝对相对偏差复算约6.93%，与约值一致",
+              "value": "实测光谱峰峰焦差及作者偏差统计见本器件汇总",
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 焦距段",
-              "note": "保留原文与复算口径；NA几何一致性问题不自行修正。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列",
+              "note": "作者报告相对 1400 μm 设计焦距的平均偏差 6.9%。十点等权平均绝对相对偏差约 6.93%，与作者值一致。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20"
             },
             "mtf_curve": {
-              "value": "正文未给可核MTF单值；不得移用SiNx曲线",
+              "value": "已核正文的该器件段未报告 MTF",
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8",
-              "note": "未视觉核图像、未估读MTF/效率；SI未取得，不以模拟/重建代替实测。",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与逐波长像质段",
+              "note": "已核正文给该实物 PSF/FWHM 和 Strehl。补件与原始 PSF 数组未取得。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "statement": "available_from_authors_upon_reasonable_request",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "psf_protocol": {
+              "value": "沿 z 每 30 μm 采样，横向 PSF 取各波长轴向强度峰所在面",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21",
+              "note": "在焦深范围内取轴向强度最大的位置。扫描步长 30 μm，附加插值、重复次数和位置不确定度未报告。 设备几何见 Fig. S10，继像倍率、实测偏振与横向采样待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "axial_step_um": 30,
+              "evaluation_plane_um": 1380,
+              "focus_selection": "axial_intensity_maximum",
+              "field_angle_deg": null,
+              "transverse_profile_direction": null,
+              "object_plane_pixel_size_um": null
+            },
+            "axial_focus_offset_um": {
+              "value": -20,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列，555 nm 与同节器件设计参数",
+              "note": "本库以作者公开的 1380 μm 实测焦距减去同一器件的 1400 μm 设计焦距。带正号表示峰位 f 较大。轴扫步长 30 μm，逐点误差未知。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 1400,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "原作 ZrO₂ PER 设计焦面 f = 1400 μm",
+              "display": "-20 μm（相对设计焦面）"
+            },
+            "simulated_fwhm_um": {
+              "value": 9.8,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，正文模拟 FWHM 序列，555 nm，§2.4 FWHM 段与补件 Fig. S22",
+              "note": "同一设计的作者模拟宽度。具体评价面与横向截线方向待核。",
+              "basis": "model",
+              "checked_on": "2026-11-20",
+              "direction": "unspecified",
+              "calculation_origin": "authors",
+              "evaluation_plane_um": null
             }
           }
         },
@@ -11489,7 +12276,7 @@
               "location": "§2.4 / PDF p.8 器件参数段",
               "note": "作者器件名义口径。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "design_focal_um": {
               "value": 1400,
@@ -11497,16 +12284,18 @@
               "location": "§2.4 / PDF p.8 器件参数段",
               "note": "原文为1.4mm，×1000换算μm；设计值，不是实测。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "na": {
               "value": null,
               "source": "kang_uv_visible_2026",
               "location": "§2.4 / PDF p.8 器件参数段",
-              "note": "作者NA与简单空气几何D/(2√(f²+(D/2)²))不一致；未解释有效孔径/介质，不选一值打点。",
+              "note": "作者标称约 0.025。以名义口径、设计焦距及空气中的圆孔几何计算约 0.03569。有效口径和定义待核。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
-              "display": "原文≈0.025；几何一致性待核"
+              "checked_on": "2026-11-20",
+              "display": "原文≈0.025；几何一致性待核",
+              "reported_nominal_na": 0.025,
+              "geometric_air_na": 0.03569
             },
             "lambda_min_nm": {
               "value": 375,
@@ -11514,7 +12303,7 @@
               "location": "§2.4 / PDF p.8",
               "note": "作者声明工作波段，不是整个可见光保证。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "lambda_max_nm": {
               "value": 645,
@@ -11522,39 +12311,44 @@
               "location": "§2.4 / PDF p.8",
               "note": "与下限同口径，不外推全场。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "wavelength_nm": {
               "value": 585,
               "source": "kang_uv_visible_2026",
               "location": "§2.4 / PDF p.8 逐谱点测量段",
-              "note": "同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
-              "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "note": "作者声明连续工作范围，本行波长为 ZrO₂ PER 实物的一个实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "spectral_sampling": "sampled_wavelength"
             },
             "measured_focal_um": {
               "value": 1410,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点焦距段",
-              "note": "原文mm×1000换算μm；同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列，585 nm",
+              "note": "原文焦距由 mm 换成 μm。在焦深范围内取轴向强度最大的位置。扫描步长 30 μm，附加插值、重复次数和位置不确定度未报告。 设备几何见 Fig. S10，继像倍率、实测偏振与横向采样待核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "position_definition": "axial_intensity_maximum"
             },
             "fwhm_um": {
               "value": 12.6,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点measured FWHM段",
-              "note": "同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。明确采用measured序列，非simulated序列。",
+              "location": "§2.4 / PDF p.8，正文实测 FWHM 序列与 Fig. 5g，585 nm",
+              "note": "该波长自身最佳焦面上的实测横向焦斑宽度。截线方向、横向采样和误差未核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "direction": "unspecified"
             },
             "strehl": {
               "value": 0.91,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点Strehl段",
-              "note": "由实测PSF与理想PSF计算，不等于直接独立MTF测量；同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.4 / PDF p.8，正文 Strehl 序列，585 nm，§2.4 Strehl 段与补件 Fig. S23",
+              "note": "作者按实测 PSF 峰强度与理想衍射极限峰强度的比值计算。各波长使用自身焦面，归一化细节待核。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_diffraction_limited_system"
             },
             "material": {
               "value": "ZrO2 PER",
@@ -11562,23 +12356,69 @@
               "location": "§2.4 / PDF p.8",
               "note": "纳米压印ZrO2颗粒树脂；不是SiNx器件。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "chromatic": {
-              "value": "作者称平均偏差6.9%；正文10点按平均绝对相对偏差复算约6.93%，与约值一致",
+              "value": "实测光谱峰峰焦差及作者偏差统计见本器件汇总",
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 焦距段",
-              "note": "保留原文与复算口径；NA几何一致性问题不自行修正。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列",
+              "note": "作者报告相对 1400 μm 设计焦距的平均偏差 6.9%。十点等权平均绝对相对偏差约 6.93%，与作者值一致。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20"
             },
             "mtf_curve": {
-              "value": "正文未给可核MTF单值；不得移用SiNx曲线",
+              "value": "已核正文的该器件段未报告 MTF",
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8",
-              "note": "未视觉核图像、未估读MTF/效率；SI未取得，不以模拟/重建代替实测。",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与逐波长像质段",
+              "note": "已核正文给该实物 PSF/FWHM 和 Strehl。补件与原始 PSF 数组未取得。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "statement": "available_from_authors_upon_reasonable_request",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "psf_protocol": {
+              "value": "沿 z 每 30 μm 采样，横向 PSF 取各波长轴向强度峰所在面",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21",
+              "note": "在焦深范围内取轴向强度最大的位置。扫描步长 30 μm，附加插值、重复次数和位置不确定度未报告。 设备几何见 Fig. S10，继像倍率、实测偏振与横向采样待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "axial_step_um": 30,
+              "evaluation_plane_um": 1410,
+              "focus_selection": "axial_intensity_maximum",
+              "field_angle_deg": null,
+              "transverse_profile_direction": null,
+              "object_plane_pixel_size_um": null
+            },
+            "axial_focus_offset_um": {
+              "value": 10,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列，585 nm 与同节器件设计参数",
+              "note": "本库以作者公开的 1410 μm 实测焦距减去同一器件的 1400 μm 设计焦距。带正号表示峰位 f 较大。轴扫步长 30 μm，逐点误差未知。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 1400,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "原作 ZrO₂ PER 设计焦面 f = 1400 μm",
+              "display": "+10 μm（相对设计焦面）"
+            },
+            "simulated_fwhm_um": {
+              "value": 10.3,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，正文模拟 FWHM 序列，585 nm，§2.4 FWHM 段与补件 Fig. S22",
+              "note": "同一设计的作者模拟宽度。具体评价面与横向截线方向待核。",
+              "basis": "model",
+              "checked_on": "2026-11-20",
+              "direction": "unspecified",
+              "calculation_origin": "authors",
+              "evaluation_plane_um": null
             }
           }
         },
@@ -11598,7 +12438,7 @@
               "location": "§2.4 / PDF p.8 器件参数段",
               "note": "作者器件名义口径。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "design_focal_um": {
               "value": 1400,
@@ -11606,16 +12446,18 @@
               "location": "§2.4 / PDF p.8 器件参数段",
               "note": "原文为1.4mm，×1000换算μm；设计值，不是实测。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "na": {
               "value": null,
               "source": "kang_uv_visible_2026",
               "location": "§2.4 / PDF p.8 器件参数段",
-              "note": "作者NA与简单空气几何D/(2√(f²+(D/2)²))不一致；未解释有效孔径/介质，不选一值打点。",
+              "note": "作者标称约 0.025。以名义口径、设计焦距及空气中的圆孔几何计算约 0.03569。有效口径和定义待核。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
-              "display": "原文≈0.025；几何一致性待核"
+              "checked_on": "2026-11-20",
+              "display": "原文≈0.025；几何一致性待核",
+              "reported_nominal_na": 0.025,
+              "geometric_air_na": 0.03569
             },
             "lambda_min_nm": {
               "value": 375,
@@ -11623,7 +12465,7 @@
               "location": "§2.4 / PDF p.8",
               "note": "作者声明工作波段，不是整个可见光保证。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "lambda_max_nm": {
               "value": 645,
@@ -11631,39 +12473,44 @@
               "location": "§2.4 / PDF p.8",
               "note": "与下限同口径，不外推全场。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "wavelength_nm": {
               "value": 615,
               "source": "kang_uv_visible_2026",
               "location": "§2.4 / PDF p.8 逐谱点测量段",
-              "note": "同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
-              "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "note": "作者声明连续工作范围，本行波长为 ZrO₂ PER 实物的一个实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "spectral_sampling": "sampled_wavelength"
             },
             "measured_focal_um": {
               "value": 1350,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点焦距段",
-              "note": "原文mm×1000换算μm；同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列，615 nm",
+              "note": "原文焦距由 mm 换成 μm。在焦深范围内取轴向强度最大的位置。扫描步长 30 μm，附加插值、重复次数和位置不确定度未报告。 设备几何见 Fig. S10，继像倍率、实测偏振与横向采样待核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "position_definition": "axial_intensity_maximum"
             },
             "fwhm_um": {
               "value": 12.6,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点measured FWHM段",
-              "note": "同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。明确采用measured序列，非simulated序列。",
+              "location": "§2.4 / PDF p.8，正文实测 FWHM 序列与 Fig. 5g，615 nm",
+              "note": "该波长自身最佳焦面上的实测横向焦斑宽度。截线方向、横向采样和误差未核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "direction": "unspecified"
             },
             "strehl": {
               "value": 0.81,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点Strehl段",
-              "note": "由实测PSF与理想PSF计算，不等于直接独立MTF测量；同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.4 / PDF p.8，正文 Strehl 序列，615 nm，§2.4 Strehl 段与补件 Fig. S23",
+              "note": "作者按实测 PSF 峰强度与理想衍射极限峰强度的比值计算。各波长使用自身焦面，归一化细节待核。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_diffraction_limited_system"
             },
             "material": {
               "value": "ZrO2 PER",
@@ -11671,23 +12518,69 @@
               "location": "§2.4 / PDF p.8",
               "note": "纳米压印ZrO2颗粒树脂；不是SiNx器件。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "chromatic": {
-              "value": "作者称平均偏差6.9%；正文10点按平均绝对相对偏差复算约6.93%，与约值一致",
+              "value": "实测光谱峰峰焦差及作者偏差统计见本器件汇总",
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 焦距段",
-              "note": "保留原文与复算口径；NA几何一致性问题不自行修正。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列",
+              "note": "作者报告相对 1400 μm 设计焦距的平均偏差 6.9%。十点等权平均绝对相对偏差约 6.93%，与作者值一致。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20"
             },
             "mtf_curve": {
-              "value": "正文未给可核MTF单值；不得移用SiNx曲线",
+              "value": "已核正文的该器件段未报告 MTF",
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8",
-              "note": "未视觉核图像、未估读MTF/效率；SI未取得，不以模拟/重建代替实测。",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与逐波长像质段",
+              "note": "已核正文给该实物 PSF/FWHM 和 Strehl。补件与原始 PSF 数组未取得。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "statement": "available_from_authors_upon_reasonable_request",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "psf_protocol": {
+              "value": "沿 z 每 30 μm 采样，横向 PSF 取各波长轴向强度峰所在面",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21",
+              "note": "在焦深范围内取轴向强度最大的位置。扫描步长 30 μm，附加插值、重复次数和位置不确定度未报告。 设备几何见 Fig. S10，继像倍率、实测偏振与横向采样待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "axial_step_um": 30,
+              "evaluation_plane_um": 1350,
+              "focus_selection": "axial_intensity_maximum",
+              "field_angle_deg": null,
+              "transverse_profile_direction": null,
+              "object_plane_pixel_size_um": null
+            },
+            "axial_focus_offset_um": {
+              "value": -50,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列，615 nm 与同节器件设计参数",
+              "note": "本库以作者公开的 1350 μm 实测焦距减去同一器件的 1400 μm 设计焦距。带正号表示峰位 f 较大。轴扫步长 30 μm，逐点误差未知。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 1400,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "原作 ZrO₂ PER 设计焦面 f = 1400 μm",
+              "display": "-50 μm（相对设计焦面）"
+            },
+            "simulated_fwhm_um": {
+              "value": 10.8,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，正文模拟 FWHM 序列，615 nm，§2.4 FWHM 段与补件 Fig. S22",
+              "note": "同一设计的作者模拟宽度。具体评价面与横向截线方向待核。",
+              "basis": "model",
+              "checked_on": "2026-11-20",
+              "direction": "unspecified",
+              "calculation_origin": "authors",
+              "evaluation_plane_um": null
             }
           }
         },
@@ -11707,7 +12600,7 @@
               "location": "§2.4 / PDF p.8 器件参数段",
               "note": "作者器件名义口径。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "design_focal_um": {
               "value": 1400,
@@ -11715,16 +12608,18 @@
               "location": "§2.4 / PDF p.8 器件参数段",
               "note": "原文为1.4mm，×1000换算μm；设计值，不是实测。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "na": {
               "value": null,
               "source": "kang_uv_visible_2026",
               "location": "§2.4 / PDF p.8 器件参数段",
-              "note": "作者NA与简单空气几何D/(2√(f²+(D/2)²))不一致；未解释有效孔径/介质，不选一值打点。",
+              "note": "作者标称约 0.025。以名义口径、设计焦距及空气中的圆孔几何计算约 0.03569。有效口径和定义待核。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
-              "display": "原文≈0.025；几何一致性待核"
+              "checked_on": "2026-11-20",
+              "display": "原文≈0.025；几何一致性待核",
+              "reported_nominal_na": 0.025,
+              "geometric_air_na": 0.03569
             },
             "lambda_min_nm": {
               "value": 375,
@@ -11732,7 +12627,7 @@
               "location": "§2.4 / PDF p.8",
               "note": "作者声明工作波段，不是整个可见光保证。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "lambda_max_nm": {
               "value": 645,
@@ -11740,39 +12635,44 @@
               "location": "§2.4 / PDF p.8",
               "note": "与下限同口径，不外推全场。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "wavelength_nm": {
               "value": 645,
               "source": "kang_uv_visible_2026",
               "location": "§2.4 / PDF p.8 逐谱点测量段",
-              "note": "同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
-              "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "note": "作者声明连续工作范围，本行波长为 ZrO₂ PER 实物的一个实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "spectral_sampling": "sampled_wavelength"
             },
             "measured_focal_um": {
               "value": 1380,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点焦距段",
-              "note": "原文mm×1000换算μm；同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列，645 nm",
+              "note": "原文焦距由 mm 换成 μm。在焦深范围内取轴向强度最大的位置。扫描步长 30 μm，附加插值、重复次数和位置不确定度未报告。 设备几何见 Fig. S10，继像倍率、实测偏振与横向采样待核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "position_definition": "axial_intensity_maximum"
             },
             "fwhm_um": {
               "value": 14.4,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点measured FWHM段",
-              "note": "同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。明确采用measured序列，非simulated序列。",
+              "location": "§2.4 / PDF p.8，正文实测 FWHM 序列与 Fig. 5g，645 nm",
+              "note": "该波长自身最佳焦面上的实测横向焦斑宽度。截线方向、横向采样和误差未核。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "direction": "unspecified"
             },
             "strehl": {
               "value": 0.74,
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 逐谱点Strehl段",
-              "note": "由实测PSF与理想PSF计算，不等于直接独立MTF测量；同一ZrO2 PER器件的谱点，非独立新样品；z扫描步长30μm，以峰强度位置选焦面；完整误差/重复统计未报告。",
+              "location": "§2.4 / PDF p.8，正文 Strehl 序列，645 nm，§2.4 Strehl 段与补件 Fig. S23",
+              "note": "作者按实测 PSF 峰强度与理想衍射极限峰强度的比值计算。各波长使用自身焦面，归一化细节待核。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "reference_model": "ideal_diffraction_limited_system"
             },
             "material": {
               "value": "ZrO2 PER",
@@ -11780,23 +12680,69 @@
               "location": "§2.4 / PDF p.8",
               "note": "纳米压印ZrO2颗粒树脂；不是SiNx器件。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20"
             },
             "chromatic": {
-              "value": "作者称平均偏差6.9%；正文10点按平均绝对相对偏差复算约6.93%，与约值一致",
+              "value": "实测光谱峰峰焦差及作者偏差统计见本器件汇总",
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8 焦距段",
-              "note": "保留原文与复算口径；NA几何一致性问题不自行修正。",
-              "basis": "measured",
-              "checked_on": "2026-11-14"
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列",
+              "note": "作者报告相对 1400 μm 设计焦距的平均偏差 6.9%。十点等权平均绝对相对偏差约 6.93%，与作者值一致。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20"
             },
             "mtf_curve": {
-              "value": "正文未给可核MTF单值；不得移用SiNx曲线",
+              "value": "已核正文的该器件段未报告 MTF",
               "source": "kang_uv_visible_2026",
-              "location": "§2.4 / PDF p.8",
-              "note": "未视觉核图像、未估读MTF/效率；SI未取得，不以模拟/重建代替实测。",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与逐波长像质段",
+              "note": "已核正文给该实物 PSF/FWHM 和 Strehl。补件与原始 PSF 数组未取得。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "statement": "available_from_authors_upon_reasonable_request",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null
+              }
+            },
+            "psf_protocol": {
+              "value": "沿 z 每 30 μm 采样，横向 PSF 取各波长轴向强度峰所在面",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21",
+              "note": "在焦深范围内取轴向强度最大的位置。扫描步长 30 μm，附加插值、重复次数和位置不确定度未报告。 设备几何见 Fig. S10，继像倍率、实测偏振与横向采样待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "axial_step_um": 30,
+              "evaluation_plane_um": 1380,
+              "focus_selection": "axial_intensity_maximum",
+              "field_angle_deg": null,
+              "transverse_profile_direction": null,
+              "object_plane_pixel_size_um": null
+            },
+            "axial_focus_offset_um": {
+              "value": -20,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列，645 nm 与同节器件设计参数",
+              "note": "本库以作者公开的 1380 μm 实测焦距减去同一器件的 1400 μm 设计焦距。带正号表示峰位 f 较大。轴扫步长 30 μm，逐点误差未知。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "calculation_origin": "atlas",
+              "formula": "measured_focal_um - reference_plane_um",
+              "reference_plane_um": 1400,
+              "reference_wavelength_nm": null,
+              "reference_plane_description": "原作 ZrO₂ PER 设计焦面 f = 1400 μm",
+              "display": "-20 μm（相对设计焦面）"
+            },
+            "simulated_fwhm_um": {
+              "value": 11.4,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，正文模拟 FWHM 序列，645 nm，§2.4 FWHM 段与补件 Fig. S22",
+              "note": "同一设计的作者模拟宽度。具体评价面与横向截线方向待核。",
+              "basis": "model",
+              "checked_on": "2026-11-20",
+              "direction": "unspecified",
+              "calculation_origin": "authors",
+              "evaluation_plane_um": null
             }
           }
         },
@@ -146162,9 +147108,344 @@
               "radius_fwhm_multiple": null
             }
           }
+        },
+        {
+          "id": "kang_sinx_residual_summary",
+          "model": "Kang 2026 · SiNₓ · 焦差汇总",
+          "module": "",
+          "variant": "原始论文器件 / 跨实测波长汇总",
+          "evidence_type": "study",
+          "study_id": "kang2026",
+          "specimen_id": "kang_sinx",
+          "measurement_scope": "同一已列实物的离散实测谱点汇总。",
+          "values": {
+            "diameter_um": {
+              "value": 60,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7 器件参数段",
+              "note": "作者器件名义口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "design_focal_um": {
+              "value": 626,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7 器件参数段",
+              "note": "原文为0.626mm，×1000换算μm；设计值，不是实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "na": {
+              "value": null,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7 器件参数段",
+              "note": "作者标称约 0.056。以名义口径、设计焦距及空气中的圆孔几何计算约 0.04787。有效口径和定义待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "原文≈0.056；几何一致性待核",
+              "reported_nominal_na": 0.056,
+              "geometric_air_na": 0.04787
+            },
+            "lambda_min_nm": {
+              "value": 320,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7",
+              "note": "作者声明工作波段，不是整个可见光保证。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "lambda_max_nm": {
+              "value": 450,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7",
+              "note": "与下限同口径，不外推全场。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "material": {
+              "value": "SiNx",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7",
+              "note": "640nm高结构，偏振无关C4设计；不声称实际整机已验证。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c，正文测量焦距序列",
+              "note": "统计覆盖本实物的全部已报告谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "focus_variation_um": {
+              "value": 72,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c，正文测量焦距序列",
+              "note": "本库复算 656 − 584 = 72 μm。来源是作者正文列出的全部 5 个已实测波长。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "statistic": "measured_axial_peak_span",
+              "calculation_origin": "atlas",
+              "formula": "max(f) - min(f)",
+              "sample_wavelengths_nm": [
+                320,
+                375,
+                405,
+                430,
+                450
+              ],
+              "measurement_record_ids": [
+                "kang_sinx_320",
+                "kang_sinx_375",
+                "kang_sinx_405",
+                "kang_sinx_430",
+                "kang_sinx_450"
+              ],
+              "display": "72 μm（本库复算峰峰值）"
+            },
+            "focus_variation_pct": {
+              "value": 6.7,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，正文设计焦距相对偏差",
+              "note": "作者报告最大相对设计焦距偏差 6.7%。五点最大绝对差 42 μm，42/626 ≈ 6.71%。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "statistic": "author_reported_band_variation",
+              "comparison_statistic": "maximum_absolute_relative_deviation",
+              "calculation_origin": "authors",
+              "denominator": "design_focal_length",
+              "reference_focal_um": 626,
+              "reference_wavelength_nm": null,
+              "sample_wavelengths_nm": [
+                320,
+                375,
+                405,
+                430,
+                450
+              ]
+            },
+            "focus_variation_protocol": {
+              "value": "已测 5 谱点的最大与最小焦距之差；百分比以 626 μm 设计焦距作分母",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a–c，正文测量焦距序列",
+              "note": "取轴向峰强度位置，原值以 mm 给出。轴扫步长 8 μm，误差、重复数及相邻波长间的极值未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "axial_step_um": 8,
+              "reference_plane_um": 626,
+              "sample_wavelengths_nm": [
+                320,
+                375,
+                405,
+                430,
+                450
+              ]
+            }
+          }
+        },
+        {
+          "id": "kang_zro2_residual_summary",
+          "model": "Kang 2026 · ZrO₂ PER · 焦差汇总",
+          "module": "",
+          "variant": "原始论文器件 / 跨实测波长汇总",
+          "evidence_type": "study",
+          "study_id": "kang2026",
+          "specimen_id": "kang_zro2",
+          "measurement_scope": "同一已列实物的离散实测谱点汇总。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8 器件参数段",
+              "note": "作者器件名义口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "design_focal_um": {
+              "value": 1400,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8 器件参数段",
+              "note": "原文为1.4mm，×1000换算μm；设计值，不是实测。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "na": {
+              "value": null,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8 器件参数段",
+              "note": "作者标称约 0.025。以名义口径、设计焦距及空气中的圆孔几何计算约 0.03569。有效口径和定义待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "原文≈0.025；几何一致性待核",
+              "reported_nominal_na": 0.025,
+              "geometric_air_na": 0.03569
+            },
+            "lambda_min_nm": {
+              "value": 375,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8",
+              "note": "作者声明工作波段，不是整个可见光保证。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "lambda_max_nm": {
+              "value": 645,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8",
+              "note": "与下限同口径，不外推全场。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "material": {
+              "value": "ZrO2 PER",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8",
+              "note": "纳米压印ZrO2颗粒树脂；不是SiNx器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列",
+              "note": "统计覆盖本实物的全部已报告谱点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "focus_variation_um": {
+              "value": 430,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列",
+              "note": "本库复算 1530 − 1100 = 430 μm。来源是作者正文列出的全部 10 个已实测波长。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "statistic": "measured_axial_peak_span",
+              "calculation_origin": "atlas",
+              "formula": "max(f) - min(f)",
+              "sample_wavelengths_nm": [
+                375,
+                405,
+                435,
+                465,
+                495,
+                525,
+                555,
+                585,
+                615,
+                645
+              ],
+              "measurement_record_ids": [
+                "kang_zro2_375",
+                "kang_zro2_405",
+                "kang_zro2_435",
+                "kang_zro2_465",
+                "kang_zro2_495",
+                "kang_zro2_525",
+                "kang_zro2_555",
+                "kang_zro2_585",
+                "kang_zro2_615",
+                "kang_zro2_645"
+              ],
+              "display": "430 μm（本库复算峰峰值）"
+            },
+            "focus_variation_pct": {
+              "value": 6.9,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，正文设计焦距相对偏差",
+              "note": "作者报告相对 1400 μm 设计焦距的平均偏差 6.9%。十点等权平均绝对相对偏差约 6.93%，与作者值一致。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "statistic": "author_reported_band_variation",
+              "comparison_statistic": "author_reported_average_deviation",
+              "calculation_origin": "authors",
+              "denominator": "design_focal_length",
+              "reference_focal_um": 1400,
+              "reference_wavelength_nm": null,
+              "sample_wavelengths_nm": [
+                375,
+                405,
+                435,
+                465,
+                495,
+                525,
+                555,
+                585,
+                615,
+                645
+              ]
+            },
+            "focus_variation_protocol": {
+              "value": "已测 10 谱点的最大与最小焦距之差；百分比以 1400 μm 设计焦距作分母",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.4 / PDF p.8，Fig. 5f–g 与补件 Fig. S21，正文测量焦距序列",
+              "note": "取轴向峰强度位置，原值以 mm 给出。轴扫步长 30 μm，误差、重复数及相邻波长间的极值未知。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "axial_step_um": 30,
+              "reference_plane_um": 1400,
+              "sample_wavelengths_nm": [
+                375,
+                405,
+                435,
+                465,
+                495,
+                525,
+                555,
+                585,
+                615,
+                645
+              ]
+            }
+          }
+        },
+        {
+          "id": "kang_sinx_uncorrected_320",
+          "model": "Kang 2026 · SiNₓ 未校正对照 · 320 nm",
+          "module": "",
+          "variant": "原始论文器件 / 未校正对照",
+          "evidence_type": "study",
+          "study_id": "kang2026",
+          "specimen_id": "kang_sinx_uncorrected",
+          "measurement_scope": "与消色差 SiNₓ 同文的色散对照。正文给 385 nm 单色设计及 320 nm 的实测焦斑变模糊。",
+          "values": {
+            "material": {
+              "value": "SiNₓ 对照镜",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a 第一行与 Fig. 4c",
+              "note": "用于色散对照。当前核到的对照段未单列口径、设计焦距或数值孔径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "wavelength_nm": {
+              "value": 320,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a 对照轴向剖面",
+              "note": "作者明确指出该测量波长的聚焦模糊。相位设计波长另为 385 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "chromatic": {
+              "value": "385 nm 单色设计。实测焦距随波长增加而减小",
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a 第一行、Fig. 4c 与补件 Figs. S6–S9",
+              "note": "作者报告 320 nm 明显离焦。完整对照波长数组与逐点焦位未核。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "nominal_design_wavelength_nm": 385
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "kang_uv_visible_2026",
+              "location": "§2.3 / PDF pp.6–7，Fig. 4a/c",
+              "note": "当前只核正文对照趋势。320 nm 轴向峰位和误差未取得作者数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20"
+            }
+          }
         }
       ],
-      "scope": "52项原始研究、279个器件/测量/系统配置、1206条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
+      "scope": "52项原始研究、280个器件/测量/系统配置、1209条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",

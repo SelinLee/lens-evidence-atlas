@@ -34,7 +34,7 @@
 
 `focus_variation_um`保存作者报告的跨波长非负焦距变化幅度，与逐波长`measured_focal_um`分开。须有`focus_variation_protocol`、实际`sample_wavelengths_nm`及`statistic`：`author_reported_band_variation`仅表示作者所称variation，不能自动改称已复核的峰峰值；`maximum_pairwise_difference`表示作者明确的谱点最大互差。当前两种均为`basis: derived_from_measurement`、`calculation_origin: authors`；本库从作者正文给出的实测焦距上下限计算宽度时，使用 `calculation_origin: atlas`、`statistic: range_width_from_reported_bounds` 和 `author_reported_focal_bounds_um`。此行保留原印字范围和计算式，逐波长焦距仍留空。其他本库重算须另设记录或协议。参考、轴向采样和缺失定义写入协议，约值保留`approximate`与`display`。汇总行不同时填写数值型`wavelength_nm`，不由百分数倒推绝对焦距或任意分派到一个波长。
 
-两谱点差值可以用 `statistic: paired_measured_axial_peak_difference` 保存。使用 `basis: derived_from_measurement`、`calculation_origin: atlas`、`formula: abs(f_2 - f_1)`、实际样本波长和同器件的两条 `measurement_record_ids`。原始行须为实测轴向强度峰位。不同照明带宽、偏振和测量不确定度写入协议。两点差值只描述这两个条件。
+两谱点差值可以用 `statistic: paired_measured_axial_peak_difference` 保存。使用 `basis: derived_from_measurement`、`calculation_origin: atlas`、`formula: abs(f_2 - f_1)`、实际样本波长和同器件的两条 `measurement_record_ids`。原始行须为实测轴向强度峰位。不同照明带宽、偏振和测量不确定度写入协议。两点差值只描述这两个条件。 本库复算多谱点的实测峰峰焦差时，使用 `statistic: measured_axial_peak_span` 与 `formula: max(f) - min(f)`。按相同顺序提供实际波长与同器件的实测峰位记录。
 
 可见光用途明确而仅有离散谱点汇总的研究器件可设`visible_light_use: true`，无需捏造连续工作波段或一个数值波长；实际单谱点波长已知时仍优先按其筛选。该规则同时适用于文献器件与旧记录。
 
@@ -77,6 +77,8 @@
 `reported_axial_scan_focusing_efficiency_pct`保存作者在轴扫效率段报告的功率比，保留`statistic`、`denominator`、作者实测计算和与分母一致的`efficiency_protocol`。作者的轴向单位或参考面存疑时保留原轴和缺口。专项报告值与指定λ的单焦面效率、带均值及整套光路模型使用各自的字段。
 
 `simulated_depth_of_focus_um`和`simulated_psf_fwhm_x_um`用于模型计算，标作者归属与`psf_protocol`，分别保留`dof_criterion`和x向的`statistic`。`simulated_focusing_efficiency_pct`保存作者模拟焦区对入射总功率的比值。`simulated_aperture_power_ratio_pct`保存同孔径面积内焦面与器件面积分之比，允许两种协议各以独立行保存。百分数与`efficiency_protocol`的分母须一致。论文只称入射光能量时，保存 `incident_light_energy` 并记录具体计量光阑的缺口。
+
+`simulated_fwhm_um` 保存作者模拟横向焦斑的 FWHM。用 `basis: model`、`calculation_origin: authors` 与相应波长。方向或评价面原文未明时标 `direction: unspecified` 或 `evaluation_plane_um: null`。
 
 `simulated_phase_strehl` 和 `simulated_psf_strehl` 保存作者的模拟 Strehl。前者从相位量化误差估算峰强衰减，后者将模拟与理想衍射剖面等积分归一后比较峰强。两者要求 0–1、`basis: model`、作者计算、模拟波长、理想模型和 `psf_protocol`。剖面的积分窗已知时保留，模型与实验各用对应指标。
 

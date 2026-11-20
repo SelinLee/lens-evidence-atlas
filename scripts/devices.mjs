@@ -223,6 +223,9 @@ export function validateDevices(d,catalog){
   !modelDof.dof_criterion||!r.values.psf_protocol?.value))errors.push('simulated focal interval context');
  if(Number.isFinite(modelWidth?.value)&&(!(modelWidth.value>0)||modelWidth.basis!=='model'||modelWidth.calculation_origin!=='authors'||
   modelWidth.direction!=='x'||!modelWidth.statistic||!r.values.psf_protocol?.value))errors.push('simulated focal width context');
+ const transverseModelWidth=r.values.simulated_fwhm_um;
+ if(Number.isFinite(transverseModelWidth?.value)&&(!(transverseModelWidth.value>0)||transverseModelWidth.basis!=='model'||
+  transverseModelWidth.calculation_origin!=='authors'||!transverseModelWidth.direction||!(r.values.wavelength_nm?.value>0)))errors.push('simulated transverse focal width context');
  for(const [key,denominators] of [['simulated_focusing_efficiency_pct',['incident_power_on_metalens','incident_light_energy','author_denominator_unreported']],
   ['simulated_aperture_power_ratio_pct',['aperture_area_integral_at_lens_plane']]]){
   const ratio=r.values[key];
@@ -357,21 +360,27 @@ export function validateDevices(d,catalog){
    variation.statistic==='range_width_from_reported_bounds'&&boundedSample&&Array.isArray(bounds)&&
    bounds.length===2&&bounds.every(Number.isFinite)&&bounds[0]>0&&bounds[1]>=bounds[0]&&
    variation.value===bounds[1]-bounds[0];
-  let pairedPeakDifference=false;
-  if(metric==='focus_variation_um'&&variation.calculation_origin==='atlas'&&variation.statistic==='paired_measured_axial_peak_difference'){
+  let measuredPeakRange=false;
+  if(metric==='focus_variation_um'&&variation.calculation_origin==='atlas'){
+   const paired=variation.statistic==='paired_measured_axial_peak_difference'&&waves?.length===2&&variation.formula==='abs(f_2 - f_1)';
+   const span=variation.statistic==='measured_axial_peak_span'&&variation.formula==='max(f) - min(f)';
    const recordIds=variation.measurement_record_ids;
-   if(listedWaves&&waves.length===2&&Array.isArray(recordIds)&&recordIds.length===2&&r.specimen_id&&variation.formula==='abs(f_2 - f_1)'){
+   if((paired||span)&&listedWaves&&r.specimen_id&&Array.isArray(recordIds)&&recordIds.length===waves.length){
     const samples=recordIds.map(id=>c.rows.find(sample=>sample.id===id));
-    pairedPeakDifference=samples.every((sample,index)=>{
+    const validSamples=samples.every((sample,index)=>{
      const focal=sample?.values.measured_focal_um;
      return sample?.study_id===r.study_id&&sample?.specimen_id===r.specimen_id&&
        sample.values.wavelength_nm?.value===waves[index]&&Number.isFinite(focal?.value)&&focal.value>0&&
        focal.basis==='measured'&&focal.position_definition==='axial_intensity_maximum';
-    })&&variation.value===Math.abs(samples[1].values.measured_focal_um.value-samples[0].values.measured_focal_um.value);
+    });
+    if(validSamples){
+     const peaks=samples.map(sample=>sample.values.measured_focal_um.value);
+     measuredPeakRange=variation.value===Math.max(...peaks)-Math.min(...peaks);
+    }
    }
   }
   if(variation.value<0||Number.isFinite(r.values.wavelength_nm?.value)||typeof protocol!=='string'||!protocol.trim()||
-   !(authorCalculation||widthFromPublishedBounds||pairedPeakDifference)||variation.basis!=='derived_from_measurement')errors.push('focal variation context');
+   !(authorCalculation||widthFromPublishedBounds||measuredPeakRange)||variation.basis!=='derived_from_measurement')errors.push('focal variation context');
   if(metric==='focus_variation_pct'&&(!variation.denominator||variation.reference_wavelength_nm!==null&&!(listedWaves&&waves.includes(variation.reference_wavelength_nm))||variation.reference_focal_um!==null&&!(variation.reference_focal_um>0)))errors.push('focal variation percent reference');
  }
  }
