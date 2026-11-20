@@ -3260,6 +3260,51 @@
       "scope": "原刊目录标文件名 lpor70432-sup-0001-SuppMat.docx，3.1 MB。原文引用 Fig. S3 与 S4，已试出版商三个入口均返回 403，文件内容未核。",
       "checked_on": "2026-11-21",
       "publication_source": "wang_lc_nju_vor_2025"
+    },
+    {
+      "id": "shen_lcthz_nju_vor_2020",
+      "title": "Shen et al. (2020) · Liquid crystal integrated metalens with tunable chromatic aberration",
+      "url": "https://light.nju.edu.cn/upload/file/20250515/152_202505151551357801.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "Advanced Photonics 2(3), 036002，2020-05-12。南京大学公开存档的正式版，核 §§2.1–2.3、3.1、3.3 及 Figs. 1–4。",
+      "checked_on": "2026-11-21",
+      "doi": "10.1117/1.ap.2.3.036002"
+    },
+    {
+      "id": "shen_lcthz_publisher_2020",
+      "title": "SPIE · Shen 2020 正式论文和补充材料入口",
+      "url": "https://doi.org/10.1117/1.AP.2.3.036002",
+      "kind": "publisher_page",
+      "scope": "原刊正式题录及补件入口。用于核主文的原始补件指向。",
+      "checked_on": "2026-11-21",
+      "publication_source": "shen_lcthz_nju_vor_2020"
+    },
+    {
+      "id": "shen_lcthz_si_registration_2020",
+      "title": "Crossref · Shen 2020 正式补件登记",
+      "url": "https://api.crossref.org/works/10.1117/1.ap.2.3.036002.s01",
+      "kind": "repository_metadata",
+      "scope": "原刊补件 AP_2_3_036002_ds001.docx，登记 DOI 10.1117/1.AP.2.3.036002.s01。下载入口返回 HTML，未取得 DOCX。补件图号据主文。",
+      "checked_on": "2026-11-21",
+      "publication_source": "shen_lcthz_nju_vor_2020"
+    },
+    {
+      "id": "shen_lcthz_crossref_2020",
+      "title": "Crossref · Shen 2020 题录与引用次数",
+      "url": "https://api.crossref.org/works/10.1117/1.ap.2.3.036002",
+      "kind": "repository_metadata",
+      "scope": "2026-11-21 查询 is-referenced-by-count 为 138。电子出版 2020-05-12。",
+      "checked_on": "2026-11-21",
+      "publication_source": "shen_lcthz_nju_vor_2020"
+    },
+    {
+      "id": "shen_lcthz_openalex_2020",
+      "title": "OpenAlex · Shen 2020 引用次数",
+      "url": "https://api.openalex.org/works/W3025422990",
+      "kind": "repository_metadata",
+      "scope": "2026-11-21 查询 cited_by_count 为 149，与原刊 DOI 对应。",
+      "checked_on": "2026-11-21",
+      "publication_source": "shen_lcthz_nju_vor_2020"
     }
   ],
   "domains": {
@@ -170860,9 +170905,1945 @@
               ]
             }
           }
+        },
+        {
+          "id": "shen2020lcthz_off_summary",
+          "model": "Shen 2020 · 无偏压消色差 · 汇总",
+          "study_id": "shen2020lcthz",
+          "specimen_id": "off",
+          "module": "",
+          "variant": "实制｜同镜电切换",
+          "measurement_scope": "同一制备的液晶／硅超透镜在 0 V 的实测状态；设计区间与六离散实测频点分开。",
+          "evidence_type": "study",
+          "values": {
+            "diameter_um": {
+              "value": 6480,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p3 §2.1、Fig. 1i–k",
+              "note": "作者给设计半径 3240 μm 和 54 个径向周期。设计口径 D=2r，单位 μm。有效照明口径与实测边界未给。",
+              "basis": "model",
+              "checked_on": "2026-11-21",
+              "calculation_origin": "atlas",
+              "formula": "2 * design_radius_um",
+              "design_radius_um": 3240
+            },
+            "na": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp3–4 §§2.1–2.2；Fig. 3f",
+              "note": "原文以 λ/(2 NA) 标注理论宽度，未报告明确数值或独立实测 NA。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "原文无 NA 数值"
+            },
+            "height_nm": {
+              "value": 200000,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p3 §2.1、Fig. 1i–k；p3 Fig. 2d",
+              "note": "模型硅柱名义高 200 μm。实物各半径的柱高有刻蚀差异，未以设计高替代。",
+              "basis": "model",
+              "checked_on": "2026-11-21",
+              "original_value": 200,
+              "original_unit": "μm"
+            },
+            "material": {
+              "value": "硅柱超表面＋图案化向列液晶＋石墨烯电极",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p3 §2.1、Fig. 1i–k；正式 PDF p6 §3.1",
+              "note": "硅柱周期 60 μm，基片名义厚 500 μm，Mylar 间隔片名义厚 250 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "metaunit_period_um": 60
+            },
+            "lambda_min_nm": {
+              "value": 214137,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp3–4 §§2.1–2.2、Fig. 3e–g",
+              "note": "作者设计区间为 0.9–1.4 THz；主文报告每 0.1 THz 实测一个频点。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 1.4,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "spectral_sampling": "continuous_design_band_six_discrete_samples",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "lambda_max_nm": {
+              "value": 333103,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp3–4 §§2.1–2.2、Fig. 3e–g",
+              "note": "作者设计区间为 0.9–1.4 THz；主文报告每 0.1 THz 实测一个频点。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 0.9,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "spectral_sampling": "continuous_design_band_six_discrete_samples",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "polarization": {
+              "value": "LCP · 0 V",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、p5 效率定义及 Fig. 4 前光路段",
+              "note": "无偏压几何相位适用于 LCP。饱和时作者说明两圆偏振均能工作，图中效率以入射 LCP 功率为参考。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "voltage_v_rms": 0,
+              "electrical_modulation_hz": null,
+              "reported_supported_handedness": [
+                "LCP"
+              ]
+            },
+            "chromatic": {
+              "value": "液晶几何相位与硅柱谐振相位共同补偿色散",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p3 §2.1、Fig. 1i–k；正式 PDF p4 §2.2、Fig. 3e",
+              "note": "选取硅柱色散斜率以匹配消色差目标，相位截距由图案化液晶补偿。作者概述实测 F 在频带内约 12 mm。作者设计区间为 0.9–1.4 THz；主文报告每 0.1 THz 实测一个频点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sample_frequencies_thz": [
+                0.9,
+                1.0,
+                1.1,
+                1.2,
+                1.3,
+                1.4
+              ],
+              "sample_wavelengths_nm": [
+                333103,
+                299792,
+                272539,
+                249827,
+                230610,
+                214137
+              ]
+            },
+            "psf_protocol": {
+              "value": "轴向扫描与固定横截面 z=12 mm",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3b,e,f；正式 PDF p6 §3.3",
+              "note": "近场太赫兹显微镜采样 Ex。横向 x–y 步长 0.25 mm，z 步长 1 mm，场图随后插值，插值算法细节未给。图 f 宽度取固定横截面，图 e 另展示 F 随频率的实测值。坐标零点的物理表面未明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "evaluation_plane_um": 12000,
+              "evaluation_plane_kind": "fixed_transverse_slice",
+              "transverse_scan_step_um": [
+                250,
+                250
+              ],
+              "axial_scan_step_um": 1000,
+              "detected_field_component": "Ex",
+              "direction": "unspecified"
+            },
+            "focus_variation_protocol": {
+              "value": "六频点轴向扫描与实验 F 曲线",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、Fig. 3e；正式 PDF p6 §3.3",
+              "note": "Fig. 3e 横轴为 THz、纵轴为 F (mm)。实验用空心方块与实线，模拟用三角与虚线。原点的物理表面、误差条定义及取峰方法未报。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "reference_plane": "author_z_origin_surface_unspecified",
+              "reference_wavelength_nm": null,
+              "axial_scan_step_um": 1000,
+              "measured_frequencies_thz": [
+                0.9,
+                1.0,
+                1.1,
+                1.2,
+                1.3,
+                1.4
+              ]
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、Fig. 3e",
+              "note": "作者概述实测 F 在设计区间内约 12 mm。未给逐频精确峰位、带内平均值或最大峰峰差。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "实测约 12 mm（作者概述），残余焦差待原数"
+            },
+            "efficiency_protocol": {
+              "value": "焦平面 THz 强度／入射 LCP THz 功率",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义",
+              "note": "沿用作者对分子和分母的措辞。未给分子积分面积、窗口或归一化，分母空间区域与校准流程未列。正文未写效率是否在 FWHM 所用的固定 z 面测定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "numerator": "reported_thz_intensity_at_focal_plane",
+              "denominator": "incident_LCP_THz_power",
+              "integration_geometry": null,
+              "integration_radius_um": null,
+              "evaluation_plane_um": null
+            },
+            "efficiency_band_mean_pct": {
+              "value": 26.1,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义",
+              "note": "作者对该状态给约值。Fig. 3g 有六频点，均值的实际参与点、谱权重和误差未说明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "display": "约 26.1%",
+              "approximate": true,
+              "statistic": "band_mean",
+              "calculation_origin": "authors",
+              "sampling": "not_reported"
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3b,f、补件 Fig. S4 引用；正式 PDF p6 §3.3",
+              "note": "只核到归一化近场强度图及横剖线。原始 PSF、处理条件、MTF、Strehl 及明确场点方向未核到。补件登记可访问，下载入口未交付 DOCX。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "只有焦区场图及宽度曲线，原始 PSF／MTF 待核",
+              "sourceIds": [
+                "shen_lcthz_nju_vor_2020",
+                "shen_lcthz_si_registration_2020"
+              ]
+            },
+            "design_focal_um": {
+              "value": 15000,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p3 §2.1、Fig. 1i–k",
+              "note": "作者设计 F=15.0 mm。同页与下节给实物刻蚀梯度，实测焦位概述见独立记录。",
+              "basis": "model",
+              "checked_on": "2026-11-21",
+              "original_value": 15.0,
+              "original_unit": "mm"
+            }
+          }
+        },
+        {
+          "id": "shen2020lcthz_off_0p9",
+          "model": "Shen 2020 · 无偏压消色差 · 0.9 THz",
+          "study_id": "shen2020lcthz",
+          "specimen_id": "off",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一制备的液晶／硅超透镜在 0 V 的实测状态；设计区间与六离散实测频点分开。",
+          "evidence_type": "study",
+          "values": {
+            "wavelength_nm": {
+              "value": 333103,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；Fig. 3b 同频 xz／xy 归一化场图",
+              "note": "实际频点 0.9 THz。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 0.9,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "polarization": {
+              "value": "LCP · 0 V",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、p5 效率定义及 Fig. 4 前光路段",
+              "note": "无偏压几何相位适用于 LCP。饱和时作者说明两圆偏振均能工作，图中效率以入射 LCP 功率为参考。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "voltage_v_rms": 0,
+              "electrical_modulation_hz": null,
+              "reported_supported_handedness": [
+                "LCP"
+              ]
+            },
+            "psf_protocol": {
+              "value": "轴向扫描与固定横截面 z=12 mm",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3b,e,f；正式 PDF p6 §3.3",
+              "note": "近场太赫兹显微镜采样 Ex。横向 x–y 步长 0.25 mm，z 步长 1 mm，场图随后插值，插值算法细节未给。图 f 宽度取固定横截面，图 e 另展示 F 随频率的实测值。坐标零点的物理表面未明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "evaluation_plane_um": 12000,
+              "evaluation_plane_kind": "fixed_transverse_slice",
+              "transverse_scan_step_um": [
+                250,
+                250
+              ],
+              "axial_scan_step_um": 1000,
+              "detected_field_component": "Ex",
+              "direction": "unspecified"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、Fig. 3e，0.9 THz 实验方块",
+              "note": "轴向焦位仅有图上标记。固定横截面 z 不代替本波长的最佳焦位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "轴峰仅有曲线"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3f，0.9 THz 实验方块",
+              "note": "同状态固定横截面 z=12 mm 的横向强度 FWHM，图纵轴为 μm。方向、点值和误差定义未核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "固定面 FWHM 仅有曲线",
+              "evaluation_plane_um": 12000,
+              "direction": "unspecified"
+            },
+            "efficiency_lambda_nm": {
+              "value": 333103,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，0.9 THz 实验方块",
+              "note": "作者图有该频点，图上百分比未转作精确数值。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 0.9,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，0.9 THz 实验方块",
+              "note": "直报的跨频平均另列，逐频值与误差定义只有图示。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "单频效率仅有曲线"
+            },
+            "efficiency_protocol": {
+              "value": "焦平面 THz 强度／入射 LCP THz 功率",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义",
+              "note": "沿用作者对分子和分母的措辞。未给分子积分面积、窗口或归一化，分母空间区域与校准流程未列。正文未写效率是否在 FWHM 所用的固定 z 面测定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "numerator": "reported_thz_intensity_at_focal_plane",
+              "denominator": "incident_LCP_THz_power",
+              "integration_geometry": null,
+              "integration_radius_um": null,
+              "evaluation_plane_um": null
+            },
+            "frequency_thz": {
+              "value": 0.9,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；Fig. 3b 同频 xz／xy 归一化场图",
+              "note": "原文横轴 THz 对应的实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-21"
+            }
+          }
+        },
+        {
+          "id": "shen2020lcthz_off_1p0",
+          "model": "Shen 2020 · 无偏压消色差 · 1.0 THz",
+          "study_id": "shen2020lcthz",
+          "specimen_id": "off",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一制备的液晶／硅超透镜在 0 V 的实测状态；设计区间与六离散实测频点分开。",
+          "evidence_type": "study",
+          "values": {
+            "wavelength_nm": {
+              "value": 299792,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；主文引用补件 Fig. S4",
+              "note": "实际频点 1.0 THz。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 1.0,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "polarization": {
+              "value": "LCP · 0 V",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、p5 效率定义及 Fig. 4 前光路段",
+              "note": "无偏压几何相位适用于 LCP。饱和时作者说明两圆偏振均能工作，图中效率以入射 LCP 功率为参考。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "voltage_v_rms": 0,
+              "electrical_modulation_hz": null,
+              "reported_supported_handedness": [
+                "LCP"
+              ]
+            },
+            "psf_protocol": {
+              "value": "轴向扫描与固定横截面 z=12 mm",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3b,e,f；正式 PDF p6 §3.3",
+              "note": "近场太赫兹显微镜采样 Ex。横向 x–y 步长 0.25 mm，z 步长 1 mm，场图随后插值，插值算法细节未给。图 f 宽度取固定横截面，图 e 另展示 F 随频率的实测值。坐标零点的物理表面未明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "evaluation_plane_um": 12000,
+              "evaluation_plane_kind": "fixed_transverse_slice",
+              "transverse_scan_step_um": [
+                250,
+                250
+              ],
+              "axial_scan_step_um": 1000,
+              "detected_field_component": "Ex",
+              "direction": "unspecified"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、Fig. 3e，1.0 THz 实验方块",
+              "note": "轴向焦位仅有图上标记。固定横截面 z 不代替本波长的最佳焦位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "轴峰仅有曲线"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3f，1.0 THz 实验方块",
+              "note": "同状态固定横截面 z=12 mm 的横向强度 FWHM，图纵轴为 μm。方向、点值和误差定义未核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "固定面 FWHM 仅有曲线",
+              "evaluation_plane_um": 12000,
+              "direction": "unspecified"
+            },
+            "efficiency_lambda_nm": {
+              "value": 299792,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，1.0 THz 实验方块",
+              "note": "作者图有该频点，图上百分比未转作精确数值。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 1.0,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，1.0 THz 实验方块",
+              "note": "直报的跨频平均另列，逐频值与误差定义只有图示。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "单频效率仅有曲线"
+            },
+            "efficiency_protocol": {
+              "value": "焦平面 THz 强度／入射 LCP THz 功率",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义",
+              "note": "沿用作者对分子和分母的措辞。未给分子积分面积、窗口或归一化，分母空间区域与校准流程未列。正文未写效率是否在 FWHM 所用的固定 z 面测定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "numerator": "reported_thz_intensity_at_focal_plane",
+              "denominator": "incident_LCP_THz_power",
+              "integration_geometry": null,
+              "integration_radius_um": null,
+              "evaluation_plane_um": null
+            },
+            "frequency_thz": {
+              "value": 1.0,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；主文引用补件 Fig. S4",
+              "note": "原文横轴 THz 对应的实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-21"
+            }
+          }
+        },
+        {
+          "id": "shen2020lcthz_off_1p1",
+          "model": "Shen 2020 · 无偏压消色差 · 1.1 THz",
+          "study_id": "shen2020lcthz",
+          "specimen_id": "off",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一制备的液晶／硅超透镜在 0 V 的实测状态；设计区间与六离散实测频点分开。",
+          "evidence_type": "study",
+          "values": {
+            "wavelength_nm": {
+              "value": 272539,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；Fig. 3b 同频 xz／xy 归一化场图",
+              "note": "实际频点 1.1 THz。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 1.1,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "polarization": {
+              "value": "LCP · 0 V",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、p5 效率定义及 Fig. 4 前光路段",
+              "note": "无偏压几何相位适用于 LCP。饱和时作者说明两圆偏振均能工作，图中效率以入射 LCP 功率为参考。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "voltage_v_rms": 0,
+              "electrical_modulation_hz": null,
+              "reported_supported_handedness": [
+                "LCP"
+              ]
+            },
+            "psf_protocol": {
+              "value": "轴向扫描与固定横截面 z=12 mm",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3b,e,f；正式 PDF p6 §3.3",
+              "note": "近场太赫兹显微镜采样 Ex。横向 x–y 步长 0.25 mm，z 步长 1 mm，场图随后插值，插值算法细节未给。图 f 宽度取固定横截面，图 e 另展示 F 随频率的实测值。坐标零点的物理表面未明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "evaluation_plane_um": 12000,
+              "evaluation_plane_kind": "fixed_transverse_slice",
+              "transverse_scan_step_um": [
+                250,
+                250
+              ],
+              "axial_scan_step_um": 1000,
+              "detected_field_component": "Ex",
+              "direction": "unspecified"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、Fig. 3e，1.1 THz 实验方块",
+              "note": "轴向焦位仅有图上标记。固定横截面 z 不代替本波长的最佳焦位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "轴峰仅有曲线"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3f，1.1 THz 实验方块",
+              "note": "同状态固定横截面 z=12 mm 的横向强度 FWHM，图纵轴为 μm。方向、点值和误差定义未核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "固定面 FWHM 仅有曲线",
+              "evaluation_plane_um": 12000,
+              "direction": "unspecified"
+            },
+            "efficiency_lambda_nm": {
+              "value": 272539,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，1.1 THz 实验方块",
+              "note": "作者图有该频点，图上百分比未转作精确数值。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 1.1,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，1.1 THz 实验方块",
+              "note": "直报的跨频平均另列，逐频值与误差定义只有图示。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "单频效率仅有曲线"
+            },
+            "efficiency_protocol": {
+              "value": "焦平面 THz 强度／入射 LCP THz 功率",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义",
+              "note": "沿用作者对分子和分母的措辞。未给分子积分面积、窗口或归一化，分母空间区域与校准流程未列。正文未写效率是否在 FWHM 所用的固定 z 面测定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "numerator": "reported_thz_intensity_at_focal_plane",
+              "denominator": "incident_LCP_THz_power",
+              "integration_geometry": null,
+              "integration_radius_um": null,
+              "evaluation_plane_um": null
+            },
+            "frequency_thz": {
+              "value": 1.1,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；Fig. 3b 同频 xz／xy 归一化场图",
+              "note": "原文横轴 THz 对应的实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-21"
+            }
+          }
+        },
+        {
+          "id": "shen2020lcthz_off_1p2",
+          "model": "Shen 2020 · 无偏压消色差 · 1.2 THz",
+          "study_id": "shen2020lcthz",
+          "specimen_id": "off",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一制备的液晶／硅超透镜在 0 V 的实测状态；设计区间与六离散实测频点分开。",
+          "evidence_type": "study",
+          "values": {
+            "wavelength_nm": {
+              "value": 249827,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；主文引用补件 Fig. S4",
+              "note": "实际频点 1.2 THz。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 1.2,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "polarization": {
+              "value": "LCP · 0 V",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、p5 效率定义及 Fig. 4 前光路段",
+              "note": "无偏压几何相位适用于 LCP。饱和时作者说明两圆偏振均能工作，图中效率以入射 LCP 功率为参考。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "voltage_v_rms": 0,
+              "electrical_modulation_hz": null,
+              "reported_supported_handedness": [
+                "LCP"
+              ]
+            },
+            "psf_protocol": {
+              "value": "轴向扫描与固定横截面 z=12 mm",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3b,e,f；正式 PDF p6 §3.3",
+              "note": "近场太赫兹显微镜采样 Ex。横向 x–y 步长 0.25 mm，z 步长 1 mm，场图随后插值，插值算法细节未给。图 f 宽度取固定横截面，图 e 另展示 F 随频率的实测值。坐标零点的物理表面未明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "evaluation_plane_um": 12000,
+              "evaluation_plane_kind": "fixed_transverse_slice",
+              "transverse_scan_step_um": [
+                250,
+                250
+              ],
+              "axial_scan_step_um": 1000,
+              "detected_field_component": "Ex",
+              "direction": "unspecified"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、Fig. 3e，1.2 THz 实验方块",
+              "note": "轴向焦位仅有图上标记。固定横截面 z 不代替本波长的最佳焦位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "轴峰仅有曲线"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3f，1.2 THz 实验方块",
+              "note": "同状态固定横截面 z=12 mm 的横向强度 FWHM，图纵轴为 μm。方向、点值和误差定义未核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "固定面 FWHM 仅有曲线",
+              "evaluation_plane_um": 12000,
+              "direction": "unspecified"
+            },
+            "efficiency_lambda_nm": {
+              "value": 249827,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，1.2 THz 实验方块",
+              "note": "作者图有该频点，图上百分比未转作精确数值。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 1.2,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，1.2 THz 实验方块",
+              "note": "直报的跨频平均另列，逐频值与误差定义只有图示。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "单频效率仅有曲线"
+            },
+            "efficiency_protocol": {
+              "value": "焦平面 THz 强度／入射 LCP THz 功率",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义",
+              "note": "沿用作者对分子和分母的措辞。未给分子积分面积、窗口或归一化，分母空间区域与校准流程未列。正文未写效率是否在 FWHM 所用的固定 z 面测定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "numerator": "reported_thz_intensity_at_focal_plane",
+              "denominator": "incident_LCP_THz_power",
+              "integration_geometry": null,
+              "integration_radius_um": null,
+              "evaluation_plane_um": null
+            },
+            "frequency_thz": {
+              "value": 1.2,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；主文引用补件 Fig. S4",
+              "note": "原文横轴 THz 对应的实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-21"
+            }
+          }
+        },
+        {
+          "id": "shen2020lcthz_off_1p3",
+          "model": "Shen 2020 · 无偏压消色差 · 1.3 THz",
+          "study_id": "shen2020lcthz",
+          "specimen_id": "off",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一制备的液晶／硅超透镜在 0 V 的实测状态；设计区间与六离散实测频点分开。",
+          "evidence_type": "study",
+          "values": {
+            "wavelength_nm": {
+              "value": 230610,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；主文引用补件 Fig. S4",
+              "note": "实际频点 1.3 THz。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 1.3,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "polarization": {
+              "value": "LCP · 0 V",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、p5 效率定义及 Fig. 4 前光路段",
+              "note": "无偏压几何相位适用于 LCP。饱和时作者说明两圆偏振均能工作，图中效率以入射 LCP 功率为参考。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "voltage_v_rms": 0,
+              "electrical_modulation_hz": null,
+              "reported_supported_handedness": [
+                "LCP"
+              ]
+            },
+            "psf_protocol": {
+              "value": "轴向扫描与固定横截面 z=12 mm",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3b,e,f；正式 PDF p6 §3.3",
+              "note": "近场太赫兹显微镜采样 Ex。横向 x–y 步长 0.25 mm，z 步长 1 mm，场图随后插值，插值算法细节未给。图 f 宽度取固定横截面，图 e 另展示 F 随频率的实测值。坐标零点的物理表面未明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "evaluation_plane_um": 12000,
+              "evaluation_plane_kind": "fixed_transverse_slice",
+              "transverse_scan_step_um": [
+                250,
+                250
+              ],
+              "axial_scan_step_um": 1000,
+              "detected_field_component": "Ex",
+              "direction": "unspecified"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、Fig. 3e，1.3 THz 实验方块",
+              "note": "轴向焦位仅有图上标记。固定横截面 z 不代替本波长的最佳焦位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "轴峰仅有曲线"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3f，1.3 THz 实验方块",
+              "note": "同状态固定横截面 z=12 mm 的横向强度 FWHM，图纵轴为 μm。方向、点值和误差定义未核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "固定面 FWHM 仅有曲线",
+              "evaluation_plane_um": 12000,
+              "direction": "unspecified"
+            },
+            "efficiency_lambda_nm": {
+              "value": 230610,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，1.3 THz 实验方块",
+              "note": "作者图有该频点，图上百分比未转作精确数值。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 1.3,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，1.3 THz 实验方块",
+              "note": "直报的跨频平均另列，逐频值与误差定义只有图示。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "单频效率仅有曲线"
+            },
+            "efficiency_protocol": {
+              "value": "焦平面 THz 强度／入射 LCP THz 功率",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义",
+              "note": "沿用作者对分子和分母的措辞。未给分子积分面积、窗口或归一化，分母空间区域与校准流程未列。正文未写效率是否在 FWHM 所用的固定 z 面测定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "numerator": "reported_thz_intensity_at_focal_plane",
+              "denominator": "incident_LCP_THz_power",
+              "integration_geometry": null,
+              "integration_radius_um": null,
+              "evaluation_plane_um": null
+            },
+            "frequency_thz": {
+              "value": 1.3,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；主文引用补件 Fig. S4",
+              "note": "原文横轴 THz 对应的实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-21"
+            }
+          }
+        },
+        {
+          "id": "shen2020lcthz_off_1p4",
+          "model": "Shen 2020 · 无偏压消色差 · 1.4 THz",
+          "study_id": "shen2020lcthz",
+          "specimen_id": "off",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一制备的液晶／硅超透镜在 0 V 的实测状态；设计区间与六离散实测频点分开。",
+          "evidence_type": "study",
+          "values": {
+            "wavelength_nm": {
+              "value": 214137,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；Fig. 3b 同频 xz／xy 归一化场图",
+              "note": "实际频点 1.4 THz。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 1.4,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "polarization": {
+              "value": "LCP · 0 V",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、p5 效率定义及 Fig. 4 前光路段",
+              "note": "无偏压几何相位适用于 LCP。饱和时作者说明两圆偏振均能工作，图中效率以入射 LCP 功率为参考。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "voltage_v_rms": 0,
+              "electrical_modulation_hz": null,
+              "reported_supported_handedness": [
+                "LCP"
+              ]
+            },
+            "psf_protocol": {
+              "value": "轴向扫描与固定横截面 z=12 mm",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3b,e,f；正式 PDF p6 §3.3",
+              "note": "近场太赫兹显微镜采样 Ex。横向 x–y 步长 0.25 mm，z 步长 1 mm，场图随后插值，插值算法细节未给。图 f 宽度取固定横截面，图 e 另展示 F 随频率的实测值。坐标零点的物理表面未明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "evaluation_plane_um": 12000,
+              "evaluation_plane_kind": "fixed_transverse_slice",
+              "transverse_scan_step_um": [
+                250,
+                250
+              ],
+              "axial_scan_step_um": 1000,
+              "detected_field_component": "Ex",
+              "direction": "unspecified"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、Fig. 3e，1.4 THz 实验方块",
+              "note": "轴向焦位仅有图上标记。固定横截面 z 不代替本波长的最佳焦位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "轴峰仅有曲线"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3f，1.4 THz 实验方块",
+              "note": "同状态固定横截面 z=12 mm 的横向强度 FWHM，图纵轴为 μm。方向、点值和误差定义未核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "固定面 FWHM 仅有曲线",
+              "evaluation_plane_um": 12000,
+              "direction": "unspecified"
+            },
+            "efficiency_lambda_nm": {
+              "value": 214137,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，1.4 THz 实验方块",
+              "note": "作者图有该频点，图上百分比未转作精确数值。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 1.4,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，1.4 THz 实验方块",
+              "note": "直报的跨频平均另列，逐频值与误差定义只有图示。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "单频效率仅有曲线"
+            },
+            "efficiency_protocol": {
+              "value": "焦平面 THz 强度／入射 LCP THz 功率",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义",
+              "note": "沿用作者对分子和分母的措辞。未给分子积分面积、窗口或归一化，分母空间区域与校准流程未列。正文未写效率是否在 FWHM 所用的固定 z 面测定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "numerator": "reported_thz_intensity_at_focal_plane",
+              "denominator": "incident_LCP_THz_power",
+              "integration_geometry": null,
+              "integration_radius_um": null,
+              "evaluation_plane_um": null
+            },
+            "frequency_thz": {
+              "value": 1.4,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；Fig. 3b 同频 xz／xy 归一化场图",
+              "note": "原文横轴 THz 对应的实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-21"
+            }
+          }
+        },
+        {
+          "id": "shen2020lcthz_imaging_off",
+          "model": "Shen 2020 · 固定物像距成像 · 无偏压消色差",
+          "study_id": "shen2020lcthz",
+          "specimen_id": "imaging_off",
+          "module": "",
+          "variant": "同镜有限共轭实验",
+          "measurement_scope": "同一物面和像面比较电压状态，焦度测试另列。",
+          "evidence_type": "study",
+          "values": {
+            "polarization": {
+              "value": "LCP · 0 V",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、p5 效率定义及 Fig. 4 前光路段",
+              "note": "无偏压几何相位适用于 LCP。饱和时作者说明两圆偏振均能工作，图中效率以入射 LCP 功率为参考。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "voltage_v_rms": 0,
+              "electrical_modulation_hz": null,
+              "reported_supported_handedness": [
+                "LCP"
+              ]
+            },
+            "chromatic": {
+              "value": "固定像面下多个频点辨清同一靶标",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp5–6 §2.3、Fig. 4a,b,c；Fig. S5 引用",
+              "note": "作者设计区间为 0.9–1.4 THz；主文报告每 0.1 THz 实测一个频点。 主文展示 0.9 和 1.4 THz 的强度及相位，补件 S5 由正文指明，未取得原图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "shown_frequencies_thz": [
+                0.9,
+                1.4
+              ],
+              "reported_measured_frequencies_thz": [
+                0.9,
+                1.0,
+                1.1,
+                1.2,
+                1.3,
+                1.4
+              ],
+              "sourceIds": [
+                "shen_lcthz_nju_vor_2020",
+                "shen_lcthz_si_registration_2020"
+              ]
+            },
+            "psf_protocol": {
+              "value": "有限共轭，固定物距 24 mm、像距 24 mm",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp5–6 §2.3、Fig. 4a,b,c；Fig. S5 引用；正式 PDF p6 §3.3",
+              "note": "设计为等倍率，针对约 12 mm 的无偏压实际焦位。保持这对物像距比较电压状态。金图形靶标并非单点 PSF。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "object_conjugate": "finite",
+              "object_distance_um": 24000,
+              "image_distance_um": 24000,
+              "transverse_scan_step_um": [
+                250,
+                250
+              ],
+              "detected_field_component": "Ex"
+            }
+          }
+        },
+        {
+          "id": "shen2020lcthz_saturated_summary",
+          "model": "Shen 2020 · 饱和偏压色散 · 汇总",
+          "study_id": "shen2020lcthz",
+          "specimen_id": "saturated",
+          "module": "",
+          "variant": "实制｜同镜电切换",
+          "measurement_scope": "同一制备的液晶／硅超透镜在 75 Vrms，1 kHz 交流方波 的实测状态；设计区间与六离散实测频点分开。",
+          "evidence_type": "study",
+          "values": {
+            "diameter_um": {
+              "value": 6480,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p3 §2.1、Fig. 1i–k",
+              "note": "作者给设计半径 3240 μm 和 54 个径向周期。设计口径 D=2r，单位 μm。有效照明口径与实测边界未给。",
+              "basis": "model",
+              "checked_on": "2026-11-21",
+              "calculation_origin": "atlas",
+              "formula": "2 * design_radius_um",
+              "design_radius_um": 3240
+            },
+            "na": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp3–4 §§2.1–2.2；Fig. 3f",
+              "note": "原文以 λ/(2 NA) 标注理论宽度，未报告明确数值或独立实测 NA。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "原文无 NA 数值"
+            },
+            "height_nm": {
+              "value": 200000,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p3 §2.1、Fig. 1i–k；p3 Fig. 2d",
+              "note": "模型硅柱名义高 200 μm。实物各半径的柱高有刻蚀差异，未以设计高替代。",
+              "basis": "model",
+              "checked_on": "2026-11-21",
+              "original_value": 200,
+              "original_unit": "μm"
+            },
+            "material": {
+              "value": "硅柱超表面＋图案化向列液晶＋石墨烯电极",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p3 §2.1、Fig. 1i–k；正式 PDF p6 §3.1",
+              "note": "硅柱周期 60 μm，基片名义厚 500 μm，Mylar 间隔片名义厚 250 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "metaunit_period_um": 60
+            },
+            "lambda_min_nm": {
+              "value": 214137,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp3–4 §§2.1–2.2、Fig. 3e–g",
+              "note": "作者设计区间为 0.9–1.4 THz；主文报告每 0.1 THz 实测一个频点。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 1.4,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "spectral_sampling": "continuous_design_band_six_discrete_samples",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "lambda_max_nm": {
+              "value": 333103,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp3–4 §§2.1–2.2、Fig. 3e–g",
+              "note": "作者设计区间为 0.9–1.4 THz；主文报告每 0.1 THz 实测一个频点。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 0.9,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "spectral_sampling": "continuous_design_band_six_discrete_samples",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "polarization": {
+              "value": "LCP · 75 Vrms，1 kHz 交流方波",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、p5 效率定义及 Fig. 4 前光路段",
+              "note": "无偏压几何相位适用于 LCP。饱和时作者说明两圆偏振均能工作，图中效率以入射 LCP 功率为参考。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "voltage_v_rms": 75,
+              "electrical_modulation_hz": 1000,
+              "reported_supported_handedness": [
+                "LCP",
+                "RCP"
+              ]
+            },
+            "chromatic": {
+              "value": "饱和电压抑制液晶几何相位，保留色散",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p3 §2.1、Fig. 1i–k；正式 PDF p4 §2.2、Fig. 3e",
+              "note": "同一枚镜片施加饱和交流偏压，使液晶取向沿 z。实测焦距随 f 升高而减小。作者设计区间为 0.9–1.4 THz；主文报告每 0.1 THz 实测一个频点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sample_frequencies_thz": [
+                0.9,
+                1.0,
+                1.1,
+                1.2,
+                1.3,
+                1.4
+              ],
+              "sample_wavelengths_nm": [
+                333103,
+                299792,
+                272539,
+                249827,
+                230610,
+                214137
+              ]
+            },
+            "psf_protocol": {
+              "value": "轴向扫描与固定横截面 z=13 mm",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3d,e,f；正式 PDF p6 §3.3",
+              "note": "近场太赫兹显微镜采样 Ex。横向 x–y 步长 0.25 mm，z 步长 1 mm，场图随后插值，插值算法细节未给。图 f 宽度取固定横截面，图 e 另展示 F 随频率的实测值。坐标零点的物理表面未明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "evaluation_plane_um": 13000,
+              "evaluation_plane_kind": "fixed_transverse_slice",
+              "transverse_scan_step_um": [
+                250,
+                250
+              ],
+              "axial_scan_step_um": 1000,
+              "detected_field_component": "Ex",
+              "direction": "unspecified"
+            },
+            "focus_variation_protocol": {
+              "value": "六频点轴向扫描与实验 F 曲线",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、Fig. 3e；正式 PDF p6 §3.3",
+              "note": "Fig. 3e 横轴为 THz、纵轴为 F (mm)。实验用空心方块与实线，模拟用三角与虚线。原点的物理表面、误差条定义及取峰方法未报。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "reference_plane": "author_z_origin_surface_unspecified",
+              "reference_wavelength_nm": null,
+              "axial_scan_step_um": 1000,
+              "measured_frequencies_thz": [
+                0.9,
+                1.0,
+                1.1,
+                1.2,
+                1.3,
+                1.4
+              ]
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、Fig. 3e",
+              "note": "实测焦距随频率下降，逐频精确轴峰和焦差原数未核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "实测曲线，轴向跨度待原数"
+            },
+            "efficiency_protocol": {
+              "value": "焦平面 THz 强度／入射 LCP THz 功率",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义",
+              "note": "沿用作者对分子和分母的措辞。未给分子积分面积、窗口或归一化，分母空间区域与校准流程未列。正文未写效率是否在 FWHM 所用的固定 z 面测定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "numerator": "reported_thz_intensity_at_focal_plane",
+              "denominator": "incident_LCP_THz_power",
+              "integration_geometry": null,
+              "integration_radius_um": null,
+              "evaluation_plane_um": null
+            },
+            "efficiency_band_mean_pct": {
+              "value": 33.9,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义",
+              "note": "作者对该状态给约值。Fig. 3g 有六频点，均值的实际参与点、谱权重和误差未说明。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "display": "约 33.9%",
+              "approximate": true,
+              "statistic": "band_mean",
+              "calculation_origin": "authors",
+              "sampling": "not_reported"
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3d,f、补件 Fig. S4 引用；正式 PDF p6 §3.3",
+              "note": "只核到归一化近场强度图及横剖线。原始 PSF、处理条件、MTF、Strehl 及明确场点方向未核到。补件登记可访问，下载入口未交付 DOCX。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "只有焦区场图及宽度曲线，原始 PSF／MTF 待核",
+              "sourceIds": [
+                "shen_lcthz_nju_vor_2020",
+                "shen_lcthz_si_registration_2020"
+              ]
+            }
+          }
+        },
+        {
+          "id": "shen2020lcthz_saturated_0p9",
+          "model": "Shen 2020 · 饱和偏压色散 · 0.9 THz",
+          "study_id": "shen2020lcthz",
+          "specimen_id": "saturated",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一制备的液晶／硅超透镜在 75 Vrms，1 kHz 交流方波 的实测状态；设计区间与六离散实测频点分开。",
+          "evidence_type": "study",
+          "values": {
+            "wavelength_nm": {
+              "value": 333103,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；Fig. 3d 同频 xz／xy 归一化场图",
+              "note": "实际频点 0.9 THz。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 0.9,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "polarization": {
+              "value": "LCP · 75 Vrms，1 kHz 交流方波",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、p5 效率定义及 Fig. 4 前光路段",
+              "note": "无偏压几何相位适用于 LCP。饱和时作者说明两圆偏振均能工作，图中效率以入射 LCP 功率为参考。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "voltage_v_rms": 75,
+              "electrical_modulation_hz": 1000,
+              "reported_supported_handedness": [
+                "LCP",
+                "RCP"
+              ]
+            },
+            "psf_protocol": {
+              "value": "轴向扫描与固定横截面 z=13 mm",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3d,e,f；正式 PDF p6 §3.3",
+              "note": "近场太赫兹显微镜采样 Ex。横向 x–y 步长 0.25 mm，z 步长 1 mm，场图随后插值，插值算法细节未给。图 f 宽度取固定横截面，图 e 另展示 F 随频率的实测值。坐标零点的物理表面未明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "evaluation_plane_um": 13000,
+              "evaluation_plane_kind": "fixed_transverse_slice",
+              "transverse_scan_step_um": [
+                250,
+                250
+              ],
+              "axial_scan_step_um": 1000,
+              "detected_field_component": "Ex",
+              "direction": "unspecified"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、Fig. 3e，0.9 THz 实验方块",
+              "note": "轴向焦位仅有图上标记。固定横截面 z 不代替本波长的最佳焦位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "轴峰仅有曲线"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3f，0.9 THz 实验方块",
+              "note": "同状态固定横截面 z=13 mm 的横向强度 FWHM，图纵轴为 μm。方向、点值和误差定义未核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "固定面 FWHM 仅有曲线",
+              "evaluation_plane_um": 13000,
+              "direction": "unspecified"
+            },
+            "efficiency_lambda_nm": {
+              "value": 333103,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，0.9 THz 实验方块",
+              "note": "作者图有该频点，图上百分比未转作精确数值。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 0.9,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，0.9 THz 实验方块",
+              "note": "直报的跨频平均另列，逐频值与误差定义只有图示。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "单频效率仅有曲线"
+            },
+            "efficiency_protocol": {
+              "value": "焦平面 THz 强度／入射 LCP THz 功率",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义",
+              "note": "沿用作者对分子和分母的措辞。未给分子积分面积、窗口或归一化，分母空间区域与校准流程未列。正文未写效率是否在 FWHM 所用的固定 z 面测定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "numerator": "reported_thz_intensity_at_focal_plane",
+              "denominator": "incident_LCP_THz_power",
+              "integration_geometry": null,
+              "integration_radius_um": null,
+              "evaluation_plane_um": null
+            },
+            "frequency_thz": {
+              "value": 0.9,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；Fig. 3d 同频 xz／xy 归一化场图",
+              "note": "原文横轴 THz 对应的实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-21"
+            }
+          }
+        },
+        {
+          "id": "shen2020lcthz_saturated_1p0",
+          "model": "Shen 2020 · 饱和偏压色散 · 1.0 THz",
+          "study_id": "shen2020lcthz",
+          "specimen_id": "saturated",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一制备的液晶／硅超透镜在 75 Vrms，1 kHz 交流方波 的实测状态；设计区间与六离散实测频点分开。",
+          "evidence_type": "study",
+          "values": {
+            "wavelength_nm": {
+              "value": 299792,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；主文引用补件 Fig. S4",
+              "note": "实际频点 1.0 THz。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 1.0,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "polarization": {
+              "value": "LCP · 75 Vrms，1 kHz 交流方波",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、p5 效率定义及 Fig. 4 前光路段",
+              "note": "无偏压几何相位适用于 LCP。饱和时作者说明两圆偏振均能工作，图中效率以入射 LCP 功率为参考。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "voltage_v_rms": 75,
+              "electrical_modulation_hz": 1000,
+              "reported_supported_handedness": [
+                "LCP",
+                "RCP"
+              ]
+            },
+            "psf_protocol": {
+              "value": "轴向扫描与固定横截面 z=13 mm",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3d,e,f；正式 PDF p6 §3.3",
+              "note": "近场太赫兹显微镜采样 Ex。横向 x–y 步长 0.25 mm，z 步长 1 mm，场图随后插值，插值算法细节未给。图 f 宽度取固定横截面，图 e 另展示 F 随频率的实测值。坐标零点的物理表面未明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "evaluation_plane_um": 13000,
+              "evaluation_plane_kind": "fixed_transverse_slice",
+              "transverse_scan_step_um": [
+                250,
+                250
+              ],
+              "axial_scan_step_um": 1000,
+              "detected_field_component": "Ex",
+              "direction": "unspecified"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、Fig. 3e，1.0 THz 实验方块",
+              "note": "轴向焦位仅有图上标记。固定横截面 z 不代替本波长的最佳焦位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "轴峰仅有曲线"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3f，1.0 THz 实验方块",
+              "note": "同状态固定横截面 z=13 mm 的横向强度 FWHM，图纵轴为 μm。方向、点值和误差定义未核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "固定面 FWHM 仅有曲线",
+              "evaluation_plane_um": 13000,
+              "direction": "unspecified"
+            },
+            "efficiency_lambda_nm": {
+              "value": 299792,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，1.0 THz 实验方块",
+              "note": "作者图有该频点，图上百分比未转作精确数值。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 1.0,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，1.0 THz 实验方块",
+              "note": "直报的跨频平均另列，逐频值与误差定义只有图示。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "单频效率仅有曲线"
+            },
+            "efficiency_protocol": {
+              "value": "焦平面 THz 强度／入射 LCP THz 功率",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义",
+              "note": "沿用作者对分子和分母的措辞。未给分子积分面积、窗口或归一化，分母空间区域与校准流程未列。正文未写效率是否在 FWHM 所用的固定 z 面测定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "numerator": "reported_thz_intensity_at_focal_plane",
+              "denominator": "incident_LCP_THz_power",
+              "integration_geometry": null,
+              "integration_radius_um": null,
+              "evaluation_plane_um": null
+            },
+            "frequency_thz": {
+              "value": 1.0,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；主文引用补件 Fig. S4",
+              "note": "原文横轴 THz 对应的实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-21"
+            }
+          }
+        },
+        {
+          "id": "shen2020lcthz_saturated_1p1",
+          "model": "Shen 2020 · 饱和偏压色散 · 1.1 THz",
+          "study_id": "shen2020lcthz",
+          "specimen_id": "saturated",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一制备的液晶／硅超透镜在 75 Vrms，1 kHz 交流方波 的实测状态；设计区间与六离散实测频点分开。",
+          "evidence_type": "study",
+          "values": {
+            "wavelength_nm": {
+              "value": 272539,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；Fig. 3d 同频 xz／xy 归一化场图",
+              "note": "实际频点 1.1 THz。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 1.1,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "polarization": {
+              "value": "LCP · 75 Vrms，1 kHz 交流方波",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、p5 效率定义及 Fig. 4 前光路段",
+              "note": "无偏压几何相位适用于 LCP。饱和时作者说明两圆偏振均能工作，图中效率以入射 LCP 功率为参考。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "voltage_v_rms": 75,
+              "electrical_modulation_hz": 1000,
+              "reported_supported_handedness": [
+                "LCP",
+                "RCP"
+              ]
+            },
+            "psf_protocol": {
+              "value": "轴向扫描与固定横截面 z=13 mm",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3d,e,f；正式 PDF p6 §3.3",
+              "note": "近场太赫兹显微镜采样 Ex。横向 x–y 步长 0.25 mm，z 步长 1 mm，场图随后插值，插值算法细节未给。图 f 宽度取固定横截面，图 e 另展示 F 随频率的实测值。坐标零点的物理表面未明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "evaluation_plane_um": 13000,
+              "evaluation_plane_kind": "fixed_transverse_slice",
+              "transverse_scan_step_um": [
+                250,
+                250
+              ],
+              "axial_scan_step_um": 1000,
+              "detected_field_component": "Ex",
+              "direction": "unspecified"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、Fig. 3e，1.1 THz 实验方块",
+              "note": "轴向焦位仅有图上标记。固定横截面 z 不代替本波长的最佳焦位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "轴峰仅有曲线"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3f，1.1 THz 实验方块",
+              "note": "同状态固定横截面 z=13 mm 的横向强度 FWHM，图纵轴为 μm。方向、点值和误差定义未核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "固定面 FWHM 仅有曲线",
+              "evaluation_plane_um": 13000,
+              "direction": "unspecified"
+            },
+            "efficiency_lambda_nm": {
+              "value": 272539,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，1.1 THz 实验方块",
+              "note": "作者图有该频点，图上百分比未转作精确数值。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 1.1,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，1.1 THz 实验方块",
+              "note": "直报的跨频平均另列，逐频值与误差定义只有图示。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "单频效率仅有曲线"
+            },
+            "efficiency_protocol": {
+              "value": "焦平面 THz 强度／入射 LCP THz 功率",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义",
+              "note": "沿用作者对分子和分母的措辞。未给分子积分面积、窗口或归一化，分母空间区域与校准流程未列。正文未写效率是否在 FWHM 所用的固定 z 面测定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "numerator": "reported_thz_intensity_at_focal_plane",
+              "denominator": "incident_LCP_THz_power",
+              "integration_geometry": null,
+              "integration_radius_um": null,
+              "evaluation_plane_um": null
+            },
+            "frequency_thz": {
+              "value": 1.1,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；Fig. 3d 同频 xz／xy 归一化场图",
+              "note": "原文横轴 THz 对应的实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-21"
+            }
+          }
+        },
+        {
+          "id": "shen2020lcthz_saturated_1p2",
+          "model": "Shen 2020 · 饱和偏压色散 · 1.2 THz",
+          "study_id": "shen2020lcthz",
+          "specimen_id": "saturated",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一制备的液晶／硅超透镜在 75 Vrms，1 kHz 交流方波 的实测状态；设计区间与六离散实测频点分开。",
+          "evidence_type": "study",
+          "values": {
+            "wavelength_nm": {
+              "value": 249827,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；主文引用补件 Fig. S4",
+              "note": "实际频点 1.2 THz。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 1.2,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "polarization": {
+              "value": "LCP · 75 Vrms，1 kHz 交流方波",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、p5 效率定义及 Fig. 4 前光路段",
+              "note": "无偏压几何相位适用于 LCP。饱和时作者说明两圆偏振均能工作，图中效率以入射 LCP 功率为参考。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "voltage_v_rms": 75,
+              "electrical_modulation_hz": 1000,
+              "reported_supported_handedness": [
+                "LCP",
+                "RCP"
+              ]
+            },
+            "psf_protocol": {
+              "value": "轴向扫描与固定横截面 z=13 mm",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3d,e,f；正式 PDF p6 §3.3",
+              "note": "近场太赫兹显微镜采样 Ex。横向 x–y 步长 0.25 mm，z 步长 1 mm，场图随后插值，插值算法细节未给。图 f 宽度取固定横截面，图 e 另展示 F 随频率的实测值。坐标零点的物理表面未明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "evaluation_plane_um": 13000,
+              "evaluation_plane_kind": "fixed_transverse_slice",
+              "transverse_scan_step_um": [
+                250,
+                250
+              ],
+              "axial_scan_step_um": 1000,
+              "detected_field_component": "Ex",
+              "direction": "unspecified"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、Fig. 3e，1.2 THz 实验方块",
+              "note": "轴向焦位仅有图上标记。固定横截面 z 不代替本波长的最佳焦位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "轴峰仅有曲线"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3f，1.2 THz 实验方块",
+              "note": "同状态固定横截面 z=13 mm 的横向强度 FWHM，图纵轴为 μm。方向、点值和误差定义未核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "固定面 FWHM 仅有曲线",
+              "evaluation_plane_um": 13000,
+              "direction": "unspecified"
+            },
+            "efficiency_lambda_nm": {
+              "value": 249827,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，1.2 THz 实验方块",
+              "note": "作者图有该频点，图上百分比未转作精确数值。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 1.2,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，1.2 THz 实验方块",
+              "note": "直报的跨频平均另列，逐频值与误差定义只有图示。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "单频效率仅有曲线"
+            },
+            "efficiency_protocol": {
+              "value": "焦平面 THz 强度／入射 LCP THz 功率",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义",
+              "note": "沿用作者对分子和分母的措辞。未给分子积分面积、窗口或归一化，分母空间区域与校准流程未列。正文未写效率是否在 FWHM 所用的固定 z 面测定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "numerator": "reported_thz_intensity_at_focal_plane",
+              "denominator": "incident_LCP_THz_power",
+              "integration_geometry": null,
+              "integration_radius_um": null,
+              "evaluation_plane_um": null
+            },
+            "frequency_thz": {
+              "value": 1.2,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；主文引用补件 Fig. S4",
+              "note": "原文横轴 THz 对应的实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-21"
+            }
+          }
+        },
+        {
+          "id": "shen2020lcthz_saturated_1p3",
+          "model": "Shen 2020 · 饱和偏压色散 · 1.3 THz",
+          "study_id": "shen2020lcthz",
+          "specimen_id": "saturated",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一制备的液晶／硅超透镜在 75 Vrms，1 kHz 交流方波 的实测状态；设计区间与六离散实测频点分开。",
+          "evidence_type": "study",
+          "values": {
+            "wavelength_nm": {
+              "value": 230610,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；主文引用补件 Fig. S4",
+              "note": "实际频点 1.3 THz。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 1.3,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "polarization": {
+              "value": "LCP · 75 Vrms，1 kHz 交流方波",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、p5 效率定义及 Fig. 4 前光路段",
+              "note": "无偏压几何相位适用于 LCP。饱和时作者说明两圆偏振均能工作，图中效率以入射 LCP 功率为参考。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "voltage_v_rms": 75,
+              "electrical_modulation_hz": 1000,
+              "reported_supported_handedness": [
+                "LCP",
+                "RCP"
+              ]
+            },
+            "psf_protocol": {
+              "value": "轴向扫描与固定横截面 z=13 mm",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3d,e,f；正式 PDF p6 §3.3",
+              "note": "近场太赫兹显微镜采样 Ex。横向 x–y 步长 0.25 mm，z 步长 1 mm，场图随后插值，插值算法细节未给。图 f 宽度取固定横截面，图 e 另展示 F 随频率的实测值。坐标零点的物理表面未明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "evaluation_plane_um": 13000,
+              "evaluation_plane_kind": "fixed_transverse_slice",
+              "transverse_scan_step_um": [
+                250,
+                250
+              ],
+              "axial_scan_step_um": 1000,
+              "detected_field_component": "Ex",
+              "direction": "unspecified"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、Fig. 3e，1.3 THz 实验方块",
+              "note": "轴向焦位仅有图上标记。固定横截面 z 不代替本波长的最佳焦位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "轴峰仅有曲线"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3f，1.3 THz 实验方块",
+              "note": "同状态固定横截面 z=13 mm 的横向强度 FWHM，图纵轴为 μm。方向、点值和误差定义未核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "固定面 FWHM 仅有曲线",
+              "evaluation_plane_um": 13000,
+              "direction": "unspecified"
+            },
+            "efficiency_lambda_nm": {
+              "value": 230610,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，1.3 THz 实验方块",
+              "note": "作者图有该频点，图上百分比未转作精确数值。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 1.3,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，1.3 THz 实验方块",
+              "note": "直报的跨频平均另列，逐频值与误差定义只有图示。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "单频效率仅有曲线"
+            },
+            "efficiency_protocol": {
+              "value": "焦平面 THz 强度／入射 LCP THz 功率",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义",
+              "note": "沿用作者对分子和分母的措辞。未给分子积分面积、窗口或归一化，分母空间区域与校准流程未列。正文未写效率是否在 FWHM 所用的固定 z 面测定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "numerator": "reported_thz_intensity_at_focal_plane",
+              "denominator": "incident_LCP_THz_power",
+              "integration_geometry": null,
+              "integration_radius_um": null,
+              "evaluation_plane_um": null
+            },
+            "frequency_thz": {
+              "value": 1.3,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；主文引用补件 Fig. S4",
+              "note": "原文横轴 THz 对应的实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-21"
+            }
+          }
+        },
+        {
+          "id": "shen2020lcthz_saturated_1p4",
+          "model": "Shen 2020 · 饱和偏压色散 · 1.4 THz",
+          "study_id": "shen2020lcthz",
+          "specimen_id": "saturated",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一制备的液晶／硅超透镜在 75 Vrms，1 kHz 交流方波 的实测状态；设计区间与六离散实测频点分开。",
+          "evidence_type": "study",
+          "values": {
+            "wavelength_nm": {
+              "value": 214137,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；Fig. 3d 同频 xz／xy 归一化场图",
+              "note": "实际频点 1.4 THz。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 1.4,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "polarization": {
+              "value": "LCP · 75 Vrms，1 kHz 交流方波",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、p5 效率定义及 Fig. 4 前光路段",
+              "note": "无偏压几何相位适用于 LCP。饱和时作者说明两圆偏振均能工作，图中效率以入射 LCP 功率为参考。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "voltage_v_rms": 75,
+              "electrical_modulation_hz": 1000,
+              "reported_supported_handedness": [
+                "LCP",
+                "RCP"
+              ]
+            },
+            "psf_protocol": {
+              "value": "轴向扫描与固定横截面 z=13 mm",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3d,e,f；正式 PDF p6 §3.3",
+              "note": "近场太赫兹显微镜采样 Ex。横向 x–y 步长 0.25 mm，z 步长 1 mm，场图随后插值，插值算法细节未给。图 f 宽度取固定横截面，图 e 另展示 F 随频率的实测值。坐标零点的物理表面未明确。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "evaluation_plane_um": 13000,
+              "evaluation_plane_kind": "fixed_transverse_slice",
+              "transverse_scan_step_um": [
+                250,
+                250
+              ],
+              "axial_scan_step_um": 1000,
+              "detected_field_component": "Ex",
+              "direction": "unspecified"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、Fig. 3e，1.4 THz 实验方块",
+              "note": "轴向焦位仅有图上标记。固定横截面 z 不代替本波长的最佳焦位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "轴峰仅有曲线"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3f，1.4 THz 实验方块",
+              "note": "同状态固定横截面 z=13 mm 的横向强度 FWHM，图纵轴为 μm。方向、点值和误差定义未核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "固定面 FWHM 仅有曲线",
+              "evaluation_plane_um": 13000,
+              "direction": "unspecified"
+            },
+            "efficiency_lambda_nm": {
+              "value": 214137,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，1.4 THz 实验方块",
+              "note": "作者图有该频点，图上百分比未转作精确数值。 按真空波长 λ₀(nm)=299792.458/f(THz) 换算至整数 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "original_frequency_thz": 1.4,
+              "approximate": true,
+              "calculation_origin": "atlas",
+              "formula": "299792.458 / frequency_thz"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义，1.4 THz 实验方块",
+              "note": "直报的跨频平均另列，逐频值与误差定义只有图示。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "单频效率仅有曲线"
+            },
+            "efficiency_protocol": {
+              "value": "焦平面 THz 强度／入射 LCP THz 功率",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp4–5 §2.2、Fig. 3g 及次页效率定义",
+              "note": "沿用作者对分子和分母的措辞。未给分子积分面积、窗口或归一化，分母空间区域与校准流程未列。正文未写效率是否在 FWHM 所用的固定 z 面测定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "numerator": "reported_thz_intensity_at_focal_plane",
+              "denominator": "incident_LCP_THz_power",
+              "integration_geometry": null,
+              "integration_radius_um": null,
+              "evaluation_plane_um": null
+            },
+            "frequency_thz": {
+              "value": 1.4,
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 Fig. 3e–g 横轴对应实测方块；Fig. 3d 同频 xz／xy 归一化场图",
+              "note": "原文横轴 THz 对应的实测谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-21"
+            }
+          }
+        },
+        {
+          "id": "shen2020lcthz_imaging_saturated",
+          "model": "Shen 2020 · 固定物像距成像 · 饱和偏压色散",
+          "study_id": "shen2020lcthz",
+          "specimen_id": "imaging_saturated",
+          "module": "",
+          "variant": "同镜有限共轭实验",
+          "measurement_scope": "同一物面和像面比较电压状态，焦度测试另列。",
+          "evidence_type": "study",
+          "values": {
+            "polarization": {
+              "value": "LCP · 75 Vrms，1 kHz 交流方波",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF p4 §2.2、p5 效率定义及 Fig. 4 前光路段",
+              "note": "无偏压几何相位适用于 LCP。饱和时作者说明两圆偏振均能工作，图中效率以入射 LCP 功率为参考。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "voltage_v_rms": 75,
+              "electrical_modulation_hz": 1000,
+              "reported_supported_handedness": [
+                "LCP",
+                "RCP"
+              ]
+            },
+            "chromatic": {
+              "value": "固定像面下低频端明显离焦",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp5–6 §2.3、Fig. 4a,d,e；Fig. S5 引用",
+              "note": "作者设计区间为 0.9–1.4 THz；主文报告每 0.1 THz 实测一个频点。 主文展示 0.9 和 1.4 THz 的强度及相位，补件 S5 由正文指明，未取得原图。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "shown_frequencies_thz": [
+                0.9,
+                1.4
+              ],
+              "reported_measured_frequencies_thz": [
+                0.9,
+                1.0,
+                1.1,
+                1.2,
+                1.3,
+                1.4
+              ],
+              "sourceIds": [
+                "shen_lcthz_nju_vor_2020",
+                "shen_lcthz_si_registration_2020"
+              ]
+            },
+            "psf_protocol": {
+              "value": "有限共轭，固定物距 24 mm、像距 24 mm",
+              "source": "shen_lcthz_nju_vor_2020",
+              "location": "正式 PDF pp5–6 §2.3、Fig. 4a,d,e；Fig. S5 引用；正式 PDF p6 §3.3",
+              "note": "设计为等倍率，针对约 12 mm 的无偏压实际焦位。保持这对物像距比较电压状态。金图形靶标并非单点 PSF。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "object_conjugate": "finite",
+              "object_distance_um": 24000,
+              "image_distance_um": 24000,
+              "transverse_scan_step_um": [
+                250,
+                250
+              ],
+              "detected_field_component": "Ex"
+            }
+          }
         }
       ],
-      "scope": "72项原始研究、333个器件/测量/系统配置、1429条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
+      "scope": "73项原始研究、337个器件/测量/系统配置、1445条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
