@@ -1303,3 +1303,11 @@ Arbabi 2016 已取得 Caltech 与 PMC 开放存档的正式版 PDF，均为 9533
 ## 2026-11-20-155 · Wang 2024 随机交织全息可见光器件及 Fresnel 对照
 
 中国科大组存正式 PDF 及 Wiley 题录证实 2023-12-12 上线、2024 年卷期。2025 年 3 月中科院物理与天体物理大类一区，Crossref 57 次、OpenAlex 58 次（2026-11-20）。32 μm 实物名义焦距 60 μm，几何 NA 约 0.258 为本库模型估算。470／510／550／590／632／660／690 nm 七点实测效率依次为 54.7／46.9／52.9／63.7／52.6／50／48%。焦区积分半径为 1.5×FWHM，分母以 z=0 面器件外的单位面积入射强度乘器件面积。作者称平均约 55%，同页七点等权为 52.69%。两种出处均保留，作者均值协议待核。实物与同口径 Fresnel 对照的最大相对焦差按作者报告为 5.26%／15%，保留参照定义的不确定处。共同焦区约 z=57 μm、轴扫步长 1 μm，逐谱点轴向峰值留空。另录固定成像光路和 2×4 实物阵列。新增 1 篇、4 配置、11 条，累计 59 篇、297 配置、1259 条。原始 PSF 像素、FWHM 和 MTF 数表及补件仍待取得。[本批核验](WANG_2024_HOLOGRAPHIC_RIL_REVIEW_2026-11-20.md)
+
+## 2026-11-20-156 · Wang 上线验收及后续候选
+
+0.3.67 经 [PR #214](https://github.com/SelinLee/lens-evidence-atlas/pull/214) 合并为 `5cb0041c9ef00ae4339a976c08b59fecc9b67f97`。PR 校验 44743306437、主线校验 44743460412 与 [Pages 44743460357](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44743460357) 成功。341 项测试通过，242 个发布文件逐个通过 SHA-256 校验，`devices-data.js` 为 `6b1da38906ae53550318eff89e7deeb4c38517159214a8750030fc4e35885f4c`。线上独立无头 Chrome 核 59 篇、1259 条，可见光筛选为 48 篇、842 条，Wang 同文四配置 11 条均保留。七个效率读数、32 μm 对应的 5.26% 与 15% 焦差点、绝对焦位数值轴空态、CSV、引用往返、重载和六种视口均通过。从引用入口取得的作者组正式 PDF 与所核存档逐字节一致。
+
+同时筛到 Dai 2021，五波长可见光实测，2026-11-20 查 Crossref 54 次、OpenAlex 57 次。补件登记 DOI `10.1021/acsphotonics.1c00411.s001`。本机无头 Chrome 的主文、补件直链与 Figshare 检索均返回 403，重庆大学组新闻入口为 412，DataCite 精确 DOI 关联为 0。已知主文可比条件尚不足，继续查正式材料。同期核 Zhang 2026 `10.1002/adom.71446`，正式摘要报告全波模拟与容差模型，当前未查到器件实测，不纳入本批。[Dai 原文入口](https://pubs.acs.org/doi/10.1021/acsphotonics.1c00411) · [Dai 补件元数据](https://api.crossref.org/works/10.1021/acsphotonics.1c00411.s001) · [Zhang 正式摘要](https://advanced.onlinelibrary.wiley.com/doi/10.1002/adom.71446)
+
+接着核查已取得主文及补件的 Ou 2020。Fig. 3C 与 Fig. 5D 的实测横轴只有 3500／3750／4000／4250／4500／4750 nm 六个滤片中心，补件 Figs. S4–S7 的 5000 nm 为模型。主文 p.4 明报 BAFOV 直径 200 μm、两种偏振的设计 f 均为 200 μm。BAFS 的两通道 f 也均为 200 μm，出射角分别 −5.5° 和 +5.5°。补件 Figs. S4–S7 的偏振剖面、模型残差与主文测量分开。继续查 BAFS 口径、两通道绝对峰位和原始焦斑采样；偏振隔离的功率分母为对称位置圆区，单独保留协议。会话目标保持开启。[Ou 正式主文](https://pmc-oa-opendata.s3.amazonaws.com/PMC7486104.1/PMC7486104.1.pdf#page=4) · [Ou 补件](https://pmc-oa-opendata.s3.amazonaws.com/PMC7486104.1/abc0711_SM.pdf)
