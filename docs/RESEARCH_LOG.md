@@ -1389,3 +1389,11 @@ Tang 2026 正式上线为 2026-06-13。正文预览所见为实物宽带成像�
 ## 2026-11-20-169 · Choi 2025 三色焦位证据与有效 NA
 
 复核用户排版稿 Fig. 3b–d 与正式补件 Note 10。635 nm 相对设计焦距的作者测量计算幅值 5.77 μm、0.11% 已入库，名义设计焦距约 5.1 mm。三谱点焦斑均值新增一行，有效 NA 约 0.55。补三个谱点共用的全口径轴扫光路、0.5 μm 步进、各色焦面及 x 向 FWHM。实测效率的积分窗口、功率分母和偏振条件仍待原始证据。保留 Fig. 3b 相对强度图定位，绝对峰位、方向和 RGB 最大互差不估填。当前目录为 66 篇、310 配置、1366 条，可见光 50 篇、860 条。[本批核验](CHOI_RGB_AXIAL_EVIDENCE_2026-11-20.md)
+
+## 2026-11-20-170 · Choi 上线验收及 Hu 2016 原始证据追查
+
+0.3.75 经 [PR #228](https://github.com/SelinLee/lens-evidence-atlas/pull/228) 合并为 `a0a235da06ac3e731a1e3160d47c5884fe4b37b6`。PR 校验 44762507998、主线校验 44762655458 和 [Pages 44762655949](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44762655949) 成功。356 项测试通过，249 个公开文件 SHA-256 与本地构建一致，`devices-data.js` 哈希为 `311ebf883af0da97929b11a2518998b0305ab8f077b015985d2d9dbe2d963514`。本机独立无头 Chrome 核到 66 篇、1,366 条，可见光 50 篇、860 条。Choi 同一器件四条，635 nm 有 5.77 μm／0.11% 两项散点、口径 10,000 μm 对应约 0.55 有效 NA，绝对焦位和三色互差无散点。CSV 和六视口通过，原刊页及补件均返回 200，补件与核验副本哈希一致，数据格与来源可往返。[本批核验](CHOI_RGB_AXIAL_EVIDENCE_2026-11-20.md)
+
+下一篇追查 Hu 2016。2026-11-20 核 Crossref 101 次、OpenAlex 114 次，符合经典引用门槛。正式上线 2016-10-27。原刊摘要列 600／785／980 nm 的晶格设计，补件目录列两、三波长消色差模拟及焦距。尚未核清三色共焦的实制样品、测量面与模型数据。出版社主文和补件直连均返回 403，Crossref 组件登记确认 `nn6b05855_si_001.pdf`，DataCite 关联 DOI 0 项。西北大学 Odom 课题组目录提供 DOI 与原图入口。后续优先确认实验图和光路后纳入。[原刊](https://pubs.acs.org/doi/10.1021/acsnano.6b05855) · [作者目录](https://www.odomgroup.northwestern.edu/nanophotonics-nano-optics-publications/) · [Crossref](https://api.crossref.org/works/10.1021/acsnano.6b05855) · [OpenAlex](https://api.openalex.org/works/W2542165975) · [补件登记](https://api.crossref.org/works/10.1021/acsnano.6b05855.s001)
+
+另查 Hu 2024 四枚偏振选择超透镜，原刊报告 450–650 nm 的全斯托克斯成像。作者稿可打开，期刊补件返回 403，Crossref 27 次、OpenAlex 46 次。保留候选，依 2025 年 3 月大类分区和引用门槛复查。Tang 2026 的 Wiley PDFDirect 仍返回 403，原刊预览提到色差的段落为研究背景，实物的光学校正证据继续追查。会话目标保持开启。[Hu 原刊](https://pubs.acs.org/doi/10.1021/acs.nanolett.4c03785) · [作者稿](https://arxiv.org/abs/2404.11415) · [OpenAlex](https://api.openalex.org/works/W4403094356) · [Tang 原刊](https://onlinelibrary.wiley.com/doi/10.1002/lpor.71431)
