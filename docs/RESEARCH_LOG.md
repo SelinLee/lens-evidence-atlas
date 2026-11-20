@@ -1269,3 +1269,9 @@ Barulin 补表沿引文核到 Jiang 2023 的四离散可见谱点实制器件，
 由 Chang 技术引文追到 Zhou 2018，核 ACS 题录、DOE OSTI 存档接收稿和 Fig. 4b,d,g,h。2026-11-20 查 Crossref 274 次、OpenAlex 294 次。500 μm 实物，名义焦距 540 μm、NA 0.42。1180／1680 nm 为离散实测点，作者报告共同主焦距。两点实测 x 向 FWHM 1.74／2.57 μm，效率 38%／52%。效率分子为像方 8×FWHM 直径虹膜中的功率，分母为移除样片、全开虹膜的总入射功率。主焦区图不提供逐色数值。记录 267 张轴扫、1.13 μm 轴向间距及 1180 nm 的弱次焦。固定物距靶图作为另一个系统配置。新增 1 篇、2 配置、4 条，累计 57 篇、291 配置、1239 条。横向物方采样、轴扫原始切片及 MTF 待查。补件组件已核登记，直连返回 403。[核验](ZHOU_2018_NIR_DOUBLET_REVIEW_2026-11-20.md) · [原作](https://www.osti.gov/servlets/purl/1491299#page=20)
 
 接续核 Arbabi 2016 的分区和交织式近红外双波长实物。已在 PMC 原作定位 Fig. 6 与 Tables 1–2，均有两波长、两只实物的测量；样品共轭、效率分母、引用数及实际轴向残差继续核查。[PMC 原作](https://pmc.ncbi.nlm.nih.gov/articles/PMC5011735/)
+
+## 2026-11-20-150 · Zhou 上线验收及 Arbabi 2016 正式材料
+
+0.3.64 经 PR #208 合并为 `93f883bc22f4478a8ca1b8f8da20bbd102a38676`。PR 校验 44735751620、主线校验 44735856139、Pages 44735856377 及 335 项测试通过。240 个公开文件与本地构建的 SHA-256 一致。独立无头 Google Chrome 在线验收 57 篇、1239 条，开启可见光为 47 篇、829 条。核新论文的 2 配置、4 条、两色 FWHM 与效率散点、设计焦距 540 μm、逐色主焦距空态、可见光排除、六种视口与引用往返。在线引用通向可读取的 DOE OSTI 原文及补件登记，原文 PDF 的 SHA-256 与本地所核版本一致。[PR #208](https://github.com/SelinLee/lens-evidence-atlas/pull/208) · [Pages 44735856377](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44735856377)
+
+Arbabi 2016 已取得 Caltech 与 PMC 开放存档的正式版 PDF，均为 953337 字节，SHA-256 `ff3fddbd471bc44ee68c592ba0e9ffe6ead8043992774e0d5a00fdd282ad99f1`。2026-11-20 查询 Crossref 221 次、OpenAlex 237 次。视觉核 p.6 Fig. 6、Tables 1–2。分区镜两色在 400 μm 目标像距附近均有强焦。交织镜在 915 nm 有约 220 μm 的高阶焦，峰值强度及光功率分别约为设计焦的 1.8 和 1.2 倍。逐色设计级次峰位、效率光阑归属和原始数据范围继续核查。会话目标保持开启。[Caltech 存档](https://authors.library.caltech.edu/records/2n3j9-sm734) · [PMC 正式版 p.6](https://pmc-oa-opendata.s3.amazonaws.com/PMC5011735.1/PMC5011735.1.pdf#page=6) · [Crossref](https://api.crossref.org/works/10.1038/srep32803) · [OpenAlex](https://api.openalex.org/works/https://doi.org/10.1038/srep32803)
