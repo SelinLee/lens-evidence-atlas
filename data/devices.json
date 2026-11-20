@@ -2741,6 +2741,57 @@
       "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1126%2Fsciadv.abc0711%22&page%5Bsize%5D=25",
       "scope": "精确关联原论文 DOI，HTTP 200，零项。",
       "checked_on": "2026-11-20"
+    },
+    {
+      "id": "shi_multicolor_2018",
+      "kind": "paper",
+      "doi": "10.1021/acs.nanolett.7b05458",
+      "title": "Single-Layer Metasurface with Controllable Multiwavelength Functions",
+      "url": "https://pubs.acs.org/doi/10.1021/acs.nanolett.7b05458",
+      "scope": "正式期刊题录、摘要与补件目录。2018-02-20 发表，18(4), 2420–2427。",
+      "checked_on": "2026-11-20"
+    },
+    {
+      "id": "shi_multicolor_nus_2018",
+      "title": "Shi 2018 · NUS 作者组存档 ACS 正式 PDF",
+      "url": "https://www.ece.nus.edu.sg/stfpage/eleqc/NL18_Shi.pdf",
+      "scope": "八页正式版，阅读 pp.2420–2427，视觉复核 Figs. 4–6 和相邻段落。",
+      "checked_on": "2026-11-20",
+      "publication_source": "shi_multicolor_2018",
+      "kind": "publisher_pdf"
+    },
+    {
+      "id": "shi_multicolor_si_2018",
+      "title": "Shi 2018 · nl7b05458_si_001.pdf",
+      "url": "https://doi.org/10.1021/acs.nanolett.7b05458.s001",
+      "scope": "期刊补件目录含实测焦距、测试布置、模拟 PSF 与相位比较。ACS 文件及补件 DOI 无头 Chrome 返回 403。",
+      "checked_on": "2026-11-20",
+      "publication_source": "shi_multicolor_2018",
+      "kind": "supplementary_material"
+    },
+    {
+      "id": "shi_multicolor_crossref_2018",
+      "title": "Shi 2018 · Crossref 元数据及引文",
+      "url": "https://api.crossref.org/works/10.1021/acs.nanolett.7b05458",
+      "scope": "2026-11-20 查引文 224 次。补件组件关联另由 DOI 元数据核实。",
+      "checked_on": "2026-11-20",
+      "publication_source": "shi_multicolor_2018"
+    },
+    {
+      "id": "shi_multicolor_openalex_2018",
+      "title": "Shi 2018 · OpenAlex 引文",
+      "url": "https://api.openalex.org/works/https://doi.org/10.1021/acs.nanolett.7b05458",
+      "scope": "2026-11-20 查引文 239 次。",
+      "checked_on": "2026-11-20",
+      "publication_source": "shi_multicolor_2018"
+    },
+    {
+      "id": "shi_multicolor_datacite_2018",
+      "title": "Shi 2018 · DataCite 关联数据查询",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1021%2Facs.nanolett.7b05458%22&page%5Bsize%5D=25",
+      "scope": "精确关系 DOI 查询，HTTP 200，结果为零。",
+      "checked_on": "2026-11-20",
+      "publication_source": "shi_multicolor_2018"
     }
   ],
   "domains": {
@@ -156187,6 +156238,1381 @@
                 "basis": "unresolved",
                 "checked_on": "2026-11-20",
                 "display": "实测隔离比图可查"
+              }
+            }
+          },
+          {
+            "id": "shi2018multiwavelength_mam_summary",
+            "model": "Shi 2018 · 400 μm 四波长反射式实物",
+            "module": "",
+            "variant": "400 μm 四波长反射式实物",
+            "evidence_type": "study",
+            "study_id": "shi2018multiwavelength",
+            "specimen_id": "mam",
+            "measurement_scope": "同一只反射式 MAM 的四波长轴扫、PSF 及银镜相对效率。",
+            "values": {
+              "diameter_um": {
+                "value": 400,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Results 首段、Eq. (3)",
+                "note": "作者所报 MAM 圆形口径。WCBG 单独以 Eq. (4) 的设计条件登记。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "na": {
+                "value": 0.2,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Results 首段、Eq. (3)",
+                "note": "作者所报 MAM 设计 NA。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "material": {
+                "value": "TiO₂ 方柱／SiO₂ 间隔层／Ag 反射镜／Si 基底",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文 pp.2421–2423（PDF pp.2–4）Fig. 1d 与 Method",
+                "note": "作者图注及工艺段给设计方柱 600 nm、SiO₂ 间隔层 180 nm、Ag 1100 nm，单元周期 450 nm。临时保护层已在制备时去除。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "height_nm": {
+                "value": 600,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2421（PDF p.2）Fig. 1d 图注；p.2422 结构段",
+                "note": "原文图注中 TiO₂ 方柱 H1 的设计高度。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "design_focal_um": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Eq. (3) 设计段及 Eq. (4) WCBG 段",
+                "note": "MAM 描述给设计 NA 和口径，未印数值设计焦距；同页明确 0.98 mm 的段落以 WCBG 的 Eq. (4) 为参照。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "待原始数据"
+              },
+              "wavelength_nm": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4a–j",
+                "note": "本行汇总主器件的四个离散谱点。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "460／540／567／700 nm（离散）"
+              },
+              "chromatic": {
+                "value": "在反射式 TiO₂ 相位单元中结合传播相位与导模共振，使四个离散波长近共焦",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文 pp.2421–2424（PDF pp.2–5）Figs. 1–4、Eq. (3)",
+                "note": "作者给四个离散工作波长。2026-11-20 查 Crossref 224 次、OpenAlex 239 次，凭同器件四个实测轴焦及 Strehl 纳入经典可见光研究。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "four_discrete_test_wavelengths",
+                "sample_wavelengths_nm": [
+                  460,
+                  540,
+                  567,
+                  700
+                ],
+                "sourceIds": [
+                  "shi_multicolor_nus_2018",
+                  "shi_multicolor_2018",
+                  "shi_multicolor_crossref_2018",
+                  "shi_multicolor_openalex_2018"
+                ]
+              },
+              "focus_variation_um": {
+                "value": 9,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4a–d 图注及 Results；Fig. 4i,j",
+                "note": "输入为作者印出的 979／985／976／982 μm。最大值在 540 nm、最小值在 567 nm。本库计算 985−976=9 μm，表示四个离散测点之间的跨度。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "atlas",
+                "statistic": "measured_focal_position_span",
+                "formula": "max(f) - min(f)",
+                "sample_wavelengths_nm": [
+                  460,
+                  540,
+                  567,
+                  700
+                ],
+                "measurement_record_ids": [
+                  "shi2018multiwavelength_mam_460",
+                  "shi2018multiwavelength_mam_540",
+                  "shi2018multiwavelength_mam_567",
+                  "shi2018multiwavelength_mam_700"
+                ],
+                "display": "9（四点焦距跨度，本库计算）"
+              },
+              "focus_variation_protocol": {
+                "value": "同一反射式 MAM 四个已报告实测焦位的 max−min",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2423（PDF p.4）Method；p.2424 Fig. 4i,j",
+                "note": "原数值用 mm 印到三位小数，折为 μm；3 μm 近焦步长，绝对轴坐标零点和拟合误差模型未给。本库跨度不附自行估计的不确定度。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "reference_plane": "原文 Fig. 4 的反射传播 z 轴",
+                "sample_wavelengths_nm": [
+                  460,
+                  540,
+                  567,
+                  700
+                ]
+              },
+              "psf_protocol": {
+                "value": "准直正入射；10 μm 粗扫和 3 μm 近焦扫描",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2423（PDF p.4）Method；p.2424 Fig. 4i,j",
+                "note": "NKT 超连续谱光源，50:50 分光镜引出反射，两级带管镜的继像总放大约 40×，以已知大小靶校验。MAM 近焦扫描约 901–1057 μm，绝对 z 零面校定、逐点轴峰提取和物方像元尺寸待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 3,
+                "coarse_scan_step_um": 10,
+                "stage_minimum_step_um": 0.1,
+                "near_focus_scan_range_um": [
+                  901,
+                  1057
+                ],
+                "wide_scan_range_um": [
+                  180,
+                  1780
+                ],
+                "object_conjugate": "infinity",
+                "reference_plane": "作者反射传播轴 z；零面标定未报告",
+                "field_point": "on_axis",
+                "polarization": null,
+                "object_space_pixel_um": null,
+                "microscope_magnification": 40
+              },
+              "efficiency_protocol": {
+                "value": "像面 0.25 mm 虹膜内焦斑功率／调整后的同尺寸银镜反射功率",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2423（PDF p.4）Method 与 Fig. 3，To measure the focused power 段",
+                "note": "分子在继像面用直径 250 μm 虹膜抑制零级并通过 Airy 第一环；分母用直径 400 μm 银镜替换 MAM，开放虹膜，借 200 μm 小银镜测得第二级透过系数修正。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "numerator": "focused_power_through_image_plane_iris",
+                "denominator": "adjusted_same_size_silver_mirror_reflected_power",
+                "iris_diameter_um": 250,
+                "iris_plane": "microscope_image_plane",
+                "microscope_magnification": 40,
+                "reference_mirror_diameter_um": 400,
+                "calibration_mirror_diameter_um": 200,
+                "reference_iris_state": "open",
+                "normalization": "small_mirror_second_objective_throughput",
+                "polarization": null
+              },
+              "mtf_curve": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文 Figs. 4–6；p.2426 Supporting Information；期刊补件目录与 DataCite",
+                "note": "主文有焦斑和横纵截线。补件目录列测试布置及焦距，当前未取得补件内容、原始 PSF 数组、物方采样或 MTF 数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "焦斑曲线可查；MTF 与原始 PSF 待查",
+                "sourceIds": [
+                  "shi_multicolor_nus_2018",
+                  "shi_multicolor_2018",
+                  "shi_multicolor_si_2018",
+                  "shi_multicolor_datacite_2018"
+                ],
+                "data_availability": {
+                  "status": "no_mtf_in_checked_material",
+                  "author_numeric_mtf": null,
+                  "raw_psf": null,
+                  "independently_recomputed_mtf": null,
+                  "search_log": "SHI_2018_VISIBLE_MULTI_WAVELENGTH_REVIEW_2026-11-20.md"
+                }
+              }
+            },
+            "visible_light_use": true
+          },
+          {
+            "id": "shi2018multiwavelength_mam_460",
+            "model": "Shi 2018 · 反射式 MAM · 460 nm",
+            "module": "",
+            "variant": "反射式 MAM · 460 nm",
+            "evidence_type": "study",
+            "study_id": "shi2018multiwavelength",
+            "specimen_id": "mam",
+            "measurement_scope": "同一器件的逐波长实测结果。",
+            "values": {
+              "diameter_um": {
+                "value": 400,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Results 首段、Eq. (3)",
+                "note": "作者所报 MAM 圆形口径。WCBG 单独以 Eq. (4) 的设计条件登记。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "na": {
+                "value": 0.2,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Results 首段、Eq. (3)",
+                "note": "作者所报 MAM 设计 NA。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 460,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4a 图注、Fig. 4i,j 及 Results 第 1 项",
+                "note": "作者指定并实测的单色照明谱点。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "measured_focal_um": {
+                "value": 979,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4a 图注、Fig. 4i,j 及 Results 第 1 项",
+                "note": "由作者逐色报告的焦长从 mm 换算到 μm；轴扫协议见同记录。",
+                "basis": "measured",
+                "checked_on": "2026-11-20",
+                "original_unit": "mm",
+                "position_definition": "author_reported_focus_position",
+                "reference_plane": "作者反射传播轴 z；零面标定未报告"
+              },
+              "psf_protocol": {
+                "value": "准直正入射；10 μm 粗扫和 3 μm 近焦扫描",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4e 与 Results 的第 1 项；主文印刷 p.2423（PDF p.4）Method；p.2424 Fig. 4i,j",
+                "note": "NKT 超连续谱光源，50:50 分光镜引出反射，两级带管镜的继像总放大约 40×，以已知大小靶校验。MAM 近焦扫描约 901–1057 μm，绝对 z 零面校定、逐点轴峰提取和物方像元尺寸待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 3,
+                "coarse_scan_step_um": 10,
+                "stage_minimum_step_um": 0.1,
+                "near_focus_scan_range_um": [
+                  901,
+                  1057
+                ],
+                "wide_scan_range_um": [
+                  180,
+                  1780
+                ],
+                "object_conjugate": "infinity",
+                "reference_plane": "作者反射传播轴 z；零面标定未报告",
+                "field_point": "on_axis",
+                "polarization": null,
+                "object_space_pixel_um": null,
+                "microscope_magnification": 40,
+                "evaluation_plane": "作者测得的该谱点焦面",
+                "evaluation_plane_um": 979,
+                "section_directions": [
+                  "x",
+                  "y"
+                ],
+                "normalization": "same_focused_power_as_diffraction_limited_psf"
+              },
+              "strehl": {
+                "value": 0.86,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4e 与 Results 的第 1 项",
+                "note": "作者报告的 Strehl。图注中实测截线与峰值为 1 的理想衍射截线按等聚焦功率归一。未印拟合、积分窗口误差及 x/y 合并方式。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "reference_model": "diffraction_limited_psf",
+                "normalization": "same_focused_power_as_diffraction_limited_psf"
+              },
+              "fwhm_x_um": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4e 与 Results 的第 1 项",
+                "note": "蓝色 x 截线为实测，宽度原值未印。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "x 截线可查"
+              },
+              "fwhm_y_um": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4e 与 Results 的第 1 项",
+                "note": "红色 y 截线为实测，宽度原值未印。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "y 截线可查"
+              },
+              "efficiency_lambda_nm": {
+                "value": 460,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Results 聚焦效率第 1 项",
+                "note": "同器件效率列表的实际波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": 17.7,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Results 聚焦效率第 1 项；主文印刷 p.2423（PDF p.4）Method 与 Fig. 3",
+                "note": "作者以同口径银镜的调整后反射功率作参照。保留正文原值。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "denominator": "adjusted_same_size_silver_mirror_reflected_power"
+              },
+              "efficiency_protocol": {
+                "value": "像面 0.25 mm 虹膜内焦斑功率／调整后的同尺寸银镜反射功率",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2423（PDF p.4）Method 与 Fig. 3，To measure the focused power 段",
+                "note": "分子在继像面用直径 250 μm 虹膜抑制零级并通过 Airy 第一环；分母用直径 400 μm 银镜替换 MAM，开放虹膜，借 200 μm 小银镜测得第二级透过系数修正。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "numerator": "focused_power_through_image_plane_iris",
+                "denominator": "adjusted_same_size_silver_mirror_reflected_power",
+                "iris_diameter_um": 250,
+                "iris_plane": "microscope_image_plane",
+                "microscope_magnification": 40,
+                "reference_mirror_diameter_um": 400,
+                "calibration_mirror_diameter_um": 200,
+                "reference_iris_state": "open",
+                "normalization": "small_mirror_second_objective_throughput",
+                "polarization": null
+              }
+            }
+          },
+          {
+            "id": "shi2018multiwavelength_mam_540",
+            "model": "Shi 2018 · 反射式 MAM · 540 nm",
+            "module": "",
+            "variant": "反射式 MAM · 540 nm",
+            "evidence_type": "study",
+            "study_id": "shi2018multiwavelength",
+            "specimen_id": "mam",
+            "measurement_scope": "同一器件的逐波长实测结果。",
+            "values": {
+              "diameter_um": {
+                "value": 400,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Results 首段、Eq. (3)",
+                "note": "作者所报 MAM 圆形口径。WCBG 单独以 Eq. (4) 的设计条件登记。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "na": {
+                "value": 0.2,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Results 首段、Eq. (3)",
+                "note": "作者所报 MAM 设计 NA。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 540,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4b 图注、Fig. 4i,j 及 Results 第 2 项",
+                "note": "作者指定并实测的单色照明谱点。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "measured_focal_um": {
+                "value": 985,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4b 图注、Fig. 4i,j 及 Results 第 2 项",
+                "note": "由作者逐色报告的焦长从 mm 换算到 μm；轴扫协议见同记录。",
+                "basis": "measured",
+                "checked_on": "2026-11-20",
+                "original_unit": "mm",
+                "position_definition": "author_reported_focus_position",
+                "reference_plane": "作者反射传播轴 z；零面标定未报告"
+              },
+              "psf_protocol": {
+                "value": "准直正入射；10 μm 粗扫和 3 μm 近焦扫描",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4f 与 Results 的第 2 项；主文印刷 p.2423（PDF p.4）Method；p.2424 Fig. 4i,j",
+                "note": "NKT 超连续谱光源，50:50 分光镜引出反射，两级带管镜的继像总放大约 40×，以已知大小靶校验。MAM 近焦扫描约 901–1057 μm，绝对 z 零面校定、逐点轴峰提取和物方像元尺寸待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 3,
+                "coarse_scan_step_um": 10,
+                "stage_minimum_step_um": 0.1,
+                "near_focus_scan_range_um": [
+                  901,
+                  1057
+                ],
+                "wide_scan_range_um": [
+                  180,
+                  1780
+                ],
+                "object_conjugate": "infinity",
+                "reference_plane": "作者反射传播轴 z；零面标定未报告",
+                "field_point": "on_axis",
+                "polarization": null,
+                "object_space_pixel_um": null,
+                "microscope_magnification": 40,
+                "evaluation_plane": "作者测得的该谱点焦面",
+                "evaluation_plane_um": 985,
+                "section_directions": [
+                  "x",
+                  "y"
+                ],
+                "normalization": "same_focused_power_as_diffraction_limited_psf"
+              },
+              "strehl": {
+                "value": 0.91,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4f 与 Results 的第 2 项",
+                "note": "作者报告的 Strehl。图注中实测截线与峰值为 1 的理想衍射截线按等聚焦功率归一。未印拟合、积分窗口误差及 x/y 合并方式。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "reference_model": "diffraction_limited_psf",
+                "normalization": "same_focused_power_as_diffraction_limited_psf"
+              },
+              "fwhm_x_um": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4f 与 Results 的第 2 项",
+                "note": "蓝色 x 截线为实测，宽度原值未印。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "x 截线可查"
+              },
+              "fwhm_y_um": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4f 与 Results 的第 2 项",
+                "note": "红色 y 截线为实测，宽度原值未印。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "y 截线可查"
+              },
+              "efficiency_lambda_nm": {
+                "value": 540,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Results 聚焦效率第 2 项",
+                "note": "同器件效率列表的实际波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": 16,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Results 聚焦效率第 2 项；主文印刷 p.2423（PDF p.4）Method 与 Fig. 3",
+                "note": "作者以同口径银镜的调整后反射功率作参照。保留正文原值。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "denominator": "adjusted_same_size_silver_mirror_reflected_power",
+                "display": "16.0"
+              },
+              "efficiency_protocol": {
+                "value": "像面 0.25 mm 虹膜内焦斑功率／调整后的同尺寸银镜反射功率",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2423（PDF p.4）Method 与 Fig. 3，To measure the focused power 段",
+                "note": "分子在继像面用直径 250 μm 虹膜抑制零级并通过 Airy 第一环；分母用直径 400 μm 银镜替换 MAM，开放虹膜，借 200 μm 小银镜测得第二级透过系数修正。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "numerator": "focused_power_through_image_plane_iris",
+                "denominator": "adjusted_same_size_silver_mirror_reflected_power",
+                "iris_diameter_um": 250,
+                "iris_plane": "microscope_image_plane",
+                "microscope_magnification": 40,
+                "reference_mirror_diameter_um": 400,
+                "calibration_mirror_diameter_um": 200,
+                "reference_iris_state": "open",
+                "normalization": "small_mirror_second_objective_throughput",
+                "polarization": null
+              }
+            }
+          },
+          {
+            "id": "shi2018multiwavelength_mam_567",
+            "model": "Shi 2018 · 反射式 MAM · 567 nm",
+            "module": "",
+            "variant": "反射式 MAM · 567 nm",
+            "evidence_type": "study",
+            "study_id": "shi2018multiwavelength",
+            "specimen_id": "mam",
+            "measurement_scope": "同一器件的逐波长实测结果。",
+            "values": {
+              "diameter_um": {
+                "value": 400,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Results 首段、Eq. (3)",
+                "note": "作者所报 MAM 圆形口径。WCBG 单独以 Eq. (4) 的设计条件登记。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "na": {
+                "value": 0.2,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Results 首段、Eq. (3)",
+                "note": "作者所报 MAM 设计 NA。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 567,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4c 图注、Fig. 4i,j 及 Results 第 3 项",
+                "note": "作者指定并实测的单色照明谱点。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "measured_focal_um": {
+                "value": 976,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4c 图注、Fig. 4i,j 及 Results 第 3 项",
+                "note": "由作者逐色报告的焦长从 mm 换算到 μm；轴扫协议见同记录。",
+                "basis": "measured",
+                "checked_on": "2026-11-20",
+                "original_unit": "mm",
+                "position_definition": "author_reported_focus_position",
+                "reference_plane": "作者反射传播轴 z；零面标定未报告"
+              },
+              "psf_protocol": {
+                "value": "准直正入射；10 μm 粗扫和 3 μm 近焦扫描",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4g 与 Results 的第 3 项；主文印刷 p.2423（PDF p.4）Method；p.2424 Fig. 4i,j",
+                "note": "NKT 超连续谱光源，50:50 分光镜引出反射，两级带管镜的继像总放大约 40×，以已知大小靶校验。MAM 近焦扫描约 901–1057 μm，绝对 z 零面校定、逐点轴峰提取和物方像元尺寸待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 3,
+                "coarse_scan_step_um": 10,
+                "stage_minimum_step_um": 0.1,
+                "near_focus_scan_range_um": [
+                  901,
+                  1057
+                ],
+                "wide_scan_range_um": [
+                  180,
+                  1780
+                ],
+                "object_conjugate": "infinity",
+                "reference_plane": "作者反射传播轴 z；零面标定未报告",
+                "field_point": "on_axis",
+                "polarization": null,
+                "object_space_pixel_um": null,
+                "microscope_magnification": 40,
+                "evaluation_plane": "作者测得的该谱点焦面",
+                "evaluation_plane_um": 976,
+                "section_directions": [
+                  "x",
+                  "y"
+                ],
+                "normalization": "same_focused_power_as_diffraction_limited_psf"
+              },
+              "strehl": {
+                "value": 0.81,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4g 与 Results 的第 3 项",
+                "note": "作者报告的 Strehl。图注中实测截线与峰值为 1 的理想衍射截线按等聚焦功率归一。未印拟合、积分窗口误差及 x/y 合并方式。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "reference_model": "diffraction_limited_psf",
+                "normalization": "same_focused_power_as_diffraction_limited_psf"
+              },
+              "fwhm_x_um": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4g 与 Results 的第 3 项",
+                "note": "蓝色 x 截线为实测，宽度原值未印。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "x 截线可查"
+              },
+              "fwhm_y_um": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4g 与 Results 的第 3 项",
+                "note": "红色 y 截线为实测，宽度原值未印。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "y 截线可查"
+              },
+              "efficiency_lambda_nm": {
+                "value": 567,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Results 聚焦效率第 3 项",
+                "note": "同器件效率列表的实际波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": 21.4,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Results 聚焦效率第 3 项；主文印刷 p.2423（PDF p.4）Method 与 Fig. 3",
+                "note": "作者以同口径银镜的调整后反射功率作参照。保留正文原值。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "denominator": "adjusted_same_size_silver_mirror_reflected_power"
+              },
+              "efficiency_protocol": {
+                "value": "像面 0.25 mm 虹膜内焦斑功率／调整后的同尺寸银镜反射功率",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2423（PDF p.4）Method 与 Fig. 3，To measure the focused power 段",
+                "note": "分子在继像面用直径 250 μm 虹膜抑制零级并通过 Airy 第一环；分母用直径 400 μm 银镜替换 MAM，开放虹膜，借 200 μm 小银镜测得第二级透过系数修正。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "numerator": "focused_power_through_image_plane_iris",
+                "denominator": "adjusted_same_size_silver_mirror_reflected_power",
+                "iris_diameter_um": 250,
+                "iris_plane": "microscope_image_plane",
+                "microscope_magnification": 40,
+                "reference_mirror_diameter_um": 400,
+                "calibration_mirror_diameter_um": 200,
+                "reference_iris_state": "open",
+                "normalization": "small_mirror_second_objective_throughput",
+                "polarization": null
+              }
+            }
+          },
+          {
+            "id": "shi2018multiwavelength_mam_700",
+            "model": "Shi 2018 · 反射式 MAM · 700 nm",
+            "module": "",
+            "variant": "反射式 MAM · 700 nm",
+            "evidence_type": "study",
+            "study_id": "shi2018multiwavelength",
+            "specimen_id": "mam",
+            "measurement_scope": "同一器件的逐波长实测结果。",
+            "values": {
+              "diameter_um": {
+                "value": 400,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Results 首段、Eq. (3)",
+                "note": "作者所报 MAM 圆形口径。WCBG 单独以 Eq. (4) 的设计条件登记。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "na": {
+                "value": 0.2,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Results 首段、Eq. (3)",
+                "note": "作者所报 MAM 设计 NA。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 700,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4d 图注、Fig. 4i,j 及 Results 第 4 项",
+                "note": "作者指定并实测的单色照明谱点。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "measured_focal_um": {
+                "value": 982,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4d 图注、Fig. 4i,j 及 Results 第 4 项",
+                "note": "由作者逐色报告的焦长从 mm 换算到 μm；轴扫协议见同记录。",
+                "basis": "measured",
+                "checked_on": "2026-11-20",
+                "original_unit": "mm",
+                "position_definition": "author_reported_focus_position",
+                "reference_plane": "作者反射传播轴 z；零面标定未报告"
+              },
+              "psf_protocol": {
+                "value": "准直正入射；10 μm 粗扫和 3 μm 近焦扫描",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4h 与 Results 的第 4 项；主文印刷 p.2423（PDF p.4）Method；p.2424 Fig. 4i,j",
+                "note": "NKT 超连续谱光源，50:50 分光镜引出反射，两级带管镜的继像总放大约 40×，以已知大小靶校验。MAM 近焦扫描约 901–1057 μm，绝对 z 零面校定、逐点轴峰提取和物方像元尺寸待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 3,
+                "coarse_scan_step_um": 10,
+                "stage_minimum_step_um": 0.1,
+                "near_focus_scan_range_um": [
+                  901,
+                  1057
+                ],
+                "wide_scan_range_um": [
+                  180,
+                  1780
+                ],
+                "object_conjugate": "infinity",
+                "reference_plane": "作者反射传播轴 z；零面标定未报告",
+                "field_point": "on_axis",
+                "polarization": null,
+                "object_space_pixel_um": null,
+                "microscope_magnification": 40,
+                "evaluation_plane": "作者测得的该谱点焦面",
+                "evaluation_plane_um": 982,
+                "section_directions": [
+                  "x",
+                  "y"
+                ],
+                "normalization": "same_focused_power_as_diffraction_limited_psf"
+              },
+              "strehl": {
+                "value": 0.92,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4h 与 Results 的第 4 项",
+                "note": "作者报告的 Strehl。图注中实测截线与峰值为 1 的理想衍射截线按等聚焦功率归一。未印拟合、积分窗口误差及 x/y 合并方式。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "reference_model": "diffraction_limited_psf",
+                "normalization": "same_focused_power_as_diffraction_limited_psf"
+              },
+              "fwhm_x_um": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4h 与 Results 的第 4 项",
+                "note": "蓝色 x 截线为实测，宽度原值未印。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "x 截线可查"
+              },
+              "fwhm_y_um": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Fig. 4h 与 Results 的第 4 项",
+                "note": "红色 y 截线为实测，宽度原值未印。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "y 截线可查"
+              },
+              "efficiency_lambda_nm": {
+                "value": 700,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Results 聚焦效率第 4 项",
+                "note": "同器件效率列表的实际波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": 22.6,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Results 聚焦效率第 4 项；主文印刷 p.2423（PDF p.4）Method 与 Fig. 3",
+                "note": "作者以同口径银镜的调整后反射功率作参照。保留正文原值。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "denominator": "adjusted_same_size_silver_mirror_reflected_power"
+              },
+              "efficiency_protocol": {
+                "value": "像面 0.25 mm 虹膜内焦斑功率／调整后的同尺寸银镜反射功率",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2423（PDF p.4）Method 与 Fig. 3，To measure the focused power 段",
+                "note": "分子在继像面用直径 250 μm 虹膜抑制零级并通过 Airy 第一环；分母用直径 400 μm 银镜替换 MAM，开放虹膜，借 200 μm 小银镜测得第二级透过系数修正。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "numerator": "focused_power_through_image_plane_iris",
+                "denominator": "adjusted_same_size_silver_mirror_reflected_power",
+                "iris_diameter_um": 250,
+                "iris_plane": "microscope_image_plane",
+                "microscope_magnification": 40,
+                "reference_mirror_diameter_um": 400,
+                "calibration_mirror_diameter_um": 200,
+                "reference_iris_state": "open",
+                "normalization": "small_mirror_second_objective_throughput",
+                "polarization": null
+              }
+            }
+          },
+          {
+            "id": "shi2018multiwavelength_wcbg1_summary",
+            "model": "Shi 2018 · WCBG1 波长控制反射式实物",
+            "module": "",
+            "variant": "WCBG1 波长控制反射式实物",
+            "evidence_type": "study",
+            "study_id": "shi2018multiwavelength",
+            "specimen_id": "wcbg1",
+            "measurement_scope": "三波长的共评价面测量，按拓扑荷区分通道。",
+            "values": {
+              "diameter_um": {
+                "value": 400,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Eq. (4) 后 WCBG 设计段",
+                "note": "作者对两套 WCBG 所给名义口径。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "na": {
+                "value": 0.2,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Eq. (4) 后 WCBG 设计段",
+                "note": "作者对两套 WCBG 所给设计 NA。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "design_focal_um": {
+                "value": 980,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Eq. (4) 后 WCBG 设计段",
+                "note": "作者原值 f=0.98 mm 的单位换算。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "material": {
+                "value": "TiO₂ 方柱／SiO₂ 间隔层／Ag 反射镜／Si 基底",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文 pp.2421–2423（PDF pp.2–4）Fig. 1d 与 Method",
+                "note": "作者图注及工艺段给设计方柱 600 nm、SiO₂ 间隔层 180 nm、Ag 1100 nm，单元周期 450 nm。临时保护层已在制备时去除。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "height_nm": {
+                "value": 600,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2421（PDF p.2）Fig. 1d 图注；p.2422 结构段",
+                "note": "原文图注中 TiO₂ 方柱 H1 的设计高度。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5）Results 末段；p.2425 Fig. 5a–f",
+                "note": "本行是三波长汇总。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "455／540／700 nm（离散）"
+              },
+              "chromatic": {
+                "value": "可见光三波长在 z=980 μm 同一评价面成斑，拓扑荷按波长编程",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5）Results 末段；p.2425 Fig. 5a–f",
+                "note": "按顺序的拓扑荷为 2／1／0；作者的同面实验并未报告沿轴峰的位置表。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "three_discrete_test_wavelengths",
+                "sample_wavelengths_nm": [
+                  455,
+                  540,
+                  700
+                ],
+                "topological_charges": [
+                  2,
+                  1,
+                  0
+                ]
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5）Results 末段；p.2425 Fig. 5a–f",
+                "note": "固定面实验未逐波长列轴向最佳焦位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "评价面 980 μm；逐点峰位待核"
+              },
+              "psf_protocol": {
+                "value": "z=980 μm 固定面焦斑；等聚焦功率截线",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5）Results 末段；p.2425 Fig. 5a–f；主文印刷 p.2423（PDF p.4）Method 与 Fig. 3",
+                "note": "准直光反射成像；图注说明该共用评价面上的焦斑。原文未展开 WCBG 各波长轴峰、取焦算法和绝对零位。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "evaluation_plane_um": 980,
+                "focus_mode": "shared_fixed_plane",
+                "field_point": "on_axis",
+                "object_conjugate": "infinity",
+                "section_directions": [
+                  "x",
+                  "y"
+                ],
+                "normalization": "same_focused_power_as_simulated_psf"
+              }
+            },
+            "visible_light_use": true
+          },
+          {
+            "id": "shi2018multiwavelength_wcbg1_455",
+            "model": "Shi 2018 · WCBG1 · 455 nm",
+            "module": "",
+            "variant": "WCBG1 · 455 nm",
+            "evidence_type": "study",
+            "study_id": "shi2018multiwavelength",
+            "specimen_id": "wcbg1",
+            "measurement_scope": "固定面实测焦斑和作者报告效率。",
+            "values": {
+              "wavelength_nm": {
+                "value": 455,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 5a, 5d",
+                "note": "图注中实验照明波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "chromatic": {
+                "value": "拓扑荷 l=2",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 5a, 5d",
+                "note": "该波长与光束形状、拓扑荷的对应关系。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "topological_charge": 2
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 5a, 5d",
+                "note": "印出的坐标是焦斑的共同采集面，逐波长轴峰数值待核。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "评价面 980 μm"
+              },
+              "psf_protocol": {
+                "value": "z=980 μm 固定面焦斑；等聚焦功率截线",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 5a, 5d；主文印刷 p.2424（PDF p.5）Results 末段；p.2425 Fig. 5a–f",
+                "note": "准直光反射成像；图注说明该共用评价面上的焦斑。原文未展开 WCBG 各波长轴峰、取焦算法和绝对零位。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "evaluation_plane_um": 980,
+                "focus_mode": "shared_fixed_plane",
+                "field_point": "on_axis",
+                "object_conjugate": "infinity",
+                "section_directions": [
+                  "x",
+                  "y"
+                ],
+                "normalization": "same_focused_power_as_simulated_psf"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5）Results 末段；p.2425 Fig. 5a–f，效率列表第 1 项",
+                "note": "正文直接报此条件的效率。WCBG 专用焦区选择、功率分母和计量光路未单列，保留原印字并留空聚焦效率散点。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "31%（作者所报，功率分母待核）",
+                "reported_author_pct": 31,
+                "reference_power": null
+              }
+            }
+          },
+          {
+            "id": "shi2018multiwavelength_wcbg1_540",
+            "model": "Shi 2018 · WCBG1 · 540 nm",
+            "module": "",
+            "variant": "WCBG1 · 540 nm",
+            "evidence_type": "study",
+            "study_id": "shi2018multiwavelength",
+            "specimen_id": "wcbg1",
+            "measurement_scope": "固定面实测焦斑和作者报告效率。",
+            "values": {
+              "wavelength_nm": {
+                "value": 540,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 5b, 5e",
+                "note": "图注中实验照明波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "chromatic": {
+                "value": "拓扑荷 l=1",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 5b, 5e",
+                "note": "该波长与光束形状、拓扑荷的对应关系。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "topological_charge": 1
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 5b, 5e",
+                "note": "印出的坐标是焦斑的共同采集面，逐波长轴峰数值待核。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "评价面 980 μm"
+              },
+              "psf_protocol": {
+                "value": "z=980 μm 固定面焦斑；等聚焦功率截线",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 5b, 5e；主文印刷 p.2424（PDF p.5）Results 末段；p.2425 Fig. 5a–f",
+                "note": "准直光反射成像；图注说明该共用评价面上的焦斑。原文未展开 WCBG 各波长轴峰、取焦算法和绝对零位。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "evaluation_plane_um": 980,
+                "focus_mode": "shared_fixed_plane",
+                "field_point": "on_axis",
+                "object_conjugate": "infinity",
+                "section_directions": [
+                  "x",
+                  "y"
+                ],
+                "normalization": "same_focused_power_as_simulated_psf"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5）Results 末段；p.2425 Fig. 5a–f，效率列表第 2 项",
+                "note": "正文直接报此条件的效率。WCBG 专用焦区选择、功率分母和计量光路未单列，保留原印字并留空聚焦效率散点。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "37%（作者所报，功率分母待核）",
+                "reported_author_pct": 37,
+                "reference_power": null
+              }
+            }
+          },
+          {
+            "id": "shi2018multiwavelength_wcbg1_700",
+            "model": "Shi 2018 · WCBG1 · 700 nm",
+            "module": "",
+            "variant": "WCBG1 · 700 nm",
+            "evidence_type": "study",
+            "study_id": "shi2018multiwavelength",
+            "specimen_id": "wcbg1",
+            "measurement_scope": "固定面实测焦斑和作者报告效率。",
+            "values": {
+              "wavelength_nm": {
+                "value": 700,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 5c, 5f",
+                "note": "图注中实验照明波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "chromatic": {
+                "value": "拓扑荷 l=0",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 5c, 5f",
+                "note": "该波长与光束形状、拓扑荷的对应关系。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "topological_charge": 0
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 5c, 5f",
+                "note": "印出的坐标是焦斑的共同采集面，逐波长轴峰数值待核。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "评价面 980 μm"
+              },
+              "psf_protocol": {
+                "value": "z=980 μm 固定面焦斑；等聚焦功率截线",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 5c, 5f；主文印刷 p.2424（PDF p.5）Results 末段；p.2425 Fig. 5a–f",
+                "note": "准直光反射成像；图注说明该共用评价面上的焦斑。原文未展开 WCBG 各波长轴峰、取焦算法和绝对零位。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "evaluation_plane_um": 980,
+                "focus_mode": "shared_fixed_plane",
+                "field_point": "on_axis",
+                "object_conjugate": "infinity",
+                "section_directions": [
+                  "x",
+                  "y"
+                ],
+                "normalization": "same_focused_power_as_simulated_psf"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5）Results 末段；p.2425 Fig. 5a–f，效率列表第 3 项",
+                "note": "正文直接报此条件的效率。WCBG 专用焦区选择、功率分母和计量光路未单列，保留原印字并留空聚焦效率散点。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "33%（作者所报，功率分母待核）",
+                "reported_author_pct": 33,
+                "reference_power": null
+              }
+            }
+          },
+          {
+            "id": "shi2018multiwavelength_wcbg2_summary",
+            "model": "Shi 2018 · WCBG2 波长控制反射式实物",
+            "module": "",
+            "variant": "WCBG2 波长控制反射式实物",
+            "evidence_type": "study",
+            "study_id": "shi2018multiwavelength",
+            "specimen_id": "wcbg2",
+            "measurement_scope": "三波长的共评价面测量，按拓扑荷区分通道。",
+            "values": {
+              "diameter_um": {
+                "value": 400,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Eq. (4) 后 WCBG 设计段",
+                "note": "作者对两套 WCBG 所给名义口径。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "na": {
+                "value": 0.2,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Eq. (4) 后 WCBG 设计段",
+                "note": "作者对两套 WCBG 所给设计 NA。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "design_focal_um": {
+                "value": 980,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2424（PDF p.5） Eq. (4) 后 WCBG 设计段",
+                "note": "作者原值 f=0.98 mm 的单位换算。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "material": {
+                "value": "TiO₂ 方柱／SiO₂ 间隔层／Ag 反射镜／Si 基底",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文 pp.2421–2423（PDF pp.2–4）Fig. 1d 与 Method",
+                "note": "作者图注及工艺段给设计方柱 600 nm、SiO₂ 间隔层 180 nm、Ag 1100 nm，单元周期 450 nm。临时保护层已在制备时去除。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "height_nm": {
+                "value": 600,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2421（PDF p.2）Fig. 1d 图注；p.2422 结构段",
+                "note": "原文图注中 TiO₂ 方柱 H1 的设计高度。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 6a–f 与上、下正文",
+                "note": "本行是三波长汇总。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "480／515／690 nm（离散）"
+              },
+              "chromatic": {
+                "value": "可见光三波长在 z=980 μm 同一评价面成斑，拓扑荷按波长编程",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 6a–f 与上、下正文",
+                "note": "按顺序的拓扑荷为 1／0／0；作者的同面实验并未报告沿轴峰的位置表。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "three_discrete_test_wavelengths",
+                "sample_wavelengths_nm": [
+                  480,
+                  515,
+                  690
+                ],
+                "topological_charges": [
+                  1,
+                  0,
+                  0
+                ]
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 6a–f 与上、下正文",
+                "note": "固定面实验未逐波长列轴向最佳焦位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "评价面 980 μm；逐点峰位待核"
+              },
+              "psf_protocol": {
+                "value": "z=980 μm 固定面焦斑；等聚焦功率截线",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 6a–f 与上、下正文；主文印刷 p.2423（PDF p.4）Method 与 Fig. 3",
+                "note": "准直光反射成像；图注说明该共用评价面上的焦斑。原文未展开 WCBG 各波长轴峰、取焦算法和绝对零位。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "evaluation_plane_um": 980,
+                "focus_mode": "shared_fixed_plane",
+                "field_point": "on_axis",
+                "object_conjugate": "infinity",
+                "section_directions": [
+                  "x",
+                  "y"
+                ],
+                "normalization": "same_focused_power_as_simulated_psf"
+              }
+            },
+            "visible_light_use": true
+          },
+          {
+            "id": "shi2018multiwavelength_wcbg2_480",
+            "model": "Shi 2018 · WCBG2 · 480 nm",
+            "module": "",
+            "variant": "WCBG2 · 480 nm",
+            "evidence_type": "study",
+            "study_id": "shi2018multiwavelength",
+            "specimen_id": "wcbg2",
+            "measurement_scope": "固定面实测焦斑和作者报告效率。",
+            "values": {
+              "wavelength_nm": {
+                "value": 480,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 6a, 6d",
+                "note": "图注中实验照明波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "chromatic": {
+                "value": "拓扑荷 l=1",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 6a, 6d",
+                "note": "该波长与光束形状、拓扑荷的对应关系。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "topological_charge": 1
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 6a, 6d",
+                "note": "印出的坐标是焦斑的共同采集面，逐波长轴峰数值待核。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "评价面 980 μm"
+              },
+              "psf_protocol": {
+                "value": "z=980 μm 固定面焦斑；等聚焦功率截线",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 6a, 6d；主文印刷 p.2425（PDF p.6）Fig. 6a–f 与上、下正文",
+                "note": "准直光反射成像；图注说明该共用评价面上的焦斑。原文未展开 WCBG 各波长轴峰、取焦算法和绝对零位。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "evaluation_plane_um": 980,
+                "focus_mode": "shared_fixed_plane",
+                "field_point": "on_axis",
+                "object_conjugate": "infinity",
+                "section_directions": [
+                  "x",
+                  "y"
+                ],
+                "normalization": "same_focused_power_as_simulated_psf"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 6a–f 与上、下正文，效率列表第 1 项",
+                "note": "正文直接报此条件的效率。WCBG 专用焦区选择、功率分母和计量光路未单列，保留原印字并留空聚焦效率散点。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "31%（作者所报，功率分母待核）",
+                "reported_author_pct": 31,
+                "reference_power": null
+              }
+            }
+          },
+          {
+            "id": "shi2018multiwavelength_wcbg2_515",
+            "model": "Shi 2018 · WCBG2 · 515 nm",
+            "module": "",
+            "variant": "WCBG2 · 515 nm",
+            "evidence_type": "study",
+            "study_id": "shi2018multiwavelength",
+            "specimen_id": "wcbg2",
+            "measurement_scope": "固定面实测焦斑和作者报告效率。",
+            "values": {
+              "wavelength_nm": {
+                "value": 515,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 6b, 6e",
+                "note": "图注中实验照明波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "chromatic": {
+                "value": "拓扑荷 l=0",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 6b, 6e",
+                "note": "该波长与光束形状、拓扑荷的对应关系。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "topological_charge": 0
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 6b, 6e",
+                "note": "印出的坐标是焦斑的共同采集面，逐波长轴峰数值待核。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "评价面 980 μm"
+              },
+              "psf_protocol": {
+                "value": "z=980 μm 固定面焦斑；等聚焦功率截线",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 6b, 6e；主文印刷 p.2425（PDF p.6）Fig. 6a–f 与上、下正文",
+                "note": "准直光反射成像；图注说明该共用评价面上的焦斑。原文未展开 WCBG 各波长轴峰、取焦算法和绝对零位。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "evaluation_plane_um": 980,
+                "focus_mode": "shared_fixed_plane",
+                "field_point": "on_axis",
+                "object_conjugate": "infinity",
+                "section_directions": [
+                  "x",
+                  "y"
+                ],
+                "normalization": "same_focused_power_as_simulated_psf"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 6a–f 与上、下正文，效率列表第 2 项",
+                "note": "正文直接报此条件的效率。WCBG 专用焦区选择、功率分母和计量光路未单列，保留原印字并留空聚焦效率散点。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "32%（作者所报，功率分母待核）",
+                "reported_author_pct": 32,
+                "reference_power": null
+              }
+            }
+          },
+          {
+            "id": "shi2018multiwavelength_wcbg2_690",
+            "model": "Shi 2018 · WCBG2 · 690 nm",
+            "module": "",
+            "variant": "WCBG2 · 690 nm",
+            "evidence_type": "study",
+            "study_id": "shi2018multiwavelength",
+            "specimen_id": "wcbg2",
+            "measurement_scope": "固定面实测焦斑和作者报告效率。",
+            "values": {
+              "wavelength_nm": {
+                "value": 690,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 6c, 6f",
+                "note": "图注中实验照明波长。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "chromatic": {
+                "value": "拓扑荷 l=0",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 6c, 6f",
+                "note": "该波长与光束形状、拓扑荷的对应关系。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "topological_charge": 0
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 6c, 6f",
+                "note": "印出的坐标是焦斑的共同采集面，逐波长轴峰数值待核。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "评价面 980 μm"
+              },
+              "psf_protocol": {
+                "value": "z=980 μm 固定面焦斑；等聚焦功率截线",
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 6c, 6f；主文印刷 p.2425（PDF p.6）Fig. 6a–f 与上、下正文",
+                "note": "准直光反射成像；图注说明该共用评价面上的焦斑。原文未展开 WCBG 各波长轴峰、取焦算法和绝对零位。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "evaluation_plane_um": 980,
+                "focus_mode": "shared_fixed_plane",
+                "field_point": "on_axis",
+                "object_conjugate": "infinity",
+                "section_directions": [
+                  "x",
+                  "y"
+                ],
+                "normalization": "same_focused_power_as_simulated_psf"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "shi_multicolor_nus_2018",
+                "location": "主文印刷 p.2425（PDF p.6）Fig. 6a–f 与上、下正文，效率列表第 3 项",
+                "note": "正文直接报此条件的效率。WCBG 专用焦区选择、功率分母和计量光路未单列，保留原印字并留空聚焦效率散点。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "33%（作者所报，功率分母待核）",
+                "reported_author_pct": 33,
+                "reference_power": null
               }
             }
           }
