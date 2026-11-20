@@ -2362,6 +2362,42 @@
       "checked_on": "2026-11-19",
       "publication_source": "baek_sim_rgb_2022",
       "kind": "peer_reviewed_paper"
+    },
+    {
+      "id": "chen_atom_tweezer_2024",
+      "title": "Chen et al. · Multifunctional Metalens for Trapping and Characterizing Single Atoms",
+      "doi": "10.1002/lpor.202401595",
+      "url": "https://doi.org/10.1002/lpor.202401595",
+      "kind": "peer_reviewed_paper",
+      "checked_on": "2026-11-20",
+      "scope": "2024-12-24 首次在线，2025年卷19期6文章2401595。核正式元数据、补件目录与合理请求数据声明；本机Wiley直连HTTP 403，中科大作者库正式PDF另列。"
+    },
+    {
+      "id": "chen_atom_tweezer_arxiv_2024",
+      "publication_source": "chen_atom_tweezer_2024",
+      "title": "Chen et al. · arXiv:2411.05501v1 作者全文",
+      "url": "https://arxiv.org/pdf/2411.05501v1",
+      "kind": "author_manuscript",
+      "checked_on": "2026-11-20",
+      "scope": "10页作者稿。视觉核p.3 Fig.2双波长径向强度、p.5 Fig.3探测束焦位；正文pp.2–5给结构、设计NA、光阑、束腰与共焦操作。1256868字节，SHA-256 852d3ed3b0d30c1c6fc02fcc23ab9bdaea7c2ac6f90afd408baa6463295b6aaa。"
+    },
+    {
+      "id": "chen_atom_tweezer_vor_2024",
+      "publication_source": "chen_atom_tweezer_2024",
+      "title": "Chen et al. · 中科大作者库托管 Wiley 正式 PDF",
+      "url": "https://faculty.ustc.edu.cn/_resources/group1/M00/00/7D/wKhJFWj7g4KAb0luABPgZZBxqqQ382.pdf",
+      "kind": "peer_reviewed_paper",
+      "checked_on": "2026-11-20",
+      "scope": "中科大对应作者公开托管9页Wiley正式PDF，1302629字节，SHA-256 634666830dba66fbfb7287386ba52f34acb33ed74577dee408fc3e2625e3fb9c。视觉核pp.3–5 Fig.2–3，p.8数据声明。p.3将效率光路指向补件，p.4将实测YZ强度指向补件。"
+    },
+    {
+      "id": "chen_atom_tweezer_datacite_2024",
+      "publication_source": "chen_atom_tweezer_2024",
+      "title": "DataCite · Chen 原作精确关联 DOI 检索",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1002%2Flpor.202401595%22",
+      "kind": "repository_metadata",
+      "checked_on": "2026-11-20",
+      "scope": "2026-11-20 DataCite 精确关联 DOI 检索0项。Wiley载数据合理请求，补件文件lpor202401595-sup-0001-SuppMat.pdf；Zenodo API本次返回HTTP 500。"
     }
   ],
   "domains": {
@@ -148341,9 +148377,436 @@
               "checked_on": "2026-11-20"
             }
           }
+        },
+        {
+          "id": "chen2024tweezer_summary",
+          "model": "Chen 2024 · 2 mm 双波长光镊 · 实验汇总",
+          "study_id": "chen2024tweezer",
+          "specimen_id": "d2000_csi_tweezer",
+          "module": "",
+          "variant": "实制器件与共同作用点",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "可见红光边界780 nm和近红外852 nm的离散校正。结构、横向焦斑比较和效率约值在器件汇总呈现。",
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 p.2 §2.1；正式 PDF p.3 Fig.2a及图注",
+              "note": "圆形超构结构的实制直径2 mm，外部方形蓝宝石基片约10 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "original_value": 2,
+              "original_unit": "mm",
+              "sourceIds": [
+                "chen_atom_tweezer_vor_2024",
+                "chen_atom_tweezer_arxiv_2024"
+              ]
+            },
+            "na": {
+              "value": 0.46,
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF p.4 §2.1焦斑表征段",
+              "note": "原作者的设计 NA。作者把横向焦斑与 NA 0.40 对照，另以 NA 0.28 描述轴向等效表现。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "na_definition": "metalens_design"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF pp.3–4 §2.1电子束光刻和刻蚀段",
+              "note": "600 nm 单晶硅薄膜经刻蚀形成纳米结构。该厚度限于硅层。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "material": {
+              "value": "蓝宝石上交错排布的两类单晶硅纳米砖",
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 p.2 §2.1；正式 PDF p.3 Fig.2a–c",
+              "note": "对应族的横截面为160×110 nm（780 nm）和250×140 nm（852 nm），分别编码几何相位。Fig.2c 的转换效率是单元模拟。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "chen_atom_tweezer_vor_2024",
+                "chen_atom_tweezer_arxiv_2024"
+              ]
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF p.3 §2.1 相位式；p.4 §2.2探测束位置",
+              "note": "作者式以 f 表示目标焦距。正文称约2.6 mm的探测束实测焦点符合预期，设计 f 的独立数值与光学参考原点待核。用2 mm与NA0.46按空气几何反算约1.93 mm，仅作来源一致性核对。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "设计值待核"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF p.3 Fig.2d；正式摘要",
+              "note": "离散测点780 nm和852 nm。780 nm位于本库可见光上限，852 nm为近红外。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sample_wavelengths_nm": [
+                780,
+                852
+              ],
+              "display": "780／852 nm（离散双波长）",
+              "sourceIds": [
+                "chen_atom_tweezer_vor_2024",
+                "chen_atom_tweezer_arxiv_2024",
+                "chen_atom_tweezer_2024"
+              ]
+            },
+            "chromatic": {
+              "value": "两类波长选择性纳米砖配相位，实现离散双波长共同作用点",
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 pp.2–3 §2.1、p.5 §2.2；正式 PDF p.3 Fig.2d",
+              "note": "两路准直后法向入射，作者报告聚焦到同一位置，并用同一器件在852 nm俘获、780 nm收集荧光。正式p.4把实测YZ强度分布指向补件；主文未列独立两色轴扫焦差。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "chen_atom_tweezer_vor_2024",
+                "chen_atom_tweezer_arxiv_2024",
+                "chen_atom_tweezer_2024"
+              ]
+            },
+            "polarization": {
+              "value": "两类纳米砖同时实现几何相位与圆偏振选择",
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF p.3 Fig.2c、e；正式 p.4 §2.1",
+              "note": "Fig.2e 偏振测量属于俘获束；Fig.2d 两路径向焦斑没有逐色明确的入射偏振记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "psf_protocol": {
+              "value": "双波长实测径向剖面；作者报告束腰 1.33 μm、Rayleigh 长度 11.68 μm",
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF p.3 Fig.2d、p.4 §2.1焦斑表征段",
+              "note": "Fig.2d 横轴 Y (μm) −4至4，纵轴为0–1归一化强度。作者未给逐色采集面或调焦步骤、横向像素标定、归一化算法和二维原始数组。 作者只给一组 w₀、Zᵣ，未分别列 780/852 nm 的轴向扫描与各自拟合区间。束腰按原术语保存，Rayleigh 长度独立于焦移和轴向 FWHM。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "direction": "radial_y",
+              "raw_psf": null,
+              "sourceIds": [
+                "chen_atom_tweezer_vor_2024",
+                "chen_atom_tweezer_arxiv_2024"
+              ],
+              "reported_psf_waist_um": 1.33,
+              "reported_rayleigh_length_um": 11.68
+            },
+            "effective_na_from_psf": {
+              "value": 0.4,
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF p.4 §2.1横向束腰段",
+              "note": "原文称横向焦斑宽度接近 NA 0.40 物镜的聚焦表现，按作者比较值单列。未给逐色拟合 NA 或误差。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "approximate": true,
+              "calculation_origin": "authors",
+              "display": "约0.40（横向焦斑比较）"
+            },
+            "focus_variation_protocol": {
+              "value": "780 nm 侧视荧光焦点以芯片表面为参照；852 nm 与其光学对准",
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF pp.4–5 §2.2 与 Fig.3",
+              "note": "作者给出780 nm的约2.6 mm位置。3 mm为冷原子云的制备位置；缺少852 nm同参考下的轴向峰位、采样步长与残差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF pp.4–5 §2.2与Fig.3",
+              "note": "共同作用点为作者操作说明，缺少两条独立峰位或作者给出的差值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "sample_wavelengths_nm": [
+                780,
+                852
+              ],
+              "reference_plane": "芯片表面",
+              "display": "残余轴向焦差待补件核验"
+            },
+            "efficiency_protocol": {
+              "value": "两波长有效聚焦效率约22%；用5 μm光阑过滤焦束",
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF p.3 §2.1相位设计段（公式下方）",
+              "note": "正式p.3把效率测量光路指向补件。主文给两路共同约值及5 μm光阑；光阑半径／直径、采集面、逐色功率、分母和背景扣除待补件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "reported_common_efficiency_pct": 22,
+              "aperture_size_um": 5,
+              "aperture_size_definition": null,
+              "denominator": null,
+              "approximate": true,
+              "sample_wavelengths_nm": [
+                780,
+                852
+              ]
+            },
+            "mtf_curve": {
+              "value": "正式 Fig.2d 给径向强度曲线；YZ强度图指向补件",
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF p.3 Fig.2d、p.4 §2.1焦斑表征段；正式数据声明与补件目录",
+              "note": "核正式全文、作者稿及补件目录。正式p.4称补件含实测YZ平面的强度分布。作者合理请求提供数据，补件下载与直连HTTP 403。DataCite精确关联0项，Zenodo入口HTTP 500。arXiv源包仅列TeX、参考文献、模板和fig1–5.pdf等制图材料；未见独立数组。定量点对应径向剖面图，处理条件和二维PSF待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "chen_atom_tweezer_vor_2024",
+                "chen_atom_tweezer_arxiv_2024",
+                "chen_atom_tweezer_2024",
+                "chen_atom_tweezer_datacite_2024"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "independently_recomputed_mtf": null,
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "statement": "available_from_corresponding_author_on_reasonable_request"
+              }
+            }
+          }
+        },
+        {
+          "id": "chen2024tweezer_780",
+          "model": "Chen 2024 · 2 mm 双波长光镊 · 780 nm 探测／荧光",
+          "study_id": "chen2024tweezer",
+          "specimen_id": "d2000_csi_tweezer",
+          "module": "",
+          "variant": "780 nm 光学表征",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一只双波长超透镜的离散光学通道。",
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 p.2 §2.1；正式 PDF p.3 Fig.2a及图注",
+              "note": "圆形超构结构的实制直径2 mm，外部方形蓝宝石基片约10 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "original_value": 2,
+              "original_unit": "mm",
+              "sourceIds": [
+                "chen_atom_tweezer_vor_2024",
+                "chen_atom_tweezer_arxiv_2024"
+              ]
+            },
+            "na": {
+              "value": 0.46,
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF p.4 §2.1焦斑表征段",
+              "note": "原作者的设计 NA。作者把横向焦斑与 NA 0.40 对照，另以 NA 0.28 描述轴向等效表现。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "na_definition": "metalens_design"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF pp.3–4 §2.1电子束光刻和刻蚀段",
+              "note": "600 nm 单晶硅薄膜经刻蚀形成纳米结构。该厚度限于硅层。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "material": {
+              "value": "蓝宝石上交错排布的两类单晶硅纳米砖",
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 p.2 §2.1；正式 PDF p.3 Fig.2a–c",
+              "note": "对应族的横截面为160×110 nm（780 nm）和250×140 nm（852 nm），分别编码几何相位。Fig.2c 的转换效率是单元模拟。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "chen_atom_tweezer_vor_2024",
+                "chen_atom_tweezer_arxiv_2024"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 780,
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF p.3 Fig.2d左图标签；正式摘要",
+              "note": "780 nm为探测／荧光通道，径向焦斑有实测点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "chen_atom_tweezer_vor_2024",
+                "chen_atom_tweezer_arxiv_2024",
+                "chen_atom_tweezer_2024"
+              ]
+            },
+            "psf_protocol": {
+              "value": "780 nm 径向 Y 归一化实测焦斑；成像采集面未给",
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF p.3 Fig.2d左图与p.4 §2.1",
+              "note": "Fig.2d 横轴 Y (μm) −4至4，纵轴为0–1归一化强度。作者未给逐色采集面或调焦步骤、横向像素标定、归一化算法和二维原始数组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "direction": "radial_y",
+              "raw_psf": null,
+              "sourceIds": [
+                "chen_atom_tweezer_vor_2024",
+                "chen_atom_tweezer_arxiv_2024"
+              ]
+            },
+            "measured_focal_um": {
+              "value": 2600,
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF pp.4–5 §2.2、p.5 Fig.3插图与图注",
+              "note": "用近共振780 nm激发池内背景铷原子，侧视荧光显示轴向聚焦。约值自芯片表面计入真空侧，未报告误差或轴扫拟合。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "reference_plane": "芯片表面",
+              "sourceIds": [
+                "chen_atom_tweezer_vor_2024",
+                "chen_atom_tweezer_arxiv_2024"
+              ],
+              "approximate": true,
+              "original_value": 2.6,
+              "original_unit": "mm",
+              "position_definition": "side_view_fluorescence_focus",
+              "display": "约2600（芯片表面起算）"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF p.3 Fig.2d左图",
+              "note": "正式Fig.2d提供归一化径向剖面和作者束腰报告。该路实测半高全宽未印数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "仅径向剖面；FWHM未印数"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF p.3 §2.1相位设计段",
+              "note": "作者给两路约22%的共同报告。该波长的单独数值、逐色原始功率与功率分母待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "双波长约22%；独立值待核",
+              "reported_common_efficiency_pct": 22
+            }
+          }
+        },
+        {
+          "id": "chen2024tweezer_852",
+          "model": "Chen 2024 · 2 mm 双波长光镊 · 852 nm 俘获",
+          "study_id": "chen2024tweezer",
+          "specimen_id": "d2000_csi_tweezer",
+          "module": "",
+          "variant": "852 nm 光学表征",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一只双波长超透镜的离散光学通道。",
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 p.2 §2.1；正式 PDF p.3 Fig.2a及图注",
+              "note": "圆形超构结构的实制直径2 mm，外部方形蓝宝石基片约10 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "original_value": 2,
+              "original_unit": "mm",
+              "sourceIds": [
+                "chen_atom_tweezer_vor_2024",
+                "chen_atom_tweezer_arxiv_2024"
+              ]
+            },
+            "na": {
+              "value": 0.46,
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF p.4 §2.1焦斑表征段",
+              "note": "原作者的设计 NA。作者把横向焦斑与 NA 0.40 对照，另以 NA 0.28 描述轴向等效表现。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "na_definition": "metalens_design"
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF pp.3–4 §2.1电子束光刻和刻蚀段",
+              "note": "600 nm 单晶硅薄膜经刻蚀形成纳米结构。该厚度限于硅层。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "material": {
+              "value": "蓝宝石上交错排布的两类单晶硅纳米砖",
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 p.2 §2.1；正式 PDF p.3 Fig.2a–c",
+              "note": "对应族的横截面为160×110 nm（780 nm）和250×140 nm（852 nm），分别编码几何相位。Fig.2c 的转换效率是单元模拟。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "chen_atom_tweezer_vor_2024",
+                "chen_atom_tweezer_arxiv_2024"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 852,
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF p.3 Fig.2d右图标签；正式摘要",
+              "note": "852 nm为俘获通道，径向焦斑有实测点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "chen_atom_tweezer_vor_2024",
+                "chen_atom_tweezer_arxiv_2024",
+                "chen_atom_tweezer_2024"
+              ]
+            },
+            "psf_protocol": {
+              "value": "852 nm 径向 Y 归一化实测焦斑；成像采集面未给",
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF p.3 Fig.2d右图与p.4 §2.1",
+              "note": "Fig.2d 横轴 Y (μm) −4至4，纵轴为0–1归一化强度。作者未给逐色采集面或调焦步骤、横向像素标定、归一化算法和二维原始数组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "direction": "radial_y",
+              "raw_psf": null,
+              "sourceIds": [
+                "chen_atom_tweezer_vor_2024",
+                "chen_atom_tweezer_arxiv_2024"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF pp.4–5 §2.2、p.5 Fig.3插图与图注",
+              "note": "正式Fig.3只显示780 nm侧视焦斑，§2.2报告两束准直后同位置。正式p.4指向补件YZ强度分布，852 nm独立轴向峰位待补件核验。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "reference_plane": "芯片表面",
+              "sourceIds": [
+                "chen_atom_tweezer_vor_2024",
+                "chen_atom_tweezer_arxiv_2024"
+              ],
+              "display": "同参考面的实测峰位待补件核验"
+            },
+            "fwhm_y_um": {
+              "value": null,
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF p.3 Fig.2d右图",
+              "note": "正式Fig.2d提供归一化径向剖面和作者束腰报告。该路实测半高全宽未印数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "仅径向剖面；FWHM未印数"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "chen_atom_tweezer_vor_2024",
+              "location": "正式 PDF p.3 §2.1相位设计段",
+              "note": "作者给两路约22%的共同报告。该波长的单独数值、逐色原始功率与功率分母待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "双波长约22%；独立值待核",
+              "reported_common_efficiency_pct": 22
+            }
+          }
         }
       ],
-      "scope": "52项原始研究、280个器件/测量/系统配置、1209条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
+      "scope": "53项原始研究、281个器件/测量/系统配置、1216条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",

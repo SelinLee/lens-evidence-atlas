@@ -22,7 +22,7 @@ test('only three explicitly printed author-manuscript focal lengths and six capt
   const v=get('aml_'+w);assert.equal(v.measured_focal_um.value,f);assert.equal(v.measured_focal_um.basis,'measured');assert.equal(v.measured_focal_um.reading_version,'arXiv:1701.06696v1');assert.match(v.measured_focal_um.location,new RegExp('Fig.5'+panel));assert.match(v.measured_focal_um.display,/arXiv v1印字/);assert.equal(v.fwhm_x_um.value,x);assert.equal(v.fwhm_y_um.value,y);assert.equal(v.design_focal_um.value,485);
  }
  for(const w of [500,510,530,540]){assert.equal(get('aml_'+w).measured_focal_um.value,null);assert.equal(get('aml_'+w).fwhm_x_um.value,null);assert.equal(get('aml_'+w).axial_focus_offset_um,undefined);}
- assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,3);assert.equal(axisPoints(rows,'wavelength_nm','fwhm_x_um').length,3);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,46);
+ assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,3);assert.equal(axisPoints(rows,'wavelength_nm','fwhm_x_um').length,3);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,47);
 });
 
 test('fixed evaluation planes do not duplicate best-focus measurements or transfer their widths',()=>{
