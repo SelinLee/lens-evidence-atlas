@@ -2682,6 +2682,65 @@
       "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1002%2Flpor.202300880%22&page%5Bsize%5D=25",
       "scope": "精确关联原论文 DOI，HTTP 200，返回零项。",
       "checked_on": "2026-11-20"
+    },
+    {
+      "id": "ou_ir_polar_2020",
+      "kind": "paper",
+      "doi": "10.1126/sciadv.abc0711",
+      "title": "Mid-infrared polarization-controlled broadband achromatic metadevice",
+      "url": "https://www.science.org/doi/10.1126/sciadv.abc0711",
+      "scope": "期刊题录，2020-09-11 发表，6 卷 eabc0711。两种实物、同篇分组。",
+      "checked_on": "2026-11-20"
+    },
+    {
+      "id": "ou_ir_polar_pmc_2020",
+      "publication_source": "ou_ir_polar_2020",
+      "title": "Ou 2020 · PMC 存档正式 PDF",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC7486104.1/PMC7486104.1.pdf",
+      "scope": "核八页正式 PDF，Results、Materials and Methods、Figs. 1–5、数据声明；视觉核轴扫与分束图。",
+      "checked_on": "2026-11-20",
+      "kind": "publisher_pdf"
+    },
+    {
+      "id": "ou_ir_polar_si_2020",
+      "publication_source": "ou_ir_polar_2020",
+      "title": "Ou 2020 · abc0711_SM.pdf",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC7486104.1/abc0711_SM.pdf",
+      "scope": "核十一页正式补件，§S2 Fig. S3 是 BAFS 实物 SEM，§S1、§S3 为设计及模拟。",
+      "checked_on": "2026-11-20",
+      "kind": "supplementary_material"
+    },
+    {
+      "id": "ou_ir_polar_archive_2020",
+      "publication_source": "ou_ir_polar_2020",
+      "title": "Ou 2020 · PMC 开放存档文件清单",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC7486104.1/PMC7486104.1.json",
+      "scope": "清单列 Fig. 1–5 的图版、补件 PDF 和六段偏振旋转视频。实取全部六段视频，S1/S4 已视觉核对及查编解码；无逐色 z 栈或数表。",
+      "checked_on": "2026-11-20"
+    },
+    {
+      "id": "ou_ir_polar_crossref_2020",
+      "publication_source": "ou_ir_polar_2020",
+      "title": "Ou 2020 · Crossref 引文与正式日期",
+      "url": "https://api.crossref.org/works/10.1126/sciadv.abc0711",
+      "scope": "2026-11-20 查询为 151 次，正式发表 2020-09-11。",
+      "checked_on": "2026-11-20"
+    },
+    {
+      "id": "ou_ir_polar_openalex_2020",
+      "publication_source": "ou_ir_polar_2020",
+      "title": "Ou 2020 · OpenAlex 引文",
+      "url": "https://api.openalex.org/works/https://doi.org/10.1126/sciadv.abc0711",
+      "scope": "2026-11-20 查询为 158 次。",
+      "checked_on": "2026-11-20"
+    },
+    {
+      "id": "ou_ir_polar_datacite_2020",
+      "publication_source": "ou_ir_polar_2020",
+      "title": "Ou 2020 · DataCite 关联数据检索",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1126%2Fsciadv.abc0711%22&page%5Bsize%5D=25",
+      "scope": "精确关联原论文 DOI，HTTP 200，零项。",
+      "checked_on": "2026-11-20"
     }
   ],
   "domains": {
@@ -6645,6 +6704,22 @@
             {
               "source": "ji_sted_vor_2025",
               "location": "正式 PDF p.5 Fig. 4C、Fig. 5C 与正文"
+            }
+          ]
+        },
+        {
+          "id": "polarization_isolation_ratio",
+          "label": "焦区偏振隔离比（功率比）",
+          "numeric": true,
+          "definition": "偏振选定焦区功率对泄漏焦区功率的无量纲比。保留单波长或作者报告的跨条件最大值。",
+          "conditions": "入射偏振、波长、评价平面、焦区与泄漏区位置和积分尺度；数值并非聚焦效率或 dB。",
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "ou_ir_polar_pmc_2020",
+              "location": "主文 p.1 摘要；p.6 Fig. 5f 及偏振隔离定义段"
             }
           ]
         }
@@ -153777,6 +153852,2343 @@
               }
             },
             "visible_light_use": true
+          },
+          {
+            "id": "ou2020polarized_bafov_summary",
+            "model": "Ou 2020 · BAFOV 同轴实物",
+            "module": "",
+            "variant": "BAFOV 同轴实物",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafov",
+            "measurement_scope": "同一器件两线偏振的轴向消色差和焦斑测量汇总。",
+            "values": {
+              "design_focal_um": {
+                "value": 200,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 BAFOV 设计与制备段；p.5 BAFS 设计段、式 (2)",
+                "note": "作者给两正交入射偏振通道相同名义设计焦距。保留实验轴峰空缺。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "lambda_min_nm": {
+                "value": 3500,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.2 Results 首段；p.4 BAFOV；pp.5–6 BAFS；补件 §S3",
+                "note": "连续设计波段下限，另有六个离散滤光中心。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "lambda_max_nm": {
+                "value": 5000,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.2 Results 首段；p.4 BAFOV；pp.5–6 BAFS；补件 §S3",
+                "note": "连续设计及模拟范围上限，实测面板没有 5000 nm 中心点。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 pp.4–6 Figs. 3a–c、5a–g 及滤片段",
+                "note": "本行为器件汇总，作者的光谱测量用六个滤片中心。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "3500／3750／4000／4250／4500／4750 nm（离散）"
+              },
+              "material": {
+                "value": "双面抛光单晶硅晶圆／椭圆形双折射硅纳米柱",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.2 Fig. 1b；p.3 硅片；p.4 椭圆柱；p.7 Sample preparation",
+                "note": "椭圆柱沿长短轴的相位色散不同，分别匹配正交偏振。p.4 方阵周期 1650 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "thickness_um": {
+                "value": 500,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 色散库末段；p.7 Sample preparation",
+                "note": "作者以台阶仪确认原晶圆厚度，刻蚀柱高使用独立字段。",
+                "basis": "measured",
+                "checked_on": "2026-11-20"
+              },
+              "diameter_um": {
+                "value": 200,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 BAFOV 制备段；p.2 Fig. 1d",
+                "note": "作者直接印出 BAFOV 实物口径。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "na": {
+                "value": 0.447,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 BAFOV 设计与制备段",
+                "note": "本库按口径 200 μm、f=200 μm 及空气侧圆孔几何估算，保留三位小数。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "atlas",
+                "formula": "R / sqrt(R^2 + f^2)",
+                "radius_um": 100,
+                "design_focal_um": 200,
+                "approximate": true,
+                "display": "约 0.447（几何设计，本库计算）"
+              },
+              "chromatic": {
+                "value": "各偏振独立匹配共振相位色散及材料色散，同轴实心／涡旋的轴向焦位在多色下近似稳定",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 pp.3–6 式 (1)–(2)、Figs. 2–5；补件 §§S1–S3",
+                "note": "2026-11-20 查询 Crossref 151 次、OpenAlex 158 次，凭两只实制器件的实测轴向图纳入经典中红外研究。 六中心波长均为 3500–4750 nm 范围实测。5000 nm 只列入连续设计和模型。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sample_wavelengths_nm": [
+                  3500,
+                  3750,
+                  4000,
+                  4250,
+                  4500,
+                  4750
+                ],
+                "spectral_sampling": "six_bandpass_filter_centers",
+                "sourceIds": [
+                  "ou_ir_polar_pmc_2020",
+                  "ou_ir_polar_si_2020",
+                  "ou_ir_polar_crossref_2020",
+                  "ou_ir_polar_openalex_2020"
+                ]
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 2b、3a–f",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": 0,
+                "input_polarization": null,
+                "object_space_pixel_um": null
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3c",
+                "note": "实验与模型都显示在焦距图中。图注误差棒是焦强保持在最大值的轴向区间。无逐谱点峰位数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "focus_error_pct": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 pp.4–5 Fig. 3c 及光学表征段",
+                "note": "作者在比较模拟与实测时写相对平均焦距最大偏差 5%。未明确该值来自哪条偏振／证据序列、平均值或精确统计式。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "作者报告最大 5%；统计归属待核",
+                "reported_upper_pct": 5,
+                "reported_lower_pct": null,
+                "sample_wavelengths_nm": [
+                  3500,
+                  3750,
+                  4000,
+                  4250,
+                  4500,
+                  4750
+                ],
+                "reference_focal_um": null
+              },
+              "focus_error_protocol": {
+                "value": "相对平均焦距；实验和模拟图例分列",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 pp.4–5 Fig. 3c 及光学表征段",
+                "note": "作者在比较模拟与实测时写相对平均焦距最大偏差 5%。未明确该值来自哪条偏振／证据序列、平均值或精确统计式。 补件中的模拟序列与主文的 Exp. 系列各自保留。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "reference_wavelength_nm": null,
+                "reference_focal_um": null,
+                "sourceIds": [
+                  "ou_ir_polar_pmc_2020",
+                  "ou_ir_polar_si_2020"
+                ]
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 Figs. 1–5 与 pp.6–7 Methods；补件 §§S1–S3",
+                "note": "现有公开材料未见焦区功率与器件入射功率的实测比。偏振隔离、库单元透射和聚焦效率各有自己的功率定义。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实物聚焦效率待核"
+              },
+              "mtf_curve": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 Results 和 p.8 数据声明；补件 §§S1–S3；PMC 文件清单与 DataCite",
+                "note": "已核出版件含排版焦场、图版和旋转偏振的视频。原始轴扫堆栈、PSF 强度标定或 MTF 数组未定位，作者允许合理请求。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "PSF 图与偏振视频可查",
+                "sourceIds": [
+                  "ou_ir_polar_pmc_2020",
+                  "ou_ir_polar_si_2020",
+                  "ou_ir_polar_archive_2020",
+                  "ou_ir_polar_datacite_2020"
+                ],
+                "data_availability": {
+                  "status": "no_mtf_in_checked_material",
+                  "author_numeric_mtf": null,
+                  "raw_psf": null,
+                  "independently_recomputed_mtf": null,
+                  "specimen": "bafov",
+                  "search_log": "OU_2020_MWIR_POLARIZATION_REVIEW_2026-11-20.md"
+                }
+              },
+              "height_nm": {
+                "value": 4500,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.2 Fig. 1b 图注",
+                "note": "图注 H 为全硅图案结构层高度。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafov_x_3500",
+            "model": "Ou 2020 · BAFOV 同轴实物 · x · 3500 nm",
+            "module": "",
+            "variant": "BAFOV 同轴实物 · x · 3500 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafov",
+            "measurement_scope": "同轴实心／涡旋的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 3500,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3a、c，3500 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-3500-500nm"
+              },
+              "polarization": {
+                "value": "x 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.2 Fig. 1a；p.4 Fig. 3a,b",
+                "note": "所选偏振产生指定拓扑荷。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "x",
+                "topological_charge": 0,
+                "designed_output_angle_deg": 0
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3c，3500 nm／x 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中。图注误差棒是焦强保持在最大值的轴向区间。无逐谱点峰位数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 2b、3a–f",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": 0,
+                "input_polarization": "x",
+                "object_space_pixel_um": null
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3f，3500 nm 实测点",
+                "note": "Fig. 3f 只画 x 偏振实心通道宽度，精确数值和统一取宽方向未印。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafov_x_3750",
+            "model": "Ou 2020 · BAFOV 同轴实物 · x · 3750 nm",
+            "module": "",
+            "variant": "BAFOV 同轴实物 · x · 3750 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafov",
+            "measurement_scope": "同轴实心／涡旋的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 3750,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3a、c，3750 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-3750-500nm"
+              },
+              "polarization": {
+                "value": "x 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.2 Fig. 1a；p.4 Fig. 3a,b",
+                "note": "所选偏振产生指定拓扑荷。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "x",
+                "topological_charge": 0,
+                "designed_output_angle_deg": 0
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3c，3750 nm／x 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中。图注误差棒是焦强保持在最大值的轴向区间。无逐谱点峰位数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 2b、3a–f",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": 0,
+                "input_polarization": "x",
+                "object_space_pixel_um": null
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3f，3750 nm 实测点",
+                "note": "Fig. 3f 只画 x 偏振实心通道宽度，精确数值和统一取宽方向未印。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafov_x_4000",
+            "model": "Ou 2020 · BAFOV 同轴实物 · x · 4000 nm",
+            "module": "",
+            "variant": "BAFOV 同轴实物 · x · 4000 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafov",
+            "measurement_scope": "同轴实心／涡旋的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 4000,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3a、c，4000 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-4000-500nm"
+              },
+              "polarization": {
+                "value": "x 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.2 Fig. 1a；p.4 Fig. 3a,b",
+                "note": "所选偏振产生指定拓扑荷。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "x",
+                "topological_charge": 0,
+                "designed_output_angle_deg": 0
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3c，4000 nm／x 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中。图注误差棒是焦强保持在最大值的轴向区间。无逐谱点峰位数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 2b、3a–f",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": 0,
+                "input_polarization": "x",
+                "object_space_pixel_um": null
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3f，4000 nm 实测点",
+                "note": "Fig. 3f 只画 x 偏振实心通道宽度，精确数值和统一取宽方向未印。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafov_x_4250",
+            "model": "Ou 2020 · BAFOV 同轴实物 · x · 4250 nm",
+            "module": "",
+            "variant": "BAFOV 同轴实物 · x · 4250 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafov",
+            "measurement_scope": "同轴实心／涡旋的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 4250,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3a、c，4250 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-4250-500nm"
+              },
+              "polarization": {
+                "value": "x 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.2 Fig. 1a；p.4 Fig. 3a,b",
+                "note": "所选偏振产生指定拓扑荷。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "x",
+                "topological_charge": 0,
+                "designed_output_angle_deg": 0
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3c，4250 nm／x 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中。图注误差棒是焦强保持在最大值的轴向区间。无逐谱点峰位数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 2b、3a–f",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": 0,
+                "input_polarization": "x",
+                "object_space_pixel_um": null
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3f，4250 nm 实测点",
+                "note": "Fig. 3f 只画 x 偏振实心通道宽度，精确数值和统一取宽方向未印。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafov_x_4500",
+            "model": "Ou 2020 · BAFOV 同轴实物 · x · 4500 nm",
+            "module": "",
+            "variant": "BAFOV 同轴实物 · x · 4500 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafov",
+            "measurement_scope": "同轴实心／涡旋的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 4500,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3a、c，4500 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-4500-500nm"
+              },
+              "polarization": {
+                "value": "x 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.2 Fig. 1a；p.4 Fig. 3a,b",
+                "note": "所选偏振产生指定拓扑荷。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "x",
+                "topological_charge": 0,
+                "designed_output_angle_deg": 0
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3c，4500 nm／x 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中。图注误差棒是焦强保持在最大值的轴向区间。无逐谱点峰位数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 2b、3a–f",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": 0,
+                "input_polarization": "x",
+                "object_space_pixel_um": null
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3f，4500 nm 实测点",
+                "note": "Fig. 3f 只画 x 偏振实心通道宽度，精确数值和统一取宽方向未印。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafov_x_4750",
+            "model": "Ou 2020 · BAFOV 同轴实物 · x · 4750 nm",
+            "module": "",
+            "variant": "BAFOV 同轴实物 · x · 4750 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafov",
+            "measurement_scope": "同轴实心／涡旋的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 4750,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3a、c，4750 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-4750-500nm"
+              },
+              "polarization": {
+                "value": "x 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.2 Fig. 1a；p.4 Fig. 3a,b",
+                "note": "所选偏振产生指定拓扑荷。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "x",
+                "topological_charge": 0,
+                "designed_output_angle_deg": 0
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3c，4750 nm／x 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中。图注误差棒是焦强保持在最大值的轴向区间。无逐谱点峰位数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 2b、3a–f",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": 0,
+                "input_polarization": "x",
+                "object_space_pixel_um": null
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3f，4750 nm 实测点",
+                "note": "Fig. 3f 只画 x 偏振实心通道宽度，精确数值和统一取宽方向未印。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafov_y_3500",
+            "model": "Ou 2020 · BAFOV 同轴实物 · y · 3500 nm",
+            "module": "",
+            "variant": "BAFOV 同轴实物 · y · 3500 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafov",
+            "measurement_scope": "同轴实心／涡旋的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 3500,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3b、c，3500 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-3500-500nm"
+              },
+              "polarization": {
+                "value": "y 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.2 Fig. 1a；p.4 Fig. 3a,b",
+                "note": "所选偏振产生指定拓扑荷。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "y",
+                "topological_charge": 2,
+                "designed_output_angle_deg": 0
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3c，3500 nm／y 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中。图注误差棒是焦强保持在最大值的轴向区间。无逐谱点峰位数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 2b、3a–f",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": 0,
+                "input_polarization": "y",
+                "object_space_pixel_um": null
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafov_y_3750",
+            "model": "Ou 2020 · BAFOV 同轴实物 · y · 3750 nm",
+            "module": "",
+            "variant": "BAFOV 同轴实物 · y · 3750 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafov",
+            "measurement_scope": "同轴实心／涡旋的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 3750,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3b、c，3750 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-3750-500nm"
+              },
+              "polarization": {
+                "value": "y 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.2 Fig. 1a；p.4 Fig. 3a,b",
+                "note": "所选偏振产生指定拓扑荷。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "y",
+                "topological_charge": 2,
+                "designed_output_angle_deg": 0
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3c，3750 nm／y 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中。图注误差棒是焦强保持在最大值的轴向区间。无逐谱点峰位数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 2b、3a–f",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": 0,
+                "input_polarization": "y",
+                "object_space_pixel_um": null
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafov_y_4000",
+            "model": "Ou 2020 · BAFOV 同轴实物 · y · 4000 nm",
+            "module": "",
+            "variant": "BAFOV 同轴实物 · y · 4000 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafov",
+            "measurement_scope": "同轴实心／涡旋的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 4000,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3b、c，4000 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-4000-500nm"
+              },
+              "polarization": {
+                "value": "y 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.2 Fig. 1a；p.4 Fig. 3a,b",
+                "note": "所选偏振产生指定拓扑荷。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "y",
+                "topological_charge": 2,
+                "designed_output_angle_deg": 0
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3c，4000 nm／y 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中。图注误差棒是焦强保持在最大值的轴向区间。无逐谱点峰位数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 2b、3a–f",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": 0,
+                "input_polarization": "y",
+                "object_space_pixel_um": null
+              },
+              "fwhm_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3e，4000 nm 归一化 x/y 截线",
+                "note": "这是 y 偏振的环状焦斑，未给环内或环外的半高宽数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "环状焦斑截线可查"
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafov_y_4250",
+            "model": "Ou 2020 · BAFOV 同轴实物 · y · 4250 nm",
+            "module": "",
+            "variant": "BAFOV 同轴实物 · y · 4250 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafov",
+            "measurement_scope": "同轴实心／涡旋的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 4250,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3b、c，4250 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-4250-500nm"
+              },
+              "polarization": {
+                "value": "y 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.2 Fig. 1a；p.4 Fig. 3a,b",
+                "note": "所选偏振产生指定拓扑荷。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "y",
+                "topological_charge": 2,
+                "designed_output_angle_deg": 0
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3c，4250 nm／y 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中。图注误差棒是焦强保持在最大值的轴向区间。无逐谱点峰位数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 2b、3a–f",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": 0,
+                "input_polarization": "y",
+                "object_space_pixel_um": null
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafov_y_4500",
+            "model": "Ou 2020 · BAFOV 同轴实物 · y · 4500 nm",
+            "module": "",
+            "variant": "BAFOV 同轴实物 · y · 4500 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafov",
+            "measurement_scope": "同轴实心／涡旋的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 4500,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3b、c，4500 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-4500-500nm"
+              },
+              "polarization": {
+                "value": "y 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.2 Fig. 1a；p.4 Fig. 3a,b",
+                "note": "所选偏振产生指定拓扑荷。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "y",
+                "topological_charge": 2,
+                "designed_output_angle_deg": 0
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3c，4500 nm／y 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中。图注误差棒是焦强保持在最大值的轴向区间。无逐谱点峰位数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 2b、3a–f",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": 0,
+                "input_polarization": "y",
+                "object_space_pixel_um": null
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafov_y_4750",
+            "model": "Ou 2020 · BAFOV 同轴实物 · y · 4750 nm",
+            "module": "",
+            "variant": "BAFOV 同轴实物 · y · 4750 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafov",
+            "measurement_scope": "同轴实心／涡旋的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 4750,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3b、c，4750 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-4750-500nm"
+              },
+              "polarization": {
+                "value": "y 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.2 Fig. 1a；p.4 Fig. 3a,b",
+                "note": "所选偏振产生指定拓扑荷。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "y",
+                "topological_charge": 2,
+                "designed_output_angle_deg": 0
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 Fig. 3c，4750 nm／y 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中。图注误差棒是焦强保持在最大值的轴向区间。无逐谱点峰位数表。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 2b、3a–f",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": 0,
+                "input_polarization": "y",
+                "object_space_pixel_um": null
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafs_summary",
+            "model": "Ou 2020 · BAFS 分束实物",
+            "module": "",
+            "variant": "BAFS 分束实物",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafs",
+            "measurement_scope": "同一器件两线偏振的轴向消色差和焦斑测量汇总。",
+            "values": {
+              "design_focal_um": {
+                "value": 200,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.4 BAFOV 设计与制备段；p.5 BAFS 设计段、式 (2)",
+                "note": "作者给两正交入射偏振通道相同名义设计焦距。保留实验轴峰空缺。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "lambda_min_nm": {
+                "value": 3500,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.2 Results 首段；p.4 BAFOV；pp.5–6 BAFS；补件 §S3",
+                "note": "连续设计波段下限，另有六个离散滤光中心。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "lambda_max_nm": {
+                "value": 5000,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.2 Results 首段；p.4 BAFOV；pp.5–6 BAFS；补件 §S3",
+                "note": "连续设计及模拟范围上限，实测面板没有 5000 nm 中心点。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 pp.4–6 Figs. 3a–c、5a–g 及滤片段",
+                "note": "本行为器件汇总，作者的光谱测量用六个滤片中心。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "3500／3750／4000／4250／4500／4750 nm（离散）"
+              },
+              "material": {
+                "value": "双面抛光单晶硅晶圆／椭圆形双折射硅纳米柱",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.2 Fig. 1b；p.3 硅片；p.4 椭圆柱；p.7 Sample preparation",
+                "note": "椭圆柱沿长短轴的相位色散不同，分别匹配正交偏振。p.4 方阵周期 1650 nm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "thickness_um": {
+                "value": 500,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 色散库末段；p.7 Sample preparation",
+                "note": "作者以台阶仪确认原晶圆厚度，刻蚀柱高使用独立字段。",
+                "basis": "measured",
+                "checked_on": "2026-11-20"
+              },
+              "diameter_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "补件 p.7 §S2 Fig. S3a；主文 p.5 BAFS 设计段",
+                "note": "Fig. S3a 的 18 μm 是 SEM 比例尺。主文所提补图编号和副标题与补件存在交叉引用误差，实物 SEM 以补件 Fig. S3 为准。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "SEM 可查；口径未印",
+                "sourceIds": [
+                  "ou_ir_polar_pmc_2020",
+                  "ou_ir_polar_si_2020"
+                ]
+              },
+              "na": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.5 BAFS 设计段；补件 p.7 Fig. S3a",
+                "note": "有效口径及实测 NA 未给。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "待原始数值"
+              },
+              "chromatic": {
+                "value": "各偏振独立匹配共振相位色散及材料色散，左右分束的轴向焦位在多色下近似稳定",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 pp.3–6 式 (1)–(2)、Figs. 2–5；补件 §§S1–S3",
+                "note": "2026-11-20 查询 Crossref 151 次、OpenAlex 158 次，凭两只实制器件的实测轴向图纳入经典中红外研究。 六中心波长均为 3500–4750 nm 范围实测。5000 nm 只列入连续设计和模型。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sample_wavelengths_nm": [
+                  3500,
+                  3750,
+                  4000,
+                  4250,
+                  4500,
+                  4750
+                ],
+                "spectral_sampling": "six_bandpass_filter_centers",
+                "sourceIds": [
+                  "ou_ir_polar_pmc_2020",
+                  "ou_ir_polar_si_2020",
+                  "ou_ir_polar_crossref_2020",
+                  "ou_ir_polar_openalex_2020"
+                ]
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 4b、5a–g",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": null,
+                "input_polarization": null,
+                "object_space_pixel_um": null
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5d",
+                "note": "实验与模型都显示在焦距图中，未取得两偏振的逐点轴向峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "focus_error_pct": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5d 及 BAFS 表征段",
+                "note": "作者在合绘模拟及实测的 Fig. 5d 相关段写相对平均焦距偏差 1%–6.5%，未给归属序列及平均值。补件 S6 的 1.5%–6.5% 明属模拟。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "作者报告 1%–6.5%；统计归属待核",
+                "reported_upper_pct": 6.5,
+                "reported_lower_pct": 1,
+                "sample_wavelengths_nm": [
+                  3500,
+                  3750,
+                  4000,
+                  4250,
+                  4500,
+                  4750
+                ],
+                "reference_focal_um": null
+              },
+              "focus_error_protocol": {
+                "value": "相对平均焦距；实验和模拟图例分列",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5d 及 BAFS 表征段",
+                "note": "作者在合绘模拟及实测的 Fig. 5d 相关段写相对平均焦距偏差 1%–6.5%，未给归属序列及平均值。补件 S6 的 1.5%–6.5% 明属模拟。 补件中的模拟序列与主文的 Exp. 系列各自保留。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "reference_wavelength_nm": null,
+                "reference_focal_um": null,
+                "sourceIds": [
+                  "ou_ir_polar_pmc_2020",
+                  "ou_ir_polar_si_2020"
+                ]
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 Figs. 1–5 与 pp.6–7 Methods；补件 §§S1–S3",
+                "note": "现有公开材料未见焦区功率与器件入射功率的实测比。偏振隔离、库单元透射和聚焦效率各有自己的功率定义。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实物聚焦效率待核"
+              },
+              "mtf_curve": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 Results 和 p.8 数据声明；补件 §§S1–S3；PMC 文件清单与 DataCite",
+                "note": "已核出版件含排版焦场、图版和旋转偏振的视频。原始轴扫堆栈、PSF 强度标定或 MTF 数组未定位，作者允许合理请求。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "PSF 图与偏振视频可查",
+                "sourceIds": [
+                  "ou_ir_polar_pmc_2020",
+                  "ou_ir_polar_si_2020",
+                  "ou_ir_polar_archive_2020",
+                  "ou_ir_polar_datacite_2020"
+                ],
+                "data_availability": {
+                  "status": "no_mtf_in_checked_material",
+                  "author_numeric_mtf": null,
+                  "raw_psf": null,
+                  "independently_recomputed_mtf": null,
+                  "specimen": "bafs",
+                  "search_log": "OU_2020_MWIR_POLARIZATION_REVIEW_2026-11-20.md"
+                }
+              },
+              "polarization_isolation_ratio": {
+                "value": 21,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.1 摘要；p.6 Fig. 5f 及偏振隔离定义段",
+                "note": "作者报告最高功率比。以通道焦斑中心、直径为该焦斑 FWHM 的圆区为分子，以关于 y 轴镜像位置的等尺寸圆区为分母。主文汇总文字未标对应波长、偏振或 FWHM 截向。",
+                "basis": "derived_from_measurement",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "statistic": "author_reported_maximum",
+                "unit": "power_ratio",
+                "sample_wavelengths_nm": [
+                  3500,
+                  3750,
+                  4000,
+                  4250,
+                  4500,
+                  4750
+                ],
+                "input_polarization": null,
+                "numerator": "selected_focal_disk_power",
+                "denominator": "mirror_symmetric_focal_disk_power",
+                "region_shape": "circle",
+                "aperture_diameter_fwhm_multiple": 1,
+                "reflection_axis": "y",
+                "display": "21（作者最高功率比）"
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafs_x_3500",
+            "model": "Ou 2020 · BAFS 分束实物 · x · 3500 nm",
+            "module": "",
+            "variant": "BAFS 分束实物 · x · 3500 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafs",
+            "measurement_scope": "左右分束的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 3500,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5a、d，3500 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-3500-500nm"
+              },
+              "polarization": {
+                "value": "x 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.5 Fig. 4b；p.6 Fig. 5a,b",
+                "note": "所选偏振对应名义输出角。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "x",
+                "topological_charge": 0,
+                "designed_output_angle_deg": -5.5
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5d，3500 nm／x 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中，未取得两偏振的逐点轴向峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 4b、5a–g",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": -5.5,
+                "input_polarization": "x",
+                "object_space_pixel_um": null
+              },
+              "fwhm_x_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，3500 nm／x 偏振 x 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "fwhm_y_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，3500 nm／x 偏振 y 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "polarization_isolation_ratio": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5f，3500 nm／x 偏振",
+                "note": "作者有实测谱点图，精确数值及各位置原始积分功率未取到。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测隔离比图可查"
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafs_x_3750",
+            "model": "Ou 2020 · BAFS 分束实物 · x · 3750 nm",
+            "module": "",
+            "variant": "BAFS 分束实物 · x · 3750 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafs",
+            "measurement_scope": "左右分束的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 3750,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5a、d，3750 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-3750-500nm"
+              },
+              "polarization": {
+                "value": "x 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.5 Fig. 4b；p.6 Fig. 5a,b",
+                "note": "所选偏振对应名义输出角。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "x",
+                "topological_charge": 0,
+                "designed_output_angle_deg": -5.5
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5d，3750 nm／x 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中，未取得两偏振的逐点轴向峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 4b、5a–g",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": -5.5,
+                "input_polarization": "x",
+                "object_space_pixel_um": null
+              },
+              "fwhm_x_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，3750 nm／x 偏振 x 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "fwhm_y_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，3750 nm／x 偏振 y 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "polarization_isolation_ratio": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5f，3750 nm／x 偏振",
+                "note": "作者有实测谱点图，精确数值及各位置原始积分功率未取到。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测隔离比图可查"
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafs_x_4000",
+            "model": "Ou 2020 · BAFS 分束实物 · x · 4000 nm",
+            "module": "",
+            "variant": "BAFS 分束实物 · x · 4000 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafs",
+            "measurement_scope": "左右分束的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 4000,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5a、d，4000 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-4000-500nm"
+              },
+              "polarization": {
+                "value": "x 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.5 Fig. 4b；p.6 Fig. 5a,b",
+                "note": "所选偏振对应名义输出角。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "x",
+                "topological_charge": 0,
+                "designed_output_angle_deg": -5.5
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5d，4000 nm／x 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中，未取得两偏振的逐点轴向峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 4b、5a–g",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": -5.5,
+                "input_polarization": "x",
+                "object_space_pixel_um": null
+              },
+              "fwhm_x_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，4000 nm／x 偏振 x 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "fwhm_y_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，4000 nm／x 偏振 y 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "polarization_isolation_ratio": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5f，4000 nm／x 偏振",
+                "note": "作者有实测谱点图，精确数值及各位置原始积分功率未取到。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测隔离比图可查"
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafs_x_4250",
+            "model": "Ou 2020 · BAFS 分束实物 · x · 4250 nm",
+            "module": "",
+            "variant": "BAFS 分束实物 · x · 4250 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafs",
+            "measurement_scope": "左右分束的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 4250,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5a、d，4250 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-4250-500nm"
+              },
+              "polarization": {
+                "value": "x 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.5 Fig. 4b；p.6 Fig. 5a,b",
+                "note": "所选偏振对应名义输出角。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "x",
+                "topological_charge": 0,
+                "designed_output_angle_deg": -5.5
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5d，4250 nm／x 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中，未取得两偏振的逐点轴向峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 4b、5a–g",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": -5.5,
+                "input_polarization": "x",
+                "object_space_pixel_um": null
+              },
+              "fwhm_x_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，4250 nm／x 偏振 x 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "fwhm_y_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，4250 nm／x 偏振 y 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "polarization_isolation_ratio": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5f，4250 nm／x 偏振",
+                "note": "作者有实测谱点图，精确数值及各位置原始积分功率未取到。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测隔离比图可查"
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafs_x_4500",
+            "model": "Ou 2020 · BAFS 分束实物 · x · 4500 nm",
+            "module": "",
+            "variant": "BAFS 分束实物 · x · 4500 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafs",
+            "measurement_scope": "左右分束的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 4500,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5a、d，4500 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-4500-500nm"
+              },
+              "polarization": {
+                "value": "x 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.5 Fig. 4b；p.6 Fig. 5a,b",
+                "note": "所选偏振对应名义输出角。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "x",
+                "topological_charge": 0,
+                "designed_output_angle_deg": -5.5
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5d，4500 nm／x 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中，未取得两偏振的逐点轴向峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 4b、5a–g",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": -5.5,
+                "input_polarization": "x",
+                "object_space_pixel_um": null
+              },
+              "fwhm_x_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，4500 nm／x 偏振 x 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "fwhm_y_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，4500 nm／x 偏振 y 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "polarization_isolation_ratio": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5f，4500 nm／x 偏振",
+                "note": "作者有实测谱点图，精确数值及各位置原始积分功率未取到。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测隔离比图可查"
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafs_x_4750",
+            "model": "Ou 2020 · BAFS 分束实物 · x · 4750 nm",
+            "module": "",
+            "variant": "BAFS 分束实物 · x · 4750 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafs",
+            "measurement_scope": "左右分束的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 4750,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5a、d，4750 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-4750-500nm"
+              },
+              "polarization": {
+                "value": "x 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.5 Fig. 4b；p.6 Fig. 5a,b",
+                "note": "所选偏振对应名义输出角。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "x",
+                "topological_charge": 0,
+                "designed_output_angle_deg": -5.5
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5d，4750 nm／x 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中，未取得两偏振的逐点轴向峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 4b、5a–g",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": -5.5,
+                "input_polarization": "x",
+                "object_space_pixel_um": null
+              },
+              "fwhm_x_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，4750 nm／x 偏振 x 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "fwhm_y_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，4750 nm／x 偏振 y 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "polarization_isolation_ratio": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5f，4750 nm／x 偏振",
+                "note": "作者有实测谱点图，精确数值及各位置原始积分功率未取到。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测隔离比图可查"
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafs_y_3500",
+            "model": "Ou 2020 · BAFS 分束实物 · y · 3500 nm",
+            "module": "",
+            "variant": "BAFS 分束实物 · y · 3500 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafs",
+            "measurement_scope": "左右分束的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 3500,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5b、d，3500 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-3500-500nm"
+              },
+              "polarization": {
+                "value": "y 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.5 Fig. 4b；p.6 Fig. 5a,b",
+                "note": "所选偏振对应名义输出角。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "y",
+                "topological_charge": 0,
+                "designed_output_angle_deg": 5.5
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5d，3500 nm／y 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中，未取得两偏振的逐点轴向峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 4b、5a–g",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": 5.5,
+                "input_polarization": "y",
+                "object_space_pixel_um": null
+              },
+              "fwhm_x_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，3500 nm／y 偏振 x 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "fwhm_y_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，3500 nm／y 偏振 y 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "polarization_isolation_ratio": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5f，3500 nm／y 偏振",
+                "note": "作者有实测谱点图，精确数值及各位置原始积分功率未取到。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测隔离比图可查"
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafs_y_3750",
+            "model": "Ou 2020 · BAFS 分束实物 · y · 3750 nm",
+            "module": "",
+            "variant": "BAFS 分束实物 · y · 3750 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafs",
+            "measurement_scope": "左右分束的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 3750,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5b、d，3750 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-3750-500nm"
+              },
+              "polarization": {
+                "value": "y 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.5 Fig. 4b；p.6 Fig. 5a,b",
+                "note": "所选偏振对应名义输出角。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "y",
+                "topological_charge": 0,
+                "designed_output_angle_deg": 5.5
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5d，3750 nm／y 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中，未取得两偏振的逐点轴向峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 4b、5a–g",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": 5.5,
+                "input_polarization": "y",
+                "object_space_pixel_um": null
+              },
+              "fwhm_x_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，3750 nm／y 偏振 x 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "fwhm_y_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，3750 nm／y 偏振 y 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "polarization_isolation_ratio": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5f，3750 nm／y 偏振",
+                "note": "作者有实测谱点图，精确数值及各位置原始积分功率未取到。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测隔离比图可查"
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafs_y_4000",
+            "model": "Ou 2020 · BAFS 分束实物 · y · 4000 nm",
+            "module": "",
+            "variant": "BAFS 分束实物 · y · 4000 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafs",
+            "measurement_scope": "左右分束的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 4000,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5b、d，4000 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-4000-500nm"
+              },
+              "polarization": {
+                "value": "y 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.5 Fig. 4b；p.6 Fig. 5a,b",
+                "note": "所选偏振对应名义输出角。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "y",
+                "topological_charge": 0,
+                "designed_output_angle_deg": 5.5
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5d，4000 nm／y 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中，未取得两偏振的逐点轴向峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 4b、5a–g",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": 5.5,
+                "input_polarization": "y",
+                "object_space_pixel_um": null
+              },
+              "fwhm_x_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，4000 nm／y 偏振 x 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "fwhm_y_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，4000 nm／y 偏振 y 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "polarization_isolation_ratio": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5f，4000 nm／y 偏振",
+                "note": "作者有实测谱点图，精确数值及各位置原始积分功率未取到。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测隔离比图可查"
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafs_y_4250",
+            "model": "Ou 2020 · BAFS 分束实物 · y · 4250 nm",
+            "module": "",
+            "variant": "BAFS 分束实物 · y · 4250 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafs",
+            "measurement_scope": "左右分束的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 4250,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5b、d，4250 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-4250-500nm"
+              },
+              "polarization": {
+                "value": "y 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.5 Fig. 4b；p.6 Fig. 5a,b",
+                "note": "所选偏振对应名义输出角。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "y",
+                "topological_charge": 0,
+                "designed_output_angle_deg": 5.5
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5d，4250 nm／y 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中，未取得两偏振的逐点轴向峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 4b、5a–g",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": 5.5,
+                "input_polarization": "y",
+                "object_space_pixel_um": null
+              },
+              "fwhm_x_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，4250 nm／y 偏振 x 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "fwhm_y_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，4250 nm／y 偏振 y 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "polarization_isolation_ratio": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5f，4250 nm／y 偏振",
+                "note": "作者有实测谱点图，精确数值及各位置原始积分功率未取到。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测隔离比图可查"
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafs_y_4500",
+            "model": "Ou 2020 · BAFS 分束实物 · y · 4500 nm",
+            "module": "",
+            "variant": "BAFS 分束实物 · y · 4500 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafs",
+            "measurement_scope": "左右分束的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 4500,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5b、d，4500 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-4500-500nm"
+              },
+              "polarization": {
+                "value": "y 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.5 Fig. 4b；p.6 Fig. 5a,b",
+                "note": "所选偏振对应名义输出角。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "y",
+                "topological_charge": 0,
+                "designed_output_angle_deg": 5.5
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5d，4500 nm／y 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中，未取得两偏振的逐点轴向峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 4b、5a–g",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": 5.5,
+                "input_polarization": "y",
+                "object_space_pixel_um": null
+              },
+              "fwhm_x_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，4500 nm／y 偏振 x 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "fwhm_y_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，4500 nm／y 偏振 y 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "polarization_isolation_ratio": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5f，4500 nm／y 偏振",
+                "note": "作者有实测谱点图，精确数值及各位置原始积分功率未取到。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测隔离比图可查"
+              }
+            }
+          },
+          {
+            "id": "ou2020polarized_bafs_y_4750",
+            "model": "Ou 2020 · BAFS 分束实物 · y · 4750 nm",
+            "module": "",
+            "variant": "BAFS 分束实物 · y · 4750 nm",
+            "evidence_type": "study",
+            "study_id": "ou2020polarized",
+            "specimen_id": "bafs",
+            "measurement_scope": "左右分束的实物轴向扫测。输出方向和偏振分别保留。",
+            "values": {
+              "wavelength_nm": {
+                "value": 4750,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5b、d，4750 nm 标注；p.4 滤片列表",
+                "note": "作者实测滤片标称中心。此中心是宽通带照明条件，系统加权谱和实际半宽未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "spectral_sampling": "reported_filter_center",
+                "filter_model": "Thorlabs FB-4750-500nm"
+              },
+              "polarization": {
+                "value": "y 方向线偏振",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.5 Fig. 4b；p.6 Fig. 5a,b",
+                "note": "所选偏振对应名义输出角。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "input_polarization": "y",
+                "topological_charge": 0,
+                "designed_output_angle_deg": 5.5
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5d，4750 nm／y 偏振的 Exp. 序列",
+                "note": "实验与模型都显示在焦距图中，未取得两偏振的逐点轴向峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测曲线可查",
+                "reference_plane": "器件面 z=0",
+                "scan_step_um": 2.5
+              },
+              "psf_protocol": {
+                "value": "2.5 μm 轴扫；器件面 z=0；MCT 焦场",
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.3 Fig. 2a；p.4 六个滤片型号；p.5 z 扫描与零位；主文 Figs. 4b、5a–g",
+                "note": "样品距带直径 2 mm 光阑的 1023 K 黑体 250 mm，近似准直正入射。实测横向采样尺度、滤片实物透过谱及随机不确定度未给。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "scan_step_um": 2.5,
+                "reference_plane": "器件面 z=0",
+                "object_conjugate": "approximately_collimated",
+                "source_distance_um": 250000,
+                "source_aperture_diameter_um": 2000,
+                "blackbody_temperature_k": 1023,
+                "evaluation_plane": "作者测定的焦面及其轴向图像栈",
+                "illumination_field": "近似轴上正入射",
+                "designed_output_angle_deg": 5.5,
+                "input_polarization": "y",
+                "object_space_pixel_um": null
+              },
+              "fwhm_x_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，4750 nm／y 偏振 x 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "fwhm_y_um": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5g，4750 nm／y 偏振 y 向实测点",
+                "note": "方向按 x-cut/y-cut 图例，数值未印。仿真虚线和理论点线与实测分开。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测宽度图可查"
+              },
+              "polarization_isolation_ratio": {
+                "value": null,
+                "source": "ou_ir_polar_pmc_2020",
+                "location": "主文 p.6 Fig. 5f，4750 nm／y 偏振",
+                "note": "作者有实测谱点图，精确数值及各位置原始积分功率未取到。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "实测隔离比图可查"
+              }
+            }
           }
       ],
       "scope": "58项原始研究、293个器件/测量/系统配置、1248条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",

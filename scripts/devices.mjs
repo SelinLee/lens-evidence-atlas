@@ -106,6 +106,12 @@ export function validateDevices(d,catalog){
  if(Number.isFinite(focusWidth?.value)&&(!(r.values.wavelength_nm?.value>0)||!focusWidth.dof_criterion||!r.values.psf_protocol?.value))errors.push('focal interval context');
  if(Number.isFinite(minimumWidth?.value)&&(minimumWidth.direction!=='x'||!minimumWidth.statistic||!r.values.psf_protocol?.value))errors.push('minimum focal width context');
  const efficiencyProtocol=r.values.efficiency_protocol;
+ const polarizationIsolation=r.values.polarization_isolation_ratio;
+ if(Number.isFinite(polarizationIsolation?.value)&&(
+  polarizationIsolation.value<0||polarizationIsolation.unit!=='power_ratio'||
+  polarizationIsolation.basis!=='derived_from_measurement'||polarizationIsolation.calculation_origin!=='authors'||
+  !polarizationIsolation.numerator||!polarizationIsolation.denominator||
+  polarizationIsolation.numerator===polarizationIsolation.denominator||!r.values.psf_protocol?.value))errors.push('polarization isolation power ratio context');
  const vortexWidth=r.values.vortex_inner_fwhm_um;
  if(Number.isFinite(vortexWidth?.value)&&(
   vortexWidth.value<=0||vortexWidth.basis!=='derived_from_measurement'||vortexWidth.calculation_origin!=='authors'||

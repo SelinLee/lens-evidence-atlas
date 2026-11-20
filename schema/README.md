@@ -100,6 +100,8 @@
 
 `optical_transmittance_pct`保存作者报告的总透射与入射参考值的百分比。口径内入射功率用 `incident_through_aperture`，作者明示为总入射光强积分时用 `incident_light_total_intensity` 并在协议中设置同一分母和实际已知的入射范围。`focusing_efficiency_transmitted_pct`保存焦区积分功率与总透过功率的百分比，分母为`transmitted_power`。两个字段均要求实测谱点、`basis: derived_from_measurement`、`calculation_origin: authors`及`efficiency_protocol`。焦区长度尺度和形状分别记录，半径或直径未明时保留缺口。
 
+`polarization_isolation_ratio` 保存作者由实测焦区功率得到的无量纲偏振隔离比。保留 `unit: power_ratio`、作者计算、两个积分区域的定义及 `psf_protocol`。作者仅报告最大值时用 `statistic: author_reported_maximum`，在汇总行保存采样范围。具体波长、偏振和截向未给时留空。聚焦效率仍使用其入射或透射功率分母。
+
 `resolved_test_line_width_um` 保存实拍标靶中作者辨认的对象侧线宽，附靶型、组/元素、采集通道、场点和对比阈值。共同阈值界限保留 `value=null`。
 
 `simulated_axial_fwhm_um` 保存模型 z 向强度半高全宽。`simulated_relative_spherical_aberration_pct` 保存作者以名义像距为分母的比例原印字，附名义像距并与未归一化 z 宽度分列。两处印字换算有差异时保留原值及对读记录。
