@@ -1397,3 +1397,7 @@ Tang 2026 正式上线为 2026-06-13。正文预览所见为实物宽带成像�
 下一篇追查 Hu 2016。2026-11-20 核 Crossref 101 次、OpenAlex 114 次，符合经典引用门槛。正式上线 2016-10-27。原刊摘要列 600／785／980 nm 的晶格设计，补件目录列两、三波长消色差模拟及焦距。尚未核清三色共焦的实制样品、测量面与模型数据。出版社主文和补件直连均返回 403，Crossref 组件登记确认 `nn6b05855_si_001.pdf`，DataCite 关联 DOI 0 项。西北大学 Odom 课题组目录提供 DOI 与原图入口。后续优先确认实验图和光路后纳入。[原刊](https://pubs.acs.org/doi/10.1021/acsnano.6b05855) · [作者目录](https://www.odomgroup.northwestern.edu/nanophotonics-nano-optics-publications/) · [Crossref](https://api.crossref.org/works/10.1021/acsnano.6b05855) · [OpenAlex](https://api.openalex.org/works/W2542165975) · [补件登记](https://api.crossref.org/works/10.1021/acsnano.6b05855.s001)
 
 另查 Hu 2024 四枚偏振选择超透镜，原刊报告 450–650 nm 的全斯托克斯成像。作者稿可打开，期刊补件返回 403，Crossref 27 次、OpenAlex 46 次。保留候选，依 2025 年 3 月大类分区和引用门槛复查。Tang 2026 的 Wiley PDFDirect 仍返回 403，原刊预览提到色差的段落为研究背景，实物的光学校正证据继续追查。会话目标保持开启。[Hu 原刊](https://pubs.acs.org/doi/10.1021/acs.nanolett.4c03785) · [作者稿](https://arxiv.org/abs/2404.11415) · [OpenAlex](https://api.openalex.org/works/W4403094356) · [Tang 原刊](https://onlinelibrary.wiley.com/doi/10.1002/lpor.71431)
+
+## 2026-11-20-171 · Peng 两栖近眼超透镜与 Xu 夹层太赫兹实物
+
+依据原刊摘要与原图图注录入 Peng 2025 的 5 mm 口径、3 mm 设计焦距、450–850 nm 光学设计区间、横向及轴向焦斑图定位。作者摘要的 445–620 nm FWHM 保留为待核区间，同时录同研究两栖相机近眼原型。Xu 2023 按被引超过 50 的经典原始研究纳入，录入 0.5–1.1 THz 实测消色差区间、NA 0.47、43.1% 作者带内平均及 Fig. 4e 的 6.5 mm 横向参考面。同篇色散对照按实物归组。累计 68 篇、313 个器件及测量配置、1369 条，可见光 51 篇、861 条。两篇的逐波长峰位、宽度或效率仍需原始图表及实验协议。[本批核验](PENG_XU_ACHROMATIC_EVIDENCE_2026-11-20.md)
