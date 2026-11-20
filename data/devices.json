@@ -2524,6 +2524,51 @@
       "scope": "正式 DOI 精确 relatedIdentifier 返回 0 项。",
       "checked_on": "2026-11-20",
       "publication_source": "barulin_fcs_2024"
+    },
+    {
+      "id": "zhou_nir_doublet_2018",
+      "title": "Zhou et al. (2018) · Multilayer Noninteracting Dielectric Metasurfaces for Multiwavelength Metaoptics",
+      "url": "https://doi.org/10.1021/acs.nanolett.8b03017",
+      "kind": "peer_reviewed_paper",
+      "scope": "Nano Letters 18(12), 7529–7537。期刊摘要给实测效率；经典原始实验的引用量于 2026-11-20 查询，Crossref 274、OpenAlex 294。",
+      "checked_on": "2026-11-20",
+      "doi": "10.1021/acs.nanolett.8b03017"
+    },
+    {
+      "id": "zhou_nir_osti_2018",
+      "title": "Zhou et al. · DOE OSTI 存档的 ACS 接收稿 PDF",
+      "url": "https://www.osti.gov/servlets/purl/1491299#page=20",
+      "kind": "author_manuscript",
+      "scope": "27 页 PDF，正文印刷页号比 PDF 页号小 1。核正文 pp.5–8、Methods pp.11–12、Fig. 4。3183176 字节，SHA-256 a20e41716a00dad8ad58a57ab066b259ac0664b025bff7eea4d79563a56e058d。",
+      "checked_on": "2026-11-20",
+      "publication_source": "zhou_nir_doublet_2018"
+    },
+    {
+      "id": "zhou_nir_si_2018",
+      "title": "Zhou et al. · 补件 nl8b03017_si_001.pdf 组件登记",
+      "url": "https://api.crossref.org/works/10.1021/acs.nanolett.8b03017.s001",
+      "kind": "repository_metadata",
+      "scope": "ACS 补件登记可读。ACS 摘要的补件目录及索引节选可读，独立无头 Chrome 请求出版方 PDF 返回 403。未以未取得的完整补件为实测数值依据。",
+      "checked_on": "2026-11-20",
+      "publication_source": "zhou_nir_doublet_2018"
+    },
+    {
+      "id": "zhou_nir_crossref_2018",
+      "title": "Crossref · Zhou 2018 题录和引用",
+      "url": "https://api.crossref.org/works/10.1021/acs.nanolett.8b03017",
+      "kind": "repository_metadata",
+      "scope": "2026-11-20，is-referenced-by-count 为 274。",
+      "checked_on": "2026-11-20",
+      "publication_source": "zhou_nir_doublet_2018"
+    },
+    {
+      "id": "zhou_nir_openalex_2018",
+      "title": "OpenAlex · Zhou 2018 引用及公开版本入口",
+      "url": "https://api.openalex.org/works/https://doi.org/10.1021/acs.nanolett.8b03017",
+      "kind": "repository_metadata",
+      "scope": "2026-11-20，cited_by_count 为 294，并索引同一 OSTI PDF。",
+      "checked_on": "2026-11-20",
+      "publication_source": "zhou_nir_doublet_2018"
     }
   ],
   "domains": {
@@ -150993,9 +151038,341 @@
               ]
             }
           }
+        },
+        {
+          "id": "zhou2018nir_doublet_summary",
+          "model": "Zhou 2018 · 双层实物汇总",
+          "study_id": "zhou2018nir",
+          "specimen_id": "nir_doublet",
+          "variant": "硅纳米柱双层 · 近红外双波长",
+          "module": "",
+          "evidence_type": "study",
+          "measurement_scope": "同一只 500 μm 双层实物，1180／1680 nm 两离散实测点。",
+          "values": {
+            "diameter_um": {
+              "value": 500,
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 pp.5–6 实物制备段与 Fig. 3（PDF p.19）",
+              "note": "实制近红外双层超透镜的物理镜径 500 μm。Fig. 4a,c,e,f 的计算试件直径为 100 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "na": {
+              "value": 0.42,
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 pp.5–6 实物制备段与 Fig. 3（PDF p.19）",
+              "note": "作者设计 NA 0.42。以空气中半径 250 μm 和名义焦距 540 μm 核算为约 0.420。光路中收集物镜另为 NA 0.42。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "design_focal_um": {
+              "value": 540,
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 pp.5–6 实物制备段与 Fig. 3（PDF p.19）",
+              "note": "两波长共用名义设计焦距 540 μm。实测轴图标出 540 μm 刻度，逐色最佳焦位未用数值单独报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "height_nm": {
+              "value": 750,
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 pp.5–6 实物制备段与 Fig. 3（PDF p.19）；Methods p.11",
+              "note": "a-Si 起始膜厚与纳米柱名义高度均为 750 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "material": {
+              "value": "熔石英／PDMS 内的两层圆柱 a-Si 纳米柱",
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 pp.5–6 实物制备段与 Fig. 3（PDF p.19）；Methods p.11",
+              "note": "周期 600 nm，第一层在熔石英上制备，第二层经 PDMS 转移倒置贴合。显微镜景深给层间轴向间距小于等于约 5.8 μm 的上界，未直接测出间距。仿真的 5 μm 不填作实物间距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "lattice_pitch_nm": 600,
+              "author_layer_spacing_upper_bound_um": 5.8
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 p.6、Fig. 4b,d（PDF p.20）；Methods pp.11–12",
+              "note": "仅核对该实制双层透镜的 1180 和 1680 nm 两离散点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "1180／1680 nm 两个实测谱点",
+              "sample_wavelengths_nm": [
+                1180,
+                1680
+              ]
+            },
+            "chromatic": {
+              "value": "1180／1680 nm 双波长光学消色差",
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 pp.2–3 设计；p.6，Fig. 4d（PDF p.20）",
+              "note": "匹配双层纳米柱在两波长的累加传播相位，为两波长设计共同焦距。轴扫中作者报告两主焦点的焦距相同。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 p.6、Fig. 4b,d（PDF p.20）；Methods pp.11–12",
+              "note": "Fig. 4d 的横轴为 z、纵轴为 x，单位 μm；作者称两色主焦距相同，未给每色峰位或残差数值与不确定度。1.13 μm 是采样间隔。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "reference_wavelength_nm": 1180,
+              "sample_wavelengths_nm": [
+                1180,
+                1680
+              ],
+              "display": "两色主焦近共面，残差未量化"
+            },
+            "mtf_curve": {
+              "value": "Fig. 4b,d 实测焦场图",
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 p.6、Fig. 4b,d（PDF p.20）；Methods pp.11–12；ACS Supporting Information 目录、OSTI 1491299",
+              "note": "本次核查范围内未定位原始强度数组、横向物方采样标定、MTF 数值或曲线和 Strehl 数字。Methods 给轴扫步长及接收光路。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "zhou_nir_osti_2018",
+                "zhou_nir_si_2018"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "independently_recomputed_mtf": null,
+              "data_availability": {
+                "status": "no_mtf_in_checked_material"
+              }
+            }
+          }
+        },
+        {
+          "id": "zhou2018nir_1180",
+          "model": "Zhou 2018 · 1180 nm 焦斑与效率",
+          "study_id": "zhou2018nir",
+          "specimen_id": "nir_doublet",
+          "variant": "硅纳米柱双层 · 近红外双波长",
+          "module": "",
+          "evidence_type": "study",
+          "measurement_scope": "同一只 500 μm 实物的 1180 nm 焦斑、轴扫与聚焦效率。",
+          "values": {
+            "wavelength_nm": {
+              "value": 1180,
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 p.6 第 41–55 行；Fig. 4b 左列（PDF p.20）",
+              "note": "实测离散入射波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 p.6、Fig. 4b,d（PDF p.20）；Methods pp.11–12",
+              "note": "原作以二维强度图展示主焦区，未单报该波长的主焦点 z 数值；名义设计 f=540 μm 独立记录。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "主焦距仅见 Fig. 4d"
+            },
+            "fwhm_x_um": {
+              "value": 1.74,
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 p.6 第 41–55 行；Fig. 4b 左列（PDF p.20）",
+              "note": "作者正文直接给出 1.74 μm；Fig. 4b 横向焦斑截线沿 x。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "direction": "x"
+            },
+            "psf_protocol": {
+              "value": "非偏振准直入射；Fig. 4b 焦面截线与 Fig. 4d 轴扫；z 间隔 1.13 μm。",
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 p.6、Fig. 4b,d（PDF p.20）；Methods pp.11–12",
+              "note": "准直非偏振超连续谱经单色仪入射。50× 接收物镜和近红外相机。Fig. 4b 沿 x 的焦面截线强度标度 0–1；Fig. 4d 提供轴向分布。作者另报 z=400 μm 的弱次焦点，并讨论两层约 3 μm 的横向错位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "direction": "x",
+              "raw_psf": null,
+              "axial_step_um": 1.13,
+              "axial_span_um": 300,
+              "axial_slices": 267,
+              "collection_objective_na": 0.42,
+              "transverse_sample_pitch_um": null,
+              "scan_planes": [
+                "xy",
+                "xz"
+              ],
+              "secondary_focus_position_um": 400
+            },
+            "efficiency_lambda_nm": {
+              "value": 1180,
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 p.7 第 10–17 行、Methods p.12 第 6–17 行（PDF p.13）",
+              "note": "实物聚焦功率比所对应的入射波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 38,
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 p.7 第 10–17 行、Methods p.12 第 6–17 行（PDF p.13）",
+              "note": "实制 500 μm 双层透镜测得的作者功率比百分数。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "denominator": "total_incident_power_on_metalens",
+              "sourceIds": [
+                "zhou_nir_osti_2018",
+                "zhou_nir_doublet_2018"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "焦斑共轭面虹膜内功率／移除样片且全开虹膜的总入射功率。虹膜直径为像方 8×FWHM。",
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 p.7 第 10–17 行、Methods p.12 第 6–17 行（PDF p.13）",
+              "note": "约 200 μm 直径入射光束用于效率测量。作者给虹膜直径的相对倍数，未给绝对孔径或逐色功率数组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "denominator": "total_incident_power_on_metalens",
+              "numerator": "power_through_conjugate_plane_iris",
+              "aperture_diameter_fwhm_multiple": 8,
+              "aperture_plane": "image_plane_conjugate_of_focal_plane",
+              "incident_measurement": "sample_removed_and_iris_fully_opened",
+              "incident_beam_diameter_um": 200
+            }
+          }
+        },
+        {
+          "id": "zhou2018nir_1680",
+          "model": "Zhou 2018 · 1680 nm 焦斑与效率",
+          "study_id": "zhou2018nir",
+          "specimen_id": "nir_doublet",
+          "variant": "硅纳米柱双层 · 近红外双波长",
+          "module": "",
+          "evidence_type": "study",
+          "measurement_scope": "同一只 500 μm 实物的 1680 nm 焦斑、轴扫与聚焦效率。",
+          "values": {
+            "wavelength_nm": {
+              "value": 1680,
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 p.6 第 41–55 行；Fig. 4b 右列（PDF p.20）",
+              "note": "实测离散入射波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 p.6、Fig. 4b,d（PDF p.20）；Methods pp.11–12",
+              "note": "原作以二维强度图展示主焦区，未单报该波长的主焦点 z 数值；名义设计 f=540 μm 独立记录。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "主焦距仅见 Fig. 4d"
+            },
+            "fwhm_x_um": {
+              "value": 2.57,
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 p.6 第 41–55 行；Fig. 4b 右列（PDF p.20）",
+              "note": "作者正文直接给出 2.57 μm；Fig. 4b 横向焦斑截线沿 x。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "direction": "x"
+            },
+            "psf_protocol": {
+              "value": "非偏振准直入射；Fig. 4b 焦面截线与 Fig. 4d 轴扫；z 间隔 1.13 μm。",
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 p.6、Fig. 4b,d（PDF p.20）；Methods pp.11–12",
+              "note": "准直非偏振超连续谱经单色仪入射。50× 接收物镜和近红外相机。Fig. 4b 沿 x 的焦面截线强度标度 0–1；Fig. 4d 提供轴向分布。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "direction": "x",
+              "raw_psf": null,
+              "axial_step_um": 1.13,
+              "axial_span_um": 300,
+              "axial_slices": 267,
+              "collection_objective_na": 0.42,
+              "transverse_sample_pitch_um": null,
+              "scan_planes": [
+                "xy",
+                "xz"
+              ]
+            },
+            "efficiency_lambda_nm": {
+              "value": 1680,
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 p.7 第 10–17 行、Methods p.12 第 6–17 行（PDF p.13）",
+              "note": "实物聚焦功率比所对应的入射波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 52,
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 p.7 第 10–17 行、Methods p.12 第 6–17 行（PDF p.13）",
+              "note": "实制 500 μm 双层透镜测得的作者功率比百分数。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "denominator": "total_incident_power_on_metalens",
+              "sourceIds": [
+                "zhou_nir_osti_2018",
+                "zhou_nir_doublet_2018"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "焦斑共轭面虹膜内功率／移除样片且全开虹膜的总入射功率。虹膜直径为像方 8×FWHM。",
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 p.7 第 10–17 行、Methods p.12 第 6–17 行（PDF p.13）",
+              "note": "约 200 μm 直径入射光束用于效率测量。作者给虹膜直径的相对倍数，未给绝对孔径或逐色功率数组。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "denominator": "total_incident_power_on_metalens",
+              "numerator": "power_through_conjugate_plane_iris",
+              "aperture_diameter_fwhm_multiple": 8,
+              "aperture_plane": "image_plane_conjugate_of_focal_plane",
+              "incident_measurement": "sample_removed_and_iris_fully_opened",
+              "incident_beam_diameter_um": 200
+            }
+          }
+        },
+        {
+          "id": "zhou2018nir_chart",
+          "model": "Zhou 2018 · 固定物距双波长 USAF 成像",
+          "study_id": "zhou2018nir",
+          "specimen_id": "nir_chart_system",
+          "variant": "同镜与筒镜成像",
+          "module": "",
+          "evidence_type": "study",
+          "measurement_scope": "同一实物接筒镜，靶至超透镜固定在 540 μm。",
+          "values": {
+            "wavelength_nm": {
+              "value": null,
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 pp.7–8；Fig. 4g,h（PDF p.20）；Methods p.12",
+              "note": "同一物距下实测两波长图像。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "1180／1680 nm 两个照明谱点",
+              "sample_wavelengths_nm": [
+                1180,
+                1680
+              ]
+            },
+            "chromatic": {
+              "value": "固定物距下两波长成像",
+              "source": "zhou_nir_osti_2018",
+              "location": "ACS 接收稿正文 pp.7–8；Fig. 4g,h（PDF p.20）；Methods p.12",
+              "note": "成像系统包括筒镜。换波长时保持镜至靶距离，Methods 记有聚光物镜细调。作者称两谱点均可分辨 6、7 组条纹，报告线宽 7.81、3.91 μm。1180 nm 图像更模糊，并讨论反射鬼影和次焦点。未给分方向 MTF。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "object_distance_um": 540,
+              "author_reported_group_line_width_um": [
+                7.81,
+                3.91
+              ]
+            }
+          }
         }
       ],
-      "scope": "56项原始研究、289个器件/测量/系统配置、1235条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
+      "scope": "57项原始研究、291个器件/测量/系统配置、1239条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
