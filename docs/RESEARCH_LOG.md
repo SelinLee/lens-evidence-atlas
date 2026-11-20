@@ -1197,3 +1197,7 @@ Zang 2024 补件组件 DOI 在 Crossref 确认从属于 ACS Nano 主文，同一
 接着核 Kang 2026 的两只实物。第一只 SiNₓ 的 Fig. 4a/c 有色散对照与五谱点轴扫，§2.3 的 8 μm 轴扫步长与最大峰强选面适用于该实验。第二只 ZrO₂ PER 在 Fig. 5f/g 和 §2.4 有十谱点轴扫和 30 μm 步长。正文给设计焦距 626／1400 μm，并分别使用最大相对偏差与平均偏差。补件目录确认文件 adfm75854-sup-0001-SuppMat.pdf，Table S1 指向效率条件，Figs. S21–S23 指向 PER 的焦距、宽度和 Strehl。独立无头 Chrome 复核直链和下载入口返回 403，OpenAlex 仅 DOI 入口，DataCite 精确关联检索无匹配。继续按参考焦面核符号残差、对照归属、实际焦圈与曲线条件。[正式稿](https://advanced.onlinelibrary.wiley.com/doi/epdf/10.1002/adfm.75854) · [2025 年材料科学大类一区](https://www.fabiao.com.cn/sci/1616301x/) · [DataCite 关联检索](https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1002%2Fadfm.75854%22)
 
 同课题组的 Lee 2026 Ta₂O₅ PER 研究作为候选复查。主文 Fig. 4 的实物超透镜以 320 nm 表征，320–635 nm 的宽带结果归属另一元件的全息重建。缺多波长透镜色差校正证据，留在检索记录。会话目标保持开启。[Lee 2026 正式主文](https://pmc.ncbi.nlm.nih.gov/articles/PMC13197409/)
+
+## 2026-11-20-137 · Kang 两只实物的有符号焦差与作者模拟焦斑
+
+按主文 §§2.3–2.4 及 §4.8 复核 15 个实测峰位。SiNₓ 的五点相对 626 μm 设计面为 +30／−42／+30／−34／−2 μm，峰峰值 72 μm。ZrO₂ PER 的十点相对 1400 μm 设计面为 −80 至 +130 μm，并在 405／435 nm 达 −300 μm，峰峰值 430 μm。6.7% 最大偏差和 6.9% 平均偏差按作者的原分母保留。新增两条实物汇总和一个 320 nm 未校正 SiNₓ 对照。不补对照镜的焦位和口径。15 个作者模拟 FWHM 使用独立字段。记录 SiNₓ 的 MTF 来源与焦面效率分母，逐频值、原始 PSF、横向尺度和效率光阑仍缺。全库 52 篇、280 个配置、1209 条，可见光 43 篇、804 条。[本批核验](KANG_2026_RESIDUAL_FOCUS_REVIEW_2026-11-20.md)

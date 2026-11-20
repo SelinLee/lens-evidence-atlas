@@ -37,7 +37,7 @@ test('eligibility follows original optical evidence when headings or index abstr
  }
 });
 test('Kang spectral rows retain the two physical specimens and original measured sequences',()=>{
- const rows=lens.rows.filter(r=>r.study_id==='kang2026');assert.equal(rows.length,15);assert.equal(new Set(rows.map(r=>r.specimen_id)).size,2);
+ const rows=lens.rows.filter(r=>r.study_id==='kang2026'&&Number.isFinite(r.values.measured_focal_um?.value));assert.equal(rows.length,15);assert.equal(new Set(rows.map(r=>r.specimen_id)).size,2);
  const si=rows.filter(r=>r.specimen_id==='kang_sinx'),zr=rows.filter(r=>r.specimen_id==='kang_zro2');
  assert.deepEqual(si.map(r=>r.values.wavelength_nm.value),[320,375,405,430,450]);
  assert.deepEqual(si.map(r=>r.values.measured_focal_um.value),[656,584,656,592,624]);
@@ -66,8 +66,8 @@ test('XR cutoff frequency is not MTF50, a dimensionless MTF value, display PPD o
 });
 test('literature domain and accessory selector use the shared data model and traceable unit-consistent points',()=>{
  const workspace=createWorkspace(load(),d),domain=workspace.domains.find(v=>v.id==='metalens');
- assert.equal(domain.name,'消色差超透镜与折超混合透镜（文献）');assert.equal(domain.category,'文献器件与计算成像');assert.equal(domain.rows.length,1206);
- const rows=filteredRows(domain,{module:'main',query:'',models:null,evidence:'research'});assert.equal(rows.length,1206);
+ assert.equal(domain.name,'消色差超透镜与折超混合透镜（文献）');assert.equal(domain.category,'文献器件与计算成像');assert.equal(domain.rows.length,1209);
+ const rows=filteredRows(domain,{module:'main',query:'',models:null,evidence:'research'});assert.equal(rows.length,1209);
  const ps=axisPoints(rows,'wavelength_nm','measured_focal_um');assert.equal(ps.length,46);
  for(const row of domain.rows)for(const value of Object.values(row.values)){assert.ok(workspace.sources.has(value.source));assert.ok(value.location);assert.ok(value.note);}
 });
