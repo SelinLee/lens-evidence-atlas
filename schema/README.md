@@ -127,3 +127,7 @@
 `reported_effective_focal_um` 和 `reported_effective_na` 保存作者在色散设计语境中报告的谱点有效值。注明波长、方法和设计参考，逐点实测焦位等待具有计量定位的证据。`author_reported_mtf_cutoff_lpmm` 保存作者直接声明的截止频率，保留阈值与频率标定缺口。由实测 PSF 派生的归一化 MTF 若缺少频率标定，曲线的 `normalization_frequency_cycles_mm` 仍留空。
 
 `simulated_cpt_mean_pct` 保存跨带单元偏振转换模拟的作者均值。注明单元、波段、涂层、采样和分母，持续区分器件实测焦区效率。
+
+`relative_fluorescence_collection_pct` 使用参考物镜收集到的荧光为分母，绑定 `efficiency_protocol` 中的物镜型号、NA、激发条件与积分范围。`fluorescence_collection_spectral_width_nm` 保存作者由测得荧光谱报告的带宽，未知谱宽判据和端点保留空值。两项属于宽谱采集，`wavelength_nm` 留空，并另存设计参考中心。
+
+`system_lateral_psf_fwhm_um` 和 `system_axial_psf_fwhm_um` 保存作者从宽谱发光成像所求的 X／Z 半高全宽。`psf_protocol` 关联激发波长、收集滤光及扫描方式，`spectral_sampling` 使用 `broadband_emission`。逐波长字段留空，作者拟合依据与发光样品条件随表格保留。

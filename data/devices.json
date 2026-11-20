@@ -2398,6 +2398,33 @@
       "kind": "repository_metadata",
       "checked_on": "2026-11-20",
       "scope": "2026-11-20 DataCite 精确关联 DOI 检索0项。Wiley载数据合理请求，补件文件lpor202401595-sup-0001-SuppMat.pdf；Zenodo API本次返回HTTP 500。"
+    },
+    {
+      "id": "zang_xia_nv_2026",
+      "title": "Zang & Xia et al. · A Miniaturized Metalens-Based Spin Defect Quantum Sensor",
+      "url": "https://doi.org/10.1002/adfm.202530596",
+      "kind": "peer_reviewed_paper",
+      "scope": "期刊正式题录、数据声明及补件目录。2026-03-01上线，36(39), e30596。主文和补件直连HTTP 403；对应作者公开正式PDF另列。",
+      "checked_on": "2026-11-20",
+      "doi": "10.1002/adfm.202530596"
+    },
+    {
+      "id": "zang_xia_nv_vor_2026",
+      "title": "Zang & Xia et al. · 中国科大作者库托管 Wiley 正式 PDF",
+      "url": "https://faculty.ustc.edu.cn/_resources/group1/M00/00/84/wKhJFWmlUBmAI0_pAFzP9cIrg9o138.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "正式10页。核 pp.2–5 §2.1–2.2 与 Figs.2–4，pp.7–8方法和数据声明。本机逐区间取得6082549字节，SHA-256 9da4956f254b68e9ca1d975aa6fb333180b7d0fe974846f8c24c462a50aae5d5。",
+      "checked_on": "2026-11-20",
+      "publication_source": "zang_xia_nv_2026"
+    },
+    {
+      "id": "zang_xia_nv_datacite_2026",
+      "title": "DataCite · Zang & Xia 2026 原作 DOI 关联检索",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1002%2Fadfm.202530596%22",
+      "kind": "repository_metadata",
+      "scope": "精确关联查询0项。Wiley来源仅列adfm74564-sup-0001-SuppMat.pdf；直接下载403。",
+      "checked_on": "2026-11-20",
+      "publication_source": "zang_xia_nv_2026"
     }
   ],
   "domains": {
@@ -6248,6 +6275,70 @@
             {
               "source": "eisenbach_dual_fzp_pdf_2015",
               "location": "p3935 Fig. 6b 及正文首段"
+            }
+          ]
+        },
+        {
+          "id": "relative_fluorescence_collection_pct",
+          "label": "相对参考物镜的荧光收集量 (%)",
+          "numeric": true,
+          "definition": "作者报告的样品收集荧光与参考光学系统收集荧光之比。",
+          "conditions": "激发条件、参考物镜、比较光谱、光阑及归一化。",
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.3 §2.2；p.4 Fig.3a,b"
+            }
+          ]
+        },
+        {
+          "id": "fluorescence_collection_spectral_width_nm",
+          "label": "实测收集荧光谱宽 (nm)",
+          "numeric": true,
+          "definition": "作者从收集到的荧光光谱报告的带宽。",
+          "conditions": "光谱采集链与宽度判据，保留作者约值。",
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.3 §2.2；p.4 Fig.3a,b"
+            }
+          ]
+        },
+        {
+          "id": "system_lateral_psf_fwhm_um",
+          "label": "宽谱成像系统横向 PSF FWHM (μm)",
+          "numeric": true,
+          "definition": "以发光样品和宽谱探测得到的系统点响应横向半高全宽。",
+          "conditions": "激发波长、探测范围、横截线及发光样品尺度。",
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF pp.4–5 §2.2、Fig.4a,c"
+            }
+          ]
+        },
+        {
+          "id": "system_axial_psf_fwhm_um",
+          "label": "宽谱成像系统轴向 PSF FWHM (μm)",
+          "numeric": true,
+          "definition": "以发光样品和宽谱探测得到的系统点响应轴向半高全宽。",
+          "conditions": "激发波长、探测范围、轴向取样及拟合，区分普通焦深与离焦坐标。",
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF pp.4–5 §2.2、Fig.4b,d"
             }
           ]
         }
@@ -148804,9 +148895,663 @@
               "reported_common_efficiency_pct": 22
             }
           }
+        },
+        {
+          "id": "zang2026nv_lens1_summary",
+          "model": "Zang 2026 · Metalens-1 · 实物汇总",
+          "study_id": "zang2026nv",
+          "specimen_id": "lens1",
+          "module": "",
+          "variant": "两区波长复用消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "1 mm分区超透镜；两款互换激发与荧光收集区。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.3 Fig.2a及p.4 Fig.3a,b嵌图",
+              "note": "作者报告整片1 mm名义圆形通光区。内圆直径474 μm，外环从474 μm内径扩展至1 mm外径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "original_value": 1,
+              "original_unit": "mm",
+              "inner_zone_diameter_um": 474
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.7 §4.1",
+              "note": "600 nm为石英基底上的SiN纳米柱设计高及所用薄膜厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "material": {
+              "value": "石英基底上的方截面SiN纳米柱；分内圆和外环",
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.3 Fig.2a及p.4 Fig.3a,b嵌图",
+              "note": "Huygens单元设计节距250 nm。532和700 nm两套相位调制分别写入专用区域。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "lattice_pitch_nm": 250
+            },
+            "na": {
+              "value": null,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.3 Fig.2a及p.4 Fig.3a,b嵌图",
+              "note": "设备由两区组成，按各自波长通道的内圆或外环报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "内圆0.7；外环0.7–0.9"
+            },
+            "design_focal_um": {
+              "value": 242,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.3 §2.2（右栏），Fig.2a与p.4 Fig.3c,d",
+              "note": "作者以700 nm设计焦位设Δz=0，报告f₀=242 μm。半径237／500 μm代入空气几何的NA约0.70／0.90，与分区标注相符。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "reference_wavelength_nm": 700,
+              "reference_plane": "700 nm设计焦面"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.3 Fig.2a",
+              "note": "532 nm激发与约700 nm荧光设计通道。发光体谱带和轴向取样另列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "532 nm激发；约700 nm荧光",
+              "design_wavelengths_nm": [
+                532,
+                700
+              ]
+            },
+            "chromatic": {
+              "value": "内圆负责532 nm激发；外环负责约700 nm荧光收集",
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.3 Fig.2a及p.4 Fig.3a,b嵌图",
+              "note": "同一镜片的两区几何相位设计在共同位置。§2.2报告实物荧光收集和离焦时谱峰变化，主文未列逐色轴向最佳焦位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "zang_xia_nv_vor_2026",
+                "zang_xia_nv_2026"
+              ]
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.3 §2.2、p.4 Fig.3、p.8 §4.3",
+              "note": "Δz是扫描输入位置，逐点收集量与荧光谱峰会变。缺少同器件532 nm／700 nm各自的实测轴向峰位与残余轴差。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "reference_wavelength_nm": 700,
+              "display": "两通道残差未给"
+            }
+          }
+        },
+        {
+          "id": "zang2026nv_lens1_excitation",
+          "model": "Zang 2026 · Metalens-1 · 532 nm 激发区",
+          "study_id": "zang2026nv",
+          "specimen_id": "lens1",
+          "module": "",
+          "variant": "内外区独立光学通道",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "窄带532 nm激发通道。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.3 Fig.2a及p.4 Fig.3a,b嵌图",
+              "note": "作者报告整片1 mm名义圆形通光区。内圆直径474 μm，外环从474 μm内径扩展至1 mm外径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "original_value": 1,
+              "original_unit": "mm",
+              "inner_zone_diameter_um": 474
+            },
+            "na": {
+              "value": 0.7,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.3 Fig.2a及p.4 Fig.3a,b嵌图",
+              "note": "内圆直径474 μm，名义设计NA 0.7；镜片整片径向分区另列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "na_definition": "metalens_design",
+              "pupil_region": "inner_disk",
+              "active_zone_diameter_um": 474
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.3 §2.2（末段）、p.8 §4.3",
+              "note": "单镜NV成像实验实际用内圆聚焦532 nm激发，荧光探测光谱及系统焦斑另设配置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1 Eq.(1)、p.3 §2.2",
+              "note": "主文未列该器件激发区的独立轴扫峰位或实测焦距表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "独立焦位未给"
+            },
+            "illumination": {
+              "value": "532 nm 激光；NV 发光探测另列",
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.8 §4.3",
+              "note": "激发落在内圆。Metalens-1用于后续单镜系统实测；两镜的荧光比较使用固定商用激发物镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            }
+          }
+        },
+        {
+          "id": "zang2026nv_lens1_collection",
+          "model": "Zang 2026 · Metalens-1 · 荧光收集与离焦",
+          "study_id": "zang2026nv",
+          "specimen_id": "lens1",
+          "module": "",
+          "variant": "宽谱收集及轴向离焦扫描",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "固定商用物镜激发；比较两实制镜收集的荧光谱，轴向移动待测镜。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.3 Fig.2a及p.4 Fig.3a,b嵌图",
+              "note": "作者报告整片1 mm名义圆形通光区。内圆直径474 μm，外环从474 μm内径扩展至1 mm外径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "original_value": 1,
+              "original_unit": "mm",
+              "inner_zone_diameter_um": 474
+            },
+            "na": {
+              "value": null,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.3 Fig.2a及p.4 Fig.3a,b嵌图",
+              "note": "外环径向NA范围0.7–0.9，作者给区间。外环内径474 μm，外径1000 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "0.7–0.9（外环）",
+              "reported_na_range": {
+                "min": 0.7,
+                "max": 0.9
+              },
+              "pupil_region": "outer_annulus",
+              "active_zone_inner_diameter_um": 474,
+              "active_zone_outer_diameter_um": 1000
+            },
+            "design_focal_um": {
+              "value": 242,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.3 §2.2（右栏），Fig.2a与p.4 Fig.3c,d",
+              "note": "作者以700 nm设计焦位设Δz=0，报告f₀=242 μm。半径237／500 μm代入空气几何的NA约0.70／0.90，与分区标注相符。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "reference_wavelength_nm": 700,
+              "reference_plane": "700 nm设计焦面"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.3 §2.2、p.4 Fig.3a,c",
+              "note": "NV荧光宽谱。Fig.3波长横轴显示650–850 nm，约700 nm是设计参考；该图轴域和单色谱点独立。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "宽谱 NV 荧光（约700 nm设计中心）",
+              "design_wavelength_nm": 700
+            },
+            "relative_fluorescence_collection_pct": {
+              "value": 16,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.3 §2.2右栏，p.4 Fig.3a",
+              "note": "分子为该镜收集的NV荧光，分母为NA0.70商用物镜收集量，绝对发光总量和积分上下限未给。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "denominator": "reference_objective_collected_fluorescence",
+              "approximate": true,
+              "display": "约16%（商用物镜参照）"
+            },
+            "efficiency_protocol": {
+              "value": "Metalens-1的NV荧光收集 / NA 0.70商用物镜收集",
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.3 §2.2；p.4 Fig.3a；SI Note 3 入口",
+              "note": "Leica HC PL FLUOTAR L 63×/0.70 CORR为正文指定的商用物镜。参考实验固定激发物镜和NV；光谱积分范围、相同曝光或通光修正待核补件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "denominator": "reference_objective_collected_fluorescence",
+              "reference_objective_na": 0.7,
+              "reference_objective": "Leica HC PL FLUOTAR L 63×/0.70 CORR",
+              "spectral_integration_nm": null
+            },
+            "fluorescence_collection_spectral_width_nm": {
+              "value": 30,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.3 §2.2左栏，p.4 Fig.3a",
+              "note": "作者所称收集到的NV荧光谱宽，约值。图中并未给统一谱宽阈值或原始端点。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "approximate": true,
+              "spectral_width_criterion": null,
+              "display": "约30 nm"
+            },
+            "focus_variation_protocol": {
+              "value": "固定激发物镜和NV，移动待测超透镜并采PL谱，Δz=0为700 nm设计焦位",
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.3 §2.2、p.4 Fig.3c、p.8 §4.3",
+              "note": "图横轴650–850 nm，纵轴PL (a.u.)，色标标注Δz +40／0／−40 μm。距离减小时谱峰红移，增大时蓝移。作者NOTE 4的推导给局部斜率模型；主文未列逐色最佳焦位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "reference_wavelength_nm": 700,
+              "reference_plane": "700 nm设计焦面",
+              "reference_focal_um": 242,
+              "defocus_axis_markers_um": [
+                40,
+                0,
+                -40
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.3 §2.2、p.4 Fig.3c",
+              "note": "显示给定离焦下PL谱。242 μm为700 nm设计参考；没有独立逐色实测峰位数表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "逐波长峰位未给"
+            }
+          }
+        },
+        {
+          "id": "zang2026nv_lens2_summary",
+          "model": "Zang 2026 · Metalens-2 · 实物汇总",
+          "study_id": "zang2026nv",
+          "specimen_id": "lens2",
+          "module": "",
+          "variant": "两区波长复用消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "1 mm分区超透镜；两款互换激发与荧光收集区。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.3 Fig.2a及p.4 Fig.3a,b嵌图",
+              "note": "作者报告整片1 mm名义圆形通光区。内圆直径474 μm，外环从474 μm内径扩展至1 mm外径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "original_value": 1,
+              "original_unit": "mm",
+              "inner_zone_diameter_um": 474
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.7 §4.1",
+              "note": "600 nm为石英基底上的SiN纳米柱设计高及所用薄膜厚度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "material": {
+              "value": "石英基底上的方截面SiN纳米柱；分内圆和外环",
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.3 Fig.2a及p.4 Fig.3a,b嵌图",
+              "note": "Huygens单元设计节距250 nm。532和700 nm两套相位调制分别写入专用区域。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "lattice_pitch_nm": 250
+            },
+            "na": {
+              "value": null,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.3 Fig.2a及p.4 Fig.3a,b嵌图",
+              "note": "设备由两区组成，按各自波长通道的内圆或外环报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "内圆0.7；外环0.7–0.9"
+            },
+            "design_focal_um": {
+              "value": 242,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.3 §2.2（右栏），Fig.2a与p.4 Fig.3c,d",
+              "note": "作者以700 nm设计焦位设Δz=0，报告f₀=242 μm。半径237／500 μm代入空气几何的NA约0.70／0.90，与分区标注相符。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "reference_wavelength_nm": 700,
+              "reference_plane": "700 nm设计焦面"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.3 Fig.2a",
+              "note": "532 nm激发与约700 nm荧光设计通道。发光体谱带和轴向取样另列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "532 nm激发；约700 nm荧光",
+              "design_wavelengths_nm": [
+                532,
+                700
+              ]
+            },
+            "chromatic": {
+              "value": "外环负责532 nm激发；内圆负责约700 nm荧光收集",
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.3 Fig.2a及p.4 Fig.3a,b嵌图",
+              "note": "同一镜片的两区几何相位设计在共同位置。§2.2报告实物荧光收集和离焦时谱峰变化，主文未列逐色轴向最佳焦位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "zang_xia_nv_vor_2026",
+                "zang_xia_nv_2026"
+              ]
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.3 §2.2、p.4 Fig.3、p.8 §4.3",
+              "note": "Δz是扫描输入位置，逐点收集量与荧光谱峰会变。缺少同器件532 nm／700 nm各自的实测轴向峰位与残余轴差。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "reference_wavelength_nm": 700,
+              "display": "两通道残差未给"
+            }
+          }
+        },
+        {
+          "id": "zang2026nv_lens2_excitation",
+          "model": "Zang 2026 · Metalens-2 · 532 nm 激发区",
+          "study_id": "zang2026nv",
+          "specimen_id": "lens2",
+          "module": "",
+          "variant": "内外区独立光学通道",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "窄带532 nm激发通道。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.3 Fig.2a及p.4 Fig.3a,b嵌图",
+              "note": "作者报告整片1 mm名义圆形通光区。内圆直径474 μm，外环从474 μm内径扩展至1 mm外径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "original_value": 1,
+              "original_unit": "mm",
+              "inner_zone_diameter_um": 474
+            },
+            "na": {
+              "value": null,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.3 Fig.2a及p.4 Fig.3a,b嵌图",
+              "note": "外环径向NA范围0.7–0.9，作者给区间。外环内径474 μm，外径1000 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "0.7–0.9（外环）",
+              "reported_na_range": {
+                "min": 0.7,
+                "max": 0.9
+              },
+              "pupil_region": "outer_annulus",
+              "active_zone_inner_diameter_um": 474,
+              "active_zone_outer_diameter_um": 1000
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1；p.3 §2.2选镜段",
+              "note": "Metalens-2 的532 nm外环是设计配置。主文荧光比较由商用物镜激发，单镜成像实验选择Metalens-1。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "532 nm（激发区设计）",
+              "design_wavelength_nm": 532
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1 Eq.(1)、p.3 §2.2",
+              "note": "主文未列该器件激发区的独立轴扫峰位或实测焦距表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "独立焦位未给"
+            },
+            "illumination": {
+              "value": "532 nm 激光；NV 发光探测另列",
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.8 §4.3",
+              "note": "激发落在外环。Metalens-1用于后续单镜系统实测；两镜的荧光比较使用固定商用激发物镜。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            }
+          }
+        },
+        {
+          "id": "zang2026nv_lens2_collection",
+          "model": "Zang 2026 · Metalens-2 · 荧光收集与离焦",
+          "study_id": "zang2026nv",
+          "specimen_id": "lens2",
+          "module": "",
+          "variant": "宽谱收集及轴向离焦扫描",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "固定商用物镜激发；比较两实制镜收集的荧光谱，轴向移动待测镜。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.3 Fig.2a及p.4 Fig.3a,b嵌图",
+              "note": "作者报告整片1 mm名义圆形通光区。内圆直径474 μm，外环从474 μm内径扩展至1 mm外径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "original_value": 1,
+              "original_unit": "mm",
+              "inner_zone_diameter_um": 474
+            },
+            "na": {
+              "value": 0.7,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.3 Fig.2a及p.4 Fig.3a,b嵌图",
+              "note": "内圆直径474 μm，名义设计NA 0.7；镜片整片径向分区另列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "na_definition": "metalens_design",
+              "pupil_region": "inner_disk",
+              "active_zone_diameter_um": 474
+            },
+            "design_focal_um": {
+              "value": 242,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.3 §2.2（右栏），Fig.2a与p.4 Fig.3c,d",
+              "note": "作者以700 nm设计焦位设Δz=0，报告f₀=242 μm。半径237／500 μm代入空气几何的NA约0.70／0.90，与分区标注相符。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "reference_wavelength_nm": 700,
+              "reference_plane": "700 nm设计焦面"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.3 §2.2、p.4 Fig.3b,d",
+              "note": "NV荧光宽谱。Fig.3波长横轴显示650–850 nm，约700 nm是设计参考；该图轴域和单色谱点独立。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "宽谱 NV 荧光（约700 nm设计中心）",
+              "design_wavelength_nm": 700
+            },
+            "relative_fluorescence_collection_pct": {
+              "value": 34,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.3 §2.2右栏，p.4 Fig.3b",
+              "note": "分子为该镜收集的NV荧光，分母为NA0.70商用物镜收集量，绝对发光总量和积分上下限未给。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "denominator": "reference_objective_collected_fluorescence",
+              "approximate": false,
+              "display": "34%（商用物镜参照）"
+            },
+            "efficiency_protocol": {
+              "value": "Metalens-2的NV荧光收集 / NA 0.70商用物镜收集",
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.3 §2.2；p.4 Fig.3b；SI Note 3 入口",
+              "note": "Leica HC PL FLUOTAR L 63×/0.70 CORR为正文指定的商用物镜。参考实验固定激发物镜和NV；光谱积分范围、相同曝光或通光修正待核补件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "denominator": "reference_objective_collected_fluorescence",
+              "reference_objective_na": 0.7,
+              "reference_objective": "Leica HC PL FLUOTAR L 63×/0.70 CORR",
+              "spectral_integration_nm": null
+            },
+            "fluorescence_collection_spectral_width_nm": {
+              "value": 50,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.3 §2.2左栏，p.4 Fig.3b",
+              "note": "作者所称收集到的NV荧光谱宽，约值。图中并未给统一谱宽阈值或原始端点。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "approximate": true,
+              "spectral_width_criterion": null,
+              "display": "约50 nm"
+            },
+            "focus_variation_protocol": {
+              "value": "固定激发物镜和NV，移动待测超透镜并采PL谱，Δz=0为700 nm设计焦位",
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.3 §2.2、p.4 Fig.3d、p.8 §4.3",
+              "note": "图横轴650–850 nm，纵轴PL (a.u.)，色标标注Δz +40／0／−40 μm。距离减小时谱峰红移，增大时蓝移。作者NOTE 4的推导给局部斜率模型；主文未列逐色最佳焦位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "reference_wavelength_nm": 700,
+              "reference_plane": "700 nm设计焦面",
+              "reference_focal_um": 242,
+              "defocus_axis_markers_um": [
+                40,
+                0,
+                -40
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.3 §2.2、p.4 Fig.3d",
+              "note": "显示给定离焦下PL谱。242 μm为700 nm设计参考；没有独立逐色实测峰位数表。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "逐波长峰位未给"
+            }
+          }
+        },
+        {
+          "id": "zang2026nv_metalens1_imaging",
+          "model": "Zang 2026 · Metalens-1 · 单镜 NV 成像",
+          "study_id": "zang2026nv",
+          "specimen_id": "lens1_nv_imaging",
+          "module": "",
+          "variant": "单镜宽谱荧光成像系统",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "使用Metalens-1成像，不同于Fig.3固定商用激发物镜的光谱比较配置。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.2 §2.1、p.3 Fig.2a及p.4 Fig.3a,b嵌图",
+              "note": "作者报告整片1 mm名义圆形通光区。内圆直径474 μm，外环从474 μm内径扩展至1 mm外径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "original_value": 1,
+              "original_unit": "mm",
+              "inner_zone_diameter_um": 474
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF pp.3–5 §2.2；p.8 §4.3",
+              "note": "探测是带650 nm长通的宽谱PL，未给该PSF记录单独有效中心波长或谱权重。532 nm属于激发条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "宽谱荧光；532 nm激发"
+            },
+            "psf_protocol": {
+              "value": "Metalens-1单镜，532 nm激发，探测经650 nm长通。三轴台扫描点状NV系综，获得XY与YZ荧光图。",
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF pp.3–5 §2.2及Fig.4a–d，p.8 §4.3",
+              "note": "532 nm激发走内圆，约700 nm设计收集走外环。正文方法列650 nm长通，Fig.4宽谱PL的上截止、像素采样与逐色数据未给。NV通过100 nm掩模孔植入。虚线取X与Z截线，实测点以高斯拟合。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "excitation_wavelength_nm": 532,
+              "collection_design_wavelength_nm": 700,
+              "collection_longpass_nm": 650,
+              "signal": "nv_fluorescence",
+              "spectral_sampling": "broadband_emission",
+              "scan_planes": [
+                "xy",
+                "yz"
+              ]
+            },
+            "system_lateral_psf_fwhm_um": {
+              "value": 0.405,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.4 §2.2（末段）；p.5 Fig.4a,c X横截线",
+              "note": "作者给 405 nm。为对NV系综扫描所得的荧光成像系统半高全宽，Gaussian拟合；图轴为X，样品尺寸与拟合误差未量化扣除。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "original_value": 405,
+              "original_unit": "nm",
+              "direction": "x",
+              "calculation_origin": "authors",
+              "signal": "nv_fluorescence",
+              "spectral_sampling": "broadband_emission",
+              "fit": "gaussian"
+            },
+            "system_axial_psf_fwhm_um": {
+              "value": 1.8,
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.4 §2.2（末段）；p.5 Fig.4b,d Z横截线",
+              "note": "作者给1.8 μm。为宽谱荧光系统Z截线半高全宽；作者未给轴向像素间距及各波长独立峰位。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "original_value": 1.8,
+              "original_unit": "μm",
+              "direction": "z",
+              "calculation_origin": "authors",
+              "signal": "nv_fluorescence",
+              "spectral_sampling": "broadband_emission",
+              "fit": "gaussian"
+            },
+            "mtf_curve": {
+              "value": "实测系统荧光PSF图与横、轴截线；原始PSF与MTF待核",
+              "source": "zang_xia_nv_vor_2026",
+              "location": "正式PDF p.5 Fig.4a–f、p.8 Data Availability；期刊SI目录",
+              "note": "实测图a,b与拟合c,d。图内e,f标Simulated，图注末尾另重复c,d，正文对应e,f。未见MTF曲线与数值。Wiley补件403、DataCite精确关联0项，作者说明数据可合理请求。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "zang_xia_nv_vor_2026",
+                "zang_xia_nv_2026",
+                "zang_xia_nv_datacite_2026"
+              ],
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "independently_recomputed_mtf": null,
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "statement": "available_from_corresponding_author_on_reasonable_request"
+              }
+            }
+          }
         }
       ],
-      "scope": "53项原始研究、281个器件/测量/系统配置、1216条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
+      "scope": "54项原始研究、284个器件/测量/系统配置、1223条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",

@@ -102,6 +102,24 @@ export function validateDevices(d,catalog){
  if(Number.isFinite(focusWidth?.value)&&(!(r.values.wavelength_nm?.value>0)||!focusWidth.dof_criterion||!r.values.psf_protocol?.value))errors.push('focal interval context');
  if(Number.isFinite(minimumWidth?.value)&&(minimumWidth.direction!=='x'||!minimumWidth.statistic||!r.values.psf_protocol?.value))errors.push('minimum focal width context');
  const efficiencyProtocol=r.values.efficiency_protocol;
+ const collection=r.values.relative_fluorescence_collection_pct;
+ const fluorescenceWidth=r.values.fluorescence_collection_spectral_width_nm;
+ if(Number.isFinite(collection?.value)&&(
+  collection.value<0||collection.basis!=='derived_from_measurement'||collection.calculation_origin!=='authors'||
+  collection.denominator!=='reference_objective_collected_fluorescence'||efficiencyProtocol?.denominator!==collection.denominator||
+  !(efficiencyProtocol.reference_objective_na>0)||!efficiencyProtocol.value||
+  r.values.wavelength_nm?.value!==null))errors.push('reference fluorescence collection context');
+ if(Number.isFinite(fluorescenceWidth?.value)&&(
+  fluorescenceWidth.value<=0||fluorescenceWidth.basis!=='derived_from_measurement'||fluorescenceWidth.calculation_origin!=='authors'||
+  r.values.wavelength_nm?.value!==null||!efficiencyProtocol?.value))errors.push('fluorescence collection spectral width context');
+ for(const [key,directions] of [['system_lateral_psf_fwhm_um',['x','y','radial']],['system_axial_psf_fwhm_um',['z']]]){
+  const width=r.values[key];
+  const protocol=r.values.psf_protocol;
+  if(Number.isFinite(width?.value)&&(
+   width.value<=0||width.basis!=='derived_from_measurement'||width.calculation_origin!=='authors'||!directions.includes(width.direction)||
+   width.spectral_sampling!=='broadband_emission'||protocol?.spectral_sampling!==width.spectral_sampling||
+   !protocol.value||!(protocol.excitation_wavelength_nm>0)||r.values.wavelength_nm?.value!==null))errors.push('broadband fluorescence system PSF context');
+ }
  const geometricRms=r.values.simulated_geometric_rms_spot_radius_um;
  if(Number.isFinite(geometricRms?.value)&&(
   geometricRms.value<0||geometricRms.basis!=='model'||!['authors','atlas'].includes(geometricRms.calculation_origin)||

@@ -1231,3 +1231,7 @@ Feng 2022 新增课题组发布的双层器件表面实拍、纳米柱结构说�
 0.3.60 经 PR #200 合并为 `5d3fe3b`，PR 校验 44720159383、主线校验 44720277360、Pages 44720277496 均成功。324 项测试通过，236 个公开文件与本地构建逐一核 SHA-256。独立无头 Chrome 核全库 53 篇、1216 条，可见光 44 篇、810 条。Chen 同篇一款实物、3 条记录，筛选后保留汇总和 780 nm 两条。复核口径／NA 为 2000 μm／0.46，780 nm 焦位为 2600 μm，验证两个散点、CSV、引用往返、正式 PDF 和作者稿的原链及六个视口。[PR #200](https://github.com/SelinLee/lens-evidence-atlas/pull/200) · [Pages 44720277496](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44720277496)
 
 沿 Chen 合作者黄坤的中科大发表目录查 Zang、Xia 等 2026。独立无头 Chrome 按 HTTP 206 字节区间取得完整的 6082549 字节正式 PDF，SHA-256 `9da4956f254b68e9ca1d975aa6fb333180b7d0fe974846f8c24c462a50aae5d5`。§2.1 明确以空间复用校正 532 nm 激发和约 700 nm 荧光收集，内外区互换得到两种实物配置。§2.2 把 700 nm 的设计焦位 242 μm 设为 Δz=0，Fig.3c,d 画离焦谱。Fig.4a–d 测 Metalens-1 荧光成像系统横向 405 nm、轴向 1.8 μm，图内 e,f 为模拟而图注末尾重复写 c,d。先复核两区的口径和设计 NA，厘清荧光收集谱宽、相对效率与实际逐色焦位的来源。期刊补件下载返回 403，数据声明为合理请求。持续目标保持开启。[正式主文](https://faculty.ustc.edu.cn/_resources/group1/M00/00/84/wKhJFWmlUBmAI0_pAFzP9cIrg9o138.pdf) · [科大作者列表](https://faculty.ustc.edu.cn/huangkun/zh_CN/zdylm/739938/list/index.htm) · [期刊](https://doi.org/10.1002/adfm.202530596)
+
+## 2026-11-20-143 · Zang 与 Xia 的两款实物和宽谱系统 PSF
+
+已录两款 1 mm、内圆 474 μm 的分区超透镜，并保留一项 Metalens-1 单镜 NV 荧光成像配置，共 7 条记录。700 nm 的 242 μm 为设计参考，Fig.3 的扫描坐标与各波长最佳焦位仍分开。Metalens-1／2 的收集谱宽约 30／50 nm，荧光收集量相对商用 NA 0.70 物镜为约 16%／34%。系统 X／Z 宽度为 0.405／1.8 μm，原始点响应、逐色残差及效率积分条件仍待补件。全库 54 篇、284 个配置、1223 条记录，可见光 45 篇、817 条。[本批核验](ZANG_XIA_NV_METALENS_REVIEW_2026-11-20.md)
