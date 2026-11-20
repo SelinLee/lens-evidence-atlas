@@ -18,12 +18,12 @@ test('line-lens geometry, bandwidth and axial steps retain their dimensions with
 
 test('three directly reported x widths and focal-line efficiencies cannot become transverse y widths, simulated efficiencies or circular encircled energy',()=>{
  for(const [w,fw,eta]of [[1300,27.5,15],[1550,29,10],[1800,25,21]]){const v=get('axial_'+w);assert.equal(v.fwhm_x_um.value,fw);assert.equal(v.fwhm_x_um.basis,'measured');assert.equal(v.fwhm_y_um.value,null);assert.equal(v.efficiency_at_lambda_pct.value,eta);assert.equal(v.efficiency_at_lambda_pct.basis,'measured');assert.equal(v.efficiency_lambda_nm.value,w);assert.match(v.fwhm_x_um.display,/作者稿正文直报/);assert.match(v.efficiency_at_lambda_pct.reading_version,/prepublication/);assert.equal(v.efficiency_band_mean_pct,undefined);assert.equal(v.efficiency_protocol.integration_geometry,'focal_line_waist');assert.equal(v.efficiency_protocol.width_definition,'full_width_at_1_over_e_squared');assert.deepEqual(v.efficiency_protocol.denominator_geometry_um,{x:600,y:600});assert.match(v.efficiency_protocol.note,/y向积分长度.*未齐/);}
- assert.equal(axisPoints(rows,'wavelength_nm','fwhm_x_um').length,3);assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,3);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,161);
+ assert.equal(axisPoints(rows,'wavelength_nm','fwhm_x_um').length,3);assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,3);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,165);
 });
 
 test('the uncorrected 1690 nm focus is a direct author-text value while its fixed-plane signed offset is an atlas calculation',()=>{
  const v=get('axial_1690');assert.equal(v.measured_focal_um.value,3830);assert.equal(v.measured_focal_um.basis,'measured');assert.match(v.measured_focal_um.display,/作者稿正文3.83mm/);const a=v.axial_focus_offset_um;assert.equal(a.value,-3670);assert.equal(a.calculation_origin,'atlas');assert.equal(a.reference_plane_um,7500);assert.equal(a.reference_wavelength_nm,null);assert.match(a.reference_plane_description,/Fig.6.*固定z7.5mm/);assert.equal(a.value,v.measured_focal_um.value-a.reference_plane_um);assert.match(a.display,/本库/);
- assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,1);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,48);assert.equal(axisPoints(rows,'wavelength_nm','axial_focus_offset_um').length,1);
+ assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,1);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,52);assert.equal(axisPoints(rows,'wavelength_nm','axial_focus_offset_um').length,1);
  const d=structuredClone(data);d.domains.metalens.rows.find(r=>r.id==='khor2015_axial_1690').values.axial_focus_offset_um.value=3670;assert.throws(()=>validateDevices(d,catalog),/atlas axial offset reference\/input/);
 });
 

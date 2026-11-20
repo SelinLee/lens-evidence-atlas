@@ -19,7 +19,7 @@ test('design focal length and collection objectives never backfill fourteen miss
  const spectral=rows.filter(r=>Number.isFinite(r.values.wavelength_nm.value));assert.deepEqual(spectral.map(r=>r.values.wavelength_nm.value),Array.from({length:14},(_,i)=>400+20*i));
  for(const r of spectral){const v=r.values;assert.equal(v.diameter_um.value,21.65);assert.equal(v.na.value,.2157);assert.equal(v.design_focal_um.value,49);assert.equal(v.design_focal_um.basis,'reported_configuration');assert.equal(v.measured_focal_um.value,null);assert.equal(v.fwhm_um.value,null);assert.equal(v.height_nm.value,800);assert.equal(v.focus_variation_um,undefined);}
  const camera=get('lightfield_system').values;for(const k of ['diameter_um','na','design_focal_um','measured_focal_um','fwhm_um'])assert.equal(camera[k],undefined);
- assert.match(camera.material.value,/60×60/);assert.equal(camera.chromatic.basis,'reconstruction');assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,48);
+ assert.match(camera.material.value,/60×60/);assert.equal(camera.chromatic.basis,'reconstruction');assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,52);
 });
 
 test('author operation efficiencies preserve their denominator and errors instead of joining focusing efficiency data',()=>{
@@ -29,7 +29,7 @@ test('author operation efficiencies preserve their denominator and errors instea
  assert.equal(band.operation_efficiency_band_mean_pct.value,39.1);assert.equal(band.operation_efficiency_band_mean_pct.approximate,true);assert.equal(band.operation_efficiency_band_mean_pct.statistic,'band_mean');assert.equal(band.operation_efficiency_band_mean_pct.reported_error.type,'not_specified');
  assert.match(point.operation_efficiency_protocol.value,/相反手性/);assert.match(point.operation_efficiency_protocol.value,/积分区域.*未给/);
  for(const r of rows)for(const k of ['efficiency_at_lambda_pct','efficiency_band_mean_pct'])assert.equal(r.values[k],undefined);
- assert.equal(axisPoints(rows,'wavelength_nm','operation_efficiency_at_lambda_pct').length,1);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,161);
+ assert.equal(axisPoints(rows,'wavelength_nm','operation_efficiency_at_lambda_pct').length,1);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,165);
 });
 
 test('the MTF audit keeps only three curve associations and explicitly unknown PSF provenance and raw arrays',()=>{
