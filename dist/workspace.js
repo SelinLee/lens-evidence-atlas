@@ -1,4 +1,4 @@
-import {groupRows, valueSources, filteredRows, axisPoints, metricAvailability, availableAxes, customSampleAxes, metricKey, customImportTemplate, mergeCustomImport} from './workspace-data.js?v=6896d22a6c4f1788';
+import {groupRows, valueSources, filteredRows, axisPoints, metricAvailability, availableAxes, customSampleAxes, metricKey, customImportTemplate, mergeCustomImport} from './workspace-data.js?v=ea0b4d9fd2693fb6';
 
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

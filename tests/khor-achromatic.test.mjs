@@ -22,7 +22,7 @@ test('only three explicitly printed author-manuscript focal lengths and six capt
   const v=get('aml_'+w);assert.equal(v.measured_focal_um.value,f);assert.equal(v.measured_focal_um.basis,'measured');assert.equal(v.measured_focal_um.reading_version,'arXiv:1701.06696v1');assert.match(v.measured_focal_um.location,new RegExp('Fig.5'+panel));assert.match(v.measured_focal_um.display,/arXiv v1印字/);assert.equal(v.fwhm_x_um.value,x);assert.equal(v.fwhm_y_um.value,y);assert.equal(v.design_focal_um.value,485);
  }
  for(const w of [500,510,530,540]){assert.equal(get('aml_'+w).measured_focal_um.value,null);assert.equal(get('aml_'+w).fwhm_x_um.value,null);assert.equal(get('aml_'+w).axial_focus_offset_um,undefined);}
- assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,3);assert.equal(axisPoints(rows,'wavelength_nm','fwhm_x_um').length,3);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,49);
+ assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,3);assert.equal(axisPoints(rows,'wavelength_nm','fwhm_x_um').length,3);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,51);
 });
 
 test('fixed evaluation planes do not duplicate best-focus measurements or transfer their widths',()=>{
@@ -44,7 +44,7 @@ test('signed axial offsets are atlas calculations against the documented fixed p
 test('control geometry and inaccessible efficiency evidence never become AML measurement values or raw data',()=>{
  const g=get('gml_summary'),r=get('reverse_summary');assert.equal(g.chromatic.basis,'measured');assert.equal(r.chromatic.basis,'model');assert.equal(r.measured_focal_um.value,null);assert.match(r.chromatic.value,/局部非单调/);assert.match(r.chromatic.note,/500→510nm.*550→560nm/);
  for(const v of [g,r])for(const key of ['diameter_um','na','design_focal_um','fwhm_x_um','focal_spectral_sd_um','focus_variation_pct'])assert.equal(v[key],undefined);
- for(const r of rows)assert.equal(r.values.efficiency_at_lambda_pct,undefined);assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,0);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,147);assert.equal(axisPoints(lens.rows,'na','efficiency_band_mean_pct').length,13);
+ for(const r of rows)assert.equal(r.values.efficiency_at_lambda_pct,undefined);assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,0);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,148);assert.equal(axisPoints(lens.rows,'na','efficiency_band_mean_pct').length,13);
  assert.match(get('aml_summary').efficiency_protocol.note,/功率分母/);assert.match(get('aml_summary').mtf_curve.value,/SI内容仍待取得/);
 });
 

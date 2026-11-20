@@ -135,3 +135,5 @@
 `vortex_inner_fwhm_um` 保存实测环形光斑的内侧两个半高交点间距，绑定波长、偏振及同向 `psf_protocol`。`reverse_collection_efficiency_pct` 保存从样品侧送光后测得的收集功率比，绑定测量波长、镜后收集距离、参考物镜、功率分母及积分范围。环内半高宽度和反向收集功率比各用独立指标。
 
 `imaging_feature_width_um` 保存有限尺寸样品在成像系统中的横截线宽度。`width_definition` 区分作者直报的 `fwhm` 与半高定义未明的 `author_fit_width`。记录拟合对象、截线方向、耗尽光条件和扫描步长。实测样品线宽和镜片焦斑 PSF 各有自己的测量记录。
+
+实测数值在同文主文、补件或作者答复之间冲突时，可用 `alternative_reports` 保存至少两个不同原值及各自的 `source`、`location`、`basis` 和 `note`。主格用 `value: null`、`basis: unresolved`，`display` 保留原值和来源标签，引用列表绑定所有报告。散点仅纳入选定的数值格。

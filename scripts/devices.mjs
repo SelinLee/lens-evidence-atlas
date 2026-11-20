@@ -25,6 +25,10 @@ export function validateDevices(d,catalog){
   if(v.sourceIds&&(!Array.isArray(v.sourceIds)||!v.sourceIds.includes(v.source)||v.sourceIds.some(id=>!ids.has(id))))errors.push('cell multiple sources');
   const m=c.metrics.find(m=>m.id===k);if(v.value!==null&&m?.numeric&&!Number.isFinite(v.value))errors.push('nonfinite numeric');
   if(m?.numeric&&v.basis==='unresolved'&&v.value!==null)errors.push('unresolved value');
+  const reports=v.alternative_reports;
+  if(reports!==undefined&&(!m?.numeric||v.value!==null||v.basis!=='unresolved'||!v.display||!Array.isArray(reports)||!Array.isArray(v.sourceIds)||
+   reports.some(report=>!Number.isFinite(report?.value)||!v.sourceIds?.includes(report.source)||!report.location||!report.note||
+    !['measured','derived_from_measurement'].includes(report.basis))||new Set(reports.map(report=>report.value)).size<2))errors.push('conflicting measured reports');
   if(m?.numeric&&v.frequency_status==='author_scale_unverified'&&!['mtf50_app_reported','mtf50_imatest_reported'].includes(k))errors.push('unverified frequency axis');
   if(r.evidence_type==='study'&&(!['reported_configuration','measured','model','modeled','derived_from_measurement','reconstruction','unresolved'].includes(v.basis)||!v.note))errors.push('study cell evidence');
   if(v.reported_error&&(!['SD','SE','not_specified'].includes(v.reported_error.type)||!Number.isFinite(v.reported_error.value)||v.reported_error.value<0||

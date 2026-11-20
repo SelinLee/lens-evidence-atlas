@@ -109,7 +109,7 @@ test('asset versions match the final bytes including transitive module imports a
 
 test('each paper owns its configurations and its supplementary source IDs resolve to the same publication',()=>{
  const lenses=atlas.domains.find(d=>d.id==='metalens'), groups=groupRows(lenses.rows);
- assert.equal(groups.length,55);
+ assert.equal(groups.length,56);
  const balli=groups.find(g=>g.key==='balli2020');
  assert.equal(balli.rows.length,47);
  assert.equal(new Set(balli.rows.map(r=>r.specimen_id)).size,6);
@@ -124,10 +124,10 @@ test('each paper owns its configurations and its supplementary source IDs resolv
 
 test('visible-light filtering prioritizes the actual spectral row and keeps unknown wavelengths separate',()=>{
  const lens=atlas.domains.find(d=>d.id==='metalens'), filtered=filteredRows(lens,{visible:true,models:null});
- assert.equal(filtered.length,825);
+ assert.equal(filtered.length,829);
  assert.deepEqual(filtered.filter(r=>r.study_id==='lin2025').map(r=>r.values.wavelength_nm.value),[650,700,650,700]);
  assert.ok(!filtered.some(r=>['balli2020','shrestha2018'].includes(r.study_id)));
- assert.equal(groupRows(filtered).length,46);
+ assert.equal(groupRows(filtered).length,47);
  const band={lambda_min_nm:{value:350},lambda_max_nm:{value:920}};
  const passes=values=>hasVisibleLight({id:'metalens'},{values});
  assert.ok(passes(band));assert.ok(!passes({}));assert.ok(!passes({...band,wavelength_nm:{value:1000}}));
@@ -159,8 +159,9 @@ test('Balli 2021 shares its imaging paper identity and plots only the assigned e
 test('journal labels use the parent publication and disambiguate same-year papers across filters',()=>{
  const lenses=atlas.domains.find(d=>d.id==='metalens');
  const chang=lenses.rows.find(r=>r.study_id==='chang2024'&&r.model.includes('400'));
- assert.equal(chang.pointLabel,'Nat. Commun. 2024');
- assert.equal(chang.chartLabel,'Nat. Commun. 2024 · D400μm');
+ assert.equal(chang.pointLabel,'Nat. Commun. 2024, 9627');
+ assert.equal(chang.chartLabel,'Nat. Commun. 2024, 9627 · D400μm');
+ assert.equal(lenses.rows.find(r=>r.study_id==='barulin2024fcs').pointLabel,'Nat. Commun. 2024, 26');
  const points=axisPoints([chang],'$model','diameter_um');
  assert.equal(points[0].label,chang.chartLabel);
  assert.equal(points[0].y,400);
