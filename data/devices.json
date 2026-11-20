@@ -2425,6 +2425,51 @@
       "scope": "精确关联查询0项。Wiley来源仅列adfm74564-sup-0001-SuppMat.pdf；直接下载403。",
       "checked_on": "2026-11-20",
       "publication_source": "zang_xia_nv_2026"
+    },
+    {
+      "id": "ji_sted_2025",
+      "title": "Ji et al. · Multidimensional multiplexing metalens for STED microscopy",
+      "url": "https://doi.org/10.1126/sciadv.adt2807",
+      "kind": "peer_reviewed_paper",
+      "scope": "Science Advances 11(17)，eadt2807，正式版 2025-04-23；PMC 卷期日 2025-04-25。2025 年 3 月中科院综合性期刊大类一区。Fig. 3 与补件 Fig. S5 明确证实同镜两色共焦。",
+      "checked_on": "2026-11-20",
+      "doi": "10.1126/sciadv.adt2807"
+    },
+    {
+      "id": "ji_sted_vor_2025",
+      "title": "Ji et al. · PMC 托管 Science Advances 正式 PDF",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12017330.1/PMC12017330.1.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "正式 7 页。核 pp.1–5 的设计、实物、焦场、效率及成像，pp.6–7 方法与数据声明。2605612 字节，SHA-256 9773ae198a6b8cf648ef966e3c8e0339939a139f145a907e622ffe277306d535。",
+      "checked_on": "2026-11-20",
+      "publication_source": "ji_sted_2025"
+    },
+    {
+      "id": "ji_sted_si_2025",
+      "title": "Ji et al. · sciadv.adt2807_sm.pdf",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12017330.1/sciadv.adt2807_sm.pdf",
+      "kind": "supplement",
+      "scope": "核 SI §§1–5、Figs. S1–S8 和 Table S1。重点复核 Fig. S4 双光束光路、Fig. S5 两色叠图和 Fig. S8 功率稳定性。3048713 字节，SHA-256 c12adcae801c460162d6d79dcd14fe56e8f2b45a7557bc434f50850185b1de5f。",
+      "checked_on": "2026-11-20",
+      "publication_source": "ji_sted_2025"
+    },
+    {
+      "id": "ji_sted_pmc_manifest_2025",
+      "title": "PMC Open Access · Ji 2025 同版存档清单",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/?prefix=PMC12017330.1",
+      "kind": "repository_metadata",
+      "scope": "同版本正文 PDF、XML、TXT、JSON，五个主文图版及补充 PDF，共十个对象。未列原始 PSF、轴向扫描或功率记录数组。",
+      "checked_on": "2026-11-20",
+      "publication_source": "ji_sted_2025"
+    },
+    {
+      "id": "ji_sted_datacite_2025",
+      "title": "DataCite · Ji 2025 原作 DOI 关联检索",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1126%2Fsciadv.adt2807%22",
+      "kind": "repository_metadata",
+      "scope": "正式 DOI 精确 relatedIdentifier 检索 0 项。",
+      "checked_on": "2026-11-20",
+      "publication_source": "ji_sted_2025"
     }
   ],
   "domains": {
@@ -6339,6 +6384,55 @@
             {
               "source": "zang_xia_nv_vor_2026",
               "location": "正式PDF pp.4–5 §2.2、Fig.4b,d"
+            }
+          ]
+        },
+        {
+          "id": "vortex_inner_fwhm_um",
+          "label": "环形焦斑内侧 FWHM (μm)",
+          "numeric": true,
+          "definition": "横截面环形焦斑中心两侧的内半高交点之间的距离。",
+          "conditions": "波长、偏振、横截线、焦面与峰值归一化。",
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.3 实验段；p.4 Fig. 3G,H"
+            }
+          ]
+        },
+        {
+          "id": "reverse_collection_efficiency_pct",
+          "label": "反向送光收集效率 (%)",
+          "numeric": true,
+          "definition": "由参考物镜在样品侧向超透镜焦点送光后，镜后收集功率与输入功率之比。",
+          "conditions": "测试波长、偏振、参考物镜、接收位置、积分区域及输入功率条件。",
+          "axis_bounds": {
+            "min": 0,
+            "max": 100
+          },
+          "definition_refs": [
+            {
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.4 Experimental demonstration 末段"
+            }
+          ]
+        },
+        {
+          "id": "imaging_feature_width_um",
+          "label": "系统成像特征截线宽度 (μm)",
+          "numeric": true,
+          "definition": "作者从实测有限尺寸样品成像截线拟合得到的宽度。",
+          "conditions": "样品、截线、拟合宽度定义、光路/通道及扫描取样条件。",
+          "axis_bounds": {
+            "min": 0
+          },
+          "definition_refs": [
+            {
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.5 Fig. 4C、Fig. 5C 与正文"
             }
           ]
         }
@@ -149549,9 +149643,805 @@
               }
             }
           }
+        },
+        {
+          "id": "ji2025sted_lens_summary",
+          "model": "Ji 2025 · STED · 双波长实物汇总",
+          "study_id": "ji2025sted",
+          "specimen_id": "lens",
+          "module": "",
+          "variant": "单层偏振复用消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一圆形 TiO₂ 透射超透镜的设计和两离散入射谱点；独立反向测试和系统成像另有记录。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF pp.1–2 Eq. (1)–(3)、Fig. 1、p.2 左栏设计段",
+              "note": "100 μm为圆形TiO₂超透镜的直径。补件 Fig. S4 的 150 μm 指缩束后的光束直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "na": {
+              "value": 0.8,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF pp.1–2 Eq. (1)–(3)、Fig. 1、p.2 左栏设计段",
+              "note": "作者明确给出的设计 NA。p.3 对 635 nm 实验也沿用 NA 0.8。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "height_nm": {
+              "value": 1000,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.6 Sample fabrication；SI p.2 §1",
+              "note": "设计柱高及制备起始 TiO₂ 薄膜厚度均报告 1000 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "ji_sted_vor_2025",
+                "ji_sted_si_2025"
+              ]
+            },
+            "material": {
+              "value": "玻璃基底上的矩形 TiO₂ 双折射纳米柱",
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF pp.1–2 Fig. 1、p.6 Sample fabrication；SI p.2 §1",
+              "note": "单层矩形纳米柱。补件给单元节距 400 nm、柱高 1000 nm。设计轮廓含 49084 根柱。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "lattice_pitch_nm": 400,
+              "sourceIds": [
+                "ji_sted_vor_2025",
+                "ji_sted_si_2025"
+              ]
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF pp.1–2 Eq. (1)–(3)、Fig. 1、p.2 左栏设计段",
+              "note": "Eq. (1)–(2) 共用设计参数 f，设计段给 100 μm 和 NA 0.8。原文未另外印出数值型设计焦距。37.5 μm 是下方两个谱点的报告实测焦位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.3 Experimental demonstration、p.4 Fig. 3D,G；SI pp.5–6 Fig. S4,S5",
+              "note": "635 nm右旋圆偏振与780 nm左旋圆偏振为两离散实测成焦谱点。690 nm属于反向收集测试。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "635 nm RCP、780 nm LCP 两点",
+              "sample_wavelengths_nm": [
+                635,
+                780
+              ]
+            },
+            "chromatic": {
+              "value": "两离散谱点共焦，分别为实心与环形焦斑",
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.3 Experimental demonstration、p.4 Fig. 3D,G；SI pp.5–6 Fig. S4,S5",
+              "note": "双折射纳米柱的传播相位及由旋角决定的几何相位匹配两套目标相位。补件 Fig. S5a,b 显示焦心重叠；未报告轴向或横向残差原值。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "ji_sted_vor_2025",
+                "ji_sted_si_2025"
+              ]
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.3 Experimental demonstration、p.4 Fig. 3D,G；SI pp.5–6 Fig. S4,S5",
+              "note": "两实测焦位均印作37.5 μm，轴向采样与焦位不确定度未报告。两色叠图支持共焦，轴向残差及横向配准偏移均无原数。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "sample_wavelengths_nm": [
+                635,
+                780
+              ],
+              "reference_wavelength_nm": 635,
+              "display": "共焦；量化残差未给",
+              "sourceIds": [
+                "ji_sted_vor_2025",
+                "ji_sted_si_2025"
+              ]
+            },
+            "mtf_curve": {
+              "value": "Fig. 3 / S5 实测焦斑图；MTF、Strehl 和可复算数组未获",
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF pp.3–4 Fig. 3D–I、p.7 Data and materials availability；补充 PDF p.6 Fig. S5",
+              "note": "原文数据声明指向文章及其补件。PMC 同版清单仅见图版和 PDF，DataCite 精确关联无结果。缺三维强度数组、PSF 原始帧和轴向步长。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "raw_psf": null,
+              "author_numeric_mtf": null,
+              "independently_recomputed_mtf": null,
+              "sourceIds": [
+                "ji_sted_vor_2025",
+                "ji_sted_si_2025",
+                "ji_sted_pmc_manifest_2025",
+                "ji_sted_datacite_2025"
+              ],
+              "data_availability": {
+                "status": "no_mtf_in_checked_material",
+                "statement": "paper_and_supplement"
+              }
+            }
+          }
+        },
+        {
+          "id": "ji2025sted_lens_635",
+          "model": "Ji 2025 · STED · 635 nm 激发 · RCP",
+          "study_id": "ji2025sted",
+          "specimen_id": "lens",
+          "module": "",
+          "variant": "单层偏振复用消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一只 100 μm 超透镜在 635 nm RCP 的 实心焦斑及其工作效率。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF pp.1–2 Eq. (1)–(3)、Fig. 1、p.2 左栏设计段",
+              "note": "100 μm为圆形TiO₂超透镜的直径。补件 Fig. S4 的 150 μm 指缩束后的光束直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "na": {
+              "value": 0.8,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF pp.1–2 Eq. (1)–(3)、Fig. 1、p.2 左栏设计段",
+              "note": "作者明确给出的设计 NA。p.3 对 635 nm 实验也沿用 NA 0.8。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "wavelength_nm": {
+              "value": 635,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.3 实验段；p.4 Fig. 3D 下图 x–z 强度图",
+              "note": "作者在 635 nm 测量 RCP 激发光的横向与纵向强度。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "polarization": {
+              "value": "RCP",
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.3 实验段；p.4 Fig. 3D 下图 x–z 强度图",
+              "note": "入射激发光的圆偏振手性；实测光路参见补件 Fig. S4。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "ji_sted_vor_2025",
+                "ji_sted_si_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": 37.5,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.3 实验段；p.4 Fig. 3D 下图 x–z 强度图",
+              "note": "实心焦斑的作者报告轴向位置。z 以超表面起算；焦场图中的水平虚线位于 37.5 μm。轴向步长、焦位拟合与误差未给。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "reference_plane": "面向样品的超表面起算",
+              "position_definition": "author_reported_focus_position",
+              "sourceIds": [
+                "ji_sted_vor_2025",
+                "ji_sted_si_2025"
+              ],
+              "sampling_step_um": null
+            },
+            "psf_protocol": {
+              "value": "635 nm RCP；实心焦斑的 xy 与 xz 强度图，x 截线在 z = 37.5 μm。",
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.4 Fig. 3D,E；SI pp.5–6 Fig. S4,S5",
+              "note": "横向、轴向坐标均为 μm；面图色标 0–1，x 截线强度为任意单位且图内最大值约 1。未给原始像素阵列、轴向步长及归一化公式。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "reference_plane": "面向样品的超表面起算",
+              "evaluation_plane_um": 37.5,
+              "direction": "x",
+              "raw_psf": null,
+              "axial_step_um": null,
+              "transverse_sample_pitch_um": null,
+              "sourceIds": [
+                "ji_sted_vor_2025",
+                "ji_sted_si_2025"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 32,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.4 Fig. 3 下方 Experimental demonstration 的工作效率段",
+              "note": "作者报告 635 nm 的 working efficiency，焦区收集功率除以输入功率。焦区积分范围及输入功率取样平面未给。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "denominator": "author_reported_input_power",
+              "numerator": "focal_power",
+              "focal_integration_radius_um": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 635,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.4 Fig. 3 下方 Experimental demonstration 的工作效率段",
+              "note": "作者表述 635 nm 是本次工作效率的实测波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "efficiency_protocol": {
+              "value": "焦区功率／输入功率；焦区积分窗口与入射功率取样面未报告。",
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.4 Fig. 3 下方 Experimental demonstration 的工作效率段",
+              "note": "方法只说明类似参考文献 21；该参考文献的 3×FWHM 积分半径未在 Ji 正文或补件确认。Fig. S8 有耗尽光 1–600 mW 的效率柱形图，无精确逐功率数值表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "denominator": "author_reported_input_power",
+              "numerator": "focal_power",
+              "focal_integration_radius_um": null,
+              "input_power_reference_plane": null,
+              "incident_polarization": "RCP",
+              "sourceIds": [
+                "ji_sted_vor_2025",
+                "ji_sted_si_2025"
+              ]
+            },
+            "fwhm_x_um": {
+              "value": 0.415,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.3 实验段；p.4 Fig. 3E x 截线",
+              "note": "实心焦斑沿图示 x 直径的 415 nm 半高全宽。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "direction": "x",
+              "original_value": 415,
+              "original_unit": "nm"
+            },
+            "diffraction_limited_reference_fwhm_um": {
+              "value": 0.405,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.3 实验段，635 nm 实心焦斑宽度后",
+              "note": "作者给出 0.51×635 nm/0.8 ≈ 405 nm，作为常用理想衍射 FWHM 参考。",
+              "basis": "model",
+              "checked_on": "2026-11-20",
+              "approximate": true,
+              "calculation_origin": "authors",
+              "reference_model": "0.51 * wavelength / NA",
+              "original_value": 405,
+              "original_unit": "nm",
+              "display": "约0.405"
+            }
+          }
+        },
+        {
+          "id": "ji2025sted_lens_780",
+          "model": "Ji 2025 · STED · 780 nm 耗尽 · LCP",
+          "study_id": "ji2025sted",
+          "specimen_id": "lens",
+          "module": "",
+          "variant": "单层偏振复用消色差",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一只 100 μm 超透镜在 780 nm LCP 的 环形焦斑及其工作效率。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF pp.1–2 Eq. (1)–(3)、Fig. 1、p.2 左栏设计段",
+              "note": "100 μm为圆形TiO₂超透镜的直径。补件 Fig. S4 的 150 μm 指缩束后的光束直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "na": {
+              "value": 0.8,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF pp.1–2 Eq. (1)–(3)、Fig. 1、p.2 左栏设计段",
+              "note": "作者明确给出的设计 NA。p.3 对 635 nm 实验也沿用 NA 0.8。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "wavelength_nm": {
+              "value": 780,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.3 实验段；p.4 Fig. 3G 下图 x–z 强度图",
+              "note": "作者在 780 nm 测量 LCP 耗尽光的横向与纵向强度。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "polarization": {
+              "value": "LCP",
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.3 实验段；p.4 Fig. 3G 下图 x–z 强度图",
+              "note": "入射耗尽光的圆偏振手性；实测光路参见补件 Fig. S4。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "ji_sted_vor_2025",
+                "ji_sted_si_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": 37.5,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.3 实验段；p.4 Fig. 3G 下图 x–z 强度图",
+              "note": "环形焦斑的作者报告轴向位置。z 以超表面起算；焦场图中的水平虚线位于 37.5 μm。轴向步长、焦位拟合与误差未给。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "reference_plane": "面向样品的超表面起算",
+              "position_definition": "author_reported_focus_position",
+              "sourceIds": [
+                "ji_sted_vor_2025",
+                "ji_sted_si_2025"
+              ],
+              "sampling_step_um": null
+            },
+            "psf_protocol": {
+              "value": "780 nm LCP；环形焦斑的 xy 与 xz 强度图，x 截线在 z = 37.5 μm。",
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.4 Fig. 3G,H；SI pp.5–6 Fig. S4,S5",
+              "note": "横向、轴向坐标均为 μm；面图色标 0–1，x 截线强度为任意单位且图内最大值约 1。未给原始像素阵列、轴向步长及归一化公式。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "reference_plane": "面向样品的超表面起算",
+              "evaluation_plane_um": 37.5,
+              "direction": "x",
+              "raw_psf": null,
+              "axial_step_um": null,
+              "transverse_sample_pitch_um": null,
+              "sourceIds": [
+                "ji_sted_vor_2025",
+                "ji_sted_si_2025"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 37.8,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.4 Fig. 3 下方 Experimental demonstration 的工作效率段",
+              "note": "作者报告 780 nm 的 working efficiency，焦区收集功率除以输入功率。焦区积分范围及输入功率取样平面未给。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "denominator": "author_reported_input_power",
+              "numerator": "focal_power",
+              "focal_integration_radius_um": null
+            },
+            "efficiency_lambda_nm": {
+              "value": 780,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.4 Fig. 3 下方 Experimental demonstration 的工作效率段",
+              "note": "作者表述 780 nm 是本次工作效率的实测波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "efficiency_protocol": {
+              "value": "焦区功率／输入功率；焦区积分窗口与入射功率取样面未报告。",
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.4 Fig. 3 下方 Experimental demonstration 的工作效率段",
+              "note": "方法只说明类似参考文献 21；该参考文献的 3×FWHM 积分半径未在 Ji 正文或补件确认。Fig. S8 有耗尽光 1–600 mW 的效率柱形图，无精确逐功率数值表。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "denominator": "author_reported_input_power",
+              "numerator": "focal_power",
+              "focal_integration_radius_um": null,
+              "input_power_reference_plane": null,
+              "incident_polarization": "LCP",
+              "sourceIds": [
+                "ji_sted_vor_2025",
+                "ji_sted_si_2025"
+              ]
+            },
+            "vortex_inner_fwhm_um": {
+              "value": 0.349,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.3 实验段；p.4 Fig. 3H x 截线",
+              "note": "作者写 inner FWHM 349 nm，为 x 截线上两侧环峰之间的内侧半高交点间隔。中心强度低于环峰的 2%。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "direction": "x",
+              "width_definition": "inner_half_maximum_crossings",
+              "original_value": 349,
+              "original_unit": "nm"
+            }
+          }
+        },
+        {
+          "id": "ji2025sted_lens_reverse_690",
+          "model": "Ji 2025 · STED · 690 nm · 反向收集",
+          "study_id": "ji2025sted",
+          "specimen_id": "lens",
+          "module": "",
+          "variant": "样品侧反向激光收集测试",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一超透镜从样品侧测试收集功率的独立测量；线偏振测试光与 STED 系统宽谱荧光不同。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF pp.1–2 Eq. (1)–(3)、Fig. 1、p.2 左栏设计段",
+              "note": "100 μm为圆形TiO₂超透镜的直径。补件 Fig. S4 的 150 μm 指缩束后的光束直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "na": {
+              "value": 0.8,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF pp.1–2 Eq. (1)–(3)、Fig. 1、p.2 左栏设计段",
+              "note": "作者明确给出的设计 NA。p.3 对 635 nm 实验也沿用 NA 0.8。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "wavelength_nm": {
+              "value": 690,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.4 Fig. 3 下末段，690 nm 反向测量",
+              "note": "独立反向收集功率实验的线偏振激光波长。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "polarization": {
+              "value": "线偏振（方向未给）",
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.4 Fig. 3 下末段，690 nm 反向测量",
+              "note": "作者给出线偏振，未注明方位角。",
+              "basis": "measured",
+              "checked_on": "2026-11-20"
+            },
+            "reverse_collection_efficiency_pct": {
+              "value": 41.6,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.4 Fig. 3 下末段，690 nm 反向测量",
+              "note": "NA 0.8 物镜从样品侧把 690 nm 激光聚焦在超透镜焦点，镜后 50 mm 收集功率除以输入功率。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "denominator": "author_reported_input_power",
+              "collection_distance_mm": 50,
+              "reference_objective_na": 0.8
+            },
+            "efficiency_protocol": {
+              "value": "690 nm 反向送光；镜后 50 mm 收集功率／输入功率。",
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.4 Fig. 3 下末段，690 nm 反向测量",
+              "note": "参考物镜 NA 0.8，输入线偏振。收集孔径、接收器和输入功率取样位置未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "denominator": "author_reported_input_power",
+              "numerator": "collected_power_after_metalens",
+              "collection_distance_mm": 50,
+              "reference_objective_na": 0.8,
+              "collection_integration_radius_um": null
+            }
+          }
+        },
+        {
+          "id": "ji2025sted_imaging_off_particle",
+          "model": "Ji 2025 · STED · 耗尽光关 · 200 nm微粒",
+          "study_id": "ji2025sted",
+          "specimen_id": "imaging_off",
+          "module": "",
+          "variant": "同一显微系统，耗尽光关",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一只 100 μm 超透镜用于宽谱荧光扫描成像；此记录为实际有限尺寸标本的截线拟合。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF pp.1–2 Eq. (1)–(3)、Fig. 1、p.2 左栏设计段",
+              "note": "100 μm为圆形TiO₂超透镜的直径。补件 Fig. S4 的 150 μm 指缩束后的光束直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "na": {
+              "value": 0.8,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF pp.1–2 Eq. (1)–(3)、Fig. 1、p.2 左栏设计段",
+              "note": "作者明确给出的设计 NA。p.3 对 635 nm 实验也沿用 NA 0.8。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "ji_sted_si_2025",
+              "location": "补充 PDF p.5 §3、Fig. S4",
+              "note": "系统探测 640–720 nm 滤光范围内的宽谱荧光。激发和耗尽波长作为系统照明条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "635 nm激发；宽谱荧光",
+              "excitation_wavelength_nm": 635,
+              "depletion_wavelength_nm": null
+            },
+            "psf_protocol": {
+              "value": "α位单个荧光微粒，标称样品直径200 nm；样品扫描步长 50 nm，驻留 2 ms，探测滤光 640–720 nm。",
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.5 Fig. 4C 截线与系统成像正文",
+              "note": "Fig. 4 横截线的横轴 x（μm）。图注给 401×401 像素和 50 nm 步长，结合 SI Fig. S4 保留光路。作者称 FWHM。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "ji_sted_vor_2025",
+                "ji_sted_si_2025"
+              ],
+              "optical_signal": "fluorescence",
+              "collection_filter_nm": [
+                640,
+                720
+              ],
+              "depletion_enabled": false,
+              "scan_step_nm": 50,
+              "dwell_time_ms": 2,
+              "pixels_xy": [
+                401,
+                401
+              ],
+              "sample_kind": "particle",
+              "excitation_wavelength_nm": 635,
+              "depletion_wavelength_nm": null
+            },
+            "imaging_feature_width_um": {
+              "value": 0.436,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.5 Fig. 4C 截线与系统成像正文",
+              "note": "α位单个荧光微粒，标称样品直径200 nm，作者称 FWHM。本行是系统图像中样品的截线结果；作者未从中分离样品尺寸。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "original_value": 436,
+              "original_unit": "nm",
+              "direction": "x",
+              "width_definition": "fwhm",
+              "sample_kind": "particle"
+            }
+          }
+        },
+        {
+          "id": "ji2025sted_imaging_off_filament",
+          "model": "Ji 2025 · STED · 耗尽光关 · 微管",
+          "study_id": "ji2025sted",
+          "specimen_id": "imaging_off",
+          "module": "",
+          "variant": "同一显微系统，耗尽光关",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一只 100 μm 超透镜用于宽谱荧光扫描成像；此记录为实际有限尺寸标本的截线拟合。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF pp.1–2 Eq. (1)–(3)、Fig. 1、p.2 左栏设计段",
+              "note": "100 μm为圆形TiO₂超透镜的直径。补件 Fig. S4 的 150 μm 指缩束后的光束直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "na": {
+              "value": 0.8,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF pp.1–2 Eq. (1)–(3)、Fig. 1、p.2 左栏设计段",
+              "note": "作者明确给出的设计 NA。p.3 对 635 nm 实验也沿用 NA 0.8。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "ji_sted_si_2025",
+              "location": "补充 PDF p.5 §3、Fig. S4",
+              "note": "系统探测 640–720 nm 滤光范围内的宽谱荧光。激发和耗尽波长作为系统照明条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "635 nm激发；宽谱荧光",
+              "excitation_wavelength_nm": 635,
+              "depletion_wavelength_nm": null
+            },
+            "psf_protocol": {
+              "value": "白色虚线处单条荧光微管；样品扫描步长 50 nm，驻留 0.5 ms，探测滤光 640–720 nm。",
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.5 Fig. 5C 截线与系统成像正文",
+              "note": "Fig. 5 横截线的横轴 x（μm）。图注给 301×301 像素和 50 nm 步长，结合 SI Fig. S4 保留光路。作者称拟合宽度，正文未单独定义半高判据。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "ji_sted_vor_2025",
+                "ji_sted_si_2025"
+              ],
+              "optical_signal": "fluorescence",
+              "collection_filter_nm": [
+                640,
+                720
+              ],
+              "depletion_enabled": false,
+              "scan_step_nm": 50,
+              "dwell_time_ms": 0.5,
+              "pixels_xy": [
+                301,
+                301
+              ],
+              "sample_kind": "filament",
+              "excitation_wavelength_nm": 635,
+              "depletion_wavelength_nm": null
+            },
+            "imaging_feature_width_um": {
+              "value": 0.45,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.5 Fig. 5C 截线与系统成像正文",
+              "note": "白色虚线处单条荧光微管，作者称拟合宽度，正文未单独定义半高判据。本行是系统图像中样品的截线结果；作者未从中分离样品尺寸。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "original_value": 450,
+              "original_unit": "nm",
+              "direction": "x",
+              "width_definition": "author_fit_width",
+              "sample_kind": "filament"
+            }
+          }
+        },
+        {
+          "id": "ji2025sted_imaging_on_particle",
+          "model": "Ji 2025 · STED · 耗尽光开 · 200 nm微粒",
+          "study_id": "ji2025sted",
+          "specimen_id": "imaging_on",
+          "module": "",
+          "variant": "同一显微系统，耗尽光开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一只 100 μm 超透镜用于宽谱荧光扫描成像；此记录为实际有限尺寸标本的截线拟合。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF pp.1–2 Eq. (1)–(3)、Fig. 1、p.2 左栏设计段",
+              "note": "100 μm为圆形TiO₂超透镜的直径。补件 Fig. S4 的 150 μm 指缩束后的光束直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "na": {
+              "value": 0.8,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF pp.1–2 Eq. (1)–(3)、Fig. 1、p.2 左栏设计段",
+              "note": "作者明确给出的设计 NA。p.3 对 635 nm 实验也沿用 NA 0.8。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "ji_sted_si_2025",
+              "location": "补充 PDF p.5 §3、Fig. S4",
+              "note": "系统探测 640–720 nm 滤光范围内的宽谱荧光。激发和耗尽波长作为系统照明条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "635 nm激发、780 nm耗尽；宽谱荧光",
+              "excitation_wavelength_nm": 635,
+              "depletion_wavelength_nm": 780
+            },
+            "psf_protocol": {
+              "value": "α位单个荧光微粒，标称样品直径200 nm；样品扫描步长 50 nm，驻留 2 ms，探测滤光 640–720 nm。",
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.5 Fig. 4C 截线与系统成像正文",
+              "note": "Fig. 4 横截线的横轴 x（μm）。图注给 401×401 像素和 50 nm 步长，结合 SI Fig. S4 保留光路。作者称 FWHM。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "ji_sted_vor_2025",
+                "ji_sted_si_2025"
+              ],
+              "optical_signal": "fluorescence",
+              "collection_filter_nm": [
+                640,
+                720
+              ],
+              "depletion_enabled": true,
+              "scan_step_nm": 50,
+              "dwell_time_ms": 2,
+              "pixels_xy": [
+                401,
+                401
+              ],
+              "sample_kind": "particle",
+              "excitation_wavelength_nm": 635,
+              "depletion_wavelength_nm": 780
+            },
+            "imaging_feature_width_um": {
+              "value": 0.283,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.5 Fig. 4C 截线与系统成像正文",
+              "note": "α位单个荧光微粒，标称样品直径200 nm，作者称 FWHM。本行是系统图像中样品的截线结果；作者未从中分离样品尺寸。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "original_value": 283,
+              "original_unit": "nm",
+              "direction": "x",
+              "width_definition": "fwhm",
+              "sample_kind": "particle"
+            }
+          }
+        },
+        {
+          "id": "ji2025sted_imaging_on_filament",
+          "model": "Ji 2025 · STED · 耗尽光开 · 微管",
+          "study_id": "ji2025sted",
+          "specimen_id": "imaging_on",
+          "module": "",
+          "variant": "同一显微系统，耗尽光开",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一只 100 μm 超透镜用于宽谱荧光扫描成像；此记录为实际有限尺寸标本的截线拟合。",
+          "values": {
+            "diameter_um": {
+              "value": 100,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF pp.1–2 Eq. (1)–(3)、Fig. 1、p.2 左栏设计段",
+              "note": "100 μm为圆形TiO₂超透镜的直径。补件 Fig. S4 的 150 μm 指缩束后的光束直径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "na": {
+              "value": 0.8,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF pp.1–2 Eq. (1)–(3)、Fig. 1、p.2 左栏设计段",
+              "note": "作者明确给出的设计 NA。p.3 对 635 nm 实验也沿用 NA 0.8。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "ji_sted_si_2025",
+              "location": "补充 PDF p.5 §3、Fig. S4",
+              "note": "系统探测 640–720 nm 滤光范围内的宽谱荧光。激发和耗尽波长作为系统照明条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "635 nm激发、780 nm耗尽；宽谱荧光",
+              "excitation_wavelength_nm": 635,
+              "depletion_wavelength_nm": 780
+            },
+            "psf_protocol": {
+              "value": "白色虚线处单条荧光微管；样品扫描步长 50 nm，驻留 0.5 ms，探测滤光 640–720 nm。",
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.5 Fig. 5C 截线与系统成像正文",
+              "note": "Fig. 5 横截线的横轴 x（μm）。图注给 301×301 像素和 50 nm 步长，结合 SI Fig. S4 保留光路。作者称拟合宽度，正文未单独定义半高判据。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "ji_sted_vor_2025",
+                "ji_sted_si_2025"
+              ],
+              "optical_signal": "fluorescence",
+              "collection_filter_nm": [
+                640,
+                720
+              ],
+              "depletion_enabled": true,
+              "scan_step_nm": 50,
+              "dwell_time_ms": 0.5,
+              "pixels_xy": [
+                301,
+                301
+              ],
+              "sample_kind": "filament",
+              "excitation_wavelength_nm": 635,
+              "depletion_wavelength_nm": 780
+            },
+            "imaging_feature_width_um": {
+              "value": 0.274,
+              "source": "ji_sted_vor_2025",
+              "location": "正式 PDF p.5 Fig. 5C 截线与系统成像正文",
+              "note": "白色虚线处单条荧光微管，作者称拟合宽度，正文未单独定义半高判据。本行是系统图像中样品的截线结果；作者未从中分离样品尺寸。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "original_value": 274,
+              "original_unit": "nm",
+              "direction": "x",
+              "width_definition": "author_fit_width",
+              "sample_kind": "filament"
+            }
+          }
         }
       ],
-      "scope": "54项原始研究、284个器件/测量/系统配置、1223条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
+      "scope": "55项原始研究、287个器件/测量/系统配置、1231条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",

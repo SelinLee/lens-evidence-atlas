@@ -19,13 +19,13 @@ test('actual 640 and 700 nm spectral rows are visible while 800 through 1200 nm 
 });
 test('focal length, scalar residual, width and Strehl curves never turn into guessed points, geometric inversions or zero aberration',()=>{
  for(const d of [10,15,20])for(const tag of ['summary',...waves]){const v=get('d'+d+'_'+tag);assert.equal(v.design_focal_um.value,null);assert.equal(v.measured_focal_um.value,null);assert.equal(v.fwhm_um.value,null);assert.equal(v.strehl.value,null);assert.deepEqual(v.strehl.bound,{relation:'>',value:.8});assert.match(v.strehl.note,/第二暗环.*未知/);assert.equal(v.psf_protocol.axial_step_um,null);assert.equal(v.psf_protocol.measurement_repeat_count,null);assert.equal(v.focus_variation_um,undefined);assert.equal(v.axial_focus_offset_um,undefined);}
- assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,47);
+ assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,49);
 });
 test('about seventy percent is an author publication-level mean with no aperture assignment and cannot create three diameter-specific efficiencies',()=>{
  const v=get('efficiency_aggregate'),e=v.efficiency_band_mean_pct;assert.equal(e.value,70);assert.equal(e.approximate,true);assert.equal(e.aggregation_scope,'publication_unassigned_devices');assert.equal(e.basis,'derived_from_measurement');assert.equal(e.calculation_origin,'authors');assert.equal(e.sampling,'not_reported');assert.equal(e.statistic,'band_mean');assert.equal(v.diameter_um.value,null);assert.equal(v.na.value,null);assert.equal(v.wavelength_nm.value,null);assert.equal(v.efficiency_protocol.device_assignment,'unassigned');assert.match(e.display,/论文级平均.*口径未分派/);assert.match(e.note,/摘要用over70%.*未重算/);
  assert.equal(axisPoints(rows,'lambda_min_nm','efficiency_band_mean_pct').length,1);assert.equal(axisPoints(rows,'na','efficiency_band_mean_pct').length,0);assert.equal(axisPoints(lens.rows,'na','efficiency_band_mean_pct').length,13);
  for(const d of [10,15,20])for(const tag of ['summary',...waves]){const x=get('d'+d+'_'+tag);assert.equal(x.efficiency_band_mean_pct,undefined);assert.equal(x.efficiency_at_lambda_pct.value,null);assert.equal(x.efficiency_protocol.integration_geometry,null);assert.match(x.efficiency_protocol.value,/size=3×FWHM.*半径\/直径未明/);}
- assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,145);
+ assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,147);
 });
 test('polarization axes, PSF coordinate axes and missing MTF are kept distinct while raw PSF and frequency units stay unknown',()=>{
  for(const p of ['x','y']){const v=get('polarization_'+p);assert.equal(v.diameter_um.value,null);assert.equal(v.na.value,null);assert.deepEqual(v.wavelength_nm.sample_wavelengths_nm,waves);assert.match(v.polarization.note,/不是PSF横纵FWHM或MTF/);assert.equal(v.fwhm_x_um,undefined);assert.equal(v.fwhm_y_um,undefined);}

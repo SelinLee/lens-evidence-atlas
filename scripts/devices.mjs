@@ -102,6 +102,25 @@ export function validateDevices(d,catalog){
  if(Number.isFinite(focusWidth?.value)&&(!(r.values.wavelength_nm?.value>0)||!focusWidth.dof_criterion||!r.values.psf_protocol?.value))errors.push('focal interval context');
  if(Number.isFinite(minimumWidth?.value)&&(minimumWidth.direction!=='x'||!minimumWidth.statistic||!r.values.psf_protocol?.value))errors.push('minimum focal width context');
  const efficiencyProtocol=r.values.efficiency_protocol;
+ const vortexWidth=r.values.vortex_inner_fwhm_um;
+ if(Number.isFinite(vortexWidth?.value)&&(
+  vortexWidth.value<=0||vortexWidth.basis!=='derived_from_measurement'||vortexWidth.calculation_origin!=='authors'||
+  vortexWidth.width_definition!=='inner_half_maximum_crossings'||vortexWidth.direction!==r.values.psf_protocol?.direction||
+  !r.values.psf_protocol?.value||!(r.values.wavelength_nm?.value>0)||!r.values.polarization?.value||
+  ['fwhm_um','fwhm_x_um','fwhm_y_um'].some(key=>Number.isFinite(r.values[key]?.value))))errors.push('vortex inner width context');
+ const reverseCollection=r.values.reverse_collection_efficiency_pct;
+ if(Number.isFinite(reverseCollection?.value)&&(
+  reverseCollection.basis!=='derived_from_measurement'||reverseCollection.calculation_origin!=='authors'||
+  reverseCollection.value<0||reverseCollection.value>100||!(r.values.wavelength_nm?.value>0)||
+  !(reverseCollection.collection_distance_mm>0)||reverseCollection.collection_distance_mm!==efficiencyProtocol?.collection_distance_mm||
+  !reverseCollection.denominator||reverseCollection.denominator!==efficiencyProtocol?.denominator||!efficiencyProtocol?.value||
+  Number.isFinite(r.values.efficiency_at_lambda_pct?.value)))errors.push('reverse collection context');
+ const featureWidth=r.values.imaging_feature_width_um;
+ if(Number.isFinite(featureWidth?.value)&&(
+  featureWidth.value<=0||featureWidth.basis!=='derived_from_measurement'||featureWidth.calculation_origin!=='authors'||
+  !['fwhm','author_fit_width'].includes(featureWidth.width_definition)||!featureWidth.direction||!featureWidth.sample_kind||
+  featureWidth.sample_kind!==r.values.psf_protocol?.sample_kind||!(r.values.psf_protocol?.scan_step_nm>0)||
+  !r.values.psf_protocol?.value))errors.push('imaging feature width context');
  const collection=r.values.relative_fluorescence_collection_pct;
  const fluorescenceWidth=r.values.fluorescence_collection_spectral_width_nm;
  if(Number.isFinite(collection?.value)&&(
