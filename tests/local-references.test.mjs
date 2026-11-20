@@ -10,9 +10,9 @@ const added=lens.rows.filter(r=>studies.includes(r.study_id));
 const get=id=>lens.rows.find(r=>r.id===id).values;
 
 test('four supplied studies are deduplicated across versions, supplements and spectral rows',()=>{
- assert.equal(added.length,64);assert.equal(new Set(added.map(r=>r.study_id)).size,4);
+ assert.equal(added.length,65);assert.equal(new Set(added.map(r=>r.study_id)).size,4);
  assert.equal(new Set(added.map(r=>r.study_id+'/'+r.specimen_id)).size,13);
- assert.equal(lens.rows.length,1365);assert.equal(new Set(lens.rows.map(r=>r.study_id)).size,66);
+ assert.equal(lens.rows.length,1366);assert.equal(new Set(lens.rows.map(r=>r.study_id)).size,66);
  assert.ok(!added.some(r=>/arxiv|proxy/i.test(r.study_id)));
  assert.equal(data.sources.length,338);assert.ok(data.sources.filter(s=>/balli_|lin_spdc|chang_dispersion|choi_rgb/.test(s.id)&&!s.id.includes('_cloud')).every(s=>s.checked_on===(s.id.startsWith('balli_haml_')?'2026-11-19':'2026-11-14')&&s.scope));
 });
@@ -72,9 +72,35 @@ test('Choi lens data preserve RGB-only scope, designed NA and measured rather th
   const v=get('choi2025_rgb_'+wave);assert.equal(v.diameter_um.value,10000);assert.equal(v.na.value,.7);assert.equal(v.height_nm.value,700);
   assert.equal(v.design_focal_um.value,5100);assert.equal(v.design_focal_um.approximate,true);
   assert.equal(v.fwhm_um.value,fw);assert.equal(v.strehl.value,sr);assert.equal(v.efficiency_at_lambda_pct.value,e);
-  for(const id of ['lambda_min_nm','lambda_max_nm','fov_deg','psnr_db','measured_focal_um'])assert.equal(v[id],undefined);
+  for(const id of ['lambda_min_nm','lambda_max_nm','fov_deg','psnr_db','focus_variation_um'])assert.equal(v[id],undefined);
+  assert.equal(v.measured_focal_um.value,null);
+  assert.equal(v.psf_protocol.axial_scan_step_um,.5);
+  assert.equal(v.psf_protocol.evaluation_plane_kind,'per_wavelength_focus');
+  assert.equal(v.efficiency_protocol.integration_window,null);
+  assert.equal(v.efficiency_protocol.denominator,null);
+  if(wave!==635)assert.equal(v.focus_error_um,undefined);
   assert.match(v.na.note,/有效NA/);assert.match(v.efficiency_protocol.value,/待补/);
  }
+});
+
+test('Choi plots the author-reported red error relative to design and the separate RGB mean',()=>{
+ const workspace=createWorkspace(load(),data);
+ const lensDomain=workspace.domains.find(domain=>domain.id==='metalens');
+ const rows=lensDomain.rows.filter(row=>row.study_id==='choi2025');
+ assert.deepEqual(axisPoints(rows,'wavelength_nm','focus_error_um').map(({x,y})=>[x,y]),[[635,5.77]]);
+ assert.deepEqual(axisPoints(rows,'wavelength_nm','focus_error_pct').map(({x,y})=>[x,y]),[[635,.11]]);
+ assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);
+ assert.equal(axisPoints(rows,'wavelength_nm','focus_variation_um').length,0);
+ const red=get('choi2025_rgb_635').focus_error_um;
+ assert.equal(red.reference_kind,'design_focal_length');
+ assert.equal(red.reference_plane_approximate,true);
+ assert.equal(red.reference_wavelength_nm,null);
+ const summary=get('choi2025_rgb_psf_summary');
+ assert.equal(summary.wavelength_nm,undefined);
+ assert.deepEqual(summary.effective_na_from_psf.sample_wavelengths_nm,[450,532,635]);
+ assert.deepEqual(axisPoints(rows,'diameter_um','effective_na_from_psf').map(({x,y})=>[x,y]),[[10000,.55]]);
+ assert.equal(workspace.sources.get('device-choi_rgb_ned_si_2025').publication_source,
+  workspace.sources.get('device-choi_rgb_ned_2025').id);
 });
 
 test('the near-eye prototype keeps diagonal FOV and author bar contrast separate from CPD, MTF50 and panel refresh',()=>{

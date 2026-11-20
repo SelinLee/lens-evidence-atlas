@@ -5997,8 +5997,8 @@
         {
           "id": "focus_error_um",
           "label": "作者报告焦距误差 (μm；定义见协议)",
-          "definition": "作者对中心焦距附近色差的汇总报告；并非逐点有符号焦移或最大互差。",
-          "conditions": "须保留波长集合、参考、聚合含义与未知公式；不与跨谱点最大焦差合并。",
+          "definition": "作者报告的焦距误差幅值，包含以设计焦距为参考的单谱点结果与作者定义的谱点汇总。",
+          "conditions": "须保留波长、参考、幅值统计或汇总含义。谱点之间的最大互差在焦距变化指标另录。",
           "numeric": true,
           "definition_refs": [
             {
@@ -25112,7 +25112,7 @@
           "evidence_type": "study",
           "study_id": "choi2025",
           "specimen_id": "rgb_1cm",
-          "measurement_scope": "Choi2025同一1cm RGB器件的三测量谱点；设计NA.7与由实测PSF估的有效NA不同；仅450/532/635nm离散消色差，不证明连续450–635nm或全可见带宽。",
+          "measurement_scope": "同一 1 cm RGB 实物的 450 nm 离散测点。Fig. 3b 为轴扫，Fig. 3c,d 为每色各自焦面。",
           "values": {
             "diameter_um": {
               "value": 10000,
@@ -25154,7 +25154,8 @@
               "location": "PDF p.5 Fig.3d",
               "note": "光学聚焦测量谱点；不同于NED采用450/520/638nm激光。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-14",
+              "spectral_sampling": "discrete"
             },
             "fwhm_um": {
               "value": 0.4821,
@@ -25163,7 +25164,8 @@
               "note": "实测x截面FWHM，非主文模拟.336/.4029/.469μm。",
               "basis": "measured",
               "checked_on": "2026-11-14",
-              "display": "0.4821"
+              "display": "0.4821",
+              "direction": "x"
             },
             "strehl": {
               "value": 0.71,
@@ -25192,14 +25194,16 @@
             "efficiency_protocol": {
               "value": "模拟段称在3×FWHM处按光通量计算；实测积分边界/分母待补",
               "source": "choi_rgb_ned_2025",
-              "location": "PDF p.3 efficiency description；SI p.20 Note10",
-              "note": "3×FWHM来自主文设计/模拟段，实测是否沿用同口径未明，不自动移用。实验用100×物镜/CCD继像、z步进.5μm，未报完整效率不确定度。",
+              "location": "用户排版稿 PDF p.3 设计段、p.4 光学表征、p.5 Fig. 3d；补充 PDF p.20 Note 10、p.31 Table 1",
+              "note": "3×FWHM 属于设计段的光通量计算。实测逐色积分窗口、功率分母和不确定度待补。Table 1 在非偏振光比较列给本器件汇总 10%，单个实验谱点的偏振未逐项交代。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
+              "checked_on": "2026-11-20",
               "sourceIds": [
                 "choi_rgb_ned_2025",
                 "choi_rgb_ned_si_2025"
-              ]
+              ],
+              "integration_window": null,
+              "denominator": null
             },
             "material": {
               "value": "MINS-311RM低折射率树脂 / 玻璃；同心环二元结构；roll-to-plate",
@@ -25218,20 +25222,62 @@
               "checked_on": "2026-11-14"
             },
             "chromatic": {
-              "value": "635nm报告偏离设计焦面5.77μm（0.11%）；不当成RGB峰峰焦移",
+              "value": "450 / 532 / 635 nm 离散 RGB 光学消色差",
               "source": "choi_rgb_ned_2025",
-              "location": "PDF pp.3–4 characterization",
-              "note": "单色相对设计误差，不是三色最大跨度；未由相对Z轴生成每色绝对焦距。",
+              "location": "用户排版稿 PDF p.2 Design principle、pp.3–4 光学表征及 p.5 Fig. 3b",
+              "note": "全口径伴随拓扑逆向优化直接匹配三个谱点的焦面。本行保留相对轴扫，残余色差须有共同标定的峰位。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "sample_wavelengths_nm": [
+                450,
+                532,
+                635
+              ],
+              "spectral_sampling": "discrete"
             },
             "mtf_curve": {
-              "value": "Fig.3为器件PSF/USAF；NED系统的CGH校正对比曲线另见XR研究行",
+              "value": "裸镜有 PSF 与 USAF 成像；近眼系统线对对比度另见 XR",
               "source": "choi_rgb_ned_2025",
-              "location": "PDF pp.4–6 Fig.3；SI pp.29–30 Note14",
-              "note": "裸镜聚焦数据与系统CGH校正MTF/PSNR/散斑改善分开；不能以RGB合成白光宣称连续宽带。",
+              "location": "用户排版稿 PDF p.5 Fig. 3b–e；补充 PDF pp.21–22 Note 11、pp.29–30 Note 14",
+              "note": "裸镜未报告 MTF 曲线、方向或原始数组。近眼系统用 Eq. S31 的 Michelson 条纹对比度评估 CGH 校正，保留系统和测量条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "choi_rgb_ned_2025",
+                "choi_rgb_ned_si_2025"
+              ]
+            },
+            "psf_protocol": {
+              "value": "全口径准直入射，z 步进 0.5 μm，横向 PSF 取各色焦面",
+              "source": "choi_rgb_ned_si_2025",
+              "location": "补充 PDF p.20 Note 10 / Fig. S9；用户排版稿 PDF p.5 Fig. 3b–d",
+              "note": "Thorlabs CPS450 经光纤准直器照满镜片。LMPLFLN 100X 物镜、TTL180-A 管镜和 INFINITY2-1RC CCD 采集。原始像素标尺、零点标定与峰拟合方法未公开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "choi_rgb_ned_si_2025",
+                "choi_rgb_ned_2025"
+              ],
+              "direction": "x",
+              "axial_scan_step_um": 0.5,
+              "evaluation_plane_kind": "per_wavelength_focus",
+              "transverse_sampling_um": null,
+              "axial_origin_calibration": null,
+              "illumination_model": "Thorlabs CPS450"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "choi_rgb_ned_2025",
+              "location": "用户排版稿 PDF p.5 Fig. 3b 蓝色；补充 PDF p.20 Note 10 / Fig. S9",
+              "note": "x–z 图横坐标为相对 Z (μm)，纵坐标为 X (μm)，颜色条为归一化强度 0–1。无逐色绝对峰位数表、标定原点或原始图像。Fig. 3a 为模拟。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "display": "Fig. 3b 实测曲线；绝对焦位待补",
+              "sourceIds": [
+                "choi_rgb_ned_2025",
+                "choi_rgb_ned_si_2025"
+              ],
+              "absolute_focal_position_available": false
             }
           }
         },
@@ -25243,7 +25289,7 @@
           "evidence_type": "study",
           "study_id": "choi2025",
           "specimen_id": "rgb_1cm",
-          "measurement_scope": "Choi2025同一1cm RGB器件的三测量谱点；设计NA.7与由实测PSF估的有效NA不同；仅450/532/635nm离散消色差，不证明连续450–635nm或全可见带宽。",
+          "measurement_scope": "同一 1 cm RGB 实物的 532 nm 离散测点。Fig. 3b 为轴扫，Fig. 3c,d 为每色各自焦面。",
           "values": {
             "diameter_um": {
               "value": 10000,
@@ -25285,7 +25331,8 @@
               "location": "PDF p.5 Fig.3d",
               "note": "光学聚焦测量谱点；不同于NED采用450/520/638nm激光。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-14",
+              "spectral_sampling": "discrete"
             },
             "fwhm_um": {
               "value": 0.4732,
@@ -25294,7 +25341,8 @@
               "note": "实测x截面FWHM，非主文模拟.336/.4029/.469μm。",
               "basis": "measured",
               "checked_on": "2026-11-14",
-              "display": "0.4732"
+              "display": "0.4732",
+              "direction": "x"
             },
             "strehl": {
               "value": 0.83,
@@ -25323,14 +25371,16 @@
             "efficiency_protocol": {
               "value": "模拟段称在3×FWHM处按光通量计算；实测积分边界/分母待补",
               "source": "choi_rgb_ned_2025",
-              "location": "PDF p.3 efficiency description；SI p.20 Note10",
-              "note": "3×FWHM来自主文设计/模拟段，实测是否沿用同口径未明，不自动移用。实验用100×物镜/CCD继像、z步进.5μm，未报完整效率不确定度。",
+              "location": "用户排版稿 PDF p.3 设计段、p.4 光学表征、p.5 Fig. 3d；补充 PDF p.20 Note 10、p.31 Table 1",
+              "note": "3×FWHM 属于设计段的光通量计算。实测逐色积分窗口、功率分母和不确定度待补。Table 1 在非偏振光比较列给本器件汇总 10%，单个实验谱点的偏振未逐项交代。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
+              "checked_on": "2026-11-20",
               "sourceIds": [
                 "choi_rgb_ned_2025",
                 "choi_rgb_ned_si_2025"
-              ]
+              ],
+              "integration_window": null,
+              "denominator": null
             },
             "material": {
               "value": "MINS-311RM低折射率树脂 / 玻璃；同心环二元结构；roll-to-plate",
@@ -25349,20 +25399,62 @@
               "checked_on": "2026-11-14"
             },
             "chromatic": {
-              "value": "635nm报告偏离设计焦面5.77μm（0.11%）；不当成RGB峰峰焦移",
+              "value": "450 / 532 / 635 nm 离散 RGB 光学消色差",
               "source": "choi_rgb_ned_2025",
-              "location": "PDF pp.3–4 characterization",
-              "note": "单色相对设计误差，不是三色最大跨度；未由相对Z轴生成每色绝对焦距。",
+              "location": "用户排版稿 PDF p.2 Design principle、pp.3–4 光学表征及 p.5 Fig. 3b",
+              "note": "全口径伴随拓扑逆向优化直接匹配三个谱点的焦面。本行保留相对轴扫，残余色差须有共同标定的峰位。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "sample_wavelengths_nm": [
+                450,
+                532,
+                635
+              ],
+              "spectral_sampling": "discrete"
             },
             "mtf_curve": {
-              "value": "Fig.3为器件PSF/USAF；NED系统的CGH校正对比曲线另见XR研究行",
+              "value": "裸镜有 PSF 与 USAF 成像；近眼系统线对对比度另见 XR",
               "source": "choi_rgb_ned_2025",
-              "location": "PDF pp.4–6 Fig.3；SI pp.29–30 Note14",
-              "note": "裸镜聚焦数据与系统CGH校正MTF/PSNR/散斑改善分开；不能以RGB合成白光宣称连续宽带。",
+              "location": "用户排版稿 PDF p.5 Fig. 3b–e；补充 PDF pp.21–22 Note 11、pp.29–30 Note 14",
+              "note": "裸镜未报告 MTF 曲线、方向或原始数组。近眼系统用 Eq. S31 的 Michelson 条纹对比度评估 CGH 校正，保留系统和测量条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "choi_rgb_ned_2025",
+                "choi_rgb_ned_si_2025"
+              ]
+            },
+            "psf_protocol": {
+              "value": "全口径准直入射，z 步进 0.5 μm，横向 PSF 取各色焦面",
+              "source": "choi_rgb_ned_si_2025",
+              "location": "补充 PDF p.20 Note 10 / Fig. S9；用户排版稿 PDF p.5 Fig. 3b–d",
+              "note": "Thorlabs CPS532 经光纤准直器照满镜片。LMPLFLN 100X 物镜、TTL180-A 管镜和 INFINITY2-1RC CCD 采集。原始像素标尺、零点标定与峰拟合方法未公开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "choi_rgb_ned_si_2025",
+                "choi_rgb_ned_2025"
+              ],
+              "direction": "x",
+              "axial_scan_step_um": 0.5,
+              "evaluation_plane_kind": "per_wavelength_focus",
+              "transverse_sampling_um": null,
+              "axial_origin_calibration": null,
+              "illumination_model": "Thorlabs CPS532"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "choi_rgb_ned_2025",
+              "location": "用户排版稿 PDF p.5 Fig. 3b 绿色；补充 PDF p.20 Note 10 / Fig. S9",
+              "note": "x–z 图横坐标为相对 Z (μm)，纵坐标为 X (μm)，颜色条为归一化强度 0–1。无逐色绝对峰位数表、标定原点或原始图像。Fig. 3a 为模拟。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "display": "Fig. 3b 实测曲线；绝对焦位待补",
+              "sourceIds": [
+                "choi_rgb_ned_2025",
+                "choi_rgb_ned_si_2025"
+              ],
+              "absolute_focal_position_available": false
             }
           }
         },
@@ -25374,7 +25466,7 @@
           "evidence_type": "study",
           "study_id": "choi2025",
           "specimen_id": "rgb_1cm",
-          "measurement_scope": "Choi2025同一1cm RGB器件的三测量谱点；设计NA.7与由实测PSF估的有效NA不同；仅450/532/635nm离散消色差，不证明连续450–635nm或全可见带宽。",
+          "measurement_scope": "同一 1 cm RGB 实物的 635 nm 离散测点。Fig. 3b 为轴扫，Fig. 3c,d 为每色各自焦面。",
           "values": {
             "diameter_um": {
               "value": 10000,
@@ -25416,7 +25508,8 @@
               "location": "PDF p.5 Fig.3d",
               "note": "光学聚焦测量谱点；不同于NED采用450/520/638nm激光。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-14",
+              "spectral_sampling": "discrete"
             },
             "fwhm_um": {
               "value": 0.5565,
@@ -25425,7 +25518,8 @@
               "note": "实测x截面FWHM，非主文模拟.336/.4029/.469μm。",
               "basis": "measured",
               "checked_on": "2026-11-14",
-              "display": "0.5565"
+              "display": "0.5565",
+              "direction": "x"
             },
             "strehl": {
               "value": 0.75,
@@ -25454,14 +25548,16 @@
             "efficiency_protocol": {
               "value": "模拟段称在3×FWHM处按光通量计算；实测积分边界/分母待补",
               "source": "choi_rgb_ned_2025",
-              "location": "PDF p.3 efficiency description；SI p.20 Note10",
-              "note": "3×FWHM来自主文设计/模拟段，实测是否沿用同口径未明，不自动移用。实验用100×物镜/CCD继像、z步进.5μm，未报完整效率不确定度。",
+              "location": "用户排版稿 PDF p.3 设计段、p.4 光学表征、p.5 Fig. 3d；补充 PDF p.20 Note 10、p.31 Table 1",
+              "note": "3×FWHM 属于设计段的光通量计算。实测逐色积分窗口、功率分母和不确定度待补。Table 1 在非偏振光比较列给本器件汇总 10%，单个实验谱点的偏振未逐项交代。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
+              "checked_on": "2026-11-20",
               "sourceIds": [
                 "choi_rgb_ned_2025",
                 "choi_rgb_ned_si_2025"
-              ]
+              ],
+              "integration_window": null,
+              "denominator": null
             },
             "material": {
               "value": "MINS-311RM低折射率树脂 / 玻璃；同心环二元结构；roll-to-plate",
@@ -25480,20 +25576,206 @@
               "checked_on": "2026-11-14"
             },
             "chromatic": {
-              "value": "635nm报告偏离设计焦面5.77μm（0.11%）；不当成RGB峰峰焦移",
+              "value": "450 / 532 / 635 nm 离散 RGB 光学消色差",
               "source": "choi_rgb_ned_2025",
-              "location": "PDF pp.3–4 characterization",
-              "note": "单色相对设计误差，不是三色最大跨度；未由相对Z轴生成每色绝对焦距。",
+              "location": "用户排版稿 PDF p.2 Design principle、pp.3–4 光学表征及 p.5 Fig. 3b",
+              "note": "全口径伴随拓扑逆向优化直接匹配三个谱点的焦面。本行保留相对轴扫，残余色差须有共同标定的峰位。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-20",
+              "sample_wavelengths_nm": [
+                450,
+                532,
+                635
+              ],
+              "spectral_sampling": "discrete"
             },
             "mtf_curve": {
-              "value": "Fig.3为器件PSF/USAF；NED系统的CGH校正对比曲线另见XR研究行",
+              "value": "裸镜有 PSF 与 USAF 成像；近眼系统线对对比度另见 XR",
               "source": "choi_rgb_ned_2025",
-              "location": "PDF pp.4–6 Fig.3；SI pp.29–30 Note14",
-              "note": "裸镜聚焦数据与系统CGH校正MTF/PSNR/散斑改善分开；不能以RGB合成白光宣称连续宽带。",
+              "location": "用户排版稿 PDF p.5 Fig. 3b–e；补充 PDF pp.21–22 Note 11、pp.29–30 Note 14",
+              "note": "裸镜未报告 MTF 曲线、方向或原始数组。近眼系统用 Eq. S31 的 Michelson 条纹对比度评估 CGH 校正，保留系统和测量条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "choi_rgb_ned_2025",
+                "choi_rgb_ned_si_2025"
+              ]
+            },
+            "psf_protocol": {
+              "value": "全口径准直入射，z 步进 0.5 μm，横向 PSF 取各色焦面",
+              "source": "choi_rgb_ned_si_2025",
+              "location": "补充 PDF p.20 Note 10 / Fig. S9；用户排版稿 PDF p.5 Fig. 3b–d",
+              "note": "Thorlabs CPS635 经光纤准直器照满镜片。LMPLFLN 100X 物镜、TTL180-A 管镜和 INFINITY2-1RC CCD 采集。原始像素标尺、零点标定与峰拟合方法未公开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "choi_rgb_ned_si_2025",
+                "choi_rgb_ned_2025"
+              ],
+              "direction": "x",
+              "axial_scan_step_um": 0.5,
+              "evaluation_plane_kind": "per_wavelength_focus",
+              "transverse_sampling_um": null,
+              "axial_origin_calibration": null,
+              "illumination_model": "Thorlabs CPS635"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "choi_rgb_ned_2025",
+              "location": "用户排版稿 PDF p.5 Fig. 3b 红色；补充 PDF p.20 Note 10 / Fig. S9",
+              "note": "x–z 图横坐标为相对 Z (μm)，纵坐标为 X (μm)，颜色条为归一化强度 0–1。无逐色绝对峰位数表、标定原点或原始图像。Fig. 3a 为模拟。",
               "basis": "measured",
+              "checked_on": "2026-11-20",
+              "display": "Fig. 3b 实测曲线；绝对焦位待补",
+              "sourceIds": [
+                "choi_rgb_ned_2025",
+                "choi_rgb_ned_si_2025"
+              ],
+              "absolute_focal_position_available": false
+            },
+            "focus_error_um": {
+              "value": 5.77,
+              "source": "choi_rgb_ned_2025",
+              "location": "用户排版稿 PDF pp.3–4 光学表征段；p.5 Fig. 3b；补充 PDF p.24 Note 12",
+              "note": "作者报告红光相对设计焦距的偏差幅值。原文未给符号、绝对峰位或 RGB 最大互差。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "choi_rgb_ned_2025",
+                "choi_rgb_ned_si_2025"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_single_wavelength_error",
+              "sample_wavelengths_nm": [
+                635
+              ],
+              "reference_wavelength_nm": null,
+              "reference_kind": "design_focal_length",
+              "reference_plane_um": 5100,
+              "reference_plane_approximate": true
+            },
+            "focus_error_pct": {
+              "value": 0.11,
+              "source": "choi_rgb_ned_2025",
+              "location": "用户排版稿 PDF pp.3–4 光学表征段；p.5 Fig. 3b；补充 PDF p.24 Note 12",
+              "note": "按设计焦距归一化的作者原值。名义焦距约 5.1 mm，原文未提供用于除法的更精确分母。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "choi_rgb_ned_2025",
+                "choi_rgb_ned_si_2025"
+              ],
+              "calculation_origin": "authors",
+              "statistic": "author_reported_single_wavelength_error",
+              "sample_wavelengths_nm": [
+                635
+              ],
+              "reference_wavelength_nm": null,
+              "reference_kind": "design_focal_length",
+              "reference_plane_um": 5100,
+              "reference_plane_approximate": true
+            },
+            "focus_error_protocol": {
+              "value": "635 nm 对设计焦距（名义约 5100 μm）；幅值",
+              "source": "choi_rgb_ned_2025",
+              "location": "用户排版稿 PDF pp.3–4 光学表征段；p.5 Fig. 3b；补充 PDF p.24 Note 12；补充 PDF p.20 Note 10 / Fig. S9",
+              "note": "用 Fig. 3b 红光轴扫报告偏差。Fig. 3b 零点与设计面的具体对齐、插值及不确定度未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "choi_rgb_ned_2025",
+                "choi_rgb_ned_si_2025"
+              ],
+              "reference_plane_um": 5100,
+              "reference_plane_approximate": true,
+              "reference_wavelength_nm": null,
+              "reference_kind": "design_focal_length",
+              "axial_scan_step_um": 0.5
+            }
+          }
+        },
+        {
+          "id": "choi2025_rgb_psf_summary",
+          "model": "Choi 2025 · RGB镜片 · 三谱点焦斑汇总",
+          "module": "",
+          "variant": "原始论文器件 / 研究配置",
+          "evidence_type": "study",
+          "study_id": "choi2025",
+          "specimen_id": "rgb_1cm",
+          "visible_light_use": true,
+          "measurement_scope": "同一 1 cm RGB 实物的三谱点焦斑汇总。横向宽度和聚焦效率见分别的 450、532、635 nm 行。",
+          "values": {
+            "diameter_um": {
+              "value": 10000,
+              "source": "choi_rgb_ned_2025",
+              "location": "PDF p.2 Results；Fig.3图注",
+              "note": "原文1cm×10000换μm。",
+              "basis": "reported_configuration",
               "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.7,
+              "source": "choi_rgb_ned_2025",
+              "location": "PDF p.2 Results",
+              "note": "设计名义NA；作者由实测FWHM估得平均有效NA约.55，不能把.7当独立实测值。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "design_focal_um": {
+              "value": 5100,
+              "source": "choi_rgb_ned_si_2025",
+              "location": "SI PDF p.24 Note12",
+              "note": "SI称镜片焦距约5.1mm，作为名义约值；不是各波长绝对实测焦距或设计5.0mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14",
+              "approximate": true,
+              "display": "约5100"
+            },
+            "height_nm": {
+              "value": 700,
+              "source": "choi_rgb_ned_si_2025",
+              "location": "SI PDF p.14 Note6 / Fig.S5；pp.16–17 Note8",
+              "note": "实制结构设计高度；最小线宽90nm，区别于5nm设计网格及其他高度工艺测试。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "effective_na_from_psf": {
+              "value": 0.55,
+              "source": "choi_rgb_ned_2025",
+              "location": "用户排版稿 PDF p.4 光学表征段；p.5 Fig. 3d",
+              "note": "作者按实测横向 FWHM 以 0.514 × λ / FWHM 得到各谱点有效 NA 后，报告三谱点均值 0.55。保留作者约值，设计 NA 为 0.70。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "display": "约 0.55",
+              "approximate": true,
+              "calculation_origin": "authors",
+              "sample_wavelengths_nm": [
+                450,
+                532,
+                635
+              ],
+              "statistic": "author_reported_three_wavelength_mean",
+              "formula": "0.514 * wavelength / FWHM"
+            },
+            "psf_protocol": {
+              "value": "450 / 532 / 635 nm 各自焦面的 x 向焦斑宽度",
+              "source": "choi_rgb_ned_si_2025",
+              "location": "补充 PDF p.20 Note 10 / Fig. S9；用户排版稿 PDF p.5 Fig. 3c,d",
+              "note": "三次测量各自寻焦。横向像素间距和三色实测绝对峰位未公开。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "choi_rgb_ned_si_2025",
+                "choi_rgb_ned_2025"
+              ],
+              "direction": "x",
+              "axial_scan_step_um": 0.5,
+              "sample_wavelengths_nm": [
+                450,
+                532,
+                635
+              ],
+              "evaluation_plane_kind": "per_wavelength_focus"
             }
           }
         },
