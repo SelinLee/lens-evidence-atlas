@@ -5532,9 +5532,9 @@
         },
         {
           "id": "focus_variation_um",
-          "label": "跨波长焦距变化幅度 (μm；定义见协议)",
-          "definition": "同一配置跨波长实测焦距的非负变化幅度。保存作者明确给出的变化，或依据正文给出的拟合焦距上下限计算宽度。",
-          "conditions": "同一器件、波长集合或范围、统计定义、计算归属及轴向采样见协议。逐波长有符号焦移与上下限宽度分开。",
+          "label": "跨波长轴向焦位变化幅度 (μm；定义见协议)",
+          "definition": "同一配置跨波长的实测焦距或有限共轭像距的非负变化幅度。保留作者所定义变化或以已报告测量位置计算的跨度。",
+          "conditions": "同一器件、共轭、波长集合或范围、统计定义及计算归属见协议。逐波长有符号焦差单列。",
           "numeric": true,
           "definition_refs": [
             {
@@ -5556,8 +5556,8 @@
         },
         {
           "id": "focus_variation_protocol",
-          "label": "焦距变化协议 / 参考面 / 谱点",
-          "definition": "保存跨波长焦距变化的统计定义、参考与采样，以及固定像面PSF和各波长焦面是否相同；未知条件逐项注明。",
+          "label": "轴向焦位变化协议 / 参考面 / 谱点",
+          "definition": "保存跨波长焦距或有限共轭像距变化的统计定义、参考与采样，含固定像面与逐波长焦面条件。",
           "conditions": "不将单谱点误差、设计焦距或工作波段端点当作已测焦移；离散RGB与连续工作波段分别保存。",
           "numeric": false,
           "definition_refs": [
@@ -83431,10 +83431,11 @@
               "value": 5070,
               "source": "hasegawa_tsf_pdf_2026",
               "location": "p7 §2.4 Fig.4c对应段，蓝光实测f；同段设计f=5.05mm",
-              "note": "准直激光装置，原文 5.07 mm。",
+              "note": "准直激光装置，原文 5.07 mm。 为作者报告的焦斑面焦距，未明示轴上寻峰规则。",
               "basis": "measured",
               "checked_on": "2026-11-18",
-              "display": "5070（5.07 mm）"
+              "display": "5070（5.07 mm）",
+              "position_definition": "author_reported_focus_position"
             },
             "axial_focus_offset_um": {
               "value": 20,
@@ -83627,10 +83628,11 @@
               "value": 5030,
               "source": "hasegawa_tsf_pdf_2026",
               "location": "p7 §2.4 Fig.4c对应段，绿光实测f；同段设计f=5.05mm",
-              "note": "准直激光装置，原文 5.03 mm。",
+              "note": "准直激光装置，原文 5.03 mm。 为作者报告的焦斑面焦距，未明示轴上寻峰规则。",
               "basis": "measured",
               "checked_on": "2026-11-18",
-              "display": "5030（5.03 mm）"
+              "display": "5030（5.03 mm）",
+              "position_definition": "author_reported_focus_position"
             },
             "axial_focus_offset_um": {
               "value": -20,
@@ -83823,10 +83825,11 @@
               "value": 4980,
               "source": "hasegawa_tsf_pdf_2026",
               "location": "p7 §2.4 Fig.4c对应段，红光实测f；同段设计f=5.05mm",
-              "note": "准直激光装置，原文 4.98 mm。",
+              "note": "准直激光装置，原文 4.98 mm。 为作者报告的焦斑面焦距，未明示轴上寻峰规则。",
               "basis": "measured",
               "checked_on": "2026-11-18",
-              "display": "4980（4.98 mm）"
+              "display": "4980（4.98 mm）",
+              "position_definition": "author_reported_focus_position"
             },
             "axial_focus_offset_um": {
               "value": -70,
@@ -84013,16 +84016,20 @@
               "nominal_collection_magnification": 20,
               "image_plane_pixel_size_um": null,
               "measurement_repeat_count": null,
-              "field_point": "on_axis"
+              "field_point": "on_axis",
+              "object_conjugate": "finite",
+              "reference_plane": "Fig. 5 实测 x–z 图的作者轴向 z 零点"
             },
-            "measured_focal_um": {
+            "measured_image_distance_um": {
               "value": null,
               "source": "hasegawa_tsf_pdf_2026",
               "location": "p8 Fig.5a及§2.4对应正文；p12 §4.3",
               "note": "非设计波长有实测x–z图，未给精确峰位印字。Fig.5i数值为衍射积分模拟。",
               "basis": "unresolved",
-              "checked_on": "2026-11-18",
-              "display": "只有图像，精确值待核"
+              "checked_on": "2026-11-20",
+              "display": "只有图像，精确值待核",
+              "object_conjugate": "finite",
+              "reference_plane": "Fig. 5 实测 x–z 图的作者轴向 z 零点"
             }
           }
         },
@@ -84121,30 +84128,37 @@
               "nominal_collection_magnification": 20,
               "image_plane_pixel_size_um": null,
               "measurement_repeat_count": null,
-              "field_point": "on_axis"
-            },
-            "measured_focal_um": {
-              "value": 5080,
-              "source": "hasegawa_tsf_pdf_2026",
-              "location": "p8 Fig.5b及§2.4对应正文；p12 §4.3",
-              "note": "作者直报轴向强度最大位置z=5.08mm；按有限物距条件保存。",
-              "basis": "measured",
-              "checked_on": "2026-11-18",
-              "display": "5080（5.08 mm）"
+              "field_point": "on_axis",
+              "object_conjugate": "finite",
+              "reference_plane": "Fig. 5 实测 x–z 图的作者轴向 z 零点"
             },
             "axial_focus_offset_um": {
               "value": 30,
               "source": "hasegawa_tsf_pdf_2026",
               "location": "p8 Fig.5b及§2.4对应正文；p12 §4.3",
-              "note": "本库按两项原文印字计算f−5050μm=+30μm。精度来自原文0.01mm印字；测量误差未报告。",
+              "note": "本库将有限共轭实测 z 减 Fig. 5 的 5050 μm 标称设计焦面，得到 +30 μm。原文读数精度 0.01 mm。5050 μm 是图中设计焦距参考线，有限共轭设计像距未报告。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-18",
+              "checked_on": "2026-11-20",
               "display": "+30（本库计算）",
               "calculation_origin": "atlas",
-              "formula": "measured_focal_um - reference_plane_um",
+              "formula": "measured_image_distance_um - reference_plane_um",
               "reference_plane_um": 5050,
               "reference_wavelength_nm": null,
-              "reference_plane_description": "Fig.5a–g标注的固定设计焦面z=5.05mm。"
+              "reference_plane_description": "同一 Fig. 5 的白色设计焦距参照线 z = 5.05 mm，原始物距 500 mm。",
+              "input_metric": "measured_image_distance_um",
+              "reference_metric": "design_focal_um"
+            },
+            "measured_image_distance_um": {
+              "value": 5080,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5b及§2.4对应正文；p12 §4.3",
+              "note": "原文报告有限共轭下轴向强度最大位置 z = 5.08 mm。物距 500 mm，光源为卤素灯滤光后的 1 mm 针孔，轴向坐标零点的独立标定未给。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "display": "5080（5.08 mm）",
+              "object_conjugate": "finite",
+              "reference_plane": "Fig. 5 实测 x–z 图的作者轴向 z 零点",
+              "position_definition": "axial_intensity_maximum"
             }
           }
         },
@@ -84243,16 +84257,20 @@
               "nominal_collection_magnification": 20,
               "image_plane_pixel_size_um": null,
               "measurement_repeat_count": null,
-              "field_point": "on_axis"
+              "field_point": "on_axis",
+              "object_conjugate": "finite",
+              "reference_plane": "Fig. 5 实测 x–z 图的作者轴向 z 零点"
             },
-            "measured_focal_um": {
+            "measured_image_distance_um": {
               "value": null,
               "source": "hasegawa_tsf_pdf_2026",
               "location": "p8 Fig.5c及§2.4对应正文；p12 §4.3",
               "note": "非设计波长有实测x–z图，未给精确峰位印字。Fig.5i数值为衍射积分模拟。 原文另指出此波长有副焦点。",
               "basis": "unresolved",
-              "checked_on": "2026-11-18",
-              "display": "只有图像，精确值待核"
+              "checked_on": "2026-11-20",
+              "display": "只有图像，精确值待核",
+              "object_conjugate": "finite",
+              "reference_plane": "Fig. 5 实测 x–z 图的作者轴向 z 零点"
             }
           }
         },
@@ -84351,30 +84369,37 @@
               "nominal_collection_magnification": 20,
               "image_plane_pixel_size_um": null,
               "measurement_repeat_count": null,
-              "field_point": "on_axis"
-            },
-            "measured_focal_um": {
-              "value": 5100,
-              "source": "hasegawa_tsf_pdf_2026",
-              "location": "p8 Fig.5d及§2.4对应正文；p12 §4.3",
-              "note": "作者直报轴向强度最大位置z=5.10mm；按有限物距条件保存。",
-              "basis": "measured",
-              "checked_on": "2026-11-18",
-              "display": "5100（5.10 mm）"
+              "field_point": "on_axis",
+              "object_conjugate": "finite",
+              "reference_plane": "Fig. 5 实测 x–z 图的作者轴向 z 零点"
             },
             "axial_focus_offset_um": {
               "value": 50,
               "source": "hasegawa_tsf_pdf_2026",
               "location": "p8 Fig.5d及§2.4对应正文；p12 §4.3",
-              "note": "本库按两项原文印字计算f−5050μm=+50μm。精度来自原文0.01mm印字；测量误差未报告。",
+              "note": "本库将有限共轭实测 z 减 Fig. 5 的 5050 μm 标称设计焦面，得到 +50 μm。原文读数精度 0.01 mm。5050 μm 是图中设计焦距参考线，有限共轭设计像距未报告。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-18",
+              "checked_on": "2026-11-20",
               "display": "+50（本库计算）",
               "calculation_origin": "atlas",
-              "formula": "measured_focal_um - reference_plane_um",
+              "formula": "measured_image_distance_um - reference_plane_um",
               "reference_plane_um": 5050,
               "reference_wavelength_nm": null,
-              "reference_plane_description": "Fig.5a–g标注的固定设计焦面z=5.05mm。"
+              "reference_plane_description": "同一 Fig. 5 的白色设计焦距参照线 z = 5.05 mm，原始物距 500 mm。",
+              "input_metric": "measured_image_distance_um",
+              "reference_metric": "design_focal_um"
+            },
+            "measured_image_distance_um": {
+              "value": 5100,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5d及§2.4对应正文；p12 §4.3",
+              "note": "原文报告有限共轭下轴向强度最大位置 z = 5.10 mm。物距 500 mm，光源为卤素灯滤光后的 1 mm 针孔，轴向坐标零点的独立标定未给。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "display": "5100（5.10 mm）",
+              "object_conjugate": "finite",
+              "reference_plane": "Fig. 5 实测 x–z 图的作者轴向 z 零点",
+              "position_definition": "axial_intensity_maximum"
             }
           }
         },
@@ -84473,16 +84498,20 @@
               "nominal_collection_magnification": 20,
               "image_plane_pixel_size_um": null,
               "measurement_repeat_count": null,
-              "field_point": "on_axis"
+              "field_point": "on_axis",
+              "object_conjugate": "finite",
+              "reference_plane": "Fig. 5 实测 x–z 图的作者轴向 z 零点"
             },
-            "measured_focal_um": {
+            "measured_image_distance_um": {
               "value": null,
               "source": "hasegawa_tsf_pdf_2026",
               "location": "p8 Fig.5e及§2.4对应正文；p12 §4.3",
               "note": "非设计波长有实测x–z图，未给精确峰位印字。Fig.5i数值为衍射积分模拟。 原文另指出此波长有副焦点。",
               "basis": "unresolved",
-              "checked_on": "2026-11-18",
-              "display": "只有图像，精确值待核"
+              "checked_on": "2026-11-20",
+              "display": "只有图像，精确值待核",
+              "object_conjugate": "finite",
+              "reference_plane": "Fig. 5 实测 x–z 图的作者轴向 z 零点"
             }
           }
         },
@@ -84581,30 +84610,37 @@
               "nominal_collection_magnification": 20,
               "image_plane_pixel_size_um": null,
               "measurement_repeat_count": null,
-              "field_point": "on_axis"
-            },
-            "measured_focal_um": {
-              "value": 5110,
-              "source": "hasegawa_tsf_pdf_2026",
-              "location": "p8 Fig.5f及§2.4对应正文；p12 §4.3",
-              "note": "作者直报轴向强度最大位置z=5.11mm；按有限物距条件保存。",
-              "basis": "measured",
-              "checked_on": "2026-11-18",
-              "display": "5110（5.11 mm）"
+              "field_point": "on_axis",
+              "object_conjugate": "finite",
+              "reference_plane": "Fig. 5 实测 x–z 图的作者轴向 z 零点"
             },
             "axial_focus_offset_um": {
               "value": 60,
               "source": "hasegawa_tsf_pdf_2026",
               "location": "p8 Fig.5f及§2.4对应正文；p12 §4.3",
-              "note": "本库按两项原文印字计算f−5050μm=+60μm。精度来自原文0.01mm印字；测量误差未报告。",
+              "note": "本库将有限共轭实测 z 减 Fig. 5 的 5050 μm 标称设计焦面，得到 +60 μm。原文读数精度 0.01 mm。5050 μm 是图中设计焦距参考线，有限共轭设计像距未报告。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-18",
+              "checked_on": "2026-11-20",
               "display": "+60（本库计算）",
               "calculation_origin": "atlas",
-              "formula": "measured_focal_um - reference_plane_um",
+              "formula": "measured_image_distance_um - reference_plane_um",
               "reference_plane_um": 5050,
               "reference_wavelength_nm": null,
-              "reference_plane_description": "Fig.5a–g标注的固定设计焦面z=5.05mm。"
+              "reference_plane_description": "同一 Fig. 5 的白色设计焦距参照线 z = 5.05 mm，原始物距 500 mm。",
+              "input_metric": "measured_image_distance_um",
+              "reference_metric": "design_focal_um"
+            },
+            "measured_image_distance_um": {
+              "value": 5110,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p8 Fig.5f及§2.4对应正文；p12 §4.3",
+              "note": "原文报告有限共轭下轴向强度最大位置 z = 5.11 mm。物距 500 mm，光源为卤素灯滤光后的 1 mm 针孔，轴向坐标零点的独立标定未给。",
+              "basis": "measured",
+              "checked_on": "2026-11-20",
+              "display": "5110（5.11 mm）",
+              "object_conjugate": "finite",
+              "reference_plane": "Fig. 5 实测 x–z 图的作者轴向 z 零点",
+              "position_definition": "axial_intensity_maximum"
             }
           }
         },
@@ -84703,16 +84739,20 @@
               "nominal_collection_magnification": 20,
               "image_plane_pixel_size_um": null,
               "measurement_repeat_count": null,
-              "field_point": "on_axis"
+              "field_point": "on_axis",
+              "object_conjugate": "finite",
+              "reference_plane": "Fig. 5 实测 x–z 图的作者轴向 z 零点"
             },
-            "measured_focal_um": {
+            "measured_image_distance_um": {
               "value": null,
               "source": "hasegawa_tsf_pdf_2026",
               "location": "p8 Fig.5g及§2.4对应正文；p12 §4.3",
               "note": "非设计波长有实测x–z图，未给精确峰位印字。Fig.5i数值为衍射积分模拟。",
               "basis": "unresolved",
-              "checked_on": "2026-11-18",
-              "display": "只有图像，精确值待核"
+              "checked_on": "2026-11-20",
+              "display": "只有图像，精确值待核",
+              "object_conjugate": "finite",
+              "reference_plane": "Fig. 5 实测 x–z 图的作者轴向 z 零点"
             }
           }
         },
@@ -152183,9 +152223,181 @@
               "power_ratio_to_design_order": 1.2
             }
           }
+        },
+        {
+          "id": "hasegawa2026_laser_rgb_span",
+          "model": "Hasegawa 2026 · 准直激光 · 三色实测焦距跨度",
+          "study_id": "hasegawa2026",
+          "specimen_id": "laser",
+          "module": "",
+          "variant": "1 mm 实物 · 准直激光",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一只 1 mm 实物、同一光路的三色数值汇总。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制圆形镜口径1mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制器件对应的名义NA；未报告独立测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 5050,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应正文；p8 Fig.5a–g虚线",
+              "note": "原文设计f=5.05mm。各光路的实测轴向位置另列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "正式版 p.7 §2.4，Fig. 4c 对应的三色焦距段；p.12 §4.3，Fig. S5 光路说明",
+              "note": "三色设计点的跨波长汇总。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "450／532／633 nm 三个实测谱点",
+              "sample_wavelengths_nm": [
+                450,
+                532,
+                633
+              ]
+            },
+            "focus_variation_um": {
+              "value": 90,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "正式版 p.7 §2.4，Fig. 4c 对应的三色焦距段；p.12 §4.3，Fig. S5 光路说明",
+              "note": "450／532／633 nm 同一准直入射组，5070 − 4980 = 90 μm。正文给相对 5050 μm 的最大偏差范围 −1.4% 至 +0.4%。 本库从原文印字相减，印字精度 0.01 mm。未给轴向步长、重复测量或焦位误差。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "display": "90（三色焦位跨度，本库计算）",
+              "calculation_origin": "atlas",
+              "statistic": "measured_focal_position_span",
+              "formula": "max(f) - min(f)",
+              "input_metric": "measured_focal_um",
+              "sample_wavelengths_nm": [
+                450,
+                532,
+                633
+              ],
+              "measurement_record_ids": [
+                "hasegawa2026_laser_450",
+                "hasegawa2026_laser_532",
+                "hasegawa2026_laser_633"
+              ]
+            },
+            "focus_variation_protocol": {
+              "value": "三色原文实测位置取最大值减最小值；波长集合为 450、532、633 nm。",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "正式版 p.7 §2.4，Fig. 4c 对应的三色焦距段；p.12 §4.3，Fig. S5 光路说明",
+              "note": "450／532／633 nm 同一准直入射组，5070 − 4980 = 90 μm。正文给相对 5050 μm 的最大偏差范围 −1.4% 至 +0.4%。 极差使用同一光路的最大/最小位置，未将设计参考面计入极差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "optical_condition": "collimated_laser",
+              "source_distance_m": null,
+              "axial_step_um": null,
+              "source_print_resolution_um": 10
+            }
+          }
+        },
+        {
+          "id": "hasegawa2026_halogen_rgb_span",
+          "model": "Hasegawa 2026 · 500 mm 物距 · 三色实测像距跨度",
+          "study_id": "hasegawa2026",
+          "specimen_id": "halogen",
+          "module": "",
+          "variant": "1 mm 实物 · 有限共轭滤光轴扫",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "measurement_scope": "同一只 1 mm 实物、同一光路的三色数值汇总。",
+          "values": {
+            "diameter_um": {
+              "value": 1000,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制圆形镜口径1mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4a",
+              "note": "实制器件对应的名义NA；未报告独立测量。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "design_focal_um": {
+              "value": 5050,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p7 §2.4 Fig.4c对应正文；p8 Fig.5a–g虚线",
+              "note": "原文设计f=5.05mm。各光路的实测轴向位置另列。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-18"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "正式版 p.8 §2.4，Fig. 5b,d,f、图注及轴向峰值描述；p.12 §4.3，Fig. S6 光路说明",
+              "note": "三色设计点的跨波长汇总。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "display": "450／532／633 nm 三个实测谱点",
+              "sample_wavelengths_nm": [
+                450,
+                532,
+                633
+              ]
+            },
+            "focus_variation_um": {
+              "value": 30,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "正式版 p.8 §2.4，Fig. 5b,d,f、图注及轴向峰值描述；p.12 §4.3，Fig. S6 光路说明",
+              "note": "450／532／633 nm 同一有限共轭组，5110 − 5080 = 30 μm。正文给相对 5050 μm 标称参考焦面的最大相对偏差小于 1.2%。其他四个测试波长只有图像。 本库从原文印字相减，印字精度 0.01 mm。未给轴向步长、重复测量或焦位误差。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "display": "30（三色焦位跨度，本库计算）",
+              "calculation_origin": "atlas",
+              "statistic": "measured_axial_peak_span",
+              "formula": "max(z) - min(z)",
+              "input_metric": "measured_image_distance_um",
+              "sample_wavelengths_nm": [
+                450,
+                532,
+                633
+              ],
+              "measurement_record_ids": [
+                "hasegawa2026_halogen_450",
+                "hasegawa2026_halogen_532",
+                "hasegawa2026_halogen_633"
+              ]
+            },
+            "focus_variation_protocol": {
+              "value": "三色原文实测位置取最大值减最小值；波长集合为 450、532、633 nm。",
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "正式版 p.8 §2.4，Fig. 5b,d,f、图注及轴向峰值描述；p.12 §4.3，Fig. S6 光路说明",
+              "note": "450／532／633 nm 同一有限共轭组，5110 − 5080 = 30 μm。正文给相对 5050 μm 标称参考焦面的最大相对偏差小于 1.2%。其他四个测试波长只有图像。 极差使用同一光路的最大/最小位置，未将设计参考面计入极差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "optical_condition": "finite_conjugate_filtered_halogen",
+              "source_distance_m": 0.5,
+              "axial_step_um": null,
+              "source_print_resolution_um": 10
+            }
+          }
         }
       ],
-      "scope": "58项原始研究、293个器件/测量/系统配置、1246条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
+      "scope": "58项原始研究、293个器件/测量/系统配置、1248条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",

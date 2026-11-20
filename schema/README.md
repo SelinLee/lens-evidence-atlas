@@ -32,7 +32,7 @@
 
 研究格可附可选的 `data_availability` 核查元数据。`status: curves_only` 表示在所列范围内只核到曲线，`author_numeric_mtf`、`raw_psf`、`independently_recomputed_mtf` 为 `null`，不表示作者没有这些数据。实际波长/方向/单位与缺失的场点、归一化及采样尺度分别保留，`search_log` 指向有日期和覆盖边界的核查记录。可展示的结论仍写入该格 `note`/`location`，数据获取声明的主文加入 `sourceIds`；元数据不直接生成数值坐标。作者由实测PSF计算与本库复算不能混称。
 
-`focus_variation_um`保存作者报告的跨波长非负焦距变化幅度，与逐波长`measured_focal_um`分开。须有`focus_variation_protocol`、实际`sample_wavelengths_nm`及`statistic`：`author_reported_band_variation`仅表示作者所称variation，不能自动改称已复核的峰峰值；`maximum_pairwise_difference`表示作者明确的谱点最大互差。当前两种均为`basis: derived_from_measurement`、`calculation_origin: authors`；本库从作者正文给出的实测焦距上下限计算宽度时，使用 `calculation_origin: atlas`、`statistic: range_width_from_reported_bounds` 和 `author_reported_focal_bounds_um`。此行保留原印字范围和计算式，逐波长焦距仍留空。其他本库重算须另设记录或协议。参考、轴向采样和缺失定义写入协议，约值保留`approximate`与`display`。汇总行不同时填写数值型`wavelength_nm`，不由百分数倒推绝对焦距或任意分派到一个波长。
+`focus_variation_um`保存作者报告的跨波长非负焦距变化幅度，与逐波长`measured_focal_um`分开。须有`focus_variation_protocol`、实际`sample_wavelengths_nm`及`statistic`：`author_reported_band_variation`仅表示作者所称variation，不能自动改称已复核的峰峰值；`maximum_pairwise_difference`表示作者明确的谱点最大互差。当前两种均为`basis: derived_from_measurement`、`calculation_origin: authors`；本库从作者正文给出的实测焦距上下限计算宽度时，使用 `calculation_origin: atlas`、`statistic: range_width_from_reported_bounds` 和 `author_reported_focal_bounds_um`。此行保留原印字范围和计算式，逐波长焦距仍留空。用同配置已报告逐谱点位置计算跨度时，使用 `statistic: measured_axial_peak_span`（轴向峰）或 `measured_focal_position_span`（作者报告焦位）。以 `measurement_record_ids` 绑定各实际谱点，有限共轭时指定 `input_metric: measured_image_distance_um` 和 `formula: max(z) - min(z)`。参考、轴向采样和缺失定义写入协议，约值保留`approximate`与`display`。汇总行不同时填写数值型`wavelength_nm`，不由百分数倒推绝对焦距或任意分派到一个波长。
 
 两谱点差值可以用 `statistic: paired_measured_axial_peak_difference` 保存。使用 `basis: derived_from_measurement`、`calculation_origin: atlas`、`formula: abs(f_2 - f_1)`、实际样本波长和同器件的两条 `measurement_record_ids`。原始行须为实测轴向强度峰位。不同照明带宽、偏振和测量不确定度写入协议。两点差值只描述这两个条件。 本库复算多谱点的实测峰峰焦差时，使用 `statistic: measured_axial_peak_span` 与 `formula: max(f) - min(f)`。按相同顺序提供实际波长与同器件的实测峰位记录。
 
@@ -52,7 +52,7 @@
 
 `axial_focus_offset_um`是本库由作者实测f减去明确固定像面`reference_plane_um`算出的有符号焦差，`basis: derived_from_measurement`、`calculation_origin: atlas`，`formula: measured_focal_um - reference_plane_um`。要求本行实际波长/实测f、`reference_plane_description`、`psf_protocol`及精确来源位置；该固定面类型的`reference_wavelength_nm`显式null。验证数值与输入差一致，允许正、负和真实零；不默认选择设计f，不称作者原始焦移表或PSF/MTF复算。版本只核到作者稿的输入须在display/note保留版本，原作者量与本库计算分别标明。
 
-有限共轭设计面与实测聚焦位置使用 `design_image_distance_um`、`measured_image_distance_um`。两者均保留 `object_conjugate: finite` 和与 `psf_protocol.reference_plane` 相同的参考面。实测像距绑定实际谱点，近轴焦距各自保留。用这两种像距计算单波长的有符号残差时，在 `axial_focus_offset_um` 指定 `input_metric: measured_image_distance_um`，计算 `measured_image_distance_um - reference_plane_um`。`reference_plane_um` 必须等于该行的设计像距。
+有限共轭设计像距与实测聚焦位置使用 `design_image_distance_um`、`measured_image_distance_um`。两者均保留 `object_conjugate: finite` 和与 `psf_protocol.reference_plane` 相同的参考面。实测像距绑定实际谱点，近轴焦距各自保留。用这两种像距计算单波长的有符号残差时，在 `axial_focus_offset_um` 指定 `input_metric: measured_image_distance_um`，计算 `measured_image_distance_um - reference_plane_um`。`reference_plane_um` 默认须等于该行的设计像距。若原文以标称设计焦距作同一轴坐标中的固定参照，标 `reference_metric: design_focal_um` 并具体定位参考线。此时有限共轭设计像距仍按原文证据填写。
 
 `diffraction_limited_reference_fwhm_um` 标记作者理想模型、相应实测或模拟波长及 `psf_protocol`。理想模型可为 Airy 参考或理想相位掩模传播，切线方向未知可记录为 `unspecified`。实物与等 NA 缩比模型的宽度使用对应字段。
 
