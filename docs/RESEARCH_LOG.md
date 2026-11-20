@@ -1209,3 +1209,7 @@ Zang 2024 补件组件 DOI 在 Crossref 确认从属于 ACS Nano 主文，同一
 沿 Kang 参考文献 1 回查 Fan 2024。独立无头 Chrome 取得正式主文（2114195 字节）和出版社 ZIP（28464909 字节，SHA-256 为 `0f8b8507e28acd06d03c614678233b4bb6507786c21d887372e44de9bc7e1402`）。ZIP 的 `Additional file/Additional file.pdf` p.8 Fig. S5a–c 在 463／547／617 nm 印出 6934／5859／5198 μm，峰峰焦差为 1736 μm。Fig. S5d 的 463 与 617 nm 焦深标签与 §S5 正文相反，留待近眼显示方向复核。正文摘要提到过去的消色差阵列，补件 §S5 将本实物的色散与潜在的校正方案明确区分。该论文只保留在检索记录。既有独立的 Fan 2019 消色差阵列沿其原作证据保留。[Fan 2024 正式主文](https://link.springer.com/article/10.1186/s43593-023-00055-1) · [正式补件 ZIP](https://static-content.springer.com/esm/art%3A10.1186%2Fs43593-023-00055-1/MediaObjects/43593_2023_55_MOESM1_ESM.zip) · [2025 年 3 月分区](https://www.scholay.com/journal/81550/elight)
 
 接续 Feng 2022 的可见光离散三色双层实物。Crossref 组件 .s003 通过 is-component-of 绑定正式 DOI，并给出精确 PDF 文件名 nl2c00486_si_003.pdf，.s001 解析为 MP4。期刊目录说明这份 PDF 含更多设计、工艺与测量、成像、1 cm 和 TiO₂ 配置。补件直连实测 403，仍须确认各器件的测量归属与数值。会话目标保持开启。[期刊](https://doi.org/10.1021/acs.nanolett.2c00486) · [组件 DOI](https://api.crossref.org/works/10.1021/acs.nanolett.2c00486.s003)
+
+## 2026-11-20-139 · Feng 与 Pan 原件补核
+
+Feng 2022 新增课题组发布的双层器件表面实拍、纳米柱结构说明和三基色成像图，保持 1 mm 口径与设计 NA 0.8 的作者摘要来源。ACS 主文和 `nl2c00486_si_003.pdf` 直连均返回 403，主镜逐色数据及厘米级和 TiO₂ 配置待核。Pan 2023 从 PMC 开放存档取得正式主文和补件。更新两只 20 μm 器件的六点焦位和测量条件引用，新增四条 Fig. S9B 条纹成像记录，沿用同一 NA 0.5 配置。保留 `<3 μm` 焦移界限、Fig. S7 的 560 nm 模拟 MTF 和两处蓝光标签分歧。全库 52 篇、280 个配置、1213 条，可见光 43 篇、808 条。[本批原件、定位及证据缺口](FENG_PAN_ORIGINAL_EVIDENCE_2026-11-20.md)
