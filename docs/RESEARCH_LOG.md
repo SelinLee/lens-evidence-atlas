@@ -1425,3 +1425,11 @@ Chen 2025 的正式 PDF 与 CityU 机构副本已取得。Fig. 3b 给八个频�
 ## 2026-11-21-175 · Chen 2025 梯度折射率太赫兹消色差实物
 
 新增一篇一区原始研究、三个器件与系统配置、22 条记录。用主文与作者审稿答复确认单镜口径 6 mm、设计焦距 4.5 mm、厚 1.5 mm、几何 NA 0.555，以及从入射基面起算的 z=6 mm 参考位置。录入八个 0.2–0.9 THz 实测频点与九个补件图内斜入射 FWHMᵤ 原数及波长换算。区分正入射双透镜标靶约 0.2 mm 和离轴成像的 SNR 界限。Fig. 3f 与正文关于 0.8 和 0.9 THz 的效率顺序冲突，精确效率、逐频轴峰和残余色差留空。累计 70 篇、323 个器件及测量配置、1399 条，可见光筛选 51 篇、861 条。[本批核验](CHEN_2025_GRIN_THZ_EVIDENCE_2026-11-21.md)
+
+## 2026-11-21-176 · Chen 上线验收及 Ou 2022 可见光原始证据
+
+0.3.78 经 [PR #234](https://github.com/SelinLee/lens-evidence-atlas/pull/234) 合并为 `df65c9ad9912e472e3488e37fa92e60776396379`。PR 校验 44773462197、主线校验 44773664589 与 [Pages 44773664848](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44773664848) 成功。361 项测试通过，253 个公开文件哈希一致，`devices-data.js` SHA-256 为 `6f8ae19c02cb6f1aff7b763dd85f82a04beca9a40a7e807c59b0b41d19b6bd3c`。本机独立无头 Chrome 核对 70 篇、1399 条，可见光 51 篇、861 条。Chen 三配置 22 条，离轴频率—FWHM 图读数覆盖九点，角度—FWHM 图把同为 30°／477 μm 的两点合并显示。逐频峰位留空，CSV、六视口、正式 Fig. 3、DOCX 和审稿文件的可达性及哈希、来源往返通过。[本批核验](CHEN_2025_GRIN_THZ_EVIDENCE_2026-11-21.md)
+
+下一篇 Ou 2022 正式上线 2022-12-06，OpenAlex 94 次（2026-11-21）。已取得 11866448 字节 arXiv 作者稿，SHA-256 为 `e35061fb620124d457357e053ff0b4b1228f05546cf0a018233833d76eb3f477`。作者的 40 μm 超透镜以 0 V、5 V 选择两种偏振通道，名义焦距 50／100 μm。Fig. 3e,f 给 450、500、532、550、635、650 nm 的轴向场和横切，Fig. 4 给实测焦位曲线、焦面效率及固定物像面色散对照。作者稿明确效率分母为同一焦面总信号。出版商主文和补件直连 403，Crossref 补件组件有效。继续核正式图的各样品、实测峰位与积分窗。Wang 2025 同方向，已获南京大学存档的太赫兹正式主文另列待办。[Ou 原刊](https://doi.org/10.1021/acs.nanolett.2c03798) · [Ou 作者稿](https://arxiv.org/abs/2209.00168) · [OpenAlex](https://api.openalex.org/works/W4311654243) · [Wang 原刊](https://doi.org/10.1002/lpor.202501901)
+
+Cai 2019 的可见光原稿已由 OSTI 取得，Crossref 20、OpenAlex 21 次（2026-11-21）。Liu 2026 NURBS 可见光实物在原刊明确给五光波长 FWHM，2026-11-21 两个引用库均为零，所在 Nanophotonics 按现用 2025 年 3 月版分区未达大类一区。这两项本批留在检索记录。会话目标保持开启。[Cai OSTI](https://www.osti.gov/servlets/purl/1524425) · [Cai Crossref](https://api.crossref.org/works/10.1063/1.5082557) · [Liu 原刊](https://doi.org/10.1002/nap2.70222)
