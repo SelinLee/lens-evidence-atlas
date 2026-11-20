@@ -23,7 +23,7 @@ test('three directly reported x widths and focal-line efficiencies cannot become
 
 test('the uncorrected 1690 nm focus is a direct author-text value while its fixed-plane signed offset is an atlas calculation',()=>{
  const v=get('axial_1690');assert.equal(v.measured_focal_um.value,3830);assert.equal(v.measured_focal_um.basis,'measured');assert.match(v.measured_focal_um.display,/作者稿正文3.83mm/);const a=v.axial_focus_offset_um;assert.equal(a.value,-3670);assert.equal(a.calculation_origin,'atlas');assert.equal(a.reference_plane_um,7500);assert.equal(a.reference_wavelength_nm,null);assert.match(a.reference_plane_description,/Fig.6.*固定z7.5mm/);assert.equal(a.value,v.measured_focal_um.value-a.reference_plane_um);assert.match(a.display,/本库/);
- assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,1);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,52);assert.equal(axisPoints(rows,'wavelength_nm','axial_focus_offset_um').length,1);
+ assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,1);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,53);assert.equal(axisPoints(rows,'wavelength_nm','axial_focus_offset_um').length,1);
  const d=structuredClone(data);d.domains.metalens.rows.find(r=>r.id==='khor2015_axial_1690').values.axial_focus_offset_um.value=3670;assert.throws(()=>validateDevices(d,catalog),/atlas axial offset reference\/input/);
 });
 

@@ -2792,6 +2792,42 @@
       "scope": "精确关系 DOI 查询，HTTP 200，结果为零。",
       "checked_on": "2026-11-20",
       "publication_source": "shi_multicolor_2018"
+    },
+    {
+      "id": "cheng_thz_2019_nju",
+      "title": "Cheng et al. (2019), Broadband achromatic metalens in terahertz regime",
+      "url": "https://dsl.nju.edu.cn/litao/papers/Cheng_QQ-SCIB_64_1525%282019%29.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "南大作者组所存 Science Bulletin 7 页正式版。核 §§2–5 及 Figs. 3–5，C 形实物和同晶圆矩形实物，实验与仿真分离。",
+      "checked_on": "2026-11-20",
+      "doi": "10.1016/j.scib.2019.08.004"
+    },
+    {
+      "id": "cheng_thz_2019_si",
+      "title": "Science Bulletin · Cheng 2019 Supporting Information",
+      "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2095927319304621-mmc1.pdf",
+      "kind": "publisher_supplement",
+      "scope": "期刊所存 12 页补件。Tables S1–S4 结构与 NA，Fig. S2 未校色模型及 Figs. S3–S6 两器件实测图。",
+      "checked_on": "2026-11-20",
+      "publication_source": "cheng_thz_2019_nju"
+    },
+    {
+      "id": "cheng_thz_2019_crossref",
+      "title": "Crossref · Cheng 2019 DOI 引用计数",
+      "url": "https://api.crossref.org/works/10.1016/j.scib.2019.08.004",
+      "kind": "bibliometric_index",
+      "scope": "2026-11-20 查询 is-referenced-by-count 为 141。",
+      "checked_on": "2026-11-20",
+      "publication_source": "cheng_thz_2019_nju"
+    },
+    {
+      "id": "cheng_thz_2019_openalex",
+      "title": "OpenAlex · Cheng 2019 DOI 引用计数",
+      "url": "https://api.openalex.org/works/https://doi.org/10.1016/j.scib.2019.08.004",
+      "kind": "bibliometric_index",
+      "scope": "2026-11-20 查询 cited_by_count 为 149。",
+      "checked_on": "2026-11-20",
+      "publication_source": "cheng_thz_2019_nju"
     }
   ],
   "domains": {
@@ -157615,9 +157651,1615 @@
                 "reference_power": null
               }
             }
+          },
+          {
+            "id": "cheng2019thz_cshape_summary",
+            "model": "Cheng 2019 · C 形硅实物 · 汇总",
+            "study_id": "cheng2019thz",
+            "specimen_id": "cshape",
+            "module": "",
+            "variant": "C 形硅实物",
+            "evidence_type": "study",
+            "measurement_scope": "0.3–0.8 THz 的连续消色差设计与六个实测展示点",
+            "visible_light_use": false,
+            "values": {
+              "diameter_um": {
+                "value": 10000,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1528 Fig. 3b 图注；p.1527 §3",
+                "note": "作者明报制成的圆片直径 10 mm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 10,
+                "original_unit": "mm"
+              },
+              "na": {
+                "value": 0.385,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1527 §3；补件 p.4 Table S2 表题",
+                "note": "C 形实物的设计 NA。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_nju",
+                  "cheng_thz_2019_si"
+                ]
+              },
+              "design_focal_um": {
+                "value": 12000,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 pp.1527、1530 §§3、5",
+                "note": "C 形镜的名义焦长 12 mm。补件 Fig. S3/S4 的共用图示面为 12.5 mm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 12,
+                "original_unit": "mm"
+              },
+              "material": {
+                "value": "高阻硅；内圈反型及外圈实体 C 形单元",
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 pp.1527–1528 §3 与 Fig. 3c,d；补件 pp.2–4 §A",
+                "note": "作者给出 550 μm 蚀深、1 mm 硅基片厚和 100 μm 周期。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "etch_depth_um": 550,
+                "substrate_thickness_um": 1000,
+                "lattice_period_um": 100
+              },
+              "lambda_min_nm": {
+                "value": 375000,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1526 §2 右栏，工作波长端点；补件 Fig. S3",
+                "note": "作者明确把 0.8 THz 标称端点写为 375 μm。沿用原值和单位，逐点以补件频率标签核对。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 375,
+                "original_unit": "μm",
+                "sourceIds": [
+                  "cheng_thz_2019_nju",
+                  "cheng_thz_2019_si"
+                ]
+              },
+              "lambda_max_nm": {
+                "value": 1000000,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1526 §2 右栏，工作波长端点；补件 Fig. S3",
+                "note": "作者明确把 0.3 THz 标称端点写为 1000 μm。沿用原值和单位，逐点以补件频率标签核对。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 1000,
+                "original_unit": "μm",
+                "sourceIds": [
+                  "cheng_thz_2019_nju",
+                  "cheng_thz_2019_si"
+                ]
+              },
+              "chromatic": {
+                "value": "0.3–0.8 THz 的连续消色差设计与六个实测展示点",
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Figs. S3/S4",
+                "note": "几何相位加单元频率线性相位补偿，共用轴向目标焦点。强度和相位图各展示六个频率标签。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_si",
+                  "cheng_thz_2019_nju",
+                  "cheng_thz_2019_crossref",
+                  "cheng_thz_2019_openalex"
+                ],
+                "spectral_sampling": "continuous_design_with_discrete_published_measurements",
+                "measured_frequencies_thz": [
+                  0.3,
+                  0.4,
+                  0.5,
+                  0.6,
+                  0.7,
+                  0.8
+                ],
+                "original_band_unit": "THz"
+              },
+              "psf_protocol": {
+                "value": "太赫兹近场电场扫描；归一化强度及相位图",
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Figs. S3/S4",
+                "note": "准直 THz 入射，近场探针采集电信号。主文给出采集平面 x、y 栅格 0.25 mm；轴向步距、传播处理、峰位算法及各图共用归一化待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_si",
+                  "cheng_thz_2019_nju"
+                ],
+                "method": "terahertz_near_field_probe_raster_scan",
+                "field_point": "on_axis",
+                "lateral_scan_step_x_um": 250,
+                "lateral_scan_step_y_um": 250,
+                "axial_scan_step_um": null,
+                "evaluation_plane_um": 12500,
+                "phase_section_plane_um": 12500,
+                "normalization": "figure_color_scale_min_max",
+                "focus_mode": "longitudinal_intensity_maps"
+              },
+              "focus_variation_um": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Figs. S3/S4",
+                "note": "跨频率轴向强度图可查。共用虚线与相位取样面不作为六个独立最佳焦位，公开的逐点峰位及测量误差待核。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "有轴向图；残差待核"
+              },
+              "mtf_curve": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Figs. S3/S4",
+                "note": "已查主文和正式 PDF 补件。暂无 MTF 曲线或原始强度数组。复算所需的原始数组以及评价与处理细则待核。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "数值待核"
+              },
+              "efficiency_protocol": {
+                "value": "直径 1.5 mm 圆域求和 ÷ 作者硅片参考项",
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1527 §3；p.1529 Fig. 4j,l",
+                "note": "原式 ΣI_E/Σ(I_ref × n_si)。I_E 为焦面圆域强度，I_ref 为参考硅片透射，分母写有 n_si。作者未在效率段交代参考积分域或此处折射率因子的实现。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "denominator": "transmitted_silicon_reference_times_author_n_si",
+                "numerator": "focal_plane_intensity_within_circle",
+                "integration_diameter_um": 1500,
+                "integration_radius_um": 750,
+                "denominator_note": "Σ(I_ref × n_si), bare silicon wafer reference",
+                "normalization_formula": "sum(I_E) / sum(I_ref * n_si)"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1527 §3；p.1529 Fig. 4j,l",
+                "note": "作者报告全带峰值高于 68%，Fig. 4j 无独立数表，正文未为峰值明报具体频率。效率峰值下界保留原字。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "峰值 >68%（作者报告）",
+                "bound": {
+                  "operator": ">",
+                  "value": 68
+                },
+                "reported_statistic": "sampled_band_peak",
+                "original_unit": "%"
+              }
+            }
+          },
+          {
+            "id": "cheng2019thz_cshape_03thz",
+            "model": "Cheng 2019 · C 形硅实物 · 0.3 THz",
+            "study_id": "cheng2019thz",
+            "specimen_id": "cshape",
+            "module": "",
+            "variant": "C 形硅实物",
+            "evidence_type": "study",
+            "measurement_scope": "0.3 THz 实测强度与相位；频率按图内标签。",
+            "visible_light_use": false,
+            "values": {
+              "diameter_um": {
+                "value": 10000,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1528 Fig. 3b 图注；p.1527 §3",
+                "note": "作者明报制成的圆片直径 10 mm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 10,
+                "original_unit": "mm"
+              },
+              "na": {
+                "value": 0.385,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1527 §3；补件 p.4 Table S2 表题",
+                "note": "C 形实物的设计 NA。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_nju",
+                  "cheng_thz_2019_si"
+                ]
+              },
+              "design_focal_um": {
+                "value": 12000,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 pp.1527、1530 §§3、5",
+                "note": "C 形镜的名义焦长 12 mm。补件 Fig. S3/S4 的共用图示面为 12.5 mm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 12,
+                "original_unit": "mm"
+              },
+              "frequency_thz": {
+                "value": 0.3,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Fig. S3a,b，第 1 列（0.3 THz）",
+                "note": "原图标注的实验太赫兹频率。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 1000000,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1527 §3，Fig. 4d 对应正文",
+                "note": "作者将 0.3 THz 明报为 1 mm。换列单位为 1,000,000 nm，保留原文有效位。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 1,
+                "original_unit": "mm",
+                "sourceIds": [
+                  "cheng_thz_2019_nju",
+                  "cheng_thz_2019_si"
+                ]
+              },
+              "psf_protocol": {
+                "value": "太赫兹近场电场扫描；归一化强度及相位图",
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Fig. S3a,b，第 1 列（0.3 THz）",
+                "note": "准直 THz 入射，近场探针采集电信号。主文给出采集平面 x、y 栅格 0.25 mm；轴向步距、传播处理、峰位算法及各图共用归一化待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_si",
+                  "cheng_thz_2019_nju"
+                ],
+                "method": "terahertz_near_field_probe_raster_scan",
+                "field_point": "on_axis",
+                "lateral_scan_step_x_um": 250,
+                "lateral_scan_step_y_um": 250,
+                "axial_scan_step_um": null,
+                "evaluation_plane_um": 12500,
+                "phase_section_plane_um": 12500,
+                "normalization": "figure_color_scale_min_max",
+                "focus_mode": "longitudinal_intensity_maps"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Fig. S3a,b，第 1 列（0.3 THz）",
+                "note": "图给归一化焦斑及轴向强度分布，作者未逐频率列出独立峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图示评价面 12.5 mm"
+              },
+              "fwhm_x_um": {
+                "value": 1300,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1529 Fig. 4d 宽度印字；p.1527 §3",
+                "note": "横坐标 x。作者在实验与模拟对照截线图上直接标注半高全宽，正文逐图讨论实测焦斑；0.3 THz 另在正文逐字报值。",
+                "basis": "measured",
+                "checked_on": "2026-11-20",
+                "direction": "x",
+                "original_value": 1.3,
+                "original_unit": "mm"
+              }
+            }
+          },
+          {
+            "id": "cheng2019thz_cshape_04thz",
+            "model": "Cheng 2019 · C 形硅实物 · 0.4 THz",
+            "study_id": "cheng2019thz",
+            "specimen_id": "cshape",
+            "module": "",
+            "variant": "C 形硅实物",
+            "evidence_type": "study",
+            "measurement_scope": "0.4 THz 实测强度与相位；频率按图内标签。",
+            "visible_light_use": false,
+            "values": {
+              "diameter_um": {
+                "value": 10000,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1528 Fig. 3b 图注；p.1527 §3",
+                "note": "作者明报制成的圆片直径 10 mm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 10,
+                "original_unit": "mm"
+              },
+              "na": {
+                "value": 0.385,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1527 §3；补件 p.4 Table S2 表题",
+                "note": "C 形实物的设计 NA。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_nju",
+                  "cheng_thz_2019_si"
+                ]
+              },
+              "design_focal_um": {
+                "value": 12000,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 pp.1527、1530 §§3、5",
+                "note": "C 形镜的名义焦长 12 mm。补件 Fig. S3/S4 的共用图示面为 12.5 mm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 12,
+                "original_unit": "mm"
+              },
+              "frequency_thz": {
+                "value": 0.4,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Fig. S3a,b，第 2 列（0.4 THz）",
+                "note": "原图标注的实验太赫兹频率。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 749481,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Fig. S3a,b，第 2 列（0.4 THz）",
+                "note": "以原图的 0.4 THz 为谱点，本库用真空光速换算，显示精度由原始频率标签限定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 749,481 nm",
+                "approximate": true,
+                "calculation_origin": "atlas",
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "original_value": 0.4,
+                "original_unit": "THz"
+              },
+              "psf_protocol": {
+                "value": "太赫兹近场电场扫描；归一化强度及相位图",
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Fig. S3a,b，第 2 列（0.4 THz）",
+                "note": "准直 THz 入射，近场探针采集电信号。主文给出采集平面 x、y 栅格 0.25 mm；轴向步距、传播处理、峰位算法及各图共用归一化待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_si",
+                  "cheng_thz_2019_nju"
+                ],
+                "method": "terahertz_near_field_probe_raster_scan",
+                "field_point": "on_axis",
+                "lateral_scan_step_x_um": 250,
+                "lateral_scan_step_y_um": 250,
+                "axial_scan_step_um": null,
+                "evaluation_plane_um": 12500,
+                "phase_section_plane_um": 12500,
+                "normalization": "figure_color_scale_min_max",
+                "focus_mode": "longitudinal_intensity_maps"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Fig. S3a,b，第 2 列（0.4 THz）",
+                "note": "图给归一化焦斑及轴向强度分布，作者未逐频率列出独立峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图示评价面 12.5 mm"
+              }
+            }
+          },
+          {
+            "id": "cheng2019thz_cshape_05thz",
+            "model": "Cheng 2019 · C 形硅实物 · 0.5 THz",
+            "study_id": "cheng2019thz",
+            "specimen_id": "cshape",
+            "module": "",
+            "variant": "C 形硅实物",
+            "evidence_type": "study",
+            "measurement_scope": "0.5 THz 实测强度与相位；频率按图内标签。",
+            "visible_light_use": false,
+            "values": {
+              "diameter_um": {
+                "value": 10000,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1528 Fig. 3b 图注；p.1527 §3",
+                "note": "作者明报制成的圆片直径 10 mm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 10,
+                "original_unit": "mm"
+              },
+              "na": {
+                "value": 0.385,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1527 §3；补件 p.4 Table S2 表题",
+                "note": "C 形实物的设计 NA。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_nju",
+                  "cheng_thz_2019_si"
+                ]
+              },
+              "design_focal_um": {
+                "value": 12000,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 pp.1527、1530 §§3、5",
+                "note": "C 形镜的名义焦长 12 mm。补件 Fig. S3/S4 的共用图示面为 12.5 mm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 12,
+                "original_unit": "mm"
+              },
+              "frequency_thz": {
+                "value": 0.5,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Fig. S3a,b，第 3 列（0.5 THz）",
+                "note": "原图标注的实验太赫兹频率。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 599585,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Fig. S3a,b，第 3 列（0.5 THz）",
+                "note": "以原图的 0.5 THz 为谱点，本库用真空光速换算，显示精度由原始频率标签限定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 599,585 nm",
+                "approximate": true,
+                "calculation_origin": "atlas",
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "original_value": 0.5,
+                "original_unit": "THz"
+              },
+              "psf_protocol": {
+                "value": "太赫兹近场电场扫描；归一化强度及相位图",
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Fig. S3a,b，第 3 列（0.5 THz）",
+                "note": "准直 THz 入射，近场探针采集电信号。主文给出采集平面 x、y 栅格 0.25 mm；轴向步距、传播处理、峰位算法及各图共用归一化待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_si",
+                  "cheng_thz_2019_nju"
+                ],
+                "method": "terahertz_near_field_probe_raster_scan",
+                "field_point": "on_axis",
+                "lateral_scan_step_x_um": 250,
+                "lateral_scan_step_y_um": 250,
+                "axial_scan_step_um": null,
+                "evaluation_plane_um": 12500,
+                "phase_section_plane_um": 12500,
+                "normalization": "figure_color_scale_min_max",
+                "focus_mode": "longitudinal_intensity_maps"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Fig. S3a,b，第 3 列（0.5 THz）",
+                "note": "图给归一化焦斑及轴向强度分布，作者未逐频率列出独立峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图示评价面 12.5 mm"
+              }
+            }
+          },
+          {
+            "id": "cheng2019thz_cshape_06thz",
+            "model": "Cheng 2019 · C 形硅实物 · 0.6 THz",
+            "study_id": "cheng2019thz",
+            "specimen_id": "cshape",
+            "module": "",
+            "variant": "C 形硅实物",
+            "evidence_type": "study",
+            "measurement_scope": "0.6 THz 实测强度与相位；频率按图内标签。",
+            "visible_light_use": false,
+            "values": {
+              "diameter_um": {
+                "value": 10000,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1528 Fig. 3b 图注；p.1527 §3",
+                "note": "作者明报制成的圆片直径 10 mm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 10,
+                "original_unit": "mm"
+              },
+              "na": {
+                "value": 0.385,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1527 §3；补件 p.4 Table S2 表题",
+                "note": "C 形实物的设计 NA。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_nju",
+                  "cheng_thz_2019_si"
+                ]
+              },
+              "design_focal_um": {
+                "value": 12000,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 pp.1527、1530 §§3、5",
+                "note": "C 形镜的名义焦长 12 mm。补件 Fig. S3/S4 的共用图示面为 12.5 mm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 12,
+                "original_unit": "mm"
+              },
+              "frequency_thz": {
+                "value": 0.6,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Fig. S3a,b，第 4 列（0.6 THz）",
+                "note": "原图标注的实验太赫兹频率。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 499654,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Fig. S3a,b，第 4 列（0.6 THz）",
+                "note": "以原图的 0.6 THz 为谱点，本库用真空光速换算，显示精度由原始频率标签限定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 499,654 nm",
+                "approximate": true,
+                "calculation_origin": "atlas",
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "original_value": 0.6,
+                "original_unit": "THz"
+              },
+              "psf_protocol": {
+                "value": "太赫兹近场电场扫描；归一化强度及相位图",
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Fig. S3a,b，第 4 列（0.6 THz）",
+                "note": "准直 THz 入射，近场探针采集电信号。主文给出采集平面 x、y 栅格 0.25 mm；轴向步距、传播处理、峰位算法及各图共用归一化待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_si",
+                  "cheng_thz_2019_nju"
+                ],
+                "method": "terahertz_near_field_probe_raster_scan",
+                "field_point": "on_axis",
+                "lateral_scan_step_x_um": 250,
+                "lateral_scan_step_y_um": 250,
+                "axial_scan_step_um": null,
+                "evaluation_plane_um": 12500,
+                "phase_section_plane_um": 12500,
+                "normalization": "figure_color_scale_min_max",
+                "focus_mode": "longitudinal_intensity_maps"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Fig. S3a,b，第 4 列（0.6 THz）",
+                "note": "图给归一化焦斑及轴向强度分布，作者未逐频率列出独立峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图示评价面 12.5 mm"
+              },
+              "fwhm_x_um": {
+                "value": 660,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1529 Fig. 4e 宽度印字；p.1527 §3",
+                "note": "横坐标 x。作者在实验与模拟对照截线图上直接标注半高全宽，正文逐图讨论实测焦斑；0.3 THz 另在正文逐字报值。",
+                "basis": "measured",
+                "checked_on": "2026-11-20",
+                "direction": "x",
+                "original_value": 0.66,
+                "original_unit": "mm"
+              },
+              "efficiency_protocol": {
+                "value": "直径 1.5 mm 圆域求和 ÷ 作者硅片参考项",
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1527 §3；p.1529 Fig. 4j,l",
+                "note": "原式 ΣI_E/Σ(I_ref × n_si)。I_E 为焦面圆域强度，I_ref 为参考硅片透射，分母写有 n_si。作者未在效率段交代参考积分域或此处折射率因子的实现。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "denominator": "transmitted_silicon_reference_times_author_n_si",
+                "numerator": "focal_plane_intensity_within_circle",
+                "integration_diameter_um": 1500,
+                "integration_radius_um": 750,
+                "denominator_note": "Σ(I_ref × n_si), bare silicon wafer reference",
+                "normalization_formula": "sum(I_E) / sum(I_ref * n_si)"
+              },
+              "efficiency_at_lambda_pct": {
+                "value": null,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1527 §3；p.1529 Fig. 4j,l",
+                "note": "原文给 0.6 THz 焦圈和硅片参考定义，逐点效率只有 Fig. 4j 曲线，暂无作者原始数值。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "效率曲线可查"
+              }
+            }
+          },
+          {
+            "id": "cheng2019thz_cshape_07thz",
+            "model": "Cheng 2019 · C 形硅实物 · 0.7 THz",
+            "study_id": "cheng2019thz",
+            "specimen_id": "cshape",
+            "module": "",
+            "variant": "C 形硅实物",
+            "evidence_type": "study",
+            "measurement_scope": "0.7 THz 实测强度与相位；频率按图内标签。",
+            "visible_light_use": false,
+            "values": {
+              "diameter_um": {
+                "value": 10000,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1528 Fig. 3b 图注；p.1527 §3",
+                "note": "作者明报制成的圆片直径 10 mm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 10,
+                "original_unit": "mm"
+              },
+              "na": {
+                "value": 0.385,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1527 §3；补件 p.4 Table S2 表题",
+                "note": "C 形实物的设计 NA。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_nju",
+                  "cheng_thz_2019_si"
+                ]
+              },
+              "design_focal_um": {
+                "value": 12000,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 pp.1527、1530 §§3、5",
+                "note": "C 形镜的名义焦长 12 mm。补件 Fig. S3/S4 的共用图示面为 12.5 mm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 12,
+                "original_unit": "mm"
+              },
+              "frequency_thz": {
+                "value": 0.7,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Fig. S3a,b，第 5 列（0.7 THz）",
+                "note": "原图标注的实验太赫兹频率。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 428275,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Fig. S3a,b，第 5 列（0.7 THz）",
+                "note": "以原图的 0.7 THz 为谱点，本库用真空光速换算，显示精度由原始频率标签限定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 428,275 nm",
+                "approximate": true,
+                "calculation_origin": "atlas",
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "original_value": 0.7,
+                "original_unit": "THz"
+              },
+              "psf_protocol": {
+                "value": "太赫兹近场电场扫描；归一化强度及相位图",
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Fig. S3a,b，第 5 列（0.7 THz）",
+                "note": "准直 THz 入射，近场探针采集电信号。主文给出采集平面 x、y 栅格 0.25 mm；轴向步距、传播处理、峰位算法及各图共用归一化待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_si",
+                  "cheng_thz_2019_nju"
+                ],
+                "method": "terahertz_near_field_probe_raster_scan",
+                "field_point": "on_axis",
+                "lateral_scan_step_x_um": 250,
+                "lateral_scan_step_y_um": 250,
+                "axial_scan_step_um": null,
+                "evaluation_plane_um": 12500,
+                "phase_section_plane_um": 12500,
+                "normalization": "figure_color_scale_min_max",
+                "focus_mode": "longitudinal_intensity_maps"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Fig. S3a,b，第 5 列（0.7 THz）",
+                "note": "图给归一化焦斑及轴向强度分布，作者未逐频率列出独立峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图示评价面 12.5 mm"
+              }
+            }
+          },
+          {
+            "id": "cheng2019thz_cshape_08thz",
+            "model": "Cheng 2019 · C 形硅实物 · 0.8 THz",
+            "study_id": "cheng2019thz",
+            "specimen_id": "cshape",
+            "module": "",
+            "variant": "C 形硅实物",
+            "evidence_type": "study",
+            "measurement_scope": "0.8 THz 实测强度与相位；频率按图内标签。",
+            "visible_light_use": false,
+            "values": {
+              "diameter_um": {
+                "value": 10000,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1528 Fig. 3b 图注；p.1527 §3",
+                "note": "作者明报制成的圆片直径 10 mm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 10,
+                "original_unit": "mm"
+              },
+              "na": {
+                "value": 0.385,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1527 §3；补件 p.4 Table S2 表题",
+                "note": "C 形实物的设计 NA。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_nju",
+                  "cheng_thz_2019_si"
+                ]
+              },
+              "design_focal_um": {
+                "value": 12000,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 pp.1527、1530 §§3、5",
+                "note": "C 形镜的名义焦长 12 mm。补件 Fig. S3/S4 的共用图示面为 12.5 mm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 12,
+                "original_unit": "mm"
+              },
+              "frequency_thz": {
+                "value": 0.8,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Fig. S3a,b，第 6 列（0.8 THz）",
+                "note": "原图标注的实验太赫兹频率。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 375000,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1526 §2 右栏，工作波长端点；补件 Fig. S3",
+                "note": "作者明确把 0.8 THz 标称端点写为 375 μm。沿用原值和单位，逐点以补件频率标签核对。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 375,
+                "original_unit": "μm",
+                "sourceIds": [
+                  "cheng_thz_2019_nju",
+                  "cheng_thz_2019_si"
+                ]
+              },
+              "psf_protocol": {
+                "value": "太赫兹近场电场扫描；归一化强度及相位图",
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Fig. S3a,b，第 6 列（0.8 THz）",
+                "note": "准直 THz 入射，近场探针采集电信号。主文给出采集平面 x、y 栅格 0.25 mm；轴向步距、传播处理、峰位算法及各图共用归一化待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_si",
+                  "cheng_thz_2019_nju"
+                ],
+                "method": "terahertz_near_field_probe_raster_scan",
+                "field_point": "on_axis",
+                "lateral_scan_step_x_um": 250,
+                "lateral_scan_step_y_um": 250,
+                "axial_scan_step_um": null,
+                "evaluation_plane_um": 12500,
+                "phase_section_plane_um": 12500,
+                "normalization": "figure_color_scale_min_max",
+                "focus_mode": "longitudinal_intensity_maps"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.8 Fig. S3a,b，第 6 列（0.8 THz）",
+                "note": "图给归一化焦斑及轴向强度分布，作者未逐频率列出独立峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图示评价面 12.5 mm"
+              },
+              "fwhm_x_um": {
+                "value": 510,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1529 Fig. 4f 宽度印字；p.1527 §3",
+                "note": "横坐标 x。作者在实验与模拟对照截线图上直接标注半高全宽，正文逐图讨论实测焦斑；0.3 THz 另在正文逐字报值。",
+                "basis": "measured",
+                "checked_on": "2026-11-20",
+                "direction": "x",
+                "original_value": 0.51,
+                "original_unit": "mm"
+              }
+            }
+          },
+          {
+            "id": "cheng2019thz_rectangle_summary",
+            "model": "Cheng 2019 · 矩形硅实物 · 汇总",
+            "study_id": "cheng2019thz",
+            "specimen_id": "rectangle",
+            "module": "",
+            "variant": "矩形硅实物",
+            "evidence_type": "study",
+            "measurement_scope": "0.3–0.8 THz 的连续消色差设计与六个实测展示点",
+            "visible_light_use": false,
+            "values": {
+              "diameter_um": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 p.6 Table S4 及 p.9 Fig. S5",
+                "note": "明确的矩形器件通光口径待核。横坐标范围及 C 形镜 10 mm 直径不作为本器件尺寸。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "数值待核"
+              },
+              "na": {
+                "value": 0.43,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 p.6 Table S4 表题",
+                "note": "矩形结构的设计 NA。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "design_focal_um": {
+                "value": 10500,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1528 §4 右栏首段；p.1529 Fig. 5e",
+                "note": "正文明确报告矩形结构的设计焦长为 10.5 mm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 10.5,
+                "original_unit": "mm"
+              },
+              "material": {
+                "value": "高阻硅；实体与反型矩形单元",
+                "source": "cheng_thz_2019_si",
+                "location": "补件 p.2 §A；主文 p.1528 §4",
+                "note": "与 C 形实物相邻制于同一硅晶圆。补件列 550 μm 蚀深、x/y 周期 90/104 μm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_si",
+                  "cheng_thz_2019_nju"
+                ],
+                "etch_depth_um": 550,
+                "lattice_period_x_um": 90,
+                "lattice_period_y_um": 104
+              },
+              "lambda_min_nm": {
+                "value": 375000,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1526 §2 右栏，工作波长端点；补件 Fig. S5",
+                "note": "作者明确把 0.8 THz 标称端点写为 375 μm。沿用原值和单位，逐点以补件频率标签核对。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 375,
+                "original_unit": "μm",
+                "sourceIds": [
+                  "cheng_thz_2019_nju",
+                  "cheng_thz_2019_si"
+                ]
+              },
+              "lambda_max_nm": {
+                "value": 1000000,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1526 §2 右栏，工作波长端点；补件 Fig. S5",
+                "note": "作者明确把 0.3 THz 标称端点写为 1000 μm。沿用原值和单位，逐点以补件频率标签核对。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 1000,
+                "original_unit": "μm",
+                "sourceIds": [
+                  "cheng_thz_2019_nju",
+                  "cheng_thz_2019_si"
+                ]
+              },
+              "chromatic": {
+                "value": "0.3–0.8 THz 的连续消色差设计与六个实测展示点",
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Figs. S5/S6",
+                "note": "几何相位加单元频率线性相位补偿，共用轴向目标焦点。强度和相位图各展示六个频率标签。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_si",
+                  "cheng_thz_2019_nju"
+                ],
+                "spectral_sampling": "continuous_design_with_discrete_published_measurements",
+                "measured_frequencies_thz": [
+                  0.3,
+                  0.4,
+                  0.5,
+                  0.6,
+                  0.7,
+                  0.8
+                ],
+                "original_band_unit": "THz"
+              },
+              "psf_protocol": {
+                "value": "太赫兹近场电场扫描；归一化强度及相位图",
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Figs. S5/S6",
+                "note": "准直 THz 入射，近场探针采集电信号。主文给出采集平面 x、y 栅格 0.25 mm；轴向步距、传播处理、峰位算法及各图共用归一化待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_si",
+                  "cheng_thz_2019_nju"
+                ],
+                "method": "terahertz_near_field_probe_raster_scan",
+                "field_point": "on_axis",
+                "lateral_scan_step_x_um": 250,
+                "lateral_scan_step_y_um": 250,
+                "axial_scan_step_um": null,
+                "evaluation_plane_um": null,
+                "phase_section_plane_um": 12500,
+                "normalization": "figure_color_scale_min_max",
+                "focus_mode": "longitudinal_intensity_maps"
+              },
+              "focus_variation_um": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Figs. S5/S6",
+                "note": "跨频率轴向强度图可查。共用虚线与相位取样面不作为六个独立最佳焦位，公开的逐点峰位及测量误差待核。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "有轴向图；残差待核"
+              },
+              "mtf_curve": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Figs. S5/S6",
+                "note": "已查主文和正式 PDF 补件。暂无 MTF 曲线或原始强度数组。复算所需的原始数组以及评价与处理细则待核。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "数值待核"
+              }
+            }
+          },
+          {
+            "id": "cheng2019thz_rectangle_03thz",
+            "model": "Cheng 2019 · 矩形硅实物 · 0.3 THz",
+            "study_id": "cheng2019thz",
+            "specimen_id": "rectangle",
+            "module": "",
+            "variant": "矩形硅实物",
+            "evidence_type": "study",
+            "measurement_scope": "0.3 THz 实测强度与相位；频率按图内标签。",
+            "visible_light_use": false,
+            "values": {
+              "diameter_um": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 p.6 Table S4 及 p.9 Fig. S5",
+                "note": "明确的矩形器件通光口径待核。横坐标范围及 C 形镜 10 mm 直径不作为本器件尺寸。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "数值待核"
+              },
+              "na": {
+                "value": 0.43,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 p.6 Table S4 表题",
+                "note": "矩形结构的设计 NA。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "design_focal_um": {
+                "value": 10500,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1528 §4 右栏首段；p.1529 Fig. 5e",
+                "note": "正文明确报告矩形结构的设计焦长为 10.5 mm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 10.5,
+                "original_unit": "mm"
+              },
+              "frequency_thz": {
+                "value": 0.3,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Fig. S5a，第 1 列（0.3 THz）",
+                "note": "原图标注的实验太赫兹频率。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 999308,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Fig. S5a，第 1 列（0.3 THz）",
+                "note": "以原图的 0.3 THz 为谱点，本库用真空光速换算，显示精度由原始频率标签限定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 999,308 nm",
+                "approximate": true,
+                "calculation_origin": "atlas",
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "original_value": 0.3,
+                "original_unit": "THz"
+              },
+              "psf_protocol": {
+                "value": "太赫兹近场电场扫描；归一化强度及相位图",
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Fig. S5a，第 1 列（0.3 THz）",
+                "note": "准直 THz 入射，近场探针采集电信号。主文给出采集平面 x、y 栅格 0.25 mm；轴向步距、传播处理、峰位算法及各图共用归一化待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_si",
+                  "cheng_thz_2019_nju"
+                ],
+                "method": "terahertz_near_field_probe_raster_scan",
+                "field_point": "on_axis",
+                "lateral_scan_step_x_um": 250,
+                "lateral_scan_step_y_um": 250,
+                "axial_scan_step_um": null,
+                "evaluation_plane_um": null,
+                "phase_section_plane_um": 12500,
+                "normalization": "figure_color_scale_min_max",
+                "focus_mode": "longitudinal_intensity_maps"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Fig. S5a，第 1 列（0.3 THz）",
+                "note": "图给归一化焦斑及轴向强度分布，作者未逐频率列出独立峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；轴位待核"
+              }
+            }
+          },
+          {
+            "id": "cheng2019thz_rectangle_04thz",
+            "model": "Cheng 2019 · 矩形硅实物 · 0.4 THz",
+            "study_id": "cheng2019thz",
+            "specimen_id": "rectangle",
+            "module": "",
+            "variant": "矩形硅实物",
+            "evidence_type": "study",
+            "measurement_scope": "0.4 THz 实测强度与相位；频率按图内标签。",
+            "visible_light_use": false,
+            "values": {
+              "diameter_um": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 p.6 Table S4 及 p.9 Fig. S5",
+                "note": "明确的矩形器件通光口径待核。横坐标范围及 C 形镜 10 mm 直径不作为本器件尺寸。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "数值待核"
+              },
+              "na": {
+                "value": 0.43,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 p.6 Table S4 表题",
+                "note": "矩形结构的设计 NA。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "design_focal_um": {
+                "value": 10500,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1528 §4 右栏首段；p.1529 Fig. 5e",
+                "note": "正文明确报告矩形结构的设计焦长为 10.5 mm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 10.5,
+                "original_unit": "mm"
+              },
+              "frequency_thz": {
+                "value": 0.4,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Fig. S5a，第 2 列（0.4 THz）",
+                "note": "原图标注的实验太赫兹频率。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 749481,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Fig. S5a，第 2 列（0.4 THz）",
+                "note": "以原图的 0.4 THz 为谱点，本库用真空光速换算，显示精度由原始频率标签限定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 749,481 nm",
+                "approximate": true,
+                "calculation_origin": "atlas",
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "original_value": 0.4,
+                "original_unit": "THz"
+              },
+              "psf_protocol": {
+                "value": "太赫兹近场电场扫描；归一化强度及相位图",
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Fig. S5a，第 2 列（0.4 THz）",
+                "note": "准直 THz 入射，近场探针采集电信号。主文给出采集平面 x、y 栅格 0.25 mm；轴向步距、传播处理、峰位算法及各图共用归一化待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_si",
+                  "cheng_thz_2019_nju"
+                ],
+                "method": "terahertz_near_field_probe_raster_scan",
+                "field_point": "on_axis",
+                "lateral_scan_step_x_um": 250,
+                "lateral_scan_step_y_um": 250,
+                "axial_scan_step_um": null,
+                "evaluation_plane_um": null,
+                "phase_section_plane_um": 12500,
+                "normalization": "figure_color_scale_min_max",
+                "focus_mode": "longitudinal_intensity_maps"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Fig. S5a，第 2 列（0.4 THz）",
+                "note": "图给归一化焦斑及轴向强度分布，作者未逐频率列出独立峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；轴位待核"
+              }
+            }
+          },
+          {
+            "id": "cheng2019thz_rectangle_05thz",
+            "model": "Cheng 2019 · 矩形硅实物 · 0.5 THz",
+            "study_id": "cheng2019thz",
+            "specimen_id": "rectangle",
+            "module": "",
+            "variant": "矩形硅实物",
+            "evidence_type": "study",
+            "measurement_scope": "0.5 THz 实测强度与相位；频率按图内标签。",
+            "visible_light_use": false,
+            "values": {
+              "diameter_um": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 p.6 Table S4 及 p.9 Fig. S5",
+                "note": "明确的矩形器件通光口径待核。横坐标范围及 C 形镜 10 mm 直径不作为本器件尺寸。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "数值待核"
+              },
+              "na": {
+                "value": 0.43,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 p.6 Table S4 表题",
+                "note": "矩形结构的设计 NA。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "design_focal_um": {
+                "value": 10500,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1528 §4 右栏首段；p.1529 Fig. 5e",
+                "note": "正文明确报告矩形结构的设计焦长为 10.5 mm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 10.5,
+                "original_unit": "mm"
+              },
+              "frequency_thz": {
+                "value": 0.5,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Fig. S5a，第 3 列（0.5 THz）",
+                "note": "原图标注的实验太赫兹频率。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 599585,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Fig. S5a，第 3 列（0.5 THz）",
+                "note": "以原图的 0.5 THz 为谱点，本库用真空光速换算，显示精度由原始频率标签限定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 599,585 nm",
+                "approximate": true,
+                "calculation_origin": "atlas",
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "original_value": 0.5,
+                "original_unit": "THz"
+              },
+              "psf_protocol": {
+                "value": "太赫兹近场电场扫描；归一化强度及相位图",
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 pp.1528–1529 §4 与 Fig. 5b,e；补件 PDF p.9 Fig. S5",
+                "note": "准直 THz 入射，近场探针采集电信号。主文给出采集平面 x、y 栅格 0.25 mm；轴向步距、传播处理、峰位算法及各图共用归一化待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_nju",
+                  "cheng_thz_2019_si"
+                ],
+                "method": "terahertz_near_field_probe_raster_scan",
+                "field_point": "on_axis",
+                "lateral_scan_step_x_um": 250,
+                "lateral_scan_step_y_um": 250,
+                "axial_scan_step_um": null,
+                "evaluation_plane_um": 10500,
+                "phase_section_plane_um": 12500,
+                "normalization": "figure_color_scale_min_max",
+                "focus_mode": "author_reported_focus_position"
+              },
+              "measured_focal_um": {
+                "value": 10500,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1528 §4 右栏首段；p.1529 Fig. 5e",
+                "note": "作者明确报告矩形实物在 0.5 THz 的实验焦长 F≈10.5 mm。轴距零位及峰值算法未单独给出。",
+                "basis": "measured",
+                "checked_on": "2026-11-20",
+                "display": "约 10,500 μm",
+                "approximate": true,
+                "original_value": 10.5,
+                "original_unit": "mm",
+                "position_definition": "author_reported_focus_position",
+                "reference_plane": "author_propagation_direction_origin_unresolved"
+              },
+              "fwhm_x_um": {
+                "value": 1050,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 pp.1528–1529 §4 与 Fig. 5b,e；补件 PDF p.9 Fig. S5",
+                "note": "Fig. 5b 实验 x 向截线标 1.05 mm，§4 明报为实验数；同节 Fig. 5e 指定矩形器件与 0.5 THz。",
+                "basis": "measured",
+                "checked_on": "2026-11-20",
+                "direction": "x",
+                "original_value": 1.05,
+                "original_unit": "mm"
+              },
+              "simulated_fwhm_um": {
+                "value": 600,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1528 §4 左栏；p.1529 Fig. 5b",
+                "note": "作者对同一频率的模拟宽度 0.6 mm。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "direction": "x",
+                "original_value": 0.6,
+                "original_unit": "mm"
+              }
+            }
+          },
+          {
+            "id": "cheng2019thz_rectangle_06thz",
+            "model": "Cheng 2019 · 矩形硅实物 · 0.6 THz",
+            "study_id": "cheng2019thz",
+            "specimen_id": "rectangle",
+            "module": "",
+            "variant": "矩形硅实物",
+            "evidence_type": "study",
+            "measurement_scope": "0.6 THz 实测强度与相位；频率按图内标签。",
+            "visible_light_use": false,
+            "values": {
+              "diameter_um": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 p.6 Table S4 及 p.9 Fig. S5",
+                "note": "明确的矩形器件通光口径待核。横坐标范围及 C 形镜 10 mm 直径不作为本器件尺寸。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "数值待核"
+              },
+              "na": {
+                "value": 0.43,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 p.6 Table S4 表题",
+                "note": "矩形结构的设计 NA。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "design_focal_um": {
+                "value": 10500,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1528 §4 右栏首段；p.1529 Fig. 5e",
+                "note": "正文明确报告矩形结构的设计焦长为 10.5 mm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 10.5,
+                "original_unit": "mm"
+              },
+              "frequency_thz": {
+                "value": 0.6,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Fig. S5a，第 4 列（0.6 THz）",
+                "note": "原图标注的实验太赫兹频率。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 499654,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Fig. S5a，第 4 列（0.6 THz）",
+                "note": "以原图的 0.6 THz 为谱点，本库用真空光速换算，显示精度由原始频率标签限定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 499,654 nm",
+                "approximate": true,
+                "calculation_origin": "atlas",
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "original_value": 0.6,
+                "original_unit": "THz"
+              },
+              "psf_protocol": {
+                "value": "太赫兹近场电场扫描；归一化强度及相位图",
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Fig. S5a，第 4 列（0.6 THz）",
+                "note": "准直 THz 入射，近场探针采集电信号。主文给出采集平面 x、y 栅格 0.25 mm；轴向步距、传播处理、峰位算法及各图共用归一化待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_si",
+                  "cheng_thz_2019_nju"
+                ],
+                "method": "terahertz_near_field_probe_raster_scan",
+                "field_point": "on_axis",
+                "lateral_scan_step_x_um": 250,
+                "lateral_scan_step_y_um": 250,
+                "axial_scan_step_um": null,
+                "evaluation_plane_um": null,
+                "phase_section_plane_um": 12500,
+                "normalization": "figure_color_scale_min_max",
+                "focus_mode": "longitudinal_intensity_maps"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Fig. S5a，第 4 列（0.6 THz）",
+                "note": "图给归一化焦斑及轴向强度分布，作者未逐频率列出独立峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；轴位待核"
+              }
+            }
+          },
+          {
+            "id": "cheng2019thz_rectangle_07thz",
+            "model": "Cheng 2019 · 矩形硅实物 · 0.7 THz",
+            "study_id": "cheng2019thz",
+            "specimen_id": "rectangle",
+            "module": "",
+            "variant": "矩形硅实物",
+            "evidence_type": "study",
+            "measurement_scope": "0.7 THz 实测强度与相位；频率按图内标签。",
+            "visible_light_use": false,
+            "values": {
+              "diameter_um": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 p.6 Table S4 及 p.9 Fig. S5",
+                "note": "明确的矩形器件通光口径待核。横坐标范围及 C 形镜 10 mm 直径不作为本器件尺寸。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "数值待核"
+              },
+              "na": {
+                "value": 0.43,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 p.6 Table S4 表题",
+                "note": "矩形结构的设计 NA。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "design_focal_um": {
+                "value": 10500,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1528 §4 右栏首段；p.1529 Fig. 5e",
+                "note": "正文明确报告矩形结构的设计焦长为 10.5 mm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 10.5,
+                "original_unit": "mm"
+              },
+              "frequency_thz": {
+                "value": 0.7,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Fig. S5a，第 5 列（0.7 THz）",
+                "note": "原图标注的实验太赫兹频率。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 428275,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Fig. S5a，第 5 列（0.7 THz）",
+                "note": "以原图的 0.7 THz 为谱点，本库用真空光速换算，显示精度由原始频率标签限定。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "display": "约 428,275 nm",
+                "approximate": true,
+                "calculation_origin": "atlas",
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "original_value": 0.7,
+                "original_unit": "THz"
+              },
+              "psf_protocol": {
+                "value": "太赫兹近场电场扫描；归一化强度及相位图",
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Fig. S5a，第 5 列（0.7 THz）",
+                "note": "准直 THz 入射，近场探针采集电信号。主文给出采集平面 x、y 栅格 0.25 mm；轴向步距、传播处理、峰位算法及各图共用归一化待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_si",
+                  "cheng_thz_2019_nju"
+                ],
+                "method": "terahertz_near_field_probe_raster_scan",
+                "field_point": "on_axis",
+                "lateral_scan_step_x_um": 250,
+                "lateral_scan_step_y_um": 250,
+                "axial_scan_step_um": null,
+                "evaluation_plane_um": null,
+                "phase_section_plane_um": 12500,
+                "normalization": "figure_color_scale_min_max",
+                "focus_mode": "longitudinal_intensity_maps"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Fig. S5a，第 5 列（0.7 THz）",
+                "note": "图给归一化焦斑及轴向强度分布，作者未逐频率列出独立峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；轴位待核"
+              }
+            }
+          },
+          {
+            "id": "cheng2019thz_rectangle_08thz",
+            "model": "Cheng 2019 · 矩形硅实物 · 0.8 THz",
+            "study_id": "cheng2019thz",
+            "specimen_id": "rectangle",
+            "module": "",
+            "variant": "矩形硅实物",
+            "evidence_type": "study",
+            "measurement_scope": "0.8 THz 实测强度与相位；频率按图内标签。",
+            "visible_light_use": false,
+            "values": {
+              "diameter_um": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 p.6 Table S4 及 p.9 Fig. S5",
+                "note": "明确的矩形器件通光口径待核。横坐标范围及 C 形镜 10 mm 直径不作为本器件尺寸。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "数值待核"
+              },
+              "na": {
+                "value": 0.43,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 p.6 Table S4 表题",
+                "note": "矩形结构的设计 NA。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "design_focal_um": {
+                "value": 10500,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1528 §4 右栏首段；p.1529 Fig. 5e",
+                "note": "正文明确报告矩形结构的设计焦长为 10.5 mm。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 10.5,
+                "original_unit": "mm"
+              },
+              "frequency_thz": {
+                "value": 0.8,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Fig. S5a，第 6 列（0.8 THz）",
+                "note": "原图标注的实验太赫兹频率。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20"
+              },
+              "wavelength_nm": {
+                "value": 375000,
+                "source": "cheng_thz_2019_nju",
+                "location": "主文 p.1526 §2 右栏，工作波长端点；补件 Fig. S5",
+                "note": "作者明确把 0.8 THz 标称端点写为 375 μm。沿用原值和单位，逐点以补件频率标签核对。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "original_value": 375,
+                "original_unit": "μm",
+                "sourceIds": [
+                  "cheng_thz_2019_nju",
+                  "cheng_thz_2019_si"
+                ]
+              },
+              "psf_protocol": {
+                "value": "太赫兹近场电场扫描；归一化强度及相位图",
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Fig. S5a，第 6 列（0.8 THz）",
+                "note": "准直 THz 入射，近场探针采集电信号。主文给出采集平面 x、y 栅格 0.25 mm；轴向步距、传播处理、峰位算法及各图共用归一化待核。",
+                "basis": "reported_configuration",
+                "checked_on": "2026-11-20",
+                "sourceIds": [
+                  "cheng_thz_2019_si",
+                  "cheng_thz_2019_nju"
+                ],
+                "method": "terahertz_near_field_probe_raster_scan",
+                "field_point": "on_axis",
+                "lateral_scan_step_x_um": 250,
+                "lateral_scan_step_y_um": 250,
+                "axial_scan_step_um": null,
+                "evaluation_plane_um": null,
+                "phase_section_plane_um": 12500,
+                "normalization": "figure_color_scale_min_max",
+                "focus_mode": "longitudinal_intensity_maps"
+              },
+              "measured_focal_um": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.9 Fig. S5a，第 6 列（0.8 THz）",
+                "note": "图给归一化焦斑及轴向强度分布，作者未逐频率列出独立峰位。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "图可查；轴位待核"
+              }
+            }
+          },
+          {
+            "id": "cheng2019thz_pb_control_span",
+            "model": "Cheng 2019 · 未校色 PB 镜模型 · 两端焦差",
+            "study_id": "cheng2019thz",
+            "specimen_id": "pb_control",
+            "module": "",
+            "variant": "未校色 PB 镜模型",
+            "evidence_type": "study",
+            "measurement_scope": "同篇仅几何相位的模拟对照。",
+            "visible_light_use": false,
+            "values": {
+              "chromatic": {
+                "value": "仅 PB 相位；模拟端点 5.0 和 14.5 mm，模型焦差 9.5 mm",
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.7 §B 与 Fig. S2",
+                "note": "作者比较 0.3 THz 的 5 mm 与 0.8 THz 的 14.5 mm。公开模型未建立对应对照实物或实验焦位。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "calculation_origin": "authors",
+                "frequency_endpoints_thz": [
+                  0.3,
+                  0.8
+                ],
+                "focal_endpoints_um": [
+                  5000,
+                  14500
+                ],
+                "model_focal_span_um": 9500
+              },
+              "lambda_min_nm": {
+                "value": 374741,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.7 §B 与 Fig. S2",
+                "note": "以原图的 0.8 THz 为谱点，本库用真空光速换算，显示精度由原始频率标签限定。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "display": "约 374,741 nm",
+                "approximate": true,
+                "calculation_origin": "atlas",
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "original_value": 0.8,
+                "original_unit": "THz"
+              },
+              "lambda_max_nm": {
+                "value": 999308,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.7 §B 与 Fig. S2",
+                "note": "以原图的 0.3 THz 为谱点，本库用真空光速换算，显示精度由原始频率标签限定。",
+                "basis": "model",
+                "checked_on": "2026-11-20",
+                "display": "约 999,308 nm",
+                "approximate": true,
+                "calculation_origin": "atlas",
+                "conversion_method": "vacuum_wavelength_from_frequency",
+                "original_value": 0.3,
+                "original_unit": "THz"
+              },
+              "focus_variation_um": {
+                "value": null,
+                "source": "cheng_thz_2019_si",
+                "location": "补件 PDF p.7 §B 与 Fig. S2",
+                "note": "这里只给同文未校色比较模型的轴向结果。",
+                "basis": "unresolved",
+                "checked_on": "2026-11-20",
+                "display": "仅模型，无实测焦差"
+              }
+            }
           }
       ],
-      "scope": "58项原始研究、293个器件/测量/系统配置、1248条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
+      "scope": "62项原始研究、305个器件/测量/系统配置、1313条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
