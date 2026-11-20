@@ -1201,3 +1201,11 @@ Zang 2024 补件组件 DOI 在 Crossref 确认从属于 ACS Nano 主文，同一
 ## 2026-11-20-137 · Kang 两只实物的有符号焦差与作者模拟焦斑
 
 按主文 §§2.3–2.4 及 §4.8 复核 15 个实测峰位。SiNₓ 的五点相对 626 μm 设计面为 +30／−42／+30／−34／−2 μm，峰峰值 72 μm。ZrO₂ PER 的十点相对 1400 μm 设计面为 −80 至 +130 μm，并在 405／435 nm 达 −300 μm，峰峰值 430 μm。6.7% 最大偏差和 6.9% 平均偏差按作者的原分母保留。新增两条实物汇总和一个 320 nm 未校正 SiNₓ 对照。不补对照镜的焦位和口径。15 个作者模拟 FWHM 使用独立字段。记录 SiNₓ 的 MTF 来源与焦面效率分母，逐频值、原始 PSF、横向尺度和效率光阑仍缺。全库 52 篇、280 个配置、1209 条，可见光 43 篇、804 条。[本批核验](KANG_2026_RESIDUAL_FOCUS_REVIEW_2026-11-20.md)
+
+## 2026-11-20-138 · Kang 上线验收与 Fan 阵列准入复核
+
+0.3.58 经 PR #196 合并为 2c53da6。PR 校验 44714279020、主线校验 44714451125 和 Pages 44714451058 均成功。321 项测试通过，235 个公开文件与本地构建逐一核 SHA-256。独立无头 Chrome 核全库 52 篇、1209 条和可见光 43 篇、804 条。Kang 同篇 3 配置、18 条。验收 15 个有符号焦差、15 个模拟焦斑宽度、两组峰峰值和两组作者百分比，共 34 个散点读数。筛选后保留 14 条。验证六个视口、CSV 与原单元格往返，DOI 和期刊链接符合原作登记。无头 Chrome 访问 Wiley 文件的直接读取仍受限于 HTTP 403。[PR #196](https://github.com/SelinLee/lens-evidence-atlas/pull/196) · [Pages 44714451058](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44714451058) · [Kang 核验](KANG_2026_RESIDUAL_FOCUS_REVIEW_2026-11-20.md)
+
+沿 Kang 参考文献 1 回查 Fan 2024。独立无头 Chrome 取得正式主文（2114195 字节）和出版社 ZIP（28464909 字节，SHA-256 为 `0f8b8507e28acd06d03c614678233b4bb6507786c21d887372e44de9bc7e1402`）。ZIP 的 `Additional file/Additional file.pdf` p.8 Fig. S5a–c 在 463／547／617 nm 印出 6934／5859／5198 μm，峰峰焦差为 1736 μm。Fig. S5d 的 463 与 617 nm 焦深标签与 §S5 正文相反，留待近眼显示方向复核。正文摘要提到过去的消色差阵列，补件 §S5 将本实物的色散与潜在的校正方案明确区分。该论文只保留在检索记录。既有独立的 Fan 2019 消色差阵列沿其原作证据保留。[Fan 2024 正式主文](https://link.springer.com/article/10.1186/s43593-023-00055-1) · [正式补件 ZIP](https://static-content.springer.com/esm/art%3A10.1186%2Fs43593-023-00055-1/MediaObjects/43593_2023_55_MOESM1_ESM.zip) · [2025 年 3 月分区](https://www.scholay.com/journal/81550/elight)
+
+接续 Feng 2022 的可见光离散三色双层实物。Crossref 组件 .s003 通过 is-component-of 绑定正式 DOI，并给出精确 PDF 文件名 nl2c00486_si_003.pdf，.s001 解析为 MP4。期刊目录说明这份 PDF 含更多设计、工艺与测量、成像、1 cm 和 TiO₂ 配置。补件直连实测 403，仍须确认各器件的测量归属与数值。会话目标保持开启。[期刊](https://doi.org/10.1021/acs.nanolett.2c00486) · [组件 DOI](https://api.crossref.org/works/10.1021/acs.nanolett.2c00486.s003)
