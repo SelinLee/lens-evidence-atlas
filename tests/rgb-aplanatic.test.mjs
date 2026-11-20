@@ -90,7 +90,7 @@ test('Li 2024 preserves the limits of normal-incidence, object-side chart and si
  assert.ok(li.every(row=>hasVisibleLight(domain,row)));
 });
 
-test('Feng 2022 attaches abstract-only geometry to one published study and plots only verified fields',()=>{
+test('Feng 2022 links the group photograph and RGB image to the published geometry without creating speculative dots',()=>{
  assert.equal(validateDevices(data,catalog),true);
  assert.equal(feng.length,1);
  assert.equal(groupRows(feng)[0].paper,'device-feng_doublet_2022');
@@ -101,6 +101,10 @@ test('Feng 2022 attaches abstract-only geometry to one published study and plots
  assert.equal(row.values.na.basis,'reported_configuration');
  assert.equal(row.values.na.na_definition,'metalens_design');
  assert.match(row.values.diameter_um.location,/abstractText/);
+ assert.equal(row.values.material.source,'device-feng_doublet_sysu_2022');
+ assert.equal(row.values.chromatic.source,'device-feng_doublet_sysu_figure_2022');
+ assert.equal(row.values.chromatic.basis,'measured');
+ assert.match(row.values.chromatic.note,/200μm.*10μm.*比例尺/);
  for (const key of ['design_focal_um','measured_focal_um','wavelength_nm','fwhm_x_um','strehl','efficiency_at_lambda_pct']) {
   assert.equal(row.values[key].value,null);
  }
