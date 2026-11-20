@@ -12,7 +12,7 @@ test('2026 original text belongs to one publication and separates the fabricated
 test('distributed design limits, axial centroid and maximum-intensity plane never become an ordinary scalar focal length, measured focus or zero chromatic shift',()=>{
  const v=get('full_summary');assert.equal(v.diameter_um.value,1000);assert.equal(v.height_nm.value,400);assert.equal(v.na.value,null);assert.equal(v.design_focal_um.value,null);assert.equal(v.design_focal_um.reported_focal_min_um,250);assert.equal(v.design_focal_um.reported_focal_span_um,1100);assert.match(v.design_focal_um.note,/轴向质心也不等于.*最大强度焦面/);assert.match(v.height_nm.note,/Cr40nm.*移除/);
  for(const r of rows){assert.ok(!Number.isFinite(r.values.measured_focal_um?.value));assert.equal(r.values.axial_focus_offset_um,undefined);assert.equal(r.values.focus_variation_um,undefined);assert.equal(r.values.measured_focal_band_mean_um,undefined);}
- assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,51);
+ assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,48);
 });
 test('eight full-pupil experimental wavelengths in both spin channels remain separate from simulated samples and an unresolved truncated-pupil wavelength',()=>{
  for(const pol of ['rcp','lcp'])assert.deepEqual(rows.filter(r=>r.id.startsWith('javed2026_'+pol+'_')).map(r=>r.values.wavelength_nm.value),waves.map(w=>w===576?null:w));

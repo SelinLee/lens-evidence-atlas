@@ -23,3 +23,11 @@ p.9 §2.4 总结 Fig. S2 与 Table S3 的另一个 30 μm 模型评估。作者�
 ## 数据入口与缺口
 
 p.14 列补件 `lpor72174-sup-0001-SuppMat.pdf`。补件直连、Wiley 下载接口和资源路径在本机独立无头 Chrome 均返回 403。已查期刊 Early View、题录、作者机构联合发布及补件文件名索引，未取得可核验补件原文件。Methods §4.3 将滤光片规格列于 Table S4，轴扫装置见 Figs. S5–S6。作者 Data Availability 指向合理请求。追加记录采用主文印字，逐偏振和失谐原表、横向实际采样、原始 PSF 和逐频 MTF 仍待核。 [补件入口](https://onlinelibrary.wiley.com/doi/suppl/10.1002/lpor.72174/supinfo/lpor72174-sup-0001-SuppMat.pdf) · [作者机构 MTF 复刊图](https://www.tuat.ac.jp/images/tuat/outline/disclosure/pressrelease/2026/20261111_01_03.png)
+
+## 2026-11-20 复核两套实物光路的三色跨度
+
+按主文 §2.4 与 §4.3 重核。Fig. 4 的 450、532、633 nm 是准直激光实测焦距，分别为 5070、5030、4980 μm，按原文印字计算跨度 **90 μm**。作者报告各点相对 5050 μm 的偏差为 −1.4% 至 +0.4%。Fig. 5b,d,f 是卤素灯、滤片、物距 500 mm 的有限共轭实验，分别直报 z = 5080、5100、5110 μm，三色峰位跨度为 **30 μm**。作者报告这些峰位相对 Fig. 5 中 5050 μm 的标称参考线的最大偏差小于 1.2%。三条峰位已移入有限共轭实测像距轴。计算的有符号距离差仍以作者图中 5050 μm 的设计焦距线为参考，有限共轭设计像距未报告。
+
+两组跨度均关联各自三条测量记录，精度取决于原文 0.01 mm 印字。要量化测量不确定度，还缺轴扫步长、重复测量和定位规则。卤素光路的 400、490、580、680 nm 只有 Fig. 5 的强度图，数值继续留空。正文的 2%／6%／5% 属于 ±5 nm 失谐讨论。§2.4 一处称数值评估，紧接处又用测量措辞。该段的参考、器件归属和证据性质仍需 Fig. S1、Table S2 核对，数据库保留空值。[准直激光 §2.4](https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/lpor.72174#page=7) · [滤光扫描 Fig. 5](https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/lpor.72174#page=8) · [测量 §4.3](https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/lpor.72174#page=12)
+
+补查原文致谢中的东京大学 ARIM 项目 JPMXP1226UTU1231。按完整项目号和论文题名检索未定位数据集。公开详细检索在无头 Chrome 返回 HTTP 202、空响应，报告索引 404，未完成馆内数据集检索。Iwami 课题组更新公告指向 Wiley 正式页和大学发布说明。Wiley 补件直连仍返回 403。现有原始记录仍可按正文重核，逐频 MTF、二维强度原数组以及 Table S2–4 尚缺。[ARIM 公共目录](https://nanonet.go.jp/data_service/) · [大学研究说明](https://www.tuat.ac.jp/outline/disclosure/pressrelease/2026/20261111_01.html) · [期刊补件](https://onlinelibrary.wiley.com/doi/suppl/10.1002/lpor.72174/supinfo/lpor72174-sup-0001-SuppMat.pdf)

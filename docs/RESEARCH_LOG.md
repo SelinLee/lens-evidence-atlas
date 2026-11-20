@@ -1287,3 +1287,7 @@ Arbabi 2016 已取得 Caltech 与 PMC 开放存档的正式版 PDF，均为 9533
 接续核查 Chang 2024 的 400 μm 器件。Penn State 专利申请公开件 Figs. 46–50 的器件参数与论文相应图表吻合，新增一个核查入口。图版及附件检查仍未定位 MTF 数表或原始 PSF。同族 WO2023235186A2 的 PDF pp.98–102 与美国公开件为相应图版，0 个嵌入文件。两版专利正文给 12.35 mm，图示设计线与正式论文为 12.5 mm，保留出处差异。查 Zhang 2021 随机形状预印本，正文有实物扫描，OpenAlex 以 arXiv DOI 查询为 7 次，引文门槛暂未达到。保持会话目标开启。[Chang 核查记录](CHANG_MTF_DATA_AUDIT_2026-11-14.md#2026-11-20-补查-penn-state-专利申请公开件) · [Zhang 预印本](https://arxiv.org/abs/2103.10845) · [OpenAlex](https://api.openalex.org/works/https://doi.org/10.48550/arXiv.2103.10845)
 
 接续回到 Hasegawa 2026 的近期可见光 RGB 实物。已由本机无头 Chrome 取得东京农工大 6 页公开说明，图 3 转载实物聚焦图。DataCite 精确关联检索返回 0。下一批继续寻找作者关联的原始补件与焦点数据，核三色轴向残差及 Table S2–3 的适用条件。[东京农工大](https://www.tuat.ac.jp/documents/tuat/outline/disclosure/pressrelease/2026/20261111_01.pdf) · [期刊正式 PDF](https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/lpor.72174)
+
+## 2026-11-20-153 · Hasegawa RGB 准直焦距与有限共轭像距
+
+主文 §2.4、Fig. 4/5 和 §4.3 重核两套实物光路。准直激光焦距为 5070／5030／4980 μm，保留原焦距轴。原库的卤素滤光轴峰 5080／5100／5110 μm 移入有限共轭实测像距轴，共轭为针孔距镜 500 mm。Fig. 5 的 5050 μm 设计焦距参照线仍用于计算 +30／+50／+60 μm 的有符号轴差，有限共轭设计像距未报道。以同光路三条 450／532／633 nm 记录复算的跨度分别为 90 和 30 μm，与作者相对设计面的百分比证据保留各自定义。已新增 2 条汇总，累计 58 篇、293 配置、1248 条。400／490／580／680 nm 的原始峰位、±5 nm 失谐的 Table S2 定义、公开 PSF 数组和 MTF 数表仍待核。实际核 ARIM 项目号、目录和研究组入口，Wiley 补件直连仍为 403。[补证记录](HASEGAWA_2026_MODEL_EVIDENCE_2026-11-19.md#2026-11-20-复核两套实物光路的三色跨度)
