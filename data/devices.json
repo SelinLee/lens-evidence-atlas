@@ -3107,6 +3107,51 @@
       "kind": "repository_metadata",
       "scope": "2026-11-20 查询 OpenAlex 引用 59 次。书目仅列原刊闭源入口。",
       "checked_on": "2026-11-20"
+    },
+    {
+      "id": "sun_duv_vor_2025",
+      "title": "Sun et al. (2025) · Production-Ready Double-Sided Fabrication of Dual-Band Infrared Metaoptics Using Deep-Ultraviolet Lithography",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12574206.1/PMC12574206.1.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "ACS Nano 19(42), 37218–37229，2025-10-19 正式上线。核 PMC 开放档案的正式 PDF，§2.4、Figs. 4–5、Table 1 与 p37228 数据声明。",
+      "checked_on": "2026-11-21",
+      "doi": "10.1021/acsnano.5c11908"
+    },
+    {
+      "id": "sun_duv_si_2025",
+      "title": "Sun et al. · 正式补件 nn5c11908_si_001.pdf",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12574206.1/nn5c11908_si_001.pdf",
+      "kind": "supplementary_material",
+      "scope": "PMC 开放档案正式补件。核 §S5 Table S3 设计，§S7 Fig. S17 的 V4 效率，§§S8–S10 裸镜及混合成像，§S13 干涉。",
+      "checked_on": "2026-11-21",
+      "publication_source": "sun_duv_vor_2025"
+    },
+    {
+      "id": "sun_duv_fig4_2025",
+      "title": "Sun et al. · 正式 Fig. 4 实测波长与 F 数比较",
+      "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12574206.1/nn5c11908_0004.jpg",
+      "kind": "publisher_figure",
+      "scope": "核 Fig. 4e,f 实测等效 F 数散点、(d) 支架清孔径及 (g) 混合光路位置标注。图像未提供精确点表。",
+      "checked_on": "2026-11-21",
+      "publication_source": "sun_duv_vor_2025"
+    },
+    {
+      "id": "sun_duv_repository_2025",
+      "title": "University of Southampton · 作者数据记录 D3494",
+      "url": "https://doi.org/10.5258/SOTON/D3494",
+      "kind": "repository_metadata",
+      "scope": "原刊数据声明指向该开放数据 DOI。解析到 ePrints 506133，2026-11-21 核验记录页及元数据导出入口返回 403。数据包内容及文件清单尚待核验。",
+      "checked_on": "2026-11-21",
+      "publication_source": "sun_duv_vor_2025"
+    },
+    {
+      "id": "sun_duv_datacite_2025",
+      "title": "DataCite · Sun 等作者数据 DOI 注册信息",
+      "url": "https://api.datacite.org/dois/10.5258/soton/d3494",
+      "kind": "repository_metadata",
+      "scope": "核到作者、数据标题、CC BY 4.0 和 ePrints 506133 入口。注册元数据未列数据文件或点表。",
+      "checked_on": "2026-11-21",
+      "publication_source": "sun_duv_vor_2025"
     }
   ],
   "domains": {
@@ -165306,9 +165351,711 @@
               "display": "Fig. 5a 色散对照；逐频焦位待补"
             }
           }
+        },
+        {
+          "id": "sun2025duv_v5_baf2",
+          "model": "Sun 2025 · V5＋BaF₂ · 长波红外折超混合",
+          "study_id": "sun2025duv",
+          "specimen_id": "v5_baf2",
+          "module": "",
+          "variant": "折超实物｜部分色散补偿",
+          "evidence_type": "study",
+          "measurement_scope": "V5 双面硅超透镜和 氟化钡 BaF₂。原刊 Fig. 4g 的示意标注 55 mm 镜间距，BaF₂ 到焦平面阵列约 21 mm。补件 §S8 对台架另给估计约 15 mm，保留各自参考条件。",
+          "values": {
+            "diameter_um": {
+              "value": 40000,
+              "source": "sun_duv_si_2025",
+              "location": "补件 p11 Table S3；正刊 Fig. 4d,g；补件 §S10 Fig. S22",
+              "note": "40 mm 为 V5 超透镜名义直径。其支架通光口径 38 mm，BaF₂ 元件直径 25 mm，复合镜组入口瞳尺寸未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "original_value": 40,
+              "original_unit": "mm",
+              "clear_aperture_um": 38000,
+              "refractive_element_diameter_um": 25000,
+              "sourceIds": [
+                "sun_duv_si_2025",
+                "sun_duv_vor_2025"
+              ]
+            },
+            "material": {
+              "value": "双面硅超透镜＋氟化钡 BaF₂折射镜",
+              "source": "sun_duv_vor_2025",
+              "location": "正刊 Fig. 5g,k；补件 §§S8–S10",
+              "note": "两独立元件组合。超透镜直径与折射元件直径各有定义。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "sun_duv_vor_2025",
+                "sun_duv_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "长波红外反号色散补偿",
+              "source": "sun_duv_vor_2025",
+              "location": "正刊 Fig. 5g,k；补件 §§S8–S10",
+              "note": "BaF₂ 折射镜与超透镜的轴向色散方向相反。混合组实物的长波效果有 Fig. 4f 及 Fig. 5 的实测支持。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "sun_duv_vor_2025",
+                "sun_duv_si_2025"
+              ]
+            },
+            "psf_protocol": {
+              "value": "长波热成像；裸镜与复合光路比较",
+              "source": "sun_duv_vor_2025",
+              "location": "正刊 Fig. 5g,k；补件 §§S8–S10",
+              "note": "原刊 Fig. 4g 的示意标注 55 mm 镜间距，BaF₂ 到焦平面阵列约 21 mm。补件 §S8 对台架另给估计约 15 mm，保留各自参考条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "sun_duv_vor_2025",
+                "sun_duv_si_2025"
+              ]
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "sun_duv_vor_2025",
+              "location": "正刊 Fig. 5g,k；补件 §§S8–S10",
+              "note": "原文给热成像对照和裸镜干涉测量。当前未核得此混合配置的定标光学 PSF、MTF 数表、横向色差数值及一致的场点和方向。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "混合配置原始 PSF／MTF 待补",
+              "sourceIds": [
+                "sun_duv_vor_2025",
+                "sun_duv_si_2025",
+                "sun_duv_repository_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sun_duv_fig4_2025",
+              "location": "正刊 p37224 §2.4、Fig. 4f 散点及 Fig. 4g",
+              "note": "横轴为波长（μm），纵轴为同一 38 mm 口径基准下的等效 F 数。原文未给配对裸镜版本、焦点定位方法、混合组等效焦距参考主面和逐点误差。原始数据 DOI 已登记，尚未读取文件。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "Fig. 4f 等效 F 数散点；逐波长原数待补",
+              "normalization_aperture_um": 38000,
+              "sourceIds": [
+                "sun_duv_fig4_2025",
+                "sun_duv_vor_2025",
+                "sun_duv_repository_2025",
+                "sun_duv_datacite_2025"
+              ]
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "sun_duv_fig4_2025",
+              "location": "正刊 p37224 §2.4、Fig. 4f 散点及 Fig. 4g",
+              "note": "原文实测图中混合组曲线明显更平；作者未给残余轴向焦差或参考焦面。需核同一光路每个谱点的等效焦距、定义和误差。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "实测支持部分校正；残余焦差待数据",
+              "sourceIds": [
+                "sun_duv_fig4_2025",
+                "sun_duv_vor_2025",
+                "sun_duv_repository_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "sun2025duv_v6_baf2",
+          "model": "Sun 2025 · V6＋BaF₂ · 长波红外折超混合",
+          "study_id": "sun2025duv",
+          "specimen_id": "v6_baf2",
+          "module": "",
+          "variant": "折超实物｜部分色散补偿",
+          "evidence_type": "study",
+          "measurement_scope": "V6 双面硅超透镜和 氟化钡 BaF₂。原刊 Fig. 4g 的示意标注 55 mm 镜间距，BaF₂ 到焦平面阵列约 21 mm。补件 §S8 对台架另给估计约 15 mm，保留各自参考条件。",
+          "values": {
+            "diameter_um": {
+              "value": 40000,
+              "source": "sun_duv_si_2025",
+              "location": "补件 p11 Table S3；正刊 Fig. 4d,g；补件 §S10 Fig. S22",
+              "note": "40 mm 为 V6 超透镜名义直径。其支架通光口径 38 mm，BaF₂ 元件直径 25 mm，复合镜组入口瞳尺寸未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "original_value": 40,
+              "original_unit": "mm",
+              "clear_aperture_um": 38000,
+              "refractive_element_diameter_um": 25000,
+              "sourceIds": [
+                "sun_duv_si_2025",
+                "sun_duv_vor_2025"
+              ]
+            },
+            "material": {
+              "value": "双面硅超透镜＋氟化钡 BaF₂折射镜",
+              "source": "sun_duv_vor_2025",
+              "location": "正刊 Fig. 5h,l；补件 §§S8–S10",
+              "note": "两独立元件组合。超透镜直径与折射元件直径各有定义。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "sun_duv_vor_2025",
+                "sun_duv_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "长波红外反号色散补偿",
+              "source": "sun_duv_vor_2025",
+              "location": "正刊 Fig. 5h,l；补件 §§S8–S10",
+              "note": "BaF₂ 折射镜与超透镜的轴向色散方向相反。混合组实物的长波效果有 Fig. 4f 及 Fig. 5 的实测支持。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "sun_duv_vor_2025",
+                "sun_duv_si_2025"
+              ]
+            },
+            "psf_protocol": {
+              "value": "长波热成像；裸镜与复合光路比较",
+              "source": "sun_duv_vor_2025",
+              "location": "正刊 Fig. 5h,l；补件 §§S8–S10",
+              "note": "原刊 Fig. 4g 的示意标注 55 mm 镜间距，BaF₂ 到焦平面阵列约 21 mm。补件 §S8 对台架另给估计约 15 mm，保留各自参考条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "sun_duv_vor_2025",
+                "sun_duv_si_2025"
+              ]
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "sun_duv_vor_2025",
+              "location": "正刊 Fig. 5h,l；补件 §§S8–S10",
+              "note": "原文给热成像对照和裸镜干涉测量。当前未核得此混合配置的定标光学 PSF、MTF 数表、横向色差数值及一致的场点和方向。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "混合配置原始 PSF／MTF 待补",
+              "sourceIds": [
+                "sun_duv_vor_2025",
+                "sun_duv_si_2025",
+                "sun_duv_repository_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sun_duv_fig4_2025",
+              "location": "正刊 p37224 §2.4、Fig. 4f 散点及 Fig. 4g",
+              "note": "横轴为波长（μm），纵轴为同一 38 mm 口径基准下的等效 F 数。原文未给配对裸镜版本、焦点定位方法、混合组等效焦距参考主面和逐点误差。原始数据 DOI 已登记，尚未读取文件。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "Fig. 4f 等效 F 数散点；逐波长原数待补",
+              "normalization_aperture_um": 38000,
+              "sourceIds": [
+                "sun_duv_fig4_2025",
+                "sun_duv_vor_2025",
+                "sun_duv_repository_2025",
+                "sun_duv_datacite_2025"
+              ]
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "sun_duv_fig4_2025",
+              "location": "正刊 p37224 §2.4、Fig. 4f 散点及 Fig. 4g",
+              "note": "原文实测图中混合组曲线明显更平；作者未给残余轴向焦差或参考焦面。需核同一光路每个谱点的等效焦距、定义和误差。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "实测支持部分校正；残余焦差待数据",
+              "sourceIds": [
+                "sun_duv_fig4_2025",
+                "sun_duv_vor_2025",
+                "sun_duv_repository_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "sun2025duv_v5_caf2",
+          "model": "Sun 2025 · V5＋CaF₂ · 长波红外折超混合",
+          "study_id": "sun2025duv",
+          "specimen_id": "v5_caf2",
+          "module": "",
+          "variant": "折超实物｜部分色散补偿",
+          "evidence_type": "study",
+          "measurement_scope": "V5 双面硅超透镜和 氟化钙 CaF₂。补件 §S10 比较同一手部目标在裸镜和混合光路下的长波图，组镜间距、焦面位置和逐色最佳焦位未给。",
+          "values": {
+            "diameter_um": {
+              "value": 40000,
+              "source": "sun_duv_si_2025",
+              "location": "补件 p11 Table S3；正刊 Fig. 4d,g；补件 §S10 Fig. S22",
+              "note": "40 mm 为 V5 超透镜名义直径。其支架通光口径 38 mm，CaF₂ 元件直径 25 mm，复合镜组入口瞳尺寸未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "original_value": 40,
+              "original_unit": "mm",
+              "clear_aperture_um": 38000,
+              "refractive_element_diameter_um": 25000,
+              "sourceIds": [
+                "sun_duv_si_2025",
+                "sun_duv_vor_2025"
+              ]
+            },
+            "material": {
+              "value": "双面硅超透镜＋氟化钙 CaF₂折射镜",
+              "source": "sun_duv_si_2025",
+              "location": "正式补件 pp20–21 §S10，Fig. S22d 对比 (a–c)",
+              "note": "两独立元件组合。超透镜直径与折射元件直径各有定义。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "sun_duv_si_2025",
+                "sun_duv_vor_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "长波红外折超补偿成像",
+              "source": "sun_duv_si_2025",
+              "location": "正式补件 pp20–21 §S10，Fig. S22d 对比 (a–c)",
+              "note": "作者以 V5 加 CaF₂ 实现像质改善并报告约两倍视场。论文没有给这一组合的残余轴向焦差曲线。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "sun_duv_si_2025",
+                "sun_duv_vor_2025"
+              ]
+            },
+            "psf_protocol": {
+              "value": "长波热成像；裸镜与复合光路比较",
+              "source": "sun_duv_si_2025",
+              "location": "正式补件 pp20–21 §S10，Fig. S22d 对比 (a–c)",
+              "note": "补件 §S10 比较同一手部目标在裸镜和混合光路下的长波图，组镜间距、焦面位置和逐色最佳焦位未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "sun_duv_si_2025",
+                "sun_duv_vor_2025"
+              ]
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "sun_duv_vor_2025",
+              "location": "正式补件 pp20–21 §S10，Fig. S22d 对比 (a–c)",
+              "note": "原文给热成像对照和裸镜干涉测量。当前未核得此混合配置的定标光学 PSF、MTF 数表、横向色差数值及一致的场点和方向。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "混合配置原始 PSF／MTF 待补",
+              "sourceIds": [
+                "sun_duv_vor_2025",
+                "sun_duv_si_2025",
+                "sun_duv_repository_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "sun2025duv_baf2_fnumber",
+          "model": "Sun 2025 · BaF₂ 混合组 · Fig. 4f 等效 F 数",
+          "study_id": "sun2025duv",
+          "specimen_id": "baf2_fnumber",
+          "module": "",
+          "variant": "实测光谱扫描｜样片版本未注明",
+          "evidence_type": "study",
+          "measurement_scope": "Fig. 4f 用 38 mm 统一归一分母比较长波三组。图例未标超透镜配置版本，保留到该测量组。",
+          "values": {
+            "fnumber": {
+              "value": 1.5,
+              "source": "sun_duv_vor_2025",
+              "location": "正刊 p37224 §2.4、Fig. 4f 散点及 Fig. 4g",
+              "note": "作者报告混合组的等效 F 数约 1.5，按 38 mm 统一口径。该值是实验概述，未指定单个谱点，逐点原数待补。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "display": "约 1.5",
+              "approximate": true,
+              "calculation_origin": "authors",
+              "normalization_aperture_um": 38000,
+              "sourceIds": [
+                "sun_duv_vor_2025",
+                "sun_duv_fig4_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "长波红外实测 F 数曲线显示部分补偿",
+              "source": "sun_duv_fig4_2025",
+              "location": "正刊 p37224 §2.4、Fig. 4f 散点及 Fig. 4g",
+              "note": "裸超透镜散点随波长降低，独立 BaF₂ 镜散点反向变化，混合组的等效 F 数随波长变化减小。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "sun_duv_fig4_2025",
+                "sun_duv_vor_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sun_duv_fig4_2025",
+              "location": "正刊 p37224 §2.4、Fig. 4f 散点及 Fig. 4g",
+              "note": "横轴为波长（μm），纵轴为同一 38 mm 口径基准下的等效 F 数。原文未给配对裸镜版本、焦点定位方法、混合组等效焦距参考主面和逐点误差。原始数据 DOI 已登记，尚未读取文件。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "Fig. 4f 等效 F 数散点；逐波长原数待补",
+              "normalization_aperture_um": 38000,
+              "sourceIds": [
+                "sun_duv_fig4_2025",
+                "sun_duv_vor_2025",
+                "sun_duv_repository_2025",
+                "sun_duv_datacite_2025"
+              ]
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "sun_duv_fig4_2025",
+              "location": "正刊 p37224 §2.4、Fig. 4f 散点及 Fig. 4g",
+              "note": "原文实测图中混合组曲线明显更平；作者未给残余轴向焦差或参考焦面。需核同一光路每个谱点的等效焦距、定义和误差。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "实测支持部分校正；残余焦差待数据",
+              "sourceIds": [
+                "sun_duv_fig4_2025",
+                "sun_duv_vor_2025",
+                "sun_duv_repository_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "sun2025duv_baf2_refractive_control",
+          "model": "Sun 2025 · 25 mm BaF₂ 折射镜 · Fig. 4f 对照",
+          "study_id": "sun2025duv",
+          "specimen_id": "baf2_control",
+          "module": "",
+          "variant": "同文单独折射镜对照",
+          "evidence_type": "study",
+          "measurement_scope": "Fig. 4f 的独立折射镜组，用来显示光焦度色散方向。",
+          "values": {
+            "diameter_um": {
+              "value": 25000,
+              "source": "sun_duv_vor_2025",
+              "location": "正刊 p37224 Fig. 4g 与 §2.4；补件 §S10",
+              "note": "BaF₂ 元件报告直径 25 mm；Fig. 4f 三组的等效 F 数统一以 38 mm 为口径基准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "original_value": 25,
+              "original_unit": "mm",
+              "normalization_aperture_um": 38000,
+              "sourceIds": [
+                "sun_duv_vor_2025",
+                "sun_duv_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "与超透镜反号的色散对照",
+              "source": "sun_duv_fig4_2025",
+              "location": "正刊 p37224 §2.4、Fig. 4f 散点及 Fig. 4g",
+              "note": "图中蓝色菱形是独立 BaF₂ 的 F 数，趋势与裸超透镜相反；逐点数据尚待核验。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "sun_duv_fig4_2025",
+                "sun_duv_vor_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "sun_duv_fig4_2025",
+              "location": "正刊 p37224 §2.4、Fig. 4f 散点及 Fig. 4g",
+              "note": "横轴为波长（μm），纵轴为同一 38 mm 口径基准下的等效 F 数。原文未给配对裸镜版本、焦点定位方法、混合组等效焦距参考主面和逐点误差。原始数据 DOI 已登记，尚未读取文件。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-21",
+              "display": "Fig. 4f 等效 F 数散点；逐波长原数待补",
+              "normalization_aperture_um": 38000,
+              "sourceIds": [
+                "sun_duv_fig4_2025",
+                "sun_duv_vor_2025",
+                "sun_duv_repository_2025",
+                "sun_duv_datacite_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "sun2025duv_v5_bare_3390",
+          "model": "Sun 2025 · V5 裸超透镜 · 3.39 μm 干涉",
+          "study_id": "sun2025duv",
+          "specimen_id": "v5_bare",
+          "module": "",
+          "variant": "同文裸镜对照｜干涉测量",
+          "evidence_type": "study",
+          "measurement_scope": "40 mm V5 裸超透镜。4／10 μm 为两个离散设计中心，各 80 mm。干涉结果属于裸镜。",
+          "values": {
+            "diameter_um": {
+              "value": 40000,
+              "source": "sun_duv_si_2025",
+              "location": "补件 p11 Table S3，V5 直径列；正刊 p37224 Fig. 4d",
+              "note": "圆形超透镜名义直径 40 mm。切割后装入 T-mount，裸超透镜支架通光孔径 38 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "original_value": 40,
+              "original_unit": "mm",
+              "clear_aperture_um": 38000
+            },
+            "design_focal_um": {
+              "value": 80000,
+              "source": "sun_duv_si_2025",
+              "location": "补件 p11 Table S3，V5 设计焦距列",
+              "note": "4／10 μm 为两个离散设计中心，各 80 mm。设计中心和本行干涉照明各按原值记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "original_value": 80,
+              "original_unit": "mm",
+              "design_wavelengths_nm": [
+                4000,
+                10000
+              ]
+            },
+            "material": {
+              "value": "双面刻蚀硅超透镜",
+              "source": "sun_duv_vor_2025",
+              "location": "§§2.1、2.4，Figs. 1b、4a–d",
+              "note": "超透镜的两面结构在硅片上对齐和刻蚀。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21"
+            },
+            "wavelength_nm": {
+              "value": 3390,
+              "source": "sun_duv_vor_2025",
+              "location": "正刊 p37225 Table 1，V5／3.39 μm 列；补件 §S13",
+              "note": "作者选用现有干涉光源，波长由 μm 转为 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "original_value": 3.39,
+              "original_unit": "μm"
+            },
+            "strehl": {
+              "value": 0.9024,
+              "source": "sun_duv_si_2025",
+              "location": "正式补件 p25 §S13 MWIR Strehl Ratio；正刊 Table 1 同项四舍五入为 0.90",
+              "note": "作者由实验波前表征报告 0.9024。补件比较了移除和加入光焦度的波前，未单列该项的归一化与瞳口径。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "calculation_origin": "authors",
+              "rms_wavefront_waves": 0.051,
+              "peak_to_valley_waves": 0.24,
+              "sourceIds": [
+                "sun_duv_vor_2025",
+                "sun_duv_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "裸超透镜色散对照",
+              "source": "sun_duv_vor_2025",
+              "location": "正刊 Figs. 4f、5d,e；补件 §S9 Fig. S20",
+              "note": "V5 设计中心有中、长波两带，V6 是长波设计。裸镜长波定性成像对照见 Fig. S20；干涉结果是各自波长的单色结果。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "sun_duv_vor_2025",
+                "sun_duv_si_2025"
+              ]
+            },
+            "psf_protocol": {
+              "value": "单色波前干涉",
+              "source": "sun_duv_si_2025",
+              "location": "正刊 p37225 Table 1，V5／3.39 μm 列；补件 §S13",
+              "note": "Table 1 给由干涉波前表征的 Strehl、RMS 和峰谷误差。该条缺直接焦斑采样和 MTF。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "sun_duv_si_2025",
+                "sun_duv_vor_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "sun2025duv_v5_bare_9240",
+          "model": "Sun 2025 · V5 裸超透镜 · 9.24 μm 干涉",
+          "study_id": "sun2025duv",
+          "specimen_id": "v5_bare",
+          "module": "",
+          "variant": "同文裸镜对照｜干涉测量",
+          "evidence_type": "study",
+          "measurement_scope": "40 mm V5 裸超透镜。4／10 μm 为两个离散设计中心，各 80 mm。干涉结果属于裸镜。",
+          "values": {
+            "diameter_um": {
+              "value": 40000,
+              "source": "sun_duv_si_2025",
+              "location": "补件 p11 Table S3，V5 直径列；正刊 p37224 Fig. 4d",
+              "note": "圆形超透镜名义直径 40 mm。切割后装入 T-mount，裸超透镜支架通光孔径 38 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "original_value": 40,
+              "original_unit": "mm",
+              "clear_aperture_um": 38000
+            },
+            "design_focal_um": {
+              "value": 80000,
+              "source": "sun_duv_si_2025",
+              "location": "补件 p11 Table S3，V5 设计焦距列",
+              "note": "4／10 μm 为两个离散设计中心，各 80 mm。设计中心和本行干涉照明各按原值记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "original_value": 80,
+              "original_unit": "mm",
+              "design_wavelengths_nm": [
+                4000,
+                10000
+              ]
+            },
+            "material": {
+              "value": "双面刻蚀硅超透镜",
+              "source": "sun_duv_vor_2025",
+              "location": "§§2.1、2.4，Figs. 1b、4a–d",
+              "note": "超透镜的两面结构在硅片上对齐和刻蚀。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21"
+            },
+            "wavelength_nm": {
+              "value": 9240,
+              "source": "sun_duv_vor_2025",
+              "location": "正刊 p37225 Table 1，V5／9.24 μm 列；补件 §S13",
+              "note": "作者选用现有干涉光源，波长由 μm 转为 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "original_value": 9.24,
+              "original_unit": "μm"
+            },
+            "strehl": {
+              "value": 0.93,
+              "source": "sun_duv_vor_2025",
+              "location": "正刊 p37225 Table 1，V5／9.24 μm 列；补件 §S13",
+              "note": "实测在 9.24 μm，补件 Fig. S24 的 V5 比较轴上离焦和轴外倾斜；Table 1 给两枚裸镜数值。作者由实验波前表征报告 Strehl；归一化与所用瞳口径未单列。误差未报。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "calculation_origin": "authors",
+              "rms_wavefront_waves": 0.042,
+              "peak_to_valley_waves": 0.28,
+              "sourceIds": [
+                "sun_duv_vor_2025",
+                "sun_duv_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "裸超透镜色散对照",
+              "source": "sun_duv_vor_2025",
+              "location": "正刊 Figs. 4f、5d,e；补件 §S9 Fig. S20",
+              "note": "V5 设计中心有中、长波两带，V6 是长波设计。裸镜长波定性成像对照见 Fig. S20；干涉结果是各自波长的单色结果。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "sun_duv_vor_2025",
+                "sun_duv_si_2025"
+              ]
+            },
+            "psf_protocol": {
+              "value": "单色波前干涉",
+              "source": "sun_duv_si_2025",
+              "location": "正刊 p37225 Table 1，V5／9.24 μm 列；补件 §S13",
+              "note": "Table 1 给由干涉波前表征的 Strehl、RMS 和峰谷误差。该条缺直接焦斑采样和 MTF。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "sun_duv_si_2025",
+                "sun_duv_vor_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "sun2025duv_v6_bare_9240",
+          "model": "Sun 2025 · V6 裸超透镜 · 9.24 μm 干涉",
+          "study_id": "sun2025duv",
+          "specimen_id": "v6_bare",
+          "module": "",
+          "variant": "同文裸镜对照｜干涉测量",
+          "evidence_type": "study",
+          "measurement_scope": "40 mm V6 裸超透镜。10 μm 为单个设计中心，80 mm。干涉结果属于裸镜。",
+          "values": {
+            "diameter_um": {
+              "value": 40000,
+              "source": "sun_duv_si_2025",
+              "location": "补件 p11 Table S3，V6 直径列；正刊 p37224 Fig. 4d",
+              "note": "圆形超透镜名义直径 40 mm。切割后装入 T-mount，裸超透镜支架通光孔径 38 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "original_value": 40,
+              "original_unit": "mm",
+              "clear_aperture_um": 38000
+            },
+            "design_focal_um": {
+              "value": 80000,
+              "source": "sun_duv_si_2025",
+              "location": "补件 p11 Table S3，V6 设计焦距列",
+              "note": "10 μm 为单个设计中心，80 mm。设计中心和本行干涉照明各按原值记录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "original_value": 80,
+              "original_unit": "mm",
+              "design_wavelengths_nm": [
+                10000
+              ]
+            },
+            "material": {
+              "value": "双面刻蚀硅超透镜",
+              "source": "sun_duv_vor_2025",
+              "location": "§§2.1、2.4，Figs. 1b、4a–d",
+              "note": "超透镜的两面结构在硅片上对齐和刻蚀。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21"
+            },
+            "wavelength_nm": {
+              "value": 9240,
+              "source": "sun_duv_vor_2025",
+              "location": "正刊 p37225 Table 1，V6／9.24 μm 列；补件 §S13",
+              "note": "作者选用现有干涉光源，波长由 μm 转为 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-21",
+              "original_value": 9.24,
+              "original_unit": "μm"
+            },
+            "strehl": {
+              "value": 0.97,
+              "source": "sun_duv_vor_2025",
+              "location": "正刊 p37225 Table 1，V6／9.24 μm 列；补件 §S13",
+              "note": "实测在 9.24 μm，补件 Fig. S24 的 V5 比较轴上离焦和轴外倾斜；Table 1 给两枚裸镜数值。作者由实验波前表征报告 Strehl；归一化与所用瞳口径未单列。误差未报。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-21",
+              "calculation_origin": "authors",
+              "rms_wavefront_waves": 0.029,
+              "peak_to_valley_waves": 0.1,
+              "sourceIds": [
+                "sun_duv_vor_2025",
+                "sun_duv_si_2025"
+              ]
+            },
+            "chromatic": {
+              "value": "裸超透镜色散对照",
+              "source": "sun_duv_vor_2025",
+              "location": "正刊 Figs. 4f、5d,e；补件 §S9 Fig. S20",
+              "note": "V5 设计中心有中、长波两带，V6 是长波设计。裸镜长波定性成像对照见 Fig. S20；干涉结果是各自波长的单色结果。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "sun_duv_vor_2025",
+                "sun_duv_si_2025"
+              ]
+            },
+            "psf_protocol": {
+              "value": "单色波前干涉",
+              "source": "sun_duv_si_2025",
+              "location": "正刊 p37225 Table 1，V6／9.24 μm 列；补件 §S13",
+              "note": "Table 1 给由干涉波前表征的 Strehl、RMS 和峰谷误差。该条缺直接焦斑采样和 MTF。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-21",
+              "sourceIds": [
+                "sun_duv_si_2025",
+                "sun_duv_vor_2025"
+              ]
+            }
+          }
         }
       ],
-      "scope": "68项原始研究、313个器件/测量/系统配置、1369条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
+      "scope": "69项原始研究、320个器件/测量/系统配置、1377条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
