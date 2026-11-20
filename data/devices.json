@@ -2882,6 +2882,51 @@
       "scope": "以 DOI 作为完整字面查询，结果共 0 条。",
       "checked_on": "2026-11-20",
       "publication_source": "jiang_lapiam_pdf_2026"
+    },
+    {
+      "id": "hsiao_iru_2018",
+      "title": "Hsiao et al. (2018), Integrated Resonant Unit of Metasurfaces for Broadband Efficiency and Phase Manipulation",
+      "url": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/adom.201800031",
+      "kind": "peer_reviewed_paper",
+      "scope": "Wiley 正式摘要与题录，2018-04-18 正式在线。已核 420–650 nm 实测论述与 NA 0.124 样片的三项效率。全文下载未取得。",
+      "checked_on": "2026-11-20",
+      "doi": "10.1002/adom.201800031"
+    },
+    {
+      "id": "hsiao_iru_si_2018",
+      "title": "Wiley · Hsiao 2018 正式补件入口",
+      "url": "https://advanced.onlinelibrary.wiley.com/doi/suppl/10.1002/adom.201800031/supinfo/adom201800031-sup-0001-S1.pdf",
+      "kind": "publisher_supplement",
+      "scope": "期刊补件目录列 adom201800031-sup-0001-S1.pdf（994.3 KB）。精确文件 URL 在本机无头 Chrome 返回 403，内容待核。",
+      "checked_on": "2026-11-20",
+      "publication_source": "hsiao_iru_2018"
+    },
+    {
+      "id": "hsiao_iru_crossref_2018",
+      "title": "Crossref · Hsiao 2018 原刊摘要及引文",
+      "url": "https://api.crossref.org/works/10.1002/adom.201800031",
+      "kind": "bibliometric_index",
+      "scope": "出版方登记的摘要、题录与首次在线日期。2026-11-20 API is-referenced-by-count 为 81。",
+      "checked_on": "2026-11-20",
+      "publication_source": "hsiao_iru_2018"
+    },
+    {
+      "id": "hsiao_iru_openalex_2018",
+      "title": "OpenAlex · Hsiao 2018 引文与开放版本索引",
+      "url": "https://api.openalex.org/works/https://doi.org/10.1002/adom.201800031",
+      "kind": "bibliometric_index",
+      "scope": "2026-11-20 API cited_by_count 为 93。仅列 DOI 落地页，开放版本栏未列 PDF。",
+      "checked_on": "2026-11-20",
+      "publication_source": "hsiao_iru_2018"
+    },
+    {
+      "id": "hsiao_iru_reprint_2018",
+      "title": "PhotoniX · Hsiao 2018 原刊图版的许可转载",
+      "url": "https://link.springer.com/article/10.1186/s43074-022-00074-0#Fig9",
+      "kind": "figure_reproduction",
+      "scope": "Fig. 9a(III–VI)，图注明确归于引文 202 和 2018 Wiley-VCH。定位实物、轴向扫描、色散对照及焦斑，保留二级载体。",
+      "checked_on": "2026-11-20",
+      "publication_source": "hsiao_iru_2018"
     }
   ],
   "domains": {
@@ -163571,9 +163616,519 @@
                 "original_unit": "THz"
               }
             }
+          },
+        {
+          "id": "hsiao2018iru_na0124_summary",
+          "model": "Hsiao 2018 · 可见光消色差实物 · NA 0.124 · 汇总",
+          "study_id": "hsiao2018iru",
+          "specimen_id": "na0124",
+          "module": "",
+          "variant": "可见光消色差实物 · NA 0.124 · 汇总",
+          "evidence_type": "study",
+          "measurement_scope": "实物 NA、工作波段和作者公开图版的测量范围。",
+          "visible_light_use": true,
+          "values": {
+            "na": {
+              "value": 0.124,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句",
+              "note": "摘要将该 NA 与三项聚焦效率明确绑定。NA 的独立测法和误差待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 420,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句",
+              "note": "作者报告实测消色差工作波段下端。原始轴扫的完整取样序列待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ],
+              "spectral_sampling": "author_reported_band_from_spectral_tests"
+            },
+            "lambda_max_nm": {
+              "value": 650,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句",
+              "note": "作者报告实测消色差工作波段上端。400–667 nm 另为 IRU 库设计范围。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ],
+              "spectral_sampling": "author_reported_band_from_spectral_tests"
+            },
+            "diameter_um": {
+              "value": null,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句；正式全文及补件入口",
+              "note": "出版方已核材料未给可绑定此样片的实物口径。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "实物口径待核",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_si_2018"
+              ]
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句；正式全文及补件入口",
+              "note": "摘要没有给该镜的名义设计焦距，图中焦长曲线保留作定位。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "设计焦距待核",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_si_2018",
+                "hsiao_iru_reprint_2018"
+              ]
+            },
+            "psf_protocol": {
+              "value": "转载图给轴向多面焦斑及 x 向剖面",
+              "source": "hsiao_iru_reprint_2018",
+              "location": "原刊图版转载，PhotoniX Fig. 9a(IV–VI)，图注归于原作引文 202",
+              "note": "IV 图的聚焦图标注 420、500、650 nm，z 以图内零位为参照。横剖面 x 单位 μm，纵轴为强度（a.u.）。IV 图与三个 NA 之一的精确归属、绝对零面、放大率、采样及光源条件待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "hsiao_iru_reprint_2018",
+                "hsiao_iru_2018"
+              ],
+              "figure_lens_assignment": "unresolved",
+              "transverse_section_direction": "x",
+              "illustrated_wavelengths_nm": [
+                420,
+                500,
+                650
+              ],
+              "evaluation_plane": null,
+              "detector_sampling_um": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "hsiao_iru_reprint_2018",
+              "location": "原刊图版转载，PhotoniX Fig. 9a(IV–VI)，图注归于原作引文 202",
+              "note": "V 图给波长（nm）对焦距（μm）曲线，实验点没有逐点数值标签，原始取峰及参考面待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "实测焦位图可查，逐点数值待核",
+              "sourceIds": [
+                "hsiao_iru_reprint_2018",
+                "hsiao_iru_2018"
+              ]
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句；原刊图版转载，PhotoniX Fig. 9a(IV–VI)，图注归于原作引文 202",
+              "note": "作者摘要报告焦距稳定，V 图上半组为消色差器件，下半组为色散对照。原始逐色焦位及带内最大互差待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "残余轴向焦移待核",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_reprint_2018",
+                "hsiao_iru_crossref_2018"
+              ]
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "hsiao_iru_reprint_2018",
+              "location": "原刊图版转载，PhotoniX Fig. 9a(IV–VI)，图注归于原作引文 202",
+              "note": "VI 图给效率和宽度，FWHM 横轴单位 μm。逐波长实测宽度、拟合规则及测量平面待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "FWHM 曲线可查，逐点数值待核",
+              "sourceIds": [
+                "hsiao_iru_reprint_2018",
+                "hsiao_iru_2018"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "焦区积分窗口和参考功率待核",
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句；出版方补件目录",
+              "note": "摘要给聚焦效率和所属谱点。实际评价面、积分窗的尺寸和形状、功率分母、偏振与重复数待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "efficiency_definition_status": "not_available_in_checked_abstract",
+              "integration_shape": null,
+              "integration_radius_um": null,
+              "integration_diameter_um": null,
+              "evaluation_plane": null,
+              "denominator": null,
+              "polarization": null,
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018",
+                "hsiao_iru_si_2018"
+              ]
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句；出版方补件目录；原刊图版转载，PhotoniX Fig. 9a(IV–VI)，图注归于原作引文 202",
+              "note": "公开已核摘要和图版未给 MTF 数表、原始 PSF 或尺度校准。正式主文及补件待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "PSF 数组／MTF 待核",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_si_2018",
+                "hsiao_iru_reprint_2018"
+              ]
+            },
+            "strehl": {
+              "value": null,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句；出版方补件目录",
+              "note": "已核证据未给该样片可复核的实验 Strehl 数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-20",
+              "display": "Strehl 待核",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_si_2018"
+              ]
+            }
           }
+        },
+        {
+          "id": "hsiao2018iru_na0124_eff_420",
+          "model": "Hsiao 2018 · 可见光消色差实物 · NA 0.124 · 420 nm",
+          "study_id": "hsiao2018iru",
+          "specimen_id": "na0124",
+          "module": "",
+          "variant": "可见光消色差实物 · NA 0.124 · 420 nm",
+          "evidence_type": "study",
+          "measurement_scope": "同一枚实物的一条聚焦效率测量。",
+          "visible_light_use": true,
+          "values": {
+            "na": {
+              "value": 0.124,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句",
+              "note": "摘要将该 NA 与三项聚焦效率明确绑定。NA 的独立测法和误差待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 420,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句",
+              "note": "作者报告实测消色差工作波段下端。原始轴扫的完整取样序列待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ],
+              "spectral_sampling": "author_reported_band_from_spectral_tests"
+            },
+            "lambda_max_nm": {
+              "value": 650,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句",
+              "note": "作者报告实测消色差工作波段上端。400–667 nm 另为 IRU 库设计范围。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ],
+              "spectral_sampling": "author_reported_band_from_spectral_tests"
+            },
+            "wavelength_nm": {
+              "value": 420,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句",
+              "note": "原摘要明确将该聚焦效率测试波长绑定到同一 NA 0.124 器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ]
+            },
+            "efficiency_lambda_nm": {
+              "value": 420,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句",
+              "note": "原摘要明确将该聚焦效率测试波长绑定到同一 NA 0.124 器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 26.31,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句",
+              "note": "作者公开报告的 420 nm 聚焦效率。百分数按摘要原精度保留。积分范围及功率分母待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "焦区积分窗口和参考功率待核",
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句；出版方补件目录",
+              "note": "摘要给聚焦效率和所属谱点。实际评价面、积分窗的尺寸和形状、功率分母、偏振与重复数待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "efficiency_definition_status": "not_available_in_checked_abstract",
+              "integration_shape": null,
+              "integration_radius_um": null,
+              "integration_diameter_um": null,
+              "evaluation_plane": null,
+              "denominator": null,
+              "polarization": null,
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018",
+                "hsiao_iru_si_2018"
+              ]
+            }
+          }
+        },
+        {
+          "id": "hsiao2018iru_na0124_eff_550",
+          "model": "Hsiao 2018 · 可见光消色差实物 · NA 0.124 · 550 nm",
+          "study_id": "hsiao2018iru",
+          "specimen_id": "na0124",
+          "module": "",
+          "variant": "可见光消色差实物 · NA 0.124 · 550 nm",
+          "evidence_type": "study",
+          "measurement_scope": "同一枚实物的一条聚焦效率测量。",
+          "visible_light_use": true,
+          "values": {
+            "na": {
+              "value": 0.124,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句",
+              "note": "摘要将该 NA 与三项聚焦效率明确绑定。NA 的独立测法和误差待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 420,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句",
+              "note": "作者报告实测消色差工作波段下端。原始轴扫的完整取样序列待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ],
+              "spectral_sampling": "author_reported_band_from_spectral_tests"
+            },
+            "lambda_max_nm": {
+              "value": 650,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句",
+              "note": "作者报告实测消色差工作波段上端。400–667 nm 另为 IRU 库设计范围。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ],
+              "spectral_sampling": "author_reported_band_from_spectral_tests"
+            },
+            "wavelength_nm": {
+              "value": 550,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句",
+              "note": "原摘要明确将该聚焦效率测试波长绑定到同一 NA 0.124 器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ]
+            },
+            "efficiency_lambda_nm": {
+              "value": 550,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句",
+              "note": "原摘要明确将该聚焦效率测试波长绑定到同一 NA 0.124 器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 19.71,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句",
+              "note": "作者公开报告的 550 nm 聚焦效率。百分数按摘要原精度保留。积分范围及功率分母待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "焦区积分窗口和参考功率待核",
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句；出版方补件目录",
+              "note": "摘要给聚焦效率和所属谱点。实际评价面、积分窗的尺寸和形状、功率分母、偏振与重复数待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "efficiency_definition_status": "not_available_in_checked_abstract",
+              "integration_shape": null,
+              "integration_radius_um": null,
+              "integration_diameter_um": null,
+              "evaluation_plane": null,
+              "denominator": null,
+              "polarization": null,
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018",
+                "hsiao_iru_si_2018"
+              ]
+            }
+          }
+        },
+        {
+          "id": "hsiao2018iru_na0124_eff_650",
+          "model": "Hsiao 2018 · 可见光消色差实物 · NA 0.124 · 650 nm",
+          "study_id": "hsiao2018iru",
+          "specimen_id": "na0124",
+          "module": "",
+          "variant": "可见光消色差实物 · NA 0.124 · 650 nm",
+          "evidence_type": "study",
+          "measurement_scope": "同一枚实物的一条聚焦效率测量。",
+          "visible_light_use": true,
+          "values": {
+            "na": {
+              "value": 0.124,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句",
+              "note": "摘要将该 NA 与三项聚焦效率明确绑定。NA 的独立测法和误差待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ]
+            },
+            "lambda_min_nm": {
+              "value": 420,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句",
+              "note": "作者报告实测消色差工作波段下端。原始轴扫的完整取样序列待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ],
+              "spectral_sampling": "author_reported_band_from_spectral_tests"
+            },
+            "lambda_max_nm": {
+              "value": 650,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句",
+              "note": "作者报告实测消色差工作波段上端。400–667 nm 另为 IRU 库设计范围。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ],
+              "spectral_sampling": "author_reported_band_from_spectral_tests"
+            },
+            "wavelength_nm": {
+              "value": 650,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句",
+              "note": "原摘要明确将该聚焦效率测试波长绑定到同一 NA 0.124 器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ]
+            },
+            "efficiency_lambda_nm": {
+              "value": 650,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句",
+              "note": "原摘要明确将该聚焦效率测试波长绑定到同一 NA 0.124 器件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ]
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 20.37,
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句",
+              "note": "作者公开报告的 650 nm 聚焦效率。百分数按摘要原精度保留。积分范围及功率分母待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-20",
+              "calculation_origin": "authors",
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ]
+            },
+            "efficiency_protocol": {
+              "value": "焦区积分窗口和参考功率待核",
+              "source": "hsiao_iru_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句；出版方补件目录",
+              "note": "摘要给聚焦效率和所属谱点。实际评价面、积分窗的尺寸和形状、功率分母、偏振与重复数待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-20",
+              "efficiency_definition_status": "not_available_in_checked_abstract",
+              "integration_shape": null,
+              "integration_radius_um": null,
+              "integration_diameter_um": null,
+              "evaluation_plane": null,
+              "denominator": null,
+              "polarization": null,
+              "sourceIds": [
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018",
+                "hsiao_iru_si_2018"
+              ]
+            }
+          }
+        }
       ],
-      "scope": "63项原始研究、307个器件/测量/系统配置、1359条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
+      "scope": "64项原始研究、308个器件/测量/系统配置、1363条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",

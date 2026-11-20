@@ -18,7 +18,7 @@ test('line-lens geometry, bandwidth and axial steps retain their dimensions with
 
 test('three directly reported x widths and focal-line efficiencies cannot become transverse y widths, simulated efficiencies or circular encircled energy',()=>{
  for(const [w,fw,eta]of [[1300,27.5,15],[1550,29,10],[1800,25,21]]){const v=get('axial_'+w);assert.equal(v.fwhm_x_um.value,fw);assert.equal(v.fwhm_x_um.basis,'measured');assert.equal(v.fwhm_y_um.value,null);assert.equal(v.efficiency_at_lambda_pct.value,eta);assert.equal(v.efficiency_at_lambda_pct.basis,'measured');assert.equal(v.efficiency_lambda_nm.value,w);assert.match(v.fwhm_x_um.display,/作者稿正文直报/);assert.match(v.efficiency_at_lambda_pct.reading_version,/prepublication/);assert.equal(v.efficiency_band_mean_pct,undefined);assert.equal(v.efficiency_protocol.integration_geometry,'focal_line_waist');assert.equal(v.efficiency_protocol.width_definition,'full_width_at_1_over_e_squared');assert.deepEqual(v.efficiency_protocol.denominator_geometry_um,{x:600,y:600});assert.match(v.efficiency_protocol.note,/y向积分长度.*未齐/);}
- assert.equal(axisPoints(rows,'wavelength_nm','fwhm_x_um').length,3);assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,3);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,165);
+ assert.equal(axisPoints(rows,'wavelength_nm','fwhm_x_um').length,3);assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,3);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,168);
 });
 
 test('the uncorrected 1690 nm focus is a direct author-text value while its fixed-plane signed offset is an atlas calculation',()=>{
