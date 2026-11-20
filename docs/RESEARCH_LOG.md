@@ -1413,3 +1413,11 @@ Tang 2026 正式上线为 2026-06-13。正文预览所见为实物宽带成像�
 ## 2026-11-21-173 · Sun 2025 长波红外折超实物
 
 一篇 2025 年 3 月中科院大类一区原始研究，新增七个配置及八条记录。Fig. 4f 的 BaF₂ 混合组用 38 mm 归一口径报告约 F/1.5，并显示色散减弱。V5 与 V6 的 40 mm 裸镜、80 mm 设计焦距及 Strehl 0.9024／0.93／0.97 各自绑定原文波长与测量。V5 的 CaF₂ 和 V5/V6 的 BaF₂ 成像另列。Southampton 数据 DOI 登记有效，ePrints 文件入口目前返回 403，逐谱点最佳焦位、残余焦差与原始 PSF／MTF 留空。累计 69 篇、320 个器件及测量配置、1377 条，可见光 51 篇、861 条。[本批核验](SUN_LWIR_HYBRID_EVIDENCE_2026-11-21.md)
+
+## 2026-11-21-174 · Sun 上线验收及 Chen 2025 正式资料
+
+0.3.77 经 [PR #232](https://github.com/SelinLee/lens-evidence-atlas/pull/232) 合并为 `590813e9f02c728b0aa00948bf45b45283c0aadd`。PR 校验 44770137531、主线校验 44770283238 与 [Pages 44770283229](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44770283229) 成功。359 项测试通过，252 个公开文件逐项哈希一致，`devices-data.js` SHA-256 为 `752410b4306168bfb83334eddb05b7b587c06e6d0e123be09bed8c0df16bf79b`。本机独立无头 Chrome 验收 69 篇、1377 条，可见光 51 篇、861 条。确认 Sun 的七组八条、裸镜 Strehl 三个散点、混合组焦位和残余焦差无散点、红外被可见光筛除、CSV 和六视口。正式 PDF、补件、Fig. 4 和 DataCite 入口均可达，数据格和原始出处可往返。[本批核验](SUN_LWIR_HYBRID_EVIDENCE_2026-11-21.md)
+
+Hu 2016 的作者发表页可达，列 DOI 与原刊图文摘要。ACS 全文、Figshare 公开资源及标题检索、Northwestern 机构目录入口仍未返回可核的正文或补件，保留经典候选，继续追两色与三色分别有没有同一器件的实测。[作者发表页](https://www.odomgroup.northwestern.edu/nanophotonics-nano-optics-publications/) · [原刊](https://pubs.acs.org/doi/10.1021/acsnano.6b05855)
+
+Chen 2025 的正式 PDF 与 CityU 机构副本已取得。Fig. 3b 给八个频点的实测轴向场，(f) 对照同频点的宽度和效率。已从 PMC 开放归档取得正式 DOCX（26428744 字节，SHA-256 `c0b618b9fa91873aa1887413d2dc42346f966197410f8220eacdde5ce87553ec`）。补件 Note 3 和 Fig. S11 提供同一透镜的测量条件和横向场入口。正式数据声明指向正文及补件，DataCite 精确关联 DOI 为零。继续核峰位参考面、各谱点焦位与效率积分口径后录入。会话目标保持开启。[正式主文](https://www.nature.com/articles/s41467-024-55624-w.pdf) · [正式补件](https://pmc-oa-opendata.s3.amazonaws.com/PMC11699036.1/41467_2024_55624_MOESM1_ESM.docx)
