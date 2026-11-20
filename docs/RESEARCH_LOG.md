@@ -1365,3 +1365,11 @@ Jiang 的 Figs. 5–6 各报告 0.80–1.20 THz、间隔 0.05 THz 的九点。�
 ## 2026-11-20-165 · Hsiao 2018 可见光整合共振实物
 
 按 Wiley 正式摘要和 Crossref 登记录入 1 篇、1 枚 NA 0.124 实物及 4 条记录。作者报告 420–650 nm 消色差实验，420／550／650 nm 的聚焦效率为 26.31%／19.71%／20.37%。效率积分范围、功率分母、参考面、偏振及重复数待核，与其他工作归一化协议的相容性待核。正式主文和补件返回 403。转载图只定位光学样片、焦位曲线、两种额外 NA、色散对照与焦斑；逐色焦位、焦差、口径、设计焦距、FWHM、Strehl 和 MTF 仍留空。累计 64 篇、308 配置、1363 条，可见光 50 篇、859 条。[本批核验](HSIAO_2018_VISIBLE_IRU_REVIEW_2026-11-20.md)
+
+## 2026-11-20-166 · Hsiao 上线验收及 He 2026 补件定位
+
+0.3.73 经 [PR #224](https://github.com/SelinLee/lens-evidence-atlas/pull/224) 合并为 `4188b09f97f56ac97603f0390b0f359e94b1d68c`。PR 校验 44757106124、主线校验 44757240051 和 [Pages 44757239955](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44757239955) 成功。353 项测试通过，247 个发布文件逐项哈希一致，`devices-data.js` SHA-256 为 `15a34bfb70e9165aa2e2db9c4abfd87a6b761fbf8553ea2ea441ef3ed7100671`。独立无头 Chrome 验收 64 篇、1363 条，可见光 50 篇、859 条，Hsiao 一配置四条。复核三个效率散点、焦位空轴、CSV、六个视口、数据格到参考文献往返。Crossref 登记摘要与原图转载可访问，Wiley 主文和补件链接返回 403。CLEO 同组摘要称其三只镜覆盖 400–650 nm，最终期刊摘要明报 420–650 nm，两版本之间的样片与测量批次匹配待核。[CLEO 题录](https://doi.org/10.1364/CLEO_AT.2018.JTh2A.70)
+
+接续 He 2026，DOI `10.1021/acsphotonics.5c02219`，2026-02-17 正式在线，ACS Photonics 2025 年 3 月中科院物理与天体物理大类一区。原刊说明双螺旋 PSF 深度读出在 1200–1400 nm 波段做消色差，补件目录列不同深度的实测 PSF 旋转角与标准差。作者报告的 14.39 倍是能量利用效率提升，具体归一与对照待核。补件 DOI 重定向到 `ph5c02219_si_001.pdf`，在本机无头 Chrome 返回 403，主文 PDF 同样返回 403。下一批先取补件，核逐色与深度参考的残余旋角以及器件的实际几何。[原刊与补件目录](https://pubs.acs.org/doi/10.1021/acsphotonics.5c02219) · [补件 DOI](https://doi.org/10.1021/acsphotonics.5c02219.s001) · [分区版本](https://m.ais.cn/journal/database/9328) · [武大馆藏分区](https://topj.lib.whu.edu.cn/show.asp?cat=sci&id=13654)
+
+另排查 Tang 2026 折超热成像，作者图注标明 8.0／10.1／12.6 μm 单色实测 MTF 和三场点的宽带 MTF。主文预览仅核到宽带成像与校正器结构，具体的色散校正设计、固定像面和数表仍待核。Hsu 2026 另篇全硅折超双焦是 2025 年表材料科学大类二区，先列检索记录。会话目标保持开启。[Tang 原刊](https://onlinelibrary.wiley.com/doi/10.1002/lpor.71431) · [图注预览](https://www.researchgate.net/publication/407021593_Hybrid_Meta-Optics_Enable_Large_Spatial-Spectral-Bandwidth_Thermal_Imaging_for_Augmented_Reality_Application) · [Hsu 原刊](https://advanced.onlinelibrary.wiley.com/doi/10.1002/adom.71689) · [分区版本](https://www.ais.cn/journal/database/9009)
