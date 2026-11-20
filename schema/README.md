@@ -131,3 +131,7 @@
 `relative_fluorescence_collection_pct` 使用参考物镜收集到的荧光为分母，绑定 `efficiency_protocol` 中的物镜型号、NA、激发条件与积分范围。`fluorescence_collection_spectral_width_nm` 保存作者由测得荧光谱报告的带宽，未知谱宽判据和端点保留空值。两项属于宽谱采集，`wavelength_nm` 留空，并另存设计参考中心。
 
 `system_lateral_psf_fwhm_um` 和 `system_axial_psf_fwhm_um` 保存作者从宽谱发光成像所求的 X／Z 半高全宽。`psf_protocol` 关联激发波长、收集滤光及扫描方式，`spectral_sampling` 使用 `broadband_emission`。逐波长字段留空，作者拟合依据与发光样品条件随表格保留。
+
+`vortex_inner_fwhm_um` 保存实测环形光斑的内侧两个半高交点间距，绑定波长、偏振及同向 `psf_protocol`。`reverse_collection_efficiency_pct` 保存从样品侧送光后测得的收集功率比，绑定测量波长、镜后收集距离、参考物镜、功率分母及积分范围。环内半高宽度和反向收集功率比各用独立指标。
+
+`imaging_feature_width_um` 保存有限尺寸样品在成像系统中的横截线宽度。`width_definition` 区分作者直报的 `fwhm` 与半高定义未明的 `author_fit_width`。记录拟合对象、截线方向、耗尽光条件和扫描步长。实测样品线宽和镜片焦斑 PSF 各有自己的测量记录。
