@@ -1315,3 +1315,11 @@ Arbabi 2016 已取得 Caltech 与 PMC 开放存档的正式版 PDF，均为 9533
 ## 2026-11-20-157 · Ou 2020 双偏振中红外消色差实物
 
 经 Crossref 151 次及 OpenAlex 158 次纳入经典实测工作。核 PMC 正式主文、补件、文件清单及旋转偏振视频。两只实物、两个正交偏振和各六个滤片中心共 24 条测试，加 2 条汇总。两镜均为 200 μm 设计焦距；BAFOV 口径 200 μm、空气侧几何 NA 约 0.447（本库计算）。BAFS 的 SEM 只有比例尺，口径留空。轴扫步长 2.5 μm、器件面 z=0。按发表状态区分 5000 nm 模拟点、六个实际滤片中心与两套焦斑模式。作者报 5% 与 1%–6.5%，原文实测、模拟同图，未明确汇总量来自哪条序列，两器件的精确实测轴峰和百分数未作散点。BAFS 实测最高偏振隔离功率比 21 单列，分母为镜像区域功率。累计 60 篇、299 配置、1285 条。逐色实际轴峰、焦斑宽度、色移、效率、Strehl 和 MTF 原始数值待核。[本批核验](OU_2020_MWIR_POLARIZATION_REVIEW_2026-11-20.md)
+
+## 2026-11-20-158 · Ou 上线验收及 Shi 四波长原始数据定位
+
+0.3.68 经 [PR #216](https://github.com/SelinLee/lens-evidence-atlas/pull/216) 合并为 `1f00b8c0c18ffc1212c870ac7ef7f62d53be1903`。PR 校验 44745209465、主线校验 44745371700 和 [Pages 44745371626](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/44745371626) 成功。344 项测试和 243 个公开文件的逐个 SHA-256 比对通过。`devices-data.js` 为 `729912b071a6e20159029f9098de65cc12f58b932da739181e5ca8e12b5b41b0`。独立无头 Chrome 核实 60 篇、1285 条及可见光 48 篇、842 条，Ou 自身占两配置、26 条，可见光筛选隐藏全部。设计焦距 200 μm 对应独立偏振隔离比 21，实测焦位轴空态、几何散点、CSV、分享重载、原文双向引用和六种视口通过。主文、补件线上字节复核与提取版本一致。
+
+可见光方向接续 Shi 2018 `10.1021/acs.nanolett.7b05458`。2026-11-20 查 Crossref 224 次、OpenAlex 239 次，沿 NUS 作者组取得 2498730 字节的八页正式 PDF，SHA-256 `1213cbd1112936ca696b0cc262b37b05c13e8a0d3771925783a1ef2ab524120d`。p.5 明报口径 400 μm、NA 0.2，Fig. 4 四谱点 460／540／567／700 nm 的实测焦长分别为 979／985／976／982 μm，Figs. 4e–h 的 Strehl 为 0.86／0.91／0.81／0.92，实验效率为 17.7%／16.0%／21.4%／22.6%。近焦区扫描步长 3 μm，宽域扫描 10 μm。下一批核 MAM 与两只 WCBG 的实际参考面、效率归一及独立归属。会话目标保持开启。[Shi 主文 Fig. 4](https://www.ece.nus.edu.sg/stfpage/eleqc/NL18_Shi.pdf#page=5) · [Crossref](https://api.crossref.org/works/10.1021/acs.nanolett.7b05458) · [OpenAlex](https://api.openalex.org/works/https://doi.org/10.1021/acs.nanolett.7b05458)
+
+同组 Ou 2021 有实制 BAPIM，在待追踪材料中保留。Wiley 列补件 PDF 及六个中心波长的视频，主文和补件在本机无头 Chrome 返回 403，DataCite 精确关联 0 项。2026 年两篇相邻题材也已核原文，Martin-Monier 的 940 nm 折射／超表面实物实验针对单色像差，Wang 的 445／450 nm Plan meta-objective 刻意利用轴向色散获取欠焦和过焦图，两者留在检索记录。[Ou 2021 目录](https://onlinelibrary.wiley.com/doi/10.1002/lpor.202100020) · [Martin-Monier 2026 正式版](https://pmc-oa-opendata.s3.amazonaws.com/PMC13683382.1/PMC13683382.1.pdf) · [Wang 2026 正式版](https://pmc-oa-opendata.s3.amazonaws.com/PMC12816609.1/PMC12816609.1.pdf)
