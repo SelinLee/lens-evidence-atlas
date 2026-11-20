@@ -1263,3 +1263,9 @@ Feng 2022 新增课题组发布的双层器件表面实拍、纳米柱结构说�
 Barulin 补表沿引文核到 Jiang 2023 的四离散可见谱点实制器件，2026-11-20 查 Crossref 45 次、OpenAlex 47 次，正式上线超三年，留检索记录。Ji 参考文献中的 Lin 2021 近红外折超混合镜以 800／1040 nm 验证焦差从 30 μm 降至 1 μm，2026-11-20 查 Crossref 32 次、OpenAlex 35 次，留检索记录。新近的 Park 2026 可见光双层折超混合镜在 2025 年 3 月升级版为材料科学大类二区，2026-11-20 查 Crossref 与 OpenAlex 均为 0 次，保留既有检索任务。[Jiang 正式原文](https://doi.org/10.1002/adom.202300077) · [Jiang 引用](https://api.openalex.org/works/https://doi.org/10.1002/adom.202300077) · [Lin 正式主文](https://pmc.ncbi.nlm.nih.gov/articles/PMC8442248/) · [Lin 引用](https://api.crossref.org/works/10.1063/5.0059874) · [Park 期刊分区](https://topj.lib.whu.edu.cn/show.asp?cat=sci&id=13648) · [Park 引用](https://api.crossref.org/works/10.1021/acs.nanolett.6c02688)
 
 后续优先补 Tang 2026 两只实物的谱点、主焦与伴焦和 MTF 测法。原刊开放摘要及补件目录列场图、MTF 与聚焦效率。Crossref 核补件 DOI 可登记。独立无头 Chrome 的 ACS 直链、DOI 跳转与 Figshare 的两种 DOI 检索返回 403，DataCite 组件查询返回 404。还需经作者或机构档案取补件和主文实验段。会话目标保持开启。[正式文章](https://doi.org/10.1021/acsphotonics.6c00399) · [补件 DOI 元数据](https://api.crossref.org/works/10.1021/acsphotonics.6c00399.s001)
+
+## 2026-11-20-149 · Zhou 2018 双层实物与固定物距成像
+
+由 Chang 技术引文追到 Zhou 2018，核 ACS 题录、DOE OSTI 存档接收稿和 Fig. 4b,d,g,h。2026-11-20 查 Crossref 274 次、OpenAlex 294 次。500 μm 实物，名义焦距 540 μm、NA 0.42。1180／1680 nm 为离散实测点，作者报告共同主焦距。两点实测 x 向 FWHM 1.74／2.57 μm，效率 38%／52%。效率分子为像方 8×FWHM 直径虹膜中的功率，分母为移除样片、全开虹膜的总入射功率。主焦区图不提供逐色数值。记录 267 张轴扫、1.13 μm 轴向间距及 1180 nm 的弱次焦。固定物距靶图作为另一个系统配置。新增 1 篇、2 配置、4 条，累计 57 篇、291 配置、1239 条。横向物方采样、轴扫原始切片及 MTF 待查。补件组件已核登记，直连返回 403。[核验](ZHOU_2018_NIR_DOUBLET_REVIEW_2026-11-20.md) · [原作](https://www.osti.gov/servlets/purl/1491299#page=20)
+
+接续核 Arbabi 2016 的分区和交织式近红外双波长实物。已在 PMC 原作定位 Fig. 6 与 Tables 1–2，均有两波长、两只实物的测量；样品共轭、效率分母、引用数及实际轴向残差继续核查。[PMC 原作](https://pmc.ncbi.nlm.nih.gov/articles/PMC5011735/)

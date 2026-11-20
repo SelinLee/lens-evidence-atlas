@@ -20,7 +20,7 @@ test('direct blue and green FWHM values retain micrometres while red main-versus
 });
 test('measured RGB efficiency range and incomplete beam-waist ROI never become assigned per-channel efficiencies, a mean or a presumed circular 1/e² aperture',()=>{
  for(const id of ['rgb_summary','rgb_450','rgb_550','rgb_650','rgb_residual']){const v=get(id);assert.equal(v.efficiency_at_lambda_pct.value,null);assert.match(v.efficiency_at_lambda_pct.display,/5.8–8.7%/);assert.equal(v.efficiency_band_mean_pct,undefined);assert.equal(v.efficiency_protocol.integration_geometry,null);assert.equal(v.efficiency_protocol.width_definition,null);assert.equal(v.efficiency_protocol.encircled_fraction_approx,.86);assert.match(v.efficiency_protocol.note,/不因86%而假定1\/e²圆圈/);}
- assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,0);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,148);
+ assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,0);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,150);
  const m=get('pfzp_model');assert.equal(m.efficiency_at_lambda_pct.value,null);assert.equal(m.efficiency_at_lambda_pct.basis,'model');assert.match(m.efficiency_at_lambda_pct.note,/40%.*4倍.*模拟/);
 });
 test('plotted focal positions and image acquisition planes do not become exact measured focal distances or zero residual shifts',()=>{
