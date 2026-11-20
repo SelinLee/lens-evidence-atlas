@@ -1311,3 +1311,7 @@ Arbabi 2016 已取得 Caltech 与 PMC 开放存档的正式版 PDF，均为 9533
 同时筛到 Dai 2021，五波长可见光实测，2026-11-20 查 Crossref 54 次、OpenAlex 57 次。补件登记 DOI `10.1021/acsphotonics.1c00411.s001`。本机无头 Chrome 的主文、补件直链与 Figshare 检索均返回 403，重庆大学组新闻入口为 412，DataCite 精确 DOI 关联为 0。已知主文可比条件尚不足，继续查正式材料。同期核 Zhang 2026 `10.1002/adom.71446`，正式摘要报告全波模拟与容差模型，当前未查到器件实测，不纳入本批。[Dai 原文入口](https://pubs.acs.org/doi/10.1021/acsphotonics.1c00411) · [Dai 补件元数据](https://api.crossref.org/works/10.1021/acsphotonics.1c00411.s001) · [Zhang 正式摘要](https://advanced.onlinelibrary.wiley.com/doi/10.1002/adom.71446)
 
 接着核查已取得主文及补件的 Ou 2020。Fig. 3C 与 Fig. 5D 的实测横轴只有 3500／3750／4000／4250／4500／4750 nm 六个滤片中心，补件 Figs. S4–S7 的 5000 nm 为模型。主文 p.4 明报 BAFOV 直径 200 μm、两种偏振的设计 f 均为 200 μm。BAFS 的两通道 f 也均为 200 μm，出射角分别 −5.5° 和 +5.5°。补件 Figs. S4–S7 的偏振剖面、模型残差与主文测量分开。继续查 BAFS 口径、两通道绝对峰位和原始焦斑采样；偏振隔离的功率分母为对称位置圆区，单独保留协议。会话目标保持开启。[Ou 正式主文](https://pmc-oa-opendata.s3.amazonaws.com/PMC7486104.1/PMC7486104.1.pdf#page=4) · [Ou 补件](https://pmc-oa-opendata.s3.amazonaws.com/PMC7486104.1/abc0711_SM.pdf)
+
+## 2026-11-20-157 · Ou 2020 双偏振中红外消色差实物
+
+经 Crossref 151 次及 OpenAlex 158 次纳入经典实测工作。核 PMC 正式主文、补件、文件清单及旋转偏振视频。两只实物、两个正交偏振和各六个滤片中心共 24 条测试，加 2 条汇总。两镜均为 200 μm 设计焦距；BAFOV 口径 200 μm、空气侧几何 NA 约 0.447（本库计算）。BAFS 的 SEM 只有比例尺，口径留空。轴扫步长 2.5 μm、器件面 z=0。按发表状态区分 5000 nm 模拟点、六个实际滤片中心与两套焦斑模式。作者报 5% 与 1%–6.5%，原文实测、模拟同图，未明确汇总量来自哪条序列，两器件的精确实测轴峰和百分数未作散点。BAFS 实测最高偏振隔离功率比 21 单列，分母为镜像区域功率。累计 60 篇、299 配置、1285 条。逐色实际轴峰、焦斑宽度、色移、效率、Strehl 和 MTF 原始数值待核。[本批核验](OU_2020_MWIR_POLARIZATION_REVIEW_2026-11-20.md)
