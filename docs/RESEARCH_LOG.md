@@ -1467,3 +1467,9 @@ Cai 2019 的可见光原稿已由 OSTI 取得，Crossref 20、OpenAlex 21 次（
 ## 2026-11-22-183 · Zhao 太赫兹实验与 Yuan 可见光三色原始证据
 
 新增两篇经典原始研究、两个器件配置和七条记录。Zhao 的原刊复载图注确认 2.54 THz 单频、实际焦位的轴向标记及 x 和 y 方向宽度曲线。录入设计 D、NA、f，分开 2.29–2.70 THz 设计范围与校方 2.4–2.6 THz 实验验证。Yuan Fig. 5 用同件 40 μm 金膜掩模在 10 μm 目标面同时聚焦 405／532／633 nm。录入三色宽度及误差、焦斑能量比例、补件的测量光路和作者数据 DOI。两篇逐谱最佳焦位、残余焦差及原始 MTF 数据待补。累计 76 篇、340 配置、1458 条，可见光 54 篇、894 条。[本批核验](ZHAO_YUAN_SUPEROSCILLATORY_EVIDENCE_2026-11-22.md)
+
+## 2026-11-22-184 · Zhao 与 Yuan 上线验收，Lin 2025 厘米级可见光原文
+
+0.3.82 经 [PR #242](https://github.com/SelinLee/lens-evidence-atlas/pull/242) 合并为 `7bd54173f41bc08be2c84d633c2019119944655a`。PR 校验 45038177545、主线校验 45038266734 与 [Pages 45038266725](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/45038266725) 成功。367 项测试和 259 个公开构建文件逐项核对通过，`devices-data.js` SHA-256 为 `89662329723d7c8d9799c06dbea95103a5df8148653e112f8af4328926a3f622`。独立无头 Chrome 复核 76 篇、1458 条及可见光 54 篇、894 条。Zhao 单频 2.54 THz／118.11 μm 读数、原刊图注关联及可见光筛除通过，图注详情本机直连 403。Yuan 五条记录的三色宽度及效率散点、同开三色、CSV、引用往返和六视口通过。正式 PDF 和补件 DOCX 经线上链接下载后哈希相符，DataCite 关联可达。逐色轴峰图未生成散点。[本批核验](ZHAO_YUAN_SUPEROSCILLATORY_EVIDENCE_2026-11-22.md)
+
+下一篇核 Lin 2025 厘米级全可见超临界透镜。Crossref 和期刊 p3220 确认 2025-10-31 正式上线，2025 年 3 月中科院物理与天体物理大类一区。期刊复载正文 §2 给 10.008 mm 名义设计直径和 50 mm 设计焦距，Fig. 4 实测七个 400–700 nm 谱点并逐一报告 FWHM 的 λ／NA 系数，Appendix B 给 1 μm 轴向步进。实测相对于理论的最大焦距差为低于 1%，精确权重和各谱点最佳焦位仍需原图或数组。页末数据声明为合理请求。Optica PDF 入口返回验证页，Chinese Laser Press 候选直链证书校验失败，DataCite 精确 DOI 关联零项。后续优先核该一区可见光实物，不将较短端实测宽度简化为摘要中的统一亚衍射比值。会话目标保持开启。[原刊](https://doi.org/10.1364/PRJ.569751) · [出版全文复载](https://www.researchgate.net/publication/394827904_Centimeter-scale_achromatic_supercritical_lens) · [武汉大学图书馆分区](https://topj.lib.whu.edu.cn/show.asp?cat=sci&id=12565)
