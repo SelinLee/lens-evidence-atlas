@@ -10,9 +10,9 @@ const added=lens.rows.filter(r=>studies.includes(r.study_id));
 const get=id=>lens.rows.find(r=>r.id===id).values;
 
 test('four supplied studies are deduplicated across versions, supplements and spectral rows',()=>{
- assert.equal(added.length,65);assert.equal(new Set(added.map(r=>r.study_id)).size,4);
+ assert.equal(added.length,78);assert.equal(new Set(added.map(r=>r.study_id)).size,4);
  assert.equal(new Set(added.map(r=>r.study_id+'/'+r.specimen_id)).size,13);
- assert.equal(lens.rows.length,1472);assert.equal(new Set(lens.rows.map(r=>r.study_id)).size,77);
+ assert.equal(lens.rows.length,1485);assert.equal(new Set(lens.rows.map(r=>r.study_id)).size,77);
  assert.ok(!added.some(r=>/arxiv|proxy/i.test(r.study_id)));
  assert.equal(data.sources.length,395);assert.ok(data.sources.filter(s=>/balli_|lin_spdc|chang_dispersion|choi_rgb/.test(s.id)&&!s.id.includes('_cloud')).every(s=>s.checked_on===(s.id.startsWith('balli_haml_')?'2026-11-19':'2026-11-14')&&s.scope));
 });
@@ -37,7 +37,7 @@ test('Balli primary source data retain four measured devices, exact efficiency s
   ['merged40',[40,52,60,72,73,72,73,74,83],[4.4,4.9,5.5,5.8,6.1,6.3,6.9,7.3,7.6]],
   ['merged80',[48,51,61,69,70,71,73,72,75],[8.7,9.5,10.2,10.9,12,12.4,13.1,13.5,13.8]],
   ['air40',[23,25,31,34,32,27,26,18,26],[2,1.9,2.2,2.2,2.2,2.8,2.7,2.7,2.9]]]){
-  const rows=added.filter(r=>r.study_id==='balli2020'&&r.specimen_id===spec);assert.equal(rows.length,9);
+  const rows=added.filter(r=>r.study_id==='balli2020'&&r.specimen_id===spec&&r.values.efficiency_at_lambda_pct?.location.startsWith('Figure 4d!'));assert.equal(rows.length,9);
   assert.deepEqual(rows.map(r=>r.values.efficiency_at_lambda_pct.value),eff);assert.deepEqual(rows.map(r=>r.values.fwhm_um.value),fw);
   for(const r of rows){assert.match(r.values.efficiency_at_lambda_pct.location,/Figure 4d![C-K][4-7]/);assert.match(r.values.efficiency_protocol.value,/r=1.5/);assert.equal(r.values.measured_focal_um,undefined);assert.equal(r.values.height_nm.value,null);}
  }
@@ -122,7 +122,7 @@ test('new measurements and their original references use the existing shared sca
  const workspace=createWorkspace(load(),data),domain=workspace.domains.find(d=>d.id==='metalens');
  assert.equal(axisPoints(domain.rows,'wavelength_nm','measured_focal_um').length,53);
  assert.equal(axisPoints(domain.rows.filter(r=>studies.includes(r.study_id)),'wavelength_nm','fwhm_x_um').length,10);
- assert.equal(axisPoints(domain.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,175);
+ assert.equal(axisPoints(domain.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,184);
  assert.equal(axisPoints(domain.rows,'na','efficiency_band_mean_pct').length,16);
  for(const r of domain.rows)for(const v of Object.values(r.values))for(const s of valueSources(v))assert.ok(workspace.sources.has(s));
  assert.equal(data.domains.phone.rows.length,37);assert.equal(data.domains.xr.rows.filter(r=>r.evidence_type!=='study').length,8);
