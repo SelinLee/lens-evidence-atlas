@@ -1457,3 +1457,9 @@ Cai 2019 的可见光原稿已由 OSTI 取得，Crossref 20、OpenAlex 21 次（
 ## 2026-11-22-181 · Dai 全息波前工程的五线可见光消色差实物
 
 重庆大学课题组发布的索引正文确认同一枚制备样片实测 520、555、632.8、660、690 nm，原刊摘要给出相同离散谱点。新录一篇经典原始研究、一器件六条记录。校方报告 NA 0.95，跨波长焦斑尺寸范围 0.40–0.47λ 随释义保留，未分派成逐色 FWHM。两段模拟范围与实验分开。2026-11-22 重查 Crossref 54、OpenAlex 57 次。校方入口无头 Chrome 返回 412 后 400，出版商主文与补件 403，原图、逐色轴峰、残余色差和效率条件仍待补。累计 74 篇、338 个器件及测量配置、1451 条，可见光 53 篇、889 条。[本批核验](DAI_2021_HOLOGRAPHIC_ACHROMATIC_EVIDENCE_2026-11-22.md)
+
+## 2026-11-22-182 · Dai 上线验收及 Zhao 2020 实测范围
+
+0.3.81 经 [PR #240](https://github.com/SelinLee/lens-evidence-atlas/pull/240) 合并为 `a7d55027b6fa97cdc2979868878e7701f6debda3`。PR 校验 45036575701、主线校验 45036684268 与 [Pages 45036684311](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/45036684311) 成功。365 项测试与 257 个公开文件哈希通过，`devices-data.js` SHA-256 为 `f69328cee58e0a7ca992b4094e91a9c28ada0f7c66ada030638428a62e1513c5`。独立无头 Chrome 核对全站 74 篇、1451 条及可见光 53 篇、889 条。Dai 同论文同配置六条、五个实测谱点的 NA 散点、CSV、原始出处引用往返和六视口通过。逐色焦距轴与 FWHM 轴无散点。Crossref 题录与补件登记 200，ACS 正文入口 403，重庆大学页面初始 412。[本批核验](DAI_2021_HOLOGRAPHIC_ACHROMATIC_EVIDENCE_2026-11-22.md)
+
+沿 Dai 的作者团队续核 Zhao 2020（2020-08-16 首次正式在线）。2026-11-22 查 Crossref 与 OpenAlex 各 69 次。Wiley 摘要列设计半径 5.11 mm、焦距 40.39 mm、NA 0.125 与设计区间 2.29–2.70 THz。第一完成单位的课题组结果段写 2.4–2.6 THz 经实验验证，后续需要用原刊 Fig. 5 和实验装置补件确定实际频点及测量条件。独立无头 Chrome 的 Wiley 全文、PDF 和补件候选入口返回 403，DataCite 精确关联零项。会话目标保持开启。[原刊](https://advanced.onlinelibrary.wiley.com/doi/10.1002/adom.202000842) · [重庆大学课题组发布](https://coe.cqu.edu.cn/info/1027/3837.htm) · [Crossref](https://api.crossref.org/works/10.1002/adom.202000842) · [OpenAlex](https://api.openalex.org/works/W3076313380)
