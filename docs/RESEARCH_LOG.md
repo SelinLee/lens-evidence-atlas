@@ -1523,3 +1523,7 @@ Ou 2022 的 Fig. 2e 增补 400 nm 元胞周期及文件登记，两个电压沿�
 0.3.86 经 PR #251 合并至 `80ff27053e3d963f37e5ef870c372d77df4b0e6a`，370 项测试、校验、构建及主线 CI 和 Pages 发布通过。线上独立无头 Chrome 在六视口核验 Ren 的 306／225 μm、+56／−25 μm、81 μm 及对应引用，核实近红外样片在可见光筛选后排除、Ou 22 条可见光记录仍可查。Ren 原件 MD5 和 Ou 公开文件登记一致。260 个发布文件与本机构建逐字节一致。当前库为 77 篇、1487 条记录，可见光筛选 54 篇、896 条记录。[PR #251](https://github.com/SelinLee/lens-evidence-atlas/pull/251) · [主线 CI](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/45047604936) · [Pages](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/45047605030)
 
 继续查 Liu 2024 折超双片，取得 ACS Figshare 条目 26018298 v1、文件 46996986 的公开登记。PDF 下载返回 403。期刊原件预览的 Note 1 可见 13 mm、F/1.5 的设计，MTF 的实测协议和数值仍缺。沿 Dong 与 Yan 的 2026 综述引文找出 Kai Ou 等的 2021 年中波红外消色差实物，逐 DOI 查数据库无重复。2026-11-23 查 Crossref 117、OpenAlex 120 次，作者摘要和附件目录可读。两篇放入后续取证，优先找 Kai Ou 的作者存档，按实物区分偏振切换、成像和涡旋条件。[Liu 公开文件](https://widgets.figshare.com/public/articles/26018298/versions/1/files) · [Kai Ou 原刊](https://onlinelibrary.wiley.com/doi/10.1002/lpor.202100020) · [引文入口](https://www.nature.com/articles/s44310-026-00127-3)
+
+## 2026-11-23-191 · Ou 2021 全硅中波红外实物入库
+
+本批按单篇分组录入 BAPVM 偏振变焦、BAPIM1 和 BAPIM2 偏振不敏感成像镜、BAFOVG 聚焦涡旋，四样片八行。用原文摘要、期刊预览和五份图注核 BAFOVG 200 μm、NA 0.24 及 4000 nm 轴向图，BAPVM 4.5 μm 柱高、1.65 μm 周期和 4000 nm 两偏振焦斑。BAPIM 图注确认实测平均焦距参照、FWHM、效率和 Strehl 指标，未取得逐点原值。补件 PDF 及公开图版下载返回 403，继续留在待办。补件视频名不作为实测谱点。独立无头 Chrome 本地检查四配置、200 μm／0.24 散点、缺失焦位不打点、引用往返及可见筛选；370 项测试通过。[本批核验](OU_2021_MWIR_REVIEW_2026-11-23.md)
