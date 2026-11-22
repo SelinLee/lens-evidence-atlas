@@ -52,7 +52,8 @@ test('Balli retains exact worksheet provenance and negative and zero scatter rea
     assert.equal(values[metric].reference_wavelength_nm, null);
     assert.equal(values.focus_error_protocol.zero_value_wavelength_nm, 1400);
   }
-  const points = axisPoints(balli, 'wavelength_nm', metric);
+  const primary = balli.filter(row => !row.id.includes('_supp_experiment_'));
+  const points = axisPoints(primary, 'wavelength_nm', metric);
   assert.equal(points.length, 45);
   assert.equal(points.filter(p => p.x === 1400 && p.y === 0).length, 5);
   assert.deepEqual(axisPoints(air100, 'wavelength_nm', metric).map(p => [p.x, p.y]), series.map(([wave, , , error]) => [wave, error]));
@@ -70,4 +71,31 @@ test('signed focus error requires the experimental spectrum, author calculation 
     invalid(sample.values);
     assert.throws(() => validateDevices(bad, catalog), /signed normalized focal error context/);
   }
+});
+
+test('Balli distinguishes the main-text maxima, workbook spans and supplementary experiments', () => {
+  const summaries = balli.filter(row => row.id.endsWith('_band_focus_summary'));
+  assert.deepEqual(summaries.map(row => [row.specimen_id, row.values.focus_variation_pct.value,
+    row.values.focus_variation_protocol.source_table_percent_point_span.value]), [
+    ['merged20', 8.6, 10.2], ['merged40', 8.2, 8.27],
+    ['merged80', 5.4, 5.43], ['air40', 8.1, 8.19],
+  ]);
+  for (const { values } of summaries) {
+    assert.equal(values.focus_variation_pct.calculation_origin, 'authors');
+    assert.equal(values.focus_variation_protocol.source_table_percent_point_span.calculation_origin, 'atlas');
+    assert.equal(values.focus_variation_protocol.normalization_denominator, null);
+    assert.equal(values.measured_focal_um, undefined);
+  }
+  assert.equal(summaries[0].values.psf_protocol.figure_reported_focal_plane_um, 34.5);
+  const supplementary = balli.filter(row => row.id.includes('_supp_experiment_'));
+  assert.deepEqual(supplementary.map(({ values }) =>
+    [values.wavelength_nm.value, values.fwhm_um.value, values.efficiency_at_lambda_pct.value, values[metric].value]), [
+    [1000, 2.21, 38.71, 2.85], [1100, 2.54, 52.77, 2.85], [1200, 2.92, 42.03, 2.57],
+    [1300, 3.23, 64.31, 1.99], [1400, 3.27, 71.6, 0], [1500, 3.31, 68.29, -2.28],
+    [1600, 3.4, 62.61, -4.85], [1700, 3.63, 69.6, -6.01], [1800, 3.67, 78.07, -6.05],
+  ]);
+  assert.ok(supplementary.every(row => row.specimen_id === 'merged20' && !hasVisibleLight(lens, row)));
+  assert.match(supplementary[0].values[metric].location, /Supplementary Figure 2-d!D24/);
+  assert.match(supplementary.at(-1).values.efficiency_at_lambda_pct.location, /Supplementary Figure 2-c!L7/);
+  assert.equal(axisPoints(balli, 'wavelength_nm', 'measured_focal_um').length, 0);
 });

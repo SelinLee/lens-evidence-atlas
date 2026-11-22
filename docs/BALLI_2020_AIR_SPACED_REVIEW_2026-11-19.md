@@ -31,3 +31,19 @@ Balli、Sultan、Lami 和 Hastings 的 *A hybrid achromatic metalens* 发表于 
 - 出版社工作簿 28046 字节，SHA-256 为 `68e0c5ac631c11b60232946a1f68f8ea7e251a039e5415dae53c6e54e12d47b1`。补充材料 15088926 字节，SHA-256 为 `14724c9d1519e14addfa5bf8c65fc996e5fa6fb3215935f148e515182350f29a`。与主文统一用一个文献编号。
 - Data availability 指向补件、Source Data 及向作者提出合理请求。工作簿与 Fig. S4 只给所列结果，此配置的二维 PSF、逐频 MTF、Strehl、相机采样与绝对峰位待补。
 - DataCite 精确 DOI 关联只有作者预印本。UKnowledge 的作者学位论文 *Optical Metasurfaces* 馆藏页可访问，全文下载在独立无头 Chrome 返回 403。[数据检索](https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1038%2Fs41467-020-17646-y%22) · [学位论文馆藏](https://uknowledge.uky.edu/physastron_etds/81/)
+
+## 2026-11-23 主文汇总与补件实验序列
+
+从用户指定参考目录的正式 PDF p.5 复核 Fig. 4a、4e 图注与 Experimental results。图注给 20 μm 一体镜的图示焦面距镜片 34.5 μm，镜片位于 z=0。九个波长的各自轴向峰位与横向帧选面仍待核。p.7 的常规轴扫步进为 2 μm，焦距误差测量改用 0.5 μm，并用针孔逐色标定继像色差。[正式 PDF pp.5,7](https://www.nature.com/articles/s41467-020-17646-y.pdf#page=5)
+
+| 配置 | 正文报告焦距最大变化或误差 | 源表有符号范围 | 本库复算极差（百分点） | 工作簿 |
+| --- | ---: | ---: | ---: | --- |
+| 一体式 20 μm，NA 0.27 | 8.6% | −6.78% 至 +3.42% | 10.20 | `Figure 4e!D7:L7` |
+| 一体式 40 μm，NA 0.11 | 8.2% | −4.51% 至 +3.76% | 8.27 | `Figure 4e!D8:L8` |
+| 一体式 80 μm，NA 0.06 | 5.4% | −2.06% 至 +3.37% | 5.43 | `Figure 4e!D9:L9` |
+| 空气间隔 40 μm，NA 0.32 | 8.1% | −2.78% 至 +5.41% | 8.19 | `Figure 4e!D10:L10` |
+| 空气间隔 100 μm，NA 0.24 | 4.8%，Discussion | −4.77% 至 +4.79% | 9.56 | `Supplementary Figure 4-c!D6:L6` |
+
+复算对同一表列九个百分数做最大值减最小值。报告数字与复算均各自保留出处。20 μm 镜的 Discussion 另称相对平均焦距小于 4.8%，归一分母、绝对焦面和与 p.5 汇总的对应未说明。工作簿的 1400 nm 列各样品均印零，百分数不据此换算成微米。[正式主文 pp.5–7](https://www.nature.com/articles/s41467-020-17646-y.pdf#page=5) · [出版社 Source Data](https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-020-17646-y/MediaObjects/41467_2020_17646_MOESM3_ESM.xlsx)
+
+补件 pp.2–3 Note 2、Fig. S2a–d 对 20 μm／NA 0.27 的设计给出另一组实验和 FDTD 结果。已录九条实验行，沿用同一器件配置和研究编号。原文未另标物理样片编号。对应的 `Experiment` 行分别为 `Supplementary Figure 2-b!D6:L6`、`Supplementary Figure 2-c!D7:L7`、`Supplementary Figure 2-d!D24:L24`。这三张表给 2.21–3.67 μm 横向 FWHM、38.71%–78.07% 聚焦效率及 +2.85% 至 −6.05% 有符号焦距误差，极差为 8.90 个百分点。例如，1800 nm 的补件宽度为 3.67 μm，主文工作表为 4.3 μm。实验条目标明所用的图表。效率沿用主文焦面圆半径 1.5×FWHM、同孔径石英入射面的分母定义，补件未列独立功率校准及逐色重复数。原始相机 PSF、逐色绝对焦位、物方采样和横向色差仍待核。[补件 Fig. S2](https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-020-17646-y/MediaObjects/41467_2020_17646_MOESM1_ESM.pdf#page=3)

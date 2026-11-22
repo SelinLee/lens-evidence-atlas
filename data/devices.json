@@ -22021,6 +22021,1770 @@
           }
         },
         {
+          "id": "balli2020_merged20_band_focus_summary",
+          "model": "Balli 2020 · 一体式 EPD 20 μm · 主文轴向焦差汇总",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "merged20",
+          "measurement_scope": "主文 Fig. 4e 及对应工作簿的九个实测谱点汇总；同一实物。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results；Fig.1图注",
+              "note": "作者名义NA；不从少数相对焦移反推绝对焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 1000,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 1800,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "focus_variation_pct": {
+              "value": 8.6,
+              "source": "balli_haml_2020",
+              "location": "正式 PDF p.5 Experimental results 段，Fig. 4e",
+              "note": "按原文保留作者 maximum shift 概述。对应工作表各谱点的极差另见焦移协议，保留独立值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-23",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_band_variation",
+              "reference_focal_um": null,
+              "reference_wavelength_nm": null,
+              "denominator": "not_reported",
+              "sample_wavelengths_nm": [
+                1000,
+                1100,
+                1200,
+                1300,
+                1400,
+                1500,
+                1600,
+                1700,
+                1800
+              ],
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ]
+            },
+            "focus_variation_protocol": {
+              "value": "作者报告焦距变化；已发表百分数极差 10.20 个百分点（本库复算）",
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!D7:L7；Figure 4e!D6:L6；正式 PDF p.5 Experimental results 段，Fig. 4e",
+              "note": "Figure 4e!D7:L7 作者有符号百分数为 -6.78% 至 +3.42%；本库按最大值减最小值复算 10.20 个百分点。1400 nm 列为零。作者未明归一化分母、绝对参考焦位和汇总公式。 p.6 Discussion 另称相对平均焦距小于 4.8%，未说明同一聚合口径。补件 Fig. S2d 的实验序列另录。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "axial_scan_step_um": 0.5,
+              "zero_value_wavelength_nm": 1400,
+              "source_table_percent_point_span": {
+                "value": 10.2,
+                "minimum_pct": -6.78,
+                "maximum_pct": 3.42,
+                "calculation_origin": "atlas",
+                "calculation_method": "max_minus_min"
+              }
+            },
+            "psf_protocol": {
+              "value": "主文 Fig. 4a 图注的焦面距镜片 34.5 μm",
+              "source": "balli_haml_2020",
+              "location": "正式 PDF p.5 Fig. 4a,b 图注；正式主文 PDF p.7 Optical testing；补件 p.7 Fig. S6",
+              "note": "透镜置于 z=0。作者为图中焦面给一个距离；逐波长轴向强度峰位、图中各横向帧的单独取面条件与不确定度均未细列。34.5 μm 按报告的焦面距离登记。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "figure_reported_focal_plane_um": 34.5,
+              "lens_axial_position_um": 0,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
+            }
+          }
+        },
+        {
+          "id": "balli2020_merged40_band_focus_summary",
+          "model": "Balli 2020 · 一体式 EPD 40 μm · 主文轴向焦差汇总",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "merged40",
+          "measurement_scope": "主文 Fig. 4e 及对应工作簿的九个实测谱点汇总；同一实物。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results",
+              "note": "同一Balli2020研究，merged D40μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.11,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results；Fig.1图注",
+              "note": "作者名义NA；不从少数相对焦移反推绝对焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 1000,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D40μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 1800,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D40μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "focus_variation_pct": {
+              "value": 8.2,
+              "source": "balli_haml_2020",
+              "location": "正式 PDF p.5 Experimental results 段，Fig. 4e",
+              "note": "按原文保留作者 maximum shift 概述。对应工作表各谱点的极差另见焦移协议，保留独立值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-23",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_band_variation",
+              "reference_focal_um": null,
+              "reference_wavelength_nm": null,
+              "denominator": "not_reported",
+              "sample_wavelengths_nm": [
+                1000,
+                1100,
+                1200,
+                1300,
+                1400,
+                1500,
+                1600,
+                1700,
+                1800
+              ],
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ]
+            },
+            "focus_variation_protocol": {
+              "value": "作者报告焦距变化；已发表百分数极差 8.27 个百分点（本库复算）",
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!D8:L8；Figure 4e!D6:L6；正式 PDF p.5 Experimental results 段，Fig. 4e",
+              "note": "Figure 4e!D8:L8 作者有符号百分数为 -4.51% 至 +3.76%；本库按最大值减最小值复算 8.27 个百分点。1400 nm 列为零。作者未明归一化分母、绝对参考焦位和汇总公式。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "axial_scan_step_um": 0.5,
+              "zero_value_wavelength_nm": 1400,
+              "source_table_percent_point_span": {
+                "value": 8.27,
+                "minimum_pct": -4.51,
+                "maximum_pct": 3.76,
+                "calculation_origin": "atlas",
+                "calculation_method": "max_minus_min"
+              }
+            }
+          }
+        },
+        {
+          "id": "balli2020_merged80_band_focus_summary",
+          "model": "Balli 2020 · 一体式 EPD 80 μm · 主文轴向焦差汇总",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "merged80",
+          "measurement_scope": "主文 Fig. 4e 及对应工作簿的九个实测谱点汇总；同一实物。",
+          "values": {
+            "diameter_um": {
+              "value": 80,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results",
+              "note": "同一Balli2020研究，merged D80μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.06,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results；Fig.1图注",
+              "note": "作者名义NA；不从少数相对焦移反推绝对焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 1000,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D80μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 1800,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D80μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "focus_variation_pct": {
+              "value": 5.4,
+              "source": "balli_haml_2020",
+              "location": "正式 PDF p.5 Experimental results 段，Fig. 4e",
+              "note": "按原文保留作者 maximum shift 概述。对应工作表各谱点的极差另见焦移协议，保留独立值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-23",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_band_variation",
+              "reference_focal_um": null,
+              "reference_wavelength_nm": null,
+              "denominator": "not_reported",
+              "sample_wavelengths_nm": [
+                1000,
+                1100,
+                1200,
+                1300,
+                1400,
+                1500,
+                1600,
+                1700,
+                1800
+              ],
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ]
+            },
+            "focus_variation_protocol": {
+              "value": "作者报告焦距变化；已发表百分数极差 5.43 个百分点（本库复算）",
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!D9:L9；Figure 4e!D6:L6；正式 PDF p.5 Experimental results 段，Fig. 4e",
+              "note": "Figure 4e!D9:L9 作者有符号百分数为 -2.06% 至 +3.37%；本库按最大值减最小值复算 5.43 个百分点。1400 nm 列为零。作者未明归一化分母、绝对参考焦位和汇总公式。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "axial_scan_step_um": 0.5,
+              "zero_value_wavelength_nm": 1400,
+              "source_table_percent_point_span": {
+                "value": 5.43,
+                "minimum_pct": -2.06,
+                "maximum_pct": 3.37,
+                "calculation_origin": "atlas",
+                "calculation_method": "max_minus_min"
+              }
+            }
+          }
+        },
+        {
+          "id": "balli2020_air40_band_focus_summary",
+          "model": "Balli 2020 · 空气间隔 EPD 40 μm · 主文轴向焦差汇总",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "air40",
+          "measurement_scope": "主文 Fig. 4e 及对应工作簿的九个实测谱点汇总；同一实物。",
+          "values": {
+            "diameter_um": {
+              "value": 40,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results",
+              "note": "同一Balli2020研究，air-spaced D40μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.32,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results；Fig.1图注",
+              "note": "作者名义NA；不从少数相对焦移反推绝对焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 1000,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，air-spaced D40μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 1800,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，air-spaced D40μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "focus_variation_pct": {
+              "value": 8.1,
+              "source": "balli_haml_2020",
+              "location": "正式 PDF p.5 Experimental results 段，Fig. 4e",
+              "note": "按原文保留作者 maximum shift 概述。对应工作表各谱点的极差另见焦移协议，保留独立值。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-23",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_band_variation",
+              "reference_focal_um": null,
+              "reference_wavelength_nm": null,
+              "denominator": "not_reported",
+              "sample_wavelengths_nm": [
+                1000,
+                1100,
+                1200,
+                1300,
+                1400,
+                1500,
+                1600,
+                1700,
+                1800
+              ],
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_source_2020"
+              ]
+            },
+            "focus_variation_protocol": {
+              "value": "作者报告焦距变化；已发表百分数极差 8.19 个百分点（本库复算）",
+              "source": "balli_haml_source_2020",
+              "location": "Figure 4e!D10:L10；Figure 4e!D6:L6；正式 PDF p.5 Experimental results 段，Fig. 4e",
+              "note": "Figure 4e!D10:L10 作者有符号百分数为 -2.78% 至 +5.41%；本库按最大值减最小值复算 8.19 个百分点。1400 nm 列为零。作者未明归一化分母、绝对参考焦位和汇总公式。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "axial_scan_step_um": 0.5,
+              "zero_value_wavelength_nm": 1400,
+              "source_table_percent_point_span": {
+                "value": 8.19,
+                "minimum_pct": -2.78,
+                "maximum_pct": 5.41,
+                "calculation_origin": "atlas",
+                "calculation_method": "max_minus_min"
+              }
+            }
+          }
+        },
+        {
+          "id": "balli2020_merged20_supp_experiment_1000",
+          "model": "Balli 2020 · 一体式 EPD 20 μm · 补件实测 · 1000 nm",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "merged20",
+          "measurement_scope": "Fig. S2 的 Experiment 序列；同设定的 EPD 20 μm、NA 0.27，原文未另列实物编号。与主文 Fig. 4 谱点保留独立记录。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results；Fig.1图注",
+              "note": "作者名义NA；不从少数相对焦移反推绝对焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 1000,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 1800,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 1000,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-b!D5；2-c!D6；2-d!D23",
+              "note": "补件实验组共同谱点 1000 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "fwhm_um": {
+              "value": 2.21,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-b!D6，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "作者实测焦面强度的横向半高全宽。原表未给拟合处理、物方采样和具体截线方位。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "psf_protocol": {
+              "value": "补件 Fig. S2a,b 焦面 PSF 实验序列",
+              "source": "balli_haml_si_2020",
+              "location": "正式补件 pp.2–3 Note 2，Fig. S2b–d；正式主文 PDF p.7 Optical testing；补件 p.7 Fig. S6",
+              "note": "准直轴上入射，逐色测量。主文一般轴扫 2 μm，焦差 0.5 μm。补件的实际横向物方采样和每个横向宽度的取面规则待补。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "evaluation_plane_um": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 38.71,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-c!D7，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "原工作表 Experiment 行，补件 Fig. S2c 的实测聚焦效率。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "efficiency_lambda_nm": {
+              "value": 1000,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-c!D6",
+              "note": "绑定补件效率工作表的实验光谱条件。",
+              "basis": "measured",
+              "checked_on": "2026-11-23"
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆半径 1.5×FWHM；分母为石英入射面同孔径面积内的总入射功率",
+              "source": "balli_haml_2020",
+              "location": "正式主文 PDF pp.5,7 Experimental results / Optical testing；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "记录主文给出的实验定义；补件未为此实验序列另外列出积分协议、偏振、重复数或入射功率校准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "integration_radius_fwhm_factor": 1.5,
+              "integration_shape": "circle",
+              "denominator": "total_incident_power_in_same_aperture_on_fused_silica"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 2.85,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-d!D24，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "补件工作表作者有符号实测归一化焦距误差；第 25 行为模拟数据。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-23",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "original_quantity": "Focal Length Error (%)",
+              "reference_wavelength_nm": null,
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "focus_error_protocol": {
+              "value": "补件实验序列的归一化参考待补",
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-d!D23:L24；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "1400 nm 工作表印为零；绝对参考焦面、把该点作为归一化参考的依据和轴向测量误差未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            }
+          }
+        },
+        {
+          "id": "balli2020_merged20_supp_experiment_1100",
+          "model": "Balli 2020 · 一体式 EPD 20 μm · 补件实测 · 1100 nm",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "merged20",
+          "measurement_scope": "Fig. S2 的 Experiment 序列；同设定的 EPD 20 μm、NA 0.27，原文未另列实物编号。与主文 Fig. 4 谱点保留独立记录。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results；Fig.1图注",
+              "note": "作者名义NA；不从少数相对焦移反推绝对焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 1000,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 1800,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 1100,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-b!E5；2-c!E6；2-d!E23",
+              "note": "补件实验组共同谱点 1100 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "fwhm_um": {
+              "value": 2.54,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-b!E6，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "作者实测焦面强度的横向半高全宽。原表未给拟合处理、物方采样和具体截线方位。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "psf_protocol": {
+              "value": "补件 Fig. S2a,b 焦面 PSF 实验序列",
+              "source": "balli_haml_si_2020",
+              "location": "正式补件 pp.2–3 Note 2，Fig. S2b–d；正式主文 PDF p.7 Optical testing；补件 p.7 Fig. S6",
+              "note": "准直轴上入射，逐色测量。主文一般轴扫 2 μm，焦差 0.5 μm。补件的实际横向物方采样和每个横向宽度的取面规则待补。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "evaluation_plane_um": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 52.77,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-c!E7，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "原工作表 Experiment 行，补件 Fig. S2c 的实测聚焦效率。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "efficiency_lambda_nm": {
+              "value": 1100,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-c!E6",
+              "note": "绑定补件效率工作表的实验光谱条件。",
+              "basis": "measured",
+              "checked_on": "2026-11-23"
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆半径 1.5×FWHM；分母为石英入射面同孔径面积内的总入射功率",
+              "source": "balli_haml_2020",
+              "location": "正式主文 PDF pp.5,7 Experimental results / Optical testing；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "记录主文给出的实验定义；补件未为此实验序列另外列出积分协议、偏振、重复数或入射功率校准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "integration_radius_fwhm_factor": 1.5,
+              "integration_shape": "circle",
+              "denominator": "total_incident_power_in_same_aperture_on_fused_silica"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 2.85,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-d!E24，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "补件工作表作者有符号实测归一化焦距误差；第 25 行为模拟数据。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-23",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "original_quantity": "Focal Length Error (%)",
+              "reference_wavelength_nm": null,
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "focus_error_protocol": {
+              "value": "补件实验序列的归一化参考待补",
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-d!D23:L24；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "1400 nm 工作表印为零；绝对参考焦面、把该点作为归一化参考的依据和轴向测量误差未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            }
+          }
+        },
+        {
+          "id": "balli2020_merged20_supp_experiment_1200",
+          "model": "Balli 2020 · 一体式 EPD 20 μm · 补件实测 · 1200 nm",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "merged20",
+          "measurement_scope": "Fig. S2 的 Experiment 序列；同设定的 EPD 20 μm、NA 0.27，原文未另列实物编号。与主文 Fig. 4 谱点保留独立记录。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results；Fig.1图注",
+              "note": "作者名义NA；不从少数相对焦移反推绝对焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 1000,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 1800,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 1200,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-b!F5；2-c!F6；2-d!F23",
+              "note": "补件实验组共同谱点 1200 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "fwhm_um": {
+              "value": 2.92,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-b!F6，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "作者实测焦面强度的横向半高全宽。原表未给拟合处理、物方采样和具体截线方位。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "psf_protocol": {
+              "value": "补件 Fig. S2a,b 焦面 PSF 实验序列",
+              "source": "balli_haml_si_2020",
+              "location": "正式补件 pp.2–3 Note 2，Fig. S2b–d；正式主文 PDF p.7 Optical testing；补件 p.7 Fig. S6",
+              "note": "准直轴上入射，逐色测量。主文一般轴扫 2 μm，焦差 0.5 μm。补件的实际横向物方采样和每个横向宽度的取面规则待补。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "evaluation_plane_um": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 42.03,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-c!F7，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "原工作表 Experiment 行，补件 Fig. S2c 的实测聚焦效率。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "efficiency_lambda_nm": {
+              "value": 1200,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-c!F6",
+              "note": "绑定补件效率工作表的实验光谱条件。",
+              "basis": "measured",
+              "checked_on": "2026-11-23"
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆半径 1.5×FWHM；分母为石英入射面同孔径面积内的总入射功率",
+              "source": "balli_haml_2020",
+              "location": "正式主文 PDF pp.5,7 Experimental results / Optical testing；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "记录主文给出的实验定义；补件未为此实验序列另外列出积分协议、偏振、重复数或入射功率校准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "integration_radius_fwhm_factor": 1.5,
+              "integration_shape": "circle",
+              "denominator": "total_incident_power_in_same_aperture_on_fused_silica"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 2.57,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-d!F24，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "补件工作表作者有符号实测归一化焦距误差；第 25 行为模拟数据。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-23",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "original_quantity": "Focal Length Error (%)",
+              "reference_wavelength_nm": null,
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "focus_error_protocol": {
+              "value": "补件实验序列的归一化参考待补",
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-d!D23:L24；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "1400 nm 工作表印为零；绝对参考焦面、把该点作为归一化参考的依据和轴向测量误差未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            }
+          }
+        },
+        {
+          "id": "balli2020_merged20_supp_experiment_1300",
+          "model": "Balli 2020 · 一体式 EPD 20 μm · 补件实测 · 1300 nm",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "merged20",
+          "measurement_scope": "Fig. S2 的 Experiment 序列；同设定的 EPD 20 μm、NA 0.27，原文未另列实物编号。与主文 Fig. 4 谱点保留独立记录。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results；Fig.1图注",
+              "note": "作者名义NA；不从少数相对焦移反推绝对焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 1000,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 1800,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 1300,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-b!G5；2-c!G6；2-d!G23",
+              "note": "补件实验组共同谱点 1300 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "fwhm_um": {
+              "value": 3.23,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-b!G6，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "作者实测焦面强度的横向半高全宽。原表未给拟合处理、物方采样和具体截线方位。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "psf_protocol": {
+              "value": "补件 Fig. S2a,b 焦面 PSF 实验序列",
+              "source": "balli_haml_si_2020",
+              "location": "正式补件 pp.2–3 Note 2，Fig. S2b–d；正式主文 PDF p.7 Optical testing；补件 p.7 Fig. S6",
+              "note": "准直轴上入射，逐色测量。主文一般轴扫 2 μm，焦差 0.5 μm。补件的实际横向物方采样和每个横向宽度的取面规则待补。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "evaluation_plane_um": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 64.31,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-c!G7，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "原工作表 Experiment 行，补件 Fig. S2c 的实测聚焦效率。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "efficiency_lambda_nm": {
+              "value": 1300,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-c!G6",
+              "note": "绑定补件效率工作表的实验光谱条件。",
+              "basis": "measured",
+              "checked_on": "2026-11-23"
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆半径 1.5×FWHM；分母为石英入射面同孔径面积内的总入射功率",
+              "source": "balli_haml_2020",
+              "location": "正式主文 PDF pp.5,7 Experimental results / Optical testing；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "记录主文给出的实验定义；补件未为此实验序列另外列出积分协议、偏振、重复数或入射功率校准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "integration_radius_fwhm_factor": 1.5,
+              "integration_shape": "circle",
+              "denominator": "total_incident_power_in_same_aperture_on_fused_silica"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 1.99,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-d!G24，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "补件工作表作者有符号实测归一化焦距误差；第 25 行为模拟数据。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-23",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "original_quantity": "Focal Length Error (%)",
+              "reference_wavelength_nm": null,
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "focus_error_protocol": {
+              "value": "补件实验序列的归一化参考待补",
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-d!D23:L24；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "1400 nm 工作表印为零；绝对参考焦面、把该点作为归一化参考的依据和轴向测量误差未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            }
+          }
+        },
+        {
+          "id": "balli2020_merged20_supp_experiment_1400",
+          "model": "Balli 2020 · 一体式 EPD 20 μm · 补件实测 · 1400 nm",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "merged20",
+          "measurement_scope": "Fig. S2 的 Experiment 序列；同设定的 EPD 20 μm、NA 0.27，原文未另列实物编号。与主文 Fig. 4 谱点保留独立记录。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results；Fig.1图注",
+              "note": "作者名义NA；不从少数相对焦移反推绝对焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 1000,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 1800,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 1400,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-b!H5；2-c!H6；2-d!H23",
+              "note": "补件实验组共同谱点 1400 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "fwhm_um": {
+              "value": 3.27,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-b!H6，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "作者实测焦面强度的横向半高全宽。原表未给拟合处理、物方采样和具体截线方位。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "psf_protocol": {
+              "value": "补件 Fig. S2a,b 焦面 PSF 实验序列",
+              "source": "balli_haml_si_2020",
+              "location": "正式补件 pp.2–3 Note 2，Fig. S2b–d；正式主文 PDF p.7 Optical testing；补件 p.7 Fig. S6",
+              "note": "准直轴上入射，逐色测量。主文一般轴扫 2 μm，焦差 0.5 μm。补件的实际横向物方采样和每个横向宽度的取面规则待补。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "evaluation_plane_um": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 71.6,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-c!H7，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "原工作表 Experiment 行，补件 Fig. S2c 的实测聚焦效率。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "efficiency_lambda_nm": {
+              "value": 1400,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-c!H6",
+              "note": "绑定补件效率工作表的实验光谱条件。",
+              "basis": "measured",
+              "checked_on": "2026-11-23"
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆半径 1.5×FWHM；分母为石英入射面同孔径面积内的总入射功率",
+              "source": "balli_haml_2020",
+              "location": "正式主文 PDF pp.5,7 Experimental results / Optical testing；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "记录主文给出的实验定义；补件未为此实验序列另外列出积分协议、偏振、重复数或入射功率校准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "integration_radius_fwhm_factor": 1.5,
+              "integration_shape": "circle",
+              "denominator": "total_incident_power_in_same_aperture_on_fused_silica"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": 0.0,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-d!H24，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "补件工作表作者有符号实测归一化焦距误差；第 25 行为模拟数据。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-23",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "original_quantity": "Focal Length Error (%)",
+              "reference_wavelength_nm": null,
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "focus_error_protocol": {
+              "value": "补件实验序列的归一化参考待补",
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-d!D23:L24；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "1400 nm 工作表印为零；绝对参考焦面、把该点作为归一化参考的依据和轴向测量误差未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            }
+          }
+        },
+        {
+          "id": "balli2020_merged20_supp_experiment_1500",
+          "model": "Balli 2020 · 一体式 EPD 20 μm · 补件实测 · 1500 nm",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "merged20",
+          "measurement_scope": "Fig. S2 的 Experiment 序列；同设定的 EPD 20 μm、NA 0.27，原文未另列实物编号。与主文 Fig. 4 谱点保留独立记录。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results；Fig.1图注",
+              "note": "作者名义NA；不从少数相对焦移反推绝对焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 1000,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 1800,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 1500,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-b!I5；2-c!I6；2-d!I23",
+              "note": "补件实验组共同谱点 1500 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "fwhm_um": {
+              "value": 3.31,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-b!I6，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "作者实测焦面强度的横向半高全宽。原表未给拟合处理、物方采样和具体截线方位。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "psf_protocol": {
+              "value": "补件 Fig. S2a,b 焦面 PSF 实验序列",
+              "source": "balli_haml_si_2020",
+              "location": "正式补件 pp.2–3 Note 2，Fig. S2b–d；正式主文 PDF p.7 Optical testing；补件 p.7 Fig. S6",
+              "note": "准直轴上入射，逐色测量。主文一般轴扫 2 μm，焦差 0.5 μm。补件的实际横向物方采样和每个横向宽度的取面规则待补。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "evaluation_plane_um": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 68.29,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-c!I7，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "原工作表 Experiment 行，补件 Fig. S2c 的实测聚焦效率。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "efficiency_lambda_nm": {
+              "value": 1500,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-c!I6",
+              "note": "绑定补件效率工作表的实验光谱条件。",
+              "basis": "measured",
+              "checked_on": "2026-11-23"
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆半径 1.5×FWHM；分母为石英入射面同孔径面积内的总入射功率",
+              "source": "balli_haml_2020",
+              "location": "正式主文 PDF pp.5,7 Experimental results / Optical testing；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "记录主文给出的实验定义；补件未为此实验序列另外列出积分协议、偏振、重复数或入射功率校准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "integration_radius_fwhm_factor": 1.5,
+              "integration_shape": "circle",
+              "denominator": "total_incident_power_in_same_aperture_on_fused_silica"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -2.28,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-d!I24，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "补件工作表作者有符号实测归一化焦距误差；第 25 行为模拟数据。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-23",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "original_quantity": "Focal Length Error (%)",
+              "reference_wavelength_nm": null,
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "focus_error_protocol": {
+              "value": "补件实验序列的归一化参考待补",
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-d!D23:L24；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "1400 nm 工作表印为零；绝对参考焦面、把该点作为归一化参考的依据和轴向测量误差未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            }
+          }
+        },
+        {
+          "id": "balli2020_merged20_supp_experiment_1600",
+          "model": "Balli 2020 · 一体式 EPD 20 μm · 补件实测 · 1600 nm",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "merged20",
+          "measurement_scope": "Fig. S2 的 Experiment 序列；同设定的 EPD 20 μm、NA 0.27，原文未另列实物编号。与主文 Fig. 4 谱点保留独立记录。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results；Fig.1图注",
+              "note": "作者名义NA；不从少数相对焦移反推绝对焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 1000,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 1800,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 1600,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-b!J5；2-c!J6；2-d!J23",
+              "note": "补件实验组共同谱点 1600 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "fwhm_um": {
+              "value": 3.4,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-b!J6，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "作者实测焦面强度的横向半高全宽。原表未给拟合处理、物方采样和具体截线方位。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "psf_protocol": {
+              "value": "补件 Fig. S2a,b 焦面 PSF 实验序列",
+              "source": "balli_haml_si_2020",
+              "location": "正式补件 pp.2–3 Note 2，Fig. S2b–d；正式主文 PDF p.7 Optical testing；补件 p.7 Fig. S6",
+              "note": "准直轴上入射，逐色测量。主文一般轴扫 2 μm，焦差 0.5 μm。补件的实际横向物方采样和每个横向宽度的取面规则待补。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "evaluation_plane_um": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 62.61,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-c!J7，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "原工作表 Experiment 行，补件 Fig. S2c 的实测聚焦效率。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "efficiency_lambda_nm": {
+              "value": 1600,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-c!J6",
+              "note": "绑定补件效率工作表的实验光谱条件。",
+              "basis": "measured",
+              "checked_on": "2026-11-23"
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆半径 1.5×FWHM；分母为石英入射面同孔径面积内的总入射功率",
+              "source": "balli_haml_2020",
+              "location": "正式主文 PDF pp.5,7 Experimental results / Optical testing；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "记录主文给出的实验定义；补件未为此实验序列另外列出积分协议、偏振、重复数或入射功率校准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "integration_radius_fwhm_factor": 1.5,
+              "integration_shape": "circle",
+              "denominator": "total_incident_power_in_same_aperture_on_fused_silica"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -4.85,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-d!J24，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "补件工作表作者有符号实测归一化焦距误差；第 25 行为模拟数据。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-23",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "original_quantity": "Focal Length Error (%)",
+              "reference_wavelength_nm": null,
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "focus_error_protocol": {
+              "value": "补件实验序列的归一化参考待补",
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-d!D23:L24；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "1400 nm 工作表印为零；绝对参考焦面、把该点作为归一化参考的依据和轴向测量误差未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            }
+          }
+        },
+        {
+          "id": "balli2020_merged20_supp_experiment_1700",
+          "model": "Balli 2020 · 一体式 EPD 20 μm · 补件实测 · 1700 nm",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "merged20",
+          "measurement_scope": "Fig. S2 的 Experiment 序列；同设定的 EPD 20 μm、NA 0.27，原文未另列实物编号。与主文 Fig. 4 谱点保留独立记录。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results；Fig.1图注",
+              "note": "作者名义NA；不从少数相对焦移反推绝对焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 1000,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 1800,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 1700,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-b!K5；2-c!K6；2-d!K23",
+              "note": "补件实验组共同谱点 1700 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "fwhm_um": {
+              "value": 3.63,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-b!K6，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "作者实测焦面强度的横向半高全宽。原表未给拟合处理、物方采样和具体截线方位。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "psf_protocol": {
+              "value": "补件 Fig. S2a,b 焦面 PSF 实验序列",
+              "source": "balli_haml_si_2020",
+              "location": "正式补件 pp.2–3 Note 2，Fig. S2b–d；正式主文 PDF p.7 Optical testing；补件 p.7 Fig. S6",
+              "note": "准直轴上入射，逐色测量。主文一般轴扫 2 μm，焦差 0.5 μm。补件的实际横向物方采样和每个横向宽度的取面规则待补。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "evaluation_plane_um": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 69.6,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-c!K7，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "原工作表 Experiment 行，补件 Fig. S2c 的实测聚焦效率。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "efficiency_lambda_nm": {
+              "value": 1700,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-c!K6",
+              "note": "绑定补件效率工作表的实验光谱条件。",
+              "basis": "measured",
+              "checked_on": "2026-11-23"
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆半径 1.5×FWHM；分母为石英入射面同孔径面积内的总入射功率",
+              "source": "balli_haml_2020",
+              "location": "正式主文 PDF pp.5,7 Experimental results / Optical testing；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "记录主文给出的实验定义；补件未为此实验序列另外列出积分协议、偏振、重复数或入射功率校准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "integration_radius_fwhm_factor": 1.5,
+              "integration_shape": "circle",
+              "denominator": "total_incident_power_in_same_aperture_on_fused_silica"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -6.01,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-d!K24，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "补件工作表作者有符号实测归一化焦距误差；第 25 行为模拟数据。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-23",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "original_quantity": "Focal Length Error (%)",
+              "reference_wavelength_nm": null,
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "focus_error_protocol": {
+              "value": "补件实验序列的归一化参考待补",
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-d!D23:L24；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "1400 nm 工作表印为零；绝对参考焦面、把该点作为归一化参考的依据和轴向测量误差未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            }
+          }
+        },
+        {
+          "id": "balli2020_merged20_supp_experiment_1800",
+          "model": "Balli 2020 · 一体式 EPD 20 μm · 补件实测 · 1800 nm",
+          "module": "",
+          "variant": "原始论文器件 / 实验配置",
+          "evidence_type": "study",
+          "study_id": "balli2020",
+          "specimen_id": "merged20",
+          "measurement_scope": "Fig. S2 的 Experiment 序列；同设定的 EPD 20 μm、NA 0.27，原文未另列实物编号。与主文 Fig. 4 谱点保留独立记录。",
+          "values": {
+            "diameter_um": {
+              "value": 20,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "na": {
+              "value": 0.27,
+              "source": "balli_haml_2020",
+              "location": "PDF p.4 Experimental results；Fig.1图注",
+              "note": "作者名义NA；不从少数相对焦移反推绝对焦距。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_min_nm": {
+              "value": 1000,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "lambda_max_nm": {
+              "value": 1800,
+              "source": "balli_haml_2020",
+              "location": "PDF pp.4–5 Experimental results",
+              "note": "同一Balli2020研究，merged D20μm，1000–1800nm九谱点；作者Source Data逐格转录，不是九枚器件。IP-Dip多光子直写；不是可见RGB或手机/头显整机。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "wavelength_nm": {
+              "value": 1800,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-b!L5；2-c!L6；2-d!L23",
+              "note": "补件实验组共同谱点 1800 nm。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "fwhm_um": {
+              "value": 3.67,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-b!L6，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "作者实测焦面强度的横向半高全宽。原表未给拟合处理、物方采样和具体截线方位。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "psf_protocol": {
+              "value": "补件 Fig. S2a,b 焦面 PSF 实验序列",
+              "source": "balli_haml_si_2020",
+              "location": "正式补件 pp.2–3 Note 2，Fig. S2b–d；正式主文 PDF p.7 Optical testing；补件 p.7 Fig. S6",
+              "note": "准直轴上入射，逐色测量。主文一般轴扫 2 μm，焦差 0.5 μm。补件的实际横向物方采样和每个横向宽度的取面规则待补。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "incidence": "on_axis",
+              "object_conjugate": "collimated",
+              "evaluation_plane_um": null,
+              "axial_scan_step_um": 2,
+              "focus_error_scan_step_um": 0.5
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 78.07,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-c!L7，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "原工作表 Experiment 行，补件 Fig. S2c 的实测聚焦效率。",
+              "basis": "measured",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "efficiency_lambda_nm": {
+              "value": 1800,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-c!L6",
+              "note": "绑定补件效率工作表的实验光谱条件。",
+              "basis": "measured",
+              "checked_on": "2026-11-23"
+            },
+            "efficiency_protocol": {
+              "value": "焦面圆半径 1.5×FWHM；分母为石英入射面同孔径面积内的总入射功率",
+              "source": "balli_haml_2020",
+              "location": "正式主文 PDF pp.5,7 Experimental results / Optical testing；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "记录主文给出的实验定义；补件未为此实验序列另外列出积分协议、偏振、重复数或入射功率校准。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_2020",
+                "balli_haml_si_2020"
+              ],
+              "integration_radius_fwhm_factor": 1.5,
+              "integration_shape": "circle",
+              "denominator": "total_incident_power_in_same_aperture_on_fused_silica"
+            },
+            "signed_normalized_focal_error_pct": {
+              "value": -6.05,
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-d!L24，Experiment；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "补件工作表作者有符号实测归一化焦距误差；第 25 行为模拟数据。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-23",
+              "calculation_origin": "authors",
+              "statistic": "author_reported_signed_normalized_focal_error",
+              "original_quantity": "Focal Length Error (%)",
+              "reference_wavelength_nm": null,
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ]
+            },
+            "focus_error_protocol": {
+              "value": "补件实验序列的归一化参考待补",
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 2-d!D23:L24；正式补件 pp.2–3 Note 2，Fig. S2b–d",
+              "note": "1400 nm 工作表印为零；绝对参考焦面、把该点作为归一化参考的依据和轴向测量误差未报告。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "zero_value_wavelength_nm": 1400
+            }
+          }
+        },
+        {
           "id": "balli2020_air100_summary",
           "model": "Balli 2020 · 空气间隔 D100 μm · 器件汇总",
           "module": "",
@@ -22220,6 +23984,31 @@
                 "raw_psf": null,
                 "independently_recomputed_mtf": null,
                 "search_log": "BALLI_2020_AIR_SPACED_REVIEW_2026-11-19.md"
+              }
+            },
+            "focus_variation_protocol": {
+              "value": "已发表百分数极差 9.56 个百分点（本库复算）",
+              "source": "balli_haml_source_2020",
+              "location": "Supplementary Figure 4-c!D5:L6；正式补件 p.5 Fig. S4c",
+              "note": "工作表范围为 −4.77% 至 +4.79%，极差为 9.56 个百分点。1400 nm 印表值为零。归一化分母和绝对参考焦面仍待核。作者 Discussion 的 4.8% 焦距误差在独立字段保留。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-23",
+              "sourceIds": [
+                "balli_haml_source_2020",
+                "balli_haml_si_2020",
+                "balli_haml_2020"
+              ],
+              "reference_wavelength_nm": null,
+              "reference_plane_um": null,
+              "normalization_denominator": null,
+              "axial_scan_step_um": 0.5,
+              "zero_value_wavelength_nm": 1400,
+              "source_table_percent_point_span": {
+                "value": 9.56,
+                "minimum_pct": -4.77,
+                "maximum_pct": 4.79,
+                "calculation_origin": "atlas",
+                "calculation_method": "max_minus_min"
               }
             }
           }
