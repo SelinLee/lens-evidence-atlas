@@ -66,3 +66,9 @@ v0.3.11候选：**19研究/70配置/675行**，可见光16研究/622行；3材�
 - 本地独立无头Google Chrome已核13记录/3配置/3材料、三f与有符号焦差（含负/零）/投影、SD/variation及x/y宽度、固定面/模拟/空态、引用往返/分享CSV/计数及六视口；已看桌面/320截图，无页面错误/溢出。arXiv原PDF200/哈希一致，ACS/SI403如实显示读取缺口、Crossref组件身份200；未冒称这些入口已能读取原始数据。Fan2019回归通过；待合并后公开页验收。
 
 - **实际发布验收**：PR #104头b17c436244eee2f5edff9b50f1c2d0c34a861fee通过CI43604935177，合并455cd12f1e75b4f48779b34fae51e5c1bae9facf；主线CI43605024931/Pages43605024915成功。公开12文件与本地一致，devices-data.js SHA256=`1ed05df45db2464a628679d70acdeb6835f9cda6a86fb614422b5d4b73342667`。线上独立无头Chrome复核三f/版本、6/−2/0焦差与投影/真实零、SD2.7/variation1.5、x/y与固定面、3配置3材料往返、缺值/CSV/分享、19篇675行及可见光16篇622行与六视口通过；已查看线上桌面/320截图，无页面错误/溢出。arXiv200/哈希一致、ACS/SI403及Crossref身份200如实保留；原始PSF/MTF/效率缺口未关闭。下篇近期[Jeon2026检查点](JEON_2026_NEXT_CHECKPOINT_2026-11-14.md)已启动，父目标active。
+
+## 2026-11-23 ACS 原始补件 Fig. S9
+
+ACS Figshare 条目 4622527 v1、文件 7521934 的 `nl6b05137_si_001.pdf` 为 373906 字节，MD5 `a2bc86e669d2544db43c3e2aaadb7beb` 与公开文件登记一致。p.7 Fig. S9 纵轴 Focusing efficiency (%)，横轴 Wavelength (nm)，在 490、500、510、520、530、540、550 nm 有七个实测曲线标记。逐点纵值未印字，积分焦圈、功率分母、效率测试的偏振和误差未报告。按现有 AML 谱点链接曲线，效率数值留空。[原始补件 Fig. S9](https://pstorage-acs-6854636.s3.amazonaws.com/7521934/nl6b05137_si_001.pdf#page=7) · [ACS 文件登记](https://widgets.figshare.com/public/articles/4622527/versions/1/files)
+
+p.6 Fig. S7 给六个相位设计波长 490、505、520、535、550、565 nm。Fig. S8 用全部柱宽增加 10 nm 模拟次峰增强。实测逐色焦位的版本和原值范围沿用上文，原始 PSF、频率表和空间采样仍待核。[原始补件 Figs. S7–S8](https://pstorage-acs-6854636.s3.amazonaws.com/7521934/nl6b05137_si_001.pdf#page=6)

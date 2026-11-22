@@ -10,7 +10,7 @@ const lens=atlas.domains.find(d=>d.id==='metalens'),rows=lens.rows.filter(r=>r.s
 test('Khorasaninejad 2017 keeps one publication across a measured AML, measured GML and simulated reverse design',()=>{
  assert.equal(validateDevices(data,catalog),true);assert.equal(rows.length,13);assert.equal(new Set(rows.map(r=>r.specimen_id)).size,3);assert.equal(groupRows(rows).length,1);
  assert.ok(rows.every(r=>r.paper==='device-khor_achromatic_2017'&&hasVisibleLight(lens,r)));
- for(const id of ['khor_achromatic_arxiv_2017','khor_achromatic_si_2017'])assert.equal(atlas.sources.get('device-'+id).publication_source,'device-khor_achromatic_2017');
+ for(const id of ['khor_achromatic_arxiv_2017','khor_achromatic_si_2017','khor_achromatic_original_si_2017'])assert.equal(atlas.sources.get('device-'+id).publication_source,'device-khor_achromatic_2017');
  assert.equal(atlas.sources.get('device-khor_achromatic_2017').bibliography.locator,'1819–1824');
  assert.match(atlas.sources.get('device-khor_achromatic_si_2017').scope,/未取得或读取SI内容/);
  for(const r of rows)for(const v of Object.values(r.values))for(const id of valueSources(v))assert.ok(atlas.sources.has(id));
@@ -22,7 +22,7 @@ test('only three explicitly printed author-manuscript focal lengths and six capt
   const v=get('aml_'+w);assert.equal(v.measured_focal_um.value,f);assert.equal(v.measured_focal_um.basis,'measured');assert.equal(v.measured_focal_um.reading_version,'arXiv:1701.06696v1');assert.match(v.measured_focal_um.location,new RegExp('Fig.5'+panel));assert.match(v.measured_focal_um.display,/arXiv v1印字/);assert.equal(v.fwhm_x_um.value,x);assert.equal(v.fwhm_y_um.value,y);assert.equal(v.design_focal_um.value,485);
  }
  for(const w of [500,510,530,540]){assert.equal(get('aml_'+w).measured_focal_um.value,null);assert.equal(get('aml_'+w).fwhm_x_um.value,null);assert.equal(get('aml_'+w).axial_focus_offset_um,undefined);}
- assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,3);assert.equal(axisPoints(rows,'wavelength_nm','fwhm_x_um').length,3);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,53);
+ assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,3);assert.equal(axisPoints(rows,'wavelength_nm','fwhm_x_um').length,3);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,55);
 });
 
 test('fixed evaluation planes do not duplicate best-focus measurements or transfer their widths',()=>{
@@ -41,11 +41,19 @@ test('signed axial offsets are atlas calculations against the documented fixed p
  assert.equal(axisPoints(rows,'wavelength_nm','axial_focus_offset_um').length,3);assert.equal(lens.metrics.find(m=>m.id==='axial_focus_offset_um').axis_bounds,undefined);
 });
 
-test('control geometry and inaccessible efficiency evidence never become AML measurement values or raw data',()=>{
+test('control geometry and a curve without labeled values never produce AML efficiency scatter values',()=>{
  const g=get('gml_summary'),r=get('reverse_summary');assert.equal(g.chromatic.basis,'measured');assert.equal(r.chromatic.basis,'model');assert.equal(r.measured_focal_um.value,null);assert.match(r.chromatic.value,/局部非单调/);assert.match(r.chromatic.note,/500→510nm.*550→560nm/);
  for(const v of [g,r])for(const key of ['diameter_um','na','design_focal_um','fwhm_x_um','focal_spectral_sd_um','focus_variation_pct'])assert.equal(v[key],undefined);
- for(const r of rows)assert.equal(r.values.efficiency_at_lambda_pct,undefined);assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,0);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,184);assert.equal(axisPoints(lens.rows,'na','efficiency_band_mean_pct').length,16);
- assert.match(get('aml_summary').efficiency_protocol.note,/功率分母/);assert.match(get('aml_summary').mtf_curve.value,/SI内容仍待取得/);
+ for(const wavelength of [490,500,510,520,530,540,550]){
+  const v=get('aml_'+wavelength);
+  assert.equal(v.efficiency_lambda_nm.value,wavelength);
+  assert.equal(v.efficiency_at_lambda_pct.value,null);
+  assert.equal(v.efficiency_at_lambda_pct.source,'device-khor_achromatic_original_si_2017');
+  assert.equal(v.efficiency_protocol.integration_radius_um,null);
+  assert.equal(v.efficiency_protocol.denominator,null);
+ }
+ assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,0);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,184);assert.equal(axisPoints(lens.rows,'na','efficiency_band_mean_pct').length,16);
+ assert.match(get('aml_summary').efficiency_protocol.note,/功率分母/);assert.match(get('aml_summary').mtf_curve.value,/原始补件.*原始 PSF/);
 });
 
 test('spectral SD validation rejects single wavelengths, repeat statistics and missing normalization context',()=>{
