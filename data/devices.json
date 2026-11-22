@@ -3467,6 +3467,69 @@
       "scope": "2026-11-22 查询 OpenAlex 引用 190，与期刊 DOI 一致。",
       "checked_on": "2026-11-22",
       "publication_source": "yuan_sol_vor_2017"
+    },
+    {
+      "id": "zhang_lwir_stokes_2022",
+      "title": "Zhang et al. (2022) · Crosstalk-free achromatic full Stokes imaging polarimetry metasurface enabled by polarization-dependent phase optimization",
+      "url": "https://www.oejournal.org/oea/article/doi/10.29026/oea.2022.220058",
+      "kind": "peer_reviewed_paper",
+      "scope": "Opto-Electronic Advances 5(11), 220058。正式在线 2022-09-30。主文 Fig. 5 与补件 Fig. S4 验证长波红外实制超透镜的轴向色散校正。2026-11-22 查 Crossref 被引 231 次、OpenAlex 235 次。",
+      "checked_on": "2026-11-22",
+      "doi": "10.29026/oea.2022.220058"
+    },
+    {
+      "id": "zhang_lwir_stokes_pdf_2022",
+      "title": "Opto-Electronic Advances · Zhang 2022 正式主文 PDF",
+      "url": "https://www.oejournal.org/fileOEJ/journal/article/gdjz/2022/11/oea-2022-0058-Luoxiangang.pdf",
+      "kind": "peer_reviewed_paper",
+      "scope": "13 页正式主文，3258811 字节，SHA-256 39ec74fe967d0020580d45de4cc7cfe743bc73d8df56ccac067e8e890c636813。核 p.5 器件、pp.7–9 Fig. 5 与 pp.9–11 Figs. 6–7。",
+      "checked_on": "2026-11-22",
+      "publication_source": "zhang_lwir_stokes_2022"
+    },
+    {
+      "id": "zhang_lwir_stokes_si_2022",
+      "title": "Opto-Electronic Advances · Zhang 2022 补件 202293017917270.pdf",
+      "url": "https://www.oejournal.org/fileOEJ/article_attachments/oea/202293017917270.pdf",
+      "kind": "supplement",
+      "scope": "7 页，2192107 字节，SHA-256 d2d9de5571fb544169eaa96d43582cc7ae5c63cf03e9d1597e90b41902a8dc99。核 p.S5 Fig. S4 圆偏振焦场与曲线、p.S6 光路及 Tables S1–S4 的偏振量。",
+      "checked_on": "2026-11-22",
+      "publication_source": "zhang_lwir_stokes_2022"
+    },
+    {
+      "id": "zhang_lwir_stokes_crossref",
+      "title": "Crossref · Zhang 2022 引用数",
+      "url": "https://api.crossref.org/works/10.29026/oea.2022.220058",
+      "kind": "repository_metadata",
+      "scope": "2026-11-22 精确 DOI 查询，is-referenced-by-count 231。正式在线日采用期刊 p.1。",
+      "checked_on": "2026-11-22",
+      "publication_source": "zhang_lwir_stokes_2022"
+    },
+    {
+      "id": "zhang_lwir_stokes_openalex",
+      "title": "OpenAlex · Zhang 2022 引用数",
+      "url": "https://api.openalex.org/works/W4312256968",
+      "kind": "repository_metadata",
+      "scope": "2026-11-22 查 cited_by_count 235。",
+      "checked_on": "2026-11-22",
+      "publication_source": "zhang_lwir_stokes_2022"
+    },
+    {
+      "id": "zhang_lwir_stokes_datacite",
+      "title": "DataCite · Zhang 2022 关联 DOI",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.29026%2Foea.2022.220058%22",
+      "kind": "repository_metadata",
+      "scope": "2026-11-22 精确 relatedIdentifier 查零项。",
+      "checked_on": "2026-11-22",
+      "publication_source": "zhang_lwir_stokes_2022"
+    },
+    {
+      "id": "zhang_lwir_stokes_zenodo",
+      "title": "Zenodo · Zhang 2022 精确 DOI 检索",
+      "url": "https://zenodo.org/api/records?q=%2210.29026%2Foea.2022.220058%22&size=8",
+      "kind": "repository_metadata",
+      "scope": "2026-11-22 精确 DOI 检索零项。",
+      "checked_on": "2026-11-22",
+      "publication_source": "zhang_lwir_stokes_2022"
     }
   ],
   "domains": {
@@ -174333,9 +174396,1494 @@
             }
           },
           "visible_light_use": true
+        },
+        {
+          "id": "zhang2022lwirStokes_x_summary",
+          "model": "Zhang 2022 · 长波红外全斯托克斯 · X → X · 实制子镜与轴扫",
+          "study_id": "zhang2022lwirStokes",
+          "specimen_id": "x_channel",
+          "module": "",
+          "variant": "X → X · 实制子镜与轴扫",
+          "measurement_scope": "X 偏振入射的 X 选择子镜，四个单色测点。聚焦效率来自主文正文。",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "values": {
+            "diameter_um": {
+              "value": 1724.3,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "每枚单元超透镜的明报名义口径 1.7243 mm。Fig. 5a,b 及 S4a,b 同时显示两个偏振子镜，整体坐标跨度非单镜口径。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1.7243,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 10000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "各子镜的共同设计焦距 1 cm。轴扫图的标线与逐色峰位分开。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1,
+              "original_unit": "cm"
+            },
+            "na": {
+              "value": null,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)；p.11 Discussion",
+              "note": "原文未给数值 NA。名义空气几何近轴估计可由 D 与 f 检查，未以估计替代作者 NA。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22"
+            },
+            "lambda_min_nm": {
+              "value": 9000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.1 摘要；pp.5–7 设计和理论验证",
+              "note": "9 μm 是连续设计区间端点。单色轴向实验为 9.3、9.6、10.3、10.6 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "spectral_sampling": "continuous_design_discrete_measurements"
+            },
+            "lambda_max_nm": {
+              "value": 12000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.1 摘要；pp.5–7 设计和理论验证",
+              "note": "12 μm 是连续设计区间端点。单色轴向实验为 9.3、9.6、10.3、10.6 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "spectral_sampling": "continuous_design_discrete_measurements"
+            },
+            "height_nm": {
+              "value": 10000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.7 · Experimental results and discussion；Fig. 4a,b",
+              "note": "硅纳米柱经刻蚀后高 10 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22"
+            },
+            "material": {
+              "value": "硅纳米柱／双面抛光硅片",
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.3 Fig. 2a 相邻正文；p.7 Fig. 4a,b",
+              "note": "设计周期 4.3 μm。线偏振方向由柱阵旋转实现，L／R 由相反旋向布局实现。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "unit_cell_period_nm": 4300
+            },
+            "chromatic": {
+              "value": "波长相关相位补偿与目标／正交偏振联合优化",
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)；正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5",
+              "note": "X 选择性子镜在四个波长实测轴向场。Eq. (4) 用传播相位，Eq. (6) 在圆偏振通道结合传播与几何相位。经典纳入，2026-11-22 查 Crossref 231 次、OpenAlex 235 次。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "zhang_lwir_stokes_pdf_2022",
+                "zhang_lwir_stokes_si_2022",
+                "zhang_lwir_stokes_crossref",
+                "zhang_lwir_stokes_openalex"
+              ],
+              "sample_wavelengths_nm": [
+                9300,
+                9600,
+                10300,
+                10600
+              ]
+            },
+            "psf_protocol": {
+              "value": "X 偏振照明，沿 z 移动红外相机，记录 x–z 与焦面场",
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5；补件 p.S6 §2",
+              "note": "ACCESS LASER L4GT CO₂ 激光，线偏振片与四分之一波片选偏振，GUIDE INFRARED Plug-612 安装在 Daheng GCD-203050M 电控位移台上。以白虚线 z=1 cm 作名义参考。轴向步进、相机标定、横向图是否逐色取峰及宽度截线方向未明。补件 §2 将光路写为 Fig. 5c，正式光路图为 Fig. 4c。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "zhang_lwir_stokes_pdf_2022",
+                "zhang_lwir_stokes_si_2022"
+              ],
+              "illumination_polarization": "X",
+              "sample_wavelengths_nm": [
+                9300,
+                9600,
+                10300,
+                10600
+              ],
+              "reference_plane": "author_nominal_z_axis",
+              "reference_plane_um": 10000,
+              "evaluation_plane_um": null,
+              "axial_scan_step_um": null
+            },
+            "focus_variation_protocol": {
+              "value": "四实测谱点围绕 1 cm 名义参考",
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5a,c",
+              "note": "曲线红点为实测，蓝色曲线为模拟。z 零点、取峰算法及重复分布未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "reference_wavelength_nm": null,
+              "reference_plane_um": 10000,
+              "sample_wavelengths_nm": [
+                9300,
+                9600,
+                10300,
+                10600
+              ]
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5c",
+              "note": "作者给逐色轴峰的实测图点，未查到逐色原数、数值误差或跨实测谱点最大互差。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "四实测焦位图点；残余互差待原数",
+              "reference_wavelength_nm": null
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5a–d；刊方主附件清单及 DOI 关联检索",
+              "note": "有排版焦场与宽度曲线。补件的原表为 Stokes 向量，无相机标定的原始 PSF 或 MTF 数组。未定位逐频 MTF 结果。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "zhang_lwir_stokes_pdf_2022",
+                "zhang_lwir_stokes_si_2022",
+                "zhang_lwir_stokes_datacite",
+                "zhang_lwir_stokes_zenodo"
+              ],
+              "display": "原始 PSF／MTF 待补"
+            }
+          }
+        },
+        {
+          "id": "zhang2022lwirStokes_x_9300",
+          "model": "Zhang 2022 · 长波红外全斯托克斯 · X → X · 9.3 μm 实测",
+          "study_id": "zhang2022lwirStokes",
+          "specimen_id": "x_channel",
+          "module": "",
+          "variant": "X → X · 9.3 μm 实测",
+          "measurement_scope": "X 偏振入射的 X 选择子镜，四个单色测点。聚焦效率来自主文正文。",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "values": {
+            "diameter_um": {
+              "value": 1724.3,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "每枚单元超透镜的明报名义口径 1.7243 mm。Fig. 5a,b 及 S4a,b 同时显示两个偏振子镜，整体坐标跨度非单镜口径。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1.7243,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 10000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "各子镜的共同设计焦距 1 cm。轴扫图的标线与逐色峰位分开。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1,
+              "original_unit": "cm"
+            },
+            "na": {
+              "value": null,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)；p.11 Discussion",
+              "note": "原文未给数值 NA。名义空气几何近轴估计可由 D 与 f 检查，未以估计替代作者 NA。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22"
+            },
+            "wavelength_nm": {
+              "value": 9300,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5a 标题与图注",
+              "note": "实测 9.3 μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-22"
+            },
+            "psf_protocol": {
+              "value": "X 偏振照明，沿 z 移动红外相机，记录 x–z 与焦面场",
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5；补件 p.S6 §2",
+              "note": "ACCESS LASER L4GT CO₂ 激光，线偏振片与四分之一波片选偏振，GUIDE INFRARED Plug-612 安装在 Daheng GCD-203050M 电控位移台上。以白虚线 z=1 cm 作名义参考。轴向步进、相机标定、横向图是否逐色取峰及宽度截线方向未明。补件 §2 将光路写为 Fig. 5c，正式光路图为 Fig. 4c。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "zhang_lwir_stokes_pdf_2022",
+                "zhang_lwir_stokes_si_2022"
+              ],
+              "illumination_polarization": "X",
+              "sample_wavelengths_nm": [
+                9300,
+                9600,
+                10300,
+                10600
+              ],
+              "reference_plane": "author_nominal_z_axis",
+              "reference_plane_um": 10000,
+              "evaluation_plane_um": null,
+              "axial_scan_step_um": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5c",
+              "note": "9.3 μm 红色实测点，原图焦距轴单位 mm，逐色数值未披露。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "实测焦位为图点"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5d",
+              "note": "9.3 μm 红色实测点，FWHM 轴单位 μm。横剖线方向未说明。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "实测 FWHM 为图点"
+            },
+            "efficiency_lambda_nm": {
+              "value": 9300,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.8 正文末段；p.9 Fig. 5e",
+              "note": "效率对应的实际单色输入。",
+              "basis": "measured",
+              "checked_on": "2026-11-22"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 31.8,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.8 Characterization 段末；p.9 Fig. 5e 红点",
+              "note": "9.3 μm、X 偏振实制聚焦通道的作者明印焦区能量比。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-22",
+              "calculation_origin": "authors",
+              "denominator": "incident_light_energy"
+            },
+            "efficiency_protocol": {
+              "value": "焦斑 3× FWHM 范围内能量／入射光能量",
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.8 Characterization 段末；p.9 Fig. 5e",
+              "note": "作者给三倍 FWHM 内能量与入射光能量之比。范围的直径或半径约定、窗口形状、入射采集面积、探测校准和误差未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "fwhm_multiple": 3,
+              "integration_geometry": null,
+              "denominator": "incident_light_energy",
+              "illumination_polarization": "X"
+            }
+          }
+        },
+        {
+          "id": "zhang2022lwirStokes_x_9600",
+          "model": "Zhang 2022 · 长波红外全斯托克斯 · X → X · 9.6 μm 实测",
+          "study_id": "zhang2022lwirStokes",
+          "specimen_id": "x_channel",
+          "module": "",
+          "variant": "X → X · 9.6 μm 实测",
+          "measurement_scope": "X 偏振入射的 X 选择子镜，四个单色测点。聚焦效率来自主文正文。",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "values": {
+            "diameter_um": {
+              "value": 1724.3,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "每枚单元超透镜的明报名义口径 1.7243 mm。Fig. 5a,b 及 S4a,b 同时显示两个偏振子镜，整体坐标跨度非单镜口径。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1.7243,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 10000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "各子镜的共同设计焦距 1 cm。轴扫图的标线与逐色峰位分开。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1,
+              "original_unit": "cm"
+            },
+            "na": {
+              "value": null,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)；p.11 Discussion",
+              "note": "原文未给数值 NA。名义空气几何近轴估计可由 D 与 f 检查，未以估计替代作者 NA。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22"
+            },
+            "wavelength_nm": {
+              "value": 9600,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5a 标题与图注",
+              "note": "实测 9.6 μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-22"
+            },
+            "psf_protocol": {
+              "value": "X 偏振照明，沿 z 移动红外相机，记录 x–z 与焦面场",
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5；补件 p.S6 §2",
+              "note": "ACCESS LASER L4GT CO₂ 激光，线偏振片与四分之一波片选偏振，GUIDE INFRARED Plug-612 安装在 Daheng GCD-203050M 电控位移台上。以白虚线 z=1 cm 作名义参考。轴向步进、相机标定、横向图是否逐色取峰及宽度截线方向未明。补件 §2 将光路写为 Fig. 5c，正式光路图为 Fig. 4c。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "zhang_lwir_stokes_pdf_2022",
+                "zhang_lwir_stokes_si_2022"
+              ],
+              "illumination_polarization": "X",
+              "sample_wavelengths_nm": [
+                9300,
+                9600,
+                10300,
+                10600
+              ],
+              "reference_plane": "author_nominal_z_axis",
+              "reference_plane_um": 10000,
+              "evaluation_plane_um": null,
+              "axial_scan_step_um": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5c",
+              "note": "9.6 μm 红色实测点，原图焦距轴单位 mm，逐色数值未披露。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "实测焦位为图点"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5d",
+              "note": "9.6 μm 红色实测点，FWHM 轴单位 μm。横剖线方向未说明。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "实测 FWHM 为图点"
+            },
+            "efficiency_lambda_nm": {
+              "value": 9600,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.8 正文末段；p.9 Fig. 5e",
+              "note": "效率对应的实际单色输入。",
+              "basis": "measured",
+              "checked_on": "2026-11-22"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 33.5,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.8 Characterization 段末；p.9 Fig. 5e 红点",
+              "note": "9.6 μm、X 偏振实制聚焦通道的作者明印焦区能量比。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-22",
+              "calculation_origin": "authors",
+              "denominator": "incident_light_energy"
+            },
+            "efficiency_protocol": {
+              "value": "焦斑 3× FWHM 范围内能量／入射光能量",
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.8 Characterization 段末；p.9 Fig. 5e",
+              "note": "作者给三倍 FWHM 内能量与入射光能量之比。范围的直径或半径约定、窗口形状、入射采集面积、探测校准和误差未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "fwhm_multiple": 3,
+              "integration_geometry": null,
+              "denominator": "incident_light_energy",
+              "illumination_polarization": "X"
+            }
+          }
+        },
+        {
+          "id": "zhang2022lwirStokes_x_10300",
+          "model": "Zhang 2022 · 长波红外全斯托克斯 · X → X · 10.3 μm 实测",
+          "study_id": "zhang2022lwirStokes",
+          "specimen_id": "x_channel",
+          "module": "",
+          "variant": "X → X · 10.3 μm 实测",
+          "measurement_scope": "X 偏振入射的 X 选择子镜，四个单色测点。聚焦效率来自主文正文。",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "values": {
+            "diameter_um": {
+              "value": 1724.3,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "每枚单元超透镜的明报名义口径 1.7243 mm。Fig. 5a,b 及 S4a,b 同时显示两个偏振子镜，整体坐标跨度非单镜口径。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1.7243,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 10000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "各子镜的共同设计焦距 1 cm。轴扫图的标线与逐色峰位分开。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1,
+              "original_unit": "cm"
+            },
+            "na": {
+              "value": null,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)；p.11 Discussion",
+              "note": "原文未给数值 NA。名义空气几何近轴估计可由 D 与 f 检查，未以估计替代作者 NA。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22"
+            },
+            "wavelength_nm": {
+              "value": 10300,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5a 标题与图注",
+              "note": "实测 10.3 μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-22"
+            },
+            "psf_protocol": {
+              "value": "X 偏振照明，沿 z 移动红外相机，记录 x–z 与焦面场",
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5；补件 p.S6 §2",
+              "note": "ACCESS LASER L4GT CO₂ 激光，线偏振片与四分之一波片选偏振，GUIDE INFRARED Plug-612 安装在 Daheng GCD-203050M 电控位移台上。以白虚线 z=1 cm 作名义参考。轴向步进、相机标定、横向图是否逐色取峰及宽度截线方向未明。补件 §2 将光路写为 Fig. 5c，正式光路图为 Fig. 4c。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "zhang_lwir_stokes_pdf_2022",
+                "zhang_lwir_stokes_si_2022"
+              ],
+              "illumination_polarization": "X",
+              "sample_wavelengths_nm": [
+                9300,
+                9600,
+                10300,
+                10600
+              ],
+              "reference_plane": "author_nominal_z_axis",
+              "reference_plane_um": 10000,
+              "evaluation_plane_um": null,
+              "axial_scan_step_um": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5c",
+              "note": "10.3 μm 红色实测点，原图焦距轴单位 mm，逐色数值未披露。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "实测焦位为图点"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5d",
+              "note": "10.3 μm 红色实测点，FWHM 轴单位 μm。横剖线方向未说明。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "实测 FWHM 为图点"
+            },
+            "efficiency_lambda_nm": {
+              "value": 10300,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.8 正文末段；p.9 Fig. 5e",
+              "note": "效率对应的实际单色输入。",
+              "basis": "measured",
+              "checked_on": "2026-11-22"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 46.2,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.8 Characterization 段末；p.9 Fig. 5e 红点",
+              "note": "10.3 μm、X 偏振实制聚焦通道的作者明印焦区能量比。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-22",
+              "calculation_origin": "authors",
+              "denominator": "incident_light_energy"
+            },
+            "efficiency_protocol": {
+              "value": "焦斑 3× FWHM 范围内能量／入射光能量",
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.8 Characterization 段末；p.9 Fig. 5e",
+              "note": "作者给三倍 FWHM 内能量与入射光能量之比。范围的直径或半径约定、窗口形状、入射采集面积、探测校准和误差未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "fwhm_multiple": 3,
+              "integration_geometry": null,
+              "denominator": "incident_light_energy",
+              "illumination_polarization": "X"
+            }
+          }
+        },
+        {
+          "id": "zhang2022lwirStokes_x_10600",
+          "model": "Zhang 2022 · 长波红外全斯托克斯 · X → X · 10.6 μm 实测",
+          "study_id": "zhang2022lwirStokes",
+          "specimen_id": "x_channel",
+          "module": "",
+          "variant": "X → X · 10.6 μm 实测",
+          "measurement_scope": "X 偏振入射的 X 选择子镜，四个单色测点。聚焦效率来自主文正文。",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "values": {
+            "diameter_um": {
+              "value": 1724.3,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "每枚单元超透镜的明报名义口径 1.7243 mm。Fig. 5a,b 及 S4a,b 同时显示两个偏振子镜，整体坐标跨度非单镜口径。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1.7243,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 10000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "各子镜的共同设计焦距 1 cm。轴扫图的标线与逐色峰位分开。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1,
+              "original_unit": "cm"
+            },
+            "na": {
+              "value": null,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)；p.11 Discussion",
+              "note": "原文未给数值 NA。名义空气几何近轴估计可由 D 与 f 检查，未以估计替代作者 NA。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22"
+            },
+            "wavelength_nm": {
+              "value": 10600,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5a 标题与图注",
+              "note": "实测 10.6 μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-22"
+            },
+            "psf_protocol": {
+              "value": "X 偏振照明，沿 z 移动红外相机，记录 x–z 与焦面场",
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5；补件 p.S6 §2",
+              "note": "ACCESS LASER L4GT CO₂ 激光，线偏振片与四分之一波片选偏振，GUIDE INFRARED Plug-612 安装在 Daheng GCD-203050M 电控位移台上。以白虚线 z=1 cm 作名义参考。轴向步进、相机标定、横向图是否逐色取峰及宽度截线方向未明。补件 §2 将光路写为 Fig. 5c，正式光路图为 Fig. 4c。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "zhang_lwir_stokes_pdf_2022",
+                "zhang_lwir_stokes_si_2022"
+              ],
+              "illumination_polarization": "X",
+              "sample_wavelengths_nm": [
+                9300,
+                9600,
+                10300,
+                10600
+              ],
+              "reference_plane": "author_nominal_z_axis",
+              "reference_plane_um": 10000,
+              "evaluation_plane_um": null,
+              "axial_scan_step_um": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5c",
+              "note": "10.6 μm 红色实测点，原图焦距轴单位 mm，逐色数值未披露。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "实测焦位为图点"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5d",
+              "note": "10.6 μm 红色实测点，FWHM 轴单位 μm。横剖线方向未说明。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "实测 FWHM 为图点"
+            },
+            "efficiency_lambda_nm": {
+              "value": 10600,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.8 正文末段；p.9 Fig. 5e",
+              "note": "效率对应的实际单色输入。",
+              "basis": "measured",
+              "checked_on": "2026-11-22"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 46.3,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.8 Characterization 段末；p.9 Fig. 5e 红点",
+              "note": "10.6 μm、X 偏振实制聚焦通道的作者明印焦区能量比。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-22",
+              "calculation_origin": "authors",
+              "denominator": "incident_light_energy"
+            },
+            "efficiency_protocol": {
+              "value": "焦斑 3× FWHM 范围内能量／入射光能量",
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.8 Characterization 段末；p.9 Fig. 5e",
+              "note": "作者给三倍 FWHM 内能量与入射光能量之比。范围的直径或半径约定、窗口形状、入射采集面积、探测校准和误差未说明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "fwhm_multiple": 3,
+              "integration_geometry": null,
+              "denominator": "incident_light_energy",
+              "illumination_polarization": "X"
+            }
+          }
+        },
+        {
+          "id": "zhang2022lwirStokes_x_cross",
+          "model": "Zhang 2022 · 长波红外全斯托克斯 · X → Y · 正交偏振对照",
+          "study_id": "zhang2022lwirStokes",
+          "specimen_id": "y_channel",
+          "module": "",
+          "variant": "X → Y · 正交偏振对照",
+          "measurement_scope": "同阵列的 Y 选择子镜，在 X 偏振照明下实测。",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "values": {
+            "diameter_um": {
+              "value": 1724.3,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "每枚单元超透镜的明报名义口径 1.7243 mm。Fig. 5a,b 及 S4a,b 同时显示两个偏振子镜，整体坐标跨度非单镜口径。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1.7243,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 10000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "各子镜的共同设计焦距 1 cm。轴扫图的标线与逐色峰位分开。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1,
+              "original_unit": "cm"
+            },
+            "na": {
+              "value": null,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)；p.11 Discussion",
+              "note": "原文未给数值 NA。名义空气几何近轴估计可由 D 与 f 检查，未以估计替代作者 NA。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22"
+            },
+            "lambda_min_nm": {
+              "value": 9000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.1 摘要；pp.5–7 设计和理论验证",
+              "note": "9 μm 是连续设计区间端点。单色轴向实验为 9.3、9.6、10.3、10.6 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "spectral_sampling": "continuous_design_discrete_measurements"
+            },
+            "lambda_max_nm": {
+              "value": 12000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.1 摘要；pp.5–7 设计和理论验证",
+              "note": "12 μm 是连续设计区间端点。单色轴向实验为 9.3、9.6、10.3、10.6 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "spectral_sampling": "continuous_design_discrete_measurements"
+            },
+            "psf_protocol": {
+              "value": "X 偏振照明，沿 z 移动红外相机，记录 x–z 与焦面场",
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5；补件 p.S6 §2",
+              "note": "ACCESS LASER L4GT CO₂ 激光，线偏振片与四分之一波片选偏振，GUIDE INFRARED Plug-612 安装在 Daheng GCD-203050M 电控位移台上。以白虚线 z=1 cm 作名义参考。轴向步进、相机标定、横向图是否逐色取峰及宽度截线方向未明。补件 §2 将光路写为 Fig. 5c，正式光路图为 Fig. 4c。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "zhang_lwir_stokes_pdf_2022",
+                "zhang_lwir_stokes_si_2022"
+              ],
+              "illumination_polarization": "X",
+              "sample_wavelengths_nm": [
+                9300,
+                9600,
+                10300,
+                10600
+              ],
+              "reference_plane": "author_nominal_z_axis",
+              "reference_plane_um": 10000,
+              "evaluation_plane_um": null,
+              "axial_scan_step_um": null
+            },
+            "chromatic": {
+              "value": "X 入射的正交偏振对照",
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.7–9 · Characterization of the achromatic metalenses、Fig. 5a,b",
+              "note": "Fig. 5a,b 在同一坐标绘出两个子镜。X 照明时 Y 子镜的焦斑显著受抑，焦位和效率均无独立数值。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "sample_wavelengths_nm": [
+                9300,
+                9600,
+                10300,
+                10600
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhang2022lwirStokes_l_summary",
+          "model": "Zhang 2022 · 长波红外全斯托克斯 · L → L · 实制子镜与轴扫",
+          "study_id": "zhang2022lwirStokes",
+          "specimen_id": "l_channel",
+          "module": "",
+          "variant": "L → L · 实制子镜与轴扫",
+          "measurement_scope": "L 偏振入射的 L 选择子镜，四个单色测点。效率来自补件曲线。",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "values": {
+            "diameter_um": {
+              "value": 1724.3,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "每枚单元超透镜的明报名义口径 1.7243 mm。Fig. 5a,b 及 S4a,b 同时显示两个偏振子镜，整体坐标跨度非单镜口径。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1.7243,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 10000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "各子镜的共同设计焦距 1 cm。轴扫图的标线与逐色峰位分开。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1,
+              "original_unit": "cm"
+            },
+            "na": {
+              "value": null,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)；p.11 Discussion",
+              "note": "原文未给数值 NA。名义空气几何近轴估计可由 D 与 f 检查，未以估计替代作者 NA。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22"
+            },
+            "lambda_min_nm": {
+              "value": 9000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.1 摘要；pp.5–7 设计和理论验证",
+              "note": "9 μm 是连续设计区间端点。单色轴向实验为 9.3、9.6、10.3、10.6 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "spectral_sampling": "continuous_design_discrete_measurements"
+            },
+            "lambda_max_nm": {
+              "value": 12000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.1 摘要；pp.5–7 设计和理论验证",
+              "note": "12 μm 是连续设计区间端点。单色轴向实验为 9.3、9.6、10.3、10.6 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "spectral_sampling": "continuous_design_discrete_measurements"
+            },
+            "height_nm": {
+              "value": 10000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.7 · Experimental results and discussion；Fig. 4a,b",
+              "note": "硅纳米柱经刻蚀后高 10 μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22"
+            },
+            "material": {
+              "value": "硅纳米柱／双面抛光硅片",
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.3 Fig. 2a 相邻正文；p.7 Fig. 4a,b",
+              "note": "设计周期 4.3 μm。线偏振方向由柱阵旋转实现，L／R 由相反旋向布局实现。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "unit_cell_period_nm": 4300
+            },
+            "chromatic": {
+              "value": "波长相关相位补偿与目标／正交偏振联合优化",
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)；正式补件 p.S5 · Fig. S4",
+              "note": "L 选择性子镜在四个波长实测轴向场。Eq. (4) 用传播相位，Eq. (6) 在圆偏振通道结合传播与几何相位。经典纳入，2026-11-22 查 Crossref 231 次、OpenAlex 235 次。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "zhang_lwir_stokes_si_2022",
+                "zhang_lwir_stokes_pdf_2022",
+                "zhang_lwir_stokes_crossref",
+                "zhang_lwir_stokes_openalex"
+              ],
+              "sample_wavelengths_nm": [
+                9300,
+                9600,
+                10300,
+                10600
+              ]
+            },
+            "psf_protocol": {
+              "value": "L 偏振照明，沿 z 移动红外相机，记录 x–z 与焦面场",
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4；补件 p.S6 §2",
+              "note": "ACCESS LASER L4GT CO₂ 激光，线偏振片与四分之一波片选偏振，GUIDE INFRARED Plug-612 安装在 Daheng GCD-203050M 电控位移台上。以白虚线 z=1 cm 作名义参考。轴向步进、相机标定、横向图是否逐色取峰及宽度截线方向未明。补件 §2 将光路写为 Fig. 5c，正式光路图为 Fig. 4c。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "zhang_lwir_stokes_si_2022",
+                "zhang_lwir_stokes_pdf_2022"
+              ],
+              "illumination_polarization": "L",
+              "sample_wavelengths_nm": [
+                9300,
+                9600,
+                10300,
+                10600
+              ],
+              "reference_plane": "author_nominal_z_axis",
+              "reference_plane_um": 10000,
+              "evaluation_plane_um": null,
+              "axial_scan_step_um": null
+            },
+            "focus_variation_protocol": {
+              "value": "四实测谱点围绕 1 cm 名义参考",
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4a,c",
+              "note": "曲线红点为实测，蓝色曲线为模拟。z 零点、取峰算法及重复分布未明。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "reference_wavelength_nm": null,
+              "reference_plane_um": 10000,
+              "sample_wavelengths_nm": [
+                9300,
+                9600,
+                10300,
+                10600
+              ]
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4c",
+              "note": "作者给逐色轴峰的实测图点，未查到逐色原数、数值误差或跨实测谱点最大互差。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "四实测焦位图点；残余互差待原数",
+              "reference_wavelength_nm": null
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4a–d；刊方主附件清单及 DOI 关联检索",
+              "note": "有排版焦场与宽度曲线。补件的原表为 Stokes 向量，无相机标定的原始 PSF 或 MTF 数组。未定位逐频 MTF 结果。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "zhang_lwir_stokes_si_2022",
+                "zhang_lwir_stokes_pdf_2022",
+                "zhang_lwir_stokes_datacite",
+                "zhang_lwir_stokes_zenodo"
+              ],
+              "display": "原始 PSF／MTF 待补"
+            }
+          }
+        },
+        {
+          "id": "zhang2022lwirStokes_l_9300",
+          "model": "Zhang 2022 · 长波红外全斯托克斯 · L → L · 9.3 μm 实测",
+          "study_id": "zhang2022lwirStokes",
+          "specimen_id": "l_channel",
+          "module": "",
+          "variant": "L → L · 9.3 μm 实测",
+          "measurement_scope": "L 偏振入射的 L 选择子镜，四个单色测点。效率来自补件曲线。",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "values": {
+            "diameter_um": {
+              "value": 1724.3,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "每枚单元超透镜的明报名义口径 1.7243 mm。Fig. 5a,b 及 S4a,b 同时显示两个偏振子镜，整体坐标跨度非单镜口径。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1.7243,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 10000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "各子镜的共同设计焦距 1 cm。轴扫图的标线与逐色峰位分开。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1,
+              "original_unit": "cm"
+            },
+            "na": {
+              "value": null,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)；p.11 Discussion",
+              "note": "原文未给数值 NA。名义空气几何近轴估计可由 D 与 f 检查，未以估计替代作者 NA。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22"
+            },
+            "wavelength_nm": {
+              "value": 9300,
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4a 标题与图注",
+              "note": "实测 9.3 μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-22"
+            },
+            "psf_protocol": {
+              "value": "L 偏振照明，沿 z 移动红外相机，记录 x–z 与焦面场",
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4；补件 p.S6 §2",
+              "note": "ACCESS LASER L4GT CO₂ 激光，线偏振片与四分之一波片选偏振，GUIDE INFRARED Plug-612 安装在 Daheng GCD-203050M 电控位移台上。以白虚线 z=1 cm 作名义参考。轴向步进、相机标定、横向图是否逐色取峰及宽度截线方向未明。补件 §2 将光路写为 Fig. 5c，正式光路图为 Fig. 4c。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "zhang_lwir_stokes_si_2022",
+                "zhang_lwir_stokes_pdf_2022"
+              ],
+              "illumination_polarization": "L",
+              "sample_wavelengths_nm": [
+                9300,
+                9600,
+                10300,
+                10600
+              ],
+              "reference_plane": "author_nominal_z_axis",
+              "reference_plane_um": 10000,
+              "evaluation_plane_um": null,
+              "axial_scan_step_um": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4c",
+              "note": "9.3 μm 红色实测点，原图焦距轴单位 mm，逐色数值未披露。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "实测焦位为图点"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4d",
+              "note": "9.3 μm 红色实测点，FWHM 轴单位 μm。横剖线方向未说明。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "实测 FWHM 为图点"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4e",
+              "note": "补件仅红色实测点，纵轴 %。未用同篇 X 选择子镜正文的效率代入。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "圆偏振效率为图点"
+            }
+          }
+        },
+        {
+          "id": "zhang2022lwirStokes_l_9600",
+          "model": "Zhang 2022 · 长波红外全斯托克斯 · L → L · 9.6 μm 实测",
+          "study_id": "zhang2022lwirStokes",
+          "specimen_id": "l_channel",
+          "module": "",
+          "variant": "L → L · 9.6 μm 实测",
+          "measurement_scope": "L 偏振入射的 L 选择子镜，四个单色测点。效率来自补件曲线。",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "values": {
+            "diameter_um": {
+              "value": 1724.3,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "每枚单元超透镜的明报名义口径 1.7243 mm。Fig. 5a,b 及 S4a,b 同时显示两个偏振子镜，整体坐标跨度非单镜口径。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1.7243,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 10000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "各子镜的共同设计焦距 1 cm。轴扫图的标线与逐色峰位分开。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1,
+              "original_unit": "cm"
+            },
+            "na": {
+              "value": null,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)；p.11 Discussion",
+              "note": "原文未给数值 NA。名义空气几何近轴估计可由 D 与 f 检查，未以估计替代作者 NA。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22"
+            },
+            "wavelength_nm": {
+              "value": 9600,
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4a 标题与图注",
+              "note": "实测 9.6 μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-22"
+            },
+            "psf_protocol": {
+              "value": "L 偏振照明，沿 z 移动红外相机，记录 x–z 与焦面场",
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4；补件 p.S6 §2",
+              "note": "ACCESS LASER L4GT CO₂ 激光，线偏振片与四分之一波片选偏振，GUIDE INFRARED Plug-612 安装在 Daheng GCD-203050M 电控位移台上。以白虚线 z=1 cm 作名义参考。轴向步进、相机标定、横向图是否逐色取峰及宽度截线方向未明。补件 §2 将光路写为 Fig. 5c，正式光路图为 Fig. 4c。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "zhang_lwir_stokes_si_2022",
+                "zhang_lwir_stokes_pdf_2022"
+              ],
+              "illumination_polarization": "L",
+              "sample_wavelengths_nm": [
+                9300,
+                9600,
+                10300,
+                10600
+              ],
+              "reference_plane": "author_nominal_z_axis",
+              "reference_plane_um": 10000,
+              "evaluation_plane_um": null,
+              "axial_scan_step_um": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4c",
+              "note": "9.6 μm 红色实测点，原图焦距轴单位 mm，逐色数值未披露。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "实测焦位为图点"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4d",
+              "note": "9.6 μm 红色实测点，FWHM 轴单位 μm。横剖线方向未说明。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "实测 FWHM 为图点"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4e",
+              "note": "补件仅红色实测点，纵轴 %。未用同篇 X 选择子镜正文的效率代入。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "圆偏振效率为图点"
+            }
+          }
+        },
+        {
+          "id": "zhang2022lwirStokes_l_10300",
+          "model": "Zhang 2022 · 长波红外全斯托克斯 · L → L · 10.3 μm 实测",
+          "study_id": "zhang2022lwirStokes",
+          "specimen_id": "l_channel",
+          "module": "",
+          "variant": "L → L · 10.3 μm 实测",
+          "measurement_scope": "L 偏振入射的 L 选择子镜，四个单色测点。效率来自补件曲线。",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "values": {
+            "diameter_um": {
+              "value": 1724.3,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "每枚单元超透镜的明报名义口径 1.7243 mm。Fig. 5a,b 及 S4a,b 同时显示两个偏振子镜，整体坐标跨度非单镜口径。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1.7243,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 10000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "各子镜的共同设计焦距 1 cm。轴扫图的标线与逐色峰位分开。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1,
+              "original_unit": "cm"
+            },
+            "na": {
+              "value": null,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)；p.11 Discussion",
+              "note": "原文未给数值 NA。名义空气几何近轴估计可由 D 与 f 检查，未以估计替代作者 NA。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22"
+            },
+            "wavelength_nm": {
+              "value": 10300,
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4a 标题与图注",
+              "note": "实测 10.3 μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-22"
+            },
+            "psf_protocol": {
+              "value": "L 偏振照明，沿 z 移动红外相机，记录 x–z 与焦面场",
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4；补件 p.S6 §2",
+              "note": "ACCESS LASER L4GT CO₂ 激光，线偏振片与四分之一波片选偏振，GUIDE INFRARED Plug-612 安装在 Daheng GCD-203050M 电控位移台上。以白虚线 z=1 cm 作名义参考。轴向步进、相机标定、横向图是否逐色取峰及宽度截线方向未明。补件 §2 将光路写为 Fig. 5c，正式光路图为 Fig. 4c。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "zhang_lwir_stokes_si_2022",
+                "zhang_lwir_stokes_pdf_2022"
+              ],
+              "illumination_polarization": "L",
+              "sample_wavelengths_nm": [
+                9300,
+                9600,
+                10300,
+                10600
+              ],
+              "reference_plane": "author_nominal_z_axis",
+              "reference_plane_um": 10000,
+              "evaluation_plane_um": null,
+              "axial_scan_step_um": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4c",
+              "note": "10.3 μm 红色实测点，原图焦距轴单位 mm，逐色数值未披露。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "实测焦位为图点"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4d",
+              "note": "10.3 μm 红色实测点，FWHM 轴单位 μm。横剖线方向未说明。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "实测 FWHM 为图点"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4e",
+              "note": "补件仅红色实测点，纵轴 %。未用同篇 X 选择子镜正文的效率代入。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "圆偏振效率为图点"
+            }
+          }
+        },
+        {
+          "id": "zhang2022lwirStokes_l_10600",
+          "model": "Zhang 2022 · 长波红外全斯托克斯 · L → L · 10.6 μm 实测",
+          "study_id": "zhang2022lwirStokes",
+          "specimen_id": "l_channel",
+          "module": "",
+          "variant": "L → L · 10.6 μm 实测",
+          "measurement_scope": "L 偏振入射的 L 选择子镜，四个单色测点。效率来自补件曲线。",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "values": {
+            "diameter_um": {
+              "value": 1724.3,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "每枚单元超透镜的明报名义口径 1.7243 mm。Fig. 5a,b 及 S4a,b 同时显示两个偏振子镜，整体坐标跨度非单镜口径。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1.7243,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 10000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "各子镜的共同设计焦距 1 cm。轴扫图的标线与逐色峰位分开。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1,
+              "original_unit": "cm"
+            },
+            "na": {
+              "value": null,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)；p.11 Discussion",
+              "note": "原文未给数值 NA。名义空气几何近轴估计可由 D 与 f 检查，未以估计替代作者 NA。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22"
+            },
+            "wavelength_nm": {
+              "value": 10600,
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4a 标题与图注",
+              "note": "实测 10.6 μm。",
+              "basis": "measured",
+              "checked_on": "2026-11-22"
+            },
+            "psf_protocol": {
+              "value": "L 偏振照明，沿 z 移动红外相机，记录 x–z 与焦面场",
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4；补件 p.S6 §2",
+              "note": "ACCESS LASER L4GT CO₂ 激光，线偏振片与四分之一波片选偏振，GUIDE INFRARED Plug-612 安装在 Daheng GCD-203050M 电控位移台上。以白虚线 z=1 cm 作名义参考。轴向步进、相机标定、横向图是否逐色取峰及宽度截线方向未明。补件 §2 将光路写为 Fig. 5c，正式光路图为 Fig. 4c。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "zhang_lwir_stokes_si_2022",
+                "zhang_lwir_stokes_pdf_2022"
+              ],
+              "illumination_polarization": "L",
+              "sample_wavelengths_nm": [
+                9300,
+                9600,
+                10300,
+                10600
+              ],
+              "reference_plane": "author_nominal_z_axis",
+              "reference_plane_um": 10000,
+              "evaluation_plane_um": null,
+              "axial_scan_step_um": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4c",
+              "note": "10.6 μm 红色实测点，原图焦距轴单位 mm，逐色数值未披露。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "实测焦位为图点"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4d",
+              "note": "10.6 μm 红色实测点，FWHM 轴单位 μm。横剖线方向未说明。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "实测 FWHM 为图点"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4e",
+              "note": "补件仅红色实测点，纵轴 %。未用同篇 X 选择子镜正文的效率代入。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "圆偏振效率为图点"
+            }
+          }
+        },
+        {
+          "id": "zhang2022lwirStokes_l_cross",
+          "model": "Zhang 2022 · 长波红外全斯托克斯 · L → R · 正交偏振对照",
+          "study_id": "zhang2022lwirStokes",
+          "specimen_id": "r_channel",
+          "module": "",
+          "variant": "L → R · 正交偏振对照",
+          "measurement_scope": "同阵列的 R 选择子镜，在 L 偏振照明下实测。",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "values": {
+            "diameter_um": {
+              "value": 1724.3,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "每枚单元超透镜的明报名义口径 1.7243 mm。Fig. 5a,b 及 S4a,b 同时显示两个偏振子镜，整体坐标跨度非单镜口径。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1.7243,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 10000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)",
+              "note": "各子镜的共同设计焦距 1 cm。轴扫图的标线与逐色峰位分开。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 1,
+              "original_unit": "cm"
+            },
+            "na": {
+              "value": null,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.5 · 双偏振相位优化段；pp.3–5 Eqs. (4)、(6)；p.11 Discussion",
+              "note": "原文未给数值 NA。名义空气几何近轴估计可由 D 与 f 检查，未以估计替代作者 NA。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22"
+            },
+            "lambda_min_nm": {
+              "value": 9000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.1 摘要；pp.5–7 设计和理论验证",
+              "note": "9 μm 是连续设计区间端点。单色轴向实验为 9.3、9.6、10.3、10.6 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "spectral_sampling": "continuous_design_discrete_measurements"
+            },
+            "lambda_max_nm": {
+              "value": 12000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.1 摘要；pp.5–7 设计和理论验证",
+              "note": "12 μm 是连续设计区间端点。单色轴向实验为 9.3、9.6、10.3、10.6 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "spectral_sampling": "continuous_design_discrete_measurements"
+            },
+            "psf_protocol": {
+              "value": "L 偏振照明，沿 z 移动红外相机，记录 x–z 与焦面场",
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4；补件 p.S6 §2",
+              "note": "ACCESS LASER L4GT CO₂ 激光，线偏振片与四分之一波片选偏振，GUIDE INFRARED Plug-612 安装在 Daheng GCD-203050M 电控位移台上。以白虚线 z=1 cm 作名义参考。轴向步进、相机标定、横向图是否逐色取峰及宽度截线方向未明。补件 §2 将光路写为 Fig. 5c，正式光路图为 Fig. 4c。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "zhang_lwir_stokes_si_2022",
+                "zhang_lwir_stokes_pdf_2022"
+              ],
+              "illumination_polarization": "L",
+              "sample_wavelengths_nm": [
+                9300,
+                9600,
+                10300,
+                10600
+              ],
+              "reference_plane": "author_nominal_z_axis",
+              "reference_plane_um": 10000,
+              "evaluation_plane_um": null,
+              "axial_scan_step_um": null
+            },
+            "chromatic": {
+              "value": "L 入射的正交偏振对照",
+              "source": "zhang_lwir_stokes_si_2022",
+              "location": "正式补件 p.S5 · Fig. S4a,b",
+              "note": "Fig. S4a,b 在同一坐标绘出两个子镜。L 照明时 R 子镜的焦斑显著受抑，焦位和效率均无独立数值。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "sample_wavelengths_nm": [
+                9300,
+                9600,
+                10300,
+                10600
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhang2022lwirStokes_polarimetry",
+          "model": "Zhang 2022 · 长波红外全斯托克斯 · 六通道装置 · 固定 1 cm 面",
+          "study_id": "zhang2022lwirStokes",
+          "specimen_id": "polarimetry",
+          "module": "",
+          "variant": "六通道装置 · 固定 1 cm 面",
+          "measurement_scope": "完整 X/Y/A/B/L/R 阵列的同面偏振表征，偏振变化量为 Stokes 概念。",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "values": {
+            "lambda_min_nm": {
+              "value": 9000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.1 摘要；pp.5–7 设计和理论验证",
+              "note": "9 μm 是连续设计区间端点。单色轴向实验为 9.3、9.6、10.3、10.6 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "spectral_sampling": "continuous_design_discrete_measurements"
+            },
+            "lambda_max_nm": {
+              "value": 12000,
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.1 摘要；pp.5–7 设计和理论验证",
+              "note": "12 μm 是连续设计区间端点。单色轴向实验为 9.3、9.6、10.3、10.6 μm。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "spectral_sampling": "continuous_design_discrete_measurements"
+            },
+            "psf_protocol": {
+              "value": "六偏振通道同一 1 cm 面取图",
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.9–10 Fig. 6a–d；补件 p.S6 §2、Tables S1–S4",
+              "note": "每个谱点测八种入射偏振。共同采集面 f=1 cm，不能用它填各偏振和波长的最佳焦位。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "evaluation_plane_um": 10000,
+              "sample_wavelengths_nm": [
+                9300,
+                9600,
+                10300,
+                10600
+              ],
+              "sourceIds": [
+                "zhang_lwir_stokes_pdf_2022",
+                "zhang_lwir_stokes_si_2022"
+              ]
+            },
+            "chromatic": {
+              "value": "四波长固定焦平面偏振测量",
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF pp.9–10 Fig. 6a–d；补件 Tables S1–S4",
+              "note": "pp.9–10 给出八种入射偏振的平均 Stokes 相对误差依次为 7.08%、8.62%、7.15%、7.59%。这些是偏振重建误差。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "sample_wavelengths_nm": [
+                9300,
+                9600,
+                10300,
+                10600
+              ],
+              "sourceIds": [
+                "zhang_lwir_stokes_pdf_2022",
+                "zhang_lwir_stokes_si_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "zhang2022lwirStokes_imaging",
+          "model": "Zhang 2022 · 长波红外全斯托克斯 · 六通道装置 · 带内实拍",
+          "study_id": "zhang2022lwirStokes",
+          "specimen_id": "imaging",
+          "module": "",
+          "variant": "六通道装置 · 带内实拍",
+          "measurement_scope": "同一偏振计的有限场景、连续波段照明，独立于激光轴扫。",
+          "evidence_type": "study",
+          "visible_light_use": false,
+          "values": {
+            "chromatic": {
+              "value": "9–12 μm 宽带掩模与 USAF 图像",
+              "source": "zhang_lwir_stokes_pdf_2022",
+              "location": "正式 PDF p.11 Fig. 7a–d；补件 p.S6 Fig. S5e",
+              "note": "陶瓷热源与两滤光片产生 9–12 μm 照明。Fig. 7 成像实测，Stokes 图由捕获图像计算。原文未给逐色横向色差、焦距或 MTF。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "zhang_lwir_stokes_pdf_2022",
+                "zhang_lwir_stokes_si_2022"
+              ],
+              "illumination_band_nm": [
+                9000,
+                12000
+              ]
+            }
+          }
         }
       ],
-      "scope": "76项原始研究、340个器件/测量/系统配置、1458条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
+      "scope": "77项原始研究、346个器件/测量/系统配置、1472条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",

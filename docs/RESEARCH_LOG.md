@@ -1479,3 +1479,9 @@ Cai 2019 的可见光原稿已由 OSTI 取得，Crossref 20、OpenAlex 21 次（
 Hsu 2022 的纳入依据为正式版附录 §12 Fig. 6c,d。另一枚矩形柱实物在固定观测平面测得 780 nm／x 和第二个正交偏振通道的焦斑。第二谱点在 §12 和 Fig. 6d 图内写 850 nm，图注写 852 nm。该实验未报告逐色最佳焦位与残余轴向焦差。主文用于原子捕获的方柱单镜在 780 nm 相对 852 nm 测得 +300 μm，780 nm 荧光由接收光路 L1 补偿。既有数据库单独标注主文光镊、接收端补偿和附录双波长实物。复核确认原分组符合准入规则。[原文 Fig. 6 与附录 §9](https://tf.nist.gov/general/pdf/3189.pdf#page=9) · [附录 §12](https://tf.nist.gov/general/pdf/3189.pdf#page=10) · [本篇核验](HSU_POLARIZED_FOCUS_REVIEW_2026-11-19.md)
 
 Lin 2025 厘米级光学消色差有实物证据。§2A Fig. 1 与 Fig. 3e 给出等宽 4 μm 的同心光刻胶环与 52 级浮雕深度，由多级衍射相位进行校正。作为多级衍射透镜保留在检索记录。D 10.008 mm、NA 0.1、设计 f 50 mm 及 400–700 nm 七点实测宽度的原值和换算见核验页。相邻的 Xiao 2022 在作者原文也明列器件为多级衍射平面透镜，归同类参考。后续先回查清单中近期实制折超混合和具有轴向实测的可见光消色差超表面研究。[Lin 原文](https://doi.org/10.1364/PRJ.569751) · [Lin 检索记录](LIN_2025_CENTIMETER_ASCL_EVIDENCE_2026-11-22.md) · [Xiao 原作](https://pmc.ncbi.nlm.nih.gov/articles/PMC9649754/)
+
+## 2026-11-22-186 · Zhang 四谱点长波红外偏振子镜
+
+新增一篇经典原始研究、六个子镜或测量配置、14 条记录。2026-11-22 查 Crossref 231 次、OpenAlex 235 次。D 1.7243 mm、设计焦距 10 mm、9–12 μm 连续设计波段与四个实测谱点分别保存。两种偏振选择机制、两个正交对照及同一阵列的两种系统测试各有出处。X 偏振效率为 31.8%、33.5%、46.2%、46.3%，入射光能量为分母。L 偏振效率及两支路焦位和 FWHM 只有图点。独立无头 Chrome 取得官网主文与补件。DataCite 关联与 Zenodo 精确 DOI 检索均零项。累计 77 篇、346 配置、1472 条，可见光为 54 篇、894 条。[本批核验](ZHANG_2022_LWIR_STOKES_EVIDENCE_2026-11-22.md)
+
+Hu 2024 四镜可见光实制工作重查为 Crossref 27 次、OpenAlex 46 次，Nano Letters 大类二区，继续留在检索记录。Teng 2023 评论的图和实验源是 Zhang 2022，按同一原始实验追溯。上批 Hsu 准入与 Lin 多级衍射筛选由 PR #244 合并，主线校验 45039929210、Pages 45039929165 成功。259 个公开文件校验一致，线上独立无头 Chrome 复核 Hsu 的三个配置、两个效率值、+300 μm 焦差及原文链接。[Hu 正式原文](https://doi.org/10.1021/acs.nanolett.4c03785) · [Teng 评论](https://doi.org/10.29026/oea.2023.230113) · [上批 PR](https://github.com/SelinLee/lens-evidence-atlas/pull/244)
