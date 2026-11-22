@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { axisPoints, createWorkspace, filteredRows, groupRows } from '../web/workspace-data.js';
+import { axisPoints, createWorkspace, filteredRows, groupRows, valueSources } from '../web/workspace-data.js';
 import { load } from '../scripts/catalog.mjs';
 
 test('Dai retains five tested wavelengths and leaves numerical spot widths and source-unverified focal positions empty', () => {
@@ -23,6 +23,9 @@ test('Dai retains five tested wavelengths and leaves numerical spot widths and s
   assert.equal(values.fwhm_um.value, null);
   assert.match(values.fwhm_um.display, /0\.40–0\.47λ/);
   assert.equal(values.focus_variation_um.value, null);
+  assert.deepEqual(valueSources(values.chromatic).slice(-2), [
+    'device-dai_holo_crossref_2021', 'device-dai_holo_openalex_2021',
+  ]);
   assert.equal(values.lambda_min_nm, undefined);
   assert.equal(values.lambda_max_nm, undefined);
   assert.deepEqual(values.chromatic.separately_reported_simulation_bands_nm, [[510, 590], [620, 700]]);
