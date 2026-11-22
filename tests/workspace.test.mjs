@@ -124,7 +124,7 @@ test('each paper owns its configurations and its supplementary source IDs resolv
 
 test('visible-light filtering prioritizes the actual spectral row and keeps unknown wavelengths separate',()=>{
  const lens=atlas.domains.find(d=>d.id==='metalens'), filtered=filteredRows(lens,{visible:true,models:null});
- assert.equal(filtered.length,894);
+ assert.equal(filtered.length,896);
  assert.deepEqual(filtered.filter(r=>r.study_id==='lin2025').map(r=>r.values.wavelength_nm.value),[650,700,650,700]);
  assert.ok(!filtered.some(r=>['balli2020','shrestha2018'].includes(r.study_id)));
  assert.equal(groupRows(filtered).length,54);

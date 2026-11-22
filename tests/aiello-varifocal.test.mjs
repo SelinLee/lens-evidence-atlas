@@ -46,7 +46,9 @@ test('Aiello fixed angle widths, analysis-polarizer efficiency and imaging state
  }
  const v=sample('eff_45');
  assert.equal(v.efficiency_at_lambda_pct.value,50);
- assert.equal(v.efficiency_at_lambda_pct.reported_error.value,2);
+ assert.deepEqual(v.efficiency_at_lambda_pct.reported_error,{type:'SD',value:2,sample_size:null});
+ assert.equal(v.efficiency_protocol.source,'device-aiello_varifocal_original_si_2019');
+ assert.match(v.efficiency_protocol.location,/S20/);
  assert.equal(v.efficiency_protocol.denominator,'incident_through_aperture');
  assert.equal(v.efficiency_protocol.integration_radius_um,null);
  assert.equal(sample('eff_135').efficiency_at_lambda_pct.value,null);

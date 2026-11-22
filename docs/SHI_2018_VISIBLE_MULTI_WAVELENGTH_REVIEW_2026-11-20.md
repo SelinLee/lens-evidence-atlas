@@ -34,3 +34,14 @@ WCBG1 的作者报告三点平均约 34%。六个效率逐项保留原印字，�
 本机独立无头 Chrome 取得 NUS 的八页 ACS 正式版 PDF，2498730 字节，SHA-256 `1213cbd1112936ca696b0cc262b37b05c13e8a0d3771925783a1ef2ab524120d`，未见嵌入文件。视觉核对 Figs. 4–6。Harvard 作者组 PDF 在网页索引可读，Chrome 直连 403。ACS 自身列补件 `nl7b05458_si_001.pdf`，目录明列实测焦距。Crossref 登记补件 DOI `10.1021/acs.nanolett.7b05458.s001`，ACS 补件、DOI 跳转及 Figshare 的补件入口在独立无头 Chrome 返回 403。DataCite 精确关系搜索结果为 0。补件可能有额外测量，仍需取得内容后核定。未定位原始轴扫栈、PSF 像素标尺或 MTF 数表。
 
 [Harvard 作者组](https://capasso.seas.harvard.edu/publications/single-layer-metasurface-controllable-multiwavelength-functions) · [补件登记](https://api.crossref.org/works/10.1021/acs.nanolett.7b05458.s001) · [补件入口](https://doi.org/10.1021/acs.nanolett.7b05458.s001) · [DataCite](https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1021%2Facs.nanolett.7b05458%22)
+
+## 2026-11-23 ACS 原始补件 Fig. S7
+
+从 ACS Figshare 取得 `nl7b05458_si_001.pdf` 原件。条目 5999816 v1，文件 10781588，808445 字节，MD5 `81fdac1b4566e9935927d64ceb4a5f56` 与公开文件登记一致。PDF p.6 Fig. S7 的纵轴为 Focal length（mm），横轴为 Wavelength（nm）。焦距从 MAM 表面量起，取轴向全局强度最大值。图注报告同一枚 400 μm、NA 0.2 MAM 的以下数据。[原始补件 Fig. S7](https://pstorage-acs-6854636.s3.amazonaws.com/10781588/nl7b05458_si_001.pdf#page=6) · [ACS 文件登记](https://widgets.figshare.com/public/articles/5999816/versions/1/files)
+
+| 非设计波长 | 全局最大点 | 次峰 |
+| --- | ---: | --- |
+| 510 nm | 0.87 mm（870 μm） | 1.05 mm（1050 μm） |
+| 520 nm | 1.03 mm（1030 μm） | 原印 0.85 nm，单位与图和同段其他峰位冲突，数值留空 |
+
+本库比较两个波长的全局最大位置得 +160 μm。作者将跳变归于局部峰之间能量再分布。图注未提供同一局部峰的位移或逐个峰的强度。原 9 μm 只覆盖 460／540／567／700 nm 四点。Figs. S3–S5 的相位设计／模拟图标作 565 nm，实测 Fig. S7 与主文 Fig. 4 标为 567 nm。其余谱点原始焦位表、轴扫、PSF 阵列与采样、FWHM 和 MTF 仍缺。PDF p.3 Fig. S2 给 10×、NA 0.28 前级与 4× 后级，未报这两个非设计谱点各自的测量步长和入射偏振。[测试光路](https://pstorage-acs-6854636.s3.amazonaws.com/10781588/nl7b05458_si_001.pdf#page=3)

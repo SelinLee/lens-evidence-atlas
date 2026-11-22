@@ -25,3 +25,7 @@ Ehsan Arbabi、Amir Arbabi、Seyedeh Mahsa Kamali、Yu Horie、Andrei Faraon，*
 错配指给定波长采用另一设计通道的入射线偏振。Fig. 6c 图注明确称 Fig. 6a,b 的这组 z 印字是焦距。故十个明确印字录为原作者实测，未经曲线估读。焦位拟合方法、轴向步长、z 原点标定与重复测量误差未报告。Fig. 5c–e 为匹配的横向宽度、轴向宽度和效率曲线。正文报告匹配横向宽度比衍射极限大不足 7%，五只两色效率均超过 65%。逐点宽度与效率、MTF 及像素数组留空。
 
 Fig. 4b 的效率是针孔焦区实测功率除以入射到镜面的总功率。p18473 按 NA 递减列出针孔尺寸。部分会聚入射束约 134 μm（1/e²），作者报告约 99% 功率通过镜口径。NA 的作者报告范围为 0.12–0.7，按五只的设计焦距排序对应两端，中间三只的精确 NA 留空。DataCite 的正式论文 DOI 精确关联零项。[Fig. 5–6 与测量方法](https://authors.library.caltech.edu/records/zsmjf-ng522/files/oe-24-16-18468.pdf?download=1#page=7) · [DataCite](https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1364%2FOE.24.018468%22)
+
+## 2026-11-23 Tang 原始补件文件登记
+
+ACS Figshare 的公开 OAI-PMH 与文件列表定位组件 `10.1021/acsphotonics.6c00399.s001`、条目 32029879 v1、文件 63774052。登记 `ph6c00399_si_001.pdf` 为 17 页、1423163 字节，MD5 `78f1fd684ae24b7da9fd1654e3ed7697`。Figshare 预览、文件下载和 ACS 出版者入口未取得 PDF 字节。逐样品谱点、<1 μm 的分配、原始 PSF、MTF 数表与协议仍缺。[ACS 文件登记](https://widgets.figshare.com/public/articles/32029879/versions/1/files) · [Crossref 组件](https://api.crossref.org/works/10.1021/acsphotonics.6c00399.s001)

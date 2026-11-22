@@ -18,10 +18,10 @@ test('Shi plots four published axial foci and their 9 µm span for one specimen'
   assert.equal(groupRows(rows).length, 1);
   assert.equal(group.paper, 'device-shi_multicolor_2018');
   assert.equal(atlas.sources.get('device-shi_multicolor_si_2018').publication_source, group.paper);
-  assert.equal(rows.length, 13);
+  assert.equal(rows.length, 15);
   assert.equal(new Set(rows.map(row => row.specimen_id)).size, 3);
-  assert.equal(filteredRows(lens, {query:'Shi 2018',visible:true,models:null}).filter(row => row.study_id === study).length, 13);
-  assert.deepEqual(xy(axisPoints(rows,'wavelength_nm','measured_focal_um')), [[460,979],[540,985],[567,976],[700,982]]);
+  assert.equal(filteredRows(lens, {query:'Shi 2018',visible:true,models:null}).filter(row => row.study_id === study).length, 15);
+  assert.deepEqual(xy(axisPoints(rows.filter(row => !row.id.endsWith('_off_design')),'wavelength_nm','measured_focal_um')), [[460,979],[540,985],[567,976],[700,982]]);
   assert.deepEqual(xy(axisPoints(rows,'diameter_um','focus_variation_um')), [[400,9]]);
   const mam = byId('mam_summary');
   assert.equal(mam.design_focal_um.value, null);
@@ -32,6 +32,27 @@ test('Shi plots four published axial foci and their 9 µm span for one specimen'
   const changed = structuredClone(raw);
   changed.domains.metalens.rows.find(row => row.id === study+'_mam_540').values.measured_focal_um.value = 984;
   assert.throws(() => validateDevices(changed), /focal variation context/);
+});
+
+test('Shi records off-design axial peaks from the original supplement separately from the four-design-wavelength result', () => {
+  const offDesign = rows.filter(row => row.id.endsWith('_off_design'));
+  const supplement = 'device-shi_multicolor_original_si_2018';
+  assert.equal(atlas.sources.get(supplement).publication_source, 'device-shi_multicolor_2018');
+  assert.ok(offDesign.every(row => row.specimen_id === 'mam'));
+  assert.deepEqual(xy(axisPoints(offDesign,'wavelength_nm','measured_focal_um')), [[510,870],[520,1030]]);
+  assert.deepEqual(xy(axisPoints(offDesign,'wavelength_nm','secondary_axial_peak_um')), [[510,1050]]);
+
+  for (const row of offDesign) {
+    const {measured_focal_um: peak, psf_protocol: protocol} = row.values;
+    assert.equal(peak.source, supplement);
+    assert.equal(peak.reference_plane, 'mam_surface');
+    assert.equal(protocol.reference_plane, peak.reference_plane);
+    assert.match(peak.location, /p\.6.*Fig\. S7/);
+  }
+
+  const unitConflict = byId('mam_520_off_design').secondary_axial_peak_um;
+  assert.equal(unitConflict.value, null);
+  assert.match(unitConflict.display, /0\.85 nm/);
 });
 
 test('Shi keeps each Strehl and silver-mirror referenced efficiency with its published wavelength', () => {
