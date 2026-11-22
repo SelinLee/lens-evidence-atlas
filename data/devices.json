@@ -3305,6 +3305,51 @@
       "scope": "2026-11-21 查询 cited_by_count 为 149，与原刊 DOI 对应。",
       "checked_on": "2026-11-21",
       "publication_source": "shen_lcthz_nju_vor_2020"
+    },
+    {
+      "id": "dai_holo_acs_2021",
+      "title": "Dai et al. (2021) · Holographic Super-Resolution Metalens for Achromatic Sub-Wavelength Focusing",
+      "url": "https://pubs.acs.org/doi/10.1021/acsphotonics.1c00411",
+      "kind": "peer_reviewed_paper",
+      "scope": "正式出版商摘要、题录与补件目录可读。2021-07-21 上线。独立无头 Chrome 原刊入口返回 403，正文 PDF 未核。",
+      "checked_on": "2026-11-22",
+      "doi": "10.1021/acsphotonics.1c00411"
+    },
+    {
+      "id": "dai_holo_cqu_2021",
+      "title": "重庆大学 · Dai 2021 课题组的实验发布",
+      "url": "https://coe.cqu.edu.cn/info/1011/4550.htm",
+      "kind": "institutional_report",
+      "scope": "第一完成单位光电工程学院 2021-07-22 发布。索引正文直接报告样片、NA 与五波长实测，并将两段模拟带宽另列；本机入口返回 412 后 400，未取得原图。",
+      "checked_on": "2026-11-22",
+      "publication_source": "dai_holo_acs_2021"
+    },
+    {
+      "id": "dai_holo_si_registration_2021",
+      "title": "Crossref · Dai 2021 正式补件登记",
+      "url": "https://api.crossref.org/works/10.1021/acsphotonics.1c00411.s001",
+      "kind": "repository_metadata",
+      "scope": "DOI 识别 ph1c00411_si_001.pdf。ACS 目录列不同调制仿真、单波长超分辨聚焦、消色差镜的实验装置。补件 DOI 和 PDF 返回 403。",
+      "checked_on": "2026-11-22",
+      "publication_source": "dai_holo_acs_2021"
+    },
+    {
+      "id": "dai_holo_crossref_2021",
+      "title": "Crossref · Dai 2021 题录及引用量",
+      "url": "https://api.crossref.org/works/10.1021/acsphotonics.1c00411",
+      "kind": "repository_metadata",
+      "scope": "2026-11-22 查询 is-referenced-by-count 为 54。正式首次上线 2021-07-21。",
+      "checked_on": "2026-11-22",
+      "publication_source": "dai_holo_acs_2021"
+    },
+    {
+      "id": "dai_holo_openalex_2021",
+      "title": "OpenAlex · Dai 2021 引用量",
+      "url": "https://api.openalex.org/works/W3185079854",
+      "kind": "repository_metadata",
+      "scope": "2026-11-22 查询 cited_by_count 为 57，对应同一 DOI。",
+      "checked_on": "2026-11-22",
+      "publication_source": "dai_holo_acs_2021"
     }
   ],
   "domains": {
@@ -172841,9 +172886,495 @@
               "detected_field_component": "Ex"
             }
           }
+        },
+        {
+          "id": "dai2021holographic_summary",
+          "model": "Dai 2021 · 五波长可见光试样 · 汇总",
+          "study_id": "dai2021holographic",
+          "specimen_id": "five_wavelength_prototype",
+          "module": "",
+          "variant": "实制｜全息波前校正",
+          "measurement_scope": "同一制备的亚波长聚焦镜，五个可见光离散实验通道；发文摘要和第一完成单位的课题组发布同属本研究。",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "values": {
+            "na": {
+              "value": 0.95,
+              "source": "dai_holo_cqu_2021",
+              "location": "重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段",
+              "note": "第一完成单位给出的器件 NA。ACS 可核摘要称高 NA，精确数值取自校方发布；NA 的确定方法与误差待全文。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22"
+            },
+            "diameter_um": {
+              "value": null,
+              "source": "dai_holo_acs_2021",
+              "location": "ACS Photonics 8(8), 2294–2303，作者摘要；重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段",
+              "note": "当前公开文字未给有效口径或几何边界，正式主文与图版待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "器件口径待全文",
+              "sourceIds": [
+                "dai_holo_acs_2021",
+                "dai_holo_cqu_2021"
+              ]
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "dai_holo_acs_2021",
+              "location": "ACS Photonics 8(8), 2294–2303，作者摘要；补件目录的实验装置条目",
+              "note": "当前公开文字未给名义焦距、轴向参考面或物像共轭。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "设计焦距及参考面待全文",
+              "sourceIds": [
+                "dai_holo_acs_2021",
+                "dai_holo_si_registration_2021"
+              ]
+            },
+            "chromatic": {
+              "value": "全息合成与波前工程的五波长光学消色差",
+              "source": "dai_holo_acs_2021",
+              "location": "ACS Photonics 8(8), 2294–2303，作者摘要；重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段",
+              "note": "课题组确认实制样片与五波长实验。校方另列 510–590 nm 和 620–700 nm 两段模拟范围，两个连续频带均未作为实测区间入库。经典研究入选依据为 2026-11-22 查询 Crossref 54 和 OpenAlex 57 次。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "dai_holo_acs_2021",
+                "dai_holo_cqu_2021",
+                "dai_holo_crossref_2021",
+                "dai_holo_openalex_2021"
+              ],
+              "sample_wavelengths_nm": [
+                520,
+                555,
+                632.8,
+                660,
+                690
+              ],
+              "spectral_sampling": "discrete_visible_wavelengths",
+              "separately_reported_simulation_bands_nm": [
+                [
+                  510,
+                  590
+                ],
+                [
+                  620,
+                  700
+                ]
+              ]
+            },
+            "psf_protocol": {
+              "value": "全息波前设计的实制镜，五个离散波长",
+              "source": "dai_holo_cqu_2021",
+              "location": "重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段；ACS 补件实验装置条目",
+              "note": "原刊摘要和第一完成单位的报告均列五波长。实验使用的偏振、轴向取峰、探测器采样和共同评价面坐标仍未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "dai_holo_cqu_2021",
+                "dai_holo_acs_2021",
+                "dai_holo_si_registration_2021"
+              ],
+              "sample_wavelengths_nm": [
+                520,
+                555,
+                632.8,
+                660,
+                690
+              ],
+              "evaluation_plane_um": null,
+              "reference_plane": null
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "dai_holo_acs_2021",
+              "location": "ACS Photonics 8(8), 2294–2303，作者摘要；ACS 补件实验装置条目",
+              "note": "目前能证实五波长做过光学校正实验。未核到逐谱点最佳焦位及参考波长，无法计算峰峰残余焦差。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "五色实验已核，定量残余焦差待原图",
+              "sourceIds": [
+                "dai_holo_acs_2021",
+                "dai_holo_cqu_2021",
+                "dai_holo_si_registration_2021"
+              ]
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "dai_holo_cqu_2021",
+              "location": "重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段",
+              "note": "第一完成单位报告跨谱点焦斑尺寸为 0.40–0.47λ，未定义宽度口径、方向、评价面或上下限对应波长。逐波长 FWHM 不换算。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "焦斑尺寸 0.40–0.47λ（宽度定义待核）",
+              "sourceIds": [
+                "dai_holo_cqu_2021",
+                "dai_holo_acs_2021"
+              ]
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "dai_holo_acs_2021",
+              "location": "ACS Photonics 8(8), 2294–2303，作者摘要；ACS 补件目录",
+              "note": "尚无可核的原始 PSF、MTF、Strehl 或效率口径、焦圈、功率分母，未填数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "原始 PSF／MTF 待核",
+              "sourceIds": [
+                "dai_holo_acs_2021",
+                "dai_holo_si_registration_2021"
+              ]
+            }
+          }
+        },
+        {
+          "id": "dai2021holographic_520",
+          "model": "Dai 2021 · 520 nm · 五波长实测",
+          "study_id": "dai2021holographic",
+          "specimen_id": "five_wavelength_prototype",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一制备的亚波长聚焦镜，五个可见光离散实验通道；发文摘要和第一完成单位的课题组发布同属本研究。",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "values": {
+            "wavelength_nm": {
+              "value": 520,
+              "source": "dai_holo_acs_2021",
+              "location": "作者摘要所列的五波长；重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段",
+              "note": "与第一完成单位报告的实际测量条件一致。离散谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "dai_holo_acs_2021",
+                "dai_holo_cqu_2021"
+              ]
+            },
+            "na": {
+              "value": 0.95,
+              "source": "dai_holo_cqu_2021",
+              "location": "重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段",
+              "note": "第一完成单位给出的器件 NA。ACS 可核摘要称高 NA，精确数值取自校方发布；NA 的确定方法与误差待全文。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22"
+            },
+            "psf_protocol": {
+              "value": "全息波前设计的实制镜，五个离散波长",
+              "source": "dai_holo_cqu_2021",
+              "location": "重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段；ACS 补件实验装置条目",
+              "note": "原刊摘要和第一完成单位的报告均列五波长。实验使用的偏振、轴向取峰、探测器采样和共同评价面坐标仍未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "dai_holo_cqu_2021",
+                "dai_holo_acs_2021",
+                "dai_holo_si_registration_2021"
+              ],
+              "sample_wavelengths_nm": [
+                520,
+                555,
+                632.8,
+                660,
+                690
+              ],
+              "evaluation_plane_um": null,
+              "reference_plane": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "dai_holo_acs_2021",
+              "location": "ACS Photonics 8(8), 2294–2303，作者摘要；重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段",
+              "note": "该谱点已做实验，未核到最佳焦距、定标或原始轴向曲线。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "该波长最佳焦位待原图",
+              "sourceIds": [
+                "dai_holo_acs_2021",
+                "dai_holo_cqu_2021",
+                "dai_holo_si_registration_2021"
+              ]
+            }
+          }
+        },
+        {
+          "id": "dai2021holographic_555",
+          "model": "Dai 2021 · 555 nm · 五波长实测",
+          "study_id": "dai2021holographic",
+          "specimen_id": "five_wavelength_prototype",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一制备的亚波长聚焦镜，五个可见光离散实验通道；发文摘要和第一完成单位的课题组发布同属本研究。",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "values": {
+            "wavelength_nm": {
+              "value": 555,
+              "source": "dai_holo_acs_2021",
+              "location": "作者摘要所列的五波长；重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段",
+              "note": "与第一完成单位报告的实际测量条件一致。离散谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "dai_holo_acs_2021",
+                "dai_holo_cqu_2021"
+              ]
+            },
+            "na": {
+              "value": 0.95,
+              "source": "dai_holo_cqu_2021",
+              "location": "重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段",
+              "note": "第一完成单位给出的器件 NA。ACS 可核摘要称高 NA，精确数值取自校方发布；NA 的确定方法与误差待全文。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22"
+            },
+            "psf_protocol": {
+              "value": "全息波前设计的实制镜，五个离散波长",
+              "source": "dai_holo_cqu_2021",
+              "location": "重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段；ACS 补件实验装置条目",
+              "note": "原刊摘要和第一完成单位的报告均列五波长。实验使用的偏振、轴向取峰、探测器采样和共同评价面坐标仍未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "dai_holo_cqu_2021",
+                "dai_holo_acs_2021",
+                "dai_holo_si_registration_2021"
+              ],
+              "sample_wavelengths_nm": [
+                520,
+                555,
+                632.8,
+                660,
+                690
+              ],
+              "evaluation_plane_um": null,
+              "reference_plane": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "dai_holo_acs_2021",
+              "location": "ACS Photonics 8(8), 2294–2303，作者摘要；重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段",
+              "note": "该谱点已做实验，未核到最佳焦距、定标或原始轴向曲线。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "该波长最佳焦位待原图",
+              "sourceIds": [
+                "dai_holo_acs_2021",
+                "dai_holo_cqu_2021",
+                "dai_holo_si_registration_2021"
+              ]
+            }
+          }
+        },
+        {
+          "id": "dai2021holographic_632p8",
+          "model": "Dai 2021 · 632.8 nm · 五波长实测",
+          "study_id": "dai2021holographic",
+          "specimen_id": "five_wavelength_prototype",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一制备的亚波长聚焦镜，五个可见光离散实验通道；发文摘要和第一完成单位的课题组发布同属本研究。",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "values": {
+            "wavelength_nm": {
+              "value": 632.8,
+              "source": "dai_holo_acs_2021",
+              "location": "作者摘要所列的五波长；重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段",
+              "note": "与第一完成单位报告的实际测量条件一致。离散谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "dai_holo_acs_2021",
+                "dai_holo_cqu_2021"
+              ]
+            },
+            "na": {
+              "value": 0.95,
+              "source": "dai_holo_cqu_2021",
+              "location": "重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段",
+              "note": "第一完成单位给出的器件 NA。ACS 可核摘要称高 NA，精确数值取自校方发布；NA 的确定方法与误差待全文。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22"
+            },
+            "psf_protocol": {
+              "value": "全息波前设计的实制镜，五个离散波长",
+              "source": "dai_holo_cqu_2021",
+              "location": "重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段；ACS 补件实验装置条目",
+              "note": "原刊摘要和第一完成单位的报告均列五波长。实验使用的偏振、轴向取峰、探测器采样和共同评价面坐标仍未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "dai_holo_cqu_2021",
+                "dai_holo_acs_2021",
+                "dai_holo_si_registration_2021"
+              ],
+              "sample_wavelengths_nm": [
+                520,
+                555,
+                632.8,
+                660,
+                690
+              ],
+              "evaluation_plane_um": null,
+              "reference_plane": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "dai_holo_acs_2021",
+              "location": "ACS Photonics 8(8), 2294–2303，作者摘要；重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段",
+              "note": "该谱点已做实验，未核到最佳焦距、定标或原始轴向曲线。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "该波长最佳焦位待原图",
+              "sourceIds": [
+                "dai_holo_acs_2021",
+                "dai_holo_cqu_2021",
+                "dai_holo_si_registration_2021"
+              ]
+            }
+          }
+        },
+        {
+          "id": "dai2021holographic_660",
+          "model": "Dai 2021 · 660 nm · 五波长实测",
+          "study_id": "dai2021holographic",
+          "specimen_id": "five_wavelength_prototype",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一制备的亚波长聚焦镜，五个可见光离散实验通道；发文摘要和第一完成单位的课题组发布同属本研究。",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "values": {
+            "wavelength_nm": {
+              "value": 660,
+              "source": "dai_holo_acs_2021",
+              "location": "作者摘要所列的五波长；重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段",
+              "note": "与第一完成单位报告的实际测量条件一致。离散谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "dai_holo_acs_2021",
+                "dai_holo_cqu_2021"
+              ]
+            },
+            "na": {
+              "value": 0.95,
+              "source": "dai_holo_cqu_2021",
+              "location": "重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段",
+              "note": "第一完成单位给出的器件 NA。ACS 可核摘要称高 NA，精确数值取自校方发布；NA 的确定方法与误差待全文。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22"
+            },
+            "psf_protocol": {
+              "value": "全息波前设计的实制镜，五个离散波长",
+              "source": "dai_holo_cqu_2021",
+              "location": "重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段；ACS 补件实验装置条目",
+              "note": "原刊摘要和第一完成单位的报告均列五波长。实验使用的偏振、轴向取峰、探测器采样和共同评价面坐标仍未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "dai_holo_cqu_2021",
+                "dai_holo_acs_2021",
+                "dai_holo_si_registration_2021"
+              ],
+              "sample_wavelengths_nm": [
+                520,
+                555,
+                632.8,
+                660,
+                690
+              ],
+              "evaluation_plane_um": null,
+              "reference_plane": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "dai_holo_acs_2021",
+              "location": "ACS Photonics 8(8), 2294–2303，作者摘要；重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段",
+              "note": "该谱点已做实验，未核到最佳焦距、定标或原始轴向曲线。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "该波长最佳焦位待原图",
+              "sourceIds": [
+                "dai_holo_acs_2021",
+                "dai_holo_cqu_2021",
+                "dai_holo_si_registration_2021"
+              ]
+            }
+          }
+        },
+        {
+          "id": "dai2021holographic_690",
+          "model": "Dai 2021 · 690 nm · 五波长实测",
+          "study_id": "dai2021holographic",
+          "specimen_id": "five_wavelength_prototype",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一制备的亚波长聚焦镜，五个可见光离散实验通道；发文摘要和第一完成单位的课题组发布同属本研究。",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "values": {
+            "wavelength_nm": {
+              "value": 690,
+              "source": "dai_holo_acs_2021",
+              "location": "作者摘要所列的五波长；重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段",
+              "note": "与第一完成单位报告的实际测量条件一致。离散谱点。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "dai_holo_acs_2021",
+                "dai_holo_cqu_2021"
+              ]
+            },
+            "na": {
+              "value": 0.95,
+              "source": "dai_holo_cqu_2021",
+              "location": "重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段",
+              "note": "第一完成单位给出的器件 NA。ACS 可核摘要称高 NA，精确数值取自校方发布；NA 的确定方法与误差待全文。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22"
+            },
+            "psf_protocol": {
+              "value": "全息波前设计的实制镜，五个离散波长",
+              "source": "dai_holo_cqu_2021",
+              "location": "重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段；ACS 补件实验装置条目",
+              "note": "原刊摘要和第一完成单位的报告均列五波长。实验使用的偏振、轴向取峰、探测器采样和共同评价面坐标仍未核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "dai_holo_cqu_2021",
+                "dai_holo_acs_2021",
+                "dai_holo_si_registration_2021"
+              ],
+              "sample_wavelengths_nm": [
+                520,
+                555,
+                632.8,
+                660,
+                690
+              ],
+              "evaluation_plane_um": null,
+              "reference_plane": null
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "dai_holo_acs_2021",
+              "location": "ACS Photonics 8(8), 2294–2303，作者摘要；重庆大学光电工程学院 2021-07-22 课题组研究发布，实物与五谱点结果段",
+              "note": "该谱点已做实验，未核到最佳焦距、定标或原始轴向曲线。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "该波长最佳焦位待原图",
+              "sourceIds": [
+                "dai_holo_acs_2021",
+                "dai_holo_cqu_2021",
+                "dai_holo_si_registration_2021"
+              ]
+            }
+          }
         }
       ],
-      "scope": "73项原始研究、337个器件/测量/系统配置、1445条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
+      "scope": "74项原始研究、338个器件/测量/系统配置、1451条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
