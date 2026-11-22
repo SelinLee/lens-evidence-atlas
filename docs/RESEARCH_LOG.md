@@ -1463,3 +1463,7 @@ Cai 2019 的可见光原稿已由 OSTI 取得，Crossref 20、OpenAlex 21 次（
 0.3.81 经 [PR #240](https://github.com/SelinLee/lens-evidence-atlas/pull/240) 合并为 `a7d55027b6fa97cdc2979868878e7701f6debda3`。PR 校验 45036575701、主线校验 45036684268 与 [Pages 45036684311](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/45036684311) 成功。365 项测试与 257 个公开文件哈希通过，`devices-data.js` SHA-256 为 `f69328cee58e0a7ca992b4094e91a9c28ada0f7c66ada030638428a62e1513c5`。独立无头 Chrome 核对全站 74 篇、1451 条及可见光 53 篇、889 条。Dai 同论文同配置六条、五个实测谱点的 NA 散点、CSV、原始出处引用往返和六视口通过。逐色焦距轴与 FWHM 轴无散点。Crossref 题录与补件登记 200，ACS 正文入口 403，重庆大学页面初始 412。[本批核验](DAI_2021_HOLOGRAPHIC_ACHROMATIC_EVIDENCE_2026-11-22.md)
 
 沿 Dai 的作者团队续核 Zhao 2020（2020-08-16 首次正式在线）。2026-11-22 查 Crossref 与 OpenAlex 各 69 次。Wiley 摘要列设计半径 5.11 mm、焦距 40.39 mm、NA 0.125 与设计区间 2.29–2.70 THz。第一完成单位的课题组结果段写 2.4–2.6 THz 经实验验证，后续需要用原刊 Fig. 5 和实验装置补件确定实际频点及测量条件。独立无头 Chrome 的 Wiley 全文、PDF 和补件候选入口返回 403，DataCite 精确关联零项。会话目标保持开启。[原刊](https://advanced.onlinelibrary.wiley.com/doi/10.1002/adom.202000842) · [重庆大学课题组发布](https://coe.cqu.edu.cn/info/1027/3837.htm) · [Crossref](https://api.crossref.org/works/10.1002/adom.202000842) · [OpenAlex](https://api.openalex.org/works/W3076313380)
+
+## 2026-11-22-183 · Zhao 太赫兹实验与 Yuan 可见光三色原始证据
+
+新增两篇经典原始研究、两个器件配置和七条记录。Zhao 的原刊复载图注确认 2.54 THz 单频、实际焦位的轴向标记及 x 和 y 方向宽度曲线。录入设计 D、NA、f，分开 2.29–2.70 THz 设计范围与校方 2.4–2.6 THz 实验验证。Yuan Fig. 5 用同件 40 μm 金膜掩模在 10 μm 目标面同时聚焦 405／532／633 nm。录入三色宽度及误差、焦斑能量比例、补件的测量光路和作者数据 DOI。两篇逐谱最佳焦位、残余焦差及原始 MTF 数据待补。累计 76 篇、340 配置、1458 条，可见光 54 篇、894 条。[本批核验](ZHAO_YUAN_SUPEROSCILLATORY_EVIDENCE_2026-11-22.md)
