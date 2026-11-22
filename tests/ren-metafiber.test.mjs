@@ -18,12 +18,13 @@ test('Ren uses one publication for the measured lenses, confocal systems and sim
  assert.equal(paper.paper, 'device-ren_metafiber_pdf_2022');
  assert.equal(workspace.sources.get('device-ren_metafiber_si_2022').publication_source, paper.paper);
  assert.equal(workspace.sources.get('device-ren_metafiber_review_2022').publication_source, paper.paper);
+ assert.equal(workspace.sources.get('device-ren_metafiber_author_thesis_2024').publication_source, paper.paper);
  assert.equal(rows.length, 35);
  assert.equal(new Set(rows.map(row => row.specimen_id)).size, 10);
  assert.ok(rows.every(row => !hasVisibleLight(lens, row)));
 });
 
-test('Ren preserves the measured focal conflict and reports three distinct efficiency ratios', () => {
+test('Ren reports three distinct efficiency ratios and preserves the author basis of its focal measurements', () => {
  for (const [type, expectedWidths, totals] of [
   ['glass_achromat', [3.03, 3.83, 3.79, 3.84, 4.24], [14.13, 18.11, 24.58, 30.87, 32.01]],
   ['glass_control', null, [20.11, 24.58, 27, 30.1, 30.96]],
@@ -45,14 +46,34 @@ test('Ren preserves the measured focal conflict and reports three distinct effic
    assert.equal(values.efficiency_protocol.focus_region_dimension_kind, null);
   }
  }
- const conflicting = specimen('glass_control').filter(row => row.values.measured_focal_um);
- assert.deepEqual(conflicting.map(row => row.values.measured_focal_um.prose_reported_value_um), [306, undefined, undefined, undefined, 225]);
- assert.ok(conflicting.every(row => row.values.measured_focal_um.value === null));
- assert.equal(axisPoints(rows, 'wavelength_nm', 'measured_focal_um').length, 1);
+ const control = specimen('glass_control');
+ const spectral = control.filter(row => row.values.wavelength_nm);
+ assert.deepEqual(spectral.map(row => row.values.measured_focal_um.value), [306, null, null, null, 225]);
+ const endpoints = [spectral[0], spectral.at(-1)];
+ assert.deepEqual(endpoints.map(row => row.values.axial_focus_offset_um.value), [56,-25]);
+ assert.ok(endpoints.every(row => {
+  const peak = row.values.measured_focal_um;
+  return peak.basis === 'measured' &&
+   peak.sourceIds.includes('device-ren_metafiber_author_thesis_2024') &&
+   peak.note.includes('Fig. 3E') &&
+   row.values.axial_focus_offset_um.reference_plane_um === 250;
+ }));
+ const span = control.find(row => row.values.focus_variation_protocol).values.focus_variation_um;
+ assert.equal(span.value,81);
+ assert.equal(span.calculation_origin,'atlas');
+ assert.deepEqual(span.sample_wavelengths_nm,[1250,1650]);
+ assert.deepEqual(span.measurement_record_ids,endpoints.map(row => row.id));
+ assert.equal(axisPoints(rows, 'wavelength_nm', 'measured_focal_um').length, 3);
  const reported = specimen('glass_achromat').find(row => row.values.wavelength_nm?.value === 1650).values;
  assert.equal(reported.measured_focal_um.value, 225);
  assert.equal(reported.axial_focus_offset_um.value, -25);
  assert.equal(reported.axial_focus_offset_um.calculation_origin, 'atlas');
+ assert.equal(reported.psf_protocol.collection_objective_magnification,10);
+ assert.equal(reported.psf_protocol.collection_objective_na,0.2);
+ const fiber = specimen('fiber_achromat').find(row => !row.values.wavelength_nm).values;
+ assert.equal(fiber.material.support_tower_sidewall_thickness_um,10);
+ assert.equal(fiber.psf_protocol.axial_step_um,0.5);
+ assert.equal(fiber.psf_protocol.collection_objective_na,undefined);
  assert.deepEqual(specimen('model_s11_control').map(row => row.values.simulated_focal_um.value), [292, 271, 258, 237, 217]);
  const invalid = structuredClone(data);
  const sample = invalid.domains.metalens.rows.find(row => row.id === 'ren2022metafiber_glass_achromat_1250');
