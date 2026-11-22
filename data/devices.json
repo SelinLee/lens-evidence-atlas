@@ -3467,6 +3467,69 @@
       "scope": "2026-11-22 查询 OpenAlex 引用 190，与期刊 DOI 一致。",
       "checked_on": "2026-11-22",
       "publication_source": "yuan_sol_vor_2017"
+    },
+    {
+      "id": "lin_ascl_prj_2025",
+      "title": "Lin et al. (2025) · Centimeter-scale achromatic supercritical lens",
+      "url": "https://doi.org/10.1364/PRJ.569751",
+      "kind": "peer_reviewed_paper",
+      "scope": "Photonics Research 13(11), 3220–3227，2025-10-31 正式发表。Optica PDF 在本机返回验证页，正式复载全文另链接。",
+      "checked_on": "2026-11-22",
+      "doi": "10.1364/prj.569751"
+    },
+    {
+      "id": "lin_ascl_publisher_pdf_2025",
+      "title": "Chinese Laser Press 正式 PDF 复载 · Lin 2025",
+      "url": "https://www.researchgate.net/journal/Photonics-Research-2327-9125/publication/394827904_Centimeter-scale_achromatic_supercritical_lens/links/6a0c23ffce67915c7531ac05/Centimeter-scale-achromatic-supercritical-lens.pdf",
+      "kind": "publisher_preview",
+      "scope": "出版方 8 页 PDF，可读 p.3220–3227 正式正文及图注。复核设计、实验、附录与数据声明。独立无头 Chrome 直连返回 403。",
+      "checked_on": "2026-11-22",
+      "publication_source": "lin_ascl_prj_2025"
+    },
+    {
+      "id": "lin_ascl_publisher_text_2025",
+      "title": "Photonics Research 正式全文复载 · Lin 2025",
+      "url": "https://www.researchgate.net/publication/394827904_Centimeter-scale_achromatic_supercritical_lens",
+      "kind": "publisher_preview",
+      "scope": "Optica 标注的 Publisher Full-text。对读实验正文、附录和图注，可由索引读取，浏览器直连返回 403。",
+      "checked_on": "2026-11-22",
+      "publication_source": "lin_ascl_prj_2025"
+    },
+    {
+      "id": "lin_ascl_fig4_2025",
+      "title": "Photonics Research 原刊 Fig. 4 图注 · Lin 2025",
+      "url": "https://www.researchgate.net/figure/Experimental-results-of-the-achromatic-sub-diffraction-limited-focusing-by-the-ASCL_fig4_394827904",
+      "kind": "publisher_figure",
+      "scope": "原刊 Fig. 4a–d 的光路、纵横向实测焦场与横剖线图注。逐点 FWHM 原印值在 p.3224 正文。",
+      "checked_on": "2026-11-22",
+      "publication_source": "lin_ascl_prj_2025"
+    },
+    {
+      "id": "lin_ascl_jnu_2025",
+      "title": "暨南大学 · Lin 2025 课题组正式发表目录",
+      "url": "https://ipt.jnu.edu.cn/npdgroup/2025/list.htm",
+      "kind": "institutional_repository",
+      "scope": "第一完成单位 2025 年发表目录核作者团队、期刊与 DOI，浏览器可访问。",
+      "checked_on": "2026-11-22",
+      "publication_source": "lin_ascl_prj_2025"
+    },
+    {
+      "id": "lin_ascl_whu_cas_2025",
+      "title": "武汉大学图书馆 · Photonics Research 分区",
+      "url": "https://topj.lib.whu.edu.cn/show.asp?cat=sci&id=12565",
+      "kind": "institutional_report",
+      "scope": "按 2025 年 3 月中科院升级版为物理与天体物理大类一区，ISSN 2327-9125。",
+      "checked_on": "2026-11-22",
+      "publication_source": "lin_ascl_prj_2025"
+    },
+    {
+      "id": "lin_ascl_crossref_2025",
+      "title": "Crossref · Lin 2025 正式出版记录",
+      "url": "https://api.crossref.org/works/10.1364/prj.569751",
+      "kind": "repository_metadata",
+      "scope": "正式出版 2025-10-31，卷 13 期 11，3220–3227。原文另列 2025-08-21 posted。",
+      "checked_on": "2026-11-22",
+      "publication_source": "lin_ascl_prj_2025"
     }
   ],
   "domains": {
@@ -174333,9 +174396,1030 @@
             }
           },
           "visible_light_use": true
+        },
+        {
+          "id": "lin2025ascl_summary",
+          "model": "Lin 2025 · 厘米级 ASCL · 汇总",
+          "study_id": "lin2025ascl",
+          "specimen_id": "focusing",
+          "module": "",
+          "variant": "实制｜连续设计与七离散实测点",
+          "measurement_scope": "同一灰度光刻制备的厘米级多级衍射超临界透镜。连续设计区间和七离散实测波长分开。",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 10008,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "§2A 明印设计外径 10.008 mm。实物在 p.3220 摘要以 10 mm 概称，附录 B.2 的 10 mm 是入射束的直径。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 10.008,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "各设计波长的共同目标焦距为 50 mm。与实测约 50 mm 的概述及未发表的逐色精确轴峰分开。",
+              "basis": "model",
+              "checked_on": "2026-11-22"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "本体名义设计 NA 为 0.1。接收显微物镜 NA 0.45，在焦斑协议记录。",
+              "basis": "model",
+              "checked_on": "2026-11-22"
+            },
+            "height_nm": {
+              "value": 10000,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d；p.3225 §3",
+              "note": "名义环形结构高度范围为 0–10 μm。Fig. 3e 比较实物轮廓和设计图，两者允许有偏差。",
+              "basis": "model",
+              "checked_on": "2026-11-22"
+            },
+            "material": {
+              "value": "AZ4562 多级聚合物环／SiO₂ 基底",
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d；p.3226 附录 B.1",
+              "note": "DWL66+ 灰度光刻制备，1251 个 4 μm 等宽环、52 级高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "number_of_rings": 1251,
+              "ring_width_um": 4,
+              "phase_levels": 52
+            },
+            "lambda_min_nm": {
+              "value": 400,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d；正式 PDF p.3224 §2B 与 Fig. 4a–d",
+              "note": "连续设计波段 400–700 nm 的短波端。Fig. 4 实测包括该波长。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "spectral_sampling": "continuous_design_discrete_measurements"
+            },
+            "lambda_max_nm": {
+              "value": 700,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d；正式 PDF p.3224 §2B 与 Fig. 4a–d",
+              "note": "连续设计波段 400–700 nm 的长波端。Fig. 4 实测包括该波长。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "spectral_sampling": "continuous_design_discrete_measurements"
+            },
+            "chromatic": {
+              "value": "相对相位补偿与多波长共同焦面优化",
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d；附录 A Eq. (A1)–(A2)；正式 PDF p.3224 §2B 与 Fig. 4a–d",
+              "note": "两阶段模拟退火先补偿不同波长的相对相位，再提高共同焦区的峰强并缩小横斑。Fig. 4 对实物轴扫，并在 Fig. 5 额外验证同面成像。近三年可见光原始研究，2025 年 3 月中科院物理与天体物理大类一区。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sample_wavelengths_nm": [
+                400,
+                450,
+                500,
+                550,
+                600,
+                650,
+                700
+              ],
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_prj_2025",
+                "lin_ascl_publisher_text_2025",
+                "lin_ascl_fig4_2025",
+                "lin_ascl_jnu_2025",
+                "lin_ascl_whu_cas_2025",
+                "lin_ascl_crossref_2025"
+              ]
+            },
+            "psf_protocol": {
+              "value": "法向照明、1 μm 轴扫，20×／NA 0.45 接收",
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B 与 Fig. 4a–d；正式 PDF p.3226 附录 B.2",
+              "note": "超连续源准直后扩束到 10 mm。偏振片和消色差四分之一波片用于设定偏振，原文未给每一波长的设置或入射旋向。以 Sigma 电动台沿 z 移动器件，经 Nikon 20× 接收物镜和 ToupTek CMOS 记录横截面。Fig. 4b 白虚线给约 50 mm 的名义参考。逐色横剖线的精确 z 及像素尺度未报。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sample_wavelengths_nm": [
+                400,
+                450,
+                500,
+                550,
+                600,
+                650,
+                700
+              ],
+              "axial_scan_step_um": 1,
+              "collection_objective_na": 0.45,
+              "collection_objective_magnification": 20,
+              "illumination_diameter_um": 10000,
+              "incidence_angle_deg": 0,
+              "reference_plane": "author_nominal_z_axis",
+              "target_evaluation_plane_um": 50000,
+              "evaluation_plane_um": null,
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            },
+            "focus_variation_protocol": {
+              "value": "七谱点轴向场与 50 mm 名义参考线",
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B 与 Fig. 4a–d；正式 PDF p.3226 附录 B.2",
+              "note": "Z 扫描步进 1 μm，原文约 50 mm 为对焦区概述。作者未给七谱点峰位、z 原点标定或不确定度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "reference_wavelength_nm": null,
+              "reference_plane_um": 50000,
+              "sample_wavelengths_nm": [
+                400,
+                450,
+                500,
+                550,
+                600,
+                650,
+                700
+              ],
+              "axial_scan_step_um": 1,
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B 与 Fig. 4a–d",
+              "note": "图有轴向场。逐色实测轴峰的最大互差仍待数据，未用理论与实测误差界替代。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "焦区约 50 mm，残余互差待原数",
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            },
+            "focus_error_pct": {
+              "value": null,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B 与 Fig. 4a–d，实测焦距比较段",
+              "note": "作者报告理论与实测的最大焦距差低于 1%。归一化用的精确分母与计算式未给，两类焦位的差与实测谱点互差分列。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "理论与实测最大差 <1%",
+              "bound": {
+                "value": 1,
+                "operator": "<",
+                "unit": "%"
+              },
+              "reference_wavelength_nm": null
+            },
+            "efficiency_protocol": {
+              "value": "模拟与实验合述 1%–5%，逐谱点效率与积分协议待核",
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B 与 Fig. 4a–d，聚焦效率段",
+              "note": "正文跨不同波长合述模拟与实验落在此范围，未给每组端点归属、分母或焦圈。范围未用作均值或逐色实测值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "reported_joint_range_pct": [
+                1,
+                5
+              ],
+              "denominator": null,
+              "integration_geometry": null,
+              "evaluation_plane_um": null
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B 与 Fig. 4a–d；正式 PDF p.3226 Data Availability",
+              "note": "可读焦区强度图与剖面。作者数据须合理请求，DataCite 精确 DOI 未匹配公开关联。原始坐标、像素校准、场点、MTF 和 Strehl 未核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "原始 PSF／MTF 待补",
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_prj_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "lin2025ascl_400",
+          "model": "Lin 2025 · 400 nm · 实测焦斑",
+          "study_id": "lin2025ascl",
+          "specimen_id": "focusing",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一灰度光刻制备的厘米级多级衍射超临界透镜。连续设计区间和七离散实测波长分开。",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 10008,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "§2A 明印设计外径 10.008 mm。实物在 p.3220 摘要以 10 mm 概称，附录 B.2 的 10 mm 是入射束的直径。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 10.008,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "各设计波长的共同目标焦距为 50 mm。与实测约 50 mm 的概述及未发表的逐色精确轴峰分开。",
+              "basis": "model",
+              "checked_on": "2026-11-22"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "本体名义设计 NA 为 0.1。接收显微物镜 NA 0.45，在焦斑协议记录。",
+              "basis": "model",
+              "checked_on": "2026-11-22"
+            },
+            "wavelength_nm": {
+              "value": 400,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B FWHM 原印及 Fig. 4b–d",
+              "note": "实际单色实验波长，七谱点之一。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            },
+            "psf_protocol": {
+              "value": "法向照明、1 μm 轴扫，20×／NA 0.45 接收",
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B 与 Fig. 4a–d；正式 PDF p.3226 附录 B.2",
+              "note": "超连续源准直后扩束到 10 mm。偏振片和消色差四分之一波片用于设定偏振，原文未给每一波长的设置或入射旋向。以 Sigma 电动台沿 z 移动器件，经 Nikon 20× 接收物镜和 ToupTek CMOS 记录横截面。Fig. 4b 白虚线给约 50 mm 的名义参考。逐色横剖线的精确 z 及像素尺度未报。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sample_wavelengths_nm": [
+                400,
+                450,
+                500,
+                550,
+                600,
+                650,
+                700
+              ],
+              "axial_scan_step_um": 1,
+              "collection_objective_na": 0.45,
+              "collection_objective_magnification": 20,
+              "illumination_diameter_um": 10000,
+              "incidence_angle_deg": 0,
+              "reference_plane": "author_nominal_z_axis",
+              "target_evaluation_plane_um": 50000,
+              "evaluation_plane_um": null,
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 Fig. 4b 与同页正文",
+              "note": "400 nm 的轴向场随 z 测量，作者给焦区约 50 mm。该波长最佳轴峰没有可核数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "轴向场已测，最佳焦位待原数"
+            },
+            "fwhm_um": {
+              "value": 3.036,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B 宽度段及 Fig. 4c,d",
+              "note": "实测 0.759 λ/NA，以本体名义 NA 0.1 和该波长换算为 μm，四舍五入至 0.001 μm。横向剖线方向、误差或精确轴向采集面未给。原文指出该短波端未达到亚衍射宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "display": "约 3.036",
+              "approximate": true,
+              "original_value": 0.759,
+              "original_unit": "lambda_over_NA",
+              "unit_conversion_origin": "atlas",
+              "formula": "original_value * wavelength_nm / (1000 * design_na)",
+              "design_na": 0.1,
+              "direction": "unspecified",
+              "evaluation_plane_um": null,
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "lin2025ascl_450",
+          "model": "Lin 2025 · 450 nm · 实测焦斑",
+          "study_id": "lin2025ascl",
+          "specimen_id": "focusing",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一灰度光刻制备的厘米级多级衍射超临界透镜。连续设计区间和七离散实测波长分开。",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 10008,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "§2A 明印设计外径 10.008 mm。实物在 p.3220 摘要以 10 mm 概称，附录 B.2 的 10 mm 是入射束的直径。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 10.008,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "各设计波长的共同目标焦距为 50 mm。与实测约 50 mm 的概述及未发表的逐色精确轴峰分开。",
+              "basis": "model",
+              "checked_on": "2026-11-22"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "本体名义设计 NA 为 0.1。接收显微物镜 NA 0.45，在焦斑协议记录。",
+              "basis": "model",
+              "checked_on": "2026-11-22"
+            },
+            "wavelength_nm": {
+              "value": 450,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B FWHM 原印及 Fig. 4b–d",
+              "note": "实际单色实验波长，七谱点之一。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            },
+            "psf_protocol": {
+              "value": "法向照明、1 μm 轴扫，20×／NA 0.45 接收",
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B 与 Fig. 4a–d；正式 PDF p.3226 附录 B.2",
+              "note": "超连续源准直后扩束到 10 mm。偏振片和消色差四分之一波片用于设定偏振，原文未给每一波长的设置或入射旋向。以 Sigma 电动台沿 z 移动器件，经 Nikon 20× 接收物镜和 ToupTek CMOS 记录横截面。Fig. 4b 白虚线给约 50 mm 的名义参考。逐色横剖线的精确 z 及像素尺度未报。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sample_wavelengths_nm": [
+                400,
+                450,
+                500,
+                550,
+                600,
+                650,
+                700
+              ],
+              "axial_scan_step_um": 1,
+              "collection_objective_na": 0.45,
+              "collection_objective_magnification": 20,
+              "illumination_diameter_um": 10000,
+              "incidence_angle_deg": 0,
+              "reference_plane": "author_nominal_z_axis",
+              "target_evaluation_plane_um": 50000,
+              "evaluation_plane_um": null,
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 Fig. 4b 与同页正文",
+              "note": "450 nm 的轴向场随 z 测量，作者给焦区约 50 mm。该波长最佳轴峰没有可核数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "轴向场已测，最佳焦位待原数"
+            },
+            "fwhm_um": {
+              "value": 2.754,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B 宽度段及 Fig. 4c,d",
+              "note": "实测 0.612 λ/NA，以本体名义 NA 0.1 和该波长换算为 μm，四舍五入至 0.001 μm。横向剖线方向、误差或精确轴向采集面未给。原文指出该短波端未达到亚衍射宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "display": "约 2.754",
+              "approximate": true,
+              "original_value": 0.612,
+              "original_unit": "lambda_over_NA",
+              "unit_conversion_origin": "atlas",
+              "formula": "original_value * wavelength_nm / (1000 * design_na)",
+              "design_na": 0.1,
+              "direction": "unspecified",
+              "evaluation_plane_um": null,
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "lin2025ascl_500",
+          "model": "Lin 2025 · 500 nm · 实测焦斑",
+          "study_id": "lin2025ascl",
+          "specimen_id": "focusing",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一灰度光刻制备的厘米级多级衍射超临界透镜。连续设计区间和七离散实测波长分开。",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 10008,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "§2A 明印设计外径 10.008 mm。实物在 p.3220 摘要以 10 mm 概称，附录 B.2 的 10 mm 是入射束的直径。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 10.008,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "各设计波长的共同目标焦距为 50 mm。与实测约 50 mm 的概述及未发表的逐色精确轴峰分开。",
+              "basis": "model",
+              "checked_on": "2026-11-22"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "本体名义设计 NA 为 0.1。接收显微物镜 NA 0.45，在焦斑协议记录。",
+              "basis": "model",
+              "checked_on": "2026-11-22"
+            },
+            "wavelength_nm": {
+              "value": 500,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B FWHM 原印及 Fig. 4b–d",
+              "note": "实际单色实验波长，七谱点之一。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            },
+            "psf_protocol": {
+              "value": "法向照明、1 μm 轴扫，20×／NA 0.45 接收",
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B 与 Fig. 4a–d；正式 PDF p.3226 附录 B.2",
+              "note": "超连续源准直后扩束到 10 mm。偏振片和消色差四分之一波片用于设定偏振，原文未给每一波长的设置或入射旋向。以 Sigma 电动台沿 z 移动器件，经 Nikon 20× 接收物镜和 ToupTek CMOS 记录横截面。Fig. 4b 白虚线给约 50 mm 的名义参考。逐色横剖线的精确 z 及像素尺度未报。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sample_wavelengths_nm": [
+                400,
+                450,
+                500,
+                550,
+                600,
+                650,
+                700
+              ],
+              "axial_scan_step_um": 1,
+              "collection_objective_na": 0.45,
+              "collection_objective_magnification": 20,
+              "illumination_diameter_um": 10000,
+              "incidence_angle_deg": 0,
+              "reference_plane": "author_nominal_z_axis",
+              "target_evaluation_plane_um": 50000,
+              "evaluation_plane_um": null,
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 Fig. 4b 与同页正文",
+              "note": "500 nm 的轴向场随 z 测量，作者给焦区约 50 mm。该波长最佳轴峰没有可核数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "轴向场已测，最佳焦位待原数"
+            },
+            "fwhm_um": {
+              "value": 2.42,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B 宽度段及 Fig. 4c,d",
+              "note": "实测 0.484 λ/NA，以本体名义 NA 0.1 和该波长换算为 μm，四舍五入至 0.001 μm。横向剖线方向、误差或精确轴向采集面未给。原文在比照其 Rayleigh 判据后列该宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "display": "约 2.420",
+              "approximate": true,
+              "original_value": 0.484,
+              "original_unit": "lambda_over_NA",
+              "unit_conversion_origin": "atlas",
+              "formula": "original_value * wavelength_nm / (1000 * design_na)",
+              "design_na": 0.1,
+              "direction": "unspecified",
+              "evaluation_plane_um": null,
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "lin2025ascl_550",
+          "model": "Lin 2025 · 550 nm · 实测焦斑",
+          "study_id": "lin2025ascl",
+          "specimen_id": "focusing",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一灰度光刻制备的厘米级多级衍射超临界透镜。连续设计区间和七离散实测波长分开。",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 10008,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "§2A 明印设计外径 10.008 mm。实物在 p.3220 摘要以 10 mm 概称，附录 B.2 的 10 mm 是入射束的直径。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 10.008,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "各设计波长的共同目标焦距为 50 mm。与实测约 50 mm 的概述及未发表的逐色精确轴峰分开。",
+              "basis": "model",
+              "checked_on": "2026-11-22"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "本体名义设计 NA 为 0.1。接收显微物镜 NA 0.45，在焦斑协议记录。",
+              "basis": "model",
+              "checked_on": "2026-11-22"
+            },
+            "wavelength_nm": {
+              "value": 550,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B FWHM 原印及 Fig. 4b–d",
+              "note": "实际单色实验波长，七谱点之一。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            },
+            "psf_protocol": {
+              "value": "法向照明、1 μm 轴扫，20×／NA 0.45 接收",
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B 与 Fig. 4a–d；正式 PDF p.3226 附录 B.2",
+              "note": "超连续源准直后扩束到 10 mm。偏振片和消色差四分之一波片用于设定偏振，原文未给每一波长的设置或入射旋向。以 Sigma 电动台沿 z 移动器件，经 Nikon 20× 接收物镜和 ToupTek CMOS 记录横截面。Fig. 4b 白虚线给约 50 mm 的名义参考。逐色横剖线的精确 z 及像素尺度未报。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sample_wavelengths_nm": [
+                400,
+                450,
+                500,
+                550,
+                600,
+                650,
+                700
+              ],
+              "axial_scan_step_um": 1,
+              "collection_objective_na": 0.45,
+              "collection_objective_magnification": 20,
+              "illumination_diameter_um": 10000,
+              "incidence_angle_deg": 0,
+              "reference_plane": "author_nominal_z_axis",
+              "target_evaluation_plane_um": 50000,
+              "evaluation_plane_um": null,
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 Fig. 4b 与同页正文",
+              "note": "550 nm 的轴向场随 z 测量，作者给焦区约 50 mm。该波长最佳轴峰没有可核数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "轴向场已测，最佳焦位待原数"
+            },
+            "fwhm_um": {
+              "value": 2.607,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B 宽度段及 Fig. 4c,d",
+              "note": "实测 0.474 λ/NA，以本体名义 NA 0.1 和该波长换算为 μm，四舍五入至 0.001 μm。横向剖线方向、误差或精确轴向采集面未给。原文在比照其 Rayleigh 判据后列该宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "display": "约 2.607",
+              "approximate": true,
+              "original_value": 0.474,
+              "original_unit": "lambda_over_NA",
+              "unit_conversion_origin": "atlas",
+              "formula": "original_value * wavelength_nm / (1000 * design_na)",
+              "design_na": 0.1,
+              "direction": "unspecified",
+              "evaluation_plane_um": null,
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "lin2025ascl_600",
+          "model": "Lin 2025 · 600 nm · 实测焦斑",
+          "study_id": "lin2025ascl",
+          "specimen_id": "focusing",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一灰度光刻制备的厘米级多级衍射超临界透镜。连续设计区间和七离散实测波长分开。",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 10008,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "§2A 明印设计外径 10.008 mm。实物在 p.3220 摘要以 10 mm 概称，附录 B.2 的 10 mm 是入射束的直径。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 10.008,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "各设计波长的共同目标焦距为 50 mm。与实测约 50 mm 的概述及未发表的逐色精确轴峰分开。",
+              "basis": "model",
+              "checked_on": "2026-11-22"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "本体名义设计 NA 为 0.1。接收显微物镜 NA 0.45，在焦斑协议记录。",
+              "basis": "model",
+              "checked_on": "2026-11-22"
+            },
+            "wavelength_nm": {
+              "value": 600,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B FWHM 原印及 Fig. 4b–d",
+              "note": "实际单色实验波长，七谱点之一。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            },
+            "psf_protocol": {
+              "value": "法向照明、1 μm 轴扫，20×／NA 0.45 接收",
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B 与 Fig. 4a–d；正式 PDF p.3226 附录 B.2",
+              "note": "超连续源准直后扩束到 10 mm。偏振片和消色差四分之一波片用于设定偏振，原文未给每一波长的设置或入射旋向。以 Sigma 电动台沿 z 移动器件，经 Nikon 20× 接收物镜和 ToupTek CMOS 记录横截面。Fig. 4b 白虚线给约 50 mm 的名义参考。逐色横剖线的精确 z 及像素尺度未报。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sample_wavelengths_nm": [
+                400,
+                450,
+                500,
+                550,
+                600,
+                650,
+                700
+              ],
+              "axial_scan_step_um": 1,
+              "collection_objective_na": 0.45,
+              "collection_objective_magnification": 20,
+              "illumination_diameter_um": 10000,
+              "incidence_angle_deg": 0,
+              "reference_plane": "author_nominal_z_axis",
+              "target_evaluation_plane_um": 50000,
+              "evaluation_plane_um": null,
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 Fig. 4b 与同页正文",
+              "note": "600 nm 的轴向场随 z 测量，作者给焦区约 50 mm。该波长最佳轴峰没有可核数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "轴向场已测，最佳焦位待原数"
+            },
+            "fwhm_um": {
+              "value": 2.814,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B 宽度段及 Fig. 4c,d",
+              "note": "实测 0.469 λ/NA，以本体名义 NA 0.1 和该波长换算为 μm，四舍五入至 0.001 μm。横向剖线方向、误差或精确轴向采集面未给。原文在比照其 Rayleigh 判据后列该宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "display": "约 2.814",
+              "approximate": true,
+              "original_value": 0.469,
+              "original_unit": "lambda_over_NA",
+              "unit_conversion_origin": "atlas",
+              "formula": "original_value * wavelength_nm / (1000 * design_na)",
+              "design_na": 0.1,
+              "direction": "unspecified",
+              "evaluation_plane_um": null,
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "lin2025ascl_650",
+          "model": "Lin 2025 · 650 nm · 实测焦斑",
+          "study_id": "lin2025ascl",
+          "specimen_id": "focusing",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一灰度光刻制备的厘米级多级衍射超临界透镜。连续设计区间和七离散实测波长分开。",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 10008,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "§2A 明印设计外径 10.008 mm。实物在 p.3220 摘要以 10 mm 概称，附录 B.2 的 10 mm 是入射束的直径。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 10.008,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "各设计波长的共同目标焦距为 50 mm。与实测约 50 mm 的概述及未发表的逐色精确轴峰分开。",
+              "basis": "model",
+              "checked_on": "2026-11-22"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "本体名义设计 NA 为 0.1。接收显微物镜 NA 0.45，在焦斑协议记录。",
+              "basis": "model",
+              "checked_on": "2026-11-22"
+            },
+            "wavelength_nm": {
+              "value": 650,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B FWHM 原印及 Fig. 4b–d",
+              "note": "实际单色实验波长，七谱点之一。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            },
+            "psf_protocol": {
+              "value": "法向照明、1 μm 轴扫，20×／NA 0.45 接收",
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B 与 Fig. 4a–d；正式 PDF p.3226 附录 B.2",
+              "note": "超连续源准直后扩束到 10 mm。偏振片和消色差四分之一波片用于设定偏振，原文未给每一波长的设置或入射旋向。以 Sigma 电动台沿 z 移动器件，经 Nikon 20× 接收物镜和 ToupTek CMOS 记录横截面。Fig. 4b 白虚线给约 50 mm 的名义参考。逐色横剖线的精确 z 及像素尺度未报。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sample_wavelengths_nm": [
+                400,
+                450,
+                500,
+                550,
+                600,
+                650,
+                700
+              ],
+              "axial_scan_step_um": 1,
+              "collection_objective_na": 0.45,
+              "collection_objective_magnification": 20,
+              "illumination_diameter_um": 10000,
+              "incidence_angle_deg": 0,
+              "reference_plane": "author_nominal_z_axis",
+              "target_evaluation_plane_um": 50000,
+              "evaluation_plane_um": null,
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 Fig. 4b 与同页正文",
+              "note": "650 nm 的轴向场随 z 测量，作者给焦区约 50 mm。该波长最佳轴峰没有可核数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "轴向场已测，最佳焦位待原数"
+            },
+            "fwhm_um": {
+              "value": 3.179,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B 宽度段及 Fig. 4c,d",
+              "note": "实测 0.489 λ/NA，以本体名义 NA 0.1 和该波长换算为 μm，四舍五入至 0.001 μm。横向剖线方向、误差或精确轴向采集面未给。原文在比照其 Rayleigh 判据后列该宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "display": "约 3.179",
+              "approximate": true,
+              "original_value": 0.489,
+              "original_unit": "lambda_over_NA",
+              "unit_conversion_origin": "atlas",
+              "formula": "original_value * wavelength_nm / (1000 * design_na)",
+              "design_na": 0.1,
+              "direction": "unspecified",
+              "evaluation_plane_um": null,
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "lin2025ascl_700",
+          "model": "Lin 2025 · 700 nm · 实测焦斑",
+          "study_id": "lin2025ascl",
+          "specimen_id": "focusing",
+          "module": "",
+          "variant": "离散实测谱点",
+          "measurement_scope": "同一灰度光刻制备的厘米级多级衍射超临界透镜。连续设计区间和七离散实测波长分开。",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 10008,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "§2A 明印设计外径 10.008 mm。实物在 p.3220 摘要以 10 mm 概称，附录 B.2 的 10 mm 是入射束的直径。",
+              "basis": "model",
+              "checked_on": "2026-11-22",
+              "original_value": 10.008,
+              "original_unit": "mm"
+            },
+            "design_focal_um": {
+              "value": 50000,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "各设计波长的共同目标焦距为 50 mm。与实测约 50 mm 的概述及未发表的逐色精确轴峰分开。",
+              "basis": "model",
+              "checked_on": "2026-11-22"
+            },
+            "na": {
+              "value": 0.1,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF pp.3221–3223 §2A 与 Fig. 1c,d",
+              "note": "本体名义设计 NA 为 0.1。接收显微物镜 NA 0.45，在焦斑协议记录。",
+              "basis": "model",
+              "checked_on": "2026-11-22"
+            },
+            "wavelength_nm": {
+              "value": 700,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B FWHM 原印及 Fig. 4b–d",
+              "note": "实际单色实验波长，七谱点之一。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            },
+            "psf_protocol": {
+              "value": "法向照明、1 μm 轴扫，20×／NA 0.45 接收",
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B 与 Fig. 4a–d；正式 PDF p.3226 附录 B.2",
+              "note": "超连续源准直后扩束到 10 mm。偏振片和消色差四分之一波片用于设定偏振，原文未给每一波长的设置或入射旋向。以 Sigma 电动台沿 z 移动器件，经 Nikon 20× 接收物镜和 ToupTek CMOS 记录横截面。Fig. 4b 白虚线给约 50 mm 的名义参考。逐色横剖线的精确 z 及像素尺度未报。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "sample_wavelengths_nm": [
+                400,
+                450,
+                500,
+                550,
+                600,
+                650,
+                700
+              ],
+              "axial_scan_step_um": 1,
+              "collection_objective_na": 0.45,
+              "collection_objective_magnification": 20,
+              "illumination_diameter_um": 10000,
+              "incidence_angle_deg": 0,
+              "reference_plane": "author_nominal_z_axis",
+              "target_evaluation_plane_um": 50000,
+              "evaluation_plane_um": null,
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 Fig. 4b 与同页正文",
+              "note": "700 nm 的轴向场随 z 测量，作者给焦区约 50 mm。该波长最佳轴峰没有可核数值。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-22",
+              "display": "轴向场已测，最佳焦位待原数"
+            },
+            "fwhm_um": {
+              "value": 3.143,
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3224 §2B 宽度段及 Fig. 4c,d",
+              "note": "实测 0.449 λ/NA，以本体名义 NA 0.1 和该波长换算为 μm，四舍五入至 0.001 μm。横向剖线方向、误差或精确轴向采集面未给。原文在比照其 Rayleigh 判据后列该宽度。",
+              "basis": "measured",
+              "checked_on": "2026-11-22",
+              "display": "约 3.143",
+              "approximate": true,
+              "original_value": 0.449,
+              "original_unit": "lambda_over_NA",
+              "unit_conversion_origin": "atlas",
+              "formula": "original_value * wavelength_nm / (1000 * design_na)",
+              "design_na": 0.1,
+              "direction": "unspecified",
+              "evaluation_plane_um": null,
+              "sourceIds": [
+                "lin_ascl_publisher_pdf_2025",
+                "lin_ascl_fig4_2025"
+              ]
+            }
+          }
+        },
+        {
+          "id": "lin2025ascl_chart",
+          "model": "Lin 2025 · 白／RGB · 同像面标板",
+          "study_id": "lin2025ascl",
+          "specimen_id": "imaging",
+          "module": "",
+          "variant": "同件成像系统",
+          "measurement_scope": "同一实物的透射 1951 USAF 标板成像。该实验的有限共轭与聚焦测量分开。",
+          "evidence_type": "study",
+          "visible_light_use": true,
+          "values": {
+            "chromatic": {
+              "value": "白光及 R／G／B 同面等尺寸成像",
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3225 §2B 与 Fig. 5a–c",
+              "note": "卤素灯照明正图案标板，作者观察白光与各单色图在同一像面取得同尺寸图像。各通道准确中心波长、横向色差、相机标尺及视场角未给。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "object_conjugate": "finite",
+              "illumination_channels": [
+                "white",
+                "red",
+                "green",
+                "blue"
+              ]
+            },
+            "psf_protocol": {
+              "value": "1951 USAF 标板、卤素灯与 CMOS",
+              "source": "lin_ascl_publisher_pdf_2025",
+              "location": "正式 PDF p.3225 §2B Fig. 5a–c",
+              "note": "剖线按黄色框中白虚线，标板像显示旁瓣引入的低对比度。正文把反卷积作为可进一步改进的方向。物距、像距、场点与独立 MTF 均待补。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-22",
+              "object_conjugate": "finite",
+              "object_distance_um": null,
+              "image_distance_um": null
+            }
+          }
         }
       ],
-      "scope": "76项原始研究、340个器件/测量/系统配置、1458条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
+      "scope": "77项原始研究、342个器件/测量/系统配置、1467条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",
