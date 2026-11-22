@@ -1,6 +1,6 @@
 # Lin 2025 厘米级可见光超临界透镜
 
-Zeda Lin 等，*Photonics Research* 13(11), 3220–3227，DOI `10.1364/PRJ.569751`。原文 p.3220 与 Crossref 报正式发表日 2025-10-31，原文另列 2025-08-21 的 posted 日期。按 2025 年 3 月中科院升级版属物理与天体物理大类一区。入选依据为原始实验研究，Fig. 4 在同一实物测量七波长焦场，Fig. 5 用白光和 RGB 在同一像面成像。[原刊](https://doi.org/10.1364/PRJ.569751) · [原刊 PDF 复载](https://www.researchgate.net/journal/Photonics-Research-2327-9125/publication/394827904_Centimeter-scale_achromatic_supercritical_lens/links/6a0c23ffce67915c7531ac05/Centimeter-scale-achromatic-supercritical-lens.pdf) · [暨南大学作者发表目录](https://ipt.jnu.edu.cn/npdgroup/2025/list.htm) · [武汉大学图书馆分区](https://topj.lib.whu.edu.cn/show.asp?cat=sci&id=12565)
+Zeda Lin 等，*Photonics Research* 13(11), 3220–3227，DOI `10.1364/PRJ.569751`。原文 p.3220 与 Crossref 报正式发表日 2025-10-31，原文另列 2025-08-21 的 posted 日期。按 2025 年 3 月中科院升级版属物理与天体物理大类一区。Fig. 4 在同一实物测量七波长焦场，Fig. 5 用白光和 RGB 在同一像面成像，支持其光学消色差。器件靠多级光刻胶环带的衍射相位实现校正，属于多级衍射透镜（MDL）。按当前超表面透镜与折射／超表面混合透镜范围，数据保存在本篇检索记录。[原刊](https://doi.org/10.1364/PRJ.569751) · [原刊 PDF 复载](https://www.researchgate.net/journal/Photonics-Research-2327-9125/publication/394827904_Centimeter-scale_achromatic_supercritical_lens/links/6a0c23ffce67915c7531ac05/Centimeter-scale-achromatic-supercritical-lens.pdf) · [暨南大学作者发表目录](https://ipt.jnu.edu.cn/npdgroup/2025/list.htm) · [武汉大学图书馆分区](https://topj.lib.whu.edu.cn/show.asp?cat=sci&id=12565)
 
 ## 器件与校正机制
 
