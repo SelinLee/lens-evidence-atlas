@@ -21,7 +21,7 @@ test('published optical powers and corrected experimental efficiencies stay sepa
 
 test('RGB widths and Strehl retain their direction and measurement plane without three invented focal lengths or a continuous band',()=>{
  for(const [w,width,sr]of [[450,1.147,.90],[532,1.376,.89],[635,1.646,.93]]){const v=get('characterization_'+w);assert.equal(v.wavelength_nm.value,w);assert.equal(v.fwhm_x_um.value,width);assert.equal(v.fwhm_y_um.value,null);assert.equal(v.strehl.value,sr);assert.equal(v.measured_focal_um.value,null);assert.equal(v.design_focal_um.value,4500);assert.equal(v.na.value,.21);assert.equal(v.height_nm.value,null);assert.equal(v.lambda_min_nm,undefined);assert.equal(v.lambda_max_nm,undefined);assert.equal(v.axial_focus_offset_um,undefined);assert.match(v.psf_protocol.note,/未逐λ明确固定4500μm或各自寻峰/);}
- assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,55);assert.equal(axisPoints(rows,'wavelength_nm','fwhm_x_um').length,3);assert.equal(axisPoints(rows,'wavelength_nm','strehl').length,3);
+ assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);assert.equal(axisPoints(lens.rows,'wavelength_nm','measured_focal_um').length,57);assert.equal(axisPoints(rows,'wavelength_nm','fwhm_x_um').length,3);assert.equal(axisPoints(rows,'wavelength_nm','strehl').length,3);
  assert.match(get('characterization_summary').chromatic.note,/S8是模拟/);assert.match(get('characterization_450').na.note,/0.20/);
 });
 

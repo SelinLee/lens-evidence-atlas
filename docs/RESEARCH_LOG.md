@@ -1513,3 +1513,9 @@ Hu 2024 四镜可见光实制工作重查为 Crossref 27 次、OpenAlex 46 次�
 0.3.85 经 PR #249 合并至 `69ef0727e9b9032bcb899d2896560d2bc27eb711`。370 项测试、校验及构建通过，主线 CI 和 Pages 发布成功。线上独立无头 Google Chrome 在六种视口验证 Shi 的分组、非设计谱点主峰和次峰、四设计点 9 μm、可见光筛选、三份原始补件往返和哈希，核实 Khorasaninejad 效率曲线未产生数值点及 Aiello 581 nm 效率来源。260 个发布文件逐字节一致。主库现为 77 篇、1487 条记录；可见光 54 篇、896 条记录。[PR #249](https://github.com/SelinLee/lens-evidence-atlas/pull/249) · [主线 CI](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/45046100892) · [Pages](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/45046100851)
 
 下一批已定位 Ou 2022 补件 `nl2c03798_si_001.pdf`（条目 21685191 v1，文件 38457069）。公开元数据可读，下载未返回 PDF。继续核作者稿的补充版本和数据文件，优先核 0 V／5 V 的六谱点实测焦位及效率积分。另筛到 2026 年双螺旋可见光实验，Nano Letters 的 2025 年 3 月中科院大类为材料科学二区，记入检索记录。[Ou 文件登记](https://widgets.figshare.com/public/articles/21685191/versions/1/files) · [Nano Letters 2025 年分区](https://www.ais.cn/journal/database/6024)
+
+## 2026-11-23-190 · 共同一作原件复核玻璃对照焦位
+
+Ren 2022 的 100 μm、NA 0.2 未校正玻璃样片有两个正文焦位。期刊主文 p.6 与共同一作 Chenhao Li 的 LMU 学位论文 p.65 同报 1250／1650 nm 为 306／225 μm。期刊 Fig. 3F 和学位论文 Fig. 4.16 轴扫支持二者的次序。期刊 Fig. 3E 红色坐标上的趋势相反，仍保留冲突。两点互差 81 μm 和相对名义 250 μm 设计面的 +56／−25 μm 分别标为本库计算。新增玻璃消色差样片的 10×、NA 0.2 接收条件和光纤支架 10 μm 侧壁厚度。中间谱点及校正残差、原始 PSF 和 MTF 待查。[原件核验](REN_METAFIBER_REVIEW_2026-11-19.md#2026-11-23-共同一作学位论文中的焦位)
+
+Ou 2022 的 Fig. 2e 增补 400 nm 元胞周期及文件登记，两个电压沿用各自独立读数。补件下载返回 403，arXiv 源文件入口仍是无附件的 v1 作者 PDF，逐点原值维持空值。筛查到 Liu 2026 的 NURBS 可见光实物，但中科院大类二区且 Crossref/OpenAlex 暂无引用，登记到检索清单。Jiang 2023 的四可见光谱点实物于 2023-05-01 正式上线，2026-11-23 查 Crossref 45 次、OpenAlex 47 次，暂存检索。下一篇核 Liu 2024 折超双片的实测 MTF 方向、场点和采样。[Ou 核验](OU_WANG_LC_ACHROMATIC_EVIDENCE_2026-11-21.md#2026-11-23-ou-原始文件与材料核对) · [Liu 原刊](https://doi.org/10.1002/nap2.70222) · [Jiang 原刊](https://doi.org/10.1002/adom.202300077) · [Crossref](https://api.crossref.org/works/10.1002/adom.202300077) · [OpenAlex](https://api.openalex.org/works/W4367679541)

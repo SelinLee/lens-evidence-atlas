@@ -32,3 +32,7 @@ Qiguang Wang、Yaqian Xu 等，*Laser & Photonics Reviews* 19(24), e01901，2025
 Fig. 3e,f 七列宽度的原印字分别为 2.16、1.98、2.02、2.11、2.34、2.49、2.45 与 2.73、3.72、3.63、2.82、2.73、2.7、2.44 倍 λ。图的色标给两端 1.0／1.6 THz，其余五点缺具体标注。两端四个已定位宽度按真空波长换算并保留系数。Fig. 3g,h 的 MTF 横轴为 0–3 lp/mm。正文的最高 1.99 lp/mm 缺明确场点、频率、方向及阈值，保留文字。具体算法和原始数组未取得。
 
 正式 p5 效率定义为焦面直径为 2×FWHM 的区域内集中功率除以入射光强，原文未给唯一入射参考面、平均频谱权重、重复数及误差。Fig. 4 的双深度成像分别使用 16.25 和 26 mm 物距，像距均为 26 mm，记录为同一研究的两个有限共轭配置。补件 Fig. S4 被正文列为进一步焦位、效率和 MTF 证据，Wiley 三个公开文件入口返回 403。数据可得性说明为合理请求，DataCite 精确关联 DOI 项数为零。[Wiley 数据声明](https://onlinelibrary.wiley.com/doi/10.1002/lpor.202501901) · [DataCite 查询](https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1002%2Flpor.202501901%22)
+
+## 2026-11-23 Ou 原始文件与材料核对
+
+arXiv 稿仅有 v1。源文件入口实际返回同一份 22 页作者稿 PDF，无嵌入附件。p.11 Fig. 2e 图注明确石英基底上的 TiO₂ 元胞设计高 1000 nm、周期 400 nm，两个 TNLC 电压状态共用。ACS Figshare 条目 21685191 v1 的文件 38457069 登记为 6 页 `nl2c03798_si_001.pdf`（562427 字节、MD5 `4630e9b5ae2cebe694a45bc3cb7d2511`）。常规下载及期刊补件直连返回 403。公开题录和出版社目录可核，补件的测量细节、逐波长焦位和效率仍待查。GitHub 按题名、DOI 和 arXiv 编号检索仓库无匹配。[作者稿 Fig. 2e](https://arxiv.org/pdf/2209.00168#page=11) · [ACS 公开文件登记](https://widgets.figshare.com/public/articles/21685191/versions/1/files)

@@ -68,7 +68,7 @@ test('literature domain and accessory selector use the shared data model and tra
  const workspace=createWorkspace(load(),d),domain=workspace.domains.find(v=>v.id==='metalens');
  assert.equal(domain.name,'消色差超透镜与折超混合透镜（文献）');assert.equal(domain.category,'文献器件与计算成像');assert.equal(domain.rows.length,1487);
  const rows=filteredRows(domain,{module:'main',query:'',models:null,evidence:'research'});assert.equal(rows.length,1487);
- const ps=axisPoints(rows,'wavelength_nm','measured_focal_um');assert.equal(ps.length,55);
+ const ps=axisPoints(rows,'wavelength_nm','measured_focal_um');assert.equal(ps.length,57);
  for(const row of domain.rows)for(const value of Object.values(row.values)){assert.ok(workspace.sources.has(value.source));assert.ok(value.location);assert.ok(value.note);}
 });
 
