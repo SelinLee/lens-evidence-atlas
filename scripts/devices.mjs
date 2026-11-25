@@ -41,6 +41,20 @@ export function validateDevices(d,catalog){
  }
  const designFocal=r.values.design_focal_um;
  const mtfCurve=r.values.mtf_curve;
+ if(mtfCurve?.mtf_kind==='measured_eyepiece_psf_curve'){
+  const psf=r.values.psf_protocol, width=r.values.fwhm_x_um;
+  if(mtfCurve.basis!=='derived_from_measurement'||mtfCurve.calculation_origin!=='authors'||
+   mtfCurve.processing_stage!=='bare_eyepiece_optical_psf'||mtfCurve.frequency_unit!=='cycles/mm'||
+   mtfCurve.direction_aggregation!=='unspecified'||mtfCurve.normalization_method!==null||
+   mtfCurve.field_point_deg!==0||mtfCurve.data_availability?.status!=='curves_only'||
+   mtfCurve.data_availability?.author_numeric_mtf!==null||mtfCurve.data_availability?.raw_psf!==null||
+   mtfCurve.data_availability?.independently_recomputed_mtf!==null||!psf?.value||
+   psf.processing_stage!==mtfCurve.processing_stage||psf.incidence_deg!==0||
+   psf.evaluation_plane!=='each_wavelength_focal_plane'||!(r.values.wavelength_nm?.value>0)||
+   !Number.isFinite(width?.value)||width.processing_stage!==mtfCurve.processing_stage||width.direction!=='x'||
+   Number.isFinite(r.values.mtf?.value)||Number.isFinite(r.values.cutoff_rb?.value)||Number.isFinite(r.values.cutoff_white?.value))errors.push('bare eyepiece linear-frequency MTF context');
+ }
+
  const rgbWidth=r.values.rgb_radial_psf_fwhm_um;
  if(Number.isFinite(rgbWidth?.value)){
   const protocol=r.values.psf_protocol;

@@ -26,6 +26,8 @@
 
 原文方向明确的实测PSF宽度可用`fwhm_x_um`/`fwhm_y_um`，与未区分方向的`fwhm_um`分开；有限数值须为正、保留测量波长及`basis: measured`。XR对角FOV用`dfov`，不借给水平/垂直/方向未明列。原型SLM频率、CGH帧数与系统刷新率/延迟不互填；RGB离散测量不填写连续带宽。
 
+XR 域可使用 `wavelength_nm`、`diameter_um`、`design_focal_um`、`na`、`fwhm_x_um`、`psf_protocol`、`mtf_curve` 保存独立目镜光学表征，而非整机显示性能。对于作者由裸目镜实测PSF计算的线频曲线（`mtf_kind: measured_eyepiece_psf_curve`），要求 `derived_from_measurement`、authors、`bare_eyepiece_optical_psf`、cycles/mm、正常入射、自己的逐色焦面、对应波长实测x向半高全宽及未知归一化/方向/原始数据明确记录；不转填整机CPD、截止频率或指定频率MTF。只列名义焦距的器件不记为轴扫实测。三色离散共轭补偿显示系统可以作为XR研究，不能凭此将裸镜归消色差矩阵；同文裸镜和完整系统分配置。
+
 `rgb_radial_psf_fwhm_um` 保存白光相机 R/G/B 通道的实测径向 PSF 宽度。保留 `color_channel`、`direction: radial`、`spectral_sampling: rgb_camera_channel` 和带同一通道与评价面的 `psf_protocol`。通道中心未给时，`wavelength_nm.value` 留空。`restored_angular_resolution_lp_mrad` 保存作者由重建图读出的标靶角频率，使用 `basis: reconstruction`、`calculation_origin: authors` 和 `frequency_unit: lp/mrad`。标靶及重建步骤在同一行的协议里对应。原文折合像方 lp/mm 如有给出可保留在该格说明。
 
 来源的可选字段 `publication_source` 指向同一来源目录内的主文 ID。补充材料、作者数据和更正仍各保留原链接和定位，页面按主文统一编号。`visible_light_use` 用于已有原始记录明确描述可见光用途、但没有独立数值波长字段的旧样本。波长筛选优先采用逐点测量，其次判断工作波段是否与 380–780 nm 交叠。

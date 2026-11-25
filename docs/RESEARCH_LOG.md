@@ -1573,3 +1573,14 @@ Cao 2024 ACS Nano 4c13213 的 Figshare PDF 和视频实际文件登记已定位�
 0.3.91 经 [PR #261](https://github.com/SelinLee/lens-evidence-atlas/pull/261) 合并 `fd8c4bf420bd1e1e0e47fd4f30fdb89bd7e7f032`。374 项测试通过，校验、可重复构建、[主线 CI 45587523173](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/45587523173) 与 [Pages 45587523206](https://github.com/SelinLee/lens-evidence-atlas/actions/runs/45587523206) 均成功。独立本机无头 Chrome 在线核验同研究1配置4记录，(41.86 μm,26.31/19.71/20.37%) 及 (420/550/650 nm,26.31/19.71/20.37%) 散点、逐色焦位无点且待核、可见筛选及两来源跳转/返回，台大两个入口实际 HTTP 200 并比对作者及原数、登记日期，六视口无溢出。264 个公开文件逐字节匹配本机构建；`domains/metalens.json` SHA-256 `0475f5502d5d0b76aa7c97ddb33e6b4f19a390fb3a6945824d30fcbd5a2fa4d8`。累计 81 篇、354 配置、1503 条；可见 56 篇、903 条。本批补字段无新增研究编号。
 
 近期 Nature Moon 2026 DOI 10.1038/s41586-026-10318-9 的正式补件实取 PDF（17页，4,995,890字节，SHA-256 `f8e524c0ecc6c2b0a88ce1c7b4a884dd7d714f57e54bcb58eb6a1dbb5f9a532e`）。PDF p9 Supplementary Note 3 是通过按色 ray-tracing 视图映射改善颜色通道；p11 Supplementary Note 4 明确实际显示三色像素分布不同、焦位依赖波长致残余串扰，未来方需开发三基色同面聚焦镜。故有全色显示与混合光学器件但**不是实制消色差超透镜**，留检索/显示技术参考；主文 PDF 取件仅 HTML，不宣称已读正文。Wu 2026 DOI 10.1038/s41467-026-72332-9 原文引言与讨论明确使用强焦位色散作光谱/深度编码，不纳入。Ayash 2026 Optica ImageSense IM3F.7 及 Mukhtar 2025 FiO JV4A.6 暂仅查到会议版本，追正式期刊与实物证据后再判。下一批沿 Dong/Yan 2026 npj Nanophotonics 综述 Tables 2–7 引文，逐项与已库 DOI 对照，优先核可见光实制器件的原始焦位和效率数据。[Moon 补件 p11](https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-026-10318-9/MediaObjects/41586_2026_10318_MOESM1_ESM.pdf#page=11) · [Wu 原作](https://www.nature.com/articles/s41467-026-72332-9) · [Ayash 会议](https://opg.optica.org/abstract.cfm?uri=ISA-2026-IM3F.7) · [Mukhtar 会议](https://opg.optica.org/abstract.cfm?uri=FiO-2025-JV4A.6) · [Dong/Yan 引文入口](https://www.nature.com/articles/s44310-026-00127-3)。
+
+
+## 2026-11-25-196 · 近眼显示分色共轭与消色差准入边界
+
+沿 Dong/Yan 2026 DOI 10.1038/s44310-026-00127-3 引文继续找实制研究，已对照 118 条 Crossref 引文；仅对取得原作证据的条目下结论，非全引文均精读。Wang 2025 46.8 mm 超透镜望远镜原作 p9 明示单色校正；Ye 2022 借助不同波长焦位作深度成像；Jung 2025 的宽带材料/效率与 550 nm 镜设计不能证明色差校正，暂不纳入。引用门槛和下一篇线索见 QUALITY-001dd。
+
+作为保留的 VR/AR 专项录入 Lee 2018 原作六条记录，按一个文献、裸目镜与原型两个配置归组。原作 Fig. 2f–h 明标 660/532/473 nm 各焦面 x 向 FWHM 780/533/507 nm；名义 f=12.9/16/18 mm 不当作实测焦位。通过二向色镜调节分色共轭，原型目标虚像 3 m，红/蓝单色 FOV 90°/76°，作者共同全彩 FOV 76° 为通道最小值。Fig. 2i 作者由实测 PSF 算出的曲线单位 cycles/mm，不当作显示 CPD；原始 PSF、数表及采样/归一化仍缺。独立无头 Chrome 已取得原刊、机构同版及补件 PDF；PMC 无数表，DataCite/Zenodo 无确切数据，作者说明合理请求。主消色差器件矩阵未增加。详见[本批核验](LEE_2018_AR_CHROMATIC_EVIDENCE_2026-11-25.md)。
+
+复核用户所问 Hsu 2022：主文光镊单镜并无色差校正（780 nm 相对 852 nm +300 μm），但独立实制附录 §12 Fig. 6 的正交偏振双波长同面 PSF 符合条件式光学消色差；850/852 nm 原文差异与未报告残余焦差已保留，主文仅对照。[既有核验](HSU_POLARIZED_FOCUS_REVIEW_2026-11-19.md)。不变更已正确区分的三个配置。
+
+追加准入核对：Li 2016（Crossref/OpenAlex 110/115）虽标题明确消色差，但原刊 Fig. 4、Discussion、Methods 明确仿真与拟议制造方法；Kim 2024 原刊设计段明确单色双曲相位透镜保留色差，消色差列未来。不因标题、引用量、RGB PSF 或期刊而纳入。[Li 原作](https://www.nature.com/articles/srep19885) · [Kim 原作](https://doi.org/10.1002/adma.202405378)。
