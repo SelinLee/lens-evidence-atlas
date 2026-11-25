@@ -52,6 +52,9 @@
 
 `focal_spectral_sd_um`是作者跨实测波长的焦距光谱SD，非逐点±不确定度、重复样品SD或DOF。要求非负、`basis: derived_from_measurement`、`calculation_origin: authors`、`statistic: spectral_standard_deviation`、`sample_unit: wavelength`、至少两个实际谱点及`focus_variation_protocol`；只在无单值波长的汇总行填写。`ddof`为0/1或未知null，`measurement_repeat_count`为实际重复数或未知null；不把谱点数量充当实物重复n，不用通用`uncertainty`把它附到每个焦距。
 
+`reported_focal_band_center_um` 保存作者只报告工作带内“焦距 ± 数值”、没有把中心定义为均值且没有解释误差的原文；要求 measured、author_reported_band_value_with_unspecified_error、reported_error.type=not_specified、sample_size=null、无单波长、有效工作范围、sample_wavelengths_nm=null、author_reported_range_only 及 psf_protocol。不把中心值当光谱均值或逐色实测，不把±当残余焦差或 SD。
+
+
 `axial_focus_offset_um`是本库由作者实测f减去明确固定像面`reference_plane_um`算出的有符号焦差，`basis: derived_from_measurement`、`calculation_origin: atlas`，`formula: measured_focal_um - reference_plane_um`。要求本行实际波长/实测f、`reference_plane_description`、`psf_protocol`及精确来源位置；该固定面类型的`reference_wavelength_nm`显式null。验证数值与输入差一致，允许正、负和真实零；不默认选择设计f，不称作者原始焦移表或PSF/MTF复算。版本只核到作者稿的输入须在display/note保留版本，原作者量与本库计算分别标明。
 
 有限共轭设计像距与实测聚焦位置使用 `design_image_distance_um`、`measured_image_distance_um`。两者均保留 `object_conjugate: finite` 和与 `psf_protocol.reference_plane` 相同的参考面。实测像距绑定实际谱点，近轴焦距各自保留。用这两种像距计算单波长的有符号残差时，在 `axial_focus_offset_um` 指定 `input_metric: measured_image_distance_um`，计算 `measured_image_distance_um - reference_plane_um`。`reference_plane_um` 默认须等于该行的设计像距。若原文以标称设计焦距作同一轴坐标中的固定参照，标 `reference_metric: design_focal_um` 并具体定位参考线。此时有限共轭设计像距仍按原文证据填写。
@@ -87,6 +90,9 @@
 `processed_psf_fwhm_um`与裸PSF宽度分列：正值、实际λ、`basis: reconstruction`、作者计算、`processing_stage: linear_intensity_subtraction`和非负系数；`psf_protocol`须绑定同系数与数值固定评价面。该行不能同时填写数值裸PSF FWHM。作者图内印字可录，负旁瓣/零点/归一化和未知拟合条件必须说明；不把处理后变窄当裸镜光学性能。
 
 `image_snr_db`是作者图像SNR，和phone的snr、PSNR及ASNR不同字段。须`calculation_origin: authors`、`statistic: author_reported_image_snr`与`image_snr_protocol`的信号/噪声公式、`metric_kind: author_image_signal_background_ratio`、靶、ROI/噪声估计（未知null）。captured行用derived_from_measurement，linear_intensity_subtraction行用reconstruction并保留非负系数；单λ或明确白光照明与null波长必须绑定。作者只称背景fluctuation时不擅自补为SD/方差或把10log改成20log；重复数、曝光/增益、基线/通道配准与误差缺口写入协议。
+
+`reconstruction_depth_cm` 为作者光场重建设置的物方深度（cm），不是光学焦距、像面距离或实际物深；绑定 lightfield_disparity_rendered_edge、具体靶及实际物深。`reconstructed_edge_peak_background_ratio` 是作者计算重建的无量纲最大边缘信号／背景比；要求 reconstruction、authors、author_reported_edge_peak_background_ratio、dimensionless、同一阶段/靶/深度/物深的 image_snr_protocol 和明确白光照明、未知单λ。不可混写为 dB SNR、PSNR、MTF 或裸镜测量。背景定义/ROI/曝光和重复数未知留空。
+
 
 `efficiency_band_mean_pct`可保存作者明确写出的论文级未分派均值，用`aggregation_scope: publication_unassigned_devices`、作者由实测计算与`sampling`（未报告可写not_reported）。此时行须unassigned_measurement_set及有效器件候选，diameter_um/na/wavelength_nm均显式null，协议device_assignment=unassigned；不可将该均值复制到各口径或各λ。约值保留approximate/display；图示谱点与平均权重未知分别记录，不称已核连续谱积分。
 

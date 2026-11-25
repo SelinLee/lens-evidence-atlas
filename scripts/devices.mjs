@@ -224,6 +224,19 @@ export function validateDevices(d,catalog){
   !Number.isFinite(psf.evaluation_plane_um)||!(r.values.wavelength_nm?.value>0)||
   ['fwhm_um','fwhm_x_um','fwhm_y_um'].some(k=>Number.isFinite(r.values[k]?.value))))errors.push('processed PSF width context');
  const imageSNR=r.values.image_snr_db,snrProtocol=r.values.image_snr_protocol;
+ const renderedDepth=r.values.reconstruction_depth_cm,edgeRatio=r.values.reconstructed_edge_peak_background_ratio;
+ if(Number.isFinite(renderedDepth?.value)&&(!(renderedDepth.value>0)||renderedDepth.basis!=='reported_configuration'||
+  renderedDepth.processing_stage!=='lightfield_disparity_rendered_edge'||!renderedDepth.target||
+  !(renderedDepth.target_object_depth_cm>0)))errors.push('reconstruction depth context');
+ if(Number.isFinite(edgeRatio?.value)&&(!(edgeRatio.value>=0)||edgeRatio.basis!=='reconstruction'||
+  edgeRatio.calculation_origin!=='authors'||edgeRatio.statistic!=='author_reported_edge_peak_background_ratio'||
+  edgeRatio.unit!=='dimensionless'||edgeRatio.processing_stage!=='lightfield_disparity_rendered_edge'||
+  snrProtocol?.metric_kind!=='author_edge_peak_background_ratio'||snrProtocol.formula!=='maximum_signal_value / noise_background_value'||
+  snrProtocol.processing_stage!==edgeRatio.processing_stage||!snrProtocol.target||snrProtocol.target!==edgeRatio.target||
+  !Number.isFinite(renderedDepth?.value)||renderedDepth.target!==edgeRatio.target||
+  renderedDepth.value!==edgeRatio.rendering_depth_cm||renderedDepth.value!==snrProtocol.rendering_depth_cm||
+  renderedDepth.target_object_depth_cm!==snrProtocol.target_object_depth_cm||
+  Number.isFinite(imageSNR?.value)||r.values.wavelength_nm?.value!==null||!r.values.illumination?.value))errors.push('reconstructed edge ratio context');
  if(Number.isFinite(imageSNR?.value)){
   const stage=snrProtocol?.processing_stage;
   if(imageSNR.calculation_origin!=='authors'||imageSNR.statistic!=='author_reported_image_snr'||
@@ -289,6 +302,15 @@ export function validateDevices(d,catalog){
  }
  const aoi=r.values.aoi_deg;
  const focalMean=r.values.measured_focal_band_mean_um;
+ const bandCenter=r.values.reported_focal_band_center_um;
+ if(Number.isFinite(bandCenter?.value)&&(!(bandCenter.value>0)||bandCenter.basis!=='measured'||
+  bandCenter.statistic!=='author_reported_band_value_with_unspecified_error'||
+  bandCenter.reported_error?.type!=='not_specified'||!Number.isFinite(bandCenter.reported_error?.value)||
+  bandCenter.reported_error.value<0||bandCenter.reported_error.sample_size!==null||
+  bandCenter.sample_wavelengths_nm!==null||bandCenter.spectral_sample_scope!=='author_reported_range_only'||
+  r.values.wavelength_nm?.value!==null||!(r.values.lambda_min_nm?.value>0)||
+  !(r.values.lambda_max_nm?.value>r.values.lambda_min_nm.value)||!r.values.psf_protocol?.value||
+  Number.isFinite(focalMean?.value)||Number.isFinite(r.values.focal_spectral_sd_um?.value)))errors.push('reported focal band center context');
  if(Number.isFinite(focalMean?.value)){
   const waves=focalMean.sample_wavelengths_nm;
   const listedWaves=Array.isArray(waves)&&waves.length>=2&&new Set(waves).size===waves.length&&waves.every(w=>Number.isFinite(w)&&w>0);
