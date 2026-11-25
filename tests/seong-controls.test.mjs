@@ -11,8 +11,8 @@ const li=lens.rows.filter(row=>row.study_id==='li2021');
 const row=(rows,id)=>rows.find(item=>item.id===id);
 
 test('Li target and near-eye records remain grouped with the RGB optical bench and reference the published PDF',()=>{
- assert.equal(li.length,17);
- assert.equal(new Set(li.map(item=>item.specimen_id)).size,8);
+ assert.equal(li.length,21);
+ assert.equal(new Set(li.map(item=>item.specimen_id)).size,9);
  assert.deepEqual(groupRows(li).map(group=>group.paper),['device-li_rgb_vr_2021']);
  for(const wave of [488,532,658]){
   const values=row(li,'li2021_target_na07_target_'+wave).values;

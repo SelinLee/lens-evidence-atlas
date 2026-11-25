@@ -41,6 +41,17 @@ export function validateDevices(d,catalog){
  }
  const designFocal=r.values.design_focal_um;
  const mtfCurve=r.values.mtf_curve;
+ if(mtfCurve?.mtf_kind==='author_reported_directional_mtf_curve'){
+  const psf=r.values.psf_protocol,availability=mtfCurve.data_availability;
+  if(mtfCurve.basis!=='measured'||mtfCurve.processing_stage!=='bare_metalens_optical_mtf'||
+   mtfCurve.frequency_unit!=='lp/mm'||mtfCurve.direction_aggregation!=='separate_tangential_sagittal'||
+   !Array.isArray(mtfCurve.directions)||mtfCurve.directions.join(',')!=='tangential,sagittal'||
+   !(r.values.wavelength_nm?.value>0)||!(r.values.na?.value>0)||!psf?.value||
+   mtfCurve.calculation_method!==null||mtfCurve.normalization!==null||availability?.status!=='curves_only'||
+   availability.author_numeric_mtf!==null||availability.raw_psf!==null||availability.independently_recomputed_mtf!==null||
+   ['mtf_spatial_frequency_lpmm','author_reported_mtf_cutoff_lpmm','system_slanted_edge_mtf'].some(k=>Number.isFinite(r.values[k]?.value)))
+   errors.push('author directional MTF curve context');
+ }
  if(mtfCurve?.mtf_kind==='measured_eyepiece_psf_curve'){
   const psf=r.values.psf_protocol, width=r.values.fwhm_x_um;
   if(mtfCurve.basis!=='derived_from_measurement'||mtfCurve.calculation_origin!=='authors'||
