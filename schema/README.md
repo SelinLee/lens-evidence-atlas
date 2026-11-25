@@ -16,6 +16,8 @@
 
 研究每格必须有source、location、note、basis；basis区分reported_configuration、measured、model、derived_from_measurement、reconstruction、unresolved（原文待消歧）。实测PSF计算、模拟MTF与实验重建PSNR不能都标为measured。`value=null`配display可保留原文界限、冲突或曲线入口，不参加坐标绘制。均值可保存statistic=mean及uncertainty={type:SD,value,n}，原文±与样本量须保留；SD不是CI。语义校验由scripts/devices.mjs执行，不替代科学复核。
 
+由同一测量行的作者透过率和透过功率归一聚焦效率换算口径内入射功率归一效率时，`efficiency_at_lambda_pct` 使用 `basis: derived_from_measurement`、`calculation_origin: atlas`、`statistic: product_of_measured_power_ratios`、`denominator: incident_through_aperture`、`approximate: true`。保留 `input_metrics`、`input_values_pct`、`rounding_decimals` 及公式，需绑定同一实测波长和效率协议；原有两项作者比值保留原分母。
+
 同一格可用sourceIds列多个原始来源，必须包含主source且各ID有效；统一界面须将这些ID全部映射并显示，不能只保留首项。efficiency_at_lambda_pct须有efficiency_lambda_nm及efficiency_protocol；efficiency_band_mean_pct须有工作波段、statistic=band_mean及协议。两类百分数都不能混成单元转换效率、最大效率或不明分母的统一排名。approximate=true的坐标保留“约”字。
 
 作者只对测试谱点报告平均效率时，可在`efficiency_band_mean_pct`保留`sampling: measured_wavelength_subset`、`sample_wavelengths_nm`、`sample_unit: wavelength`和作者计算归属；`display`/`note`必须明确“谱点平均，非连续全谱积分”。工作波段仍是设计/声明范围，不自动成为平均积分区间；`replicates_per_wavelength`属于效率协议，与波长数、物理样本数、跨波长均值误差分开。没有原始逐点值时不反推均值或误差棒，不把每λ的n/CI复制给汇总均值。
@@ -46,7 +48,7 @@
 
 `focus_variation_pct`保存作者实测焦点的百分比variation，沿用`focus_variation_um`的实际谱点、协议、作者计算与汇总约束；另保留`denominator`和`reference_wavelength_nm`/`reference_focal_um`（未知显式null）。`denominator: not_defined`不允许解释成已知分母；不能由百分数倒算μm、把作者中心焦点复制为各波长精确焦距，或和RMS/最大互差直接混用。原作冲突参数使用null+display/note保存，不选择一个值打点。
 
-`measured_focal_band_mean_um`仅保存作者明确给出的同器件跨实测波长平均焦距，须为正数、`basis: derived_from_measurement`、`calculation_origin: authors`、`statistic: author_reported_spectral_mean`，并有至少两个不同的实际`sample_wavelengths_nm`、`reference_plane`、`aggregation_note`及`psf_protocol`。未知参考原点、谱权重、重复数和不确定度须在说明中保留；汇总行不绑定一个数值波长，不将均值复制为逐波长`measured_focal_um`或设计焦距。DOF公共区与DOF误差条不是残余焦移或统计SD/CI，不据区间宽度生成色差数值。
+`measured_focal_band_mean_um`仅保存作者明确给出的同器件跨实测波长平均焦距，须为正数、`basis: derived_from_measurement`、`calculation_origin: authors`、`statistic: author_reported_spectral_mean`，并有至少两个不同的实际`sample_wavelengths_nm`、`reference_plane`、`aggregation_note`及`psf_protocol`。若原文明确报告作者平均实测焦距和工作范围，但实际谱点清单未能核实，允许 `sample_wavelengths_nm: null`、`spectral_sample_scope: author_reported_range_only`，须有正值工作波段上下限；在说明中保留谱点缺口，不把端点当成已核的实际采样。未知参考原点、谱权重、重复数和不确定度须在说明中保留；汇总行不绑定一个数值波长，不将均值复制为逐波长`measured_focal_um`或设计焦距。DOF公共区与DOF误差条不是残余焦移或统计SD/CI，不据区间宽度生成色差数值。
 
 `focal_spectral_sd_um`是作者跨实测波长的焦距光谱SD，非逐点±不确定度、重复样品SD或DOF。要求非负、`basis: derived_from_measurement`、`calculation_origin: authors`、`statistic: spectral_standard_deviation`、`sample_unit: wavelength`、至少两个实际谱点及`focus_variation_protocol`；只在无单值波长的汇总行填写。`ddof`为0/1或未知null，`measurement_repeat_count`为实际重复数或未知null；不把谱点数量充当实物重复n，不用通用`uncertainty`把它附到每个焦距。
 

@@ -23,9 +23,9 @@ test('focal length, scalar residual, width and Strehl curves never turn into gue
 });
 test('about seventy percent is an author publication-level mean with no aperture assignment and cannot create three diameter-specific efficiencies',()=>{
  const v=get('efficiency_aggregate'),e=v.efficiency_band_mean_pct;assert.equal(e.value,70);assert.equal(e.approximate,true);assert.equal(e.aggregation_scope,'publication_unassigned_devices');assert.equal(e.basis,'derived_from_measurement');assert.equal(e.calculation_origin,'authors');assert.equal(e.sampling,'not_reported');assert.equal(e.statistic,'band_mean');assert.equal(v.diameter_um.value,null);assert.equal(v.na.value,null);assert.equal(v.wavelength_nm.value,null);assert.equal(v.efficiency_protocol.device_assignment,'unassigned');assert.match(e.display,/论文级平均.*口径未分派/);assert.match(e.note,/摘要用over70%.*未重算/);
- assert.equal(axisPoints(rows,'lambda_min_nm','efficiency_band_mean_pct').length,1);assert.equal(axisPoints(rows,'na','efficiency_band_mean_pct').length,0);assert.equal(axisPoints(lens.rows,'na','efficiency_band_mean_pct').length,16);
+ assert.equal(axisPoints(rows,'lambda_min_nm','efficiency_band_mean_pct').length,1);assert.equal(axisPoints(rows,'na','efficiency_band_mean_pct').length,0);assert.equal(axisPoints(lens.rows,'na','efficiency_band_mean_pct').length,17);
  for(const d of [10,15,20])for(const tag of ['summary',...waves]){const x=get('d'+d+'_'+tag);assert.equal(x.efficiency_band_mean_pct,undefined);assert.equal(x.efficiency_at_lambda_pct.value,null);assert.equal(x.efficiency_protocol.integration_geometry,null);assert.match(x.efficiency_protocol.value,/size=3×FWHM.*半径\/直径未明/);}
- assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,184);
+ assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,187);
 });
 test('polarization axes, PSF coordinate axes and missing MTF are kept distinct while raw PSF and frequency units stay unknown',()=>{
  for(const p of ['x','y']){const v=get('polarization_'+p);assert.equal(v.diameter_um.value,null);assert.equal(v.na.value,null);assert.deepEqual(v.wavelength_nm.sample_wavelengths_nm,waves);assert.match(v.polarization.note,/不是PSF横纵FWHM或MTF/);assert.equal(v.fwhm_x_um,undefined);assert.equal(v.fwhm_y_um,undefined);}

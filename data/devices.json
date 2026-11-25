@@ -2791,6 +2791,79 @@
       "checked_on": "2026-11-20"
     },
     {
+      "id": "wang_ann_2022",
+      "kind": "paper",
+      "doi": "10.1002/adom.202101842",
+      "title": "Visible Achromatic Metalens Design Based on Artificial Neural Network",
+      "url": "https://advanced.onlinelibrary.wiley.com/doi/abs/10.1002/adom.202101842",
+      "checked_on": "2026-11-25",
+      "scope": "2021-11-23 正式上线，2022 年第 10 卷第 3 期 2101842。核期刊摘要、数据声明、文件目录与出版方公开首面预览及原图注。"
+    },
+    {
+      "id": "wang_ann_fig1_2022",
+      "publication_source": "wang_ann_2022",
+      "title": "Wang 2022 · Wiley Fig. 1 图注",
+      "url": "https://www.researchgate.net/figure/Schematic-of-backpropagation-neural-network-Meta-atoms-of-cross-hollow-circle-and_fig1_356498894",
+      "scope": "图注列设计口径 20.8 μm、柱高 400 nm、单元周期 320 nm 和三种结构，作者原印字。",
+      "checked_on": "2026-11-25"
+    },
+    {
+      "id": "wang_ann_fig2_2022",
+      "publication_source": "wang_ann_2022",
+      "title": "Wang 2022 · Wiley Fig. 2 图注",
+      "url": "https://www.researchgate.net/figure/Needed-and-actual-phase-and-dispersion-values-for-the-fabricated-metalens-a-Phase-and_fig2_356498894",
+      "scope": "图注列相位与群延时匹配，以及实物平面、斜视 SEM 和光学照片。",
+      "checked_on": "2026-11-25"
+    },
+    {
+      "id": "wang_ann_fig3_2022",
+      "publication_source": "wang_ann_2022",
+      "title": "Wang 2022 · Wiley Fig. 3 图注",
+      "url": "https://www.researchgate.net/figure/Measured-focusing-intensity-distribution-at-different-wavelengths-a-Measured-normalized_fig3_356498894",
+      "scope": "图注列多波长实测归一化 yz 面与横向焦面强度。",
+      "checked_on": "2026-11-25"
+    },
+    {
+      "id": "wang_ann_fig4_2022",
+      "publication_source": "wang_ann_2022",
+      "title": "Wang 2022 · Wiley Fig. 4 图注",
+      "url": "https://www.researchgate.net/figure/Measured-focal-lengths-focusing-efficiencies-and-FWHMs-at-different-wavelengths-a_fig4_356498894",
+      "scope": "图注直报平均实测焦距 124 μm、实验 NA 0.084、平均效率 40%，图中误差棒为三次测量标准差。",
+      "checked_on": "2026-11-25"
+    },
+    {
+      "id": "wang_ann_fig5_2022",
+      "publication_source": "wang_ann_2022",
+      "title": "Wang 2022 · Wiley Fig. 5 图注",
+      "url": "https://www.researchgate.net/figure/Achromatic-imaging-under-halogen-lamp-illumination-a-The-picture-of-the-1951-United_fig5_356498894",
+      "scope": "图注列卤素灯下 USAF 第5组第1–6元素实拍和三字母图案。",
+      "checked_on": "2026-11-25"
+    },
+    {
+      "id": "wang_ann_si_list_2022",
+      "publication_source": "wang_ann_2022",
+      "title": "Wang 2022 · Wiley 支持数据文件登记",
+      "url": "https://advanced.onlinelibrary.wiley.com/doi/abs/10.1002/adom.202101842",
+      "scope": "作者数据指向补件 adom202101842-sup-0001-SuppMat.pdf（期刊标829 KB），直接下载返回 403。",
+      "checked_on": "2026-11-25"
+    },
+    {
+      "id": "wang_ann_crossref_2022",
+      "publication_source": "wang_ann_2022",
+      "title": "Wang 2022 · Crossref 日期与被引次数",
+      "url": "https://api.crossref.org/works/10.1002/adom.202101842",
+      "scope": "2026-11-25 被引 59 次；正式上线 2021-11-23。",
+      "checked_on": "2026-11-25"
+    },
+    {
+      "id": "wang_ann_openalex_2022",
+      "publication_source": "wang_ann_2022",
+      "title": "Wang 2022 · OpenAlex 引用与开放版本索引",
+      "url": "https://api.openalex.org/works/W3216964393",
+      "scope": "2026-11-25 被引 71 次；未登记开放全文。",
+      "checked_on": "2026-11-25"
+    },
+    {
       "id": "ou_mwir_2021",
       "kind": "paper",
       "doi": "10.1002/lpor.202100020",
@@ -86855,15 +86928,17 @@
               "data_availability": "curves_only"
             },
             "efficiency_protocol": {
-              "value": "透过率为P_out/P_in；聚焦效率为P_focus/P_out",
+              "value": "透过率 P_out/P_in；作者效率 P_focus/P_out；本库换算 P_focus/P_in",
               "source": "hasegawa_tsf_pdf_2026",
               "location": "pp7–8 §2.4 功率测量段，蓝光",
-              "note": "P_in通过φ1mm口径。P_focus积分范围原文写within 3×FWHM，未指明该尺度是半径还是直径。P_out为器件总透射功率，焦区形状、探测及误差待核。",
+              "note": "P_in通过φ1mm口径。P_focus积分范围原文写within 3×FWHM，未指明该尺度是半径还是直径。P_out为器件总透射功率，焦区形状、探测及误差待核。 本库用同谱点的两项作者印字百分比相乘后除以 100，得到以口径内入射功率为分母的近似效率。无逐次功率和误差，保留原始两个功率比。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-18",
+              "checked_on": "2026-11-25",
               "incident_aperture_um": 1000,
               "focus_integration_scale_fwhm": 3,
-              "focus_region_geometry": null
+              "focus_region_geometry": null,
+              "denominator": "incident_through_aperture",
+              "transmitted_efficiency_denominator": "transmitted_power"
             },
             "optical_transmittance_pct": {
               "value": 55,
@@ -86884,6 +86959,48 @@
               "checked_on": "2026-11-18",
               "calculation_origin": "authors",
               "denominator": "transmitted_power"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 4.4,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "pp7–8 §2.4 功率测量段，蓝光",
+              "note": "本库按同一器件同波长作者印字 P_out/P_in=55% 和 P_focus/P_out=8% 相乘换算 P_focus/P_in。原参照为 1 mm 口径内入射功率，焦区为作者所称 3×FWHM，半径或直径及形状尚未核实。两项均为整数百分比印字，结果约值，保留一位小数，无误差和逐次功率原数。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-25",
+              "calculation_origin": "atlas",
+              "statistic": "product_of_measured_power_ratios",
+              "denominator": "incident_through_aperture",
+              "input_metrics": [
+                "optical_transmittance_pct",
+                "focusing_efficiency_transmitted_pct"
+              ],
+              "input_values_pct": [
+                55,
+                8
+              ],
+              "formula": "transmittance_pct * focusing_efficiency_transmitted_pct / 100",
+              "approximate": true,
+              "display": "约 4.4%（本库换算）",
+              "rounding_decimals": 1
+            },
+            "efficiency_lambda_nm": {
+              "value": 450,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4c–e 左列；p12 §4.3；pp.7–8 §2.4 功率测量段",
+              "note": "实物准直激光功率比测量的单色照明值，与两项作者百分比和本库换算值绑定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25"
+            },
+            "diffraction_limited_reference_fwhm_um": {
+              "value": 2.25,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.7 §2.4 Fig. 4d 实测与理论宽度段",
+              "note": "作者给与各色实测 x 向焦斑截线对照的理想衍射极限宽度，原印值。精确理论公式和归一化参数未报告，不替换为本库计算的 Airy 宽度。",
+              "basis": "model",
+              "checked_on": "2026-11-25",
+              "calculation_origin": "authors",
+              "reference_model": "author_theoretical_diffraction_limited_profile",
+              "direction": "x"
             }
           }
         },
@@ -87052,15 +87169,17 @@
               "data_availability": "curves_only"
             },
             "efficiency_protocol": {
-              "value": "透过率为P_out/P_in；聚焦效率为P_focus/P_out",
+              "value": "透过率 P_out/P_in；作者效率 P_focus/P_out；本库换算 P_focus/P_in",
               "source": "hasegawa_tsf_pdf_2026",
               "location": "pp7–8 §2.4 功率测量段，绿光",
-              "note": "P_in通过φ1mm口径。P_focus积分范围原文写within 3×FWHM，未指明该尺度是半径还是直径。P_out为器件总透射功率，焦区形状、探测及误差待核。",
+              "note": "P_in通过φ1mm口径。P_focus积分范围原文写within 3×FWHM，未指明该尺度是半径还是直径。P_out为器件总透射功率，焦区形状、探测及误差待核。 本库用同谱点的两项作者印字百分比相乘后除以 100，得到以口径内入射功率为分母的近似效率。无逐次功率和误差，保留原始两个功率比。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-18",
+              "checked_on": "2026-11-25",
               "incident_aperture_um": 1000,
               "focus_integration_scale_fwhm": 3,
-              "focus_region_geometry": null
+              "focus_region_geometry": null,
+              "denominator": "incident_through_aperture",
+              "transmitted_efficiency_denominator": "transmitted_power"
             },
             "optical_transmittance_pct": {
               "value": 80,
@@ -87081,6 +87200,48 @@
               "checked_on": "2026-11-18",
               "calculation_origin": "authors",
               "denominator": "transmitted_power"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 20.8,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "pp7–8 §2.4 功率测量段，绿光",
+              "note": "本库按同一器件同波长作者印字 P_out/P_in=80% 和 P_focus/P_out=26% 相乘换算 P_focus/P_in。原参照为 1 mm 口径内入射功率，焦区为作者所称 3×FWHM，半径或直径及形状尚未核实。两项均为整数百分比印字，结果约值，保留一位小数，无误差和逐次功率原数。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-25",
+              "calculation_origin": "atlas",
+              "statistic": "product_of_measured_power_ratios",
+              "denominator": "incident_through_aperture",
+              "input_metrics": [
+                "optical_transmittance_pct",
+                "focusing_efficiency_transmitted_pct"
+              ],
+              "input_values_pct": [
+                80,
+                26
+              ],
+              "formula": "transmittance_pct * focusing_efficiency_transmitted_pct / 100",
+              "approximate": true,
+              "display": "约 20.8%（本库换算）",
+              "rounding_decimals": 1
+            },
+            "efficiency_lambda_nm": {
+              "value": 532,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4c–e 中列；p12 §4.3；pp.7–8 §2.4 功率测量段",
+              "note": "实物准直激光功率比测量的单色照明值，与两项作者百分比和本库换算值绑定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25"
+            },
+            "diffraction_limited_reference_fwhm_um": {
+              "value": 2.64,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.7 §2.4 Fig. 4d 实测与理论宽度段",
+              "note": "作者给与各色实测 x 向焦斑截线对照的理想衍射极限宽度，原印值。精确理论公式和归一化参数未报告，不替换为本库计算的 Airy 宽度。",
+              "basis": "model",
+              "checked_on": "2026-11-25",
+              "calculation_origin": "authors",
+              "reference_model": "author_theoretical_diffraction_limited_profile",
+              "direction": "x"
             }
           }
         },
@@ -87249,15 +87410,17 @@
               "data_availability": "curves_only"
             },
             "efficiency_protocol": {
-              "value": "透过率为P_out/P_in；聚焦效率为P_focus/P_out",
+              "value": "透过率 P_out/P_in；作者效率 P_focus/P_out；本库换算 P_focus/P_in",
               "source": "hasegawa_tsf_pdf_2026",
               "location": "pp7–8 §2.4 功率测量段，红光",
-              "note": "P_in通过φ1mm口径。P_focus积分范围原文写within 3×FWHM，未指明该尺度是半径还是直径。P_out为器件总透射功率，焦区形状、探测及误差待核。",
+              "note": "P_in通过φ1mm口径。P_focus积分范围原文写within 3×FWHM，未指明该尺度是半径还是直径。P_out为器件总透射功率，焦区形状、探测及误差待核。 本库用同谱点的两项作者印字百分比相乘后除以 100，得到以口径内入射功率为分母的近似效率。无逐次功率和误差，保留原始两个功率比。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-18",
+              "checked_on": "2026-11-25",
               "incident_aperture_um": 1000,
               "focus_integration_scale_fwhm": 3,
-              "focus_region_geometry": null
+              "focus_region_geometry": null,
+              "denominator": "incident_through_aperture",
+              "transmitted_efficiency_denominator": "transmitted_power"
             },
             "optical_transmittance_pct": {
               "value": 82,
@@ -87278,6 +87441,48 @@
               "checked_on": "2026-11-18",
               "calculation_origin": "authors",
               "denominator": "transmitted_power"
+            },
+            "efficiency_at_lambda_pct": {
+              "value": 18.9,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "pp7–8 §2.4 功率测量段，红光",
+              "note": "本库按同一器件同波长作者印字 P_out/P_in=82% 和 P_focus/P_out=23% 相乘换算 P_focus/P_in。原参照为 1 mm 口径内入射功率，焦区为作者所称 3×FWHM，半径或直径及形状尚未核实。两项均为整数百分比印字，结果约值，保留一位小数，无误差和逐次功率原数。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-25",
+              "calculation_origin": "atlas",
+              "statistic": "product_of_measured_power_ratios",
+              "denominator": "incident_through_aperture",
+              "input_metrics": [
+                "optical_transmittance_pct",
+                "focusing_efficiency_transmitted_pct"
+              ],
+              "input_values_pct": [
+                82,
+                23
+              ],
+              "formula": "transmittance_pct * focusing_efficiency_transmitted_pct / 100",
+              "approximate": true,
+              "display": "约 18.9%（本库换算）",
+              "rounding_decimals": 1
+            },
+            "efficiency_lambda_nm": {
+              "value": 633,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "摘要；p7 Fig.4c–e 右列；p12 §4.3；pp.7–8 §2.4 功率测量段",
+              "note": "实物准直激光功率比测量的单色照明值，与两项作者百分比和本库换算值绑定。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25"
+            },
+            "diffraction_limited_reference_fwhm_um": {
+              "value": 3.05,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.7 §2.4 Fig. 4d 实测与理论宽度段",
+              "note": "作者给与各色实测 x 向焦斑截线对照的理想衍射极限宽度，原印值。精确理论公式和归一化参数未报告，不替换为本库计算的 Airy 宽度。",
+              "basis": "model",
+              "checked_on": "2026-11-25",
+              "calculation_origin": "authors",
+              "reference_model": "author_theoretical_diffraction_limited_profile",
+              "direction": "x"
             }
           }
         },
@@ -88195,6 +88400,20 @@
                 "hasegawa_tsf_tuat_2026"
               ],
               "object_distance_m": 0.02
+            },
+            "fov_deg": {
+              "value": 9.8,
+              "source": "hasegawa_tsf_pdf_2026",
+              "location": "p.9 §2.5 实拍评价段；p.10 Fig. 6c",
+              "note": "作者按 CMOS 上约 1.2 mm 有效像圈评价总角视场，原文 ±4.9°。物距 20 mm，USAF 放大率 0.38，LCD RGB 背光。像圈的逐场判据和方向未定，维持作者报告视场。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-25",
+              "calculation_origin": "authors",
+              "reported_half_angle_deg": 4.9,
+              "approximate_image_circle_diameter_um": 1200,
+              "object_distance_m": 0.02,
+              "magnification": 0.38,
+              "field_direction": null
             }
           }
         },
@@ -179012,9 +179231,260 @@
             }
           },
           "visible_light_use": false
+        },
+        {
+          "id": "wang2022ann_summary",
+          "model": "Wang 2022 · 20.8 μm · ANN 可见消色差",
+          "module": "",
+          "variant": "相位及群时延匹配单镜",
+          "evidence_type": "study",
+          "study_id": "wang2022ann",
+          "specimen_id": "metalens",
+          "measurement_scope": "同一只可见光消色差透镜的轴向光学实测；波段来自作者摘要，实际抽样谱点待核。",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 20.8,
+              "source": "wang_ann_fig1_2022",
+              "location": "Fig. 1 图注；Fig. 2d–f 实物图注",
+              "note": "作者设计口径 20.8 μm，由总计 3209 个单元构成。Fig. 2 有制备实物的 SEM，未给独立口径测量误差。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25",
+              "sourceIds": [
+                "wang_ann_fig1_2022",
+                "wang_ann_fig2_2022"
+              ]
+            },
+            "na": {
+              "value": 0.084,
+              "source": "wang_ann_fig4_2022",
+              "location": "Fig. 4a 图注",
+              "note": "作者按实验平均焦距得出的实验 NA 0.084，名义设计 NA 待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-25",
+              "calculation_origin": "authors",
+              "reference_focal_um": 124
+            },
+            "design_focal_um": {
+              "value": null,
+              "source": "wang_ann_fig4_2022",
+              "location": "Fig. 4a 图注",
+              "note": "作者图注的 124 μm 是跨测量波长平均焦距。名义设计值待全文。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-25",
+              "display": "设计焦距待核"
+            },
+            "lambda_min_nm": {
+              "value": 420,
+              "source": "wang_ann_2022",
+              "location": "摘要，实测工作范围 420–640 nm",
+              "note": "原刊摘要报告 420–640 nm 范围内的实验消色差。图注未枚举各实际谱点。此为工作范围端点，实际采集列表与谱权重待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25"
+            },
+            "lambda_max_nm": {
+              "value": 640,
+              "source": "wang_ann_2022",
+              "location": "摘要，实测工作范围 420–640 nm",
+              "note": "原刊摘要报告 420–640 nm 范围内的实验消色差。图注未枚举各实际谱点。此为工作范围端点，实际采集列表与谱权重待核。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25"
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "wang_ann_fig3_2022",
+              "location": "Fig. 3a–b；Fig. 4a–b 图注",
+              "note": "作者报告多个光谱点，不能从工作范围推定具体测量点。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-25",
+              "display": "汇总；各测量谱点待核"
+            },
+            "height_nm": {
+              "value": 400,
+              "source": "wang_ann_fig1_2022",
+              "location": "Fig. 1 图注，height",
+              "note": "结构单元的设计高度。物理高度偏差待全文。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25"
+            },
+            "material": {
+              "value": "十字、空心圆及空心方单元；材料待核",
+              "source": "wang_ann_fig1_2022",
+              "location": "Fig. 1 图注；Fig. 2d–f 图注",
+              "note": "作者指明单元周期 320 nm、柱高 400 nm，基底和结构材料待全文。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25",
+              "lattice_period_nm": 320,
+              "sourceIds": [
+                "wang_ann_fig1_2022",
+                "wang_ann_fig2_2022"
+              ]
+            },
+            "chromatic": {
+              "value": "相位／群时延联合匹配；多波长轴向消色差实测",
+              "source": "wang_ann_fig2_2022",
+              "location": "主文摘要，Fig. 2a–f、Fig. 3a–b 图注",
+              "note": "以神经网络预测相位和群时延，再为器件选单元。作者图注支持实制器件、跨谱点轴向和焦面实测。2026-11-25 Crossref 59 次、OpenAlex 71 次，凭经典被引条件纳入。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25",
+              "sourceIds": [
+                "wang_ann_fig2_2022",
+                "wang_ann_fig3_2022",
+                "wang_ann_2022",
+                "wang_ann_crossref_2022",
+                "wang_ann_openalex_2022"
+              ]
+            },
+            "psf_protocol": {
+              "value": "多波长归一化实测 yz 轴向截面及焦面横向强度",
+              "source": "wang_ann_fig3_2022",
+              "location": "Fig. 3a–b、Fig. 4b 图注",
+              "note": "作者图注给实测与理论宽度比较，曲线误差棒为三次测量的标准差。轴向零点、场点、空间采样、PSF 归一分母、拟合方法和实测波长列表尚缺。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25",
+              "sample_wavelengths_nm": null,
+              "reference_plane": "作者焦距；精确轴向零点／表面待核",
+              "scan_step_um": null,
+              "object_space_pixel_um": null,
+              "sourceIds": [
+                "wang_ann_fig3_2022",
+                "wang_ann_fig4_2022"
+              ]
+            },
+            "measured_focal_band_mean_um": {
+              "value": 124,
+              "source": "wang_ann_fig4_2022",
+              "location": "Fig. 4a 图注，平均实测焦距",
+              "note": "作者直接印出跨实测波长平均 f=124 μm。各谱点、加权方式、轴向参考原点及平均值的不确定度待核。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-25",
+              "statistic": "author_reported_spectral_mean",
+              "calculation_origin": "authors",
+              "sample_wavelengths_nm": null,
+              "spectral_sample_scope": "author_reported_range_only",
+              "reference_plane": "作者焦距；精确轴向零点／表面待核",
+              "aggregation_note": "原图注给出平均焦距，实测谱点清单、权重和平均不确定度待核。"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "wang_ann_fig4_2022",
+              "location": "Fig. 4a，实测焦距随波长图",
+              "note": "图注的 124 μm 是平均值，单点原值未取得。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-25",
+              "display": "逐色焦位曲线；原数待核"
+            },
+            "focus_variation_um": {
+              "value": null,
+              "source": "wang_ann_fig4_2022",
+              "location": "Fig. 4a 焦距曲线",
+              "note": "缺精确逐色焦点与焦面参考，不能从均值推出残余色差。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-25",
+              "display": "残余焦差待核"
+            },
+            "fwhm_um": {
+              "value": null,
+              "source": "wang_ann_fig4_2022",
+              "location": "Fig. 4b 实测与理想 FWHM",
+              "note": "图注确认多波长实测 FWHM 与理想参考，误差棒来自三次测量 SD，原始点、方向和采样待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-25",
+              "display": "宽度曲线；原数待核"
+            },
+            "efficiency_band_mean_pct": {
+              "value": 40,
+              "source": "wang_ann_fig4_2022",
+              "location": "Fig. 4a 图注，平均效率",
+              "note": "作者直报平均效率 40%，工作范围 420–640 nm。实际测量谱点、平均权重、焦区积分和功率分母待全文。作者图中误差棒来自三次测量；不能作为该平均值的误差。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-25",
+              "statistic": "band_mean",
+              "calculation_origin": "authors",
+              "sampling": "not_reported",
+              "sample_wavelengths_nm": null,
+              "sample_unit": "wavelength",
+              "denominator": null
+            },
+            "efficiency_protocol": {
+              "value": "作者报告多谱点平均效率；分母、焦圈待核",
+              "source": "wang_ann_fig4_2022",
+              "location": "Fig. 4a 图注",
+              "note": "效率被作者列在同一实物的光谱曲线，现有图注未给积分窗口及分母，也未说明谱权重。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25",
+              "denominator": null,
+              "focus_region_geometry": null,
+              "replicates_per_wavelength": null
+            },
+            "efficiency_at_lambda_pct": {
+              "value": null,
+              "source": "wang_ann_fig4_2022",
+              "location": "Fig. 4a 图注，逐色效率曲线",
+              "note": "平均值归汇总记录，不能向透过功率或入射功率的单谱点值转换。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-25",
+              "display": "逐色效率数值待核"
+            },
+            "mtf_curve": {
+              "value": null,
+              "source": "wang_ann_fig4_2022",
+              "location": "主文 Fig. 3–5 图注与 Data Availability Statement",
+              "note": "只核当前可读图注；完整正文、补件未取，未定位 MTF 或原始 PSF。空间采样及归一化信息待核。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-25",
+              "display": "MTF 原始数据待核",
+              "sourceIds": [
+                "wang_ann_fig4_2022",
+                "wang_ann_si_list_2022"
+              ]
+            }
+          }
+        },
+        {
+          "id": "wang2022ann_imaging",
+          "model": "Wang 2022 · 20.8 μm · 卤素灯标靶",
+          "module": "",
+          "variant": "相位及群时延匹配单镜",
+          "evidence_type": "study",
+          "study_id": "wang2022ann",
+          "specimen_id": "metalens",
+          "measurement_scope": "同一研究的卤素灯实拍，不与轴向 PSF 条件合并。",
+          "visible_light_use": true,
+          "values": {
+            "illumination": {
+              "value": "卤素灯；USAF 1951 标靶及 FIB 字母",
+              "source": "wang_ann_fig5_2022",
+              "location": "Fig. 5a–c 图注",
+              "note": "b 为超透镜对 USAF 第5组第1–6元素的实拍，c 为样品字母图。图注明示 Thorlabs R3L3S1N，但未给物距、放大率、波长权重及测量场点。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25"
+            },
+            "resolved_test_line_width_um": {
+              "value": null,
+              "source": "wang_ann_fig5_2022",
+              "location": "Fig. 5b 图注",
+              "note": "实拍图所示靶元素编号，不判断是否全部分辨，作者最细辨认阈值待正文。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-25",
+              "display": "标靶元素 1–6；分辨线宽待核",
+              "target": "USAF_1951",
+              "target_group": 5,
+              "target_elements": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+              ],
+              "contrast_threshold": null,
+              "field_point": null
+            }
+          }
         }
       ],
-      "scope": "78项原始研究、350个器件/测量/系统配置、1495条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
+      "scope": "79项原始研究、351个器件/测量/系统配置、1497条记录。按正式原文及补件的器件色差校正证据纳入。真实谱点优先匹配可见光筛选。",
       "task_guidance": [
         {
           "task": "消色差、通光与画质联合评价",

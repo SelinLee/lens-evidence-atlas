@@ -66,8 +66,8 @@ test('XR cutoff frequency is not MTF50, a dimensionless MTF value, display PPD o
 });
 test('literature domain and accessory selector use the shared data model and traceable unit-consistent points',()=>{
  const workspace=createWorkspace(load(),d),domain=workspace.domains.find(v=>v.id==='metalens');
- assert.equal(domain.name,'消色差超透镜与折超混合透镜（文献）');assert.equal(domain.category,'文献器件与计算成像');assert.equal(domain.rows.length,1495);
- const rows=filteredRows(domain,{module:'main',query:'',models:null,evidence:'research'});assert.equal(rows.length,1495);
+ assert.equal(domain.name,'消色差超透镜与折超混合透镜（文献）');assert.equal(domain.category,'文献器件与计算成像');assert.equal(domain.rows.length,1497);
+ const rows=filteredRows(domain,{module:'main',query:'',models:null,evidence:'research'});assert.equal(rows.length,1497);
  const ps=axisPoints(rows,'wavelength_nm','measured_focal_um');assert.equal(ps.length,57);
  for(const row of domain.rows)for(const value of Object.values(row.values)){assert.ok(workspace.sources.has(value.source));assert.ok(value.location);assert.ok(value.note);}
 });
@@ -106,4 +106,23 @@ test('Shrestha retains the exact 33 measured wavelength labels without treating 
  assert.equal(axisPoints(rows, 'wavelength_nm', 'measured_focal_um').length, 0);
  assert.equal(axisPoints(rows, 'wavelength_nm', 'efficiency_at_lambda_pct').length, 0);
  assert.equal(filteredRows(domain, { visible:true, models:null }).filter(row => row.study_id === 'shrestha2018').length, 0);
+});
+
+test("Wang ANN spectral mean keeps the author's range and unknown measurement list", () => {
+ const rows=lens.rows.filter(r=>r.study_id==='wang2022ann');
+ assert.equal(rows.length,2);
+ assert.equal(new Set(rows.map(r=>r.specimen_id)).size,1);
+ const summary=rows.find(r=>r.id.endsWith('_summary')).values;
+ assert.deepEqual([summary.diameter_um.value,summary.na.value,summary.measured_focal_band_mean_um.value,summary.efficiency_band_mean_pct.value],[20.8,.084,124,40]);
+ assert.equal(summary.measured_focal_band_mean_um.sample_wavelengths_nm,null);
+ assert.equal(summary.measured_focal_band_mean_um.spectral_sample_scope,'author_reported_range_only');
+ assert.equal(summary.wavelength_nm.value,null);
+ assert.equal(summary.measured_focal_um.value,null);
+ assert.equal(summary.focus_variation_um.value,null);
+ assert.equal(summary.efficiency_protocol.denominator,null);
+ assert.equal(axisPoints(rows,'wavelength_nm','measured_focal_um').length,0);
+ const selected={...d,domains:{metalens:{...lens,rows:structuredClone(rows)}}};
+ assert.equal(validateDevices(selected),true);
+ delete selected.domains.metalens.rows[0].values.measured_focal_band_mean_um.spectral_sample_scope;
+ assert.throws(()=>validateDevices(selected),/spectral focal mean context/);
 });
