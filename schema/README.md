@@ -149,3 +149,5 @@ XR 域可使用 `wavelength_nm`、`diameter_um`、`design_focal_um`、`na`、`fw
 `imaging_feature_width_um` 保存有限尺寸样品在成像系统中的横截线宽度。`width_definition` 区分作者直报的 `fwhm` 与半高定义未明的 `author_fit_width`。记录拟合对象、截线方向、耗尽光条件和扫描步长。实测样品线宽和镜片焦斑 PSF 各有自己的测量记录。
 
 实测数值在同文主文、补件或作者答复之间冲突时，可用 `alternative_reports` 保存至少两个不同原值及各自的 `source`、`location`、`basis` 和 `note`。主格用 `value: null`、`basis: unresolved`，`display` 保留原值和来源标签，引用列表绑定所有报告。散点仅纳入选定的数值格。
+
+同文原作者专利中的实验可补充原刊材料，必须按原刊明确关联号及重复图证核实归属，来源标为作者专利并归同一 `publication_source`，不当作另篇期刊、正式补件或原始数表。若光学测量仅明确 NA、波长而未确认实物身份，不复制别的配置的口径或焦距；单设测量配置并说明身份待核。`mtf_kind: author_reported_directional_mtf_curve` 指正文称实测但算法未给的独立切向/弧矢曲线；用原物理频率单位和方向，未知计算、归一化及原数组留空，不创造截止频率或固定频率MTF点。若某一 FWHM 的对应波长存在原文冲突，保留图内印字及单位在 `display`/`original_value`，数值轴与波长数值保持空缺，清楚区分其他已确认谱点。

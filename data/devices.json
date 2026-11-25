@@ -1159,8 +1159,8 @@
       "title": "PMC · Li 2021 正式版的公开对象清单",
       "url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC7840120.1%2F",
       "kind": "repository",
-      "checked_on": "2026-11-18",
-      "scope": "公开对象为正文和发表图，没有补充材料或原始数组。Science正式补充PDF和旧DC1入口403。",
+      "checked_on": "2026-11-25",
+      "scope": "公开对象为正文和发表图，没有补充材料或原始数组。Science正式补充PDF和旧DC1入口403。 2026-11-25 重新实取公开对象清单8件，仍无正式SI或原始数组；原作者相关专利实验另有入口。",
       "publication_source": "li_rgb_vr_2021"
     },
     {
@@ -3977,6 +3977,24 @@
       "scope": "2026-11-25 实查HTTP200，精确 DOI 零项。",
       "checked_on": "2026-11-25",
       "publication_source": "lee_ar_2018"
+    },
+    {
+      "id": "li_rgb_vr_patent_a1_2021",
+      "title": "Li、Huang、Capasso · 原作者专利申请 US20210263190A1（2021）",
+      "url": "https://patentimages.storage.googleapis.com/64/89/42/60a2f3f1573b28/US20210263190A1.pdf",
+      "kind": "author_patent",
+      "checked_on": "2026-11-25",
+      "scope": "正式公开美国申请，2021-08-26；41页 4305510 字节，SHA-256 244b242bfa0676cf52b86d22210bc74fd930945c69188a92c91526688e03874d。封面优先权 62/981,478 与 Science Advances 原刊 p8 Competing interests 对应。Fig.7A–C 与原刊 Fig.2F–H 六数字一致；Figs.9–10、17 与段[0056]–[0058]、[0068] 为原作者披露的额外实验，非期刊SI或相机原始文件。Fig.17 的实际样片口径/身份未明。",
+      "publication_source": "li_rgb_vr_2021"
+    },
+    {
+      "id": "li_rgb_vr_patent_b2_2023",
+      "title": "Li、Huang、Capasso · 同族美国授权公开 US11774635B2（2023）",
+      "url": "https://patents.google.com/patent/US11774635B2/en",
+      "kind": "author_patent",
+      "checked_on": "2026-11-25",
+      "scope": "2023-10-03 授权公开；同一申请 US17/184326、相同优先权。核 HTML 的 Figs.9–10 与 Fig.17 相关段，保留470/480 nm冲突及三宽度数值、532 nm T/S MTF 文字。不是独立研究或重复实验。",
+      "publication_source": "li_rgb_vr_2021"
     }
   ],
   "domains": {
@@ -29953,19 +29971,27 @@
               "value": 0.351,
               "source": "li_rgb_vr_2021",
               "location": "Fig.2F，原始主文图abe4458-F2.jpg，FWHM=351nm印字",
-              "note": "作者图中直接印出的测量FWHM，nm÷1000→μm；横截面轴X(μm)。不是由曲线宽度估读，也不是理想Airy曲线。",
+              "note": "作者图中直接印出的测量FWHM，nm÷1000→μm；横截面轴X(μm)。不是由曲线宽度估读，也不是理想Airy曲线。 同族原作者专利PDF p10 Fig.7A–C 和 p34 [0055] 中相应原印字一致（不计重复测试）。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-25",
+              "sourceIds": [
+                "li_rgb_vr_2021",
+                "li_rgb_vr_patent_a1_2021"
+              ]
             },
             "strehl": {
-              "value": 1.0,
+              "value": 1,
               "source": "li_rgb_vr_2021",
               "location": "Fig.2F，abe4458-F2.jpg，Strehl ratio约值标签",
-              "note": "作者由实测PSF报告的近似Strehl；完整总功率归一化/计算细节当前缺SI，不套用Chen2019第二瓣规则。",
+              "note": "作者由实测PSF报告的近似Strehl；完整总功率归一化/计算细节当前缺SI，不套用Chen2019第二瓣规则。 同族原作者专利PDF p10 Fig.7A–C 和 p34 [0055] 中相应原印字一致（不计重复测试）。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14",
+              "checked_on": "2026-11-25",
               "approximate": true,
-              "display": "约1.0"
+              "display": "约1.0",
+              "sourceIds": [
+                "li_rgb_vr_2021",
+                "li_rgb_vr_patent_a1_2021"
+              ]
             }
           }
         },
@@ -30032,19 +30058,27 @@
               "value": 0.391,
               "source": "li_rgb_vr_2021",
               "location": "Fig.2G，原始主文图abe4458-F2.jpg，FWHM=391nm印字",
-              "note": "作者图中直接印出的测量FWHM，nm÷1000→μm；横截面轴X(μm)。不是由曲线宽度估读，也不是理想Airy曲线。",
+              "note": "作者图中直接印出的测量FWHM，nm÷1000→μm；横截面轴X(μm)。不是由曲线宽度估读，也不是理想Airy曲线。 同族原作者专利PDF p10 Fig.7A–C 和 p34 [0055] 中相应原印字一致（不计重复测试）。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-25",
+              "sourceIds": [
+                "li_rgb_vr_2021",
+                "li_rgb_vr_patent_a1_2021"
+              ]
             },
             "strehl": {
               "value": 0.98,
               "source": "li_rgb_vr_2021",
               "location": "Fig.2G，abe4458-F2.jpg，Strehl ratio约值标签",
-              "note": "作者由实测PSF报告的近似Strehl；完整总功率归一化/计算细节当前缺SI，不套用Chen2019第二瓣规则。",
+              "note": "作者由实测PSF报告的近似Strehl；完整总功率归一化/计算细节当前缺SI，不套用Chen2019第二瓣规则。 同族原作者专利PDF p10 Fig.7A–C 和 p34 [0055] 中相应原印字一致（不计重复测试）。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14",
+              "checked_on": "2026-11-25",
               "approximate": true,
-              "display": "约0.98"
+              "display": "约0.98",
+              "sourceIds": [
+                "li_rgb_vr_2021",
+                "li_rgb_vr_patent_a1_2021"
+              ]
             }
           }
         },
@@ -30111,19 +30145,27 @@
               "value": 0.485,
               "source": "li_rgb_vr_2021",
               "location": "Fig.2H，原始主文图abe4458-F2.jpg，FWHM=485nm印字",
-              "note": "作者图中直接印出的测量FWHM，nm÷1000→μm；横截面轴X(μm)。不是由曲线宽度估读，也不是理想Airy曲线。",
+              "note": "作者图中直接印出的测量FWHM，nm÷1000→μm；横截面轴X(μm)。不是由曲线宽度估读，也不是理想Airy曲线。 同族原作者专利PDF p10 Fig.7A–C 和 p34 [0055] 中相应原印字一致（不计重复测试）。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
+              "checked_on": "2026-11-25",
+              "sourceIds": [
+                "li_rgb_vr_2021",
+                "li_rgb_vr_patent_a1_2021"
+              ]
             },
             "strehl": {
               "value": 0.97,
               "source": "li_rgb_vr_2021",
               "location": "Fig.2H，abe4458-F2.jpg，Strehl ratio约值标签",
-              "note": "作者由实测PSF报告的近似Strehl；完整总功率归一化/计算细节当前缺SI，不套用Chen2019第二瓣规则。",
+              "note": "作者由实测PSF报告的近似Strehl；完整总功率归一化/计算细节当前缺SI，不套用Chen2019第二瓣规则。 同族原作者专利PDF p10 Fig.7A–C 和 p34 [0055] 中相应原印字一致（不计重复测试）。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-14",
+              "checked_on": "2026-11-25",
               "approximate": true,
-              "display": "约0.97"
+              "display": "约0.97",
+              "sourceIds": [
+                "li_rgb_vr_2021",
+                "li_rgb_vr_patent_a1_2021"
+              ]
             }
           }
         },
@@ -30172,12 +30214,19 @@
             },
             "wavelength_nm": {
               "value": null,
-              "source": "li_rgb_vr_2021",
-              "location": "Fig.2B（NA0.7）/Fig.3I–K（NA0.3）及相应图注",
-              "note": "Li2021同一研究，D2mm/NA0.3实制RGB镜；离散470/548/647nm，不是连续470–670nm整镜消色差或1cm/双片仿真。",
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p13 Fig.9，p14 Fig.10A–C，p34 [0057]–[0058]；原刊 p4 Fig.3I–K",
+              "note": "正式原刊标靶成像 470/548/647 nm；原作者专利 Fig.9/10A–C 聚焦图标 470/548/648 nm，而[0058]末句蓝光写480 nm。蓝光焦斑谱点待消歧；不把照明设定 647 和 648 互填。均为离散谱点，不是连续波段。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-14",
-              "display": "470/548/647 nm（离散RGB）"
+              "checked_on": "2026-11-25",
+              "display": "标靶 470/548/647 nm；聚焦 470（另印480）/548/648 nm",
+              "sourceIds": [
+                "li_rgb_vr_patent_a1_2021",
+                "li_rgb_vr_patent_b2_2023",
+                "li_rgb_vr_pdf_2021",
+                "li_rgb_vr_2021",
+                "li_rgb_vr_cloud_2021"
+              ]
             },
             "polarization": {
               "value": "LCP入射→RCP检出通道（作者设计）",
@@ -30188,25 +30237,550 @@
               "checked_on": "2026-11-14"
             },
             "chromatic": {
-              "value": "作者报告RGB聚焦近似消色差；定量焦移及PSF详指SI S3，当前未取得",
-              "source": "li_rgb_vr_2021",
-              "location": "Results / Focusing and imaging characterizations第一段；Fig.2B；Fig.3I–K",
-              "note": "只把约1μm归NA0.7；不由1μm/0.1%反推设计焦距，不把单区470–670nm范围当全镜连续带宽。",
+              "value": "NA0.3 专利实测三谱点接近共同焦面；数值焦差未报告",
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p13 Fig.9，p14 Fig.10A–C，p34 [0057]–[0058]；原刊 p4 Fig.3I–K",
+              "note": "原作者[0057]将三色轴向焦移描述为可忽略，Fig.9横轴Z(μm)相对位置−80至80刻度、纵轴X(μm)。精确轴峰/绝对零点/轴扫步长均缺，不当零焦差或照搬NA0.7约1μm。",
               "basis": "measured",
-              "checked_on": "2026-11-14"
-            },
-            "mtf_curve": {
-              "value": "Fig.3I–K实测成像；SI S3聚焦细节未取得，MTF/效率数值待补",
-              "source": "li_rgb_vr_2021",
-              "location": "Fig.2F–H或Fig.3I–K；Data and materials availability",
-              "note": "Science/作者PDF及SI入口403；PMC/Europe PMC全文可读，supplementaryFiles ZIP只有主文图，不能当SI/原始PSF。额外数据可向作者请求。 PMC公开清单与PDF已核。补充入口仍受限，逐频数表和原始PSF待核。",
-              "basis": "measured",
-              "checked_on": "2026-11-14",
+              "checked_on": "2026-11-25",
               "sourceIds": [
-                "li_rgb_vr_2021",
+                "li_rgb_vr_patent_a1_2021",
+                "li_rgb_vr_patent_b2_2023",
                 "li_rgb_vr_pdf_2021",
+                "li_rgb_vr_2021",
                 "li_rgb_vr_cloud_2021"
               ]
+            },
+            "mtf_curve": {
+              "value": "三色焦斑及轴扫图已补；532 nm T/S MTF 见独立测量配置",
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF pp13–15 Figs.9–10；p22 Fig.17及p36 [0068]；原刊p3及p8数据声明",
+              "note": "Fig.17 为另一532 nm测试条件，虽报告NA0.3但未明物理样片/直径，MTF另行记录；尚无原始PSF/采样/数表、逐色效率及轴峰。正式SI仍未取得。",
+              "basis": "measured",
+              "checked_on": "2026-11-25",
+              "sourceIds": [
+                "li_rgb_vr_patent_a1_2021",
+                "li_rgb_vr_patent_b2_2023",
+                "li_rgb_vr_pdf_2021",
+                "li_rgb_vr_2021",
+                "li_rgb_vr_cloud_2021"
+              ]
+            }
+          }
+        },
+        {
+          "id": "li2021_na03_patent_blue_470_480",
+          "model": "Li 2021 · NA0.3 · 原作者专利 · 470/480 nm（冲突）",
+          "study_id": "li2021",
+          "specimen_id": "na03",
+          "module": "",
+          "variant": "原作同族专利原作者实验补证（非期刊SI）",
+          "evidence_type": "study",
+          "measurement_scope": "2 mm、NA0.3 原作者同族专利的共同焦面横向实测；不把专利图当正式SI或原始像素。",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p34 [0056]；原刊p2 Results / Simulation results",
+              "note": "作者报告2 mm设计直径，对应此低NA实制镜，mm×1000→μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25",
+              "sourceIds": [
+                "li_rgb_vr_patent_a1_2021",
+                "li_rgb_vr_pdf_2021"
+              ]
+            },
+            "na": {
+              "value": 0.3,
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p34 [0056]–[0058]；原刊p3 Focusing and imaging characterizations",
+              "note": "作者NA0.3配置，不以PSF反推NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25",
+              "sourceIds": [
+                "li_rgb_vr_patent_a1_2021",
+                "li_rgb_vr_pdf_2021"
+              ]
+            },
+            "wavelength_nm": {
+              "value": null,
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF pp13–14 Fig.9/10A；p34 [0057]–[0058]",
+              "note": "作者图和[0058]前段给470 nm，后一个列FWHM的句子给480 nm；同族授权正文也保留冲突，正式论文标靶470 nm不用于消歧本次聚焦。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-25",
+              "display": "470（图）/480（正文）nm",
+              "sourceIds": [
+                "li_rgb_vr_patent_a1_2021",
+                "li_rgb_vr_patent_b2_2023",
+                "li_rgb_vr_pdf_2021"
+              ],
+              "alternative_reports": [
+                {
+                  "value": 470,
+                  "source": "li_rgb_vr_patent_a1_2021",
+                  "location": "PDF pp13–14 Figs.9、10A；p34 [0057]–[0058]前段",
+                  "basis": "measured",
+                  "note": "原作者实测图波长及对应文字"
+                },
+                {
+                  "value": 480,
+                  "source": "li_rgb_vr_patent_a1_2021",
+                  "location": "PDF p34 [0058]后一个FWHM句；同族B2对应段",
+                  "basis": "measured",
+                  "note": "正文列三色宽度处原印480 nm"
+                }
+              ]
+            },
+            "fwhm_x_um": {
+              "value": null,
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p15 Fig.10D x向FWHM印字；p34 [0058]",
+              "note": "专利公开原作者直接图中印字；x向半高全宽，不是对曲线估点。Fig.10A为同一共同焦面二维归一化PSF。蓝光图内470与[0058]后一句480相冲突；绿548和红648无该差异。 680 nm本身明确，因对应的实际波长待消歧，保留原作者印字但不打数值点。",
+              "basis": "measured",
+              "checked_on": "2026-11-25",
+              "direction": "x",
+              "original_value": 680,
+              "original_unit": "nm",
+              "sourceIds": [
+                "li_rgb_vr_patent_a1_2021",
+                "li_rgb_vr_patent_b2_2023"
+              ],
+              "display": "680 nm（原图印字；谱点待消歧）"
+            },
+            "psf_protocol": {
+              "value": "原作者共同焦面PSF；SuperK超连续谱，线宽>5 nm",
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF pp13–15 Figs.9/10A–F；p34 [0057]–[0058]，p33 [0054]通用聚焦光路",
+              "note": "共同焦面横向(x,y) PSF 归一化0–1；图为排版半色调而非原始二维数组。通用光路准直LCP，经100×/NA0.9物镜、180mm管镜、RCP选择和CMOS；各谱点实际像素尺度/曝光/轴步未报告，精确共同z未知。作者说明光源线宽大于5nm使焦峰有尾部。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25",
+              "object_conjugate": "collimated",
+              "illumination_polarization": "LCP",
+              "detection_polarization": "RCP",
+              "collection_na": 0.9,
+              "nominal_collection_magnification": 100,
+              "focal_plane_selection": "common_plane",
+              "evaluation_plane_um": null,
+              "sampling_um": null,
+              "axial_step_um": null,
+              "linewidth_bound_nm": {
+                "operator": ">",
+                "value": 5
+              },
+              "data_availability": {
+                "raw_psf": null,
+                "raw_axial_scan": null
+              }
+            },
+            "chromatic": {
+              "value": "Fig.9实测轴扫；近共同焦面",
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p13 Fig.9；p34 [0057]",
+              "note": "作者未量化三色互差、峰位及参考面的绝对位置。",
+              "basis": "measured",
+              "checked_on": "2026-11-25",
+              "sourceIds": [
+                "li_rgb_vr_patent_a1_2021",
+                "li_rgb_vr_pdf_2021"
+              ]
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_rgb_vr_2021",
+              "location": "Materials and Methods / Simulation；Fabrication",
+              "note": "最终TiO2纳米鳍高600nm；ALD约210nm为沉积膜/工艺厚度，不作最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，p=400nm",
+              "source": "li_rgb_vr_2021",
+              "location": "Materials and Methods / Simulation and Fabrication",
+              "note": "正胶模板＋TiO2 ALD填充/刻蚀/去胶；不是210nm总结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "LCP入射→RCP检出通道（作者设计）",
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Simulation results；Methods / Simulation",
+              "note": "不是偏振不敏感透镜；不可套Chen2019无检偏器配置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p13 Fig.9；p34 [0057]",
+              "note": "Fig.9 为相对轴向光强图，作者未给绝对焦距、逐色峰位或参考零点。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-25",
+              "display": "逐色焦位待核"
+            }
+          }
+        },
+        {
+          "id": "li2021_na03_patent_548",
+          "model": "Li 2021 · NA0.3 · 原作者专利 · 548 nm",
+          "study_id": "li2021",
+          "specimen_id": "na03",
+          "module": "",
+          "variant": "原作同族专利原作者实验补证（非期刊SI）",
+          "evidence_type": "study",
+          "measurement_scope": "2 mm、NA0.3 原作者同族专利的共同焦面横向实测；不把专利图当正式SI或原始像素。",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p34 [0056]；原刊p2 Results / Simulation results",
+              "note": "作者报告2 mm设计直径，对应此低NA实制镜，mm×1000→μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25",
+              "sourceIds": [
+                "li_rgb_vr_patent_a1_2021",
+                "li_rgb_vr_pdf_2021"
+              ]
+            },
+            "na": {
+              "value": 0.3,
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p34 [0056]–[0058]；原刊p3 Focusing and imaging characterizations",
+              "note": "作者NA0.3配置，不以PSF反推NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25",
+              "sourceIds": [
+                "li_rgb_vr_patent_a1_2021",
+                "li_rgb_vr_pdf_2021"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 548,
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p13 Fig.9；p14 Fig.10B；p34 [0058]",
+              "note": "低NA共同焦面聚焦谱点；不同于主文标靶的谱点条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25",
+              "sourceIds": [
+                "li_rgb_vr_patent_a1_2021",
+                "li_rgb_vr_patent_b2_2023"
+              ]
+            },
+            "fwhm_x_um": {
+              "value": 0.787,
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p15 Fig.10E x向FWHM印字；p34 [0058]",
+              "note": "专利公开原作者直接图中印字；x向半高全宽，不是对曲线估点。Fig.10B为同一共同焦面二维归一化PSF。蓝光图内470与[0058]后一句480相冲突；绿548和红648无该差异。 nm÷1000→μm；不转换为MTF或分辨率。",
+              "basis": "measured",
+              "checked_on": "2026-11-25",
+              "direction": "x",
+              "original_value": 787,
+              "original_unit": "nm",
+              "sourceIds": [
+                "li_rgb_vr_patent_a1_2021",
+                "li_rgb_vr_patent_b2_2023"
+              ]
+            },
+            "psf_protocol": {
+              "value": "原作者共同焦面PSF；SuperK超连续谱，线宽>5 nm",
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF pp13–15 Figs.9/10A–F；p34 [0057]–[0058]，p33 [0054]通用聚焦光路",
+              "note": "共同焦面横向(x,y) PSF 归一化0–1；图为排版半色调而非原始二维数组。通用光路准直LCP，经100×/NA0.9物镜、180mm管镜、RCP选择和CMOS；各谱点实际像素尺度/曝光/轴步未报告，精确共同z未知。作者说明光源线宽大于5nm使焦峰有尾部。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25",
+              "object_conjugate": "collimated",
+              "illumination_polarization": "LCP",
+              "detection_polarization": "RCP",
+              "collection_na": 0.9,
+              "nominal_collection_magnification": 100,
+              "focal_plane_selection": "common_plane",
+              "evaluation_plane_um": null,
+              "sampling_um": null,
+              "axial_step_um": null,
+              "linewidth_bound_nm": {
+                "operator": ">",
+                "value": 5
+              },
+              "data_availability": {
+                "raw_psf": null,
+                "raw_axial_scan": null
+              }
+            },
+            "chromatic": {
+              "value": "Fig.9实测轴扫；近共同焦面",
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p13 Fig.9；p34 [0057]",
+              "note": "作者未量化三色互差、峰位及参考面的绝对位置。",
+              "basis": "measured",
+              "checked_on": "2026-11-25",
+              "sourceIds": [
+                "li_rgb_vr_patent_a1_2021",
+                "li_rgb_vr_pdf_2021"
+              ]
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_rgb_vr_2021",
+              "location": "Materials and Methods / Simulation；Fabrication",
+              "note": "最终TiO2纳米鳍高600nm；ALD约210nm为沉积膜/工艺厚度，不作最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，p=400nm",
+              "source": "li_rgb_vr_2021",
+              "location": "Materials and Methods / Simulation and Fabrication",
+              "note": "正胶模板＋TiO2 ALD填充/刻蚀/去胶；不是210nm总结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "LCP入射→RCP检出通道（作者设计）",
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Simulation results；Methods / Simulation",
+              "note": "不是偏振不敏感透镜；不可套Chen2019无检偏器配置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p13 Fig.9；p34 [0057]",
+              "note": "Fig.9 为相对轴向光强图，作者未给绝对焦距、逐色峰位或参考零点。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-25",
+              "display": "逐色焦位待核"
+            }
+          }
+        },
+        {
+          "id": "li2021_na03_patent_648",
+          "model": "Li 2021 · NA0.3 · 原作者专利 · 648 nm",
+          "study_id": "li2021",
+          "specimen_id": "na03",
+          "module": "",
+          "variant": "原作同族专利原作者实验补证（非期刊SI）",
+          "evidence_type": "study",
+          "measurement_scope": "2 mm、NA0.3 原作者同族专利的共同焦面横向实测；不把专利图当正式SI或原始像素。",
+          "visible_light_use": true,
+          "values": {
+            "diameter_um": {
+              "value": 2000,
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p34 [0056]；原刊p2 Results / Simulation results",
+              "note": "作者报告2 mm设计直径，对应此低NA实制镜，mm×1000→μm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25",
+              "sourceIds": [
+                "li_rgb_vr_patent_a1_2021",
+                "li_rgb_vr_pdf_2021"
+              ]
+            },
+            "na": {
+              "value": 0.3,
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p34 [0056]–[0058]；原刊p3 Focusing and imaging characterizations",
+              "note": "作者NA0.3配置，不以PSF反推NA。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25",
+              "sourceIds": [
+                "li_rgb_vr_patent_a1_2021",
+                "li_rgb_vr_pdf_2021"
+              ]
+            },
+            "wavelength_nm": {
+              "value": 648,
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p13 Fig.9；p14 Fig.10C；p34 [0058]",
+              "note": "低NA共同焦面聚焦谱点；不同于主文标靶的谱点条件。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25",
+              "sourceIds": [
+                "li_rgb_vr_patent_a1_2021",
+                "li_rgb_vr_patent_b2_2023"
+              ]
+            },
+            "fwhm_x_um": {
+              "value": 0.94,
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p15 Fig.10F x向FWHM印字；p34 [0058]",
+              "note": "专利公开原作者直接图中印字；x向半高全宽，不是对曲线估点。Fig.10C为同一共同焦面二维归一化PSF。蓝光图内470与[0058]后一句480相冲突；绿548和红648无该差异。 nm÷1000→μm；不转换为MTF或分辨率。",
+              "basis": "measured",
+              "checked_on": "2026-11-25",
+              "direction": "x",
+              "original_value": 940,
+              "original_unit": "nm",
+              "sourceIds": [
+                "li_rgb_vr_patent_a1_2021",
+                "li_rgb_vr_patent_b2_2023"
+              ]
+            },
+            "psf_protocol": {
+              "value": "原作者共同焦面PSF；SuperK超连续谱，线宽>5 nm",
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF pp13–15 Figs.9/10A–F；p34 [0057]–[0058]，p33 [0054]通用聚焦光路",
+              "note": "共同焦面横向(x,y) PSF 归一化0–1；图为排版半色调而非原始二维数组。通用光路准直LCP，经100×/NA0.9物镜、180mm管镜、RCP选择和CMOS；各谱点实际像素尺度/曝光/轴步未报告，精确共同z未知。作者说明光源线宽大于5nm使焦峰有尾部。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25",
+              "object_conjugate": "collimated",
+              "illumination_polarization": "LCP",
+              "detection_polarization": "RCP",
+              "collection_na": 0.9,
+              "nominal_collection_magnification": 100,
+              "focal_plane_selection": "common_plane",
+              "evaluation_plane_um": null,
+              "sampling_um": null,
+              "axial_step_um": null,
+              "linewidth_bound_nm": {
+                "operator": ">",
+                "value": 5
+              },
+              "data_availability": {
+                "raw_psf": null,
+                "raw_axial_scan": null
+              }
+            },
+            "chromatic": {
+              "value": "Fig.9实测轴扫；近共同焦面",
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p13 Fig.9；p34 [0057]",
+              "note": "作者未量化三色互差、峰位及参考面的绝对位置。",
+              "basis": "measured",
+              "checked_on": "2026-11-25",
+              "sourceIds": [
+                "li_rgb_vr_patent_a1_2021",
+                "li_rgb_vr_pdf_2021"
+              ]
+            },
+            "height_nm": {
+              "value": 600,
+              "source": "li_rgb_vr_2021",
+              "location": "Materials and Methods / Simulation；Fabrication",
+              "note": "最终TiO2纳米鳍高600nm；ALD约210nm为沉积膜/工艺厚度，不作最终鳍高。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "material": {
+              "value": "TiO2纳米鳍 / fused silica；h=600nm，p=400nm",
+              "source": "li_rgb_vr_2021",
+              "location": "Materials and Methods / Simulation and Fabrication",
+              "note": "正胶模板＋TiO2 ALD填充/刻蚀/去胶；不是210nm总结构高度。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "polarization": {
+              "value": "LCP入射→RCP检出通道（作者设计）",
+              "source": "li_rgb_vr_2021",
+              "location": "Results / Simulation results；Methods / Simulation",
+              "note": "不是偏振不敏感透镜；不可套Chen2019无检偏器配置。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-14"
+            },
+            "measured_focal_um": {
+              "value": null,
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p13 Fig.9；p34 [0057]",
+              "note": "Fig.9 为相对轴向光强图，作者未给绝对焦距、逐色峰位或参考零点。",
+              "basis": "unresolved",
+              "checked_on": "2026-11-25",
+              "display": "逐色焦位待核"
+            }
+          }
+        },
+        {
+          "id": "li2021_na03_patent_532_mtf",
+          "model": "Li 2021 · NA0.3 · 532 nm 专利方向MTF（样片归属待核）",
+          "study_id": "li2021",
+          "specimen_id": "na03_mtf_unconfirmed",
+          "module": "",
+          "variant": "原作同族专利原作者实验补证（非期刊SI）",
+          "evidence_type": "study",
+          "measurement_scope": "同族原作者披露的NA0.3／532 nm实验，标明独立测量配置；未明确实物口径及与2 mm三色样片的身份，不增称独立实物。",
+          "visible_light_use": true,
+          "values": {
+            "na": {
+              "value": 0.3,
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p22 Fig.17C；p36 [0068]",
+              "note": "作者用于测量及理论比较的NA；没有直径或实际样片序列号，不借用 D2 mm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25"
+            },
+            "wavelength_nm": {
+              "value": 532,
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p36 [0068]",
+              "note": "作者明确532 nm、1 nm线宽激光二极管测试；不是NA0.3 RGB设计绿光548 nm。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25"
+            },
+            "psf_protocol": {
+              "value": "532 nm激光二极管，1 nm线宽；固定焦面PSF",
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p22 Fig.17A,B；p36 [0068]",
+              "note": "Fig.17A 为焦面二维归一化强度，图轴 x/y μm；B为x向中心线。归一化分母、CCD标尺、样片/场点、取面与计算流程未单列。不把印刷图当原始PSF。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25",
+              "illumination_linewidth_nm": 1,
+              "focal_plane_selection": "focal_plane_unspecified_peak_selection",
+              "evaluation_plane_um": null,
+              "sampling_um": null,
+              "axial_step_um": null,
+              "incidence_deg": null,
+              "object_conjugate": null
+            },
+            "strehl": {
+              "value": 0.95,
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利PDF p36 [0068]；p22 Fig.17A,B",
+              "note": "原作者由实测聚焦表现报告0.95，具体计算/归一化未说明；按同一532 nm测试保存，不借给548 nm。",
+              "basis": "derived_from_measurement",
+              "checked_on": "2026-11-25",
+              "approximate": true,
+              "sourceIds": [
+                "li_rgb_vr_patent_a1_2021",
+                "li_rgb_vr_patent_b2_2023"
+              ]
+            },
+            "mtf_curve": {
+              "value": "532 nm 原作者实测切向与弧矢 MTF 曲线；无原始表",
+              "source": "li_rgb_vr_patent_a1_2021",
+              "location": "专利 PDF p22 Fig.17C；p36 [0068]；正式原刊 p8 Data and materials availability",
+              "note": "Fig.17C 横轴 Frequency (lp/mm) 0–700，纵轴 MTF(%) 0–100；实线切向、虚线弧矢，另有NA0.3理论。正文称实测MTF，但未明确是否FFT PSF、方向映射、场点、空间频率的像物方、归一化/采样与重复次数。Fig.17A不是原始PSF，不估图、不复算、不填 cutoff 或 MTF50。",
+              "basis": "measured",
+              "checked_on": "2026-11-25",
+              "sourceIds": [
+                "li_rgb_vr_patent_a1_2021",
+                "li_rgb_vr_patent_b2_2023",
+                "li_rgb_vr_pdf_2021",
+                "li_rgb_vr_cloud_2021"
+              ],
+              "mtf_kind": "author_reported_directional_mtf_curve",
+              "processing_stage": "bare_metalens_optical_mtf",
+              "frequency_unit": "lp/mm",
+              "frequency_reference_plane": null,
+              "frequency_range": [
+                0,
+                700
+              ],
+              "ordinate_unit": "percent",
+              "direction_aggregation": "separate_tangential_sagittal",
+              "directions": [
+                "tangential",
+                "sagittal"
+              ],
+              "field_point_deg": null,
+              "normalization": null,
+              "calculation_method": null,
+              "data_availability": {
+                "status": "curves_only",
+                "author_numeric_mtf": null,
+                "raw_psf": null,
+                "independently_recomputed_mtf": null,
+                "sampling_um": null
+              }
             }
           }
         },
