@@ -3133,6 +3133,24 @@
       "publication_source": "hsiao_iru_2018"
     },
     {
+      "id": "hsiao_iru_thesis_2018",
+      "title": "陳郁涵（Yu-Han Chen）2018 · 臺大碩士論文公開摘要與完整題錄",
+      "url": "https://tdr.lib.ntu.edu.tw/jspui/handle/123456789/69179",
+      "kind": "author_thesis",
+      "scope": "同文第二作者，论文 DOI 10.6342/NTU201801686。中英文摘要明报直径41.86 μm及420/550/650 nm三效率与期刊完全一致，中文摘要明示偏振转换后的聚焦效率。完整题录参考文献第35项为本原刊，§3-4 自p52起，§3-4-3 从p57起为模拟及实测。PDF ntu-107-1.pdf 4.09 MB未授权公开；dc.date.available 登记2028-07-18，非保证开放日期。未读正文。",
+      "checked_on": "2026-11-25",
+      "publication_source": "hsiao_iru_2018"
+    },
+    {
+      "id": "hsiao_iru_thesis_metadata_2018",
+      "title": "臺大 · 陳郁涵學位論文完整題錄",
+      "url": "https://tdr.lib.ntu.edu.tw/jspui/handle/123456789/69179?mode=full",
+      "kind": "repository_metadata",
+      "scope": "HTTP 200。作者、导师、中英文原摘要、参考文献第35项、§3-4 实验目录、66页及文件登记。登记全文为有偿授权/未授权公开取用，dc.date.available 2028-07-18；无公开PDF链接。本批未取正文或原始数表。",
+      "checked_on": "2026-11-25",
+      "publication_source": "hsiao_iru_2018"
+    },
+    {
       "id": "he_dhpsf_2026",
       "title": "He et al. (2026), Achromatic Metalens for Three-Dimensional Depth Sensing",
       "url": "https://pubs.acs.org/doi/10.1021/acsphotonics.5c02219",
@@ -167366,19 +167384,20 @@
           "module": "",
           "variant": "可见光消色差实物 · NA 0.124 · 汇总",
           "evidence_type": "study",
-          "measurement_scope": "实物 NA、工作波段和作者公开图版的测量范围。",
+          "measurement_scope": "实物 NA、工作波段和作者公开图版的测量范围。 同文第二作者学位论文摘要用三个完全一致的效率与 NA 0.124 原刊样片互证实物口径。",
           "visible_light_use": true,
           "values": {
             "na": {
               "value": 0.124,
               "source": "hsiao_iru_2018",
               "location": "Wiley 正式摘要，实测超透镜与效率句",
-              "note": "摘要将该 NA 与三项聚焦效率明确绑定。NA 的独立测法和误差待核。",
+              "note": "摘要将该 NA 与三项聚焦效率明确绑定。NA 的独立测法和误差待核。 台大同作者论文摘要的三项效率精确一致，与 41.86 μm 口径配对。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-20",
+              "checked_on": "2026-11-25",
               "sourceIds": [
                 "hsiao_iru_2018",
-                "hsiao_iru_crossref_2018"
+                "hsiao_iru_crossref_2018",
+                "hsiao_iru_thesis_2018"
               ]
             },
             "lambda_min_nm": {
@@ -167408,30 +167427,32 @@
               "spectral_sampling": "author_reported_band_from_spectral_tests"
             },
             "diameter_um": {
-              "value": null,
-              "source": "hsiao_iru_2018",
-              "location": "Wiley 正式摘要，实测超透镜与效率句；正式全文及补件入口",
-              "note": "出版方已核材料未给可绑定此样片的实物口径。",
-              "basis": "unresolved",
-              "checked_on": "2026-11-20",
-              "display": "实物口径待核",
+              "value": 41.86,
+              "source": "hsiao_iru_thesis_2018",
+              "location": "台大学位论文中英文摘要，41.86 μm 器件及 420/550/650 nm 三项效率；完整题录 Ref.35",
+              "note": "同文第二作者 Chen 2018 明报直径 41.86 μm；三个波长及 26.31%、19.71%、20.37% 逐项与期刊 NA 0.124 样片完全一致。非由综述推定，也未按 NA 反算口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25",
               "sourceIds": [
+                "hsiao_iru_thesis_2018",
+                "hsiao_iru_thesis_metadata_2018",
                 "hsiao_iru_2018",
-                "hsiao_iru_si_2018"
+                "hsiao_iru_crossref_2018"
               ]
             },
             "design_focal_um": {
               "value": null,
               "source": "hsiao_iru_2018",
               "location": "Wiley 正式摘要，实测超透镜与效率句；正式全文及补件入口",
-              "note": "摘要没有给该镜的名义设计焦距，图中焦长曲线保留作定位。",
+              "note": "摘要没有给该镜的名义设计焦距，图中焦长曲线保留作定位。 已核作者学位论文摘要未列 f；假设空气圆孔的 NA 换算仅作一致性检查，不能当设计值。",
               "basis": "unresolved",
-              "checked_on": "2026-11-20",
+              "checked_on": "2026-11-25",
               "display": "设计焦距待核",
               "sourceIds": [
                 "hsiao_iru_2018",
                 "hsiao_iru_si_2018",
-                "hsiao_iru_reprint_2018"
+                "hsiao_iru_reprint_2018",
+                "hsiao_iru_thesis_2018"
               ]
             },
             "psf_protocol": {
@@ -167496,13 +167517,13 @@
               ]
             },
             "efficiency_protocol": {
-              "value": "焦区积分窗口和参考功率待核",
-              "source": "hsiao_iru_2018",
-              "location": "Wiley 正式摘要，实测超透镜与效率句；出版方补件目录",
-              "note": "摘要给聚焦效率和所属谱点。实际评价面、积分窗的尺寸和形状、功率分母、偏振与重复数待核。",
+              "value": "偏振转换后聚焦效率；焦区积分和参考功率待核",
+              "source": "hsiao_iru_thesis_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句；出版方补件目录；陈郁涵学位论文中文摘要",
+              "note": "期刊摘要给聚焦效率与谱点，同作者学位论文中文摘要明确是偏振转换后的聚焦效率。未给入／出射偏振态及手性、评价面、积分窗尺寸和形状、功率分母或重复数；不按总入射功率效率解读。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-20",
-              "efficiency_definition_status": "not_available_in_checked_abstract",
+              "checked_on": "2026-11-25",
+              "efficiency_definition_status": "partial_author_thesis_abstract",
               "integration_shape": null,
               "integration_radius_um": null,
               "integration_diameter_um": null,
@@ -167512,21 +167533,24 @@
               "sourceIds": [
                 "hsiao_iru_2018",
                 "hsiao_iru_crossref_2018",
-                "hsiao_iru_si_2018"
-              ]
+                "hsiao_iru_si_2018",
+                "hsiao_iru_thesis_2018"
+              ],
+              "polarization_conversion_reported": true
             },
             "mtf_curve": {
               "value": null,
               "source": "hsiao_iru_2018",
               "location": "Wiley 正式摘要，实测超透镜与效率句；出版方补件目录；原刊图版转载，PhotoniX Fig. 9a(IV–VI)，图注归于原作引文 202",
-              "note": "公开已核摘要和图版未给 MTF 数表、原始 PSF 或尺度校准。正式主文及补件待核。",
+              "note": "公开已核摘要和图版未给 MTF 数表、原始 PSF 或尺度校准。正式主文及补件待核。 学位论文题录 §3-4-3 p57 起为模拟及实测，但 PDF 未公开授权。",
               "basis": "unresolved",
-              "checked_on": "2026-11-20",
+              "checked_on": "2026-11-25",
               "display": "PSF 数组／MTF 待核",
               "sourceIds": [
                 "hsiao_iru_2018",
                 "hsiao_iru_si_2018",
-                "hsiao_iru_reprint_2018"
+                "hsiao_iru_reprint_2018",
+                "hsiao_iru_thesis_metadata_2018"
               ]
             },
             "strehl": {
@@ -167552,19 +167576,34 @@
           "module": "",
           "variant": "可见光消色差实物 · NA 0.124 · 420 nm",
           "evidence_type": "study",
-          "measurement_scope": "同一枚实物的一条聚焦效率测量。",
+          "measurement_scope": "同一枚实物的一条聚焦效率测量。 同文第二作者学位论文摘要与原刊三个效率精确对齐，实物口径41.86 μm。",
           "visible_light_use": true,
           "values": {
+            "diameter_um": {
+              "value": 41.86,
+              "source": "hsiao_iru_thesis_2018",
+              "location": "台大学位论文中英文摘要，41.86 μm 器件及 420/550/650 nm 三项效率；完整题录 Ref.35",
+              "note": "同文第二作者 Chen 2018 明报直径 41.86 μm；三个波长及 26.31%、19.71%、20.37% 逐项与期刊 NA 0.124 样片完全一致。非由综述推定，也未按 NA 反算口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25",
+              "sourceIds": [
+                "hsiao_iru_thesis_2018",
+                "hsiao_iru_thesis_metadata_2018",
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ]
+            },
             "na": {
               "value": 0.124,
               "source": "hsiao_iru_2018",
               "location": "Wiley 正式摘要，实测超透镜与效率句",
-              "note": "摘要将该 NA 与三项聚焦效率明确绑定。NA 的独立测法和误差待核。",
+              "note": "摘要将该 NA 与三项聚焦效率明确绑定。NA 的独立测法和误差待核。 台大同作者论文摘要的三项效率精确一致，与 41.86 μm 口径配对。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-20",
+              "checked_on": "2026-11-25",
               "sourceIds": [
                 "hsiao_iru_2018",
-                "hsiao_iru_crossref_2018"
+                "hsiao_iru_crossref_2018",
+                "hsiao_iru_thesis_2018"
               ]
             },
             "lambda_min_nm": {
@@ -167621,23 +167660,24 @@
               "value": 26.31,
               "source": "hsiao_iru_2018",
               "location": "Wiley 正式摘要，实测超透镜与效率句",
-              "note": "作者公开报告的 420 nm 聚焦效率。百分数按摘要原精度保留。积分范围及功率分母待核。",
+              "note": "作者公开报告的 420 nm 聚焦效率。百分数按摘要原精度保留。积分范围及功率分母待核。 同文第二作者论文摘要以相同效率对应 41.86 μm 直径；中文摘要明报偏振转换后聚焦效率，完整分母未报。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-20",
+              "checked_on": "2026-11-25",
               "calculation_origin": "authors",
               "sourceIds": [
                 "hsiao_iru_2018",
-                "hsiao_iru_crossref_2018"
+                "hsiao_iru_crossref_2018",
+                "hsiao_iru_thesis_2018"
               ]
             },
             "efficiency_protocol": {
-              "value": "焦区积分窗口和参考功率待核",
-              "source": "hsiao_iru_2018",
-              "location": "Wiley 正式摘要，实测超透镜与效率句；出版方补件目录",
-              "note": "摘要给聚焦效率和所属谱点。实际评价面、积分窗的尺寸和形状、功率分母、偏振与重复数待核。",
+              "value": "偏振转换后聚焦效率；焦区积分和参考功率待核",
+              "source": "hsiao_iru_thesis_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句；出版方补件目录；陈郁涵学位论文中文摘要",
+              "note": "期刊摘要给聚焦效率与谱点，同作者学位论文中文摘要明确是偏振转换后的聚焦效率。未给入／出射偏振态及手性、评价面、积分窗尺寸和形状、功率分母或重复数；不按总入射功率效率解读。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-20",
-              "efficiency_definition_status": "not_available_in_checked_abstract",
+              "checked_on": "2026-11-25",
+              "efficiency_definition_status": "partial_author_thesis_abstract",
               "integration_shape": null,
               "integration_radius_um": null,
               "integration_diameter_um": null,
@@ -167647,8 +167687,10 @@
               "sourceIds": [
                 "hsiao_iru_2018",
                 "hsiao_iru_crossref_2018",
-                "hsiao_iru_si_2018"
-              ]
+                "hsiao_iru_si_2018",
+                "hsiao_iru_thesis_2018"
+              ],
+              "polarization_conversion_reported": true
             }
           }
         },
@@ -167660,19 +167702,34 @@
           "module": "",
           "variant": "可见光消色差实物 · NA 0.124 · 550 nm",
           "evidence_type": "study",
-          "measurement_scope": "同一枚实物的一条聚焦效率测量。",
+          "measurement_scope": "同一枚实物的一条聚焦效率测量。 同文第二作者学位论文摘要与原刊三个效率精确对齐，实物口径41.86 μm。",
           "visible_light_use": true,
           "values": {
+            "diameter_um": {
+              "value": 41.86,
+              "source": "hsiao_iru_thesis_2018",
+              "location": "台大学位论文中英文摘要，41.86 μm 器件及 420/550/650 nm 三项效率；完整题录 Ref.35",
+              "note": "同文第二作者 Chen 2018 明报直径 41.86 μm；三个波长及 26.31%、19.71%、20.37% 逐项与期刊 NA 0.124 样片完全一致。非由综述推定，也未按 NA 反算口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25",
+              "sourceIds": [
+                "hsiao_iru_thesis_2018",
+                "hsiao_iru_thesis_metadata_2018",
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ]
+            },
             "na": {
               "value": 0.124,
               "source": "hsiao_iru_2018",
               "location": "Wiley 正式摘要，实测超透镜与效率句",
-              "note": "摘要将该 NA 与三项聚焦效率明确绑定。NA 的独立测法和误差待核。",
+              "note": "摘要将该 NA 与三项聚焦效率明确绑定。NA 的独立测法和误差待核。 台大同作者论文摘要的三项效率精确一致，与 41.86 μm 口径配对。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-20",
+              "checked_on": "2026-11-25",
               "sourceIds": [
                 "hsiao_iru_2018",
-                "hsiao_iru_crossref_2018"
+                "hsiao_iru_crossref_2018",
+                "hsiao_iru_thesis_2018"
               ]
             },
             "lambda_min_nm": {
@@ -167729,23 +167786,24 @@
               "value": 19.71,
               "source": "hsiao_iru_2018",
               "location": "Wiley 正式摘要，实测超透镜与效率句",
-              "note": "作者公开报告的 550 nm 聚焦效率。百分数按摘要原精度保留。积分范围及功率分母待核。",
+              "note": "作者公开报告的 550 nm 聚焦效率。百分数按摘要原精度保留。积分范围及功率分母待核。 同文第二作者论文摘要以相同效率对应 41.86 μm 直径；中文摘要明报偏振转换后聚焦效率，完整分母未报。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-20",
+              "checked_on": "2026-11-25",
               "calculation_origin": "authors",
               "sourceIds": [
                 "hsiao_iru_2018",
-                "hsiao_iru_crossref_2018"
+                "hsiao_iru_crossref_2018",
+                "hsiao_iru_thesis_2018"
               ]
             },
             "efficiency_protocol": {
-              "value": "焦区积分窗口和参考功率待核",
-              "source": "hsiao_iru_2018",
-              "location": "Wiley 正式摘要，实测超透镜与效率句；出版方补件目录",
-              "note": "摘要给聚焦效率和所属谱点。实际评价面、积分窗的尺寸和形状、功率分母、偏振与重复数待核。",
+              "value": "偏振转换后聚焦效率；焦区积分和参考功率待核",
+              "source": "hsiao_iru_thesis_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句；出版方补件目录；陈郁涵学位论文中文摘要",
+              "note": "期刊摘要给聚焦效率与谱点，同作者学位论文中文摘要明确是偏振转换后的聚焦效率。未给入／出射偏振态及手性、评价面、积分窗尺寸和形状、功率分母或重复数；不按总入射功率效率解读。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-20",
-              "efficiency_definition_status": "not_available_in_checked_abstract",
+              "checked_on": "2026-11-25",
+              "efficiency_definition_status": "partial_author_thesis_abstract",
               "integration_shape": null,
               "integration_radius_um": null,
               "integration_diameter_um": null,
@@ -167755,8 +167813,10 @@
               "sourceIds": [
                 "hsiao_iru_2018",
                 "hsiao_iru_crossref_2018",
-                "hsiao_iru_si_2018"
-              ]
+                "hsiao_iru_si_2018",
+                "hsiao_iru_thesis_2018"
+              ],
+              "polarization_conversion_reported": true
             }
           }
         },
@@ -167768,19 +167828,34 @@
           "module": "",
           "variant": "可见光消色差实物 · NA 0.124 · 650 nm",
           "evidence_type": "study",
-          "measurement_scope": "同一枚实物的一条聚焦效率测量。",
+          "measurement_scope": "同一枚实物的一条聚焦效率测量。 同文第二作者学位论文摘要与原刊三个效率精确对齐，实物口径41.86 μm。",
           "visible_light_use": true,
           "values": {
+            "diameter_um": {
+              "value": 41.86,
+              "source": "hsiao_iru_thesis_2018",
+              "location": "台大学位论文中英文摘要，41.86 μm 器件及 420/550/650 nm 三项效率；完整题录 Ref.35",
+              "note": "同文第二作者 Chen 2018 明报直径 41.86 μm；三个波长及 26.31%、19.71%、20.37% 逐项与期刊 NA 0.124 样片完全一致。非由综述推定，也未按 NA 反算口径。",
+              "basis": "reported_configuration",
+              "checked_on": "2026-11-25",
+              "sourceIds": [
+                "hsiao_iru_thesis_2018",
+                "hsiao_iru_thesis_metadata_2018",
+                "hsiao_iru_2018",
+                "hsiao_iru_crossref_2018"
+              ]
+            },
             "na": {
               "value": 0.124,
               "source": "hsiao_iru_2018",
               "location": "Wiley 正式摘要，实测超透镜与效率句",
-              "note": "摘要将该 NA 与三项聚焦效率明确绑定。NA 的独立测法和误差待核。",
+              "note": "摘要将该 NA 与三项聚焦效率明确绑定。NA 的独立测法和误差待核。 台大同作者论文摘要的三项效率精确一致，与 41.86 μm 口径配对。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-20",
+              "checked_on": "2026-11-25",
               "sourceIds": [
                 "hsiao_iru_2018",
-                "hsiao_iru_crossref_2018"
+                "hsiao_iru_crossref_2018",
+                "hsiao_iru_thesis_2018"
               ]
             },
             "lambda_min_nm": {
@@ -167837,23 +167912,24 @@
               "value": 20.37,
               "source": "hsiao_iru_2018",
               "location": "Wiley 正式摘要，实测超透镜与效率句",
-              "note": "作者公开报告的 650 nm 聚焦效率。百分数按摘要原精度保留。积分范围及功率分母待核。",
+              "note": "作者公开报告的 650 nm 聚焦效率。百分数按摘要原精度保留。积分范围及功率分母待核。 同文第二作者论文摘要以相同效率对应 41.86 μm 直径；中文摘要明报偏振转换后聚焦效率，完整分母未报。",
               "basis": "derived_from_measurement",
-              "checked_on": "2026-11-20",
+              "checked_on": "2026-11-25",
               "calculation_origin": "authors",
               "sourceIds": [
                 "hsiao_iru_2018",
-                "hsiao_iru_crossref_2018"
+                "hsiao_iru_crossref_2018",
+                "hsiao_iru_thesis_2018"
               ]
             },
             "efficiency_protocol": {
-              "value": "焦区积分窗口和参考功率待核",
-              "source": "hsiao_iru_2018",
-              "location": "Wiley 正式摘要，实测超透镜与效率句；出版方补件目录",
-              "note": "摘要给聚焦效率和所属谱点。实际评价面、积分窗的尺寸和形状、功率分母、偏振与重复数待核。",
+              "value": "偏振转换后聚焦效率；焦区积分和参考功率待核",
+              "source": "hsiao_iru_thesis_2018",
+              "location": "Wiley 正式摘要，实测超透镜与效率句；出版方补件目录；陈郁涵学位论文中文摘要",
+              "note": "期刊摘要给聚焦效率与谱点，同作者学位论文中文摘要明确是偏振转换后的聚焦效率。未给入／出射偏振态及手性、评价面、积分窗尺寸和形状、功率分母或重复数；不按总入射功率效率解读。",
               "basis": "reported_configuration",
-              "checked_on": "2026-11-20",
-              "efficiency_definition_status": "not_available_in_checked_abstract",
+              "checked_on": "2026-11-25",
+              "efficiency_definition_status": "partial_author_thesis_abstract",
               "integration_shape": null,
               "integration_radius_um": null,
               "integration_diameter_um": null,
@@ -167863,8 +167939,10 @@
               "sourceIds": [
                 "hsiao_iru_2018",
                 "hsiao_iru_crossref_2018",
-                "hsiao_iru_si_2018"
-              ]
+                "hsiao_iru_si_2018",
+                "hsiao_iru_thesis_2018"
+              ],
+              "polarization_conversion_reported": true
             }
           }
         },

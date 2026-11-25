@@ -4,7 +4,7 @@ Hui-Hsin Hsiao 等，*Advanced Optical Materials* 6(12), 1800031，DOI `10.1002/
 
 ## 已录入的实物与效率
 
-作者用整合共振单元（integrated-resonant units, IRUs）在单个单元中结合多个散射体或多个共振模态，以控制相位随波长的变化。摘要报告实物在 420–650 nm 测试区间的焦距保持稳定。波段上下端和下面三个明确印出的效率测试谱点分别登记。摘要中的 400–667 nm 属于 IRU 设计库，三个消色差偏折角属于数值验证。现有摘要未列轴扫完整取样序列或最大焦差。[原刊摘要](https://advanced.onlinelibrary.wiley.com/doi/10.1002/adom.201800031)
+作者用整合共振单元（integrated-resonant units, IRUs）在单个单元中结合多个散射体或多个共振模态，以控制相位随波长的变化。摘要报告实物在 420–650 nm 测试区间的焦距保持稳定。波段上下端和下面三个明确印出的效率测试谱点分别登记。摘要中的 400–667 nm 属于 IRU 设计库，三个消色差偏折角属于数值验证。截至 2026-11-20 已核摘要未列轴扫完整取样序列或最大焦差。[原刊摘要](https://advanced.onlinelibrary.wiley.com/doi/10.1002/adom.201800031)
 
 | 实物 | 效率测量波长 | 作者报告的聚焦效率 |
 | --- | ---: | ---: |
@@ -18,8 +18,25 @@ Hui-Hsin Hsiao 等，*Advanced Optical Materials* 6(12), 1800031，DOI `10.1002/
 
 PhotoniX 的许可转载 Fig. 9a(III–VI) 保留样片图、不同 z 面的二维强度图及 x 向剖面、消色差与色散对照的焦距曲线、效率和 FWHM。IV 图的 420、500、650 nm 带有各自的面板标签，二维图坐标单位 μm，横截面纵轴为强度 a.u.。z=0 的物理参考面和这组图对应的样片 NA 未核。V 图上半部为消色差实物和其模拟，下半部为色散对照及计算，横轴波长 nm、纵轴焦距 μm。VI 图上部是效率百分数，底面投影有 FWHM，单位 μm；需要原图表核逐点数值和测法。综述图版内另有 NA 0.165 和 0.198 标签，没有由此新增含推定几何和峰位的样品记录。[许可转载图与图注](https://link.springer.com/article/10.1186/s43074-022-00074-0#Fig9)
 
-通讯作者参与的后续综述 Table 1 把 41.86 μm 和圆偏振列给 NA 0.124 的研究，作为定位原方法的线索。其他综述把 150 μm 和约 30 μm 分别列作名义焦距和最大焦移。后两个量的原始定义和取样条件尚未确认，不能和作者摘要的带内焦距稳定描述直接对算。已核原摘要未给实物口径、设计焦距、绝对焦位或扫描零位，也没有足以核算 NA 的几何输入。以上几何和带内焦差字段留空。[后续综述 Table 1](https://scholars.cityu.edu.hk/files/159361975/157454589.pdf#page=5) · [二级汇编 Table A1](https://www.mdpi.com/2304-6732/12/9/913)
+通讯作者参与的后续综述 Table 1 把 41.86 μm 和圆偏振列给 NA 0.124 的研究，作为定位原方法的线索。其他综述把 150 μm 和约 30 μm 分别列作名义焦距和最大焦移。后两个量的原始定义和取样条件尚未确认，不能和作者摘要的带内焦距稳定描述直接对算。已核原摘要未给实物口径、设计焦距、绝对焦位或扫描零位，也没有足以核算 NA 的几何输入。截至 2026-11-20 几何和带内焦差字段留空；2026-11-25 新核实的实物口径见下文。[后续综述 Table 1](https://scholars.cityu.edu.hk/files/159361975/157454589.pdf#page=5) · [二级汇编 Table A1](https://www.mdpi.com/2304-6732/12/9/913)
 
 ## 已检查的入口
 
 本机独立无头 Google Chrome 检查 Wiley 全文、正式 PDF 和 `adom201800031-sup-0001-S1.pdf` 均返回 403。Wiley 的公开目录列该补件为 994.3 KB，内容待核。NTU 馆藏页和公开 API 返回 403，NTNU、NCKU、CityU、PolyU 可打开题录。通讯作者与同组的公开发表目录可定位 DOI。CLEO 同团队论文的 Optica PDF 返回验证页，IEEE 入口返回 418。DataCite 关联 DOI 和 Zenodo 精确 DOI 检索均为 0。待继续取得作者原始焦位、焦斑宽度、校准资料与功率比定义。[Wiley 补件直连](https://advanced.onlinelibrary.wiley.com/doi/suppl/10.1002/adom.201800031/supinfo/adom201800031-sup-0001-S1.pdf) · [NTU 馆藏](https://scholars.lib.ntu.edu.tw/handle/123456789/621106) · [NTNU 馆藏](https://scholar.lib.ntnu.edu.tw/en/publications/integrated-resonant-unit-of-metasurfaces-for-broadband-efficiency-2/) · [通讯作者目录](https://www.dinpingtsai.com/refereed-papers) · [CLEO 题录](https://doi.org/10.1364/CLEO_AT.2018.JTh2A.70) · [DataCite](https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1002%2Fadom.201800031%22) · [Zenodo](https://zenodo.org/api/records?q=%2210.1002%2Fadom.201800031%22)
+
+## 2026-11-25 同文合著者台大学位论文补证
+
+对照台大导师论文目录定位原作者学位论文。正式机构题录与完整题录在本机独立无头 Google Chrome 实际 HTTP 200。陳郁涵（Yu-Han Chen，原刊第二作者），《集成共振單位元件組成之寬頻刻作超穎表面 / Broadband metasurface with integrated resonant units》，台大物理学系硕士，2018，DOI 10.6342/NTU201801686。其完整题录引用列表第35项直接列本原刊 1800031。不是将另一篇同主题论文混入同一样片。[台大原作者摘要](https://tdr.lib.ntu.edu.tw/jspui/handle/123456789/69179) · [完整题录与文献表](https://tdr.lib.ntu.edu.tw/jspui/handle/123456789/69179?mode=full)
+
+| 字段 | 已核结果 | 证据 |
+| --- | --- | --- |
+| 实物口径 | 41.86 μm | 台大作者中英文摘要明确给出直径，关联 420/550/650 nm 与 26.31/19.71/20.37% 的原数据 |
+| NA | 0.124 | Hsiao 原刊摘要中相同三波长、相同三个百分数，逐项完全一致，极强的同样片归属证据 |
+| 效率性质 | 偏振转换后聚焦效率 | 学位论文中文摘要明确输出经过偏振转换；入/出射手性、积分范围、入射功率分母未报，不擅自作绝对总入射功率归一化 |
+| 实物数量 | 作者述三个不同 NA/直径样片 | 摘要未列另两枚的具体 NA 或直径，无新增配置；此前转载图归属仍待确认 |
+
+本轮只补一枚器件的实际直径（同一研究中的汇总与三个原有效率谱点共四条记录），不是增加独立器件。作者直接报告直径和 NA 来自不同形式的同作者原始记录，通过三项效率匹配。用空气中圆形有效孔径几何关系 `f=(D/2)sqrt(1−NA²)/NA` 核数量级，得到约167.49 μm；二级汇编的150 μm不能在未核有效孔径定义、工作介质和作者标称值情况下替代 f。该换算不进入设计或实测焦距轴。420/550/650 nm 是经核效率谱点，绝不当逐色最佳焦位；其他 NA 与所有原始焦位/FWHM/MTF 仍空。
+
+完整题录给 §3-4 p52 起为消色差透镜，§3-4-1 p53 设计、§3-4-2 p54 制备、§3-4-3 p57 起模拟与实验量测，下一章 p61。原件登记 `ntu-107-1.pdf`，4.09 MB，66 页，未授权公开取用；登记 dc.date.available 为 2028-07-18，并非开放保证。因此未获正文、图页和原始数表，不提供推测的焦距与残差。DataCite 精确论文 DOI 请求 404，不改变已核台大机构题录；NTU Scholars 原刊登记 [4a0cb518-82ff-4d79-b515-076198546c5d](https://scholars.lib.ntu.edu.tw/entities/publication/4a0cb518-82ff-4d79-b515-076198546c5d) 本机恢复 HTTP 200，未列可取得 PDF 的公开链接。2026-11-25 重查 Crossref 81 次和 OpenAlex 93 次，与 11-20 相同。
+
+同时找到同组的 [林仁傑 2018 硕士论文](https://tdr.lib.ntu.edu.tw/jspui/handle/123456789/19983?mode=full)（NA/光场，§3-3 p32 特性检测）、[陳沐谷 2019 博士论文](https://tdr.lib.ntu.edu.tw/jspui/handle/123456789/77394?mode=full)（GaN 消色差与60×60光场系统）、[陳柏翰 2018 博士论文](https://tdr.lib.ntu.edu.tw/jspui/handle/123456789/70179?mode=full)（§5.5 p62 实验与成像，dc.date.available 2028-01-23）。三份均未授权公开取用正文，只有题录/摘要/目录；未取得能消除 Lin 2019 与 Chen 2021 样片身份疑问的新证据。作为后续原文路径，不搬用别的样片参数。
