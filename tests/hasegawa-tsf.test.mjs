@@ -51,10 +51,17 @@ test('Hasegawa power ratios use distinct denominators and the x-direction MTF re
  assert.deepEqual(laser.map(v => v.strehl.display), ['0.80', '0.97', '0.95']);
  assert.deepEqual(laser.map(v => v.optical_transmittance_pct.value), [55, 80, 82]);
  assert.deepEqual(laser.map(v => v.focusing_efficiency_transmitted_pct.value), [8, 26, 23]);
+ assert.deepEqual(laser.map(v => v.efficiency_at_lambda_pct.value), [4.4, 20.8, 18.9]);
+ assert.deepEqual(laser.map(v => v.diffraction_limited_reference_fwhm_um.value), [2.25, 2.64, 3.05]);
+ assert.ok(laser.every(v => v.diffraction_limited_reference_fwhm_um.basis === 'model'));
  for (const values of laser) {
   assert.equal(values.optical_transmittance_pct.denominator, 'incident_through_aperture');
   assert.equal(values.focusing_efficiency_transmitted_pct.denominator, 'transmitted_power');
-  assert.equal(values.efficiency_at_lambda_pct, undefined);
+  assert.equal(values.efficiency_at_lambda_pct.denominator, 'incident_through_aperture');
+  assert.equal(values.efficiency_at_lambda_pct.basis, 'derived_from_measurement');
+  assert.equal(values.efficiency_at_lambda_pct.calculation_origin, 'atlas');
+  assert.equal(values.efficiency_at_lambda_pct.approximate, true);
+  assert.equal(values.efficiency_lambda_nm.value, values.wavelength_nm.value);
   assert.equal(values.efficiency_protocol.focus_region_geometry, null);
   assert.equal(values.mtf_curve.direction, 'x');
   assert.equal(values.mtf_curve.data_availability, 'curves_only');
@@ -64,6 +71,9 @@ test('Hasegawa power ratios use distinct denominators and the x-direction MTF re
  invalidRow.values.focusing_efficiency_transmitted_pct.denominator = 'incident_through_aperture';
  const {metrics} = data.domains.metalens;
  assert.throws(() => validateDevices({...data, domains: {metalens: {metrics, rows: [invalidRow]}}}), /optical power ratio context/);
+ const incorrectProduct = structuredClone(rows[0]);
+ incorrectProduct.values.efficiency_at_lambda_pct.value = 8;
+ assert.throws(() => validateDevices({...data, domains: {metalens: {metrics, rows: [incorrectProduct]}}}), /incident efficiency from measured power ratios/);
 });
 
 test('Hasegawa records optimization and PSF metrics only on their original models', () => {

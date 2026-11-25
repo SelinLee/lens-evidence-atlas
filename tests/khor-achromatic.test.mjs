@@ -52,7 +52,7 @@ test('control geometry and a curve without labeled values never produce AML effi
   assert.equal(v.efficiency_protocol.integration_radius_um,null);
   assert.equal(v.efficiency_protocol.denominator,null);
  }
- assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,0);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,184);assert.equal(axisPoints(lens.rows,'na','efficiency_band_mean_pct').length,16);
+ assert.equal(axisPoints(rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,0);assert.equal(axisPoints(lens.rows,'efficiency_lambda_nm','efficiency_at_lambda_pct').length,187);assert.equal(axisPoints(lens.rows,'na','efficiency_band_mean_pct').length,17);
  assert.match(get('aml_summary').efficiency_protocol.note,/功率分母/);assert.match(get('aml_summary').mtf_curve.value,/原始补件.*原始 PSF/);
 });
 

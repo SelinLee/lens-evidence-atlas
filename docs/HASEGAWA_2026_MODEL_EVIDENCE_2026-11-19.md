@@ -31,3 +31,17 @@ p.14 列补件 `lpor72174-sup-0001-SuppMat.pdf`。补件直连、Wiley 下载接
 两组跨度均关联各自三条测量记录，精度取决于原文 0.01 mm 印字。要量化测量不确定度，还缺轴扫步长、重复测量和定位规则。卤素光路的 400、490、580、680 nm 只有 Fig. 5 的强度图，数值继续留空。正文的 2%／6%／5% 属于 ±5 nm 失谐讨论。§2.4 一处称数值评估，紧接处又用测量措辞。该段的参考、器件归属和证据性质仍需 Fig. S1、Table S2 核对，数据库保留空值。[准直激光 §2.4](https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/lpor.72174#page=7) · [滤光扫描 Fig. 5](https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/lpor.72174#page=8) · [测量 §4.3](https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/lpor.72174#page=12)
 
 补查原文致谢中的东京大学 ARIM 项目 JPMXP1226UTU1231。按完整项目号和论文题名检索未定位数据集。公开详细检索在无头 Chrome 返回 HTTP 202、空响应，报告索引 404，未完成馆内数据集检索。Iwami 课题组更新公告指向 Wiley 正式页和大学发布说明。Wiley 补件直连仍返回 403。现有原始记录仍可按正文重核，逐频 MTF、二维强度原数组以及 Table S2–4 尚缺。[ARIM 公共目录](https://nanonet.go.jp/data_service/) · [大学研究说明](https://www.tuat.ac.jp/outline/disclosure/pressrelease/2026/20261111_01.html) · [期刊补件](https://onlinelibrary.wiley.com/doi/suppl/10.1002/lpor.72174/supinfo/lpor72174-sup-0001-SuppMat.pdf)
+
+## 2026-11-25 同一入射功率参照和理想焦斑
+
+按 §2.4 pp.7–8 的两个实测功率比，设透过率 `T=P_out/P_in`、作者聚焦效率 `η_exp=P_focus/P_out`，其中 `P_in` 是 1 mm 口径内入射功率。仅对同一光路实物的三个准直激光波长作本库换算 `η_in=T×η_exp`。两个百分比输入为作者整数印字，换算结果保留约值、1 位小数及运算来源。焦区作者称 3×FWHM，半径/直径定义及积分形状待核。无逐次功率和不确定度原数。
+
+| 波长 (nm) | 作者透过率 (%) | 作者透过功率分母效率 (%) | 本库换算入射功率分母效率 (约 %) | 实测 x 向 FWHM (μm) | 作者写明的理论 FWHM (μm) |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 450 | 55 | 8 | 4.4 | 2.75 | 2.25 |
+| 532 | 80 | 26 | 20.8 | 2.65 | 2.64 |
+| 633 | 82 | 23 | 18.9 | 3.39 | 3.05 |
+
+原文的理论参考 FWHM 三值单独进入模型参考字段，基于 Fig. 4d 所用理想曲线，未核到精确公式。p.9 §2.5 作者从约 1.2 mm 的传感器有效像圈给总角视场 9.8°（±4.9°）；对应物距 20 mm、USAF 放大率 0.38 的实拍配置。Fig. 6c 文中给出 10 lp/mm 的亮暗差判据（高于最大值的 15%），其频率参考面、方向及明确对比度公式待核，不当作系统 MTF 数值。[正式稿 §2.4](https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/lpor.72174#page=7) · [§2.5](https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/lpor.72174#page=9)
+
+2026-11-25 本机独立无头 Chrome 取得大学正式发布 PDF 1337214 字节及 502×419 的复刊实测 MTF 图。图中频率轴 cycles/mm、x 截线、色彩图谱同前记录，未核到原 PSF 与逐频数表。Crossref 登记可达，Europe PMC 精确 DOI、DataCite 关联查找均零项。补件直连实际 403，另部分出版商入口连接复位。原文 ARIM 号 `JPMXP1226UTU1231`，大学发布 PDF p.5 则为 `JPMXP1226UT1231`。已查两种印字及课题号，尚未定位公开附属数据。失谐 2%／6%／5% 的归属和逐偏振原值继续留空。[大学联合发布 PDF](https://www.tuat.ac.jp/documents/tuat/outline/disclosure/pressrelease/2026/20261111_01.pdf) · [复刊图](https://www.tuat.ac.jp/images/tuat/outline/disclosure/pressrelease/2026/20261111_01_03.png)
